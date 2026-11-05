@@ -1,0 +1,28 @@
+  detail QA-PANEL-BESIDE-BUTTON: {"shown":true,"expanded":"true","belowHeader":true,"aboveButton":true,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail SMALL-PHONE-CLEAR: {"bad":[],"last":[],"qa":{"shown":true,"inBand":false}}
+  detail SMALL-PHONE-CLEAR: {"narrow":true,"bad":[],"last":[],"qa":{"shown":true,"topShown":true,"inBand":false,"cornerOwn":false}}
+  note landscape page height 193px
+PASS SEAM-PRESENT
+PASS NO-BAND
+PASS PHONE-CONTROLS-IN-CORNERS
+PASS PHONE-HEADINGS-CLEAR
+PASS PHONE-END-CLEAR
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+PASS TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-UPWARD
+FAIL QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+PASS LANDSCAPE-CLEAR
+PASS DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+21/23 checks passed

@@ -1,0 +1,38 @@
+  detail SEAM-PRESENT: {"seam":false}
+  detail NO-BAND: {"band":false,"on":false,"before":"carViewport","flush":true,"room":"22px"}
+  detail PHONE-CONTROLS-IN-CORNERS: [["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":16,"top":169,"right":52,"bottom":205,"width":36,"height":36},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","middle","quickAccessToggleBtn",{"rect":{"left":16,"top":169,"right":52,"bottom":205,"width":36,"height":36},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":16,"top":169,"right":52,"bottom":205,"width":36,"height":36},"onTabs":false,"inCorner":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"rect":{"left":16,"top":169,"right":52,"bottom":205,"width":36,"height":36},"onTabs":false,"inCorner":false
+  detail PHONE-HEADINGS-CLEAR: [["play","Clan & School",{"text":"Clan, Family & School","start":false,"middle":true}],["play","Identity",{"text":"Identity","start":false,"middle":false}],["play","Rings & Traits",{"text":"Rings & Traits","start":false,"middle":true}],["play","Skills",{"text":"Skills","start":false,"middle":false}],["play","Adv & Disadv",{"text":"Advantages & Disadvantages","start":false,"middle":true}],["play","Techniques",{"text":"Techniques, Kata & Spells","start":false,"middle":true}],["play","Spell Slots",{"text":"Spell Slots","start":false,"middle":true}],["play","Combat",{"text":"Combat","start":false,"middle":true}],["play","Equipment",{"text":"Equipment & Money","start":false,"middle":true}],["play
+  detail PHONE-END-CLEAR: [["play","Clan & School",[],["quickAccessToggleBtn over SELECT#cfs_clan Crab\nCrane\nDragon\nLion\nP","quickAccessToggleBtn over LABEL FAMILY","floatingDiceBtn over SELECT#anc48Pick — No Ancestor —\nHida — 1"]],["play","Identity",null,["quickAccessToggleBtn over LABEL MANUAL ADJUSTMENT","quickAccessToggleBtn over INPUT#f_xpAdjust 0","floatingDiceBtn over SPAN Identify starting spells"]],["play","Rings & Traits",[],["quickAccessToggleBtn over DIV Ring = lower of its two "]],["play","Skills",[],["quickAccessToggleBtn over TD 0 xp","floatingDiceBtn over DIV Mastery notes below a sk"]],["play","Adv & Disadv",[],["quickAccessToggleBtn over BUTTON CHECK (TN 5 × GLORY)","quickAccessToggleBtn over T
+  detail COMBAT-WOUND-PLUS-REACHABLE: false
+  detail TOP-SHOWN-AFTER-SCROLL: {"c":{"rect":{"left":16,"top":790,"right":54,"bottom":828,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true},"above":false,"count":1}
+  detail QA-OPENS-UPWARD: {"shown":true,"expanded":"true","belowHeader":true,"aboveButton":false,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail QA-PANEL-BESIDE-BUTTON: {"shown":true,"expanded":"true","belowHeader":true,"aboveButton":false,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":16,"top":169,"right":52,"bottom":205,"width":36,"height":36},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":16,"top":169,"right":52,"bottom":205,"width":36,"height":36},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","end","scrollTopBtn",{"rect":{"left":16,"top":613,"right":54,"bottom":651,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"rect":{"left":16,"top":169,"right":52,"bottom":205,"width":36,"height":36},"onTabs":false,"inCorner":false,"tap
+  detail SMALL-PHONE-CLEAR: {"narrow":true,"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":16,"top":215,"right":52,"bottom":251,"width":36,"height":36},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":16,"top":215,"right":52,"bottom":251,"width":36,"height":36},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","end","scrollTopBtn",{"rect":{"left":16,"top":514,"right":54,"bottom":552,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"rect":{"left":16,"top":215,"right":52,"bottom":251,"width":36,"height":36},"onTabs":false,"inCorn
+  note landscape page height 193px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":16,"top":212,"right":56,"bottom":252,"width":40,"height":40},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":16,"top":212,"right":56,"bottom":252,"width":40,"height":40},"onTabs":false,"inCorner":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"rect":{"left":16,"top":212,"right":56,"bottom":252,"width":40,"height":40},"onTabs":false,"inCorner":false,"tappable":true}],["play","Identity","end","quickAccessToggleBtn",{"rect":{"left":16,"top":212,"right":56,"bottom":252,"width":40,"height":40},"onTabs":false,"inCorner":false,
+  detail DESKTOP-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":16,"top":190,"right":56,"bottom":230,"width":40,"height":40},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","middle","quickAccessToggleBtn",{"rect":{"left":16,"top":190,"right":56,"bottom":230,"width":40,"height":40},"onTabs":false,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":16,"top":190,"right":56,"bottom":230,"width":40,"height":40},"onTabs":false,"inCorner":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"rect":{"left":16,"top":190,"right":56,"bottom":230,"width":40,"height":40},"onTabs":false,"inCorner
+FAIL SEAM-PRESENT
+FAIL NO-BAND
+FAIL PHONE-CONTROLS-IN-CORNERS
+FAIL PHONE-HEADINGS-CLEAR
+FAIL PHONE-END-CLEAR
+FAIL COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+FAIL TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+FAIL QA-OPENS-UPWARD
+FAIL QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+11/23 checks passed

@@ -13,10 +13,12 @@ PREFIX=(Q/'qualified-sha256.txt').read_text().strip()[:8]
 # Attempt 4: attempt 3 passed and its full pass 2 failed when pwa-harness.js (Part F Phase 0.6) stalled. On the owner's
 # ruling (5 November) the stall was fixed as its own unit (QA — PWA Harness Step Limits 2026-11-05), and the whole chain
 # runs again from removal, with a fresh discovery folder; attempt 3's files and final-run-1/-2 are kept as they were.
-ATTEMPT='-4'
-DISCOVERY='discovery-2'
+# Revision 2 (owner's decision Revise, 5 November): a new candidate, so a new qualified-sha256.txt and a new prefix.
+# Its first chain carries no attempt suffix; revision 1's files (prefix 1cc41d8c) are kept as they were.
+ATTEMPT=''
+DISCOVERY='discovery-3'
 STATE=Q/('qualification-'+PREFIX+ATTEMPT+'.json')
-assert not (Q/DISCOVERY).exists() and not (Q/'full-launched-2.txt').exists(), 'Discovery and full runs are single-use.'
+assert not (Q/DISCOVERY).exists() and not (Q/'full-launched-3.txt').exists(), 'Discovery and full runs are single-use.'
 assert not STATE.exists(), 'One qualification chain only; retain and investigate failures.'
 FROZEN=(Q/'qualified-sha256.txt').read_text().strip()
 os.environ.update(PYTHONUTF8='1',NODE_PATH='C:/Users/jcrow/l5r-qa-tools/node_modules',NODE_OPTIONS='--require "'+(V/'QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js').as_posix()+'"')
@@ -37,7 +39,7 @@ try:
     assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0]==1,'Mains power required'
     run('removal-final',[sys.executable,'-B',str(Q/'test-removal.py')])
     run('variants-final',[sys.executable,'-B',str(Q/'verify-variants.py')])
-    run('dependencies',[sys.executable,'-B',str(P/'qa/feature-dependencies.py'),'src/sheet/209.9999999999999996-feat-floating-strip.js','PART H PHASE 15.1.2','--also','fc15Strip','fc15-strip','fc15-on','--fc15-h','--fc15-base','1128-floating-strip'],str(P))
+    run('dependencies',[sys.executable,'-B',str(P/'qa/feature-dependencies.py'),'src/sheet/209.9999999999999996-feat-floating-strip.js','PART H PHASE 15.1.2','--also','fc15Strip','fc15-strip','fc15-on','--fc15-h','--fc15-base','--fc15-gap','--fc15-end','1128-floating-strip'],str(P))
     run('under-load-final',[sys.executable,'-B',str(Q/'run-under-load.py'),'under-load-'+PREFIX+ATTEMPT])
     run('discovery-launch',[sys.executable,'-B',str(Q/'discovery.py'),DISCOVERY])
     state['passed']=True

@@ -1,0 +1,30 @@
+  detail PHONE-CONTROLS-IN-CORNERS: [["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":12,"top":790,"right":56,"bottom":834,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"rect":{"left":330,"top":788,"right":378,"bottom":836,"width":48,"height":48},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","middle","quickAccessToggleBtn",{"rect":{"left":12,"top":790,"right":56,"bottom":834,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","middle","floatingDiceBtn",{"rect":{"left":330,"top":788,"right":378,"bottom":836,"width":48,"height":48},"onTabs":true,"inCorner":false,"
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":12,"top":613,"right":56,"bottom":657,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"rect":{"left":315,"top":611,"right":363,"bottom":659,"width":48,"height":48},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":12,"top":613,"right":56,"bottom":657,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"rect":{"left":315,"top":611,"right":363,"bottom":659,"width":48,"height":48},"onTabs":true,"inCorner":false,
+  detail SMALL-PHONE-CLEAR: {"narrow":true,"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":12,"top":514,"right":56,"bottom":558,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"rect":{"left":260,"top":512,"right":308,"bottom":560,"width":48,"height":48},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":12,"top":514,"right":56,"bottom":558,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"rect":{"left":260,"top":512,"right":308,"bottom":560,"width":48,"height":48},"onTabs":true,"in
+  note landscape page height 193px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":12,"top":336,"right":56,"bottom":380,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"rect":{"left":784,"top":334,"right":832,"bottom":382,"width":48,"height":48},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"rect":{"left":12,"top":336,"right":56,"bottom":380,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","end","scrollTopBtn",{"rect":{"left":732,"top":336,"right":776,"bottom":380,"width":44,"height":44},"onTabs":true,"inCorner":false,"ta
+  detail DESKTOP-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"rect":{"left":12,"top":946,"right":56,"bottom":990,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"rect":{"left":1380,"top":944,"right":1428,"bottom":992,"width":48,"height":48},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","middle","quickAccessToggleBtn",{"rect":{"left":12,"top":946,"right":56,"bottom":990,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["play","Clan & School","middle","floatingDiceBtn",{"rect":{"left":1380,"top":944,"right":1428,"bottom":992,"width":48,"height":48},"onTabs":true,"inCorn
+PASS SEAM-PRESENT
+PASS NO-BAND
+FAIL PHONE-CONTROLS-IN-CORNERS
+PASS PHONE-HEADINGS-CLEAR
+PASS PHONE-END-CLEAR
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+PASS TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-UPWARD
+PASS QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+19/23 checks passed

@@ -1,46 +1,56 @@
-# Release 15a · A02 — the floating controls on one strip above the tabs
+# Release 15a · A02 — the floating controls in the bottom corners, above the tabs (revision 2)
 
-Phase 15, Release 15a, finding A02 ([audit entry](<../../../PART H — Phase 15 UI Consistency Audit/AUDIT.md>), owner ruling Q2 of 1 November 2026, [delivery rules](<../../../PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>)). Built on 4 November 2026 after the owner accepted A01 and A01 went live. Built alone: none of A03 onward, none of the three 8b.1 UI follow-ups, and not FU-15a-1.
+Phase 15, Release 15a, finding A02 ([audit entry](<../../../PART H — Phase 15 UI Consistency Audit/AUDIT.md>), owner ruling Q2 of 1 November 2026, [delivery rules](<../../../PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>)). Built on 4 November 2026 after the owner accepted A01 and A01 went live. **Revised on 5 November 2026 on the owner's decision (Revise)**, after the device checks of revision 1. Built alone: none of A03 onward, none of the three 8b.1 UI follow-ups, and not FU-15a-1. The folder keeps its name, and the files and switch keep revision 1's names, so the removal chain and the records still point at one unit.
+
+## Why there is a revision 2
+
+Revision 1 set aside a 52 px band between the pages and the tab bar and put the three buttons on it. All 11 device checks passed on iPhone Safari and Laptop Edge. The owner's verdict (checklist comments, 5 November):
+- The band made two solid bars at the bottom that felt separate from the sheet, starkly so on the laptop.
+- On the iPhone it felt cluttered and claustrophobic, because it took page height on a small screen.
+
+The owner chose (a) no bar, (d) the dice as a floating button and (e) return-to-top only after scrolling, with Quick Access floating bottom-left. They parked (c), key stats always on view like D&D Beyond's header, for the new Combat tab: see the roadmap's Combat tab plan and the [mock-up canvas](https://claude.ai/artifact/3xjspD1SqtVrRz46dvoM3h).
 
 ## What changed
 
-Three buttons used to float over the sheet. On a phone, Quick Access's circle sat over each page's heading, the return-to-top button sat on the tab bar, and the dice covered the lowest fields, even at the very end of a page (Combat's Wounds **+**, for example). A02 sets aside one band, 52 px high, between the pages and the tab bar. The pages now end above it, so nothing lies over the sheet. The same three buttons sit on that band:
+Three buttons used to float over the sheet. On a phone:
+- Quick Access's circle sat over each page's heading.
+- The return-to-top button sat on the tab bar.
+- The dice covered the lowest fields, even at the very end of a page (Combat's Wounds **+**, for example).
 
-- **Quick Access** on the left. Its panel now opens upward from the button, between the header and the band.
-- **Return to top** in the middle. It still appears only after the page has scrolled 300 px (Phase 1's own rule), and there is still only one.
-- **The dice** on the right.
+Revision 2 places the same three buttons in the bottom corners, just above the tabs:
 
-Search stays in the app bar. There is no second destination bar.
+- **Quick Access**, bottom-left. Its panel opens upward from the button.
+- **The dice**, bottom-right.
+- **Return to top**, directly above the dice. It still appears only after the page has scrolled 300 px (Phase 1's own rule), and there is still only one. On a short screen (a phone on its side, height 500 px or less) it sits beside the dice instead, so the corner stays one button high.
 
-Unchanged: what each button does, its name and its keyboard order. Also unchanged: the tabs, swiping, each page's scroll position, the modals and screens that open above the sheet, print, and all character data. The buttons are not moved or copied in the page: A02 only reserves the band and sets where they are drawn. The band is the same at every width, on a phone and on a desktop.
+Every page also gets **room at its end** as tall as the corner stack: 116 px, or 64 px on a short screen, instead of the carousel's 24–30 px. So at the very end of a page every field scrolls clear of the buttons. Part-way down a page, content passes under the corners as it scrolls, which the owner accepted. The pages run down to the tab bar again, so no height is lost. Search stays in the app bar, and there is no second destination bar. On a desktop the buttons sit in the page margins and cover nothing.
 
-## Current behaviour reproduced first (A01 live, 4 November 2026)
+Unchanged: what each button does, its name and its keyboard order. Also unchanged: the tabs, swiping, each page's scroll position, the modals and screens that open above the sheet, print (no buttons, no extra room) and all character data. The buttons are not moved or copied in the page. A02 only sets where they are drawn and how much room each page leaves at its end.
 
-The audit's screenshots predate 8b, 8c and A01, so today's build was measured first: every tab in Play and Manage, at the top, part-way and at the end of each page, on a phone (390 × 844), a small phone (375 × 667) and a desktop (1440 × 1000). That is 171 states (`qa/reproduce.cjs`, results in `qa/reproduce/predecessor-a01/`). Findings, all as the audit describes:
+## Measured (5 November 2026)
 
-- **Quick Access** covered the heading at the top of every page on the phone (for example *Skills*, *Combat*, *Equipment & Money*). Further down, it covered fields and buttons.
-- **Return to top** sat on the tab bar whenever it showed, on the phone and on the desktop.
-- **The dice** covered fields at the top of pages and controls at the end of pages (Combat's Wounds **+**, Identity's *Review starting spells*, Skills' mastery note).
-- On the desktop, Quick Access and the dice sat in the page margins and covered nothing. Only return-to-top touched the tabs there.
+`qa/reproduce.cjs` loads the Phase 15 audit's dense test character into a build. It visits every tab in Play and Manage, at the top, part-way and at the end of each page, on a phone (390 × 844), a small phone (375 × 667) and a desktop (1440 × 1000): 171 states. A01 as live and revision 2 were measured with the same probe: `qa/reproduce/predecessor-a01-r2/` and `qa/reproduce/candidate-r2/`. Comparison: [COMPARISON.md](COMPARISON.md).
 
-The same probe on the candidate: **0 of 171 states** has a control over the page or on the tabs (`qa/reproduce/candidate/`).
+On the phone:
+- Headings covered at the top of a page: 19 → **0**.
+- Controls on the tabs: 21 → **0**.
+- Content covered at the very end of a page: 16 → **0**.
+- Page height: 641 px, the same as A01 (revision 1 cut it to 589).
 
 ## How it is built
 
 | Owned item | Purpose |
 |---|---|
-| `src/sheet/209.9999999999999996-feat-floating-strip.js` | `FC15` adds the band (`#fc15Strip`) directly before the tab bar and sets `fc15-on` on the body; `FLOATING_STRIP_ENABLED` |
-| `src/css/1128-floating-strip.css` | The band's look and height, and the positions of the three buttons and the Quick Access panel, all under `body.car-active.fc15-on` |
+| `src/sheet/209.9999999999999996-feat-floating-strip.js` | `FC15` sets `fc15-on` on the body when the carousel's shell holds its tab bar; `FLOATING_STRIP_ENABLED`. It adds no element |
+| `src/css/1128-floating-strip.css` | The corner placements of the three buttons and the Quick Access panel, the short-screen placement of return-to-top, and the end-of-page room, all under `body.car-active.fc15-on` |
 | Manifest entries for both | CSS last before the stylesheet closes; script right after A01's |
 | `210-test-seam-and-init.js` block `floating-strip-seam` | Guarded test exports, right after A01's block |
 | `QA — Removal Chain Registry` entry | Last in `CHAIN`, after A01 |
 
-Each button's position is the tab bar's measured height, plus half the band's spare height. That height is the carousel's own `--car-tabbar-h`, which includes any safe-area padding the tab bar has. The page does not ask for edge-to-edge drawing (`viewport-fit=cover`), so on an iPhone the browser keeps the home-indicator area clear itself and the safe-area insets read as 0. Device check 9 is the real test of that. Quick Access and return-to-top are 44 px, the carousel's own minimum touch target; the dice is 48 px. ID selectors let the new placements outrank the older ones without `!important` and without editing them. The band is decoration only (`aria-hidden`, nothing focusable). Marker `PART H PHASE 15.1.2` (Phase 15 · Release 15a · finding 2). Removal: [ROLLBACK.md](ROLLBACK.md).
+Each button's bottom edge is the tab bar's measured height (`--car-tabbar-h`, the carousel's own, including any safe-area padding) plus an 8 px gap. When the app bar is placed at the bottom, its height is added. Quick Access and return-to-top are 44 px, the carousel's minimum touch target; the dice is 48 px. Quick Access sits 2 px higher than the dice's bottom edge, so the two centres line up. ID selectors let the new placements outrank the older ones without `!important` and without editing them. The end-of-page room is set with `@media screen`, so print keeps its own spacing. Marker `PART H PHASE 15.1.2` (Phase 15 · Release 15a · finding 2). Removal: [ROLLBACK.md](ROLLBACK.md).
 
-**One cost, measured:** the band takes 52 px from every page. On a phone held on its side (844 × 390), the visible page goes from 193 px to 141 px. That is one of the owner's device checks.
-
-**Not verified automatically:** the app bar placed at the bottom (the app ships it at the top; the arithmetic for the bottom was checked by the reviewer, not run), and the Quick Access panel reaching its height cap (the densest test character's panel is shorter than the cap).
+**Not verified automatically:** the app bar placed at the bottom (the app ships it at the top), and the Quick Access panel reaching its height cap (the densest test character's panel is shorter than the cap).
 
 ## Verification
 
-Recorded in [HANDOVER.md](HANDOVER.md) with the measured numbers of this run.
+Recorded in [HANDOVER.md](HANDOVER.md) with the measured numbers of this run. Revision 1's evidence (candidate `1cc41d8c…5d2c`: discovery-1/-2, final-run-1 to -4, the under-load folders ending -3 and -4, `reproduce/candidate/`) is kept as it was.
