@@ -2,7 +2,7 @@
 // Release 15a, A02: measure the floating controls on a given build. For every carousel tab, in Play and in
 // Manage, on a phone (390 x 844, touch), a small phone (375 x 667, touch) and a desktop (1440 x 1000), at the top of the page, scrolled
 // part-way and at the very end, it records where the dice launcher, the return-to-top control, the Quick Access
-// toggle (and any A02 strip) sit, what each covers (headings, controls, the tab bar) and whether the last line of
+// toggle (and revision 1's A02 strip, if present) sit, what each covers (headings, controls, the tab bar) and whether the last line of
 // the page can be read clear of them. Writes <out>/floating-states.json and screenshots.
 // node reproduce.cjs <sheet.html> <out folder> [fixture.json]
 const fs = require('fs'), path = require('path'), {pathToFileURL} = require('url');
@@ -17,7 +17,8 @@ const DEVICES = {phone: {viewport: {width: 390, height: 844}, isMobile: true, ha
 
 function measure() {
   const vis = e => { if (!e) return false; const s = getComputedStyle(e), r = e.getBoundingClientRect();
-    return !e.hidden && s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0; };
+    return !e.hidden && s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0 &&
+      (typeof e.checkVisibility !== 'function' || e.checkVisibility({visibilityProperty: true})); };  // not drawn: e.g. inside a closed <details>
   const rect = e => { const r = e.getBoundingClientRect(); return {x: Math.round(r.left), y: Math.round(r.top), r: Math.round(r.right), b: Math.round(r.bottom)}; };
   const hit = (a, b) => a.x < b.r && b.x < a.r && a.y < b.b && b.y < a.b;
   const C = window.__L5R_CAROUSEL__, page = [...document.querySelectorAll('.car-page:not([data-clone])')].find(p => !p.hidden && !p.inert && (() => { const r = p.getBoundingClientRect(); return r.left > -5 && r.left < 5; })());

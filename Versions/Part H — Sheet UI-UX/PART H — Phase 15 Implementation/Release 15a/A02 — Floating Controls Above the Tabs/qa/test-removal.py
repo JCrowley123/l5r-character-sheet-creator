@@ -83,7 +83,7 @@ with tempfile.TemporaryDirectory(prefix='l5r-removal-') as folder:
     b, data = rebuild(tree)
     text = data.decode('utf-8', 'replace')
     check('A01-ALONE-REBUILD-VERIFIES', b.returncode == 0 and 'BYTE-IDENTICAL' in b.stdout and
-          'PART H PHASE 15.1.2' in text and 'FLOATING_STRIP_ENABLED' in text and 'fc15Strip' in text and
+          'PART H PHASE 15.1.2' in text and 'FLOATING_STRIP_ENABLED' in text and 'fc15-on' in text and
           'PART H PHASE 15.1.1' not in text and not A01_SURFACE.search(text), b.stdout[-300:])
     if KEEP:
         KEEP.parent.mkdir(parents=True, exist_ok=True)

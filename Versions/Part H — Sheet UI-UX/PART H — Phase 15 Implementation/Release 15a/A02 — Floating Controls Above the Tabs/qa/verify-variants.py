@@ -1,4 +1,4 @@
-"""Pinned negative variants for Release 15a, A02 (the floating controls on one strip above the tabs); sequential, each must fail exactly its
+"""Pinned negative variants for Release 15a, A02 (revision 2: the floating controls in the bottom corners above the tabs); sequential, each must fail exactly its
 pinned checks (variants.json, written before the first run) and exit 1. Each variant is the built sheet with one change;
 the baseline is main at the branch point. A scenario that stops on a broken build is one FAIL and its
 later checks never run, so the pin is the set of failed checks, not a count. --dry-run checks that every mutation is
@@ -19,13 +19,14 @@ PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
 cases = [
  ["disabled", "const FLOATING_STRIP_ENABLED = true;", "const FLOATING_STRIP_ENABLED = false;"],
- ["strip-after-tabs", "shell.insertBefore(strip, tabbar);", "shell.insertBefore(strip, tabbar.nextSibling);"],
- ["no-band", "  display: block;\n  flex: 0 0 auto;\n  position: relative;\n  z-index: 29;", "  display: none;\n  flex: 0 0 auto;\n  position: relative;\n  z-index: 29;"],
  ["dice-unplaced", "html body.car-active.fc15-on #floatingDiceBtn {", "html body.car-active.fc15-on #floatingDiceBtnX {"],
  ["qa-unplaced", "html body.car-active.fc15-on #quickAccessToggleBtn {", "html body.car-active.fc15-on #quickAccessToggleBtnX {"],
- ["top-unplaced", "html body.car-active.fc15-on #scrollTopBtn {", "html body.car-active.fc15-on #scrollTopBtnX {"],
+ ["top-unplaced", "html body.car-active.fc15-on #scrollTopBtn {\n  top: auto;\n  left: auto;", "html body.car-active.fc15-on #scrollTopBtnX {\n  top: auto;\n  left: auto;"],
  ["panel-unplaced", "html body.car-active.fc15-on #quickAccessPanel {", "html body.car-active.fc15-on #quickAccessPanelX {"],
- ["tab-height-ignored", "--fc15-base: var(--car-tabbar-h, 56px);\n}", "--fc15-base: 0px;\n}"]
+ ["tab-height-ignored", "  --fc15-base: var(--car-tabbar-h, 56px);\n  --fc15-gap", "  --fc15-base: 0px;\n  --fc15-gap"],
+ ["no-end-room", "html body.car-active.fc15-on .car-page {", "html body.car-active.fc15-on .car-pageX {"],
+ ["short-screen-ignored", "@media screen and (max-height: 500px) {", "@media screen and (max-height: 50px) {"],
+ ["print-room", "@media screen {\n  html body.car-active.fc15-on .car-page {", "@media all {\n  html body.car-active.fc15-on .car-page {"]
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

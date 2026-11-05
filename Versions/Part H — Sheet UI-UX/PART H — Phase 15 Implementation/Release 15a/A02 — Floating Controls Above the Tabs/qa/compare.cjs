@@ -7,11 +7,11 @@ const load = d => JSON.parse(fs.readFileSync(path.join(d, 'floating-states.json'
 const key = r => [r.device, r.mode, r.tab, r.where].join('|');
 const before = new Map(load(a).map(r => [key(r), r])), after = new Map(load(b).map(r => [key(r), r]));
 const tally = rs => {
-  const t = {states: 0, controlOverPage: 0, onTabs: 0, coveredItems: 0, headingCovered: 0, pageHeight: {}};
+  const t = {states: 0, controlOverPage: 0, overPageByWhere: {top: 0, middle: 0, end: 0}, onTabs: 0, coveredItems: 0, headingCovered: 0, pageHeight: {}};
   for (const r of rs) {
     t.states++;
     const covered = Object.values(r.covered || {}).reduce((n, list) => n + list.length, 0);
-    if (covered) t.controlOverPage++;
+    if (covered) { t.controlOverPage++; t.overPageByWhere[r.where]++; }
     t.coveredItems += covered;
     if (Object.values(r.onTabbar || {}).some(Boolean)) t.onTabs++;
     if (r.where === 'top' && Object.values(r.covered || {}).some(list => list.some(s => /^h2:/.test(s)))) t.headingCovered++;
@@ -24,7 +24,8 @@ const out = {predecessor: a, candidate: b, byDevice: {}, sameStates: before.size
 for (const d of devices) out.byDevice[d] = {predecessor: tally([...before.values()].filter(r => r.device === d)), candidate: tally([...after.values()].filter(r => r.device === d))};
 fs.writeFileSync(path.join(b, 'comparison.json'), JSON.stringify(out, null, 2) + '\n');
 console.log('same states: ' + out.sameStates);
-console.log('device  | states | with a control over the page | items covered | headings covered | on the tabs | page height');
+console.log('device  | states | with a control over the page (top / part-way / end) | items covered | headings covered | on the tabs | page height');
+const w = t => t.controlOverPage + ' (' + t.overPageByWhere.top + '/' + t.overPageByWhere.middle + '/' + t.overPageByWhere.end + ')';
 for (const d of devices) { const p = out.byDevice[d].predecessor, c = out.byDevice[d].candidate;
-  console.log([d, p.states + ' / ' + c.states, p.controlOverPage + ' -> ' + c.controlOverPage, p.coveredItems + ' -> ' + c.coveredItems,
+  console.log([d, p.states + ' / ' + c.states, w(p) + ' -> ' + w(c), p.coveredItems + ' -> ' + c.coveredItems,
     p.headingCovered + ' -> ' + c.headingCovered, p.onTabs + ' -> ' + c.onTabs, p.pageHeight[d] + ' -> ' + c.pageHeight[d]].join(' | ')); }

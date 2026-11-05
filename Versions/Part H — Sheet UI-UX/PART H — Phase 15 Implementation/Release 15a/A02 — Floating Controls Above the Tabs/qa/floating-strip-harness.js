@@ -1,10 +1,12 @@
 'use strict';
-// Release 15a, A02 (PART H PHASE 15.1.2): the floating controls on one strip above the tabs.
+// Release 15a, A02 (PART H PHASE 15.1.2), revision 2: the floating controls in the bottom corners, above the tabs,
+// with room at the end of every page (owner's ruling, 5 November 2026; revision 1's band above the tabs is gone).
 //   node floating-strip-harness.js <sheet.html> [--variant]
 // Every check id is pinned in expected-checks.json before the first run; a check that never ran is a FAIL.
-// Oracles are independent of the layer: the carousel's own page and tab bar, the header, and what the browser
-// reports at a point (elementFromPoint). The strip is looked up only to check where it is, never asked where the
-// controls should be.
+// Oracles are independent of the layer: the carousel's own page and tab bar, the header, the page's own content,
+// and what the browser reports at a point (elementFromPoint). The layer is never asked where the controls should be.
+// The corner zone is the 112 px above the tab bar: the tallest stack, the dice with return-to-top above it, is
+// 8 + 48 + 8 + 44 = 108 px.
 const fs = require('fs'), path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
@@ -26,23 +28,42 @@ const CONTROLS = ['quickAccessToggleBtn', 'scrollTopBtn', 'floatingDiceBtn'];
 // In-page helpers: geometry from the carousel's own elements.
 function helpers() {
   const rect = e => { const r = e.getBoundingClientRect(); return {left: r.left, top: r.top, right: r.right, bottom: r.bottom, width: r.width, height: r.height}; };
-  const shown = e => !!e && !e.hidden && getComputedStyle(e).display !== 'none' && getComputedStyle(e).visibility !== 'hidden' && e.getClientRects().length > 0;
+  // checkVisibility() also rules out content the browser keeps laid out but never draws, such as the inside of a closed
+  // <details> (the Set Rules options at the end of Adv & Disadv report boxes there, and a tap there reaches the page).
+  const shown = e => !!e && !e.hidden && getComputedStyle(e).display !== 'none' && getComputedStyle(e).visibility !== 'hidden' && e.getClientRects().length > 0 &&
+    (typeof e.checkVisibility !== 'function' || e.checkVisibility({visibilityProperty: true}));
   const overlap = (a, b) => a.left < b.right - 0.5 && b.left < a.right - 0.5 && a.top < b.bottom - 0.5 && b.top < a.bottom - 0.5;
   const inside = (a, b) => a.left >= b.left - 0.5 && a.right <= b.right + 0.5 && a.top >= b.top - 0.5 && a.bottom <= b.bottom + 0.5;
   const page = () => [...document.querySelectorAll('.car-page:not([data-clone])')].find(p => !p.hidden && !p.inert && Math.abs(p.getBoundingClientRect().left) < 5) || null;
   const hits = e => { const r = e.getBoundingClientRect(); const h = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!h && (h === e || e.contains(h)); };
   window.__fc = {rect, shown, overlap, inside, page, hits,
     scroll: where => { const p = page(); if (p) p.scrollTop = where === 'top' ? 0 : where === 'end' ? p.scrollHeight : where; return p ? p.scrollTop : null; },
-    // Where each visible floating control lies against the page and the tab bar.
+    // Where each visible floating control lies against the page and the tab bar. inCorner: wholly within the 112 px
+    // above the tab bar, Quick Access in the left half of the screen and the dice and return-to-top in the right half.
     layout() {
-      const p = page(), tabs = document.getElementById('carTabbar'), strip = document.getElementById('fc15Strip');
-      const pr = rect(p), tr = rect(tabs), sr = shown(strip) ? rect(strip) : null;
-      const out = {page: pr, tabs: tr, strip: sr, controls: {}};
+      const p = page(), tabs = document.getElementById('carTabbar');
+      const pr = rect(p), tr = rect(tabs);
+      const out = {page: pr, tabs: tr, controls: {}};
       for (const id of ['quickAccessToggleBtn', 'scrollTopBtn', 'floatingDiceBtn']) {
         const e = document.getElementById(id);
         if (!shown(e)) continue;
         const r = rect(e);
-        out.controls[id] = {overPage: overlap(r, pr), onTabs: overlap(r, tr), onStrip: !!sr && inside(r, sr), tappable: hits(e)};
+        const side = id === 'quickAccessToggleBtn' ? r.right <= innerWidth / 2 : r.left >= innerWidth / 2;
+        out.controls[id] = {rect: r, onTabs: overlap(r, tr), inCorner: side && r.bottom <= tr.top + 0.5 && r.top >= tr.top - 112.5, tappable: hits(e)};
+      }
+      return out;
+    },
+    // At the end of a page: every piece of the page's own content (text, controls, images and icons) that a shown
+    // floating control lies over. Must be none.
+    under() {
+      const p = page(), pr = rect(p), ctl = ['quickAccessToggleBtn', 'scrollTopBtn', 'floatingDiceBtn'].map(id => document.getElementById(id)).filter(shown).map(e => [e.id, rect(e)]);
+      const leaf = e => /^(BUTTON|INPUT|SELECT|TEXTAREA|A|IMG|svg|CANVAS|LABEL)$/.test(e.tagName) || [...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim());
+      const out = [];
+      for (const e of p.querySelectorAll('*')) {
+        if (!leaf(e) || !shown(e) || (e.closest('svg') && e.tagName !== 'svg')) continue;
+        const r = rect(e);
+        if (!r.width || !r.height || r.bottom <= pr.top || r.top >= pr.bottom) continue;
+        for (const [id, c] of ctl) if (overlap(r, c)) out.push(id + ' over ' + e.tagName + (e.id ? '#' + e.id : '') + ' ' + (e.innerText || e.value || '').trim().slice(0, 24));
       }
       return out;
     },
@@ -87,7 +108,9 @@ async function go(page, label) {
   await page.evaluate(async l => { const C = window.__L5R_CAROUSEL__; C.goToTab(l); await C.whenSettled(); }, label);
   await settle(page);
 }
-// Every tab, Play and Manage, at the top, part-way and at the end: no floating control over the page or the tabs.
+// Every tab, Play and Manage, at the top, part-way and at the end: every floating control in its corner just above
+// the tabs and never on them, the page running down to the tab bar, and at the end of each page nothing of the page
+// under a control and every low field tappable.
 async function sweep(page, wheres, extra) {
   const bad = [], last = [];
   for (const mode of ['play', 'management']) {
@@ -97,10 +120,13 @@ async function sweep(page, wheres, extra) {
         await page.evaluate(w => window.__fc.scroll(w), where);
         await settle(page);
         const l = await page.evaluate(() => window.__fc.layout());
-        if (l.page.bottom > (l.strip ? l.strip.top : l.tabs.top) + 0.5) bad.push([mode, label, where, 'page runs under the strip']);
+        if (Math.abs(l.page.bottom - l.tabs.top) > 0.5) bad.push([mode, label, where, 'page does not reach the tabs', l.page.bottom, l.tabs.top]);
         for (const [id, c] of Object.entries(l.controls))
-          if (c.overPage || c.onTabs || !c.onStrip || !c.tappable) bad.push([mode, label, where, id, c]);
-        if (where === 'end') { const lo = await page.evaluate(() => window.__fc.lowest()); if (!lo.none && !lo.tappable) last.push([mode, label, lo.missed]); }
+          if (c.onTabs || !c.inCorner || !c.tappable) bad.push([mode, label, where, id, c]);
+        if (where === 'end') {
+          const lo = await page.evaluate(() => window.__fc.lowest()), un = await page.evaluate(() => window.__fc.under());
+          if ((!lo.none && !lo.tappable) || un.length) last.push([mode, label, lo.missed, un.slice(0, 3)]);
+        }
         if (extra) await extra(mode, label, where, l);
       }
     }
@@ -122,13 +148,13 @@ async function session(browser, opts, body) {
       const s = await page.evaluate(() => { const T = window.__L5R_TEST__;
         return {seam: !!(T.FC15 && T.FLOATING_STRIP_ENABLED === true && T.FC15.installed === true && T.FC15.enabled() === true)}; });
       set('SEAM-PRESENT', s.seam, s);
-      const placed = await page.evaluate(() => { const shell = document.getElementById('carShell'), tabs = document.getElementById('carTabbar'), strip = document.getElementById('fc15Strip');
-        if (!strip) return {strip: false};
-        const sr = strip.getBoundingClientRect(), tr = tabs.getBoundingClientRect(), pr = window.__fc.page().getBoundingClientRect();
-        return {parent: strip.parentElement === shell, before: strip.nextElementSibling === tabs, flush: Math.abs(sr.bottom - tr.top) < 0.5,
-          height: Math.round(sr.height), pageAbove: pr.bottom <= sr.top + 0.5, full: Math.round(sr.width) === innerWidth,
-          hidden: strip.getAttribute('aria-hidden') === 'true' && !strip.querySelector('button,a,input,select,[tabindex]')}; });
-      set('STRIP-PLACED', placed.parent && placed.before && placed.flush && placed.height === 52 && placed.pageAbove && placed.full && placed.hidden, placed);
+      // No band: the page runs down to the tab bar again, nothing new sits between them, and the end-of-page room is
+      // the corner stack's height (116 px on a phone held upright).
+      const placed = await page.evaluate(() => { const tabs = document.getElementById('carTabbar'), p = window.__fc.page();
+        return {band: !!document.getElementById('fc15Strip'), on: document.body.classList.contains('fc15-on'),
+          before: tabs.previousElementSibling && tabs.previousElementSibling.id, flush: Math.abs(p.getBoundingClientRect().bottom - tabs.getBoundingClientRect().top) < 0.5,
+          room: getComputedStyle(p).paddingBottom}; });
+      set('NO-BAND', !placed.band && placed.on && placed.before === 'carViewport' && placed.flush && placed.room === '116px', placed);
 
       const headings = [];
       const r = await sweep(page, ['top', 'middle', 'end'], async (mode, label, where) => {
@@ -136,9 +162,9 @@ async function session(browser, opts, body) {
         const h = await page.evaluate(() => window.__fc.heading());
         if (!h.none && !(h.start && h.middle)) headings.push([mode, label, h]);
       });
-      set('PHONE-NO-CONTROL-OVER-PAGE', r.bad.length === 0, r.bad.slice(0, 6));
+      set('PHONE-CONTROLS-IN-CORNERS', r.bad.length === 0, r.bad.slice(0, 6));
       set('PHONE-HEADINGS-CLEAR', headings.length === 0, headings);
-      set('PHONE-LAST-LINE-REACHABLE', r.last.length === 0, r.last);
+      set('PHONE-END-CLEAR', r.last.length === 0, r.last.slice(0, 6));
 
       // Combat's Wounds +: the dice used to lie over it at the end of the page.
       await tabs(page, 'play'); await go(page, 'Combat');
@@ -153,28 +179,30 @@ async function session(browser, opts, body) {
       const atTop = await page.evaluate(() => !window.__fc.shown(document.getElementById('scrollTopBtn')));
       set('TOP-HIDDEN-AT-START', atTop, atTop);
       await page.evaluate(() => window.__fc.scroll(600)); await settle(page);
-      const shownTop = await page.evaluate(() => { const l = window.__fc.layout(); return {c: l.controls.scrollTopBtn || null,
-        count: [...document.querySelectorAll('[aria-label="Scroll to top"],[title="Scroll to top"]')].filter(window.__fc.shown).length}; });
-      set('TOP-SHOWN-AFTER-SCROLL', !!shownTop.c && shownTop.c.onStrip && !shownTop.c.onTabs && !shownTop.c.overPage && shownTop.c.tappable, shownTop);
+      // Directly above the dice: centred on it, 8 px clear of it, not on the tabs, and tappable.
+      const shownTop = await page.evaluate(() => { const l = window.__fc.layout(), t = l.controls.scrollTopBtn || null, d = l.controls.floatingDiceBtn || null;
+        return {c: t, above: !!t && !!d && Math.abs((t.rect.left + t.rect.right) / 2 - (d.rect.left + d.rect.right) / 2) < 1 && Math.abs(d.rect.top - t.rect.bottom - 8) < 1,
+          count: [...document.querySelectorAll('[aria-label="Scroll to top"],[title="Scroll to top"]')].filter(window.__fc.shown).length}; });
+      set('TOP-SHOWN-AFTER-SCROLL', !!shownTop.c && shownTop.above && shownTop.c.inCorner && !shownTop.c.onTabs && shownTop.c.tappable, shownTop);
       set('ONE-TOP-CONTROL', shownTop.count === 1, shownTop);
       await page.tap('#scrollTopBtn'); await settle(page);
       const back = await page.evaluate(() => ({top: window.__fc.page().scrollTop, hidden: !window.__fc.shown(document.getElementById('scrollTopBtn')), tab: window.__L5R_CAROUSEL__.getActiveTab().label}));
       set('TOP-RETURNS', back.top === 0 && back.hidden && back.tab === 'Skills', back);
 
-      // Quick Access opens upward from its button, between the header and the strip, and closes as before.
+      // Quick Access opens upward from its button, between the header and the button, and closes as before.
       await page.evaluate(() => window.__fc.scroll(500)); await settle(page);
       const kept0 = await page.evaluate(() => window.__fc.page().scrollTop);
       await page.tap('#quickAccessToggleBtn'); await settle(page);
       const qa = await page.evaluate(() => { const F = window.__fc, p = document.getElementById('quickAccessPanel'), b = document.getElementById('quickAccessToggleBtn');
-        const strip = document.getElementById('fc15Strip'), head = F.rect(document.getElementById('carTopbar'));
+        const head = F.rect(document.getElementById('carTopbar'));
         if (!F.shown(p)) return {shown: false};
         // The button's own layout box, not its painted one: its existing :hover/:active scale (Phase 2, Part H) is
         // still transitioning just after a tap, which moves getBoundingClientRect by 1-2 px (found by the 4x screen).
-        const pr = F.rect(p), sr = strip && F.shown(strip) ? F.rect(strip) : null, br = {left: b.offsetLeft, top: b.offsetTop};
-        return {shown: true, expanded: b.getAttribute('aria-expanded'), belowHeader: pr.top >= head.bottom - 0.5, aboveStrip: !!sr && pr.bottom <= sr.top + 0.5,
-          beside: !!sr && Math.abs(sr.top - 8 - pr.bottom) < 1 && Math.abs(pr.left - br.left) < 1, inView: pr.top >= 0 && pr.bottom <= innerHeight,
+        const pr = F.rect(p), br = {left: b.offsetLeft, top: b.offsetTop};
+        return {shown: true, expanded: b.getAttribute('aria-expanded'), belowHeader: pr.top >= head.bottom - 0.5, aboveButton: pr.bottom <= br.top + 0.5,
+          beside: Math.abs(br.top - 8 - pr.bottom) < 1 && Math.abs(pr.left - br.left) < 1, inView: pr.top >= 0 && pr.bottom <= innerHeight,
           voidRead: F.hits(document.getElementById('qaVoidValue')), closeTappable: F.hits(document.getElementById('quickAccessCloseBtn'))}; });
-      set('QA-OPENS-ABOVE-STRIP', qa.shown && qa.expanded === 'true' && qa.belowHeader && qa.aboveStrip && qa.inView && qa.voidRead && qa.closeTappable, qa);
+      set('QA-OPENS-UPWARD', qa.shown && qa.expanded === 'true' && qa.belowHeader && qa.aboveButton && qa.inView && qa.voidRead && qa.closeTappable, qa);
       set('QA-PANEL-BESIDE-BUTTON', qa.beside === true, qa);
       await page.tap('#quickAccessToggleBtn'); await settle(page);
       const c1 = await page.evaluate(() => document.getElementById('quickAccessPanel').hidden);
@@ -188,7 +216,7 @@ async function session(browser, opts, body) {
       const c3 = await page.evaluate(() => document.getElementById('quickAccessPanel').hidden);
       set('QA-CLOSES', c1 && c2 && c3, [c1, c2, c3]);
 
-      // The dice opens the manual roll, which sits above the strip like every modal.
+      // The dice opens the manual roll, which sits above the controls like every modal.
       await page.tap('#floatingDiceBtn'); await settle(page);
       const dice = await page.evaluate(() => { const o = document.getElementById('manualRollPromptOverlay'), d = document.getElementById('floatingDiceBtn').getBoundingClientRect();
         const h = document.elementFromPoint(d.left + d.width / 2, d.top + d.height / 2); return {open: getComputedStyle(o).display === 'flex', above: !!h && o.contains(h)}; });
@@ -220,53 +248,65 @@ async function session(browser, opts, body) {
       }
       set('TABS-REACHABLE', tabRes.length === 0, tabRes);
 
-      // Search stays where it is: in the app bar, not on the strip.
-      const search = await page.evaluate(() => { const s = document.querySelector('#ab113Bar [data-section="search"]'), strip = document.getElementById('fc15Strip');
-        return {there: !!s && window.__fc.hits(s), notOnStrip: !strip || !strip.querySelector('[data-section]')}; });
-      set('SEARCH-IN-APP-BAR', search.there && search.notOnStrip, search);
+      // Search stays where it is: in the app bar, and no destination button has joined the floating controls.
+      const search = await page.evaluate(() => { const s = document.querySelector('#ab113Bar [data-section="search"]');
+        return {there: !!s && window.__fc.hits(s), noneFloating: !document.querySelector('body > [data-section]')}; });
+      set('SEARCH-IN-APP-BAR', search.there && search.noneFloating, search);
 
       // Screens and dialogs above the sheet still cover the strip and its controls.
       await page.evaluate(() => window.__L5R_TEST__.CL11.open()); await settle(page);
       const over = await page.evaluate(() => { const v = document.getElementById('cl11View'), out = [];
-        for (const id of ['floatingDiceBtn', 'quickAccessToggleBtn', 'fc15Strip']) { const e = document.getElementById(id); if (!e) continue;
+        for (const id of ['floatingDiceBtn', 'quickAccessToggleBtn']) { const e = document.getElementById(id); if (!e) continue;
           const r = e.getBoundingClientRect(); if (!r.width) continue; const h = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); out.push(!!h && v.contains(h)); }
         return out; });
       set('OVERLAYS-ABOVE', over.length >= 2 && over.every(Boolean), over);
       await page.evaluate(() => window.__L5R_TEST__.CL11.close()); await settle(page);
 
-      // Print shows neither the strip nor the controls.
+      // Print shows none of the controls, and the end-of-page room is not printed.
       await page.emulateMedia({media: 'print'});
-      const pr = await page.evaluate(() => ({strip: (s => !s || getComputedStyle(s).display === 'none')(document.getElementById('fc15Strip')),
+      const pr = await page.evaluate(() => ({room: [...document.querySelectorAll('.car-page:not([data-clone])')].every(p => getComputedStyle(p).paddingBottom !== '116px'),
         controls: ['floatingDiceBtn', 'quickAccessToggleBtn', 'scrollTopBtn'].every(id => getComputedStyle(document.getElementById(id)).display === 'none')}));
       await page.emulateMedia({media: 'screen'});
-      set('PRINT-HIDDEN', pr.strip && pr.controls, pr);
+      set('PRINT-HIDDEN', pr.room && pr.controls, pr);
     });
 
     // ---------- Small phone, 375 x 667
     await session(browser, SMALL, async page => {
       const r = await sweep(page, ['top', 'end']);
       const qa = await (async () => { await page.tap('#quickAccessToggleBtn'); await settle(page);
-        return page.evaluate(() => { const F = window.__fc, p = document.getElementById('quickAccessPanel'), s = document.getElementById('fc15Strip'), h = F.rect(document.getElementById('carTopbar'));
-          if (!F.shown(p) || !s) return {shown: F.shown(p), strip: !!s}; const pr = F.rect(p), sr = F.rect(s); return {shown: true, inBand: pr.top >= h.bottom - 0.5 && pr.bottom <= sr.top + 0.5}; }); })();
+        return page.evaluate(() => { const F = window.__fc, p = document.getElementById('quickAccessPanel'), b = document.getElementById('quickAccessToggleBtn'), h = F.rect(document.getElementById('carTopbar'));
+          if (!F.shown(p)) return {shown: false}; const pr = F.rect(p); return {shown: true, inBand: pr.top >= h.bottom - 0.5 && pr.bottom <= b.offsetTop + 0.5}; }); })();
       set('SMALL-PHONE-CLEAR', r.bad.length === 0 && r.last.length === 0 && qa.inBand === true, {bad: r.bad.slice(0, 4), last: r.last, qa});
     });
 
-    // ---------- Phone on its side, 844 x 390
+    // ---------- Phone on its side, 844 x 390: return-to-top beside the dice, not above it, and less room at the end.
     await session(browser, LANDSCAPE, async page => {
       const r = await sweep(page, ['top', 'end']);
-      const h = await page.evaluate(() => Math.round(window.__fc.page().getBoundingClientRect().height));
-      console.log('  note landscape page height ' + h + 'px');
-      set('LANDSCAPE-CLEAR', r.bad.length === 0 && r.last.length === 0 && h > 0, {bad: r.bad.slice(0, 4), last: r.last, h});
+      await tabs(page, 'management'); await go(page, 'Skills');
+      await page.evaluate(() => window.__fc.scroll(600)); await settle(page);
+      const s = await page.evaluate(() => { const l = window.__fc.layout(), t = l.controls.scrollTopBtn || null, d = l.controls.floatingDiceBtn || null, p = window.__fc.page();
+        return {h: Math.round(p.getBoundingClientRect().height), room: getComputedStyle(p).paddingBottom,
+          beside: !!t && !!d && Math.abs((t.rect.top + t.rect.bottom) / 2 - (d.rect.top + d.rect.bottom) / 2) < 1 && Math.abs(d.rect.left - t.rect.right - 8) < 1}; });
+      console.log('  note landscape page height ' + s.h + 'px');
+      set('LANDSCAPE-CLEAR', r.bad.length === 0 && r.last.length === 0 && s.h > 0 && s.beside && s.room === '64px', {bad: r.bad.slice(0, 4), last: r.last, s});
     });
 
-    // ---------- Desktop, 1440 x 1000
+    // ---------- Desktop, 1440 x 1000: the controls sit in the page margins, so at every position none lies over the
+    // page's content column.
     await session(browser, DESKTOP, async page => {
-      const r = await sweep(page, ['top', 'end']);
+      const overInner = [];
+      const r = await sweep(page, ['top', 'middle', 'end'], async (mode, label, where) => {
+        const o = await page.evaluate(() => { const F = window.__fc, ir = F.rect(F.page().querySelector('.car-page-inner'));
+          return ['quickAccessToggleBtn', 'scrollTopBtn', 'floatingDiceBtn'].map(id => document.getElementById(id)).filter(F.shown).filter(e => F.overlap(F.rect(e), ir)).map(e => e.id); });
+        if (o.length) overInner.push([mode, label, where, o]);
+      });
       // Return to top must be showing for this part to test anything: Adv & Disadv (long at every width), 600 px down.
       await tabs(page, 'management'); await go(page, 'Adv & Disadv');
       await page.evaluate(() => window.__fc.scroll(600)); await settle(page);
-      const t = await page.evaluate(() => window.__fc.layout().controls.scrollTopBtn || null);
-      set('DESKTOP-CLEAR', r.bad.length === 0 && r.last.length === 0 && !!t && !t.onTabs && t.onStrip && !t.overPage, {bad: r.bad.slice(0, 4), last: r.last, t});
+      const t = await page.evaluate(() => { const l = window.__fc.layout(), t = l.controls.scrollTopBtn || null, d = l.controls.floatingDiceBtn || null;
+        return {t, above: !!t && !!d && Math.abs((t.rect.left + t.rect.right) / 2 - (d.rect.left + d.rect.right) / 2) < 1 && Math.abs(d.rect.top - t.rect.bottom - 8) < 1}; });
+      set('DESKTOP-CLEAR', r.bad.length === 0 && r.last.length === 0 && overInner.length === 0 && !!t.t && !t.t.onTabs && t.t.inCorner && t.above,
+        {bad: r.bad.slice(0, 4), last: r.last, overInner: overInner.slice(0, 4), t});
     });
     seen['NO-SCRIPT-ERRORS'] = errors.length === 0;
   } finally {

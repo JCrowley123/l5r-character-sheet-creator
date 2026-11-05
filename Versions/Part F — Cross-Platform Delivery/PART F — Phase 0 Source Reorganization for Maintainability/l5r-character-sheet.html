@@ -6653,74 +6653,87 @@
   .sr7-override { display:flex;align-items:center;gap:8px;min-height:44px;margin:0;font-size:14px; }
   body.pm12-play .sr7-overrides { display:none; }
 
-/* PART H PHASE 15.1.2 — Release 15a A02: the floating controls on one strip above the tabs.
-   The band (#fc15Strip, added by 209.9999999999999996-feat-floating-strip.js) takes its own height out of the
-   carousel's column, so the pages end above it and nothing lies over the sheet. The three existing buttons keep
-   their fixed positioning and are placed on that band: their bottom edge is the tab bar's measured height
-   (--car-tabbar-h, published by the carousel) plus half the band's spare height. ID selectors under the classes
-   this layer's switch adds, so each rule outranks the older placements without !important and without editing them.
-   Everything waits for body.car-active.fc15-on: without the carousel, or with the switch off, nothing here applies. */
-.fc15-strip { display: none; }
+/* PART H PHASE 15.1.2 — Release 15a A02 (revision 2, owner's ruling of 5 November 2026): the floating controls in the
+   two bottom corners, just above the tabs, with room at the end of every page so nothing is ever left under them.
+   Revision 1 reserved a 52 px band above the tabs; on the owner's devices it felt separate and took page height, so
+   the band is gone and the pages run down to the tab bar again. The three existing buttons keep their fixed
+   positioning and are placed by this file only: Quick Access bottom-left, the dice bottom-right, and return-to-top
+   (still shown only after scrolling, by Phase 1's own rule) directly above the dice. Their bottom edges are the tab
+   bar's measured height (--car-tabbar-h, published by the carousel) plus a small gap, so none sits on the tabs.
+   Each page gets bottom padding as tall as the controls' corner stack, so at the very end of a page every field
+   scrolls clear of them; part-way down a page, content passes under the corners as it scrolls.
+   ID selectors under the classes this layer's switch adds, so each rule outranks the older placements without
+   !important and without editing them. Everything waits for body.car-active.fc15-on: without the carousel, or with
+   the switch off, nothing here applies. */
 html body.car-active.fc15-on {
-  --fc15-h: 52px;
   --fc15-base: var(--car-tabbar-h, 56px);
+  --fc15-gap: 8px;
+  /* The corner stack on the right: gap, dice (48), gap, return-to-top (44), gap. */
+  --fc15-end: calc(var(--fc15-gap) + 48px + var(--fc15-gap) + 44px + var(--fc15-gap));
 }
-/* The app bar (Phase 11.3, Part K) can be placed below the tabs; the band then sits above both. */
+/* The app bar (Phase 11.3, Part K) can be placed below the tabs; the controls then sit above both. */
 html body.car-active.fc15-on.ab113-bottom {
   --fc15-base: calc(var(--car-tabbar-h, 56px) + var(--ab113-h, 44px) + 1px + env(safe-area-inset-bottom, 0px));
 }
-html body.car-active.fc15-on .fc15-strip {
-  display: block;
-  flex: 0 0 auto;
-  position: relative;
-  z-index: 29;
-  height: var(--fc15-h);
-  box-sizing: border-box;
-  background: var(--car-rail-solid, #e6dcc4);
-  border-top: 1px solid var(--car-hairline, rgba(201,187,152,.85));
-}
-/* Quick Access, left. 44 px, the carousel's own minimum touch target (--car-tap). */
+/* Quick Access, bottom-left. 44 px, the carousel's own minimum touch target (--car-tap); centred on the dice's row. */
 html body.car-active.fc15-on #quickAccessToggleBtn {
   top: auto;
   left: 12px;
   right: auto;
-  bottom: calc(var(--fc15-base) + (var(--fc15-h) - 44px) / 2);
+  bottom: calc(var(--fc15-base) + var(--fc15-gap) + 2px);
   width: 44px;
   height: 44px;
 }
-/* Return to top, centre: shown and hidden exactly as before (Phase 1, Part H). */
-html body.car-active.fc15-on #scrollTopBtn {
-  top: auto;
-  left: calc(50% - 22px);
-  right: auto;
-  bottom: calc(var(--fc15-base) + (var(--fc15-h) - 44px) / 2);
-  width: 44px;
-  height: 44px;
-}
-html body.car-active.fc15-on #scrollTopBtn svg { width: 20px; height: 20px; }
-/* The dice, right. */
+/* The dice, bottom-right. */
 html body.car-active.fc15-on #floatingDiceBtn {
   top: auto;
   left: auto;
   right: 12px;
-  bottom: calc(var(--fc15-base) + (var(--fc15-h) - 48px) / 2);
+  bottom: calc(var(--fc15-base) + var(--fc15-gap));
   width: 48px;
   height: 48px;
 }
 html body.car-active.fc15-on #floatingDiceBtn .dice-icon { width: 40px; height: 40px; }
-/* Quick Access opens upward from its button, between the header and the band. */
+/* Return to top, directly above the dice and centred on it: shown and hidden exactly as before (Phase 1, Part H). */
+html body.car-active.fc15-on #scrollTopBtn {
+  top: auto;
+  left: auto;
+  right: 14px;
+  bottom: calc(var(--fc15-base) + var(--fc15-gap) + 48px + var(--fc15-gap));
+  width: 44px;
+  height: 44px;
+}
+html body.car-active.fc15-on #scrollTopBtn svg { width: 20px; height: 20px; }
+/* Quick Access opens upward from its button, between the header and the button. */
 html body.car-active.fc15-on #quickAccessPanel {
   top: auto;
   left: 12px;
-  bottom: calc(var(--fc15-base) + var(--fc15-h) + 8px);
-  max-height: calc(100vh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - 24px);
-  max-height: calc(100dvh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - 24px);
+  bottom: calc(var(--fc15-base) + var(--fc15-gap) + 2px + 44px + 8px);
+  max-height: calc(100vh - var(--fc15-base) - var(--fc15-gap) - 54px - var(--qa-topbar-h, 96px) - 24px);
+  max-height: calc(100dvh - var(--fc15-base) - var(--fc15-gap) - 54px - var(--qa-topbar-h, 96px) - 24px);
 }
 html body.car-active.fc15-on.ab113-top #quickAccessPanel {
-  max-height: calc(100vh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - var(--ab113-h, 44px) - env(safe-area-inset-top, 0px) - 24px);
-  max-height: calc(100dvh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - var(--ab113-h, 44px) - env(safe-area-inset-top, 0px) - 24px);
+  max-height: calc(100vh - var(--fc15-base) - var(--fc15-gap) - 54px - var(--qa-topbar-h, 96px) - var(--ab113-h, 44px) - env(safe-area-inset-top, 0px) - 24px);
+  max-height: calc(100dvh - var(--fc15-base) - var(--fc15-gap) - 54px - var(--qa-topbar-h, 96px) - var(--ab113-h, 44px) - env(safe-area-inset-top, 0px) - 24px);
 }
-@media print { .fc15-strip { display: none !important; } }
+/* A short screen (a phone on its side): return-to-top sits beside the dice instead of above it, so the corner stack
+   stays one button high and the end-of-page room stays small. */
+@media screen and (max-height: 500px) {
+  html body.car-active.fc15-on {
+    --fc15-end: calc(var(--fc15-gap) + 48px + var(--fc15-gap));
+  }
+  html body.car-active.fc15-on #scrollTopBtn {
+    right: calc(12px + 48px + var(--fc15-gap));
+    bottom: calc(var(--fc15-base) + var(--fc15-gap) + 2px);
+  }
+}
+/* Room at the end of every page, so the last fields scroll clear of the corner controls. Screen only: print unwinds
+   the carousel and keeps its own spacing. */
+@media screen {
+  html body.car-active.fc15-on .car-page {
+    padding-bottom: var(--fc15-end);
+  }
+}
 
 </style>
 <noscript><style>
@@ -54849,34 +54862,28 @@ return fontkitCache=module.exports;}
   })();
   // ============ END PART H PHASE 15.1.1 ============
 
-  // ============ PART H PHASE 15.1.2 — FLOATING CONTROLS ON ONE STRIP ABOVE THE TABS ============
-  // Phase 15, Release 15a, finding A02 (owner's ruling Q2, 1 November 2026: one navigation system, a compact action
-  // strip above the existing tabs, Search stays in the app bar, no second destination bar). On a phone the three
-  // floating controls lay over the sheet: Quick Access's circle over each page's heading, the return-to-top control
-  // on the tab bar, and the dice over the lowest fields. This layer reserves one band of the screen between the pages
-  // and the tab bar, so the pages end above it, and its stylesheet (1128-floating-strip.css) places the SAME three
-  // buttons on that band: Quick Access on the left, return-to-top in the middle (still shown only once the page has
-  // scrolled, by Phase 1's own rule), the dice on the right. The buttons are not moved, copied or rewired: their
-  // markup, listeners, names and stacking stay exactly as they were. With the switch off, or without the carousel's
-  // shell and tab bar, nothing is added and the page is exactly as before.
+  // ============ PART H PHASE 15.1.2 — FLOATING CONTROLS IN THE BOTTOM CORNERS, ABOVE THE TABS ============
+  // Phase 15, Release 15a, finding A02 (owner's ruling Q2, 1 November 2026: Search stays in the app bar, no second
+  // destination bar). On a phone the three floating controls lay over the sheet: Quick Access's circle over each
+  // page's heading, the return-to-top control on the tab bar, and the dice over the lowest fields even at the very
+  // end of a page. Revision 2 (owner's ruling, 5 November 2026, after device checks): no band above the tabs; the
+  // stylesheet (1128-floating-strip.css) places the SAME three buttons in the bottom corners just above the tab bar,
+  // Quick Access on the left, the dice on the right and return-to-top above the dice (still shown only once the page
+  // has scrolled, by Phase 1's own rule), and gives every page room at its end so nothing is left under them. The
+  // buttons are not moved, copied or rewired: their markup, listeners, names and stacking stay exactly as they were.
+  // This script only sets the body class the stylesheet waits for. With the switch off, or without the carousel's
+  // shell and tab bar, nothing is set and the page is exactly as before.
   const FLOATING_STRIP_ENABLED = true;
 
   const FC15 = (function(){
     const api = {installed: false};
     api.enabled = function(){ return FLOATING_STRIP_ENABLED; };
-    api.strip = function(){ return document.getElementById('fc15Strip'); };
-    // Adds the band once, directly before the carousel's tab bar inside its shell, and the body class the
-    // stylesheet waits for. The band is decoration and space only: the controls placed on it keep their own names.
+    // Sets the body class once, only where the carousel's shell holds its tab bar (the placements are measured from it).
     api.install = function(){
       if(api.installed || !FLOATING_STRIP_ENABLED) return false;
       const shell = document.getElementById('carShell');
       const tabbar = document.getElementById('carTabbar');
       if(!shell || !tabbar || tabbar.parentElement !== shell) return false;
-      const strip = document.createElement('div');
-      strip.id = 'fc15Strip';
-      strip.className = 'fc15-strip print-hide';
-      strip.setAttribute('aria-hidden', 'true');
-      shell.insertBefore(strip, tabbar);
       document.body.classList.add('fc15-on');
       api.installed = true;
       return true;
