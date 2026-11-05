@@ -1,0 +1,7 @@
+PASS ORIGINAL-HELD-CONNECTION  — expected hang, got hang in 150 s
+PASS ORIGINAL-PAGE-NEVER-ANSWERS  — expected hang, got hang in 150 s
+PASS FIXED-HELD-CONNECTION  — expected pass, got pass in 8 s
+PASS FIXED-PAGE-NEVER-ANSWERS  — expected stall-fail, got stall-fail in 64 s: stalled: reading the page after "index.html is cached" took over 60 s
+
+4/4 checks passed
+exit 0

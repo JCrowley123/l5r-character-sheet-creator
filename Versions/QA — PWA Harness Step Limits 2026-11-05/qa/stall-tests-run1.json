@@ -1,0 +1,37 @@
+{
+  "checkedUtc": "2026-11-05T10:14:35.100Z",
+  "results": [
+    {
+      "which": "original",
+      "name": "held-connection",
+      "want": "hang",
+      "got": "hang",
+      "secs": 150,
+      "stallLine": ""
+    },
+    {
+      "which": "original",
+      "name": "page-never-answers",
+      "want": "hang",
+      "got": "hang",
+      "secs": 150,
+      "stallLine": ""
+    },
+    {
+      "which": "fixed",
+      "name": "held-connection",
+      "want": "pass",
+      "got": "pass",
+      "secs": 8,
+      "stallLine": ""
+    },
+    {
+      "which": "fixed",
+      "name": "page-never-answers",
+      "want": "stall-fail",
+      "got": "stall-fail",
+      "secs": 64,
+      "stallLine": "stalled: reading the page after \"index.html is cached\" took over 60 s"
+    }
+  ]
+}

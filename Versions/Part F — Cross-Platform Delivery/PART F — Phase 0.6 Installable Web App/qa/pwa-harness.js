@@ -91,11 +91,41 @@ async function main() {
   }
   console.log(`\nPWA checks against: ${url}\n`);
 
+  // QA PWASTALL BEGIN step-limit
+  // Every wait below that had no limit of its own gets one, so a stall fails at
+  // once and says where, instead of hanging until sw-checks.js kills the whole
+  // harness after 20 minutes with no output (A02 full pass 2, 5 November 2026).
+  // 60 s is twice the longest wait this harness allows on purpose (its 30 s
+  // section-count loop); every step normally takes under 2 s. A limit that is
+  // reached is a FAILURE, never a retry.
+  const STEP_LIMIT_MS = 60000;
+  const lastCheck = () => (results.length ? 'after "' + results[results.length - 1].name + '"' : 'before the first check');
+  const limit = (label, promise) => {
+    let timer;
+    const stall = new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(`stalled: ${label} ${lastCheck()} took over ${STEP_LIMIT_MS / 1000} s`)), STEP_LIMIT_MS);
+    });
+    return Promise.race([promise, stall]).finally(() => clearTimeout(timer));
+  };
+  const stopServer = (s) => {          // ends open connections too, so close() cannot wait on one
+    const closed = new Promise((r) => s.close(r));
+    s.closeAllConnections();
+    return limit('stopping the test server', closed);
+  };
+  // END PWASTALL step-limit
   const browser = await chromium.launch(LAUNCH);
-  const context = await browser.newContext({ viewport: { width: 1400, height: 1000 } });
-  const page = await context.newPage();
+  // QA PWASTALL BEGIN step-limit-start
+  const context = await limit('opening a browser context', browser.newContext({ viewport: { width: 1400, height: 1000 } }));
+  const page = await limit('opening a page', context.newPage());
+  // END PWASTALL step-limit-start
   const pageErrors = [];
   page.on('pageerror', (e) => pageErrors.push(String(e)));
+  // QA PWASTALL BEGIN step-limit-calls
+  { const evaluate = page.evaluate.bind(page), setOffline = context.setOffline.bind(context), close = browser.close.bind(browser);
+    page.evaluate = (...a) => limit('reading the page', evaluate(...a));
+    context.setOffline = (...a) => limit('cutting the network', setOffline(...a));
+    browser.close = (...a) => limit('closing the browser', close(...a)); }
+  // END PWASTALL step-limit-calls
 
   // ---- 1. manifest ---------------------------------------------------------
   const manifestUrl = new URL('manifest.webmanifest', url).href;
@@ -201,7 +231,9 @@ async function main() {
   // END NEWEST061 online-sections
   // ---- 4. THE PHASE: cut the network entirely -----------------------------
   await context.setOffline(true);
-  if (server) { await new Promise((r) => server.close(r)); server = null; }
+  // QA PWASTALL BEGIN server-stop
+  if (server) { await stopServer(server); server = null; }
+  // END PWASTALL server-stop
 
   let offline = null;
   try {
@@ -261,7 +293,9 @@ async function main() {
     `capable=${apple.capable} title=${apple.title} icon=${apple.icon}, theme-color=${apple.themeColor}`);
 
   await browser.close();
-  if (server) await new Promise((r) => server.close(r));
+  // QA PWASTALL BEGIN server-stop-end
+  if (server) await stopServer(server);
+  // END PWASTALL server-stop-end
 
   const failed = results.filter((r) => !r.pass);
   console.log(`\n${results.length - failed.length}/${results.length} checks passed`);
