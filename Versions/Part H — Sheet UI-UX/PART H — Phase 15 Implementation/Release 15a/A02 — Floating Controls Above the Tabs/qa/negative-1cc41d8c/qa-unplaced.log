@@ -1,0 +1,31 @@
+  detail PHONE-NO-CONTROL-OVER-PAGE: [["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","middle","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","middle","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":t
+  detail PHONE-HEADINGS-CLEAR: [["play","Clan & School",{"text":"Clan, Family & School","start":false,"middle":true}],["play","Identity",{"text":"Identity","start":false,"middle":false}],["play","Rings & Traits",{"text":"Rings & Traits","start":false,"middle":true}],["play","Skills",{"text":"Skills","start":false,"middle":false}],["play","Adv & Disadv",{"text":"Advantages & Disadvantages","start":false,"middle":true}],["play","Techniques",{"text":"Techniques, Kata & Spells","start":false,"middle":true}],["play","Spell Slots",{"text":"Spell Slots","start":false,"middle":true}],["play","Combat",{"text":"Combat","start":false,"middle":true}],["play","Equipment",{"text":"Equipment & Money","start":false,"middle":true}],["play
+  detail QA-PANEL-BESIDE-BUTTON: {"shown":true,"expanded":"true","belowHeader":true,"aboveStrip":true,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"qa":{"shown":true,"inBand":true}}
+  note landscape page height 141px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[["play","Combat",["BUTTON#woundStepDown −"]]],"h":141}
+  detail DESKTOP-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"t":{"overPage":false,"onTabs":false,"onStrip":true,"tappable":true}}
+PASS SEAM-PRESENT
+PASS STRIP-PLACED
+FAIL PHONE-NO-CONTROL-OVER-PAGE
+FAIL PHONE-HEADINGS-CLEAR
+PASS PHONE-LAST-LINE-REACHABLE
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+PASS TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-ABOVE-STRIP
+FAIL QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+17/23 checks passed

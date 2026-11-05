@@ -1,0 +1,12 @@
+8 mutations unique.
+baseline: failed exactly its 12 pinned checks
+disabled: failed exactly its 12 pinned checks
+strip-after-tabs: failed exactly its 8 pinned checks
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A02 — Floating Controls Above the Tabs\qa\verify-variants.py", line 70, in <module>
+    run(label, original.replace(old, new))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A02 — Floating Controls Above the Tabs\qa\verify-variants.py", line 53, in run
+    assert r.returncode == 1 and failed == sorted(PINNED[label]) and len(got) == 2 and got[1] - got[0] == len(failed), case
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'id': 'no-band', 'expected_failures': ['STRIP-PLACED', 'PHONE-NO-CONTROL-OVER-PAGE', 'PHONE-LAST-LINE-REACHABLE', 'COMBAT-WOUND-PLUS-REACHABLE', 'TOP-SHOWN-AFTER-SCROLL', 'QA-OPENS-ABOVE-STRIP', 'QA-PANEL-BESIDE-BUTTON', 'SMALL-PHONE-CLEAR', 'LANDSCAPE-CLEAR', 'DESKTOP-CLEAR'], 'actual_failures': ['DESKTOP-CLEAR', 'LANDSCAPE-CLEAR', 'PHONE-NO-CONTROL-OVER-PAGE', 'QA-OPENS-ABOVE-STRIP', 'QA-PANEL-BESIDE-BUTTON', 'SMALL-PHONE-CLEAR', 'STRIP-PLACED', 'TOP-SHOWN-AFTER-SCROLL'], 'counts': [15, 23], 'exit': 1}

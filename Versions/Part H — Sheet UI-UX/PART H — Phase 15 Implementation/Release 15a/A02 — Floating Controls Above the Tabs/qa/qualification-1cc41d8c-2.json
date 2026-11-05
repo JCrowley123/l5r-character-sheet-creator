@@ -1,0 +1,10 @@
+{
+  "started_utc": "2026-11-04T21:30:22.796274+00:00",
+  "sha256": "1cc41d8c3d8bc93cb5350972ce1b438e0636aa683df9fa74076498cccfac5d2c",
+  "stages": [
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-04T21:30:22.809107+00:00"
+    }
+  ]
+}

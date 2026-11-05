@@ -1,0 +1,73 @@
+{
+  "predecessor": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A02 — Floating Controls Above the Tabs\\qa\\reproduce\\predecessor-a01",
+  "candidate": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A02 — Floating Controls Above the Tabs\\qa\\reproduce\\candidate",
+  "byDevice": {
+    "phone": {
+      "predecessor": {
+        "states": 57,
+        "controlOverPage": 52,
+        "onTabs": 21,
+        "coveredItems": 127,
+        "headingCovered": 19,
+        "pageHeight": {
+          "phone": 641
+        }
+      },
+      "candidate": {
+        "states": 57,
+        "controlOverPage": 0,
+        "onTabs": 0,
+        "coveredItems": 0,
+        "headingCovered": 0,
+        "pageHeight": {
+          "phone": 589
+        }
+      }
+    },
+    "small": {
+      "predecessor": {
+        "states": 57,
+        "controlOverPage": 50,
+        "onTabs": 25,
+        "coveredItems": 119,
+        "headingCovered": 19,
+        "pageHeight": {
+          "small": 464
+        }
+      },
+      "candidate": {
+        "states": 57,
+        "controlOverPage": 0,
+        "onTabs": 0,
+        "coveredItems": 0,
+        "headingCovered": 0,
+        "pageHeight": {
+          "small": 412
+        }
+      }
+    },
+    "desktop": {
+      "predecessor": {
+        "states": 57,
+        "controlOverPage": 0,
+        "onTabs": 6,
+        "coveredItems": 0,
+        "headingCovered": 0,
+        "pageHeight": {
+          "desktop": 813
+        }
+      },
+      "candidate": {
+        "states": 57,
+        "controlOverPage": 0,
+        "onTabs": 0,
+        "coveredItems": 0,
+        "headingCovered": 0,
+        "pageHeight": {
+          "desktop": 761
+        }
+      }
+    }
+  },
+  "sameStates": true
+}

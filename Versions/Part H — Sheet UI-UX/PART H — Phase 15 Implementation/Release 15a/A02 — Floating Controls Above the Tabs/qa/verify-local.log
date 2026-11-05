@@ -1,0 +1,55 @@
+Checking deployed files: floating-strip-harness.js
+Checking deployed files: ui-foundations-harness.js
+Checking deployed files: quick-access-sidebar-harness.js
+Checking deployed files: appbar-harness.js
+Checking deployed files: carousel-destination-harness.js
+Checking deployed files: review-reminder-harness.js
+Checking deployed files: rank-spell-harness.js
+Checking deployed files: legacy-grants-harness.js
+Checking deployed files: older-review-harness.js
+Checking deployed files: allocation-boundaries-harness.js
+Checking deployed files: school-choices-harness.js
+Checking deployed files: review-regression-harness.js
+Checking deployed files: free-choice-harness.js
+Checking deployed files: scrolls-harness.js
+Checking deployed files: wizard-remove-harness.js
+Checking deployed files: wizard-harness.js
+Checking deployed files: wizard2-harness.js
+Checking deployed files: wizard3-harness.js
+Checking deployed files: wizard4-harness.js
+Checking deployed files: wizard5-harness.js
+Checking deployed files: school-skill-rows-harness.js
+{
+  "commit": "d454036086af188b902eeadb126204f919ff9d44",
+  "checked_utc": "2026-11-05T00:45:28.681299+00:00",
+  "url": "local build preview",
+  "source_sha256": "1cc41d8c3d8bc93cb5350972ce1b438e0636aa683df9fa74076498cccfac5d2c",
+  "page_sha256": "fde3cfd7d8ed2c94d6796136a1c588912f9e09fe2bcaac3e14e626b88085d8fe",
+  "page_bytes": 17543986,
+  "service_worker_build": "de06fea28f3f679c",
+  "service_worker_sha256": "a9c191b3b900ac35a3cc7cdddac13102b31adf1ee01b6641cb786c1cf511baa9",
+  "passed": true
+}
+PASS A02 — Floating Controls Above the Tabs/floating-strip-harness.js 23/23
+PASS PART H — Phase 1 UI-UX Foundations/ui-foundations-harness.js 9/9
+PASS PART H — Phase 2 Quick-Access Sidebar/quick-access-sidebar-harness.js 19/19
+PASS PART K — Phase 11.3 App Bar/appbar-harness.js 25/25
+PASS BUGFIX — Carousel Settles on Its Destination/carousel-destination-harness.js 9/9
+PASS A01 — One Reminder per School Choice/review-reminder-harness.js 31/31
+PASS PART K — Phase 11.2.6 Rank Advancement Spell Choices/rank-spell-harness.js 36/36
+PASS BUGFIX — Older School Choices/legacy-grants-harness.js 4/4
+PASS BUGFIX — Older School Choices/older-review-harness.js 20/20
+PASS BUGFIX — Older School Choices/allocation-boundaries-harness.js 5/5
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js 30/30
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js 6/6
+PASS BUGFIX — Free Choice Note Clears/free-choice-harness.js 9/9
+PASS BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js 5/5
+PASS BUGFIX — Wizard Skill Remove/wizard-remove-harness.js 5/5
+PASS PART K — Phase 11.2 Creation Wizard/wizard-harness.js 43/43
+PASS PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js 32/32
+PASS PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js 52/52
+PASS PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js 25/25
+PASS PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js 71/71
+PASS BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js 37/37
+LIVE VERIFICATION PASSED: 496/496 on the deployed files
+exit 0

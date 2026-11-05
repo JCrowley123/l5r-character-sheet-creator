@@ -168,7 +168,9 @@ async function session(browser, opts, body) {
       const qa = await page.evaluate(() => { const F = window.__fc, p = document.getElementById('quickAccessPanel'), b = document.getElementById('quickAccessToggleBtn');
         const strip = document.getElementById('fc15Strip'), head = F.rect(document.getElementById('carTopbar'));
         if (!F.shown(p)) return {shown: false};
-        const pr = F.rect(p), sr = strip && F.shown(strip) ? F.rect(strip) : null, br = F.rect(b);
+        // The button's own layout box, not its painted one: its existing :hover/:active scale (Phase 2, Part H) is
+        // still transitioning just after a tap, which moves getBoundingClientRect by 1-2 px (found by the 4x screen).
+        const pr = F.rect(p), sr = strip && F.shown(strip) ? F.rect(strip) : null, br = {left: b.offsetLeft, top: b.offsetTop};
         return {shown: true, expanded: b.getAttribute('aria-expanded'), belowHeader: pr.top >= head.bottom - 0.5, aboveStrip: !!sr && pr.bottom <= sr.top + 0.5,
           beside: !!sr && Math.abs(sr.top - 8 - pr.bottom) < 1 && Math.abs(pr.left - br.left) < 1, inView: pr.top >= 0 && pr.bottom <= innerHeight,
           voidRead: F.hits(document.getElementById('qaVoidValue')), closeTappable: F.hits(document.getElementById('quickAccessCloseBtn'))}; });

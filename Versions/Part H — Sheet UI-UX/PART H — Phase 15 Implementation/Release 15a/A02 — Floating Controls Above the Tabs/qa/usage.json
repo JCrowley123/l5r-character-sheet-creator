@@ -1,0 +1,41 @@
+{
+  "note": "Claude account-wide plan meters as reported by the Claude desktop app (get_usage), Pro plan. Readings are account-wide observations, not exclusive to A02; kept separate from Codex readings. Model claude-opus-5-5.",
+  "readings": [
+    {
+      "label": "start",
+      "utc": "2026-11-04T19:55Z",
+      "five_hour_percent": 22,
+      "five_hour_resets_utc": "2026-11-04T21:50Z",
+      "weekly_percent": 17,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
+    },
+    {
+      "label": "before full QA (candidate frozen 1cc41d8c; review done; qualification chain about to start)",
+      "utc": "2026-11-04T20:50Z",
+      "five_hour_percent": 56,
+      "five_hour_resets_utc": "2026-11-04T21:50Z",
+      "weekly_percent": 21,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
+    },
+    {
+      "label": "after the full passes (pass 1 passed; pass 2 failed in pwa-harness.js; investigation starting)",
+      "utc": "2026-11-05T00:39Z",
+      "five_hour_percent": 12,
+      "five_hour_resets_utc": "2026-11-05T03:40Z",
+      "weekly_percent": 25,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
+    },
+    {
+      "label": "end (records written; before commit)",
+      "utc": "2026-11-05T00:51Z",
+      "five_hour_percent": 16,
+      "five_hour_resets_utc": "2026-11-05T03:40Z",
+      "weekly_percent": 25,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
+    }
+  ]
+}

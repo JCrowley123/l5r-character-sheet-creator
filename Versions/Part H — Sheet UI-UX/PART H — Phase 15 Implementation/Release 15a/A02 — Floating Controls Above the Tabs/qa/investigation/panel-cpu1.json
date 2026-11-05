@@ -1,0 +1,155 @@
+{
+ "rate": 1,
+ "out": [
+  {
+   "when": "after 2 frames",
+   "transform": "matrix(0.944522, 0, 0, 0.944522, 0, 0)",
+   "hover": true,
+   "active": true,
+   "button": [
+    13.22,
+    738.22,
+    54.78,
+    779.78
+   ],
+   "offsetLeft": 12,
+   "panel": [
+    12,
+    351.22,
+    292,
+    725
+   ],
+   "strip": [
+    0,
+    733,
+    390,
+    785
+   ]
+  },
+  {
+   "when": "after 500 ms",
+   "transform": "matrix(1.06, 0, 0, 1.06, 0, 0)",
+   "hover": true,
+   "active": false,
+   "button": [
+    10.68,
+    735.68,
+    57.32,
+    782.32
+   ],
+   "offsetLeft": 12,
+   "panel": [
+    12,
+    351.22,
+    292,
+    725
+   ],
+   "strip": [
+    0,
+    733,
+    390,
+    785
+   ]
+  },
+  {
+   "when": "after 2 frames",
+   "transform": "matrix(0.965513, 0, 0, 0.965513, 0, 0)",
+   "hover": true,
+   "active": true,
+   "button": [
+    12.76,
+    737.76,
+    55.24,
+    780.24
+   ],
+   "offsetLeft": 12,
+   "panel": [
+    12,
+    351.22,
+    292,
+    725
+   ],
+   "strip": [
+    0,
+    733,
+    390,
+    785
+   ]
+  },
+  {
+   "when": "after 500 ms",
+   "transform": "matrix(1.06, 0, 0, 1.06, 0, 0)",
+   "hover": true,
+   "active": false,
+   "button": [
+    10.68,
+    735.68,
+    57.32,
+    782.32
+   ],
+   "offsetLeft": 12,
+   "panel": [
+    12,
+    351.22,
+    292,
+    725
+   ],
+   "strip": [
+    0,
+    733,
+    390,
+    785
+   ]
+  },
+  {
+   "when": "after 2 frames",
+   "transform": "matrix(0.96541, 0, 0, 0.96541, 0, 0)",
+   "hover": true,
+   "active": true,
+   "button": [
+    12.76,
+    737.76,
+    55.24,
+    780.24
+   ],
+   "offsetLeft": 12,
+   "panel": [
+    12,
+    351.22,
+    292,
+    725
+   ],
+   "strip": [
+    0,
+    733,
+    390,
+    785
+   ]
+  },
+  {
+   "when": "after 500 ms",
+   "transform": "matrix(1.06, 0, 0, 1.06, 0, 0)",
+   "hover": true,
+   "active": false,
+   "button": [
+    10.68,
+    735.68,
+    57.32,
+    782.32
+   ],
+   "offsetLeft": 12,
+   "panel": [
+    12,
+    351.22,
+    292,
+    725
+   ],
+   "strip": [
+    0,
+    733,
+    390,
+    785
+   ]
+  }
+ ]
+}

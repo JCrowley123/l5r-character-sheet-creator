@@ -9,7 +9,7 @@ Q = Path(__file__).resolve().parent
 first = int(sys.argv[1])
 assert first == 1, 'A02 has one full qualification: runs 1 and 2 only'
 prefix=(Q/'qualified-sha256.txt').read_text().strip()[:8]
-qualified = json.loads((Q / ('qualification-'+prefix+'.json')).read_bytes())
+qualified = json.loads((Q / ('qualification-'+prefix+'-3.json')).read_bytes())  # attempt 3; see investigation/README.md
 assert qualified.get('passed') is True and all(s['exit'] == 0 for s in qualified['stages'])
 assert [s['label'] for s in qualified['stages']] == ['removal-final', 'variants-final', 'dependencies', 'under-load-final', 'discovery-launch']
 source = next(d for d in Q.parents if (d / 'BUILD-LEDGER.md').is_file() and (d / 'CLAUDE.md').is_file()) / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html'

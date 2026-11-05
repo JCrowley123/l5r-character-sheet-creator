@@ -1,0 +1,10478 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "fixture": "dense-audit-fixture.json",
+ "results": [
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 212,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 691,
+    "r": 170,
+    "b": 716,
+    "what": "button:AFFINITY\nEARTH\nⒾ"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Clan & School",
+   "scrollTop": 106,
+   "scrollMax": 212,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 665,
+    "r": 367,
+    "b": 714,
+    "what": "div:A great hero of your Clan who watches ov"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Clan & School",
+   "scrollTop": 212,
+   "scrollMax": 212,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 639,
+    "r": 367,
+    "b": 672,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Identity",
+   "scrollTop": 0,
+   "scrollMax": 1753,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 689,
+    "r": 367,
+    "b": 723,
+    "what": "input:11"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Identity",
+   "scrollTop": 400,
+   "scrollMax": 1753,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 32,
+    "y": 684,
+    "r": 358,
+    "b": 702,
+    "what": "h3:Honour"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Identity",
+   "scrollTop": 1753,
+   "scrollMax": 1753,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 297,
+    "r": 367,
+    "b": 363,
+    "what": "div:Spent XP is calculated automatically fro"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Rings & Traits",
+   "scrollTop": 0,
+   "scrollMax": 290,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 59,
+    "y": 630,
+    "r": 85,
+    "b": 656,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Rings & Traits",
+   "scrollTop": 145,
+   "scrollMax": 290,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 40,
+    "y": 721,
+    "r": 89,
+    "b": 734,
+    "what": "label:STAMINA"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Rings & Traits",
+   "scrollTop": 290,
+   "scrollMax": 290,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 127,
+    "y": 611,
+    "r": 171,
+    "b": 637,
+    "what": "input:4"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 1918,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 689,
+    "r": 46,
+    "b": 697,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Skills",
+   "scrollTop": 400,
+   "scrollMax": 1918,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 682,
+    "r": 46,
+    "b": 690,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Skills",
+   "scrollTop": 1918,
+   "scrollMax": 1918,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 632,
+    "r": 367,
+    "b": 682,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Adv & Disadv",
+   "scrollTop": 0,
+   "scrollMax": 3258,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 610,
+    "r": 354,
+    "b": 688,
+    "what": "textarea:Once/round, add School Rank +1k1 to an a"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Adv & Disadv",
+   "scrollTop": 400,
+   "scrollMax": 3258,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 696,
+    "r": 293,
+    "b": 722,
+    "what": "label:YOUR KHARMIC TIE IS TO YOUR SPOUSE"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Adv & Disadv",
+   "scrollTop": 3258,
+   "scrollMax": 3258,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 601,
+    "r": 354,
+    "b": 679,
+    "what": "textarea:Reminders of a lost love raise all your "
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Techniques",
+   "scrollTop": 0,
+   "scrollMax": 260,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 666,
+    "r": 156,
+    "b": 700,
+    "what": "input:Commune"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Techniques",
+   "scrollTop": 130,
+   "scrollMax": 260,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 691,
+    "r": 156,
+    "b": 725,
+    "what": "input:Summon"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Techniques",
+   "scrollTop": 260,
+   "scrollMax": 260,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 601,
+    "r": 354,
+    "b": 679,
+    "what": "textarea:[Spell — Universal 1] Conjure roughly on"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 1,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 661,
+    "r": 101,
+    "b": 687,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Spell Slots",
+   "scrollTop": 1,
+   "scrollMax": 1,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 660,
+    "r": 101,
+    "b": 686,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Spell Slots",
+   "scrollTop": 1,
+   "scrollMax": 1,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 660,
+    "r": 101,
+    "b": 686,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Combat",
+   "scrollTop": 0,
+   "scrollMax": 816,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 38,
+    "y": 696,
+    "r": 352,
+    "b": 732,
+    "what": "input:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Combat",
+   "scrollTop": 400,
+   "scrollMax": 816,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 49,
+    "y": 667,
+    "r": 341,
+    "b": 703,
+    "what": "button:SPEND VOID: FOR A TECHNIQUE OR ADVANTAGE"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Combat",
+   "scrollTop": 816,
+   "scrollMax": 816,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 659,
+    "r": 59,
+    "b": 695,
+    "what": "button:−"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 1678,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 688,
+    "r": 354,
+    "b": 725,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Equipment",
+   "scrollTop": 400,
+   "scrollMax": 1678,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 675,
+    "r": 354,
+    "b": 712,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Equipment",
+   "scrollTop": 1678,
+   "scrollMax": 1678,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 652,
+    "r": 152,
+    "b": 696,
+    "what": "button:+ ADD ARROWS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "top",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 512,
+    "r": 367,
+    "b": 592,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 512,
+    "r": 367,
+    "b": 592,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "play",
+   "where": "end",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 512,
+    "r": 367,
+    "b": 592,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 296,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 543,
+    "r": 367,
+    "b": 575,
+    "what": "button:APPLY SCHOOL"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Clan & School",
+   "scrollTop": 148,
+   "scrollMax": 296,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 148,
+    "y": 675,
+    "r": 176,
+    "b": 703,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Clan & School",
+   "scrollTop": 296,
+   "scrollMax": 296,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 637,
+    "r": 367,
+    "b": 672,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Identity",
+   "scrollTop": 0,
+   "scrollMax": 2028,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 689,
+    "r": 367,
+    "b": 723,
+    "what": "input:11"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Identity",
+   "scrollTop": 400,
+   "scrollMax": 2028,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 666,
+    "r": 367,
+    "b": 699,
+    "what": "p:Advanced Schools appear on the Technique"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Identity",
+   "scrollTop": 2028,
+   "scrollMax": 2028,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 61,
+    "y": 638,
+    "r": 354,
+    "b": 682,
+    "what": "button:REVIEW STARTING SPELLS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Rings & Traits",
+   "scrollTop": 0,
+   "scrollMax": 752,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 59,
+    "y": 632,
+    "r": 85,
+    "b": 658,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Rings & Traits",
+   "scrollTop": 376,
+   "scrollMax": 752,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 683,
+    "r": 367,
+    "b": 716,
+    "what": "p:In Management, choose the wound multipli"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Rings & Traits",
+   "scrollTop": 752,
+   "scrollMax": 752,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 668,
+    "r": 249,
+    "b": 695,
+    "what": "th:Out"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 2339,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 692,
+    "r": 354,
+    "b": 718,
+    "what": "td:0 xp"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Skills",
+   "scrollTop": 400,
+   "scrollMax": 2339,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 707,
+    "r": 354,
+    "b": 734,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Skills",
+   "scrollTop": 2339,
+   "scrollMax": 2339,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 632,
+    "r": 367,
+    "b": 682,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Adv & Disadv",
+   "scrollTop": 0,
+   "scrollMax": 3579,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 606,
+    "r": 301,
+    "b": 627,
+    "what": "button:LEAD AN ALLY (SCHOOL RANK + 1K1)"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Adv & Disadv",
+   "scrollTop": 400,
+   "scrollMax": 3579,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 611,
+    "r": 354,
+    "b": 689,
+    "what": "textarea:+1 Status Rank."
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Adv & Disadv",
+   "scrollTop": 3579,
+   "scrollMax": 3579,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 594,
+    "r": 195,
+    "b": 638,
+    "what": "button:+ ADD DISADVANTAGE"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Techniques",
+   "scrollTop": 0,
+   "scrollMax": 418,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 320,
+    "y": 617,
+    "r": 360,
+    "b": 657,
+    "what": "button:✕"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Techniques",
+   "scrollTop": 209,
+   "scrollMax": 418,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 607,
+    "r": 354,
+    "b": 685,
+    "what": "textarea:[Spell — Universal 1] Ask a local elemen"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Techniques",
+   "scrollTop": 418,
+   "scrollMax": 418,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 652,
+    "r": 267,
+    "b": 696,
+    "what": "button:+ ADD TECHNIQUE / KATA / SPELL"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 1,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 661,
+    "r": 101,
+    "b": 687,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Spell Slots",
+   "scrollTop": 1,
+   "scrollMax": 1,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 660,
+    "r": 101,
+    "b": 686,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Spell Slots",
+   "scrollTop": 1,
+   "scrollMax": 1,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 660,
+    "r": 101,
+    "b": 686,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 1678,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 688,
+    "r": 354,
+    "b": 725,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Equipment",
+   "scrollTop": 400,
+   "scrollMax": 1678,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 675,
+    "r": 354,
+    "b": 712,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Equipment",
+   "scrollTop": 1678,
+   "scrollMax": 1678,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": {
+     "x": 173,
+     "y": 737,
+     "r": 217,
+     "b": 781
+    },
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 652,
+    "r": 152,
+    "b": 696,
+    "what": "button:+ ADD ARROWS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "top",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 512,
+    "r": 367,
+    "b": 592,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 512,
+    "r": 367,
+    "b": 592,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "mode": "management",
+   "where": "end",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 390,
+    "b": 733
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 785,
+    "r": 390,
+    "b": 844
+   },
+   "floats": {
+    "dice": {
+     "x": 330,
+     "y": 735,
+     "r": 378,
+     "b": 783
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 737,
+     "r": 56,
+     "b": 781
+    },
+    "strip": {
+     "x": 0,
+     "y": 733,
+     "r": 390,
+     "b": 785
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 512,
+    "r": 367,
+    "b": 592,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "phone",
+   "errors": []
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 389,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 448,
+    "r": 352,
+    "b": 481,
+    "what": "select:Hida Bushi\nHida Pragmatist [Bushi]\nHirum"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Clan & School",
+   "scrollTop": 195,
+   "scrollMax": 389,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 495,
+    "r": 170,
+    "b": 520,
+    "what": "button:AFFINITY\nEARTH\nⒾ"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Clan & School",
+   "scrollTop": 389,
+   "scrollMax": 389,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 461,
+    "r": 352,
+    "b": 494,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Identity",
+   "scrollTop": 0,
+   "scrollMax": 1929,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 507,
+    "r": 352,
+    "b": 541,
+    "what": "input:1"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Identity",
+   "scrollTop": 400,
+   "scrollMax": 1929,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 458,
+    "r": 352,
+    "b": 557,
+    "what": "div:Insight = (sum of all five Rings × 10) +"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Identity",
+   "scrollTop": 1929,
+   "scrollMax": 1929,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 120,
+    "r": 352,
+    "b": 186,
+    "what": "div:Spent XP is calculated automatically fro"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Rings & Traits",
+   "scrollTop": 0,
+   "scrollMax": 467,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 119,
+    "y": 382,
+    "r": 163,
+    "b": 408,
+    "what": "input:2"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Rings & Traits",
+   "scrollTop": 234,
+   "scrollMax": 467,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 54,
+    "y": 396,
+    "r": 80,
+    "b": 422,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Rings & Traits",
+   "scrollTop": 467,
+   "scrollMax": 467,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 119,
+    "y": 434,
+    "r": 163,
+    "b": 460,
+    "what": "input:4"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 2094,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 132,
+    "y": 517,
+    "r": 233,
+    "b": 545,
+    "what": "select:Cipher\nHigh Rokugani"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Skills",
+   "scrollTop": 400,
+   "scrollMax": 2094,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 509,
+    "r": 339,
+    "b": 546,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Skills",
+   "scrollTop": 2094,
+   "scrollMax": 2094,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 456,
+    "r": 352,
+    "b": 505,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Adv & Disadv",
+   "scrollTop": 0,
+   "scrollMax": 3495,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 503,
+    "r": 259,
+    "b": 537,
+    "what": "input:Leadership"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Adv & Disadv",
+   "scrollTop": 400,
+   "scrollMax": 3495,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 500,
+    "r": 259,
+    "b": 534,
+    "what": "input:Social Position"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Adv & Disadv",
+   "scrollTop": 3495,
+   "scrollMax": 3495,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 424,
+    "r": 339,
+    "b": 502,
+    "what": "textarea:Reminders of a lost love raise all your "
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Techniques",
+   "scrollTop": 0,
+   "scrollMax": 436,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 510,
+    "r": 141,
+    "b": 544,
+    "what": "input:Sense"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Techniques",
+   "scrollTop": 218,
+   "scrollMax": 436,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 448,
+    "r": 141,
+    "b": 482,
+    "what": "input:Commune"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Techniques",
+   "scrollTop": 436,
+   "scrollMax": 436,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 425,
+    "r": 339,
+    "b": 503,
+    "what": "textarea:[Spell — Universal 1] Conjure roughly on"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 195,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 495,
+    "r": 101,
+    "b": 521,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Spell Slots",
+   "scrollTop": 98,
+   "scrollMax": 195,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 488,
+    "r": 101,
+    "b": 514,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Spell Slots",
+   "scrollTop": 195,
+   "scrollMax": 195,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 482,
+    "r": 101,
+    "b": 508,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Combat",
+   "scrollTop": 0,
+   "scrollMax": 1015,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 147,
+    "y": 525,
+    "r": 324,
+    "b": 554,
+    "what": "input:Kenjutsu"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Combat",
+   "scrollTop": 400,
+   "scrollMax": 1015,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 49,
+    "y": 504,
+    "r": 326,
+    "b": 540,
+    "what": "button:SPEND VOID: MAKE AN UNSKILLED ROLL SKILL"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Combat",
+   "scrollTop": 1015,
+   "scrollMax": 1015,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 482,
+    "r": 59,
+    "b": 518,
+    "what": "button:−"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 1855,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 517,
+    "r": 76,
+    "b": 557,
+    "what": "button:✕"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Equipment",
+   "scrollTop": 400,
+   "scrollMax": 1855,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 500,
+    "r": 339,
+    "b": 537,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Equipment",
+   "scrollTop": 1855,
+   "scrollMax": 1855,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 474,
+    "r": 152,
+    "b": 518,
+    "what": "button:+ ADD ARROWS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "top",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 169,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 495,
+    "r": 352,
+    "b": 508,
+    "what": "label:NOTES"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Background",
+   "scrollTop": 85,
+   "scrollMax": 169,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 427,
+    "r": 352,
+    "b": 507,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "play",
+   "where": "end",
+   "tab": "Background",
+   "scrollTop": 169,
+   "scrollMax": 169,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 343,
+    "r": 352,
+    "b": 423,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 473,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 490,
+    "r": 352,
+    "b": 525,
+    "what": "select:Hida Bushi\nHida Pragmatist [Bushi]\nHirum"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Clan & School",
+   "scrollTop": 237,
+   "scrollMax": 473,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 306,
+    "r": 352,
+    "b": 338,
+    "what": "button:APPLY SCHOOL"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Clan & School",
+   "scrollTop": 473,
+   "scrollMax": 473,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 459,
+    "r": 352,
+    "b": 494,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Identity",
+   "scrollTop": 0,
+   "scrollMax": 2204,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 507,
+    "r": 352,
+    "b": 541,
+    "what": "input:1"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Identity",
+   "scrollTop": 400,
+   "scrollMax": 2204,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 458,
+    "r": 352,
+    "b": 557,
+    "what": "div:Insight = (sum of all five Rings × 10) +"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Identity",
+   "scrollTop": 2204,
+   "scrollMax": 2204,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 61,
+    "y": 460,
+    "r": 339,
+    "b": 504,
+    "what": "button:REVIEW STARTING SPELLS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Rings & Traits",
+   "scrollTop": 0,
+   "scrollMax": 956,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 128,
+    "y": 382,
+    "r": 172,
+    "b": 408,
+    "what": "input:2"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Rings & Traits",
+   "scrollTop": 400,
+   "scrollMax": 956,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 128,
+    "y": 503,
+    "r": 172,
+    "b": 529,
+    "what": "input:4"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Rings & Traits",
+   "scrollTop": 956,
+   "scrollMax": 956,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 491,
+    "r": 239,
+    "b": 518,
+    "what": "th:Out"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 2515,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 490,
+    "r": 339,
+    "b": 527,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Skills",
+   "scrollTop": 400,
+   "scrollMax": 2515,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 299,
+    "y": 470,
+    "r": 339,
+    "b": 510,
+    "what": "button:👁"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Skills",
+   "scrollTop": 2515,
+   "scrollMax": 2515,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 455,
+    "r": 352,
+    "b": 505,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Adv & Disadv",
+   "scrollTop": 0,
+   "scrollMax": 3784,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 451,
+    "r": 339,
+    "b": 529,
+    "what": "textarea:1 point per rank. Each point grants 2 ex"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Adv & Disadv",
+   "scrollTop": 400,
+   "scrollMax": 3784,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 455,
+    "r": 339,
+    "b": 533,
+    "what": "textarea:1-5 points. Bonded to a chosen person; p"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Adv & Disadv",
+   "scrollTop": 3784,
+   "scrollMax": 3784,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 416,
+    "r": 195,
+    "b": 460,
+    "what": "button:+ ADD DISADVANTAGE"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Techniques",
+   "scrollTop": 0,
+   "scrollMax": 594,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 305,
+    "y": 426,
+    "r": 345,
+    "b": 466,
+    "what": "button:✕"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Techniques",
+   "scrollTop": 297,
+   "scrollMax": 594,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 305,
+    "y": 475,
+    "r": 345,
+    "b": 515,
+    "what": "button:✕"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Techniques",
+   "scrollTop": 594,
+   "scrollMax": 594,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 475,
+    "r": 267,
+    "b": 519,
+    "what": "button:+ ADD TECHNIQUE / KATA / SPELL"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 195,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 495,
+    "r": 101,
+    "b": 521,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Spell Slots",
+   "scrollTop": 98,
+   "scrollMax": 195,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 488,
+    "r": 101,
+    "b": 514,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Spell Slots",
+   "scrollTop": 195,
+   "scrollMax": 195,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 75,
+    "y": 482,
+    "r": 101,
+    "b": 508,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 1855,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 517,
+    "r": 76,
+    "b": 557,
+    "what": "button:✕"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Equipment",
+   "scrollTop": 400,
+   "scrollMax": 1855,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 36,
+    "y": 500,
+    "r": 339,
+    "b": 537,
+    "what": "td:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Equipment",
+   "scrollTop": 1855,
+   "scrollMax": 1855,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": {
+     "x": 166,
+     "y": 560,
+     "r": 210,
+     "b": 604
+    },
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 474,
+    "r": 152,
+    "b": 518,
+    "what": "button:+ ADD ARROWS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "top",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 169,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 495,
+    "r": 352,
+    "b": 508,
+    "what": "label:NOTES"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Background",
+   "scrollTop": 85,
+   "scrollMax": 169,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 427,
+    "r": 352,
+    "b": 507,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "mode": "management",
+   "where": "end",
+   "tab": "Background",
+   "scrollTop": 169,
+   "scrollMax": 169,
+   "page": {
+    "x": 0,
+    "y": 144,
+    "r": 375,
+    "b": 556
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 608,
+    "r": 375,
+    "b": 667
+   },
+   "floats": {
+    "dice": {
+     "x": 315,
+     "y": 558,
+     "r": 363,
+     "b": 606
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 560,
+     "r": 56,
+     "b": 604
+    },
+    "strip": {
+     "x": 0,
+     "y": 556,
+     "r": 375,
+     "b": 608
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 23,
+    "y": 343,
+    "r": 352,
+    "b": 423,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "small",
+   "errors": []
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 554,
+    "r": 573,
+    "b": 587,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 554,
+    "r": 573,
+    "b": 587,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 554,
+    "r": 573,
+    "b": 587,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Identity",
+   "scrollTop": 0,
+   "scrollMax": 155,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 724,
+    "r": 1287,
+    "b": 759,
+    "what": "div:Spent XP is calculated automatically fro"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Identity",
+   "scrollTop": 78,
+   "scrollMax": 155,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 646,
+    "r": 1287,
+    "b": 681,
+    "what": "div:Spent XP is calculated automatically fro"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Identity",
+   "scrollTop": 155,
+   "scrollMax": 155,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 569,
+    "r": 1287,
+    "b": 604,
+    "what": "div:Spent XP is calculated automatically fro"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Rings & Traits",
+   "scrollTop": 0,
+   "scrollMax": 226,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 1035,
+    "y": 782,
+    "r": 1079,
+    "b": 808,
+    "what": "input:3"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Rings & Traits",
+   "scrollTop": 113,
+   "scrollMax": 226,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 673,
+    "y": 854,
+    "r": 699,
+    "b": 880,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Rings & Traits",
+   "scrollTop": 226,
+   "scrollMax": 226,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 673,
+    "y": 741,
+    "r": 699,
+    "b": 767,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 718,
+    "r": 1287,
+    "b": 735,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 718,
+    "r": 1287,
+    "b": 735,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 718,
+    "r": 1287,
+    "b": 735,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Adv & Disadv",
+   "scrollTop": 0,
+   "scrollMax": 1681,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 738,
+    "y": 839,
+    "r": 1194,
+    "b": 873,
+    "what": "input:Blind"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Adv & Disadv",
+   "scrollTop": 400,
+   "scrollMax": 1681,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": {
+     "x": 698,
+     "y": 903,
+     "r": 742,
+     "b": 947
+    },
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 738,
+    "y": 859,
+    "r": 855,
+    "b": 880,
+    "what": "button:CHECK (TN 25)"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Adv & Disadv",
+   "scrollTop": 1681,
+   "scrollMax": 1681,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": {
+     "x": 698,
+     "y": 903,
+     "r": 742,
+     "b": 947
+    },
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 166,
+    "y": 752,
+    "r": 702,
+    "b": 830,
+    "what": "textarea:One extra Rank in a Games Skill you choo"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Techniques",
+   "scrollTop": 0,
+   "scrollMax": 47,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 166,
+    "y": 800,
+    "r": 1274,
+    "b": 877,
+    "what": "textarea:[Spell — Universal 1] Conjure roughly on"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Techniques",
+   "scrollTop": 24,
+   "scrollMax": 47,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 166,
+    "y": 776,
+    "r": 1274,
+    "b": 853,
+    "what": "textarea:[Spell — Universal 1] Conjure roughly on"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Techniques",
+   "scrollTop": 47,
+   "scrollMax": 47,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 166,
+    "y": 753,
+    "r": 1274,
+    "b": 830,
+    "what": "textarea:[Spell — Universal 1] Conjure roughly on"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 205,
+    "y": 656,
+    "r": 231,
+    "b": 682,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 205,
+    "y": 656,
+    "r": 231,
+    "b": 682,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 205,
+    "y": 656,
+    "r": 231,
+    "b": 682,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Combat",
+   "scrollTop": 0,
+   "scrollMax": 234,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 878,
+    "r": 1287,
+    "b": 892,
+    "what": "label:WOUNDS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Combat",
+   "scrollTop": 117,
+   "scrollMax": 234,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 807,
+    "r": 1287,
+    "b": 824,
+    "what": "p:Change the multiplier in Management → Ri"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Combat",
+   "scrollTop": 234,
+   "scrollMax": 234,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 279,
+    "y": 814,
+    "r": 1253,
+    "b": 848,
+    "what": "input:0"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 630,
+    "r": 256,
+    "b": 674,
+    "what": "button:+ ADD ITEM"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 630,
+    "r": 256,
+    "b": 674,
+    "what": "button:+ ADD ITEM"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 630,
+    "r": 256,
+    "b": 674,
+    "what": "button:+ ADD ITEM"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "top",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 440,
+    "r": 1287,
+    "b": 520,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "middle",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 440,
+    "r": 1287,
+    "b": 520,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "play",
+   "where": "end",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 440,
+    "r": 1287,
+    "b": 520,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 594,
+    "r": 573,
+    "b": 629,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 594,
+    "r": 573,
+    "b": 629,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Clan & School",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 594,
+    "r": 573,
+    "b": 629,
+    "what": "select:— No Ancestor —\nHida — 14 XP\nKuni — 8 XP"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Identity",
+   "scrollTop": 0,
+   "scrollMax": 309,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 773,
+    "r": 1287,
+    "b": 808,
+    "what": "div:Spent XP is calculated automatically fro"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Identity",
+   "scrollTop": 155,
+   "scrollMax": 309,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 191,
+    "y": 796,
+    "r": 656,
+    "b": 840,
+    "what": "button:CHOOSE SCHOOL SKILLS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Identity",
+   "scrollTop": 309,
+   "scrollMax": 309,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": {
+     "x": 698,
+     "y": 903,
+     "r": 742,
+     "b": 947
+    },
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 191,
+    "y": 790,
+    "r": 542,
+    "b": 834,
+    "what": "button:REVIEW STARTING SPELLS"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Rings & Traits",
+   "scrollTop": 0,
+   "scrollMax": 672,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 1035,
+    "y": 782,
+    "r": 1079,
+    "b": 808,
+    "what": "input:3"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Rings & Traits",
+   "scrollTop": 336,
+   "scrollMax": 672,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": {
+     "x": 698,
+     "y": 903,
+     "r": 742,
+     "b": 947
+    },
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 878,
+    "r": 274,
+    "b": 892,
+    "what": "label:WOUND MULTIPLIER"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Rings & Traits",
+   "scrollTop": 672,
+   "scrollMax": 672,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": {
+     "x": 698,
+     "y": 903,
+     "r": 742,
+     "b": 947
+    },
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 820,
+    "r": 389,
+    "b": 847,
+    "what": "th:Out"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Skills",
+   "scrollTop": 0,
+   "scrollMax": 23,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 839,
+    "r": 1287,
+    "b": 857,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Skills",
+   "scrollTop": 12,
+   "scrollMax": 23,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 827,
+    "r": 1287,
+    "b": 845,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Skills",
+   "scrollTop": 23,
+   "scrollMax": 23,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 816,
+    "r": 1287,
+    "b": 834,
+    "what": "div:Mastery notes below a skill show what ea"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Adv & Disadv",
+   "scrollTop": 0,
+   "scrollMax": 1844,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 738,
+    "y": 780,
+    "r": 1274,
+    "b": 857,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Adv & Disadv",
+   "scrollTop": 400,
+   "scrollMax": 1844,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": {
+     "x": 698,
+     "y": 903,
+     "r": 742,
+     "b": 947
+    },
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 1253,
+    "y": 872,
+    "r": 1280,
+    "b": 900,
+    "what": "button:✕"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Adv & Disadv",
+   "scrollTop": 1844,
+   "scrollMax": 1844,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": {
+     "x": 698,
+     "y": 903,
+     "r": 742,
+     "b": 947
+    },
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "top": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "top": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 846,
+    "r": 1287,
+    "b": 863,
+    "what": "p:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Techniques",
+   "scrollTop": 0,
+   "scrollMax": 205,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 1181,
+    "y": 870,
+    "r": 1274,
+    "b": 900,
+    "what": "label:MEMORISED"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Techniques",
+   "scrollTop": 103,
+   "scrollMax": 205,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 166,
+    "y": 807,
+    "r": 1274,
+    "b": 884,
+    "what": "textarea:[Spell — Universal 1] Conjure roughly on"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Techniques",
+   "scrollTop": 205,
+   "scrollMax": 205,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 804,
+    "r": 397,
+    "b": 848,
+    "what": "button:+ ADD TECHNIQUE / KATA / SPELL"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 205,
+    "y": 656,
+    "r": 231,
+    "b": 682,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 205,
+    "y": 656,
+    "r": 231,
+    "b": 682,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Spell Slots",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 205,
+    "y": 656,
+    "r": 231,
+    "b": 682,
+    "what": "button:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 630,
+    "r": 256,
+    "b": 674,
+    "what": "button:+ ADD ITEM"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 630,
+    "r": 256,
+    "b": 674,
+    "what": "button:+ ADD ITEM"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Equipment",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 630,
+    "r": 256,
+    "b": 674,
+    "what": "button:+ ADD ITEM"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "top",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 440,
+    "r": 1287,
+    "b": 520,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "middle",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 440,
+    "r": 1287,
+    "b": 520,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "mode": "management",
+   "where": "end",
+   "tab": "Background",
+   "scrollTop": 0,
+   "scrollMax": 0,
+   "page": {
+    "x": 0,
+    "y": 138,
+    "r": 1440,
+    "b": 899
+   },
+   "tabbar": {
+    "x": 0,
+    "y": 951,
+    "r": 1440,
+    "b": 1000
+   },
+   "floats": {
+    "dice": {
+     "x": 1380,
+     "y": 901,
+     "r": 1428,
+     "b": 949
+    },
+    "top": null,
+    "quick": {
+     "x": 12,
+     "y": 903,
+     "r": 56,
+     "b": 947
+    },
+    "strip": {
+     "x": 0,
+     "y": 899,
+     "r": 1440,
+     "b": 951
+    }
+   },
+   "onTabbar": {
+    "dice": false,
+    "quick": false,
+    "strip": false
+   },
+   "covered": {
+    "dice": [],
+    "quick": []
+   },
+   "lastContent": {
+    "x": 153,
+    "y": 440,
+    "r": 1287,
+    "b": 520,
+    "what": "textarea:"
+   },
+   "stripOn": true,
+   "A02": true
+  },
+  {
+   "device": "desktop",
+   "errors": []
+  }
+ ]
+}

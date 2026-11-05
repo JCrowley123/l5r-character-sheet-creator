@@ -1,0 +1,29 @@
+  detail PHONE-NO-CONTROL-OVER-PAGE: [["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","middle","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","middle","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]]
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"qa":{"shown":true,"inBand":true}}
+  note landscape page height 141px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"h":141}
+  detail DESKTOP-CLEAR: {"bad":[["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Identity","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"t":{"overPage":false,"onTabs":false,"onStrip":true,"tappable":true}}
+PASS SEAM-PRESENT
+PASS STRIP-PLACED
+FAIL PHONE-NO-CONTROL-OVER-PAGE
+PASS PHONE-HEADINGS-CLEAR
+PASS PHONE-LAST-LINE-REACHABLE
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+PASS TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-ABOVE-STRIP
+PASS QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+19/23 checks passed

@@ -1,0 +1,12 @@
+removal-final passed
+variants-final passed
+dependencies passed
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A02 — Floating Controls Above the Tabs\qa\qualify-before-full.py", line 33, in <module>
+    assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0]==1,'Mains power required'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A02 — Floating Controls Above the Tabs\qa\qualify-before-full.py", line 24, in run
+    state['stages'].append(stage);save()
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: under-load-final failed; later stages were not started
+exit 1

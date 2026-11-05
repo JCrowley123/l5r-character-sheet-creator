@@ -7,7 +7,11 @@ V=next(d for d in Q.parents if (d / 'BUILD-LEDGER.md').is_file() and (d / 'CLAUD
 P=V/'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 PH=Q
 PREFIX=(Q/'qualified-sha256.txt').read_text().strip()[:8]
-STATE=Q/('qualification-'+PREFIX+'.json')
+# Attempt 3: attempt 1 (qualification-<prefix>.json, under-load-<prefix>/) failed at the 4x screen on a harness timing
+# fault in A02's own QA-PANEL-BESIDE-BUTTON; attempt 2 was stopped by hand inside its removal stage because attempt 1
+# was still running its screen. Both are kept as they were (investigation/README.md).
+ATTEMPT='-3'
+STATE=Q/('qualification-'+PREFIX+ATTEMPT+'.json')
 assert not (Q/'discovery-1').exists() and not (Q/'full-launched.txt').exists(), 'Discovery and full runs are single-use.'
 assert not STATE.exists(), 'One qualification chain only; retain and investigate failures.'
 FROZEN=(Q/'qualified-sha256.txt').read_text().strip()
@@ -18,7 +22,7 @@ def run(label,args,cwd=None):
     assert hashlib.sha256((P/'l5r-character-sheet.html').read_bytes()).hexdigest()==FROZEN
     stage={'label':label,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
     state['stages'].append(stage);save()
-    with (Q/(label+'-'+PREFIX+'.log')).open('xb') as log:
+    with (Q/(label+'-'+PREFIX+ATTEMPT+'.log')).open('xb') as log:
         result=subprocess.run(args,cwd=cwd,stdout=log,stderr=subprocess.STDOUT)
     stage.update(exit=result.returncode,finished_utc=datetime.datetime.now(datetime.timezone.utc).isoformat());save()
     assert result.returncode==0,label+' failed; later stages were not started'
@@ -30,7 +34,7 @@ try:
     run('removal-final',[sys.executable,'-B',str(Q/'test-removal.py')])
     run('variants-final',[sys.executable,'-B',str(Q/'verify-variants.py')])
     run('dependencies',[sys.executable,'-B',str(P/'qa/feature-dependencies.py'),'src/sheet/209.9999999999999996-feat-floating-strip.js','PART H PHASE 15.1.2','--also','fc15Strip','fc15-strip','fc15-on','--fc15-h','--fc15-base','1128-floating-strip'],str(P))
-    run('under-load-final',[sys.executable,'-B',str(Q/'run-under-load.py'),'under-load-'+PREFIX])
+    run('under-load-final',[sys.executable,'-B',str(Q/'run-under-load.py'),'under-load-'+PREFIX+ATTEMPT])
     run('discovery-launch',[sys.executable,'-B',str(Q/'discovery.py'),'discovery-1'])
     state['passed']=True
 except Exception as e:

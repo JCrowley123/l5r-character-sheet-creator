@@ -1,0 +1,30 @@
+  detail PHONE-NO-CONTROL-OVER-PAGE: [["play","Identity","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Skills","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Adv & Disadv","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Combat","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Equipment","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["management","Identity","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}]]
+  detail TOP-SHOWN-AFTER-SCROLL: {"c":{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true},"count":1}
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Identity","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Rings & Traits","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Skills","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}]],"last":[],"qa":{"shown":true,"inBand":true}}
+  note landscape page height 141px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Identity","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Rings & Traits","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["play","Skills","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}]],"last":[],"h":141}
+  detail DESKTOP-CLEAR: {"bad":[["play","Adv & Disadv","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["management","Identity","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["management","Rings & Traits","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}],["management","Adv & Disadv","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}]],"last":[],"t":null}
+PASS SEAM-PRESENT
+PASS STRIP-PLACED
+FAIL PHONE-NO-CONTROL-OVER-PAGE
+PASS PHONE-HEADINGS-CLEAR
+PASS PHONE-LAST-LINE-REACHABLE
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+FAIL TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-ABOVE-STRIP
+PASS QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+18/23 checks passed

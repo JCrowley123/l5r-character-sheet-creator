@@ -1,0 +1,171 @@
+phone · play · Clan & School · top · dice; quick; strip
+phone · play · Clan & School · middle · dice; quick; strip
+phone · play · Clan & School · end · dice; quick; strip
+phone · play · Identity · top · dice; quick; strip
+phone · play · Identity · middle · dice; top; quick; strip
+phone · play · Identity · end · dice; top; quick; strip
+phone · play · Rings & Traits · top · dice; quick; strip
+phone · play · Rings & Traits · middle · dice; quick; strip
+phone · play · Rings & Traits · end · dice; quick; strip
+phone · play · Skills · top · dice; quick; strip
+phone · play · Skills · middle · dice; top; quick; strip
+phone · play · Skills · end · dice; top; quick; strip
+phone · play · Adv & Disadv · top · dice; quick; strip
+phone · play · Adv & Disadv · middle · dice; top; quick; strip
+phone · play · Adv & Disadv · end · dice; top; quick; strip
+phone · play · Techniques · top · dice; quick; strip
+phone · play · Techniques · middle · dice; quick; strip
+phone · play · Techniques · end · dice; quick; strip
+phone · play · Spell Slots · top · dice; quick; strip
+phone · play · Spell Slots · middle · dice; quick; strip
+phone · play · Spell Slots · end · dice; quick; strip
+phone · play · Combat · top · dice; quick; strip
+phone · play · Combat · middle · dice; top; quick; strip
+phone · play · Combat · end · dice; top; quick; strip
+phone · play · Equipment · top · dice; quick; strip
+phone · play · Equipment · middle · dice; top; quick; strip
+phone · play · Equipment · end · dice; top; quick; strip
+phone · play · Background · top · dice; quick; strip
+phone · play · Background · middle · dice; quick; strip
+phone · play · Background · end · dice; quick; strip
+phone · management · Clan & School · top · dice; quick; strip
+phone · management · Clan & School · middle · dice; quick; strip
+phone · management · Clan & School · end · dice; quick; strip
+phone · management · Identity · top · dice; quick; strip
+phone · management · Identity · middle · dice; top; quick; strip
+phone · management · Identity · end · dice; top; quick; strip
+phone · management · Rings & Traits · top · dice; quick; strip
+phone · management · Rings & Traits · middle · dice; top; quick; strip
+phone · management · Rings & Traits · end · dice; top; quick; strip
+phone · management · Skills · top · dice; quick; strip
+phone · management · Skills · middle · dice; top; quick; strip
+phone · management · Skills · end · dice; top; quick; strip
+phone · management · Adv & Disadv · top · dice; quick; strip
+phone · management · Adv & Disadv · middle · dice; top; quick; strip
+phone · management · Adv & Disadv · end · dice; top; quick; strip
+phone · management · Techniques · top · dice; quick; strip
+phone · management · Techniques · middle · dice; quick; strip
+phone · management · Techniques · end · dice; top; quick; strip
+phone · management · Spell Slots · top · dice; quick; strip
+phone · management · Spell Slots · middle · dice; quick; strip
+phone · management · Spell Slots · end · dice; quick; strip
+phone · management · Equipment · top · dice; quick; strip
+phone · management · Equipment · middle · dice; top; quick; strip
+phone · management · Equipment · end · dice; top; quick; strip
+phone · management · Background · top · dice; quick; strip
+phone · management · Background · middle · dice; quick; strip
+phone · management · Background · end · dice; quick; strip
+small · play · Clan & School · top · dice; quick; strip
+small · play · Clan & School · middle · dice; quick; strip
+small · play · Clan & School · end · dice; top; quick; strip
+small · play · Identity · top · dice; quick; strip
+small · play · Identity · middle · dice; top; quick; strip
+small · play · Identity · end · dice; top; quick; strip
+small · play · Rings & Traits · top · dice; quick; strip
+small · play · Rings & Traits · middle · dice; quick; strip
+small · play · Rings & Traits · end · dice; top; quick; strip
+small · play · Skills · top · dice; quick; strip
+small · play · Skills · middle · dice; top; quick; strip
+small · play · Skills · end · dice; top; quick; strip
+small · play · Adv & Disadv · top · dice; quick; strip
+small · play · Adv & Disadv · middle · dice; top; quick; strip
+small · play · Adv & Disadv · end · dice; top; quick; strip
+small · play · Techniques · top · dice; quick; strip
+small · play · Techniques · middle · dice; quick; strip
+small · play · Techniques · end · dice; top; quick; strip
+small · play · Spell Slots · top · dice; quick; strip
+small · play · Spell Slots · middle · dice; quick; strip
+small · play · Spell Slots · end · dice; quick; strip
+small · play · Combat · top · dice; quick; strip
+small · play · Combat · middle · dice; top; quick; strip
+small · play · Combat · end · dice; top; quick; strip
+small · play · Equipment · top · dice; quick; strip
+small · play · Equipment · middle · dice; top; quick; strip
+small · play · Equipment · end · dice; top; quick; strip
+small · play · Background · top · dice; quick; strip
+small · play · Background · middle · dice; quick; strip
+small · play · Background · end · dice; quick; strip
+small · management · Clan & School · top · dice; quick; strip
+small · management · Clan & School · middle · dice; quick; strip
+small · management · Clan & School · end · dice; top; quick; strip
+small · management · Identity · top · dice; quick; strip
+small · management · Identity · middle · dice; top; quick; strip
+small · management · Identity · end · dice; top; quick; strip
+small · management · Rings & Traits · top · dice; quick; strip
+small · management · Rings & Traits · middle · dice; top; quick; strip
+small · management · Rings & Traits · end · dice; top; quick; strip
+small · management · Skills · top · dice; quick; strip
+small · management · Skills · middle · dice; top; quick; strip
+small · management · Skills · end · dice; top; quick; strip
+small · management · Adv & Disadv · top · dice; quick; strip
+small · management · Adv & Disadv · middle · dice; top; quick; strip
+small · management · Adv & Disadv · end · dice; top; quick; strip
+small · management · Techniques · top · dice; quick; strip
+small · management · Techniques · middle · dice; quick; strip
+small · management · Techniques · end · dice; top; quick; strip
+small · management · Spell Slots · top · dice; quick; strip
+small · management · Spell Slots · middle · dice; quick; strip
+small · management · Spell Slots · end · dice; quick; strip
+small · management · Equipment · top · dice; quick; strip
+small · management · Equipment · middle · dice; top; quick; strip
+small · management · Equipment · end · dice; top; quick; strip
+small · management · Background · top · dice; quick; strip
+small · management · Background · middle · dice; quick; strip
+small · management · Background · end · dice; quick; strip
+desktop · play · Clan & School · top · dice; quick; strip
+desktop · play · Clan & School · middle · dice; quick; strip
+desktop · play · Clan & School · end · dice; quick; strip
+desktop · play · Identity · top · dice; quick; strip
+desktop · play · Identity · middle · dice; quick; strip
+desktop · play · Identity · end · dice; quick; strip
+desktop · play · Rings & Traits · top · dice; quick; strip
+desktop · play · Rings & Traits · middle · dice; quick; strip
+desktop · play · Rings & Traits · end · dice; quick; strip
+desktop · play · Skills · top · dice; quick; strip
+desktop · play · Skills · middle · dice; quick; strip
+desktop · play · Skills · end · dice; quick; strip
+desktop · play · Adv & Disadv · top · dice; quick; strip
+desktop · play · Adv & Disadv · middle · dice; top; quick; strip
+desktop · play · Adv & Disadv · end · dice; top; quick; strip
+desktop · play · Techniques · top · dice; quick; strip
+desktop · play · Techniques · middle · dice; quick; strip
+desktop · play · Techniques · end · dice; quick; strip
+desktop · play · Spell Slots · top · dice; quick; strip
+desktop · play · Spell Slots · middle · dice; quick; strip
+desktop · play · Spell Slots · end · dice; quick; strip
+desktop · play · Combat · top · dice; quick; strip
+desktop · play · Combat · middle · dice; quick; strip
+desktop · play · Combat · end · dice; quick; strip
+desktop · play · Equipment · top · dice; quick; strip
+desktop · play · Equipment · middle · dice; quick; strip
+desktop · play · Equipment · end · dice; quick; strip
+desktop · play · Background · top · dice; quick; strip
+desktop · play · Background · middle · dice; quick; strip
+desktop · play · Background · end · dice; quick; strip
+desktop · management · Clan & School · top · dice; quick; strip
+desktop · management · Clan & School · middle · dice; quick; strip
+desktop · management · Clan & School · end · dice; quick; strip
+desktop · management · Identity · top · dice; quick; strip
+desktop · management · Identity · middle · dice; quick; strip
+desktop · management · Identity · end · dice; top; quick; strip
+desktop · management · Rings & Traits · top · dice; quick; strip
+desktop · management · Rings & Traits · middle · dice; top; quick; strip
+desktop · management · Rings & Traits · end · dice; top; quick; strip
+desktop · management · Skills · top · dice; quick; strip
+desktop · management · Skills · middle · dice; quick; strip
+desktop · management · Skills · end · dice; quick; strip
+desktop · management · Adv & Disadv · top · dice; quick; strip
+desktop · management · Adv & Disadv · middle · dice; top; quick; strip
+desktop · management · Adv & Disadv · end · dice; top; quick; strip
+desktop · management · Techniques · top · dice; quick; strip
+desktop · management · Techniques · middle · dice; quick; strip
+desktop · management · Techniques · end · dice; quick; strip
+desktop · management · Spell Slots · top · dice; quick; strip
+desktop · management · Spell Slots · middle · dice; quick; strip
+desktop · management · Spell Slots · end · dice; quick; strip
+desktop · management · Equipment · top · dice; quick; strip
+desktop · management · Equipment · middle · dice; quick; strip
+desktop · management · Equipment · end · dice; quick; strip
+desktop · management · Background · top · dice; quick; strip
+desktop · management · Background · middle · dice; quick; strip
+desktop · management · Background · end · dice; quick; strip

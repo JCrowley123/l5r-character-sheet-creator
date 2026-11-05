@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-11-04T20:50:20.507525+00:00",
+  "sha256": "1cc41d8c3d8bc93cb5350972ce1b438e0636aa683df9fa74076498cccfac5d2c",
+  "stages": [
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-04T20:50:20.522806+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-04T20:50:45.481503+00:00"
+    },
+    {
+      "label": "variants-final",
+      "started_utc": "2026-11-04T20:50:45.501913+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-04T20:59:42.860150+00:00"
+    },
+    {
+      "label": "dependencies",
+      "started_utc": "2026-11-04T20:59:42.884671+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-04T20:59:43.602570+00:00"
+    },
+    {
+      "label": "under-load-final",
+      "started_utc": "2026-11-04T20:59:43.624082+00:00",
+      "exit": 1,
+      "finished_utc": "2026-11-04T21:46:46.909637+00:00"
+    }
+  ],
+  "passed": false,
+  "error": "under-load-final failed; later stages were not started",
+  "finished_utc": "2026-11-04T21:46:46.912906+00:00"
+}

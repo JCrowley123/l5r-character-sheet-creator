@@ -1,0 +1,33 @@
+  detail STRIP-PLACED: {"parent":true,"before":true,"flush":false,"height":0,"pageAbove":false,"full":false,"hidden":true}
+  detail PHONE-NO-CONTROL-OVER-PAGE: [["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","middle","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","middle","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":t
+  detail TOP-SHOWN-AFTER-SCROLL: {"c":{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true},"count":1}
+  detail QA-OPENS-ABOVE-STRIP: {"shown":true,"expanded":"true","belowHeader":true,"aboveStrip":false,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail QA-PANEL-BESIDE-BUTTON: {"shown":true,"expanded":"true","belowHeader":true,"aboveStrip":false,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","scrollTopBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"qa":{"shown":true,"inBand":false}}
+  note landscape page height 193px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"h":193}
+  detail DESKTOP-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"t":{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}}
+PASS SEAM-PRESENT
+FAIL STRIP-PLACED
+FAIL PHONE-NO-CONTROL-OVER-PAGE
+PASS PHONE-HEADINGS-CLEAR
+PASS PHONE-LAST-LINE-REACHABLE
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+FAIL TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+FAIL QA-OPENS-ABOVE-STRIP
+FAIL QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+15/23 checks passed

@@ -1,0 +1,37 @@
+  detail SEAM-PRESENT: {"seam":false}
+  detail STRIP-PLACED: {"strip":false}
+  detail PHONE-NO-CONTROL-OVER-PAGE: [["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","middle","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","middle","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":t
+  detail PHONE-HEADINGS-CLEAR: [["play","Clan & School",{"text":"Clan, Family & School","start":false,"middle":true}],["play","Identity",{"text":"Identity","start":false,"middle":false}],["play","Rings & Traits",{"text":"Rings & Traits","start":false,"middle":true}],["play","Skills",{"text":"Skills","start":false,"middle":false}],["play","Adv & Disadv",{"text":"Advantages & Disadvantages","start":false,"middle":true}],["play","Techniques",{"text":"Techniques, Kata & Spells","start":false,"middle":true}],["play","Spell Slots",{"text":"Spell Slots","start":false,"middle":true}],["play","Combat",{"text":"Combat","start":false,"middle":true}],["play","Equipment",{"text":"Equipment & Money","start":false,"middle":true}],["play
+  detail PHONE-LAST-LINE-REACHABLE: [["play","Combat",["BUTTON#woundStepUp +"]]]
+  detail COMBAT-WOUND-PLUS-REACHABLE: false
+  detail TOP-SHOWN-AFTER-SCROLL: {"c":{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true},"count":1}
+  detail QA-OPENS-ABOVE-STRIP: {"shown":true,"expanded":"true","belowHeader":true,"aboveStrip":false,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail QA-PANEL-BESIDE-BUTTON: {"shown":true,"expanded":"true","belowHeader":true,"aboveStrip":false,"beside":false,"inView":true,"voidRead":true,"closeTappable":true}
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","scrollTopBtn",{"overPage":false,"onTabs":true,"onStrip":false,"tappable":true}]],"last":[["play","Combat",["BUTTON#woundStepUp +"]]],"qa":{"shown":true,"strip":false}}
+  note landscape page height 193px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[["play","Combat",["BUTTON#woundStepUp +"]]],"h":193}
+  detail DESKTOP-CLEAR: {"bad":[["play","Clan & School","top","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","top","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","quickAccessToggleBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}],["play","Clan & School","end","floatingDiceBtn",{"overPage":true,"onTabs":false,"onStrip":false,"tappable":true}]],"last":[],"t":{"overPage":true,"onTabs":true,"onStrip":false,"tappable":true}}
+FAIL SEAM-PRESENT
+FAIL STRIP-PLACED
+FAIL PHONE-NO-CONTROL-OVER-PAGE
+FAIL PHONE-HEADINGS-CLEAR
+FAIL PHONE-LAST-LINE-REACHABLE
+FAIL COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+FAIL TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+FAIL QA-OPENS-ABOVE-STRIP
+FAIL QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+11/23 checks passed

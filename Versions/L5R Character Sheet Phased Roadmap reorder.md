@@ -30,6 +30,10 @@ Deferred items and completed R rulings are reconciled in the work order. Honour/
 **Release 15a A01 built, 4 November (Claude):** one Review reminder for each open School choice, on branch `claude/release-15a-a01` (application `cffde624…0414`), qualified with both full passes first time (6,805/6,805 and 6,701/6,701 each; removal rebuilds 8c exactly). The owner's [device checks](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8) passed 12/12. **Accepted by the owner and live, 4 November** (main `6cdbe2e6`; production verified 411/411 and browser/offline 24/24); A02 not started. New request FU-15a-1 (no duplicate Kiho, Kata or spells in the wizard or sheet) recorded for scheduling, outside the totals. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
 <!-- end-a01-15a-roadmap -->
 
+<!-- a02-15a-roadmap -->
+**Release 15a A02 built, 4 November (Claude):** the floating controls on one 52 px band above the tabs, on branch `claude/release-15a-a02` (application `1cc41d8c…5d2c`, [preview](https://claude-release-15a-a02.l5r-character-sheet-creator.pages.dev/)), full pass 1 passed (6,828/6,828 and 6,732/6,732; removal rebuilds A01 exactly) but **full pass 2 failed** in Phase 0.6's service-worker harness, a 20-minute stall that did not reproduce in 25 isolated runs; not re-run. The owner rules on how to proceed; the [device checks](https://claude.ai/artifact/28WsHerG4EDkzZwSac8ocp) and decision (Accept, Revise or Remove) follow; merging and deploying then need the go-live word. A03 not started. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
+<!-- end-a02-15a-roadmap -->
+
 ## Earlier dated records
 
 **3 November · Phase 15a device follow-ups.** The owner parked three presentation items from the 8b.1 preview. [Scope and acceptance checks](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).

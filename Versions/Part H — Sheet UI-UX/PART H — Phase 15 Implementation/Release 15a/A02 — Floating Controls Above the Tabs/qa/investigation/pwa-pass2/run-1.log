@@ -1,0 +1,30 @@
+
+PWA checks against: http://127.0.0.1:8091/
+
+  PASS  manifest is valid JSON with required fields  — display=standalone, 3 icons
+  PASS  icon set covers install requirements  — 192 y, 512 y, maskable y
+  PASS  every manifest icon resolves
+  PASS  service worker registers and activates  — state=activated, controlling=true
+  PASS  cache is populated  — l5r-sheet-7019ca1ae2b29f86: 7 entries
+  PASS  index.html is cached  — / /icons/apple-touch-icon.png /icons/icon-192.png /icons/icon-512.png /icons/icon-maskable-512.png /index.html /manifest.webmanifest
+STEP 5a-evaluate-start +3.8s
+STEP 5a-done-wait800 +3.8s
+STEP onlineSections-start +4.6s
+STEP setOffline +4.6s
+STEP server-close +4.6s
+STEP reload +4.6s
+STEP offline-evaluate +6.4s
+  PASS  loads with the network cut  — title "L5R 4th Edition — Character Sheet"
+  PASS  sheet boots offline — both seams present  — __L5R_TEST__ 751 keys, __L5R_CAROUSEL__ 11 methods
+  PASS  renders offline every section it rendered online  — 15 of 15 sections, 423 element ids
+  PASS  localStorage survives reload while offline  — probe=survived
+STEP page-errors +6.4s
+  PASS  no uncaught page errors
+STEP apple +6.4s
+  PASS  Apple home-screen tags present (Safari ignores the manifest)  — capable=true title=true icon=true, theme-color=#efe7d4
+STEP browser-close +6.4s
+
+12/12 checks passed
+
+PWA verified: installable metadata correct, and the sheet runs with no network.
+

@@ -1,0 +1,220 @@
+phone · play · Clan & School · top · dice; quick covers 1 (h2:Clan, Family & School)
+phone · play · Clan & School · middle · dice covers 2 (div:A great hero of your Clan who watches ov | label:ANCESTOR); quick
+phone · play · Clan & School · end · dice covers 1 (select#anc48Pick:— No Ancestor —
+Hida — 14 XP
+Kuni — 8 XP); quick covers 2 (select#cfs_clan:Crab
+Crane
+Dragon
+Lion
+Phoenix
+Scorpion
+ | label:FAMILY)
+phone · play · Identity · top · dice covers 3 (input#f_insightToNextRank:11 | label:OTHER INSIGHT BONUS | input#f_insightBonus:0); quick covers 2 (h2:Identity | label:CHARACTER NAME)
+phone · play · Identity · middle · dice; top[ON TABS]; quick covers 1 (input#f_insightRank:1)
+phone · play · Identity · end · dice; top[ON TABS]; quick covers 2 (label:MANUAL ADJUSTMENT | input#f_xpAdjust:0)
+phone · play · Rings & Traits · top · dice; quick covers 2 (h2:Rings & Traits | div:Ring rank normally equals the lower of i)
+phone · play · Rings & Traits · middle · dice; quick
+phone · play · Rings & Traits · end · dice; quick
+phone · play · Skills · top · dice; quick covers 2 (h2:Skills | div:Roll = Skill Rank + Trait Rank, Keep = T)
+phone · play · Skills · middle · dice; top[ON TABS]; quick covers 1 (td:)
+phone · play · Skills · end · dice covers 1 (div:Mastery notes below a skill show what ea); top[ON TABS]; quick covers 2 (td:0 xp | td:10)
+phone · play · Adv & Disadv · top · dice covers 1 (input:0); quick covers 2 (h2:Advantages & Disadvantages | div:Pick from the reference library to add a)
+phone · play · Adv & Disadv · middle · dice; top[ON TABS]; quick
+phone · play · Adv & Disadv · end · dice covers 1 (textarea:Reminders of a lost love raise all your ); top[ON TABS]; quick covers 2 (button:CHECK (TN 5 × GLORY) | textarea:Compulsive gossip; resisting spreading a)
+phone · play · Techniques · top · dice covers 1 (textarea:[Spell — Universal 1] Ask a local elemen); quick covers 1 (h2:Techniques, Kata & Spells)
+phone · play · Techniques · middle · dice covers 1 (label:MEMORISED); quick
+phone · play · Techniques · end · dice covers 1 (textarea:[Spell — Universal 1] Conjure roughly on); quick covers 1 (textarea:[School Technique — Rank 1, Kuni Shugenj)
+phone · play · Spell Slots · top · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+phone · play · Spell Slots · middle · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+phone · play · Spell Slots · end · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+phone · play · Combat · top · dice covers 3 (input#is4535Input:Your Initiative dice total, before bonus | td: | input:Complete weapon notes must remain readab); quick covers 1 (h2:Combat)
+phone · play · Combat · middle · dice; top[ON TABS]; quick covers 3 (input#f_currentTN:7 | label: | td:)
+phone · play · Combat · end · dice covers 1 (button#woundStepUp:+); top[ON TABS]; quick covers 1 (button:SPEND VOID: +10 TN TO BE HIT)
+phone · play · Equipment · top · dice covers 1 (td:); quick covers 2 (h2:Equipment & Money | label:KOKU)
+phone · play · Equipment · middle · dice covers 2 (td: | input:Starting outfit); top[ON TABS]; quick covers 1 (td:)
+phone · play · Equipment · end · dice; top[ON TABS]; quick covers 2 (td:✕ | button:✕)
+phone · play · Background · top · dice; quick covers 2 (h2:Background | label:APPEARANCE)
+phone · play · Background · middle · dice; quick covers 2 (h2:Background | label:APPEARANCE)
+phone · play · Background · end · dice; quick covers 2 (h2:Background | label:APPEARANCE)
+phone · management · Clan & School · top · dice; quick covers 1 (h2:Clan, Family & School)
+phone · management · Clan & School · middle · dice covers 1 (div:A great hero of your Clan who watches ov); quick covers 2 (label:CLAN | select#cfs_clan:Crab
+Crane
+Dragon
+Lion
+Phoenix
+Scorpion
+)
+phone · management · Clan & School · end · dice covers 1 (select#anc48Pick:— No Ancestor —
+Hida — 14 XP
+Kuni — 8 XP); quick covers 1 (button#cfs_applyFamily:APPLY FAMILY (+1 TRAIT))
+phone · management · Identity · top · dice covers 3 (input#f_insightToNextRank:11 | label:OTHER INSIGHT BONUS | input#f_insightBonus:0); quick covers 2 (h2:Identity | label:CHARACTER NAME)
+phone · management · Identity · middle · dice covers 2 (h3:Honour | input#ce7-honor-rank:4); top[ON TABS]; quick covers 1 (input#f_insightRank:1)
+phone · management · Identity · end · dice covers 1 (button:REVIEW STARTING SPELLS); top[ON TABS]; quick covers 2 (label:EXPERIENCE — REMAINING | input#f_xpRemain:198)
+phone · management · Rings & Traits · top · dice; quick covers 2 (h2:Rings & Traits | div:Ring rank normally equals the lower of i)
+phone · management · Rings & Traits · middle · dice covers 2 (p:In Management, choose the wound multipli | p#wm7-summary:Healthy: Earth ×5 · Each later level: Ea); top[ON TABS]; quick covers 1 (button:−)
+phone · management · Rings & Traits · end · dice covers 1 (td:38); top[ON TABS]; quick covers 1 (label:STAMINA)
+phone · management · Skills · top · dice covers 1 (td:10); quick covers 2 (h2:Skills | div:Roll = Skill Rank + Trait Rank, Keep = T)
+phone · management · Skills · middle · dice covers 2 (td: | td:0 xp); top[ON TABS]; quick covers 1 (td:Cipher
+High Rokugani
+FREE
+✕
++ EMPH
+1 / 1)
+phone · management · Skills · end · dice covers 1 (div:Mastery notes below a skill show what ea); top[ON TABS]; quick covers 2 (td:👁
+R5: +5 on any Contested Roll using th | input:Intimidation)
+phone · management · Adv & Disadv · top · dice covers 1 (textarea:Once/round, add School Rank +1k1 to an a); quick covers 2 (h2:Advantages & Disadvantages | div:Pick from the reference library to add a)
+phone · management · Adv & Disadv · middle · dice covers 2 (button:✕ | input:3); top[ON TABS]; quick covers 1 (input:Leadership)
+phone · management · Adv & Disadv · end · dice; top[ON TABS]; quick
+phone · management · Techniques · top · dice covers 1 (textarea:[Spell — Universal 1] Detect the presenc); quick covers 2 (h2:Techniques, Kata & Spells | select#techQuickAdd:— choose a Kata, Kiho or Spell to add —
+)
+phone · management · Techniques · middle · dice covers 2 (button:✕ | label:MEMORISED); quick covers 1 (div:Kiho: spend a Void Point (Free Action), )
+phone · management · Techniques · end · dice; top[ON TABS]; quick
+phone · management · Spell Slots · top · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+phone · management · Spell Slots · middle · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+phone · management · Spell Slots · end · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+phone · management · Equipment · top · dice covers 1 (td:); quick covers 2 (h2:Equipment & Money | label:KOKU)
+phone · management · Equipment · middle · dice covers 2 (td: | input:Starting outfit); top[ON TABS]; quick covers 1 (td:)
+phone · management · Equipment · end · dice; top[ON TABS]; quick covers 2 (td:✕ | button:✕)
+phone · management · Background · top · dice; quick covers 2 (h2:Background | label:APPEARANCE)
+phone · management · Background · middle · dice; quick covers 2 (h2:Background | label:APPEARANCE)
+phone · management · Background · end · dice; quick covers 2 (h2:Background | label:APPEARANCE)
+small · play · Clan & School · top · dice; quick covers 1 (h2:Clan, Family & School)
+small · play · Clan & School · middle · dice covers 1 (button#cfs_deficiencyBadgeBtn:DEFICIENCY
+AIR
+Ⓘ); quick covers 1 (label:FAMILY)
+small · play · Clan & School · end · dice covers 1 (select#anc48Pick:— No Ancestor —
+Hida — 14 XP
+Kuni — 8 XP); top[ON TABS]; quick
+small · play · Identity · top · dice covers 2 (label:INSIGHT RANK (AUTO) | input#f_insightRank:1); quick covers 2 (h2:Identity | label:CHARACTER NAME)
+small · play · Identity · middle · dice covers 2 (div:Insight = (sum of all five Rings × 10) + | label:SCHOOLS); top[ON TABS]; quick covers 1 (input#f_insightRank:1)
+small · play · Identity · end · dice; top[ON TABS]; quick covers 1 (div:Spent XP is calculated automatically fro)
+small · play · Rings & Traits · top · dice covers 1 (input#trait_strength:3); quick covers 2 (h2:Rings & Traits | div:Ring rank normally equals the lower of i)
+small · play · Rings & Traits · middle · dice; quick covers 1 (label:AWARENESS)
+small · play · Rings & Traits · end · dice; top[ON TABS]; quick covers 1 (label:VOID POINTS (CURRENT))
+small · play · Skills · top · dice covers 2 (td:Cipher
+High Rokugani
+FREE
+1 / 1 emphases | td:); quick covers 2 (h2:Skills | div:Roll = Skill Rank + Trait Rank, Keep = T)
+small · play · Skills · middle · dice covers 3 (td: | td:0 / 1 emphases at rank 1 | td:); top[ON TABS]; quick covers 1 (td:)
+small · play · Skills · end · dice covers 1 (div:Mastery notes below a skill show what ea); top[ON TABS]; quick covers 1 (td:)
+small · play · Adv & Disadv · top · dice; quick covers 2 (h2:Advantages & Disadvantages | div:Pick from the reference library to add a)
+small · play · Adv & Disadv · middle · dice; top[ON TABS]; quick
+small · play · Adv & Disadv · end · dice covers 1 (textarea:Reminders of a lost love raise all your ); top[ON TABS]; quick covers 2 (button:CHECK (TN 20) | label:WRACKED WITH GUILT (TN +10))
+small · play · Techniques · top · dice; quick covers 1 (h2:Techniques, Kata & Spells)
+small · play · Techniques · middle · dice covers 1 (textarea:[Spell — Universal 1] Ask a local elemen); quick covers 1 (textarea:[School Technique — Rank 1, Kuni Shugenj)
+small · play · Techniques · end · dice covers 1 (textarea:[Spell — Universal 1] Conjure roughly on); top[ON TABS]; quick covers 1 (textarea:[Spell — Universal 1] Detect the presenc)
+small · play · Spell Slots · top · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+small · play · Spell Slots · middle · dice; quick
+small · play · Spell Slots · end · dice; quick
+small · play · Combat · top · dice covers 7 (input#f_currentTN:7 | label: | td:); quick covers 1 (h2:Combat)
+small · play · Combat · middle · dice; top[ON TABS]; quick covers 4 (label: | input#f_initiative:3k2 | td:)
+small · play · Combat · end · dice covers 1 (button#woundStepUp:+); top[ON TABS]; quick
+small · play · Equipment · top · dice; quick covers 2 (h2:Equipment & Money | label:KOKU)
+small · play · Equipment · middle · dice; top[ON TABS]; quick covers 1 (td:)
+small · play · Equipment · end · dice; top[ON TABS]; quick covers 3 (td: | td:✕ | button:✕)
+small · play · Background · top · dice covers 1 (textarea#f_notes:); quick covers 2 (h2:Background | label:APPEARANCE)
+small · play · Background · middle · dice; quick covers 1 (textarea#f_appearance:)
+small · play · Background · end · dice; quick covers 2 (label:PERSONALITY | textarea#f_personality:)
+small · management · Clan & School · top · dice covers 1 (button#cfs_applySchool:APPLY SCHOOL); quick covers 1 (h2:Clan, Family & School)
+small · management · Clan & School · middle · dice covers 1 (button#cfs_deficiencyBadgeBtn:DEFICIENCY
+AIR
+Ⓘ); quick covers 1 (select#cfs_family:Hida (+1 Strength)
+Hiruma (+1 Agility)
+K)
+small · management · Clan & School · end · dice covers 1 (select#anc48Pick:— No Ancestor —
+Hida — 14 XP
+Kuni — 8 XP); top[ON TABS]; quick
+small · management · Identity · top · dice covers 2 (label:INSIGHT RANK (AUTO) | input#f_insightRank:1); quick covers 2 (h2:Identity | label:CHARACTER NAME)
+small · management · Identity · middle · dice covers 2 (div:Insight = (sum of all five Rings × 10) + | label:SCHOOLS); top[ON TABS]; quick covers 1 (input#f_insightRank:1)
+small · management · Identity · end · dice covers 1 (button:REVIEW STARTING SPELLS); top[ON TABS]; quick
+small · management · Rings & Traits · top · dice covers 1 (input#trait_strength:3); quick covers 2 (h2:Rings & Traits | div:Ring rank normally equals the lower of i)
+small · management · Rings & Traits · middle · dice; top[ON TABS]; quick covers 1 (label:VOID POINTS (CURRENT))
+small · management · Rings & Traits · end · dice covers 1 (td:38); top[ON TABS]; quick covers 2 (p:In Management, choose the wound multipli | p#wm7-summary:Healthy: Earth ×5 · Each later level: Ea)
+small · management · Skills · top · dice covers 2 (td: | input:1); quick covers 2 (h2:Skills | div:Roll = Skill Rank + Trait Rank, Keep = T)
+small · management · Skills · middle · dice covers 1 (td:👁
+R3: Can keep a prior Defense roll whi); top[ON TABS]; quick covers 2 (td:Cipher
+High Rokugani
+FREE
+✕
++ EMPH
+1 / 1 | select:Cipher
+High Rokugani)
+small · management · Skills · end · dice covers 1 (div:Mastery notes below a skill show what ea); top[ON TABS]; quick covers 1 (td:Bullying
+Control
+Torture
+✕
++ EMPH
+1 / 2 )
+small · management · Adv & Disadv · top · dice covers 2 (button:✕ | input:6); quick covers 2 (h2:Advantages & Disadvantages | div:Pick from the reference library to add a)
+small · management · Adv & Disadv · middle · dice covers 2 (button:✕ | input:4); top[ON TABS]; quick covers 1 (input:Leadership)
+small · management · Adv & Disadv · end · dice; top[ON TABS]; quick
+small · management · Techniques · top · dice covers 1 (textarea:[School Technique — Rank 1, Kuni Shugenj); quick covers 2 (h2:Techniques, Kata & Spells | select#techQuickAdd:— choose a Kata, Kiho or Spell to add —
+)
+small · management · Techniques · middle · dice; quick covers 2 (input:Gaze Into Shadow | textarea:[School Technique — Rank 1, Kuni Shugenj)
+small · management · Techniques · end · dice; top[ON TABS]; quick
+small · management · Spell Slots · top · dice; quick covers 2 (h2:Spell Slots | div:Maximum slots per element always equal t)
+small · management · Spell Slots · middle · dice; quick
+small · management · Spell Slots · end · dice; quick
+small · management · Equipment · top · dice; quick covers 2 (h2:Equipment & Money | label:KOKU)
+small · management · Equipment · middle · dice; top[ON TABS]; quick covers 1 (td:)
+small · management · Equipment · end · dice; top[ON TABS]; quick covers 3 (td: | td:✕ | button:✕)
+small · management · Background · top · dice covers 1 (textarea#f_notes:); quick covers 2 (h2:Background | label:APPEARANCE)
+small · management · Background · middle · dice; quick covers 1 (textarea#f_appearance:)
+small · management · Background · end · dice; quick covers 2 (label:PERSONALITY | textarea#f_personality:)
+desktop · play · Clan & School · top · dice; quick
+desktop · play · Clan & School · middle · dice; quick
+desktop · play · Clan & School · end · dice; quick
+desktop · play · Identity · top · dice; quick
+desktop · play · Identity · middle · dice; quick
+desktop · play · Identity · end · dice; quick
+desktop · play · Rings & Traits · top · dice; quick
+desktop · play · Rings & Traits · middle · dice; quick
+desktop · play · Rings & Traits · end · dice; quick
+desktop · play · Skills · top · dice; quick
+desktop · play · Skills · middle · dice; quick
+desktop · play · Skills · end · dice; quick
+desktop · play · Adv & Disadv · top · dice; quick
+desktop · play · Adv & Disadv · middle · dice; top[ON TABS]; quick
+desktop · play · Adv & Disadv · end · dice; top[ON TABS]; quick
+desktop · play · Techniques · top · dice; quick
+desktop · play · Techniques · middle · dice; quick
+desktop · play · Techniques · end · dice; quick
+desktop · play · Spell Slots · top · dice; quick
+desktop · play · Spell Slots · middle · dice; quick
+desktop · play · Spell Slots · end · dice; quick
+desktop · play · Combat · top · dice; quick
+desktop · play · Combat · middle · dice; quick
+desktop · play · Combat · end · dice; quick
+desktop · play · Equipment · top · dice; quick
+desktop · play · Equipment · middle · dice; quick
+desktop · play · Equipment · end · dice; quick
+desktop · play · Background · top · dice; quick
+desktop · play · Background · middle · dice; quick
+desktop · play · Background · end · dice; quick
+desktop · management · Clan & School · top · dice; quick
+desktop · management · Clan & School · middle · dice; quick
+desktop · management · Clan & School · end · dice; quick
+desktop · management · Identity · top · dice; quick
+desktop · management · Identity · middle · dice; quick
+desktop · management · Identity · end · dice; quick
+desktop · management · Rings & Traits · top · dice; quick
+desktop · management · Rings & Traits · middle · dice; top[ON TABS]; quick
+desktop · management · Rings & Traits · end · dice; top[ON TABS]; quick
+desktop · management · Skills · top · dice; quick
+desktop · management · Skills · middle · dice; quick
+desktop · management · Skills · end · dice; quick
+desktop · management · Adv & Disadv · top · dice; quick
+desktop · management · Adv & Disadv · middle · dice; top[ON TABS]; quick
+desktop · management · Adv & Disadv · end · dice; top[ON TABS]; quick
+desktop · management · Techniques · top · dice; quick
+desktop · management · Techniques · middle · dice; quick
+desktop · management · Techniques · end · dice; quick
+desktop · management · Spell Slots · top · dice; quick
+desktop · management · Spell Slots · middle · dice; quick
+desktop · management · Spell Slots · end · dice; quick
+desktop · management · Equipment · top · dice; quick
+desktop · management · Equipment · middle · dice; quick
+desktop · management · Equipment · end · dice; quick
+desktop · management · Background · top · dice; quick
+desktop · management · Background · middle · dice; quick
+desktop · management · Background · end · dice; quick
