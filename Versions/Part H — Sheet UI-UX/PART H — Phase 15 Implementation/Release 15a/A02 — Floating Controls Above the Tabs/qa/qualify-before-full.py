@@ -10,9 +10,13 @@ PREFIX=(Q/'qualified-sha256.txt').read_text().strip()[:8]
 # Attempt 3: attempt 1 (qualification-<prefix>.json, under-load-<prefix>/) failed at the 4x screen on a harness timing
 # fault in A02's own QA-PANEL-BESIDE-BUTTON; attempt 2 was stopped by hand inside its removal stage because attempt 1
 # was still running its screen. Both are kept as they were (investigation/README.md).
-ATTEMPT='-3'
+# Attempt 4: attempt 3 passed and its full pass 2 failed when pwa-harness.js (Part F Phase 0.6) stalled. On the owner's
+# ruling (5 November) the stall was fixed as its own unit (QA — PWA Harness Step Limits 2026-11-05), and the whole chain
+# runs again from removal, with a fresh discovery folder; attempt 3's files and final-run-1/-2 are kept as they were.
+ATTEMPT='-4'
+DISCOVERY='discovery-2'
 STATE=Q/('qualification-'+PREFIX+ATTEMPT+'.json')
-assert not (Q/'discovery-1').exists() and not (Q/'full-launched.txt').exists(), 'Discovery and full runs are single-use.'
+assert not (Q/DISCOVERY).exists() and not (Q/'full-launched-2.txt').exists(), 'Discovery and full runs are single-use.'
 assert not STATE.exists(), 'One qualification chain only; retain and investigate failures.'
 FROZEN=(Q/'qualified-sha256.txt').read_text().strip()
 os.environ.update(PYTHONUTF8='1',NODE_PATH='C:/Users/jcrow/l5r-qa-tools/node_modules',NODE_OPTIONS='--require "'+(V/'QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js').as_posix()+'"')
@@ -35,7 +39,7 @@ try:
     run('variants-final',[sys.executable,'-B',str(Q/'verify-variants.py')])
     run('dependencies',[sys.executable,'-B',str(P/'qa/feature-dependencies.py'),'src/sheet/209.9999999999999996-feat-floating-strip.js','PART H PHASE 15.1.2','--also','fc15Strip','fc15-strip','fc15-on','--fc15-h','--fc15-base','1128-floating-strip'],str(P))
     run('under-load-final',[sys.executable,'-B',str(Q/'run-under-load.py'),'under-load-'+PREFIX+ATTEMPT])
-    run('discovery-launch',[sys.executable,'-B',str(Q/'discovery.py'),'discovery-1'])
+    run('discovery-launch',[sys.executable,'-B',str(Q/'discovery.py'),DISCOVERY])
     state['passed']=True
 except Exception as e:
     state.update(passed=False,error=str(e));raise

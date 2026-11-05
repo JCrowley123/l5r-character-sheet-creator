@@ -34,4 +34,4 @@ Five marked blocks in that harness (`QA PWASTALL`):
 | `qa/removal-check.py`: ROLLBACK's by-hand removal | **8/8**: rebuilds `originals/pwa-harness.js` byte for byte (sha256 `c1f88f30…56ee`) |
 | One read-only review | no defects in the change. Its documentation and evidence items are done; two test notes taken (raw-byte compare, hang located at the injected spot). Accepted notes: a stall in the offline section count shows as `-1 of N sections` rather than as a stall; a stall at the very end still has no count line, but now prints its `stalled:` message |
 
-Then A02's qualification chain and full passes ran again with this in place (see A02's handover).
+Then A02's qualification chain and full passes ran again with this in place (see A02's handover). Attempt 4 passed every stage, and full passes 3 and 4 both passed on their first executions. Within them this harness passed 12/12 each time, and its leaf took 93 s, 85 s and 84 s.

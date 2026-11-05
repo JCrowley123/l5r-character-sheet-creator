@@ -36,6 +36,15 @@
       "weekly_percent": 25,
       "weekly_resets_utc": "2026-11-11T01:00Z",
       "model": "claude-opus-5-5"
+    },
+    {
+      "label": "end after re-qualification (harness step-limit fix 13f85caf, attempt 4 and full passes 3 and 4 passed; records written; before commit)",
+      "utc": "2026-11-05T13:24Z",
+      "five_hour_percent": 19,
+      "five_hour_resets_utc": "2026-11-05T15:00Z",
+      "weekly_percent": 28,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
     }
   ]
 }

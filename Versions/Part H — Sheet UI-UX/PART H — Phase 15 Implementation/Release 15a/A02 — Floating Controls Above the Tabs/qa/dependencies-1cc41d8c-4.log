@@ -1,0 +1,25 @@
+fragment : src/sheet/209.9999999999999996-feat-floating-strip.js
+marker   : PART H PHASE 15.1.2
+surface  : 8 name(s) -- --fc15-base, --fc15-h, 1128-floating-strip, FC15, FLOATING_STRIP_ENABLED, fc15-on, fc15-strip, fc15Strip
+
+src\css\1128-floating-strip.css
+    own      2  [PART H PHASE 15.1.2 +1]  The band (#fc15Strip, added by 209.9999999999999996-feat-floating-strip.js) takes its own height
+    own      7  [PART H PHASE 15.1.2 +6]  Everything waits for body.car-active.fc15-on: without the carousel, or with the switch off, noth
+    own      8  [PART H PHASE 15.1.2 +7]  .fc15-strip { display: none; }
+    own      9  [PART H PHASE 15.1.2 +8]  html body.car-active.fc15-on {
+    own     14  [PART H PHASE 15.1.2 +13]  html body.car-active.fc15-on.ab113-bottom {
+    own     17  [PART H PHASE 15.1.2 +16]  html body.car-active.fc15-on .fc15-strip {
+    own     28  [PART H PHASE 15.1.2 +27]  html body.car-active.fc15-on #quickAccessToggleBtn {
+    own     37  [PART H PHASE 15.1.2 +36]  html body.car-active.fc15-on #scrollTopBtn {
+    own     45  [PART H PHASE 15.1.2 +44]  html body.car-active.fc15-on #scrollTopBtn svg { width: 20px; height: 20px; }
+    own     47  [PART H PHASE 15.1.2 +46]  html body.car-active.fc15-on #floatingDiceBtn {
+    own     55  [PART H PHASE 15.1.2 +54]  html body.car-active.fc15-on #floatingDiceBtn .dice-icon { width: 40px; height: 40px; }
+    own     57  [PART H PHASE 15.1.2 +56]  html body.car-active.fc15-on #quickAccessPanel {
+    own     64  [PART H PHASE 15.1.2 +63]  html body.car-active.fc15-on.ab113-top #quickAccessPanel {
+    own     68  [PART H PHASE 15.1.2 +67]  @media print { .fc15-strip { display: none !important; } }
+
+src\sheet\210-test-seam-and-init.js
+    own    948  [PART H PHASE 15.1.2 +1]  if(typeof FC15 === 'object' && FC15) Object.assign(window.__L5R_TEST__, {FC15, FLOATING_STRIP_EN
+    own    949  [PART H PHASE 15.1.2 +2]  // END FC15 floating-strip-seam
+
+every reference is inside a block PART H PHASE 15.1.2 owns -- surgical removal covers all of them.
