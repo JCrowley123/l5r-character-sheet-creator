@@ -48,8 +48,11 @@
       try { usable = getUsableEmphSlots(tr).usableSlots; } catch(e){ return ''; }
       const count = tr.querySelectorAll('.emph-container .emph-item-row').length;
       if(count <= usable) return '';
+      // The note can be two lines ("... – no more to be unlocked", a line break, "Max Emphases assigned"); its
+      // parts are joined so they do not run together.
       const noteEl = tr.querySelector('.emph-limit-note');
-      const note = noteEl ? String(noteEl.textContent || '').trim() : '';
+      const note = noteEl ? Array.from(noteEl.childNodes).map(function(n){ return String(n.textContent || '').trim(); })
+        .filter(Boolean).join(' · ') : '';
       return note || (count + ' Emphases, ' + usable + ' allowed');
     };
     api.summaryOf = function(tr){ return tr.querySelector('.cs15-summary'); };

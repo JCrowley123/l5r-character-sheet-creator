@@ -58,3 +58,55 @@ The reviewer read code, diffs and scripts and ran text checks only: no browser, 
 **Before the review, from this session's own targeted runs:** `PRINT-UNCHANGED`'s first reference took away only A03's class, which left the Details controls in the print. It now also lifts the controls out. That is a harness fix, made before any pin was asserted.
 
 The candidate was rebuilt after these fixes and frozen in `qualified-sha256.txt` before the variant discovery and the qualification chain.
+
+## Revision 2 (one read-only reviewer, 6 November 2026, before freezing)
+
+**Scope given:**
+- the owner's decision: no Details control, only the Masteries reached in Play, and the laptop columns as built;
+- the diff from revision 1 (`9ccce5e8`) to the revision 2 draft (`53d861db`);
+- the removability rules and the QA constants.
+
+The reviewer read code and scripts only: no browser, harness, remover or build.
+
+**Verdict: no blocking defects.** Revision 2 matches the decision on a portrait phone, and the laptop column rule is unchanged.
+
+**Confirmed by hand:**
+- **Counts:** the draft's 35 checks, 35 + 6,828 and 23 + 6,732. Since then the harness has 37 checks (below), so the candidate is 6,865.
+- **Folders:** `discovery-2`, `full-launched-2.txt`, and full passes 3 and 4.
+- **Removability:** A03's code is in its two fragments and the unchanged seam block, with no marker-shaped prose.
+- **Dependency:** the `pm12-play` dependency is declared in both rollback files.
+- **Observer:** it cannot loop.
+- **Scope of the rules:** every new rule is inside `@supports` and the phone media query.
+- **Variants:** all 19 pins traced and plausible.
+
+### Findings and what was done
+
+1. **Minor, fixed: the first row moved when switching to Manage.**
+   - In Manage the School cell's caption kept the carousel's fixed caption width. That widened its column, so between 361 and 600 px the name box shrank and the Rank and d10 shifted.
+   - **Fixed:** the caption is drawn at its own width, as the Rank's is.
+   - **New check `FIRST-ROW-STEADY`:** the same name width and Rank and roll positions in both modes.
+   - **New variant `school-caption-wide`:** puts the fixed width back.
+2. **Minor, recorded: a phone held sideways keeps the table.** The card layout, and with it the reached-only rule, applies at 600 px and less, as in revision 1. A phone turned sideways shows the table with every note. The owner's words were about the phone card, so this is declared in the README and the checklist rather than changed.
+3. **Minor, fixed: a two-line Emphasis note ran together in the summary.**
+   - When the Emphasis list is the ceiling, the sheet writes the count, a line break, then "Max Emphases assigned". `textContent` dropped the break.
+   - **Fixed:** the note's parts are joined with " · ".
+   - `EMPHASIS-WARNING-SHOWN` now also writes that two-line note while over the limit and checks the summary.
+4. **Minor, done after freezing: rollback claims rested on revision 1's logs.** A02's harness and Phase 12.4's harness with revision 2 present, and A03's harness on the A02-removed build, were run on the frozen candidate. Their logs are kept with `-r2` in their names.
+5. **Minor, fixed: one comment in the stylesheet was wrong.** It said that additions are drawn after the Mastery notes. In fact a name-line badge (Release 8c's School choice) keeps its place before them.
+6. **Note, fixed:** the manifest's note still said "Details control".
+7. **Note, declared:** the XP, the Emphasis count line (unless over the limit) and the Free badges are drawn only in Manage on a phone. The device checklist says so, so the owner can object.
+8. **Note, partly addressed: accessibility.**
+   - The summary's generated text is exposed as text.
+   - **New check `SUMMARY-READABLE`** reads the browser's accessibility tree: exactly the summary in Play, nothing in Manage.
+   - Revision 1's comma-joined `aria-label` is gone, so " · " is voiced according to the reader's punctuation setting.
+   - The Manage focus order (name, eye, Trait, Rank, Emphases, School, d10, Remove) is declared in the README.
+9. **Note, kept: keying the reached-only rule on the trunk's muted colour.** If the trunk changes, every note shows and `PLAY-MASTERIES-REACHED` fails. The match is now case-insensitive (`[style*="#a89f8c" i]`).
+
+**Harness hardening from the review:**
+- `PLAY-COMPACT` now leaves the Mastery notes out on both sides of its half-height comparison.
+- `TABLET-UNCHANGED` covers Play as well as Manage.
+- `MODE-SWITCH-LIVE` also checks that without Phase 12's Play class every card takes the Manage layout.
+
+**Variant pin changed before any variant ran:** `no-grid` no longer predicts `PHONE-END-CLEAR`. That failure in revision 1 was incidental: it depended on how far the open last card ran off the screen, and revision 2's card is shorter.
+
+The harness is now 37 checks. The candidate is 37 + 6,828 = 6,865, and `verify-live.py` totals 550.

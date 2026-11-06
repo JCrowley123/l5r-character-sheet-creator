@@ -99,34 +99,38 @@ function helpers() {
     out.inside = boxes.every(b => b.left >= c.left - 0.5 && b.right <= c.right + 0.5);
     out.noOverflow = tr.scrollWidth <= tr.clientWidth + 1;
     out.nameWidth = Math.round(n.width);
+    out.rankLeft = Math.round(r.left);
+    out.rollLeft = Math.round(d.left);
     return out;
   };
-  // Each card's height on the same page without A03: its class taken away and its summary lines lifted out.
+  const noteHeight = tr => { const note = tr.querySelector('.sk-mastery-note'); return note && shown(note) ? rect(note).height : 0; };
+  // Each card's height, and its Mastery notes' height, on the same page without A03: its class taken away and its
+  // summary lines lifted out.
   const reference = () => {
     const had = document.body.classList.contains('cs15-on');
     document.body.classList.remove('cs15-on');
     const lifted = [...document.querySelectorAll('#skillsBody .cs15-summary')].map(t => [t, t.parentNode, t.nextSibling]);
     lifted.forEach(([t]) => t.remove());
-    const hs = rows().map(tr => rect(tr).height);
+    const hs = rows().map(tr => ({h: rect(tr).height, noteH: noteHeight(tr)}));
     lifted.forEach(([t, p, n]) => p.insertBefore(t, n));
     if (had) document.body.classList.add('cs15-on');
     return hs;
   };
   // Everything one check needs about every card in the current mode.
   const survey = mode => { const ref = reference(); return rows().map((tr, i) => {
-    const c = card(tr, mode), note = tr.querySelector('.sk-mastery-note'), M = masteries(tr), C = cells(tr), F = fields(tr);
+    const c = card(tr, mode), M = masteries(tr), C = cells(tr), F = fields(tr);
     const spans = M.map(m => ({tier: m.tier, reached: m.reached, shown: shown(m.e)}));
-    const noteH = note && shown(note) ? rect(note).height : 0;
+    const noteH = noteHeight(tr);
     const top = e => e && shown(e) ? Math.round(rect(e).top) : null;
     const shownSpans = M.filter(m => shown(m.e));
-    return {...c, ref: Math.round(ref[i]), noteH: Math.round(noteH), spans,
+    return {...c, ref: Math.round(ref[i].h), refNoteH: Math.round(ref[i].noteH), noteH: Math.round(noteH), spans,
       cellsShown: Object.fromEntries(Object.entries(C).map(([k, e]) => [k, shown(e)])),
       controlsShown: Object.fromEntries(Object.entries(F).filter(([k]) => !/Cell$/.test(k)).map(([k, e]) => [k, shown(e)])),
       summaryShown: shown(summaryOf(tr)),
       tops: {second: top(C.trait) !== null && top(C.school) !== null ? Math.max(top(C.trait), top(C.school)) : null, emph: top(C.emph), xp: top(C.xp),
         notes: shownSpans.length ? Math.round(Math.min(...shownSpans.map(m => rect(m.e).top))) : null, remove: top(C.remove)}};
   }); };
-  window.__cs = {rect, shown, overlap, hits, level, page, rows, row, summaryOf, parts, fields, cells, masteries, expectSummary, drawn, scroll, card, reference, survey};
+  window.__cs = {rect, shown, overlap, hits, level, page, rows, row, summaryOf, parts, fields, cells, masteries, expectSummary, drawn, scroll, card, noteHeight, reference, survey};
 }
 const settle = page => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
 async function open(browser, opts, fixture) {
@@ -294,11 +298,19 @@ async function type(page, name, selector, value) {
           return seq.some(v => v === null) || !seq.every((v, i) => i === 0 || v > seq[i - 1]); });
         return [S.management.length === 18 && bad.length === 0, bad.slice(0, 3).map(c => [c.name, c.tops])];
       });
-      // Play cards: without the Mastery notes, as short as the two-row card (124 px), and at most half the height of
-      // the same card without A03.
+      // Play cards, leaving out the Mastery notes on both sides: as short as the two-row card (124 px), and at most half
+      // the height of the same card without A03.
       await check('PLAY-COMPACT', async () => {
-        const bad = S.play.filter(c => !(c.h - c.noteH <= 124 && c.h <= 0.5 * c.ref));
-        return [S.play.length === 18 && bad.length === 0, bad.slice(0, 4).map(c => [c.name, c.h, c.noteH, c.ref])];
+        const bad = S.play.filter(c => !(c.h - c.noteH <= 124 && c.h - c.noteH <= 0.5 * (c.ref - c.refNoteH)));
+        return [S.play.length === 18 && bad.length === 0, bad.slice(0, 4).map(c => [c.name, c.h, c.noteH, c.ref, c.refNoteH])];
+      });
+      // Tapping Manage or Done leaves the first row where it was: the same name width, Rank and roll positions.
+      await check('FIRST-ROW-STEADY', async () => {
+        const bad = S.play.filter((p, i) => { const m = S.management[i];
+          return !(m && p.firstRow && m.firstRow && p.name === m.name && Math.abs(p.nameWidth - m.nameWidth) <= 1 &&
+            Math.abs(p.rankLeft - m.rankLeft) <= 1 && Math.abs(p.rollLeft - m.rollLeft) <= 1); });
+        return [S.play.length === 18 && S.management.length === 18 && bad.length === 0,
+          bad.slice(0, 3).map(p => [p.name, p.nameWidth, p.rankLeft, p.rollLeft, (S.management.find(m => m.name === p.name) || {}).rankLeft])];
       });
       // Manage cards: at most 85% of the height of the same card without A03.
       await check('MANAGE-SHORTER', async () => {
@@ -342,6 +354,27 @@ async function type(page, name, selector, value) {
           return {onSummary: !!s && (f === s || s.contains(f)), focused: f ? f.tagName + '.' + f.className : null}; });
         return [a.bad === 0 && a.expanded === 0 && a.toggles === 0 && !tab.onSummary, {a, tab}];
       });
+      // What a screen reader gets: in Play each summary line is exposed as its own text, exactly the summary; in Manage,
+      // where it is not drawn, it is not exposed at all (the browser's accessibility tree, through Playwright).
+      await check('SUMMARY-READABLE', async () => {
+        const read = async () => { const out = [];
+          for (const n of ['Kenjutsu', 'Iaijutsu', 'Etiquette', 'Jiujutsu']) {
+            const i = await page.evaluate(x => window.__cs.rows().indexOf(window.__cs.row(x)), n);
+            const loc = page.locator('#skillsBody > tr').nth(Math.max(i, 0)).locator('.cs15-summary');
+            let snap = null;
+            try { snap = await loc.ariaSnapshot({timeout: 5000}); } catch (e) { snap = 'error: ' + String(e.message || e).slice(0, 80); }
+            const attr = await page.evaluate(x => { const s = window.__cs.summaryOf(window.__cs.row(x)); return s ? s.getAttribute('data-cs15-summary') : null; }, n);
+            out.push({n, snap, attr});
+          }
+          return out; };
+        await mode(page, 'play'); await go(page, 'Skills');
+        const play = await read();
+        await mode(page, 'management');
+        const manage = await read();
+        await mode(page, 'play');
+        const text = s => String(s || '').trim().replace(/^- text:\s*/, '').replace(/^"(.*)"$/, '$1');
+        return [play.every(x => !!x.attr && /^- text:/.test(String(x.snap).trim()) && text(x.snap) === x.attr) && manage.every(x => text(x.snap) === ''), {play, manage}];
+      });
       // A real tap on Manage switches every card to the Manage layout at once, and a tap on Done switches it back.
       await check('MODE-SWITCH-LIVE', async () => {
         await mode(page, 'play'); await go(page, 'Skills');
@@ -353,8 +386,13 @@ async function type(page, name, selector, value) {
         const b = await look();
         await page.tap('#pm12Toggle'); await settle(page);
         const c = await look();
+        // Without Phase 12's Play class (as without Phase 12 itself) every card takes the Manage layout.
+        await page.evaluate(() => document.body.classList.remove('pm12-play')); await settle(page);
+        const d = await look();
+        await page.evaluate(() => document.body.classList.add('pm12-play')); await settle(page);
+        const e = await look();
         return [a.summary && !a.trait && !a.school && a.button === 'Manage' && !b.summary && b.trait && b.school && b.button === 'Done' &&
-          c.summary && !c.trait && c.button === 'Manage', {a, b, c}];
+          c.summary && !c.trait && c.button === 'Manage' && !d.summary && d.trait && d.school && e.summary && !e.trait, {a, b, c, d, e}];
       });
       // Play keeps Phase 12's locks on the fields, and the summary itself is drawn and never locked.
       await check('PLAY-LOCKS-KEPT', async () => {
@@ -451,12 +489,20 @@ async function type(page, name, selector, value) {
         await type(page, 'Athletics', '.sk-rank', '1');
         await mode(page, 'play');
         const w1 = await warnOf();
+        // The sheet's note can be two lines (a line break, then "Max Emphases assigned"): written that way while over the
+        // limit, each line shows, separated, rather than running together. The refresh is the layer's own, triggered.
+        const two = await page.evaluate(() => { const F = window.__cs, tr = F.row('Athletics'), note = tr.querySelector('.emph-limit-note');
+          const first = note.textContent.trim();
+          note.innerHTML = first + ' – no more to be unlocked<br><strong>Max Emphases assigned</strong>';
+          window.__L5R_TEST__.CS15.refresh(tr);
+          return {first, summary: F.summaryOf(tr).getAttribute('data-cs15-summary')}; });
         await mode(page, 'management');
         await type(page, 'Athletics', '.sk-rank', '4');
         await mode(page, 'play');
         const w2 = await warnOf();
         return [w1.shown && !!w1.note && w1.summary.startsWith(w1.note + ' · ') && w1.drawn === JSON.stringify(w1.summary) && w1.shownColour === w1.noteColour &&
-          w1.noteColour !== w1.ink && w2.summary === 'Strength · Running, Climbing' && w2.shownColour !== w1.noteColour, {w1, w2}];
+          w1.noteColour !== w1.ink && two.summary.startsWith(two.first + ' – no more to be unlocked · Max Emphases assigned · ') &&
+          w2.summary === 'Strength · Running, Climbing' && w2.shownColour !== w1.noteColour, {w1, two, w2}];
       });
       // Manage edits straight from the card, by real taps: Rank (the XP follows), Trait, the School tick, + Emph and Remove.
       await check('MANAGE-EDITS-WORK', async () => {
@@ -576,14 +622,18 @@ async function type(page, name, selector, value) {
       });
     }
 
-    // ---------- Tablet, 700 x 1000: the Skills table in its scroller, unchanged, with no summary line.
+    // ---------- Tablet, 700 x 1000: the Skills table in its scroller, unchanged, with no summary line, in both modes
+    // (every Mastery note in Play too; every field control in Manage).
     await session(browser, TABLET, async page => {
       await check('TABLET-UNCHANGED', async () => {
-        await mode(page, 'management'); await go(page, 'Skills');
-        const t = await page.evaluate(() => { const F = window.__cs; return {scroller: !!document.querySelector('.car-hscroll > #skillsTable'),
-          bad: F.rows().map(tr => ({tr: getComputedStyle(tr).display, summary: F.shown(F.summaryOf(tr)), controls: Object.values(F.fields(tr)).every(F.shown),
-            notes: F.masteries(tr).every(x => F.shown(x.e))})).filter(x => x.tr !== 'table-row' || x.summary || !x.controls || !x.notes).length}; });
-        return [t.scroller && t.bad === 0, t];
+        const out = [];
+        for (const m of ['management', 'play']) {
+          await mode(page, m); await go(page, 'Skills');
+          out.push(await page.evaluate(mm => { const F = window.__cs; return {m: mm, scroller: !!document.querySelector('.car-hscroll > #skillsTable'),
+            bad: F.rows().map(tr => ({tr: getComputedStyle(tr).display, summary: F.shown(F.summaryOf(tr)), controls: mm === 'play' || Object.values(F.fields(tr)).every(F.shown),
+              notes: F.masteries(tr).every(x => F.shown(x.e))})).filter(x => x.tr !== 'table-row' || x.summary || !x.controls || !x.notes).length}; }, m));
+        }
+        return [out.length === 2 && out.every(t => t.scroller && t.bad === 0), out];
       });
     });
     seen['NO-SCRIPT-ERRORS'] = errors.length === 0;

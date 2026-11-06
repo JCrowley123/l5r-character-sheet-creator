@@ -24,8 +24,9 @@ cases = [
  ["cards-in-print", "  @media screen and (max-width: 600px) {\n    html body.car-active.cs15-on #skillsBody > tr {", "  @media (max-width: 600px) {\n    html body.car-active.cs15-on #skillsBody > tr {"],
  ["no-grid", "    html body.car-active.cs15-on #skillsBody > tr {\n      display: grid;", "    html body.car-active.cs15-on #skillsBody > tr {\n      display: block;"],
  ["play-fields-shown", "html body.car-active.cs15-on.pm12-play #skillsBody > tr > td:not(:first-child):not(:has(> .sk-rank)):not(:has(> .sk-roll)) {", "html body.car-active.cs15-on.pm12-never #skillsBody > tr > td:not(:first-child):not(:has(> .sk-rank)):not(:has(> .sk-roll)) {"],
- ["unreached-shown", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\"] {", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8cX\"] {"],
- ["manage-masteries-hidden", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\"] {", "html body.car-active.cs15-on #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\"] {"],
+ ["unreached-shown", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\" i] {", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8cX\" i] {"],
+ ["manage-masteries-hidden", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\" i] {", "html body.car-active.cs15-on #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\" i] {"],
+ ["school-caption-wide", "html body.car-active.cs15-on:not(.pm12-play) #skillsBody > tr > td:has(> .sk-school)::before {", "html body.car-active.cs15-on:not(.pm12-play) #skillsBody > tr > td:has(> .sk-schoolX)::before {"],
  ["manage-summary-shown", "html body.car-active.cs15-on.pm12-play #skillsBody > tr > td:first-child > .cs15-summary {", "html body.car-active.cs15-on #skillsBody > tr > td:first-child > .cs15-summary {"],
  ["summary-everywhere", "html body.cs15-on #skillsBody .cs15-summary {\n  display: none;", "html body.cs15-on #skillsBody .cs15-summaryX {\n  display: none;"],
  ["summary-truncated", "      line-height: 1.35;\n      overflow-wrap: break-word;\n    }", "      line-height: 1.35;\n      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;\n    }"],
@@ -40,8 +41,9 @@ cases = [
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
-# Evidence goes to negative-<first 8 hex of the build under test>: the frozen candidate once qualified-sha256.txt exists.
-out = Q / ('negative-' + hashlib.sha256(original.encode('utf-8')).hexdigest()[:8])
+# Evidence goes to negative-<first 8 hex of the build under test> (the frozen candidate once qualified-sha256.txt exists);
+# a --discover run goes to variants-discover-<same>, so the qualification run never writes over the discovery's logs.
+out = Q / (('variants-discover-' if DISCOVER else 'negative-') + hashlib.sha256(original.encode('utf-8')).hexdigest()[:8])
 
 
 def run(label, body):

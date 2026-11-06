@@ -6751,7 +6751,9 @@ html body.car-active.fc15-on.ab113-top #quickAccessPanel {
         the Masteries not yet reached are drawn in Manage.
       - Manage: the Trait, the School tick and the eye on the second row, then the Emphases, the XP, every Mastery
         note, and Remove last. The summary is not drawn: the fields show the same values.
-      Anything another layer adds to the first cell or to the name line is drawn after the Mastery notes, in both.
+      Anything another layer adds to the first cell or to the name line is drawn in both modes, full width, below the
+      second row (in Manage after the XP and before Remove), keeping its place in the page: an addition to the name
+      line (the School choice's source badge) before the Mastery notes, one appended to the cell after them.
       The cells and controls are not moved in the page: the first cell and the name line are laid out with
       display:contents, so their children take grid places of their own.
    Play and Manage are told apart by the pm12-play body class of Phase 12 (Part K); without that class every card
@@ -6868,7 +6870,7 @@ html body.cs15-on #skillsBody .cs15-summary {
       display: none;
     }
     /* Play: only the Mastery notes already reached. The trunk draws a note not yet reached in its muted colour. */
-    html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*="#a89f8c"] {
+    html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*="#a89f8c" i] {
       display: none !important;
     }
     /* Manage: the Trait and the School tick beside the eye; the Emphases, the XP and the notes follow. */
@@ -6896,6 +6898,11 @@ html body.cs15-on #skillsBody .cs15-summary {
       flex-wrap: nowrap;
       align-items: center;
       gap: 6px;
+    }
+    /* The caption at its own width, as the Rank's: the carousel's fixed caption width would widen this column in
+       Manage only, so tapping Manage would shift the name, the Rank and the roll. */
+    html body.car-active.cs15-on:not(.pm12-play) #skillsBody > tr > td:has(> .sk-school)::before {
+      flex: none;
     }
   }
 }
@@ -55108,8 +55115,11 @@ return fontkitCache=module.exports;}
       try { usable = getUsableEmphSlots(tr).usableSlots; } catch(e){ return ''; }
       const count = tr.querySelectorAll('.emph-container .emph-item-row').length;
       if(count <= usable) return '';
+      // The note can be two lines ("... – no more to be unlocked", a line break, "Max Emphases assigned"); its
+      // parts are joined so they do not run together.
       const noteEl = tr.querySelector('.emph-limit-note');
-      const note = noteEl ? String(noteEl.textContent || '').trim() : '';
+      const note = noteEl ? Array.from(noteEl.childNodes).map(function(n){ return String(n.textContent || '').trim(); })
+        .filter(Boolean).join(' · ') : '';
       return note || (count + ' Emphases, ' + usable + ' allowed');
     };
     api.summaryOf = function(tr){ return tr.querySelector('.cs15-summary'); };
