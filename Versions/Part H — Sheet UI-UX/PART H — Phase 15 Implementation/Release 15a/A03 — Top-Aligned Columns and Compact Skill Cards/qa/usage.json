@@ -25,6 +25,30 @@
       "five_hour_pct": 78,
       "weekly_pct": 44,
       "note": "end, after deployed-file checks, before the records commit"
+    },
+    {
+      "utc": "2026-11-06T09:15Z",
+      "five_hour_pct": 15,
+      "weekly_pct": 46,
+      "note": "revision 2 start (after the owner's feedback, the prototypes and the recommendation)"
+    },
+    {
+      "utc": "2026-11-06T11:15Z",
+      "five_hour_pct": 59,
+      "weekly_pct": 56,
+      "note": "revision 2 before its qualification chain (after build, review, fixes and the harness typing investigation)"
+    },
+    {
+      "utc": "2026-11-06T12:54Z",
+      "five_hour_pct": 73,
+      "weekly_pct": 58,
+      "note": "revision 2 before full QA (after its qualification chain)"
+    },
+    {
+      "utc": "2026-11-06T14:48Z",
+      "five_hour_pct": 10,
+      "weekly_pct": 59,
+      "note": "revision 2 end, after the deployed-file checks, before the records commit (the five-hour window restarted at about 14:30)"
     }
   ]
 }

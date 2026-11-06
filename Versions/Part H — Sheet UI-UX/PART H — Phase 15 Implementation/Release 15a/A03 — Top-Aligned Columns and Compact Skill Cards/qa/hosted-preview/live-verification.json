@@ -1,5 +1,5 @@
 {
-  "commit": "2c77bfd17313c6a2f455518816c11798e2c20bd6",
+  "commit": "252fbd591d390ffc40536fecd9f7638acc5ee1c0",
   "downloaded_asset_sha256": {
     "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
     "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
@@ -7,20 +7,20 @@
     "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
     "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
   },
-  "checked_utc": "2026-11-06T03:44:44.219253+00:00",
+  "checked_utc": "2026-11-06T14:47:04.588098+00:00",
   "url": "https://claude-release-15a-a03.l5r-character-sheet-creator.pages.dev/",
-  "source_sha256": "eb1c29f799d6d655b8a4906e4d6a838689472e7b5d0b1d20383f7081f9a15d18",
-  "page_sha256": "05e8d29263084f62746c81d2eee2693490038d8a8818cc035fc6d9e9366de4a1",
-  "page_bytes": 17558978,
-  "service_worker_build": "54db2ae4b51eab75",
-  "service_worker_sha256": "712e4d126cfa95338bb0d31f1cccab904161dca0a0f62946ef98282ffb158de5",
+  "source_sha256": "e73b7c0cac70c95d2965d993c9a3b9f0b66eb6f3ef4b81d6667166667090de06",
+  "page_sha256": "e7cb9b9949b1d1b979db0bbbe267e32e4d4bebe42f6b001f302d402d2638cbc1",
+  "page_bytes": 17560147,
+  "service_worker_build": "946e8dc511b4b539",
+  "service_worker_sha256": "73ee5f8646119d21e0725809a910cb2594b612141a8c73bda9b2fa5b3dad0144",
   "harnesses": {
     "A03 \u2014 Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js": {
       "counts": [
-        "32",
-        "32"
+        "37",
+        "37"
       ],
-      "expected": 32,
+      "expected": 37,
       "passed": true
     },
     "PART K \u2014 Phase 12.4 Play Mode Skills/skills-harness.js": {

@@ -1,0 +1,67 @@
+  detail SEAM-PRESENT: {"obj":true,"on":false,"installed":false,"cls":false,"one":false,"noToggle":true}
+  detail DESKTOP-COLUMNS-LEVEL: [{"fx":"dense","m":"play","labelGap":1113,"colGap":1113,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11,"ok":false},{"fx":"dense","m":"management","labelGap":1092,"colGap":1092,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11,"ok":false}]
+  detail DESKTOP-COLUMNS-ONE-EMPTY: [{"fx":"noAdv","m":"play","labelGap":2247,"colGap":2247,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11,"ok":false},{"fx":"noAdv","m":"management","labelGap":2249,"colGap":2249,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11,"ok":false},{"fx":"noDisadv","m":"play","labelGap":1134,"colGap":1134,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":0,"ok":false},{"fx":"noDisadv","m":"management","labelGap":1157,"colGap":1157,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":0,"ok":false}]
+  detail OTHER-GRIDS desktop: [{"l":"Adv & Disadv","adv":true,"align":"end"},{"l":"Adv & Disadv","adv":true,"align":"end"}]
+  detail TWO-COLUMN-PHONE-LEVEL: [{"fx":"dense","labelGap":1404,"colGap":1404,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11},{"fx":"noAdv","labelGap":2809,"colGap":2809,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11}]
+  detail OTHER-GRIDS-UNCHANGED: [{"l":"Adv & Disadv","adv":true,"align":"end"},{"l":"Adv & Disadv","adv":true,"align":"end"}]
+  detail CARD-FIRST-ROW: [["management",{"name":"Calligraphy","h":440,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":266,"rankLeft":132,"rollLeft":132,"ref":440,"refNoteH":15,"noteH":15,"spans":[{"tier":5,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":true,"limit":true,"school":true,"xp":true,"remove":true,"emph0":true},"summaryShown":false,"tops":{"second":665,"emph":564,"xp":692,"notes":472,"remove":766}}],["management",{"name":"Defense","h":431,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":266,"rankLeft":132,"rollLeft":132,"ref":431,"refNoteH":59,"noteH":59,"spans":[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}],"cellsShown":{"trait":tru
+  detail PLAY-CARD: [{"name":"Calligraphy","h":379,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":266,"rankLeft":132,"rollLeft":132,"ref":379,"refNoteH":15,"noteH":15,"spans":[{"tier":5,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":false,"limit":true,"school":true,"xp":true,"remove":false,"emph0":true},"summaryShown":false,"tops":{"second":581,"emph":513,"xp":608,"notes":421,"remove":689}},{"name":"Defense","h":382,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":266,"rankLeft":132,"rollLeft":132,"ref":382,"refNoteH":59,"noteH":59,"spans":[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true
+  detail MANAGE-CARD: [{"name":"Calligraphy","h":440,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":266,"rankLeft":132,"rollLeft":132,"ref":440,"refNoteH":15,"noteH":15,"spans":[{"tier":5,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":true,"limit":true,"school":true,"xp":true,"remove":true,"emph0":true},"summaryShown":false,"tops":{"second":665,"emph":564,"xp":692,"notes":472,"remove":766}},{"name":"Defense","h":431,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":266,"rankLeft":132,"rollLeft":132,"ref":431,"refNoteH":59,"noteH":59,"spans":[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"
+  detail MANAGE-ORDER: [["Calligraphy",{"second":665,"emph":564,"xp":692,"notes":472,"remove":766}],["Defense",{"second":1107,"emph":1059,"xp":1134,"notes":922,"remove":1207}],["Lore: Shadowlands",{"second":1489,"emph":1441,"xp":1516,"notes":null,"remove":1589}]]
+  detail PLAY-COMPACT: [["Calligraphy",379,15,379,15],["Defense",382,59,382,59],["Lore: Shadowlands",324,0,324,0],["Lore: Theology",324,0,324,0]]
+  detail FIRST-ROW-STEADY: [["Calligraphy",266,132,132,132],["Defense",266,132,132,132],["Lore: Shadowlands",266,132,132,132]]
+  detail MANAGE-SHORTER: [["Calligraphy",440,440],["Defense",431,431],["Lore: Shadowlands",372,372],["Lore: Theology",372,372]]
+  detail SUMMARY-MATCHES: [{"n":"Calligraphy","got":null,"drawn":null,"want":"Intelligence · Cipher · School"},{"n":"Defense","got":null,"drawn":null,"want":"Reflexes · School"},{"n":"Lore: Shadowlands","got":null,"drawn":null,"want":"Intelligence · School"},{"n":"Lore: Theology","got":null,"drawn":null,"want":"Intelligence · School"},{"Calligraphy":null,"Defense":null,"Lore: Shadowlands":null,"Lore: Theology":null,"Spellcraft":null,"Intimidation":null,"Kenjutsu":null,"Iaijutsu":null,"Athletics":null,"Etiquette":null,"Courtier":null,"Investigation":null,"Jiujutsu":null,"Horsemanship":null,"Meditation":null,"Sincerity":null,"Kyujutsu":null,"Lore: History":null}]
+  detail SUMMARY-WRAPS: [{"n":"Calligraphy","missing":true},{"n":"Defense","missing":true},{"n":"Lore: Shadowlands","missing":true},{"n":"Lore: Theology","missing":true},{"n":"Etiquette","missing":true}]
+  detail SUMMARY-NOT-A-CONTROL: {"a":{"bad":18,"expanded":0,"toggles":0},"tab":{"onSummary":false,"focused":"INPUT.sk-trait"}}
+  detail SUMMARY-READABLE: {"play":[{"n":"Kenjutsu","snap":"error: locator.ariaSnapshot: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for loc","attr":null},{"n":"Iaijutsu","snap":"error: locator.ariaSnapshot: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for loc","attr":null},{"n":"Etiquette","snap":"error: locator.ariaSnapshot: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for loc","attr":null},{"n":"Jiujutsu","snap":"error: locator.ariaSnapshot: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for loc","attr":null}],"manage":[{"n":"Kenjutsu","snap":"error: locator.ariaSnapshot: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for loc","attr":null},{"n":"Iaijutsu","snap":"error: locator.ariaSnapshot: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for loc","attr":null},{"n":"Etiquette","snap":"error: locator.ariaSnapshot: Timeout 5000ms exceeded.\nC
+  detail MODE-SWITCH-LIVE: {"a":{"summary":false,"trait":true,"school":true,"button":"Manage"},"b":{"summary":false,"trait":true,"school":true,"button":"Done"},"c":{"summary":false,"trait":true,"school":true,"button":"Manage"},"d":{"summary":false,"trait":true,"school":true,"button":"Manage"},"e":{"summary":false,"trait":true,"school":true,"button":"Manage"}}
+  detail PLAY-LOCKS-KEPT: {"summary":false,"summaryLocked":false,"traitRO":true,"rankRO":true,"schoolOff":true,"removeGone":true,"addGone":true,"emphLocked":true}
+  detail SUMMARY-LIVE: "exception: page.evaluate: TypeError: Cannot read properties of null (reading 'getAttribute')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:57)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail DOM-NOT-MOVED: ["Calligraphy","Defense","Lore: Shadowlands","Lore: Theology","Spellcraft","Intimidation","Kenjutsu","Iaijutsu","Athletics","Etiquette","Courtier","Investigation","Jiujutsu","Horsemanship","Meditation","Sincerity","Kyujutsu","Lore: History"]
+  detail FIRST-CELL-ADDITIONS: {"real":true,"res":{"management":{"shown":[true,true,true],"after":false,"beforeRemove":true,"full":false},"play":{"shown":[true,true,true],"after":false,"beforeRemove":true,"full":false}}}
+  detail EMPHASIS-WARNING-SHOWN: "exception: page.evaluate: TypeError: Cannot read properties of null (reading 'getAttribute')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:30)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail PLAY-MASTERIES-REACHED: {"staticNotes":[["Calligraphy",[{"tier":5,"reached":false,"shown":true}]],["Defense",[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}]],["Spellcraft",[{"tier":5,"reached":false,"shown":true}]]],"someReached":true,"someNot":true,"iai":[{"tier":3,"reached":true,"shown":true},{"tier":5,"reached":true,"shown":true},{"tier":7,"reached":true,"shown":true}]}
+  detail NEW-ROW: "exception: page.evaluate: TypeError: Cannot read properties of null (reading 'getAttribute')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:117)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail QUICK-ADD: "exception: page.evaluate: TypeError: Cannot read properties of null (reading 'getAttribute')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:127)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail RELOAD: [[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false],[0,false]]
+  detail SMALL-PHONE-FIT: [["management",{"name":"Calligraphy","h":440,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":251,"rankLeft":132,"rollLeft":132}],["management",{"name":"Defense","h":431,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":251,"rankLeft":132,"rollLeft":132}],["management",{"name":"Lore: Shadowlands","h":372,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":251,"rankLeft":132,"rollLeft":132}]]
+  detail NARROW-PHONE-FIT: [["management",{"name":"Calligraphy","h":667,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":212,"rankLeft":28,"rollLeft":28}],["management",{"name":"Defense","h":686,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":212,"rankLeft":28,"rollLeft":28}],["management",{"name":"Lore: Shadowlands","h":612,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":212,"rankLeft":28,"rollLeft":28}]]
+FAIL SEAM-PRESENT
+FAIL DESKTOP-COLUMNS-LEVEL
+FAIL DESKTOP-COLUMNS-ONE-EMPTY
+FAIL TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+FAIL OTHER-GRIDS-UNCHANGED
+FAIL CARD-FIRST-ROW
+FAIL PLAY-CARD
+FAIL MANAGE-CARD
+FAIL MANAGE-ORDER
+FAIL PLAY-COMPACT
+FAIL FIRST-ROW-STEADY
+FAIL MANAGE-SHORTER
+FAIL SUMMARY-MATCHES
+FAIL SUMMARY-WRAPS
+FAIL SUMMARY-NOT-A-CONTROL
+FAIL SUMMARY-READABLE
+FAIL MODE-SWITCH-LIVE
+FAIL PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+FAIL SUMMARY-LIVE
+PASS VALUES-KEPT
+FAIL DOM-NOT-MOVED
+FAIL FIRST-CELL-ADDITIONS
+FAIL EMPHASIS-WARNING-SHOWN
+PASS MANAGE-EDITS-WORK
+FAIL PLAY-MASTERIES-REACHED
+FAIL NEW-ROW
+FAIL QUICK-ADD
+FAIL RELOAD
+PASS PHONE-END-CLEAR
+PASS PRINT-UNCHANGED
+FAIL SMALL-PHONE-FIT
+FAIL NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+9/37 checks passed

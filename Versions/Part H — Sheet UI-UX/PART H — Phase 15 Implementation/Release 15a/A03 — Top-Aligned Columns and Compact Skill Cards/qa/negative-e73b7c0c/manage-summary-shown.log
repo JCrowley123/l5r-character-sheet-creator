@@ -1,0 +1,42 @@
+  detail MANAGE-CARD: [{"name":"Calligraphy","h":309,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":440,"refNoteH":15,"noteH":15,"spans":[{"tier":5,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":true,"limit":true,"school":true,"xp":true,"remove":true,"emph0":true},"summaryShown":true,"tops":{"second":452,"emph":488,"xp":591,"notes":618,"remove":635}},{"name":"Defense","h":300,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":431,"refNoteH":59,"noteH":59,"spans":[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp"
+  detail MODE-SWITCH-LIVE: {"a":{"summary":true,"trait":false,"school":false,"button":"Manage"},"b":{"summary":true,"trait":true,"school":true,"button":"Done"},"c":{"summary":true,"trait":false,"school":false,"button":"Manage"},"d":{"summary":true,"trait":true,"school":true,"button":"Manage"},"e":{"summary":true,"trait":false,"school":false,"button":"Manage"}}
+  detail SMALL-PHONE-FIT: [["management",{"name":"Calligraphy","h":309,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156,"rankLeft":235,"rollLeft":295}],["management",{"name":"Defense","h":300,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156,"rankLeft":235,"rollLeft":295}],["management",{"name":"Lore: Shadowlands","h":241,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156,"rankLeft":235,"rollLeft":295}]]
+  detail NARROW-PHONE-FIT: [["management",{"name":"Calligraphy","h":354,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117,"rankLeft":188,"rollLeft":248}],["management",{"name":"Defense","h":373,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117,"rankLeft":188,"rollLeft":248}],["management",{"name":"Lore: Shadowlands","h":299,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117,"rankLeft":188,"rollLeft":248}]]
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+PASS PLAY-CARD
+FAIL MANAGE-CARD
+PASS MANAGE-ORDER
+PASS PLAY-COMPACT
+PASS FIRST-ROW-STEADY
+PASS MANAGE-SHORTER
+PASS SUMMARY-MATCHES
+PASS SUMMARY-WRAPS
+PASS SUMMARY-NOT-A-CONTROL
+PASS SUMMARY-READABLE
+FAIL MODE-SWITCH-LIVE
+PASS PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+PASS SUMMARY-LIVE
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS MANAGE-EDITS-WORK
+PASS PLAY-MASTERIES-REACHED
+PASS NEW-ROW
+PASS QUICK-ADD
+PASS RELOAD
+PASS PHONE-END-CLEAR
+PASS PRINT-UNCHANGED
+FAIL SMALL-PHONE-FIT
+FAIL NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+33/37 checks passed

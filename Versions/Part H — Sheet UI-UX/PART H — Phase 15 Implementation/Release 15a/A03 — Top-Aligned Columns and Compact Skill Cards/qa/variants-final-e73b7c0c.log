@@ -1,0 +1,23 @@
+20 mutations unique.
+baseline: failed exactly its 28 pinned checks
+disabled: failed exactly its 28 pinned checks
+columns-bottom: failed exactly its 4 pinned checks
+columns-in-print: failed exactly its 1 pinned checks
+cards-in-print: failed exactly its 1 pinned checks
+no-grid: failed exactly its 11 pinned checks
+play-fields-shown: failed exactly its 4 pinned checks
+unreached-shown: failed exactly its 1 pinned checks
+manage-masteries-hidden: failed exactly its 1 pinned checks
+school-caption-wide: failed exactly its 1 pinned checks
+manage-summary-shown: failed exactly its 4 pinned checks
+summary-everywhere: failed exactly its 7 pinned checks
+summary-truncated: failed exactly its 1 pinned checks
+text-in-row: failed exactly its 2 pinned checks
+summary-focusable: failed exactly its 1 pinned checks
+eye-in-first-row: failed exactly its 6 pinned checks
+remove-before-notes: failed exactly its 2 pinned checks
+no-observer: failed exactly its 1 pinned checks
+no-input-listener: failed exactly its 1 pinned checks
+no-summary-refresh: failed exactly its 1 pinned checks
+no-warning: failed exactly its 1 pinned checks
+All 21 negative variants matched their pinned failures.

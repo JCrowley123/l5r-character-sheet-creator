@@ -1,0 +1,44 @@
+  detail PLAY-CARD: [{"name":"Calligraphy","h":95,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":379,"refNoteH":15,"noteH":0,"spans":[{"tier":5,"reached":false,"shown":false}],"cellsShown":{"trait":false,"emph":false,"school":false,"xp":false,"remove":false},"controlsShown":{"trait":false,"emphAdd":false,"limit":false,"school":false,"xp":false,"remove":false,"emph0":false},"summaryShown":true,"tops":{"second":null,"emph":null,"xp":null,"notes":null,"remove":null}},{"name":"Defense","h":95,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":382,"refNoteH":59,"noteH":0,"spans":[{"tier":3,"reached":false,"shown":false},{"tier":5,"reached":false,"shown":false},{"tier":7,"reached":false,"shown":false}],"cellsShown":{"trait":false,"emph":false
+  detail MANAGE-CARD: [{"name":"Calligraphy","h":306,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":440,"refNoteH":15,"noteH":15,"spans":[{"tier":5,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":true,"limit":true,"school":true,"xp":true,"remove":true,"emph0":true},"summaryShown":false,"tops":{"second":451,"emph":485,"xp":588,"notes":615,"remove":632}},{"name":"Defense","h":297,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":431,"refNoteH":59,"noteH":59,"spans":[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp
+  detail PLAY-ROLL-AND-INFO: "exception: elementHandle.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <path fill=\"var(--gold-soft)\" d=\"M256,8 L352,250 L256,320 L160,250 Z\"></path> from <td data-label=\"Roll\" class=\"col-xnarrow\">…</td> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22"
+  detail PHONE-END-CLEAR: [{"m":"play","count":4,"bad":["sk-info-btn"]},{"m":"management","count":8,"bad":["sk-info-btn"]}]
+  detail SMALL-PHONE-FIT: [["management",{"name":"Calligraphy","h":306,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156,"rankLeft":235,"rollLeft":295}],["management",{"name":"Defense","h":297,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156,"rankLeft":235,"rollLeft":295}],["management",{"name":"Lore: Shadowlands","h":238,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156,"rankLeft":235,"rollLeft":295}]]
+  detail NARROW-PHONE-FIT: [["management",{"name":"Calligraphy","h":351,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117,"rankLeft":188,"rollLeft":248}],["management",{"name":"Defense","h":370,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117,"rankLeft":188,"rollLeft":248}],["management",{"name":"Lore: Shadowlands","h":296,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117,"rankLeft":188,"rollLeft":248}]]
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+FAIL PLAY-CARD
+FAIL MANAGE-CARD
+PASS MANAGE-ORDER
+PASS PLAY-COMPACT
+PASS FIRST-ROW-STEADY
+PASS MANAGE-SHORTER
+PASS SUMMARY-MATCHES
+PASS SUMMARY-WRAPS
+PASS SUMMARY-NOT-A-CONTROL
+PASS SUMMARY-READABLE
+PASS MODE-SWITCH-LIVE
+PASS PLAY-LOCKS-KEPT
+FAIL PLAY-ROLL-AND-INFO
+PASS SUMMARY-LIVE
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS MANAGE-EDITS-WORK
+PASS PLAY-MASTERIES-REACHED
+PASS NEW-ROW
+PASS QUICK-ADD
+PASS RELOAD
+FAIL PHONE-END-CLEAR
+PASS PRINT-UNCHANGED
+FAIL SMALL-PHONE-FIT
+FAIL NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+31/37 checks passed
