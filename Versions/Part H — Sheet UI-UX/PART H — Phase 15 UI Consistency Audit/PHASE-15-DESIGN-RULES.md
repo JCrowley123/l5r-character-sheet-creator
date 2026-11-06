@@ -2,6 +2,8 @@
 
 **Owner-approved delivery rules, 1 November 2026. Applies to Claude, ChatGPT/Codex and any later contributor implementing or removing Phase 15 work.**
 
+**Amended 6 November 2026 by the owner:** review stays one finding at a time, but the build and QA are grouped. See [the amendment at the end](#amendment--6-november-2026-review-stays-one-finding-at-a-time-build-and-qa-are-grouped).
+
 The owner wants to see, compare and accept each finding's change before the next is built. Every finding, each release group and the whole phase must be independently removable while preserving the remaining accepted work.
 
 This document records the owner's delivery and reversibility decision. It supersedes the audit's suggestion that several findings could be combined into shared implementation layers. The subsequent owner approval on 1 November accepts Q1–Q8 as recommended; see [the accepted rulings](PHASE-15-RULINGS-2026-11-01.md). Those questions are settled. This delivery rule still governs the approved scope; implementation has not started and the 8b/8c work order and merge approval requirements remain unchanged.
@@ -95,3 +97,44 @@ Refer to this document from future Phase 15 kickoffs, implementation handovers a
 ## Source of this decision
 
 Owner conversation, 1 November 2026: Phase 15 contains release A and release B, each finding is a separate unit; investigate/build A01, let the owner test and decide, then A02 onward; complete A before B; allow removal of A11, all of A, or all of Phase 15 while preserving everything else. The owner then explicitly requested that these rules be saved for future Claude/ChatGPT reference.
+
+## Amendment — 6 November 2026: review stays one finding at a time; build and QA are grouped
+
+**Owner's ruling, 6 November 2026, in the Release 15a A03 session.** One finding at a time exists so the owner can see each change and judge it against the step before. It was never meant to govern how the work is built or qualified. To make the remaining allowance go further, the owner approved the following. Where it differs from §2 steps 3–6, including "do not batch findings together", it amends them.
+
+1. **A mockup before the build.** Before a group is built, show the owner today's screen beside the proposed change for each finding. A scratch prototype on the current build is fine. Build only what the owner approves.
+2. **Groups of 3–4 related findings.** Each finding stays its own unit, with its own folder, fragments, switch, marker, remover, removal-chain entry and decision. §3–§5 (isolation and removal) are unchanged.
+3. **Light checks for each finding**, enough to give the owner a working preview:
+   - the finding's own pinned harness;
+   - its removal proof;
+   - the dependency check;
+   - the harnesses of the layers it touches.
+4. **The owner's review, one finding at a time and in order.**
+   - Each finding gets its own branch, stacked on the previous finding's, so each has its own Cloudflare preview to compare with the step before.
+   - Each group gets one checklist (a Claude Doc), with a section and an Accept / Revise / Remove decision for each finding.
+   - Revisions happen at this stage, while they cost only light checks.
+   - One read-only code review of the group's diff runs before the owner's review, so defects are found before the owner tests.
+5. **Full qualification once for each accepted group,** then one go-live, on the owner's word only.
+   - The qualification covers: negative variants pinned before running, the removal chain for every unit, the comparison, the full suite, and checks of the preview and production.
+   - The handover, ledger, roadmap and CLAUDE.md pointer are written once for each group.
+6. **Two QA tiers.**
+   - **Screen-only findings** change layout, spacing, labels or controls' presentation, with no change to values, saves, rolls, undo or focus.
+     - One full pass, run as both the candidate and the retained build.
+     - Counts pinned by arithmetic beforehand: the previous total plus the group's new checks. No separate discovery run.
+     - The 4× CPU screen only when a finding adds timing, animation or asynchronous behaviour.
+   - **Behaviour findings** change values, saves, rolls, undo, focus or startup.
+     - The previous standard: the 4× CPU screen, then two full passes, both of which must pass on their first executions.
+   - **Both tiers, unchanged:** never drop assertions, widen expected values, merely lengthen timeouts, or re-run a failed full suite. A failed run is investigated, not repeated.
+
+**Groups proposed for the rest of 15a.** The owner may regroup when a group's mockup is shown.
+
+| Group | Findings | Tier |
+|---|---|---|
+| G1 · Information pattern (Q3) | A04, A15, A16 | Screen-only |
+| G2 · Small layout fixes | A05, A06, A07, A11 | Screen-only |
+| G3 · Spell rows | 8b.1-UI-01, 8b.1-UI-02, 8b.1-UI-03 | Screen-only |
+| G4 · Touch, focus and startup | A09, A10, A17, A18 (A18 is a device investigation) | Behaviour |
+| G5 · Undo and the roll preview | A08, A12 | Behaviour |
+| G6 · New functions | A19, A20 (each L; may run as two groups of one) | Behaviour |
+
+That leaves 18 units in 15a after A01–A03: 15 audit findings and the three 8b.1 follow-ups.
