@@ -41,4 +41,4 @@ A04 does not start until you decide.
 
 - **Every box passed:** 17 in all (checks 1 and 4–13 on iPhone Safari, checks 1–3 and 13 on Laptop Edge). There were no comments.
 - Check 13 on Laptop Edge and the decision were left blank in the doc. The owner gave both in chat: **Pass** and **Accept**.
-- **Decision: Accept.** Merging and going live wait for the owner's separate go-live word.
+- **Decision: Accept.** Live the same day on the owner's go-live word (`main` `46a7929d`).

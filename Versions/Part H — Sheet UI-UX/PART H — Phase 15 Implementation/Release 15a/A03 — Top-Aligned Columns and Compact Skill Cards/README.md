@@ -10,7 +10,7 @@ Phase 15, Release 15a, finding A03 ([audit entry](<../../../PART H — Phase 15 
   - the laptop Adv & Disadv columns stay as revision 1 built them.
 - **Considered and declined:** a laptop grid that lined each Advantage up with the Disadvantage beside it. It looked even, but it padded the shorter card in every pair.
 - **Evidence:** the prototypes the decision was made from are recorded in [HANDOVER.md](HANDOVER.md).
-- **Revision 2** passed all 17 of its device-check boxes on iPhone Safari and Laptop Edge, and the owner **accepted** it on 6 November 2026. Merging and going live wait for the go-live word.
+- **Revision 2** passed all 17 of its device-check boxes on iPhone Safari and Laptop Edge, and the owner **accepted** it on 6 November 2026. It went live the same day on the owner's go-live word (`main` `46a7929d`).
 
 ## What changed
 

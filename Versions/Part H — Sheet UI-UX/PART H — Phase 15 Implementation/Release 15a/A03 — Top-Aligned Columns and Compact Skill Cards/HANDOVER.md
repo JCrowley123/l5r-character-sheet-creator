@@ -1,9 +1,10 @@
 # Release 15a · A03 — handover
 
-**State, 6 November 2026 (about 15:15 UTC): the owner ACCEPTED A03 REVISION 2 after passing every device check. The owner's go-live word is next.**
-- Both full passes of revision 2 passed on their first executions.
+**State, 6 November 2026 (about 15:30 UTC): A03 revision 2 is ACCEPTED and LIVE.**
 - The owner passed all 17 device-check boxes on iPhone Safari and Laptop Edge, with no comments, and chose **Accept**.
-- **Not merged, not deployed.** Merging to `main` and deploying need the owner's explicit go-live word.
+- The owner gave the go-live word in chat ("Go live"). `main` was fast-forwarded from `5f7a060f` to `46a7929d` at 15:14 UTC (no merge commit, no force).
+- **Production verified** at 15:23 UTC: page `e7cb9b99…cbc1` (17,560,147 bytes) and service worker `946e8dc511b4b539` byte for byte with the accepted build, 550/550 on the downloaded files, browser and offline smoke 22/22 (`qa/verify-production.log`, `qa/live/`).
+- Removal still rebuilds A02 `91d45109…6dc0` with A03's own remover (full passes 3 and 4).
 
 | | |
 |---|---|
@@ -106,6 +107,7 @@
 | 6 Nov 11:15 | 59% | 56% | revision 2 before its qualification chain (after the build, the review, the fixes and the harness typing investigation) |
 | 6 Nov 12:54 | 73% | 58% | revision 2 before full QA (after its qualification chain) |
 | 6 Nov 14:48 | 10% | 59% | revision 2 end, after the deployed-file checks, before the records commit (the five-hour window restarted at about 14:30) |
+| 6 Nov 15:24 | 21% | 61% | after the owner's Accept, the go-live and production verification |
 
 **In all, A03 moved the weekly meter from 35% to 59%, about 24 points, against the work order's 5 (3–8):**
 - revision 1: about 9 (35% → 44%);
@@ -126,11 +128,8 @@ Model `claude-opus-5-5`. Readings come from the desktop app (`qa/usage.json`). T
 
 ## Next
 
-**The owner accepted revision 2 on 6 November.** Merging and going live wait for the owner's separate go-live word. On that word:
-1. fast-forward `main` to the branch (no merge commit, no force);
-2. verify production byte for byte with `qa/verify-live.py` (no `--url`);
-3. run the browser and offline smoke, `BUGFIX — Older School Choices/qa/live-browser-smoke.cjs <qa/live>`.
+**A03 is live** (`main` `46a7929d`), verified as above.
 
 If A03 ever has to come out, `qa/remove-phase.py` on a scratch copy rebuilds A02 exactly ([ROLLBACK.md](ROLLBACK.md)).
 
-The owner has decided, so A04 may now be scheduled. It has not started, and its kickoff is not written.
+A04 has not started, and its kickoff is not written.

@@ -49,6 +49,12 @@
       "five_hour_pct": 10,
       "weekly_pct": 59,
       "note": "revision 2 end, after the deployed-file checks, before the records commit (the five-hour window restarted at about 14:30)"
+    },
+    {
+      "utc": "2026-11-06T15:24Z",
+      "five_hour_pct": 21,
+      "weekly_pct": 61,
+      "note": "after the owner's Accept, the go-live and production verification"
     }
   ]
 }
