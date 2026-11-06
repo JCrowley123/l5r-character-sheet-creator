@@ -1,0 +1,473 @@
+{
+  "checked_utc": "2026-11-06T10:10:14.260040+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "FIRST-ROW-STEADY",
+        "MANAGE-CARD",
+        "MANAGE-ORDER",
+        "MANAGE-SHORTER",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW",
+        "OTHER-GRIDS-UNCHANGED",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-MASTERIES-REACHED",
+        "QUICK-ADD",
+        "RELOAD",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "SUMMARY-NOT-A-CONTROL",
+        "SUMMARY-READABLE",
+        "SUMMARY-WRAPS",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "actual_failures": [
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "FIRST-ROW-STEADY",
+        "MANAGE-CARD",
+        "MANAGE-EDITS-WORK",
+        "MANAGE-ORDER",
+        "MANAGE-SHORTER",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW",
+        "OTHER-GRIDS-UNCHANGED",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-MASTERIES-REACHED",
+        "QUICK-ADD",
+        "RELOAD",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "SUMMARY-NOT-A-CONTROL",
+        "SUMMARY-READABLE",
+        "SUMMARY-WRAPS",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "counts": [
+        8,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "FIRST-ROW-STEADY",
+        "MANAGE-CARD",
+        "MANAGE-ORDER",
+        "MANAGE-SHORTER",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW",
+        "OTHER-GRIDS-UNCHANGED",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-MASTERIES-REACHED",
+        "QUICK-ADD",
+        "RELOAD",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "SUMMARY-NOT-A-CONTROL",
+        "SUMMARY-READABLE",
+        "SUMMARY-WRAPS",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "actual_failures": [
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "FIRST-ROW-STEADY",
+        "MANAGE-CARD",
+        "MANAGE-EDITS-WORK",
+        "MANAGE-ORDER",
+        "MANAGE-SHORTER",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW",
+        "OTHER-GRIDS-UNCHANGED",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-MASTERIES-REACHED",
+        "QUICK-ADD",
+        "RELOAD",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "SUMMARY-NOT-A-CONTROL",
+        "SUMMARY-READABLE",
+        "SUMMARY-WRAPS",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "counts": [
+        8,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "columns-bottom",
+      "expected_failures": [
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "OTHER-GRIDS-UNCHANGED",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "actual_failures": [
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "OTHER-GRIDS-UNCHANGED",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "counts": [
+        33,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "columns-in-print",
+      "expected_failures": [
+        "PRINT-UNCHANGED"
+      ],
+      "actual_failures": [
+        "PRINT-UNCHANGED"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cards-in-print",
+      "expected_failures": [
+        "PRINT-UNCHANGED"
+      ],
+      "actual_failures": [
+        "PRINT-UNCHANGED"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-grid",
+      "expected_failures": [
+        "CARD-FIRST-ROW",
+        "FIRST-CELL-ADDITIONS",
+        "FIRST-ROW-STEADY",
+        "MANAGE-CARD",
+        "MANAGE-ORDER",
+        "MANAGE-SHORTER",
+        "NARROW-PHONE-FIT",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "SMALL-PHONE-FIT"
+      ],
+      "actual_failures": [
+        "CARD-FIRST-ROW",
+        "FIRST-CELL-ADDITIONS",
+        "FIRST-ROW-STEADY",
+        "MANAGE-CARD",
+        "MANAGE-ORDER",
+        "MANAGE-SHORTER",
+        "NARROW-PHONE-FIT",
+        "PHONE-END-CLEAR",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "SMALL-PHONE-FIT"
+      ],
+      "counts": [
+        26,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "play-fields-shown",
+      "expected_failures": [
+        "MODE-SWITCH-LIVE",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "QUICK-ADD"
+      ],
+      "actual_failures": [
+        "MODE-SWITCH-LIVE",
+        "PLAY-CARD",
+        "PLAY-COMPACT",
+        "QUICK-ADD"
+      ],
+      "counts": [
+        33,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "unreached-shown",
+      "expected_failures": [
+        "PLAY-MASTERIES-REACHED"
+      ],
+      "actual_failures": [
+        "PLAY-MASTERIES-REACHED"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "manage-masteries-hidden",
+      "expected_failures": [
+        "MANAGE-CARD"
+      ],
+      "actual_failures": [
+        "MANAGE-CARD"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "school-caption-wide",
+      "expected_failures": [
+        "FIRST-ROW-STEADY"
+      ],
+      "actual_failures": [
+        "FIRST-ROW-STEADY"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "manage-summary-shown",
+      "expected_failures": [
+        "MANAGE-CARD",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "SMALL-PHONE-FIT"
+      ],
+      "actual_failures": [
+        "MANAGE-CARD",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "SMALL-PHONE-FIT"
+      ],
+      "counts": [
+        33,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "summary-everywhere",
+      "expected_failures": [
+        "DESKTOP-SKILLS-UNCHANGED",
+        "MANAGE-CARD",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "PRINT-UNCHANGED",
+        "SMALL-PHONE-FIT",
+        "TABLET-UNCHANGED"
+      ],
+      "actual_failures": [
+        "DESKTOP-SKILLS-UNCHANGED",
+        "MANAGE-CARD",
+        "MODE-SWITCH-LIVE",
+        "NARROW-PHONE-FIT",
+        "PRINT-UNCHANGED",
+        "SMALL-PHONE-FIT",
+        "TABLET-UNCHANGED"
+      ],
+      "counts": [
+        30,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "summary-truncated",
+      "expected_failures": [
+        "SUMMARY-WRAPS"
+      ],
+      "actual_failures": [
+        "SUMMARY-WRAPS"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "text-in-row",
+      "expected_failures": [
+        "SUMMARY-NOT-A-CONTROL",
+        "SUMMARY-READABLE"
+      ],
+      "actual_failures": [
+        "SUMMARY-NOT-A-CONTROL",
+        "SUMMARY-READABLE"
+      ],
+      "counts": [
+        35,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "summary-focusable",
+      "expected_failures": [
+        "SUMMARY-NOT-A-CONTROL"
+      ],
+      "actual_failures": [
+        "SUMMARY-NOT-A-CONTROL"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "eye-in-first-row",
+      "expected_failures": [
+        "MANAGE-CARD",
+        "NARROW-PHONE-FIT",
+        "PHONE-END-CLEAR",
+        "PLAY-CARD",
+        "PLAY-ROLL-AND-INFO",
+        "SMALL-PHONE-FIT"
+      ],
+      "actual_failures": [
+        "MANAGE-CARD",
+        "NARROW-PHONE-FIT",
+        "PHONE-END-CLEAR",
+        "PLAY-CARD",
+        "PLAY-ROLL-AND-INFO",
+        "SMALL-PHONE-FIT"
+      ],
+      "counts": [
+        31,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "remove-before-notes",
+      "expected_failures": [
+        "FIRST-CELL-ADDITIONS",
+        "MANAGE-ORDER"
+      ],
+      "actual_failures": [
+        "FIRST-CELL-ADDITIONS",
+        "MANAGE-ORDER"
+      ],
+      "counts": [
+        35,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-observer",
+      "expected_failures": [
+        "NEW-ROW"
+      ],
+      "actual_failures": [
+        "NEW-ROW"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-input-listener",
+      "expected_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "actual_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-summary-refresh",
+      "expected_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "actual_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-warning",
+      "expected_failures": [
+        "EMPHASIS-WARNING-SHOWN"
+      ],
+      "actual_failures": [
+        "EMPHASIS-WARNING-SHOWN"
+      ],
+      "counts": [
+        36,
+        37
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": false
+}

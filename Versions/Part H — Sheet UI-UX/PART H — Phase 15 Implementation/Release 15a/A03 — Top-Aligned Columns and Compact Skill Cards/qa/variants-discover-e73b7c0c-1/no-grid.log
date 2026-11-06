@@ -1,0 +1,49 @@
+  detail CARD-FIRST-ROW: [["management",{"name":"Calligraphy","h":429,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":318,"rankLeft":71,"rollLeft":36,"ref":440,"refNoteH":15,"noteH":15,"spans":[{"tier":5,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":true,"limit":true,"school":true,"xp":true,"remove":true,"emph0":true},"summaryShown":false,"tops":{"second":654,"emph":553,"xp":681,"notes":465,"remove":755}}],["management",{"name":"Defense","h":420,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":318,"rankLeft":71,"rollLeft":36,"ref":431,"refNoteH":59,"noteH":59,"spans":[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}],"cellsShown":{"trait":true,"e
+  detail PLAY-CARD: [{"name":"Calligraphy","h":197,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":318,"rankLeft":71,"rollLeft":36,"ref":379,"refNoteH":15,"noteH":0,"spans":[{"tier":5,"reached":false,"shown":false}],"cellsShown":{"trait":false,"emph":false,"school":false,"xp":false,"remove":false},"controlsShown":{"trait":false,"emphAdd":false,"limit":false,"school":false,"xp":false,"remove":false,"emph0":false},"summaryShown":true,"tops":{"second":null,"emph":null,"xp":null,"notes":null,"remove":null}},{"name":"Defense","h":197,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":318,"rankLeft":71,"rollLeft":36,"ref":382,"refNoteH":59,"noteH":0,"spans":[{"tier":3,"reached":false,"shown":false},{"tier":5,"reached":false,"shown":false},{"tier":7,"reached":false,"shown":false}],"cellsShown":{"trait":false,"emph":false
+  detail MANAGE-CARD: [{"name":"Calligraphy","h":429,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":318,"rankLeft":71,"rollLeft":36,"ref":440,"refNoteH":15,"noteH":15,"spans":[{"tier":5,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":true,"limit":true,"school":true,"xp":true,"remove":true,"emph0":true},"summaryShown":false,"tops":{"second":654,"emph":553,"xp":681,"notes":465,"remove":755}},{"name":"Defense","h":420,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":318,"rankLeft":71,"rollLeft":36,"ref":431,"refNoteH":59,"noteH":59,"spans":[{"tier":3,"reached":false,"shown":true},{"tier":5,"reached":false,"shown":true},{"tier":7,"reached":false,"shown":true}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":
+  detail MANAGE-ORDER: [["Calligraphy",{"second":654,"emph":553,"xp":681,"notes":465,"remove":755}],["Defense",{"second":1085,"emph":1037,"xp":1112,"notes":904,"remove":1185}],["Lore: Shadowlands",{"second":1456,"emph":1408,"xp":1483,"notes":null,"remove":1556}]]
+  detail PLAY-COMPACT: [["Calligraphy",197,0,379,15],["Defense",197,0,382,59],["Lore: Shadowlands",197,0,324,0],["Lore: Theology",197,0,324,0]]
+  detail FIRST-ROW-STEADY: [["Calligraphy",318,71,36,71],["Defense",318,71,36,71],["Lore: Shadowlands",318,71,36,71]]
+  detail MANAGE-SHORTER: [["Calligraphy",429,440],["Defense",420,431],["Lore: Shadowlands",361,372],["Lore: Theology",361,372]]
+  detail FIRST-CELL-ADDITIONS: {"real":true,"res":{"management":{"shown":[true,true,true],"after":false,"beforeRemove":true,"full":false},"play":{"shown":[true,true,true],"after":false,"beforeRemove":true,"full":false}}}
+  detail PHONE-END-CLEAR: [{"m":"play","count":4,"bad":[]},{"m":"management","count":8,"bad":["sk-name"]}]
+  detail SMALL-PHONE-FIT: [["management",{"name":"Calligraphy","h":429,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":303,"rankLeft":71,"rollLeft":36}],["management",{"name":"Defense","h":420,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":303,"rankLeft":71,"rollLeft":36}],["management",{"name":"Lore: Shadowlands","h":361,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":303,"rankLeft":71,"rollLeft":36}]]
+  detail NARROW-PHONE-FIT: [["management",{"name":"Calligraphy","h":474,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":264,"rankLeft":63,"rollLeft":28}],["management",{"name":"Defense","h":493,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":264,"rankLeft":63,"rollLeft":28}],["management",{"name":"Lore: Shadowlands","h":419,"firstShown":true,"firstRow":false,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":264,"rankLeft":63,"rollLeft":28}]]
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+FAIL CARD-FIRST-ROW
+FAIL PLAY-CARD
+FAIL MANAGE-CARD
+FAIL MANAGE-ORDER
+FAIL PLAY-COMPACT
+FAIL FIRST-ROW-STEADY
+FAIL MANAGE-SHORTER
+PASS SUMMARY-MATCHES
+PASS SUMMARY-WRAPS
+PASS SUMMARY-NOT-A-CONTROL
+PASS SUMMARY-READABLE
+PASS MODE-SWITCH-LIVE
+PASS PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+PASS SUMMARY-LIVE
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+FAIL FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS MANAGE-EDITS-WORK
+PASS PLAY-MASTERIES-REACHED
+PASS NEW-ROW
+PASS QUICK-ADD
+PASS RELOAD
+FAIL PHONE-END-CLEAR
+PASS PRINT-UNCHANGED
+FAIL SMALL-PHONE-FIT
+FAIL NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+26/37 checks passed

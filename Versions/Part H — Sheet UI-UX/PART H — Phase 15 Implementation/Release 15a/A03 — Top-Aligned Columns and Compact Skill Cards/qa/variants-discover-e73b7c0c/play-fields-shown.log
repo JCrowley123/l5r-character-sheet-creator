@@ -1,0 +1,42 @@
+  detail PLAY-CARD: [{"name":"Calligraphy","h":289,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":379,"refNoteH":15,"noteH":0,"spans":[{"tier":5,"reached":false,"shown":false}],"cellsShown":{"trait":true,"emph":true,"school":true,"xp":true,"remove":true},"controlsShown":{"trait":true,"emphAdd":false,"limit":true,"school":true,"xp":true,"remove":false,"emph0":true},"summaryShown":true,"tops":{"second":546,"emph":476,"xp":575,"notes":null,"remove":604}},{"name":"Defense","h":248,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":171,"rankLeft":250,"rollLeft":310,"ref":382,"refNoteH":59,"noteH":0,"spans":[{"tier":3,"reached":false,"shown":false},{"tier":5,"reached":false,"shown":false},{"tier":7,"reached":false,"shown":false}],"cellsShown":{"trait":true,"emph":true,"school":true,"
+  detail PLAY-COMPACT: [["Calligraphy",289,0,379,15],["Defense",248,0,382,59],["Lore: Shadowlands",248,0,324,0],["Lore: Theology",248,0,324,0]]
+  detail MODE-SWITCH-LIVE: {"a":{"summary":true,"trait":true,"school":true,"button":"Manage"},"b":{"summary":false,"trait":true,"school":true,"button":"Done"},"c":{"summary":true,"trait":true,"school":true,"button":"Manage"},"d":{"summary":false,"trait":true,"school":true,"button":"Manage"},"e":{"summary":true,"trait":true,"school":true,"button":"Manage"}}
+  detail QUICK-ADD: {"pick":"Hunting","m":{"trait":"Perception","summary":"Perception","traitShown":true},"p":{"summary":true,"traitCell":true}}
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+FAIL PLAY-CARD
+PASS MANAGE-CARD
+PASS MANAGE-ORDER
+FAIL PLAY-COMPACT
+PASS FIRST-ROW-STEADY
+PASS MANAGE-SHORTER
+PASS SUMMARY-MATCHES
+PASS SUMMARY-WRAPS
+PASS SUMMARY-NOT-A-CONTROL
+PASS SUMMARY-READABLE
+FAIL MODE-SWITCH-LIVE
+PASS PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+PASS SUMMARY-LIVE
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS MANAGE-EDITS-WORK
+PASS PLAY-MASTERIES-REACHED
+PASS NEW-ROW
+FAIL QUICK-ADD
+PASS RELOAD
+PASS PHONE-END-CLEAR
+PASS PRINT-UNCHANGED
+PASS SMALL-PHONE-FIT
+PASS NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+33/37 checks passed

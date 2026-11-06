@@ -198,10 +198,20 @@ async function el(page, name, selector) {
   return e;
 }
 async function tap(page, name, selector) { await (await el(page, name, selector)).tap(); await settle(page); }
+// Real keystrokes into a row's field: tap it, move to the end and delete what is there, type, and confirm the field
+// holds exactly the typed value before leaving it. Ctrl+A straight after a tap does not always select a number field's
+// text in Chromium's touch emulation (found by the variant discovery: "7" typed into "5" became "75", and Release 8's
+// rank-spell offer opened over the page), so it is not relied on.
 async function type(page, name, selector, value) {
   const e = await el(page, name, selector);
-  await e.tap(); await page.keyboard.press('Control+A'); await page.keyboard.type(value);
+  await e.tap();
+  if (!await e.evaluate(x => document.activeElement === x)) throw new Error('the tap did not focus ' + selector + ' in ' + name);
+  await page.keyboard.press('End');
+  for (let i = await e.evaluate(x => String(x.value).length); i > 0; i--) await page.keyboard.press('Backspace');
+  await page.keyboard.type(value);
+  const held = await e.evaluate(x => x.value);
   await page.evaluate(() => document.activeElement && document.activeElement.blur()); await settle(page);
+  if (held !== value) throw new Error('typed ' + value + ' into ' + selector + ' in ' + name + ', the field holds ' + held);
 }
 
 (async () => {
@@ -487,6 +497,8 @@ async function type(page, name, selector, value) {
             shownColour: getComputedStyle(s, '::after').color, ink: getComputedStyle(s).color, shown: F.shown(s)}; });
         await mode(page, 'management'); await go(page, 'Skills');
         await type(page, 'Athletics', '.sk-rank', '1');
+        let restored = false;
+        try {
         await mode(page, 'play');
         const w1 = await warnOf();
         // The sheet's note can be two lines (a line break, then "Max Emphases assigned"): written that way while over the
@@ -498,11 +510,16 @@ async function type(page, name, selector, value) {
           return {first, summary: F.summaryOf(tr).getAttribute('data-cs15-summary')}; });
         await mode(page, 'management');
         await type(page, 'Athletics', '.sk-rank', '4');
+        restored = true;
         await mode(page, 'play');
         const w2 = await warnOf();
         return [w1.shown && !!w1.note && w1.summary.startsWith(w1.note + ' · ') && w1.drawn === JSON.stringify(w1.summary) && w1.shownColour === w1.noteColour &&
           w1.noteColour !== w1.ink && two.summary.startsWith(two.first + ' – no more to be unlocked · Max Emphases assigned · ') &&
           w2.summary === 'Strength · Running, Climbing' && w2.shownColour !== w1.noteColour, {w1, two, w2}];
+        } finally {
+          // Put the Rank back even when the check stops part-way, so no later check starts with a Skill over its limit.
+          if (!restored) { try { await mode(page, 'management'); await type(page, 'Athletics', '.sk-rank', '4'); } catch (e) { /* the check has failed already */ } }
+        }
       });
       // Manage edits straight from the card, by real taps: Rank (the XP follows), Trait, the School tick, + Emph and Remove.
       await check('MANAGE-EDITS-WORK', async () => {
