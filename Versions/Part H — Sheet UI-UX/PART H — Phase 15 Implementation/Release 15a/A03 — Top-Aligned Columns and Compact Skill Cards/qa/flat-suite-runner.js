@@ -37,6 +37,7 @@
  * removed, exactly A01 as live, less the two live-site leaves (6,732). Totals only; leaf handling is unchanged.
  * Release 15a, A03 (6 November 2026): candidate 6,860 (A03's 32 + A02's 6,828); --retained runs the tree with A03
  * removed, exactly A02 as live, less the two live-site leaves (6,755). Totals only; leaf handling is unchanged.
+ * Release 15a, A03 revision 2 (6 November 2026): candidate 6,863 (A03's 35 + A02's 6,828); retained unchanged (6,755).
  * --list records the exact invocation order without launching any harnesses.
  */
 'use strict';
@@ -195,7 +196,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, 'retained-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 6755 : 6860;
+  const expected = retained ? 6755 : 6863;
   // Fresh execution only. Fingerprints label evidence; prior outputs are never reused.
   const hash = value => crypto.createHash('sha256').update(value).digest('hex');
   const repo = path.dirname(VERSIONS);

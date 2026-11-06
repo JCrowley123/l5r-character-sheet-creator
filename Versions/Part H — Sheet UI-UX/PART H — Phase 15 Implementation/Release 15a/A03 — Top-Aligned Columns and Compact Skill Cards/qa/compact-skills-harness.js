@@ -1,10 +1,13 @@
 'use strict';
-// Release 15a, A03 (PART H PHASE 15.1.3): top-aligned Advantage/Disadvantage columns and compact phone Skill cards.
+// Release 15a, A03 (PART H PHASE 15.1.3), revision 2: top-aligned Advantage/Disadvantage columns and compact phone
+// Skill cards with nothing behind a control (owner's decision, 6 November 2026).
 //   node compact-skills-harness.js <sheet.html> [--variant]
-// Every check id is pinned in expected-checks.json before the first run; a check that never ran is a FAIL.
+// Every check id is pinned in expected-checks.json before the first run; a check that never ran is a FAIL. An
+// exception inside one check is that check's FAIL, with its reason, and the scenario goes on.
 // Oracles are independent of the layer: the page's own labels, fields and cells, what the browser reports at a point
-// (elementFromPoint), the row's own field values, the fixture, and the same page with the layer's class taken away.
-// The layer is never asked where anything should be or what its summary should say.
+// (elementFromPoint), the row's own field values and Rank, the tier each Mastery note names, the fixture, and the same
+// page with the layer's class taken away. The layer is never asked where anything should be or what its summary
+// should say.
 const fs = require('fs'), path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
@@ -16,6 +19,14 @@ const set = (id, ok, detail) => {
   seen[id] = ok === true && seen[id] !== false;
   if (ok !== true) console.log('  detail ' + id + ': ' + JSON.stringify(detail === undefined ? ok : detail).slice(0, 900));
 };
+async function check(id, body) {
+  try {
+    const [ok, detail] = await body();
+    set(id, ok, detail);
+  } catch (e) {
+    set(id, false, 'exception: ' + String(e && e.message || e).slice(0, 500));
+  }
+}
 const PHONE = {viewport: {width: 390, height: 844}, isMobile: true, hasTouch: true};
 const SMALL = {viewport: {width: 375, height: 667}, isMobile: true, hasTouch: true};
 const NARROW = {viewport: {width: 320, height: 568}, isMobile: true, hasTouch: true};
@@ -31,21 +42,28 @@ function helpers() {
     (typeof e.checkVisibility !== 'function' || e.checkVisibility({visibilityProperty: true}));
   const overlap = (a, b) => a.left < b.right - 0.5 && b.left < a.right - 0.5 && a.top < b.bottom - 0.5 && b.top < a.bottom - 0.5;
   const hits = e => { const r = e.getBoundingClientRect(); const h = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!h && (h === e || e.contains(h)); };
+  const level = (a, b) => a.top < b.bottom && b.top < a.bottom;
   const page = () => [...document.querySelectorAll('.car-page:not([data-clone])')].find(p => !p.hidden && !p.inert && Math.abs(p.getBoundingClientRect().left) < 5) || null;
   const rows = () => [...document.querySelectorAll('#skillsBody > tr')];
   const row = name => rows().find(t => t.querySelector('.sk-name').value === name) || null;
-  const toggle = tr => tr.querySelector('.cs15-toggle');
+  const summaryOf = tr => tr.querySelector('.cs15-summary');
   const parts = tr => ({name: tr.querySelector('.sk-name'), rank: tr.querySelector('.sk-rank'), roll: tr.querySelector('.sk-roll'),
-    toggle: toggle(tr), eye: tr.querySelector('.sk-info-btn')});
-  // Everything A03 puts under Details, from the row's own markup: the fields after the first row, the Mastery notes
-  // (when the Skill has any), the Emphasis widgets and Remove. In Play some are hidden by Phase 12 (Part K) anyway.
-  const secondary = tr => {
-    const out = {trait: tr.querySelector('.sk-trait'), school: tr.querySelector('.sk-school'), xp: tr.querySelector('td.sk-cost'),
-      emphAdd: tr.querySelector('.emph-add-btn'), limit: tr.querySelector('.emph-limit-note'), remove: tr.querySelector('.rm-btn:not(.emph-item-del)')};
-    const m = tr.querySelector('.sk-mastery-note'); if (m && m.children.length) out.mastery = m;
+    summary: summaryOf(tr), eye: tr.querySelector('.sk-info-btn')});
+  // The field cells and controls, from the row's own markup (makeSkillRow's eight cells).
+  const fields = tr => {
+    const removeCell = tr.querySelector(':scope > td:has(> .rm-btn)');
+    const out = {traitCell: tr.querySelector(':scope > td:has(> .sk-trait)'), trait: tr.querySelector('.sk-trait'),
+      emphCell: tr.querySelector(':scope > td:has(> .emph-container)'), emphAdd: tr.querySelector('.emph-add-btn'), limit: tr.querySelector('.emph-limit-note'),
+      schoolCell: tr.querySelector(':scope > td:has(> .sk-school)'), school: tr.querySelector('.sk-school'), xp: tr.querySelector(':scope > td.sk-cost'),
+      removeCell, remove: removeCell && removeCell.querySelector(':scope > .rm-btn')};
     [...tr.querySelectorAll('.emph-container .emph-item-row')].forEach((e, i) => { out['emph' + i] = e; });
     return out;
   };
+  const cells = tr => { const F = fields(tr); return {trait: F.traitCell, emph: F.emphCell, school: F.schoolCell, xp: F.xp, remove: F.removeCell}; };
+  // Each Mastery note with the tier its own text names ("R3: ...", "R5 ✓: ..."), and whether the row's Rank reaches it.
+  const masteries = tr => { const rank = parseInt(tr.querySelector('.sk-rank').value || '0', 10);
+    return [...tr.querySelectorAll('.sk-mastery-note > span')].map(e => { const m = /^R(\d+)/.exec(e.textContent.trim());
+      return {e, tier: m ? +m[1] : NaN, reached: !!m && rank >= +m[1]}; }); };
   // The summary a reader should see, from the row's own fields: Trait, the Emphases, and School when ticked.
   const expectSummary = tr => {
     const v = e => e ? String(e.value || '').trim() : '';
@@ -56,23 +74,59 @@ function helpers() {
     if (tr.querySelector('.sk-school').checked) p.push('School');
     return p.join(' · ');
   };
+  const drawn = e => { const c = getComputedStyle(e, '::after').content; return c && c !== 'none' && c !== 'normal' ? c : ''; };
   const scroll = where => { const p = page(); if (p) p.scrollTop = where === 'top' ? 0 : where === 'end' ? p.scrollHeight : where; return p ? p.scrollTop : null; };
-  // One closed card: its first row (name, Rank, roll side by side and level), its second row (Details and the eye)
-  // below it, nothing wider than the card.
-  const card = tr => {
-    const P = parts(tr), out = {name: P.name.value, h: Math.round(rect(tr).height)};
+  // One card. First row: name, Rank and roll side by side and level. Second row, below it: in Play the summary then the
+  // eye; in Manage the Trait, the School tick and the eye, with no summary. Nothing wider than the card.
+  const card = (tr, mode) => {
+    const P = parts(tr), F = fields(tr), out = {name: P.name.value, h: Math.round(rect(tr).height)};
     out.firstShown = ['name', 'rank', 'roll'].every(k => shown(P[k]));
-    if (!out.firstShown || !P.toggle) return out;
-    const n = rect(P.name), r = rect(P.rank), d = rect(P.roll), t = rect(P.toggle), e = rect(P.eye), c = rect(tr);
-    const level = (a, b) => a.top < b.bottom && b.top < a.bottom;
+    if (!out.firstShown) return out;
+    const n = rect(P.name), r = rect(P.rank), d = rect(P.roll), e = rect(P.eye), c = rect(tr);
+    const firstBottom = Math.max(n.bottom, r.bottom, d.bottom);
     out.firstRow = level(n, r) && level(r, d) && level(n, d) && n.right <= r.left + 0.5 && r.right <= d.left + 0.5;
-    out.secondRow = shown(P.toggle) && shown(P.eye) && t.top >= Math.max(n.bottom, r.bottom, d.bottom) - 1 && level(t, e) && t.right <= e.left + 0.5;
-    out.inside = [n, r, d, t, e].every(b => b.left >= c.left - 0.5 && b.right <= c.right + 0.5);
+    const boxes = [n, r, d, e];
+    if (mode === 'play') {
+      const s = P.summary && shown(P.summary) ? rect(P.summary) : null;
+      out.secondRow = !!s && shown(P.eye) && s.top >= firstBottom - 1 && e.top >= firstBottom - 1 && level(s, e) && s.right <= e.left + 0.5;
+      if (s) boxes.push(s);
+    } else {
+      const t = shown(F.trait) ? rect(F.traitCell) : null, k = shown(F.school) ? rect(F.schoolCell) : null;
+      out.secondRow = !!t && !!k && shown(P.eye) && t.top >= firstBottom - 1 && e.top >= firstBottom - 1 && level(t, k) && level(k, e) &&
+        t.right <= k.left + 0.5 && k.right <= e.left + 0.5 && !(P.summary && shown(P.summary));
+      if (t && k) boxes.push(t, k);
+    }
+    out.inside = boxes.every(b => b.left >= c.left - 0.5 && b.right <= c.right + 0.5);
     out.noOverflow = tr.scrollWidth <= tr.clientWidth + 1;
     out.nameWidth = Math.round(n.width);
     return out;
   };
-  window.__cs = {rect, shown, overlap, hits, page, rows, row, toggle, parts, secondary, expectSummary, scroll, card};
+  // Each card's height on the same page without A03: its class taken away and its summary lines lifted out.
+  const reference = () => {
+    const had = document.body.classList.contains('cs15-on');
+    document.body.classList.remove('cs15-on');
+    const lifted = [...document.querySelectorAll('#skillsBody .cs15-summary')].map(t => [t, t.parentNode, t.nextSibling]);
+    lifted.forEach(([t]) => t.remove());
+    const hs = rows().map(tr => rect(tr).height);
+    lifted.forEach(([t, p, n]) => p.insertBefore(t, n));
+    if (had) document.body.classList.add('cs15-on');
+    return hs;
+  };
+  // Everything one check needs about every card in the current mode.
+  const survey = mode => { const ref = reference(); return rows().map((tr, i) => {
+    const c = card(tr, mode), note = tr.querySelector('.sk-mastery-note'), M = masteries(tr), C = cells(tr), F = fields(tr);
+    const spans = M.map(m => ({tier: m.tier, reached: m.reached, shown: shown(m.e)}));
+    const noteH = note && shown(note) ? rect(note).height : 0;
+    const top = e => e && shown(e) ? Math.round(rect(e).top) : null;
+    const shownSpans = M.filter(m => shown(m.e));
+    return {...c, ref: Math.round(ref[i]), noteH: Math.round(noteH), spans,
+      cellsShown: Object.fromEntries(Object.entries(C).map(([k, e]) => [k, shown(e)])),
+      controlsShown: Object.fromEntries(Object.entries(F).filter(([k]) => !/Cell$/.test(k)).map(([k, e]) => [k, shown(e)])),
+      summaryShown: shown(summaryOf(tr)),
+      tops: {second: top(C.trait) !== null && top(C.school) !== null ? Math.max(top(C.trait), top(C.school)) : null, emph: top(C.emph), xp: top(C.xp),
+        notes: shownSpans.length ? Math.round(Math.min(...shownSpans.map(m => rect(m.e).top))) : null, remove: top(C.remove)}};
+  }); };
+  window.__cs = {rect, shown, overlap, hits, level, page, rows, row, summaryOf, parts, fields, cells, masteries, expectSummary, drawn, scroll, card, reference, survey};
 }
 const settle = page => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
 async function open(browser, opts, fixture) {
@@ -89,7 +143,7 @@ async function open(browser, opts, fixture) {
   await settle(page);
   return {context, page};
 }
-const mode = (page, m) => page.evaluate(x => window.__L5R_TEST__.MODES12.set(x), m);
+const mode = async (page, m) => { await page.evaluate(x => window.__L5R_TEST__.MODES12.set(x), m); await settle(page); };
 async function go(page, label) {
   await page.evaluate(async l => { const C = window.__L5R_CAROUSEL__; C.goToTab(l); await C.whenSettled(); }, label);
   await settle(page);
@@ -118,30 +172,46 @@ const columns = page => page.evaluate(() => {
     stacked: ca.bottom <= cd.top + 0.5, align: getComputedStyle(a.parentElement).alignItems, advRows: a.querySelector('#advList').children.length,
     disRows: d.querySelector('#disadvList').children.length};
 });
-// A real tap on one row's Details control.
-async function tapToggle(page, name) {
-  const box = await page.evaluate(n => { const F = window.__cs, tr = F.row(n), t = tr && F.toggle(tr); if (!t) return null;
-    t.scrollIntoView({block: 'center'}); const r = t.getBoundingClientRect(); return {x: r.left + r.width / 2, y: r.top + r.height / 2}; }, name);
-  if (!box) return false;
-  await settle(page);
-  const again = await page.evaluate(n => { const r = window.__cs.toggle(window.__cs.row(n)).getBoundingClientRect(); return {x: r.left + r.width / 2, y: r.top + r.height / 2}; }, name);
-  await page.touchscreen.tap(again.x, again.y);
-  await settle(page);
-  return true;
+// Grids on every visible page other than Adv & Disadv's keep the carousel's bottom alignment; that one starts at the top.
+async function otherGrids(page) {
+  const other = [];
+  for (const m of ['play', 'management']) {
+    await mode(page, m);
+    for (const label of await page.evaluate(() => window.__L5R_CAROUSEL__.getTabs().filter(t => !t.panel.hidden).map(t => t.label))) {
+      await go(page, label);
+      other.push(...await page.evaluate(l => [...window.__cs.page().querySelectorAll('.grid')].map(g => ({l, adv: !!g.querySelector(':scope > * > #advList'),
+        align: getComputedStyle(g).alignItems})).filter(x => x.adv ? x.align !== 'start' : x.align !== 'end'), label));
+    }
+  }
+  return other;
 }
-const state = (page, name) => page.evaluate(n => { const F = window.__cs, tr = F.row(n); if (!tr) return {missing: true};
-  const t = F.toggle(tr), s = F.secondary(tr);
-  return {expanded: t ? t.getAttribute('aria-expanded') : null, shown: Object.fromEntries(Object.entries(s).map(([k, e]) => [k, F.shown(e)]))}; }, name);
+// A row's element, scrolled into the middle of the page, then a real tap (Playwright checks it is the one hit).
+async function el(page, name, selector) {
+  const h = await page.evaluateHandle(([n, s]) => { const tr = window.__cs.row(n); const e = tr && tr.querySelector(s); if (e) e.scrollIntoView({block: 'center'}); return e; }, [name, selector]);
+  const e = h.asElement();
+  if (!e) throw new Error('no ' + selector + ' in ' + name);
+  await settle(page);
+  return e;
+}
+async function tap(page, name, selector) { await (await el(page, name, selector)).tap(); await settle(page); }
+async function type(page, name, selector, value) {
+  const e = await el(page, name, selector);
+  await e.tap(); await page.keyboard.press('Control+A'); await page.keyboard.type(value);
+  await page.evaluate(() => document.activeElement && document.activeElement.blur()); await settle(page);
+}
 
 (async () => {
   const browser = await chromium.launch();
   try {
     // ---------- Desktop, 1440 x 1000: the two columns start level, with both lists filled and with either empty.
     await session(browser, DESKTOP, async page => {
-      const seam = await page.evaluate(() => { const T = window.__L5R_TEST__, C = T.CS15;
-        return {obj: typeof C === 'object' && !!C, on: T.COMPACT_SKILL_CARDS_ENABLED === true, installed: !!C && C.installed === true,
-          cls: document.body.classList.contains('cs15-on'), one: [...document.querySelectorAll('#skillsBody > tr')].every(t => t.querySelectorAll('.cs15-toggle').length === 1)}; });
-      set('SEAM-PRESENT', seam.obj && seam.on && seam.installed && seam.cls && seam.one, seam);
+      await check('SEAM-PRESENT', async () => {
+        const s = await page.evaluate(() => { const T = window.__L5R_TEST__, C = T.CS15;
+          return {obj: typeof C === 'object' && !!C, on: T.COMPACT_SKILL_CARDS_ENABLED === true, installed: !!C && C.installed === true,
+            cls: document.body.classList.contains('cs15-on'), one: window.__cs.rows().every(t => t.querySelectorAll('.cs15-summary').length === 1),
+            noToggle: !document.querySelector('#skillsBody .cs15-toggle')}; });
+        return [s.obj && s.on && s.installed && s.cls && s.one && s.noToggle, s];
+      });
       const level = [], empty = [];
       for (const fx of ['dense', 'noAdv', 'noDisadv']) {
         await load(page, fx);
@@ -153,26 +223,24 @@ const state = (page, name) => page.evaluate(n => { const F = window.__cs, tr = F
       }
       set('DESKTOP-COLUMNS-LEVEL', level.length === 2 && level.every(x => x.ok && x.advRows > 0 && x.disRows > 0), level);
       set('DESKTOP-COLUMNS-ONE-EMPTY', empty.length === 4 && empty.every(x => x.ok), empty);
-      // Every other grid on every page keeps the carousel's bottom alignment; only the Adv & Disadv grid starts at the top.
-      const other = [];
       await load(page, 'longSkills');
-      for (const m of ['play', 'management']) {
-        await mode(page, m);
-        for (const label of await page.evaluate(() => window.__L5R_CAROUSEL__.getTabs().filter(t => !t.panel.hidden).map(t => t.label))) {
-          await go(page, label);
-          other.push(...await page.evaluate(l => [...window.__cs.page().querySelectorAll('.grid')].map(g => ({l, adv: !!g.querySelector(':scope > * > #advList'),
-            align: getComputedStyle(g).alignItems})).filter(x => x.adv ? x.align !== 'start' : x.align !== 'end'), label));
-        }
-      }
+      const other = await otherGrids(page);
       seen['OTHER-GRIDS-UNCHANGED-DESKTOP'] = other.length === 0;
       if (other.length) console.log('  detail OTHER-GRIDS desktop: ' + JSON.stringify(other.slice(0, 6)));
-      // The desktop Skills table is still a table: every cell drawn, no Details control.
-      await mode(page, 'management'); await go(page, 'Skills');
-      const t = await page.evaluate(() => { const F = window.__cs;
-        return F.rows().map(tr => ({tr: getComputedStyle(tr).display, cells: [...tr.children].map(td => getComputedStyle(td).display),
-          toggle: !F.toggle(tr) || !F.shown(F.toggle(tr)), sec: Object.entries(F.secondary(tr)).filter(([k, e]) => !F.shown(e)).map(([k]) => k)}))
-          .filter(x => x.tr !== 'table-row' || x.cells.length !== 8 || x.cells.some(c => c !== 'table-cell') || !x.toggle || x.sec.length); });
-      set('DESKTOP-SKILLS-UNCHANGED', t.length === 0, t.slice(0, 3));
+      // The desktop Skills table is still a table: every cell drawn, no summary line, every Mastery note in both modes,
+      // and every field control in Manage.
+      await check('DESKTOP-SKILLS-UNCHANGED', async () => {
+        const bad = [];
+        for (const m of ['management', 'play']) {
+          await mode(page, m); await go(page, 'Skills');
+          bad.push(...await page.evaluate(mm => { const F = window.__cs;
+            return F.rows().map(tr => ({m: mm, n: tr.querySelector('.sk-name').value, tr: getComputedStyle(tr).display, cells: [...tr.children].map(td => getComputedStyle(td).display),
+              summary: F.shown(F.summaryOf(tr)), notes: F.masteries(tr).every(x => F.shown(x.e)),
+              controls: mm === 'play' || Object.entries(F.fields(tr)).every(([k, e]) => F.shown(e))}))
+              .filter(x => x.tr !== 'table-row' || x.cells.length !== 8 || x.cells.some(c => c !== 'table-cell') || x.summary || !x.notes || !x.controls); }, m));
+        }
+        return [bad.length === 0, bad.slice(0, 3)];
+      });
     });
 
     // ---------- A phone wide enough for two columns (540 x 900): the columns still start level.
@@ -188,272 +256,335 @@ const state = (page, name) => page.evaluate(n => { const F = window.__cs, tr = F
     // ---------- Phone, 390 x 844.
     await session(browser, PHONE, async page => {
       // Adv & Disadv on a phone stays one column, Advantages first.
-      const st = [];
-      for (const m of ['play', 'management']) { await mode(page, m); await go(page, 'Adv & Disadv'); st.push(await columns(page)); }
-      set('PHONE-COLUMNS-STACKED', st.every(c => c.stacked && !c.side), st);
-      const other = [];
-      for (const m of ['play', 'management']) {
-        await mode(page, m);
-        for (const label of await page.evaluate(() => window.__L5R_CAROUSEL__.getTabs().filter(t => !t.panel.hidden).map(t => t.label))) {
-          await go(page, label);
-          other.push(...await page.evaluate(l => [...window.__cs.page().querySelectorAll('.grid')].map(g => ({l, adv: !!g.querySelector(':scope > * > #advList'),
-            align: getComputedStyle(g).alignItems})).filter(x => x.adv ? x.align !== 'start' : x.align !== 'end'), label));
-        }
-      }
-      set('OTHER-GRIDS-UNCHANGED', seen['OTHER-GRIDS-UNCHANGED-DESKTOP'] === true && other.length === 0, other.slice(0, 6));
+      await check('PHONE-COLUMNS-STACKED', async () => {
+        const st = [];
+        for (const m of ['play', 'management']) { await mode(page, m); await go(page, 'Adv & Disadv'); st.push(await columns(page)); }
+        return [st.every(c => c.stacked && !c.side), st];
+      });
+      await check('OTHER-GRIDS-UNCHANGED', async () => {
+        const other = await otherGrids(page);
+        return [seen['OTHER-GRIDS-UNCHANGED-DESKTOP'] === true && other.length === 0, other.slice(0, 6)];
+      });
       delete seen['OTHER-GRIDS-UNCHANGED-DESKTOP'];
 
-      // Closed cards, both modes: compact first and second rows, secondary editing hidden, nothing wider than the card.
-      const first = [], closed = [], tall = [];
+      // Every card in both modes, with the same page without A03 as the reference height.
+      const S = {};
       for (const m of ['management', 'play']) {
         await mode(page, m); await go(page, 'Skills');
-        const r = await page.evaluate(() => { const F = window.__cs; return F.rows().map(tr => ({...F.card(tr),
-          hidden: Object.entries(F.secondary(tr)).filter(([k, e]) => F.shown(e)).map(([k]) => k), expanded: F.toggle(tr) && F.toggle(tr).getAttribute('aria-expanded')})); });
-        const doc = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
-        for (const c of r) {
-          if (!(c.firstShown && c.firstRow && c.inside && c.noOverflow && doc)) first.push([m, c]);
-          if (!(c.secondRow && c.expanded === 'false' && c.hidden.length === 0)) closed.push([m, c]);
-          if (!(c.h <= 140)) tall.push([m, c.name, c.h]);
-        }
+        S[m] = await page.evaluate(mm => window.__cs.survey(mm), m);
       }
-      set('CARD-FIRST-ROW', first.length === 0, first.slice(0, 3));
-      set('CARD-CLOSED', closed.length === 0, closed.slice(0, 3));
-      set('CARD-COMPACT', tall.length === 0, tall.slice(0, 6));
+      const doc = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+      await check('CARD-FIRST-ROW', async () => {
+        const bad = ['management', 'play'].flatMap(m => S[m].filter(c => !(c.firstShown && c.firstRow && c.inside && c.noOverflow && doc)).map(c => [m, c]));
+        return [S.play.length === 18 && bad.length === 0, bad.slice(0, 3)];
+      });
+      // Play: the summary beside the eye; the Trait, Emphases, School, XP and Remove cells are not drawn.
+      await check('PLAY-CARD', async () => {
+        const bad = S.play.filter(c => !(c.secondRow && c.summaryShown && Object.values(c.cellsShown).every(v => v === false)));
+        return [S.play.length === 18 && bad.length === 0, bad.slice(0, 3)];
+      });
+      // Manage: the Trait, the School tick and the eye on the second row; every field control and every Mastery note drawn.
+      await check('MANAGE-CARD', async () => {
+        const bad = S.management.filter(c => !(c.secondRow && !c.summaryShown && Object.values(c.controlsShown).every(v => v === true) && c.spans.every(s => s.shown)));
+        return [S.management.length === 18 && bad.length === 0, bad.slice(0, 3)];
+      });
+      // Manage, top to bottom: Trait and School, then the Emphases, the XP, the Mastery notes and Remove last.
+      await check('MANAGE-ORDER', async () => {
+        const bad = S.management.filter(c => { const t = c.tops, seq = [t.second, t.emph, t.xp].concat(t.notes === null ? [] : [t.notes], [t.remove]);
+          return seq.some(v => v === null) || !seq.every((v, i) => i === 0 || v > seq[i - 1]); });
+        return [S.management.length === 18 && bad.length === 0, bad.slice(0, 3).map(c => [c.name, c.tops])];
+      });
+      // Play cards: without the Mastery notes, as short as the two-row card (124 px), and at most half the height of
+      // the same card without A03.
+      await check('PLAY-COMPACT', async () => {
+        const bad = S.play.filter(c => !(c.h - c.noteH <= 124 && c.h <= 0.5 * c.ref));
+        return [S.play.length === 18 && bad.length === 0, bad.slice(0, 4).map(c => [c.name, c.h, c.noteH, c.ref])];
+      });
+      // Manage cards: at most 85% of the height of the same card without A03.
+      await check('MANAGE-SHORTER', async () => {
+        const bad = S.management.filter(c => !(c.h <= 0.85 * c.ref));
+        return [S.management.length === 18 && bad.length === 0, bad.slice(0, 4).map(c => [c.name, c.h, c.ref])];
+      });
+      // Play: exactly the Mastery notes the Rank reaches (the static half; the live half follows the Rank edits below).
+      const staticNotes = S.play.filter(c => !c.spans.every(s => s.shown === s.reached && Number.isFinite(s.tier)));
+      const someReached = S.play.some(c => c.spans.some(s => s.reached)), someNot = S.play.some(c => c.spans.some(s => !s.reached));
 
-      // The summary matches each row's own fields, and two rows match the fixture as written.
-      const sums = await page.evaluate(() => { const F = window.__cs; return F.rows().map(tr => ({n: tr.querySelector('.sk-name').value,
-        got: F.toggle(tr) ? F.toggle(tr).getAttribute('data-cs15-summary') : null, want: F.expectSummary(tr)})); });
-      const byName = Object.fromEntries(sums.map(s => [s.n, s.got]));
-      set('SUMMARY-MATCHES', sums.length === 18 && sums.every(s => s.got === s.want) && byName.Kenjutsu === 'Agility · Katana, Ninja-to' &&
-        byName.Iaijutsu === 'Reflexes · Focus · School' && byName.Jiujutsu === 'Agility', sums.filter(s => s.got !== s.want).slice(0, 4).concat([byName]));
+      // The summary matches each row's own fields, is what the card draws, and four rows match the fixture as written.
+      await check('SUMMARY-MATCHES', async () => {
+        await mode(page, 'play'); await go(page, 'Skills');
+        const sums = await page.evaluate(() => { const F = window.__cs; return F.rows().map(tr => { const s = F.summaryOf(tr);
+          return {n: tr.querySelector('.sk-name').value, got: s ? s.getAttribute('data-cs15-summary') : null, drawn: s ? F.drawn(s) : null, want: F.expectSummary(tr)}; }); });
+        const byName = Object.fromEntries(sums.map(s => [s.n, s.got]));
+        return [sums.length === 18 && sums.every(s => s.got === s.want && s.drawn === JSON.stringify(s.want)) && byName.Kenjutsu === 'Agility · Katana, Ninja-to' &&
+          byName.Iaijutsu === 'Reflexes · Focus · School' && byName.Jiujutsu === 'Agility' && byName.Etiquette === 'Awareness · Courtesy, Bureaucracy, Conversation · School',
+          sums.filter(s => s.got !== s.want || s.drawn !== JSON.stringify(s.want)).slice(0, 4).concat([byName])];
+      });
+      // Play: every summary fits its card and wraps rather than being cut off (Etiquette's runs to two lines), clear of the eye.
+      await check('SUMMARY-WRAPS', async () => {
+        await mode(page, 'play'); await go(page, 'Skills');
+        const w = await page.evaluate(() => { const F = window.__cs; return F.rows().map(tr => { const s = F.summaryOf(tr); if (!s || !F.shown(s)) return {n: tr.querySelector('.sk-name').value, missing: true};
+          const r = F.rect(s), c = F.rect(tr), lh = parseFloat(getComputedStyle(s).lineHeight);
+          return {n: tr.querySelector('.sk-name').value, fits: s.scrollWidth <= s.clientWidth + 1, inside: r.left >= c.left - 0.5 && r.right <= c.right + 0.5,
+            clear: !F.overlap(r, F.rect(tr.querySelector('.sk-info-btn'))), lines: Math.round(r.height / lh * 10) / 10}; }); });
+        const et = w.find(x => x.n === 'Etiquette');
+        return [w.length === 18 && w.every(x => !x.missing && x.fits && x.inside && x.clear) && !!et && et.lines >= 1.8, w.filter(x => x.missing || !x.fits || !x.inside || !x.clear).slice(0, 4).concat([et])];
+      });
+      // The summary is not a control: a plain element with no text of its own, no focus, role, title or expanded state;
+      // no element in the Skills table has an expanded state, and Tab from the eye does not stop on it.
+      await check('SUMMARY-NOT-A-CONTROL', async () => {
+        await mode(page, 'play'); await go(page, 'Skills');
+        const a = await page.evaluate(() => { const F = window.__cs; return {bad: F.rows().map(tr => F.summaryOf(tr)).filter(s => !s || s.tagName !== 'DIV' || s.hasAttribute('tabindex') ||
+            s.tabIndex !== -1 || s.hasAttribute('role') || s.hasAttribute('title') || s.hasAttribute('aria-expanded') || s.textContent !== '' || s.children.length !== 0).length,
+          expanded: document.querySelectorAll('#skillsBody [aria-expanded]').length, toggles: document.querySelectorAll('#skillsBody .cs15-toggle').length}; });
+        await page.evaluate(() => { const e = window.__cs.row('Etiquette').querySelector('.sk-info-btn'); e.scrollIntoView({block: 'center'}); e.focus(); });
+        await page.keyboard.press('Tab'); await settle(page);
+        const tab = await page.evaluate(() => { const s = window.__cs.summaryOf(window.__cs.row('Etiquette')); const f = document.activeElement;
+          return {onSummary: !!s && (f === s || s.contains(f)), focused: f ? f.tagName + '.' + f.className : null}; });
+        return [a.bad === 0 && a.expanded === 0 && a.toggles === 0 && !tab.onSummary, {a, tab}];
+      });
+      // A real tap on Manage switches every card to the Manage layout at once, and a tap on Done switches it back.
+      await check('MODE-SWITCH-LIVE', async () => {
+        await mode(page, 'play'); await go(page, 'Skills');
+        const look = () => page.evaluate(() => { const F = window.__cs, tr = F.row('Kenjutsu');
+          return {summary: F.shown(F.summaryOf(tr)), trait: F.shown(tr.querySelector('.sk-trait')), school: F.shown(tr.querySelector('.sk-school')), button: document.getElementById('pm12Toggle').textContent}; });
+        await page.evaluate(() => window.__cs.row('Kenjutsu').scrollIntoView({block: 'center'})); await settle(page);
+        const a = await look();
+        await page.tap('#pm12Toggle'); await settle(page);
+        const b = await look();
+        await page.tap('#pm12Toggle'); await settle(page);
+        const c = await look();
+        return [a.summary && !a.trait && !a.school && a.button === 'Manage' && !b.summary && b.trait && b.school && b.button === 'Done' &&
+          c.summary && !c.trait && c.button === 'Manage', {a, b, c}];
+      });
+      // Play keeps Phase 12's locks on the fields, and the summary itself is drawn and never locked.
+      await check('PLAY-LOCKS-KEPT', async () => {
+        await mode(page, 'play'); await go(page, 'Skills');
+        const lock = await page.evaluate(() => { const F = window.__cs, tr = F.row('Kenjutsu'), s = F.summaryOf(tr);
+          return {summary: F.shown(s), summaryLocked: !!s && s.hasAttribute('data-pm12-locked'), traitRO: tr.querySelector('.sk-trait').readOnly, rankRO: tr.querySelector('.sk-rank').readOnly,
+            schoolOff: tr.querySelector('.sk-school').disabled, removeGone: getComputedStyle(tr.querySelector(':scope > td > .rm-btn')).display === 'none',
+            addGone: getComputedStyle(tr.querySelector('.emph-add-btn')).display === 'none', emphLocked: [...tr.querySelectorAll('.sk-emph-select')].every(e => e.hasAttribute('data-pm12-locked'))}; });
+        return [lock.summary && !lock.summaryLocked && lock.traitRO && lock.rankRO && lock.schoolOff && lock.removeGone && lock.addGone && lock.emphLocked, lock];
+      });
+      // Play: the d10 rolls and the eye opens Skill Info, from the compact card.
+      await check('PLAY-ROLL-AND-INFO', async () => {
+        await mode(page, 'play'); await go(page, 'Skills');
+        await tap(page, 'Kenjutsu', '.sk-roll'); await page.waitForTimeout(300);
+        const rolled = await page.evaluate(() => [...document.querySelectorAll('.roll-modal-overlay')].some(o => getComputedStyle(o).display !== 'none'));
+        await page.keyboard.press('Escape'); await page.waitForTimeout(150);
+        await page.evaluate(() => [...document.querySelectorAll('.roll-modal-overlay')].forEach(o => { if (getComputedStyle(o).display !== 'none') { const c = o.querySelector('[id$="Close"], .rm-btn'); if (c) c.click(); } }));
+        await settle(page);
+        await tap(page, 'Kenjutsu', '.sk-info-btn');
+        const info = await page.evaluate(() => { const o = document.getElementById('skillInfoModalOverlay'); return getComputedStyle(o).display !== 'none' && /Kenjutsu/.test(document.getElementById('skillInfoTitle').textContent); });
+        await page.evaluate(() => document.getElementById('skillInfoClose').click()); await settle(page);
+        return [rolled === true && info === true, {rolled, info}];
+      });
 
-      // The control is a real button with an accessible name and state, adds no text to the row and has no title=.
-      await mode(page, 'management');
-      const acc = await page.evaluate(() => { const F = window.__cs, tr = F.row('Kenjutsu'), t = tr && F.toggle(tr); if (!t) return {missing: true};
-        return {tag: t.tagName, type: t.type, text: t.textContent, title: t.hasAttribute('title'), label: t.getAttribute('aria-label'),
-          expanded: t.getAttribute('aria-expanded'), before: getComputedStyle(t, '::before').content, rowText: tr.textContent.includes('Details')}; });
-      await tapToggle(page, 'Kenjutsu');
-      const accOpen = await page.evaluate(() => { const t = window.__cs.toggle(window.__cs.row('Kenjutsu')); return t && t.getAttribute('aria-expanded'); });
-      await tapToggle(page, 'Kenjutsu');
-      set('TOGGLE-ACCESSIBLE', acc.tag === 'BUTTON' && acc.type === 'button' && acc.text === '' && acc.title === false && acc.rowText === false &&
-        acc.label === 'Details for Kenjutsu: Agility, Katana, Ninja-to' && acc.expanded === 'false' && /Details/.test(acc.before || '') && accOpen === 'true', {acc, accOpen});
-
-      // A tap opens one card's Details (every secondary item drawn) and a second tap closes it; other cards stay closed.
-      await tapToggle(page, 'Kenjutsu');
-      const opened = await state(page, 'Kenjutsu');
-      const others = await page.evaluate(() => window.__cs.rows().filter(t => t.querySelector('.sk-name').value !== 'Kenjutsu').every(t => t.querySelector('.cs15-toggle').getAttribute('aria-expanded') === 'false'));
-      await tapToggle(page, 'Kenjutsu');
-      const closedAgain = await state(page, 'Kenjutsu');
-      const need = ['trait', 'school', 'xp', 'emphAdd', 'limit', 'remove', 'mastery', 'emph0', 'emph1'];
-      set('TOGGLE-OPENS-CLOSES', opened.expanded === 'true' && need.every(k => opened.shown[k] === true) && others &&
-        closedAgain.expanded === 'false' && need.every(k => closedAgain.shown[k] === false), {opened, others, closedAgain});
-
-      // Keyboard: Enter opens, Space closes.
-      await page.evaluate(() => { const t = window.__cs.toggle(window.__cs.row('Iaijutsu')); if (t) t.focus(); });
-      await page.keyboard.press('Enter'); await settle(page);
-      const k1 = await state(page, 'Iaijutsu');
-      await page.keyboard.press('Space'); await settle(page);
-      const k2 = await state(page, 'Iaijutsu');
-      set('TOGGLE-KEYBOARD', k1.expanded === 'true' && k1.shown.trait === true && k2.expanded === 'false' && k2.shown.trait === false, {k1, k2});
-
-      // Under Details, in order: Trait, Emphases, School, XP, then the Mastery notes, then Remove; all below the second row.
-      await tapToggle(page, 'Kenjutsu');
-      const order = await page.evaluate(() => { const F = window.__cs, tr = F.row('Kenjutsu'), y = e => F.rect(e).top;
-        const s = F.secondary(tr), t = F.rect(F.toggle(tr)).bottom;
-        const seq = [y(s.trait), y(tr.querySelector('.emph-container')), y(s.school), y(s.xp), y(s.mastery), y(s.remove)];
-        return {seq: seq.map(Math.round), below: seq.every(v => v >= t - 1), rising: seq.every((v, i) => i === 0 || v > seq[i - 1])}; });
-      set('DETAILS-ORDER', order.below && order.rising, order);
-
-      // Live summary: typing a Trait, ticking School and removing an Emphasis all show at once; so does a change the
-      // sheet makes itself followed by its recalculation.
-      const live = [];
-      const sum = () => page.evaluate(() => window.__cs.toggle(window.__cs.row('Kenjutsu')).getAttribute('data-cs15-summary'));
-      await page.evaluate(() => window.__cs.row('Kenjutsu').querySelector('.sk-trait').scrollIntoView({block: 'center'}));
-      const traitBox = await page.evaluateHandle(() => window.__cs.row('Kenjutsu').querySelector('.sk-trait'));
-      await traitBox.asElement().fill('Strength'); await settle(page); live.push(await sum());
-      const tick = await page.evaluateHandle(() => window.__cs.row('Kenjutsu').querySelector('.sk-school'));
-      await tick.asElement().tap(); await settle(page); live.push(await sum());
-      const del = await page.evaluateHandle(() => window.__cs.row('Kenjutsu').querySelector('.emph-item-del'));
-      await del.asElement().tap(); await settle(page); live.push(await sum());
-      await page.evaluate(() => { window.__cs.row('Kenjutsu').querySelector('.sk-trait').value = 'Agility'; window.__L5R_TEST__.recalcAll(); }); await settle(page); live.push(await sum());
-      set('SUMMARY-LIVE', JSON.stringify(live) === JSON.stringify(['Strength · Katana, Ninja-to', 'Strength · Katana, Ninja-to · School',
-        'Strength · Ninja-to · School', 'Agility · Ninja-to · School']), live);
-      await tapToggle(page, 'Kenjutsu');
-
-      // Opening and closing every card changes no saved value, and nothing of A03's reaches the save.
-      const before = await page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
-      const names = await page.evaluate(() => window.__cs.rows().map(t => t.querySelector('.sk-name').value));
-      for (const n of names) await page.evaluate(x => window.__cs.toggle(window.__cs.row(x)).click(), n);
-      const mid = await page.evaluate(() => window.__cs.rows().every(t => t.classList.contains('cs15-open')));
-      for (const n of names) await page.evaluate(x => window.__cs.toggle(window.__cs.row(x)).click(), n);
-      const after = await page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
-      set('VALUES-KEPT', before === after && mid && !/cs15/i.test(after) && names.length === 18, {same: before === after, mid, leak: /cs15/i.test(after)});
-
-      // Every cell and control stays where makeSkillRow put it; the one addition is the control, right after the name line.
-      const dom = await page.evaluate(() => window.__cs.rows().map(tr => { const c = [...tr.children];
-        const ok = c.length === 8 && c.every(td => td.tagName === 'TD') &&
-          c[0].querySelector(':scope > .sk-name-row > .sk-name') && c[0].querySelector(':scope > .sk-name-row > .sk-info-btn') &&
-          c[0].querySelector(':scope > .sk-name-row + .cs15-toggle') && tr.querySelectorAll('.cs15-toggle').length === 1 &&
-          c[1].querySelector(':scope > .sk-trait') && c[2].querySelector(':scope > .sk-rank') && c[3].querySelector(':scope > .emph-container') &&
-          c[3].querySelector(':scope > .emph-add-btn') && c[4].querySelector(':scope > .sk-school') && c[5].classList.contains('sk-cost') &&
-          c[6].querySelector(':scope > .sk-roll') && c[7].querySelector(':scope > .rm-btn');
-        return ok ? null : tr.querySelector('.sk-name').value; }).filter(Boolean));
-      set('DOM-NOT-MOVED', dom.length === 0, dom);
-
+      // Live summary: typing a Trait, ticking School and removing an Emphasis in Manage all show at once; so does a change
+      // the sheet makes itself followed by its recalculation. Back in Play the card draws the last one.
+      await check('SUMMARY-LIVE', async () => {
+        await mode(page, 'management'); await go(page, 'Skills');
+        const live = [];
+        const sum = () => page.evaluate(() => window.__cs.summaryOf(window.__cs.row('Kenjutsu')).getAttribute('data-cs15-summary'));
+        await (await el(page, 'Kenjutsu', '.sk-trait')).fill('Strength'); await settle(page); live.push(await sum());
+        await tap(page, 'Kenjutsu', '.sk-school'); live.push(await sum());
+        await tap(page, 'Kenjutsu', '.emph-item-del'); live.push(await sum());
+        await page.evaluate(() => { window.__cs.row('Kenjutsu').querySelector('.sk-trait').value = 'Agility'; window.__L5R_TEST__.recalcAll(); }); await settle(page); live.push(await sum());
+        await mode(page, 'play');
+        const drawn = await page.evaluate(() => window.__cs.drawn(window.__cs.summaryOf(window.__cs.row('Kenjutsu'))));
+        return [JSON.stringify(live) === JSON.stringify(['Strength · Katana, Ninja-to', 'Strength · Katana, Ninja-to · School',
+          'Strength · Ninja-to · School', 'Agility · Ninja-to · School']) && drawn === JSON.stringify('Agility · Ninja-to · School'), {live, drawn}];
+      });
+      // Switching modes and redrawing changes no saved value, and nothing of A03's reaches the save.
+      await check('VALUES-KEPT', async () => {
+        const before = await page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+        for (const m of ['management', 'play', 'management', 'play']) await mode(page, m);
+        await page.evaluate(() => window.__L5R_TEST__.recalcAll()); await settle(page);
+        const after = await page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+        const n = await page.evaluate(() => window.__cs.rows().length);
+        return [before === after && !/cs15/i.test(after) && n === 18, {same: before === after, leak: /cs15/i.test(after), n}];
+      });
+      // Every cell and control stays where makeSkillRow put it; the one addition is the summary, right after the name line.
+      await check('DOM-NOT-MOVED', async () => {
+        const dom = await page.evaluate(() => window.__cs.rows().map(tr => { const c = [...tr.children];
+          const ok = c.length === 8 && c.every(td => td.tagName === 'TD') &&
+            c[0].querySelector(':scope > .sk-name-row > .sk-name') && c[0].querySelector(':scope > .sk-name-row > .sk-info-btn') &&
+            c[0].querySelector(':scope > .sk-name-row + .cs15-summary') && tr.querySelectorAll('.cs15-summary').length === 1 &&
+            c[1].querySelector(':scope > .sk-trait') && c[2].querySelector(':scope > .sk-rank') && c[3].querySelector(':scope > .emph-container') &&
+            c[3].querySelector(':scope > .emph-add-btn') && c[4].querySelector(':scope > .sk-school') && c[5].classList.contains('sk-cost') &&
+            c[6].querySelector(':scope > .sk-roll') && c[7].querySelector(':scope > .rm-btn');
+          return ok ? null : tr.querySelector('.sk-name').value; }).filter(Boolean));
+        return [dom.length === 0, dom];
+      });
       // Anything another layer adds to the first cell, or to the name line (the School choice's source badge goes right
-      // after the name: Release 8c's SC8.badge, when present, and a stand-in placed the same way), is under Details:
-      // not drawn while closed, so the closed card keeps its height; drawn when open, after the fields.
-      const add = await page.evaluate(async () => { const F = window.__cs, T = window.__L5R_TEST__, tr = F.row('Defense');
-        const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
-        const h0 = F.rect(tr).height;
-        const n = document.createElement('div'); n.className = 'a03-test-note'; n.textContent = 'A note another layer adds'; tr.cells[0].appendChild(n);
-        const b = document.createElement('small'); b.className = 'a03-test-badge'; b.textContent = 'A badge after the name'; tr.querySelector('.sk-name').after(b);
-        let real = null;
-        if (T.SC8 && typeof T.SC8.badge === 'function') { T.SC8.badge(tr, {school: 'Hida Bushi'}); real = tr.querySelector('.sc8-source'); }
-        const added = [n, b].concat(real ? [real] : []);
-        await frame();
-        const closed = {shown: added.map(F.shown), height: Math.round(F.rect(tr).height) === Math.round(h0)};
-        F.toggle(tr).click(); await frame();
-        const xp = F.rect(tr.querySelector('td.sk-cost')).bottom;
-        const open = {shown: added.map(F.shown), afterFields: added.every(e => F.rect(e).top >= xp - 1), full: added.every(e => F.rect(e).width >= F.rect(tr.cells[1]).width - 1)};
-        F.toggle(tr).click(); added.forEach(e => e.remove());
-        return {real: !!real, closed, open}; });
-      set('FIRST-CELL-ADDITIONS', add.closed.shown.every(v => v === false) && add.closed.height && add.open.shown.every(v => v === true) &&
-        add.open.afterFields && add.open.full && add.closed.shown.length === (add.real ? 3 : 2), add);
-
-      // More Emphases than the Rank allows (Athletics' 2 at Rank 1; no other check touches Athletics): while closed, the
-      // summary leads with the sheet's own count note, in the note's own warning colour; back at Rank 4 the warning goes.
-      const typeRank = async (name, value) => { const h = await page.evaluateHandle(n => window.__cs.row(n).querySelector('.sk-rank'), name);
-        await h.asElement().scrollIntoViewIfNeeded(); await h.asElement().tap(); await page.keyboard.press('Control+A'); await page.keyboard.type(value);
-        await page.evaluate(() => document.activeElement.blur()); await settle(page); };
-      const warnOf = () => page.evaluate(() => { const F = window.__cs, tr = F.row('Athletics'), t = F.toggle(tr), note = tr.querySelector('.emph-limit-note');
-        return {expanded: t.getAttribute('aria-expanded'), summary: t.getAttribute('data-cs15-summary'), note: note.textContent.trim(), noteColour: getComputedStyle(note).color,
-          shownColour: getComputedStyle(t, '::after').color, ink: getComputedStyle(t).color}; });
-      await typeRank('Athletics', '1');
-      const w1 = await warnOf();
-      await typeRank('Athletics', '4');
-      const w2 = await warnOf();
-      set('EMPHASIS-WARNING-SHOWN', w1.expanded === 'false' && !!w1.note && w1.summary.startsWith(w1.note + ' · ') && w1.shownColour === w1.noteColour &&
-        w1.noteColour !== w1.ink && w2.summary === 'Strength · Running, Climbing' && w2.shownColour !== w1.noteColour, {w1, w2});
-
-      // Management edits from the compact row: real keystrokes in the Rank change the XP; Remove works once opened.
-      const xp0 = await page.evaluate(() => window.__cs.row('Iaijutsu').querySelector('td.sk-cost').textContent);
-      const rank = await page.evaluateHandle(() => window.__cs.row('Iaijutsu').querySelector('.sk-rank'));
-      await rank.asElement().scrollIntoViewIfNeeded(); await rank.asElement().tap(); await page.keyboard.press('Control+A'); await page.keyboard.type('6');
-      await page.evaluate(() => document.activeElement.blur()); await settle(page);
-      const xp1 = await page.evaluate(() => [window.__cs.row('Iaijutsu').querySelector('.sk-rank').value, window.__cs.row('Iaijutsu').querySelector('td.sk-cost').textContent]);
-      const count0 = await page.evaluate(() => window.__cs.rows().length);
-      await tapToggle(page, 'Lore: History');
-      const rm = await page.evaluateHandle(() => window.__cs.row('Lore: History').querySelector('.rm-btn:not(.emph-item-del)'));
-      await rm.asElement().scrollIntoViewIfNeeded(); await rm.asElement().tap(); await settle(page);
-      const count1 = await page.evaluate(() => [window.__cs.rows().length, !!window.__cs.row('Lore: History')]);
-      set('MANAGE-EDITS-WORK', xp1[0] === '6' && xp1[1] !== xp0 && count1[0] === count0 - 1 && count1[1] === false, {xp0, xp1, count0, count1});
-
-      // + Add Skill gives a blank row with its Details open; a Skill picked from the list (name and Trait filled) arrives closed.
-      await page.evaluate(() => document.getElementById('addSkill').scrollIntoView({block: 'center'})); await settle(page);
-      await page.tap('#addSkill'); await settle(page);
-      const blank = await page.evaluate(() => { const F = window.__cs, tr = F.rows().at(-1); return {name: tr.querySelector('.sk-name').value,
-        expanded: F.toggle(tr) && F.toggle(tr).getAttribute('aria-expanded'), trait: F.shown(tr.querySelector('.sk-trait'))}; });
-      // A row appended without a recalculation (as a later layer or a harness may do) is decorated as it arrives.
-      const direct = await page.evaluate(async () => { const T = window.__L5R_TEST__; const tr = T.makeSkillRow({});
-        document.getElementById('skillsBody').appendChild(tr); await Promise.resolve(); await new Promise(r => setTimeout(r, 0));
-        const t = tr.querySelectorAll('.cs15-toggle'); const out = {count: t.length, expanded: t[0] && t[0].getAttribute('aria-expanded')}; tr.remove(); return out; });
-      set('NEW-ROW-OPEN', blank.name === '' && blank.expanded === 'true' && blank.trait === true && direct.count === 1 && direct.expanded === 'true', {blank, direct});
-      const pick = await page.evaluate(() => { const own = new Set(window.__cs.rows().map(t => t.querySelector('.sk-name').value));
-        const v = [...document.querySelectorAll('#skillQuickAdd option')].map(o => o.value).filter(x => x && !own.has(x)); return v.includes('Hunting') ? 'Hunting' : v[0]; });
-      await page.selectOption('#skillQuickAdd', pick); await settle(page);
-      const picked = await page.evaluate(n => { const F = window.__cs, tr = F.row(n); return tr ? {trait: tr.querySelector('.sk-trait').value,
-        expanded: F.toggle(tr) && F.toggle(tr).getAttribute('aria-expanded'), traitShown: F.shown(tr.querySelector('.sk-trait'))} : {missing: n}; }, pick);
-      set('QUICK-ADD-CLOSED', !!picked.trait && picked.expanded === 'false' && picked.traitShown === false, picked);
-
-      // Loading a character rebuilds the rows, all closed, each with one control.
-      await page.evaluate(() => window.__cs.rows().slice(0, 4).forEach(t => t.querySelector('.cs15-toggle').click()));
-      await load(page, 'longSkills');
-      const re = await page.evaluate(() => window.__cs.rows().map(t => [t.querySelectorAll('.cs15-toggle').length, t.querySelector('.cs15-toggle') && t.querySelector('.cs15-toggle').getAttribute('aria-expanded')]));
-      set('RELOAD-CLOSED', re.length === 18 && re.every(x => x[0] === 1 && x[1] === 'false'), re);
-
-      // Play: the d10 rolls and the eye opens Skill Info, from the compact rows.
-      await mode(page, 'play'); await go(page, 'Skills');
-      const d10 = await page.evaluateHandle(() => window.__cs.row('Kenjutsu').querySelector('.sk-roll'));
-      await d10.asElement().scrollIntoViewIfNeeded(); await d10.asElement().tap(); await page.waitForTimeout(300);
-      const rolled = await page.evaluate(() => [...document.querySelectorAll('.roll-modal-overlay')].some(o => getComputedStyle(o).display !== 'none'));
-      await page.keyboard.press('Escape'); await page.waitForTimeout(150);
-      await page.evaluate(() => [...document.querySelectorAll('.roll-modal-overlay')].forEach(o => { if (getComputedStyle(o).display !== 'none') { const c = o.querySelector('[id$="Close"], .rm-btn'); if (c) c.click(); } }));
-      await settle(page);
-      const eye = await page.evaluateHandle(() => window.__cs.row('Kenjutsu').querySelector('.sk-info-btn'));
-      await eye.asElement().scrollIntoViewIfNeeded(); await eye.asElement().tap(); await settle(page);
-      const info = await page.evaluate(() => { const o = document.getElementById('skillInfoModalOverlay'); return getComputedStyle(o).display !== 'none' && /Kenjutsu/.test(document.getElementById('skillInfoTitle').textContent); });
-      await page.evaluate(() => document.getElementById('skillInfoClose').click()); await settle(page);
-      set('PLAY-ROLL-AND-INFO', rolled === true && info === true, {rolled, info});
-
-      // Play keeps Phase 12's locks: the control itself is live, and what it shows stays read-only.
-      await tapToggle(page, 'Kenjutsu');
-      const lock = await page.evaluate(() => { const F = window.__cs, tr = F.row('Kenjutsu'), t = F.toggle(tr);
-        return {toggleLocked: !!t && t.hasAttribute('data-pm12-locked'), expanded: t && t.getAttribute('aria-expanded'), traitShown: F.shown(tr.querySelector('.sk-trait')),
-          traitRO: tr.querySelector('.sk-trait').readOnly, rankRO: tr.querySelector('.sk-rank').readOnly, schoolOff: tr.querySelector('.sk-school').disabled,
-          removeGone: getComputedStyle(tr.querySelector('.rm-btn:not(.emph-item-del)')).display === 'none', addGone: getComputedStyle(tr.querySelector('.emph-add-btn')).display === 'none',
-          emphLocked: [...tr.querySelectorAll('.sk-emph-select')].every(e => e.hasAttribute('data-pm12-locked'))}; });
-      set('PLAY-LOCKS-KEPT', lock.toggleLocked === false && lock.expanded === 'true' && lock.traitShown && lock.traitRO && lock.rankRO && lock.schoolOff &&
-        lock.removeGone && lock.addGone && lock.emphLocked, lock);
-      await tapToggle(page, 'Kenjutsu');
-
-      // At the very end of the page, closed and with the last card open, every control of the last card is tappable and
-      // none lies under a floating control (A02's corners, where present).
-      const ends = [];
-      for (const m of ['play', 'management']) {
-        await mode(page, m); await go(page, 'Skills');
-        for (const openLast of [false, true]) {
-          await page.evaluate(o => { const tr = window.__cs.rows().at(-1); tr.querySelector('.cs15-toggle') && (tr.classList.contains('cs15-open') !== o) && tr.querySelector('.cs15-toggle').click(); }, openLast);
+      // after the name: Release 8c's SC8.badge, when present, and a stand-in placed the same way), is drawn in both
+      // modes, full width, below the second row; in Manage after the XP and before Remove. (Among the trunk's own
+      // first-cell notes it keeps its place in the page: a name-line badge before the Mastery notes, a note after.)
+      await check('FIRST-CELL-ADDITIONS', async () => {
+        const add = await page.evaluate(async () => { const F = window.__cs, T = window.__L5R_TEST__, tr = F.row('Defense');
+          const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+          const n = document.createElement('div'); n.className = 'a03-test-note'; n.textContent = 'A note another layer adds'; tr.cells[0].appendChild(n);
+          const b = document.createElement('small'); b.className = 'a03-test-badge'; b.textContent = 'A badge after the name'; tr.querySelector('.sk-name').after(b);
+          let real = null;
+          if (T.SC8 && typeof T.SC8.badge === 'function') { T.SC8.badge(tr, {school: 'Hida Bushi'}); real = tr.querySelector('.sc8-source'); }
+          const added = [n, b].concat(real ? [real] : []);
+          const res = {};
+          for (const m of ['management', 'play']) {
+            T.MODES12.set(m); await frame();
+            const cs = getComputedStyle(tr), content = F.rect(tr).width - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - parseFloat(cs.borderLeftWidth) - parseFloat(cs.borderRightWidth);
+            const above = m === 'play' ? F.rect(F.summaryOf(tr) || tr).bottom : F.rect(tr.querySelector(':scope > td.sk-cost')).bottom;
+            const removeTop = F.rect(tr.querySelector(':scope > td:has(> .rm-btn)')).top;
+            res[m] = {shown: added.map(F.shown), after: added.every(e => F.rect(e).top >= above - 1), beforeRemove: m === 'play' || added.every(e => F.rect(e).bottom <= removeTop + 1),
+              full: added.every(e => F.rect(e).width >= content - 2)};
+          }
+          added.forEach(e => e.remove());
+          return {real: !!real, res}; });
+        const ok = ['management', 'play'].every(m => add.res[m].shown.every(v => v === true) && add.res[m].after && add.res[m].beforeRemove && add.res[m].full);
+        return [ok && add.res.play.shown.length === (add.real ? 3 : 2), add];
+      });
+      // More Emphases than the Rank allows (Athletics' 2 at Rank 1, typed in Manage; no other check touches Athletics):
+      // in Play the summary leads with the sheet's own count note, in the note's own warning colour; at Rank 4 it goes.
+      await check('EMPHASIS-WARNING-SHOWN', async () => {
+        const warnOf = () => page.evaluate(() => { const F = window.__cs, tr = F.row('Athletics'), s = F.summaryOf(tr), note = tr.querySelector('.emph-limit-note');
+          return {summary: s.getAttribute('data-cs15-summary'), drawn: F.drawn(s), note: note.textContent.trim(), noteColour: getComputedStyle(note).color,
+            shownColour: getComputedStyle(s, '::after').color, ink: getComputedStyle(s).color, shown: F.shown(s)}; });
+        await mode(page, 'management'); await go(page, 'Skills');
+        await type(page, 'Athletics', '.sk-rank', '1');
+        await mode(page, 'play');
+        const w1 = await warnOf();
+        await mode(page, 'management');
+        await type(page, 'Athletics', '.sk-rank', '4');
+        await mode(page, 'play');
+        const w2 = await warnOf();
+        return [w1.shown && !!w1.note && w1.summary.startsWith(w1.note + ' · ') && w1.drawn === JSON.stringify(w1.summary) && w1.shownColour === w1.noteColour &&
+          w1.noteColour !== w1.ink && w2.summary === 'Strength · Running, Climbing' && w2.shownColour !== w1.noteColour, {w1, w2}];
+      });
+      // Manage edits straight from the card, by real taps: Rank (the XP follows), Trait, the School tick, + Emph and Remove.
+      await check('MANAGE-EDITS-WORK', async () => {
+        await mode(page, 'management'); await go(page, 'Skills');
+        const xp0 = await page.evaluate(() => window.__cs.row('Iaijutsu').querySelector(':scope > td.sk-cost').textContent);
+        await type(page, 'Iaijutsu', '.sk-rank', '7');
+        const xp1 = await page.evaluate(() => [window.__cs.row('Iaijutsu').querySelector('.sk-rank').value, window.__cs.row('Iaijutsu').querySelector(':scope > td.sk-cost').textContent]);
+        await type(page, 'Kyujutsu', '.sk-trait', 'Agility');
+        const trait = await page.evaluate(() => window.__cs.row('Kyujutsu').querySelector('.sk-trait').value);
+        const school0 = await page.evaluate(() => window.__cs.row('Horsemanship').querySelector('.sk-school').checked);
+        await tap(page, 'Horsemanship', '.sk-school');
+        const school1 = await page.evaluate(() => window.__cs.row('Horsemanship').querySelector('.sk-school').checked);
+        const emph0 = await page.evaluate(() => window.__cs.row('Jiujutsu').querySelectorAll('.emph-item-row').length);
+        await tap(page, 'Jiujutsu', '.emph-add-btn');
+        const emph1 = await page.evaluate(() => window.__cs.row('Jiujutsu').querySelectorAll('.emph-item-row').length);
+        const count0 = await page.evaluate(() => window.__cs.rows().length);
+        await tap(page, 'Lore: History', ':scope > td > .rm-btn');
+        const count1 = await page.evaluate(() => [window.__cs.rows().length, !!window.__cs.row('Lore: History')]);
+        return [xp1[0] === '7' && xp1[1] !== xp0 && trait === 'Agility' && school1 === !school0 && emph1 === emph0 + 1 && count1[0] === count0 - 1 && count1[1] === false,
+          {xp0, xp1, trait, school0, school1, emph0, emph1, count0, count1}];
+      });
+      // Play: exactly the Mastery notes the Rank reaches; after Iaijutsu's Rank went from 5 to 7 above, its R7 note too.
+      await check('PLAY-MASTERIES-REACHED', async () => {
+        await mode(page, 'play'); await go(page, 'Skills');
+        const iai = await page.evaluate(() => { const F = window.__cs; return F.masteries(F.row('Iaijutsu')).map(m => ({tier: m.tier, reached: m.reached, shown: F.shown(m.e)})); });
+        return [staticNotes.length === 0 && someReached && someNot && iai.length === 3 && iai.every(m => m.reached && m.shown),
+          {staticNotes: staticNotes.slice(0, 3).map(c => [c.name, c.spans]), someReached, someNot, iai}];
+      });
+      // + Add Skill gives a blank row whose Trait can be typed at once; a row appended without a recalculation (as a later
+      // layer or a harness may do) gets its summary as it arrives.
+      await check('NEW-ROW', async () => {
+        await mode(page, 'management'); await go(page, 'Skills');
+        await page.evaluate(() => document.getElementById('addSkill').scrollIntoView({block: 'center'})); await settle(page);
+        await page.tap('#addSkill'); await settle(page);
+        const blank = await page.evaluate(() => { const F = window.__cs, tr = F.rows().at(-1); return {name: tr.querySelector('.sk-name').value, lines: tr.querySelectorAll('.cs15-summary').length,
+          trait: F.shown(tr.querySelector('.sk-trait'))}; });
+        const h = await page.evaluateHandle(() => { const e = window.__cs.rows().at(-1).querySelector('.sk-trait'); e.scrollIntoView({block: 'center'}); return e; });
+        await settle(page); await h.asElement().tap(); await page.keyboard.type('Agility'); await page.evaluate(() => document.activeElement.blur()); await settle(page);
+        const typed = await page.evaluate(() => { const tr = window.__cs.rows().at(-1); return [tr.querySelector('.sk-trait').value, window.__cs.summaryOf(tr).getAttribute('data-cs15-summary')]; });
+        const direct = await page.evaluate(async () => { const T = window.__L5R_TEST__; const tr = T.makeSkillRow({});
+          document.getElementById('skillsBody').appendChild(tr); await Promise.resolve(); await new Promise(r => setTimeout(r, 0));
+          const out = tr.querySelectorAll('.cs15-summary').length; tr.remove(); return out; });
+        return [blank.name === '' && blank.lines === 1 && blank.trait === true && typed[0] === 'Agility' && typed[1] === 'Agility' && direct === 1, {blank, typed, direct}];
+      });
+      // A Skill picked from the list arrives with its Trait in the summary; in Play its fields are not drawn.
+      await check('QUICK-ADD', async () => {
+        await mode(page, 'management'); await go(page, 'Skills');
+        const pick = await page.evaluate(() => { const own = new Set(window.__cs.rows().map(t => t.querySelector('.sk-name').value));
+          const v = [...document.querySelectorAll('#skillQuickAdd option')].map(o => o.value).filter(x => x && !own.has(x)); return v.includes('Hunting') ? 'Hunting' : v[0]; });
+        await page.selectOption('#skillQuickAdd', pick); await settle(page);
+        const m = await page.evaluate(n => { const F = window.__cs, tr = F.row(n); return tr ? {trait: tr.querySelector('.sk-trait').value, summary: F.summaryOf(tr).getAttribute('data-cs15-summary'),
+          traitShown: F.shown(tr.querySelector('.sk-trait'))} : {missing: n}; }, pick);
+        await mode(page, 'play');
+        const p = await page.evaluate(n => { const F = window.__cs, tr = F.row(n); return tr ? {summary: F.shown(F.summaryOf(tr)), traitCell: F.shown(F.cells(tr).trait)} : {missing: n}; }, pick);
+        return [!!m.trait && m.summary.startsWith(m.trait) && m.traitShown === true && p.summary === true && p.traitCell === false, {pick, m, p}];
+      });
+      // Loading a character rebuilds the rows, each with one summary that matches its fields.
+      await check('RELOAD', async () => {
+        await load(page, 'longSkills');
+        const re = await page.evaluate(() => window.__cs.rows().map(t => [t.querySelectorAll('.cs15-summary').length, (t.querySelector('.cs15-summary') || {getAttribute() { return null; }}).getAttribute('data-cs15-summary') === window.__cs.expectSummary(t)]));
+        return [re.length === 18 && re.every(x => x[0] === 1 && x[1] === true), re];
+      });
+      // At the very end of the page, in both modes, every control of the last card is tappable and none lies under a
+      // floating control (A02's corners, where present).
+      await check('PHONE-END-CLEAR', async () => {
+        const ends = [];
+        for (const m of ['play', 'management']) {
+          await mode(page, m); await go(page, 'Skills');
           await page.evaluate(() => window.__cs.scroll('end')); await settle(page);
-          ends.push(await page.evaluate(([m, o]) => { const F = window.__cs, tr = F.rows().at(-1);
+          ends.push(await page.evaluate(mm => { const F = window.__cs, tr = F.rows().at(-1);
             const floats = ['floatingDiceBtn', 'scrollTopBtn', 'quickAccessToggleBtn'].map(id => document.getElementById(id)).filter(F.shown).map(F.rect);
             const ctl = [...tr.querySelectorAll('button,input,select,textarea')].filter(F.shown);
             const bad = ctl.filter(e => !F.hits(e) || floats.some(f => F.overlap(F.rect(e), f))).map(e => e.className || e.tagName);
-            return {m, o, count: ctl.length, bad}; }, [m, openLast]));
+            return {m: mm, count: ctl.length, bad}; }, m));
         }
-      }
-      set('PHONE-END-CLEAR', ends.length === 4 && ends.every(e => e.count >= 3 && e.bad.length === 0), ends);
-
+        return [ends.length === 2 && ends.every(e => e.count >= 3 && e.bad.length === 0), ends];
+      });
       // Print, at phone width: the Skills table and the Adv & Disadv page print exactly as they do without A03's class.
-      await mode(page, 'management');
-      await page.emulateMedia({media: 'print'});
-      const measure = () => page.evaluate(() => { const F = window.__cs;
-        const g = document.getElementById('advList').parentElement.parentElement;
-        return JSON.stringify({rows: F.rows().map(tr => [getComputedStyle(tr).display, Math.round(F.rect(tr).height), [...tr.children].map(td => getComputedStyle(td).display).join()]),
-          toggles: F.rows().map(tr => F.toggle(tr) ? getComputedStyle(F.toggle(tr)).display : 'none'), adv: getComputedStyle(g).alignItems}); });
-      const withA03 = await measure();
-      // The reference is the page without A03: its class taken away and its controls lifted out (A03 adds nothing else).
-      const had = await page.evaluate(() => { const h = document.body.classList.contains('cs15-on'); document.body.classList.remove('cs15-on');
-        window.__csLifted = [...document.querySelectorAll('#skillsBody .cs15-toggle')].map(t => [t, t.parentNode, t.nextSibling]);
-        window.__csLifted.forEach(([t]) => t.remove()); return h; });
-      const without = await measure();
-      await page.evaluate(h => { window.__csLifted.forEach(([t, p, n]) => p.insertBefore(t, n)); if (h) document.body.classList.add('cs15-on'); }, had);
-      await page.emulateMedia({media: 'screen'});
-      const pw = JSON.parse(withA03);
-      set('PRINT-UNCHANGED', withA03 === without && pw.toggles.every(d => d === 'none') && pw.rows.every(r => r[0] !== 'grid'), {same: withA03 === without, pw: withA03.slice(0, 300)});
+      await check('PRINT-UNCHANGED', async () => {
+        await mode(page, 'management');
+        await page.emulateMedia({media: 'print'});
+        const measure = () => page.evaluate(() => { const F = window.__cs;
+          const g = document.getElementById('advList').parentElement.parentElement;
+          return JSON.stringify({rows: F.rows().map(tr => [getComputedStyle(tr).display, Math.round(F.rect(tr).height), [...tr.children].map(td => getComputedStyle(td).display).join(),
+            F.masteries(tr).map(x => getComputedStyle(x.e).display).join()]),
+            summaries: F.rows().map(tr => F.summaryOf(tr) ? getComputedStyle(F.summaryOf(tr)).display : 'none'), adv: getComputedStyle(g).alignItems}); });
+        let withA03, without;
+        try {
+          withA03 = await measure();
+          // The reference is the page without A03: its class taken away and its summaries lifted out (A03 adds nothing else).
+          const had = await page.evaluate(() => { const h = document.body.classList.contains('cs15-on'); document.body.classList.remove('cs15-on');
+            window.__csLifted = [...document.querySelectorAll('#skillsBody .cs15-summary')].map(t => [t, t.parentNode, t.nextSibling]);
+            window.__csLifted.forEach(([t]) => t.remove()); return h; });
+          without = await measure();
+          await page.evaluate(h => { window.__csLifted.forEach(([t, p, n]) => p.insertBefore(t, n)); if (h) document.body.classList.add('cs15-on'); }, had);
+        } finally {
+          await page.emulateMedia({media: 'screen'});
+        }
+        const pw = JSON.parse(withA03);
+        return [withA03 === without && pw.summaries.every(d => d === 'none') && pw.rows.every(r => r[0] !== 'grid'), {same: withA03 === without, pw: withA03.slice(0, 300)}];
+      });
     });
 
-    // ---------- Small phone, 375 x 667, and the narrowest, 320 x 568: the compact rows still fit, with room for the name.
-    for (const [id, opts, minName, maxH] of [['SMALL-PHONE-FIT', SMALL, 100, 140], ['NARROW-PHONE-FIT', NARROW, 80, 180]]) {
+    // ---------- Small phone, 375 x 667, and the narrowest, 320 x 568: both rows still fit, with room for the name.
+    for (const [id, opts, minName] of [['SMALL-PHONE-FIT', SMALL, 100], ['NARROW-PHONE-FIT', NARROW, 80]]) {
       await session(browser, opts, async page => {
-        const bad = [];
-        for (const m of ['management', 'play']) {
-          await mode(page, m); await go(page, 'Skills');
-          const r = await page.evaluate(() => window.__cs.rows().map(tr => window.__cs.card(tr)));
-          const doc = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
-          for (const c of r) if (!(c.firstShown && c.firstRow && c.secondRow && c.inside && c.noOverflow && doc && c.nameWidth >= minName && c.h <= maxH)) bad.push([m, c]);
-        }
-        set(id, bad.length === 0, bad.slice(0, 3));
+        await check(id, async () => {
+          const bad = [];
+          for (const m of ['management', 'play']) {
+            await mode(page, m); await go(page, 'Skills');
+            const r = await page.evaluate(mm => window.__cs.rows().map(tr => window.__cs.card(tr, mm)), m);
+            const doc = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+            for (const c of r) if (!(c.firstShown && c.firstRow && c.secondRow && c.inside && c.noOverflow && doc && c.nameWidth >= minName)) bad.push([m, c]);
+          }
+          return [bad.length === 0, bad.slice(0, 3)];
+        });
       });
     }
 
-    // ---------- Tablet, 700 x 1000: the Skills table in its scroller, unchanged, with no Details control.
+    // ---------- Tablet, 700 x 1000: the Skills table in its scroller, unchanged, with no summary line.
     await session(browser, TABLET, async page => {
-      await mode(page, 'management'); await go(page, 'Skills');
-      const t = await page.evaluate(() => { const F = window.__cs; return {scroller: !!document.querySelector('.car-hscroll > #skillsTable'),
-        bad: F.rows().map(tr => ({tr: getComputedStyle(tr).display, toggle: !F.toggle(tr) || !F.shown(F.toggle(tr)), sec: Object.values(F.secondary(tr)).every(F.shown)}))
-          .filter(x => x.tr !== 'table-row' || !x.toggle || !x.sec).length}; });
-      set('TABLET-UNCHANGED', t.scroller && t.bad === 0, t);
+      await check('TABLET-UNCHANGED', async () => {
+        await mode(page, 'management'); await go(page, 'Skills');
+        const t = await page.evaluate(() => { const F = window.__cs; return {scroller: !!document.querySelector('.car-hscroll > #skillsTable'),
+          bad: F.rows().map(tr => ({tr: getComputedStyle(tr).display, summary: F.shown(F.summaryOf(tr)), controls: Object.values(F.fields(tr)).every(F.shown),
+            notes: F.masteries(tr).every(x => F.shown(x.e))})).filter(x => x.tr !== 'table-row' || x.summary || !x.controls || !x.notes).length}; });
+        return [t.scroller && t.bad === 0, t];
+      });
     });
     seen['NO-SCRIPT-ERRORS'] = errors.length === 0;
   } finally {

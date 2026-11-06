@@ -1,4 +1,4 @@
-"""Pinned negative variants for Release 15a, A03 (top-aligned columns and compact phone Skill cards); sequential, each must fail exactly its
+"""Pinned negative variants for Release 15a, A03 (top-aligned columns and compact phone Skill cards; revision 2); sequential, each must fail exactly its
 pinned checks (variants.json, written before the first run) and exit 1. Each variant is the built sheet with one change;
 the baseline is main at the branch point. A scenario that stops on a broken build is one FAIL and its
 later checks never run, so the pin is the set of failed checks, not a count. --dry-run checks that every mutation is
@@ -21,16 +21,21 @@ cases = [
  ["disabled", "const COMPACT_SKILL_CARDS_ENABLED = true;", "const COMPACT_SKILL_CARDS_ENABLED = false;"],
  ["columns-bottom", "html body.car-active.cs15-on .car-page .grid.g-2:has(> * > #advList) {", "html body.car-active.cs15-on .car-page .grid.g-2:has(> * > #advListX) {"],
  ["columns-in-print", "  @media screen {\n    html body.car-active.cs15-on .car-page .grid.g-2", "  @media all {\n    html body.car-active.cs15-on .car-page .grid.g-2"],
+ ["cards-in-print", "  @media screen and (max-width: 600px) {\n    html body.car-active.cs15-on #skillsBody > tr {", "  @media (max-width: 600px) {\n    html body.car-active.cs15-on #skillsBody > tr {"],
  ["no-grid", "    html body.car-active.cs15-on #skillsBody > tr {\n      display: grid;", "    html body.car-active.cs15-on #skillsBody > tr {\n      display: block;"],
- ["closed-cells-shown", "#skillsBody > tr:not(.cs15-open) > td:not(:first-child):not(", "#skillsBody > tr.cs15-never > td:not(:first-child):not("],
- ["notes-shown", "#skillsBody > tr:not(.cs15-open) > td:first-child > :not(.sk-name-row):not(.cs15-toggle) {", "#skillsBody > tr.cs15-never > td:first-child > :not(.sk-name-row):not(.cs15-toggle) {"],
- ["no-summary-refresh", "const out = cs15Recalc.apply(this, arguments); api.refreshAll(); return out;", "const out = cs15Recalc.apply(this, arguments); return out;"],
- ["blank-row-closed", "      api.setOpen(tr, empty);", "      api.setOpen(tr, false);"],
- ["text-in-row", "      button.className = 'cs15-toggle';", "      button.className = 'cs15-toggle'; button.textContent = 'Details';"],
- ["toggle-everywhere", "html body.cs15-on #skillsBody .cs15-toggle {\n  display: none;", "html body.cs15-on #skillsBody .cs15-toggleX {\n  display: none;"],
+ ["play-fields-shown", "html body.car-active.cs15-on.pm12-play #skillsBody > tr > td:not(:first-child):not(:has(> .sk-rank)):not(:has(> .sk-roll)) {", "html body.car-active.cs15-on.pm12-never #skillsBody > tr > td:not(:first-child):not(:has(> .sk-rank)):not(:has(> .sk-roll)) {"],
+ ["unreached-shown", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\"] {", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8cX\"] {"],
+ ["manage-masteries-hidden", "html body.car-active.cs15-on.pm12-play #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\"] {", "html body.car-active.cs15-on #skillsBody .sk-mastery-note > span[style*=\"#a89f8c\"] {"],
+ ["manage-summary-shown", "html body.car-active.cs15-on.pm12-play #skillsBody > tr > td:first-child > .cs15-summary {", "html body.car-active.cs15-on #skillsBody > tr > td:first-child > .cs15-summary {"],
+ ["summary-everywhere", "html body.cs15-on #skillsBody .cs15-summary {\n  display: none;", "html body.cs15-on #skillsBody .cs15-summaryX {\n  display: none;"],
+ ["summary-truncated", "      line-height: 1.35;\n      overflow-wrap: break-word;\n    }", "      line-height: 1.35;\n      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;\n    }"],
+ ["text-in-row", "      line.className = 'cs15-summary';", "      line.className = 'cs15-summary'; line.textContent = 'Summary';"],
+ ["summary-focusable", "      line.className = 'cs15-summary';", "      line.className = 'cs15-summary'; line.tabIndex = 0;"],
  ["eye-in-first-row", "#skillsBody .sk-name-row > .sk-info-btn {\n      grid-row: 2;", "#skillsBody .sk-name-row > .sk-info-btn {\n      grid-row: 1;"],
+ ["remove-before-notes", "#skillsBody > tr > td:has(> .rm-btn) {\n      order: 2;", "#skillsBody > tr > td:has(> .rm-btn) {\n      order: 0;"],
  ["no-observer", "api.observer.observe(body, {childList: true});", "api.observer.observe(document.createElement('tbody'), {childList: true});"],
  ["no-input-listener", "      body.addEventListener('input', function(e){", "      body.addEventListener('cs15-never', function(e){"],
+ ["no-summary-refresh", "const out = cs15Recalc.apply(this, arguments); api.refreshAll(); return out;", "const out = cs15Recalc.apply(this, arguments); return out;"],
  ["no-warning", "      const warning = api.warning(tr);", "      const warning = '';"]
 ]
 

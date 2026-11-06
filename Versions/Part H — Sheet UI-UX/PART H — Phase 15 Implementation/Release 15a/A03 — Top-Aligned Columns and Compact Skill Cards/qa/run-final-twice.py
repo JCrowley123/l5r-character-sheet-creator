@@ -7,8 +7,8 @@ import ctypes, datetime, hashlib, json, os, subprocess, sys
 
 Q = Path(__file__).resolve().parent
 first = int(sys.argv[1])
-# Release 15a, A03: one full qualification, runs 1 and 2, after its own chain.
-assert first == 1, 'A03 has one full qualification: runs 1 and 2 only'
+# Release 15a, A03: one full qualification per revision, after its own chain: revision 1 ran 1 and 2; revision 2 runs 3 and 4.
+assert first == 3, 'A03 revision 2 has one full qualification: runs 3 and 4 only'
 prefix=(Q/'qualified-sha256.txt').read_text().strip()[:8]
 qualified = json.loads((Q / ('qualification-'+prefix+'.json')).read_bytes())  # this candidate's chain
 assert qualified.get('passed') is True and all(s['exit'] == 0 for s in qualified['stages'])
@@ -17,7 +17,7 @@ source = next(d for d in Q.parents if (d / 'BUILD-LEDGER.md').is_file() and (d /
 assert qualified['sha256'] == (Q / 'qualified-sha256.txt').read_text().strip() == hashlib.sha256(source.read_bytes()).hexdigest()
 power = (ctypes.c_byte * 12)()
 assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0] == 1, 'Mains power required'
-lock = Q / 'full-launched.txt'
+lock = Q / 'full-launched-2.txt'
 with lock.open('x', encoding='utf-8') as marker:
     marker.write(datetime.datetime.now(datetime.timezone.utc).isoformat() + '\n')
 os.environ['NODE_PATH'] = 'C:/Users/jcrow/l5r-qa-tools/node_modules'

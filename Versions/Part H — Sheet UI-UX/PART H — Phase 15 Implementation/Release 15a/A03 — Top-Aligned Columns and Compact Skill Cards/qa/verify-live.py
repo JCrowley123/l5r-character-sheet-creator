@@ -83,7 +83,7 @@ def main():
         fast = ['--require', str(V / 'PART K — Phase 14.2 Kata and Kiho References/qa/navigation-budget.cjs'),
                 '--require', str(F / 'PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs')]
         runs = [
-            (QA/'compact-skills-harness.js', [sheet], 32, fast),
+            (QA/'compact-skills-harness.js', [sheet], 35, fast),
             (V/'PART K — Phase 12.4 Play Mode Skills/qa/skills-harness.js', [sheet], 17, fast),
             (QA.parent.parent/'A02 — Floating Controls Above the Tabs/qa/floating-strip-harness.js', [sheet], 23, fast),
             (V/'Part H — Sheet UI-UX/PART H — Phase 1 UI-UX Foundations/qa/ui-foundations-harness.js', [sheet], 9, fast),
@@ -117,7 +117,7 @@ def main():
             counts = re.findall(r'(\d+)/(\d+) checks passed', run.stdout)
             results[label] = {'counts': counts[-1] if counts else None, 'expected': total,
                               'passed': run.returncode == 0 and counts[-1:] == [(str(total), str(total))]}
-    passed = (FILES_ONLY and not results) or (len(results) == 23 and sum(r['expected'] for r in results.values()) == 545 and all(r['passed'] for r in results.values()))
+    passed = (FILES_ONLY and not results) or (len(results) == 23 and sum(r['expected'] for r in results.values()) == 548 and all(r['passed'] for r in results.values()))
     report = {'commit': subprocess.check_output(['git','rev-parse','HEAD'], cwd=V.parent, text=True).strip(), 'downloaded_asset_sha256': asset_hashes, 'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'url': 'local build preview' if LOCAL else URL,
               'source_sha256': hashlib.sha256(committed(SOURCE)).hexdigest(),
               'page_sha256': hashlib.sha256(actual).hexdigest(), 'page_bytes': len(actual),

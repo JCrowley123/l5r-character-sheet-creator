@@ -1,4 +1,4 @@
-"""Release 15a, A03: candidate 6860; remove CS15 to exact A02 (live) bytes; retained 6755 (A02 less the two live-site leaves). Fresh run folders only.
+"""Release 15a, A03 (revision 2): candidate 6863 (6860 in revision 1); remove CS15 to exact A02 (live) bytes; retained 6755 (A02 less the two live-site leaves). Fresh run folders only.
 Adapted from A02's final-qa.py (constants only)."""
 from pathlib import Path
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
@@ -11,7 +11,7 @@ NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 BEFORE = '91d451099ee58f1b481fcf87b3defa7955138f9fb67a56e8fa6fac1e5ad66dc0'
 BEFORE_BYTES = 17538334
 LAST_KEPT = 'PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs'
-CANDIDATE, RETAINED, LAYERS = 6860, 6755, 1
+CANDIDATE, RETAINED, LAYERS = 6863, 6755, 1
 OUT = Q / ('final-run-' + next(a.split('=', 1)[1] for a in sys.argv if a.startswith('--run=')) if any(a.startswith('--run=') for a in sys.argv) else 'final')
 assert '--resume' not in sys.argv, 'Fresh runs only'
 OUT.mkdir(exist_ok=False)

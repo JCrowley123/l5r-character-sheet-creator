@@ -81,6 +81,15 @@ undoing it; if it is undone, do it with this part removed.
   present: remove the fix first (the removal chain does so in order). No edit to this part's
   production fragment is required.
 
+- **Release 15a A03 — Top-Aligned Columns and Compact Skill Cards** (revision 2, 6 November 2026,
+  `Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/`) reads this part's
+  `pm12-play` body class in its own stylesheet to tell Play from Manage on a phone: in Play a Skill
+  card draws a summary line and the Mastery notes already reached; otherwise the full Manage card. It
+  calls nothing here and registers nothing. Without this part the class never appears and every card
+  takes the Manage layout, which draws everything. Its stylesheet names `pm12-play`, so this part's
+  remover refuses while it is present: remove A03 first (the removal chain does so in order). No edit
+  to this part's production fragment is required.
+
 
 ## Release 8b / SC8 dependency (1 November 2026)
 

@@ -8,11 +8,12 @@ P=V/'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization
 PH=Q
 PREFIX=(Q/'qualified-sha256.txt').read_text().strip()[:8]
 # Release 15a, A03 (adapted from A02's chain; constants only). One chain for this candidate; a failed stage is kept and
-# investigated, never re-run.
+# investigated, never re-run. Revision 2: its own discovery folder and full-run lock; revision 1's evidence is kept.
 ATTEMPT=''
-DISCOVERY='discovery-1'
+DISCOVERY='discovery-2'
+LOCK='full-launched-2.txt'
 STATE=Q/('qualification-'+PREFIX+ATTEMPT+'.json')
-assert not (Q/DISCOVERY).exists() and not (Q/'full-launched.txt').exists(), 'Discovery and full runs are single-use.'
+assert not (Q/DISCOVERY).exists() and not (Q/LOCK).exists(), 'Discovery and full runs are single-use.'
 assert not STATE.exists(), 'One qualification chain only; retain and investigate failures.'
 FROZEN=(Q/'qualified-sha256.txt').read_text().strip()
 os.environ.update(PYTHONUTF8='1',NODE_PATH='C:/Users/jcrow/l5r-qa-tools/node_modules',NODE_OPTIONS='--require "'+(V/'QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js').as_posix()+'"')
@@ -33,7 +34,7 @@ try:
     assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0]==1,'Mains power required'
     run('removal-final',[sys.executable,'-B',str(Q/'test-removal.py')])
     run('variants-final',[sys.executable,'-B',str(Q/'verify-variants.py')])
-    run('dependencies',[sys.executable,'-B',str(P/'qa/feature-dependencies.py'),'src/sheet/209.9999999999999997-feat-compact-skill-cards.js','PART H PHASE 15.1.3','--also','cs15-on','cs15-toggle','cs15-open','data-cs15-summary','cs15Recalc','1129-compact-skill-cards'],str(P))
+    run('dependencies',[sys.executable,'-B',str(P/'qa/feature-dependencies.py'),'src/sheet/209.9999999999999997-feat-compact-skill-cards.js','PART H PHASE 15.1.3','--also','cs15-on','cs15-summary','data-cs15-summary','data-cs15-warn','cs15Recalc','1129-compact-skill-cards'],str(P))
     run('under-load-final',[sys.executable,'-B',str(Q/'run-under-load.py'),'under-load-'+PREFIX+ATTEMPT])
     run('discovery-launch',[sys.executable,'-B',str(Q/'discovery.py'),DISCOVERY])
     state['passed']=True
