@@ -36,3 +36,9 @@
 - **Remove:** A03 comes out with its own remover, which rebuilds A02's live app byte for byte. Nothing else changes.
 
 A04 does not start until you decide.
+
+## Results (6 November 2026)
+
+- **Every box passed:** 17 in all (checks 1 and 4–13 on iPhone Safari, checks 1–3 and 13 on Laptop Edge). There were no comments.
+- Check 13 on Laptop Edge and the decision were left blank in the doc. The owner gave both in chat: **Pass** and **Accept**.
+- **Decision: Accept.** Merging and going live wait for the owner's separate go-live word.

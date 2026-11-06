@@ -1,8 +1,8 @@
 # Release 15a · A03 — handover
 
-**State, 6 November 2026 (about 14:50 UTC): A03 REVISION 2 is BUILT AND QUALIFIED on its branch. The owner's device checks and decision are next.**
+**State, 6 November 2026 (about 15:15 UTC): the owner ACCEPTED A03 REVISION 2 after passing every device check. The owner's go-live word is next.**
 - Both full passes of revision 2 passed on their first executions.
-- The preview and the checklist are ready.
+- The owner passed all 17 device-check boxes on iPhone Safari and Laptop Edge, with no comments, and chose **Accept**.
 - **Not merged, not deployed.** Merging to `main` and deploying need the owner's explicit go-live word.
 
 | | |
@@ -15,6 +15,14 @@
 | Revision 1's checklist and the owner's comments | [Claude Doc](https://claude.ai/artifact/CNTa2BVhtR2iHWrQ5EaNTM) |
 | Comparison | [COMPARISON.md](COMPARISON.md) |
 | What A03 is and owns | [README.md](README.md) · [ROLLBACK.md](ROLLBACK.md) |
+
+## The owner's device checks and decision on revision 2
+
+6 November 2026, in the [revision 2 checklist](https://claude.ai/artifact/NuGaGAL8e4tDvjMJWfdnxy):
+- **Every box passed:** checks 1 and 4–13 on iPhone Safari, and checks 1–3 and 13 on Laptop Edge, 17 boxes in all. There were no comments.
+- Check 4 asked whether the XP, the Emphasis count and the Free badges are missed in Play, now that a phone shows them only in Manage. It passed with no comment.
+- Two answers were left blank in the doc and given in chat when asked: check 13 on Laptop Edge (the browser's print) **Pass**, and the decision **Accept**.
+- **Decision: Accept.** A03 stays as built.
 
 ## The owner's decision on revision 1, and what revision 2 changes
 
@@ -118,9 +126,11 @@ Model `claude-opus-5-5`. Readings come from the desktop app (`qa/usage.json`). T
 
 ## Next
 
-**Stop for the owner.** The owner runs the [revision 2 device checks](https://claude.ai/artifact/NuGaGAL8e4tDvjMJWfdnxy) on iPhone Safari and Laptop Edge and sets the decision: Accept, Revise or Remove.
-- **Accept and the go-live word:** fast-forward `main` to the branch (no merge commit, no force). Then verify production byte for byte with `qa/verify-live.py` (no `--url`), plus the browser and offline smoke, `BUGFIX — Older School Choices/qa/live-browser-smoke.cjs <qa/live>`.
-- **Revise:** rebuild on this branch and re-qualify.
-- **Remove:** `qa/remove-phase.py` on a scratch copy rebuilds A02 exactly ([ROLLBACK.md](ROLLBACK.md)).
+**The owner accepted revision 2 on 6 November.** Merging and going live wait for the owner's separate go-live word. On that word:
+1. fast-forward `main` to the branch (no merge commit, no force);
+2. verify production byte for byte with `qa/verify-live.py` (no `--url`);
+3. run the browser and offline smoke, `BUGFIX — Older School Choices/qa/live-browser-smoke.cjs <qa/live>`.
 
-A04 does not start until the owner decides.
+If A03 ever has to come out, `qa/remove-phase.py` on a scratch copy rebuilds A02 exactly ([ROLLBACK.md](ROLLBACK.md)).
+
+The owner has decided, so A04 may now be scheduled. It has not started, and its kickoff is not written.
