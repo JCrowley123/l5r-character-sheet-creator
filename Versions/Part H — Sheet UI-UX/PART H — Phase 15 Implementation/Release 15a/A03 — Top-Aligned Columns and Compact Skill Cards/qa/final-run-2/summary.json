@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-11-06T02:42:29.087198+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6860,
+      "total": 6860,
+      "orchestration": {
+        "expected": 6860,
+        "passed": 6860,
+        "total": 6860,
+        "leafTotal": 6860,
+        "wrapperCount": 113,
+        "leafCount": 182,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 182,
+        "fingerprint": "2ba2daed7eddaad2db02520f222f07fa24e1833312ef59d7fbbaadfadcd0838e",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 26.13
+    },
+    {
+      "label": "04-retained",
+      "passed": 6755,
+      "total": 6755,
+      "orchestration": {
+        "expected": 6755,
+        "passed": 6755,
+        "total": 6755,
+        "leafTotal": 6755,
+        "wrapperCount": 98,
+        "leafCount": 179,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 179,
+        "fingerprint": "3710082f1d7322e282bb6dd613d1f9d3b72eede714ee464bef9a488c729609b3",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 23.65
+    }
+  ],
+  "source_sha256": "eb1c29f799d6d655b8a4906e4d6a838689472e7b5d0b1d20383f7081f9a15d18",
+  "source_bytes": 17552201,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A03 \u2014 Top-Aligned Columns and Compact Skill Cards"
+  ],
+  "restoration": {
+    "sha256": "91d451099ee58f1b481fcf87b3defa7955138f9fb67a56e8fa6fac1e5ad66dc0",
+    "bytes": 17538334,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-06T03:32:31.273785+00:00"
+}

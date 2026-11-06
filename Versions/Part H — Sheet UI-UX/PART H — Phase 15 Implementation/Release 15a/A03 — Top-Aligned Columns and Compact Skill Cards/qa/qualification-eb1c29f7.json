@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-11-06T00:29:46.910141+00:00",
+  "sha256": "eb1c29f799d6d655b8a4906e4d6a838689472e7b5d0b1d20383f7081f9a15d18",
+  "stages": [
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-06T00:29:46.922054+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-06T00:30:16.515179+00:00"
+    },
+    {
+      "label": "variants-final",
+      "started_utc": "2026-11-06T00:30:16.528215+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-06T00:41:23.309155+00:00"
+    },
+    {
+      "label": "dependencies",
+      "started_utc": "2026-11-06T00:41:23.321056+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-06T00:41:23.905497+00:00"
+    },
+    {
+      "label": "under-load-final",
+      "started_utc": "2026-11-06T00:41:23.917202+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-06T01:26:18.165915+00:00"
+    },
+    {
+      "label": "discovery-launch",
+      "started_utc": "2026-11-06T01:26:18.178865+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-06T01:52:18.781998+00:00"
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-11-06T01:52:18.782529+00:00"
+}

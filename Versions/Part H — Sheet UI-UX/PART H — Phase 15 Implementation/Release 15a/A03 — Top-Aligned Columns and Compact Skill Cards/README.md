@@ -37,7 +37,12 @@ Unchanged:
 
 `qa/reproduce.cjs` loads the audit's dense test character, with either list emptied and with a long Skill list (18 Skills with Masteries, Emphases and School ticks; `qa/a03-fixtures.json`), on a phone (390 × 844), a small phone (375 × 667) and a desktop (1440 × 1000), in Play and Manage. A02 as live and A03 were measured with the same probe (`qa/reproduce/predecessor-a02/`, `qa/reproduce/candidate/`). Comparison: [COMPARISON.md](COMPARISON.md).
 
-See COMPARISON.md for the numbers measured on the frozen candidate.
+On the frozen candidate (`eb1c29f7…8d18`):
+- **Desktop columns:** the headings were 1,092–2,249 px apart and are now **0 px**, with both lists filled or either one empty.
+- **Phone Skill cards:** each card was 324–601 px and is now **116 px**.
+- **The long Skills page on a phone:** 7,581 → 2,709 px in Play, 8,894 → 2,808 px in Manage.
+- **Cards per screen:** about 1.5 → **5.5** on a phone, 1.0–1.3 → **4** on a small phone.
+- **Desktop Skills table:** unchanged, to the pixel.
 
 ## How it is built
 

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-06T00:17:25.889220+00:00",
+  "checked_utc": "2026-11-06T00:30:16.617614+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -184,6 +184,7 @@
         "DETAILS-ORDER",
         "FIRST-CELL-ADDITIONS",
         "NARROW-PHONE-FIT",
+        "PHONE-END-CLEAR",
         "SMALL-PHONE-FIT"
       ],
       "actual_failures": [
@@ -317,9 +318,11 @@
       "expected_failures": [
         "CARD-CLOSED",
         "NARROW-PHONE-FIT",
+        "NO-SCRIPT-ERRORS",
         "PHONE-END-CLEAR",
         "PLAY-LOCKS-KEPT",
         "PLAY-ROLL-AND-INFO",
+        "PRINT-UNCHANGED",
         "SMALL-PHONE-FIT"
       ],
       "actual_failures": [
@@ -381,5 +384,5 @@
       "exit": 1
     }
   ],
-  "passed": false
+  "passed": true
 }

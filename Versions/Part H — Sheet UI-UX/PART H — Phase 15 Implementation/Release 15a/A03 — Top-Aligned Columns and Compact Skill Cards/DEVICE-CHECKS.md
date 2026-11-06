@@ -1,10 +1,10 @@
 # A03 device checks: top-aligned columns and compact phone Skill cards
 
-**Candidate (A03):** [A03 preview](https://claude-release-15a-a03.l5r-character-sheet-creator.pages.dev/), branch `claude/release-15a-a03`, application `CANDIDATE`.
-**Published checklist (Claude Doc, with Pass/Fail pickers and the decision):** CHECKLIST
+**Candidate (A03):** [A03 preview](https://claude-release-15a-a03.l5r-character-sheet-creator.pages.dev/), branch `claude/release-15a-a03`, application `eb1c29f7…8d18`.
+**Published checklist (Claude Doc, with Pass/Fail pickers and the decision):** https://claude.ai/artifact/CNTa2BVhtR2iHWrQ5EaNTM
 **Predecessor (accepted and live, A02):** [the live app](https://l5r-character-sheet-creator.pages.dev/), application `91d45109…6dc0`.
 
-Use a saved character with several Skills (some with Emphases and a School tick) and both Advantages and Disadvantages. Check 9 changes a Rank and adds a blank Skill: put the Rank back and remove the blank row afterwards, or use a copy (**Save As**).
+Use a saved character with several Skills (some with Emphases and a School tick) and both Advantages and Disadvantages. Checks 7–9 edit a Skill and add rows: put them back afterwards, or use a copy (**Save As**). If the preview still looks like the live app, reload it once.
 
 | # | What to do | Pass looks like | iPhone Safari | Laptop Edge | Comments |
 |---|---|---|---|---|---|
@@ -14,7 +14,7 @@ Use a saved character with several Skills (some with Emphases and a School tick)
 | 4 | **A03 preview, iPhone.** **Skills** in Play. | Each card is two short rows: the Skill's name, **Rank** and the d10; then **▸ DETAILS** with the Trait, Emphases and "School" in one line, and the eye. Several Skills fit on the screen. | | n/a | |
 | 5 | **A03 preview, iPhone.** Play: tap a d10; close the roll. Tap an eye; close it. | The roll and the Skill information open as before, straight from the compact card. | | n/a | |
 | 6 | **A03 preview, iPhone.** Play: tap **Details** on a Skill with Masteries; tap it again. | The card opens in place: Trait, Emphases, School, XP and the Mastery notes (the ones reached highlighted), all read-only as before. The second tap closes it. | | n/a | |
-| 7 | **A03 preview, iPhone.** Tap **Manage**. On a closed card, change the **Rank** and put it back. | The Rank can be edited on the compact row, and the card stays two rows. | | n/a | |
+| 7 | **A03 preview, iPhone.** Tap **Manage**. On a closed card, change the **Rank** and put it back. | The Rank can be edited on the compact row and the card stays two rows. If you lower it below what the Emphases need, the summary turns red with the count (for example "2 / 1 emphases at rank 1") until you put it back. | | n/a | |
 | 8 | **A03 preview, iPhone.** Manage: open **Details** on a Skill. Change the Trait, add an Emphasis with **+ Emph**, tick and untick **School**; then close it. | Every field works as on the live app. The one-line summary under the name follows each change. Remove (✕) is at the bottom of the open card. | | n/a | |
 | 9 | **A03 preview, iPhone.** Manage: tap **+ Add Skill**; then pick a Skill from **Add from Skill List**. | The blank row arrives with its Details already open, so its Trait can be typed. The picked Skill arrives closed, with its Trait in the summary. | | n/a | |
 | 10 | **A03 preview, iPhone.** Scroll to the very end of **Skills**; open the last card's Details. | The last card and its controls are clear of the corner buttons. | | n/a | |

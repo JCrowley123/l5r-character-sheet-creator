@@ -2,7 +2,29 @@
   "source": "desktop app get_usage (account-wide, Claude only; Codex measured separately)",
   "model": "claude-opus-5-5",
   "readings": [
-    {"utc": "2026-11-05T23:34Z", "five_hour_pct": 10, "weekly_pct": 35, "note": "start"},
-    {"utc": "2026-11-06T00:17Z", "five_hour_pct": 52, "weekly_pct": 41, "note": "before full QA (after build, review and fixes)"}
+    {
+      "utc": "2026-11-05T23:34Z",
+      "five_hour_pct": 10,
+      "weekly_pct": 35,
+      "note": "start"
+    },
+    {
+      "utc": "2026-11-06T00:17Z",
+      "five_hour_pct": 52,
+      "weekly_pct": 41,
+      "note": "before full QA (after build, review and fixes)"
+    },
+    {
+      "utc": "2026-11-06T03:36Z",
+      "five_hour_pct": 75,
+      "weekly_pct": 44,
+      "note": "after both full passes"
+    },
+    {
+      "utc": "2026-11-06T03:45Z",
+      "five_hour_pct": 78,
+      "weekly_pct": 44,
+      "note": "end, after deployed-file checks, before the records commit"
+    }
   ]
 }

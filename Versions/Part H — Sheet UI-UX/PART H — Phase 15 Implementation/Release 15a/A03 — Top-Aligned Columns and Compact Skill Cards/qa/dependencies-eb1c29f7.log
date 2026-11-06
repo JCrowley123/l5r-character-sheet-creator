@@ -1,0 +1,40 @@
+fragment : src/sheet/209.9999999999999997-feat-compact-skill-cards.js
+marker   : PART H PHASE 15.1.3
+surface  : 8 name(s) -- 1129-compact-skill-cards, COMPACT_SKILL_CARDS_ENABLED, CS15, cs15-on, cs15-open, cs15-toggle, cs15Recalc, data-cs15-summary
+
+src\css\1129-compact-skill-cards.css
+    own      2  [PART H PHASE 15.1.3 +1]  Everything waits for body.cs15-on, which this unit's switch sets: with the switch off nothing he
+    own     17  [PART H PHASE 15.1.3 +16]  html body.car-active.cs15-on .car-page .grid.g-2:has(> * > #advList) {
+    own     22  [PART H PHASE 15.1.3 +21]  html body.cs15-on #skillsBody .cs15-toggle {
+    own     27  [PART H PHASE 15.1.3 +26]  html body.car-active.cs15-on #skillsBody > tr {
+    own     36  [PART H PHASE 15.1.3 +35]  html body.car-active.cs15-on #skillsBody > tr > td,
+    own     37  [PART H PHASE 15.1.3 +36]  html body.car-active.cs15-on #skillsBody > tr > td:first-child > *,
+    own     38  [PART H PHASE 15.1.3 +37]  html body.car-active.cs15-on #skillsBody .sk-name-row > :not(.sk-name):not(.sk-info-btn) {
+    own     41  [PART H PHASE 15.1.3 +40]  html body.car-active.cs15-on #skillsBody > tr > td:first-child > :not(.sk-name-row):not(.cs15-to
+    own     42  [PART H PHASE 15.1.3 +41]  html body.car-active.cs15-on #skillsBody .sk-name-row > :not(.sk-name):not(.sk-info-btn) {
+    own     45  [PART H PHASE 15.1.3 +44]  html body.car-active.cs15-on #skillsBody > tr > td:first-child,
+    own     46  [PART H PHASE 15.1.3 +45]  html body.car-active.cs15-on #skillsBody > tr > td:first-child > .sk-name-row {
+    own     50  [PART H PHASE 15.1.3 +49]  html body.car-active.cs15-on #skillsBody > tr > td:first-child::before {
+    own     54  [PART H PHASE 15.1.3 +53]  html body.car-active.cs15-on #skillsBody .sk-name-row > .sk-name {
+    own     60  [PART H PHASE 15.1.3 +59]  html body.car-active.cs15-on #skillsBody > tr > td:has(> .sk-rank) {
+    own     68  [PART H PHASE 15.1.3 +67]  html body.car-active.cs15-on #skillsBody > tr > td:has(> .sk-rank)::before {
+    own     73  [PART H PHASE 15.1.3 +72]  html body.car-active.cs15-on #skillsBody > tr > td > .sk-rank {
+    own     77  [PART H PHASE 15.1.3 +76]  html body.car-active.cs15-on #skillsBody > tr > td:has(> .sk-roll) {
+    own     81  [PART H PHASE 15.1.3 +80]  html body.car-active.cs15-on #skillsBody > tr > td:has(> .sk-roll)::before {
+    own     85  [PART H PHASE 15.1.3 +84]  html body.car-active.cs15-on #skillsBody > tr > td:first-child > .cs15-toggle {
+    own    105  [PART H PHASE 15.1.3 +104]  html body.car-active.cs15-on #skillsBody .cs15-toggle::before {
+    own    113  [PART H PHASE 15.1.3 +112]  html body.car-active.cs15-on #skillsBody .cs15-toggle[aria-expanded="true"]::before {
+    own    116  [PART H PHASE 15.1.3 +115]  html body.car-active.cs15-on #skillsBody .cs15-toggle::after {
+    own    117  [PART H PHASE 15.1.3 +116]  content: attr(data-cs15-summary);
+    own    127  [PART H PHASE 15.1.3 +126]  html body.car-active.cs15-on #skillsBody .cs15-toggle[data-cs15-warn]::after {
+    own    131  [PART H PHASE 15.1.3 +130]  html body.car-active.cs15-on #skillsBody .sk-name-row > .sk-info-btn {
+    own    137  [PART H PHASE 15.1.3 +136]  html body.car-active.cs15-on #skillsBody > tr > td:has(> .rm-btn) {
+    own    141  [PART H PHASE 15.1.3 +140]  html body.car-active.cs15-on #skillsBody > tr:not(.cs15-open) > td:not(:first-child):not(:has(> 
+    own    144  [PART H PHASE 15.1.3 +143]  html body.car-active.cs15-on #skillsBody > tr:not(.cs15-open) > td:first-child > :not(.sk-name-r
+    own    147  [PART H PHASE 15.1.3 +146]  html body.car-active.cs15-on #skillsBody > tr:not(.cs15-open) .sk-name-row > :not(.sk-name):not(
+
+src\sheet\210-test-seam-and-init.js
+    own    951  [PART H PHASE 15.1.3 +1]  if(typeof CS15 === 'object' && CS15) Object.assign(window.__L5R_TEST__, {CS15, COMPACT_SKILL_CAR
+    own    952  [PART H PHASE 15.1.3 +2]  // END CS15 compact-skills-seam
+
+every reference is inside a block PART H PHASE 15.1.3 owns -- surgical removal covers all of them.
