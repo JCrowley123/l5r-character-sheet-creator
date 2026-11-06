@@ -1,0 +1,133 @@
+{
+  "baseline": [
+    "CARD-CLOSED",
+    "CARD-COMPACT",
+    "CARD-FIRST-ROW",
+    "DESKTOP-COLUMNS-LEVEL",
+    "DESKTOP-COLUMNS-ONE-EMPTY",
+    "DETAILS-ORDER",
+    "DOM-NOT-MOVED",
+    "EMPHASIS-WARNING-SHOWN",
+    "FIRST-CELL-ADDITIONS",
+    "MANAGE-EDITS-WORK",
+    "NARROW-PHONE-FIT",
+    "NEW-ROW-OPEN",
+    "NO-SCRIPT-ERRORS",
+    "OTHER-GRIDS-UNCHANGED",
+    "PHONE-END-CLEAR",
+    "PLAY-LOCKS-KEPT",
+    "PLAY-ROLL-AND-INFO",
+    "PRINT-UNCHANGED",
+    "QUICK-ADD-CLOSED",
+    "RELOAD-CLOSED",
+    "SEAM-PRESENT",
+    "SMALL-PHONE-FIT",
+    "SUMMARY-LIVE",
+    "SUMMARY-MATCHES",
+    "TOGGLE-ACCESSIBLE",
+    "TOGGLE-KEYBOARD",
+    "TOGGLE-OPENS-CLOSES",
+    "TWO-COLUMN-PHONE-LEVEL",
+    "VALUES-KEPT"
+  ],
+  "disabled": [
+    "CARD-CLOSED",
+    "CARD-COMPACT",
+    "CARD-FIRST-ROW",
+    "DESKTOP-COLUMNS-LEVEL",
+    "DESKTOP-COLUMNS-ONE-EMPTY",
+    "DETAILS-ORDER",
+    "DOM-NOT-MOVED",
+    "EMPHASIS-WARNING-SHOWN",
+    "FIRST-CELL-ADDITIONS",
+    "MANAGE-EDITS-WORK",
+    "NARROW-PHONE-FIT",
+    "NEW-ROW-OPEN",
+    "NO-SCRIPT-ERRORS",
+    "OTHER-GRIDS-UNCHANGED",
+    "PHONE-END-CLEAR",
+    "PLAY-LOCKS-KEPT",
+    "PLAY-ROLL-AND-INFO",
+    "PRINT-UNCHANGED",
+    "QUICK-ADD-CLOSED",
+    "RELOAD-CLOSED",
+    "SEAM-PRESENT",
+    "SMALL-PHONE-FIT",
+    "SUMMARY-LIVE",
+    "SUMMARY-MATCHES",
+    "TOGGLE-ACCESSIBLE",
+    "TOGGLE-KEYBOARD",
+    "TOGGLE-OPENS-CLOSES",
+    "TWO-COLUMN-PHONE-LEVEL",
+    "VALUES-KEPT"
+  ],
+  "columns-bottom": [
+    "DESKTOP-COLUMNS-LEVEL",
+    "DESKTOP-COLUMNS-ONE-EMPTY",
+    "OTHER-GRIDS-UNCHANGED",
+    "TWO-COLUMN-PHONE-LEVEL"
+  ],
+  "columns-in-print": [
+    "PRINT-UNCHANGED"
+  ],
+  "no-grid": [
+    "CARD-CLOSED",
+    "CARD-COMPACT",
+    "CARD-FIRST-ROW",
+    "DETAILS-ORDER",
+    "FIRST-CELL-ADDITIONS",
+    "NARROW-PHONE-FIT",
+    "PHONE-END-CLEAR",
+    "SMALL-PHONE-FIT"
+  ],
+  "closed-cells-shown": [
+    "CARD-CLOSED",
+    "CARD-COMPACT",
+    "NARROW-PHONE-FIT",
+    "QUICK-ADD-CLOSED",
+    "SMALL-PHONE-FIT",
+    "TOGGLE-KEYBOARD",
+    "TOGGLE-OPENS-CLOSES"
+  ],
+  "notes-shown": [
+    "CARD-CLOSED",
+    "CARD-COMPACT",
+    "FIRST-CELL-ADDITIONS",
+    "NARROW-PHONE-FIT",
+    "SMALL-PHONE-FIT",
+    "TOGGLE-OPENS-CLOSES"
+  ],
+  "no-summary-refresh": [
+    "SUMMARY-LIVE"
+  ],
+  "blank-row-closed": [
+    "NEW-ROW-OPEN"
+  ],
+  "text-in-row": [
+    "TOGGLE-ACCESSIBLE"
+  ],
+  "toggle-everywhere": [
+    "DESKTOP-SKILLS-UNCHANGED",
+    "PRINT-UNCHANGED",
+    "TABLET-UNCHANGED"
+  ],
+  "eye-in-first-row": [
+    "CARD-CLOSED",
+    "NARROW-PHONE-FIT",
+    "NO-SCRIPT-ERRORS",
+    "PHONE-END-CLEAR",
+    "PLAY-LOCKS-KEPT",
+    "PLAY-ROLL-AND-INFO",
+    "PRINT-UNCHANGED",
+    "SMALL-PHONE-FIT"
+  ],
+  "no-observer": [
+    "NEW-ROW-OPEN"
+  ],
+  "no-input-listener": [
+    "SUMMARY-LIVE"
+  ],
+  "no-warning": [
+    "EMPHASIS-WARNING-SHOWN"
+  ]
+}

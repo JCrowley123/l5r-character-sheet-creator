@@ -1,0 +1,40 @@
+  detail CARD-CLOSED: [["management",{"name":"Calligraphy","h":364,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":171,"hidden":["trait","school","xp","emphAdd","limit","remove","emph0"],"expanded":"false"}],["management",{"name":"Defense","h":311,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":171,"hidden":["trait","school","xp","emphAdd","limit","remove"],"expanded":"false"}],["management",{"name":"Lore: Shadowlands","h":311,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":171,"hidden":["trait","school","xp","emphAdd","limit","remove"],"expanded":"false"}]]
+  detail CARD-COMPACT: [["management","Calligraphy",364],["management","Defense",311],["management","Lore: Shadowlands",311],["management","Lore: Theology",311],["management","Spellcraft",311],["management","Intimidation",343]]
+  detail TOGGLE-OPENS-CLOSES: {"opened":{"expanded":"true","shown":{"trait":true,"school":true,"xp":true,"emphAdd":true,"limit":true,"remove":true,"mastery":true,"emph0":true,"emph1":true}},"others":true,"closedAgain":{"expanded":"false","shown":{"trait":true,"school":true,"xp":true,"emphAdd":true,"limit":true,"remove":true,"mastery":false,"emph0":true,"emph1":true}}}
+  detail TOGGLE-KEYBOARD: {"k1":{"expanded":"true","shown":{"trait":true,"school":true,"xp":true,"emphAdd":true,"limit":true,"remove":true,"mastery":true,"emph0":true}},"k2":{"expanded":"false","shown":{"trait":true,"school":true,"xp":true,"emphAdd":true,"limit":true,"remove":true,"mastery":false,"emph0":true}}}
+  detail QUICK-ADD-CLOSED: {"trait":"Perception","expanded":"false","traitShown":true}
+  detail SMALL-PHONE-FIT: [["management",{"name":"Calligraphy","h":364,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":156}],["management",{"name":"Defense","h":311,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":156}],["management",{"name":"Lore: Shadowlands","h":311,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":156}]]
+  detail NARROW-PHONE-FIT: [["management",{"name":"Calligraphy","h":506,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":117}],["management",{"name":"Defense","h":466,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":117}],["management",{"name":"Lore: Shadowlands","h":466,"firstShown":true,"firstRow":true,"secondRow":true,"inside":true,"noOverflow":true,"nameWidth":117}]]
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+FAIL CARD-CLOSED
+FAIL CARD-COMPACT
+FAIL TOGGLE-OPENS-CLOSES
+FAIL TOGGLE-KEYBOARD
+PASS SUMMARY-MATCHES
+PASS SUMMARY-LIVE
+PASS TOGGLE-ACCESSIBLE
+PASS PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+PASS MANAGE-EDITS-WORK
+PASS NEW-ROW-OPEN
+FAIL QUICK-ADD-CLOSED
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS DETAILS-ORDER
+PASS RELOAD-CLOSED
+PASS PHONE-END-CLEAR
+FAIL SMALL-PHONE-FIT
+FAIL NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS PRINT-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+25/32 checks passed

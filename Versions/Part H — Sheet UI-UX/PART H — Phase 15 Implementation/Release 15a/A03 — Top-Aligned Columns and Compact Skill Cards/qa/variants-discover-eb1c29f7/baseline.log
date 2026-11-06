@@ -1,0 +1,62 @@
+  detail SEAM-PRESENT: {"obj":false,"on":false,"installed":false,"cls":false,"one":false}
+  detail DESKTOP-COLUMNS-LEVEL: [{"fx":"dense","m":"play","labelGap":1113,"colGap":1113,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11,"ok":false},{"fx":"dense","m":"management","labelGap":1092,"colGap":1092,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11,"ok":false}]
+  detail DESKTOP-COLUMNS-ONE-EMPTY: [{"fx":"noAdv","m":"play","labelGap":2247,"colGap":2247,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11,"ok":false},{"fx":"noAdv","m":"management","labelGap":2249,"colGap":2249,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11,"ok":false},{"fx":"noDisadv","m":"play","labelGap":1134,"colGap":1134,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":0,"ok":false},{"fx":"noDisadv","m":"management","labelGap":1157,"colGap":1157,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":0,"ok":false}]
+  detail OTHER-GRIDS desktop: [{"l":"Adv & Disadv","adv":true,"align":"end"},{"l":"Adv & Disadv","adv":true,"align":"end"}]
+  detail TWO-COLUMN-PHONE-LEVEL: [{"fx":"dense","labelGap":1404,"colGap":1404,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11},{"fx":"noAdv","labelGap":2809,"colGap":2809,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11}]
+  detail OTHER-GRIDS-UNCHANGED: [{"l":"Adv & Disadv","adv":true,"align":"end"},{"l":"Adv & Disadv","adv":true,"align":"end"}]
+  detail CARD-FIRST-ROW: [["management",{"name":"Calligraphy","h":440,"firstShown":true,"hidden":["trait","school","xp","emphAdd","limit","remove","mastery","emph0"],"expanded":null}],["management",{"name":"Defense","h":431,"firstShown":true,"hidden":["trait","school","xp","emphAdd","limit","remove","mastery"],"expanded":null}],["management",{"name":"Lore: Shadowlands","h":372,"firstShown":true,"hidden":["trait","school","xp","emphAdd","limit","remove"],"expanded":null}]]
+  detail CARD-CLOSED: [["management",{"name":"Calligraphy","h":440,"firstShown":true,"hidden":["trait","school","xp","emphAdd","limit","remove","mastery","emph0"],"expanded":null}],["management",{"name":"Defense","h":431,"firstShown":true,"hidden":["trait","school","xp","emphAdd","limit","remove","mastery"],"expanded":null}],["management",{"name":"Lore: Shadowlands","h":372,"firstShown":true,"hidden":["trait","school","xp","emphAdd","limit","remove"],"expanded":null}]]
+  detail CARD-COMPACT: [["management","Calligraphy",440],["management","Defense",431],["management","Lore: Shadowlands",372],["management","Lore: Theology",372],["management","Spellcraft",387],["management","Intimidation",419]]
+  detail SUMMARY-MATCHES: [{"n":"Calligraphy","got":null,"want":"Intelligence · Cipher · School"},{"n":"Defense","got":null,"want":"Reflexes · School"},{"n":"Lore: Shadowlands","got":null,"want":"Intelligence · School"},{"n":"Lore: Theology","got":null,"want":"Intelligence · School"},{"Calligraphy":null,"Defense":null,"Lore: Shadowlands":null,"Lore: Theology":null,"Spellcraft":null,"Intimidation":null,"Kenjutsu":null,"Iaijutsu":null,"Athletics":null,"Etiquette":null,"Courtier":null,"Investigation":null,"Jiujutsu":null,"Horsemanship":null,"Meditation":null,"Sincerity":null,"Kyujutsu":null,"Lore: History":null}]
+  detail TOGGLE-ACCESSIBLE: {"acc":{"missing":true},"accOpen":null}
+  scenario error: page.evaluate: TypeError: Cannot read properties of null (reading 'getAttribute')
+    at eval (eval at evaluate (:311:30), <anonymous>:1:130)
+    at Array.every (<anonymous>)
+    at eval (eval at evaluate (:311:30), <anonymous>:1:88)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A03 — Top-Aligned Columns and Compact Skill Cards\qa\compact-skills-harness.js:244:33
+    at async session (C:\Users\jcrow\l5r-character-s
+  detail SMALL-PHONE-FIT: [["management",{"name":"Calligraphy","h":440,"firstShown":true}],["management",{"name":"Defense","h":431,"firstShown":true}],["management",{"name":"Lore: Shadowlands","h":372,"firstShown":true}]]
+  detail NARROW-PHONE-FIT: [["management",{"name":"Calligraphy","h":667,"firstShown":true}],["management",{"name":"Defense","h":686,"firstShown":true}],["management",{"name":"Lore: Shadowlands","h":612,"firstShown":true}]]
+FAIL SEAM-PRESENT
+FAIL DESKTOP-COLUMNS-LEVEL
+FAIL DESKTOP-COLUMNS-ONE-EMPTY
+FAIL TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+FAIL OTHER-GRIDS-UNCHANGED
+FAIL CARD-FIRST-ROW
+FAIL CARD-CLOSED
+FAIL CARD-COMPACT
+FAIL TOGGLE-OPENS-CLOSES
+FAIL TOGGLE-KEYBOARD
+FAIL SUMMARY-MATCHES
+FAIL SUMMARY-LIVE
+FAIL TOGGLE-ACCESSIBLE
+FAIL PLAY-LOCKS-KEPT
+FAIL PLAY-ROLL-AND-INFO
+FAIL MANAGE-EDITS-WORK
+FAIL NEW-ROW-OPEN
+FAIL QUICK-ADD-CLOSED
+FAIL VALUES-KEPT
+FAIL DOM-NOT-MOVED
+FAIL FIRST-CELL-ADDITIONS
+FAIL EMPHASIS-WARNING-SHOWN
+FAIL DETAILS-ORDER
+FAIL RELOAD-CLOSED
+FAIL PHONE-END-CLEAR
+FAIL SMALL-PHONE-FIT
+FAIL NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+FAIL PRINT-UNCHANGED
+FAIL NO-SCRIPT-ERRORS
+3/32 checks passed
+[
+  "scenario: Error: page.evaluate: TypeError: Cannot read properties of null (reading 'getAttribute')\n" +
+    '    at eval (eval at evaluate (:311:30), <anonymous>:1:130)\n' +
+    '    at Array.every (<anonymous>)\n' +
+    '    at eval (eval at evaluate (:311:30), <anonymous>:1:88)\n' +
+    '    at UtilityScript.evaluate (<anonymous>:313:16)\n' +
+    '    at UtilityScript.<anonymous> (<anonymous>:1:44)'
+]

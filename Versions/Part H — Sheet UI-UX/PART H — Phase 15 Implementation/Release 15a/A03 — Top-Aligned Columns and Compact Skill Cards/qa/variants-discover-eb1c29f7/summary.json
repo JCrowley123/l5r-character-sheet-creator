@@ -1,0 +1,385 @@
+{
+  "checked_utc": "2026-11-06T00:17:25.889220+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DETAILS-ORDER",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "MANAGE-EDITS-WORK",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW-OPEN",
+        "NO-SCRIPT-ERRORS",
+        "OTHER-GRIDS-UNCHANGED",
+        "PHONE-END-CLEAR",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-ROLL-AND-INFO",
+        "PRINT-UNCHANGED",
+        "QUICK-ADD-CLOSED",
+        "RELOAD-CLOSED",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "TOGGLE-ACCESSIBLE",
+        "TOGGLE-KEYBOARD",
+        "TOGGLE-OPENS-CLOSES",
+        "TWO-COLUMN-PHONE-LEVEL",
+        "VALUES-KEPT"
+      ],
+      "actual_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DETAILS-ORDER",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "MANAGE-EDITS-WORK",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW-OPEN",
+        "NO-SCRIPT-ERRORS",
+        "OTHER-GRIDS-UNCHANGED",
+        "PHONE-END-CLEAR",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-ROLL-AND-INFO",
+        "PRINT-UNCHANGED",
+        "QUICK-ADD-CLOSED",
+        "RELOAD-CLOSED",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "TOGGLE-ACCESSIBLE",
+        "TOGGLE-KEYBOARD",
+        "TOGGLE-OPENS-CLOSES",
+        "TWO-COLUMN-PHONE-LEVEL",
+        "VALUES-KEPT"
+      ],
+      "counts": [
+        3,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DETAILS-ORDER",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "MANAGE-EDITS-WORK",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW-OPEN",
+        "NO-SCRIPT-ERRORS",
+        "OTHER-GRIDS-UNCHANGED",
+        "PHONE-END-CLEAR",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-ROLL-AND-INFO",
+        "PRINT-UNCHANGED",
+        "QUICK-ADD-CLOSED",
+        "RELOAD-CLOSED",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "TOGGLE-ACCESSIBLE",
+        "TOGGLE-KEYBOARD",
+        "TOGGLE-OPENS-CLOSES",
+        "TWO-COLUMN-PHONE-LEVEL",
+        "VALUES-KEPT"
+      ],
+      "actual_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "CARD-FIRST-ROW",
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "DETAILS-ORDER",
+        "DOM-NOT-MOVED",
+        "EMPHASIS-WARNING-SHOWN",
+        "FIRST-CELL-ADDITIONS",
+        "MANAGE-EDITS-WORK",
+        "NARROW-PHONE-FIT",
+        "NEW-ROW-OPEN",
+        "NO-SCRIPT-ERRORS",
+        "OTHER-GRIDS-UNCHANGED",
+        "PHONE-END-CLEAR",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-ROLL-AND-INFO",
+        "PRINT-UNCHANGED",
+        "QUICK-ADD-CLOSED",
+        "RELOAD-CLOSED",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-FIT",
+        "SUMMARY-LIVE",
+        "SUMMARY-MATCHES",
+        "TOGGLE-ACCESSIBLE",
+        "TOGGLE-KEYBOARD",
+        "TOGGLE-OPENS-CLOSES",
+        "TWO-COLUMN-PHONE-LEVEL",
+        "VALUES-KEPT"
+      ],
+      "counts": [
+        3,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "columns-bottom",
+      "expected_failures": [
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "OTHER-GRIDS-UNCHANGED",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "actual_failures": [
+        "DESKTOP-COLUMNS-LEVEL",
+        "DESKTOP-COLUMNS-ONE-EMPTY",
+        "OTHER-GRIDS-UNCHANGED",
+        "TWO-COLUMN-PHONE-LEVEL"
+      ],
+      "counts": [
+        28,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "columns-in-print",
+      "expected_failures": [
+        "PRINT-UNCHANGED"
+      ],
+      "actual_failures": [
+        "PRINT-UNCHANGED"
+      ],
+      "counts": [
+        31,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-grid",
+      "expected_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "CARD-FIRST-ROW",
+        "DETAILS-ORDER",
+        "FIRST-CELL-ADDITIONS",
+        "NARROW-PHONE-FIT",
+        "SMALL-PHONE-FIT"
+      ],
+      "actual_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "CARD-FIRST-ROW",
+        "DETAILS-ORDER",
+        "FIRST-CELL-ADDITIONS",
+        "NARROW-PHONE-FIT",
+        "PHONE-END-CLEAR",
+        "SMALL-PHONE-FIT"
+      ],
+      "counts": [
+        24,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "closed-cells-shown",
+      "expected_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "NARROW-PHONE-FIT",
+        "QUICK-ADD-CLOSED",
+        "SMALL-PHONE-FIT",
+        "TOGGLE-KEYBOARD",
+        "TOGGLE-OPENS-CLOSES"
+      ],
+      "actual_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "NARROW-PHONE-FIT",
+        "QUICK-ADD-CLOSED",
+        "SMALL-PHONE-FIT",
+        "TOGGLE-KEYBOARD",
+        "TOGGLE-OPENS-CLOSES"
+      ],
+      "counts": [
+        25,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "notes-shown",
+      "expected_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "FIRST-CELL-ADDITIONS",
+        "NARROW-PHONE-FIT",
+        "SMALL-PHONE-FIT",
+        "TOGGLE-OPENS-CLOSES"
+      ],
+      "actual_failures": [
+        "CARD-CLOSED",
+        "CARD-COMPACT",
+        "FIRST-CELL-ADDITIONS",
+        "NARROW-PHONE-FIT",
+        "SMALL-PHONE-FIT",
+        "TOGGLE-OPENS-CLOSES"
+      ],
+      "counts": [
+        26,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-summary-refresh",
+      "expected_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "actual_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "counts": [
+        31,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "blank-row-closed",
+      "expected_failures": [
+        "NEW-ROW-OPEN"
+      ],
+      "actual_failures": [
+        "NEW-ROW-OPEN"
+      ],
+      "counts": [
+        31,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "text-in-row",
+      "expected_failures": [
+        "TOGGLE-ACCESSIBLE"
+      ],
+      "actual_failures": [
+        "TOGGLE-ACCESSIBLE"
+      ],
+      "counts": [
+        31,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "toggle-everywhere",
+      "expected_failures": [
+        "DESKTOP-SKILLS-UNCHANGED",
+        "PRINT-UNCHANGED",
+        "TABLET-UNCHANGED"
+      ],
+      "actual_failures": [
+        "DESKTOP-SKILLS-UNCHANGED",
+        "PRINT-UNCHANGED",
+        "TABLET-UNCHANGED"
+      ],
+      "counts": [
+        29,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "eye-in-first-row",
+      "expected_failures": [
+        "CARD-CLOSED",
+        "NARROW-PHONE-FIT",
+        "PHONE-END-CLEAR",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-ROLL-AND-INFO",
+        "SMALL-PHONE-FIT"
+      ],
+      "actual_failures": [
+        "CARD-CLOSED",
+        "NARROW-PHONE-FIT",
+        "NO-SCRIPT-ERRORS",
+        "PHONE-END-CLEAR",
+        "PLAY-LOCKS-KEPT",
+        "PLAY-ROLL-AND-INFO",
+        "PRINT-UNCHANGED",
+        "SMALL-PHONE-FIT"
+      ],
+      "counts": [
+        24,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-observer",
+      "expected_failures": [
+        "NEW-ROW-OPEN"
+      ],
+      "actual_failures": [
+        "NEW-ROW-OPEN"
+      ],
+      "counts": [
+        31,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-input-listener",
+      "expected_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "actual_failures": [
+        "SUMMARY-LIVE"
+      ],
+      "counts": [
+        31,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-warning",
+      "expected_failures": [
+        "EMPHASIS-WARNING-SHOWN"
+      ],
+      "actual_failures": [
+        "EMPHASIS-WARNING-SHOWN"
+      ],
+      "counts": [
+        31,
+        32
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": false
+}

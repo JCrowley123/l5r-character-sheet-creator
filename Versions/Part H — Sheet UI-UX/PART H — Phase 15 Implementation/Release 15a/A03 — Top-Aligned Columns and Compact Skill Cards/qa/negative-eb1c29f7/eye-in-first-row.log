@@ -1,0 +1,107 @@
+  detail CARD-CLOSED: [["management",{"name":"Calligraphy","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"hidden":[],"expanded":"false"}],["management",{"name":"Defense","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"hidden":[],"expanded":"false"}],["management",{"name":"Lore: Shadowlands","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":171,"hidden":[],"expanded":"false"}]]
+  scenario error: elementHandle.tap: Timeout 30000ms exceeded.
+Call log:
+[2m  - attempting tap action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <path fill="var(--gold-soft)" d="M256,8 L352,250 L256,320 L160,250 Z"></path> from <td data-label="Roll" class="col-xnarrow">…</td> subtree intercepts pointer events[22m
+[2m  - retrying tap action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible,
+  detail SMALL-PHONE-FIT: [["management",{"name":"Calligraphy","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156}],["management",{"name":"Defense","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156}],["management",{"name":"Lore: Shadowlands","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":156}]]
+  detail NARROW-PHONE-FIT: [["management",{"name":"Calligraphy","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117}],["management",{"name":"Defense","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117}],["management",{"name":"Lore: Shadowlands","h":116,"firstShown":true,"firstRow":true,"secondRow":false,"inside":true,"noOverflow":true,"nameWidth":117}]]
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+FAIL CARD-CLOSED
+PASS CARD-COMPACT
+PASS TOGGLE-OPENS-CLOSES
+PASS TOGGLE-KEYBOARD
+PASS SUMMARY-MATCHES
+PASS SUMMARY-LIVE
+PASS TOGGLE-ACCESSIBLE
+FAIL PLAY-LOCKS-KEPT
+FAIL PLAY-ROLL-AND-INFO
+PASS MANAGE-EDITS-WORK
+PASS NEW-ROW-OPEN
+PASS QUICK-ADD-CLOSED
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS DETAILS-ORDER
+PASS RELOAD-CLOSED
+FAIL PHONE-END-CLEAR
+FAIL SMALL-PHONE-FIT
+FAIL NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+FAIL PRINT-UNCHANGED
+FAIL NO-SCRIPT-ERRORS
+24/32 checks passed
+[
+  'scenario: TimeoutError: elementHandle.tap: Timeout 30000ms exceeded.\n' +
+    'Call log:\n' +
+    '\x1B[2m  - attempting tap action\x1B[22m\n' +
+    '\x1B[2m    - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m    - done scrolling\x1B[22m\n' +
+    '\x1B[2m    - <path fill="var(--gold-soft)" d="M256,8 L352,250 L256,320 L160,250 Z"></path> from <td data-label="Roll" class="col-xnarrow">…</td> subtree intercepts pointer events\x1B[22m\n' +
+    '\x1B[2m  - retrying tap action\x1B[22m\n' +
+    '\x1B[2m    - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m    - done scrolling\x1B[22m\n' +
+    '\x1B[2m    - <svg class="dice-icon" aria-hidden="true" viewBox="0 0 512 512">…</svg> from <button type="button" id="floatingDiceBtn" title="Manual Dice Roll" class="floating-dice-btn print-hide">…</button> subtree intercepts pointer events\x1B[22m\n' +
+    '\x1B[2m  - retrying tap action\x1B[22m\n' +
+    '\x1B[2m    - waiting 20ms\x1B[22m\n' +
+    '\x1B[2m    - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m    - done scrolling\x1B[22m\n' +
+    '\x1B[2m    - <path fill="var(--gold-soft)" d="M256,8 L352,250 L256,320 L160,250 Z"></path> from <td data-label="Roll" class="col-xnarrow">…</td> subtree intercepts pointer events\x1B[22m\n' +
+    '\x1B[2m  - retrying tap action\x1B[22m\n' +
+    '\x1B[2m    - waiting 100ms\x1B[22m\n' +
+    '\x1B[2m    - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m    - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m    - done scrolling\x1B[22m\n' +
+    '\x1B[2m    - element is outside of the viewport\x1B[22m\n' +
+    '\x1B[2m  - retrying tap action\x1B[22m\n' +
+    '\x1B[2m    - waiting 100ms\x1B[22m\n' +
+    '\x1B[2m    14 × waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m       - done scrolling\x1B[22m\n' +
+    '\x1B[2m       - <path fill="var(--gold-soft)" d="M256,8 L352,250 L256,320 L160,250 Z"></path> from <td data-label="Roll" class="col-xnarrow">…</td> subtree intercepts pointer events\x1B[22m\n' +
+    '\x1B[2m     - retrying tap action\x1B[22m\n' +
+    '\x1B[2m       - waiting 500ms\x1B[22m\n' +
+    '\x1B[2m       - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m       - done scrolling\x1B[22m\n' +
+    '\x1B[2m       - <svg class="dice-icon" aria-hidden="true" viewBox="0 0 512 512">…</svg> from <button type="button" id="floatingDiceBtn" title="Manual Dice Roll" class="floating-dice-btn print-hide">…</button> subtree intercepts pointer events\x1B[22m\n' +
+    '\x1B[2m     - retrying tap action\x1B[22m\n' +
+    '\x1B[2m       - waiting 500ms\x1B[22m\n' +
+    '\x1B[2m       - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m       - done scrolling\x1B[22m\n' +
+    '\x1B[2m       - <path fill="var(--gold-soft)" d="M256,8 L352,250 L256,320 L160,250 Z"></path> from <td data-label="Roll" class="col-xnarrow">…</td> subtree intercepts pointer events\x1B[22m\n' +
+    '\x1B[2m     - retrying tap action\x1B[22m\n' +
+    '\x1B[2m       - waiting 500ms\x1B[22m\n' +
+    '\x1B[2m       - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - element is visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - scrolling into view if needed\x1B[22m\n' +
+    '\x1B[2m       - done scrolling\x1B[22m\n' +
+    '\x1B[2m       - element is outside of the viewport\x1B[22m\n' +
+    '\x1B[2m     - retrying tap action\x1B[22m\n' +
+    '\x1B[2m       - waiting 500ms\x1B[22m\n'
+]

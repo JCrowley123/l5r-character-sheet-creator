@@ -302,6 +302,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999999995-feat-review-one-reminder.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs",
             fragment="src/sheet/209.9999999999999996-feat-floating-strip.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards",
+            fragment="src/sheet/209.9999999999999997-feat-compact-skill-cards.js"),
 )
 
 

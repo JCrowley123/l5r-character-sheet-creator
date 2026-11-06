@@ -1,0 +1,6254 @@
+[
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "dense",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 1500,
+   "h": 1207
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1510,
+   "b": 3954,
+   "h": 2444
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1510,
+   "b": 1523,
+   "h": 13
+  },
+  "labelGap": -1217,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "dense",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 1197,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "dense",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 1626,
+   "h": 1333
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1636,
+   "b": 4217,
+   "h": 2581
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1636,
+   "b": 1648,
+   "h": 13
+  },
+  "labelGap": -1343,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "dense",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 1296,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "noAdv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 317,
+   "h": 25
+  },
+  "disCol": {
+   "x": 23,
+   "y": 327,
+   "b": 2771,
+   "h": 2444
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 327,
+   "b": 340,
+   "h": 13
+  },
+  "labelGap": -35,
+  "advRows": 0,
+  "disRows": 11
+ },
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "noAdv",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 1197,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "noAdv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 420,
+   "h": 128
+  },
+  "disCol": {
+   "x": 23,
+   "y": 430,
+   "b": 3011,
+   "h": 2581
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 430,
+   "b": 443,
+   "h": 13
+  },
+  "labelGap": -138,
+  "advRows": 0,
+  "disRows": 11
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "noAdv",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 1296,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "noDisadv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 1500,
+   "h": 1207
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1510,
+   "b": 1535,
+   "h": 25
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1510,
+   "b": 1523,
+   "h": 13
+  },
+  "labelGap": -1217,
+  "advRows": 6,
+  "disRows": 0
+ },
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "noDisadv",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 1197,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "noDisadv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 1626,
+   "h": 1333
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1636,
+   "b": 1763,
+   "h": 128
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1636,
+   "b": 1648,
+   "h": 13
+  },
+  "labelGap": -1343,
+  "advRows": 6,
+  "disRows": 0
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "noDisadv",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 1296,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "longSkills",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 1500,
+   "h": 1207
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1510,
+   "b": 3954,
+   "h": 2444
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1510,
+   "b": 1523,
+   "h": 13
+  },
+  "labelGap": -1217,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "phone",
+  "mode": "play",
+  "variant": "longSkills",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 2709,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kenjutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Iaijutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Athletics",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Etiquette",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Courtier",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Investigation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Jiujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Horsemanship",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Meditation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Sincerity",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kyujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: History",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "longSkills",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 293,
+   "b": 1626,
+   "h": 1333
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1636,
+   "b": 4217,
+   "h": 2581
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 293,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1636,
+   "b": 1648,
+   "h": 13
+  },
+  "labelGap": -1343,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "phone",
+  "mode": "management",
+  "variant": "longSkills",
+  "tab": "Skills",
+  "pageClient": 641,
+  "pageScroll": 2808,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kenjutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Iaijutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Athletics",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Etiquette",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Courtier",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Investigation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Jiujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Horsemanship",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Meditation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Sincerity",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kyujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: History",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "phone",
+  "errors": []
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "dense",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 1499,
+   "h": 1207
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1509,
+   "b": 4013,
+   "h": 2504
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1509,
+   "b": 1522,
+   "h": 13
+  },
+  "labelGap": -1217,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "dense",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 1196,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "dense",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 1625,
+   "h": 1333
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1635,
+   "b": 4244,
+   "h": 2610
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1635,
+   "b": 1648,
+   "h": 13
+  },
+  "labelGap": -1343,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "dense",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 1295,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "noAdv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 317,
+   "h": 25
+  },
+  "disCol": {
+   "x": 23,
+   "y": 327,
+   "b": 2831,
+   "h": 2504
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 327,
+   "b": 339,
+   "h": 13
+  },
+  "labelGap": -35,
+  "advRows": 0,
+  "disRows": 11
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "noAdv",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 1196,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "noAdv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 420,
+   "h": 128
+  },
+  "disCol": {
+   "x": 23,
+   "y": 430,
+   "b": 3039,
+   "h": 2610
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 430,
+   "b": 442,
+   "h": 13
+  },
+  "labelGap": -138,
+  "advRows": 0,
+  "disRows": 11
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "noAdv",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 1295,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "noDisadv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 1499,
+   "h": 1207
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1509,
+   "b": 1534,
+   "h": 25
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1509,
+   "b": 1522,
+   "h": 13
+  },
+  "labelGap": -1217,
+  "advRows": 6,
+  "disRows": 0
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "noDisadv",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 1196,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "noDisadv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 1625,
+   "h": 1333
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1635,
+   "b": 1763,
+   "h": 128
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1635,
+   "b": 1648,
+   "h": 13
+  },
+  "labelGap": -1343,
+  "advRows": 6,
+  "disRows": 0
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "noDisadv",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 1295,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "longSkills",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 1499,
+   "h": 1207
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1509,
+   "b": 4013,
+   "h": 2504
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1509,
+   "b": 1522,
+   "h": 13
+  },
+  "labelGap": -1217,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "small",
+  "mode": "play",
+  "variant": "longSkills",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 2708,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kenjutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Iaijutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Athletics",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Etiquette",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Courtier",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Investigation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Jiujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Horsemanship",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Meditation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Sincerity",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kyujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: History",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "longSkills",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 23,
+   "y": 292,
+   "b": 1625,
+   "h": 1333
+  },
+  "disCol": {
+   "x": 23,
+   "y": 1635,
+   "b": 4244,
+   "h": 2610
+  },
+  "advLabel": {
+   "x": 23,
+   "y": 292,
+   "b": 305,
+   "h": 13
+  },
+  "disLabel": {
+   "x": 23,
+   "y": 1635,
+   "b": 1648,
+   "h": 13
+  },
+  "labelGap": -1343,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "small",
+  "mode": "management",
+  "variant": "longSkills",
+  "tab": "Skills",
+  "pageClient": 464,
+  "pageScroll": 2807,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Defense",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Intimidation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kenjutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Iaijutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Athletics",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Etiquette",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Courtier",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Investigation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Jiujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Horsemanship",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Meditation",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Sincerity",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Kyujutsu",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: History",
+    "h": 116,
+    "cells": [
+     {
+      "label": "Rank",
+      "h": 37
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     }
+    ],
+    "controls": 5,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "small",
+  "errors": []
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "dense",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 1416,
+   "h": 1160
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 2528,
+   "h": 2273
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "dense",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 813,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "dense",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 1541,
+   "h": 1285
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 2634,
+   "h": 2378
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "dense",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 870,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "noAdv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 282,
+   "h": 26
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 2528,
+   "h": 2273
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 0,
+  "disRows": 11
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "noAdv",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 813,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "noAdv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 385,
+   "h": 129
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 2634,
+   "h": 2378
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 0,
+  "disRows": 11
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "noAdv",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 870,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "noDisadv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 1416,
+   "h": 1160
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 282,
+   "h": 26
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 6,
+  "disRows": 0
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "noDisadv",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 813,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "noDisadv",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 1541,
+   "h": 1285
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 385,
+   "h": 129
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 6,
+  "disRows": 0
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "noDisadv",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 870,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "longSkills",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 1416,
+   "h": 1160
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 2528,
+   "h": 2273
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "desktop",
+  "mode": "play",
+  "variant": "longSkills",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 1808,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   },
+   {
+    "name": "Kenjutsu",
+    "h": 89,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 89
+     },
+     {
+      "label": "Trait",
+      "h": 89
+     },
+     {
+      "label": "Rank",
+      "h": 89
+     },
+     {
+      "label": "Emphases",
+      "h": 89
+     },
+     {
+      "label": "School",
+      "h": 89
+     },
+     {
+      "label": "XP",
+      "h": 89
+     },
+     {
+      "label": "Roll",
+      "h": 89
+     },
+     {
+      "label": "action",
+      "h": 89
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Iaijutsu",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 3
+   },
+   {
+    "name": "Athletics",
+    "h": 89,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 89
+     },
+     {
+      "label": "Trait",
+      "h": 89
+     },
+     {
+      "label": "Rank",
+      "h": 89
+     },
+     {
+      "label": "Emphases",
+      "h": 89
+     },
+     {
+      "label": "School",
+      "h": 89
+     },
+     {
+      "label": "XP",
+      "h": 89
+     },
+     {
+      "label": "Roll",
+      "h": 89
+     },
+     {
+      "label": "action",
+      "h": 89
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Etiquette",
+    "h": 137,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 137
+     },
+     {
+      "label": "Trait",
+      "h": 137
+     },
+     {
+      "label": "Rank",
+      "h": 137
+     },
+     {
+      "label": "Emphases",
+      "h": 137
+     },
+     {
+      "label": "School",
+      "h": 137
+     },
+     {
+      "label": "XP",
+      "h": 137
+     },
+     {
+      "label": "Roll",
+      "h": 137
+     },
+     {
+      "label": "action",
+      "h": 137
+     }
+    ],
+    "controls": 9,
+    "masteryLines": 3
+   },
+   {
+    "name": "Courtier",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 3
+   },
+   {
+    "name": "Investigation",
+    "h": 137,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 137
+     },
+     {
+      "label": "Trait",
+      "h": 137
+     },
+     {
+      "label": "Rank",
+      "h": 137
+     },
+     {
+      "label": "Emphases",
+      "h": 137
+     },
+     {
+      "label": "School",
+      "h": 137
+     },
+     {
+      "label": "XP",
+      "h": 137
+     },
+     {
+      "label": "Roll",
+      "h": 137
+     },
+     {
+      "label": "action",
+      "h": 137
+     }
+    ],
+    "controls": 9,
+    "masteryLines": 3
+   },
+   {
+    "name": "Jiujutsu",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 3
+   },
+   {
+    "name": "Horsemanship",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 3
+   },
+   {
+    "name": "Meditation",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 3
+   },
+   {
+    "name": "Sincerity",
+    "h": 56,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 56
+     },
+     {
+      "label": "Trait",
+      "h": 56
+     },
+     {
+      "label": "Rank",
+      "h": 56
+     },
+     {
+      "label": "Emphases",
+      "h": 56
+     },
+     {
+      "label": "School",
+      "h": 56
+     },
+     {
+      "label": "XP",
+      "h": 56
+     },
+     {
+      "label": "Roll",
+      "h": 56
+     },
+     {
+      "label": "action",
+      "h": 56
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 1
+   },
+   {
+    "name": "Kyujutsu",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 7,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: History",
+    "h": 48,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 48
+     },
+     {
+      "label": "Trait",
+      "h": 48
+     },
+     {
+      "label": "Rank",
+      "h": 48
+     },
+     {
+      "label": "Emphases",
+      "h": 48
+     },
+     {
+      "label": "School",
+      "h": 48
+     },
+     {
+      "label": "XP",
+      "h": 48
+     },
+     {
+      "label": "Roll",
+      "h": 48
+     },
+     {
+      "label": "action",
+      "h": 48
+     }
+    ],
+    "controls": 6,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "longSkills",
+  "tab": "Adv & Disadv",
+  "grid": "start",
+  "advCol": {
+   "x": 153,
+   "y": 256,
+   "b": 1541,
+   "h": 1285
+  },
+  "disCol": {
+   "x": 725,
+   "y": 256,
+   "b": 2634,
+   "h": 2378
+  },
+  "advLabel": {
+   "x": 153,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "disLabel": {
+   "x": 725,
+   "y": 256,
+   "b": 270,
+   "h": 14
+  },
+  "labelGap": 0,
+  "advRows": 6,
+  "disRows": 11
+ },
+ {
+  "device": "desktop",
+  "mode": "management",
+  "variant": "longSkills",
+  "tab": "Skills",
+  "pageClient": 813,
+  "pageScroll": 2096,
+  "rows": [
+   {
+    "name": "Calligraphy",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   },
+   {
+    "name": "Defense",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: Shadowlands",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Lore: Theology",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   },
+   {
+    "name": "Spellcraft",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 1
+   },
+   {
+    "name": "Intimidation",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   },
+   {
+    "name": "Kenjutsu",
+    "h": 120,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 120
+     },
+     {
+      "label": "Trait",
+      "h": 120
+     },
+     {
+      "label": "Rank",
+      "h": 120
+     },
+     {
+      "label": "Emphases",
+      "h": 120
+     },
+     {
+      "label": "School",
+      "h": 120
+     },
+     {
+      "label": "XP",
+      "h": 120
+     },
+     {
+      "label": "Roll",
+      "h": 120
+     },
+     {
+      "label": "action",
+      "h": 120
+     }
+    ],
+    "controls": 12,
+    "masteryLines": 3
+   },
+   {
+    "name": "Iaijutsu",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 3
+   },
+   {
+    "name": "Athletics",
+    "h": 120,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 120
+     },
+     {
+      "label": "Trait",
+      "h": 120
+     },
+     {
+      "label": "Rank",
+      "h": 120
+     },
+     {
+      "label": "Emphases",
+      "h": 120
+     },
+     {
+      "label": "School",
+      "h": 120
+     },
+     {
+      "label": "XP",
+      "h": 120
+     },
+     {
+      "label": "Roll",
+      "h": 120
+     },
+     {
+      "label": "action",
+      "h": 120
+     }
+    ],
+    "controls": 12,
+    "masteryLines": 3
+   },
+   {
+    "name": "Etiquette",
+    "h": 170,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 170
+     },
+     {
+      "label": "Trait",
+      "h": 170
+     },
+     {
+      "label": "Rank",
+      "h": 170
+     },
+     {
+      "label": "Emphases",
+      "h": 170
+     },
+     {
+      "label": "School",
+      "h": 170
+     },
+     {
+      "label": "XP",
+      "h": 170
+     },
+     {
+      "label": "Roll",
+      "h": 170
+     },
+     {
+      "label": "action",
+      "h": 170
+     }
+    ],
+    "controls": 14,
+    "masteryLines": 3
+   },
+   {
+    "name": "Courtier",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 3
+   },
+   {
+    "name": "Investigation",
+    "h": 170,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 170
+     },
+     {
+      "label": "Trait",
+      "h": 170
+     },
+     {
+      "label": "Rank",
+      "h": 170
+     },
+     {
+      "label": "Emphases",
+      "h": 170
+     },
+     {
+      "label": "School",
+      "h": 170
+     },
+     {
+      "label": "XP",
+      "h": 170
+     },
+     {
+      "label": "Roll",
+      "h": 170
+     },
+     {
+      "label": "action",
+      "h": 170
+     }
+    ],
+    "controls": 14,
+    "masteryLines": 3
+   },
+   {
+    "name": "Jiujutsu",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Horsemanship",
+    "h": 84,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 84
+     },
+     {
+      "label": "Trait",
+      "h": 84
+     },
+     {
+      "label": "Rank",
+      "h": 84
+     },
+     {
+      "label": "Emphases",
+      "h": 84
+     },
+     {
+      "label": "School",
+      "h": 84
+     },
+     {
+      "label": "XP",
+      "h": 84
+     },
+     {
+      "label": "Roll",
+      "h": 84
+     },
+     {
+      "label": "action",
+      "h": 84
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 3
+   },
+   {
+    "name": "Meditation",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 3
+   },
+   {
+    "name": "Sincerity",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 1
+   },
+   {
+    "name": "Kyujutsu",
+    "h": 85,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 85
+     },
+     {
+      "label": "Trait",
+      "h": 85
+     },
+     {
+      "label": "Rank",
+      "h": 85
+     },
+     {
+      "label": "Emphases",
+      "h": 85
+     },
+     {
+      "label": "School",
+      "h": 85
+     },
+     {
+      "label": "XP",
+      "h": 85
+     },
+     {
+      "label": "Roll",
+      "h": 85
+     },
+     {
+      "label": "action",
+      "h": 85
+     }
+    ],
+    "controls": 10,
+    "masteryLines": 3
+   },
+   {
+    "name": "Lore: History",
+    "h": 55,
+    "cells": [
+     {
+      "label": "Skill",
+      "h": 55
+     },
+     {
+      "label": "Trait",
+      "h": 55
+     },
+     {
+      "label": "Rank",
+      "h": 55
+     },
+     {
+      "label": "Emphases",
+      "h": 55
+     },
+     {
+      "label": "School",
+      "h": 55
+     },
+     {
+      "label": "XP",
+      "h": 55
+     },
+     {
+      "label": "Roll",
+      "h": 55
+     },
+     {
+      "label": "action",
+      "h": 55
+     }
+    ],
+    "controls": 8,
+    "masteryLines": 0
+   }
+  ]
+ },
+ {
+  "device": "desktop",
+  "errors": []
+ }
+]

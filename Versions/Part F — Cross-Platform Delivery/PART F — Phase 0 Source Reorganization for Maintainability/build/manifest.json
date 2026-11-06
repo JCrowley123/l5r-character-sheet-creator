@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "91d451099ee58f1b481fcf87b3defa7955138f9fb67a56e8fa6fac1e5ad66dc0",
+  "expect_sha256": "eb1c29f799d6d655b8a4906e4d6a838689472e7b5d0b1d20383f7081f9a15d18",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -173,6 +173,7 @@
     { "file": "src/css/59.9999999982-bugfix-compact-school-button.css", "note": "BUGFIX — Compact Advanced Schools Button (7b.1.1 E1)" },
     { "file": "src/css/59.9999999983-bugfix-set-rules.css", "note": "BUGFIX — Advantage Set Rules (R23)" },
     { "file": "src/css/1128-floating-strip.css", "note": "PART H PHASE 15.1.2 - Release 15a A02, the floating controls in the bottom corners above the tabs (revision 2)" },
+    { "file": "src/css/1129-compact-skill-cards.css", "note": "PART H PHASE 15.1.3 - Release 15a A03, top-aligned Advantage/Disadvantage columns and compact phone Skill cards" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -499,6 +500,7 @@
     { "file": "src/sheet/209.9999999999999994-feat-rank-spell-picker.js", "note": "PART K PHASE 11.2.6 - Rank spell picker" },
     { "file": "src/sheet/209.9999999999999995-feat-review-one-reminder.js", "note": "PART H PHASE 15.1.1 - Release 15a A01, one Review reminder for each open School choice" },
     { "file": "src/sheet/209.9999999999999996-feat-floating-strip.js", "note": "PART H PHASE 15.1.2 - Release 15a A02, the switch and body class for the corner placements of Quick Access, return-to-top and the dice" },
+    { "file": "src/sheet/209.9999999999999997-feat-compact-skill-cards.js", "note": "PART H PHASE 15.1.3 - Release 15a A03, the switch, body class and Details control for compact phone Skill cards" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

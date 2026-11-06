@@ -1,0 +1,36 @@
+  detail DESKTOP-SKILLS-UNCHANGED: [{"tr":"table-row","cells":["table-cell","table-cell","table-cell","table-cell","table-cell","table-cell","table-cell","table-cell"],"toggle":false,"sec":[]},{"tr":"table-row","cells":["table-cell","table-cell","table-cell","table-cell","table-cell","table-cell","table-cell","table-cell"],"toggle":false,"sec":[]},{"tr":"table-row","cells":["table-cell","table-cell","table-cell","table-cell","table-cell","table-cell","table-cell","table-cell"],"toggle":false,"sec":[]}]
+  detail PRINT-UNCHANGED: {"same":false,"pw":"{\"rows\":[[\"table-row\",78,\"table-cell,table-cell,table-cell,table-cell,table-cell,table-cell,table-cell,inline-flex\"],[\"table-row\",151,\"table-cell,table-cell,table-cell,table-cell,table-cell,table-cell,table-cell,inline-flex\"],[\"table-row\",63,\"table-cell,table-cell,table-cell,table-cell,table-cell,ta"}
+  detail TABLET-UNCHANGED: {"scroller":true,"bad":18}
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+PASS CARD-CLOSED
+PASS CARD-COMPACT
+PASS TOGGLE-OPENS-CLOSES
+PASS TOGGLE-KEYBOARD
+PASS SUMMARY-MATCHES
+PASS SUMMARY-LIVE
+PASS TOGGLE-ACCESSIBLE
+PASS PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+PASS MANAGE-EDITS-WORK
+PASS NEW-ROW-OPEN
+PASS QUICK-ADD-CLOSED
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS DETAILS-ORDER
+PASS RELOAD-CLOSED
+PASS PHONE-END-CLEAR
+PASS SMALL-PHONE-FIT
+PASS NARROW-PHONE-FIT
+FAIL DESKTOP-SKILLS-UNCHANGED
+FAIL TABLET-UNCHANGED
+FAIL PRINT-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+29/32 checks passed

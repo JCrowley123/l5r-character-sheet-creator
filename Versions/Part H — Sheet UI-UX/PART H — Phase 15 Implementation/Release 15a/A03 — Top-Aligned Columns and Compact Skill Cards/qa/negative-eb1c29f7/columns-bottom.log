@@ -1,0 +1,38 @@
+  detail DESKTOP-COLUMNS-LEVEL: [{"fx":"dense","m":"play","labelGap":1113,"colGap":1113,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11,"ok":false},{"fx":"dense","m":"management","labelGap":1092,"colGap":1092,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11,"ok":false}]
+  detail DESKTOP-COLUMNS-ONE-EMPTY: [{"fx":"noAdv","m":"play","labelGap":2247,"colGap":2247,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11,"ok":false},{"fx":"noAdv","m":"management","labelGap":2249,"colGap":2249,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11,"ok":false},{"fx":"noDisadv","m":"play","labelGap":1134,"colGap":1134,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":0,"ok":false},{"fx":"noDisadv","m":"management","labelGap":1157,"colGap":1157,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":0,"ok":false}]
+  detail OTHER-GRIDS desktop: [{"l":"Adv & Disadv","adv":true,"align":"end"},{"l":"Adv & Disadv","adv":true,"align":"end"}]
+  detail TWO-COLUMN-PHONE-LEVEL: [{"fx":"dense","labelGap":1404,"colGap":1404,"side":true,"stacked":false,"align":"end","advRows":6,"disRows":11},{"fx":"noAdv","labelGap":2809,"colGap":2809,"side":true,"stacked":false,"align":"end","advRows":0,"disRows":11}]
+  detail OTHER-GRIDS-UNCHANGED: [{"l":"Adv & Disadv","adv":true,"align":"end"},{"l":"Adv & Disadv","adv":true,"align":"end"}]
+PASS SEAM-PRESENT
+FAIL DESKTOP-COLUMNS-LEVEL
+FAIL DESKTOP-COLUMNS-ONE-EMPTY
+FAIL TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+FAIL OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+PASS CARD-CLOSED
+PASS CARD-COMPACT
+PASS TOGGLE-OPENS-CLOSES
+PASS TOGGLE-KEYBOARD
+PASS SUMMARY-MATCHES
+PASS SUMMARY-LIVE
+PASS TOGGLE-ACCESSIBLE
+PASS PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+PASS MANAGE-EDITS-WORK
+PASS NEW-ROW-OPEN
+PASS QUICK-ADD-CLOSED
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS DETAILS-ORDER
+PASS RELOAD-CLOSED
+PASS PHONE-END-CLEAR
+PASS SMALL-PHONE-FIT
+PASS NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS PRINT-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+28/32 checks passed
