@@ -974,6 +974,9 @@
   // PART H PHASE 15.1.11 BEGIN text-edges-seam
   if(typeof TE15 === 'object' && TE15) Object.assign(window.__L5R_TEST__, {TE15, TEXT_EDGES_ENABLED});
   // END TE15 text-edges-seam
+  // PART H PHASE 15.1.4.1 BEGIN inline-rules-seam
+  if(typeof IR15 === 'object' && IR15) Object.assign(window.__L5R_TEST__, {IR15, INLINE_RULES_ENABLED});
+  // END IR15 inline-rules-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

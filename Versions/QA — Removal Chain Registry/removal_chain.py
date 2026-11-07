@@ -320,6 +320,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999999999995-feat-moon-row.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/A11 — Explanatory Text Gaps and One Left Edge",
             fragment="src/sheet/209.99999999999999996-feat-text-edges.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers",
+            fragment="src/sheet/209.99999999999999997-feat-inline-rules.js"),
 )
 
 

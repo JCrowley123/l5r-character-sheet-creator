@@ -137,3 +137,7 @@ writes, retained future fragments, and full removal after an individual removal.
 Run the Phase 0 `qa/feature-dependencies.py` on the current core and each component
 before the scratch proof, and account for every reference it attributes to a
 different owner. No claim of completed production QA is made by the fixture suite.
+
+## Release 15a A04.1 — each option's rule inline (7 November 2026)
+
+Release 15a A04.1 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers/`), on the owner's comment 2 at G1's review, copies each option's `details.d45-tooltip` text into a `span.ir15-rule` at the end of its `label.d45-option-label`, sets the name in the first span in bold (same text), and gives the option Paragon's card, while `body.ir15-on` is set. It calls nothing here. This release's harness passes 163/163 with A04.1 present. A04.1 names `d45-*` classes, so this release's remover may refuse while A04.1 is present: remove A04.1 first (the removal chain does so in order).

@@ -1,0 +1,54 @@
+/* PART H PHASE 15.1.4.1 — Release 15a A04.1: each option's rule inline, in Paragon's option card (owner, 7 November).
+   Matches only an option this unit has marked (ir15-item, ir15-opt). The option becomes Paragon's card: a 1 px line
+   border, 6 px radius, 4 x 6 px padding, left-aligned .9 rem text at 1.35, the radio beside the first line; the name,
+   price and rule run on as one paragraph. Its "Rule" disclosure and Phase 4.54's (Part I) i on the option are not
+   drawn: the rule is on the card itself. Every other control in the window, and the row's i after choosing, is
+   unaffected. The ID in each selector outranks the pickers' own option rules and the carousel's label rule.
+   Waits for body.ir15-on, which this unit's switch sets. */
+html body.ir15-on #advConfigGrid .ir15-item {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  height: auto;
+  min-height: 32px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  text-align: start;
+}
+html body.ir15-on #advConfigGrid label.ir15-opt {
+  display: block;
+  position: relative;
+  width: auto;
+  margin: 0;
+  padding: 0 0 0 21px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .9rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: start;
+  white-space: normal;
+  color: var(--ink);
+  cursor: pointer;
+}
+html body.ir15-on #advConfigGrid label.ir15-opt > input {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 13px;
+  height: 13px;
+  margin: 0;
+}
+html body.ir15-on #advConfigGrid label.ir15-opt > span {
+  display: inline;
+  overflow-wrap: break-word;
+}
+html body.ir15-on #advConfigGrid .ir15-item > details,
+html body.ir15-on #advConfigGrid .ir15-item .adv-config-info {
+  display: none !important;
+}

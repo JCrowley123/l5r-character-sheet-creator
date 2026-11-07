@@ -280,7 +280,10 @@ async function main() {
           const grid = document.getElementById('advConfigGrid').getBoundingClientRect();
           const inside = el => { const r = el.getBoundingClientRect(); return r.left >= grid.left - 1 && r.right <= grid.right + 1 && el.scrollWidth <= el.clientWidth + 1; };
           const opts = [...document.querySelectorAll('#advConfigGrid .fb4521-option')];
-          return {fits:opts.every(inside) && [...document.querySelectorAll('#advConfigGrid .fb4521-rule')].every(inside) && inside(document.getElementById('fb4521Lore')),
+          // Conditional on Release 15a A04.1's seam key (declared in both ROLLBACK files): with A04.1 each rule is shown inline
+          // on its option (.ir15-rule) and the disclosure is not drawn, so the rule is measured where it is shown.
+          const rules = window.__L5R_TEST__.IR15 ? '#advConfigGrid .ir15-rule' : '#advConfigGrid .fb4521-rule';
+          return {fits:opts.every(inside) && [...document.querySelectorAll(rules)].length === 7 && [...document.querySelectorAll(rules)].every(inside) && inside(document.getElementById('fb4521Lore')),
             readable:opts.every(o => parseFloat(getComputedStyle(o).fontSize) >= 12 && getComputedStyle(o).textTransform === 'none' && o.getBoundingClientRect().height >= 32)};
         });
         await page.locator('#fb4521Lore').fill('Lore: Theology'); await page.locator('#advConfigConfirm').click();

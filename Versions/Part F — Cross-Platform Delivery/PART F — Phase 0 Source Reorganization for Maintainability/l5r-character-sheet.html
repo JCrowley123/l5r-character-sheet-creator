@@ -7346,6 +7346,61 @@ html body.te15-on #advList .dsx4532-row {
   margin-bottom: 6px;
 }
 
+/* PART H PHASE 15.1.4.1 — Release 15a A04.1: each option's rule inline, in Paragon's option card (owner, 7 November).
+   Matches only an option this unit has marked (ir15-item, ir15-opt). The option becomes Paragon's card: a 1 px line
+   border, 6 px radius, 4 x 6 px padding, left-aligned .9 rem text at 1.35, the radio beside the first line; the name,
+   price and rule run on as one paragraph. Its "Rule" disclosure and Phase 4.54's (Part I) i on the option are not
+   drawn: the rule is on the card itself. Every other control in the window, and the row's i after choosing, is
+   unaffected. The ID in each selector outranks the pickers' own option rules and the carousel's label rule.
+   Waits for body.ir15-on, which this unit's switch sets. */
+html body.ir15-on #advConfigGrid .ir15-item {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  height: auto;
+  min-height: 32px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  text-align: start;
+}
+html body.ir15-on #advConfigGrid label.ir15-opt {
+  display: block;
+  position: relative;
+  width: auto;
+  margin: 0;
+  padding: 0 0 0 21px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .9rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: start;
+  white-space: normal;
+  color: var(--ink);
+  cursor: pointer;
+}
+html body.ir15-on #advConfigGrid label.ir15-opt > input {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 13px;
+  height: 13px;
+  margin: 0;
+}
+html body.ir15-on #advConfigGrid label.ir15-opt > span {
+  display: inline;
+  overflow-wrap: break-word;
+}
+html body.ir15-on #advConfigGrid .ir15-item > details,
+html body.ir15-on #advConfigGrid .ir15-item .adv-config-info {
+  display: none !important;
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -56117,6 +56172,80 @@ return fontkitCache=module.exports;}
   TE15.install();
   // ============ END PART H PHASE 15.1.11 ============
 
+  // ============ PART H PHASE 15.1.4.1 — ONE WAY TO SHOW CHOICES IN PICKERS: EACH RULE INLINE ============
+  // Phase 15, Release 15a, unit A04.1: the owner's comment 2 at G1's review (7 November 2026), approved as mocked up the
+  // same day. It extends A04's single information pattern into the pickers. The pickers explained their options three
+  // ways: Paragon, Dark Paragon, Touch of the Spirit Realms and Soul of Artistry show each option's rule in full on the
+  // option; Seven Fortunes' Blessing (Phase 4.5.21 (Part I)) hides each behind its own "Rule" disclosure; and the
+  // Phase 4.5.2 (Part I) pickers whose options carry a rule (Consumed, Failure of Bushido, Cursed by the Realm, Seven
+  // Fortunes' Curse) hide it behind Phase 4.54's (Part I) i on each option. The owner chose inline, as Paragon does.
+  // An observer on the configuration window's grid finds each option that carries a rule disclosure (fb4521-rule, or
+  // d45-tooltip) and copies the rule, word for word, into a span of its own at the end of the option's label, after
+  // its name and price, which it sets in bold. The option's first text span keeps its exact text. The disclosure and
+  // the per-option i are then not drawn (the stylesheet, 1138-inline-rules.css), and the option takes Paragon's card.
+  // After choosing, the row's i keeps the text, as before. The pickers' own fragments are not changed.
+  // Everything waits for body.ir15-on, which the switch sets: with the switch off the pickers are exactly as before.
+  const INLINE_RULES_ENABLED = true;
+
+  const IR15 = (function(){
+    const api = {installed: false, observer: null};
+    api.enabled = function(){ return INLINE_RULES_ENABLED; };
+    api.ITEMS = '#advConfigGrid .fb4521-item:not(.ir15-item), #advConfigGrid .d45-option:not(.ir15-item)';
+    // The separator after the name and price: a full stop after "Name — 4 XP", a dash after a bare name or a ")".
+    api.separator = function(text){ return / — /.test(text) && !/\)$/.test(text) ? '. ' : ' — '; };
+    // Only marks options not yet marked, so the mutation it causes finds nothing more and the observer settles at once.
+    api.sweep = function(){
+      if(!document.body.classList.contains('ir15-on')) return 0;
+      let marked = 0;
+      document.querySelectorAll(api.ITEMS).forEach(function(item){
+        const details = item.querySelector(':scope > details.fb4521-rule, :scope > details.d45-tooltip');
+        const label = item.querySelector(':scope > label');
+        if(!details || !label) return;
+        const body = details.querySelector(':scope > span');
+        const rule = (body ? body.textContent : '').trim();
+        if(!rule) return;
+        const name = label.querySelector(':scope > span');
+        const text = name ? name.textContent.trim() : '';
+        if(name && !name.querySelector('b')){
+          const cut = text.indexOf(' — ');
+          const bold = document.createElement('b');
+          bold.textContent = cut < 0 ? text : text.slice(0, cut);
+          name.textContent = '';
+          name.appendChild(bold);
+          if(cut >= 0) name.appendChild(document.createTextNode(text.slice(cut)));
+        }
+        const span = document.createElement('span');
+        span.className = 'ir15-rule';
+        span.textContent = api.separator(text) + rule;
+        label.appendChild(span);
+        label.classList.add('ir15-opt');
+        item.classList.add('ir15-item');
+        marked++;
+      });
+      return marked;
+    };
+    api.install = function(){
+      if(api.installed || !INLINE_RULES_ENABLED) return false;
+      const grid = document.getElementById('advConfigGrid');
+      if(!grid) return false;
+      api.installed = true;
+      document.body.classList.add('ir15-on');
+      // Phase 4.54's (Part I) heading for an option's i leaves out what is not the option's own label; the inline rule
+      // is not, so it is added to that list (read by property at call time). Soft: without Phase 4.54 nothing is added.
+      if(typeof R454 === 'object' && R454 && typeof R454.EXCLUDE_FROM_LABEL === 'string' && R454.EXCLUDE_FROM_LABEL.indexOf('.ir15-rule') === -1)
+        R454.EXCLUDE_FROM_LABEL += ', .ir15-rule';
+      if(typeof MutationObserver === 'function'){
+        api.observer = new MutationObserver(api.sweep);
+        api.observer.observe(grid, {childList: true, subtree: true});
+      }
+      api.sweep();
+      return true;
+    };
+    return api;
+  })();
+  IR15.install();
+  // ============ END PART H PHASE 15.1.4.1 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -57093,6 +57222,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.11 BEGIN text-edges-seam
   if(typeof TE15 === 'object' && TE15) Object.assign(window.__L5R_TEST__, {TE15, TEXT_EDGES_ENABLED});
   // END TE15 text-edges-seam
+  // PART H PHASE 15.1.4.1 BEGIN inline-rules-seam
+  if(typeof IR15 === 'object' && IR15) Object.assign(window.__L5R_TEST__, {IR15, INLINE_RULES_ENABLED});
+  // END IR15 inline-rules-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
