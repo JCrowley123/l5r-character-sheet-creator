@@ -1,0 +1,38 @@
+  detail IP-HOTEI-ROW-PHONE: {"cost":"6","hidden":[false,false,false],"notes":2,"text":true,"badge":true,"change":true,"ring":{"w":28,"h":28,"radius":"50%","border":"solid 1px","color":"rgb(42, 36, 32)","glyph":"\"i\"","italic":"normal","bold":"400","ok":true},"line":["\"Techniques and Advantages cost 2 Void Points to activate. 6 XP.\""],"label":"Hotei’s Curse information"}
+  detail IP-HOTEI-ROW-DESKTOP: {"cost":"6","hidden":[false,false,false],"notes":2,"text":true,"badge":true,"change":true,"ring":{"w":28,"h":28,"radius":"50%","border":"solid 1px","color":"rgb(42, 36, 32)","glyph":"\"i\"","italic":"normal","bold":"400","ok":true},"line":["\"Techniques and Advantages cost 2 Void Points to activate. 6 XP.\""],"label":"Hotei’s Curse information"}
+PASS IP-SEAM-PHONE
+PASS IP-SEAM-DESKTOP
+PASS IP-SKILL-RING-PHONE-PLAY
+PASS IP-SKILL-RING-PHONE-MANAGEMENT
+PASS IP-SKILL-RING-DESKTOP-PLAY
+PASS IP-SKILL-RING-DESKTOP-MANAGEMENT
+PASS IP-SKILL-TOUCH-PHONE
+PASS IP-SKILL-TOUCH-DESKTOP
+PASS IP-SKILL-OPENS-PHONE
+PASS IP-SKILL-OPENS-DESKTOP
+PASS IP-SKILL-RENAME
+PASS IP-VOID-PHONE
+PASS IP-VOID-DESKTOP
+PASS IP-KIHO-PHONE
+PASS IP-KIHO-DESKTOP
+PASS IP-COMBAT-UNCHANGED-PHONE
+PASS IP-COMBAT-UNCHANGED-DESKTOP
+PASS IP-ADV-NOT-NESTED-PHONE-PLAY
+PASS IP-ADV-NOT-NESTED-PHONE-MANAGEMENT
+PASS IP-ADV-NOT-NESTED-DESKTOP-PLAY
+PASS IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT
+PASS IP-PLAY-NO-LONE-I-PHONE
+PASS IP-CHOOSE-PHONE
+PASS IP-PLAY-NO-LONE-I-DESKTOP
+PASS IP-CHOOSE-DESKTOP
+PASS IP-MODAL-NOT-NESTED
+FAIL IP-HOTEI-ROW-PHONE
+FAIL IP-HOTEI-ROW-DESKTOP
+PASS IP-HOTEI-PANEL-PHONE
+PASS IP-HOTEI-PANEL-DESKTOP
+PASS IP-CLASS-GATES-PHONE
+PASS IP-CLASS-GATES-DESKTOP
+PASS IP-NO-ERRORS-PHONE
+PASS IP-NO-ERRORS-DESKTOP
+PASS IP-OTHER-FORTUNE-UNCHANGED
+33/35 checks passed

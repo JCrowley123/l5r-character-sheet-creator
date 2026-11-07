@@ -1,0 +1,63 @@
+  detail IP-SEAM-PHONE: {"on":false,"seam":true,"sw":false}
+  detail IP-SKILL-RING-PHONE-PLAY: [{"name":"Calligraphy","shown":true,"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Defense","shown":true,"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Lore: Shadowlands","shown":true,"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null}]
+  detail IP-SKILL-RING-PHONE-MANAGEMENT: [{"name":"Calligraphy","shown":true,"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Defense","shown":true,"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Lore: Shadowlands","shown":true,"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null}]
+  detail IP-SKILL-TOUCH-PHONE: [[false,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,false]]
+  detail IP-SKILL-RENAME: [null,null]
+  detail IP-VOID-PHONE: {"r":{"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(90, 79, 67)","glyph":"none","italic":"normal","bold":"400","ok":false},"reach":[false,false,false,false],"label":null,"title":"What can Void Points be spent on?","text":"👁"},"opened":true}
+  detail IP-KIHO-PHONE: {"shown":true,"ring":{"w":40,"h":40,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"label":null,"text":"ⓘ","opened":0}
+  detail IP-ADV-NOT-NESTED-PHONE-PLAY: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Choose…<","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Ch","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[]}
+  detail IP-ADV-NOT-NESTED-PHONE-MANAGEMENT: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-config-i","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-co","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[{"w":18,"h":18,"radius":"50%","border":"solid 1px","color":"rgb(124, 94, 46)","glyph":"\"i\"","italic":"italic","bold":"700","ok":false},{"w":18,"h":18,"radius":"50%","border":"solid 1px","color":"rgb(124, 94, 46)","glyph":"\"i\"","italic":"italic","bold":"700","ok":false},{"w":18,"h":18,"radius":"50%","border":"solid 1px","color":"rgb(124,
+  detail IP-PLAY-NO-LONE-I-PHONE: {"r":[],"m":[]}
+  detail IP-CHOOSE-PHONE: {"wealthy":{"label":null,"isInfo":false,"title":"Wealthy — choose how many Ranks.","hostText":"Choose…","reach":[]},"info":{"body":"Wealthy — choose how many Ranks.","overlay":"flex","picker":"none"},"picker":"flex"}
+  detail IP-HOTEI-ROW-PHONE: {"cost":"6","hidden":[false,false,false],"notes":2,"text":true,"badge":true,"change":true,"ring":null,"line":[],"label":null}
+  detail IP-HOTEI-PANEL-PHONE: "exception: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .entry').nth(1).locator('.fortune4511-badge + button')\u001b[22m\n"
+  detail IP-CLASS-GATES-PHONE: {"on":false,"off":false,"glyph":"none"}
+  detail IP-SEAM-DESKTOP: {"on":false,"seam":true,"sw":false}
+  detail IP-SKILL-RING-DESKTOP-PLAY: [{"name":"Calligraphy","shown":true,"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Defense","shown":true,"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Lore: Shadowlands","shown":true,"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null}]
+  detail IP-SKILL-RING-DESKTOP-MANAGEMENT: [{"name":"Calligraphy","shown":true,"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Defense","shown":true,"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null},{"name":"Lore: Shadowlands","shown":true,"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"text":"👁","title":"Skill Info","label":null}]
+  detail IP-SKILL-TOUCH-DESKTOP: [[false,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,false]]
+  detail IP-VOID-DESKTOP: {"r":{"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(90, 79, 67)","glyph":"none","italic":"normal","bold":"400","ok":false},"reach":[false,false,false,false],"label":null,"title":"What can Void Points be spent on?","text":"👁"},"opened":true}
+  detail IP-KIHO-DESKTOP: {"shown":true,"ring":{"w":22,"h":22,"radius":"50%","border":"solid 1px","color":"rgb(169, 132, 63)","glyph":"none","italic":"normal","bold":"400","ok":false},"label":null,"text":"ⓘ","opened":0}
+  detail IP-ADV-NOT-NESTED-DESKTOP-PLAY: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Choose…<","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Ch","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[]}
+  detail IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-config-i","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-co","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[{"w":18,"h":18,"radius":"50%","border":"solid 1px","color":"rgb(124, 94, 46)","glyph":"\"i\"","italic":"italic","bold":"700","ok":false},{"w":18,"h":18,"radius":"50%","border":"solid 1px","color":"rgb(124, 94, 46)","glyph":"\"i\"","italic":"italic","bold":"700","ok":false},{"w":18,"h":18,"radius":"50%","border":"solid 1px","color":"rgb(124,
+  detail IP-PLAY-NO-LONE-I-DESKTOP: {"r":[],"m":[]}
+  detail IP-CHOOSE-DESKTOP: {"wealthy":{"label":null,"isInfo":false,"title":"Wealthy — choose how many Ranks.","hostText":"Choose…","reach":[]},"info":{"body":"Wealthy — choose how many Ranks.","overlay":"flex","picker":"none"},"picker":"flex"}
+  detail IP-HOTEI-ROW-DESKTOP: {"cost":"6","hidden":[false,false,false],"notes":2,"text":true,"badge":true,"change":true,"ring":null,"line":[],"label":null}
+  detail IP-HOTEI-PANEL-DESKTOP: "exception: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .entry').nth(1).locator('.fortune4511-badge + button')\u001b[22m\n"
+  detail IP-CLASS-GATES-DESKTOP: {"on":false,"off":false,"glyph":"none"}
+FAIL IP-SEAM-PHONE
+FAIL IP-SEAM-DESKTOP
+FAIL IP-SKILL-RING-PHONE-PLAY
+FAIL IP-SKILL-RING-PHONE-MANAGEMENT
+FAIL IP-SKILL-RING-DESKTOP-PLAY
+FAIL IP-SKILL-RING-DESKTOP-MANAGEMENT
+FAIL IP-SKILL-TOUCH-PHONE
+FAIL IP-SKILL-TOUCH-DESKTOP
+PASS IP-SKILL-OPENS-PHONE
+PASS IP-SKILL-OPENS-DESKTOP
+FAIL IP-SKILL-RENAME
+FAIL IP-VOID-PHONE
+FAIL IP-VOID-DESKTOP
+FAIL IP-KIHO-PHONE
+FAIL IP-KIHO-DESKTOP
+PASS IP-COMBAT-UNCHANGED-PHONE
+PASS IP-COMBAT-UNCHANGED-DESKTOP
+FAIL IP-ADV-NOT-NESTED-PHONE-PLAY
+FAIL IP-ADV-NOT-NESTED-PHONE-MANAGEMENT
+FAIL IP-ADV-NOT-NESTED-DESKTOP-PLAY
+FAIL IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT
+FAIL IP-PLAY-NO-LONE-I-PHONE
+FAIL IP-CHOOSE-PHONE
+FAIL IP-PLAY-NO-LONE-I-DESKTOP
+FAIL IP-CHOOSE-DESKTOP
+PASS IP-MODAL-NOT-NESTED
+FAIL IP-HOTEI-ROW-PHONE
+FAIL IP-HOTEI-ROW-DESKTOP
+FAIL IP-HOTEI-PANEL-PHONE
+FAIL IP-HOTEI-PANEL-DESKTOP
+FAIL IP-CLASS-GATES-PHONE
+FAIL IP-CLASS-GATES-DESKTOP
+PASS IP-NO-ERRORS-PHONE
+PASS IP-NO-ERRORS-DESKTOP
+PASS IP-OTHER-FORTUNE-UNCHANGED
+8/35 checks passed

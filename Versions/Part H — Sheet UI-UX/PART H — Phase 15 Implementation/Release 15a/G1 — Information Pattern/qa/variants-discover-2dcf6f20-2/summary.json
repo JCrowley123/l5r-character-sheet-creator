@@ -1,0 +1,466 @@
+{
+  "checked_utc": "2026-11-07T06:48:12.980955+00:00",
+  "cases": [
+    {
+      "id": "A04:baseline",
+      "expected_failures": [
+        "IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-DESKTOP-PLAY",
+        "IP-ADV-NOT-NESTED-PHONE-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-PHONE-PLAY",
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-CLASS-GATES-DESKTOP",
+        "IP-CLASS-GATES-PHONE",
+        "IP-HOTEI-PANEL-DESKTOP",
+        "IP-HOTEI-PANEL-PHONE",
+        "IP-HOTEI-ROW-DESKTOP",
+        "IP-HOTEI-ROW-PHONE",
+        "IP-KIHO-DESKTOP",
+        "IP-KIHO-PHONE",
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE",
+        "IP-SEAM-DESKTOP",
+        "IP-SEAM-PHONE",
+        "IP-SKILL-RENAME",
+        "IP-SKILL-RING-DESKTOP-MANAGEMENT",
+        "IP-SKILL-RING-DESKTOP-PLAY",
+        "IP-SKILL-RING-PHONE-MANAGEMENT",
+        "IP-SKILL-RING-PHONE-PLAY",
+        "IP-SKILL-TOUCH-DESKTOP",
+        "IP-SKILL-TOUCH-PHONE",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "actual_failures": [
+        "IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-DESKTOP-PLAY",
+        "IP-ADV-NOT-NESTED-PHONE-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-PHONE-PLAY",
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-CLASS-GATES-DESKTOP",
+        "IP-CLASS-GATES-PHONE",
+        "IP-HOTEI-PANEL-DESKTOP",
+        "IP-HOTEI-PANEL-PHONE",
+        "IP-HOTEI-ROW-DESKTOP",
+        "IP-HOTEI-ROW-PHONE",
+        "IP-KIHO-DESKTOP",
+        "IP-KIHO-PHONE",
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE",
+        "IP-SEAM-DESKTOP",
+        "IP-SEAM-PHONE",
+        "IP-SKILL-RENAME",
+        "IP-SKILL-RING-DESKTOP-MANAGEMENT",
+        "IP-SKILL-RING-DESKTOP-PLAY",
+        "IP-SKILL-RING-PHONE-MANAGEMENT",
+        "IP-SKILL-RING-PHONE-PLAY",
+        "IP-SKILL-TOUCH-DESKTOP",
+        "IP-SKILL-TOUCH-PHONE",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "counts": [
+        8,
+        35
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A03.1:baseline",
+      "expected_failures": [
+        "SM-CLASS-GATES-DESKTOP",
+        "SM-CLASS-GATES-PHONE",
+        "SM-CUSTOM-SKILL",
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-PLACE-DESKTOP",
+        "SM-PLACE-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE",
+        "SM-READABLE-DESKTOP",
+        "SM-READABLE-PHONE",
+        "SM-SEAM-DESKTOP",
+        "SM-SEAM-PHONE"
+      ],
+      "actual_failures": [
+        "SM-CLASS-GATES-DESKTOP",
+        "SM-CLASS-GATES-PHONE",
+        "SM-CUSTOM-SKILL",
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-PLACE-DESKTOP",
+        "SM-PLACE-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE",
+        "SM-READABLE-DESKTOP",
+        "SM-READABLE-PHONE",
+        "SM-SEAM-DESKTOP",
+        "SM-SEAM-PHONE"
+      ],
+      "counts": [
+        4,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04:disabled",
+      "expected_failures": [
+        "IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-DESKTOP-PLAY",
+        "IP-ADV-NOT-NESTED-PHONE-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-PHONE-PLAY",
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-CLASS-GATES-DESKTOP",
+        "IP-CLASS-GATES-PHONE",
+        "IP-HOTEI-PANEL-DESKTOP",
+        "IP-HOTEI-PANEL-PHONE",
+        "IP-HOTEI-ROW-DESKTOP",
+        "IP-HOTEI-ROW-PHONE",
+        "IP-KIHO-DESKTOP",
+        "IP-KIHO-PHONE",
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE",
+        "IP-SEAM-DESKTOP",
+        "IP-SEAM-PHONE",
+        "IP-SKILL-RENAME",
+        "IP-SKILL-RING-DESKTOP-MANAGEMENT",
+        "IP-SKILL-RING-DESKTOP-PLAY",
+        "IP-SKILL-RING-PHONE-MANAGEMENT",
+        "IP-SKILL-RING-PHONE-PLAY",
+        "IP-SKILL-TOUCH-DESKTOP",
+        "IP-SKILL-TOUCH-PHONE",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "actual_failures": [
+        "IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-DESKTOP-PLAY",
+        "IP-ADV-NOT-NESTED-PHONE-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-PHONE-PLAY",
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-CLASS-GATES-DESKTOP",
+        "IP-CLASS-GATES-PHONE",
+        "IP-HOTEI-PANEL-DESKTOP",
+        "IP-HOTEI-PANEL-PHONE",
+        "IP-HOTEI-ROW-DESKTOP",
+        "IP-HOTEI-ROW-PHONE",
+        "IP-KIHO-DESKTOP",
+        "IP-KIHO-PHONE",
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE",
+        "IP-SEAM-DESKTOP",
+        "IP-SEAM-PHONE",
+        "IP-SKILL-RENAME",
+        "IP-SKILL-RING-DESKTOP-MANAGEMENT",
+        "IP-SKILL-RING-DESKTOP-PLAY",
+        "IP-SKILL-RING-PHONE-MANAGEMENT",
+        "IP-SKILL-RING-PHONE-PLAY",
+        "IP-SKILL-TOUCH-DESKTOP",
+        "IP-SKILL-TOUCH-PHONE",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "counts": [
+        8,
+        35
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04:no-unnest",
+      "expected_failures": [
+        "IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-DESKTOP-PLAY",
+        "IP-ADV-NOT-NESTED-PHONE-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-PHONE-PLAY",
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE"
+      ],
+      "actual_failures": [
+        "IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-DESKTOP-PLAY",
+        "IP-ADV-NOT-NESTED-PHONE-MANAGEMENT",
+        "IP-ADV-NOT-NESTED-PHONE-PLAY",
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE"
+      ],
+      "counts": [
+        27,
+        35
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04:lone-i-in-play",
+      "expected_failures": [
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE"
+      ],
+      "actual_failures": [
+        "IP-PLAY-NO-LONE-I-DESKTOP",
+        "IP-PLAY-NO-LONE-I-PHONE"
+      ],
+      "counts": [
+        33,
+        35
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04:no-names",
+      "expected_failures": [
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-KIHO-DESKTOP",
+        "IP-KIHO-PHONE",
+        "IP-SKILL-RENAME",
+        "IP-SKILL-RING-DESKTOP-MANAGEMENT",
+        "IP-SKILL-RING-DESKTOP-PLAY",
+        "IP-SKILL-RING-PHONE-MANAGEMENT",
+        "IP-SKILL-RING-PHONE-PLAY",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "actual_failures": [
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-KIHO-DESKTOP",
+        "IP-KIHO-PHONE",
+        "IP-SKILL-RENAME",
+        "IP-SKILL-RING-DESKTOP-MANAGEMENT",
+        "IP-SKILL-RING-DESKTOP-PLAY",
+        "IP-SKILL-RING-PHONE-MANAGEMENT",
+        "IP-SKILL-RING-PHONE-PLAY",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "counts": [
+        24,
+        35
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04:hotei-unfolded",
+      "expected_failures": [
+        "IP-HOTEI-ROW-DESKTOP",
+        "IP-HOTEI-ROW-PHONE"
+      ],
+      "actual_failures": [
+        "IP-HOTEI-ROW-DESKTOP",
+        "IP-HOTEI-ROW-PHONE"
+      ],
+      "counts": [
+        33,
+        35
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04:small-touch-area",
+      "expected_failures": [
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-SKILL-TOUCH-DESKTOP",
+        "IP-SKILL-TOUCH-PHONE",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "actual_failures": [
+        "IP-CHOOSE-DESKTOP",
+        "IP-CHOOSE-PHONE",
+        "IP-SKILL-TOUCH-DESKTOP",
+        "IP-SKILL-TOUCH-PHONE",
+        "IP-VOID-DESKTOP",
+        "IP-VOID-PHONE"
+      ],
+      "counts": [
+        29,
+        35
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A16:note-hidden-too",
+      "expected_failures": [
+        "BI-A01-NOTE-SHOWN-DESKTOP",
+        "BI-A01-NOTE-SHOWN-PHONE",
+        "BI-A03-NOTE-SHOWN-DESKTOP",
+        "BI-A03-NOTE-SHOWN-PHONE",
+        "BI-A04-NOTE-SHOWN-DESKTOP",
+        "BI-A04-NOTE-SHOWN-PHONE",
+        "BI-A09-NOTE-SHOWN-DESKTOP",
+        "BI-A09-NOTE-SHOWN-PHONE",
+        "BI-A12-NOTE-SHOWN-DESKTOP",
+        "BI-A12-NOTE-SHOWN-PHONE",
+        "BI-A13-NOTE-SHOWN-DESKTOP",
+        "BI-A13-NOTE-SHOWN-PHONE",
+        "BI-A14-NOTE-SHOWN-DESKTOP",
+        "BI-A14-NOTE-SHOWN-PHONE"
+      ],
+      "actual_failures": [
+        "BI-A01-NOTE-SHOWN-DESKTOP",
+        "BI-A01-NOTE-SHOWN-PHONE",
+        "BI-A03-NOTE-SHOWN-DESKTOP",
+        "BI-A03-NOTE-SHOWN-PHONE",
+        "BI-A04-NOTE-SHOWN-DESKTOP",
+        "BI-A04-NOTE-SHOWN-PHONE",
+        "BI-A09-NOTE-SHOWN-DESKTOP",
+        "BI-A09-NOTE-SHOWN-PHONE",
+        "BI-A12-NOTE-SHOWN-DESKTOP",
+        "BI-A12-NOTE-SHOWN-PHONE",
+        "BI-A13-NOTE-SHOWN-DESKTOP",
+        "BI-A13-NOTE-SHOWN-PHONE",
+        "BI-A14-NOTE-SHOWN-DESKTOP",
+        "BI-A14-NOTE-SHOWN-PHONE"
+      ],
+      "counts": [
+        36,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A03.1:disabled",
+      "expected_failures": [
+        "SM-CLASS-GATES-DESKTOP",
+        "SM-CLASS-GATES-PHONE",
+        "SM-CUSTOM-SKILL",
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-PLACE-DESKTOP",
+        "SM-PLACE-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE",
+        "SM-READABLE-DESKTOP",
+        "SM-READABLE-PHONE",
+        "SM-SEAM-DESKTOP",
+        "SM-SEAM-PHONE"
+      ],
+      "actual_failures": [
+        "SM-CLASS-GATES-DESKTOP",
+        "SM-CLASS-GATES-PHONE",
+        "SM-CUSTOM-SKILL",
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-PLACE-DESKTOP",
+        "SM-PLACE-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE",
+        "SM-READABLE-DESKTOP",
+        "SM-READABLE-PHONE",
+        "SM-SEAM-DESKTOP",
+        "SM-SEAM-PHONE"
+      ],
+      "counts": [
+        4,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A03.1:reached-not-coloured",
+      "expected_failures": [
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE"
+      ],
+      "actual_failures": [
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE"
+      ],
+      "counts": [
+        17,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A03.1:tier-seven-missing",
+      "expected_failures": [
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE",
+        "SM-READABLE-DESKTOP",
+        "SM-READABLE-PHONE"
+      ],
+      "actual_failures": [
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE",
+        "SM-READABLE-DESKTOP",
+        "SM-READABLE-PHONE"
+      ],
+      "counts": [
+        11,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A03.1:reached-off-by-one",
+      "expected_failures": [
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE"
+      ],
+      "actual_failures": [
+        "SM-FOLLOWS-RANK-DESKTOP",
+        "SM-FOLLOWS-RANK-PHONE",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE",
+        "SM-REACHED-MARKED-DESKTOP",
+        "SM-REACHED-MARKED-PHONE"
+      ],
+      "counts": [
+        13,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A03.1:no-none-message",
+      "expected_failures": [
+        "SM-CUSTOM-SKILL",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE"
+      ],
+      "actual_failures": [
+        "SM-CUSTOM-SKILL",
+        "SM-MATCHES-THE-CARD-DESKTOP",
+        "SM-MATCHES-THE-CARD-PHONE"
+      ],
+      "counts": [
+        16,
+        19
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": false
+}

@@ -1,0 +1,42 @@
+  detail IP-SKILL-TOUCH-PHONE: [[false,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,false]]
+  detail IP-VOID-PHONE: {"r":{"ring":{"w":28,"h":28,"radius":"50%","border":"solid 1px","color":"rgb(42, 36, 32)","glyph":"\"i\"","italic":"normal","bold":"400","ok":true},"reach":[false,false,false,false],"label":"Void Points information","title":"What can Void Points be spent on?","text":"👁"},"opened":true}
+  detail IP-CHOOSE-PHONE: {"wealthy":{"label":"Explain: Wealthy","isInfo":true,"title":"Wealthy — choose how many Ranks.","hostText":"Choose…","reach":[false,false,false,false]},"info":{"body":"Wealthy — choose how many Ranks.","overlay":"flex","picker":"none"},"picker":"flex"}
+  detail IP-SKILL-TOUCH-DESKTOP: [[false,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,false]]
+  detail IP-VOID-DESKTOP: {"r":{"ring":{"w":28,"h":28,"radius":"50%","border":"solid 1px","color":"rgb(42, 36, 32)","glyph":"\"i\"","italic":"normal","bold":"400","ok":true},"reach":[false,false,false,false],"label":"Void Points information","title":"What can Void Points be spent on?","text":"👁"},"opened":true}
+  detail IP-CHOOSE-DESKTOP: {"wealthy":{"label":"Explain: Wealthy","isInfo":true,"title":"Wealthy — choose how many Ranks.","hostText":"Choose…","reach":[false,false,false,false]},"info":{"body":"Wealthy — choose how many Ranks.","overlay":"flex","picker":"none"},"picker":"flex"}
+PASS IP-SEAM-PHONE
+PASS IP-SEAM-DESKTOP
+PASS IP-SKILL-RING-PHONE-PLAY
+PASS IP-SKILL-RING-PHONE-MANAGEMENT
+PASS IP-SKILL-RING-DESKTOP-PLAY
+PASS IP-SKILL-RING-DESKTOP-MANAGEMENT
+FAIL IP-SKILL-TOUCH-PHONE
+FAIL IP-SKILL-TOUCH-DESKTOP
+PASS IP-SKILL-OPENS-PHONE
+PASS IP-SKILL-OPENS-DESKTOP
+PASS IP-SKILL-RENAME
+FAIL IP-VOID-PHONE
+FAIL IP-VOID-DESKTOP
+PASS IP-KIHO-PHONE
+PASS IP-KIHO-DESKTOP
+PASS IP-COMBAT-UNCHANGED-PHONE
+PASS IP-COMBAT-UNCHANGED-DESKTOP
+PASS IP-ADV-NOT-NESTED-PHONE-PLAY
+PASS IP-ADV-NOT-NESTED-PHONE-MANAGEMENT
+PASS IP-ADV-NOT-NESTED-DESKTOP-PLAY
+PASS IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT
+PASS IP-PLAY-NO-LONE-I-PHONE
+FAIL IP-CHOOSE-PHONE
+PASS IP-PLAY-NO-LONE-I-DESKTOP
+FAIL IP-CHOOSE-DESKTOP
+PASS IP-MODAL-NOT-NESTED
+PASS IP-HOTEI-ROW-PHONE
+PASS IP-HOTEI-ROW-DESKTOP
+PASS IP-HOTEI-PANEL-PHONE
+PASS IP-HOTEI-PANEL-DESKTOP
+PASS IP-CLASS-GATES-PHONE
+PASS IP-CLASS-GATES-DESKTOP
+PASS IP-NO-ERRORS-PHONE
+PASS IP-NO-ERRORS-DESKTOP
+PASS IP-OTHER-FORTUNE-UNCHANGED
+29/35 checks passed
