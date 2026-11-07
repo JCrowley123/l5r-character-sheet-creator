@@ -38,6 +38,7 @@ function options() {
     const rule = item.querySelector('.ir15-rule'), s = getComputedStyle(item), l = getComputedStyle(label);
     return {oracle: det ? (det.querySelector(':scope > span') || det).textContent.trim() : null, inline: rule ? rule.textContent : null,
       detShown: shown(det), infoShown: [...item.querySelectorAll('.adv-config-info')].some(shown), first: first ? first.textContent : '', bold: !!(first && first.querySelector('b')),
+      inner: [label, ...label.querySelectorAll('*')].filter(e => parseFloat(getComputedStyle(e).borderTopWidth) > 0 || parseFloat(getComputedStyle(e).borderLeftWidth) > 0).map(e => e.tagName + '.' + e.className),
       card: {border: s.borderTopWidth + ' ' + s.borderTopStyle, radius: s.borderTopLeftRadius, pad: s.paddingTop + ' ' + s.paddingLeft, font: l.fontSize, lh: l.lineHeight, family: l.fontFamily, align: l.textAlign, transform: l.textTransform}};
   });
 }
@@ -84,6 +85,8 @@ const lastRow = (page, list, name) => page.evaluate(([l, n]) => { const d = [...
         await check('IR-' + K + '-INLINE-' + D, async () => [o.length === n && o.every(x => x.oracle && x.inline && x.inline.endsWith(x.oracle) && /^( — |\. )/.test(x.inline) &&
           x.inline.length === x.oracle.length + (x.inline.startsWith('. ') ? 2 : 3)), o.map(x => [x.first, (x.inline || '').slice(0, 40), (x.oracle || '').slice(0, 40)])]);
         await check('IR-' + K + '-NOTHING-HIDDEN-DRAWN-' + D, async () => [o.every(x => !x.detShown && !x.infoShown), o.map(x => [x.detShown, x.infoShown])]);
+        // One box per option (owner's review, 7 November): nothing inside the card draws a border of its own.
+        await check('IR-' + K + '-ONE-BOX-' + D, async () => [o.every(x => x.inner.filter(t => !/^INPUT/.test(t)).length === 0), o.map(x => x.inner)]);
         await check('IR-' + K + '-PARAGON-CARD-' + D, async () => [o.every(x => x.bold && !x.first.includes(x.oracle.slice(0, 20)) && JSON.stringify(x.card) === JSON.stringify(ref)), {card: o[0].card, ref}]);
         await closeAll(page);
       }

@@ -62,7 +62,7 @@ TOUCHED = {
             (V / 'PART K — Phase 12 Play and Management Modes/qa/modes-harness.js', 25),
             (V / 'PART K — Phase 12.2 Play Mode Identity/qa/identity-harness.js', 17),
             (V / 'PART I — Phase 4.5.32 Damage, Sessions and XP/qa/damage-sessions-xp-harness.js', 69)],
-    'A04.1': [(R15A / 'A04.1 — One Way to Show Choices in Pickers/qa/inline-rules-harness.js', 46),
+    'A04.1': [(R15A / 'A04.1 — One Way to Show Choices in Pickers/qa/inline-rules-harness.js', 56),
               (V / 'PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js', 77),
               (V / 'PART I — Phase 4.5.2 Disadvantages/qa/disadv-config-harness.js', 163),
               (V / 'PART I — Phase 4.5.10 Cursed by the Realm/qa/disadv-realm-harness.js', 62),

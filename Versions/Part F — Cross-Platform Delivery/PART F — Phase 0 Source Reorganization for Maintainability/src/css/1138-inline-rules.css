@@ -26,6 +26,10 @@ html body.ir15-on #advConfigGrid label.ir15-opt {
   width: auto;
   margin: 0;
   padding: 0 0 0 21px;
+  /* One box per option (owner's review, 7 November): Phase 4.5.21's own option card border is not drawn inside it. */
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   font-family: 'Noto Sans JP', sans-serif;
   font-size: .9rem;
   line-height: 1.35;

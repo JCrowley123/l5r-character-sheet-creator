@@ -25,6 +25,33 @@
 
 All five units are approved: A05, A06 revision 2, A07, A11 and A04.1, as the boards show them. **A11 also closes the 2 px gap** under the row controls on the six Disadvantage cards (Missing Limb, Lost Love, Contrary, Rumormonger, Soft-Hearted, Blissful Betrothal), using the same 6 px helper gap. The other candidates from the whole-app read are left for later.
 
+## Owner's device review, 7 November: A04.1 revised; a new unit, A04.2
+
+All 18 checks passed on the iPhone and the laptop.
+
+**A04.1 is to be revised:** Seven Fortunes' Blessing showed a box inside a box. Its option already had its own bordered card, and A04.1 added Paragon's card around it. The inner box goes, so each option is one card, as on Consumed.
+
+**A04.2, one pattern for a configured row (proposed by the owner; parked, mock-up first, after the 11 November reset).** The rows of configured entries grew up in different phases and disagree:
+
+- the badge comes before Change on some rows and after it on others;
+- some badges are dashed, some filled;
+- some rows have an i and some have none (Failure of Bushido has neither a badge nor an i);
+- some rows show a short reminder, others the full rule;
+- Bishamon's note under Seven Fortunes' Curse is drawn in the Clan colour.
+
+The owner's layout:
+
+- **One line:** the choice as a badge on the far left; then Change (Manage only); then the i, which explains every choice in full.
+- **Below it:** what the chosen option does, as a summary.
+
+The owner's decisions (7 November):
+
+1. **One badge style everywhere**, leaning to the filled one. "Applied automatically" or "Reminder" is said in words in the summary line. Today it is encoded in the badge's border: Phases 4.5.10 and 4.5.11 draw dashed for a reminder and filled for automatic.
+2. **The summaries are written later, from a read pass of the rules.** First the rules are read so they are clearly known, then each summary is written from that read. The rewrite is deferred.
+3. **Bishamon's Clan-coloured note becomes plain summary text,** like everything else.
+
+Scope to measure at its inventory: about 20 configured entries across about 10 earlier phases, many of whose harnesses pin the row text.
+
 ## Usage (Claude, account-wide, five-hour / weekly)
 
 | When (UTC) | Five-hour | Weekly | Point |

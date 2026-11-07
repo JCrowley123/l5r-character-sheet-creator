@@ -38,15 +38,15 @@ The window scrolls, and Confirm stays reachable (checked).
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With A04.1 (this branch, the whole group) | `d243a6e794076b73982ecc5b1770b04c25e6f04946a75eb78d78cb814f2eda90` | 17,609,051 |
+| With A04.1 (this branch, the whole group), revision 1 | `7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0` | 17,609,230 |
 | A04.1 removed (A11) | `d8965a9f8c419d85e3587cc5ab5ec0798c75e0292036c0896c7d9a6f6aff3907` | 17,602,520 |
 
 ## Light checks (7 November)
 
 | Check | Result |
 |---|---|
-| Own harness `qa/inline-rules-harness.js` (46 checks, pinned before the first run) | 46/46 |
-| Own harness with A11 removed and A04.1 kept | 46/46 |
+| Own harness `qa/inline-rules-harness.js` (46 checks pinned before the first run; ten ONE-BOX checks added at revision 1) | 56/56 |
+| Own harness with A11 removed and A04.1 kept | 56/56 |
 | `qa/test-removal.py` | 10/10 |
 | `feature-dependencies.py` | every reference inside A04.1's own blocks |
 | Phase 4.5.21 (Part I), Seven Fortunes' Blessing (one declared conditional fixture, below) | 77/77, and 77/77 with A04.1 removed |
@@ -67,5 +67,9 @@ The window scrolls, and Confirm stays reachable (checked).
 - **Phase 4.54's own heading for an option's i** took in the new inline rule, turning its screen-reader name into "Explain: Control — 4 XP. −1k1 …" (its SUPERSEDE-03/04 caught it). A04.1 now adds `.ir15-rule` to that phase's own list of what is not the label (`R454.EXCLUDE_FROM_LABEL`, read by property). No change to that phase's checks.
 - **The card's alignment** was `left`; Paragon's is `start`. Now `start`, so the card measures equal to Paragon's.
 - **The harness's tap on the rule** now lands on the rule's last line. An inline span's box starts on the name's line, so the first attempt reached the bold name.
+
+**Revision 1 (the owner's device review, 7 November).** All checks passed on the iPhone and the laptop, but Seven Fortunes' Blessing showed a box inside a box. Phase 4.5.21's own option card kept its border inside the new card. The label no longer draws a border or radius, so each option is one card, as on Consumed. Ten ONE-BOX checks (five pickers, two sizes) pin it. They failed on the first build for the Blessing only, and pass on the revised one. The first build was `d243a6e7…da90`; its preview passed 2,513/2,513.
+
+The owner's further comments on the rows after choosing (badge, Change, i, summary) became a unit of their own, A04.2, parked with the owner's three decisions in [G2's MOCKUP.md](<../G2 — Small Layout Fixes/MOCKUP.md>).
 
 Qualification follows the owner's review. See [ROLLBACK.md](ROLLBACK.md).
