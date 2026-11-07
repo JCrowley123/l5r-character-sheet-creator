@@ -1,0 +1,8221 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pickers": [
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Dark Paragon",
+   "title": "Dark Paragon",
+   "mode": "inline",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "dp4523-option",
+     "len": 62,
+     "text": "Control — Reroll any Social Skill Roll, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 97,
+     "text": "Determination — Negate every TN and Wound penalty on one Skill Roll or Spell Casting Roll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 67,
+     "text": "Insight — Reroll a roll that used Awareness, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 72,
+     "text": "Knowledge — Reroll a roll that used Intelligence, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 64,
+     "text": "Perfection — Make one chosen die on a Skill Roll explode. No +5.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 57,
+     "text": "Strength — Reroll any damage roll, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 54,
+     "text": "Will — Negate 10 Wounds at the moment you suffer them.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 638,
+   "clientH": 638,
+   "gridText": "Precept Control — Reroll any Social Skill Roll, with +5 to the reroll. Determination — Negate every TN and Wound penalty on one Skill Roll or Spell Casting Roll. No +5. Insight — Reroll a roll that used Awareness, with +5 to the reroll. Knowledge — Reroll a roll that used Intelligence, with +5 to the reroll. Perfection — Make one chosen die on a Skill Roll explode. No +5. Strength — Reroll any damage roll, with +5 to the reroll. Will — Negate 10 Wounds at the moment you suffer them."
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Forbidden Knowledge",
+   "title": "Forbidden Knowledge",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [
+    "named4513-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "named4513-info:i",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 418,
+   "clientH": 418,
+   "gridText": "Subject Agreed effects (optional) i"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Languages",
+   "title": "Configure Languages",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 18,
+     "text": "Human language1 pt",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 23,
+     "text": "Non-human language3 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 444,
+   "clientH": 444,
+   "gridText": "HUMAN LANGUAGE 1 PT NON-HUMAN LANGUAGE 3 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Paragon",
+   "title": "Paragon",
+   "mode": "inline",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "p4518-option",
+     "len": 137,
+     "text": "Compassion — When a Void Point improves a roll made to directly help someone lower in the ",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 64,
+     "text": "Courage — +1k1 on rolls to resist Intimidation or overcome Fear.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 79,
+     "text": "Courtesy — +2k0 on Etiquette rolls to avoid embarrassment or a breach of honor.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 111,
+     "text": "Duty — A Void Point can negate every TN penalty, including Wound penalties, on one Skill o",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 90,
+     "text": "Honesty — +1k1 on Sincerity (Honesty) rolls, even without that Emphasis when it would fit.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 117,
+     "text": "Honor — Use twice your Honor Rank instead of the normal Honor contribution when resisting ",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 52,
+     "text": "Sincerity — +2k0 on Contested Rolls using Sincerity.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 754,
+   "clientH": 671,
+   "gridText": "Tenet Compassion — When a Void Point improves a roll made to directly help someone lower in the Celestial Order, it gives +2k2 instead of +1k1. Courage — +1k1 on rolls to resist Intimidation or overcome Fear. Courtesy — +2k0 on Etiquette rolls to avoid embarrassment or a breach of honor. Duty — A Void Point can negate every TN penalty, including Wound penalties, on one Skill or Spell Casting roll. Honesty — +1k1 on Sincerity (Honesty) rolls, even without that Emphasis when it would fit. Honor — Use twice your Honor Rank instead of the normal Honor contribution when resisting Temptation or Inti"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Soul of Artistry",
+   "title": "Soul of Artistry",
+   "mode": "inline",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "sa4519-option",
+     "len": 66,
+     "text": "Artisan Skills — Artisan and its specializations, plus Calligraphy",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "sa4519-option",
+     "len": 83,
+     "text": "Craft Skills — Craft and its specializations, plus Engineering, Sailing and Forgery",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 363,
+   "clientH": 363,
+   "gridText": "Skill family Artisan Skills — Artisan and its specializations, plus Calligraphy Craft Skills — Craft and its specializations, plus Engineering, Sailing and Forgery"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Watanu-Trained",
+   "title": "Watanu-Trained",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 284,
+   "clientH": 284,
+   "gridText": "Skill"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Way of the Land",
+   "title": "Way of the Land",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [
+    "named4513-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "named4513-info:i",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 340,
+   "clientH": 340,
+   "gridText": "Region (optional) i"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Naga Ancestry",
+   "title": "Choose how it shows",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 22,
+     "text": "No visible signs 7 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 19,
+     "text": "Visible signs 5 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 373,
+   "clientH": 373,
+   "gridText": "NO VISIBLE SIGNS 7 PTS VISIBLE SIGNS 5 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Allies",
+   "title": "Allies — Influence",
+   "mode": "label-only",
+   "nOptions": 3,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "11 pt",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 6,
+     "text": "22 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 6,
+     "text": "44 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 290,
+   "clientH": 290,
+   "gridText": "1 1 PT 2 2 PTS 4 4 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Blackmail",
+   "title": "Blackmail",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [
+    "named4513-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "named4513-info:i",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 419,
+   "clientH": 419,
+   "gridText": "Target name Agreed target Status Rank i"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Darling of the Court",
+   "title": "Darling of the Court",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 2,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "ghost:Remove",
+    "ghost:Add court",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 314,
+   "clientH": 314,
+   "gridText": "Court 1 REMOVE ADD COURT"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Heart of Vengeance",
+   "title": "Heart of Vengeance",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [
+    "hv4516-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "hv4516-info:i",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 292,
+   "clientH": 292,
+   "gridText": "Rival Clan or faction i"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Perceived Honor",
+   "title": "Choose a Rank",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 320,
+   "clientH": 320,
+   "gridText": "RANK — 2 XP PER RANK"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Stolen Identity",
+   "title": "Stolen Identity",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 495,
+   "clientH": 495,
+   "gridText": "School (another Great Clan’s) Family Alias"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Water Hammer Citizen",
+   "title": "Water Hammer Citizen",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 284,
+   "clientH": 284,
+   "gridText": "Skill"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Zakyo Toshi Citizen",
+   "title": "Zakyo Toshi Citizen",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 284,
+   "clientH": 284,
+   "gridText": "Skill"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Chosen by the Oracles",
+   "title": "Choose a Ring",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Void",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 345,
+   "clientH": 345,
+   "gridText": "AIR EARTH FIRE WATER VOID"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Elemental Blessing",
+   "title": "Choose a Ring",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 363,
+   "clientH": 363,
+   "gridText": "AIR EARTH FIRE WATER"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Friendly Kami",
+   "title": "Choose an Element",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 363,
+   "clientH": 363,
+   "gridText": "AIR EARTH FIRE WATER"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Friend of the Elements",
+   "title": "Choose a Ring",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 363,
+   "clientH": 363,
+   "gridText": "AIR EARTH FIRE WATER"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Kharmic Tie",
+   "title": "Kharmic Tie — Target",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 288,
+   "clientH": 288,
+   "gridText": "Target person"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Luck",
+   "title": "Choose a Rank",
+   "mode": "label-only",
+   "nOptions": 3,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Rank 13 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Rank 26 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Rank 39 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 306,
+   "clientH": 306,
+   "gridText": "RANK 1 3 PTS RANK 2 6 PTS RANK 3 9 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Magic Resistance",
+   "title": "Choose a Rank",
+   "mode": "label-only",
+   "nOptions": 3,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Rank 12 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Rank 24 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Rank 36 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 308,
+   "clientH": 308,
+   "gridText": "RANK 1 2 PTS RANK 2 4 PTS RANK 3 6 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Reincarnated",
+   "title": "Reincarnated",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 459,
+   "clientH": 459,
+   "gridText": "Skill 1 Skill 2 Skill 3"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Seven Fortunes’ Blessing",
+   "title": "Seven Fortunes’ Blessing",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "fb4521-option",
+     "len": 38,
+     "text": "Benten’s Blessing — 3 XP (Crane pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 45,
+     "text": "Bishamon’s Blessing — 5 XP (Crab, Lion pay 4)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 40,
+     "text": "Daikoku’s Blessing — 4 XP (Mantis pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 39,
+     "text": "Ebisu’s Blessing — 4 XP (Unicorn pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 53,
+     "text": "Fukurokujin’s Blessing — 4 XP (Dragon, Phoenix pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 65,
+     "text": "Hotei’s Blessing — 4 XP — ruled out by Hotei’s Curse (Core p.148)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span. span.sr7-reason"
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 42,
+     "text": "Jurojin’s Blessing — 4 XP (Scorpion pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule"
+   ],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 801,
+   "clientH": 671,
+   "gridText": "Fortune Benten’s Blessing — 3 XP (Crane pay 3) Rule Bishamon’s Blessing — 5 XP (Crab, Lion pay 4) Rule Daikoku’s Blessing — 4 XP (Mantis pay 3) Rule Ebisu’s Blessing — 4 XP (Unicorn pay 3) Rule Fukurokujin’s Blessing — 4 XP (Dragon, Phoenix pay 3) Rule Hotei’s Blessing — 4 XP — ruled out by Hotei’s Curse (Core p.148) Rule Jurojin’s Blessing — 4 XP (Scorpion pay 3) Rule"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Touch of the Spirit Realms",
+   "title": "Touch of the Spirit Realms",
+   "mode": "inline",
+   "nOptions": 10,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "tr4524-option",
+     "len": 53,
+     "text": "Chikushudo — 4 XP. +1k1 on all Animal Handling rolls.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 95,
+     "text": "Gaki-do — 4 XP. When you resolve an attack that kills an opponent, immediately regain 5 Wo",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 175,
+     "text": "Jigoku — 4 XP. Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skil",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 87,
+     "text": "Maigo no Musha — 4 XP. When you are awarded more than 3 points of Glory, gain one more.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 84,
+     "text": "Meido — 4 XP. +2k0 on Contested Rolls against social manipulation, such as Courtier.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 49,
+     "text": "Sakkaku — 4 XP. +1k1 on Sincerity (Deceit) rolls.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 69,
+     "text": "Tengoku — 4 XP. +2k0 on Earth Ring Rolls to resist Shadowlands Taint.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 109,
+     "text": "Toshigoku — 7 XP (confirm with your GM). A Move Action taken to get into attack range move",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 90,
+     "text": "Yomi — 6 XP (confirm with your GM). Choose one School Skill; +1k0 on Skill Rolls using it.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 105,
+     "text": "Yume-do — 4 XP. Four hours of rest recover all your expended Void Points, instead of a ful",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 976,
+   "clientH": 671,
+   "gridText": "Spirit Realm Chikushudo — 4 XP. +1k1 on all Animal Handling rolls. Gaki-do — 4 XP. When you resolve an attack that kills an opponent, immediately regain 5 Wounds. Jigoku — 4 XP. Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skill and Trait rolls using a Physical Trait; if you are Lost, add twice your Taint Rank. Maigo no Musha — 4 XP. When you are awarded more than 3 points of Glory, gain one more. Meido — 4 XP. +2k0 on Contested Rolls against social manipulation, such as Courtier. Sakkaku — 4 XP. +1k1 on Sincerity (Deceit) rolls. Tengoku — 4 XP. +2k0 on Earth Ring Rol"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Void Versatility",
+   "title": "Void Versatility",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "vv4520-option",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "vv4520-option",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "vv4520-option",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "vv4520-option",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 404,
+   "clientH": 404,
+   "gridText": "Ring Air Earth Fire Water"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Gentry",
+   "title": "Choose a holding",
+   "mode": "label-only",
+   "nOptions": 6,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 13,
+     "text": "Village 8 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 20,
+     "text": "Large Village 15 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 21,
+     "text": "Unique Holding 18 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Town 20 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "City 25 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 15,
+     "text": "Province 30 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 459,
+   "clientH": 459,
+   "gridText": "VILLAGE 8 PTS LARGE VILLAGE 15 PTS UNIQUE HOLDING 18 PTS TOWN 20 PTS CITY 25 PTS PROVINCE 30 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Inheritance",
+   "title": "Inheritance",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [
+    "named4513-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "named4513-info:i",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 340,
+   "clientH": 340,
+   "gridText": "Heirloom name i"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Wealthy",
+   "title": "Choose a Rank",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "wealth4517-opt",
+     "len": 21,
+     "text": "Add it to my Koku now",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "wealth4517-opt",
+     "len": 30,
+     "text": "I have already added it myself",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 440,
+   "clientH": 440,
+   "gridText": "RANK — 1 XP PER RANK Starting koku — 2 per Rank Add it to my Koku now I have already added it myself"
+  },
+  {
+   "device": "phone",
+   "kind": "adv",
+   "name": "Great Potential",
+   "title": "Choose a Skill",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 17,
+     "text": "CalligraphySchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 13,
+     "text": "DefenseSchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 23,
+     "text": "Lore: ShadowlandsSchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 20,
+     "text": "Lore: TheologySchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 16,
+     "text": "SpellcraftSchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 12,
+     "text": "Intimidation",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 14,
+     "text": "Another Skill…",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 650,
+   "clientH": 650,
+   "gridText": "Skill CALLIGRAPHYSCHOOL DEFENSESCHOOL LORE: SHADOWLANDSSCHOOL LORE: THEOLOGYSCHOOL SPELLCRAFTSCHOOL INTIMIDATION ANOTHER SKILL… Your School’s Skills are listed first. Great Potential raises the Raise cap using this Skill’s Rank, so a Skill you have not taken yet does nothing for you."
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Compulsion",
+   "title": "Compulsion",
+   "mode": "label-only",
+   "nOptions": 3,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "2 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 411,
+   "clientH": 411,
+   "gridText": "2 XP 3 XP 4 XP"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Consumed",
+   "title": "Consumed",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Control — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 20,
+     "text": "Determination — 6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Insight — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 16,
+     "text": "Knowledge — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 17,
+     "text": "Perfection — 6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 15,
+     "text": "Strength — 5 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Will — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 811,
+   "clientH": 671,
+   "gridText": "CONTROL — 4 XP DETERMINATION — 6 XP INSIGHT — 4 XP KNOWLEDGE — 4 XP PERFECTION — 6 XP STRENGTH — 5 XP WILL — 4 XP"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Doubt",
+   "title": "Doubt",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Calligraphy",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Defense",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 17,
+     "text": "Lore: Shadowlands",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Lore: Theology",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 10,
+     "text": "Spellcraft",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 583,
+   "clientH": 583,
+   "gridText": "CALLIGRAPHY DEFENSE LORE: SHADOWLANDS LORE: THEOLOGY SPELLCRAFT"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Failure of Bushido",
+   "title": "Failure of Bushido",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 17,
+     "text": "Compassion — 3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Courage — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 15,
+     "text": "Courtesy — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Duty — 6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Honesty — 3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 12,
+     "text": "Honor — 3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 16,
+     "text": "Sincerity — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 811,
+   "clientH": 671,
+   "gridText": "COMPASSION — 3 XP COURAGE — 4 XP COURTESY — 4 XP DUTY — 6 XP HONESTY — 3 XP HONOR — 3 XP SINCERITY — 4 XP"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Phobia",
+   "title": "Phobia",
+   "mode": "label-only",
+   "nOptions": 3,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 20,
+     "text": "1 XP refund (Rank 1)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 20,
+     "text": "2 XP refund (Rank 2)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 20,
+     "text": "3 XP refund (Rank 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 411,
+   "clientH": 411,
+   "gridText": "1 XP REFUND (RANK 1) 2 XP REFUND (RANK 2) 3 XP REFUND (RANK 3)"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Sleeper Agent",
+   "title": "Choose the conditioning",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 18,
+     "text": "No fail-safe 5 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 22,
+     "text": "With a fail-safe 8 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 357,
+   "clientH": 357,
+   "gridText": "NO FAIL-SAFE 5 PTS WITH A FAIL-SAFE 8 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Weakness",
+   "title": "Weakness",
+   "mode": "label-only",
+   "nOptions": 8,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 8,
+     "text": "Reflexes",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Awareness",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Stamina",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Willpower",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Agility",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 12,
+     "text": "Intelligence",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 8,
+     "text": "Strength",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 10,
+     "text": "Perception",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 857,
+   "clientH": 671,
+   "gridText": "REFLEXES AWARENESS STAMINA WILLPOWER AGILITY INTELLIGENCE STRENGTH PERCEPTION"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Antisocial",
+   "title": "Antisocial",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "2 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 325,
+   "clientH": 325,
+   "gridText": "2 XP 4 XP"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Bounty",
+   "title": "Choose the offence",
+   "mode": "label-only",
+   "nOptions": 3,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 19,
+     "text": "Minor offence 2 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 21,
+     "text": "Serious offence 4 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 24,
+     "text": "Violent or heinous 6 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 528,
+   "clientH": 528,
+   "gridText": "MINOR OFFENCE 2 PTS SERIOUS OFFENCE 4 PTS VIOLENT OR HEINOUS 6 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Cast Out",
+   "title": "Cast Out",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "1 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 325,
+   "clientH": 325,
+   "gridText": "1 XP 3 XP"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Clear Water Stigma",
+   "title": "Choose what you lose",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 28,
+     "text": "All your Outfit’s koku 2 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 23,
+     "text": "One Outfit weapon 2 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 392,
+   "clientH": 392,
+   "gridText": "ALL YOUR OUTFIT’S KOKU 2 PTS ONE OUTFIT WEAPON 2 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Dependant",
+   "title": "Dependant",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 252,
+   "clientH": 252,
+   "gridText": "AGREED POINT VALUE — WHAT YOU AND YOUR GM SETTLED ON"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Imperial City Stigma",
+   "title": "Imperial City Stigma",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 252,
+   "clientH": 252,
+   "gridText": "NAME YOUR CURRENT ENEMY (THE GM CHANGES THEM EVERY MONTH TO A YEAR)"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Obligation",
+   "title": "Obligation",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 325,
+   "clientH": 325,
+   "gridText": "3 XP 6 XP"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Sworn Enemy",
+   "title": "Sworn Enemy",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 222,
+   "clientH": 222,
+   "gridText": "NAME YOUR SWORN ENEMY"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "The Chrysanthemum Court",
+   "title": "Choose the era",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 16,
+     "text": "Hantei XVI 5 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 17,
+     "text": "Another era 3 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 269,
+   "clientH": 269,
+   "gridText": "HANTEI XVI 5 PTS ANOTHER ERA 3 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Trials of the Imperial City",
+   "title": "Trials of the Imperial City",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 252,
+   "clientH": 252,
+   "gridText": "NAME YOUR CURRENT ENEMY (THE GM CHANGES THEM EVERY MONTH TO A YEAR)"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Cursed by the Realm",
+   "title": "Cursed by the Realm",
+   "mode": "label-only",
+   "nOptions": 10,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 10,
+     "text": "Chikushudo",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Gaki-do",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 6,
+     "text": "Jigoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Maigo no Musha",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Meido",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Sakkaku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Tengoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Toshigoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "Yomi",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Yume-do",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 1109,
+   "clientH": 671,
+   "gridText": "CHIKUSHUDO GAKI-DO JIGOKU MAIGO NO MUSHA MEIDO SAKKAKU TENGOKU TOSHIGOKU YOMI YUME-DO"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Elemental Imbalance",
+   "title": "Elemental Imbalance",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 222,
+   "clientH": 222,
+   "gridText": "RANK — 2 XP PER RANK"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Enlightened Madness",
+   "title": "Enlightened Madness",
+   "mode": "label-only",
+   "nOptions": 2,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 325,
+   "clientH": 325,
+   "gridText": "4 XP 6 XP"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Lord Moon’s Curse",
+   "title": "Choose a severity",
+   "mode": "label-only",
+   "nOptions": 3,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 9,
+     "text": "Low 3 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 12,
+     "text": "Medium 5 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 10,
+     "text": "High 7 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 237,
+   "clientH": 237,
+   "gridText": "LOW 3 PTS MEDIUM 5 PTS HIGH 7 PTS"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Seven Fortunes’ Curse",
+   "title": "Seven Fortunes’ Curse",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 6,
+     "text": "Benten",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 8,
+     "text": "Bishamon",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Daikoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Ebisu",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Fukurokujin",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Hotei",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Jurojin",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 827,
+   "clientH": 671,
+   "gridText": "BENTEN BISHAMON DAIKOKU EBISU FUKUROKUJIN HOTEI JUROJIN"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Unlucky",
+   "title": "Unlucky",
+   "mode": "other",
+   "nOptions": 0,
+   "nButtonCards": 0,
+   "options": [],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 238,
+   "clientH": 238,
+   "gridText": "RANK — 2 XP PER RANK, ONE USE PER RANK"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Wrath of the Kami",
+   "title": "Wrath of the Kami",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "Void",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 599,
+   "clientH": 599,
+   "gridText": "AIR EARTH FIRE WATER VOID"
+  },
+  {
+   "device": "phone",
+   "kind": "disadv",
+   "name": "Ruined City Survivor",
+   "title": "Ruined City Survivor",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Robes",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Wakizashi",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Knife",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Scroll Satchel",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Traveling Pack",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 599,
+   "clientH": 599,
+   "gridText": "ROBES WAKIZASHI KNIFE SCROLL SATCHEL TRAVELING PACK"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Dark Paragon",
+   "title": "Dark Paragon",
+   "mode": "inline",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "dp4523-option",
+     "len": 62,
+     "text": "Control — Reroll any Social Skill Roll, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 97,
+     "text": "Determination — Negate every TN and Wound penalty on one Skill Roll or Spell Casting Roll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 67,
+     "text": "Insight — Reroll a roll that used Awareness, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 72,
+     "text": "Knowledge — Reroll a roll that used Intelligence, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 64,
+     "text": "Perfection — Make one chosen die on a Skill Roll explode. No +5.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 57,
+     "text": "Strength — Reroll any damage roll, with +5 to the reroll.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "dp4523-option",
+     "len": 54,
+     "text": "Will — Negate 10 Wounds at the moment you suffer them.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 638,
+   "clientH": 638,
+   "gridText": "Precept Control — Reroll any Social Skill Roll, with +5 to the reroll. Determination — Negate every TN and Wound penalty on one Skill Roll or Spell Casting Roll. No +5. Insight — Reroll a roll that used Awareness, with +5 to the reroll. Knowledge — Reroll a roll that used Intelligence, with +5 to the reroll. Perfection — Make one chosen die on a Skill Roll explode. No +5. Strength — Reroll any damage roll, with +5 to the reroll. Will — Negate 10 Wounds at the moment you suffer them."
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Paragon",
+   "title": "Paragon",
+   "mode": "inline",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "p4518-option",
+     "len": 137,
+     "text": "Compassion — When a Void Point improves a roll made to directly help someone lower in the ",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 64,
+     "text": "Courage — +1k1 on rolls to resist Intimidation or overcome Fear.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 79,
+     "text": "Courtesy — +2k0 on Etiquette rolls to avoid embarrassment or a breach of honor.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 111,
+     "text": "Duty — A Void Point can negate every TN penalty, including Wound penalties, on one Skill o",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 90,
+     "text": "Honesty — +1k1 on Sincerity (Honesty) rolls, even without that Emphasis when it would fit.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 117,
+     "text": "Honor — Use twice your Honor Rank instead of the normal Honor contribution when resisting ",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "p4518-option",
+     "len": 52,
+     "text": "Sincerity — +2k0 on Contested Rolls using Sincerity.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 696,
+   "clientH": 696,
+   "gridText": "Tenet Compassion — When a Void Point improves a roll made to directly help someone lower in the Celestial Order, it gives +2k2 instead of +1k1. Courage — +1k1 on rolls to resist Intimidation or overcome Fear. Courtesy — +2k0 on Etiquette rolls to avoid embarrassment or a breach of honor. Duty — A Void Point can negate every TN penalty, including Wound penalties, on one Skill or Spell Casting roll. Honesty — +1k1 on Sincerity (Honesty) rolls, even without that Emphasis when it would fit. Honor — Use twice your Honor Rank instead of the normal Honor contribution when resisting Temptation or Inti"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Chosen by the Oracles",
+   "title": "Choose a Ring",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Void",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 345,
+   "clientH": 345,
+   "gridText": "AIR EARTH FIRE WATER VOID"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Elemental Blessing",
+   "title": "Choose a Ring",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 345,
+   "clientH": 345,
+   "gridText": "AIR EARTH FIRE WATER"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Friendly Kami",
+   "title": "Choose an Element",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 363,
+   "clientH": 363,
+   "gridText": "AIR EARTH FIRE WATER"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Friend of the Elements",
+   "title": "Choose a Ring",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 363,
+   "clientH": 363,
+   "gridText": "AIR EARTH FIRE WATER"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Seven Fortunes’ Blessing",
+   "title": "Seven Fortunes’ Blessing",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "fb4521-option",
+     "len": 38,
+     "text": "Benten’s Blessing — 3 XP (Crane pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 45,
+     "text": "Bishamon’s Blessing — 5 XP (Crab, Lion pay 4)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 40,
+     "text": "Daikoku’s Blessing — 4 XP (Mantis pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 39,
+     "text": "Ebisu’s Blessing — 4 XP (Unicorn pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 53,
+     "text": "Fukurokujin’s Blessing — 4 XP (Dragon, Phoenix pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 65,
+     "text": "Hotei’s Blessing — 4 XP — ruled out by Hotei’s Curse (Core p.148)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span. span.sr7-reason"
+    },
+    {
+     "cls": "fb4521-option",
+     "len": 42,
+     "text": "Jurojin’s Blessing — 4 XP (Scorpion pay 3)",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule",
+    "fb4521-rule:Rule"
+   ],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 734,
+   "clientH": 734,
+   "gridText": "Fortune Benten’s Blessing — 3 XP (Crane pay 3) Rule Bishamon’s Blessing — 5 XP (Crab, Lion pay 4) Rule Daikoku’s Blessing — 4 XP (Mantis pay 3) Rule Ebisu’s Blessing — 4 XP (Unicorn pay 3) Rule Fukurokujin’s Blessing — 4 XP (Dragon, Phoenix pay 3) Rule Hotei’s Blessing — 4 XP — ruled out by Hotei’s Curse (Core p.148) Rule Jurojin’s Blessing — 4 XP (Scorpion pay 3) Rule"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Touch of the Spirit Realms",
+   "title": "Touch of the Spirit Realms",
+   "mode": "inline",
+   "nOptions": 10,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "tr4524-option",
+     "len": 53,
+     "text": "Chikushudo — 4 XP. +1k1 on all Animal Handling rolls.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 95,
+     "text": "Gaki-do — 4 XP. When you resolve an attack that kills an opponent, immediately regain 5 Wo",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 175,
+     "text": "Jigoku — 4 XP. Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skil",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 87,
+     "text": "Maigo no Musha — 4 XP. When you are awarded more than 3 points of Glory, gain one more.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 84,
+     "text": "Meido — 4 XP. +2k0 on Contested Rolls against social manipulation, such as Courtier.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 49,
+     "text": "Sakkaku — 4 XP. +1k1 on Sincerity (Deceit) rolls.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 69,
+     "text": "Tengoku — 4 XP. +2k0 on Earth Ring Rolls to resist Shadowlands Taint.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 109,
+     "text": "Toshigoku — 7 XP (confirm with your GM). A Move Action taken to get into attack range move",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 90,
+     "text": "Yomi — 6 XP (confirm with your GM). Choose one School Skill; +1k0 on Skill Rolls using it.",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "tr4524-option",
+     "len": 105,
+     "text": "Yume-do — 4 XP. Four hours of rest recover all your expended Void Points, instead of a ful",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 937,
+   "clientH": 796,
+   "gridText": "Spirit Realm Chikushudo — 4 XP. +1k1 on all Animal Handling rolls. Gaki-do — 4 XP. When you resolve an attack that kills an opponent, immediately regain 5 Wounds. Jigoku — 4 XP. Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skill and Trait rolls using a Physical Trait; if you are Lost, add twice your Taint Rank. Maigo no Musha — 4 XP. When you are awarded more than 3 points of Glory, gain one more. Meido — 4 XP. +2k0 on Contested Rolls against social manipulation, such as Courtier. Sakkaku — 4 XP. +1k1 on Sincerity (Deceit) rolls. Tengoku — 4 XP. +2k0 on Earth Ring Rol"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Void Versatility",
+   "title": "Void Versatility",
+   "mode": "label-only",
+   "nOptions": 4,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "vv4520-option",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "vv4520-option",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "vv4520-option",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "vv4520-option",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 386,
+   "clientH": 386,
+   "gridText": "Ring Air Earth Fire Water"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Gentry",
+   "title": "Choose a holding",
+   "mode": "label-only",
+   "nOptions": 6,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "affinity-pick-item",
+     "len": 13,
+     "text": "Village 8 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 20,
+     "text": "Large Village 15 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 21,
+     "text": "Unique Holding 18 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "Town 20 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 11,
+     "text": "City 25 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    },
+    {
+     "cls": "affinity-pick-item",
+     "len": 15,
+     "text": "Province 30 pts",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "label. input."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 459,
+   "clientH": 459,
+   "gridText": "VILLAGE 8 PTS LARGE VILLAGE 15 PTS UNIQUE HOLDING 18 PTS TOWN 20 PTS CITY 25 PTS PROVINCE 30 PTS"
+  },
+  {
+   "device": "desktop",
+   "kind": "adv",
+   "name": "Great Potential",
+   "title": "Choose a Skill",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 17,
+     "text": "CalligraphySchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 13,
+     "text": "DefenseSchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 23,
+     "text": "Lore: ShadowlandsSchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 20,
+     "text": "Lore: TheologySchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 16,
+     "text": "SpellcraftSchool",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 12,
+     "text": "Intimidation",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "adv-config-skill-choice",
+     "len": 14,
+     "text": "Another Skill…",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 650,
+   "clientH": 650,
+   "gridText": "Skill CALLIGRAPHYSCHOOL DEFENSESCHOOL LORE: SHADOWLANDSSCHOOL LORE: THEOLOGYSCHOOL SPELLCRAFTSCHOOL INTIMIDATION ANOTHER SKILL… Your School’s Skills are listed first. Great Potential raises the Raise cap using this Skill’s Rank, so a Skill you have not taken yet does nothing for you."
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Consumed",
+   "title": "Consumed",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Control — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 20,
+     "text": "Determination — 6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Insight — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 16,
+     "text": "Knowledge — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 17,
+     "text": "Perfection — 6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 15,
+     "text": "Strength — 5 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Will — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 811,
+   "clientH": 796,
+   "gridText": "CONTROL — 4 XP DETERMINATION — 6 XP INSIGHT — 4 XP KNOWLEDGE — 4 XP PERFECTION — 6 XP STRENGTH — 5 XP WILL — 4 XP"
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Doubt",
+   "title": "Doubt",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Calligraphy",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Defense",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 17,
+     "text": "Lore: Shadowlands",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Lore: Theology",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 10,
+     "text": "Spellcraft",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 583,
+   "clientH": 583,
+   "gridText": "CALLIGRAPHY DEFENSE LORE: SHADOWLANDS LORE: THEOLOGY SPELLCRAFT"
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Failure of Bushido",
+   "title": "Failure of Bushido",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 17,
+     "text": "Compassion — 3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Courage — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 15,
+     "text": "Courtesy — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Duty — 6 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Honesty — 3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 12,
+     "text": "Honor — 3 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 16,
+     "text": "Sincerity — 4 XP",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 811,
+   "clientH": 796,
+   "gridText": "COMPASSION — 3 XP COURAGE — 4 XP COURTESY — 4 XP DUTY — 6 XP HONESTY — 3 XP HONOR — 3 XP SINCERITY — 4 XP"
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Weakness",
+   "title": "Weakness",
+   "mode": "label-only",
+   "nOptions": 8,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 8,
+     "text": "Reflexes",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Awareness",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Stamina",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Willpower",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Agility",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 12,
+     "text": "Intelligence",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 8,
+     "text": "Strength",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 10,
+     "text": "Perception",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 857,
+   "clientH": 796,
+   "gridText": "REFLEXES AWARENESS STAMINA WILLPOWER AGILITY INTELLIGENCE STRENGTH PERCEPTION"
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Cursed by the Realm",
+   "title": "Cursed by the Realm",
+   "mode": "label-only",
+   "nOptions": 10,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 10,
+     "text": "Chikushudo",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Gaki-do",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 6,
+     "text": "Jigoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Maigo no Musha",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Meido",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Sakkaku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Tengoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Toshigoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "Yomi",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Yume-do",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 1109,
+   "clientH": 796,
+   "gridText": "CHIKUSHUDO GAKI-DO JIGOKU MAIGO NO MUSHA MEIDO SAKKAKU TENGOKU TOSHIGOKU YOMI YUME-DO"
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Seven Fortunes’ Curse",
+   "title": "Seven Fortunes’ Curse",
+   "mode": "label-only",
+   "nOptions": 7,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 6,
+     "text": "Benten",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 8,
+     "text": "Bishamon",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Daikoku",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Ebisu",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 11,
+     "text": "Fukurokujin",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Hotei",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 7,
+     "text": "Jurojin",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info",
+    "adv-config-info"
+   ],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "adv-config-info:",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 827,
+   "clientH": 796,
+   "gridText": "BENTEN BISHAMON DAIKOKU EBISU FUKUROKUJIN HOTEI JUROJIN"
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Wrath of the Kami",
+   "title": "Wrath of the Kami",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 3,
+     "text": "Air",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Earth",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "Fire",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Water",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 4,
+     "text": "Void",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Confirm"
+   ],
+   "scrollH": 599,
+   "clientH": 599,
+   "gridText": "AIR EARTH FIRE WATER VOID"
+  },
+  {
+   "device": "desktop",
+   "kind": "disadv",
+   "name": "Ruined City Survivor",
+   "title": "Ruined City Survivor",
+   "mode": "label-only",
+   "nOptions": 5,
+   "nButtonCards": 0,
+   "options": [
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Robes",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 9,
+     "text": "Wakizashi",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 5,
+     "text": "Knife",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Scroll Satchel",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    },
+    {
+     "cls": "d45-option-label",
+     "len": 14,
+     "text": "Traveling Pack",
+     "rule": "",
+     "ruleCls": "",
+     "info": "",
+     "title": 0,
+     "kids": "input. span."
+    }
+   ],
+   "gridInfo": [],
+   "gridDetails": [],
+   "selects": [],
+   "steps": [
+    "advConfigX:✕",
+    "advConfigConfirm:Next"
+   ],
+   "scrollH": 583,
+   "clientH": 583,
+   "gridText": "ROBES WAKIZASHI KNIFE SCROLL SATCHEL TRAVELING PACK"
+  }
+ ],
+ "rows": {
+  "missing:Sworn Enemy": true,
+  "missing:Curse of Hotei": true,
+  "phone/management": {
+   "Wealthy": {
+    "row": {
+     "box": [
+      23,
+      1854,
+      344,
+      175
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1941
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       320,
+       1861,
+       40,
+       40
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 1881
+     },
+     {
+      "el": "input.en-name",
+      "text": "Wealthy",
+      "box": [
+       36,
+       1865,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1882
+     },
+     {
+      "el": "input.en-cost",
+      "text": "1",
+      "box": [
+       284,
+       1865,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1882
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       126,
+       1908,
+       90,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 1919
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       231,
+       1905,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "pad": "0px",
+      "mid": 1919
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "1 point per rank. Each point grants 2 ex",
+      "box": [
+       36,
+       1935,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1973
+     }
+    ],
+    "id": ""
+   },
+   "Zakyo Toshi Citizen": {
+    "row": {
+     "box": [
+      23,
+      1610,
+      344,
+      234
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1727
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       320,
+       1617,
+       40,
+       40
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 1637
+     },
+     {
+      "el": "input.en-name",
+      "text": "Zakyo Toshi Citizen",
+      "box": [
+       36,
+       1621,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1638
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       284,
+       1621,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1638
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       126,
+       1665,
+       90,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 1675
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       231,
+       1661,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "pad": "0px",
+      "mid": 1675
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       36,
+       1715,
+       120,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1731
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       156,
+       1715,
+       138,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1731
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "One extra Rank in a Games Skill you choo",
+      "box": [
+       36,
+       1749,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1788
+     }
+    ],
+    "id": ""
+   },
+   "Paragon": {
+    "row": {
+     "box": [
+      23,
+      2039,
+      344,
+      257
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2167
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       320,
+       2046,
+       40,
+       40
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 2066
+     },
+     {
+      "el": "input.en-name",
+      "text": "Paragon",
+      "box": [
+       36,
+       2050,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2067
+     },
+     {
+      "el": "input.en-cost",
+      "text": "7",
+      "box": [
+       284,
+       2050,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2067
+     },
+     {
+      "el": "span.adv-config-summary.p4518-badge",
+      "text": "Compassion",
+      "box": [
+       36,
+       2090,
+       85,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 2104
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       129,
+       2094,
+       76,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 2104
+     },
+     {
+      "el": "button.p4518-info",
+      "text": "i",
+      "box": [
+       213,
+       2090,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 2104
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose one Bushido tenet; gain its match",
+      "box": [
+       36,
+       2201,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2240
+     }
+    ],
+    "id": ""
+   },
+   "Seven Fortunes’ Blessing": {
+    "row": {
+     "box": [
+      23,
+      2306,
+      344,
+      220
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2416
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       320,
+       2313,
+       40,
+       40
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 2333
+     },
+     {
+      "el": "input.en-name",
+      "text": "Seven Fortunes’ Blessing",
+      "box": [
+       36,
+       2317,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2334
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       284,
+       2317,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2334
+     },
+     {
+      "el": "span.adv-config-summary.fb4521-badge",
+      "text": "Benten’s Blessing",
+      "box": [
+       36,
+       2357,
+       116,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 2371
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       160,
+       2360,
+       76,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 2371
+     },
+     {
+      "el": "button.fb4521-info",
+      "text": "i",
+      "box": [
+       244,
+       2357,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 2371
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose a Fortune’s blessing; each grants",
+      "box": [
+       36,
+       2431,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2470
+     }
+    ],
+    "id": ""
+   },
+   "Lord Moon’s Curse": {
+    "row": {
+     "box": [
+      23,
+      5215,
+      344,
+      175
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 5302
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       320,
+       5222,
+       40,
+       40
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 5242
+     },
+     {
+      "el": "input.en-name",
+      "text": "Lord Moon’s Curse",
+      "box": [
+       36,
+       5226,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 5243
+     },
+     {
+      "el": "input.en-cost",
+      "text": "0",
+      "box": [
+       284,
+       5226,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 5243
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       126,
+       5269,
+       90,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 5279
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       231,
+       5266,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "pad": "0px",
+      "mid": 5280
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "3/5/7 points. Gain a bonus Void Point ea",
+      "box": [
+       36,
+       5296,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 5334
+     }
+    ],
+    "id": ""
+   },
+   "Missing Limb": {
+    "row": {
+     "box": [
+      23,
+      5002,
+      344,
+      202
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 5103
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       320,
+       5009,
+       40,
+       40
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 5029
+     },
+     {
+      "el": "input.en-name",
+      "text": "Missing Limb",
+      "box": [
+       36,
+       5013,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 5030
+     },
+     {
+      "el": "input.en-cost",
+      "text": "6",
+      "box": [
+       284,
+       5013,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 5030
+     },
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       36,
+       5053,
+       318,
+       55
+      ],
+      "font": "14.68px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 5081
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       36,
+       5053,
+       174,
+       25
+      ],
+      "font": "9.705px \"Noto Sans JP\"",
+      "pad": "0px",
+      "mid": 5066
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight",
+      "box": [
+       87,
+       5053,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "pad": "2px 4px",
+      "mid": 5066
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       36,
+       5090,
+       166,
+       18
+      ],
+      "font": "13.12px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 5099
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "+10 TN on any task requiring the missing",
+      "box": [
+       36,
+       5110,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 5149
+     }
+    ],
+    "id": ""
+   },
+   "f_insightBonus": {
+    "field": {
+     "box": [
+      -1147,
+      766,
+      344,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 783
+    },
+    "hint": null
+   },
+   "f_insightToNextRank": {
+    "field": {
+     "box": [
+      -1147,
+      705,
+      344,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 722
+    },
+    "hint": null
+   },
+   "spentXP": {
+    "hint": {
+     "box": [
+      -1147,
+      2235,
+      344,
+      66
+     ],
+     "font": "11.66px \"EB Garamond\"",
+     "pad": "0px",
+     "mid": 2268,
+     "lh": "16.5572px",
+     "gap": 14,
+     "prev": "DIV.grid g-4"
+    }
+   }
+  },
+  "phone/play": {
+   "Wealthy": {
+    "row": {
+     "box": [
+      23,
+      1744,
+      344,
+      166
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1827
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Wealthy",
+      "box": [
+       36,
+       1755,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1772
+     },
+     {
+      "el": "input.en-cost",
+      "text": "1",
+      "box": [
+       284,
+       1755,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1772
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "1 point per rank. Each point grants 2 ex",
+      "box": [
+       36,
+       1815,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1854
+     }
+    ],
+    "id": ""
+   },
+   "Zakyo Toshi Citizen": {
+    "row": {
+     "box": [
+      23,
+      1510,
+      344,
+      224
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1622
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Zakyo Toshi Citizen",
+      "box": [
+       36,
+       1521,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1538
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       284,
+       1521,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1538
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       36,
+       1606,
+       120,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1622
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       156,
+       1606,
+       138,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1622
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "One extra Rank in a Games Skill you choo",
+      "box": [
+       36,
+       1640,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1679
+     }
+    ],
+    "id": ""
+   },
+   "Paragon": {
+    "row": {
+     "box": [
+      23,
+      1920,
+      344,
+      257
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2048
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Paragon",
+      "box": [
+       36,
+       1931,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1948
+     },
+     {
+      "el": "input.en-cost",
+      "text": "7",
+      "box": [
+       284,
+       1931,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1948
+     },
+     {
+      "el": "span.adv-config-summary.p4518-badge",
+      "text": "Compassion",
+      "box": [
+       36,
+       1971,
+       85,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 1985
+     },
+     {
+      "el": "button.p4518-info",
+      "text": "i",
+      "box": [
+       129,
+       1971,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 1985
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose one Bushido tenet; gain its match",
+      "box": [
+       36,
+       2082,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2121
+     }
+    ],
+    "id": ""
+   },
+   "Seven Fortunes’ Blessing": {
+    "row": {
+     "box": [
+      23,
+      2186,
+      344,
+      220
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2297
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Seven Fortunes’ Blessing",
+      "box": [
+       36,
+       2197,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2214
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       284,
+       2197,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2214
+     },
+     {
+      "el": "span.adv-config-summary.fb4521-badge",
+      "text": "Benten’s Blessing",
+      "box": [
+       36,
+       2238,
+       116,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 2251
+     },
+     {
+      "el": "button.fb4521-info",
+      "text": "i",
+      "box": [
+       160,
+       2237,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 2251
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose a Fortune’s blessing; each grants",
+      "box": [
+       36,
+       2312,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2351
+     }
+    ],
+    "id": ""
+   },
+   "Lord Moon’s Curse": {
+    "row": {
+     "box": [
+      23,
+      4990,
+      344,
+      166
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 5073
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Lord Moon’s Curse",
+      "box": [
+       36,
+       5001,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 5018
+     },
+     {
+      "el": "input.en-cost",
+      "text": "0",
+      "box": [
+       284,
+       5001,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 5018
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "3/5/7 points. Gain a bonus Void Point ea",
+      "box": [
+       36,
+       5062,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 5100
+     }
+    ],
+    "id": ""
+   },
+   "Missing Limb": {
+    "row": {
+     "box": [
+      23,
+      4778,
+      344,
+      202
+     ],
+     "font": "14.68px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 4879
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Missing Limb",
+      "box": [
+       36,
+       4789,
+       238,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 4806
+     },
+     {
+      "el": "input.en-cost",
+      "text": "6",
+      "box": [
+       284,
+       4789,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 4806
+     },
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       36,
+       4829,
+       318,
+       55
+      ],
+      "font": "14.68px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 4856
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       36,
+       4829,
+       174,
+       25
+      ],
+      "font": "9.705px \"Noto Sans JP\"",
+      "pad": "0px",
+      "mid": 4842
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight",
+      "box": [
+       87,
+       4829,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "pad": "2px 4px",
+      "mid": 4842
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       36,
+       4866,
+       166,
+       18
+      ],
+      "font": "13.12px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 4875
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "+10 TN on any task requiring the missing",
+      "box": [
+       36,
+       4886,
+       318,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 4925
+     }
+    ],
+    "id": ""
+   },
+   "f_insightBonus": {
+    "field": {
+     "box": [
+      -1147,
+      750,
+      344,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 767
+    },
+    "hint": null
+   },
+   "f_insightToNextRank": {
+    "field": {
+     "box": [
+      -1147,
+      689,
+      344,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 706
+    },
+    "hint": null
+   },
+   "spentXP": {
+    "hint": {
+     "box": [
+      -1147,
+      2050,
+      344,
+      66
+     ],
+     "font": "11.66px \"EB Garamond\"",
+     "pad": "0px",
+     "mid": 2083,
+     "lh": "16.5572px",
+     "gap": 14,
+     "prev": "DIV.grid g-4"
+    }
+   }
+  },
+  "desktop/management": {
+   "Wealthy": {
+    "row": {
+     "box": [
+      153,
+      1740,
+      562,
+      176
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1828
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       681,
+       1747,
+       27,
+       28
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 1761
+     },
+     {
+      "el": "input.en-name",
+      "text": "Wealthy",
+      "box": [
+       166,
+       1751,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1768
+     },
+     {
+      "el": "input.en-cost",
+      "text": "1",
+      "box": [
+       632,
+       1751,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1768
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       256,
+       1795,
+       90,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 1805
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       361,
+       1791,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "pad": "0px",
+      "mid": 1805
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "1 point per rank. Each point grants 2 ex",
+      "box": [
+       166,
+       1821,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1860
+     }
+    ],
+    "id": ""
+   },
+   "Zakyo Toshi Citizen": {
+    "row": {
+     "box": [
+      153,
+      1514,
+      562,
+      216
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1622
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       681,
+       1521,
+       27,
+       28
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 1535
+     },
+     {
+      "el": "input.en-name",
+      "text": "Zakyo Toshi Citizen",
+      "box": [
+       166,
+       1525,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1542
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       632,
+       1525,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1542
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       256,
+       1569,
+       90,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 1579
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       361,
+       1565,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "pad": "0px",
+      "mid": 1579
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       441,
+       1601,
+       120,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1617
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       561,
+       1601,
+       138,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1617
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "One extra Rank in a Games Skill you choo",
+      "box": [
+       166,
+       1635,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1674
+     }
+    ],
+    "id": ""
+   },
+   "Paragon": {
+    "row": {
+     "box": [
+      153,
+      1926,
+      562,
+      239
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2046
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       681,
+       1933,
+       27,
+       28
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 1947
+     },
+     {
+      "el": "input.en-name",
+      "text": "Paragon",
+      "box": [
+       166,
+       1937,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1954
+     },
+     {
+      "el": "input.en-cost",
+      "text": "7",
+      "box": [
+       632,
+       1937,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1954
+     },
+     {
+      "el": "span.adv-config-summary.p4518-badge",
+      "text": "Compassion",
+      "box": [
+       166,
+       1978,
+       85,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 1991
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       259,
+       1981,
+       76,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 1991
+     },
+     {
+      "el": "button.p4518-info",
+      "text": "i",
+      "box": [
+       343,
+       1977,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 1991
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose one Bushido tenet; gain its match",
+      "box": [
+       166,
+       2070,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2109
+     }
+    ],
+    "id": ""
+   },
+   "Seven Fortunes’ Blessing": {
+    "row": {
+     "box": [
+      153,
+      2176,
+      562,
+      203
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2277
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       681,
+       2183,
+       27,
+       28
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 2197
+     },
+     {
+      "el": "input.en-name",
+      "text": "Seven Fortunes’ Blessing",
+      "box": [
+       166,
+       2187,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2204
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       632,
+       2187,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2204
+     },
+     {
+      "el": "span.adv-config-summary.fb4521-badge",
+      "text": "Benten’s Blessing",
+      "box": [
+       166,
+       2227,
+       116,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 2241
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       290,
+       2230,
+       76,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 2241
+     },
+     {
+      "el": "button.fb4521-info",
+      "text": "i",
+      "box": [
+       374,
+       2227,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 2241
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose a Fortune’s blessing; each grants",
+      "box": [
+       166,
+       2283,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2322
+     }
+    ],
+    "id": ""
+   },
+   "Lord Moon’s Curse": {
+    "row": {
+     "box": [
+      725,
+      2713,
+      562,
+      176
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2801
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       1253,
+       2720,
+       27,
+       28
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 2734
+     },
+     {
+      "el": "input.en-name",
+      "text": "Lord Moon’s Curse",
+      "box": [
+       738,
+       2724,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2741
+     },
+     {
+      "el": "input.en-cost",
+      "text": "0",
+      "box": [
+       1204,
+       2724,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2741
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       828,
+       2768,
+       90,
+       20
+      ],
+      "font": "12.48px \"Noto Sans JP\"",
+      "pad": "3px 8px",
+      "mid": 2778
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       933,
+       2764,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "pad": "0px",
+      "mid": 2778
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "3/5/7 points. Gain a bonus Void Point ea",
+      "box": [
+       738,
+       2794,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2833
+     }
+    ],
+    "id": ""
+   },
+   "Missing Limb": {
+    "row": {
+     "box": [
+      725,
+      2526,
+      562,
+      177
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2614
+    },
+    "parts": [
+     {
+      "el": "button.rm-btn",
+      "text": "✕",
+      "box": [
+       1253,
+       2533,
+       27,
+       28
+      ],
+      "font": "17.6px \"Noto Sans JP\"",
+      "pad": "2px 6px",
+      "mid": 2547
+     },
+     {
+      "el": "input.en-name",
+      "text": "Missing Limb",
+      "box": [
+       738,
+       2537,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2554
+     },
+     {
+      "el": "input.en-cost",
+      "text": "6",
+      "box": [
+       1204,
+       2537,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2554
+     },
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       738,
+       2577,
+       536,
+       29
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 2591
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       738,
+       2577,
+       178,
+       25
+      ],
+      "font": "10.56px \"Noto Sans JP\"",
+      "pad": "0px",
+      "mid": 2589
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight",
+      "box": [
+       793,
+       2577,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "pad": "2px 4px",
+      "mid": 2589
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       924,
+       2582,
+       166,
+       18
+      ],
+      "font": "13.12px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 2591
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "+10 TN on any task requiring the missing",
+      "box": [
+       738,
+       2608,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2646
+     }
+    ],
+    "id": ""
+   },
+   "f_insightBonus": {
+    "field": {
+     "box": [
+      -3404,
+      296,
+      181,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 313
+    },
+    "hint": null
+   },
+   "f_insightToNextRank": {
+    "field": {
+     "box": [
+      -3595,
+      296,
+      181,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 313
+    },
+    "hint": null
+   },
+   "spentXP": {
+    "hint": {
+     "box": [
+      -4167,
+      777,
+      1134,
+      35
+     ],
+     "font": "12.48px \"EB Garamond\"",
+     "pad": "0px",
+     "mid": 795,
+     "lh": "17.7216px",
+     "gap": -4,
+     "prev": "DIV.grid g-4"
+    }
+   }
+  },
+  "desktop/play": {
+   "Wealthy": {
+    "row": {
+     "box": [
+      153,
+      1642,
+      562,
+      167
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1725
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Wealthy",
+      "box": [
+       166,
+       1653,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1670
+     },
+     {
+      "el": "input.en-cost",
+      "text": "1",
+      "box": [
+       632,
+       1653,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1670
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "1 point per rank. Each point grants 2 ex",
+      "box": [
+       166,
+       1713,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1752
+     }
+    ],
+    "id": ""
+   },
+   "Zakyo Toshi Citizen": {
+    "row": {
+     "box": [
+      153,
+      1426,
+      562,
+      207
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1529
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Zakyo Toshi Citizen",
+      "box": [
+       166,
+       1437,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1454
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       632,
+       1437,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1454
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       441,
+       1503,
+       120,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1519
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       561,
+       1503,
+       138,
+       32
+      ],
+      "font": "11.84px \"Noto Sans JP\"",
+      "pad": "8px 14px",
+      "mid": 1519
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "One extra Rank in a Games Skill you choo",
+      "box": [
+       166,
+       1537,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1576
+     }
+    ],
+    "id": ""
+   },
+   "Paragon": {
+    "row": {
+     "box": [
+      153,
+      1819,
+      562,
+      239
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 1938
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Paragon",
+      "box": [
+       166,
+       1830,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 1847
+     },
+     {
+      "el": "input.en-cost",
+      "text": "7",
+      "box": [
+       632,
+       1830,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 1847
+     },
+     {
+      "el": "span.adv-config-summary.p4518-badge",
+      "text": "Compassion",
+      "box": [
+       166,
+       1870,
+       85,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 1884
+     },
+     {
+      "el": "button.p4518-info",
+      "text": "i",
+      "box": [
+       259,
+       1870,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 1884
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose one Bushido tenet; gain its match",
+      "box": [
+       166,
+       1963,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2002
+     }
+    ],
+    "id": ""
+   },
+   "Seven Fortunes’ Blessing": {
+    "row": {
+     "box": [
+      153,
+      2068,
+      562,
+      203
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2169
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Seven Fortunes’ Blessing",
+      "box": [
+       166,
+       2079,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2096
+     },
+     {
+      "el": "input.en-cost",
+      "text": "3",
+      "box": [
+       632,
+       2079,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2096
+     },
+     {
+      "el": "span.adv-config-summary.fb4521-badge",
+      "text": "Benten’s Blessing",
+      "box": [
+       166,
+       2119,
+       116,
+       27
+      ],
+      "font": "13.6px \"EB Garamond\"",
+      "pad": "3px 8px",
+      "mid": 2133
+     },
+     {
+      "el": "button.fb4521-info",
+      "text": "i",
+      "box": [
+       290,
+       2119,
+       28,
+       28
+      ],
+      "font": "17px Georgia",
+      "pad": "0px",
+      "mid": 2133
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "Choose a Fortune’s blessing; each grants",
+      "box": [
+       166,
+       2175,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2214
+     }
+    ],
+    "id": ""
+   },
+   "Lord Moon’s Curse": {
+    "row": {
+     "box": [
+      725,
+      2651,
+      562,
+      167
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2734
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Lord Moon’s Curse",
+      "box": [
+       738,
+       2662,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2679
+     },
+     {
+      "el": "input.en-cost",
+      "text": "0",
+      "box": [
+       1204,
+       2662,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2679
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "3/5/7 points. Gain a bonus Void Point ea",
+      "box": [
+       738,
+       2722,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2761
+     }
+    ],
+    "id": ""
+   },
+   "Missing Limb": {
+    "row": {
+     "box": [
+      725,
+      2464,
+      562,
+      177
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "10px 12px",
+     "mid": 2552
+    },
+    "parts": [
+     {
+      "el": "input.en-name",
+      "text": "Missing Limb",
+      "box": [
+       738,
+       2475,
+       456,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2492
+     },
+     {
+      "el": "input.en-cost",
+      "text": "6",
+      "box": [
+       1204,
+       2475,
+       70,
+       34
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "7px 6px",
+      "mid": 2492
+     },
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       738,
+       2515,
+       536,
+       29
+      ],
+      "font": "16px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 2529
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft ",
+      "box": [
+       738,
+       2515,
+       178,
+       25
+      ],
+      "font": "10.56px \"Noto Sans JP\"",
+      "pad": "0px",
+      "mid": 2527
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight",
+      "box": [
+       793,
+       2515,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "pad": "2px 4px",
+      "mid": 2527
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       924,
+       2521,
+       166,
+       18
+      ],
+      "font": "13.12px \"EB Garamond\"",
+      "pad": "0px",
+      "mid": 2529
+     },
+     {
+      "el": "textarea.en-desc",
+      "text": "+10 TN on any task requiring the missing",
+      "box": [
+       738,
+       2546,
+       536,
+       78
+      ],
+      "font": "14.4px \"EB Garamond\"",
+      "pad": "7px 9px",
+      "mid": 2585
+     }
+    ],
+    "id": ""
+   },
+   "f_insightBonus": {
+    "field": {
+     "box": [
+      -3404,
+      292,
+      181,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 309
+    },
+    "hint": null
+   },
+   "f_insightToNextRank": {
+    "field": {
+     "box": [
+      -3595,
+      292,
+      181,
+      34
+     ],
+     "font": "16px \"EB Garamond\"",
+     "pad": "7px 6px",
+     "mid": 309
+    },
+    "hint": null
+   },
+   "spentXP": {
+    "hint": {
+     "box": [
+      -4167,
+      724,
+      1134,
+      35
+     ],
+     "font": "12.48px \"EB Garamond\"",
+     "pad": "0px",
+     "mid": 742,
+     "lh": "17.7216px",
+     "gap": -4,
+     "prev": "DIV.grid g-4"
+    }
+   }
+  }
+ },
+ "align": {
+  "phone/management/Background": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/management/Clan & School": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/management/Identity": {
+   "misaligned": [
+    {
+     "where": "Identity / div.section",
+     "el": "div.",
+     "above": "div.hint",
+     "dx": 13,
+     "text": "Traits: 52",
+     "aboveText": "Spent XP is calculated automatically fro"
+    }
+   ],
+   "tight": []
+  },
+  "phone/management/Rings & Traits": {
+   "misaligned": [
+    {
+     "where": "Rings & Traits / div.section",
+     "el": "th.",
+     "above": "caption.",
+     "dx": 8,
+     "text": "Wound level",
+     "aboveText": "Current wound thresholds"
+    }
+   ],
+   "tight": []
+  },
+  "phone/management/Skills": {
+   "misaligned": [],
+   "tight": [
+    {
+     "where": "Skills / div.section",
+     "el": "span.emph-free-badge",
+     "after": "select.sk-emph-select",
+     "gap": -25,
+     "fs": 9.6,
+     "lh": "13.44px",
+     "text": "Free"
+    }
+   ]
+  },
+  "phone/management/Adv & Disadv": {
+   "misaligned": [
+    {
+     "where": "Adv & Disadv / Paragon / div.entry",
+     "el": "p.p4518-reminder",
+     "above": "span.adv-config-summary.p4518-badge",
+     "dx": -9,
+     "text": "When a Void Point improves a roll made to directly",
+     "aboveText": "Compassion"
+    },
+    {
+     "where": "Adv & Disadv / Seven Fortunes’ Blessing / div.entry",
+     "el": "p.fb4521-reminder",
+     "above": "span.adv-config-summary.fb4521-badge",
+     "dx": -9,
+     "text": "In the roll preview of a Social Skill roll, tick \"",
+     "aboveText": "Benten’s Blessing"
+    },
+    {
+     "where": "Adv & Disadv / Lord Moon’s Curse / div.entry",
+     "el": "label.lm7-tick",
+     "above": "span.adv-config-summary",
+     "dx": 20,
+     "text": "Full moon tonight (+1 Void Point, spent last)",
+     "aboveText": "Medium — 5 points"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "p.hint",
+     "above": "summary.",
+     "dx": -16,
+     "text": "Core p.148 lets the GM allow what its set rules fo",
+     "aboveText": "GM overrides: Advantage and Disadvantage"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Adv & Disadv / Blissful Betrothal / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.dsx4532-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "A loving arranged marriage lets you buy Gentry, Kh"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    },
+    {
+     "where": "Adv & Disadv / Contrary / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compelled to argue your view in disputes; must pas"
+    },
+    {
+     "where": "Adv & Disadv / Rumormonger / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compulsive gossip; resisting spreading a rumor nee"
+    },
+    {
+     "where": "Adv & Disadv / Soft-Hearted / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Killing another person requires a Willpower roll ("
+    },
+    {
+     "where": "Adv & Disadv / Lost Love / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Reminders of a lost love raise all your TNs by 5 u"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "Paragon with Dark Paragon"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "Consumed with Failure of Bushido"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "Paragon with Failure of Bushido"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "Dark Paragon with Consumed"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -19,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "Touch of the Spirit Realms with Cursed by the Real"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "One Fortune’s Blessing and Curse together"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Paragon"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Failure of Bushido"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Dark Paragon"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Consumed"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Seven Fortunes’ Blessing"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Seven Fortunes’ Curse"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Touch of the Spirit Realms"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 9.705,
+     "lh": "12.6165px",
+     "text": "A second Cursed by the Realm"
+    }
+   ]
+  },
+  "phone/management/Techniques": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/management/Spell Slots": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/management/Combat": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/management/Equipment": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/play/Background": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/play/Clan & School": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/play/Identity": {
+   "misaligned": [
+    {
+     "where": "Identity / div.section",
+     "el": "div.",
+     "above": "div.hint",
+     "dx": 13,
+     "text": "Traits: 52",
+     "aboveText": "Spent XP is calculated automatically fro"
+    }
+   ],
+   "tight": []
+  },
+  "phone/play/Rings & Traits": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/play/Skills": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/play/Adv & Disadv": {
+   "misaligned": [
+    {
+     "where": "Adv & Disadv / Paragon / div.entry",
+     "el": "p.p4518-reminder",
+     "above": "span.adv-config-summary.p4518-badge",
+     "dx": -9,
+     "text": "When a Void Point improves a roll made to directly",
+     "aboveText": "Compassion"
+    },
+    {
+     "where": "Adv & Disadv / Seven Fortunes’ Blessing / div.entry",
+     "el": "p.fb4521-reminder",
+     "above": "span.adv-config-summary.fb4521-badge",
+     "dx": -9,
+     "text": "In the roll preview of a Social Skill roll, tick \"",
+     "aboveText": "Benten’s Blessing"
+    },
+    {
+     "where": "Adv & Disadv / Lord Moon’s Curse / div.entry",
+     "el": "label.lm7-tick",
+     "above": "span.adv-config-summary",
+     "dx": 20,
+     "text": "Full moon tonight (+1 Void Point, spent last)",
+     "aboveText": "Medium — 5 points"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Adv & Disadv / Blissful Betrothal / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.dsx4532-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "A loving arranged marriage lets you buy Gentry, Kh"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    },
+    {
+     "where": "Adv & Disadv / Contrary / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compelled to argue your view in disputes; must pas"
+    },
+    {
+     "where": "Adv & Disadv / Rumormonger / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compulsive gossip; resisting spreading a rumor nee"
+    },
+    {
+     "where": "Adv & Disadv / Soft-Hearted / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Killing another person requires a Willpower roll ("
+    },
+    {
+     "where": "Adv & Disadv / Lost Love / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Reminders of a lost love raise all your TNs by 5 u"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    }
+   ]
+  },
+  "phone/play/Techniques": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/play/Spell Slots": {
+   "misaligned": [],
+   "tight": []
+  },
+  "phone/play/Combat": {
+   "misaligned": [
+    {
+     "where": "Combat / div.section",
+     "el": "summary.combat-summary",
+     "above": "h2.",
+     "dx": 15,
+     "text": "Armor & TN\n                ⓘ",
+     "aboveText": "Combat"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Combat / div.field",
+     "el": "div.bl4534-note",
+     "after": "input.",
+     "gap": 3,
+     "fs": 12.48,
+     "lh": "16.224px",
+     "text": "Blind: Reflexes 2 + 5 = 7 (Core Rulebook p.156)"
+    }
+   ]
+  },
+  "phone/play/Equipment": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/management/Background": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/management/Clan & School": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/management/Identity": {
+   "misaligned": [
+    {
+     "where": "Identity / div.section",
+     "el": "div.",
+     "above": "div.hint",
+     "dx": 13,
+     "text": "Traits: 52",
+     "aboveText": "Spent XP is calculated automatically fro"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Identity / div.section",
+     "el": "div.hint",
+     "after": "div.grid.g-6",
+     "gap": -4,
+     "fs": 12.48,
+     "lh": "17.7216px",
+     "text": "Insight = (sum of all five Rings × 10) + total Ski"
+    },
+    {
+     "where": "Identity / div.section",
+     "el": "div.hint",
+     "after": "div.grid.g-4",
+     "gap": -4,
+     "fs": 12.48,
+     "lh": "17.7216px",
+     "text": "Spent XP is calculated automatically from Traits, "
+    }
+   ]
+  },
+  "desktop/management/Rings & Traits": {
+   "misaligned": [
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Awareness"
+    },
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Intelligence"
+    },
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Perception"
+    },
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Willpower"
+    },
+    {
+     "where": "Rings & Traits / div.section",
+     "el": "th.",
+     "above": "caption.",
+     "dx": 8,
+     "text": "Wound level",
+     "aboveText": "Current wound thresholds"
+    }
+   ],
+   "tight": []
+  },
+  "desktop/management/Skills": {
+   "misaligned": [],
+   "tight": [
+    {
+     "where": "Skills / div.section",
+     "el": "span.emph-free-badge",
+     "after": "select.sk-emph-select",
+     "gap": -25,
+     "fs": 9.6,
+     "lh": "13.44px",
+     "text": "Free"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -85,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -84,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -55,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -55,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -55,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -85,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "8 xp"
+    }
+   ]
+  },
+  "desktop/management/Adv & Disadv": {
+   "misaligned": [
+    {
+     "where": "Adv & Disadv / Paragon / div.entry",
+     "el": "p.p4518-reminder",
+     "above": "span.adv-config-summary.p4518-badge",
+     "dx": -9,
+     "text": "When a Void Point improves a roll made to directly",
+     "aboveText": "Compassion"
+    },
+    {
+     "where": "Adv & Disadv / Seven Fortunes’ Blessing / div.entry",
+     "el": "p.fb4521-reminder",
+     "above": "span.adv-config-summary.fb4521-badge",
+     "dx": -9,
+     "text": "In the roll preview of a Social Skill roll, tick \"",
+     "aboveText": "Benten’s Blessing"
+    },
+    {
+     "where": "Adv & Disadv / Lord Moon’s Curse / div.entry",
+     "el": "label.lm7-tick",
+     "above": "span.adv-config-summary",
+     "dx": 20,
+     "text": "Full moon tonight (+1 Void Point, spent last)",
+     "aboveText": "Medium — 5 points"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "p.hint",
+     "above": "summary.",
+     "dx": -17,
+     "text": "Core p.148 lets the GM allow what its set rules fo",
+     "aboveText": "GM overrides: Advantage and Disadvantage"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Adv & Disadv / Blissful Betrothal / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.dsx4532-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "A loving arranged marriage lets you buy Gentry, Kh"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "span.chk4531-note",
+     "after": "label.chk4531-field",
+     "gap": -19,
+     "fs": 13.12,
+     "lh": "17.712px",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    },
+    {
+     "where": "Adv & Disadv / Contrary / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compelled to argue your view in disputes; must pas"
+    },
+    {
+     "where": "Adv & Disadv / Rumormonger / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compulsive gossip; resisting spreading a rumor nee"
+    },
+    {
+     "where": "Adv & Disadv / Soft-Hearted / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Killing another person requires a Willpower roll ("
+    },
+    {
+     "where": "Adv & Disadv / Lost Love / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Reminders of a lost love raise all your TNs by 5 u"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "span.chk4531-note",
+     "after": "label.chk4531-field",
+     "gap": -19,
+     "fs": 13.12,
+     "lh": "17.712px",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "Paragon with Dark Paragon"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "Consumed with Failure of Bushido"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "Paragon with Failure of Bushido"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "Dark Paragon with Consumed"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "Touch of the Spirit Realms with Cursed by the Real"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "One Fortune’s Blessing and Curse together"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Paragon"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Failure of Bushido"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Dark Paragon"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Consumed"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Seven Fortunes’ Blessing"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Seven Fortunes’ Curse"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Touch of the Spirit Realms"
+    },
+    {
+     "where": "Adv & Disadv / div.section",
+     "el": "span.",
+     "after": "input.",
+     "gap": -13,
+     "fs": 10.56,
+     "lh": "13.728px",
+     "text": "A second Cursed by the Realm"
+    }
+   ]
+  },
+  "desktop/management/Techniques": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/management/Spell Slots": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/management/Combat": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/management/Equipment": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/play/Background": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/play/Clan & School": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/play/Identity": {
+   "misaligned": [
+    {
+     "where": "Identity / div.section",
+     "el": "div.",
+     "above": "div.hint",
+     "dx": 13,
+     "text": "Traits: 52",
+     "aboveText": "Spent XP is calculated automatically fro"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Identity / div.section",
+     "el": "div.hint",
+     "after": "div.grid.g-6",
+     "gap": -4,
+     "fs": 12.48,
+     "lh": "17.7216px",
+     "text": "Insight = (sum of all five Rings × 10) + total Ski"
+    },
+    {
+     "where": "Identity / div.section",
+     "el": "div.hint",
+     "after": "div.grid.g-4",
+     "gap": -4,
+     "fs": 12.48,
+     "lh": "17.7216px",
+     "text": "Spent XP is calculated automatically from Traits, "
+    }
+   ]
+  },
+  "desktop/play/Rings & Traits": {
+   "misaligned": [
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Awareness"
+    },
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Intelligence"
+    },
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Perception"
+    },
+    {
+     "where": "Rings & Traits / div.ring-card",
+     "el": "div.void-note",
+     "above": "label.",
+     "dx": 12,
+     "text": "Ring = lower of its two traits (auto)",
+     "aboveText": "Willpower"
+    }
+   ],
+   "tight": []
+  },
+  "desktop/play/Skills": {
+   "misaligned": [
+    {
+     "where": "Skills / div.section",
+     "el": "th.",
+     "above": "label.",
+     "dx": 6,
+     "text": "Skill",
+     "aboveText": "Add from Skill List"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Skills / div.section",
+     "el": "span.emph-free-badge",
+     "after": "select.sk-emph-select",
+     "gap": -24,
+     "fs": 9.6,
+     "lh": "13.44px",
+     "text": "Free"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -56,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -84,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -48,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -48,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -55,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "0 xp"
+    },
+    {
+     "where": "Skills / div.section",
+     "el": "td.col-narrow.sk-cost",
+     "after": "td.col-check",
+     "gap": -56,
+     "fs": 12.48,
+     "lh": "17.472px",
+     "text": "8 xp"
+    }
+   ]
+  },
+  "desktop/play/Adv & Disadv": {
+   "misaligned": [
+    {
+     "where": "Adv & Disadv / Paragon / div.entry",
+     "el": "p.p4518-reminder",
+     "above": "span.adv-config-summary.p4518-badge",
+     "dx": -9,
+     "text": "When a Void Point improves a roll made to directly",
+     "aboveText": "Compassion"
+    },
+    {
+     "where": "Adv & Disadv / Seven Fortunes’ Blessing / div.entry",
+     "el": "p.fb4521-reminder",
+     "above": "span.adv-config-summary.fb4521-badge",
+     "dx": -9,
+     "text": "In the roll preview of a Social Skill roll, tick \"",
+     "aboveText": "Benten’s Blessing"
+    },
+    {
+     "where": "Adv & Disadv / Lord Moon’s Curse / div.entry",
+     "el": "label.lm7-tick",
+     "above": "span.adv-config-summary",
+     "dx": 20,
+     "text": "Full moon tonight (+1 Void Point, spent last)",
+     "aboveText": "Medium — 5 points"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Adv & Disadv / Blissful Betrothal / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.dsx4532-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "A loving arranged marriage lets you buy Gentry, Kh"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "span.chk4531-note",
+     "after": "label.chk4531-field",
+     "gap": -19,
+     "fs": 13.12,
+     "lh": "17.712px",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    },
+    {
+     "where": "Adv & Disadv / Contrary / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compelled to argue your view in disputes; must pas"
+    },
+    {
+     "where": "Adv & Disadv / Rumormonger / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Compulsive gossip; resisting spreading a rumor nee"
+    },
+    {
+     "where": "Adv & Disadv / Soft-Hearted / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Killing another person requires a Willpower roll ("
+    },
+    {
+     "where": "Adv & Disadv / Lost Love / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "Reminders of a lost love raise all your TNs by 5 u"
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "span.chk4531-note",
+     "after": "label.chk4531-field",
+     "gap": -19,
+     "fs": 13.12,
+     "lh": "17.712px",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "where": "Adv & Disadv / Missing Limb / div.entry",
+     "el": "textarea.en-desc",
+     "after": "div.chk4531-row",
+     "gap": 2,
+     "fs": 14.4,
+     "lh": "19.44px",
+     "text": "+10 TN on any task requiring the missing limb."
+    }
+   ]
+  },
+  "desktop/play/Techniques": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/play/Spell Slots": {
+   "misaligned": [],
+   "tight": []
+  },
+  "desktop/play/Combat": {
+   "misaligned": [
+    {
+     "where": "Combat / div.section",
+     "el": "summary.combat-summary",
+     "above": "h2.",
+     "dx": 15,
+     "text": "Armor & TN\n                ⓘ",
+     "aboveText": "Combat"
+    },
+    {
+     "where": "Combat / div.section",
+     "el": "th.",
+     "above": "label.",
+     "dx": 6,
+     "text": "Weapon",
+     "aboveText": "Combat Stance"
+    }
+   ],
+   "tight": [
+    {
+     "where": "Combat / div.field",
+     "el": "div.bl4534-note",
+     "after": "input.",
+     "gap": 3,
+     "fs": 12.48,
+     "lh": "16.224px",
+     "text": "Blind: Reflexes 2 + 5 = 7 (Core Rulebook p.156)"
+    }
+   ]
+  },
+  "desktop/play/Equipment": {
+   "misaligned": [],
+   "tight": []
+  }
+ },
+ "direct": [
+  "adv:Absolute Direction",
+  "adv:Balance",
+  "adv:Clear Thinker",
+  "adv:Crafty",
+  "adv:Daredevil",
+  "adv:Heartless",
+  "adv:Higher Purpose",
+  "adv:Irreproachable",
+  "adv:Laughing Plains Native",
+  "adv:Precise Memory",
+  "adv:Read Lips",
+  "adv:Sacred Forest Native",
+  "adv:Sage",
+  "adv:Sage of the Sword and Fan",
+  "adv:Shadowed Heart",
+  "adv:Strategist",
+  "adv:Tactician",
+  "adv:Virtuous",
+  "adv:Wary",
+  "adv:Bland",
+  "adv:Crab Hands",
+  "adv:Dangerous Beauty",
+  "adv:Hands of Stone",
+  "adv:Iron Heart Native",
+  "adv:Large",
+  "adv:Prodigy",
+  "adv:Quick",
+  "adv:Quick Healer",
+  "adv:Ruined City Shadow",
+  "adv:Silent",
+  "adv:Strength of the Earth",
+  "adv:Voice",
+  "adv:Blissful Betrothal",
+  "adv:Broken Wave Citizen",
+  "adv:Clear Water Native",
+  "adv:Dark Edge Native",
+  "adv:Different School",
+  "adv:Fame",
+  "adv:Hero of the People",
+  "adv:Imperial City Citizen",
+  "adv:Imperial City Veteran",
+  "adv:Imperial Scribe",
+  "adv:Imperial Spouse",
+  "adv:Leadership",
+  "adv:Multiple Schools",
+  "adv:Nikesake Citizen",
+  "adv:Sacrosanct",
+  "adv:Sensation",
+  "adv:Social Position",
+  "adv:Spy Network",
+  "adv:Blood of Osano-Wo",
+  "adv:Enlightened",
+  "adv:Friend of the Brotherhood",
+  "adv:Great Destiny",
+  "adv:Inari’s Blessing",
+  "adv:Inner Gift",
+  "adv:Ishiken-Do",
+  "adv:Medium",
+  "adv:Naishou Citizen",
+  "adv:Battle Healing",
+  "adv:Gaijin Gear",
+  "adv:Sacred Weapon",
+  "adv:Sacred Weapon: Owl Blade",
+  "adv:Servant",
+  "disadv:Anachronism",
+  "disadv:Ascetic",
+  "disadv:Brash",
+  "disadv:Can’t Lie",
+  "disadv:Contrary",
+  "disadv:Disbeliever",
+  "disadv:Driven",
+  "disadv:Fascination",
+  "disadv:Frail Mind",
+  "disadv:Greedy",
+  "disadv:Gullible",
+  "disadv:Idealistic",
+  "disadv:Insensitive",
+  "disadv:Jealousy",
+  "disadv:Lost Love",
+  "disadv:Obtuse",
+  "disadv:Overconfident",
+  "disadv:Soft-Hearted",
+  "disadv:True Love",
+  "disadv:Wanderer",
+  "disadv:Bad Eyesight",
+  "disadv:Bad Health",
+  "disadv:Blind",
+  "disadv:Disturbing Countenance",
+  "disadv:Epilepsy",
+  "disadv:Lame",
+  "disadv:Low Pain Threshold",
+  "disadv:Missing Limb",
+  "disadv:Permanent Wound",
+  "disadv:Small",
+  "disadv:Bitter Betrothal",
+  "disadv:Blackmailed",
+  "disadv:Black Sheep",
+  "disadv:Broken Wave Stigma",
+  "disadv:Dark Edge Reputation",
+  "disadv:Dark Secret",
+  "disadv:Dishonored",
+  "disadv:Forced Retirement",
+  "disadv:Gaijin Name",
+  "disadv:Hostage",
+  "disadv:Infamous",
+  "disadv:Lechery",
+  "disadv:Nikesake Stigma",
+  "disadv:Rumormonger",
+  "disadv:Social Disadvantage",
+  "disadv:Water Hammer Stigma",
+  "disadv:Zakyo Toshi Stigma",
+  "disadv:Uncentered",
+  "disadv:Bad Fortune",
+  "disadv:Dark Fate",
+  "disadv:Haunted",
+  "disadv:Momoku",
+  "disadv:Shadowlands Taint",
+  "disadv:Touch of the Void"
+ ],
+ "errors": []
+}

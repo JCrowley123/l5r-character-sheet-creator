@@ -1,0 +1,2090 @@
+{
+ "phone/play": [
+  {
+   "name": "Wealthy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Wealthy"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 71,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1 point per rank. Each point grants "
+    }
+   ]
+  },
+  {
+   "name": "Leadership",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Leadership"
+    },
+    {
+     "top": 79,
+     "x": 13,
+     "el": "span.vi4533-note",
+     "kind": "text",
+     "text": "Once a Round, in the Reactions Stage"
+    },
+    {
+     "top": 117,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Once/round, add School Rank +1k1 to "
+    }
+   ]
+  },
+  {
+   "name": "Kharmic Tie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Kharmic Tie"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 71,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1-5 points. Bonded to a chosen perso"
+    }
+   ]
+  },
+  {
+   "name": "Social Position",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Social Position"
+    },
+    {
+     "top": 51,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+1 Status Rank."
+    }
+   ]
+  },
+  {
+   "name": "Blissful Betrothal",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blissful Betrothal"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.dsx4532-switch",
+     "kind": "text",
+     "text": "Your Kharmic Tie is to your spouse"
+    },
+    {
+     "top": 89,
+     "x": 13,
+     "el": "span.dsx4532-note",
+     "kind": "text",
+     "text": "Gentry, Social Position and Wealthy "
+    },
+    {
+     "top": 126,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A loving arranged marriage lets you "
+    }
+   ]
+  },
+  {
+   "name": "Zakyo Toshi Citizen",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Zakyo Toshi Citizen"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 78,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Half your School’s starting koku aga"
+    },
+    {
+     "top": 130,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "One extra Rank in a Games Skill you "
+    }
+   ]
+  },
+  {
+   "name": "Lord Moon’s Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lord Moon’s Curse"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-summary",
+     "kind": "text",
+     "text": "Medium — 5 points"
+    },
+    {
+     "top": 83,
+     "x": 33,
+     "el": "label.lm7-tick",
+     "kind": "text",
+     "text": "Full moon tonight (+1 Void Point, sp"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 22,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 135,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    }
+   ]
+  },
+  {
+   "name": "Blind",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blind"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Armor TN uses Reflexes + 5. Move: Wa"
+    },
+    {
+     "top": 106,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "-3k3 ranged/-1k1 melee attacks; Armo"
+    }
+   ]
+  },
+  {
+   "name": "Missing Limb",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Missing Limb"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Missing — choose —Left armRight armL"
+    },
+    {
+     "top": 88,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "top": 108,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+10 TN on any task requiring the mis"
+    }
+   ]
+  },
+  {
+   "name": "Brash",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Brash"
+    },
+    {
+     "top": 52,
+     "x": 138,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Adds your Honor Rank."
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "When threatened or insulted, must pa"
+    }
+   ]
+  },
+  {
+   "name": "Overconfident",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Overconfident"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Facing a clearly superior foe, you n"
+    }
+   ]
+  },
+  {
+   "name": "Can’t Lie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Can’t Lie"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Physically unable to lie; must corre"
+    }
+   ]
+  },
+  {
+   "name": "Contrary",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Contrary"
+    },
+    {
+     "top": 91,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compelled to argue your view in disp"
+    }
+   ]
+  },
+  {
+   "name": "Rumormonger",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Rumormonger"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Glory Rank"
+    },
+    {
+     "top": 119,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compulsive gossip; resisting spreadi"
+    }
+   ]
+  },
+  {
+   "name": "Soft-Hearted",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Soft-Hearted"
+    },
+    {
+     "top": 79,
+     "x": 46,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Wracked with guilt (TN +10)"
+    },
+    {
+     "top": 111,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Killing another person requires a Wi"
+    }
+   ]
+  },
+  {
+   "name": "Lost Love",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lost Love"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Reminded of your loss (TN +5)"
+    },
+    {
+     "top": 117,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "At most twice a day, an hour apart."
+    },
+    {
+     "top": 137,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Reminders of a lost love raise all y"
+    }
+   ]
+  },
+  {
+   "name": "Sworn Enemy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Sworn Enemy"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 71,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A dedicated enemy who wants you defe"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 22,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 135,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    },
+    {
+     "top": 190,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A Fortune’s specific curse against y"
+    }
+   ]
+  }
+ ],
+ "phone/management": [
+  {
+   "name": "Wealthy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Wealthy"
+    },
+    {
+     "top": 56,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 81,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1 point per rank. Each point grants "
+    }
+   ]
+  },
+  {
+   "name": "Leadership",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Leadership"
+    },
+    {
+     "top": 79,
+     "x": 13,
+     "el": "span.vi4533-note",
+     "kind": "text",
+     "text": "Once a Round, in the Reactions Stage"
+    },
+    {
+     "top": 117,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Once/round, add School Rank +1k1 to "
+    }
+   ]
+  },
+  {
+   "name": "Kharmic Tie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Kharmic Tie"
+    },
+    {
+     "top": 56,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 81,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1-5 points. Bonded to a chosen perso"
+    }
+   ]
+  },
+  {
+   "name": "Social Position",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Social Position"
+    },
+    {
+     "top": 51,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+1 Status Rank."
+    }
+   ]
+  },
+  {
+   "name": "Blissful Betrothal",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blissful Betrothal"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.dsx4532-switch",
+     "kind": "text",
+     "text": "Your Kharmic Tie is to your spouse"
+    },
+    {
+     "top": 89,
+     "x": 13,
+     "el": "span.dsx4532-note",
+     "kind": "text",
+     "text": "Gentry, Social Position and Wealthy "
+    },
+    {
+     "top": 126,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A loving arranged marriage lets you "
+    }
+   ]
+  },
+  {
+   "name": "Zakyo Toshi Citizen",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Zakyo Toshi Citizen"
+    },
+    {
+     "top": 56,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 88,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Half your School’s starting koku aga"
+    },
+    {
+     "top": 139,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "One extra Rank in a Games Skill you "
+    }
+   ]
+  },
+  {
+   "name": "Lord Moon’s Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lord Moon’s Curse"
+    },
+    {
+     "top": 52,
+     "x": 13,
+     "el": "span.adv-config-summary",
+     "kind": "text",
+     "text": "Medium — 5 points"
+    },
+    {
+     "top": 85,
+     "x": 33,
+     "el": "label.lm7-tick",
+     "kind": "text",
+     "text": "Full moon tonight (+1 Void Point, sp"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 106,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 135,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    }
+   ]
+  },
+  {
+   "name": "Blind",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blind"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Armor TN uses Reflexes + 5. Move: Wa"
+    },
+    {
+     "top": 106,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "-3k3 ranged/-1k1 melee attacks; Armo"
+    }
+   ]
+  },
+  {
+   "name": "Missing Limb",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Missing Limb"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Missing — choose —Left armRight armL"
+    },
+    {
+     "top": 88,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "top": 108,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+10 TN on any task requiring the mis"
+    }
+   ]
+  },
+  {
+   "name": "Brash",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Brash"
+    },
+    {
+     "top": 52,
+     "x": 138,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Adds your Honor Rank."
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "When threatened or insulted, must pa"
+    }
+   ]
+  },
+  {
+   "name": "Overconfident",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Overconfident"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Facing a clearly superior foe, you n"
+    }
+   ]
+  },
+  {
+   "name": "Can’t Lie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Can’t Lie"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Physically unable to lie; must corre"
+    }
+   ]
+  },
+  {
+   "name": "Contrary",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Contrary"
+    },
+    {
+     "top": 91,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compelled to argue your view in disp"
+    }
+   ]
+  },
+  {
+   "name": "Rumormonger",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Rumormonger"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Glory Rank"
+    },
+    {
+     "top": 119,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compulsive gossip; resisting spreadi"
+    }
+   ]
+  },
+  {
+   "name": "Soft-Hearted",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Soft-Hearted"
+    },
+    {
+     "top": 79,
+     "x": 46,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Wracked with guilt (TN +10)"
+    },
+    {
+     "top": 111,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Killing another person requires a Wi"
+    }
+   ]
+  },
+  {
+   "name": "Lost Love",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lost Love"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Reminded of your loss (TN +5)"
+    },
+    {
+     "top": 117,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "At most twice a day, an hour apart."
+    },
+    {
+     "top": 137,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Reminders of a lost love raise all y"
+    }
+   ]
+  },
+  {
+   "name": "Sworn Enemy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Sworn Enemy"
+    },
+    {
+     "top": 52,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A dedicated enemy who wants you defe"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 106,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 135,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    },
+    {
+     "top": 190,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A Fortune’s specific curse against y"
+    }
+   ]
+  }
+ ],
+ "desktop/play": [
+  {
+   "name": "Wealthy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Wealthy"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 71,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1 point per rank. Each point grants "
+    }
+   ]
+  },
+  {
+   "name": "Leadership",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Leadership"
+    },
+    {
+     "top": 79,
+     "x": 13,
+     "el": "span.vi4533-note",
+     "kind": "text",
+     "text": "Once a Round, in the Reactions Stage"
+    },
+    {
+     "top": 99,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Once/round, add School Rank +1k1 to "
+    }
+   ]
+  },
+  {
+   "name": "Kharmic Tie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Kharmic Tie"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 71,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1-5 points. Bonded to a chosen perso"
+    }
+   ]
+  },
+  {
+   "name": "Social Position",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Social Position"
+    },
+    {
+     "top": 51,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+1 Status Rank."
+    }
+   ]
+  },
+  {
+   "name": "Blissful Betrothal",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blissful Betrothal"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.dsx4532-switch",
+     "kind": "text",
+     "text": "Your Kharmic Tie is to your spouse"
+    },
+    {
+     "top": 89,
+     "x": 13,
+     "el": "span.dsx4532-note",
+     "kind": "text",
+     "text": "Gentry, Social Position and Wealthy "
+    },
+    {
+     "top": 109,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A loving arranged marriage lets you "
+    }
+   ]
+  },
+  {
+   "name": "Zakyo Toshi Citizen",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Zakyo Toshi Citizen"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 85,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Half your School’s starting koku aga"
+    },
+    {
+     "top": 111,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "One extra Rank in a Games Skill you "
+    }
+   ]
+  },
+  {
+   "name": "Lord Moon’s Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lord Moon’s Curse"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-summary",
+     "kind": "text",
+     "text": "Medium — 5 points"
+    },
+    {
+     "top": 83,
+     "x": 33,
+     "el": "label.lm7-tick",
+     "kind": "text",
+     "text": "Full moon tonight (+1 Void Point, sp"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 22,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 116,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    }
+   ]
+  },
+  {
+   "name": "Blind",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blind"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Armor TN uses Reflexes + 5. Move: Wa"
+    },
+    {
+     "top": 88,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "-3k3 ranged/-1k1 melee attacks; Armo"
+    }
+   ]
+  },
+  {
+   "name": "Missing Limb",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Missing Limb"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Missing — choose —Left armRight armL"
+    },
+    {
+     "top": 57,
+     "x": 199,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "top": 82,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+10 TN on any task requiring the mis"
+    }
+   ]
+  },
+  {
+   "name": "Brash",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Brash"
+    },
+    {
+     "top": 52,
+     "x": 138,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Adds your Honor Rank."
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "When threatened or insulted, must pa"
+    }
+   ]
+  },
+  {
+   "name": "Overconfident",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Overconfident"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Facing a clearly superior foe, you n"
+    }
+   ]
+  },
+  {
+   "name": "Can’t Lie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Can’t Lie"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Physically unable to lie; must corre"
+    }
+   ]
+  },
+  {
+   "name": "Contrary",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Contrary"
+    },
+    {
+     "top": 91,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compelled to argue your view in disp"
+    }
+   ]
+  },
+  {
+   "name": "Rumormonger",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Rumormonger"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Glory Rank"
+    },
+    {
+     "top": 91,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compulsive gossip; resisting spreadi"
+    }
+   ]
+  },
+  {
+   "name": "Soft-Hearted",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Soft-Hearted"
+    },
+    {
+     "top": 51,
+     "x": 171,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Wracked with guilt (TN +10)"
+    },
+    {
+     "top": 83,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Killing another person requires a Wi"
+    }
+   ]
+  },
+  {
+   "name": "Lost Love",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lost Love"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Reminded of your loss (TN +5)"
+    },
+    {
+     "top": 89,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "At most twice a day, an hour apart."
+    },
+    {
+     "top": 109,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Reminders of a lost love raise all y"
+    }
+   ]
+  },
+  {
+   "name": "Sworn Enemy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Sworn Enemy"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 71,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A dedicated enemy who wants you defe"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 22,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 116,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    },
+    {
+     "top": 152,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A Fortune’s specific curse against y"
+    }
+   ]
+  }
+ ],
+ "desktop/management": [
+  {
+   "name": "Wealthy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Wealthy"
+    },
+    {
+     "top": 56,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 81,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1 point per rank. Each point grants "
+    }
+   ]
+  },
+  {
+   "name": "Leadership",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Leadership"
+    },
+    {
+     "top": 79,
+     "x": 13,
+     "el": "span.vi4533-note",
+     "kind": "text",
+     "text": "Once a Round, in the Reactions Stage"
+    },
+    {
+     "top": 99,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Once/round, add School Rank +1k1 to "
+    }
+   ]
+  },
+  {
+   "name": "Kharmic Tie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Kharmic Tie"
+    },
+    {
+     "top": 56,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 81,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "1-5 points. Bonded to a chosen perso"
+    }
+   ]
+  },
+  {
+   "name": "Social Position",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Social Position"
+    },
+    {
+     "top": 51,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+1 Status Rank."
+    }
+   ]
+  },
+  {
+   "name": "Blissful Betrothal",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blissful Betrothal"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.dsx4532-switch",
+     "kind": "text",
+     "text": "Your Kharmic Tie is to your spouse"
+    },
+    {
+     "top": 89,
+     "x": 13,
+     "el": "span.dsx4532-note",
+     "kind": "text",
+     "text": "Gentry, Social Position and Wealthy "
+    },
+    {
+     "top": 109,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A loving arranged marriage lets you "
+    }
+   ]
+  },
+  {
+   "name": "Zakyo Toshi Citizen",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Zakyo Toshi Citizen"
+    },
+    {
+     "top": 56,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 95,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Half your School’s starting koku aga"
+    },
+    {
+     "top": 121,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "One extra Rank in a Games Skill you "
+    }
+   ]
+  },
+  {
+   "name": "Lord Moon’s Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lord Moon’s Curse"
+    },
+    {
+     "top": 52,
+     "x": 13,
+     "el": "span.adv-config-summary",
+     "kind": "text",
+     "text": "Medium — 5 points"
+    },
+    {
+     "top": 85,
+     "x": 33,
+     "el": "label.lm7-tick",
+     "kind": "text",
+     "text": "Full moon tonight (+1 Void Point, sp"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 106,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 116,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    }
+   ]
+  },
+  {
+   "name": "Blind",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Blind"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Armor TN uses Reflexes + 5. Move: Wa"
+    },
+    {
+     "top": 88,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "-3k3 ranged/-1k1 melee attacks; Armo"
+    }
+   ]
+  },
+  {
+   "name": "Missing Limb",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Missing Limb"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Missing — choose —Left armRight armL"
+    },
+    {
+     "top": 57,
+     "x": 199,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Ticks on every roll but damage."
+    },
+    {
+     "top": 82,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "+10 TN on any task requiring the mis"
+    }
+   ]
+  },
+  {
+   "name": "Brash",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Brash"
+    },
+    {
+     "top": 52,
+     "x": 138,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "Adds your Honor Rank."
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "When threatened or insulted, must pa"
+    }
+   ]
+  },
+  {
+   "name": "Overconfident",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Overconfident"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Facing a clearly superior foe, you n"
+    }
+   ]
+  },
+  {
+   "name": "Can’t Lie",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Can’t Lie"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Physically unable to lie; must corre"
+    }
+   ]
+  },
+  {
+   "name": "Contrary",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Contrary"
+    },
+    {
+     "top": 91,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compelled to argue your view in disp"
+    }
+   ]
+  },
+  {
+   "name": "Rumormonger",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Rumormonger"
+    },
+    {
+     "top": 51,
+     "x": 13,
+     "el": "label.chk4531-field",
+     "kind": "text",
+     "text": "Glory Rank"
+    },
+    {
+     "top": 91,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Compulsive gossip; resisting spreadi"
+    }
+   ]
+  },
+  {
+   "name": "Soft-Hearted",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Soft-Hearted"
+    },
+    {
+     "top": 51,
+     "x": 171,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Wracked with guilt (TN +10)"
+    },
+    {
+     "top": 83,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Killing another person requires a Wi"
+    }
+   ]
+  },
+  {
+   "name": "Lost Love",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Lost Love"
+    },
+    {
+     "top": 51,
+     "x": 46,
+     "el": "label.chk4531-switch",
+     "kind": "text",
+     "text": "Reminded of your loss (TN +5)"
+    },
+    {
+     "top": 89,
+     "x": 13,
+     "el": "span.chk4531-note",
+     "kind": "text",
+     "text": "At most twice a day, an hour apart."
+    },
+    {
+     "top": 109,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "Reminders of a lost love raise all y"
+    }
+   ]
+  },
+  {
+   "name": "Sworn Enemy",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Sworn Enemy"
+    },
+    {
+     "top": 52,
+     "x": 13,
+     "el": "span.adv-config-warn",
+     "kind": "text",
+     "text": "Needs a choice"
+    },
+    {
+     "top": 73,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A dedicated enemy who wants you defe"
+    }
+   ]
+  },
+  {
+   "name": "Seven Fortunes’ Curse",
+   "id": "",
+   "lines": [
+    {
+     "top": 11,
+     "x": 23,
+     "el": "input.en-name",
+     "kind": "field",
+     "text": "Seven Fortunes’ Curse"
+    },
+    {
+     "top": 53,
+     "x": 106,
+     "el": "span.fortune4511-badge.fortune4511-eff-voidDouble",
+     "kind": "text",
+     "text": "Hotei"
+    },
+    {
+     "top": 116,
+     "x": 13,
+     "el": "p.sr7-flag",
+     "kind": "text",
+     "text": "Core p.148: only one Seven Fortunes’"
+    },
+    {
+     "top": 152,
+     "x": 23,
+     "el": "textarea.en-desc",
+     "kind": "field",
+     "text": "A Fortune’s specific curse against y"
+    }
+   ]
+  }
+ ]
+}

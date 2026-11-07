@@ -1,0 +1,98 @@
+PICKERS (phone): mode | options | scrollH | gridInfo | details | name
+inline	7	638	0	0	adv:Dark Paragon
+other	0	418	1	0	adv:Forbidden Knowledge
+label-only	2	444	0	0	adv:Languages
+inline	7	754	0	0	adv:Paragon
+inline	2	363	0	0	adv:Soul of Artistry
+other	0	284	0	0	adv:Watanu-Trained
+other	0	340	1	0	adv:Way of the Land
+label-only	2	373	0	0	adv:Naga Ancestry
+label-only	3	290	0	0	adv:Allies
+other	0	419	1	0	adv:Blackmail
+other	0	314	0	0	adv:Darling of the Court
+other	0	292	1	0	adv:Heart of Vengeance
+other	0	320	0	0	adv:Perceived Honor
+other	0	495	0	0	adv:Stolen Identity
+other	0	284	0	0	adv:Water Hammer Citizen
+other	0	284	0	0	adv:Zakyo Toshi Citizen
+label-only	5	345	0	0	adv:Chosen by the Oracles
+label-only	4	363	0	0	adv:Elemental Blessing
+label-only	4	363	0	0	adv:Friendly Kami
+label-only	4	363	0	0	adv:Friend of the Elements
+other	0	288	0	0	adv:Kharmic Tie
+label-only	3	306	0	0	adv:Luck
+label-only	3	308	0	0	adv:Magic Resistance
+other	0	459	0	0	adv:Reincarnated
+label-only	7	801	0	7	adv:Seven Fortunes’ Blessing
+inline	10	976	0	0	adv:Touch of the Spirit Realms
+label-only	4	404	0	0	adv:Void Versatility
+label-only	6	459	0	0	adv:Gentry
+other	0	340	1	0	adv:Inheritance
+label-only	2	440	0	0	adv:Wealthy
+label-only	7	650	0	0	adv:Great Potential
+label-only	3	411	0	0	disadv:Compulsion
+label-only	7	811	7	0	disadv:Consumed
+label-only	5	583	0	0	disadv:Doubt
+label-only	7	811	7	0	disadv:Failure of Bushido
+label-only	3	411	0	0	disadv:Phobia
+label-only	2	357	0	0	disadv:Sleeper Agent
+label-only	8	857	0	0	disadv:Weakness
+label-only	2	325	0	0	disadv:Antisocial
+label-only	3	528	0	0	disadv:Bounty
+label-only	2	325	0	0	disadv:Cast Out
+label-only	2	392	0	0	disadv:Clear Water Stigma
+other	0	252	0	0	disadv:Dependant
+other	0	252	0	0	disadv:Imperial City Stigma
+label-only	2	325	0	0	disadv:Obligation
+other	0	222	0	0	disadv:Sworn Enemy
+label-only	2	269	0	0	disadv:The Chrysanthemum Court
+other	0	252	0	0	disadv:Trials of the Imperial City
+label-only	10	1109	10	0	disadv:Cursed by the Realm
+other	0	222	0	0	disadv:Elemental Imbalance
+label-only	2	325	0	0	disadv:Enlightened Madness
+label-only	3	237	0	0	disadv:Lord Moon’s Curse
+label-only	7	827	7	0	disadv:Seven Fortunes’ Curse
+other	0	238	0	0	disadv:Unlucky
+label-only	5	599	0	0	disadv:Wrath of the Kami
+label-only	5	599	0	0	disadv:Ruined City Survivor
+
+DIRECT ADD (no picker): 118
+
+MISALIGNED TEXT (|dx| 3–24 px)
+Lord Moon’s Curse / div.entry | label.lm7-tick vs span.adv-config-summary dx=20	phone/management:Full moon tonight (+1 Void Poi ; phone/play:Full moon tonight (+1 Void Poi ; desktop/management:Full moon tonight (+1 Void Poi ; desktop/play:Full moon tonight (+1 Void Poi
+Paragon / div.entry | p.p4518-reminder vs span.adv-config-summary.p4518-badge dx=-9	phone/management:When a Void Point improves a r ; phone/play:When a Void Point improves a r ; desktop/management:When a Void Point improves a r ; desktop/play:When a Void Point improves a r
+Seven Fortunes’ Blessing / div.entry | p.fb4521-reminder vs span.adv-config-summary.fb4521-badge dx=-9	phone/management:In the roll preview of a Socia ; phone/play:In the roll preview of a Socia ; desktop/management:In the roll preview of a Socia ; desktop/play:In the roll preview of a Socia
+div.ring-card | div.void-note vs label. dx=12	desktop/management:Ring = lower of its two traits ; desktop/play:Ring = lower of its two traits
+div.section | div. vs div.hint dx=13	phone/management:Traits: 52 ; phone/play:Traits: 52 ; desktop/management:Traits: 52 ; desktop/play:Traits: 52
+div.section | p.hint vs summary. dx=-16	phone/management:Core p.148 lets the GM allow w
+div.section | p.hint vs summary. dx=-17	desktop/management:Core p.148 lets the GM allow w
+div.section | summary.combat-summary vs h2. dx=15	phone/play:Armor & TN
+                ⓘ ; desktop/play:Armor & TN
+                ⓘ
+div.section | th. vs caption. dx=8	phone/management:Wound level ; desktop/management:Wound level
+div.section | th. vs label. dx=6	desktop/play:Skill ; desktop/play:Weapon
+
+TIGHT HELPER TEXT (gap < 4 px under a field)
+Adv & Disadv / Blissful Betrothal / div.entry | textarea.en-desc after div.dsx4532-row gap=2 fs=14.4 lh=19.44px	phone/management,phone/play,desktop/management,desktop/play
+Adv & Disadv / Contrary / div.entry | textarea.en-desc after div.chk4531-row gap=2 fs=14.4 lh=19.44px	phone/management,phone/play,desktop/management,desktop/play
+Adv & Disadv / Lost Love / div.entry | textarea.en-desc after div.chk4531-row gap=2 fs=14.4 lh=19.44px	phone/management,phone/play,desktop/management,desktop/play
+Adv & Disadv / Missing Limb / div.entry | span.chk4531-note after label.chk4531-field gap=-19 fs=13.12 lh=17.712px	desktop/management,desktop/play
+Adv & Disadv / Missing Limb / div.entry | textarea.en-desc after div.chk4531-row gap=2 fs=14.4 lh=19.44px	phone/management,phone/play,desktop/management,desktop/play
+Adv & Disadv / Rumormonger / div.entry | textarea.en-desc after div.chk4531-row gap=2 fs=14.4 lh=19.44px	phone/management,phone/play,desktop/management,desktop/play
+Adv & Disadv / Soft-Hearted / div.entry | textarea.en-desc after div.chk4531-row gap=2 fs=14.4 lh=19.44px	phone/management,phone/play,desktop/management,desktop/play
+Adv & Disadv / div.section | span. after input. gap=-13 fs=10.56 lh=13.728px	desktop/management
+Adv & Disadv / div.section | span. after input. gap=-13 fs=9.705 lh=12.6165px	phone/management
+Adv & Disadv / div.section | span. after input. gap=-19 fs=9.705 lh=12.6165px	phone/management
+Combat / div.field | div.bl4534-note after input. gap=3 fs=12.48 lh=16.224px	phone/play,desktop/play
+Identity / div.section | div.hint after div.grid.g-4 gap=-4 fs=12.48 lh=17.7216px	desktop/management,desktop/play
+Identity / div.section | div.hint after div.grid.g-6 gap=-4 fs=12.48 lh=17.7216px	desktop/management,desktop/play
+Skills / div.section | span.emph-free-badge after select.sk-emph-select gap=-24 fs=9.6 lh=13.44px	desktop/play
+Skills / div.section | span.emph-free-badge after select.sk-emph-select gap=-25 fs=9.6 lh=13.44px	phone/management,desktop/management
+Skills / div.section | td.col-narrow.sk-cost after td.col-check gap=-48 fs=12.48 lh=17.472px	desktop/play
+Skills / div.section | td.col-narrow.sk-cost after td.col-check gap=-55 fs=12.48 lh=17.472px	desktop/management,desktop/play
+Skills / div.section | td.col-narrow.sk-cost after td.col-check gap=-56 fs=12.48 lh=17.472px	desktop/play
+Skills / div.section | td.col-narrow.sk-cost after td.col-check gap=-84 fs=12.48 lh=17.472px	desktop/management,desktop/play
+Skills / div.section | td.col-narrow.sk-cost after td.col-check gap=-85 fs=12.48 lh=17.472px	desktop/management
+
+ERRORS
+

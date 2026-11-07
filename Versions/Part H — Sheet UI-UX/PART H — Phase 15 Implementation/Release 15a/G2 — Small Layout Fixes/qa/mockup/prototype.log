@@ -1,0 +1,118 @@
+{
+ "pickers": {
+  "phone:Seven Fortunes’ Blessing": {
+   "todayH": 801,
+   "lens": [
+    190,
+    283,
+    99,
+    196,
+    160,
+    383,
+    235
+   ],
+   "scrollH": 1369,
+   "options": 7,
+   "newH": 1369
+  },
+  "phone:Seven Fortunes’ Curse": {
+   "todayH": 827,
+   "lens": [
+    79,
+    293,
+    112,
+    171,
+    107,
+    169,
+    163
+   ],
+   "scrollH": 978,
+   "options": 7,
+   "newH": 978
+  },
+  "phone:Consumed": {
+   "todayH": 811,
+   "lens": [
+    42,
+    92,
+    180,
+    118,
+    97,
+    94,
+    48
+   ],
+   "scrollH": 829,
+   "options": 7,
+   "newH": 829
+  },
+  "phone:Failure of Bushido": {
+   "todayH": 811,
+   "lens": [
+    86,
+    156,
+    114,
+    46,
+    173,
+    78,
+    100
+   ],
+   "scrollH": 855,
+   "options": 7,
+   "newH": 855
+  },
+  "phone:Cursed by the Realm": {
+   "todayH": 1109,
+   "lens": [
+    96,
+    106,
+    197,
+    128,
+    161,
+    102,
+    128,
+    185,
+    161,
+    118
+   ],
+   "scrollH": 1231,
+   "options": 10,
+   "newH": 1231
+  },
+  "phone:Paragon": {
+   "todayH": 754
+  },
+  "desktop:Seven Fortunes’ Blessing": {
+   "todayH": 734,
+   "lens": [
+    190,
+    283,
+    99,
+    196,
+    160,
+    383,
+    235
+   ],
+   "scrollH": 1311,
+   "options": 7,
+   "newH": 1311
+  },
+  "desktop:Cursed by the Realm": {
+   "todayH": 1109,
+   "lens": [
+    96,
+    106,
+    197,
+    128,
+    161,
+    102,
+    128,
+    185,
+    161,
+    118
+   ],
+   "scrollH": 1168,
+   "options": 10,
+   "newH": 1168
+  }
+ }
+}

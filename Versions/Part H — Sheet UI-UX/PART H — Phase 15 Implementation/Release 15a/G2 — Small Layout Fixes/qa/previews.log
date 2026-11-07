@@ -1,0 +1,45 @@
+=== a05
+PASS PART I — Phase 4.5.19 Soul of Artistry/soul-artistry-harness.js 92/92
+PASS PART I — Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js 50/50
+PASS PART I — Phase 4.5.20 Void Versatility/void-versatility-harness.js 66/66
+PASS A03.1 — Masteries in the Skill Information/skill-masteries-harness.js 19/19
+PASS BUGFIX — Skill Traits/skill-traits-harness.js 38/38
+PASS A05 — Missing Limb Picker/limb-picker-harness.js 22/22
+PASS PART I — Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js 101/101
+LIVE VERIFICATION PASSED: 1922/1922 on the deployed files
+=== a06
+PASS A03.1 — Masteries in the Skill Information/skill-masteries-harness.js 19/19
+PASS BUGFIX — Skill Traits/skill-traits-harness.js 38/38
+PASS A05 — Missing Limb Picker/limb-picker-harness.js 22/22
+PASS PART I — Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js 101/101
+PASS A06 — Grant Actions and Their State/grant-actions-harness.js 20/20
+PASS PART I — Phase 4.5.17 Wealthy Koku Grant/wealthy-grant-harness.js 87/87
+PASS PART I — Phase 4.5.40 Supplement Identity and Outfit/identity-outfit-harness.js 21/21
+LIVE VERIFICATION PASSED: 2050/2050 on the deployed files
+=== a07
+PASS PART I — Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js 101/101
+PASS A06 — Grant Actions and Their State/grant-actions-harness.js 20/20
+PASS PART I — Phase 4.5.17 Wealthy Koku Grant/wealthy-grant-harness.js 87/87
+PASS PART I — Phase 4.5.40 Supplement Identity and Outfit/identity-outfit-harness.js 21/21
+PASS A07 — The Moon Row/moon-row-harness.js 26/26
+PASS BUGFIX — Moon Curse Full Moon/moon-harness.js 17/17
+PASS BUGFIX — Moon Resist Label/moon-label-harness.js 5/5
+LIVE VERIFICATION PASSED: 2098/2098 on the deployed files
+=== a11
+PASS PART I — Phase 4.5.40 Supplement Identity and Outfit/identity-outfit-harness.js 21/21
+PASS A07 — The Moon Row/moon-row-harness.js 26/26
+PASS BUGFIX — Moon Curse Full Moon/moon-harness.js 17/17
+PASS BUGFIX — Moon Resist Label/moon-label-harness.js 5/5
+PASS A11 — Explanatory Text Gaps and One Left Edge/text-edges-harness.js 22/22
+PASS PART K — Phase 12.2 Play Mode Identity/identity-harness.js 17/17
+PASS PART I — Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js 69/69
+LIVE VERIFICATION FAILED
+=== a04.1
+PASS A11 — Explanatory Text Gaps and One Left Edge/text-edges-harness.js 22/22
+PASS PART K — Phase 12.2 Play Mode Identity/identity-harness.js 17/17
+PASS PART I — Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js 69/69
+PASS A04.1 — One Way to Show Choices in Pickers/inline-rules-harness.js 46/46
+PASS PART I — Phase 4.5.2 Disadvantages/disadv-config-harness.js 163/163
+PASS PART I — Phase 4.5.10 Cursed by the Realm/disadv-realm-harness.js 62/62
+PASS PART I — Phase 4.5.22 Naishou Citizen/naishou-citizen-harness.js 36/36
+LIVE VERIFICATION PASSED: 2513/2513 on the deployed files

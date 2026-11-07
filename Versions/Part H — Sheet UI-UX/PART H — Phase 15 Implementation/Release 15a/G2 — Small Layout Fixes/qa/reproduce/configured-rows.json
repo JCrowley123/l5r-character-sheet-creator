@@ -1,0 +1,998 @@
+{
+ "phone": {
+  "management": {
+   "rows": {
+    "Zakyo Toshi Citizen": [
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       126,
+       1236,
+       90,
+       20
+      ],
+      "font": "12.48px Noto Sans JP uppercase",
+      "mid": 1246
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       231,
+       1232,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "mid": 1246
+     },
+     {
+      "el": "div.supp4540-koku",
+      "text": "Half your School’s starting koku again: 1.5 ",
+      "box": [
+       36,
+       1268,
+       318,
+       50
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1293
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       36,
+       1286,
+       120,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1302
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       156,
+       1286,
+       138,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1302
+     }
+    ],
+    "Wealthy": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Rank 2 — 1 XP (clan discount −1); entitles 4",
+      "box": [
+       36,
+       1476,
+       318,
+       37
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1494
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       36,
+       1520,
+       76,
+       20
+      ],
+      "font": "12.48px Noto Sans JP uppercase",
+      "mid": 1531
+     },
+     {
+      "el": "div.wealth4517-status.wealth4517-recorded",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       36,
+       1549,
+       318,
+       19
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1558
+     },
+     {
+      "el": "span.wealth4517-text",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       36,
+       1549,
+       318,
+       19
+      ],
+      "font": "13.6px EB Garamond",
+      "mid": 1558
+     }
+    ],
+    "Missing Limb": [
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       36,
+       2299,
+       318,
+       55
+      ],
+      "font": "14.68px EB Garamond",
+      "mid": 2326
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       36,
+       2299,
+       174,
+       25
+      ],
+      "font": "9.705px Noto Sans JP uppercase",
+      "mid": 2311
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight leg",
+      "box": [
+       87,
+       2299,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "mid": 2311
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       36,
+       2336,
+       166,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 2344
+     }
+    ],
+    "Lord Moon’s Curse": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Medium — 5 points",
+      "box": [
+       36,
+       3938,
+       106,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 3947
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       150,
+       3936,
+       76,
+       20
+      ],
+      "font": "12.48px Noto Sans JP uppercase",
+      "mid": 3947
+     },
+     {
+      "el": "div.lm7-moon",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       36,
+       3971,
+       318,
+       64
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 4003
+     },
+     {
+      "el": "label.lm7-tick",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       36,
+       3971,
+       307,
+       20
+      ],
+      "font": "9.705px Noto Sans JP uppercase",
+      "mid": 3981
+     },
+     {
+      "el": "input.",
+      "text": "",
+      "box": [
+       40,
+       3974,
+       13,
+       13
+      ],
+      "font": "13.3333px Arial",
+      "mid": 3980
+     },
+     {
+      "el": "button.ghost.lm7-roll",
+      "text": "Resist Lord Moon (TN 20)",
+      "box": [
+       36,
+       4003,
+       209,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 4019
+     }
+    ]
+   },
+   "identity": {
+    "Insight ": {
+     "hint": {
+      "box": [
+       23,
+       875,
+       344,
+       99
+      ],
+      "font": "11.66px",
+      "lh": "16.5572px",
+      "mt": "14px"
+     },
+     "prev": "grid g-6",
+     "gapToLowestField": 14
+    },
+    "Spent XP": {
+     "hint": {
+      "box": [
+       23,
+       2235,
+       344,
+       66
+      ],
+      "font": "11.66px",
+      "lh": "16.5572px",
+      "mt": "14px"
+     },
+     "prev": "grid g-4",
+     "gapToLowestField": 14
+    }
+   }
+  },
+  "play": {
+   "rows": {
+    "Zakyo Toshi Citizen": [
+     {
+      "el": "div.supp4540-koku",
+      "text": "Half your School’s starting koku again: 1.5 ",
+      "box": [
+       36,
+       1194,
+       318,
+       50
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1219
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       36,
+       1212,
+       120,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1228
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       156,
+       1212,
+       138,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1228
+     }
+    ],
+    "Wealthy": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Rank 2 — 1 XP (clan discount −1); entitles 4",
+      "box": [
+       36,
+       1401,
+       318,
+       37
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1420
+     },
+     {
+      "el": "div.wealth4517-status.wealth4517-recorded",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       36,
+       1446,
+       318,
+       19
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1456
+     },
+     {
+      "el": "span.wealth4517-text",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       36,
+       1446,
+       318,
+       19
+      ],
+      "font": "13.6px EB Garamond",
+      "mid": 1456
+     }
+    ],
+    "Missing Limb": [
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       36,
+       2093,
+       318,
+       55
+      ],
+      "font": "14.68px EB Garamond",
+      "mid": 2120
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       36,
+       2093,
+       174,
+       25
+      ],
+      "font": "9.705px Noto Sans JP uppercase",
+      "mid": 2105
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight leg",
+      "box": [
+       87,
+       2093,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "mid": 2105
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       36,
+       2130,
+       166,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 2139
+     }
+    ],
+    "Lord Moon’s Curse": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Medium — 5 points",
+      "box": [
+       36,
+       3731,
+       106,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 3740
+     },
+     {
+      "el": "div.lm7-moon",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       36,
+       3763,
+       318,
+       64
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 3795
+     },
+     {
+      "el": "label.lm7-tick",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       36,
+       3763,
+       307,
+       20
+      ],
+      "font": "9.705px Noto Sans JP uppercase",
+      "mid": 3773
+     },
+     {
+      "el": "input.",
+      "text": "",
+      "box": [
+       40,
+       3766,
+       13,
+       13
+      ],
+      "font": "13.3333px Arial",
+      "mid": 3773
+     },
+     {
+      "el": "button.ghost.lm7-roll",
+      "text": "Resist Lord Moon (TN 20)",
+      "box": [
+       36,
+       3795,
+       209,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 3811
+     }
+    ]
+   },
+   "identity": {
+    "Insight ": {
+     "hint": {
+      "box": [
+       40,
+       859,
+       344,
+       99
+      ],
+      "font": "11.66px",
+      "lh": "16.5572px",
+      "mt": "14px"
+     },
+     "prev": "grid g-6",
+     "gapToLowestField": 14
+    },
+    "Spent XP": {
+     "hint": {
+      "box": [
+       40,
+       2050,
+       344,
+       66
+      ],
+      "font": "11.66px",
+      "lh": "16.5572px",
+      "mt": "14px"
+     },
+     "prev": "grid g-4",
+     "gapToLowestField": 14
+    }
+   }
+  }
+ },
+ "desktop": {
+  "management": {
+   "rows": {
+    "Zakyo Toshi Citizen": [
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Choose…",
+      "box": [
+       256,
+       1156,
+       90,
+       20
+      ],
+      "font": "12.48px Noto Sans JP uppercase",
+      "mid": 1167
+     },
+     {
+      "el": "button.adv-config-info",
+      "text": "",
+      "box": [
+       361,
+       1153,
+       28,
+       28
+      ],
+      "font": "0px Georgia",
+      "mid": 1167
+     },
+     {
+      "el": "div.supp4540-koku",
+      "text": "Half your School’s starting koku again: 1.5 ",
+      "box": [
+       166,
+       1189,
+       534,
+       32
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1205
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       441,
+       1189,
+       120,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1205
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       561,
+       1189,
+       138,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1205
+     }
+    ],
+    "Wealthy": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Rank 2 — 1 XP (clan discount −1); entitles 4",
+      "box": [
+       166,
+       1380,
+       325,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1389
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       499,
+       1379,
+       76,
+       20
+      ],
+      "font": "12.48px Noto Sans JP uppercase",
+      "mid": 1389
+     },
+     {
+      "el": "div.wealth4517-status.wealth4517-recorded",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       166,
+       1407,
+       536,
+       19
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1417
+     },
+     {
+      "el": "span.wealth4517-text",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       166,
+       1407,
+       536,
+       19
+      ],
+      "font": "13.6px EB Garamond",
+      "mid": 1417
+     }
+    ],
+    "Missing Limb": [
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       738,
+       803,
+       536,
+       29
+      ],
+      "font": "16px EB Garamond",
+      "mid": 817
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       738,
+       803,
+       178,
+       25
+      ],
+      "font": "10.56px Noto Sans JP uppercase",
+      "mid": 815
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight leg",
+      "box": [
+       793,
+       803,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "mid": 815
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       924,
+       809,
+       166,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 817
+     }
+    ],
+    "Lord Moon’s Curse": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Medium — 5 points",
+      "box": [
+       738,
+       2321,
+       106,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 2331
+     },
+     {
+      "el": "button.ghost.adv-config-btn",
+      "text": "Change",
+      "box": [
+       852,
+       2320,
+       76,
+       20
+      ],
+      "font": "12.48px Noto Sans JP uppercase",
+      "mid": 2331
+     },
+     {
+      "el": "div.lm7-moon",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       738,
+       2355,
+       536,
+       64
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 2387
+     },
+     {
+      "el": "label.lm7-tick",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       738,
+       2355,
+       333,
+       20
+      ],
+      "font": "10.56px Noto Sans JP uppercase",
+      "mid": 2365
+     },
+     {
+      "el": "input.",
+      "text": "",
+      "box": [
+       742,
+       2358,
+       13,
+       13
+      ],
+      "font": "13.3333px Arial",
+      "mid": 2364
+     },
+     {
+      "el": "button.ghost.lm7-roll",
+      "text": "Resist Lord Moon (TN 20)",
+      "box": [
+       738,
+       2386,
+       209,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 2402
+     }
+    ]
+   },
+   "identity": {
+    "Insight ": {
+     "hint": {
+      "box": [
+       153,
+       326,
+       1134,
+       35
+      ],
+      "font": "12.48px",
+      "lh": "17.7216px",
+      "mt": "-4px"
+     },
+     "prev": "grid g-6",
+     "gapToLowestField": -4
+    },
+    "Spent XP": {
+     "hint": {
+      "box": [
+       153,
+       777,
+       1134,
+       35
+      ],
+      "font": "12.48px",
+      "lh": "17.7216px",
+      "mt": "-4px"
+     },
+     "prev": "grid g-4",
+     "gapToLowestField": -4
+    }
+   }
+  },
+  "play": {
+   "rows": {
+    "Zakyo Toshi Citizen": [
+     {
+      "el": "div.supp4540-koku",
+      "text": "Half your School’s starting koku again: 1.5 ",
+      "box": [
+       166,
+       1110,
+       534,
+       32
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1126
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Add 1.5 koku",
+      "box": [
+       441,
+       1110,
+       120,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1126
+     },
+     {
+      "el": "button.ghost.supp4540-btn",
+      "text": "Already added",
+      "box": [
+       561,
+       1110,
+       138,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 1126
+     }
+    ],
+    "Wealthy": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Rank 2 — 1 XP (clan discount −1); entitles 4",
+      "box": [
+       166,
+       1300,
+       325,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1309
+     },
+     {
+      "el": "div.wealth4517-status.wealth4517-recorded",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       166,
+       1326,
+       536,
+       19
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 1336
+     },
+     {
+      "el": "span.wealth4517-text",
+      "text": "4 koku from Wealthy recorded on your Koku.",
+      "box": [
+       166,
+       1326,
+       536,
+       19
+      ],
+      "font": "13.6px EB Garamond",
+      "mid": 1336
+     }
+    ],
+    "Missing Limb": [
+     {
+      "el": "div.chk4531-row",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       738,
+       743,
+       536,
+       29
+      ],
+      "font": "16px EB Garamond",
+      "mid": 758
+     },
+     {
+      "el": "label.chk4531-field",
+      "text": "Missing — choose —Left armRight armLeft legR",
+      "box": [
+       738,
+       743,
+       178,
+       25
+      ],
+      "font": "10.56px Noto Sans JP uppercase",
+      "mid": 756
+     },
+     {
+      "el": "select.chk4531-limb",
+      "text": "— choose —Left armRight armLeft legRight leg",
+      "box": [
+       793,
+       743,
+       123,
+       25
+      ],
+      "font": "16px Arial",
+      "mid": 756
+     },
+     {
+      "el": "span.chk4531-note",
+      "text": "Ticks on every roll but damage.",
+      "box": [
+       924,
+       749,
+       166,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 758
+     }
+    ],
+    "Lord Moon’s Curse": [
+     {
+      "el": "span.adv-config-summary",
+      "text": "Medium — 5 points",
+      "box": [
+       738,
+       2261,
+       106,
+       18
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 2270
+     },
+     {
+      "el": "div.lm7-moon",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       738,
+       2293,
+       536,
+       64
+      ],
+      "font": "13.12px EB Garamond",
+      "mid": 2325
+     },
+     {
+      "el": "label.lm7-tick",
+      "text": "Full moon tonight (+1 Void Point, spent last",
+      "box": [
+       738,
+       2293,
+       333,
+       20
+      ],
+      "font": "10.56px Noto Sans JP uppercase",
+      "mid": 2303
+     },
+     {
+      "el": "input.",
+      "text": "",
+      "box": [
+       742,
+       2296,
+       13,
+       13
+      ],
+      "font": "13.3333px Arial",
+      "mid": 2303
+     },
+     {
+      "el": "button.ghost.lm7-roll",
+      "text": "Resist Lord Moon (TN 20)",
+      "box": [
+       738,
+       2325,
+       209,
+       32
+      ],
+      "font": "11.84px Noto Sans JP uppercase",
+      "mid": 2341
+     }
+    ]
+   },
+   "identity": {
+    "Insight ": {
+     "hint": {
+      "box": [
+       153,
+       322,
+       1134,
+       35
+      ],
+      "font": "12.48px",
+      "lh": "17.7216px",
+      "mt": "-4px"
+     },
+     "prev": "grid g-6",
+     "gapToLowestField": -4
+    },
+    "Spent XP": {
+     "hint": {
+      "box": [
+       153,
+       724,
+       1134,
+       35
+      ],
+      "font": "12.48px",
+      "lh": "17.7216px",
+      "mt": "-4px"
+     },
+     "prev": "grid g-4",
+     "gapToLowestField": -4
+    }
+   }
+  }
+ }
+}
