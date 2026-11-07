@@ -131,10 +131,15 @@ Owner conversation, 1 November 2026: Phase 15 contains release A and release B, 
 | Group | Findings | Tier |
 |---|---|---|
 | G1 · Information pattern (Q3) | A04, A15, A16 | Screen-only |
-| G2 · Small layout fixes | A05, A06, A07, A11 | Screen-only |
+| G2 · Small layout fixes | A05, A06, A07, A11; plus a picker unit (owner, 7 Nov: each option's rule inline, as Paragon does) | Screen-only |
 | G3 · Spell rows | 8b.1-UI-01, 8b.1-UI-02, 8b.1-UI-03 | Screen-only |
 | G4 · Touch, focus and startup | A09, A10, A17, A18 (A18 is a device investigation) | Behaviour |
 | G5 · Undo and the roll preview | A08, A12 | Behaviour |
 | G6 · New functions | A19, A20 (each L; may run as two groups of one) | Behaviour |
 
 That leaves 18 units in 15a after A01–A03: 15 audit findings and the three 8b.1 follow-ups.
+
+**Owner additions, 7 November 2026 (from G1's device review):**
+
+- **A11** also lines up explanatory text on Advantage cards. In Play a description sits 10 px right of the line above it, measured on the live app and on G1. A11 starts with a read of the whole app for similar cases.
+- **G2 gains a fifth unit:** one way to show choices in pickers. Each option's rule is shown in full inline, replacing the "▶ Rule" disclosures and the i on each option; the row's i keeps the text after choosing. Mock-up first.

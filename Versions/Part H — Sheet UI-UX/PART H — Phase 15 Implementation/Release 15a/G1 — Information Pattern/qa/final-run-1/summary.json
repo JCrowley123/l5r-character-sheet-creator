@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-11-07T07:17:18.308105+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7002,
+      "total": 7002,
+      "orchestration": {
+        "expected": 7002,
+        "passed": 7002,
+        "total": 7002,
+        "leafTotal": 7002,
+        "wrapperCount": 114,
+        "leafCount": 186,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 186,
+        "fingerprint": "35a723ba8554f73aa09ccc3c3905661194e3eefeb1c129eafcffd4c77bcea934",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 27.93
+    },
+    {
+      "label": "04-retained",
+      "passed": 6792,
+      "total": 6792,
+      "orchestration": {
+        "expected": 6792,
+        "passed": 6792,
+        "total": 6792,
+        "leafTotal": 6792,
+        "wrapperCount": 99,
+        "leafCount": 180,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 180,
+        "fingerprint": "22f646f2910ac2797cd2552a8ad316158522ea4f55f0b4c22948113df9bc7272",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 24.62
+    }
+  ],
+  "source_sha256": "2dcf6f20846b0c9ea97b59b94537abda6d510714b3bc1ef6376175056d066af6",
+  "source_bytes": 17586964,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A03.1 \u2014 Masteries in the Skill Information",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A16 \u2014 No Bottom i in the Seven Pickers",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A15 \u2014 Court Badges",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A04 \u2014 One Information Pattern"
+  ],
+  "restoration": {
+    "sha256": "e73b7c0cac70c95d2965d993c9a3b9f0b66eb6f3ef4b81d6667166667090de06",
+    "bytes": 17553370,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-07T08:10:11.437681+00:00"
+}

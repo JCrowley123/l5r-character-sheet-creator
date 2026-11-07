@@ -37,6 +37,28 @@ Local records updated **4 November 2026** (Codex; Claude's publication and revie
 
 <!-- a03-15a-part1 -->
 **5–6 November · Release 15a A03, revision 2 accepted and live (Claude).** On a wide screen the Advantage and Disadvantage columns start level: on the dense test character their headings were 1,092–2,249 px apart, and are 0 px now. On a phone, revision 1 put each Skill card's fields and Masteries under a labelled **Details** control. The owner passed all 12 of its device checks, then chose **Revise**: Details hid what is used at the table. Revision 2 hides nothing behind a control. In Play a card shows the name, Rank and d10, one summary line (Trait, Emphases, School) beside the eye, and the Masteries already reached. In Manage it shows every field straight away, packed tighter, with every Mastery and Remove last. Play cards go from 324–490 px to 114–158 px on the long test character (about 5 to a phone screen instead of 1.7); Manage cards from 372–601 px to 241–470 px. A laptop grid lining up the two lists' cards was prototyped and declined by the owner. Both full passes of revision 2 (3 and 4) passed on their first executions: candidate 6,865/6,865 and retained 6,755/6,755 each, with removal rebuilding A02 (`91d45109…6dc0`) exactly. The owner passed all 17 device-check boxes on iPhone Safari and Laptop Edge and **accepted** revision 2 on 6 November and gave the go-live word the same day. `main` was fast-forwarded to `46a7929d` (application `e73b7c0c…de06`), and production was verified byte for byte (550/550 on the downloaded files, browser and offline smoke 22/22). [Revision 2 device checks](https://claude.ai/artifact/NuGaGAL8e4tDvjMJWfdnxy) · [revision 1 checks and the owner's comments](https://claude.ai/artifact/CNTa2BVhtR2iHWrQ5EaNTM) · [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
+
+**7 November · Release 15a G1 (A04, A15, A16, A03.1), accepted and qualified; go-live word next (Claude).** G1 is built as four removable units on stacked branches:
+
+- **A04, one information pattern:** one circled i for Skills, Advantages, Disadvantages and the Void card, with accessible names and 44 px tap areas. The i no longer sits inside "Choose…", and Hotei's rule is behind its i.
+- **A15, court badges:** tap a court to fill it in the Clan colour (in session), tap again to empty it. The radio and the tick box are gone.
+- **A16:** the seven pickers' bottom i is removed.
+- **A03.1:** the owner's Masteries list in the Skill window.
+
+One review found no blocking defect, and its eight findings are fixed. The previews passed on the deployed files (973 to 1,799 checks each). The owner passed every device check (36/36) and **accepted all four** on 7 November.
+
+Qualification passed:
+
+- 25 negative variants matched their pins.
+- Group removal 34/34: the whole group removed rebuilds A03 `e73b7c0c…de06` exactly.
+- Dependencies 4/4.
+- **One full pass, first time:** 7,002/7,002 and 6,792/6,792.
+
+Group build `2dcf6f20…6af6`, branch `claude/release-15a-a03.1`.
+
+The owner's two comments are G2 work: Advantage card text alignment goes into A11, and inline rule text in pickers is a new G2 unit. FT-59 (a mon and colour for every Clan) is parked.
+
+[Device checks](https://claude.ai/artifact/BFg3Gg19jUM9EJEshc2T2i) · [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
 <!-- end-a03-15a-part1 -->
 
 **4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
@@ -168,6 +190,8 @@ These sit outside the 169 / 214 envelope; together about 259 (179–384) more, f
 
 <!-- a03-15a-part2 -->
 **5–6 November · Release 15a A03.** A03, estimated 5 (3–8), is built and qualified on branch `claude/release-15a-a03`, in two revisions. Revision 1 used about 9 weekly points; the owner's Revise and revision 2 brought the total to about 24. The reforecast stated at A03's start is an estimate only, not a budget approval: about 7 (5–10) for a clean unit like A03, so the other 15 units of 15a would need about 100 more weekly points (80–150). That is several weeks rather than the old grouped 20, and revisions on the owner's devices come on top (A02 and A03 each needed one). The owner passed every device check on revision 2, accepted it and gave the go-live word on 6 November: it is live (`main` `46a7929d`). A04 has not started. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
+
+**6–7 November · Release 15a G1.** The kickoff estimated 11 points (A04 5, A15 3, A16 3), about 10–15 under the grouped process. Four units were built, A03.1 included, after three mock-up rounds; the group used about 19 weekly points. All four were accepted on 7 November and qualified first time (7,002/7,002, 6,792/6,792); the go-live word is pending. Next is G2: A05, A06, A07, A11 (with the owner's alignment comment) and a new picker unit. [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
 <!-- end-a03-15a-part2 -->
 
 ### Earlier planning snapshots — historical estimates and decisions
@@ -312,6 +336,8 @@ Ranked by impact for each point spent, with what each step needs first.
 
 <!-- a03-15a-part3 -->
 **5–6 November · Release 15a A03 (Claude, claude-opus-5-5).** Account meters from the desktop app, five-hour / weekly. Revision 1: 10% / 35% at the start (23:34 UTC, 5 November); 52% / 41% before full QA (00:17); 75% / 44% after both passes (03:36); 78% / 44% at its end (03:45). Revision 2: 15% / 46% at its start (09:15); 59% / 56% before its qualification chain (11:15); 73% / 58% (12:54) before full QA; 10% / 59% (14:48) at the end; 21% / 61% (15:24) after the go-live and production verification. Weekly use moved by about 24 points in all against the 5 (3–8) estimate. The qualification chains and the full passes ran on the machine, not on the allowance. Readings are account-wide and kept separate from Codex's. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
+
+**6–7 November · Release 15a G1 (Claude, claude-opus-5-5).** Account meters, five-hour / weekly: 32% / 62% at the start (17:37 UTC, 6 November); 44% / 64% after the mock-ups; 7% / 65% after revision 2 of the mock-ups; 59% / 72% after the build; 94% / 76% at the owner's review; 32% / 81% before qualification (07:15, 7 November); 34% / 81% at the end (08:11). About 19 weekly points against the 10–15 estimate. The variant runs and the full pass ran on the machine. Readings are account-wide and kept separate from Codex's. [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
 <!-- end-a03-15a-part3 -->
 
 **4 November — Claude kickoff preparation.** Shared Codex readings after preliminary reads at 03:43 UTC: 76% five-hour / 73% weekly; after drafting at 03:46 UTC: 80% / 74%. These do not include the entire turn and are not an exclusive step cost. Model/effort were not exposed. The full Claude kickoff is saved with the cycle-closure work order.
