@@ -1,0 +1,33 @@
+/* PART H PHASE 15.1.11 — Release 15a A11: explanatory text gaps and one left edge (FT-51, ruling Q1, owner's additions).
+   1. In Play, a card's locked name and description show as plain text (Phase 12 (Part K) makes their border
+      transparent); without their horizontal padding and border they start on the card's text edge, with the lines
+      between them. Manage keeps the editable boxes as they are.
+   2. Insight's and Spent XP's notes: the shared 6 px helper gap on a laptop, where their inline style pulled them 4 px
+      up (the carousel's own phone rule already gives 14 px, or 10 px on very small screens), and a 1.5 line height.
+   3. The six condition rows' controls (Phase 4.5.31 and Phase 4.5.32, Part I) keep a 6 px gap above the description.
+   Waits for body.te15-on, which this unit's switch sets. */
+html body.te15-on.pm12-play #advList .entry .en-name[data-pm12-locked],
+html body.te15-on.pm12-play #disadvList .entry .en-name[data-pm12-locked],
+html body.te15-on.pm12-play #advList .entry .en-desc[data-pm12-locked],
+html body.te15-on.pm12-play #disadvList .entry .en-desc[data-pm12-locked] {
+  padding-left: 0;
+  padding-right: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+html body.te15-on .section > .grid:has(#f_insightBonus) + .hint,
+html body.te15-on .section > .grid:has(#f_xpSpent) + .hint {
+  line-height: 1.5;
+}
+@media (min-width: 769px) {
+  html body.te15-on .section > .grid:has(#f_insightBonus) + .hint,
+  html body.te15-on .section > .grid:has(#f_xpSpent) + .hint {
+    margin-top: 6px !important;
+  }
+}
+html body.te15-on #disadvList .chk4531-row,
+html body.te15-on #advList .chk4531-row,
+html body.te15-on #disadvList .dsx4532-row,
+html body.te15-on #advList .dsx4532-row {
+  margin-bottom: 6px;
+}

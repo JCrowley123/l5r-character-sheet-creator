@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "9d1ece8c5339c963784f62a43d8f86f1e84eb084debdd8dab0a8af7eb0e72aae",
+  "expect_sha256": "d8965a9f8c419d85e3587cc5ab5ec0798c75e0292036c0896c7d9a6f6aff3907",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -181,6 +181,7 @@
     { "file": "src/css/1134-limb-picker.css", "note": "PART H PHASE 15.1.5 - Release 15a A05, Missing Limb's select as a shared field" },
     { "file": "src/css/1135-grant-actions.css", "note": "PART H PHASE 15.1.6 - Release 15a A06, the grant action group and its state on Zakyo Toshi Citizen and Wealthy" },
     { "file": "src/css/1136-moon-row.css", "note": "PART H PHASE 15.1.7 - Release 15a A07, the Moon row's severity label, full-moon toggle and resist button" },
+    { "file": "src/css/1137-text-edges.css", "note": "PART H PHASE 15.1.11 - Release 15a A11, the Play cards' text edge, the Insight and Spent XP helper gap, and the condition rows' gap" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -515,6 +516,7 @@
     { "file": "src/sheet/209.99999999999999993-feat-limb-picker.js", "note": "PART H PHASE 15.1.5 - Release 15a A05, the switch and the marking of Missing Limb's field" },
     { "file": "src/sheet/209.99999999999999994-feat-grant-actions.js", "note": "PART H PHASE 15.1.6 - Release 15a A06, the switch for the grant action group" },
     { "file": "src/sheet/209.99999999999999995-feat-moon-row.js", "note": "PART H PHASE 15.1.7 - Release 15a A07, the switch for the Moon row" },
+    { "file": "src/sheet/209.99999999999999996-feat-text-edges.js", "note": "PART H PHASE 15.1.11 - Release 15a A11, the switch for helper gaps and the cards' text edge" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -56,3 +56,7 @@ Two earlier harnesses list the production tick providers: Feature 4.5.15 `roll-d
 gained a term for `damage-sessions-xp` that applies only while `DSX4532` is present.
 
 The removal chain registry gained one entry, at its end.
+
+## Release 15a A11 — explanatory text gaps (7 November 2026)
+
+Release 15a A11 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A11 — Explanatory Text Gaps and One Left Edge/`), on the owner's word of 7 November, gives this release's condition row (`.chk4531-row` / `.dsx4532-row`) a 6 px bottom margin while `body.te15-on` is set, so the description no longer sits 2 px under its controls. Stylesheet only; it calls nothing here. This release's harness passes in full with A11 present. A11's stylesheet names this release's row class, so this release's remover may refuse while A11 is present: remove A11 first (the removal chain does so in order).

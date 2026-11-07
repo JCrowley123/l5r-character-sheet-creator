@@ -971,6 +971,9 @@
   // PART H PHASE 15.1.7 BEGIN moon-row-seam
   if(typeof MR15 === 'object' && MR15) Object.assign(window.__L5R_TEST__, {MR15, MOON_ROW_ENABLED});
   // END MR15 moon-row-seam
+  // PART H PHASE 15.1.11 BEGIN text-edges-seam
+  if(typeof TE15 === 'object' && TE15) Object.assign(window.__L5R_TEST__, {TE15, TEXT_EDGES_ENABLED});
+  // END TE15 text-edges-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
