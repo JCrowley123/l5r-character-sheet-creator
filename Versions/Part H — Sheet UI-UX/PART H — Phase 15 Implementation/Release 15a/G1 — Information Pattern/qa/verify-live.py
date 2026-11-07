@@ -27,7 +27,7 @@ A03 = R15A / 'A03 — Top-Aligned Columns and Compact Skill Cards' / 'qa'
 # Each G1 unit: its marker, and its own harness plus the harnesses of the layers it touches, with their pinned counts.
 UNITS = [('A04', 'PART H PHASE 15.1.4'), ('A15', 'PART H PHASE 15.1.15'), ('A16', 'PART H PHASE 15.1.16'), ('A03.1', 'PART H PHASE 15.1.3.1')]
 TOUCHED = {
-    'A04': [(R15A / 'A04 — One Information Pattern/qa/info-pattern-harness.js', 33),
+    'A04': [(R15A / 'A04 — One Information Pattern/qa/info-pattern-harness.js', 35),
             (V / 'PART I — Phase 4.5.4 Configuration UX Pass/qa/adv-config-ux-harness.js', 28),
             (V / 'PART I — Phase 4.5.14 Darling of the Court and Servant/qa/court-servant-harness.js', 225),
             (V / 'PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/weakness-hotei-harness.js', 45),
@@ -172,7 +172,7 @@ def main():
               'page_sha256': hashlib.sha256(actual).hexdigest(), 'page_bytes': len(actual),
               'service_worker_build': sw_id, 'service_worker_sha256': hashlib.sha256(sw).hexdigest(),
               'g1_units': present, 'expected': {'harnesses': EXPECT[0], 'checks': EXPECT[1]}, 'harnesses': results, 'passed': passed}
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     (OUT / ('files-only.json' if FILES_ONLY else 'live-verification.json')).write_bytes((json.dumps(report, indent=2) + '\n').encode('utf-8'))
     (OUT / 'live-qa.log').write_bytes(('\n'.join(lines).rstrip() + '\n').encode('utf-8'))
     print(json.dumps({k: v for k, v in report.items() if k not in ('harnesses', 'downloaded_asset_sha256')}, indent=2))
