@@ -50,6 +50,8 @@ The owner's decisions (7 November):
 2. **The summaries are written later, from a read pass of the rules.** First the rules are read so they are clearly known, then each summary is written from that read. The rewrite is deferred.
 3. **Bishamon's Clan-coloured note becomes plain summary text,** like everything else.
 
+**Timing (owner, 7 November): A04.2 waits until the rules read pass is done,** so it ships with the new summaries rather than the rule text first.
+
 Scope to measure at its inventory: about 20 configured entries across about 10 earlier phases, many of whose harnesses pin the row text.
 
 ## Usage (Claude, account-wide, five-hour / weekly)
