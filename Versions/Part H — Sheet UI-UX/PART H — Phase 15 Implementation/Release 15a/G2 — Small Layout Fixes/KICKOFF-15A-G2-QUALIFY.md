@@ -77,13 +77,11 @@ export PYTHONUTF8=1
 ### 0. Before qualifying
 
 - **The owner re-checks check 15** on the A04.1 preview. If it fails, revise A04.1 as before: its folder, its harness, its preview.
-- **Close a timing race in A03's harness first.** A03's `MANAGE-EDITS-WORK` (in `Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/qa/compact-skills-harness.js`) failed once, on the A11 preview:
-  - it taps Iaijutsu's Rank, confirms the field has focus, and types 7, but the field still held 5;
-  - `PLAY-MASTERIES-REACHED` then failed because it depends on that Rank;
-  - the same harness gave 37/37 on the identical page.
-- The keys went elsewhere: focus moved between the tap and the typing. Find what moves it (a redraw, an autosave, a carousel settle) and make the harness wait for a stable, focused field before typing.
-  - This is a declared harness fix in A03's ROLLBACK: same ids and counts, no loosening.
-  - **Reason:** the single full pass may not be re-run.
+- **A03's timing race: addressed on 7 November (Claude), with a declared harness synchronisation fix.**
+  - A03's `MANAGE-EDITS-WORK` failed once, on the A11 preview: the keys typed into Iaijutsu's Rank went nowhere, and `PLAY-MASTERIES-REACHED` followed.
+  - Measured: the Skills table redraws parts of its rows about 130 ms after a Rank changes, later than the harness's two-frame `settle()`.
+  - A03's `type()` now waits until the table has had no DOM change for 300 ms (at most 3 s) before tapping. Same ids and count, 37/37 on G2's build and on G1. It is declared in A03's ROLLBACK.
+  - The exact handler that moved the focus was not identified. If the race shows again in the variant discovery or the chain, stop and find it before the full pass.
 
 ### 1. Qualify once (screen-only tier)
 

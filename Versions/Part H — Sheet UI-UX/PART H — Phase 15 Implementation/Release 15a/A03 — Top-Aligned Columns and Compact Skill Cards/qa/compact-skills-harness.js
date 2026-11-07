@@ -202,7 +202,20 @@ async function tap(page, name, selector) { await (await el(page, name, selector)
 // holds exactly the typed value before leaving it. Ctrl+A straight after a tap does not always select a number field's
 // text in Chromium's touch emulation (found by the variant discovery: "7" typed into "5" became "75", and Release 8's
 // rank-spell offer opened over the page), so it is not relied on.
+// The Skills table redraws parts of its rows about 130 ms after a Rank changes (measured 7 November 2026), later than
+// settle()'s two frames. G2's A11 preview once saw the keys typed into Iaijutsu's Rank go nowhere (the field held 5) in
+// MANAGE-EDITS-WORK, straight after the previous check had changed a Rank. So before tapping a field to type, wait
+// until the table has had no DOM change for 300 ms (at most 3 s). Synchronisation only: no assertion changes.
+const quiet = page => page.evaluate(() => new Promise(resolve => {
+  const body = document.getElementById('skillsBody') || document.body, start = performance.now();
+  let timer = null;
+  const mo = new MutationObserver(() => { clearTimeout(timer); if (performance.now() - start > 3000) done(); else timer = setTimeout(done, 300); });
+  function done() { mo.disconnect(); clearTimeout(timer); resolve(); }
+  mo.observe(body, {childList: true, subtree: true});
+  timer = setTimeout(done, 300);
+}));
 async function type(page, name, selector, value) {
+  await quiet(page);
   const e = await el(page, name, selector);
   await e.tap();
   if (!await e.evaluate(x => document.activeElement === x)) throw new Error('the tap did not focus ' + selector + ' in ' + name);
