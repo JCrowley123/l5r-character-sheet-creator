@@ -950,6 +950,9 @@
   // PART H PHASE 15.1.3 BEGIN compact-skills-seam
   if(typeof CS15 === 'object' && CS15) Object.assign(window.__L5R_TEST__, {CS15, COMPACT_SKILL_CARDS_ENABLED});
   // END CS15 compact-skills-seam
+  // PART H PHASE 15.1.4 BEGIN info-pattern-seam
+  if(typeof IP15 === 'object' && IP15) Object.assign(window.__L5R_TEST__, {IP15, ONE_INFO_PATTERN_ENABLED});
+  // END IP15 info-pattern-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

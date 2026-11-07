@@ -5,3 +5,5 @@ Quickest: set `HOTEI_AUTOMATIC_ENABLED = false` and rebuild; the sheet then beha
 Full removal: run `qa/remove-phase.py` on a scratch copy of the Phase 0 tree, never the live one (it refuses the live tree). Later releases come off first through `QA — Removal Chain Registry/removal_chain.py` (`strip_later`). It removes this layer's fragments, their manifest entries and the `hotei-seam` seam block, then the rebuild is exactly `7a4d598996dbae3a5a164263e261bd93e9516795214c17bf87a44458b681ef46`, 17,351,774 bytes.
 
 The surface check skips base64 neighbours (`+` and `/`): the PDF font fragment's data holds short tags such as AG7 and AP7 between them.
+
+**Read by a later unit:** Release 15a A04 — One Information Pattern (7 November 2026, `Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/`) folds this layer's `.ht7-note` behind Hotei's row i, word for word. It calls nothing here, and this remover does not name that class, so either can be removed first.

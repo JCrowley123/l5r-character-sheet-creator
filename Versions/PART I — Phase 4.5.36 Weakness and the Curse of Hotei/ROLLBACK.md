@@ -36,3 +36,5 @@ without this layer they assert the original expectations. Their pre-change copie
 - **Feature 4.5.33 (`VI4533`)**: Momoku closes the two-point spend as it closes the whole card (read guarded).
 - **Feature 4.5.12 (Bishamon), 4.5.29 (Bad Health), 4.5.31 (Blind)** read the lowered values through the trunk; no
   edit to any of them.
+
+- **Release 15a A04 — One Information Pattern** (7 November 2026, `Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/`) folds this phase's `.hotei4536-note` behind Hotei's row i, word for word. It calls nothing here. This phase's remover matches `hotei4536-` as its surface, so it refuses while A04 is present: remove A04 first (the removal chain does so in order). No edit to this phase's fragment is required.

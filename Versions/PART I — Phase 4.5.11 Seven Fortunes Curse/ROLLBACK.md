@@ -85,6 +85,8 @@ Nothing. No other phase references `F4511`, `fortune4511*`, `fortunePick` or any
 `.fortune4511-*` class, except the fixture corrections listed below, all of which are written to
 read correctly with this phase absent.
 
+**Since 7 November 2026:** Release 15a A04 — One Information Pattern (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/`) reads `.fortune4511-badge.fortune4511-eff-voidDouble` to find Hotei's row. It folds the rule and the two notes behind an i placed after the badge. It reads the badge only (guarded) and changes nothing here. This phase's remover still runs with A04 present (dry run, 7 November).
+
 ---
 
 ## Cross-phase fixture corrections

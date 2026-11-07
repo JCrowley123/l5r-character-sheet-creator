@@ -94,3 +94,5 @@ undoing it; if it is undone, do it with this part removed.
 ## Release 8b / SC8 dependency (1 November 2026)
 
 The independently removable layer in `Versions/PART K — Phase 11.2.5 School Choices from the Character Check/` uses this phase to complete starting School choices from Manage. Remove SC8 before removing this prerequisite, or explicitly sever its adapter first. SC8 has its own fragment, switch, seam, remover and tests; removing SC8 alone preserves this phase unchanged.
+
+- **Release 15a A04 — One Information Pattern** (7 November 2026, `Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/`) reads this part's `pm12-play` body class and its `data-pm12-locked` attribute in its own stylesheet. In Play it hides an information button that A04 moved out of a locked control, as it was hidden inside it before. It calls nothing here. Without this part nothing is locked and the button always shows. Its stylesheet names `pm12-play`, so this part's remover refuses while it is present: remove A04 first (the removal chain does so in order).

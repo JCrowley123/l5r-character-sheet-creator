@@ -1,0 +1,120 @@
+/* PART H PHASE 15.1.4 — Release 15a A04: one information pattern (mock-ups approved 6 November 2026).
+   The standard is the upright circled i the A01-A16 Advantages already draw: a 28 px ring in the ink colour with an
+   upright serif i. Here it replaces the Skill Info eye and the Kiho note's ⓘ (.sk-info-btn), the Void Points eye
+   (.void-eye-btn) and Phase 4.54's (Part I) small gold italic i (.adv-config-info), and draws Hotei's row button.
+   Each keeps a 44 x 44 px touch area: the ring is 28 px and a transparent ::before reaches 8 px past it.
+   The glyph is an ::after; the eyes' own text is hidden (font-size 0), not removed, so no textContent changes.
+   Everything waits for body.ip15-on, which this unit's switch sets. The selectors carry html, the body class and a
+   :not() so they outrank the carousel's touch-size rule (body.car-active .car-page .sk-info-btn) without !important.
+   The Combat tab's formula i shares .sk-info-btn and is left as it is (outside A04's areas). Screen only: print
+   already hides these buttons. */
+@media screen {
+  html body.ip15-on .sk-info-btn:not(.combat-formula-info),
+  html body.ip15-on .void-eye-btn:not(.combat-formula-info) {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    width: 28px;
+    min-width: 28px;
+    max-width: 28px;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    font-family: Georgia, serif;
+    font-size: 0;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  html body.ip15-on .adv-config-info:not(.combat-formula-info),
+  html body.ip15-on .ip15-hotei-info:not(.combat-formula-info) {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    width: 28px;
+    min-width: 28px;
+    max-width: 28px;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    margin-left: 8px;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    font-family: Georgia, serif;
+    font-size: 0;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  html body.ip15-on .sk-info-btn:not(.combat-formula-info)::after,
+  html body.ip15-on .void-eye-btn:not(.combat-formula-info)::after,
+  html body.ip15-on .adv-config-info:not(.combat-formula-info)::after,
+  html body.ip15-on .ip15-hotei-info:not(.combat-formula-info)::after {
+    content: 'i';
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+  }
+  html body.ip15-on .sk-info-btn:not(.combat-formula-info)::before,
+  html body.ip15-on .void-eye-btn:not(.combat-formula-info)::before,
+  html body.ip15-on .adv-config-info:not(.combat-formula-info)::before,
+  html body.ip15-on .ip15-hotei-info:not(.combat-formula-info)::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+  }
+  html body.ip15-on .sk-info-btn:not(.combat-formula-info):hover,
+  html body.ip15-on .void-eye-btn:not(.combat-formula-info):hover,
+  html body.ip15-on .adv-config-info:not(.combat-formula-info):hover,
+  html body.ip15-on .ip15-hotei-info:not(.combat-formula-info):hover {
+    background: rgba(42, 36, 32, .08);
+    color: var(--ink);
+  }
+  html body.ip15-on .sk-info-btn:not(.combat-formula-info):focus-visible,
+  html body.ip15-on .void-eye-btn:not(.combat-formula-info):focus-visible,
+  html body.ip15-on .adv-config-info:not(.combat-formula-info):focus-visible,
+  html body.ip15-on .ip15-hotei-info:not(.combat-formula-info):focus-visible {
+    outline: 2px solid var(--shu);
+    outline-offset: 2px;
+  }
+  /* An i moved out of a control that Phase 12 (Part K) locks in Play is hidden with it, as it was inside it. The
+     8 px gap above matches the touch area's 8 px reach, so the i's area never covers the control beside it. */
+  html body.ip15-on.pm12-play [data-pm12-locked] + .adv-config-info {
+    display: none;
+  }
+  /* Hotei: the rule and the two instructions are behind the i; one line says what the Curse does. */
+  html body.ip15-on .adv-config-row .ip15-folded {
+    display: none;
+  }
+  html body.ip15-on .adv-config-row .ip15-hotei-line {
+    flex: 1 1 100%;
+    min-width: 0;
+    margin-top: 4px;
+    font-size: .85rem;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  html body.ip15-on .adv-config-row .ip15-hotei-line::after {
+    content: attr(data-ip15-line);
+  }
+}

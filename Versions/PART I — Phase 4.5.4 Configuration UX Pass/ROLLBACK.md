@@ -99,6 +99,8 @@ script does that for you, a manual removal does not.
 **No markup.** This phase adds no element to any `src/markup/` file; every node it creates is
 made at runtime and disappears with the fragment.
 
+**Wrapped by a later unit:** Release 15a A04 — One Information Pattern (7 November 2026, `Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/`) wraps `R454.decorate` by property. After it runs, A04 moves any `.adv-config-info` that sits inside a button, link or `[role=button]` to just after that control (hidden with it in Play when Phase 12 (Part K) locks the control), and it restyles `.adv-config-info` as the standard circled i. Without A04 the decorator behaves exactly as described here. This phase's remover names nothing of A04's, and its harness passes 28/28 with A04 present.
+
 ## A note for whoever edits Phase 4.5.2's row renderer
 
 Two strings in this phase's `R454.SUMMARY_TEXT` are matched against the **painted** summary node,
