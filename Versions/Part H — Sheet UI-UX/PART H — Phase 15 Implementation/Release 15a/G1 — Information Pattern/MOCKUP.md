@@ -111,3 +111,4 @@ These are scratch prototypes injected into today's build. The boards are `G1-A04
 | 6 Nov 17:37 | 32% | 62% | G1 start |
 | 6 Nov 17:56 | 44% | 64% | after reproduction and mockups |
 | 6 Nov 23:52 | 7% (new window) | 65% | after revision 2 |
+| 7 Nov 01:24 | 59% | 72% | four units built and light-checked, before the review |
