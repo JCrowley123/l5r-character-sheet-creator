@@ -1,0 +1,46 @@
+  detail CB-TAP-PUTS-IN-SESSION-PHONE: {"config":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Toshi Ranbo","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"pressed":["false","false","false"],"names":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"status":"Status 3 as normal — no court in session.","status_rank":"3","focus":"Toshi Ranbo"}
+  detail CB-FILL-IN-CLAN-COLOUR-PHONE: {"bg":"rgb(239, 231, 212)","shu":"rgb(33, 85, 125)","want":"rgb(33, 85, 125)","fg":"rgb(42, 36, 32)","paper":"rgb(239, 231, 212)","bold":400,"ratio":12.43111172833325,"others":[true,true]}
+  detail CB-ONE-AT-A-TIME-PHONE: {"config":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Otosan Uchi","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"pressed":["false","false","false"],"names":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"status":"Status 3 as normal — no court in session.","status_rank":"3","focus":"Otosan Uchi"}
+  detail CB-PLAY-PHONE: {"r":{"add":[false],"badges":[true,true,true]},"s":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+  detail CB-KEYBOARD-PHONE: {"off":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"on":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"focus":"Kyuden Doji"}
+  detail CB-SAVE-ROUND-TRIP-PHONE: {"saved":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"before":["false","false","false"],"after":["false","false","false"],"cfg":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+  detail CB-TAP-PUTS-IN-SESSION-DESKTOP: {"config":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Toshi Ranbo","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"pressed":["false","false","false"],"names":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"status":"Status 3 as normal — no court in session.","status_rank":"3","focus":"Toshi Ranbo"}
+  detail CB-FILL-IN-CLAN-COLOUR-DESKTOP: {"bg":"rgb(239, 231, 212)","shu":"rgb(33, 85, 125)","want":"rgb(33, 85, 125)","fg":"rgb(42, 36, 32)","paper":"rgb(239, 231, 212)","bold":400,"ratio":12.43111172833325,"others":[true,true]}
+  detail CB-ONE-AT-A-TIME-DESKTOP: {"config":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Otosan Uchi","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"pressed":["false","false","false"],"names":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"status":"Status 3 as normal — no court in session.","status_rank":"3","focus":"Otosan Uchi"}
+  detail CB-PLAY-DESKTOP: {"r":{"add":[false],"badges":[true,true,true]},"s":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+  detail CB-KEYBOARD-DESKTOP: {"off":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"on":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"focus":"Kyuden Doji"}
+  detail CB-SAVE-ROUND-TRIP-DESKTOP: {"saved":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"before":["false","false","false"],"after":["false","false","false"],"cfg":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+PASS CB-SEAM-PHONE
+PASS CB-ONE-BADGE-PER-COURT-PHONE
+PASS CB-IDLE-LOOK-PHONE
+FAIL CB-TAP-PUTS-IN-SESSION-PHONE
+FAIL CB-FILL-IN-CLAN-COLOUR-PHONE
+PASS CB-TAP-AGAIN-ENDS-SESSION-PHONE
+FAIL CB-ONE-AT-A-TIME-PHONE
+PASS CB-TOUCH-44-PHONE
+PASS CB-ADD-COURT-PHONE
+FAIL CB-PLAY-PHONE
+FAIL CB-KEYBOARD-PHONE
+FAIL CB-SAVE-ROUND-TRIP-PHONE
+PASS CB-WORDS-PHONE
+PASS CB-CLASS-GATES-PHONE
+PASS CB-NO-ERRORS-PHONE
+PASS CB-SEAM-DESKTOP
+PASS CB-ONE-BADGE-PER-COURT-DESKTOP
+PASS CB-IDLE-LOOK-DESKTOP
+FAIL CB-TAP-PUTS-IN-SESSION-DESKTOP
+FAIL CB-FILL-IN-CLAN-COLOUR-DESKTOP
+PASS CB-TAP-AGAIN-ENDS-SESSION-DESKTOP
+FAIL CB-ONE-AT-A-TIME-DESKTOP
+PASS CB-TOUCH-44-DESKTOP
+PASS CB-ADD-COURT-DESKTOP
+FAIL CB-PLAY-DESKTOP
+FAIL CB-KEYBOARD-DESKTOP
+FAIL CB-SAVE-ROUND-TRIP-DESKTOP
+PASS CB-WORDS-DESKTOP
+PASS CB-CLASS-GATES-DESKTOP
+PASS CB-NO-ERRORS-DESKTOP
+PASS CB-EVERY-CLAN-COLOUR
+PASS CB-LONG-NAME-FITS
+PASS CB-DUPLICATE-ROW-NO-BADGES
+21/33 checks passed

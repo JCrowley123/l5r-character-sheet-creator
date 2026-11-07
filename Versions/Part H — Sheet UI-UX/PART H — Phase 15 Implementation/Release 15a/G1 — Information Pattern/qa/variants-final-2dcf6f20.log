@@ -1,0 +1,27 @@
+21 mutations unique.
+A04:baseline: failed exactly its 27 pinned checks
+A15:baseline: failed exactly its 30 pinned checks
+A16:baseline: failed exactly its 18 pinned checks
+A03.1:baseline: failed exactly its 15 pinned checks
+A04:disabled: failed exactly its 27 pinned checks
+A04:no-unnest: failed exactly its 8 pinned checks
+A04:lone-i-in-play: failed exactly its 2 pinned checks
+A04:no-names: failed exactly its 11 pinned checks
+A04:hotei-unfolded: failed exactly its 2 pinned checks
+A04:small-touch-area: failed exactly its 6 pinned checks
+A15:disabled: failed exactly its 30 pinned checks
+A15:tap-not-in-session: failed exactly its 12 pinned checks
+A15:gold-fill: failed exactly its 3 pinned checks
+A15:no-add-court: failed exactly its 7 pinned checks
+A15:add-court-in-play: failed exactly its 2 pinned checks
+A15:tick-box-kept: failed exactly its 2 pinned checks
+A15:old-help-words: failed exactly its 2 pinned checks
+A16:disabled: failed exactly its 18 pinned checks
+A16:hidden-not-removed: failed exactly its 16 pinned checks
+A16:note-hidden-too: failed exactly its 14 pinned checks
+A03.1:disabled: failed exactly its 15 pinned checks
+A03.1:reached-not-coloured: failed exactly its 2 pinned checks
+A03.1:tier-seven-missing: failed exactly its 8 pinned checks
+A03.1:reached-off-by-one: failed exactly its 6 pinned checks
+A03.1:no-none-message: failed exactly its 3 pinned checks
+All 25 negative variants matched their pinned failures.

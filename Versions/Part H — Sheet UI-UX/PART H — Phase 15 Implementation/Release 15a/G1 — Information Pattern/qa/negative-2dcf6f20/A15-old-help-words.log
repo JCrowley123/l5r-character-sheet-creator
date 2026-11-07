@@ -1,0 +1,36 @@
+  detail CB-WORDS-PHONE: {"help":"Core p.148 — reference, not an automatic effect.\n\nChoose a court. While you attend it and its court is in session, your Status counts as one Rank higher there. Your actual Status Rank, and everything calculated from it, is unchanged.\n\nYou may buy this again for a different court, but only once for any particular court. Each court costs 2 XP, or 1 XP for a Courtier.\n\nExamples, not a complete list: the court of Kyuden Bayushi; the court of Toshi Ranbo’s Okura district.\n\nThis sheet shows the higher Status only for the one court you select, and only while “Court in session” is ticked.\n\nCourtier price: does not apply — no Courtier School recorded. A School counts when its name or its bracketed type says Courtier.","note":"Each court is a separate purchase: 2 XP each, 1 XP for a Courtier. A court can be listed only once. On the sheet, tap a court to put it in session."}
+  detail CB-WORDS-DESKTOP: {"help":"Core p.148 — reference, not an automatic effect.\n\nChoose a court. While you attend it and its court is in session, your Status counts as one Rank higher there. Your actual Status Rank, and everything calculated from it, is unchanged.\n\nYou may buy this again for a different court, but only once for any particular court. Each court costs 2 XP, or 1 XP for a Courtier.\n\nExamples, not a complete list: the court of Kyuden Bayushi; the court of Toshi Ranbo’s Okura district.\n\nThis sheet shows the higher Status only for the one court you select, and only while “Court in session” is ticked.\n\nCourtier price: does not apply — no Courtier School recorded. A School counts when its name or its bracketed type says Courtier.","note":"Each court is a separate purchase: 2 XP each, 1 XP for a Courtier. A court can be listed only once. On the sheet, tap a court to put it in session."}
+PASS CB-SEAM-PHONE
+PASS CB-ONE-BADGE-PER-COURT-PHONE
+PASS CB-IDLE-LOOK-PHONE
+PASS CB-TAP-PUTS-IN-SESSION-PHONE
+PASS CB-FILL-IN-CLAN-COLOUR-PHONE
+PASS CB-TAP-AGAIN-ENDS-SESSION-PHONE
+PASS CB-ONE-AT-A-TIME-PHONE
+PASS CB-TOUCH-44-PHONE
+PASS CB-ADD-COURT-PHONE
+PASS CB-PLAY-PHONE
+PASS CB-KEYBOARD-PHONE
+PASS CB-SAVE-ROUND-TRIP-PHONE
+FAIL CB-WORDS-PHONE
+PASS CB-CLASS-GATES-PHONE
+PASS CB-NO-ERRORS-PHONE
+PASS CB-SEAM-DESKTOP
+PASS CB-ONE-BADGE-PER-COURT-DESKTOP
+PASS CB-IDLE-LOOK-DESKTOP
+PASS CB-TAP-PUTS-IN-SESSION-DESKTOP
+PASS CB-FILL-IN-CLAN-COLOUR-DESKTOP
+PASS CB-TAP-AGAIN-ENDS-SESSION-DESKTOP
+PASS CB-ONE-AT-A-TIME-DESKTOP
+PASS CB-TOUCH-44-DESKTOP
+PASS CB-ADD-COURT-DESKTOP
+PASS CB-PLAY-DESKTOP
+PASS CB-KEYBOARD-DESKTOP
+PASS CB-SAVE-ROUND-TRIP-DESKTOP
+FAIL CB-WORDS-DESKTOP
+PASS CB-CLASS-GATES-DESKTOP
+PASS CB-NO-ERRORS-DESKTOP
+PASS CB-EVERY-CLAN-COLOUR
+PASS CB-LONG-NAME-FITS
+PASS CB-DUPLICATE-ROW-NO-BADGES
+31/33 checks passed

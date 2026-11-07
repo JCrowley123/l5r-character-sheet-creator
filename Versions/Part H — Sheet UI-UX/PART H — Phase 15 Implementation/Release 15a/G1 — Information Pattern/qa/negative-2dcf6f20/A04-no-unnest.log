@@ -1,0 +1,44 @@
+  detail IP-ADV-NOT-NESTED-PHONE-PLAY: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Choose…<","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Ch","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[]}
+  detail IP-ADV-NOT-NESTED-PHONE-MANAGEMENT: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-config-i","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-co","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[]}
+  detail IP-PLAY-NO-LONE-I-PHONE: {"r":[],"m":[]}
+  detail IP-CHOOSE-PHONE: {"wealthy":{"label":null,"isInfo":false,"title":"Wealthy — choose how many Ranks.","hostText":"Choose…","reach":[]},"info":{"body":"Wealthy — choose how many Ranks.","overlay":"flex","picker":"none"},"picker":"flex"}
+  detail IP-ADV-NOT-NESTED-DESKTOP-PLAY: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Choose…<","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\" disabled=\"\" data-pm12-locked=\"disabled\">Ch","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[]}
+  detail IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT: {"nested":3,"hosts":4,"lonely":["<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Wealthy — choose how many Ranks.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-config-i","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"Name the person, then choose the Rank.\" data-ux-info=\"done\">Choose…<button type=\"button\" class=\"adv-co","<button type=\"button\" class=\"ghost adv-config-btn\" title=\"One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. St"],"rings":[]}
+  detail IP-PLAY-NO-LONE-I-DESKTOP: {"r":[],"m":[]}
+  detail IP-CHOOSE-DESKTOP: {"wealthy":{"label":null,"isInfo":false,"title":"Wealthy — choose how many Ranks.","hostText":"Choose…","reach":[]},"info":{"body":"Wealthy — choose how many Ranks.","overlay":"flex","picker":"none"},"picker":"flex"}
+PASS IP-SEAM-PHONE
+PASS IP-SEAM-DESKTOP
+PASS IP-SKILL-RING-PHONE-PLAY
+PASS IP-SKILL-RING-PHONE-MANAGEMENT
+PASS IP-SKILL-RING-DESKTOP-PLAY
+PASS IP-SKILL-RING-DESKTOP-MANAGEMENT
+PASS IP-SKILL-TOUCH-PHONE
+PASS IP-SKILL-TOUCH-DESKTOP
+PASS IP-SKILL-OPENS-PHONE
+PASS IP-SKILL-OPENS-DESKTOP
+PASS IP-SKILL-RENAME
+PASS IP-VOID-PHONE
+PASS IP-VOID-DESKTOP
+PASS IP-KIHO-PHONE
+PASS IP-KIHO-DESKTOP
+PASS IP-COMBAT-UNCHANGED-PHONE
+PASS IP-COMBAT-UNCHANGED-DESKTOP
+FAIL IP-ADV-NOT-NESTED-PHONE-PLAY
+FAIL IP-ADV-NOT-NESTED-PHONE-MANAGEMENT
+FAIL IP-ADV-NOT-NESTED-DESKTOP-PLAY
+FAIL IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT
+FAIL IP-PLAY-NO-LONE-I-PHONE
+FAIL IP-CHOOSE-PHONE
+FAIL IP-PLAY-NO-LONE-I-DESKTOP
+FAIL IP-CHOOSE-DESKTOP
+PASS IP-MODAL-NOT-NESTED
+PASS IP-HOTEI-ROW-PHONE
+PASS IP-HOTEI-ROW-DESKTOP
+PASS IP-HOTEI-PANEL-PHONE
+PASS IP-HOTEI-PANEL-DESKTOP
+PASS IP-CLASS-GATES-PHONE
+PASS IP-CLASS-GATES-DESKTOP
+PASS IP-NO-ERRORS-PHONE
+PASS IP-NO-ERRORS-DESKTOP
+PASS IP-OTHER-FORTUNE-UNCHANGED
+27/35 checks passed

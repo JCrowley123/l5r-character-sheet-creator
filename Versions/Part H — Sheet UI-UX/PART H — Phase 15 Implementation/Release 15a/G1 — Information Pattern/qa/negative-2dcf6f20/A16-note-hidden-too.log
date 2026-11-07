@@ -1,0 +1,65 @@
+  detail BI-A01-NOTE-SHOWN-PHONE: {"shown":false,"text":"The Clans listed for a Fortune pay 1 XP less. Open \"Rule\" on any Fortune to read what it does."}
+  detail BI-A03-NOTE-SHOWN-PHONE: {"shown":false,"text":"Once per session: 5 Honor points, or a Void Point only without them. Changing the precept does not reset this session’s use."}
+  detail BI-A04-NOTE-SHOWN-PHONE: {"shown":false,"text":"Each court is a separate purchase: 2 XP each, 1 XP for a Courtier. A court can be listed only once. On the sheet, tap a court to put it in session."}
+  detail BI-A09-NOTE-SHOWN-PHONE: {"shown":false,"text":"Reminder only: the sheet records your tenet but changes no dice, Void or Honor. Whenever you gain Honor for showing it, add 1 more yourself."}
+  detail BI-A12-NOTE-SHOWN-PHONE: {"shown":false,"text":"A matching Skill you have no Rank in rolls as Rank 1 (10s explode). Trained Skills and bought Ranks are unchanged."}
+  detail BI-A13-NOTE-SHOWN-PHONE: {"shown":false,"text":"Shugenja price shown. The book gives only “Shugenja pay 4”; this sheet reads that as 1 XP less, so a Shugenja pays 7 for Toshigoku and 6 for Yomi. You may want to confirm this price with your GM."}
+  detail BI-A14-NOTE-SHOWN-PHONE: {"shown":false,"text":"That Ring's spell slots may also pay for Void spells. The spell is still cast as Void. Not in effect on this character yet: Requires a Void Affinity — your School's Affinity is Earth."}
+  detail BI-A01-NOTE-SHOWN-DESKTOP: {"shown":false,"text":"The Clans listed for a Fortune pay 1 XP less. Open \"Rule\" on any Fortune to read what it does."}
+  detail BI-A03-NOTE-SHOWN-DESKTOP: {"shown":false,"text":"Once per session: 5 Honor points, or a Void Point only without them. Changing the precept does not reset this session’s use."}
+  detail BI-A04-NOTE-SHOWN-DESKTOP: {"shown":false,"text":"Each court is a separate purchase: 2 XP each, 1 XP for a Courtier. A court can be listed only once. On the sheet, tap a court to put it in session."}
+  detail BI-A09-NOTE-SHOWN-DESKTOP: {"shown":false,"text":"Reminder only: the sheet records your tenet but changes no dice, Void or Honor. Whenever you gain Honor for showing it, add 1 more yourself."}
+  detail BI-A12-NOTE-SHOWN-DESKTOP: {"shown":false,"text":"A matching Skill you have no Rank in rolls as Rank 1 (10s explode). Trained Skills and bought Ranks are unchanged."}
+  detail BI-A13-NOTE-SHOWN-DESKTOP: {"shown":false,"text":"Shugenja price shown. The book gives only “Shugenja pay 4”; this sheet reads that as 1 XP less, so a Shugenja pays 7 for Toshigoku and 6 for Yomi. You may want to confirm this price with your GM."}
+  detail BI-A14-NOTE-SHOWN-DESKTOP: {"shown":false,"text":"That Ring's spell slots may also pay for Void spells. The spell is still cast as Void. Not in effect on this character yet: Requires a Void Affinity — your School's Affinity is Earth."}
+PASS BI-SEAM-PHONE
+PASS BI-A01-NOT-DRAWN-PHONE
+FAIL BI-A01-NOTE-SHOWN-PHONE
+PASS BI-A01-NOTHING-LOST-PHONE
+PASS BI-A03-NOT-DRAWN-PHONE
+FAIL BI-A03-NOTE-SHOWN-PHONE
+PASS BI-A03-NOTHING-LOST-PHONE
+PASS BI-A04-NOT-DRAWN-PHONE
+FAIL BI-A04-NOTE-SHOWN-PHONE
+PASS BI-A04-NOTHING-LOST-PHONE
+PASS BI-A09-NOT-DRAWN-PHONE
+FAIL BI-A09-NOTE-SHOWN-PHONE
+PASS BI-A09-NOTHING-LOST-PHONE
+PASS BI-A12-NOT-DRAWN-PHONE
+FAIL BI-A12-NOTE-SHOWN-PHONE
+PASS BI-A12-NOTHING-LOST-PHONE
+PASS BI-A13-NOT-DRAWN-PHONE
+FAIL BI-A13-NOTE-SHOWN-PHONE
+PASS BI-A13-NOTHING-LOST-PHONE
+PASS BI-A14-NOT-DRAWN-PHONE
+FAIL BI-A14-NOTE-SHOWN-PHONE
+PASS BI-A14-NOTHING-LOST-PHONE
+PASS BI-CLASS-GATES-PHONE
+PASS BI-OTHER-PICKERS-UNTOUCHED-PHONE
+PASS BI-NO-ERRORS-PHONE
+PASS BI-SEAM-DESKTOP
+PASS BI-A01-NOT-DRAWN-DESKTOP
+FAIL BI-A01-NOTE-SHOWN-DESKTOP
+PASS BI-A01-NOTHING-LOST-DESKTOP
+PASS BI-A03-NOT-DRAWN-DESKTOP
+FAIL BI-A03-NOTE-SHOWN-DESKTOP
+PASS BI-A03-NOTHING-LOST-DESKTOP
+PASS BI-A04-NOT-DRAWN-DESKTOP
+FAIL BI-A04-NOTE-SHOWN-DESKTOP
+PASS BI-A04-NOTHING-LOST-DESKTOP
+PASS BI-A09-NOT-DRAWN-DESKTOP
+FAIL BI-A09-NOTE-SHOWN-DESKTOP
+PASS BI-A09-NOTHING-LOST-DESKTOP
+PASS BI-A12-NOT-DRAWN-DESKTOP
+FAIL BI-A12-NOTE-SHOWN-DESKTOP
+PASS BI-A12-NOTHING-LOST-DESKTOP
+PASS BI-A13-NOT-DRAWN-DESKTOP
+FAIL BI-A13-NOTE-SHOWN-DESKTOP
+PASS BI-A13-NOTHING-LOST-DESKTOP
+PASS BI-A14-NOT-DRAWN-DESKTOP
+FAIL BI-A14-NOTE-SHOWN-DESKTOP
+PASS BI-A14-NOTHING-LOST-DESKTOP
+PASS BI-CLASS-GATES-DESKTOP
+PASS BI-OTHER-PICKERS-UNTOUCHED-DESKTOP
+PASS BI-NO-ERRORS-DESKTOP
+36/50 checks passed

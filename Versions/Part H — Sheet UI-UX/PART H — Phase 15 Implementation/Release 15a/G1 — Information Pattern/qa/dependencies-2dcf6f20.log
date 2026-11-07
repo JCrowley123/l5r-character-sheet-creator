@@ -1,0 +1,79 @@
+== PART H PHASE 15.1.4 exit 0
+    own     89  [PART H PHASE 15.1.4 +88]  html body.ip15-on .ip15-hotei-info:not(.combat-formula-info):hover {
+    own     93  [PART H PHASE 15.1.4 +92]  html body.ip15-on .sk-info-btn:not(.combat-formula-info):focus-visible,
+    own     94  [PART H PHASE 15.1.4 +93]  html body.ip15-on .void-eye-btn:not(.combat-formula-info):focus-visible,
+    own     95  [PART H PHASE 15.1.4 +94]  html body.ip15-on .adv-config-info:not(.combat-formula-info):focus-visible,
+    own     96  [PART H PHASE 15.1.4 +95]  html body.ip15-on .ip15-hotei-info:not(.combat-formula-info):focus-visible {
+    own    102  [PART H PHASE 15.1.4 +101]  html body.ip15-on.pm12-play [data-pm12-locked] + .adv-config-info {
+    own    106  [PART H PHASE 15.1.4 +105]  html body.ip15-on .adv-config-row .ip15-folded {
+    own    109  [PART H PHASE 15.1.4 +108]  html body.ip15-on .adv-config-row .ip15-hotei-line {
+    own    117  [PART H PHASE 15.1.4 +116]  html body.ip15-on .adv-config-row .ip15-hotei-line::after {
+    own    118  [PART H PHASE 15.1.4 +117]  content: attr(data-ip15-line);
+
+src\sheet\210-test-seam-and-init.js
+    own    953  [PART H PHASE 15.1.4 +0]  // PART H PHASE 15.1.4 BEGIN info-pattern-seam
+    own    954  [PART H PHASE 15.1.4 +1]  if(typeof IP15 === 'object' && IP15) Object.assign(window.__L5R_TEST__, {IP15, ONE_INFO_PATTERN_
+    own    955  [PART H PHASE 15.1.4 +2]  // END IP15 info-pattern-seam
+
+every reference is inside a block PART H PHASE 15.1.4 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.15 exit 0
+t4514-controls .cb15-add {
+    own     35  [PART H PHASE 15.1.15 +34]  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge {
+    own     41  [PART H PHASE 15.1.15 +40]  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge[aria-pressed="true"] {
+    own     49  [PART H PHASE 15.1.15 +48]  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge[aria-pressed="true"]:h
+    own     52  [PART H PHASE 15.1.15 +51]  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-add {
+    own     58  [PART H PHASE 15.1.15 +57]  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge:focus-visible,
+    own     59  [PART H PHASE 15.1.15 +58]  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-add:focus-visible {
+    own     63  [PART H PHASE 15.1.15 +62]  html body.cb15-on.pm12-play #advList .court4514-row .court4514-controls .cb15-add {
+    own     67  [PART H PHASE 15.1.15 +66]  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-add {
+
+src\sheet\210-test-seam-and-init.js
+    own    956  [PART H PHASE 15.1.15 +0]  // PART H PHASE 15.1.15 BEGIN court-badges-seam
+    own    957  [PART H PHASE 15.1.15 +1]  if(typeof CB15 === 'object' && CB15) Object.assign(window.__L5R_TEST__, {CB15, COURT_BADGES_ENAB
+    own    958  [PART H PHASE 15.1.15 +2]  // END CB15 court-badges-seam
+
+every reference is inside a block PART H PHASE 15.1.15 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.16 exit 0
+fragment : src/sheet/209.99999999999999991-feat-picker-bottom-info.js
+marker   : PART H PHASE 15.1.16
+surface  : 5 name(s) -- 1132-picker-bottom-info, BI15, PICKER_BOTTOM_INFO_REMOVED_ENABLED, bi15-on, picker-bottom-info-seam
+
+src\css\1132-picker-bottom-info.css
+    own      7  [PART H PHASE 15.1.16 +6]  Waits for body.bi15-on, which this unit's switch sets. */
+    own      8  [PART H PHASE 15.1.16 +7]  html body.bi15-on #advConfigGrid > .fb4521-info,
+    own      9  [PART H PHASE 15.1.16 +8]  html body.bi15-on #advConfigGrid > .dp4523-info,
+    own     10  [PART H PHASE 15.1.16 +9]  html body.bi15-on #advConfigGrid .court4514-editor > .court4514-info,
+    own     11  [PART H PHASE 15.1.16 +10]  html body.bi15-on #advConfigGrid > .p4518-info,
+    own     12  [PART H PHASE 15.1.16 +11]  html body.bi15-on #advConfigGrid > .sa4519-info,
+    own     13  [PART H PHASE 15.1.16 +12]  html body.bi15-on #advConfigGrid > .tr4524-info,
+    own     14  [PART H PHASE 15.1.16 +13]  html body.bi15-on #advConfigGrid > .vv4520-info {
+
+src\sheet\210-test-seam-and-init.js
+    own    959  [PART H PHASE 15.1.16 +0]  // PART H PHASE 15.1.16 BEGIN picker-bottom-info-seam
+    own    960  [PART H PHASE 15.1.16 +1]  if(typeof BI15 === 'object' && BI15) Object.assign(window.__L5R_TEST__, {BI15, PICKER_BOTTOM_INF
+    own    961  [PART H PHASE 15.1.16 +2]  // END BI15 picker-bottom-info-seam
+
+every reference is inside a block PART H PHASE 15.1.16 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.3.1 exit 0
+   5  [PART H PHASE 15.1.3.1 +4]  rests on colour alone. Waits for body.sm15-on, which this unit's switch sets. */
+    own      6  [PART H PHASE 15.1.3.1 +5]  html body.sm15-on #skillInfoModalOverlay .sm15-masteries {
+    own     11  [PART H PHASE 15.1.3.1 +10]  html body.sm15-on #skillInfoModalOverlay .sm15-head {
+    own     19  [PART H PHASE 15.1.3.1 +18]  html body.sm15-on #skillInfoModalOverlay .sm15-list {
+    own     26  [PART H PHASE 15.1.3.1 +25]  html body.sm15-on #skillInfoModalOverlay .sm15-item {
+    own     34  [PART H PHASE 15.1.3.1 +33]  html body.sm15-on #skillInfoModalOverlay .sm15-rank {
+    own     43  [PART H PHASE 15.1.3.1 +42]  html body.sm15-on #skillInfoModalOverlay .sm15-text {
+    own     47  [PART H PHASE 15.1.3.1 +46]  html body.sm15-on #skillInfoModalOverlay .sm15-item.sm15-reached {
+    own     50  [PART H PHASE 15.1.3.1 +49]  html body.sm15-on #skillInfoModalOverlay .sm15-item.sm15-reached .sm15-rank {
+    own     54  [PART H PHASE 15.1.3.1 +53]  html body.sm15-on #skillInfoModalOverlay .sm15-none {
+
+src\sheet\210-test-seam-and-init.js
+    own    962  [PART H PHASE 15.1.3.1 +0]  // PART H PHASE 15.1.3.1 BEGIN skill-masteries-seam
+    own    963  [PART H PHASE 15.1.3.1 +1]  if(typeof SM15 === 'object' && SM15) Object.assign(window.__L5R_TEST__, {SM15, SKILL_MASTERIES_E
+    own    964  [PART H PHASE 15.1.3.1 +2]  // END SM15 skill-masteries-seam
+
+every reference is inside a block PART H PHASE 15.1.3.1 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 4/4
