@@ -959,6 +959,9 @@
   // PART H PHASE 15.1.16 BEGIN picker-bottom-info-seam
   if(typeof BI15 === 'object' && BI15) Object.assign(window.__L5R_TEST__, {BI15, PICKER_BOTTOM_INFO_REMOVED_ENABLED});
   // END BI15 picker-bottom-info-seam
+  // PART H PHASE 15.1.3.1 BEGIN skill-masteries-seam
+  if(typeof SM15 === 'object' && SM15) Object.assign(window.__L5R_TEST__, {SM15, SKILL_MASTERIES_ENABLED});
+  // END SM15 skill-masteries-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

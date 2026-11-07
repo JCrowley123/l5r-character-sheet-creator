@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "f64b6e375665d9e7175a98d70829b8c9afb09646261ddc3574eaae1ff01258ef",
+  "expect_sha256": "2dcf6f20846b0c9ea97b59b94537abda6d510714b3bc1ef6376175056d066af6",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -177,6 +177,7 @@
     { "file": "src/css/1130-one-info-pattern.css", "note": "PART H PHASE 15.1.4 - Release 15a A04, one information pattern: the circled i for the Skill, Void and Advantage information buttons" },
     { "file": "src/css/1131-court-badges.css", "note": "PART H PHASE 15.1.15 - Release 15a A15, court badges: tap a court to put it in session, filled in the Clan colour" },
     { "file": "src/css/1132-picker-bottom-info.css", "note": "PART H PHASE 15.1.16 - Release 15a A16, the seven pickers' bottom information button not drawn inside the configuration window" },
+    { "file": "src/css/1133-skill-masteries.css", "note": "PART H PHASE 15.1.3.1 - Release 15a A03.1, the Mastery Abilities list in the Skill information window" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -507,6 +508,7 @@
     { "file": "src/sheet/209.9999999999999998-feat-one-info-pattern.js", "note": "PART H PHASE 15.1.4 - Release 15a A04, the switch, accessible names, the un-nested Advantage i and Hotei's folded row" },
     { "file": "src/sheet/209.9999999999999999-feat-court-badges.js", "note": "PART H PHASE 15.1.15 - Release 15a A15, the switch and the court badges replacing the radios and the session tick box" },
     { "file": "src/sheet/209.99999999999999991-feat-picker-bottom-info.js", "note": "PART H PHASE 15.1.16 - Release 15a A16, the switch and body class for removing the seven pickers' bottom i" },
+    { "file": "src/sheet/209.99999999999999992-feat-skill-masteries.js", "note": "PART H PHASE 15.1.3.1 - Release 15a A03.1, the switch and the Mastery Abilities list in the Skill information window" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

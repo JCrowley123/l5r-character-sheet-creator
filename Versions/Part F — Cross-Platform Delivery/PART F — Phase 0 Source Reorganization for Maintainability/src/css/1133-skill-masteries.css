@@ -1,0 +1,58 @@
+/* PART H PHASE 15.1.3.1 — Release 15a A03.1: the Mastery Abilities list in the Skill information window.
+   After the Emphases: a ruled heading, then one line per Mastery with its Rank as a small outlined label. A reached
+   Mastery is in the ink colour with its label in the Clan's colour (--shu-dark, as the Skill card marks reached notes)
+   and the word "reached"; one not yet reached is in the muted ink (--ink-soft, still readable). So the state never
+   rests on colour alone. Waits for body.sm15-on, which this unit's switch sets. */
+html body.sm15-on #skillInfoModalOverlay .sm15-masteries {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-head {
+  margin: 0 0 6px;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-rank {
+  padding: 1px 7px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-item.sm15-reached {
+  color: var(--ink);
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-item.sm15-reached .sm15-rank {
+  border-color: var(--shu-dark);
+  color: var(--shu-dark);
+}
+html body.sm15-on #skillInfoModalOverlay .sm15-none {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
