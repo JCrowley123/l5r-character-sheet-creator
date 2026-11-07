@@ -19,6 +19,10 @@ HARNESS = {'A04': R / 'A04 — One Information Pattern/qa/info-pattern-harness.j
            'A16': R / 'A16 — No Bottom i in the Seven Pickers/qa/picker-info-harness.js',
            'A03.1': R / 'A03.1 — Masteries in the Skill Information/qa/skill-masteries-harness.js'}
 DISCOVER = '--discover' in sys.argv
+# --only=A04,A16:note-hidden-too limits a --discover run to those units or cases (a second discovery after a harness fix).
+ONLY = next((x.split('=', 1)[1].split(',') for x in sys.argv if x.startswith('--only=')), None)
+assert ONLY is None or DISCOVER, '--only is for discovery; the qualification run asserts every pin'
+wanted = lambda unit, label: ONLY is None or unit in ONLY or (unit + ':' + label) in ONLY
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
 cases = [
@@ -40,7 +44,7 @@ cases = [
  # A16: no bottom i in the seven pickers
  ["A16", "disabled", "const PICKER_BOTTOM_INFO_REMOVED_ENABLED = true;", "const PICKER_BOTTOM_INFO_REMOVED_ENABLED = false;"],
  ["A16", "hidden-not-removed", "found.forEach(function(button){ button.remove(); });", "void found;"],
- ["A16", "row-i-removed-too", "api.SELECTOR = ['#advConfigGrid > .fb4521-info',", "api.SELECTOR = ['.fb4521-info',"],
+ ["A16", "note-hidden-too", "html body.bi15-on #advConfigGrid > .fb4521-info,", "html body.bi15-on #advConfigNote,\nhtml body.bi15-on #advConfigGrid > .fb4521-info,"],
  # A03.1: Masteries in the Skill information
  ["A03.1", "disabled", "const SKILL_MASTERIES_ENABLED = true;", "const SKILL_MASTERIES_ENABLED = false;"],
  ["A03.1", "reached-not-coloured", ".sm15-item.sm15-reached .sm15-rank {\n  border-color: var(--shu-dark);\n  color: var(--shu-dark);", ".sm15-item.sm15-reached .sm15-rank {\n  border-color: var(--line);\n  color: var(--ink-soft);"],
@@ -50,7 +54,7 @@ cases = [
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
-out = Q / (('variants-discover-' if DISCOVER else 'negative-') + hashlib.sha256(original.encode('utf-8')).hexdigest()[:8])
+out = Q / (('variants-discover-' if DISCOVER else 'negative-') + hashlib.sha256(original.encode('utf-8')).hexdigest()[:8] + ('-2' if ONLY else ''))
 
 
 def run(unit, label, body):
@@ -90,9 +94,9 @@ baseline = subprocess.check_output(['git', 'show', BASELINE_REF + ':' + P.relati
                                    cwd=V.parent).decode('utf-8')
 assert hashlib.sha256(baseline.encode('utf-8')).hexdigest() == BASELINE_SHA
 for unit in HARNESS:
-    run(unit, 'baseline', baseline)
+    if wanted(unit, 'baseline'): run(unit, 'baseline', baseline)
 for unit, label, old, new in cases:
-    run(unit, label, original.replace(old, new))
+    if wanted(unit, label): run(unit, label, original.replace(old, new))
 report['passed'] = not DISCOVER
 (out / 'summary.json').write_bytes((json.dumps(report, indent=2) + '\n').encode())
 print('All ' + str(len(cases) + len(HARNESS)) + ' negative variants matched their pinned failures.' if not DISCOVER else 'Discovery done.')

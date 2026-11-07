@@ -1,0 +1,64 @@
+  detail CB-SEAM-PHONE: {"on":false,"seam":true,"sw":false}
+  detail CB-ONE-BADGE-PER-COURT-PHONE: {"radios":3,"tick":2,"badges":[],"legend":"Selected court"}
+  detail CB-IDLE-LOOK-PHONE: {"s":{"config":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"pressed":[],"names":[],"status":"Status 3 as normal — Kyuden Doji not in session.","status_rank":"3","focus":null},"looks":[]}
+  detail CB-TAP-PUTS-IN-SESSION-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').nth(1)\u001b[22m\n"
+  detail CB-FILL-IN-CLAN-COLOUR-PHONE: "exception: page.evaluate: TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.\n    at eval (eval at evaluate (:311:30), <anonymous>:1:55)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail CB-TAP-AGAIN-ENDS-SESSION-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').nth(1)\u001b[22m\n"
+  detail CB-ONE-AT-A-TIME-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').first()\u001b[22m\n"
+  detail CB-TOUCH-44-PHONE: []
+  detail CB-ADD-COURT-PHONE: "exception: locator.textContent: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button:not(.court4514-court)')\u001b[22m\n"
+  detail CB-PLAY-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').first()\u001b[22m\n"
+  detail CB-KEYBOARD-PHONE: "exception: locator.focus: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').first()\u001b[22m\n"
+  detail CB-SAVE-ROUND-TRIP-PHONE: {"saved":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"before":[],"after":[],"cfg":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+  detail CB-WORDS-PHONE: "exception: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .entry').filter({ has: locator('.court4514-row') }).first().locator('.adv-config-btn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled type=\"button\" data-pm12-locked=\"disabled\" class=\"ghost adv-config-btn\" aria-label=\"Configure Darling of the Court\">Change</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not v"
+  detail CB-CLASS-GATES-PHONE: "exception: page.evaluate: TypeError: Cannot read properties of undefined (reading 'getBoundingClientRect')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:63)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail CB-SEAM-DESKTOP: {"on":false,"seam":true,"sw":false}
+  detail CB-ONE-BADGE-PER-COURT-DESKTOP: {"radios":3,"tick":2,"badges":[],"legend":"Selected court"}
+  detail CB-IDLE-LOOK-DESKTOP: {"s":{"config":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"pressed":[],"names":[],"status":"Status 3 as normal — Kyuden Doji not in session.","status_rank":"3","focus":null},"looks":[]}
+  detail CB-TAP-PUTS-IN-SESSION-DESKTOP: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').nth(1)\u001b[22m\n"
+  detail CB-FILL-IN-CLAN-COLOUR-DESKTOP: "exception: page.evaluate: TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.\n    at eval (eval at evaluate (:311:30), <anonymous>:1:55)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail CB-TAP-AGAIN-ENDS-SESSION-DESKTOP: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').nth(1)\u001b[22m\n"
+  detail CB-ONE-AT-A-TIME-DESKTOP: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').first()\u001b[22m\n"
+  detail CB-TOUCH-44-DESKTOP: []
+  detail CB-ADD-COURT-DESKTOP: "exception: locator.textContent: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button:not(.court4514-court)')\u001b[22m\n"
+  detail CB-PLAY-DESKTOP: "exception: locator.scrollIntoViewIfNeeded: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').first()\u001b[22m\n"
+  detail CB-KEYBOARD-DESKTOP: "exception: locator.focus: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button.court4514-court').first()\u001b[22m\n"
+  detail CB-SAVE-ROUND-TRIP-DESKTOP: {"saved":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"},"before":[],"after":[],"cfg":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":false,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+  detail CB-WORDS-DESKTOP: "exception: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .entry').filter({ has: locator('.court4514-row') }).first().locator('.adv-config-btn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled type=\"button\" data-pm12-locked=\"disabled\" class=\"ghost adv-config-btn\" aria-label=\"Configure Darling of the Court\">Change</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not v"
+  detail CB-CLASS-GATES-DESKTOP: "exception: page.evaluate: TypeError: Cannot read properties of undefined (reading 'getBoundingClientRect')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:63)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail CB-EVERY-CLAN-COLOUR: "exception: page.evaluate: TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.\n    at eval (eval at evaluate (:311:30), <anonymous>:1:61)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  detail CB-DUPLICATE-ROW-NO-BADGES: {"r":[0,0],"errors":[]}
+FAIL CB-SEAM-PHONE
+FAIL CB-ONE-BADGE-PER-COURT-PHONE
+FAIL CB-IDLE-LOOK-PHONE
+FAIL CB-TAP-PUTS-IN-SESSION-PHONE
+FAIL CB-FILL-IN-CLAN-COLOUR-PHONE
+FAIL CB-TAP-AGAIN-ENDS-SESSION-PHONE
+FAIL CB-ONE-AT-A-TIME-PHONE
+FAIL CB-TOUCH-44-PHONE
+FAIL CB-ADD-COURT-PHONE
+FAIL CB-PLAY-PHONE
+FAIL CB-KEYBOARD-PHONE
+FAIL CB-SAVE-ROUND-TRIP-PHONE
+FAIL CB-WORDS-PHONE
+FAIL CB-CLASS-GATES-PHONE
+PASS CB-NO-ERRORS-PHONE
+FAIL CB-SEAM-DESKTOP
+FAIL CB-ONE-BADGE-PER-COURT-DESKTOP
+FAIL CB-IDLE-LOOK-DESKTOP
+FAIL CB-TAP-PUTS-IN-SESSION-DESKTOP
+FAIL CB-FILL-IN-CLAN-COLOUR-DESKTOP
+FAIL CB-TAP-AGAIN-ENDS-SESSION-DESKTOP
+FAIL CB-ONE-AT-A-TIME-DESKTOP
+FAIL CB-TOUCH-44-DESKTOP
+FAIL CB-ADD-COURT-DESKTOP
+FAIL CB-PLAY-DESKTOP
+FAIL CB-KEYBOARD-DESKTOP
+FAIL CB-SAVE-ROUND-TRIP-DESKTOP
+FAIL CB-WORDS-DESKTOP
+FAIL CB-CLASS-GATES-DESKTOP
+PASS CB-NO-ERRORS-DESKTOP
+FAIL CB-EVERY-CLAN-COLOUR
+PASS CB-LONG-NAME-FITS
+FAIL CB-DUPLICATE-ROW-NO-BADGES
+3/33 checks passed

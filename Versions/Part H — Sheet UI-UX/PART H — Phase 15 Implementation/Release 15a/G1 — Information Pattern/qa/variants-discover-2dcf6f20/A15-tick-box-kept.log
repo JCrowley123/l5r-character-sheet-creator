@@ -1,0 +1,36 @@
+  detail CB-ONE-BADGE-PER-COURT-PHONE: {"radios":0,"tick":2,"badges":[{"tag":"BUTTON","type":"button","pressed":"false","text":"Kyuden Doji","shown":true},{"tag":"BUTTON","type":"button","pressed":"false","text":"Toshi Ranbo","shown":true},{"tag":"BUTTON","type":"button","pressed":"false","text":"Otosan Uchi","shown":true}],"legend":"Courts: tap the one in session"}
+  detail CB-ONE-BADGE-PER-COURT-DESKTOP: {"radios":0,"tick":2,"badges":[{"tag":"BUTTON","type":"button","pressed":"false","text":"Kyuden Doji","shown":true},{"tag":"BUTTON","type":"button","pressed":"false","text":"Toshi Ranbo","shown":true},{"tag":"BUTTON","type":"button","pressed":"false","text":"Otosan Uchi","shown":true}],"legend":"Courts: tap the one in session"}
+PASS CB-SEAM-PHONE
+FAIL CB-ONE-BADGE-PER-COURT-PHONE
+PASS CB-IDLE-LOOK-PHONE
+PASS CB-TAP-PUTS-IN-SESSION-PHONE
+PASS CB-FILL-IN-CLAN-COLOUR-PHONE
+PASS CB-TAP-AGAIN-ENDS-SESSION-PHONE
+PASS CB-ONE-AT-A-TIME-PHONE
+PASS CB-TOUCH-44-PHONE
+PASS CB-ADD-COURT-PHONE
+PASS CB-PLAY-PHONE
+PASS CB-KEYBOARD-PHONE
+PASS CB-SAVE-ROUND-TRIP-PHONE
+PASS CB-WORDS-PHONE
+PASS CB-CLASS-GATES-PHONE
+PASS CB-NO-ERRORS-PHONE
+PASS CB-SEAM-DESKTOP
+FAIL CB-ONE-BADGE-PER-COURT-DESKTOP
+PASS CB-IDLE-LOOK-DESKTOP
+PASS CB-TAP-PUTS-IN-SESSION-DESKTOP
+PASS CB-FILL-IN-CLAN-COLOUR-DESKTOP
+PASS CB-TAP-AGAIN-ENDS-SESSION-DESKTOP
+PASS CB-ONE-AT-A-TIME-DESKTOP
+PASS CB-TOUCH-44-DESKTOP
+PASS CB-ADD-COURT-DESKTOP
+PASS CB-PLAY-DESKTOP
+PASS CB-KEYBOARD-DESKTOP
+PASS CB-SAVE-ROUND-TRIP-DESKTOP
+PASS CB-WORDS-DESKTOP
+PASS CB-CLASS-GATES-DESKTOP
+PASS CB-NO-ERRORS-DESKTOP
+PASS CB-EVERY-CLAN-COLOUR
+PASS CB-LONG-NAME-FITS
+PASS CB-DUPLICATE-ROW-NO-BADGES
+31/33 checks passed

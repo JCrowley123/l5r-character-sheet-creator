@@ -130,7 +130,9 @@ const closeOverlays = page => page.evaluate(() => { for (const id of ['stanceInf
       await check('IP-COMBAT-UNCHANGED-' + D, async () => {
         const r = await page.evaluate(() => { const b = document.getElementById('combatTnInfoBtn'); if (!b) return null;
           const take = () => { const s = getComputedStyle(b), a = getComputedStyle(b, '::after'); return [s.width, s.height, s.borderTopColor, s.fontSize, s.color, a.content].join('|'); };
-          const on = take(); document.body.classList.remove('ip15-on'); const off = take(); document.body.classList.add('ip15-on'); return {on, off}; });
+          // Puts the class back only if it was there, so a build without A04 is never given it (variant discovery, 7 Nov).
+          const had = document.body.classList.contains('ip15-on');
+          const on = take(); document.body.classList.remove('ip15-on'); const off = take(); if (had) document.body.classList.add('ip15-on'); return {on, off}; });
         return [!!r && r.on === r.off, r];
       });
       // Advantages and Disadvantages: no i inside another control, every one next to what it explains.
@@ -212,7 +214,8 @@ const closeOverlays = page => page.evaluate(() => { for (const id of ['stanceInf
       await check('IP-CLASS-GATES-' + D, async () => {
         await goTab(page, 'Skills');
         const r = await page.evaluate(() => { const b = document.querySelector('#skillsBody > tr .sk-info-btn'); const on = __IP_H.ring(b);
-          document.body.classList.remove('ip15-on'); const off = __IP_H.ring(b); const glyph = getComputedStyle(b, '::after').content; document.body.classList.add('ip15-on'); return {on: on.ok, off: off.ok, glyph}; });
+          const had = document.body.classList.contains('ip15-on');
+          document.body.classList.remove('ip15-on'); const off = __IP_H.ring(b); const glyph = getComputedStyle(b, '::after').content; if (had) document.body.classList.add('ip15-on'); return {on: on.ok, off: off.ok, glyph}; });
         return [r.on === true && r.off === false && r.glyph !== '"i"', r];
       });
       await check('IP-NO-ERRORS-' + D, async () => [errors.length === 0, errors]);

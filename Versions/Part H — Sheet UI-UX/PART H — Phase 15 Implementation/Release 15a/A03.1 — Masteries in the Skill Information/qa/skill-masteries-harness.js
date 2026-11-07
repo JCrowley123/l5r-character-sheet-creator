@@ -65,6 +65,9 @@ async function open(browser, opts) {
 const settle = page => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
 async function goTab(page, tab) { await page.evaluate(async l => { const C = window.__L5R_CAROUSEL__; if (C) { C.goToTab(l); await C.whenSettled(); } }, tab); await settle(page); }
 async function info(page, index) {
+  // A check that failed part-way may have left the window open; close it first so one failure cannot cascade into the
+  // next check (variant discovery, 7 November 2026).
+  await page.evaluate(() => { const o = document.getElementById('skillInfoModalOverlay'); if (o) o.style.display = 'none'; });
   const b = page.locator('#skillsBody > tr').nth(index).locator('.sk-name-row > .sk-info-btn');
   await b.scrollIntoViewIfNeeded(); await b.click(); await page.waitForSelector('#skillInfoModalOverlay', {state: 'visible'}); await settle(page);
 }

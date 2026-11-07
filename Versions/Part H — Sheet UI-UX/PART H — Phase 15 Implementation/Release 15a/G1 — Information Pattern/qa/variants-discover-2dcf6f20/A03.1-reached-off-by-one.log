@@ -1,0 +1,26 @@
+  detail SM-MATCHES-THE-CARD-PHONE: [{"name":"Defense","want":"[{\"rank\":3,\"reached\":true,\"text\":\"Can keep a prior Defense roll while holding Full Defense\"},{\"rank\":5,\"reached\":true,\"text\":\"+3 Armor TN while in Defense or Full Defense\"},{\"rank\":7,\"reached\":false,\"text\":\"May take one Simple Action while in Full Defense (still no attacks)\"}]","got":"[{\"rank\":3,\"reached\":true,\"text\":\"Can keep a prior Defense roll while holding Full Defense\"},{\"rank\":5,\"reached\":false,\"text\":\"+3 Armor TN while in Defense or Full Defense\"},{\"rank\":7,\"reached\":false,\"text\":\"May take one Simple Action while in Full Defense (still no attacks)\"}]","none":null}]
+  detail SM-REACHED-MARKED-PHONE: [{"rank":3,"reached":true,"text":"Can keep a prior Defense roll while holding Full Defense","label":"Rank 3 · reached","labelColour":"rgb(33, 85, 125)","textColour":"rgb(42, 36, 32)","bg":"rgb(239, 231, 212)"},{"rank":5,"reached":false,"text":"+3 Armor TN while in Defense or Full Defense","label":"Rank 5","labelColour":"rgb(90, 79, 67)","textColour":"rgb(90, 79, 67)","bg":"rgb(239, 231, 212)"},{"rank":7,"reached":false,"text":"May take one Simple Action while in Full Defense (still no attacks)","label":"Rank 7","labelColour":"rgb(90, 79, 67)","textColour":"rgb(90, 79, 67)","bg":"rgb(239, 231, 212)"}]
+  detail SM-FOLLOWS-RANK-PHONE: {"seven":[true,true,false],"five":[true,false,false]}
+  detail SM-MATCHES-THE-CARD-DESKTOP: [{"name":"Defense","want":"[{\"rank\":3,\"reached\":true,\"text\":\"Can keep a prior Defense roll while holding Full Defense\"},{\"rank\":5,\"reached\":true,\"text\":\"+3 Armor TN while in Defense or Full Defense\"},{\"rank\":7,\"reached\":false,\"text\":\"May take one Simple Action while in Full Defense (still no attacks)\"}]","got":"[{\"rank\":3,\"reached\":true,\"text\":\"Can keep a prior Defense roll while holding Full Defense\"},{\"rank\":5,\"reached\":false,\"text\":\"+3 Armor TN while in Defense or Full Defense\"},{\"rank\":7,\"reached\":false,\"text\":\"May take one Simple Action while in Full Defense (still no attacks)\"}]","none":null}]
+  detail SM-REACHED-MARKED-DESKTOP: [{"rank":3,"reached":true,"text":"Can keep a prior Defense roll while holding Full Defense","label":"Rank 3 · reached","labelColour":"rgb(33, 85, 125)","textColour":"rgb(42, 36, 32)","bg":"rgb(239, 231, 212)"},{"rank":5,"reached":false,"text":"+3 Armor TN while in Defense or Full Defense","label":"Rank 5","labelColour":"rgb(90, 79, 67)","textColour":"rgb(90, 79, 67)","bg":"rgb(239, 231, 212)"},{"rank":7,"reached":false,"text":"May take one Simple Action while in Full Defense (still no attacks)","label":"Rank 7","labelColour":"rgb(90, 79, 67)","textColour":"rgb(90, 79, 67)","bg":"rgb(239, 231, 212)"}]
+  detail SM-FOLLOWS-RANK-DESKTOP: {"seven":[true,true,false],"five":[true,false,false]}
+PASS SM-SEAM-PHONE
+FAIL SM-MATCHES-THE-CARD-PHONE
+FAIL SM-REACHED-MARKED-PHONE
+PASS SM-READABLE-PHONE
+PASS SM-PLACE-PHONE
+PASS SM-DEBUG-UNCHANGED-PHONE
+FAIL SM-FOLLOWS-RANK-PHONE
+PASS SM-CLASS-GATES-PHONE
+PASS SM-NO-ERRORS-PHONE
+PASS SM-SEAM-DESKTOP
+FAIL SM-MATCHES-THE-CARD-DESKTOP
+FAIL SM-REACHED-MARKED-DESKTOP
+PASS SM-READABLE-DESKTOP
+PASS SM-PLACE-DESKTOP
+PASS SM-DEBUG-UNCHANGED-DESKTOP
+FAIL SM-FOLLOWS-RANK-DESKTOP
+PASS SM-CLASS-GATES-DESKTOP
+PASS SM-NO-ERRORS-DESKTOP
+PASS SM-CUSTOM-SKILL
+13/19 checks passed

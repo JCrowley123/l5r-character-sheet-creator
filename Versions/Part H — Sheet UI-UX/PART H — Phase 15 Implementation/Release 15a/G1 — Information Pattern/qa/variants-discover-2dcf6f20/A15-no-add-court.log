@@ -1,0 +1,41 @@
+  detail CB-TOUCH-44-PHONE: [{"h":44,"w":113,"hit":true},{"h":44,"w":111,"hit":true},{"h":44,"w":115,"hit":true}]
+  detail CB-ADD-COURT-PHONE: "exception: locator.textContent: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button:not(.court4514-court)')\u001b[22m\n"
+  detail CB-PLAY-PHONE: {"r":{"add":[],"badges":[true,true,true]},"s":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":true,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+  detail CB-TOUCH-44-DESKTOP: [{"h":44,"w":113,"hit":true},{"h":44,"w":111,"hit":true},{"h":44,"w":115,"hit":true}]
+  detail CB-ADD-COURT-DESKTOP: "exception: locator.textContent: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .court4514-courts > button:not(.court4514-court)')\u001b[22m\n"
+  detail CB-PLAY-DESKTOP: {"r":{"add":[],"badges":[true,true,true]},"s":{"type":"courtList","revision":1,"courts":["Kyuden Doji","Toshi Ranbo","Otosan Uchi"],"selected":"Kyuden Doji","inSession":true,"value":"Kyuden Doji, Toshi Ranbo, Otosan Uchi"}}
+  detail CB-DUPLICATE-ROW-NO-BADGES: {"r":[1,0],"errors":[]}
+PASS CB-SEAM-PHONE
+PASS CB-ONE-BADGE-PER-COURT-PHONE
+PASS CB-IDLE-LOOK-PHONE
+PASS CB-TAP-PUTS-IN-SESSION-PHONE
+PASS CB-FILL-IN-CLAN-COLOUR-PHONE
+PASS CB-TAP-AGAIN-ENDS-SESSION-PHONE
+PASS CB-ONE-AT-A-TIME-PHONE
+FAIL CB-TOUCH-44-PHONE
+FAIL CB-ADD-COURT-PHONE
+FAIL CB-PLAY-PHONE
+PASS CB-KEYBOARD-PHONE
+PASS CB-SAVE-ROUND-TRIP-PHONE
+PASS CB-WORDS-PHONE
+PASS CB-CLASS-GATES-PHONE
+PASS CB-NO-ERRORS-PHONE
+PASS CB-SEAM-DESKTOP
+PASS CB-ONE-BADGE-PER-COURT-DESKTOP
+PASS CB-IDLE-LOOK-DESKTOP
+PASS CB-TAP-PUTS-IN-SESSION-DESKTOP
+PASS CB-FILL-IN-CLAN-COLOUR-DESKTOP
+PASS CB-TAP-AGAIN-ENDS-SESSION-DESKTOP
+PASS CB-ONE-AT-A-TIME-DESKTOP
+FAIL CB-TOUCH-44-DESKTOP
+FAIL CB-ADD-COURT-DESKTOP
+FAIL CB-PLAY-DESKTOP
+PASS CB-KEYBOARD-DESKTOP
+PASS CB-SAVE-ROUND-TRIP-DESKTOP
+PASS CB-WORDS-DESKTOP
+PASS CB-CLASS-GATES-DESKTOP
+PASS CB-NO-ERRORS-DESKTOP
+PASS CB-EVERY-CLAN-COLOUR
+PASS CB-LONG-NAME-FITS
+FAIL CB-DUPLICATE-ROW-NO-BADGES
+26/33 checks passed
