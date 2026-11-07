@@ -1,5 +1,5 @@
 Live page matches the expected PWA build byte for byte.
-Service worker matches build b5041bc165d1c594.
+Service worker matches build f9a4bcad8d36d92a.
 G1 units in the deployed page: A04, A15, A16, A03.1, A05, A06, A07, A11, A04.1
 == A03 — Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js
 PASS SEAM-PRESENT
@@ -42,7 +42,7 @@ PASS NO-SCRIPT-ERRORS
 37/37 checks passed
 
 == PART K — Phase 12.4 Play Mode Skills/skills-harness.js
-Skills in Play (part 5) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Skills in Play (part 5) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS SK124-ENABLED
 PASS SK124-MANAGEMENT-RANK-TYPES
 PASS SK124-MANAGEMENT-ADD-SKILL-WORKS
@@ -349,7 +349,7 @@ PASS WR-NO-ERRORS
 5/5 checks passed
 
 == PART K — Phase 11.2 Creation Wizard/wizard-harness.js
-Creation wizard checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Creation wizard checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS CW-ENABLED
 PASS CW-OPENS-ON-CREATE
 PASS CW-COVERS-VIEWPORT
@@ -397,7 +397,7 @@ PASS CW-NO-PAGE-ERRORS-EXIT
 43/43 checks passed
 
 == PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js
-Wizard Skills and Advantages checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Wizard Skills and Advantages checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS CW1-ENABLED
 PASS CW1-STEPS-INSERTED
 PASS CW1-SKILLS-STEP
@@ -435,7 +435,7 @@ PASS CW1-SAME-AS-BY-HAND
 32/32 checks passed
 
 == PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js
-Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS CW2-ENABLED
 PASS CW2-BUSHI-NO-EXTRA-STEPS
 PASS CW2-KAKITA-SLOT
@@ -495,7 +495,7 @@ PASS CW2-SAME-AS-BY-HAND-MONK
 52/52 checks passed
 
 == PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js
-Wizard starting spells checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Wizard starting spells checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS CW3-ENABLED
 PASS CW3-TABLE-ONLY-QUOTED
 PASS CW3-GIVEN-ADDED
@@ -526,7 +526,7 @@ PASS CW3-SAME-AS-BY-HAND
 25/25 checks passed
 
 == PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js
-Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS CW5-ENABLED
 PASS CW5-LINE-AGASHA-SHUGENJA
 PASS CW5-LINE-ASAHINA-SHUGENJA
@@ -603,7 +603,7 @@ PASS CW5-SAME-AS-BY-HAND
 71/71 checks passed
 
 == BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js
-Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS SSR-ENABLED
 PASS SSR-LIBRARY-MIRUMOTO
 PASS SSR-LIBRARY-SHIBA
@@ -1349,7 +1349,7 @@ PASS PM125-ENTRY-PATHS-NO-ERRORS
 212/212 checks passed
 
 == PART K — Phase 12 Play and Management Modes/modes-harness.js
-Play and Management modes (part 1) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Play and Management modes (part 1) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS PM12-ENABLED
 PASS PM12-BLANK-SHEET-IS-MANAGEMENT
 PASS PM12-MANAGEMENT-TYPING-WORKS
@@ -2328,7 +2328,7 @@ PASS TE-NO-ERRORS-DESKTOP
 22/22 checks passed
 
 == PART K — Phase 12.2 Play Mode Identity/identity-harness.js
-Identity in Play (part 3) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-gijx3jxn\site\index.html
+Identity in Play (part 3) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g2-live-fsjk9ge1\site\index.html
 PASS ID122-ENABLED
 PASS ID122-MANAGEMENT-NAME-TYPES
 PASS ID122-PLAY-FIELDS-READ-ONLY
@@ -2427,18 +2427,23 @@ PASS IR-SEAM-PHONE
 PASS IR-PARAGON-UNTOUCHED-PHONE
 PASS IR-BLESSING-INLINE-PHONE
 PASS IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-BLESSING-ONE-BOX-PHONE
 PASS IR-BLESSING-PARAGON-CARD-PHONE
 PASS IR-CONSUMED-INLINE-PHONE
 PASS IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-CONSUMED-ONE-BOX-PHONE
 PASS IR-CONSUMED-PARAGON-CARD-PHONE
 PASS IR-FAILURE-INLINE-PHONE
 PASS IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-FAILURE-ONE-BOX-PHONE
 PASS IR-FAILURE-PARAGON-CARD-PHONE
 PASS IR-REALM-INLINE-PHONE
 PASS IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-REALM-ONE-BOX-PHONE
 PASS IR-REALM-PARAGON-CARD-PHONE
 PASS IR-CURSE-INLINE-PHONE
 PASS IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-CURSE-ONE-BOX-PHONE
 PASS IR-CURSE-PARAGON-CARD-PHONE
 PASS IR-TAP-RULE-CHOOSES-PHONE
 PASS IR-ROW-I-KEEPS-TEXT-PHONE
@@ -2450,18 +2455,23 @@ PASS IR-SEAM-DESKTOP
 PASS IR-PARAGON-UNTOUCHED-DESKTOP
 PASS IR-BLESSING-INLINE-DESKTOP
 PASS IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-BLESSING-ONE-BOX-DESKTOP
 PASS IR-BLESSING-PARAGON-CARD-DESKTOP
 PASS IR-CONSUMED-INLINE-DESKTOP
 PASS IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-CONSUMED-ONE-BOX-DESKTOP
 PASS IR-CONSUMED-PARAGON-CARD-DESKTOP
 PASS IR-FAILURE-INLINE-DESKTOP
 PASS IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-FAILURE-ONE-BOX-DESKTOP
 PASS IR-FAILURE-PARAGON-CARD-DESKTOP
 PASS IR-REALM-INLINE-DESKTOP
 PASS IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-REALM-ONE-BOX-DESKTOP
 PASS IR-REALM-PARAGON-CARD-DESKTOP
 PASS IR-CURSE-INLINE-DESKTOP
 PASS IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-CURSE-ONE-BOX-DESKTOP
 PASS IR-CURSE-PARAGON-CARD-DESKTOP
 PASS IR-TAP-RULE-CHOOSES-DESKTOP
 PASS IR-ROW-I-KEEPS-TEXT-DESKTOP
@@ -2469,7 +2479,7 @@ PASS IR-LONG-WINDOW-REACHABLE-DESKTOP
 PASS IR-LABEL-ONLY-PICKER-UNTOUCHED-DESKTOP
 PASS IR-CLASS-GATES-DESKTOP
 PASS IR-NO-ERRORS-DESKTOP
-46/46 checks passed
+56/56 checks passed
 
 == PART I — Phase 4.5.2 Disadvantages/disadv-config-harness.js
 PASS D45-00 Disadvantages point release is present and enabled
@@ -2675,7 +2685,7 @@ PASS REALM4510-TENGOKU-04 Outside the temple it applies nothing
 PASS REALM4510-DAMAGE-01 No branch contributes to a damage roll carrying the attack’s skillName
 PASS REALM4510-DAMAGE-02 D45 excludes damage BEFORE consulting this phase’s module
 PASS REALM4510-TOTAL-01 The displayed total is exactly 10 below the kept dice
-PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  10 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
+PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  31 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
 PASS REALM4510-DECLARE-01 Undeclared, it contributes nothing
 PASS REALM4510-DECLARE-02 The preview offers the declaration
 PASS REALM4510-DECLARE-03 …unchecked when the preview opens
@@ -2687,7 +2697,7 @@ PASS REALM4510-DECLARE-08 Another realm’s character sees an unchanged preview
 PASS REALM4510-TOSHIGOKU-01 The row offers the Willpower check
 PASS REALM4510-TOSHIGOKU-02 It contributes no automatic modifier to anything
 PASS REALM4510-TOSHIGOKU-03 Invoking it opens a real roll preview
-PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 13 Target Number: 15 You are overcome by the urge to fight. Tell 
+PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 10 Target Number: 15 You are overcome by the urge to fight. Tell 
 PASS REALM4510-YOMI-01 With no ancestral entry it says so plainly
 PASS REALM4510-YOMI-02 It names Inheritance, the entry the audit names — Ancestral: Inheritance, Haunted — resolve with your GM
 PASS REALM4510-YOMI-03 It names Haunted, the entry measuring the libraries found — Ancestral: Inheritance, Haunted — resolve with your GM

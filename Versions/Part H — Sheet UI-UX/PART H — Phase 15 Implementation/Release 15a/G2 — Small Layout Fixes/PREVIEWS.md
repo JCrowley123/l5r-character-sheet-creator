@@ -8,7 +8,7 @@
 | A06 | [claude-release-15a-a06](https://claude-release-15a-a06.l5r-character-sheet-creator.pages.dev/) | **2,050/2,050** |
 | A07 | [claude-release-15a-a07](https://claude-release-15a-a07.l5r-character-sheet-creator.pages.dev/) | **2,098/2,098** |
 | A11 | [claude-release-15a-a11](https://claude-release-15a-a11.l5r-character-sheet-creator.pages.dev/) | page and service worker match; every G2 harness passes; **two A03 checks failed once** (below) |
-| A04.1 (the whole group) | [claude-release-15a-a04-1](https://claude-release-15a-a04-1.l5r-character-sheet-creator.pages.dev/) | **2,513/2,513** |
+| A04.1 (the whole group) | [claude-release-15a-a04-1](https://claude-release-15a-a04-1.l5r-character-sheet-creator.pages.dev/) | **2,513/2,513**. Revision 1 (one box per option, build `77936023…82f0`): **2,523/2,523**, the ten ONE-BOX checks added (`qa/preview-a041-r1.log`) |
 
 ## The A11 preview: a timing race in A03's harness, not caused by A11
 

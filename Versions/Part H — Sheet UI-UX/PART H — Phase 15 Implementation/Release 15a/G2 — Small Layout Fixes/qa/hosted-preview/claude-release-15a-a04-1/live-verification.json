@@ -1,5 +1,5 @@
 {
-  "commit": "180193b28386a5e3b6e1c2b0870bb606ec15c8b6",
+  "commit": "ea2dc0a36d18b5db4952d3b893a53d5ce0745699",
   "downloaded_asset_sha256": {
     "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
     "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
@@ -7,13 +7,13 @@
     "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
     "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
   },
-  "checked_utc": "2026-11-07T16:56:58.249492+00:00",
+  "checked_utc": "2026-11-07T17:35:02.887101+00:00",
   "url": "https://claude-release-15a-a04-1.l5r-character-sheet-creator.pages.dev/",
-  "source_sha256": "d243a6e794076b73982ecc5b1770b04c25e6f04946a75eb78d78cb814f2eda90",
-  "page_sha256": "6d1e14cede0943641ad1540e92e1dcd30988b38ff91d72d6de309f4605dc2bc9",
-  "page_bytes": 17615828,
-  "service_worker_build": "b5041bc165d1c594",
-  "service_worker_sha256": "9e1759a12e60a8d9fad85538524721a3b2a9b14e9333716a667b333e7476fed6",
+  "source_sha256": "7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0",
+  "page_sha256": "bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107",
+  "page_bytes": 17616007,
+  "service_worker_build": "f9a4bcad8d36d92a",
+  "service_worker_sha256": "d66ab82abc47601f7e165a0fb305aa651e1f468c8e311e2233816a6128331527",
   "g1_units": [
     "A04",
     "A15",
@@ -27,7 +27,7 @@
   ],
   "expected": {
     "harnesses": 57,
-    "checks": 2513
+    "checks": 2523
   },
   "harnesses": {
     "A03 \u2014 Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js": {
@@ -456,10 +456,10 @@
     },
     "A04.1 \u2014 One Way to Show Choices in Pickers/inline-rules-harness.js": {
       "counts": [
-        "46",
-        "46"
+        "56",
+        "56"
       ],
-      "expected": 46,
+      "expected": 56,
       "passed": true
     },
     "PART I \u2014 Phase 4.5.2 Disadvantages/disadv-config-harness.js": {
