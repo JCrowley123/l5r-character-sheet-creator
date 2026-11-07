@@ -36,3 +36,7 @@ Measured on the restore-point build with a Shugenja holding Touch of the Spirit 
 ## Proof
 
 See the README's measured QA for the byte-identical removal, the 4.5.15 refusal and the removal orders with 4.5.23.
+
+## Release 15a A16 — no bottom i in the picker (7 November 2026)
+
+Release 15a A16 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/`), under the owner's ruling Q3, stops drawing this release's bottom information button inside the configuration window: its script removes `#advConfigGrid > .tr4524-info` whenever the picker draws it, while `body.bi15-on` is set (its stylesheet keeps it from being painted in the moment before). It calls nothing here and changes nothing in this release's fragment. The row's i on the Advantages list (the same class, outside the window) is unaffected, and A16's harness measures that every sentence of the bottom panel is still on the row or behind its i after Confirm. A16 names `tr4524-info`, so this release's remover may refuse while A16 is present: remove A16 first (the removal chain does so in order).

@@ -45,3 +45,7 @@ Measured on the removed build: the saved Fortune stays in the row's config byte-
 ## Proof
 
 Measured 23 September 2026: the 2,846,031-byte build (`9c749b7dc9c45fc5829f8db3172067d91ced54833e734da4f245d3ddb08528d0`) removes to **exactly 2,820,250 bytes**, `10683306…`; the removed copy verifies; **1,822/1,822** retained checks pass on those bytes. Live **1,899/1,899**. With 4.5.20 removed first: this suite 77/77 and older suites 1,756/1,756; both removed in either order: byte-identical to `2b69794dcd3bf9d70b8a1676a4f9cb734cf1f4b0ecf7d40b0396d0bae8ef0c3e` (2,798,717 bytes). Fixtures 45/45, no skips. Inventory unchanged; seven registry seats.
+
+## Release 15a A16 — no bottom i in the picker (7 November 2026)
+
+Release 15a A16 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/`), under the owner's ruling Q3, stops drawing this release's bottom information button inside the configuration window: its script removes `#advConfigGrid > .fb4521-info` whenever the picker draws it, while `body.bi15-on` is set (its stylesheet keeps it from being painted in the moment before). It calls nothing here and changes nothing in this release's fragment. The row's i on the Advantages list (the same class, outside the window) is unaffected, and A16's harness measures that every sentence of the bottom panel is still on the row or behind its i after Confirm. A16 names `fb4521-info`, so this release's remover may refuse while A16 is present: remove A16 first (the removal chain does so in order).

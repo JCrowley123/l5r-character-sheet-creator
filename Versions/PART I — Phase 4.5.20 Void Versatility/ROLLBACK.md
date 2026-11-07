@@ -33,3 +33,7 @@ Measured on the removed build: the saved Ring stays in the row's config byte-for
 ## Proof
 
 Measured 23 September 2026: the 2,820,250-byte build (`106833069f5bf72a69b185b9d29c85c7f0d1cbf6748bff2195a2581b5d1e8e79`) removes to **exactly 2,798,717 bytes**, `2b69794d…`; the removed copy verifies; **1,756/1,756** retained checks pass on those bytes. Live **1,822/1,822**. With 4.5.19 removed first: this suite 66/66 and older suites 1,664/1,664; both removed in either order: byte-identical to `96dda731ef0cf9670fe2c65763bf28e2a73698972e7d8f49014ac598c728385a` (2,780,550 bytes). Fixtures 45/45, no skips. Inventory unchanged; seven registry seats.
+
+## Release 15a A16 — no bottom i in the picker (7 November 2026)
+
+Release 15a A16 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/`), under the owner's ruling Q3, stops drawing this release's bottom information button inside the configuration window: its script removes `#advConfigGrid > .vv4520-info` whenever the picker draws it, while `body.bi15-on` is set (its stylesheet keeps it from being painted in the moment before). It calls nothing here and changes nothing in this release's fragment. The row's i on the Advantages list (the same class, outside the window) is unaffected, and A16's harness measures that every sentence of the bottom panel is still on the row or behind its i after Confirm. A16 names `vv4520-info`, so this release's remover may refuse while A16 is present: remove A16 first (the removal chain does so in order).

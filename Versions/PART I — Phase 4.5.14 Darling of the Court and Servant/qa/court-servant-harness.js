@@ -8,6 +8,8 @@
  * `radios` reads each badge's aria-pressed; `toggles` counts the court group; session() taps the selected court's badge
  * (or nothing if it is already in session); and the checks whose expected value is about the old controls expect the
  * badge behaviour instead (named at each). Same ids, same count; with A15 removed every line runs as before.
+ * Also conditional on Release 15a A16 (PART H PHASE 15.1.16, no bottom i in the seven pickers): CS-INFO-NESTED, explained
+ * where it runs. Same id; with A16 removed it runs as before.
  */
 'use strict';
 const {chromium} = require('playwright');
@@ -425,9 +427,16 @@ async function main() {
       await page.locator('#stanceInfoClose').click();
       await edit(page);
       const original = await collect(page);
-      await page.locator('#advConfigGrid .court4514-info').click();
-      check('CS-INFO-NESTED', await page.locator('#stanceInfoOverlay').isVisible());
-      await page.locator('#stanceInfoClose').click();
+      // Conditional on Release 15a A16 (PART H PHASE 15.1.16), declared in A16's and this phase's ROLLBACK.md: with A16
+      // present the editor draws no information button of its own (the row's i holds the same text), so this checks
+      // that none is drawn there and that the editor stays open; with A16 removed it opens the nested panel as before.
+      if (await page.evaluate(() => !!(window.__L5R_TEST__.BI15 && window.__L5R_TEST__.PICKER_BOTTOM_INFO_REMOVED_ENABLED))) {
+        check('CS-INFO-NESTED', await page.locator('#advConfigGrid .court4514-info').evaluateAll(list => list.filter(e => e.checkVisibility()).length), 0);
+      } else {
+        await page.locator('#advConfigGrid .court4514-info').click();
+        check('CS-INFO-NESTED', await page.locator('#stanceInfoOverlay').isVisible());
+        await page.locator('#stanceInfoClose').click();
+      }
       check('CS-INFO-RETURNS-TO-EDITOR', await modalOpen(page));
       check('CS-INFO-NO-CHANGE', await collect(page), original);
       await cancel(page);

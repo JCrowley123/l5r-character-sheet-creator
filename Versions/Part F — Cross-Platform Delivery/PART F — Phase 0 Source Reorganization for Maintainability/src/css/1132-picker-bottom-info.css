@@ -1,0 +1,16 @@
+/* PART H PHASE 15.1.16 — Release 15a A16: no bottom information button in the seven pickers (ruling Q3).
+   This unit's script removes the seven pickers' own bottom i from the configuration window as soon as a picker draws
+   it. This rule only keeps it from being painted in the moment before: Seven Fortunes' Blessing, Dark Paragon, Darling
+   of the Court (inside its court editor), Paragon, Soul of Artistry, Touch of the Spirit Realms and Void Versatility.
+   Each is a direct child, so the child combinator matches exactly that button; the same classes on the Advantages
+   list (the row's i) are outside the window and unaffected.
+   Waits for body.bi15-on, which this unit's switch sets. */
+html body.bi15-on #advConfigGrid > .fb4521-info,
+html body.bi15-on #advConfigGrid > .dp4523-info,
+html body.bi15-on #advConfigGrid .court4514-editor > .court4514-info,
+html body.bi15-on #advConfigGrid > .p4518-info,
+html body.bi15-on #advConfigGrid > .sa4519-info,
+html body.bi15-on #advConfigGrid > .tr4524-info,
+html body.bi15-on #advConfigGrid > .vv4520-info {
+  display: none;
+}

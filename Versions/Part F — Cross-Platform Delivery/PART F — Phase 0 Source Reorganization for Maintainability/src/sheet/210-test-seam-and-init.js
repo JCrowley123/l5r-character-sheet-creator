@@ -956,6 +956,9 @@
   // PART H PHASE 15.1.15 BEGIN court-badges-seam
   if(typeof CB15 === 'object' && CB15) Object.assign(window.__L5R_TEST__, {CB15, COURT_BADGES_ENABLED});
   // END CB15 court-badges-seam
+  // PART H PHASE 15.1.16 BEGIN picker-bottom-info-seam
+  if(typeof BI15 === 'object' && BI15) Object.assign(window.__L5R_TEST__, {BI15, PICKER_BOTTOM_INFO_REMOVED_ENABLED});
+  // END BI15 picker-bottom-info-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
