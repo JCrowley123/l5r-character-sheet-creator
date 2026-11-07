@@ -7217,6 +7217,55 @@ html body.lp15-on #disadvList .chk4531-row.lp15-row > .chk4531-note {
   line-height: 1.5;
 }
 
+/* PART H PHASE 15.1.6 — Release 15a A06: grant actions as one compact group, with the state beside it (FT-42, ruling Q1).
+   Matches only a grant box that is offering an action (it has buttons): Zakyo Toshi Citizen's .supp4540-koku and
+   Wealthy's .wealth4517-status. The explanation line takes the full width; below it the two actions sit with a 10 px
+   gap, 44 px tall; the first is the primary (filled in ink), the second stays outlined. The state follows them as
+   generated text, so no phase's own text or element changes. A recorded box has no buttons and is left as it is.
+   Hover keeps full opacity: the global button:hover fade sticks after a tap on a phone (A15's lesson).
+   Waits for body.ga15-on, which this unit's switch sets. */
+html body.ga15-on #advList .supp4540-koku:has(> button),
+html body.ga15-on #advList .wealth4517-status:has(> button) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+html body.ga15-on #advList .supp4540-koku:has(> button) > span,
+html body.ga15-on #advList .wealth4517-status:has(> button) > span {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+html body.ga15-on #advList .supp4540-koku > button,
+html body.ga15-on #advList .wealth4517-status > button {
+  min-height: 44px;
+  margin: 0;
+  padding: 0 16px;
+}
+html body.ga15-on #advList .supp4540-koku > button:first-of-type,
+html body.ga15-on #advList .wealth4517-status > button:first-of-type {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+html body.ga15-on #advList .supp4540-koku > button:hover,
+html body.ga15-on #advList .wealth4517-status > button:hover {
+  opacity: 1;
+}
+html body.ga15-on #advList .wealth4517-status > button:disabled {
+  opacity: .5;
+}
+html body.ga15-on #advList .supp4540-koku:has(> button)::after,
+html body.ga15-on #advList .wealth4517-status:has(> button)::after {
+  content: 'Not recorded yet';
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+html body.ga15-on #advList .wealth4517-status.wealth4517-excess:has(> button)::after {
+  content: 'Not settled yet';
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -55908,6 +55957,32 @@ return fontkitCache=module.exports;}
   LP15.install();
   // ============ END PART H PHASE 15.1.5 ============
 
+  // ============ PART H PHASE 15.1.6 — GRANT ACTIONS AND THEIR STATE ============
+  // Phase 15, Release 15a, finding A06 (FT-42; owner's ruling Q1; mock-up approved 7 November 2026, revision 2: no tick).
+  // Zakyo Toshi Citizen's row (Phase 4.5.40 (Part I)) and Wealthy's row (Phase 4.5.17 (Part I)) offer a koku grant as
+  // two equal outlined buttons, touching on Zakyo's row: "Add N koku" and "Already added" (or "Return N koku" and
+  // "Keep"). They now read as one compact group with a clear gap: the first action filled as the primary, the second
+  // outlined, both 44 px tall, and the state beside them ("Not recorded yet", or "Not settled yet" for Return / Keep).
+  // Once recorded, the buttons go and the existing line says so in plain words, as today: no tick (owner, revision 2).
+  // All of it is the stylesheet (1135-grant-actions.css): no button is moved, renamed or relabelled, and the state is
+  // drawn by the stylesheet, so each row's text, buttons, one-time guard and reversal are exactly those phases' own.
+  // This fragment holds only the switch, which sets body.ga15-on: with the switch off the rows are exactly as before.
+  const GRANT_ACTIONS_ENABLED = true;
+
+  const GA15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return GRANT_ACTIONS_ENABLED; };
+    api.install = function(){
+      if(api.installed || !GRANT_ACTIONS_ENABLED || !document.body) return false;
+      api.installed = true;
+      document.body.classList.add('ga15-on');
+      return true;
+    };
+    return api;
+  })();
+  GA15.install();
+  // ============ END PART H PHASE 15.1.6 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -56875,6 +56950,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.5 BEGIN limb-picker-seam
   if(typeof LP15 === 'object' && LP15) Object.assign(window.__L5R_TEST__, {LP15, LIMB_PICKER_ENABLED});
   // END LP15 limb-picker-seam
+  // PART H PHASE 15.1.6 BEGIN grant-actions-seam
+  if(typeof GA15 === 'object' && GA15) Object.assign(window.__L5R_TEST__, {GA15, GRANT_ACTIONS_ENABLED});
+  // END GA15 grant-actions-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -19,3 +19,7 @@ The block begins `// PART I PHASE 4.5.40 BEGIN identity-outfit-seam` and ends `/
    (Phase 4.5.39 alone, 7,932,036 bytes).
 4. Rebuild with `build/recombine.py --verify` and run Phase 4.5.39's harness. Then apply the same removal to the working
    branch, delete this layer's entry from `CHAIN`, and delete this folder.
+
+## Release 15a A06 — grant actions and their state (7 November 2026)
+
+Release 15a A06 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A06 — Grant Actions and Their State/`), under the owner's ruling Q1, restyles `.supp4540-koku` and its buttons while `body.ga15-on` is set: one group with a 10 px gap, 44 px buttons, the first filled as the primary, and the state ("Not recorded yet" / "Not settled yet") drawn as generated text after them. Stylesheet only: it moves, renames and relabels nothing, and calls nothing here. This release's harness passes in full with A06 present. A06's stylesheet names this release's classes, so this release's remover may refuse while A06 is present: remove A06 first (the removal chain does so in order).

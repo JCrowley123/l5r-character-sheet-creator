@@ -965,6 +965,9 @@
   // PART H PHASE 15.1.5 BEGIN limb-picker-seam
   if(typeof LP15 === 'object' && LP15) Object.assign(window.__L5R_TEST__, {LP15, LIMB_PICKER_ENABLED});
   // END LP15 limb-picker-seam
+  // PART H PHASE 15.1.6 BEGIN grant-actions-seam
+  if(typeof GA15 === 'object' && GA15) Object.assign(window.__L5R_TEST__, {GA15, GRANT_ACTIONS_ENABLED});
+  // END GA15 grant-actions-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

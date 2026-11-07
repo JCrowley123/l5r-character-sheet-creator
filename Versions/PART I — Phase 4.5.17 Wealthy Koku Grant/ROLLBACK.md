@@ -35,3 +35,7 @@ No registry seat, roll modifier, markup or top-level save change.
 ## Proof
 
 Measured 23 September 2026: the 2,767,985-byte build (`be9076cfbebc3fac31641a03fab82508b35a7c06caf961e347e546151930115a`) removes to **exactly 2,753,162 bytes**, `0aefe9c9…`; the removed copy verifies; **1,497/1,497** retained checks pass on those bytes. Live **1,584/1,584**. With 4.5.16 removed first: this suite 87/87 and older suites 1,406/1,406; both removed in either order: byte-identical to `1d8aa345b8c054cca212bd57a57acb49cb593bf4b7805cec0438a171537a70e4`. Fixtures 45/45, no skips. Inventory unchanged; seven registry seats.
+
+## Release 15a A06 — grant actions and their state (7 November 2026)
+
+Release 15a A06 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A06 — Grant Actions and Their State/`), under the owner's ruling Q1, restyles `.wealth4517-status` and its buttons while `body.ga15-on` is set: one group with a 10 px gap, 44 px buttons, the first filled as the primary, and the state ("Not recorded yet" / "Not settled yet") drawn as generated text after them. Stylesheet only: it moves, renames and relabels nothing, and calls nothing here. This release's harness passes in full with A06 present. A06's stylesheet names this release's classes, so this release's remover may refuse while A06 is present: remove A06 first (the removal chain does so in order).

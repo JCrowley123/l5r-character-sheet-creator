@@ -1,0 +1,48 @@
+/* PART H PHASE 15.1.6 — Release 15a A06: grant actions as one compact group, with the state beside it (FT-42, ruling Q1).
+   Matches only a grant box that is offering an action (it has buttons): Zakyo Toshi Citizen's .supp4540-koku and
+   Wealthy's .wealth4517-status. The explanation line takes the full width; below it the two actions sit with a 10 px
+   gap, 44 px tall; the first is the primary (filled in ink), the second stays outlined. The state follows them as
+   generated text, so no phase's own text or element changes. A recorded box has no buttons and is left as it is.
+   Hover keeps full opacity: the global button:hover fade sticks after a tap on a phone (A15's lesson).
+   Waits for body.ga15-on, which this unit's switch sets. */
+html body.ga15-on #advList .supp4540-koku:has(> button),
+html body.ga15-on #advList .wealth4517-status:has(> button) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+html body.ga15-on #advList .supp4540-koku:has(> button) > span,
+html body.ga15-on #advList .wealth4517-status:has(> button) > span {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+html body.ga15-on #advList .supp4540-koku > button,
+html body.ga15-on #advList .wealth4517-status > button {
+  min-height: 44px;
+  margin: 0;
+  padding: 0 16px;
+}
+html body.ga15-on #advList .supp4540-koku > button:first-of-type,
+html body.ga15-on #advList .wealth4517-status > button:first-of-type {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+html body.ga15-on #advList .supp4540-koku > button:hover,
+html body.ga15-on #advList .wealth4517-status > button:hover {
+  opacity: 1;
+}
+html body.ga15-on #advList .wealth4517-status > button:disabled {
+  opacity: .5;
+}
+html body.ga15-on #advList .supp4540-koku:has(> button)::after,
+html body.ga15-on #advList .wealth4517-status:has(> button)::after {
+  content: 'Not recorded yet';
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+html body.ga15-on #advList .wealth4517-status.wealth4517-excess:has(> button)::after {
+  content: 'Not settled yet';
+}
