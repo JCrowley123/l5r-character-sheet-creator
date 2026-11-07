@@ -1,0 +1,99 @@
+{
+ "phone-A01-today": "phone-picker-A01-today.png",
+ "phone-A01-remove": "phone-picker-A01-remove.png",
+ "phone-A01-move": "phone-picker-A01-move.png",
+ "phone-A03-today": "phone-picker-A03-today.png",
+ "phone-A03-remove": "phone-picker-A03-remove.png",
+ "phone-A03-move": "phone-picker-A03-move.png",
+ "phone-A04-today": "phone-picker-A04-today.png",
+ "phone-A04-remove": "phone-picker-A04-remove.png",
+ "phone-A04-move": "phone-picker-A04-move.png",
+ "phone-A09-today": "phone-picker-A09-today.png",
+ "phone-A09-remove": "phone-picker-A09-remove.png",
+ "phone-A09-move": "phone-picker-A09-move.png",
+ "phone-A12-today": "phone-picker-A12-today.png",
+ "phone-A12-remove": "phone-picker-A12-remove.png",
+ "phone-A12-move": "phone-picker-A12-move.png",
+ "phone-A13-today": "phone-picker-A13-today.png",
+ "phone-A13-remove": "phone-picker-A13-remove.png",
+ "phone-A13-move": "phone-picker-A13-move.png",
+ "phone-A14-today": "phone-picker-A14-today.png",
+ "phone-A14-remove": "phone-picker-A14-remove.png",
+ "phone-A14-move": "phone-picker-A14-move.png",
+ "phone-play-court-today": "phone-play-court-today.png",
+ "phone-play-hotei-today": "phone-play-hotei-today.png",
+ "phone-play-skills-today": "phone-play-skill0-today.png",
+ "phone-play-kiho-today": "phone-play-kiho-today.png",
+ "phone-management-court-today": "phone-management-court-today.png",
+ "phone-management-choose-today": "phone-management-choose-today.png",
+ "phone-management-hotei-today": "phone-management-hotei-today.png",
+ "phone-management-skills-today": "phone-management-skill0-today.png",
+ "phone-management-kiho-today": "phone-management-kiho-today.png",
+ "phone-void-today": "phone-void-today.png",
+ "phone-play-court-new": "phone-play-court-new.png",
+ "phone-play-hotei-new": "phone-play-hotei-new.png",
+ "phone-play-skills-new": "phone-play-skill0-new.png",
+ "phone-play-kiho-new": "phone-play-kiho-new.png",
+ "phone-management-court-new": "phone-management-court-new.png",
+ "phone-management-choose-new": "phone-management-choose-new.png",
+ "phone-management-hotei-new": "phone-management-hotei-new.png",
+ "phone-management-skills-new": "phone-management-skill0-new.png",
+ "phone-management-kiho-new": "phone-management-kiho-new.png",
+ "phone-void-new": "phone-void-new.png",
+ "phone-touch": {
+  "void-eye-btn": [
+   "44x44"
+  ],
+  "sk-info-btn": [
+   "44x44"
+  ],
+  "adv-config-info": [
+   "44x44"
+  ],
+  "court4514-court": [
+   "144x44",
+   "103x44"
+  ],
+  "g1-add-court": [
+   "128x44"
+  ]
+ },
+ "desktop-play-court-today": "desktop-play-court-today.png",
+ "desktop-play-hotei-today": "desktop-play-hotei-today.png",
+ "desktop-play-skills-today": "desktop-play-skill0-today.png",
+ "desktop-play-kiho-today": "desktop-play-kiho-today.png",
+ "desktop-management-court-today": "desktop-management-court-today.png",
+ "desktop-management-choose-today": "desktop-management-choose-today.png",
+ "desktop-management-hotei-today": "desktop-management-hotei-today.png",
+ "desktop-management-skills-today": "desktop-management-skill0-today.png",
+ "desktop-management-kiho-today": "desktop-management-kiho-today.png",
+ "desktop-void-today": "desktop-void-today.png",
+ "desktop-play-court-new": "desktop-play-court-new.png",
+ "desktop-play-hotei-new": "desktop-play-hotei-new.png",
+ "desktop-play-skills-new": "desktop-play-skill0-new.png",
+ "desktop-play-kiho-new": "desktop-play-kiho-new.png",
+ "desktop-management-court-new": "desktop-management-court-new.png",
+ "desktop-management-choose-new": "desktop-management-choose-new.png",
+ "desktop-management-hotei-new": "desktop-management-hotei-new.png",
+ "desktop-management-skills-new": "desktop-management-skill0-new.png",
+ "desktop-management-kiho-new": "desktop-management-kiho-new.png",
+ "desktop-void-new": "desktop-void-new.png",
+ "desktop-touch": {
+  "void-eye-btn": [
+   "44x44"
+  ],
+  "sk-info-btn": [
+   "44x44"
+  ],
+  "adv-config-info": [
+   "44x44"
+  ],
+  "court4514-court": [
+   "144x44",
+   "103x44"
+  ],
+  "g1-add-court": [
+   "128x44"
+  ]
+ }
+}

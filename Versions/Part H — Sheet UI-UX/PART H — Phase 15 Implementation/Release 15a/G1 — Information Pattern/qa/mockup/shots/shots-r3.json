@@ -1,0 +1,11 @@
+{
+ "phone-Crane": "rgb(33, 85, 125)",
+ "phone-Crab": "rgb(125, 76, 33)",
+ "phone-Dragon": "rgb(27, 101, 64)",
+ "phone-Lion": "rgb(101, 83, 27)",
+ "phone-Phoenix": "rgb(125, 52, 33)",
+ "phone-Scorpion": "rgb(83, 45, 59)",
+ "phone-Unicorn": "rgb(82, 33, 125)",
+ "phone-none": "rgb(124, 38, 32)",
+ "desktop-Crane": "rgb(33, 85, 125)"
+}

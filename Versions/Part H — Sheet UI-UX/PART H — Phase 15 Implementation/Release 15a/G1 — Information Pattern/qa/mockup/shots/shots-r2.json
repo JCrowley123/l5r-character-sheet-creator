@@ -1,0 +1,80 @@
+{
+ "phone-today": "phone-court-r2-today.png",
+ "phone-management-none": "phone-management-court-r2-none.png",
+ "phone-management-on": "phone-management-court-r2-on.png",
+ "phone-management-moved": "phone-management-court-r2-moved.png",
+ "phone-management-gold": "phone-management-court-r2-gold.png",
+ "touch": [
+  44,
+  44,
+  44,
+  44
+ ],
+ "phone-play-none": "phone-play-court-r2-none.png",
+ "phone-play-on": "phone-play-court-r2-on.png",
+ "phone-contrast": {
+  "deepGoldPaper": 4.88,
+  "goldPaper": 2.81,
+  "goldInk": 4.42,
+  "outlineOnPage": 2.81
+ },
+ "phone-raised": "Defense to Rank 5",
+ "phone-skills": {
+  "reached": {
+   "i": 1,
+   "name": "Defense",
+   "spans": 3,
+   "reached": 2
+  },
+  "notYet": {
+   "i": 0,
+   "name": "Calligraphy",
+   "spans": 1,
+   "reached": 0
+  },
+  "none": {
+   "i": 2,
+   "name": "Lore: Shadowlands",
+   "spans": 0,
+   "reached": 0
+  }
+ },
+ "phone-skillinfo-today": "phone-skillinfo-today.png",
+ "phone-skillinfo-reached": "phone-skillinfo-reached.png",
+ "phone-skillinfo-notYet": "phone-skillinfo-notYet.png",
+ "phone-skillinfo-none": "phone-skillinfo-none.png",
+ "desktop-today": "desktop-court-r2-today.png",
+ "desktop-management-none": "desktop-management-court-r2-none.png",
+ "desktop-management-on": "desktop-management-court-r2-on.png",
+ "desktop-contrast": {
+  "deepGoldPaper": 4.88,
+  "goldPaper": 2.81,
+  "goldInk": 4.42,
+  "outlineOnPage": 2.81
+ },
+ "desktop-raised": "Defense to Rank 5",
+ "desktop-skills": {
+  "reached": {
+   "i": 1,
+   "name": "Defense",
+   "spans": 3,
+   "reached": 2
+  },
+  "notYet": {
+   "i": 0,
+   "name": "Calligraphy",
+   "spans": 1,
+   "reached": 0
+  },
+  "none": {
+   "i": 2,
+   "name": "Lore: Shadowlands",
+   "spans": 0,
+   "reached": 0
+  }
+ },
+ "desktop-skillinfo-today": "desktop-skillinfo-today.png",
+ "desktop-skillinfo-reached": "desktop-skillinfo-reached.png",
+ "desktop-skillinfo-notYet": "desktop-skillinfo-notYet.png",
+ "desktop-skillinfo-none": "desktop-skillinfo-none.png"
+}

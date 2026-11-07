@@ -590,6 +590,22 @@ No deferred idea was silently promoted or dropped: R6 and the UI backlog go to P
 **4 November · from Release 15a A01.** (1) **FU-15a-1**, the owner's device-pass request: the wizard's Kiho step and the sheet's Add Technique picker both offer a Kiho already learnt, so one can be taken twice (Air Fist twice, screenshot in A01's `qa/device-pass/`). The owner asks that learnt Kiho, Kata and spells leave the list in the wizard and on the sheet, as Skills do. It is in Release 8c; A01 does not touch it. (2) Already in 8c: naming the monk's Lore subject in the wizard adds a *1 School Skill at Rank 0* warning card. (3) Two minor review notes, recorded and not changed: a theoretical comma-bounded false match between two given-spell names (no data has one), and the A01 harness's own list parser cutting at the first ". ". [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
 <!-- end-a01-15a-part4 -->
 
+<!-- ft59-part4 -->
+**7 November · parked by the owner: FT-59, a mon and a colour theme for every Clan.** This extends Phase 9 (Part H)'s Clan look:
+
+- **Mons:** each Minor Clan gets its own mon, and so do the Spider, the Imperial families and the ronin.
+- **Colours:** about 12 themes instead of one per Clan (about 25):
+  - the seven Great Clans, as today;
+  - one theme each for the Mantis, the Spider, the Imperial families and the ronin;
+  - one colour shared by every Minor Clan, each keeping its own mon;
+  - the sheet's red with no Clan.
+- **Why, as discussed on 7 November:** a sheet shows one Clan at a time, so the mon identifies the Clan and the colour sets the mood. Text on these colours has to stay readable, which means dark shades, and about 25 dark shades would bunch together.
+- **Pairs to keep apart:** Spider and Scorpion, Mantis and Dragon, Imperial and Unicorn (or Lion), ronin and the Void grey.
+- **Rules for each new theme:** its deep shade must reach 4.5 : 1 on the paper, like the existing seven. It must also avoid the reserved colours: the Delete and worst-wound red, the gold of buttons, and the Ring colours.
+- **Link to G1:** Release 15a G1's A15 court badges fill with the Clan colour, so new themes reach them without further work.
+- **Status:** parked until the owner chooses a time. There are no mock-ups and no estimate yet, and nothing is built.
+<!-- end-ft59-part4 -->
+
 <!-- a02-15a-part4 -->
 **4–5 November · from Release 15a A02.** (1) Parked by the owner on 5 November: key stats always on view, like D&D Beyond's header. It is recorded in the roadmap's Combat tab plan and on the [Combat tab mock-up canvas](https://claude.ai/artifact/3xjspD1SqtVrRz46dvoM3h), with a note that the floating strip's Rest needs a new home. (2) Revision 2's review found that the A02 harness's "part-way" scroll went to the top, in revision 1 too. Fixed before qualification; revision 1's part-way comparison numbers were really top states. (3) Review notes, recorded and not changed: `TABS-REACHABLE` tests the middle of each tab (the tab bar's ends are covered by every sweep state's on-tabs check); no harness runs the app bar at the bottom or the Quick Access panel at its height cap; with the app bar on top, the panel is short on a phone held sideways. (4) Seen while measuring, already in A01's build and belonging to other findings: on the desktop, Advantages start far below Disadvantages when one list is empty (A03); the colophon's faint mon shows over the tab bar (B13). (5) The service-worker harness fix ([QA — PWA Harness Step Limits](<QA — PWA Harness Step Limits 2026-11-05/README.md>), commit `13f85caf`) lives on A02's branch but is its own unit: it can be merged with A02, or taken to `main` alone if A02 is removed. FU-15a-1 stays recorded and unscheduled. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
 <!-- end-a02-15a-part4 -->

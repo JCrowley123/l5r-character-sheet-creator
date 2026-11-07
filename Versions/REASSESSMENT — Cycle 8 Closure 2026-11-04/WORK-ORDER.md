@@ -167,3 +167,19 @@ Claude's review added the work planned after this file was written (the owner's 
 | PDF core-book-style redraw (your plan, 27 Oct) | After the fixes: prototype page 2 first; if the look is worth it, a second selectable sheet style beside the L5RCM look, with original artwork, A4 and a print-friendly option. | 30 (20–45), prototype 6 (4–10) |
 
 Provisional step 8 order: sync stage A and the PDF export fixes, the Combat tab, ronin and tattoos, the PDF redraw if its prototype is liked, the career planner, sync stage B, with FT-16 weighed against each. The recommendation is unchanged: A01 next.
+
+## Addendum — parked by the owner, 7 November 2026
+
+**7 November · parked by the owner: FT-59, a mon and a colour theme for every Clan.** This extends Phase 9 (Part H)'s Clan look:
+
+- **Mons:** each Minor Clan gets its own mon, and so do the Spider, the Imperial families and the ronin.
+- **Colours:** about 12 themes instead of one per Clan (about 25):
+  - the seven Great Clans, as today;
+  - one theme each for the Mantis, the Spider, the Imperial families and the ronin;
+  - one colour shared by every Minor Clan, each keeping its own mon;
+  - the sheet's red with no Clan.
+- **Why, as discussed on 7 November:** a sheet shows one Clan at a time, so the mon identifies the Clan and the colour sets the mood. Text on these colours has to stay readable, which means dark shades, and about 25 dark shades would bunch together.
+- **Pairs to keep apart:** Spider and Scorpion, Mantis and Dragon, Imperial and Unicorn (or Lion), ronin and the Void grey.
+- **Rules for each new theme:** its deep shade must reach 4.5 : 1 on the paper, like the existing seven. It must also avoid the reserved colours: the Delete and worst-wound red, the gold of buttons, and the Ring colours.
+- **Link to G1:** Release 15a G1's A15 court badges fill with the Clan colour, so new themes reach them without further work.
+- **Status:** parked until the owner chooses a time. There are no mock-ups and no estimate yet, and nothing is built. It is recorded in the roadmap's *Deferred and declined* section and in part 4 of the build ledger, for reference when its time comes. The order above is unchanged.

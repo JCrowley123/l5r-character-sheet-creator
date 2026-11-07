@@ -869,6 +869,24 @@ details.evidence > .rows{ padding:0 10px 10px; margin-top:0; }
 <!-- a01-15a-part4 -->
 <p><strong>4 November · from Release 15a A01.</strong> (1) <strong>FU-15a-1</strong>, the owner&#x27;s device-pass request: the wizard&#x27;s Kiho step and the sheet&#x27;s Add Technique picker both offer a Kiho already learnt, so one can be taken twice (Air Fist twice, screenshot in A01&#x27;s <code>qa/device-pass/</code>). The owner asks that learnt Kiho, Kata and spells leave the list in the wizard and on the sheet, as Skills do. It is in Release 8c; A01 does not touch it. (2) Already in 8c: naming the monk&#x27;s Lore subject in the wizard adds a <em>1 School Skill at Rank 0</em> warning card. (3) Two minor review notes, recorded and not changed: a theoretical comma-bounded false match between two given-spell names (no data has one), and the A01 harness&#x27;s own list parser cutting at the first ". ". <a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/A01%20%E2%80%94%20One%20Reminder%20per%20School%20Choice/HANDOVER.md">A01 handover</a>.</p>
 <!-- end-a01-15a-part4 -->
+<!-- ft59-part4 -->
+<p><strong>7 November · parked by the owner: FT-59, a mon and a colour theme for every Clan.</strong> This extends Phase 9 (Part H)'s Clan look:</p>
+<ul>
+<li><strong>Mons:</strong> each Minor Clan gets its own mon, and so do the Spider, the Imperial families and the ronin.</li>
+<li><strong>Colours:</strong> about 12 themes instead of one per Clan (about 25):</li>
+<ul>
+<li>the seven Great Clans, as today;</li>
+<li>one theme each for the Mantis, the Spider, the Imperial families and the ronin;</li>
+<li>one colour shared by every Minor Clan, each keeping its own mon;</li>
+<li>the sheet's red with no Clan.</li>
+</ul>
+<li><strong>Why, as discussed on 7 November:</strong> a sheet shows one Clan at a time, so the mon identifies the Clan and the colour sets the mood. Text on these colours has to stay readable, which means dark shades, and about 25 dark shades would bunch together.</li>
+<li><strong>Pairs to keep apart:</strong> Spider and Scorpion, Mantis and Dragon, Imperial and Unicorn (or Lion), ronin and the Void grey.</li>
+<li><strong>Rules for each new theme:</strong> its deep shade must reach 4.5 : 1 on the paper, like the existing seven. It must also avoid the reserved colours: the Delete and worst-wound red, the gold of buttons, and the Ring colours.</li>
+<li><strong>Link to G1:</strong> Release 15a G1's A15 court badges fill with the Clan colour, so new themes reach them without further work.</li>
+<li><strong>Status:</strong> parked until the owner chooses a time. There are no mock-ups and no estimate yet, and nothing is built.</li>
+</ul>
+<!-- end-ft59-part4 -->
 <!-- a02-15a-part4 -->
 <p><strong>4–5 November · from Release 15a A02.</strong> (1) Parked by the owner on 5 November: key stats always on view, like D&amp;D Beyond&#x27;s header. It is recorded in the roadmap&#x27;s Combat tab plan and on the <a href="https://claude.ai/artifact/3xjspD1SqtVrRz46dvoM3h">Combat tab mock-up canvas</a>, with a note that the floating strip&#x27;s Rest needs a new home. (2) Revision 2&#x27;s review found that the A02 harness&#x27;s &quot;part-way&quot; scroll went to the top, in revision 1 too. Fixed before qualification; revision 1&#x27;s part-way comparison numbers were really top states. (3) Review notes, recorded and not changed: <code>TABS-REACHABLE</code> tests the middle of each tab (the tab bar&#x27;s ends are covered by every sweep state&#x27;s on-tabs check); no harness runs the app bar at the bottom or the Quick Access panel at its height cap; with the app bar on top, the panel is short on a phone held sideways. (4) Seen while measuring, already in A01&#x27;s build and belonging to other findings: on the desktop, Advantages start far below Disadvantages when one list is empty (A03); the colophon&#x27;s faint mon shows over the tab bar (B13). (5) The service-worker harness fix (<a href="QA%20%E2%80%94%20PWA%20Harness%20Step%20Limits%202026-11-05/README.md">QA — PWA Harness Step Limits</a>, commit <code>13f85caf</code>) lives on A02&#x27;s branch but is its own unit: it can be merged with A02, or taken to <code>main</code> alone if A02 is removed. FU-15a-1 stays recorded and unscheduled. <a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/A02%20%E2%80%94%20Floating%20Controls%20Above%20the%20Tabs/HANDOVER.md">A02 handover</a>.</p>
 <!-- end-a02-15a-part4 -->

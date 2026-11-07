@@ -1763,6 +1763,18 @@ rules. Mock-ups: [Combat Tab Mock-ups](https://claude.ai/artifact/3xjspD1SqtVrRz
   award or take away (Honor, Glory).
 - **FT-58 — Combat Honor reminders.** A gentle note when an action may cost Honor (attacking an unarmed or
   surrendering opponent); the GM may prefer to handle it. Review with the owner's end-of-project look at Glory, Status and Honour.
+- **FT-59 — A mon and a colour theme for every Clan. Parked by the owner, 7 November 2026, until a suitable time;** no mock-ups, no estimate and nothing built. It extends Phase 9 (Part H):
+  - **Mons:** each Minor Clan gets its own mon, and so do the Spider, the Imperial families and the ronin.
+  - **Colours:** about 12 themes instead of about 25:
+    - the seven Great Clans, as today;
+    - one theme each for the Mantis, the Spider, the Imperial families and the ronin;
+    - one colour shared by every Minor Clan, each keeping its own mon;
+    - the sheet's red with no Clan.
+  - **Why:** a sheet shows one Clan at a time, so the mon carries identity and the colour sets the mood. Readable text needs dark shades, and about 25 of them would bunch together.
+  - **Pairs to keep apart:** Spider and Scorpion, Mantis and Dragon, Imperial and Unicorn (or Lion), ronin and the Void grey.
+  - **Rules for each new theme:** its deep shade must reach 4.5 : 1 on the paper. It must avoid the reserved colours: the Delete and worst-wound red, the gold of buttons, and the Ring colours.
+  - **Link to G1:** Release 15a G1's A15 court badges use the Clan colour, so new themes reach them automatically.
+  - **Record:** [work order addendum](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) and part 4 of the build ledger.
 
 ### Desk review rulings, 23 October 2026
 
