@@ -16,6 +16,9 @@ URL = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--url=')), 'ht
 FILES_ONLY = '--files-only' in sys.argv
 LOCAL = '--local' in sys.argv
 LOCAL_FILES = {}
+# --ref=<branch> compares a preview with that branch's committed build (default HEAD), so one checkout checks every
+# stacked branch's preview.
+REF = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--ref=')), 'HEAD')
 PREVIEW = re.sub(r'^https?://|\.l5r-character-sheet-creator\.pages\.dev/?$', '', URL).strip('/')
 OUT = QA / ('local' if LOCAL else 'live' if URL == 'https://l5r-character-sheet-creator.pages.dev/' else 'hosted-preview/' + PREVIEW)
 NODE = shutil.which('node') or r'C:\Program Files\nodejs\node.exe'
@@ -56,7 +59,7 @@ def count_of(out):
 
 def committed(path):
     # Deployment builds from Git blobs; older PWA files in this checkout carry CRLF.
-    return subprocess.check_output(['git', 'show', 'HEAD:' + path.relative_to(V.parent).as_posix()], cwd=V.parent)
+    return subprocess.check_output(['git', 'show', REF + ':' + path.relative_to(V.parent).as_posix()], cwd=V.parent)
 
 
 def download(name):
@@ -164,7 +167,7 @@ def main():
             results[label] = {'counts': counts, 'expected': total,
                               'passed': run.returncode == 0 and counts == (str(total), str(total))}
     passed = (FILES_ONLY and not results) or (len(results) == EXPECT[0] and sum(r['expected'] for r in results.values()) == EXPECT[1] and all(r['passed'] for r in results.values()))
-    report = {'commit': subprocess.check_output(['git','rev-parse','HEAD'], cwd=V.parent, text=True).strip(), 'downloaded_asset_sha256': asset_hashes, 'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'url': 'local build preview' if LOCAL else URL,
+    report = {'commit': subprocess.check_output(['git','rev-parse',REF], cwd=V.parent, text=True).strip(), 'downloaded_asset_sha256': asset_hashes, 'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'url': 'local build preview' if LOCAL else URL,
               'source_sha256': hashlib.sha256(committed(SOURCE)).hexdigest(),
               'page_sha256': hashlib.sha256(actual).hexdigest(), 'page_bytes': len(actual),
               'service_worker_build': sw_id, 'service_worker_sha256': hashlib.sha256(sw).hexdigest(),
