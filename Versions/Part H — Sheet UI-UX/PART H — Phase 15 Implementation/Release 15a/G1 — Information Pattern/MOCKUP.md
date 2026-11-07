@@ -112,3 +112,4 @@ These are scratch prototypes injected into today's build. The boards are `G1-A04
 | 6 Nov 17:56 | 44% | 64% | after reproduction and mockups |
 | 6 Nov 23:52 | 7% (new window) | 65% | after revision 2 |
 | 7 Nov 01:24 | 59% | 72% | four units built and light-checked, before the review |
+| 7 Nov 03:06 | 94% | 76% | review fixes, previews verified, device-check doc sent; G1 so far about 14 weekly points |
