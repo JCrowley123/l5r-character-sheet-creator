@@ -102,8 +102,12 @@ G2's `qa/verify-live.py` already has the G2 tables, with A04.1's count at 56.
    - then the variants;
    - then the dependencies.
 3. **Run one full pass, with its counts pinned by arithmetic beforehand:**
-   - **Candidate:** G1's 7,002 + G2's 146 = **7,148**, assuming no older harness changes count with G2 present. None does: the 4.5.21 fixture keeps its ids and counts.
-   - **Retained (the tree with G2 removed = G1 as live):** the G2 kickoff gives **6,929** (G1's 137 + 6,792). G1's own candidate pass on that same tree was 7,002 (6,865 + 137). **Before pinning, confirm from the retained runner's harness list which number it measures,** and record why.
+   - **Candidate: 7,148.** This is G1's `current-suite-runner.js` (7,002) plus G2's five harnesses (22 + 20 + 26 + 22 + 56 = 146). No older harness changes its count with G2 present: the 4.5.21 fixture keeps its ids and its 77, and every touched harness passed with its usual total.
+     - G2's `current-suite-runner.js` = G1's list, with G2's five harnesses added.
+   - **Retained (the tree with G2 removed, which is G1 as live): 6,929.** Confirmed on 7 November from G1's runners and `final-run-1/summary.json`.
+     - A retained run leaves out the two live-site leaves, 73 checks: Phase 5a's `sw-checks` and Phase 5b's `notice-checks`. That is why G1's own candidate pass on this tree was 7,002, but its retained measure is lower.
+     - G2's `retained-suite-runner.js` = G1's candidate list with A03's live-site suite swapped for its retained one: A04 35, A15 33, A16 50, A03.1 19, A03's `compact-skills-harness.js` 37, and A03's `retained-suite-runner.js` 6,755. That adds up to 6,929, as the G2 kickoff said.
+     - G1's `final-qa.py` pins `CANDIDATE, RETAINED = 7002, 6792`. G2's must pin `7148, 6929`. Its `BEFORE` (the group-removed rebuild) becomes G1's `2dcf6f20…6af6`, 17,586,964 bytes, and `LAST_KEPT` becomes A03.1's folder.
    - Never re-run a failed pass, never widen a check, and investigate any failure rather than retrying.
 
 ### 2. Records once, then stop for the go-live word
