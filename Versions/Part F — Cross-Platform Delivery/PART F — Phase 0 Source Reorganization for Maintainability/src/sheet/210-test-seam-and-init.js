@@ -968,6 +968,9 @@
   // PART H PHASE 15.1.6 BEGIN grant-actions-seam
   if(typeof GA15 === 'object' && GA15) Object.assign(window.__L5R_TEST__, {GA15, GRANT_ACTIONS_ENABLED});
   // END GA15 grant-actions-seam
+  // PART H PHASE 15.1.7 BEGIN moon-row-seam
+  if(typeof MR15 === 'object' && MR15) Object.assign(window.__L5R_TEST__, {MR15, MOON_ROW_ENABLED});
+  // END MR15 moon-row-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -7266,6 +7266,52 @@ html body.ga15-on #advList .wealth4517-status.wealth4517-excess:has(> button)::a
   content: 'Not settled yet';
 }
 
+/* PART H PHASE 15.1.7 — Release 15a A07: the Moon row (ruling Q1).
+   Matches only Lord Moon's Curse's row: the configuration row that holds the Lord Moon fix's (LM7) .lm7-moon box. The severity
+   summary gains a "Severity" label in the sheet's shared label style (generated text, so the summary's own text is
+   unchanged). The moon box becomes a column on the row's left edge: the full-moon tick on its own 44 px line, a 22 px box
+   in body text (not the carousel's tiny capitals), then the resist button at 44 px. The ID in each selector outranks the
+   carousel's label rule and the fix's own injected style.
+   Waits for body.mr15-on, which this unit's switch sets. */
+html body.mr15-on #disadvList .adv-config-row:has(> .lm7-moon) > .adv-config-summary::before {
+  content: 'Severity';
+  margin-right: 8px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .66rem;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+html body.mr15-on #disadvList .lm7-moon {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+}
+html body.mr15-on #disadvList label.lm7-tick {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: .95rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+}
+html body.mr15-on #disadvList label.lm7-tick input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+html body.mr15-on #disadvList .lm7-roll {
+  min-height: 44px;
+  margin: 0;
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -55983,6 +56029,31 @@ return fontkitCache=module.exports;}
   GA15.install();
   // ============ END PART H PHASE 15.1.6 ============
 
+  // ============ PART H PHASE 15.1.7 — THE MOON ROW ============
+  // Phase 15, Release 15a, finding A07 (the Moon row, 29 October; owner's ruling Q1; mock-up approved 7 November 2026).
+  // Lord Moon's Curse's row (the Lord Moon fix LM7's decorate, with the resist-label fix MR7) showed three things on three
+  // different edges and baselines: the severity ("Medium — 5 points") with no label, a 13 px full-moon tick in tiny
+  // capitals set 10 px in, and the roll button. It now reads as a labelled severity row ("SEVERITY Medium — 5 points",
+  // then Change), the full-moon toggle on its own aligned 44 px line in body text, and "Resist Lord Moon (TN n)" at 44 px.
+  // All of it is the stylesheet (1136-moon-row.css): the label is generated text, and the tick, its wording, its state,
+  // the roll, the moon's extra Void pip and its order, and every rule are those fixes' own and unchanged.
+  // This fragment holds only the switch, which sets body.mr15-on: with the switch off the row is exactly as before.
+  const MOON_ROW_ENABLED = true;
+
+  const MR15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return MOON_ROW_ENABLED; };
+    api.install = function(){
+      if(api.installed || !MOON_ROW_ENABLED || !document.body) return false;
+      api.installed = true;
+      document.body.classList.add('mr15-on');
+      return true;
+    };
+    return api;
+  })();
+  MR15.install();
+  // ============ END PART H PHASE 15.1.7 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -56953,6 +57024,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.6 BEGIN grant-actions-seam
   if(typeof GA15 === 'object' && GA15) Object.assign(window.__L5R_TEST__, {GA15, GRANT_ACTIONS_ENABLED});
   // END GA15 grant-actions-seam
+  // PART H PHASE 15.1.7 BEGIN moon-row-seam
+  if(typeof MR15 === 'object' && MR15) Object.assign(window.__L5R_TEST__, {MR15, MOON_ROW_ENABLED});
+  // END MR15 moon-row-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
