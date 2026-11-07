@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "bc4ba31134bb30848f73bbfd5fc1e7a9c76eb75fee391f829f682647d700e0c9",
+  "expect_sha256": "2ba7e6dfe0385f6be499452a0f0ba68aea6b40a29482a214ea2212eb2466c0e0",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -175,6 +175,7 @@
     { "file": "src/css/1128-floating-strip.css", "note": "PART H PHASE 15.1.2 - Release 15a A02, the floating controls in the bottom corners above the tabs (revision 2)" },
     { "file": "src/css/1129-compact-skill-cards.css", "note": "PART H PHASE 15.1.3 - Release 15a A03, top-aligned Advantage/Disadvantage columns and compact phone Skill cards" },
     { "file": "src/css/1130-one-info-pattern.css", "note": "PART H PHASE 15.1.4 - Release 15a A04, one information pattern: the circled i for the Skill, Void and Advantage information buttons" },
+    { "file": "src/css/1131-court-badges.css", "note": "PART H PHASE 15.1.15 - Release 15a A15, court badges: tap a court to put it in session, filled in the Clan colour" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -503,6 +504,7 @@
     { "file": "src/sheet/209.9999999999999996-feat-floating-strip.js", "note": "PART H PHASE 15.1.2 - Release 15a A02, the switch and body class for the corner placements of Quick Access, return-to-top and the dice" },
     { "file": "src/sheet/209.9999999999999997-feat-compact-skill-cards.js", "note": "PART H PHASE 15.1.3 - Release 15a A03 (revision 2), the switch, body class and summary line for compact phone Skill cards" },
     { "file": "src/sheet/209.9999999999999998-feat-one-info-pattern.js", "note": "PART H PHASE 15.1.4 - Release 15a A04, the switch, accessible names, the un-nested Advantage i and Hotei's folded row" },
+    { "file": "src/sheet/209.9999999999999999-feat-court-badges.js", "note": "PART H PHASE 15.1.15 - Release 15a A15, the switch and the court badges replacing the radios and the session tick box" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

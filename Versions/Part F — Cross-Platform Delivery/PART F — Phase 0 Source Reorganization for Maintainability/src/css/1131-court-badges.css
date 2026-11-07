@@ -1,0 +1,70 @@
+/* PART H PHASE 15.1.15 — Release 15a A15: court badges (the owner's design, mock-ups approved 6-7 November 2026).
+   Each court on Darling of the Court's row is a toggle button (this unit's script):
+   - not in session: a gold outline on the page colour;
+   - in session (aria-pressed): filled in the Clan's colour, --shu-dark, which Phase 9 (Part H) recolours per Clan
+     (the sheet's red with no Great Clan). The court name is in the paper colour, measured at 5.7 : 1 or more for every
+     Clan. The name is also bold, and the status line says which court is in session, so the state never rests on
+     colour alone (or on a background a printer may drop).
+   - + Add court: a dashed gold outline, in Manage only; Phase 12's (Part K) pm12-play body class hides it in Play.
+   Every badge and + Add court is at least 44 px tall. Long court names wrap inside the badge.
+   Everything waits for body.cb15-on, which this unit's switch sets. The ID in each selector outranks 4.5.14's chip
+   rules and the carousel's button rules without !important. */
+html body.cb15-on #advList .court4514-row .court4514-courts {
+  gap: 8px;
+}
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge,
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-add {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 11px 16px;
+  border-radius: 22px;
+  font-family: inherit;
+  font-size: .95rem;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge {
+  border: 1px solid var(--gold);
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 400;
+}
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge[aria-pressed="true"] {
+  border-color: var(--shu-dark);
+  background: var(--shu-dark);
+  color: var(--paper);
+  font-weight: 700;
+}
+/* The trunk fades every button on hover (button:hover, opacity .85), and on a phone that state sticks after a tap.
+   A filled badge is a state, not a hover cue: it keeps its full colour, so the measured contrast holds. */
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge[aria-pressed="true"]:hover {
+  opacity: 1;
+}
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-add {
+  border: 1px dashed var(--gold);
+  background: transparent;
+  color: var(--ink);
+  font-weight: 400;
+}
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-badge:focus-visible,
+html body.cb15-on #advList .court4514-row .court4514-controls .cb15-add:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+html body.cb15-on.pm12-play #advList .court4514-row .court4514-controls .cb15-add {
+  display: none;
+}
+@media print {
+  html body.cb15-on #advList .court4514-row .court4514-controls .cb15-add {
+    display: none;
+  }
+}

@@ -42,3 +42,9 @@ Removal order with 4.5.13, all in scratch copies: with 4.5.13 removed and this r
 Saved data across removal: `qa/saved-after-removal.js` passes **13/13** (preserved, flagged, cost kept, survives a re-save, reads back on the live build) and fails 10/13 when given the wrong build.
 
 Safety fixtures: **45 run, 45 passed, 0 skipped** on Linux, including the two real-symlink cases Windows had to skip for 4.5.13. Foreign markers, malformed seam or manifest, a wrong required hash, traversal paths, symlinked or hard-linked targets, unmanifested surface leaks and the live-tree path all refuse without writing. `feature-dependencies.py` exits 0 for this release and still exits 0 for 4.5.13. Mutation results are in README.md.
+
+## Release 15a A15 — court badges (7 November 2026)
+
+Release 15a A15 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A15 — Court Badges/`) wraps three of this release's methods by property: `CS4514.controls`, `CS4514.darlingHelp` and `CS4514.open`. With it, each court is one toggle badge: tap it to select the court and put it in session, and tap it again to end the session. It replaces the radios and the "Court in session" box. It writes this release's own `{selected, inSession}` through `CS4514.update()`, so saved data is unchanged. A15 names this release's `court4514-*` classes, so **this release's remover refuses while A15 is present: remove A15 first** (the removal chain does so in order).
+
+**Declared fixture correction:** `qa/court-servant-harness.js` is conditional on A15. Only while `CB15` is on the seam does it drive the badges, through a `session()` helper, `radios` read from `aria-pressed`, and the badge expectations named at each check. It has the same 225 ids, and passes 225/225 both with A15 present and on A04's build (A15 removed).

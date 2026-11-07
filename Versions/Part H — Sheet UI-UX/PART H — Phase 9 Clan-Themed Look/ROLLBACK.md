@@ -287,3 +287,7 @@ If a restored build's `element_id_count` or seam key count lands anywhere other 
 deleted, or (for the whole-file-restore method) a later phase has since touched the same shared
 files and its work was accidentally reverted along with this one — recheck against the surgical
 procedure above.
+
+## Read by a later unit (comment-level, 7 November 2026)
+
+Release 15a A15 — Court Badges (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A15 — Court Badges/`) fills an in-session court badge with the trunk token `--shu-dark`, which this phase recolours per Clan. A15 names nothing of this phase's, so removing either is unaffected. Without this phase, the badge is the sheet's red. A15's own harness checks each Clan's shade against its own copy of this phase's `CLAN_THEME_PALETTE` while the theme is applied (`getAppliedClanKey()`), and expects the red otherwise, so it passes with this phase removed. It needs that copy updated if the palette ever changes.

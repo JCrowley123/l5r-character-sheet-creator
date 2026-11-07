@@ -45,3 +45,7 @@ for an actionable, focused Techniques field before typing. Its 16 assertions are
 pass with this release both present and removed; all six pinned variants still match. This
 test-only readiness fix is intentionally not undone by removing 12.5. It is outside the built
 source tree and does not affect the byte-identical production rebuild.
+
+## Release 15a A15 — court badges (7 November 2026)
+
+**Declared fixture correction.** `qa/advantages-harness.js` is conditional on Release 15a A15 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A15 — Court Badges/`). While `CB15` is on the seam, a court is a toggle badge and the badge is the session control. So `PM125-VISIBLE-PLAY-COURT` and `-COURT-SESSION` look for the badge, and `PM125-COURT-SELECTION` taps it once, with no tick-box tap. It has the same 212 ids, and passes 212/212 both with A15 present and on A04's build (A15 removed). Removing this phase is unaffected.

@@ -1,10 +1,16 @@
 /* Phase12.5 mode boundaries. Fixtures specified independently from retained feature harnesses;
  * game-rule arithmetic remains covered by those suites. Real clicks, keyboard, DOM and saved data
- * are the oracles; no assertion compares selector strings with their implementation. */
+ * are the oracles; no assertion compares selector strings with their implementation.
+ * Conditional on Release 15a A15 (PART H PHASE 15.1.15, court badges), declared in A15's and this phase's ROLLBACK.md
+ * (7 November 2026): with A15 present a court is a toggle button and the badge IS the session control, so the two
+ * court visibility checks look for the badge, and one tap selects the court and puts it in session (no tick box to
+ * press). Same ids, same count; with A15 removed every line runs as before. */
 'use strict';
 const {chromium}=require('playwright'),{pathToFileURL}=require('url'),path=require('path');
 const SHEET=path.resolve(process.argv[2]||path.join(__dirname,'../../Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html'));
 let passed=0,failed=0;const contexts=[];
+let BADGES=false; // Release 15a A15 present (read in PLAY-ACTIONS)
+const COURT_CONTROL=()=>BADGES?'.court4514-courts > button.court4514-court':'.court4514-courts input';
 function check(id,a,e=true){if(JSON.stringify(a)===JSON.stringify(e)){passed++;console.log('PASS '+id);}else{failed++;console.log('FAIL '+id+'\n expected '+JSON.stringify(e)+'\n actual '+JSON.stringify(a));}}
 async function scenario(id,fn){try{await fn();}catch(e){check('PM125-SCENARIO-'+id,String(e.message).split('\n')[0],'completed');}}
 const F=(name,config,side='adv')=>({name,config,side,cost:'5',desc:'Fixture description'});
@@ -82,10 +88,11 @@ async function main(){const b=await chromium.launch();try{
  });
  await scenario('NATURAL-DISABLED',async()=>{const p=await fresh(b);await seed(p,[F('Wealthy',{type:'rankFreePick',rank:1,value:'Rank 1',wealth4517:{revision:1,granted:6}})]);await p.evaluate(()=>{document.getElementById('f_koku').value='0';window.__L5R_TEST__.recalcAll();});check('PM125-WEALTHY-RETURN-STARTS-DISABLED',await p.locator('.wealth4517-btn').first().isDisabled());await mode(p,'play');await mode(p,'management');check('PM125-WEALTHY-NATURAL-DISABLED-PRESERVED',await p.locator('.wealth4517-btn').first().isDisabled());});
  await scenario('PLAY-ACTIONS',async()=>{const p=await fresh(b);await seed(p);await mode(p,'play');
+ BADGES=await p.evaluate(()=>!!(window.__L5R_TEST__.CB15&&window.__L5R_TEST__.COURT_BADGES_ENABLED));
  await p.evaluate(async()=>{const C=window.__L5R_CAROUSEL__;C.goToTab('Adv & Disadv');await C.whenSettled();});
- for(const [id,s] of [['HOTEI','.fb4521-hotei-roll'],['TATTOO','.d45-tattoo-check'],['PHOBIA','.d45-phobia-row .d45-toggle'],['NEMESIS','.d45-nemesis-row .d45-toggle'],['REALM',(await row(p,F('Cursed by the Realm',{},'disadv')))+' .d45-toggle'],['COURT','.court4514-courts input'],['COURT-SESSION','.court4514-session-box'],['LOST','.tr4524-lost input'],['DP-USE','.dp4523-use'],['DP-RESET','.dp4523-reset'],['LUCK-RESET',(await row(p,F('Luck',{})))+' .adv-config-reset-session'],['TIE-RESET',(await row(p,F('Kharmic Tie',{})))+' .adv-config-reset-session'],['UNLUCKY','.unlucky-btn'],['INFO','.fb4521-info']])check('PM125-VISIBLE-PLAY-'+id,await p.locator(s).first().isVisible());
+ for(const [id,s] of [['HOTEI','.fb4521-hotei-roll'],['TATTOO','.d45-tattoo-check'],['PHOBIA','.d45-phobia-row .d45-toggle'],['NEMESIS','.d45-nemesis-row .d45-toggle'],['REALM',(await row(p,F('Cursed by the Realm',{},'disadv')))+' .d45-toggle'],['COURT',COURT_CONTROL()],['COURT-SESSION',BADGES?COURT_CONTROL():'.court4514-session-box'],['LOST','.tr4524-lost input'],['DP-USE','.dp4523-use'],['DP-RESET','.dp4523-reset'],['LUCK-RESET',(await row(p,F('Luck',{})))+' .adv-config-reset-session'],['TIE-RESET',(await row(p,F('Kharmic Tie',{})))+' .adv-config-reset-session'],['UNLUCKY','.unlucky-btn'],['INFO','.fb4521-info']])check('PM125-VISIBLE-PLAY-'+id,await p.locator(s).first().isVisible());
  for(const [name,field] of [['Phobia','active'],['Sworn Enemy','active'],['Cursed by the Realm','inTemple']]){const s=await row(p,F(name,{},'disadv')),toggle=s+' .d45-toggle';await click(p,toggle);check('PM125-PLAY-TOGGLE-'+slug(name),(await config(p,name,'disadv'))?.[field],true);await click(p,toggle);}
- await p.locator('.court4514-courts input').last().evaluate(e=>e.click());check('PM125-COURT-SELECTION',(await config(p,'Darling of the Court')).selected,'Imperial Court');await click(p,'.court4514-session-box');check('PM125-COURT-SESSION',(await config(p,'Darling of the Court')).inSession,true);
+ await p.locator(COURT_CONTROL()).last().evaluate(e=>e.click());check('PM125-COURT-SELECTION',(await config(p,'Darling of the Court')).selected,'Imperial Court');if(!BADGES)await click(p,'.court4514-session-box');check('PM125-COURT-SESSION',(await config(p,'Darling of the Court')).inSession,true);
  await click(p,'.tr4524-lost input');check('PM125-LOST-TOGGLE',(await config(p,'Touch of the Spirit Realms')).lost,true);
  await click(p,'.fb4521-hotei-roll');check('PM125-HOTEI-ROLL-ACTION',await p.locator('#rollPreviewOverlay').isVisible());await closeRoll(p);
  await click(p,'.d45-tattoo-check');check('PM125-TATTOO-CHECK-ACTION',await p.locator('#rollPreviewOverlay').isVisible()&&/Willpower/.test(await p.locator('#rollPreviewOverlay').textContent()));await closeRoll(p);

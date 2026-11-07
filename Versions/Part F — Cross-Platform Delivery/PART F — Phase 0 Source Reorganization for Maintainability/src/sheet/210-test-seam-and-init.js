@@ -953,6 +953,9 @@
   // PART H PHASE 15.1.4 BEGIN info-pattern-seam
   if(typeof IP15 === 'object' && IP15) Object.assign(window.__L5R_TEST__, {IP15, ONE_INFO_PATTERN_ENABLED});
   // END IP15 info-pattern-seam
+  // PART H PHASE 15.1.15 BEGIN court-badges-seam
+  if(typeof CB15 === 'object' && CB15) Object.assign(window.__L5R_TEST__, {CB15, COURT_BADGES_ENABLED});
+  // END CB15 court-badges-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

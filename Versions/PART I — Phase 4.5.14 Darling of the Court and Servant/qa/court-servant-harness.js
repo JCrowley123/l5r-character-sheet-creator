@@ -1,12 +1,20 @@
 /* Real-browser acceptance tests for Darling of the Court (A04) and the Servant reference (A11).
  * Expected values come from the source notes (Core pp.148 and 153), never from CS4514 itself.
  * node court-servant-harness.js <sheet.html>
+ *
+ * Conditional on Release 15a A15 (PART H PHASE 15.1.15, court badges), declared in A15's and this phase's ROLLBACK.md
+ * (7 November 2026). With A15 present each court is a toggle button and there is no radio or "Court in session" box:
+ * tapping a court selects it AND puts it in session, tapping it again ends the session. So, only while A15 is present:
+ * `radios` reads each badge's aria-pressed; `toggles` counts the court group; session() taps the selected court's badge
+ * (or nothing if it is already in session); and the checks whose expected value is about the old controls expect the
+ * badge behaviour instead (named at each). Same ids, same count; with A15 removed every line runs as before.
  */
 'use strict';
 const {chromium} = require('playwright');
 const {pathToFileURL} = require('url');
 const path = require('path');
 const results = [];
+let BADGES = false;   // Release 15a A15 present (set once the page loads)
 const canonical = value => Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object'
   ? Object.fromEntries(Object.keys(value).sort().map(k => [k, canonical(value[k])])) : value;
 function check(id, actual, expected = true) {
@@ -74,8 +82,11 @@ async function rows(page, list = 'advList') {
     config:JSON.parse(div.dataset.advConfig || 'null'),
     text:div.querySelector('.adv-config-row')?.textContent || '', hasRow:!!div.querySelector('.adv-config-row'),
     warning:!!div.querySelector('.adv-config-warn'),
-    radios:[...div.querySelectorAll('.court4514-courts input[type=radio]')].map(r => r.checked),
-    toggles:div.querySelectorAll('.court4514-session-box').length,
+    radios:div.querySelector('.court4514-courts > button.court4514-court')
+      ? [...div.querySelectorAll('.court4514-courts > button.court4514-court')].map(b => b.getAttribute('aria-pressed') === 'true')
+      : [...div.querySelectorAll('.court4514-courts input[type=radio]')].map(r => r.checked),
+    toggles:div.querySelector('.court4514-courts > button.court4514-court') ? div.querySelectorAll('.court4514-courts').length
+      : div.querySelectorAll('.court4514-session-box').length,
     status:div.querySelector('.court4514-status')?.textContent || ''})), list);
 }
 const first = async (page, list) => (await rows(page, list))[0];
@@ -88,6 +99,16 @@ async function edit(page, index = 0) {
   await page.waitForSelector('#advConfigGrid .court4514-input', {state:'visible'});
 }
 const collect = page => page.evaluate(() => window.__L5R_TEST__.collectData());
+// Puts the selected court in session: the tick box, or with A15 the selected court's badge (nothing if already filled).
+async function session(page) {
+  if (!BADGES) return page.locator('#advList .court4514-session').click();
+  const index = await page.evaluate(() => { const div = document.querySelector('#advList .entry'); const config = JSON.parse(div.dataset.advConfig);
+    const badges = [...div.querySelectorAll('.court4514-courts > button.court4514-court')];
+    const i = badges.findIndex(b => b.textContent === (config.selected === undefined ? config.courts[0] : config.selected));
+    return badges[i] && badges[i].getAttribute('aria-pressed') === 'true' ? -1 : i; });
+  if (index >= 0) await page.locator('#advList .court4514-courts > button.court4514-court').nth(index).click();
+}
+const toggleCount = page => page.locator(BADGES ? '.court4514-courts:has(> button.court4514-court)' : '.court4514-session-box').count();
 const xp = page => page.locator('#f_xpSpent').inputValue().then(Number);
 const field = (page, id) => page.locator('#' + id).inputValue();
 
@@ -102,6 +123,7 @@ async function main() {
     const errors = []; page.on('pageerror', e => errors.push(String(e)));
     await page.goto(pathToFileURL(path.resolve(process.argv[2])).href, {waitUntil:'domcontentloaded'});
     await page.waitForFunction(() => !!window.__L5R_TEST__);
+    BADGES = await page.evaluate(() => !!(window.__L5R_TEST__.CB15 && window.__L5R_TEST__.COURT_BADGES_ENABLED));
 
     await section('CS-START', async () => {
       check('CS-ENABLED', await page.evaluate(() => window.__L5R_TEST__.ADV_COURT_SERVANT_ENABLED));
@@ -183,10 +205,12 @@ async function main() {
       const blackmailed = async () => (await first(page, 'disadvList')).cost;
       check('CS-BLACKMAILED-BASE', await blackmailed(), 3);
       let row = await first(page);
-      check('CS-ONE-SELECTED', row.radios, [true, false]);
+      // A15: no badge filled until a court is in session, and the first court is still the selected one.
+      check('CS-ONE-SELECTED', BADGES ? [row.radios, row.config.selected === undefined ? row.config.courts[0] : row.config.selected] : row.radios,
+        BADGES ? [[false, false], 'Kyuden Bayushi'] : [true, false]);
       check('CS-NOT-IN-SESSION-TEXT', /Status 3 as normal/.test(row.status) && !/counts as/.test(row.status));
       const before = await collect(page);
-      await page.locator('#advList .court4514-session').click();
+      await session(page);
       row = await first(page);
       check('CS-SESSION-SAVED', row.config.inSession, true);
       check('CS-SESSION-READOUT', /Status 3 — counts as 4 at Kyuden Bayushi/.test(row.status));
@@ -195,14 +219,16 @@ async function main() {
         [before.fields.f_statusRank, before.fields.f_statusPts]);
       check('CS-BLACKMAILED-UNCHANGED', await blackmailed(), 3);
       check('CS-SESSION-NO-XP', row.cost, 2 * PER_COURT.normal);
-      check('CS-FOCUS-RETURNS-TOGGLE', await page.evaluate(() => document.activeElement?.classList.contains('court4514-session-box')));
+      check('CS-FOCUS-RETURNS-TOGGLE', await page.evaluate(b => b ? document.activeElement?.matches('button.court4514-court[aria-pressed="true"]')
+        : document.activeElement?.classList.contains('court4514-session-box'), BADGES));
       await page.locator('#advList .court4514-court').nth(1).click();
       row = await first(page);
       check('CS-SELECT-SECOND', row.config.selected, 'Toshi Ranbo');
-      check('CS-SELECT-RESETS-SESSION', row.config.inSession, false);
+      check('CS-SELECT-RESETS-SESSION', row.config.inSession, BADGES);     // A15: tapping another court moves the session there
       check('CS-SELECT-ONE-CHECKED', row.radios, [false, true]);
-      check('CS-FOCUS-RETURNS-RADIO', await page.evaluate(() => document.activeElement?.type === 'radio' && document.activeElement.checked));
-      await page.locator('#advList .court4514-session').click();
+      check('CS-FOCUS-RETURNS-RADIO', await page.evaluate(b => b ? document.activeElement?.matches('button.court4514-court[aria-pressed="true"]')
+        : document.activeElement?.type === 'radio' && document.activeElement.checked, BADGES));
+      await session(page);
       check('CS-SECOND-IN-SESSION', /counts as 4 at Toshi Ranbo/.test((await first(page)).status));
       await page.evaluate(() => { document.getElementById('f_statusRank').value = '5'; window.__L5R_TEST__.recalcAll(); });
       check('CS-READOUT-FOLLOWS-STATUS', /Status 5 — counts as 6 at Toshi Ranbo/.test((await first(page)).status));
@@ -219,7 +245,7 @@ async function main() {
       check('CS-REMOVE-SELECTED-RESETS', [row.config.courts, row.config.selected, row.config.inSession],
         [['Kyuden Bayushi', 'Otosan Uchi'], 'Kyuden Bayushi', false]);
       check('CS-REMOVE-REPRICES', row.cost, 2 * PER_COURT.normal);
-      check('CS-ONE-TOGGLE-ON-SHEET', await page.locator('.court4514-session-box').count(), 1);
+      check('CS-ONE-TOGGLE-ON-SHEET', await toggleCount(page), 1);
     });
 
     await section('CS-DUPLICATE-ROW', async () => {
@@ -232,7 +258,7 @@ async function main() {
       check('CS-DUPLICATE-PRICED-AS-ONE', second.cost, PER_COURT.normal);
       check('CS-DUPLICATE-NO-CONTROLS', second.toggles, 0);
       check('CS-PRIMARY-KEEPS-CONTROLS', primary.toggles, 1);
-      check('CS-ONE-TOGGLE-WITH-DUPLICATE', await page.locator('.court4514-session-box').count(), 1);
+      check('CS-ONE-TOGGLE-WITH-DUPLICATE', await toggleCount(page), 1);
       await page.locator('#advList .entry').nth(1).locator('.rm-btn').click();
       check('CS-DUPLICATE-DELETE-XP', await xp(page), PER_COURT.normal);
       // A CONFIGURED duplicate (e.g. a save made before courts were consolidated): the first
@@ -247,7 +273,7 @@ async function main() {
       check('CS-CONFIGURED-DUPLICATE-OWN-PRICE', [a.cost, b.cost], [PER_COURT.normal, 2 * PER_COURT.normal]);
       check('CS-CONFIGURED-DUPLICATE-NO-CONTROLS', [a.toggles, b.toggles], [1, 0]);
       check('CS-CONFIGURED-DUPLICATE-NO-READOUT', b.status, '');
-      check('CS-CONFIGURED-DUPLICATE-ONE-TOGGLE', await page.locator('.court4514-session-box').count(), 1);
+      check('CS-CONFIGURED-DUPLICATE-ONE-TOGGLE', await toggleCount(page), 1);
       check('CS-CONFIGURED-DUPLICATE-PRESERVED', (await collect(page)).adv.map(e => e.config), two.map(e => e.config));
       await page.locator('#advList .entry').nth(0).locator('.rm-btn').click();
       const promoted = await first(page);
@@ -274,7 +300,7 @@ async function main() {
     await section('CS-PERSISTENCE', async () => {
       await darling(page, ['Kyuden Bayushi', 'Toshi Ranbo’s Okura district']);
       await page.locator('#advList .court4514-court').nth(1).click();
-      await page.locator('#advList .court4514-session').click();
+      await session(page);
       await quickAdd(page, 'Servant');
       const saved = await collect(page);
       check('CS-SAVE-CONFIG', saved.adv[0].config, {type:'courtList', revision:1, courts:['Kyuden Bayushi', 'Toshi Ranbo’s Okura district'],
@@ -301,6 +327,7 @@ async function main() {
       const savedId = await page.locator('#charSelect').inputValue();
       await page.reload({waitUntil:'domcontentloaded'});
       await page.waitForFunction(() => !!window.__L5R_TEST__);
+      BADGES = await page.evaluate(() => !!(window.__L5R_TEST__.CB15 && window.__L5R_TEST__.COURT_BADGES_ENABLED));
       // Test-only correction for Phase 12.8 (Part K), 30 September 2026: the old toolbar row is no
       // longer on screen, so the picker is set by script, as Load is below. Nothing listens for its
       // change event, so this is exactly what choosing an option did.
@@ -322,7 +349,7 @@ async function main() {
       const minimal = {type:'courtList', revision:1, courts:['Kyuden Bayushi', 'Otosan Uchi']};
       await load(minimal);
       let row = await first(page);
-      check('CS-MINIMAL-VALID', [row.warning, row.cost, row.radios], [false, 2 * PER_COURT.normal, [true, false]]);
+      check('CS-MINIMAL-VALID', [row.warning, row.cost, row.radios], [false, 2 * PER_COURT.normal, BADGES ? [false, false] : [true, false]]);   // A15: none filled, not in session
       check('CS-MINIMAL-NOT-IN-SESSION', /as normal/.test(row.status));
       check('CS-MINIMAL-PRESERVED', (await collect(page)).adv[0].config, minimal);
       for (const [id, config] of [
@@ -418,7 +445,7 @@ async function main() {
       });
       const pools = await probe();
       await quickAdd(page, DARLING); await fillCourts(page, ['Kyuden Bayushi', 'Otosan Uchi']); await confirm(page);
-      await page.locator('#advList .court4514-session').click();
+      await session(page);
       await quickAdd(page, 'Servant');
       const after = await collect(page);
       check('CS-XP-SUM', Number(after.fields.f_xpSpent) - Number(before.fields.f_xpSpent), 2 * PER_COURT.normal + 5);
@@ -460,7 +487,7 @@ async function main() {
         });
         check('CS-GEOMETRY-' + width, geometry, {fits:true, inputsReadable:true, labelsReadable:true, labelled:true, removeNamed:true});
         await fillCourts(page, ['AnUnbrokenCourtName'.repeat(12), 'Toshi Ranbo’s Okura district']); await confirm(page);
-        await page.locator('#advList .court4514-session').click();
+        await session(page);
         await quickAdd(page, 'Servant');
         await page.evaluate(() => document.querySelector('#advList').scrollIntoView());
         const fit = await page.evaluate(() => [...document.querySelectorAll('#advList .adv-config-row')].map(row => {
@@ -469,13 +496,15 @@ async function main() {
             [...row.querySelectorAll('*')].every(el => { const r = el.getBoundingClientRect(); return r.width === 0 || r.right <= box.right + 1; });
         }));
         check('CS-LONG-ROWS-FIT-' + width, fit, [true, true]);
-        const readable = await page.evaluate(() => {
-          const controls = [...document.querySelectorAll('#advList .court4514-court, #advList .court4514-session, #advList .court4514-status')];
+        // A15: the row's controls are the two badges, + Add court and the status line (still four).
+        const readable = await page.evaluate(b => {
+          const controls = [...document.querySelectorAll(b ? '#advList .court4514-court, #advList .cb15-add, #advList .court4514-status'
+            : '#advList .court4514-court, #advList .court4514-session, #advList .court4514-status')];
           return controls.length === 4 && controls.every(el => parseFloat(getComputedStyle(el).fontSize) >= 12 && getComputedStyle(el).textTransform === 'none');
-        });
+        }, BADGES);
         check('CS-ROW-CONTROLS-READABLE-' + width, readable);
-        const target = await page.evaluate(() => [...document.querySelectorAll('#advList .court4514-court, #advList .court4514-session')]
-          .every(el => el.getBoundingClientRect().height >= 32));
+        const target = await page.evaluate(b => [...document.querySelectorAll(b ? '#advList .court4514-court, #advList .cb15-add' : '#advList .court4514-court, #advList .court4514-session')]
+          .every(el => el.getBoundingClientRect().height >= 32), BADGES);
         check('CS-TOUCH-TARGET-' + width, target);
       }
     });
