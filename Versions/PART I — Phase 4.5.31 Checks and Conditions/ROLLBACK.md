@@ -69,3 +69,7 @@ The removal chain registry gained one entry, at its end.
 ## Declared dependents (added 9 October 2026)
 
 - Phase 4.5.34 Blind's Armor TN Note (Part I) reads `CHK4531.has('Blind')` and the `data-chk4531` mark on `#f_baseTN` to explain Blind's base. A hard dependency: removing this release means removing 4.5.34 first (the removal chain does so).
+
+## Release 15a A05 — Missing Limb's picker (7 November 2026)
+
+Release 15a A05 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A05 — Missing Limb Picker/`), under the owner's ruling Q1, restyles this release's Missing Limb field as a shared field. While `body.lp15-on` is set, an observer on `#disadvList` replaces the text node of `label.chk4531-field` ("Missing ") with its own `span.lp15-label` ("Missing limb") and marks the label and its `.chk4531-row`; its stylesheet then places the label above `select.chk4531-limb`, gives the select the shared field's look and a 44 px height, and puts `.chk4531-note` below. It calls nothing here; the select, its options, saved value and `aria-label` are unchanged. This harness passes 101/101 with A05 present. A05 names `chk4531-*` classes, so this release's remover may refuse while A05 is present: remove A05 first (the removal chain does so in order).

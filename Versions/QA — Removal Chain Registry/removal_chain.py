@@ -312,6 +312,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999999999991-feat-picker-bottom-info.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/A03.1 — Masteries in the Skill Information",
             fragment="src/sheet/209.99999999999999992-feat-skill-masteries.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A05 — Missing Limb Picker",
+            fragment="src/sheet/209.99999999999999993-feat-limb-picker.js"),
 )
 
 
