@@ -1,0 +1,110 @@
+waiting for the deploy: e7cb9b9949b1 17560147
+waiting for the deploy: e7cb9b9949b1 17560147
+waiting for the deploy: e7cb9b9949b1 17560147
+waiting for the deploy: e7cb9b9949b1 17560147
+Checking deployed files: compact-skills-harness.js
+Checking deployed files: skills-harness.js
+Checking deployed files: floating-strip-harness.js
+Checking deployed files: ui-foundations-harness.js
+Checking deployed files: quick-access-sidebar-harness.js
+Checking deployed files: appbar-harness.js
+Checking deployed files: carousel-destination-harness.js
+Checking deployed files: review-reminder-harness.js
+Checking deployed files: rank-spell-harness.js
+Checking deployed files: legacy-grants-harness.js
+Checking deployed files: older-review-harness.js
+Checking deployed files: allocation-boundaries-harness.js
+Checking deployed files: school-choices-harness.js
+Checking deployed files: review-regression-harness.js
+Checking deployed files: free-choice-harness.js
+Checking deployed files: scrolls-harness.js
+Checking deployed files: wizard-remove-harness.js
+Checking deployed files: wizard-harness.js
+Checking deployed files: wizard2-harness.js
+Checking deployed files: wizard3-harness.js
+Checking deployed files: wizard4-harness.js
+Checking deployed files: wizard5-harness.js
+Checking deployed files: school-skill-rows-harness.js
+Checking deployed files: info-pattern-harness.js
+Checking deployed files: adv-config-ux-harness.js
+Checking deployed files: court-servant-harness.js
+Checking deployed files: weakness-hotei-harness.js
+Checking deployed files: hotei-auto-harness.js
+Checking deployed files: disadv-fortune-harness.js
+Checking deployed files: court-badges-harness.js
+Checking deployed files: advantages-harness.js
+Checking deployed files: modes-harness.js
+Checking deployed files: clan-theming-harness.js
+Checking deployed files: picker-info-harness.js
+Checking deployed files: fortune-blessing-harness.js
+Checking deployed files: dark-paragon-harness.js
+Checking deployed files: paragon-harness.js
+Checking deployed files: soul-artistry-harness.js
+Checking deployed files: spirit-realms-harness.js
+Checking deployed files: void-versatility-harness.js
+Checking deployed files: skill-masteries-harness.js
+Checking deployed files: skill-traits-harness.js
+{
+  "commit": "22c1d7240d09204fa764a5708a590ddfc32aa222",
+  "checked_utc": "2026-11-07T13:30:38.675163+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "2dcf6f20846b0c9ea97b59b94537abda6d510714b3bc1ef6376175056d066af6",
+  "page_sha256": "490f4a387347febc42ba2b045b7acb29fbf2bc99fb1c5606e71ddc8e885c3d74",
+  "page_bytes": 17593741,
+  "service_worker_build": "616c577290b65bb1",
+  "service_worker_sha256": "6487d75c3425070de56459b2d61dcb4dc418233266207bfd38a5ef6f0b5a57e2",
+  "g1_units": [
+    "A04",
+    "A15",
+    "A16",
+    "A03.1"
+  ],
+  "expected": {
+    "harnesses": 42,
+    "checks": 1799
+  },
+  "passed": true
+}
+PASS A03 — Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js 37/37
+PASS PART K — Phase 12.4 Play Mode Skills/skills-harness.js 17/17
+PASS A02 — Floating Controls Above the Tabs/floating-strip-harness.js 23/23
+PASS PART H — Phase 1 UI-UX Foundations/ui-foundations-harness.js 9/9
+PASS PART H — Phase 2 Quick-Access Sidebar/quick-access-sidebar-harness.js 19/19
+PASS PART K — Phase 11.3 App Bar/appbar-harness.js 25/25
+PASS BUGFIX — Carousel Settles on Its Destination/carousel-destination-harness.js 9/9
+PASS A01 — One Reminder per School Choice/review-reminder-harness.js 31/31
+PASS PART K — Phase 11.2.6 Rank Advancement Spell Choices/rank-spell-harness.js 36/36
+PASS BUGFIX — Older School Choices/legacy-grants-harness.js 4/4
+PASS BUGFIX — Older School Choices/older-review-harness.js 20/20
+PASS BUGFIX — Older School Choices/allocation-boundaries-harness.js 5/5
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js 30/30
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js 6/6
+PASS BUGFIX — Free Choice Note Clears/free-choice-harness.js 9/9
+PASS BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js 5/5
+PASS BUGFIX — Wizard Skill Remove/wizard-remove-harness.js 5/5
+PASS PART K — Phase 11.2 Creation Wizard/wizard-harness.js 43/43
+PASS PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js 32/32
+PASS PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js 52/52
+PASS PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js 25/25
+PASS PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js 71/71
+PASS BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js 37/37
+PASS A04 — One Information Pattern/info-pattern-harness.js 35/35
+PASS PART I — Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js 28/28
+PASS PART I — Phase 4.5.14 Darling of the Court and Servant/court-servant-harness.js 225/225
+PASS PART I — Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js 45/45
+PASS BUGFIX — Hotei Where the Sheet Spends Void/hotei-auto-harness.js 16/16
+PASS PART I — Phase 4.5.11 Seven Fortunes Curse/disadv-fortune-harness.js 74/74
+PASS A15 — Court Badges/court-badges-harness.js 33/33
+PASS PART K — Phase 12.5 Play Mode Advantages and Disadvantages/advantages-harness.js 212/212
+PASS PART K — Phase 12 Play and Management Modes/modes-harness.js 25/25
+PASS PART H — Phase 9 Clan-Themed Look/clan-theming-harness.js 17/17
+PASS A16 — No Bottom i in the Seven Pickers/picker-info-harness.js 50/50
+PASS PART I — Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js 77/77
+PASS PART I — Phase 4.5.23 Dark Paragon/dark-paragon-harness.js 67/67
+PASS PART I — Phase 4.5.18 Paragon/paragon-harness.js 80/80
+PASS PART I — Phase 4.5.19 Soul of Artistry/soul-artistry-harness.js 92/92
+PASS PART I — Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js 50/50
+PASS PART I — Phase 4.5.20 Void Versatility/void-versatility-harness.js 66/66
+PASS A03.1 — Masteries in the Skill Information/skill-masteries-harness.js 19/19
+PASS BUGFIX — Skill Traits/skill-traits-harness.js 38/38
+LIVE VERIFICATION PASSED: 1799/1799 on the deployed files

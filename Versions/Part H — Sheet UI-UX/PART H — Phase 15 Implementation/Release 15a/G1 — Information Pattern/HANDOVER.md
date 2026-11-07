@@ -1,6 +1,6 @@
 # Release 15a · G1 — Information Pattern · handover
 
-7 November 2026 (Claude). **Accepted by the owner and qualified. Waiting for the go-live word.** Nothing is merged to `main`.
+7 November 2026 (Claude). **Accepted, qualified and LIVE.** On the owner's go-live word (7 November), `main` was fast-forwarded to `22c1d724` (no merge commit, no force). Production was verified: the live page `490f4a38…` and service worker `616c5772…` match the committed build byte for byte, 1,799/1,799 on the downloaded files, browser and offline smoke 22/22.
 
 ## Contents
 
@@ -62,5 +62,5 @@ G1 used about **19 weekly points**, against an estimate of 10–15 for three uni
 
 ## Next
 
-- **The owner's go-live word** for G1.
+- G1 is live (above). Production evidence: `qa/verify-production.log`, `qa/live/`.
 - **Then G2:** A05, A06, A07, A11 (with comment 1), and the picker unit (comment 2). It needs its own kickoff.

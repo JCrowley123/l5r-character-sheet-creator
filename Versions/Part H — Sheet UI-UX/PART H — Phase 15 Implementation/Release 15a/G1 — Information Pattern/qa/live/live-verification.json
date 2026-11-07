@@ -1,0 +1,366 @@
+{
+  "commit": "22c1d7240d09204fa764a5708a590ddfc32aa222",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-11-07T13:30:38.675163+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "2dcf6f20846b0c9ea97b59b94537abda6d510714b3bc1ef6376175056d066af6",
+  "page_sha256": "490f4a387347febc42ba2b045b7acb29fbf2bc99fb1c5606e71ddc8e885c3d74",
+  "page_bytes": 17593741,
+  "service_worker_build": "616c577290b65bb1",
+  "service_worker_sha256": "6487d75c3425070de56459b2d61dcb4dc418233266207bfd38a5ef6f0b5a57e2",
+  "g1_units": [
+    "A04",
+    "A15",
+    "A16",
+    "A03.1"
+  ],
+  "expected": {
+    "harnesses": 42,
+    "checks": 1799
+  },
+  "harnesses": {
+    "A03 \u2014 Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js": {
+      "counts": [
+        "37",
+        "37"
+      ],
+      "expected": 37,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.4 Play Mode Skills/skills-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "A02 \u2014 Floating Controls Above the Tabs/floating-strip-harness.js": {
+      "counts": [
+        "23",
+        "23"
+      ],
+      "expected": 23,
+      "passed": true
+    },
+    "PART H \u2014 Phase 1 UI-UX Foundations/ui-foundations-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "PART H \u2014 Phase 2 Quick-Access Sidebar/quick-access-sidebar-harness.js": {
+      "counts": [
+        "19",
+        "19"
+      ],
+      "expected": 19,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.3 App Bar/appbar-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "BUGFIX \u2014 Carousel Settles on Its Destination/carousel-destination-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "A01 \u2014 One Reminder per School Choice/review-reminder-harness.js": {
+      "counts": [
+        "31",
+        "31"
+      ],
+      "expected": 31,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.6 Rank Advancement Spell Choices/rank-spell-harness.js": {
+      "counts": [
+        "36",
+        "36"
+      ],
+      "expected": 36,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/legacy-grants-harness.js": {
+      "counts": [
+        "4",
+        "4"
+      ],
+      "expected": 4,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/older-review-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/allocation-boundaries-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js": {
+      "counts": [
+        "30",
+        "30"
+      ],
+      "expected": 30,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "BUGFIX \u2014 Free Choice Note Clears/free-choice-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "BUGFIX \u2014 Starting Spells Are Scrolls/scrolls-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "BUGFIX \u2014 Wizard Skill Remove/wizard-remove-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2 Creation Wizard/wizard-harness.js": {
+      "counts": [
+        "43",
+        "43"
+      ],
+      "expected": 43,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js": {
+      "counts": [
+        "52",
+        "52"
+      ],
+      "expected": 52,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
+    "BUGFIX \u2014 Apply School Skill Rows/school-skill-rows-harness.js": {
+      "counts": [
+        "37",
+        "37"
+      ],
+      "expected": 37,
+      "passed": true
+    },
+    "A04 \u2014 One Information Pattern/info-pattern-harness.js": {
+      "counts": [
+        "35",
+        "35"
+      ],
+      "expected": 35,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js": {
+      "counts": [
+        "28",
+        "28"
+      ],
+      "expected": 28,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.14 Darling of the Court and Servant/court-servant-harness.js": {
+      "counts": [
+        "225",
+        "225"
+      ],
+      "expected": 225,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    },
+    "BUGFIX \u2014 Hotei Where the Sheet Spends Void/hotei-auto-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.11 Seven Fortunes Curse/disadv-fortune-harness.js": {
+      "counts": [
+        "74",
+        "74"
+      ],
+      "expected": 74,
+      "passed": true
+    },
+    "A15 \u2014 Court Badges/court-badges-harness.js": {
+      "counts": [
+        "33",
+        "33"
+      ],
+      "expected": 33,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages/advantages-harness.js": {
+      "counts": [
+        "212",
+        "212"
+      ],
+      "expected": 212,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12 Play and Management Modes/modes-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "PART H \u2014 Phase 9 Clan-Themed Look/clan-theming-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "A16 \u2014 No Bottom i in the Seven Pickers/picker-info-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js": {
+      "counts": [
+        "77",
+        "77"
+      ],
+      "expected": 77,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.23 Dark Paragon/dark-paragon-harness.js": {
+      "counts": [
+        "67",
+        "67"
+      ],
+      "expected": 67,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.18 Paragon/paragon-harness.js": {
+      "counts": [
+        "80",
+        "80"
+      ],
+      "expected": 80,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.19 Soul of Artistry/soul-artistry-harness.js": {
+      "counts": [
+        "92",
+        "92"
+      ],
+      "expected": 92,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.20 Void Versatility/void-versatility-harness.js": {
+      "counts": [
+        "66",
+        "66"
+      ],
+      "expected": 66,
+      "passed": true
+    },
+    "A03.1 \u2014 Masteries in the Skill Information/skill-masteries-harness.js": {
+      "counts": [
+        "19",
+        "19"
+      ],
+      "expected": 19,
+      "passed": true
+    },
+    "BUGFIX \u2014 Skill Traits/skill-traits-harness.js": {
+      "counts": [
+        "38",
+        "38"
+      ],
+      "expected": 38,
+      "passed": true
+    }
+  },
+  "passed": true
+}
