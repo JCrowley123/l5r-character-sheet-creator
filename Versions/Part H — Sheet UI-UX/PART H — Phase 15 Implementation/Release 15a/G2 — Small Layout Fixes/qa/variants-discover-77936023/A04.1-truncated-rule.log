@@ -1,0 +1,67 @@
+  detail IR-BLESSING-INLINE-PHONE: [["Benten’s Blessing — 3 XP (Crane pay 3)"," — Fortune of Romantic Love. +0k1 on a S","Fortune of Romantic Love. +0k1 on a Soci"],["Bishamon’s Blessing — 5 XP (Crab, Lion pay 4)"," — Fortune of Strength. +1k0 on Strength","Fortune of Strength. +1k0 on Strength Tr"],["Daikoku’s Blessing — 4 XP (Mantis pay 3)"," — Fortune of Wealth. +1k1 on all Commer","Fortune of Wealth. +1k1 on all Commerce "],["Ebisu’s Blessing — 4 XP (Unicorn pay 3)"," — Fortune of Honest Work. +1k1 on Socia","Fortune of Honest Work. +1k1 on Social S"],["Fukurokujin’s Blessing — 4 XP (Dragon, Phoenix pay 3)"," — Fortune of Wisdom. Choose one Lore Sk","Fortune of Wisdom. Choose one Lore Skill"],["Hotei’s Blessing — 4 XP",". Fortune of Contentment. When any effec","Fortune of Contentment. When any effect "],["Jurojin’s Blessing — 4 XP (Scorpion pay 3)"," — Fortune of Longevity. +2k0 on rolls t","Fortune of Longevity. +2k
+  detail IR-CONSUMED-INLINE-PHONE: [["Control — 4 XP",". −1k1 to all Etiquette and Sincerity ro","−1k1 to all Etiquette and Sincerity roll"],["Determination — 6 XP",". You cannot spend Void Points to enhanc","You cannot spend Void Points to enhance "],["Insight — 4 XP",". Whenever you use the chosen School Ski","Whenever you use the chosen School Skill"],["Knowledge — 4 XP",". When you encounter a topic, area of re","When you encounter a topic, area of rese"],["Perfection — 6 XP",". Every Skill or Spell Casting Roll requ","Every Skill or Spell Casting Roll requir"],["Strength — 5 XP",". Called Shot, Feint, and Disarm require","Called Shot, Feint, and Disarm require o"],["Will — 4 XP",". −1k1 to all Courtier and Temptation Sk","−1k1 to all Courtier and Temptation Skil"]]
+  detail IR-FAILURE-INLINE-PHONE: [["Compassion — 3 XP",". Spend a Void Point before acting on be","Spend a Void Point before acting on beha"],["Courage — 4 XP",". When facing an opponent of higher Glor","When facing an opponent of higher Glory "],["Courtesy — 4 XP",". A Social Skill Roll to apologize or av","A Social Skill Roll to apologize or avoi"],["Duty — 6 XP",". You cannot spend Void Points to negate","You cannot spend Void Points to negate W"],["Honesty — 3 XP",". You cannot spend Void Points on a Sinc","You cannot spend Void Points on a Sincer"],["Honor — 3 XP",". You cannot add your Honor Rank to a ro","You cannot add your Honor Rank to a roll"],["Sincerity — 4 XP",". A Sincerity roll to convince someone r","A Sincerity roll to convince someone req"]]
+  detail IR-REALM-INLINE-PHONE: [["Chikushudo"," — The realm of animals is closed to you","The realm of animals is closed to you: −"],["Gaki-do"," — Hungry ghosts single you out. The GM ","Hungry ghosts single you out. The GM dec"],["Jigoku"," — Resisting the Shadowlands Taint is ha","Resisting the Shadowlands Taint is harde"],["Maigo no Musha"," — −1k1 on a roll made against a spirit.","−1k1 on a roll made against a spirit. De"],["Meido"," — While in a trance: −1k0 on Perception","While in a trance: −1k0 on Perception-ba"],["Sakkaku"," — Trickster spirits torment you. Narrat","Trickster spirits torment you. Narrative"],["Tengoku"," — Inside a qualifying temple: TN +10, s","Inside a qualifying temple: TN +10, show"],["Toshigoku"," — On seeing a wounded opponent: Willpow","On seeing a wounded opponent: Willpower "],["Yomi"," — Your ancestors have turned from you. ","Your ancestors have turned from you. Anc"],["Yume-do",
+  detail IR-CURSE-INLINE-PHONE: [["Benten"," — The Fortune of Romance has turned fro","The Fortune of Romance has turned from y"],["Bishamon"," — The Fortune of Strength withholds it:","The Fortune of Strength withholds it: yo"],["Daikoku"," — The Fortune of Wealth disfavours you:","The Fortune of Wealth disfavours you: −1"],["Ebisu"," — The Fortune of Honest Work is displea","The Fortune of Honest Work is displeased"],["Fukurokujin"," — The Fortune of Wisdom withholds it: L","The Fortune of Wisdom withholds it: Lore"],["Hotei"," — The Fortune of Contentment burdens yo","The Fortune of Contentment burdens you: "],["Jurojin"," — The Fortune of Longevity has abandone","The Fortune of Longevity has abandoned y"]]
+  detail IR-BLESSING-INLINE-DESKTOP: [["Benten’s Blessing — 3 XP (Crane pay 3)"," — Fortune of Romantic Love. +0k1 on a S","Fortune of Romantic Love. +0k1 on a Soci"],["Bishamon’s Blessing — 5 XP (Crab, Lion pay 4)"," — Fortune of Strength. +1k0 on Strength","Fortune of Strength. +1k0 on Strength Tr"],["Daikoku’s Blessing — 4 XP (Mantis pay 3)"," — Fortune of Wealth. +1k1 on all Commer","Fortune of Wealth. +1k1 on all Commerce "],["Ebisu’s Blessing — 4 XP (Unicorn pay 3)"," — Fortune of Honest Work. +1k1 on Socia","Fortune of Honest Work. +1k1 on Social S"],["Fukurokujin’s Blessing — 4 XP (Dragon, Phoenix pay 3)"," — Fortune of Wisdom. Choose one Lore Sk","Fortune of Wisdom. Choose one Lore Skill"],["Hotei’s Blessing — 4 XP",". Fortune of Contentment. When any effec","Fortune of Contentment. When any effect "],["Jurojin’s Blessing — 4 XP (Scorpion pay 3)"," — Fortune of Longevity. +2k0 on rolls t","Fortune of Longevity. +2k
+  detail IR-CONSUMED-INLINE-DESKTOP: [["Control — 4 XP",". −1k1 to all Etiquette and Sincerity ro","−1k1 to all Etiquette and Sincerity roll"],["Determination — 6 XP",". You cannot spend Void Points to enhanc","You cannot spend Void Points to enhance "],["Insight — 4 XP",". Whenever you use the chosen School Ski","Whenever you use the chosen School Skill"],["Knowledge — 4 XP",". When you encounter a topic, area of re","When you encounter a topic, area of rese"],["Perfection — 6 XP",". Every Skill or Spell Casting Roll requ","Every Skill or Spell Casting Roll requir"],["Strength — 5 XP",". Called Shot, Feint, and Disarm require","Called Shot, Feint, and Disarm require o"],["Will — 4 XP",". −1k1 to all Courtier and Temptation Sk","−1k1 to all Courtier and Temptation Skil"]]
+  detail IR-FAILURE-INLINE-DESKTOP: [["Compassion — 3 XP",". Spend a Void Point before acting on be","Spend a Void Point before acting on beha"],["Courage — 4 XP",". When facing an opponent of higher Glor","When facing an opponent of higher Glory "],["Courtesy — 4 XP",". A Social Skill Roll to apologize or av","A Social Skill Roll to apologize or avoi"],["Duty — 6 XP",". You cannot spend Void Points to negate","You cannot spend Void Points to negate W"],["Honesty — 3 XP",". You cannot spend Void Points on a Sinc","You cannot spend Void Points on a Sincer"],["Honor — 3 XP",". You cannot add your Honor Rank to a ro","You cannot add your Honor Rank to a roll"],["Sincerity — 4 XP",". A Sincerity roll to convince someone r","A Sincerity roll to convince someone req"]]
+  detail IR-REALM-INLINE-DESKTOP: [["Chikushudo"," — The realm of animals is closed to you","The realm of animals is closed to you: −"],["Gaki-do"," — Hungry ghosts single you out. The GM ","Hungry ghosts single you out. The GM dec"],["Jigoku"," — Resisting the Shadowlands Taint is ha","Resisting the Shadowlands Taint is harde"],["Maigo no Musha"," — −1k1 on a roll made against a spirit.","−1k1 on a roll made against a spirit. De"],["Meido"," — While in a trance: −1k0 on Perception","While in a trance: −1k0 on Perception-ba"],["Sakkaku"," — Trickster spirits torment you. Narrat","Trickster spirits torment you. Narrative"],["Tengoku"," — Inside a qualifying temple: TN +10, s","Inside a qualifying temple: TN +10, show"],["Toshigoku"," — On seeing a wounded opponent: Willpow","On seeing a wounded opponent: Willpower "],["Yomi"," — Your ancestors have turned from you. ","Your ancestors have turned from you. Anc"],["Yume-do",
+  detail IR-CURSE-INLINE-DESKTOP: [["Benten"," — The Fortune of Romance has turned fro","The Fortune of Romance has turned from y"],["Bishamon"," — The Fortune of Strength withholds it:","The Fortune of Strength withholds it: yo"],["Daikoku"," — The Fortune of Wealth disfavours you:","The Fortune of Wealth disfavours you: −1"],["Ebisu"," — The Fortune of Honest Work is displea","The Fortune of Honest Work is displeased"],["Fukurokujin"," — The Fortune of Wisdom withholds it: L","The Fortune of Wisdom withholds it: Lore"],["Hotei"," — The Fortune of Contentment burdens yo","The Fortune of Contentment burdens you: "],["Jurojin"," — The Fortune of Longevity has abandone","The Fortune of Longevity has abandoned y"]]
+PASS IR-SEAM-PHONE
+PASS IR-PARAGON-UNTOUCHED-PHONE
+FAIL IR-BLESSING-INLINE-PHONE
+PASS IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-BLESSING-ONE-BOX-PHONE
+PASS IR-BLESSING-PARAGON-CARD-PHONE
+FAIL IR-CONSUMED-INLINE-PHONE
+PASS IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-CONSUMED-ONE-BOX-PHONE
+PASS IR-CONSUMED-PARAGON-CARD-PHONE
+FAIL IR-FAILURE-INLINE-PHONE
+PASS IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-FAILURE-ONE-BOX-PHONE
+PASS IR-FAILURE-PARAGON-CARD-PHONE
+FAIL IR-REALM-INLINE-PHONE
+PASS IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-REALM-ONE-BOX-PHONE
+PASS IR-REALM-PARAGON-CARD-PHONE
+FAIL IR-CURSE-INLINE-PHONE
+PASS IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-CURSE-ONE-BOX-PHONE
+PASS IR-CURSE-PARAGON-CARD-PHONE
+PASS IR-TAP-RULE-CHOOSES-PHONE
+PASS IR-ROW-I-KEEPS-TEXT-PHONE
+PASS IR-LONG-WINDOW-REACHABLE-PHONE
+PASS IR-LABEL-ONLY-PICKER-UNTOUCHED-PHONE
+PASS IR-CLASS-GATES-PHONE
+PASS IR-NO-ERRORS-PHONE
+PASS IR-SEAM-DESKTOP
+PASS IR-PARAGON-UNTOUCHED-DESKTOP
+FAIL IR-BLESSING-INLINE-DESKTOP
+PASS IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-BLESSING-ONE-BOX-DESKTOP
+PASS IR-BLESSING-PARAGON-CARD-DESKTOP
+FAIL IR-CONSUMED-INLINE-DESKTOP
+PASS IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-CONSUMED-ONE-BOX-DESKTOP
+PASS IR-CONSUMED-PARAGON-CARD-DESKTOP
+FAIL IR-FAILURE-INLINE-DESKTOP
+PASS IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-FAILURE-ONE-BOX-DESKTOP
+PASS IR-FAILURE-PARAGON-CARD-DESKTOP
+FAIL IR-REALM-INLINE-DESKTOP
+PASS IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-REALM-ONE-BOX-DESKTOP
+PASS IR-REALM-PARAGON-CARD-DESKTOP
+FAIL IR-CURSE-INLINE-DESKTOP
+PASS IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-CURSE-ONE-BOX-DESKTOP
+PASS IR-CURSE-PARAGON-CARD-DESKTOP
+PASS IR-TAP-RULE-CHOOSES-DESKTOP
+PASS IR-ROW-I-KEEPS-TEXT-DESKTOP
+PASS IR-LONG-WINDOW-REACHABLE-DESKTOP
+PASS IR-LABEL-ONLY-PICKER-UNTOUCHED-DESKTOP
+PASS IR-CLASS-GATES-DESKTOP
+PASS IR-NO-ERRORS-DESKTOP
+46/56 checks passed

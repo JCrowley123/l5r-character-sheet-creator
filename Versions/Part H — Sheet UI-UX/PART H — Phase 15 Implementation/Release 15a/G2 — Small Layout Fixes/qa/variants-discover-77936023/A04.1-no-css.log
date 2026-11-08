@@ -1,0 +1,79 @@
+  detail IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE: [[true,false],[true,false],[true,false],[true,false],[true,false],[true,false],[true,false]]
+  detail IR-BLESSING-ONE-BOX-PHONE: [["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"]]
+  detail IR-BLESSING-PARAGON-CARD-PHONE: {"card":{"border":"0px none","radius":"0px","pad":"0px 0px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-CONSUMED-PARAGON-CARD-PHONE: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-FAILURE-PARAGON-CARD-PHONE: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-REALM-PARAGON-CARD-PHONE: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-CURSE-PARAGON-CARD-PHONE: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP: [[true,false],[true,false],[true,false],[true,false],[true,false],[true,false],[true,false]]
+  detail IR-BLESSING-ONE-BOX-DESKTOP: [["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"]]
+  detail IR-BLESSING-PARAGON-CARD-DESKTOP: {"card":{"border":"0px none","radius":"0px","pad":"0px 0px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-CONSUMED-PARAGON-CARD-DESKTOP: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-FAILURE-PARAGON-CARD-DESKTOP: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-REALM-PARAGON-CARD-DESKTOP: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+  detail IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP: [[false,true],[false,true],[false,true],[false,true],[false,true],[false,true],[false,true]]
+  detail IR-CURSE-PARAGON-CARD-DESKTOP: {"card":{"border":"1px solid","radius":"8px","pad":"10px 12px","font":"14.72px","lh":"18.4px","family":"\"Shippori Mincho\", serif","align":"center","transform":"uppercase"},"ref":{"border":"1px solid","radius":"6px","pad":"4px 6px","font":"14.4px","lh":"19.44px","family":"\"Noto Sans JP\", sans-serif","align":"start","transform":"none"}}
+PASS IR-SEAM-PHONE
+PASS IR-PARAGON-UNTOUCHED-PHONE
+PASS IR-BLESSING-INLINE-PHONE
+FAIL IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE
+FAIL IR-BLESSING-ONE-BOX-PHONE
+FAIL IR-BLESSING-PARAGON-CARD-PHONE
+PASS IR-CONSUMED-INLINE-PHONE
+FAIL IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-CONSUMED-ONE-BOX-PHONE
+FAIL IR-CONSUMED-PARAGON-CARD-PHONE
+PASS IR-FAILURE-INLINE-PHONE
+FAIL IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-FAILURE-ONE-BOX-PHONE
+FAIL IR-FAILURE-PARAGON-CARD-PHONE
+PASS IR-REALM-INLINE-PHONE
+FAIL IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-REALM-ONE-BOX-PHONE
+FAIL IR-REALM-PARAGON-CARD-PHONE
+PASS IR-CURSE-INLINE-PHONE
+FAIL IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE
+PASS IR-CURSE-ONE-BOX-PHONE
+FAIL IR-CURSE-PARAGON-CARD-PHONE
+PASS IR-TAP-RULE-CHOOSES-PHONE
+PASS IR-ROW-I-KEEPS-TEXT-PHONE
+PASS IR-LONG-WINDOW-REACHABLE-PHONE
+PASS IR-LABEL-ONLY-PICKER-UNTOUCHED-PHONE
+PASS IR-CLASS-GATES-PHONE
+PASS IR-NO-ERRORS-PHONE
+PASS IR-SEAM-DESKTOP
+PASS IR-PARAGON-UNTOUCHED-DESKTOP
+PASS IR-BLESSING-INLINE-DESKTOP
+FAIL IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP
+FAIL IR-BLESSING-ONE-BOX-DESKTOP
+FAIL IR-BLESSING-PARAGON-CARD-DESKTOP
+PASS IR-CONSUMED-INLINE-DESKTOP
+FAIL IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-CONSUMED-ONE-BOX-DESKTOP
+FAIL IR-CONSUMED-PARAGON-CARD-DESKTOP
+PASS IR-FAILURE-INLINE-DESKTOP
+FAIL IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-FAILURE-ONE-BOX-DESKTOP
+FAIL IR-FAILURE-PARAGON-CARD-DESKTOP
+PASS IR-REALM-INLINE-DESKTOP
+FAIL IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-REALM-ONE-BOX-DESKTOP
+FAIL IR-REALM-PARAGON-CARD-DESKTOP
+PASS IR-CURSE-INLINE-DESKTOP
+FAIL IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP
+PASS IR-CURSE-ONE-BOX-DESKTOP
+FAIL IR-CURSE-PARAGON-CARD-DESKTOP
+PASS IR-TAP-RULE-CHOOSES-DESKTOP
+PASS IR-ROW-I-KEEPS-TEXT-DESKTOP
+PASS IR-LONG-WINDOW-REACHABLE-DESKTOP
+PASS IR-LABEL-ONLY-PICKER-UNTOUCHED-DESKTOP
+PASS IR-CLASS-GATES-DESKTOP
+PASS IR-NO-ERRORS-DESKTOP
+34/56 checks passed

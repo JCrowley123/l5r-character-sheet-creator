@@ -1,0 +1,33 @@
+  detail TE-PLAY-ONE-EDGE-PHONE: {"cards":17,"withLines":8,"off":[{"name":"Wealthy","d":[10,10,0]},{"name":"Leadership","d":[10,10,0]},{"name":"Kharmic Tie","d":[10,10,0]},{"name":"Social Position","d":[10,10]},{"name":"Blissful Betrothal","d":[10,10,0]},{"name":"Zakyo Toshi Citizen","d":[10,10,0,0]}]}
+  detail TE-CONDITION-GAP-PHONE: [{"n":"Missing Limb","gap":2},{"n":"Lost Love","gap":2},{"n":"Contrary","gap":2},{"n":"Rumormonger","gap":2},{"n":"Soft-Hearted","gap":2},{"n":"Blissful Betrothal","gap":2}]
+  detail TE-HINT-LINE-HEIGHT-PHONE: {"others":[{"mt":"14px","lh":1.4200000000000002,"gap":1000000207.828125,"text":"Pick your Clan, Family, and Sc"},{"mt":"-2px","lh":1.4200000000000002,"gap":1000000195.828125,"text":"Ring rank normally equals the "},{"mt":"-2px","lh":1.4200000000000002,"gap":1000000195.828125,"text":"Roll = Skill Rank + Trait Rank"},{"mt":"8px","lh":1.4200000000000002,"gap":1000002167.015625,"text":"Mastery notes below a skill sh"},{"mt":"-2px","lh":1.4200000000000002,"gap":1000000195.828125,"text":"Pick from the reference librar"},{"mt":"14px","lh":1.4200000000000002,"gap":1000000000,"text":""},{"mt":"14px","lh":1.4200000000000002,"gap":1000000317.828125,"text":"Purchased: 0 of 1 (cap = cumul"},{"mt":"14px","lh":1.4200000000000002,"gap":1000000348.375,"text":"Kiho: spend a Void Point (Free"},{"mt":"-2px","lh":1.4200000000000002,"gap":1000000195.828125,"text":"Maximum slots per element alwa"},{"mt":"14px"
+  detail TE-CLASS-GATES-PHONE: {"had":true,"pad":"9px","padOn":"9px","back":true}
+  detail TE-PLAY-ONE-EDGE-DESKTOP: {"cards":17,"withLines":8,"off":[{"name":"Wealthy","d":[10,10,0]},{"name":"Leadership","d":[10,10,0]},{"name":"Kharmic Tie","d":[10,10,0]},{"name":"Social Position","d":[10,10]},{"name":"Blissful Betrothal","d":[10,10,0]},{"name":"Zakyo Toshi Citizen","d":[10,10,0,0]}]}
+  detail TE-CONDITION-GAP-DESKTOP: [{"n":"Missing Limb","gap":2},{"n":"Lost Love","gap":2},{"n":"Contrary","gap":2},{"n":"Rumormonger","gap":2},{"n":"Soft-Hearted","gap":2},{"n":"Blissful Betrothal","gap":2}]
+  detail TE-HINT-GAP-DESKTOP: {"others":[{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Pick your Clan, Family, and Sc"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Ring rank normally equals the "},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Roll = Skill Rank + Trait Rank"},{"mt":"8px","lh":1.42,"gap":1000000839.4375,"text":"Mastery notes below a skill sh"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Pick from the reference librar"},{"mt":"-2px","lh":1.42,"gap":1000000000,"text":""},{"mt":"-2px","lh":1.42,"gap":1000000324.46875,"text":"Purchased: 0 of 1 (cap = cumul"},{"mt":"-2px","lh":1.42,"gap":1000000354.1875,"text":"Kiho: spend a Void Point (Free"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Maximum slots per element alwa"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Pick your Clan, Family, and Sc"}],"insight":{"mt":"-4px","lh":1.42,"gap":-4,"text":"Insight
+  detail TE-HINT-LINE-HEIGHT-DESKTOP: {"others":[{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Pick your Clan, Family, and Sc"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Ring rank normally equals the "},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Roll = Skill Rank + Trait Rank"},{"mt":"8px","lh":1.42,"gap":1000000839.4375,"text":"Mastery notes below a skill sh"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Pick from the reference librar"},{"mt":"-2px","lh":1.42,"gap":1000000000,"text":""},{"mt":"-2px","lh":1.42,"gap":1000000324.46875,"text":"Purchased: 0 of 1 (cap = cumul"},{"mt":"-2px","lh":1.42,"gap":1000000354.1875,"text":"Kiho: spend a Void Point (Free"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Maximum slots per element alwa"},{"mt":"-2px","lh":1.42,"gap":1000000206.46875,"text":"Pick your Clan, Family, and Sc"}],"insight":{"mt":"-4px","lh":1.42,"gap":-4,"text":"Insight
+  detail TE-OTHER-HINTS-UNCHANGED-DESKTOP: {"a":"[[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"8px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42]]","b":"[[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"8px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42],[\"-2px\",1.42]]"}
+  detail TE-CLASS-GATES-DESKTOP: {"had":true,"pad":"9px","padOn":"9px","back":true}
+PASS TE-SEAM-PHONE
+FAIL TE-PLAY-ONE-EDGE-PHONE
+PASS TE-PLAY-WAS-OFF-WITHOUT-THE-LAYER-PHONE
+PASS TE-PLAY-TEXT-KEPT-PHONE
+PASS TE-MANAGE-UNCHANGED-PHONE
+FAIL TE-CONDITION-GAP-PHONE
+PASS TE-HINT-GAP-PHONE
+FAIL TE-HINT-LINE-HEIGHT-PHONE
+PASS TE-OTHER-HINTS-UNCHANGED-PHONE
+FAIL TE-CLASS-GATES-PHONE
+PASS TE-NO-ERRORS-PHONE
+PASS TE-SEAM-DESKTOP
+FAIL TE-PLAY-ONE-EDGE-DESKTOP
+PASS TE-PLAY-WAS-OFF-WITHOUT-THE-LAYER-DESKTOP
+PASS TE-PLAY-TEXT-KEPT-DESKTOP
+PASS TE-MANAGE-UNCHANGED-DESKTOP
+FAIL TE-CONDITION-GAP-DESKTOP
+FAIL TE-HINT-GAP-DESKTOP
+FAIL TE-HINT-LINE-HEIGHT-DESKTOP
+FAIL TE-OTHER-HINTS-UNCHANGED-DESKTOP
+FAIL TE-CLASS-GATES-DESKTOP
+PASS TE-NO-ERRORS-DESKTOP
+12/22 checks passed

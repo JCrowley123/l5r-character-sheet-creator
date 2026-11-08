@@ -47,6 +47,6 @@ The group removal must restore G1 exactly. It also runs all kept G2 harnesses fo
 
 ## Discovery
 
-Not started. Pins above are predictions, not test results.
+Discovery completed once on 8 November 2026. **All 25 cases matched every predicted failed-check ID exactly**, each with exit 1 and a complete pinned harness count. No pin correction, harness change or repeat discovery was needed. Predictions were committed and pushed as `d8764eaf` before discovery. Evidence: `variants-discover.log` and `variants-discover-77936023/summary.json`. The qualification chain will now assert the same pins.
 
 Preparation validation: the A11 candidate harness passed 22/22 on its first execution after the hygiene fix (a11-hygiene-candidate.log). Syntax, unique mutation anchors and invocation inventories passed: candidate 191 leaves / 7,148 checks; retained 184 leaves / 6,929 checks. Read-only review found no blocking defect in the adapted scripts or their count arithmetic.
