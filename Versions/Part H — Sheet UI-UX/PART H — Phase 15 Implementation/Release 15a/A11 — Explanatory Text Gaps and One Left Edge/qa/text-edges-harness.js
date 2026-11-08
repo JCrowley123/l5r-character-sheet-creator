@@ -90,8 +90,14 @@ const toggle = (page, on) => page.evaluate(on => { document.body.classList.toggl
         return [play.length >= 15 && withLines >= 8 && off.length === 0, {cards: play.length, withLines, off: off.slice(0, 6)}];
       });
       await check('TE-PLAY-WAS-OFF-WITHOUT-THE-LAYER-' + D, async () => {
-        await toggle(page, false); await settle(page);
-        const before = await page.evaluate(cardEdges); await toggle(page, true); await settle(page);
+        const had = await page.evaluate(() => document.body.classList.contains('te15-on'));
+        let before;
+        try {
+          await toggle(page, false); await settle(page);
+          before = await page.evaluate(cardEdges);
+        } finally {
+          await toggle(page, had); await settle(page);
+        }
         const moved = before.filter(c => c.nameX - c.edge > 5).length;
         return [moved === before.length && before.length >= 15, {moved, of: before.length}];
       });
@@ -120,8 +126,14 @@ const toggle = (page, on) => page.evaluate(on => { document.body.classList.toggl
       });
       await check('TE-HINT-LINE-HEIGHT-' + D, async () => [['insight', 'spent'].every(k => h[k] && Math.abs(h[k].lh - 1.5) < 0.01), h]);
       await check('TE-OTHER-HINTS-UNCHANGED-' + D, async () => {
-        await toggle(page, false); await settle(page);
-        const without = await page.evaluate(hints); await toggle(page, true); await settle(page);
+        const had = await page.evaluate(() => document.body.classList.contains('te15-on'));
+        let without;
+        try {
+          await toggle(page, false); await settle(page);
+          without = await page.evaluate(hints);
+        } finally {
+          await toggle(page, had); await settle(page);
+        }
         const a = JSON.stringify((h.others || []).map(x => [x.mt, x.lh])), b = JSON.stringify((without.others || []).map(x => [x.mt, x.lh]));
         return [a === b && (h.others || []).length > 0 && (without.insight.mt !== h.insight.mt || D === 'PHONE'), {a, b}];
       });

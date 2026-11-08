@@ -27,3 +27,7 @@
 | 12 | A04.1 | Hotei's "ruled out" note in the Blessing | It stays inside the label, before the inline rule, and reads in order. | — |
 
 No finding needed a restack: every fix was made on its own branch before the next was built.
+
+## Qualification preparation review — 8 November 2026 (Codex)
+
+Read-only review of the nine G2 qualification scripts and variant pins found no blocking defect. It checked runner nesting and 7,148/6,929 arithmetic, the 47 group-removal checks (15 structural plus 32 harness runs), G2 markers and surfaces, the 4.5.21 conditional fixture, environment/preloads and prior-class restoration in A11. The A11 candidate harness then passed 22/22. Candidate application remains 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0.

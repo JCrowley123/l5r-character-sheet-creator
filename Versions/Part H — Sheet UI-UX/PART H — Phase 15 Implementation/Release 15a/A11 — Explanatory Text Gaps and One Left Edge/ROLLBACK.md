@@ -37,3 +37,7 @@ With nothing later present, the rebuild is exactly A07: 17,598,724 bytes, SHA-25
 - **A07:** no dependency. A11's harness measures a line that opens with generated text, such as A07's "Severity", from where that text starts. It passes with and without A07.
 - **Trunk:** `#advList`, `#disadvList`, `.en-name`, `.en-desc`, the Identity fields `#f_insightBonus` and `#f_xpSpent`, and their hints.
 - **Nothing depends on A11.**
+
+## Harness state restoration — 8 November 2026 (Codex)
+
+Before G2 negative-variant discovery, code review found that TE-PLAY-WAS-OFF-WITHOUT-THE-LAYER and TE-OTHER-HINTS-UNCHANGED added `te15-on` unconditionally after measuring the unstyled page. Both now save and restore the class state in `finally`, so a disabled variant stays disabled even after an exception. Same check IDs, assertions, timing and 22-check count; application bytes unchanged. This is the same harness hygiene correction recorded by G1. G2's qualification records hold the validation.

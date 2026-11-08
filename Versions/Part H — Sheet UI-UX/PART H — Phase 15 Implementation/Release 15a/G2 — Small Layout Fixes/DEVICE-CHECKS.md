@@ -21,6 +21,6 @@
 
 - Each option is now one card. Ten ONE-BOX checks pin it.
 - The new build is `77936023…82f0`. Its preview passed 2,523/2,523 on the deployed files.
-- Not yet re-checked on a device: the owner re-checks check 15.
+- Re-checked by the owner on 8 November 2026: check 15 **Passed on both devices** (iPhone Safari and Laptop Edge), confirmed in the Codex qualification chat. The revision device gate is cleared.
 
 **The owner's further comments** on the rows after choosing are recorded as A04.2, parked until after the rules read pass. They cover the badge, Change, the i, a summary, and the badge style. The owner's decisions are in [MOCKUP.md](MOCKUP.md).
