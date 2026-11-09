@@ -2,7 +2,9 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **4 November 2026** (Codex; Claude's publication and review the same day). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. Claude republished the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) from this record and published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) on 4 November at about 15:25 UTC; both were opened and checked. The next build choice is still pending.
+Local records updated **9 November 2026** (Codex). **Release 15a G2 is qualified and waiting for the owner's go-live word.** Main and production remain G1, application `2dcf6f20…6af6`. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+
+**Historical publication and status, 4 November 2026:** Local records updated **4 November 2026** (Codex; Claude's publication and review the same day). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. Claude republished the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) from this record and published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) on 4 November at about 15:25 UTC; both were opened and checked. The next build choice is still pending.
 
 **Contents**
 
@@ -21,6 +23,14 @@ Local records updated **4 November 2026** (Codex; Claude's publication and revie
 ---
 
 ## 1. Where things stand
+
+<!-- g2-15a-qualification-part1 -->
+**9 November 2026 · G2 qualification (Codex).** Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.
+
+The 25 negative cases matched their predictions in the single discovery and their exact pins in final qualification. The original removal chain stopped at 46/47: A11 had insufficient eligible fixture rows with A05 removed, despite correct alignment. Its fixture was strengthened without changing assertions; A11 then passed 22/22 on all six affected inputs (132/132). The original failed chain remains intact. A guarded continuation validated this evidence and ran only the unstarted variants and dependencies (25/25 and 5/5). All five G2 units removed restore G1 byte-for-byte (17,586,964 bytes). The single full pass passed on its first execution: candidate 7,148/7,148 and retained 6,929/6,929, with fresh execution and no reused leaves. No assertions were widened and no failed chain or full pass was retried. No 4x CPU screen applies to this screen-only group.
+
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+<!-- end-g2-15a-qualification-part1 -->
 
 <!-- cycle8-close-part1 -->
 <!-- claude-publish-part1 -->
@@ -142,6 +152,12 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- g2-15a-qualification-part2 -->
+**9 November 2026 · G2 qualification (Codex).** G2 qualification is complete; the next decision is the owner's go-live word. G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work. A04.2 is gated on completion of the rules read pass. No later group is authorized by this record.
+
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+<!-- end-g2-15a-qualification-part2 -->
 
 <!-- cycle8-close-part2 -->
 ### Current reassessment and proposed work order — 4 November 2026
@@ -321,6 +337,12 @@ Ranked by impact for each point spent, with what each step needs first.
 **Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- g2-15a-qualification-part3 -->
+**9 November 2026 · G2 qualification (Codex).** G2 was built by Claude on 7 November (about 9 Claude weekly points, 84% to 93%, as reported in the kickoff). Qualification and records are by Codex; its account-wide readings are recorded separately in the handover, with no whole-session cost inferred.
+
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+<!-- end-g2-15a-qualification-part3 -->
 
 <!-- claude-publish-part3 -->
 **4 November — Claude publication and review.** Claude meters (five-hour / weekly used): 9% / 6% at 15:09 UTC at the start; 19% / 7% at 15:15 UTC after reading the records and all 2,569 lines of the live ledger page; 25% / 8% at 15:19 UTC after the work-order doc, before the republish. Model Opus 5.5, effort high. About 2 weekly points by publication. Claude's week runs to 11 November, 01:00 UTC.
@@ -601,6 +623,16 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- g2-15a-qualification-part4 -->
+**9 November 2026 · G2 qualification (Codex).** **A04.2 — one pattern for a configured row.** Parked until the rules read pass is done. One line: a filled choice badge at the far left, Change in Manage only, then the i explaining every choice. Below: a summary of the chosen option, written from the later rules read. Say Applied automatically or Reminder in words. Bishamon's Clan-coloured note becomes plain summary text. Mock-up first; not part of G2.
+
+**Identity character check — Needs a choice.** Owner idea outside G2: list every Advantage or Disadvantage still at Needs a choice, as missing free Skill choices are listed today. No such rule exists today. A small future unit can register one rule with Phase 5 (Part J), using the sheet's own configuration-complete test.
+
+**A11 whole-app read — later layout work.** Keep for later: the Rings note 12 px right of its label on a laptop; the Armor & TN information heading in Play and its bonus note 3 px below the field; the Wounds table's first column 8 px right of its caption.
+
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+<!-- end-g2-15a-qualification-part4 -->
 
 <!-- cycle8-close-part4 -->
 **4 November — remaining-work review.** The 8b.1 functional correction and 8c advancement picker are complete. Keep all three 8b.1 presentation findings as separate 15a units. The 36-finding audit contains 34 work units plus retained A13/B15; with the three follow-ups, 37 possible work units remain. [Current inventory, R1–R27 dispositions and deferred work](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>).
@@ -1928,6 +1960,14 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- g2-15a-qualification-part6 -->
+**9 November 2026 · G2 qualification (Codex).** Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.
+
+The 25 negative cases matched their predictions in the single discovery and their exact pins in final qualification. The original removal chain stopped at 46/47: A11 had insufficient eligible fixture rows with A05 removed, despite correct alignment. Its fixture was strengthened without changing assertions; A11 then passed 22/22 on all six affected inputs (132/132). The original failed chain remains intact. A guarded continuation validated this evidence and ran only the unstarted variants and dependencies (25/25 and 5/5). All five G2 units removed restore G1 byte-for-byte (17,586,964 bytes). The single full pass passed on its first execution: candidate 7,148/7,148 and retained 6,929/6,929, with fresh execution and no reused leaves. No assertions were widened and no failed chain or full pass was retried. No 4x CPU screen applies to this screen-only group.
+
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+<!-- end-g2-15a-qualification-part6 -->
 
 <!-- a01-15a-part6 -->
 ### 4 November 2026 — Claude: Release 15a A01 built, qualified, accepted and live

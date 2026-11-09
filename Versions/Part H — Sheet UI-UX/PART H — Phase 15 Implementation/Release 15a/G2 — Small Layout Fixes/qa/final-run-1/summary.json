@@ -1,0 +1,62 @@
+{
+  "started_utc": "2026-11-09T05:05:39.760775+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7148,
+      "total": 7148,
+      "orchestration": {
+        "expected": 7148,
+        "passed": 7148,
+        "total": 7148,
+        "leafTotal": 7148,
+        "wrapperCount": 114,
+        "leafCount": 191,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 191,
+        "fingerprint": "56561ec678e32d0bf739f6100d79c3f61a09376aa3649bda63b71d926aba374e",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 25.48
+    },
+    {
+      "label": "04-retained",
+      "passed": 6929,
+      "total": 6929,
+      "orchestration": {
+        "expected": 6929,
+        "passed": 6929,
+        "total": 6929,
+        "leafTotal": 6929,
+        "wrapperCount": 99,
+        "leafCount": 184,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 184,
+        "fingerprint": "2ef51e3936435ff4516917ce362999615f00d107493716213637cf8bbabecc3f",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.92
+    }
+  ],
+  "source_sha256": "7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0",
+  "source_bytes": 17609230,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A04.1 \u2014 One Way to Show Choices in Pickers",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A11 \u2014 Explanatory Text Gaps and One Left Edge",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A07 \u2014 The Moon Row",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A06 \u2014 Grant Actions and Their State",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A05 \u2014 Missing Limb Picker"
+  ],
+  "restoration": {
+    "sha256": "2dcf6f20846b0c9ea97b59b94537abda6d510714b3bc1ef6376175056d066af6",
+    "bytes": 17586964,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-09T05:54:26.724931+00:00"
+}

@@ -1,0 +1,5 @@
+built  : l5r-character-sheet.html
+bytes  : 17609230
+lines  : 58872
+sha256 : 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0
+verify : BYTE-IDENTICAL to the pre-split build

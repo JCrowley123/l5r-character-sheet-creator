@@ -409,17 +409,21 @@ details.evidence > .rows{ padding:0 10px 10px; margin-top:0; }
     <h1>Rokugan Build Ledger</h1>
     <p class="standfirst">What is built and checked, what each step cost, and what is left. The summary comes first; every dated update is kept at the end, closed until you tap it.</p>
     <div class="meta">
-      <span><b>Local records</b> 4 November 2026</span>
-      <span><b>Live</b> Release 8c · application <code>919a5e35</code></span>
-      <span><b>Cycle 8</b> closed · next build choice pending</span>
+      <span><b>Local records</b> 9 November 2026</span>
+      <span><b>Live</b> Release 15a G1 · application <code>2dcf6f20</code></span>
+      <span><b>G2</b> qualified · go-live word pending</span>
     </div>
-    <p class="sec-note">Republished by Claude on 4 November at about 15:25 UTC from the repository&#x27;s <code>BUILD-LEDGER.html</code>. Current plan: <a href="https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA">Work Order — 4 November 2026</a>; the next build choice is pending.</p>
+    <p class="sec-note">Historical publication: republished by Claude on 4 November at about 15:25 UTC from the repository&#x27;s <code>BUILD-LEDGER.html</code>. Work order at that time: <a href="https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA">Work Order — 4 November 2026</a>. Current G2 status: <a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/G2%20%E2%80%94%20Small%20Layout%20Fixes/HANDOVER.md">G2 handover</a>; waiting for the owner&#x27;s go-live word.</p>
     <nav aria-label="Contents"><ul class="toc">
       <li><a href="#now">Now</a></li><li><a href="#left">What is left</a></li><li><a href="#order">Build order</a></li><li><a href="#costs">Costs</a></li><li><a href="#parked">Parked</a></li><li><a href="#phases">Every phase</a></li><li><a href="#history">History</a></li>
     </ul></nav>
   </header>
 
   <section class="s-sum" id="now">
+<!-- g2-15a-qualification-part1 -->
+<p><strong>9 November 2026 · G2 qualification (Codex).</strong></p><p>Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.</p><p>The 25 negative cases matched their predictions in the single discovery and their exact pins in final qualification. The original removal chain stopped at 46/47: A11 had insufficient eligible fixture rows with A05 removed, despite correct alignment. Its fixture was strengthened without changing assertions; A11 then passed 22/22 on all six affected inputs (132/132). The original failed chain remains intact. A guarded continuation validated this evidence and ran only the unstarted variants and dependencies (25/25 and 5/5). All five G2 units removed restore G1 byte-for-byte (17,586,964 bytes). The single full pass passed on its first execution: candidate 7,148/7,148 and retained 6,929/6,929, with fresh execution and no reused leaves. No assertions were widened and no failed chain or full pass was retried. No 4x CPU screen applies to this screen-only group.</p><p><a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/G2%20%E2%80%94%20Small%20Layout%20Fixes/HANDOVER.md">G2 handover</a>.</p>
+<!-- end-g2-15a-qualification-part1 -->
+
 <!-- cycle8-close-part1 -->
 <h2>Cycle 8 closed · 4 November 2026</h2>
 <p><strong>4 November 2026 — Cycle 8 closed on the owner&#x27;s instruction.</strong> Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.</p>
@@ -495,6 +499,10 @@ The owner&#x27;s two comments are G2 work: Advantage card text alignment goes in
 </ul>
   </section>
   <section class="s-sum" id="left">
+<!-- g2-15a-qualification-part2 -->
+<p><strong>9 November 2026 · G2 qualification (Codex).</strong></p><p>G2 qualification is complete; the next decision is the owner&#x27;s go-live word. G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work. A04.2 is gated on completion of the rules read pass. No later group is authorized by this record.</p><p><a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/G2%20%E2%80%94%20Small%20Layout%20Fixes/HANDOVER.md">G2 handover</a>.</p>
+<!-- end-g2-15a-qualification-part2 -->
+
 <!-- cycle8-close-part2 -->
 <h3>Current reassessment and proposed work order — 4 November 2026</h3>
 <p>The owner explicitly closes Cycle 8 after step 3b. The ledger, roadmap, R1–R27 end-of-project rulings, Phase 15 decisions and remaining notes were reviewed. <a href="REASSESSMENT%20%E2%80%94%20Cycle%208%20Closure%202026-11-04/WORK-ORDER.md">Full work order, with every finding and estimate</a> is the current planning record; the next build choice is pending.</p>
@@ -597,6 +605,10 @@ The owner&#x27;s two comments are G2 work: Advantage card text alignment goes in
     <p class="sec-note"><b>Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):</b> a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.</p>
   </section>
   <section class="s-sum" id="costs">
+<!-- g2-15a-qualification-part3 -->
+<p><strong>9 November 2026 · G2 qualification (Codex).</strong></p><p>G2 was built by Claude on 7 November (about 9 Claude weekly points, 84% to 93%, as reported in the kickoff). Qualification and records are by Codex; its account-wide readings are recorded separately in the handover, with no whole-session cost inferred.</p><p><a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/G2%20%E2%80%94%20Small%20Layout%20Fixes/HANDOVER.md">G2 handover</a>.</p>
+<!-- end-g2-15a-qualification-part3 -->
+
 <!-- claude-publish-part3 -->
 <p><strong>4 November — Claude publication and review.</strong> Claude meters (five-hour / weekly used): 9% / 6% at 15:09 UTC at the start; 19% / 7% at 15:15 UTC after reading the records and all 2,569 lines of the live ledger page; 25% / 8% at 15:19 UTC after the work-order doc, before the republish. Model Opus 5.5, effort high. About 2 weekly points by publication. Claude&#x27;s week runs to 11 November, 01:00 UTC.</p>
 <!-- end-claude-publish-part3 -->
@@ -882,6 +894,10 @@ The owner&#x27;s two comments are G2 work: Advantage card text alignment goes in
     <p>Phase 5's 3% is the outlier worth remembering &mdash; its audit found the machinery already existed and the phase was mostly consolidation. Phase 4 is the opposite lesson: the roadmap called it &ldquo;mostly wiring&rdquo; and five of its seven factors turned out unbuilt. <b>The cheap phases are the ones whose unknowns were resolved before the work started</b>, which is the reasoning behind measuring first in 4.5.3 and 4.5.4.</p></div></details>
   </section>
   <section class="s-sum" id="parked">
+<!-- g2-15a-qualification-part4 -->
+<p><strong>9 November 2026 · G2 qualification (Codex).</strong></p><p><strong>A04.2 — one pattern for a configured row.</strong> Parked until the rules read pass is done. One line: a filled choice badge at the far left, Change in Manage only, then the i explaining every choice. Below: a summary of the chosen option, written from the later rules read. Say Applied automatically or Reminder in words. Bishamon&#x27;s Clan-coloured note becomes plain summary text. Mock-up first; not part of G2.</p><p><strong>Identity character check — Needs a choice.</strong> Owner idea outside G2: list every Advantage or Disadvantage still at Needs a choice, as missing free Skill choices are listed today. No such rule exists today. A small future unit can register one rule with Phase 5 (Part J), using the sheet&#x27;s own configuration-complete test.</p><p><strong>A11 whole-app read — later layout work.</strong> Keep for later: the Rings note 12 px right of its label on a laptop; the Armor &amp; TN information heading in Play and its bonus note 3 px below the field; the Wounds table&#x27;s first column 8 px right of its caption.</p><p><a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/G2%20%E2%80%94%20Small%20Layout%20Fixes/HANDOVER.md">G2 handover</a>.</p>
+<!-- end-g2-15a-qualification-part4 -->
+
 <!-- cycle8-close-part4 -->
 <p><strong>4 November — remaining-work review.</strong> The 8b.1 functional correction and 8c advancement picker are complete. Keep all three 8b.1 presentation findings as separate 15a units. The 36-finding audit contains 34 work units plus retained A13/B15; with the three follow-ups, 37 possible work units remain. <a href="REASSESSMENT%20%E2%80%94%20Cycle%208%20Closure%202026-11-04/WORK-ORDER.md">Current inventory, R1–R27 dispositions and deferred work</a>.</p>
 <p>No deferred idea was silently promoted or dropped: R6 and the UI backlog go to Phase 15; FT-16 follows it unless the owner selects optional step 4; sync/Manage/career planning are reweighed at step 8. Final Honour/Glory/Status/wound review remains validation of the accepted app. FT-08 stays open until recurrence or the final review. The older rules-audit A14 spill stays parked for owner scenarios, distinct from Phase 15 A14. Android&#x27;s seven tests, conditional save-race/History concerns, wiki access and after-project engine/optimization/EPUB/Equipment/rules work retain their recorded gates.</p>
@@ -1508,6 +1524,10 @@ The owner&#x27;s two comments are G2 work: Advantage card text alignment goes in
   </section>
 
   <section class="s-hist" id="history">
+<!-- g2-15a-qualification-part6 -->
+<p><strong>9 November 2026 · G2 qualification (Codex).</strong></p><p>Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.</p><p>The 25 negative cases matched their predictions in the single discovery and their exact pins in final qualification. The original removal chain stopped at 46/47: A11 had insufficient eligible fixture rows with A05 removed, despite correct alignment. Its fixture was strengthened without changing assertions; A11 then passed 22/22 on all six affected inputs (132/132). The original failed chain remains intact. A guarded continuation validated this evidence and ran only the unstarted variants and dependencies (25/25 and 5/5). All five G2 units removed restore G1 byte-for-byte (17,586,964 bytes). The single full pass passed on its first execution: candidate 7,148/7,148 and retained 6,929/6,929, with fresh execution and no reused leaves. No assertions were widened and no failed chain or full pass was retried. No 4x CPU screen applies to this screen-only group.</p><p><a href="Part%20H%20%E2%80%94%20Sheet%20UI-UX/PART%20H%20%E2%80%94%20Phase%2015%20Implementation/Release%2015a/G2%20%E2%80%94%20Small%20Layout%20Fixes/HANDOVER.md">G2 handover</a>.</p>
+<!-- end-g2-15a-qualification-part6 -->
+
 <!-- a01-15a-part6 -->
 <h3>4 November 2026 — Claude: Release 15a A01 built, qualified, accepted and live</h3>
 <p>Remote Control on and verified; keep-awake held; usage read at start, before full QA and at the end. Reproduced today&#x27;s Kuni Shugenja, Matsu Beastmaster and Order of the Nameless Gift monk Reviews first (12 states) and confirmed the audit: Kuni repeats its weapon Skill and three spell lines, Matsu its Bugei Skill, and the monk&#x27;s Lore subject and Kiho picks appear only in the box.</p>

@@ -15,7 +15,7 @@
 | A06 Grant actions and their state | claude-release-15a-a06 | A05 preview | 5–7 | 3 Pass | 3 Pass | Accept |
 | A07 The Moon row | claude-release-15a-a07 | A06 preview | 8–10 | 3 Pass | 3 Pass | Accept |
 | A11 Text gaps and one left edge | claude-release-15a-a11 | A07 preview | 11–14 | 4 Pass | 4 Pass | Accept |
-| A04.1 Each rule inline in pickers | claude-release-15a-a04-1 | A11 preview | 15–18 | 4 Pass | 4 Pass | Revise → revision 1 built |
+| A04.1 Each rule inline in pickers | claude-release-15a-a04-1 | A11 preview | 15–18 | 4 Pass | 4 Pass | Revise → revision 1 device re-check passed 8 Nov |
 
 **A04.1 revision 1.** The owner saw a box inside a box on Seven Fortunes' Blessing's options, and it is fixed:
 
