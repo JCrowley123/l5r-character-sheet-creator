@@ -1,0 +1,141 @@
+Checking deployed files: compact-skills-harness.js
+Checking deployed files: skills-harness.js
+Checking deployed files: floating-strip-harness.js
+Checking deployed files: ui-foundations-harness.js
+Checking deployed files: quick-access-sidebar-harness.js
+Checking deployed files: appbar-harness.js
+Checking deployed files: carousel-destination-harness.js
+Checking deployed files: review-reminder-harness.js
+Checking deployed files: rank-spell-harness.js
+Checking deployed files: legacy-grants-harness.js
+Checking deployed files: older-review-harness.js
+Checking deployed files: allocation-boundaries-harness.js
+Checking deployed files: school-choices-harness.js
+Checking deployed files: review-regression-harness.js
+Checking deployed files: free-choice-harness.js
+Checking deployed files: scrolls-harness.js
+Checking deployed files: wizard-remove-harness.js
+Checking deployed files: wizard-harness.js
+Checking deployed files: wizard2-harness.js
+Checking deployed files: wizard3-harness.js
+Checking deployed files: wizard4-harness.js
+Checking deployed files: wizard5-harness.js
+Checking deployed files: school-skill-rows-harness.js
+Checking deployed files: info-pattern-harness.js
+Checking deployed files: adv-config-ux-harness.js
+Checking deployed files: court-servant-harness.js
+Checking deployed files: weakness-hotei-harness.js
+Checking deployed files: hotei-auto-harness.js
+Checking deployed files: disadv-fortune-harness.js
+Checking deployed files: court-badges-harness.js
+Checking deployed files: advantages-harness.js
+Checking deployed files: modes-harness.js
+Checking deployed files: clan-theming-harness.js
+Checking deployed files: picker-info-harness.js
+Checking deployed files: fortune-blessing-harness.js
+Checking deployed files: dark-paragon-harness.js
+Checking deployed files: paragon-harness.js
+Checking deployed files: soul-artistry-harness.js
+Checking deployed files: spirit-realms-harness.js
+Checking deployed files: void-versatility-harness.js
+Checking deployed files: skill-masteries-harness.js
+Checking deployed files: skill-traits-harness.js
+Checking deployed files: limb-picker-harness.js
+Checking deployed files: checks-conditions-harness.js
+Checking deployed files: grant-actions-harness.js
+Checking deployed files: wealthy-grant-harness.js
+Checking deployed files: identity-outfit-harness.js
+Checking deployed files: moon-row-harness.js
+Checking deployed files: moon-harness.js
+Checking deployed files: moon-label-harness.js
+Checking deployed files: text-edges-harness.js
+Checking deployed files: identity-harness.js
+Checking deployed files: damage-sessions-xp-harness.js
+Checking deployed files: inline-rules-harness.js
+Checking deployed files: disadv-config-harness.js
+Checking deployed files: disadv-realm-harness.js
+Checking deployed files: naishou-citizen-harness.js
+{
+  "commit": "93b27c61fca838079909a7b52398cbf163d418c4",
+  "checked_utc": "2026-11-09T12:46:26.627998+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0",
+  "page_sha256": "bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107",
+  "page_bytes": 17616007,
+  "service_worker_build": "f9a4bcad8d36d92a",
+  "service_worker_sha256": "d66ab82abc47601f7e165a0fb305aa651e1f468c8e311e2233816a6128331527",
+  "g1_units": [
+    "A04",
+    "A15",
+    "A16",
+    "A03.1",
+    "A05",
+    "A06",
+    "A07",
+    "A11",
+    "A04.1"
+  ],
+  "expected": {
+    "harnesses": 57,
+    "checks": 2523
+  },
+  "passed": true
+}
+PASS A03 — Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js 37/37
+PASS PART K — Phase 12.4 Play Mode Skills/skills-harness.js 17/17
+PASS A02 — Floating Controls Above the Tabs/floating-strip-harness.js 23/23
+PASS PART H — Phase 1 UI-UX Foundations/ui-foundations-harness.js 9/9
+PASS PART H — Phase 2 Quick-Access Sidebar/quick-access-sidebar-harness.js 19/19
+PASS PART K — Phase 11.3 App Bar/appbar-harness.js 25/25
+PASS BUGFIX — Carousel Settles on Its Destination/carousel-destination-harness.js 9/9
+PASS A01 — One Reminder per School Choice/review-reminder-harness.js 31/31
+PASS PART K — Phase 11.2.6 Rank Advancement Spell Choices/rank-spell-harness.js 36/36
+PASS BUGFIX — Older School Choices/legacy-grants-harness.js 4/4
+PASS BUGFIX — Older School Choices/older-review-harness.js 20/20
+PASS BUGFIX — Older School Choices/allocation-boundaries-harness.js 5/5
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js 30/30
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js 6/6
+PASS BUGFIX — Free Choice Note Clears/free-choice-harness.js 9/9
+PASS BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js 5/5
+PASS BUGFIX — Wizard Skill Remove/wizard-remove-harness.js 5/5
+PASS PART K — Phase 11.2 Creation Wizard/wizard-harness.js 43/43
+PASS PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js 32/32
+PASS PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js 52/52
+PASS PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js 25/25
+PASS PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js 71/71
+PASS BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js 37/37
+PASS A04 — One Information Pattern/info-pattern-harness.js 35/35
+PASS PART I — Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js 28/28
+PASS PART I — Phase 4.5.14 Darling of the Court and Servant/court-servant-harness.js 225/225
+PASS PART I — Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js 45/45
+PASS BUGFIX — Hotei Where the Sheet Spends Void/hotei-auto-harness.js 16/16
+PASS PART I — Phase 4.5.11 Seven Fortunes Curse/disadv-fortune-harness.js 74/74
+PASS A15 — Court Badges/court-badges-harness.js 33/33
+PASS PART K — Phase 12.5 Play Mode Advantages and Disadvantages/advantages-harness.js 212/212
+PASS PART K — Phase 12 Play and Management Modes/modes-harness.js 25/25
+PASS PART H — Phase 9 Clan-Themed Look/clan-theming-harness.js 17/17
+PASS A16 — No Bottom i in the Seven Pickers/picker-info-harness.js 50/50
+PASS PART I — Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js 77/77
+PASS PART I — Phase 4.5.23 Dark Paragon/dark-paragon-harness.js 67/67
+PASS PART I — Phase 4.5.18 Paragon/paragon-harness.js 80/80
+PASS PART I — Phase 4.5.19 Soul of Artistry/soul-artistry-harness.js 92/92
+PASS PART I — Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js 50/50
+PASS PART I — Phase 4.5.20 Void Versatility/void-versatility-harness.js 66/66
+PASS A03.1 — Masteries in the Skill Information/skill-masteries-harness.js 19/19
+PASS BUGFIX — Skill Traits/skill-traits-harness.js 38/38
+PASS A05 — Missing Limb Picker/limb-picker-harness.js 22/22
+PASS PART I — Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js 101/101
+PASS A06 — Grant Actions and Their State/grant-actions-harness.js 20/20
+PASS PART I — Phase 4.5.17 Wealthy Koku Grant/wealthy-grant-harness.js 87/87
+PASS PART I — Phase 4.5.40 Supplement Identity and Outfit/identity-outfit-harness.js 21/21
+PASS A07 — The Moon Row/moon-row-harness.js 26/26
+PASS BUGFIX — Moon Curse Full Moon/moon-harness.js 17/17
+PASS BUGFIX — Moon Resist Label/moon-label-harness.js 5/5
+PASS A11 — Explanatory Text Gaps and One Left Edge/text-edges-harness.js 22/22
+PASS PART K — Phase 12.2 Play Mode Identity/identity-harness.js 17/17
+PASS PART I — Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js 69/69
+PASS A04.1 — One Way to Show Choices in Pickers/inline-rules-harness.js 56/56
+PASS PART I — Phase 4.5.2 Disadvantages/disadv-config-harness.js 163/163
+PASS PART I — Phase 4.5.10 Cursed by the Realm/disadv-realm-harness.js 62/62
+PASS PART I — Phase 4.5.22 Naishou Citizen/naishou-citizen-harness.js 36/36
+LIVE VERIFICATION PASSED: 2523/2523 on the deployed files

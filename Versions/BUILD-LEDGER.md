@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **9 November 2026** (Codex). **Release 15a G2 is qualified and waiting for the owner's go-live word.** Main and production remain G1, application `2dcf6f20…6af6`. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+Local records updated **9 November 2026** (Codex). **Release 15a G2 is live and verified** on the owner's go-live instruction. Main was fast-forwarded to `93b27c61`; application `77936023…82f0`. Production checks passed **2,523/2,523**, browser/offline **22/22**. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
 
 **Historical publication and status, 4 November 2026:** Local records updated **4 November 2026** (Codex; Claude's publication and review the same day). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. Claude republished the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) from this record and published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) on 4 November at about 15:25 UTC; both were opened and checked. The next build choice is still pending.
 
@@ -24,13 +24,13 @@ Local records updated **9 November 2026** (Codex). **Release 15a G2 is qualified
 
 ## 1. Where things stand
 
-<!-- g2-15a-qualification-part1 -->
-**9 November 2026 · G2 qualification (Codex).** Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.
+<!-- g2-15a-live-part1 -->
+**9 November 2026 · G2 live (Codex).** Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
 
-The 25 negative cases matched their predictions in the single discovery and their exact pins in final qualification. The original removal chain stopped at 46/47: A11 had insufficient eligible fixture rows with A05 removed, despite correct alignment. Its fixture was strengthened without changing assertions; A11 then passed 22/22 on all six affected inputs (132/132). The original failed chain remains intact. A guarded continuation validated this evidence and ran only the unstarted variants and dependencies (25/25 and 5/5). All five G2 units removed restore G1 byte-for-byte (17,586,964 bytes). The single full pass passed on its first execution: candidate 7,148/7,148 and retained 6,929/6,929, with fresh execution and no reused leaves. No assertions were widened and no failed chain or full pass was retried. No 4x CPU screen applies to this screen-only group.
+Production checked on 9 November 2026: all seven deployed files match the qualified build byte for byte; 57 application harnesses passed 2,523/2,523 on the downloaded production files, and the fresh browser/offline smoke passed 22/22. Application checks completed at 2026-11-09T12:46:26.627998+00:00; browser/offline checks completed at 2026-11-09T12:46:38.319Z. Deployed page SHA-256 bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107 (17,616,007 bytes); service-worker build f9a4bcad8d36d92a. No feature check or failed full pass was retried.
 
 [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-qualification-part1 -->
+<!-- end-g2-15a-live-part1 -->
 
 <!-- cycle8-close-part1 -->
 <!-- claude-publish-part1 -->
@@ -153,11 +153,11 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 ## 2. What is left, the estimate and the build order
 
-<!-- g2-15a-qualification-part2 -->
-**9 November 2026 · G2 qualification (Codex).** G2 qualification is complete; the next decision is the owner's go-live word. G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work. A04.2 is gated on completion of the rules read pass. No later group is authorized by this record.
+<!-- g2-15a-live-part2 -->
+**9 November 2026 · G2 live (Codex).** G2 go-live and production verification are complete. G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work. A04.2 is gated on completion of the rules read pass. No later group is authorized by this release record.
 
 [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-qualification-part2 -->
+<!-- end-g2-15a-live-part2 -->
 
 <!-- cycle8-close-part2 -->
 ### Current reassessment and proposed work order — 4 November 2026
@@ -1960,6 +1960,14 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- g2-15a-live-part6 -->
+**9 November 2026 · G2 live (Codex), after qualification.** Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
+
+Production checked on 9 November 2026: all seven deployed files match the qualified build byte for byte; 57 application harnesses passed 2,523/2,523 on the downloaded production files, and the fresh browser/offline smoke passed 22/22. Application checks completed at 2026-11-09T12:46:26.627998+00:00; browser/offline checks completed at 2026-11-09T12:46:38.319Z. Deployed page SHA-256 bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107 (17,616,007 bytes); service-worker build f9a4bcad8d36d92a. No feature check or failed full pass was retried.
+
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+<!-- end-g2-15a-live-part6 -->
 
 <!-- g2-15a-qualification-part6 -->
 **9 November 2026 · G2 qualification (Codex).** Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.

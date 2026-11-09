@@ -1,9 +1,11 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
 <!-- g2-15a-qualification-roadmap -->
-## Current G2 qualification — 9 November 2026
+## Current G2 production — 9 November 2026
 
-Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.
+Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
+
+Production checked on 9 November 2026: all seven deployed files match the qualified build byte for byte; 57 application harnesses passed 2,523/2,523 on the downloaded production files, and the fresh browser/offline smoke passed 22/22. Application checks completed at 2026-11-09T12:46:26.627998+00:00; browser/offline checks completed at 2026-11-09T12:46:38.319Z. Deployed page SHA-256 bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107 (17,616,007 bytes); service-worker build f9a4bcad8d36d92a. No feature check or failed full pass was retried.
 
 The 25 negative cases matched their predictions in the single discovery and their exact pins in final qualification. The original removal chain stopped at 46/47: A11 had insufficient eligible fixture rows with A05 removed, despite correct alignment. Its fixture was strengthened without changing assertions; A11 then passed 22/22 on all six affected inputs (132/132). The original failed chain remains intact. A guarded continuation validated this evidence and ran only the unstarted variants and dependencies (25/25 and 5/5). All five G2 units removed restore G1 byte-for-byte (17,586,964 bytes). The single full pass passed on its first execution: candidate 7,148/7,148 and retained 6,929/6,929, with fresh execution and no reused leaves. No assertions were widened and no failed chain or full pass was retried. No 4x CPU screen applies to this screen-only group.
 

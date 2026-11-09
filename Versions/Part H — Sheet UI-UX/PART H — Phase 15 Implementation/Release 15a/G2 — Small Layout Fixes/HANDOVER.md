@@ -1,8 +1,8 @@
 # Release 15a G2 — Small Layout Fixes — handover
 
-9 November 2026 (Codex). **Qualified; waiting for the owner's go-live word.**
+9 November 2026 (Codex). **Accepted, qualified and live.**
 
-Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.
+Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
 
 ## Units and device review
 
@@ -34,7 +34,7 @@ The previously declared A03 synchronization fix remains in place. Before discove
 
 The removal-stage failure was investigated using read-only geometry capture on the exact preserved scratch page: 17 cards, eight eligible text rows on phone, seven on desktop, no misaligned edges and no page errors. The original fixture depended on A05 placing Missing Limb's note below its select. Only A11's own fixture changed: its existing Moon card received a description, adding independent text coverage while retaining the eight-row minimum and 1 px tolerance. The unchanged 22-check harness passed the candidate and all five removal inputs where A11 remains. The continuation and full-launch gates bind the original failure, scoped log hashes, check IDs, fixture and application hashes. [Investigation](qa/A11-REMOVAL-INVESTIGATION.md) · [scoped proof](qa/a11-fixture-validation/summary.json). Qualification was therefore not an uninterrupted first-chain pass; the full pass itself ran once and passed.
 
-Set `NODE_PATH=C:/Users/jcrow/l5r-qa-tools/node_modules`, `PLAYWRIGHT_BROWSERS_PATH=C:/Users/jcrow/l5r-qa-tools/ms-playwright`, and `PYTHONUTF8=1`. Do not inherit the old installed-Chrome shim. Every ordinary leaf uses navigation-budget.cjs and splash-fast.cjs as in the suite. Browser jobs ran sequentially on mains power, with sleep inhibited for each stage. Scratch removers never target the live source tree.
+Set `NODE_PATH=C:/Users/jcrow/l5r-qa-tools/node_modules`, `PLAYWRIGHT_BROWSERS_PATH=C:/Users/jcrow/l5r-qa-tools/ms-playwright`, and `PYTHONUTF8=1`. Do not inherit the old installed-Chrome shim. Every ordinary leaf uses navigation-budget.cjs and splash-fast.cjs as in the suite. Qualification browser jobs ran sequentially on mains power, with sleep inhibited for each stage. Scratch removers never target the live source tree.
 
 ## Later work recorded from the owner's decisions
 
@@ -48,11 +48,18 @@ G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work.
 
 [Usage readings](qa/USAGE.md) keep Codex separate from Claude. The initial Codex reading was unavailable, so no whole-session cost is asserted. The owner confirmed Remote Control enabled and the iPhone connected on 8 November.
 
-## Go-live — on the owner's word only
+## Production — 9 November 2026
 
-1. Fast-forward `main` to the qualified G2 tip, with no merge commit and no force; push main only after that authorization.
-2. From this group's folder run `python -B qa/verify-live.py` with no `--url`, using the environment above.
-3. Return to the repository root and run `node "Versions/BUGFIX — Older School Choices/qa/live-browser-smoke.cjs" "Versions/Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/qa/live"` (22 checks).
-4. Record production evidence. Do not commit `candidate-leaves/`, `retained-leaves/` or `local/site/`.
+The owner explicitly requested: “Please go ahead and make G2 live, then run the production checks and update the records.” Main was fast-forwarded from `2790a2ba` to `93b27c61`, without a merge commit or force, and pushed to trigger deployment.
 
-No later group is started by this handover. The qualification files are single-use; do not launch the completed chain or full pass again.
+Production checked on 9 November 2026: all seven deployed files match the qualified build byte for byte; 57 application harnesses passed 2,523/2,523 on the downloaded production files, and the fresh browser/offline smoke passed 22/22. Application checks completed at 2026-11-09T12:46:26.627998+00:00; browser/offline checks completed at 2026-11-09T12:46:38.319Z. Deployed page SHA-256 bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107 (17,616,007 bytes); service-worker build f9a4bcad8d36d92a. No feature check or failed full pass was retried.
+
+- [Application verification](qa/live/live-verification.json) and [complete QA log](qa/live/live-qa.log).
+- [Browser/offline verification](qa/live/live-browser-smoke.json) and [smoke log](qa/browser-smoke.log).
+- Source application SHA-256: `7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0`; 17,609,230 bytes. The deployed PWA page includes its installation header, so its hash and size above differ from the source.
+- Service-worker SHA-256: `d66ab82abc47601f7e165a0fb305aa651e1f468c8e311e2233816a6128331527`. Manifest and icon hashes are in the application-verification report.
+- The browser smoke used a fresh automated Chromium context at 390 px, then reloaded offline. It supplements the previously recorded owner iPhone Safari and Laptop Edge acceptance.
+
+The initial launcher stopped at its power preflight before any test or download. The project instruction requires mains for the full suite; the shorter production checks then ran sequentially on battery (61% at launch), with display/system sleep inhibited. Both production suites ran once and passed; no test result was overwritten.
+
+The go-live and verification are complete. No later group is started by this handover. Do not rerun the completed qualification or production suites. Keep candidate-leaves/, retained-leaves/ and local/site/ out of commits.
