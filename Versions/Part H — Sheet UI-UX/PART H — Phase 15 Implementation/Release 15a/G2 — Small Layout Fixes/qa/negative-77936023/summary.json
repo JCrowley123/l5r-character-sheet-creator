@@ -1,0 +1,974 @@
+{
+  "checked_utc": "2026-11-09T04:59:45.743281+00:00",
+  "cases": [
+    {
+      "id": "A05:baseline",
+      "expected_failures": [
+        "LP-CLASS-GATES-DESKTOP",
+        "LP-CLASS-GATES-PHONE",
+        "LP-FITS-320-DESKTOP",
+        "LP-FITS-320-PHONE",
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-NOTE-BELOW-DESKTOP",
+        "LP-NOTE-BELOW-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-ROW-PRESENT-DESKTOP",
+        "LP-ROW-PRESENT-PHONE",
+        "LP-SEAM-DESKTOP",
+        "LP-SEAM-PHONE",
+        "LP-SHARED-FIELD-DESKTOP",
+        "LP-SHARED-FIELD-PHONE",
+        "LP-STILL-THE-SAME-SELECT-DESKTOP",
+        "LP-STILL-THE-SAME-SELECT-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "actual_failures": [
+        "LP-CLASS-GATES-DESKTOP",
+        "LP-CLASS-GATES-PHONE",
+        "LP-FITS-320-DESKTOP",
+        "LP-FITS-320-PHONE",
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-NOTE-BELOW-DESKTOP",
+        "LP-NOTE-BELOW-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-ROW-PRESENT-DESKTOP",
+        "LP-ROW-PRESENT-PHONE",
+        "LP-SEAM-DESKTOP",
+        "LP-SEAM-PHONE",
+        "LP-SHARED-FIELD-DESKTOP",
+        "LP-SHARED-FIELD-PHONE",
+        "LP-STILL-THE-SAME-SELECT-DESKTOP",
+        "LP-STILL-THE-SAME-SELECT-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "counts": [
+        2,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A06:baseline",
+      "expected_failures": [
+        "GA-CLASS-GATES-DESKTOP",
+        "GA-CLASS-GATES-PHONE",
+        "GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP",
+        "GA-HOVER-KEEPS-FULL-OPACITY-PHONE",
+        "GA-SEAM-DESKTOP",
+        "GA-SEAM-PHONE",
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "actual_failures": [
+        "GA-CLASS-GATES-DESKTOP",
+        "GA-CLASS-GATES-PHONE",
+        "GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP",
+        "GA-HOVER-KEEPS-FULL-OPACITY-PHONE",
+        "GA-SEAM-DESKTOP",
+        "GA-SEAM-PHONE",
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "counts": [
+        6,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A07:baseline",
+      "expected_failures": [
+        "MR-CLASS-GATES-DESKTOP",
+        "MR-CLASS-GATES-PHONE",
+        "MR-ONE-EDGE-DESKTOP",
+        "MR-ONE-EDGE-PHONE",
+        "MR-PLAY-ONE-EDGE-DESKTOP",
+        "MR-PLAY-ONE-EDGE-PHONE",
+        "MR-PLAY-RESIST-AND-ORDER-DESKTOP",
+        "MR-PLAY-RESIST-AND-ORDER-PHONE",
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-RESIST-AND-ORDER-DESKTOP",
+        "MR-RESIST-AND-ORDER-PHONE",
+        "MR-SEAM-DESKTOP",
+        "MR-SEAM-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE",
+        "MR-TICK-STILL-WORKS-DESKTOP",
+        "MR-TICK-STILL-WORKS-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "actual_failures": [
+        "MR-CLASS-GATES-DESKTOP",
+        "MR-CLASS-GATES-PHONE",
+        "MR-ONE-EDGE-DESKTOP",
+        "MR-ONE-EDGE-PHONE",
+        "MR-PLAY-ONE-EDGE-DESKTOP",
+        "MR-PLAY-ONE-EDGE-PHONE",
+        "MR-PLAY-RESIST-AND-ORDER-DESKTOP",
+        "MR-PLAY-RESIST-AND-ORDER-PHONE",
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-RESIST-AND-ORDER-DESKTOP",
+        "MR-RESIST-AND-ORDER-PHONE",
+        "MR-SEAM-DESKTOP",
+        "MR-SEAM-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE",
+        "MR-TICK-STILL-WORKS-DESKTOP",
+        "MR-TICK-STILL-WORKS-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "counts": [
+        4,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A11:baseline",
+      "expected_failures": [
+        "TE-CLASS-GATES-DESKTOP",
+        "TE-CLASS-GATES-PHONE",
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE",
+        "TE-HINT-GAP-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE",
+        "TE-OTHER-HINTS-UNCHANGED-DESKTOP",
+        "TE-PLAY-ONE-EDGE-DESKTOP",
+        "TE-PLAY-ONE-EDGE-PHONE",
+        "TE-SEAM-DESKTOP",
+        "TE-SEAM-PHONE"
+      ],
+      "actual_failures": [
+        "TE-CLASS-GATES-DESKTOP",
+        "TE-CLASS-GATES-PHONE",
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE",
+        "TE-HINT-GAP-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE",
+        "TE-OTHER-HINTS-UNCHANGED-DESKTOP",
+        "TE-PLAY-ONE-EDGE-DESKTOP",
+        "TE-PLAY-ONE-EDGE-PHONE",
+        "TE-SEAM-DESKTOP",
+        "TE-SEAM-PHONE"
+      ],
+      "counts": [
+        10,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04.1:baseline",
+      "expected_failures": [
+        "IR-BLESSING-INLINE-DESKTOP",
+        "IR-BLESSING-INLINE-PHONE",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-BLESSING-PARAGON-CARD-DESKTOP",
+        "IR-BLESSING-PARAGON-CARD-PHONE",
+        "IR-CLASS-GATES-DESKTOP",
+        "IR-CLASS-GATES-PHONE",
+        "IR-CONSUMED-INLINE-DESKTOP",
+        "IR-CONSUMED-INLINE-PHONE",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CONSUMED-PARAGON-CARD-DESKTOP",
+        "IR-CONSUMED-PARAGON-CARD-PHONE",
+        "IR-CURSE-INLINE-DESKTOP",
+        "IR-CURSE-INLINE-PHONE",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CURSE-PARAGON-CARD-DESKTOP",
+        "IR-CURSE-PARAGON-CARD-PHONE",
+        "IR-FAILURE-INLINE-DESKTOP",
+        "IR-FAILURE-INLINE-PHONE",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-FAILURE-PARAGON-CARD-DESKTOP",
+        "IR-FAILURE-PARAGON-CARD-PHONE",
+        "IR-REALM-INLINE-DESKTOP",
+        "IR-REALM-INLINE-PHONE",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-REALM-PARAGON-CARD-DESKTOP",
+        "IR-REALM-PARAGON-CARD-PHONE",
+        "IR-SEAM-DESKTOP",
+        "IR-SEAM-PHONE",
+        "IR-TAP-RULE-CHOOSES-DESKTOP",
+        "IR-TAP-RULE-CHOOSES-PHONE"
+      ],
+      "actual_failures": [
+        "IR-BLESSING-INLINE-DESKTOP",
+        "IR-BLESSING-INLINE-PHONE",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-BLESSING-PARAGON-CARD-DESKTOP",
+        "IR-BLESSING-PARAGON-CARD-PHONE",
+        "IR-CLASS-GATES-DESKTOP",
+        "IR-CLASS-GATES-PHONE",
+        "IR-CONSUMED-INLINE-DESKTOP",
+        "IR-CONSUMED-INLINE-PHONE",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CONSUMED-PARAGON-CARD-DESKTOP",
+        "IR-CONSUMED-PARAGON-CARD-PHONE",
+        "IR-CURSE-INLINE-DESKTOP",
+        "IR-CURSE-INLINE-PHONE",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CURSE-PARAGON-CARD-DESKTOP",
+        "IR-CURSE-PARAGON-CARD-PHONE",
+        "IR-FAILURE-INLINE-DESKTOP",
+        "IR-FAILURE-INLINE-PHONE",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-FAILURE-PARAGON-CARD-DESKTOP",
+        "IR-FAILURE-PARAGON-CARD-PHONE",
+        "IR-REALM-INLINE-DESKTOP",
+        "IR-REALM-INLINE-PHONE",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-REALM-PARAGON-CARD-DESKTOP",
+        "IR-REALM-PARAGON-CARD-PHONE",
+        "IR-SEAM-DESKTOP",
+        "IR-SEAM-PHONE",
+        "IR-TAP-RULE-CHOOSES-DESKTOP",
+        "IR-TAP-RULE-CHOOSES-PHONE"
+      ],
+      "counts": [
+        18,
+        56
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A05:disabled",
+      "expected_failures": [
+        "LP-CLASS-GATES-DESKTOP",
+        "LP-CLASS-GATES-PHONE",
+        "LP-FITS-320-DESKTOP",
+        "LP-FITS-320-PHONE",
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-NOTE-BELOW-DESKTOP",
+        "LP-NOTE-BELOW-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-ROW-PRESENT-DESKTOP",
+        "LP-ROW-PRESENT-PHONE",
+        "LP-SEAM-DESKTOP",
+        "LP-SEAM-PHONE",
+        "LP-SHARED-FIELD-DESKTOP",
+        "LP-SHARED-FIELD-PHONE",
+        "LP-STILL-THE-SAME-SELECT-DESKTOP",
+        "LP-STILL-THE-SAME-SELECT-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "actual_failures": [
+        "LP-CLASS-GATES-DESKTOP",
+        "LP-CLASS-GATES-PHONE",
+        "LP-FITS-320-DESKTOP",
+        "LP-FITS-320-PHONE",
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-NOTE-BELOW-DESKTOP",
+        "LP-NOTE-BELOW-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-ROW-PRESENT-DESKTOP",
+        "LP-ROW-PRESENT-PHONE",
+        "LP-SEAM-DESKTOP",
+        "LP-SEAM-PHONE",
+        "LP-SHARED-FIELD-DESKTOP",
+        "LP-SHARED-FIELD-PHONE",
+        "LP-STILL-THE-SAME-SELECT-DESKTOP",
+        "LP-STILL-THE-SAME-SELECT-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "counts": [
+        2,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A05:no-css",
+      "expected_failures": [
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-NOTE-BELOW-DESKTOP",
+        "LP-NOTE-BELOW-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-SHARED-FIELD-DESKTOP",
+        "LP-SHARED-FIELD-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "actual_failures": [
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-NOTE-BELOW-DESKTOP",
+        "LP-NOTE-BELOW-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-SHARED-FIELD-DESKTOP",
+        "LP-SHARED-FIELD-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "counts": [
+        12,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A06:disabled",
+      "expected_failures": [
+        "GA-CLASS-GATES-DESKTOP",
+        "GA-CLASS-GATES-PHONE",
+        "GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP",
+        "GA-HOVER-KEEPS-FULL-OPACITY-PHONE",
+        "GA-SEAM-DESKTOP",
+        "GA-SEAM-PHONE",
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "actual_failures": [
+        "GA-CLASS-GATES-DESKTOP",
+        "GA-CLASS-GATES-PHONE",
+        "GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP",
+        "GA-HOVER-KEEPS-FULL-OPACITY-PHONE",
+        "GA-SEAM-DESKTOP",
+        "GA-SEAM-PHONE",
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "counts": [
+        6,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A06:no-css",
+      "expected_failures": [
+        "GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP",
+        "GA-HOVER-KEEPS-FULL-OPACITY-PHONE",
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "actual_failures": [
+        "GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP",
+        "GA-HOVER-KEEPS-FULL-OPACITY-PHONE",
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "counts": [
+        10,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A07:disabled",
+      "expected_failures": [
+        "MR-CLASS-GATES-DESKTOP",
+        "MR-CLASS-GATES-PHONE",
+        "MR-ONE-EDGE-DESKTOP",
+        "MR-ONE-EDGE-PHONE",
+        "MR-PLAY-ONE-EDGE-DESKTOP",
+        "MR-PLAY-ONE-EDGE-PHONE",
+        "MR-PLAY-RESIST-AND-ORDER-DESKTOP",
+        "MR-PLAY-RESIST-AND-ORDER-PHONE",
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-RESIST-AND-ORDER-DESKTOP",
+        "MR-RESIST-AND-ORDER-PHONE",
+        "MR-SEAM-DESKTOP",
+        "MR-SEAM-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE",
+        "MR-TICK-STILL-WORKS-DESKTOP",
+        "MR-TICK-STILL-WORKS-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "actual_failures": [
+        "MR-CLASS-GATES-DESKTOP",
+        "MR-CLASS-GATES-PHONE",
+        "MR-ONE-EDGE-DESKTOP",
+        "MR-ONE-EDGE-PHONE",
+        "MR-PLAY-ONE-EDGE-DESKTOP",
+        "MR-PLAY-ONE-EDGE-PHONE",
+        "MR-PLAY-RESIST-AND-ORDER-DESKTOP",
+        "MR-PLAY-RESIST-AND-ORDER-PHONE",
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-RESIST-AND-ORDER-DESKTOP",
+        "MR-RESIST-AND-ORDER-PHONE",
+        "MR-SEAM-DESKTOP",
+        "MR-SEAM-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE",
+        "MR-TICK-STILL-WORKS-DESKTOP",
+        "MR-TICK-STILL-WORKS-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "counts": [
+        4,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A07:no-css",
+      "expected_failures": [
+        "MR-ONE-EDGE-DESKTOP",
+        "MR-ONE-EDGE-PHONE",
+        "MR-PLAY-ONE-EDGE-DESKTOP",
+        "MR-PLAY-ONE-EDGE-PHONE",
+        "MR-PLAY-RESIST-AND-ORDER-DESKTOP",
+        "MR-PLAY-RESIST-AND-ORDER-PHONE",
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-RESIST-AND-ORDER-DESKTOP",
+        "MR-RESIST-AND-ORDER-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE",
+        "MR-TICK-STILL-WORKS-DESKTOP",
+        "MR-TICK-STILL-WORKS-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "actual_failures": [
+        "MR-ONE-EDGE-DESKTOP",
+        "MR-ONE-EDGE-PHONE",
+        "MR-PLAY-ONE-EDGE-DESKTOP",
+        "MR-PLAY-ONE-EDGE-PHONE",
+        "MR-PLAY-RESIST-AND-ORDER-DESKTOP",
+        "MR-PLAY-RESIST-AND-ORDER-PHONE",
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-RESIST-AND-ORDER-DESKTOP",
+        "MR-RESIST-AND-ORDER-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE",
+        "MR-TICK-STILL-WORKS-DESKTOP",
+        "MR-TICK-STILL-WORKS-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "counts": [
+        8,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A11:disabled",
+      "expected_failures": [
+        "TE-CLASS-GATES-DESKTOP",
+        "TE-CLASS-GATES-PHONE",
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE",
+        "TE-HINT-GAP-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE",
+        "TE-OTHER-HINTS-UNCHANGED-DESKTOP",
+        "TE-PLAY-ONE-EDGE-DESKTOP",
+        "TE-PLAY-ONE-EDGE-PHONE",
+        "TE-SEAM-DESKTOP",
+        "TE-SEAM-PHONE"
+      ],
+      "actual_failures": [
+        "TE-CLASS-GATES-DESKTOP",
+        "TE-CLASS-GATES-PHONE",
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE",
+        "TE-HINT-GAP-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE",
+        "TE-OTHER-HINTS-UNCHANGED-DESKTOP",
+        "TE-PLAY-ONE-EDGE-DESKTOP",
+        "TE-PLAY-ONE-EDGE-PHONE",
+        "TE-SEAM-DESKTOP",
+        "TE-SEAM-PHONE"
+      ],
+      "counts": [
+        10,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A11:no-css",
+      "expected_failures": [
+        "TE-CLASS-GATES-DESKTOP",
+        "TE-CLASS-GATES-PHONE",
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE",
+        "TE-HINT-GAP-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE",
+        "TE-OTHER-HINTS-UNCHANGED-DESKTOP",
+        "TE-PLAY-ONE-EDGE-DESKTOP",
+        "TE-PLAY-ONE-EDGE-PHONE"
+      ],
+      "actual_failures": [
+        "TE-CLASS-GATES-DESKTOP",
+        "TE-CLASS-GATES-PHONE",
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE",
+        "TE-HINT-GAP-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE",
+        "TE-OTHER-HINTS-UNCHANGED-DESKTOP",
+        "TE-PLAY-ONE-EDGE-DESKTOP",
+        "TE-PLAY-ONE-EDGE-PHONE"
+      ],
+      "counts": [
+        12,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04.1:disabled",
+      "expected_failures": [
+        "IR-BLESSING-INLINE-DESKTOP",
+        "IR-BLESSING-INLINE-PHONE",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-BLESSING-PARAGON-CARD-DESKTOP",
+        "IR-BLESSING-PARAGON-CARD-PHONE",
+        "IR-CLASS-GATES-DESKTOP",
+        "IR-CLASS-GATES-PHONE",
+        "IR-CONSUMED-INLINE-DESKTOP",
+        "IR-CONSUMED-INLINE-PHONE",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CONSUMED-PARAGON-CARD-DESKTOP",
+        "IR-CONSUMED-PARAGON-CARD-PHONE",
+        "IR-CURSE-INLINE-DESKTOP",
+        "IR-CURSE-INLINE-PHONE",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CURSE-PARAGON-CARD-DESKTOP",
+        "IR-CURSE-PARAGON-CARD-PHONE",
+        "IR-FAILURE-INLINE-DESKTOP",
+        "IR-FAILURE-INLINE-PHONE",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-FAILURE-PARAGON-CARD-DESKTOP",
+        "IR-FAILURE-PARAGON-CARD-PHONE",
+        "IR-REALM-INLINE-DESKTOP",
+        "IR-REALM-INLINE-PHONE",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-REALM-PARAGON-CARD-DESKTOP",
+        "IR-REALM-PARAGON-CARD-PHONE",
+        "IR-SEAM-DESKTOP",
+        "IR-SEAM-PHONE",
+        "IR-TAP-RULE-CHOOSES-DESKTOP",
+        "IR-TAP-RULE-CHOOSES-PHONE"
+      ],
+      "actual_failures": [
+        "IR-BLESSING-INLINE-DESKTOP",
+        "IR-BLESSING-INLINE-PHONE",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-BLESSING-PARAGON-CARD-DESKTOP",
+        "IR-BLESSING-PARAGON-CARD-PHONE",
+        "IR-CLASS-GATES-DESKTOP",
+        "IR-CLASS-GATES-PHONE",
+        "IR-CONSUMED-INLINE-DESKTOP",
+        "IR-CONSUMED-INLINE-PHONE",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CONSUMED-PARAGON-CARD-DESKTOP",
+        "IR-CONSUMED-PARAGON-CARD-PHONE",
+        "IR-CURSE-INLINE-DESKTOP",
+        "IR-CURSE-INLINE-PHONE",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CURSE-PARAGON-CARD-DESKTOP",
+        "IR-CURSE-PARAGON-CARD-PHONE",
+        "IR-FAILURE-INLINE-DESKTOP",
+        "IR-FAILURE-INLINE-PHONE",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-FAILURE-PARAGON-CARD-DESKTOP",
+        "IR-FAILURE-PARAGON-CARD-PHONE",
+        "IR-REALM-INLINE-DESKTOP",
+        "IR-REALM-INLINE-PHONE",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-REALM-PARAGON-CARD-DESKTOP",
+        "IR-REALM-PARAGON-CARD-PHONE",
+        "IR-SEAM-DESKTOP",
+        "IR-SEAM-PHONE",
+        "IR-TAP-RULE-CHOOSES-DESKTOP",
+        "IR-TAP-RULE-CHOOSES-PHONE"
+      ],
+      "counts": [
+        18,
+        56
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04.1:no-css",
+      "expected_failures": [
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-BLESSING-PARAGON-CARD-DESKTOP",
+        "IR-BLESSING-PARAGON-CARD-PHONE",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CONSUMED-PARAGON-CARD-DESKTOP",
+        "IR-CONSUMED-PARAGON-CARD-PHONE",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CURSE-PARAGON-CARD-DESKTOP",
+        "IR-CURSE-PARAGON-CARD-PHONE",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-FAILURE-PARAGON-CARD-DESKTOP",
+        "IR-FAILURE-PARAGON-CARD-PHONE",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-REALM-PARAGON-CARD-DESKTOP",
+        "IR-REALM-PARAGON-CARD-PHONE"
+      ],
+      "actual_failures": [
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-BLESSING-PARAGON-CARD-DESKTOP",
+        "IR-BLESSING-PARAGON-CARD-PHONE",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CONSUMED-PARAGON-CARD-DESKTOP",
+        "IR-CONSUMED-PARAGON-CARD-PHONE",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-CURSE-PARAGON-CARD-DESKTOP",
+        "IR-CURSE-PARAGON-CARD-PHONE",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-FAILURE-PARAGON-CARD-DESKTOP",
+        "IR-FAILURE-PARAGON-CARD-PHONE",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP",
+        "IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE",
+        "IR-REALM-PARAGON-CARD-DESKTOP",
+        "IR-REALM-PARAGON-CARD-PHONE"
+      ],
+      "counts": [
+        34,
+        56
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A05:wrong-label",
+      "expected_failures": [
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-STILL-THE-SAME-SELECT-DESKTOP",
+        "LP-STILL-THE-SAME-SELECT-PHONE"
+      ],
+      "actual_failures": [
+        "LP-LABEL-ABOVE-DESKTOP",
+        "LP-LABEL-ABOVE-PHONE",
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-STILL-THE-SAME-SELECT-DESKTOP",
+        "LP-STILL-THE-SAME-SELECT-PHONE"
+      ],
+      "counts": [
+        16,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A05:short-select",
+      "expected_failures": [
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "actual_failures": [
+        "LP-PLAY-DESKTOP",
+        "LP-PLAY-PHONE",
+        "LP-TOUCH-HEIGHT-DESKTOP",
+        "LP-TOUCH-HEIGHT-PHONE"
+      ],
+      "counts": [
+        18,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A06:wrong-state",
+      "expected_failures": [
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "actual_failures": [
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-STATE-DESKTOP",
+        "GA-ZAKYO-STATE-PHONE"
+      ],
+      "counts": [
+        16,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A06:unfilled-primary",
+      "expected_failures": [
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE"
+      ],
+      "actual_failures": [
+        "GA-WEALTHY-EXCESS-DESKTOP",
+        "GA-WEALTHY-EXCESS-PHONE",
+        "GA-WEALTHY-UNRECORDED-DESKTOP",
+        "GA-WEALTHY-UNRECORDED-PHONE",
+        "GA-ZAKYO-GROUP-DESKTOP",
+        "GA-ZAKYO-GROUP-PHONE"
+      ],
+      "counts": [
+        14,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A07:wrong-severity",
+      "expected_failures": [
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE"
+      ],
+      "actual_failures": [
+        "MR-PLAY-SEVERITY-LABELLED-DESKTOP",
+        "MR-PLAY-SEVERITY-LABELLED-PHONE",
+        "MR-SEVERITY-LABELLED-DESKTOP",
+        "MR-SEVERITY-LABELLED-PHONE"
+      ],
+      "counts": [
+        22,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A07:small-checkbox",
+      "expected_failures": [
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "actual_failures": [
+        "MR-PLAY-TOGGLE-ROW-DESKTOP",
+        "MR-PLAY-TOGGLE-ROW-PHONE",
+        "MR-TOGGLE-ROW-DESKTOP",
+        "MR-TOGGLE-ROW-PHONE"
+      ],
+      "counts": [
+        22,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A11:cramped-conditions",
+      "expected_failures": [
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE"
+      ],
+      "actual_failures": [
+        "TE-CONDITION-GAP-DESKTOP",
+        "TE-CONDITION-GAP-PHONE"
+      ],
+      "counts": [
+        20,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A11:tight-hint-lines",
+      "expected_failures": [
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE"
+      ],
+      "actual_failures": [
+        "TE-HINT-LINE-HEIGHT-DESKTOP",
+        "TE-HINT-LINE-HEIGHT-PHONE"
+      ],
+      "counts": [
+        20,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04.1:truncated-rule",
+      "expected_failures": [
+        "IR-BLESSING-INLINE-DESKTOP",
+        "IR-BLESSING-INLINE-PHONE",
+        "IR-CONSUMED-INLINE-DESKTOP",
+        "IR-CONSUMED-INLINE-PHONE",
+        "IR-CURSE-INLINE-DESKTOP",
+        "IR-CURSE-INLINE-PHONE",
+        "IR-FAILURE-INLINE-DESKTOP",
+        "IR-FAILURE-INLINE-PHONE",
+        "IR-REALM-INLINE-DESKTOP",
+        "IR-REALM-INLINE-PHONE"
+      ],
+      "actual_failures": [
+        "IR-BLESSING-INLINE-DESKTOP",
+        "IR-BLESSING-INLINE-PHONE",
+        "IR-CONSUMED-INLINE-DESKTOP",
+        "IR-CONSUMED-INLINE-PHONE",
+        "IR-CURSE-INLINE-DESKTOP",
+        "IR-CURSE-INLINE-PHONE",
+        "IR-FAILURE-INLINE-DESKTOP",
+        "IR-FAILURE-INLINE-PHONE",
+        "IR-REALM-INLINE-DESKTOP",
+        "IR-REALM-INLINE-PHONE"
+      ],
+      "counts": [
+        46,
+        56
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A04.1:nested-border",
+      "expected_failures": [
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-CONSUMED-ONE-BOX-DESKTOP",
+        "IR-CONSUMED-ONE-BOX-PHONE",
+        "IR-CURSE-ONE-BOX-DESKTOP",
+        "IR-CURSE-ONE-BOX-PHONE",
+        "IR-FAILURE-ONE-BOX-DESKTOP",
+        "IR-FAILURE-ONE-BOX-PHONE",
+        "IR-REALM-ONE-BOX-DESKTOP",
+        "IR-REALM-ONE-BOX-PHONE"
+      ],
+      "actual_failures": [
+        "IR-BLESSING-ONE-BOX-DESKTOP",
+        "IR-BLESSING-ONE-BOX-PHONE",
+        "IR-CONSUMED-ONE-BOX-DESKTOP",
+        "IR-CONSUMED-ONE-BOX-PHONE",
+        "IR-CURSE-ONE-BOX-DESKTOP",
+        "IR-CURSE-ONE-BOX-PHONE",
+        "IR-FAILURE-ONE-BOX-DESKTOP",
+        "IR-FAILURE-ONE-BOX-PHONE",
+        "IR-REALM-ONE-BOX-DESKTOP",
+        "IR-REALM-ONE-BOX-PHONE"
+      ],
+      "counts": [
+        46,
+        56
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

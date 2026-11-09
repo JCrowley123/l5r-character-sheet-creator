@@ -1,0 +1,27 @@
+20 mutations unique.
+A05:baseline: failed exactly its 20 pinned checks
+A06:baseline: failed exactly its 14 pinned checks
+A07:baseline: failed exactly its 22 pinned checks
+A11:baseline: failed exactly its 12 pinned checks
+A04.1:baseline: failed exactly its 38 pinned checks
+A05:disabled: failed exactly its 20 pinned checks
+A05:no-css: failed exactly its 10 pinned checks
+A06:disabled: failed exactly its 14 pinned checks
+A06:no-css: failed exactly its 10 pinned checks
+A07:disabled: failed exactly its 22 pinned checks
+A07:no-css: failed exactly its 18 pinned checks
+A11:disabled: failed exactly its 12 pinned checks
+A11:no-css: failed exactly its 10 pinned checks
+A04.1:disabled: failed exactly its 38 pinned checks
+A04.1:no-css: failed exactly its 22 pinned checks
+A05:wrong-label: failed exactly its 6 pinned checks
+A05:short-select: failed exactly its 4 pinned checks
+A06:wrong-state: failed exactly its 4 pinned checks
+A06:unfilled-primary: failed exactly its 6 pinned checks
+A07:wrong-severity: failed exactly its 4 pinned checks
+A07:small-checkbox: failed exactly its 4 pinned checks
+A11:cramped-conditions: failed exactly its 2 pinned checks
+A11:tight-hint-lines: failed exactly its 2 pinned checks
+A04.1:truncated-rule: failed exactly its 10 pinned checks
+A04.1:nested-border: failed exactly its 10 pinned checks
+All 25 negative variants matched their pinned failures.

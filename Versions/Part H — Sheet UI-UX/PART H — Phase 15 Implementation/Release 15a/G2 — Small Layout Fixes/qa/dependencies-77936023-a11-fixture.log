@@ -1,0 +1,102 @@
+== PART H PHASE 15.1.5 exit 0
+face  : 8 name(s) -- 1134-limb-picker, LIMB_PICKER_ENABLED, LP15, limb-picker-seam, lp15-field, lp15-label, lp15-on, lp15-row
+
+src\css\1134-limb-picker.css
+    own      2  [PART H PHASE 15.1.5 +1]  The label's word (span.lp15-label, "Missing limb") sits above the select as every field label do
+    own      5  [PART H PHASE 15.1.5 +4]  unaffected: these rules match only a row this unit has marked (lp15-row, lp15-field), so Lost Lo
+    own      7  [PART H PHASE 15.1.5 +6]  Waits for body.lp15-on, which this unit's switch sets. */
+    own      8  [PART H PHASE 15.1.5 +7]  html body.lp15-on #disadvList .chk4531-row.lp15-row {
+    own     11  [PART H PHASE 15.1.5 +10]  html body.lp15-on #disadvList label.chk4531-field.lp15-field {
+    own     18  [PART H PHASE 15.1.5 +17]  html body.lp15-on #disadvList label.lp15-field .lp15-label {
+    own     22  [PART H PHASE 15.1.5 +21]  html body.lp15-on #disadvList label.lp15-field select.chk4531-limb {
+    own     37  [PART H PHASE 15.1.5 +36]  html body.lp15-on #disadvList .chk4531-row.lp15-row > .chk4531-note {
+
+src\sheet\210-test-seam-and-init.js
+    own    965  [PART H PHASE 15.1.5 +0]  // PART H PHASE 15.1.5 BEGIN limb-picker-seam
+    own    966  [PART H PHASE 15.1.5 +1]  if(typeof LP15 === 'object' && LP15) Object.assign(window.__L5R_TEST__, {LP15, LIMB_PICKER_ENABL
+    own    967  [PART H PHASE 15.1.5 +2]  // END LP15 limb-picker-seam
+
+every reference is inside a block PART H PHASE 15.1.5 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.6 exit 0
+H PHASE 15.1.6 +19]  html body.ga15-on #advList .supp4540-koku > button,
+    own     21  [PART H PHASE 15.1.6 +20]  html body.ga15-on #advList .wealth4517-status > button {
+    own     26  [PART H PHASE 15.1.6 +25]  html body.ga15-on #advList .supp4540-koku > button:first-of-type,
+    own     27  [PART H PHASE 15.1.6 +26]  html body.ga15-on #advList .wealth4517-status > button:first-of-type {
+    own     32  [PART H PHASE 15.1.6 +31]  html body.ga15-on #advList .supp4540-koku > button:hover,
+    own     33  [PART H PHASE 15.1.6 +32]  html body.ga15-on #advList .wealth4517-status > button:hover {
+    own     36  [PART H PHASE 15.1.6 +35]  html body.ga15-on #advList .wealth4517-status > button:disabled {
+    own     39  [PART H PHASE 15.1.6 +38]  html body.ga15-on #advList .supp4540-koku:has(> button)::after,
+    own     40  [PART H PHASE 15.1.6 +39]  html body.ga15-on #advList .wealth4517-status:has(> button)::after {
+    own     46  [PART H PHASE 15.1.6 +45]  html body.ga15-on #advList .wealth4517-status.wealth4517-excess:has(> button)::after {
+
+src\sheet\210-test-seam-and-init.js
+    own    968  [PART H PHASE 15.1.6 +0]  // PART H PHASE 15.1.6 BEGIN grant-actions-seam
+    own    969  [PART H PHASE 15.1.6 +1]  if(typeof GA15 === 'object' && GA15) Object.assign(window.__L5R_TEST__, {GA15, GRANT_ACTIONS_ENA
+    own    970  [PART H PHASE 15.1.6 +2]  // END GA15 grant-actions-seam
+
+every reference is inside a block PART H PHASE 15.1.6 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.7 exit 0
+fragment : src/sheet/209.99999999999999995-feat-moon-row.js
+marker   : PART H PHASE 15.1.7
+surface  : 5 name(s) -- 1136-moon-row, MOON_ROW_ENABLED, MR15, moon-row-seam, mr15-on
+
+src\css\1136-moon-row.css
+    own      7  [PART H PHASE 15.1.7 +6]  Waits for body.mr15-on, which this unit's switch sets. */
+    own      8  [PART H PHASE 15.1.7 +7]  html body.mr15-on #disadvList .adv-config-row:has(> .lm7-moon) > .adv-config-summary::before {
+    own     17  [PART H PHASE 15.1.7 +16]  html body.mr15-on #disadvList .lm7-moon {
+    own     23  [PART H PHASE 15.1.7 +22]  html body.mr15-on #disadvList label.lm7-tick {
+    own     36  [PART H PHASE 15.1.7 +35]  html body.mr15-on #disadvList label.lm7-tick input {
+    own     42  [PART H PHASE 15.1.7 +41]  html body.mr15-on #disadvList .lm7-roll {
+
+src\sheet\210-test-seam-and-init.js
+    own    971  [PART H PHASE 15.1.7 +0]  // PART H PHASE 15.1.7 BEGIN moon-row-seam
+    own    972  [PART H PHASE 15.1.7 +1]  if(typeof MR15 === 'object' && MR15) Object.assign(window.__L5R_TEST__, {MR15, MOON_ROW_ENABLED}
+    own    973  [PART H PHASE 15.1.7 +2]  // END MR15 moon-row-seam
+
+every reference is inside a block PART H PHASE 15.1.7 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.11 exit 0
+lay #disadvList .entry .en-name[data-pm12-locked],
+    own     11  [PART H PHASE 15.1.11 +10]  html body.te15-on.pm12-play #advList .entry .en-desc[data-pm12-locked],
+    own     12  [PART H PHASE 15.1.11 +11]  html body.te15-on.pm12-play #disadvList .entry .en-desc[data-pm12-locked] {
+    own     18  [PART H PHASE 15.1.11 +17]  html body.te15-on .section > .grid:has(#f_insightBonus) + .hint,
+    own     19  [PART H PHASE 15.1.11 +18]  html body.te15-on .section > .grid:has(#f_xpSpent) + .hint {
+    own     23  [PART H PHASE 15.1.11 +22]  html body.te15-on .section > .grid:has(#f_insightBonus) + .hint,
+    own     24  [PART H PHASE 15.1.11 +23]  html body.te15-on .section > .grid:has(#f_xpSpent) + .hint {
+    own     28  [PART H PHASE 15.1.11 +27]  html body.te15-on #disadvList .chk4531-row,
+    own     29  [PART H PHASE 15.1.11 +28]  html body.te15-on #advList .chk4531-row,
+    own     30  [PART H PHASE 15.1.11 +29]  html body.te15-on #disadvList .dsx4532-row,
+    own     31  [PART H PHASE 15.1.11 +30]  html body.te15-on #advList .dsx4532-row {
+
+src\sheet\210-test-seam-and-init.js
+    own    974  [PART H PHASE 15.1.11 +0]  // PART H PHASE 15.1.11 BEGIN text-edges-seam
+    own    975  [PART H PHASE 15.1.11 +1]  if(typeof TE15 === 'object' && TE15) Object.assign(window.__L5R_TEST__, {TE15, TEXT_EDGES_ENABLE
+    own    976  [PART H PHASE 15.1.11 +2]  // END TE15 text-edges-seam
+
+every reference is inside a block PART H PHASE 15.1.11 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.4.1 exit 0
+t-inline-rules.js
+marker   : PART H PHASE 15.1.4.1
+surface  : 8 name(s) -- 1138-inline-rules, INLINE_RULES_ENABLED, IR15, inline-rules-seam, ir15-item, ir15-on, ir15-opt, ir15-rule
+
+src\css\1138-inline-rules.css
+    own      2  [PART H PHASE 15.1.4.1 +1]  Matches only an option this unit has marked (ir15-item, ir15-opt). The option becomes Paragon's 
+    own      7  [PART H PHASE 15.1.4.1 +6]  Waits for body.ir15-on, which this unit's switch sets. */
+    own      8  [PART H PHASE 15.1.4.1 +7]  html body.ir15-on #advConfigGrid .ir15-item {
+    own     23  [PART H PHASE 15.1.4.1 +22]  html body.ir15-on #advConfigGrid label.ir15-opt {
+    own     43  [PART H PHASE 15.1.4.1 +42]  html body.ir15-on #advConfigGrid label.ir15-opt > input {
+    own     51  [PART H PHASE 15.1.4.1 +50]  html body.ir15-on #advConfigGrid label.ir15-opt > span {
+    own     55  [PART H PHASE 15.1.4.1 +54]  html body.ir15-on #advConfigGrid .ir15-item > details,
+    own     56  [PART H PHASE 15.1.4.1 +55]  html body.ir15-on #advConfigGrid .ir15-item .adv-config-info {
+
+src\sheet\210-test-seam-and-init.js
+    own    977  [PART H PHASE 15.1.4.1 +0]  // PART H PHASE 15.1.4.1 BEGIN inline-rules-seam
+    own    978  [PART H PHASE 15.1.4.1 +1]  if(typeof IR15 === 'object' && IR15) Object.assign(window.__L5R_TEST__, {IR15, INLINE_RULES_ENAB
+    own    979  [PART H PHASE 15.1.4.1 +2]  // END IR15 inline-rules-seam
+
+every reference is inside a block PART H PHASE 15.1.4.1 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 5/5

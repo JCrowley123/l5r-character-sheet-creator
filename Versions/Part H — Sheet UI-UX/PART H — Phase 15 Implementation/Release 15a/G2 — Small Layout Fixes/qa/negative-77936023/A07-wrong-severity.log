@@ -1,0 +1,31 @@
+  detail MR-SEVERITY-LABELLED-PHONE: {"sum":{"top":4262.65625,"bottom":4281.03125,"left":36,"h":18.375,"w":151.703125,"transform":"none","size":13.12},"sumText":"Medium — 5 points","before":"\"Level\"","beforeTransform":"uppercase","tick":{"top":4298.09375,"bottom":4342.09375,"left":36,"h":44,"w":304.359375,"transform":"none","size":15.2},"tickText":"Full moon tonight (+1 Void Point, spent last)","box":{"top":4309.09375,"bottom":4331.09375,"left":36,"h":22,"w":22,"transform":"none","size":13.3333},"checked":false,"roll":{"top":4350.09375,"bottom":4394.09375,"left":36,"h":44,"w":209.328125,"transform":"uppercase","size":11.84},"rollText":"Resist Lord Moon (TN 20)","config":"{\"type\":\"severityTier\",\"value\":\"Medium\"}"}
+  detail MR-PLAY-SEVERITY-LABELLED-PHONE: {"sum":{"top":4058.734375,"bottom":4077.109375,"left":36,"h":18.375,"w":151.703125,"transform":"none","size":13.12},"sumText":"Medium — 5 points","before":"\"Level\"","beforeTransform":"uppercase","tick":{"top":4093.109375,"bottom":4137.109375,"left":36,"h":44,"w":304.359375,"transform":"none","size":15.2},"tickText":"Full moon tonight (+1 Void Point, spent last)","box":{"top":4104.109375,"bottom":4126.109375,"left":36,"h":22,"w":22,"transform":"none","size":13.3333},"checked":false,"roll":{"top":4145.109375,"bottom":4189.109375,"left":36,"h":44,"w":209.328125,"transform":"uppercase","size":11.84},"rollText":"Resist Lord Moon (TN 20)","config":"{\"type\":\"severityTier\",\"value\":\"Medium\"}"}
+  detail MR-SEVERITY-LABELLED-DESKTOP: {"sum":{"top":2415.71875,"bottom":2434.09375,"left":738,"h":18.375,"w":151.703125,"transform":"none","size":13.12},"sumText":"Medium — 5 points","before":"\"Level\"","beforeTransform":"uppercase","tick":{"top":2451.15625,"bottom":2495.15625,"left":738,"h":44,"w":304.359375,"transform":"none","size":15.2},"tickText":"Full moon tonight (+1 Void Point, spent last)","box":{"top":2462.15625,"bottom":2484.15625,"left":738,"h":22,"w":22,"transform":"none","size":13.3333},"checked":false,"roll":{"top":2503.15625,"bottom":2547.15625,"left":738,"h":44,"w":209.328125,"transform":"uppercase","size":11.84},"rollText":"Resist Lord Moon (TN 20)","config":"{\"type\":\"severityTier\",\"value\":\"Medium\"}"}
+  detail MR-PLAY-SEVERITY-LABELLED-DESKTOP: {"sum":{"top":2359.671875,"bottom":2378.046875,"left":738,"h":18.375,"w":151.703125,"transform":"none","size":13.12},"sumText":"Medium — 5 points","before":"\"Level\"","beforeTransform":"uppercase","tick":{"top":2394.046875,"bottom":2438.046875,"left":738,"h":44,"w":304.359375,"transform":"none","size":15.2},"tickText":"Full moon tonight (+1 Void Point, spent last)","box":{"top":2405.046875,"bottom":2427.046875,"left":738,"h":22,"w":22,"transform":"none","size":13.3333},"checked":false,"roll":{"top":2446.046875,"bottom":2490.046875,"left":738,"h":44,"w":209.328125,"transform":"uppercase","size":11.84},"rollText":"Resist Lord Moon (TN 20)","config":"{\"type\":\"severityTier\",\"value\":\"Medium\"}"}
+PASS MR-SEAM-PHONE
+FAIL MR-SEVERITY-LABELLED-PHONE
+PASS MR-ONE-EDGE-PHONE
+PASS MR-TOGGLE-ROW-PHONE
+PASS MR-RESIST-AND-ORDER-PHONE
+FAIL MR-PLAY-SEVERITY-LABELLED-PHONE
+PASS MR-PLAY-ONE-EDGE-PHONE
+PASS MR-PLAY-TOGGLE-ROW-PHONE
+PASS MR-PLAY-RESIST-AND-ORDER-PHONE
+PASS MR-TICK-STILL-WORKS-PHONE
+PASS MR-ONLY-THE-MOON-ROW-PHONE
+PASS MR-CLASS-GATES-PHONE
+PASS MR-NO-ERRORS-PHONE
+PASS MR-SEAM-DESKTOP
+FAIL MR-SEVERITY-LABELLED-DESKTOP
+PASS MR-ONE-EDGE-DESKTOP
+PASS MR-TOGGLE-ROW-DESKTOP
+PASS MR-RESIST-AND-ORDER-DESKTOP
+FAIL MR-PLAY-SEVERITY-LABELLED-DESKTOP
+PASS MR-PLAY-ONE-EDGE-DESKTOP
+PASS MR-PLAY-TOGGLE-ROW-DESKTOP
+PASS MR-PLAY-RESIST-AND-ORDER-DESKTOP
+PASS MR-TICK-STILL-WORKS-DESKTOP
+PASS MR-ONLY-THE-MOON-ROW-DESKTOP
+PASS MR-CLASS-GATES-DESKTOP
+PASS MR-NO-ERRORS-DESKTOP
+22/26 checks passed

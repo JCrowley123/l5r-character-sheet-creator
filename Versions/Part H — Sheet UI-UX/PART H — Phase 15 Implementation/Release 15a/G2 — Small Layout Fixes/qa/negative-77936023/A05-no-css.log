@@ -1,0 +1,33 @@
+  detail LP-LABEL-ABOVE-PHONE: {"m":{"sel":{"top":2567.0625,"bottom":2592.0625,"left":116.78125,"h":25,"font":"Arial","size":"16px","border":"rgb(118, 118, 118) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(0, 0, 0)","bg":"rgb(255, 255, 255)"},"label":{"top":2573.25,"bottom":2585.859375,"left":36,"h":12.609375,"font":"\"Noto Sans JP\", sans-serif","size":"9.705px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"uppercase","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"labelText":"Missing limb","strayWords":[],"labels":1,"note":{"top":2604.0625,"bottom":2621.78125,"left":36,"h":17.71875,"font":"\"EB Garamond\", serif","size":"13.12px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"none","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"noteText":"Ticks on every roll but damage.","entry":{"top":2516.0625,"bottom":2722.09375,"left":23,"h":206.0312
+  detail LP-SHARED-FIELD-PHONE: {"sel":{"top":2567.0625,"bottom":2592.0625,"left":116.78125,"h":25,"font":"Arial","size":"16px","border":"rgb(118, 118, 118) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(0, 0, 0)","bg":"rgb(255, 255, 255)"},"ref":{"font":"\"EB Garamond\", serif","size":"16px","border":"rgb(201, 187, 152) 1px","radius":"5px","colour":"rgb(42, 36, 32)","bg":"rgb(255, 253, 248)","labelTransform":"uppercase","labelFont":"\"Noto Sans JP\", sans-serif"}}
+  detail LP-TOUCH-HEIGHT-PHONE: 25
+  detail LP-NOTE-BELOW-PHONE: {"sel":{"top":2567.0625,"bottom":2592.0625,"left":116.78125,"h":25,"font":"Arial","size":"16px","border":"rgb(118, 118, 118) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(0, 0, 0)","bg":"rgb(255, 255, 255)"},"note":{"top":2604.0625,"bottom":2621.78125,"left":36,"h":17.71875,"font":"\"EB Garamond\", serif","size":"13.12px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"none","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"}}
+  detail LP-PLAY-PHONE: {"sel":{"top":2378.078125,"bottom":2403.078125,"left":116.78125,"h":25,"font":"Arial","size":"16px","border":"rgba(118, 118, 118, 0.3) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(109, 109, 109)","bg":"rgb(255, 255, 255)"},"label":{"top":2384.265625,"bottom":2396.875,"left":36,"h":12.609375,"font":"\"Noto Sans JP\", sans-serif","size":"9.705px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"uppercase","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"labelText":"Missing limb","strayWords":[],"labels":1,"note":{"top":2415.078125,"bottom":2432.796875,"left":36,"h":17.71875,"font":"\"EB Garamond\", serif","size":"13.12px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"none","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"noteText":"Ticks on every roll but damage.","entry":{"top":2327.078125,"bottom":2533.109375,"lef
+  detail LP-LABEL-ABOVE-DESKTOP: {"m":{"sel":{"top":1093,"bottom":1118,"left":825.578125,"h":25,"font":"Arial","size":"16px","border":"rgb(118, 118, 118) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(0, 0, 0)","bg":"rgb(255, 255, 255)"},"label":{"top":1098.640625,"bottom":1112.359375,"left":738,"h":13.71875,"font":"\"Noto Sans JP\", sans-serif","size":"10.56px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"uppercase","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"labelText":"Missing limb","strayWords":[],"labels":1,"note":{"top":1098.640625,"bottom":1116.359375,"left":956.578125,"h":17.71875,"font":"\"EB Garamond\", serif","size":"13.12px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"none","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"noteText":"Ticks on every roll but damage.","entry":{"top":1042,"bottom":1223.140625,"left":725,"h":181.1
+  detail LP-SHARED-FIELD-DESKTOP: {"sel":{"top":1093,"bottom":1118,"left":825.578125,"h":25,"font":"Arial","size":"16px","border":"rgb(118, 118, 118) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(0, 0, 0)","bg":"rgb(255, 255, 255)"},"ref":{"font":"\"EB Garamond\", serif","size":"16px","border":"rgb(201, 187, 152) 1px","radius":"5px","colour":"rgb(42, 36, 32)","bg":"rgb(255, 253, 248)","labelTransform":"uppercase","labelFont":"\"Noto Sans JP\", sans-serif"}}
+  detail LP-TOUCH-HEIGHT-DESKTOP: 25
+  detail LP-NOTE-BELOW-DESKTOP: {"sel":{"top":1093,"bottom":1118,"left":825.578125,"h":25,"font":"Arial","size":"16px","border":"rgb(118, 118, 118) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(0, 0, 0)","bg":"rgb(255, 255, 255)"},"note":{"top":1098.640625,"bottom":1116.359375,"left":956.578125,"h":17.71875,"font":"\"EB Garamond\", serif","size":"13.12px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"none","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"}}
+  detail LP-PLAY-DESKTOP: {"sel":{"top":1035.890625,"bottom":1060.890625,"left":825.578125,"h":25,"font":"Arial","size":"16px","border":"rgba(118, 118, 118, 0.3) 1px","radius":"0px","pad":"4px","transform":"none","colour":"rgb(109, 109, 109)","bg":"rgb(255, 255, 255)"},"label":{"top":1041.53125,"bottom":1055.25,"left":738,"h":13.71875,"font":"\"Noto Sans JP\", sans-serif","size":"10.56px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"uppercase","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"labelText":"Missing limb","strayWords":[],"labels":1,"note":{"top":1041.53125,"bottom":1059.25,"left":956.578125,"h":17.71875,"font":"\"EB Garamond\", serif","size":"13.12px","border":"rgb(90, 79, 67) 0px","radius":"0px","pad":"0px","transform":"none","colour":"rgb(90, 79, 67)","bg":"rgba(0, 0, 0, 0)"},"noteText":"Ticks on every roll but damage.","entry":{"top":984.890625,"bottom":1166.03125,"lef
+PASS LP-SEAM-PHONE
+PASS LP-ROW-PRESENT-PHONE
+FAIL LP-LABEL-ABOVE-PHONE
+FAIL LP-SHARED-FIELD-PHONE
+FAIL LP-TOUCH-HEIGHT-PHONE
+FAIL LP-NOTE-BELOW-PHONE
+PASS LP-STILL-THE-SAME-SELECT-PHONE
+FAIL LP-PLAY-PHONE
+PASS LP-FITS-320-PHONE
+PASS LP-CLASS-GATES-PHONE
+PASS LP-NO-ERRORS-PHONE
+PASS LP-SEAM-DESKTOP
+PASS LP-ROW-PRESENT-DESKTOP
+FAIL LP-LABEL-ABOVE-DESKTOP
+FAIL LP-SHARED-FIELD-DESKTOP
+FAIL LP-TOUCH-HEIGHT-DESKTOP
+FAIL LP-NOTE-BELOW-DESKTOP
+PASS LP-STILL-THE-SAME-SELECT-DESKTOP
+FAIL LP-PLAY-DESKTOP
+PASS LP-FITS-320-DESKTOP
+PASS LP-CLASS-GATES-DESKTOP
+PASS LP-NO-ERRORS-DESKTOP
+12/22 checks passed

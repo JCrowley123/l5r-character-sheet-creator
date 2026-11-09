@@ -1,0 +1,35 @@
+  detail GA-SEAM-PHONE: {"api":false,"cls":false}
+  detail GA-ZAKYO-GROUP-PHONE: {"btns":[{"text":"Add 1.5 koku","top":1286.265625,"left":36,"right":156.125,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost supp4540-btn","disabled":false},{"text":"Already added","top":1286.265625,"left":156.125,"right":294.515625,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost supp4540-btn","disabled":false}],"text":"Half your School’s starting koku again: 1.5 koku.","spanBottom":1283.890625,"spanW":275.21875,"boxW":318,"after":"none","before":"none","display":"block","gap":"normal","ink":"rgb(42, 36, 32)","cls":"supp4540-koku"}
+  detail GA-ZAKYO-STATE-PHONE: "none"
+  detail GA-WEALTHY-UNRECORDED-PHONE: {"btns":[{"text":"Add 4 koku","top":1560.875,"left":36,"right":143.21875,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false},{"text":"Already added","top":1560.875,"left":149.21875,"right":288.390625,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false}],"text":"Wealthy’s 4 starting koku is not recorded yet. Was it added to your Koku?","spanBottom":1554.875,"spanW":318,"boxW":318,"after":"none","before":"none","display":"flex","gap":"6px","ink":"rgb(42, 36, 32)","cls":"wealth4517-status wealth4517-unrecorded"}
+  detail GA-WEALTHY-EXCESS-PHONE: {"btns":[{"text":"Return 2 koku","top":1560.875,"left":36,"right":171.828125,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false},{"text":"Keep","top":1560.875,"left":177.828125,"right":237.0625,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false}],"text":"2 koku were granted for Wealthy Ranks you removed. Return them, or keep them if already spent.","spanBottom":1554.875,"spanW":318,"boxW":318,"after":"none","before":"none","display":"flex","gap":"6px","ink":"rgb(42, 36, 32)","cls":"wealth4517-status wealth4517-excess"}
+  detail GA-HOVER-KEEPS-FULL-OPACITY-PHONE: "0.948232"
+  detail GA-CLASS-GATES-PHONE: {"had":false,"h":32,"after":"none","back":false}
+  detail GA-SEAM-DESKTOP: {"api":false,"cls":false}
+  detail GA-ZAKYO-GROUP-DESKTOP: {"btns":[{"text":"Add 1.5 koku","top":1188.703125,"left":441.21875,"right":561.34375,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost supp4540-btn","disabled":false},{"text":"Already added","top":1188.703125,"left":561.34375,"right":699.734375,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost supp4540-btn","disabled":false}],"text":"Half your School’s starting koku again: 1.5 koku.","spanBottom":1211.703125,"spanW":275.21875,"boxW":533.734375,"after":"none","before":"none","display":"block","gap":"normal","ink":"rgb(42, 36, 32)","cls":"supp4540-koku"}
+  detail GA-ZAKYO-STATE-DESKTOP: "none"
+  detail GA-WEALTHY-UNRECORDED-DESKTOP: {"btns":[{"text":"Add 4 koku","top":1418.734375,"left":166,"right":273.21875,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false},{"text":"Already added","top":1418.734375,"left":279.21875,"right":418.390625,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false}],"text":"Wealthy’s 4 starting koku is not recorded yet. Was it added to your Koku?","spanBottom":1412.734375,"spanW":536,"boxW":536,"after":"none","before":"none","display":"flex","gap":"6px","ink":"rgb(42, 36, 32)","cls":"wealth4517-status wealth4517-unrecorded"}
+  detail GA-WEALTHY-EXCESS-DESKTOP: {"btns":[{"text":"Return 2 koku","top":1437.765625,"left":166,"right":301.828125,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false},{"text":"Keep","top":1437.765625,"left":307.828125,"right":367.0625,"h":32,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false}],"text":"2 koku were granted for Wealthy Ranks you removed. Return them, or keep them if already spent.","spanBottom":1431.765625,"spanW":536,"boxW":536,"after":"none","before":"none","display":"flex","gap":"6px","ink":"rgb(42, 36, 32)","cls":"wealth4517-status wealth4517-excess"}
+  detail GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP: "0.948089"
+  detail GA-CLASS-GATES-DESKTOP: {"had":false,"h":32,"after":"none","back":false}
+FAIL GA-SEAM-PHONE
+FAIL GA-ZAKYO-GROUP-PHONE
+FAIL GA-ZAKYO-STATE-PHONE
+PASS GA-ZAKYO-ADD-STILL-WORKS-PHONE
+PASS GA-WEALTHY-RECORDED-UNCHANGED-PHONE
+FAIL GA-WEALTHY-UNRECORDED-PHONE
+FAIL GA-WEALTHY-EXCESS-PHONE
+FAIL GA-HOVER-KEEPS-FULL-OPACITY-PHONE
+FAIL GA-CLASS-GATES-PHONE
+PASS GA-NO-ERRORS-PHONE
+FAIL GA-SEAM-DESKTOP
+FAIL GA-ZAKYO-GROUP-DESKTOP
+FAIL GA-ZAKYO-STATE-DESKTOP
+PASS GA-ZAKYO-ADD-STILL-WORKS-DESKTOP
+PASS GA-WEALTHY-RECORDED-UNCHANGED-DESKTOP
+FAIL GA-WEALTHY-UNRECORDED-DESKTOP
+FAIL GA-WEALTHY-EXCESS-DESKTOP
+FAIL GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP
+FAIL GA-CLASS-GATES-DESKTOP
+PASS GA-NO-ERRORS-DESKTOP
+6/20 checks passed

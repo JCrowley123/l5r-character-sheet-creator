@@ -1,0 +1,25 @@
+  detail GA-ZAKYO-STATE-PHONE: "\"Pending\""
+  detail GA-WEALTHY-UNRECORDED-PHONE: {"btns":[{"text":"Add 4 koku","top":1568.875,"left":36,"right":155.21875,"h":44,"bg":"rgb(42, 36, 32)","colour":"rgb(239, 231, 212)","cls":"ghost wealth4517-btn","disabled":false},{"text":"Already added","top":1568.875,"left":165.21875,"right":316.390625,"h":44,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false}],"text":"Wealthy’s 4 starting koku is not recorded yet. Was it added to your Koku?","spanBottom":1558.875,"spanW":318,"boxW":318,"after":"\"Pending\"","before":"none","display":"flex","gap":"10px","ink":"rgb(42, 36, 32)","cls":"wealth4517-status wealth4517-unrecorded"}
+  detail GA-ZAKYO-STATE-DESKTOP: "\"Pending\""
+  detail GA-WEALTHY-UNRECORDED-DESKTOP: {"btns":[{"text":"Add 4 koku","top":1426.734375,"left":166,"right":285.21875,"h":44,"bg":"rgb(42, 36, 32)","colour":"rgb(239, 231, 212)","cls":"ghost wealth4517-btn","disabled":false},{"text":"Already added","top":1426.734375,"left":295.21875,"right":446.390625,"h":44,"bg":"rgba(0, 0, 0, 0)","colour":"rgb(42, 36, 32)","cls":"ghost wealth4517-btn","disabled":false}],"text":"Wealthy’s 4 starting koku is not recorded yet. Was it added to your Koku?","spanBottom":1416.734375,"spanW":536,"boxW":536,"after":"\"Pending\"","before":"none","display":"flex","gap":"10px","ink":"rgb(42, 36, 32)","cls":"wealth4517-status wealth4517-unrecorded"}
+PASS GA-SEAM-PHONE
+PASS GA-ZAKYO-GROUP-PHONE
+FAIL GA-ZAKYO-STATE-PHONE
+PASS GA-ZAKYO-ADD-STILL-WORKS-PHONE
+PASS GA-WEALTHY-RECORDED-UNCHANGED-PHONE
+FAIL GA-WEALTHY-UNRECORDED-PHONE
+PASS GA-WEALTHY-EXCESS-PHONE
+PASS GA-HOVER-KEEPS-FULL-OPACITY-PHONE
+PASS GA-CLASS-GATES-PHONE
+PASS GA-NO-ERRORS-PHONE
+PASS GA-SEAM-DESKTOP
+PASS GA-ZAKYO-GROUP-DESKTOP
+FAIL GA-ZAKYO-STATE-DESKTOP
+PASS GA-ZAKYO-ADD-STILL-WORKS-DESKTOP
+PASS GA-WEALTHY-RECORDED-UNCHANGED-DESKTOP
+FAIL GA-WEALTHY-UNRECORDED-DESKTOP
+PASS GA-WEALTHY-EXCESS-DESKTOP
+PASS GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP
+PASS GA-CLASS-GATES-DESKTOP
+PASS GA-NO-ERRORS-DESKTOP
+16/20 checks passed

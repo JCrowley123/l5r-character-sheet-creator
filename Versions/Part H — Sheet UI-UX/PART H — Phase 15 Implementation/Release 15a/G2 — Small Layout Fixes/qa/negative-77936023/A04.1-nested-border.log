@@ -1,0 +1,67 @@
+  detail IR-BLESSING-ONE-BOX-PHONE: [["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"]]
+  detail IR-CONSUMED-ONE-BOX-PHONE: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+  detail IR-FAILURE-ONE-BOX-PHONE: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+  detail IR-REALM-ONE-BOX-PHONE: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+  detail IR-CURSE-ONE-BOX-PHONE: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+  detail IR-BLESSING-ONE-BOX-DESKTOP: [["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"],["LABEL.fb4521-option ir15-opt"]]
+  detail IR-CONSUMED-ONE-BOX-DESKTOP: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+  detail IR-FAILURE-ONE-BOX-DESKTOP: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+  detail IR-REALM-ONE-BOX-DESKTOP: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+  detail IR-CURSE-ONE-BOX-DESKTOP: [["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"],["LABEL.d45-option-label ir15-opt"]]
+PASS IR-SEAM-PHONE
+PASS IR-PARAGON-UNTOUCHED-PHONE
+PASS IR-BLESSING-INLINE-PHONE
+PASS IR-BLESSING-NOTHING-HIDDEN-DRAWN-PHONE
+FAIL IR-BLESSING-ONE-BOX-PHONE
+PASS IR-BLESSING-PARAGON-CARD-PHONE
+PASS IR-CONSUMED-INLINE-PHONE
+PASS IR-CONSUMED-NOTHING-HIDDEN-DRAWN-PHONE
+FAIL IR-CONSUMED-ONE-BOX-PHONE
+PASS IR-CONSUMED-PARAGON-CARD-PHONE
+PASS IR-FAILURE-INLINE-PHONE
+PASS IR-FAILURE-NOTHING-HIDDEN-DRAWN-PHONE
+FAIL IR-FAILURE-ONE-BOX-PHONE
+PASS IR-FAILURE-PARAGON-CARD-PHONE
+PASS IR-REALM-INLINE-PHONE
+PASS IR-REALM-NOTHING-HIDDEN-DRAWN-PHONE
+FAIL IR-REALM-ONE-BOX-PHONE
+PASS IR-REALM-PARAGON-CARD-PHONE
+PASS IR-CURSE-INLINE-PHONE
+PASS IR-CURSE-NOTHING-HIDDEN-DRAWN-PHONE
+FAIL IR-CURSE-ONE-BOX-PHONE
+PASS IR-CURSE-PARAGON-CARD-PHONE
+PASS IR-TAP-RULE-CHOOSES-PHONE
+PASS IR-ROW-I-KEEPS-TEXT-PHONE
+PASS IR-LONG-WINDOW-REACHABLE-PHONE
+PASS IR-LABEL-ONLY-PICKER-UNTOUCHED-PHONE
+PASS IR-CLASS-GATES-PHONE
+PASS IR-NO-ERRORS-PHONE
+PASS IR-SEAM-DESKTOP
+PASS IR-PARAGON-UNTOUCHED-DESKTOP
+PASS IR-BLESSING-INLINE-DESKTOP
+PASS IR-BLESSING-NOTHING-HIDDEN-DRAWN-DESKTOP
+FAIL IR-BLESSING-ONE-BOX-DESKTOP
+PASS IR-BLESSING-PARAGON-CARD-DESKTOP
+PASS IR-CONSUMED-INLINE-DESKTOP
+PASS IR-CONSUMED-NOTHING-HIDDEN-DRAWN-DESKTOP
+FAIL IR-CONSUMED-ONE-BOX-DESKTOP
+PASS IR-CONSUMED-PARAGON-CARD-DESKTOP
+PASS IR-FAILURE-INLINE-DESKTOP
+PASS IR-FAILURE-NOTHING-HIDDEN-DRAWN-DESKTOP
+FAIL IR-FAILURE-ONE-BOX-DESKTOP
+PASS IR-FAILURE-PARAGON-CARD-DESKTOP
+PASS IR-REALM-INLINE-DESKTOP
+PASS IR-REALM-NOTHING-HIDDEN-DRAWN-DESKTOP
+FAIL IR-REALM-ONE-BOX-DESKTOP
+PASS IR-REALM-PARAGON-CARD-DESKTOP
+PASS IR-CURSE-INLINE-DESKTOP
+PASS IR-CURSE-NOTHING-HIDDEN-DRAWN-DESKTOP
+FAIL IR-CURSE-ONE-BOX-DESKTOP
+PASS IR-CURSE-PARAGON-CARD-DESKTOP
+PASS IR-TAP-RULE-CHOOSES-DESKTOP
+PASS IR-ROW-I-KEEPS-TEXT-DESKTOP
+PASS IR-LONG-WINDOW-REACHABLE-DESKTOP
+PASS IR-LABEL-ONLY-PICKER-UNTOUCHED-DESKTOP
+PASS IR-CLASS-GATES-DESKTOP
+PASS IR-NO-ERRORS-DESKTOP
+46/56 checks passed
