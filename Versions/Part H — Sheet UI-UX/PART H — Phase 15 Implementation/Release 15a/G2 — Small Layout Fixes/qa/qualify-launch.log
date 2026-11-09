@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\G2 — Small Layout Fixes\qa\qualify-before-full.py", line 36, in <module>
+    run('removal-final',[sys.executable,'-B',str(Q/'test-removal-group.py')])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\G2 — Small Layout Fixes\qa\qualify-before-full.py", line 30, in run
+    assert result.returncode==0,label+' failed; later stages were not started'
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: removal-final failed; later stages were not started

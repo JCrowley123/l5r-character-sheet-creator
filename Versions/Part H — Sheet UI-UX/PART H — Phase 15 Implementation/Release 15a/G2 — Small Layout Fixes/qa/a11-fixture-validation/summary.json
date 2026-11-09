@@ -1,0 +1,74 @@
+{
+  "started_utc": "2026-11-08T20:54:21.689413+00:00",
+  "fixture_change": {
+    "old_fixture_sha256": "3125190d422cd176739716f83d589fb784d93fecf7aae5fd663ec245992af65b",
+    "new_fixture_sha256": "2d1376cf5e234bd3b626246fd3b739112675953c8838021c365eb70cf07caf1a",
+    "harness_sha256": "08ee30a53f13f3bca21b7270c174274f21666815cd524420382df833e22ae338",
+    "expected_checks_sha256": "346b9dcd29f851bd194c354fd9633cc97a41868d47fb894a6366dd827eb7e6cb",
+    "app_sha256": "7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0"
+  },
+  "cases": [
+    {
+      "label": "candidate",
+      "page_sha256": "7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0",
+      "page_bytes": 17609230,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ]
+    },
+    {
+      "label": "A05-removed",
+      "page_sha256": "80db689d71a573fff5d2d23362cf9b920324af29f5785e8ed2539756058bfb37",
+      "page_bytes": 17604577,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ]
+    },
+    {
+      "label": "A06-removed",
+      "page_sha256": "ee77d7fe9635fadd1712c49809839a9bc5ac56789acd00aaf6aeeea1925a4880",
+      "page_bytes": 17605342,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ]
+    },
+    {
+      "label": "A07-removed",
+      "page_sha256": "3d0cad59e9b2bd20c4c3d97262e46451007c9617cbc28d1b70c607cf3c4db000",
+      "page_bytes": 17606011,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ]
+    },
+    {
+      "label": "A04.1-removed",
+      "page_sha256": "d8965a9f8c419d85e3587cc5ab5ec0798c75e0292036c0896c7d9a6f6aff3907",
+      "page_bytes": 17602520,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ]
+    },
+    {
+      "label": "A03.1-removed",
+      "page_sha256": "ae0a7cf649197e9fa15f84e240b591348f7a75bd4efd24cb28d265b62fa4f4de",
+      "page_bytes": 17602768,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ]
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-11-08T20:55:19.816676+00:00"
+}

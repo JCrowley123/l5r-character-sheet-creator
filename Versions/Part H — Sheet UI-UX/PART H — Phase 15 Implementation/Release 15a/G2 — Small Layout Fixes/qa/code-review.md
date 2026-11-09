@@ -31,3 +31,7 @@ No finding needed a restack: every fix was made on its own branch before the nex
 ## Qualification preparation review — 8 November 2026 (Codex)
 
 Read-only review of the nine G2 qualification scripts and variant pins found no blocking defect. It checked runner nesting and 7,148/6,929 arithmetic, the 47 group-removal checks (15 structural plus 32 harness runs), G2 markers and surfaces, the 4.5.21 conditional fixture, environment/preloads and prior-class restoration in A11. The A11 candidate harness then passed 22/22. Candidate application remains 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0.
+
+## Fixture-repair continuation review - 9 November 2026 (Codex)
+
+Read-only review found no blocker in the fixture correction, six scoped results (132/132), or one-use continuation. It preserves the original 46/47 failure, checks exact page and fixture/harness hashes, validates the unchanged 22 PASS IDs in each scoped log, and runs only the still-unstarted final variants and dependencies. The full launcher requires the distinct removal-fixture-proof state, original failed JSON hash and scoped log hashes. No application or assertion change; no failed chain or full suite is retried.

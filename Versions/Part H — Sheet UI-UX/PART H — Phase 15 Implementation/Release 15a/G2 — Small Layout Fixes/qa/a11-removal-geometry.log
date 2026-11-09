@@ -1,0 +1,379 @@
+{
+  "device": "PHONE",
+  "cards": 17,
+  "withLines": 8,
+  "qualifyingNames": [
+    "Wealthy",
+    "Leadership",
+    "Kharmic Tie",
+    "Blissful Betrothal",
+    "Zakyo Toshi Citizen",
+    "Blind",
+    "Missing Limb",
+    "Lost Love"
+  ],
+  "off": [],
+  "errors": [],
+  "cardsMeasured": [
+    {
+      "name": "Wealthy",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Leadership",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Kharmic Tie",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Social Position",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Blissful Betrothal",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Zakyo Toshi Citizen",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36,
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Lord Moon’s Curse",
+      "edge": 36,
+      "nameX": 36,
+      "descX": null,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Seven Fortunes’ Curse",
+      "edge": 36,
+      "nameX": 36,
+      "descX": null,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Blind",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Missing Limb",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Brash",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Overconfident",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Can’t Lie",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Contrary",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Rumormonger",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Soft-Hearted",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Lost Love",
+      "edge": 36,
+      "nameX": 36,
+      "descX": 36,
+      "lines": [
+        36
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    }
+  ]
+}
+{
+  "device": "DESKTOP",
+  "cards": 17,
+  "withLines": 7,
+  "qualifyingNames": [
+    "Wealthy",
+    "Leadership",
+    "Kharmic Tie",
+    "Blissful Betrothal",
+    "Zakyo Toshi Citizen",
+    "Blind",
+    "Lost Love"
+  ],
+  "off": [],
+  "errors": [],
+  "cardsMeasured": [
+    {
+      "name": "Wealthy",
+      "edge": 166,
+      "nameX": 166,
+      "descX": 166,
+      "lines": [
+        166
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Leadership",
+      "edge": 166,
+      "nameX": 166,
+      "descX": 166,
+      "lines": [
+        166
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Kharmic Tie",
+      "edge": 166,
+      "nameX": 166,
+      "descX": 166,
+      "lines": [
+        166
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Social Position",
+      "edge": 166,
+      "nameX": 166,
+      "descX": 166,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Blissful Betrothal",
+      "edge": 166,
+      "nameX": 166,
+      "descX": 166,
+      "lines": [
+        166
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Zakyo Toshi Citizen",
+      "edge": 166,
+      "nameX": 166,
+      "descX": 166,
+      "lines": [
+        166,
+        166
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Lord Moon’s Curse",
+      "edge": 738,
+      "nameX": 738,
+      "descX": null,
+      "lines": [
+        738
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Seven Fortunes’ Curse",
+      "edge": 738,
+      "nameX": 738,
+      "descX": null,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Blind",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [
+        738
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Missing Limb",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Brash",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Overconfident",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Can’t Lie",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Contrary",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Rumormonger",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Soft-Hearted",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    },
+    {
+      "name": "Lost Love",
+      "edge": 738,
+      "nameX": 738,
+      "descX": 738,
+      "lines": [
+        738
+      ],
+      "namePad": "0px",
+      "nameBorder": "0px"
+    }
+  ]
+}

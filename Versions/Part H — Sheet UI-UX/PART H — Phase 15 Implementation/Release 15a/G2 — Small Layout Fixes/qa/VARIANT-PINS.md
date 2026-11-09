@@ -50,3 +50,11 @@ The group removal must restore G1 exactly. It also runs all kept G2 harnesses fo
 Discovery completed once on 8 November 2026. **All 25 cases matched every predicted failed-check ID exactly**, each with exit 1 and a complete pinned harness count. No pin correction, harness change or repeat discovery was needed. Predictions were committed and pushed as `d8764eaf` before discovery. Evidence: `variants-discover.log` and `variants-discover-77936023/summary.json`. The qualification chain will now assert the same pins.
 
 Preparation validation: the A11 candidate harness passed 22/22 on its first execution after the hygiene fix (a11-hygiene-candidate.log). Syntax, unique mutation anchors and invocation inventories passed: candidate 191 leaves / 7,148 checks; retained 184 leaves / 6,929 checks. Read-only review found no blocking defect in the adapted scripts or their count arithmetic.
+
+## Removal-stage fixture correction and continuation
+
+The original qualification chain stopped at removal, **46/47**, before final variants or dependencies. A11's desktop alignment check had seven eligible fixture rows when A05 was removed, despite no off-edge text. The exact failure, raw geometry, and correction are recorded in [A11-REMOVAL-INVESTIGATION.md](A11-REMOVAL-INVESTIGATION.md).
+
+Only A11's own Moon fixture description changed. The unchanged harness passed **22/22 on all six affected inputs** (candidate and five preserved removal builds), with the eight-row minimum, 1 px tolerance, assertion IDs and counts retained. All other harness inputs and application bytes are unchanged.
+
+The original chain is never restarted or overwritten. `continue-after-a11-fixture.py` validates the exact original failure and scoped evidence, then runs only the previously unstarted final variants and dependencies. It records a separate `qualification-77936023-a11-fixture.json`; `run-final-once.py` requires this truthful continuation and the unchanged fixture/harness hashes. The five A11 negative-case predictions remain unchanged and must match in final qualification; no prediction is widened based on a failed run.

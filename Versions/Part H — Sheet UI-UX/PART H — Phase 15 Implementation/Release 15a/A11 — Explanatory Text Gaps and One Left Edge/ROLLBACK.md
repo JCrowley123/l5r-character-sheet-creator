@@ -41,3 +41,7 @@ With nothing later present, the rebuild is exactly A07: 17,598,724 bytes, SHA-25
 ## Harness state restoration — 8 November 2026 (Codex)
 
 Before G2 negative-variant discovery, code review found that TE-PLAY-WAS-OFF-WITHOUT-THE-LAYER and TE-OTHER-HINTS-UNCHANGED added `te15-on` unconditionally after measuring the unstyled page. Both now save and restore the class state in `finally`, so a disabled variant stays disabled even after an exception. Same check IDs, assertions, timing and 22-check count; application bytes unchanged. This is the same harness hygiene correction recorded by G1. G2's qualification records hold the validation.
+
+## G2 removal fixture coverage correction - 8 November 2026 (Codex)
+
+The first G2 removal chain finished 46/47: with A05 removed, TE-PLAY-ONE-EDGE-DESKTOP had seven eligible text rows rather than the required eight. Read-only geometry capture on the exact scratch build found no misaligned edges or page errors. Without A05, Missing Limb's note sits beside its select on desktop and is correctly excluded from the first-line measurement. A11's own fixture now gives its existing Moon row a nonempty description, supplying an independent eighth eligible row. All original rows remain. The harness, 1 px tolerance, eight-row minimum, IDs and 22-check count are unchanged; other units' fixtures and application bytes are unchanged. G2 qa/a11-fixture-change.json pins the changed fixture and unchanged harness. The failed chain is preserved; scoped validation is recorded under G2 qa/a11-fixture-validation/.

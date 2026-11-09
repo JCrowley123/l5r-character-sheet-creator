@@ -1,0 +1,15 @@
+{
+  "started_utc": "2026-11-08T20:46:35.160780+00:00",
+  "sha256": "7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0",
+  "stages": [
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-08T20:46:35.172150+00:00",
+      "exit": 1,
+      "finished_utc": "2026-11-08T20:52:42.970685+00:00"
+    }
+  ],
+  "passed": false,
+  "error": "removal-final failed; later stages were not started",
+  "finished_utc": "2026-11-08T20:52:42.971335+00:00"
+}

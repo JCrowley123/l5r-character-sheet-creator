@@ -8,9 +8,22 @@ import ctypes, datetime, hashlib, json, os, subprocess, sys
 
 Q = Path(__file__).resolve().parent
 prefix=(Q/'qualified-sha256.txt').read_text().strip()[:8]
-qualified = json.loads((Q / ('qualification-'+prefix+'.json')).read_bytes())  # this candidate's chain
+qualified = json.loads((Q / ('qualification-'+prefix+'-a11-fixture.json')).read_bytes())  # separate, truthful continuation; original failure retained
 assert qualified.get('passed') is True and all(s['exit'] == 0 for s in qualified['stages'])
-assert [s['label'] for s in qualified['stages']] == ['removal-final', 'variants-final', 'dependencies']
+assert [s['label'] for s in qualified['stages']] == ['removal-fixture-proof', 'variants-final', 'dependencies']
+assert qualified['stages'][0]['original_failure_preserved'] is True
+original = json.loads((Q / qualified['original_failed_chain']).read_bytes())
+assert original['passed'] is False and original['stages'][0]['exit'] == 1
+assert hashlib.sha256((Q / qualified['original_failed_chain']).read_bytes()).hexdigest() == qualified['original_failed_chain_sha256']
+for label, digest in qualified['fixture_validation_log_sha256'].items():
+    assert hashlib.sha256((Q / 'a11-fixture-validation' / (label + '.log')).read_bytes()).hexdigest() == digest
+proof_path = Q / 'a11-fixture-validation/summary.json'
+assert hashlib.sha256(proof_path.read_bytes()).hexdigest() == qualified['stages'][0]['proof_sha256']
+assert json.loads(proof_path.read_bytes()) == qualified['fixture_validation']
+fix = qualified['fixture_validation']['fixture_change']
+a11 = Q.parent.parent / 'A11 — Explanatory Text Gaps and One Left Edge/qa'
+for name, key in [('g2-fixtures.json', 'new_fixture_sha256'), ('text-edges-harness.js', 'harness_sha256'), ('expected-checks.json', 'expected_checks_sha256')]:
+    assert hashlib.sha256((a11 / name).read_bytes()).hexdigest() == fix[key], 'A11 input changed after scoped proof'
 source = next(d for d in Q.parents if (d / 'BUILD-LEDGER.md').is_file() and (d / 'CLAUDE.md').is_file()) / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html'
 assert qualified['sha256'] == (Q / 'qualified-sha256.txt').read_text().strip() == hashlib.sha256(source.read_bytes()).hexdigest()
 power = (ctypes.c_byte * 12)()
