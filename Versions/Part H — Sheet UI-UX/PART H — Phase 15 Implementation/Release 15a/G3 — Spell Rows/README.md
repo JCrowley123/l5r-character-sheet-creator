@@ -12,3 +12,7 @@ Base: `main` commit `20fd1b3e509dddd16fab0a44ef8f2cc6d2c00e79`. Mockup branch: `
 Next: record the owner's UI-01, UI-02 A/B and UI-03 mockup decisions. Build only approved scope as three independently owned units with stacked previews. Do not start G4 or merge/deploy G3. Exact new check counts and markers remain unchosen. G3 candidate starts at 7,148 plus new checks; retained is 7,075. Removing all G3 must restore the G2 hash above. G2's completed qualification and production suites must not be rerun.
 
 Remote Control: owner confirmed enabled and iPhone connected on 8 November in this chat. Left untouched. No current switch is exposed by the available tools, so this session does not claim a fresh status verification.
+
+## Continue in Claude
+
+Use [the Claude continuation kickoff](KICKOFF-15A-G3-CLAUDE.md), prepared 10 November 2026 after the completed mockups. It records the pending decisions and exact next steps without requiring the previous chat.
