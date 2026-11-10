@@ -1,0 +1,1248 @@
+{
+  "captured_utc": "2026-11-10T13:13:51.823Z",
+  "devices": {
+    "phone": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "review": {
+        "dialogHeight": 773.765625,
+        "scrollHeight": 551,
+        "clientHeight": 551,
+        "actionTop": 734.875,
+        "confirm": {
+          "x": 158.53125,
+          "y": 747.875,
+          "h": 44
+        },
+        "later": {
+          "x": 86.5,
+          "y": 747.875,
+          "h": 44
+        },
+        "minChoiceHeight": 44
+      },
+      "laterNoWrites": true,
+      "laterCloses": true,
+      "transition": {
+        "schoolCount": 8,
+        "rewardGrant": null,
+        "onlyEarth": true,
+        "reviewClassRemoved": true
+      },
+      "dataPreserved": {
+        "management-today": true,
+        "management-quiet": true,
+        "management-badge": true,
+        "play-today": true,
+        "play-quiet": true,
+        "play-badge": true
+      },
+      "interactions": {
+        "toggleOnlyFirst": true,
+        "saveRoundTrip": true,
+        "removedReward": true,
+        "playLocks": true
+      },
+      "longReview": {
+        "choices": 20,
+        "clientHeight": 589,
+        "scrollHeight": 1079,
+        "footerTop": 754,
+        "bottom": {
+          "scrollTop": 490,
+          "footerTop": 754
+        },
+        "invalidRejected": true,
+        "invalidNoWrites": true
+      },
+      "states": {
+        "management-today": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 0,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 34,
+              "h": 33
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 0,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 34,
+              "h": 33
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 107,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 34,
+              "h": 33
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 106,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 34,
+              "h": 33
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ],
+        "management-quiet": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ],
+        "management-badge": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ],
+        "play-today": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 0,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 0,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 107,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 106,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ],
+        "play-quiet": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ],
+        "play-badge": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ],
+        "removeOnly": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 182,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 182,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 298,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ],
+        "nameOnly": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 254,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 254,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 254,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 254,
+            "remove": {
+              "w": 40,
+              "h": 40,
+              "display": "flex"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 344,
+            "scrollWidth": 342,
+            "school": null
+          }
+        ]
+      },
+      "longName": "Wrath of Kaze-no-Kami (Hurricane)",
+      "errors": []
+    },
+    "laptop": {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "review": {
+        "dialogHeight": 493.78125,
+        "scrollHeight": 294,
+        "clientHeight": 294,
+        "actionTop": 672.890625,
+        "confirm": {
+          "x": 843.53125,
+          "y": 685.890625,
+          "h": 44
+        },
+        "later": {
+          "x": 771.5,
+          "y": 685.890625,
+          "h": 44
+        },
+        "minChoiceHeight": 44
+      },
+      "laterNoWrites": true,
+      "laterCloses": true,
+      "transition": {
+        "schoolCount": 8,
+        "rewardGrant": null,
+        "onlyEarth": true,
+        "reviewClassRemoved": true
+      },
+      "dataPreserved": {
+        "management-today": true,
+        "management-quiet": true,
+        "management-badge": true,
+        "play-today": true,
+        "play-quiet": true,
+        "play-badge": true
+      },
+      "interactions": {
+        "toggleOnlyFirst": true,
+        "saveRoundTrip": true,
+        "removedReward": true,
+        "playLocks": true
+      },
+      "longReview": {
+        "choices": 20,
+        "clientHeight": 768,
+        "scrollHeight": 822,
+        "footerTop": 910,
+        "bottom": {
+          "scrollTop": 54,
+          "footerTop": 910
+        },
+        "invalidRejected": true,
+        "invalidNoWrites": true
+      },
+      "states": {
+        "management-today": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 775,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 21.4375,
+              "h": 25
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 775,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 21.4375,
+              "h": 25
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 891,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 21.4375,
+              "h": 25
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 891,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 21.4375,
+              "h": 25
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ],
+        "management-quiet": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ],
+        "management-badge": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ],
+        "play-today": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 775,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 775,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 891,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 891,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 33,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ],
+        "play-quiet": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ],
+        "play-badge": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 0,
+              "h": 0,
+              "display": "none"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ],
+        "removeOnly": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 972,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 972,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 1088,
+            "remove": {
+              "w": 44,
+              "h": 44,
+              "display": "flex"
+            },
+            "memoHeight": 44,
+            "overlap": {
+              "w": 0,
+              "h": 44
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ],
+        "nameOnly": [
+          {
+            "name": "Sense",
+            "nameTextWidth": 1044,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Sense\",\"created\":false}"
+          },
+          {
+            "name": "Clarity of Purpose",
+            "nameTextWidth": 1044,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": "{\"version\":1,\"stage\":\"starting\",\"kind\":\"spell\",\"school\":\"Kitsu Shugenja\",\"name\":\"Clarity of Purpose\",\"created\":false}"
+          },
+          {
+            "name": "Jurojin's Balm",
+            "nameTextWidth": 1044,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "nameTextWidth": 1044,
+            "remove": {
+              "w": 27.4375,
+              "h": 29,
+              "display": "block"
+            },
+            "memoHeight": 19,
+            "overlap": {
+              "w": 0,
+              "h": 0
+            },
+            "rowWidth": 1134,
+            "scrollWidth": 1132,
+            "school": null
+          }
+        ]
+      },
+      "longName": "Wrath of Kaze-no-Kami (Hurricane)",
+      "errors": []
+    }
+  },
+  "note": "Scratch screenshots only; synthetic layout text is not a rules change."
+}

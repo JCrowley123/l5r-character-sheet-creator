@@ -1,0 +1,32 @@
+
+#sc8Dialog.g3-review[open]{display:flex;flex-direction:column;overflow:hidden;max-height:calc(100dvh - 32px);padding:16px;box-sizing:border-box}
+#sc8Dialog.g3-review h2,#sc8Dialog.g3-review>.cw112-note{flex:none}
+#sc8Dialog.g3-review #sc8Message:empty{display:none}
+#sc8Dialog.g3-review #sc8Body{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+#sc8Dialog.g3-review #sc8Body>p{flex:none}
+#sc8Dialog.g3-review .g3-groups{overflow:auto;min-height:0;display:grid;gap:14px;padding:0 2px 2px}
+#sc8Dialog.g3-review fieldset{border:0;min-width:0;padding:0;margin:0}
+#sc8Dialog.g3-review legend{font-family:'Noto Sans JP',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.035em;padding:0;margin-bottom:6px;color:var(--ink-soft)}
+#sc8Dialog.g3-review fieldset>div+div{margin-top:4px}
+#sc8Dialog.g3-review .oc8-held-spell{display:flex;align-items:center;min-height:44px;gap:10px;margin:0;padding:6px 9px;border:1px solid var(--line);border-radius:6px;box-sizing:border-box;font-family:'Noto Sans JP',sans-serif;font-size:.9rem;line-height:1.35;text-transform:none;letter-spacing:0;color:var(--ink)}
+#sc8Dialog.g3-review .oc8-held-spell:has(input:checked){background:var(--paper);border-color:var(--ink-soft)}
+#sc8Dialog.g3-review .oc8-spell{margin:0;width:16px;height:16px;flex:none}
+#sc8Dialog.g3-review .g3-review-actions{display:flex;gap:8px;justify-content:flex-end;align-items:stretch;flex:none;padding-top:12px;margin-top:12px;border-top:1px solid var(--line)}
+#sc8Dialog.g3-review .g3-review-actions button{min-height:44px;margin:0;padding:8px 12px}
+#sc8Dialog.g3-review .oc8-confirm{background:var(--ink);border-color:var(--ink);color:var(--paper);order:2}
+#sc8Dialog.g3-review #sc8Done{background:transparent;color:var(--ink);border:1px solid var(--line);order:1}
+@media(min-width:800px){#sc8Dialog.g3-review .g3-groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#techList .g3-name-first .entry-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+#techList .g3-name-first .en-name{flex:0 0 calc(100% - 44px);width:calc(100% - 44px);min-width:0;margin-right:44px;box-sizing:border-box}
+#techList .g3-name-first .g3-source-line{flex:0 0 100%;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:.78rem;line-height:1.4;color:var(--ink-soft)}
+#techList .g3-source-badge{font-family:'Noto Sans JP',sans-serif;font-size:.65rem;line-height:1.4;background:var(--ink-soft);color:var(--paper);padding:3px 7px;border-radius:5px;white-space:nowrap}
+#techList .g3-school-names{overflow-wrap:anywhere}
+#techList .g3-separated .g3-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+#techList .g3-separated .g3-actions button{min-height:44px;margin:0}
+#techList .g3-separated .spell-memo-label{display:inline-flex;align-items:center;gap:7px;min-height:44px;margin:0;white-space:nowrap;font-size:.72rem;letter-spacing:0}
+#techList .g3-separated .spell-memo-checkbox{width:18px;height:18px;margin:0;flex:none}
+#techList .g3-separated .rm-btn{position:static!important;flex:0 0 44px;min-width:44px;min-height:44px;margin-left:auto!important;padding:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:5px}
+#techList .g3-separated.g3-name-first .en-name{flex-basis:100%;width:100%;margin-right:0}
+#techList .g3-separated:not(.g3-name-first) .entry-top{min-width:0}
+html body.pm12-play #techList .g3-name-first .en-name{flex-basis:100%;width:100%;margin-right:0}
+html body.pm12-play #techList .g3-separated .rm-btn[data-pm12-locked]{display:none!important}
