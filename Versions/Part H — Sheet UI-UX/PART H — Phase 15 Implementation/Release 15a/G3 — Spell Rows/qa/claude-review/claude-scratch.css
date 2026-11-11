@@ -1,0 +1,48 @@
+
+/* ---- UI-01 (Claude): Codex's dialog, plus live counts and the pickers' own heading type ---- */
+#sc8Dialog.c3-review[open]{display:flex;flex-direction:column;overflow:hidden;max-height:calc(100dvh - 32px);padding:16px;box-sizing:border-box}
+#sc8Dialog.c3-review h2,#sc8Dialog.c3-review>.cw112-note{flex:none}
+#sc8Dialog.c3-review #sc8Message:empty{display:none}
+#sc8Dialog.c3-review #sc8Body{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+#sc8Dialog.c3-review #sc8Body>p{flex:none;margin:.2rem 0 .6rem}
+#sc8Dialog.c3-review .c3-groups{overflow:auto;min-height:0;display:grid;gap:12px;padding:0 2px 2px}
+#sc8Dialog.c3-review fieldset{border:0;min-width:0;padding:0;margin:0}
+#sc8Dialog.c3-review legend{display:flex;align-items:baseline;gap:8px;width:100%;box-sizing:border-box;font-family:'EB Garamond',serif;font-size:.9rem;font-weight:700;padding:0;margin-bottom:4px;color:var(--ink)}
+#sc8Dialog.c3-review .c3-count{margin-left:auto;font-family:'Noto Sans JP',sans-serif;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(90,77,49,.12);color:var(--ink-soft);white-space:nowrap}
+#sc8Dialog.c3-review .c3-count[data-state=done]{background:var(--ink-soft);color:var(--paper)}
+#sc8Dialog.c3-review .c3-count[data-state=over]{background:#a3332a;color:#fff}
+#sc8Dialog.c3-review fieldset>div+div{margin-top:4px}
+#sc8Dialog.c3-review .oc8-held-spell{display:flex;align-items:center;min-height:44px;gap:8px;margin:0;padding:4px 8px;border:1px solid var(--line);border-radius:6px;box-sizing:border-box;font-family:'Noto Sans JP',sans-serif;font-size:.9rem;line-height:1.35;text-transform:none;letter-spacing:0;color:var(--ink)}
+#sc8Dialog.c3-review .oc8-held-spell:has(input:checked){background:var(--paper);border-color:var(--ink-soft);font-weight:600}
+#sc8Dialog.c3-review .oc8-spell{margin:0;width:18px;height:18px;flex:none}
+#sc8Dialog.c3-review .c3-actions{display:flex;gap:8px;justify-content:flex-end;align-items:stretch;flex:none;padding-top:12px;margin-top:12px;border-top:1px solid var(--line)}
+#sc8Dialog.c3-review .c3-actions button{min-height:44px;margin:0;padding:8px 12px}
+#sc8Dialog.c3-review .oc8-confirm{background:var(--ink);border-color:var(--ink);color:var(--paper);order:2}
+#sc8Dialog.c3-review #sc8Done{background:transparent;color:var(--ink);border:1px solid var(--line);order:1}
+@media(min-width:800px){#sc8Dialog.c3-review .c3-groups{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}}
+
+/* ---- UI-02 (Claude): name owns the first line on a phone; one quiet cue on the control line ---- */
+#techList .entry.c3-name .entry-top{flex-wrap:wrap;gap:6px 8px}
+#techList .entry.c3-name .en-name{flex:1 1 15rem;min-width:0}
+#techList .entry.c3-name .c3-cue{order:9;margin-left:auto;align-self:center;flex:0 1 auto;display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;background:rgba(90,77,49,.12);color:var(--ink-soft);font-family:'Noto Sans JP',sans-serif;font-size:.7rem;font-weight:700;line-height:1.5;letter-spacing:0;text-transform:none}
+@media(max-width:768px){
+ #techList .entry.c3-name .en-name{flex:1 0 100%}
+ #techList .entry.c3-name .spell-cast-btn,#techList .entry.c3-name .cast-why-btn{min-height:44px;margin:0}
+ #techList .entry.c3-name .spell-memo-label{min-height:44px;gap:7px;margin:0;padding:0 2px}
+ #techList .entry.c3-name .spell-memo-checkbox{width:18px;height:18px;margin:0;flex:none}
+}
+/* ---- UI-03 (Claude): Remove keeps the card corner every other card uses; the corner is reserved ---- */
+#techList .entry.c3-rm .rm-btn{top:7px;right:4px;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+#techList .entry.c3-rm .entry-top{flex-wrap:wrap}
+@media(min-width:769px){
+ #techList .entry.c3-rm .entry-top{padding-right:42px}
+ html body.pm12-play #techList .entry.c3-rm .entry-top{padding-right:0}
+}
+@media(max-width:768px){
+ #techList .entry.c3-rm.c3-name .en-name{flex:1 0 calc(100% - 42px);margin-right:42px}
+ html body.pm12-play #techList .entry.c3-rm.c3-name .en-name{flex-basis:100%;margin-right:0}
+ #techList .entry.c3-rm:not(.c3-name) .entry-top{padding-right:42px;row-gap:6px}
+ #techList .entry.c3-rm:not(.c3-name) .en-name{flex:1 0 8rem;min-width:0}
+ html body.pm12-play #techList .entry.c3-rm:not(.c3-name) .entry-top{padding-right:0}
+}
+html body.pm12-play #techList .entry.c3-rm .rm-btn[data-pm12-locked]{display:none!important}

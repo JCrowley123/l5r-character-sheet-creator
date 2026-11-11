@@ -13,6 +13,10 @@ Next: record the owner's UI-01, UI-02 A/B and UI-03 mockup decisions. Build only
 
 Remote Control: owner confirmed enabled and iPhone connected on 8 November in this chat. Left untouched. No current switch is exposed by the available tools, so this session does not claim a fresh status verification.
 
+## Claude review, 11 November 2026
+
+The owner asked Claude to review the boards before deciding. [Claude's review page](mockups/G3-CLAUDE-REVIEW.html) and boards ([UI-01](mockups/G3-CLAUDE-UI01.png), [spell rows](mockups/G3-CLAUDE-ROWS.png)) set today, the proposals above and Claude's alternatives side by side; the reasoning and measurements are in [MOCKUP.md](MOCKUP.md). Scratch evidence and the two utilities are in `qa/claude-review/` (`claude-proto.cjs <output>` with the standard preloads, then `claude-boards.cjs <shots> <qa/prototype> <output>`). **Still awaiting the owner's three decisions; nothing is built.** Remote Control was switched on for the Claude session on 11 November (state reported “on”).
+
 ## Continue in Claude
 
 Use [the Claude continuation kickoff](KICKOFF-15A-G3-CLAUDE.md), prepared 10 November 2026 after the completed mockups. It records the pending decisions and exact next steps without requiring the previous chat.

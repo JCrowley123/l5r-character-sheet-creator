@@ -1,0 +1,2040 @@
+{
+  "captured_utc": "2026-11-11T01:33:50.449Z",
+  "note": "Scratch review prototype; not qualification. Synthetic layout text is not a rules change.",
+  "devices": {
+    "phone": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "review": {
+        "dialogHeight": 756.046875,
+        "groupsClient": 553,
+        "groupsScroll": 553,
+        "minChoiceHeight": 44,
+        "counts": [
+          "3 of 3 chosen ✓",
+          "2 of 3 chosen",
+          "0 of 2 chosen",
+          "0 of 1 chosen"
+        ],
+        "confirm": 44,
+        "later": 44,
+        "lastGroupToActions": 12
+      },
+      "laterNoWrites": true,
+      "laterCloses": true,
+      "transition": {
+        "schoolCount": 8,
+        "rewardGrant": null,
+        "onlyEarth": true,
+        "reviewClassRemoved": true
+      },
+      "dataPreserved": {
+        "management-today": true,
+        "management-codex-quiet": true,
+        "management-codex-badge": true,
+        "management-claude": true,
+        "management-claude-rm": true,
+        "management-claude-name": true,
+        "play-today": true,
+        "play-codex-quiet": true,
+        "play-codex-badge": true,
+        "play-claude": true,
+        "play-claude-rm": true,
+        "play-claude-name": true
+      },
+      "interactions": {
+        "toggleOnlyFirst": true,
+        "renameSurvives": true,
+        "removedReward": true,
+        "playLocks": true
+      },
+      "longReview": {
+        "choices": 20,
+        "clientHeight": 609,
+        "scrollHeight": 1081,
+        "footerTop": 754,
+        "counts": [
+          "3 of 3 chosen ✓",
+          "0 of 3 chosen",
+          "3 of 2 · deselect 1",
+          "0 of 1 chosen"
+        ],
+        "footerTopAfterScroll": 754,
+        "overQuotaRejected": true,
+        "overQuotaNoWrites": true
+      },
+      "states": {
+        "management-today": [
+          {
+            "name": "Sense",
+            "rowHeight": 148,
+            "nameTextWidth": 0,
+            "nameScrollWidth": 52,
+            "nameClientWidth": 18,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 34,
+                "h": 33
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 148,
+            "nameTextWidth": 0,
+            "nameScrollWidth": 131,
+            "nameClientWidth": 18,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 34,
+                "h": 33
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 148,
+            "nameTextWidth": 107,
+            "nameScrollWidth": 125,
+            "nameClientWidth": 125,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 34,
+                "h": 33
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 148,
+            "nameTextWidth": 106,
+            "nameScrollWidth": 240,
+            "nameClientWidth": 124,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 34,
+                "h": 33
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "management-codex-quiet": [
+          {
+            "name": "Sense",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "management-codex-badge": [
+          {
+            "name": "Sense",
+            "rowHeight": 229,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 229,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "management-claude": [
+          {
+            "name": "Sense",
+            "rowHeight": 198,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 198,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 198,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 198,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "management-claude-rm": [
+          {
+            "name": "Sense",
+            "rowHeight": 182,
+            "nameTextWidth": 140,
+            "nameScrollWidth": 158,
+            "nameClientWidth": 158,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 24,
+            "castHeight": 28,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 182,
+            "nameTextWidth": 140,
+            "nameScrollWidth": 158,
+            "nameClientWidth": 158,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 24,
+            "castHeight": 28,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 177,
+            "nameTextWidth": 158,
+            "nameScrollWidth": 176,
+            "nameClientWidth": 176,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 19,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 177,
+            "nameTextWidth": 158,
+            "nameScrollWidth": 240,
+            "nameClientWidth": 176,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 19,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "management-claude-name": [
+          {
+            "name": "Sense",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {
+              ".en-name": {
+                "w": 34,
+                "h": 36
+              }
+            },
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {
+              ".en-name": {
+                "w": 34,
+                "h": 36
+              }
+            },
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {
+              ".en-name": {
+                "w": 34,
+                "h": 36
+              }
+            },
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 40,
+              "h": 40
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {
+              ".en-name": {
+                "w": 34,
+                "h": 36
+              }
+            },
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "play-today": [
+          {
+            "name": "Sense",
+            "rowHeight": 148,
+            "nameTextWidth": 0,
+            "nameScrollWidth": 52,
+            "nameClientWidth": 18,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 148,
+            "nameTextWidth": 0,
+            "nameScrollWidth": 131,
+            "nameClientWidth": 18,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 148,
+            "nameTextWidth": 107,
+            "nameScrollWidth": 125,
+            "nameClientWidth": 125,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 148,
+            "nameTextWidth": 106,
+            "nameScrollWidth": 240,
+            "nameClientWidth": 124,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "play-codex-quiet": [
+          {
+            "name": "Sense",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "play-codex-badge": [
+          {
+            "name": "Sense",
+            "rowHeight": 229,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 229,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 200,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "play-claude": [
+          {
+            "name": "Sense",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "play-claude-rm": [
+          {
+            "name": "Sense",
+            "rowHeight": 177,
+            "nameTextWidth": 122,
+            "nameScrollWidth": 140,
+            "nameClientWidth": 140,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 19,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 177,
+            "nameTextWidth": 122,
+            "nameScrollWidth": 140,
+            "nameClientWidth": 140,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 19,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 177,
+            "nameTextWidth": 200,
+            "nameScrollWidth": 218,
+            "nameClientWidth": 218,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 19,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 177,
+            "nameTextWidth": 200,
+            "nameScrollWidth": 240,
+            "nameClientWidth": 218,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 19,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "play-claude-name": [
+          {
+            "name": "Sense",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 198,
+            "nameTextWidth": 298,
+            "nameScrollWidth": 316,
+            "nameClientWidth": 316,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ],
+        "multiple": [
+          {
+            "name": "Sense",
+            "rowHeight": 198,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 225,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 198,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 198,
+            "nameTextWidth": 256,
+            "nameScrollWidth": 274,
+            "nameClientWidth": 274,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 342,
+            "clientWidth": 342
+          }
+        ]
+      },
+      "errors": []
+    },
+    "laptop": {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "review": {
+        "dialogHeight": 476.3125,
+        "groupsClient": 295,
+        "groupsScroll": 295,
+        "minChoiceHeight": 44,
+        "counts": [
+          "3 of 3 chosen ✓",
+          "2 of 3 chosen",
+          "0 of 2 chosen",
+          "0 of 1 chosen"
+        ],
+        "confirm": 44,
+        "later": 44,
+        "lastGroupToActions": 12
+      },
+      "laterNoWrites": true,
+      "laterCloses": true,
+      "transition": {
+        "schoolCount": 8,
+        "rewardGrant": null,
+        "onlyEarth": true,
+        "reviewClassRemoved": true
+      },
+      "dataPreserved": {
+        "management-today": true,
+        "management-codex-quiet": true,
+        "management-codex-badge": true,
+        "management-claude": true,
+        "management-claude-rm": true,
+        "management-claude-name": true,
+        "play-today": true,
+        "play-codex-quiet": true,
+        "play-codex-badge": true,
+        "play-claude": true,
+        "play-claude-rm": true,
+        "play-claude-name": true
+      },
+      "interactions": {
+        "toggleOnlyFirst": true,
+        "renameSurvives": true,
+        "removedReward": true,
+        "playLocks": true
+      },
+      "longReview": {
+        "choices": 20,
+        "clientHeight": 787,
+        "scrollHeight": 823,
+        "footerTop": 910,
+        "counts": [
+          "3 of 3 chosen ✓",
+          "0 of 3 chosen",
+          "3 of 2 · deselect 1",
+          "0 of 1 chosen"
+        ],
+        "footerTopAfterScroll": 910,
+        "overQuotaRejected": true,
+        "overQuotaNoWrites": true
+      },
+      "states": {
+        "management-today": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 775,
+            "nameScrollWidth": 793,
+            "nameClientWidth": 793,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 21.4375,
+                "h": 25
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 775,
+            "nameScrollWidth": 793,
+            "nameClientWidth": 793,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 21.4375,
+                "h": 25
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 891,
+            "nameScrollWidth": 909,
+            "nameClientWidth": 909,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 21.4375,
+                "h": 25
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 891,
+            "nameScrollWidth": 909,
+            "nameClientWidth": 909,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 21.4375,
+                "h": 25
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "management-codex-quiet": [
+          {
+            "name": "Sense",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "management-codex-badge": [
+          {
+            "name": "Sense",
+            "rowHeight": 230,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 230,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "management-claude": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 767,
+            "nameScrollWidth": 785,
+            "nameClientWidth": 785,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 767,
+            "nameScrollWidth": 785,
+            "nameClientWidth": 785,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 855,
+            "nameScrollWidth": 873,
+            "nameClientWidth": 873,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 855,
+            "nameScrollWidth": 873,
+            "nameClientWidth": 873,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "management-claude-rm": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 733,
+            "nameScrollWidth": 751,
+            "nameClientWidth": 751,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 733,
+            "nameScrollWidth": 751,
+            "nameClientWidth": 751,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 849,
+            "nameScrollWidth": 867,
+            "nameClientWidth": 867,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 849,
+            "nameScrollWidth": 867,
+            "nameClientWidth": 867,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "management-claude-name": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 809,
+            "nameScrollWidth": 827,
+            "nameClientWidth": 827,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".c3-cue": {
+                "w": 21.4375,
+                "h": 16.90625
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 809,
+            "nameScrollWidth": 827,
+            "nameClientWidth": 827,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".c3-cue": {
+                "w": 21.4375,
+                "h": 16.90625
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 897,
+            "nameScrollWidth": 915,
+            "nameClientWidth": 915,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 21.4375,
+                "h": 25
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 897,
+            "nameScrollWidth": 915,
+            "nameClientWidth": 915,
+            "remove": {
+              "w": 27.4375,
+              "h": 29
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {
+              ".spell-memo-label": {
+                "w": 21.4375,
+                "h": 25
+              }
+            },
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "play-today": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 775,
+            "nameScrollWidth": 793,
+            "nameClientWidth": 793,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 775,
+            "nameScrollWidth": 793,
+            "nameClientWidth": 793,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 891,
+            "nameScrollWidth": 909,
+            "nameClientWidth": 909,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 891,
+            "nameScrollWidth": 909,
+            "nameClientWidth": 909,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "play-codex-quiet": [
+          {
+            "name": "Sense",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "play-codex-badge": [
+          {
+            "name": "Sense",
+            "rowHeight": 230,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 230,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 3,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 201,
+            "nameTextWidth": 1088,
+            "nameScrollWidth": 1106,
+            "nameClientWidth": 1106,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 44,
+            "castHeight": 44,
+            "removeOverlaps": {},
+            "headerLines": 2,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "play-claude": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 809,
+            "nameScrollWidth": 827,
+            "nameClientWidth": 827,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 809,
+            "nameScrollWidth": 827,
+            "nameClientWidth": 827,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 897,
+            "nameScrollWidth": 915,
+            "nameClientWidth": 915,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 897,
+            "nameScrollWidth": 915,
+            "nameClientWidth": 915,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "play-claude-rm": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 775,
+            "nameScrollWidth": 793,
+            "nameClientWidth": 793,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 775,
+            "nameScrollWidth": 793,
+            "nameClientWidth": 793,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 891,
+            "nameScrollWidth": 909,
+            "nameClientWidth": 909,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 891,
+            "nameScrollWidth": 909,
+            "nameClientWidth": 909,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "play-claude-name": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 809,
+            "nameScrollWidth": 827,
+            "nameClientWidth": 827,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 809,
+            "nameScrollWidth": 827,
+            "nameClientWidth": 827,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 897,
+            "nameScrollWidth": 915,
+            "nameClientWidth": 915,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 897,
+            "nameScrollWidth": 915,
+            "nameClientWidth": 915,
+            "remove": {
+              "w": 0,
+              "h": 0
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ],
+        "multiple": [
+          {
+            "name": "Sense",
+            "rowHeight": 149,
+            "nameTextWidth": 751,
+            "nameScrollWidth": 769,
+            "nameClientWidth": 769,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Clarity of Purpose",
+            "rowHeight": 149,
+            "nameTextWidth": 657,
+            "nameScrollWidth": 675,
+            "nameClientWidth": 675,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Jurojin's Balm",
+            "rowHeight": 149,
+            "nameTextWidth": 855,
+            "nameScrollWidth": 873,
+            "nameClientWidth": 873,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          },
+          {
+            "name": "Wrath of Kaze-no-Kami (Hurricane)",
+            "rowHeight": 149,
+            "nameTextWidth": 855,
+            "nameScrollWidth": 873,
+            "nameClientWidth": 873,
+            "remove": {
+              "w": 44,
+              "h": 44
+            },
+            "memoHeight": 33,
+            "castHeight": 37,
+            "removeOverlaps": {},
+            "headerLines": 1,
+            "scrollWidth": 1132,
+            "clientWidth": 1132
+          }
+        ]
+      },
+      "errors": []
+    }
+  }
+}
