@@ -33,5 +33,5 @@ With nothing later present, the rebuild is exactly 8b.1-UI-01: 17,619,334 bytes,
 - **Phase 11.2.5 (Part K), School choices — reads only.** This unit reads that layer's `.sc8-source` label on a spell row and stops drawing it there. It calls nothing in that layer and does not name its objects. Without the label no tag is drawn.
 - **The trunk.** `recalcAll`, `getSchoolsList` (guarded) and the spell row's own classes from `makeEntry`.
 - **8b.1-UI-01:** no dependency either way. Each is proved with the other removed.
-- **8b.1-UI-03:** this unit does not read it. That unit's phone rule gives the name a margin beside Remove; this unit's name line is written to shrink, so the two fit together without either naming the other.
+- **8b.1-UI-03 — declared conditional fixture.** This unit's harness check `SN-CLASS-OFF-PHONE` expects the line to wrap with this unit's class off when `window.__L5R_TEST__.SX15` is present (that unit also wraps the line on a phone), and not to wrap otherwise. Same id and count; 28/28 both ways. Apart from that, this unit does not read it. That unit's phone rule gives the name a margin beside Remove; this unit's name line is written to shrink, so the two fit together without either naming the other.
 - **Nothing depends on this unit.**

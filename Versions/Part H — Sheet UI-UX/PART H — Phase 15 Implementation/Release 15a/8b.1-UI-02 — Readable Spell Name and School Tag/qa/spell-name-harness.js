@@ -158,8 +158,12 @@ const sameLine = (a, b) => a.y < b.bottom && b.y < a.bottom;
       await check('SN-CLASS-OFF-' + D, async () => {
         await load(false);
         const r = await page.evaluate(() => { const b = document.body; b.classList.remove('sn15-on'); const off = window.SNH.rows().filter(x => x.spell)[0]; b.classList.add('sn15-on'); const on = window.SNH.rows().filter(x => x.spell)[0];
-          return {off: {wrap: off.wrap, tag: off.tag && off.tag.drawn, source: off.source && off.source.drawn}, on: {wrap: on.wrap, tag: on.tag && on.tag.drawn, source: on.source && on.source.drawn}}; });
-        return [r.off.wrap === 'nowrap' && r.off.tag === false && r.off.source === true && r.on.wrap === 'wrap' && r.on.tag === true && r.on.source === false, r];
+          return {off: {wrap: off.wrap, tag: off.tag && off.tag.drawn, source: off.source && off.source.drawn}, on: {wrap: on.wrap, tag: on.tag && on.tag.drawn, source: on.source && on.source.drawn}, corner: !!window.__L5R_TEST__.SX15}; });
+        // Declared conditional fixture (both ROLLBACK files): up to 768 px the next unit, 8b.1-UI-03, also lets the line
+        // wrap, to keep Remove's corner clear. With that unit present on a phone, this unit's class off leaves the line
+        // wrapping; without it, or on a laptop, the line is the original one that cannot wrap. Same id and count.
+        const offWrap = PHONE && r.corner ? 'wrap' : 'nowrap';
+        return [r.off.wrap === offWrap && r.off.tag === false && r.off.source === true && r.on.wrap === 'wrap' && r.on.tag === true && r.on.source === false, r];
       });
 
       await check('SN-NO-ERRORS-' + D, async () => [errors.length === 0, errors]);

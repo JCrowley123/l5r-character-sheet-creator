@@ -7610,6 +7610,57 @@ html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-mem
 }
 }
 
+/* PART H PHASE 15.1.23 — Release 15a, follow-up 8b.1-UI-03: Remove in its own clear corner of a spell row, apart from
+   Memorised (owner, 11 November 2026).
+   Matches only spell rows in the Techniques list. Remove stays in the card's top-right corner, where every other
+   card has it, with a 44 x 44 px target on the row's first line that never reaches the line below. From 769 px the row's line stops 42 px short
+   of the card's edge. Up to 768 px the line may wrap, and the name takes the first line and stops 42 px short; the
+   name is written to shrink, so it fits beside Remove whether or not another layer has already given it the line.
+   In Play (the pm12-play body class of Phase 12 (Part K)) Remove is not drawn, by that phase's own rule, and the
+   corner is given back. The ID in each selector outranks the row's own rules.
+   Waits for body.sx15-on, which this unit's switch sets. Screen only. */
+@media screen {
+html body.sx15-on #techList .entry[data-spell-element] > .rm-btn {
+  /* Ends above the second line even where a fallback font makes the name box 3 px shorter. */
+  top: 5px;
+  right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+}
+}
+@media screen and (min-width: 769px) {
+/* On one line the description follows directly, so the target sits 1 px higher and ends above it. */
+html body.sx15-on #techList .entry[data-spell-element] > .rm-btn {
+  top: 4px;
+}
+html body.sx15-on #techList .entry[data-spell-element] > .entry-top {
+  padding-right: 42px;
+}
+html body.sx15-on.pm12-play #techList .entry[data-spell-element] > .entry-top {
+  padding-right: 0;
+}
+}
+@media screen and (max-width: 768px) {
+html body.sx15-on #techList .entry[data-spell-element] > .entry-top {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+html body.sx15-on #techList .entry[data-spell-element] > .entry-top > .en-name {
+  flex: 1 1 100%;
+  min-width: 0;
+  margin-right: 42px;
+}
+html body.sx15-on.pm12-play #techList .entry[data-spell-element] > .entry-top > .en-name {
+  margin-right: 0;
+}
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -56626,6 +56677,34 @@ return fontkitCache=module.exports;}
   SN15.install();
   // ============ END PART H PHASE 15.1.22 ============
 
+  // ============ PART H PHASE 15.1.23 — SPELL ROWS: REMOVE IN ITS OWN CLEAR CORNER ============
+  // Phase 15, Release 15a, follow-up 8b.1-UI-03 (group G3), approved as mocked up by the owner on 11 November 2026.
+  // The number 23 is this unit's marker only; the finding keeps its identifier, 8b.1-UI-03.
+  // On a spell row the Remove cross sat in the card's top-right corner, as on every other card, but the row's one
+  // line ran underneath it: the cross covered the right end of Memorised, 34 x 33 px on a phone and about 21 x 25 px
+  // on a laptop, so a tap meant for one could reach the other.
+  // Remove keeps that corner. The stylesheet (1141-spell-remove-corner.css) gives it a 44 x 44 px target there and
+  // keeps the corner clear: on a laptop the row's line stops short of it; on a phone the name takes the first line
+  // and stops short of it, and the rest of the row moves below. Nothing else on the row is moved or resized, and no
+  // other card is touched. In Play, where Remove is not drawn, the corner is given back.
+  // This fragment holds only the switch and the body class; all the work is styling.
+  // Everything waits for body.sx15-on, which the switch sets: with the switch off the rows are exactly as before.
+  const SPELL_REMOVE_CORNER_ENABLED = true;
+
+  const SX15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return SPELL_REMOVE_CORNER_ENABLED; };
+    api.install = function(){
+      if(api.installed || !SPELL_REMOVE_CORNER_ENABLED) return false;
+      api.installed = true;
+      document.body.classList.add('sx15-on');
+      return true;
+    };
+    return api;
+  })();
+  SX15.install();
+  // ============ END PART H PHASE 15.1.23 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -57611,6 +57690,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.22 BEGIN spell-name-line-seam
   if(typeof SN15 === 'object' && SN15) Object.assign(window.__L5R_TEST__, {SN15, SPELL_NAME_LINE_ENABLED});
   // END SN15 spell-name-line-seam
+  // PART H PHASE 15.1.23 BEGIN spell-remove-corner-seam
+  if(typeof SX15 === 'object' && SX15) Object.assign(window.__L5R_TEST__, {SX15, SPELL_REMOVE_CORNER_ENABLED});
+  // END SX15 spell-remove-corner-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

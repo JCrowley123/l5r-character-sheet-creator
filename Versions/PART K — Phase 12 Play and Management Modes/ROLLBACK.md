@@ -101,3 +101,5 @@ The independently removable layer in `Versions/PART K — Phase 11.2.5 School Ch
 ## Release 15a A11 — card text edge in Play (7 November 2026)
 
 Release 15a A11 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A11 — Explanatory Text Gaps and One Left Edge/`), on the owner's point from G1's review, removes the horizontal padding and border of a locked (`data-pm12-locked`) card name and description in `#advList` / `#disadvList` while `body.pm12-play` and `body.te15-on` are set, so they start on the card's text edge. It reads this phase's attribute and body class and calls nothing here. This phase's harness passes 25/25 with A11 present.
+
+**Declared 11 November 2026:** Release 15a, 8b.1-UI-03 (Remove Apart from Memorised) names this phase's `pm12-play` body class in its stylesheet, to give a spell row's Remove corner back in Play. It calls nothing here. Remove that unit before this phase; the removal chain does so in order.

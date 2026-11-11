@@ -983,6 +983,9 @@
   // PART H PHASE 15.1.22 BEGIN spell-name-line-seam
   if(typeof SN15 === 'object' && SN15) Object.assign(window.__L5R_TEST__, {SN15, SPELL_NAME_LINE_ENABLED});
   // END SN15 spell-name-line-seam
+  // PART H PHASE 15.1.23 BEGIN spell-remove-corner-seam
+  if(typeof SX15 === 'object' && SX15) Object.assign(window.__L5R_TEST__, {SX15, SPELL_REMOVE_CORNER_ENABLED});
+  // END SX15 spell-remove-corner-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
