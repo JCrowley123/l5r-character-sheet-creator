@@ -7427,8 +7427,10 @@ html body.sr15-on #sc8Dialog.sr15-review > p,
 html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > p {
   grid-column: 1 / -1;
 }
+/* The message is a status region: it stays rendered while empty, so a refusal written into it is announced. An empty
+   one takes no room. */
 html body.sr15-on #sc8Dialog.sr15-review > #sc8Message:empty {
-  display: none;
+  margin: 0;
 }
 html body.sr15-on #sc8Dialog.sr15-review > #sc8Body {
   display: contents;
@@ -7442,6 +7444,9 @@ html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
   display: grid;
   gap: 12px;
   min-height: 0;
+  /* A second limit, for a browser that does not shrink this row to the dialog's own maximum height: the groups never
+     take more than the screen less the title, the instruction and the action bar, so the bar cannot be pushed out. */
+  max-height: calc(100dvh - 2rem - 13rem);
   overflow: auto;
   margin: 0 0 12px;
   padding: 0 2px 12px;
@@ -56437,6 +56442,8 @@ return fontkitCache=module.exports;}
       group.dataset.sr15Want = hit[2];
       const count = document.createElement('span');
       count.className = 'sr15-count';
+      // A space between the two, so the heading's text reads "Water 2 of 3 chosen", not "Water2 of 3 chosen".
+      legend.appendChild(document.createTextNode(' '));
       legend.appendChild(count);
     };
     api.tally = function(){

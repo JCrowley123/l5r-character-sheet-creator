@@ -36,7 +36,7 @@ The count reads the tick boxes and writes nothing: no value, save, roll, undo, f
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With UI-01 (this branch) | `b3395d846f5d6398b4bcf15214575bdf1a38e1f69f06e5c6b6e74a24b2acea16` | 17,619,334 |
+| With UI-01 (this branch), revision 1 | `390f3cd1df02639b086e8dfc3ba3c883bbb62cdfb27ddf906b72c7b923fef19c` | 17,619,920 |
 | UI-01 removed (live G2) | `7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0` | 17,609,230 |
 
 ## Light checks (11 November)
@@ -45,7 +45,7 @@ The count reads the tick boxes and writes nothing: no value, save, roll, undo, f
 |---|---|
 | Own harness `qa/spell-review-harness.js` (32 checks pinned before the first run) | 32/32, first run |
 | Own harness on live G2 (the unit absent) | 5/32 |
-| Own harness with A04.1 removed and UI-01 kept (`8442f25e…bc90`) | 32/32 |
+| Own harness with A04.1 removed and UI-01 kept (`68c487f9…a3d6`) | 32/32 |
 | `qa/test-removal.py` | 10/10 |
 | `feature-dependencies.py` | every reference inside this unit's own blocks |
 | Older School Choices: `older-review-harness.js` | 20/20 |
@@ -57,6 +57,16 @@ The count reads the tick boxes and writes nothing: no value, save, roll, undo, f
 | A04.1 | 56/56 |
 
 The harness builds its older character in the page, as the older-holdings layer's own harness does, so it needs no fixture from another folder. Its oracles are the School's rulebook line, the tick boxes, the saved character before and after, Paragon's own card, and the same dialog rendered with this unit's body class taken away.
+
+**Revision 1 (the group's code review, 11 November).** The read-only review found nothing serious. Three small points were taken here, before the owner's device round. The first build was `b3395d84…ea16` (17,619,334 bytes); its preview passed 171/171.
+
+- **The refusal message stays rendered while empty**, taking no room, so a screen reader announces "Too many choices…" when it arrives. Before, the empty message was not drawn at all.
+- **A space between a heading's name and its count**, so its text reads "Water 2 of 3 chosen".
+- **A second height limit on the scrolling groups**, for a browser that does not shrink that row to the dialog's own maximum: the action bar cannot be pushed off the screen.
+
+Three existing checks were strengthened, with the same ids and count: the empty message is rendered and takes no height; the headings' own text; and a boxes School's headings carry no count (that assertion had been true by construction). 32/32 on the revised build, and every row of the table above was run again on it.
+
+**Recorded, not changed:** Tab reaches Confirm before Later, as it always has, while the bar draws Later to the left. Moving either button out of its parent to change that would break the constraint this unit is built on.
 
 **Not yet covered here:** iPhone Safari and Laptop Edge (the owner's device round), and the group's full qualification. The grid relies on a dialog with a maximum height shrinking its one flexible row; that is standard, and is the first thing to look at on the iPhone with a long list.
 

@@ -67,7 +67,8 @@ function install() {
       done: done ? Object.assign(R(done), {bg: getComputedStyle(done).backgroundColor, text: done.textContent, shown: done.getClientRects().length > 0}) : null,
       groups: groups ? Object.assign(R(groups), {scrollHeight: groups.scrollHeight, clientHeight: groups.clientHeight, scrollTop: groups.scrollTop, divider: getComputedStyle(groups).borderBottomWidth}) : null,
       ps: ps.map(R), cards: cards.map(R), card: cards[0] ? style(cards[0]) : null, setLefts: sets.map(f => Math.round(R(f).x)),
-      message: {text: document.getElementById('sc8Message').textContent, shown: document.getElementById('sc8Message').getClientRects().length > 0},
+      message: {text: document.getElementById('sc8Message').textContent, shown: document.getElementById('sc8Message').getClientRects().length > 0,
+        h: document.getElementById('sc8Message').getBoundingClientRect().height},
       ink: getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()};
   };
   window.SRH = H;
@@ -121,7 +122,9 @@ const near = (a, b, t = 1.5) => Math.abs(a - b) <= t;
 
       let opened = await base(), s = await state(), h = await heads();
       await check('SR-DRESSED-NOTHING-MOVED-' + D, async () => [opened === true && s && s.open && s.dressed && s.display === 'grid' && s.wrapper && s.sets === 4 && s.setsInWrapper === 4 && s.setsInBody === 0 &&
-        s.confirmInBody && s.doneInDialog && s.confirmBeforeDone && s.done.text === 'Later' && s.confirm.text === 'Confirm starting spells', s]);
+        s.confirmInBody && s.doneInDialog && s.confirmBeforeDone && s.done.text === 'Later' && s.confirm.text === 'Confirm starting spells' &&
+        // Code review, 11 November: the status message stays rendered while empty (so a refusal is announced) and takes no room.
+        s.message.text === '' && s.message.shown && s.message.h === 0, s]);
       await check('SR-ACTIONS-ONE-BAR-' + D, async () => [near(s.confirm.y, s.done.y) && s.confirm.h >= 44 && s.done.h >= 44 && near(s.confirm.h, s.done.h) && s.done.right <= s.confirm.x - 6 &&
         s.done.x >= s.dialog.x && s.confirm.bottom <= s.dialog.bottom && s.confirm.bg !== s.done.bg && s.done.bg === 'rgba(0, 0, 0, 0)' && s.confirm.bg !== 'rgba(0, 0, 0, 0)', {confirm: s.confirm, done: s.done, dialog: s.dialog}]);
       await check('SR-COMMON-INSET-AND-GAP-' + D, async () => {
@@ -132,7 +135,9 @@ const near = (a, b, t = 1.5) => Math.abs(a - b) <= t;
       await check('SR-OPTION-CARDS-' + D, async () => [s.cards.length === 9 && s.cards.every(c => c.h >= 44) && s.card.border === '1px solid' && s.card.radius === '6px' && s.card.transform === 'none' &&
         ref && JSON.stringify(s.card) === JSON.stringify(ref), {card: s.card, ref, heights: s.cards.map(c => c.h)}]);
       await check('SR-COUNTS-START-' + D, async () => [JSON.stringify(h.map(x => x.name)) === JSON.stringify(['Given by your School', 'Water', 'Air', 'Earth']) &&
-        JSON.stringify(h.map(x => x.count)) === JSON.stringify(['0 of 3 chosen', '0 of 3 chosen', '0 of 2 chosen', '0 of 1 chosen']) && h.every(x => x.state === 'open' && x.ticked === 0), h]);
+        JSON.stringify(h.map(x => x.count)) === JSON.stringify(['0 of 3 chosen', '0 of 3 chosen', '0 of 2 chosen', '0 of 1 chosen']) && h.every(x => x.state === 'open' && x.ticked === 0) &&
+        // Code review, 11 November: the heading's own text reads with a space between the name and the count.
+        JSON.stringify(h.map(x => x.legend)) === JSON.stringify(['Given by your School 0 of 3 chosen', 'Water 0 of 3 chosen', 'Air 0 of 2 chosen', 'Earth 0 of 1 chosen']), h]);
       await check('SR-COLUMNS-' + D, async () => { const lefts = [...new Set(s.setLefts)]; return [lefts.length === (D === 'PHONE' ? 1 : 2), s.setLefts]; });
 
       // A tap on the far end of a card ticks it; the heading follows each tick and un-tick.
@@ -212,7 +217,7 @@ const near = (a, b, t = 1.5) => Math.abs(a - b) <= t;
         await close();
         const rows = t ? [...t.ps, t.groups] : [];
         return [ok === true && t.dressed && t.ps.length === 2 && rows.every((r, i) => i === 0 || r.y >= rows[i - 1].bottom - 0.5) && t.cards.length === 4 && t.cards.every(c => c.h >= 44) &&
-          near(t.confirm.y, t.done.y) && t.confirm.y >= t.groups.bottom && hh.length >= 1 && hh.every(x => x.name && x.name === x.legend.replace(x.count || '', '')), {t, hh}];
+          near(t.confirm.y, t.done.y) && t.confirm.y >= t.groups.bottom && hh.length >= 1 && hh.every(x => x.name && x.count === null && x.name === x.legend), {t, hh}];
       });
 
       await check('SR-NO-ERRORS-' + D, async () => [errors.length === 0, errors]);
