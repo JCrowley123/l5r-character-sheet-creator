@@ -2,13 +2,27 @@
 
 **The owner's checklist** is the Claude Doc [G3 device checks — spell rows](https://claude.ai/artifact/T9HYrvm4TJDXwKu3UrN21f), created through the connected document service on 11 November 2026. It has a Pass/Fail choice for iPhone Safari and Laptop Edge on each check, and an Accept / Revise / Remove choice for each finding. This file mirrors it as plain text.
 
-**Results: none yet.** The owner has not run the checks. This file is updated from the doc when they have.
+**Results, read from the doc on 11 November 2026 (the owner filled it in the same day):**
+
+- Checks: 17 rows × 2 devices = **34/34 Pass**.
+- Decisions marked in the doc by the owner: **8b.1-UI-01 Accept · 8b.1-UI-02 Accept · 8b.1-UI-03 Revise**.
 
 | Finding | Preview | Compared with | Checks | iPhone Safari | Laptop Edge | Decision |
 |---|---|---|---|---|---|---|
-| 8b.1-UI-01 Starting-spell review | claude-release-15a-ui01 | live app (G2) | 1–6 | pending | pending | pending |
-| 8b.1-UI-02 Spell name and School tag | claude-release-15a-ui02 | UI-01 preview | 7–12 | pending | pending | pending |
-| 8b.1-UI-03 Remove apart from Memorised | claude-release-15a-ui03 | UI-02 preview | 13–17 | pending | pending | pending |
+| 8b.1-UI-01 Starting-spell review | claude-release-15a-ui01 | live app (G2) | 1–6 | 6 Pass | 6 Pass | Accept |
+| 8b.1-UI-02 Spell name and School tag | claude-release-15a-ui02 | UI-01 preview | 7–12 | 6 Pass | 6 Pass | Accept |
+| 8b.1-UI-03 Remove apart from Memorised | claude-release-15a-ui03 | UI-02 preview | 13–17 | 5 Pass | 5 Pass | Revise |
+
+**Which builds the round ran on.** The owner tested while the code-review revisions were being pushed (the first previews were verified at 17:14 UTC; the revisions followed). Treat the round as run on the first builds. The revisions do not change what checks 2–5 and 7–17 look at. Checks 1 and 6 look at the review dialog, where revision 1 added a second height limit and keeps the empty message rendered: **a short re-look at checks 1 and 6 on the iPhone is owed** before qualification.
+
+**The owner's comments with the round (in chat, 11 November), summarised; the full wording is in the session:**
+
+1. A gold outline appears around the page after leaving the starting-spell review, until the mode is changed.
+2. Sense, Commune and Summon are taught to every shugenja and are not a choice: the owner proposes crediting them automatically on import (and adding any that are missing) instead of asking the player to tick them.
+3. The × on a Technique card sits inside the XP box and should be outside it. Claude reads this as the reason for **Revise** on 8b.1-UI-03; to be confirmed.
+4. A School Technique is learned automatically with Rank, so its XP box and its × look redundant; the owner suggests keeping × only on optional entries (Kata, Kiho), and asks whether removing a School or Path should take its Techniques with it.
+
+Claude's findings and recommendations on each are in [OWNER-COMMENTS-2026-11-11.md](OWNER-COMMENTS-2026-11-11.md).
 
 **The test character.** The review appears only for an older character. Import `Versions/BUGFIX — Older School Choices/qa/older-kitsu.l5r.json` on each preview and each device (each preview keeps its own characters). To repeat a check after Confirm, import it again.
 

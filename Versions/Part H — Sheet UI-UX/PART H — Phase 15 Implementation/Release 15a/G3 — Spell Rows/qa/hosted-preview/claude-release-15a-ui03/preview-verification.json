@@ -1,0 +1,111 @@
+{
+  "commit": "0e0929b9a578362c5fbf1bd99dbf65f1addd9798",
+  "ref": "claude/release-15a-ui03",
+  "url": "https://claude-release-15a-ui03.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-11T22:17:43.110584+00:00",
+  "source_sha256": "15268822a339d55ecbf421bca7a0f76063254a34702be5820759bf6038e30ff8",
+  "page_sha256": "1b4251fc616c95c172dfdcfd70ca02bd0acdc59c1d5fc08bbe77ff7f709c1f98",
+  "page_bytes": 17637253,
+  "service_worker_build": "cfeebb86e152b1e2",
+  "g3_units": [
+    "8b.1-UI-01",
+    "8b.1-UI-02",
+    "8b.1-UI-03"
+  ],
+  "expected": {
+    "harnesses": 11,
+    "checks": 223
+  },
+  "harnesses": {
+    "8b.1-UI-01 \u2014 Starting-Spell Review and Its Actions/spell-review-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "8b.1-UI-02 \u2014 Readable Spell Name and School Tag/spell-name-harness.js": {
+      "counts": [
+        "28",
+        "28"
+      ],
+      "expected": 28,
+      "passed": true
+    },
+    "8b.1-UI-03 \u2014 Remove Apart from Memorised/spell-remove-harness.js": {
+      "counts": [
+        "24",
+        "24"
+      ],
+      "expected": 24,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/older-review-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/legacy-grants-harness.js": {
+      "counts": [
+        "4",
+        "4"
+      ],
+      "expected": 4,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/allocation-boundaries-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js": {
+      "counts": [
+        "30",
+        "30"
+      ],
+      "expected": 30,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.6 Play Mode Techniques/techniques-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    },
+    "PART J \u2014 Phase 8 Why Cant I Cast This/casting-diagnostics-harness.js": {
+      "counts": [
+        "36",
+        "36"
+      ],
+      "expected": 36,
+      "passed": true
+    },
+    "A11 \u2014 Explanatory Text Gaps and One Left Edge/text-edges-harness.js": {
+      "counts": [
+        "22",
+        "22"
+      ],
+      "expected": 22,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}

@@ -1,0 +1,102 @@
+{
+  "commit": "f8f544b673ccc0d93039de112aedcd2c346b7e62",
+  "ref": "claude/release-15a-ui02",
+  "url": "https://claude-release-15a-ui02.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-11T22:15:57.028488+00:00",
+  "source_sha256": "4f121ab46b9654219b589dfdde71cf8989f00ff1a92ea5f152151e53539569ca",
+  "page_sha256": "be5079371bcf6e2e6368c8db913119ce10cdc6812c0b8523ca3c516302e13c00",
+  "page_bytes": 17633114,
+  "service_worker_build": "27df6d6dd4c5725b",
+  "g3_units": [
+    "8b.1-UI-01",
+    "8b.1-UI-02"
+  ],
+  "expected": {
+    "harnesses": 10,
+    "checks": 199
+  },
+  "harnesses": {
+    "8b.1-UI-01 \u2014 Starting-Spell Review and Its Actions/spell-review-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "8b.1-UI-02 \u2014 Readable Spell Name and School Tag/spell-name-harness.js": {
+      "counts": [
+        "28",
+        "28"
+      ],
+      "expected": 28,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/older-review-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/legacy-grants-harness.js": {
+      "counts": [
+        "4",
+        "4"
+      ],
+      "expected": 4,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/allocation-boundaries-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js": {
+      "counts": [
+        "30",
+        "30"
+      ],
+      "expected": 30,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.6 Play Mode Techniques/techniques-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    },
+    "PART J \u2014 Phase 8 Why Cant I Cast This/casting-diagnostics-harness.js": {
+      "counts": [
+        "36",
+        "36"
+      ],
+      "expected": 36,
+      "passed": true
+    },
+    "A11 \u2014 Explanatory Text Gaps and One Left Edge/text-edges-harness.js": {
+      "counts": [
+        "22",
+        "22"
+      ],
+      "expected": 22,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}

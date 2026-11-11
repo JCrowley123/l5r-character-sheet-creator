@@ -2,7 +2,7 @@
 
 ## Current state (11 November 2026, Claude)
 
-**Mock-ups approved, three units built and light-checked, previews deployed. Not device-accepted, not qualified, not live.** G2 remains live.
+**Device round done: 34/34 Pass; 8b.1-UI-01 Accept, 8b.1-UI-02 Accept, 8b.1-UI-03 Revise. Not qualified, not live.** G2 remains live. The owner's comments at the round, with findings and recommendations, are in [OWNER-COMMENTS-2026-11-11.md](OWNER-COMMENTS-2026-11-11.md); none is decided or built.
 
 - **The owner's decision:** "Approve all three", 11 November 2026, for Claude's alternatives ([MOCKUP.md](MOCKUP.md)).
 - **The units** (each its own folder under Release 15a, with README, ROLLBACK, pinned harness, remover and removal proof):
@@ -15,7 +15,7 @@
 - **Code review:** [qa/code-review.md](qa/code-review.md).
 - **Whole-group removal** restores live G2 exactly (`77936023…82f0`, 17,609,230 bytes); each unit can also be removed alone with the other two kept.
 
-**Next:** the owner's device round (Accept / Revise / Remove for each finding), then one qualification for the accepted units, then the owner's go-live word. Qualification arithmetic if all three are accepted and stay screen-only: candidate 7,148 + 84 = **7,232**; retained **7,075**. Pin the exact ids before running.
+**Next:** confirm and build the 8b.1-UI-03 revision (the × outside the XP box on the other Techniques cards), a short re-look at checks 1 and 6 on the iPhone, then one qualification for the accepted units, then the owner's go-live word. Qualification arithmetic if all three are accepted and stay screen-only: candidate 7,148 + 84 = **7,232**; retained **7,075**. Pin the exact ids before running.
 
 **Environment notes from the build:** the tree is LF throughout. On this Windows machine a rebuild occasionally cannot rewrite `l5r-character-sheet.html` (`OSError 22`, a file lock); the file is left as it was, so run it again and gate every commit on `build.py --check-drift`. Harness contexts block web fonts, which makes a name box 3 px shorter than on a device.
 

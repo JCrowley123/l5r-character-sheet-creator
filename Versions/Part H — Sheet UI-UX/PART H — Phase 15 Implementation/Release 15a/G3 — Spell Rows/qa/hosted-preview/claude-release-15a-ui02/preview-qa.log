@@ -1,0 +1,233 @@
+Preview page matches the committed build byte for byte.
+Service worker matches build 27df6d6dd4c5725b.
+== 8b.1-UI-01 — Starting-Spell Review and Its Actions/spell-review-harness.js
+PASS SR-SEAM-PHONE
+PASS SR-DRESSED-NOTHING-MOVED-PHONE
+PASS SR-ACTIONS-ONE-BAR-PHONE
+PASS SR-COMMON-INSET-AND-GAP-PHONE
+PASS SR-OPTION-CARDS-PHONE
+PASS SR-COUNTS-START-PHONE
+PASS SR-COLUMNS-PHONE
+PASS SR-COUNTS-LIVE-PHONE
+PASS SR-LATER-NO-WRITES-PHONE
+PASS SR-CONFIRM-SAVES-PHONE
+PASS SR-CHOOSER-UNDRESSED-PHONE
+PASS SR-LONG-LIST-SCROLLS-PHONE
+PASS SR-COUNTS-OVER-REFUSED-PHONE
+PASS SR-SWITCH-CLASS-OFF-PHONE
+PASS SR-SLOT-SCHOOL-PHONE
+PASS SR-NO-ERRORS-PHONE
+PASS SR-SEAM-DESKTOP
+PASS SR-DRESSED-NOTHING-MOVED-DESKTOP
+PASS SR-ACTIONS-ONE-BAR-DESKTOP
+PASS SR-COMMON-INSET-AND-GAP-DESKTOP
+PASS SR-OPTION-CARDS-DESKTOP
+PASS SR-COUNTS-START-DESKTOP
+PASS SR-COLUMNS-DESKTOP
+PASS SR-COUNTS-LIVE-DESKTOP
+PASS SR-LATER-NO-WRITES-DESKTOP
+PASS SR-CONFIRM-SAVES-DESKTOP
+PASS SR-CHOOSER-UNDRESSED-DESKTOP
+PASS SR-LONG-LIST-SCROLLS-DESKTOP
+PASS SR-COUNTS-OVER-REFUSED-DESKTOP
+PASS SR-SWITCH-CLASS-OFF-DESKTOP
+PASS SR-SLOT-SCHOOL-DESKTOP
+PASS SR-NO-ERRORS-DESKTOP
+32/32 checks passed
+
+== 8b.1-UI-02 — Readable Spell Name and School Tag/spell-name-harness.js
+PASS SN-SEAM-PHONE
+PASS SN-NAME-READABLE-PHONE
+PASS SN-LINES-PHONE
+PASS SN-TAG-SCHOOL-PHONE
+PASS SN-REWARD-NO-TAG-PHONE
+PASS SN-CONTROLS-PHONE
+PASS SN-DATA-UNCHANGED-PHONE
+PASS SN-TAG-FOLLOWS-GRANT-PHONE
+PASS SN-EDIT-SAVE-REOPEN-PHONE
+PASS SN-MEMO-TAP-PHONE
+PASS SN-MULTI-SCHOOL-PHONE
+PASS SN-PLAY-PHONE
+PASS SN-CLASS-OFF-PHONE
+PASS SN-NO-ERRORS-PHONE
+PASS SN-SEAM-DESKTOP
+PASS SN-NAME-READABLE-DESKTOP
+PASS SN-LINES-DESKTOP
+PASS SN-TAG-SCHOOL-DESKTOP
+PASS SN-REWARD-NO-TAG-DESKTOP
+PASS SN-CONTROLS-DESKTOP
+PASS SN-DATA-UNCHANGED-DESKTOP
+PASS SN-TAG-FOLLOWS-GRANT-DESKTOP
+PASS SN-EDIT-SAVE-REOPEN-DESKTOP
+PASS SN-MEMO-TAP-DESKTOP
+PASS SN-MULTI-SCHOOL-DESKTOP
+PASS SN-PLAY-DESKTOP
+PASS SN-CLASS-OFF-DESKTOP
+PASS SN-NO-ERRORS-DESKTOP
+28/28 checks passed
+
+== BUGFIX — Older School Choices/older-review-harness.js
+PASS REVIEW-BUTTON-MANAGE
+PASS PLAY-READ-ONLY
+PASS NINE-OWNED-UNSELECTED
+PASS LATER-NO-WRITES
+PASS REWARD-RETAINED
+PASS EIGHT-NO-DUPLICATES
+PASS ONLY-EARTH-OWED
+PASS RELOAD-RETAINS-REVIEW
+PASS LAST-EARTH-GRANTED-ONCE
+PASS ALL-REWARDS-REMEMBERED
+PASS MODERN-EQUIPMENT-NO-REVIEW
+PASS PARTIAL-GRANTS-PRESERVED
+PASS OVER-QUOTA-ATOMIC
+PASS COMPLEX-ALLOTMENT-ENFORCED
+PASS AMBIGUOUS-SKILL-EXISTING-ONLY
+PASS MULTI-SCHOOL-NO-DOUBLE-ASSIGNMENT
+PASS FIXED-AND-UNTICKED-EXCLUDED
+PASS RESTRICTED-SKILL-ELIGIBILITY
+PASS EXPLICIT-SKILL-CONFLICT-REPORTED
+PASS NO-SCRIPT-ERRORS
+20/20 checks passed
+
+== BUGFIX — Older School Choices/legacy-grants-harness.js
+PASS DEFENSE-FILLS-SLOT
+PASS NO-EXTRA-MEDITATION
+PASS NO-EXTRA-WATER
+PASS NO-EXTRA-AIR
+4/4 checks passed
+
+== BUGFIX — Older School Choices/allocation-boundaries-harness.js
+PASS CANNOT-BYPASS-TICKED-ROWS
+PASS FROZEN-SCHOOL-AFFINITY
+PASS ONE-FIXED-SUBJECT
+PASS OCCUPIED-CROSS-SCHOOL-CONFLICT
+PASS WIZARD-CAP
+5/5 checks passed
+
+== PART K — Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js
+PASS SC8-ENABLED
+PASS SC8-REPORT-READ-ONLY
+PASS SC8-MANAGE-BUTTONS
+PASS SC8-PLAY-REPORT-ONLY
+PASS SC8-OPEN-READ-ONLY
+PASS SC8-SKILL-PICKER-REUSED
+PASS SC8-FREE-SCHOOL-SKILL
+PASS SC8-SKILL-NOTE-CLEARS
+PASS SC8-SKILL-RELOAD
+PASS SC8-UNTICK-REOPENS
+PASS SC8-DELETE-REOPENS
+PASS SC8-SCHOOL-ISOLATION
+PASS SC8-ADOPT-SKILL
+PASS SC8-UNDO-PRESERVES-PAID-SKILL
+PASS SC8-REWARD-DOES-NOT-COUNT
+PASS SC8-ELEMENT-PICKER-REUSED
+PASS SC8-GIVEN-SOURCE
+PASS SC8-ADOPT-SPELL
+PASS SC8-SPELL-SOURCE
+PASS SC8-SPELL-RELOAD
+PASS SC8-RENAME-REOPENS
+PASS SC8-LATER-KEEPS-OWED
+PASS SC8-ESCAPE-CLOSES
+PASS SC8-CHARACTER-SWITCH-CLOSES
+PASS SC8-COMPLEX-ALLOTMENT
+PASS SC8-WIZARD-SKILL-SOURCE
+PASS SC8-WIZARD-SPELL-SOURCE
+PASS SC8-MALFORMED-RECORDS
+PASS SC8-PHONE-FITS
+PASS SC8-NO-PAGE-ERRORS
+30/30 checks passed
+
+== PART K — Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js
+PASS SC8R-FIXED-SKILL-NOT-EXTRA
+PASS SC8R-KNOWN-SPELL-NO-DUPLICATE
+PASS SC8R-SECOND-SCHOOL-GIVEN
+PASS SC8R-FORMER-NAME-ADOPTION
+PASS SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM
+PASS SC8R-PAID-MEMORISED-SPELL-KEPT
+6/6 checks passed
+
+== PART K — Phase 12.6 Play Mode Techniques/techniques-harness.js
+Techniques in Play checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g3-preview-1w_tpwih\site\index.html
+PASS TQ126-ENABLED
+PASS TQ126-MANAGEMENT-NAME-TYPES
+PASS TQ126-PLAY-ENTRY-LOCKED
+PASS TQ126-PLAY-NAME-TYPING-BLOCKED
+PASS TQ126-PLAY-ADD-INERT
+PASS TQ126-PLAY-REMOVE-INERT
+PASS TQ126-PLAY-MEMORISED-TICK-INERT
+PASS TQ126-PLAY-CAST-STAYS-LIVE
+PASS TQ126-ADVANTAGE-ROWS-NOT-REACHED
+PASS TQ126-PLAY-NEW-ENTRY-LOCKED
+PASS TQ126-PLAY-SHOWS-PLAIN-TEXT
+PASS TQ126-BACK-TO-MANAGEMENT
+PASS TQ126-MANAGEMENT-REMOVE-WORKS
+PASS TQ126-NO-PAGE-ERRORS-LOCK
+PASS TQ126-OPEN-FROM-LIST-LOCKS-THE-TAB
+PASS TQ126-NO-PAGE-ERRORS-LIST
+
+16/16 checks passed
+
+== PART J — Phase 8 Why Cant I Cast This/casting-diagnostics-harness.js
+  PASS  the phase exports getCastingDiagnostics on the test seam
+  PASS  all seven built-in rules are registered  — ["school-restriction","ishiken-do","rank-too-low","deficiency-lockout","wrong-element","missing-scroll","not-memorised","no-slots","void-versatility"]
+  PASS  an ordinary spell on a Bushi character is a blocker  — ["blocker"]
+  PASS  ...and the finding names the School that locked the path  — true
+  PASS  a Maho spell on a Bushi character raises no school restriction  — 0
+  PASS  the context's effective School Rank matches an independently computed one  — 2
+  PASS  a spell above that Rank is a blocker  — ["blocker"]
+  PASS  a spell exactly at that Rank raises no rank finding  — 0
+  PASS  a Deficiency drops the effective Rank as the oracle predicts  — 1
+  PASS  the Deficiency lockout is a blocker  — ["blocker"]
+  PASS  ...and the plain rank-too-low finding stays silent, so the gate is reported once  — 0
+  PASS  the oracle confirms the Equipment table holds one scroll and not the other  — [true,false]
+  PASS  a spell with no scroll and not memorised is a blocker  — ["blocker"]
+  PASS  memorising it removes the scroll requirement entirely  — 0
+  PASS  holding the scroll clears the blocker and leaves the "not memorised" note  — [0,["note"]]
+  PASS  a Universal spell some Elements can still cast is a caution, not a blocker  — ["caution"]
+  PASS  a Universal spell no Element can cast is a blocker  — ["blocker"]
+  PASS  element slots gone but bonus slots left is a caution  — ["caution"]
+  PASS  every slot spent is a blocker  — ["blocker"]
+  PASS  a Maho spell never reports a slot problem, because it spends none  — 0
+  PASS  a Universal spell with slots everywhere reports no slot problem  — null
+  PASS  one Element out of slots is a note that names the Elements still open  — ["note",true]
+  PASS  every castable Element out, bonus pool left, is a caution  — "caution"
+  PASS  every castable Element out and the bonus pool spent is a blocker  — "blocker"
+  PASS  castable is true exactly when there are no blockers  — true
+  PASS  the built-in blocker fires before any contributor is added  — 1
+  PASS  a registered contributor can add a finding  — true
+  PASS  a contributor can suppress a built-in blocker  — 0
+  PASS  ...and the suppressed blocker is shown as LIFTED, not silently dropped  — true
+  PASS  a contributor that throws is contained and the others still report  — true
+  PASS  unregistering restores the original report  — [1,-1]
+  PASS  a spell entry gets the diagnostic button  — true
+  PASS  the modal paints one row per finding  — 1
+  PASS  a blocked spell shows the blocked badge on its button  — true
+  PASS  closing the modal hides it  — "none"
+  PASS  no uncaught page errors  — []
+
+36/36 checks passed
+
+== A11 — Explanatory Text Gaps and One Left Edge/text-edges-harness.js
+PASS TE-SEAM-PHONE
+PASS TE-PLAY-ONE-EDGE-PHONE
+PASS TE-PLAY-WAS-OFF-WITHOUT-THE-LAYER-PHONE
+PASS TE-PLAY-TEXT-KEPT-PHONE
+PASS TE-MANAGE-UNCHANGED-PHONE
+PASS TE-CONDITION-GAP-PHONE
+PASS TE-HINT-GAP-PHONE
+PASS TE-HINT-LINE-HEIGHT-PHONE
+PASS TE-OTHER-HINTS-UNCHANGED-PHONE
+PASS TE-CLASS-GATES-PHONE
+PASS TE-NO-ERRORS-PHONE
+PASS TE-SEAM-DESKTOP
+PASS TE-PLAY-ONE-EDGE-DESKTOP
+PASS TE-PLAY-WAS-OFF-WITHOUT-THE-LAYER-DESKTOP
+PASS TE-PLAY-TEXT-KEPT-DESKTOP
+PASS TE-MANAGE-UNCHANGED-DESKTOP
+PASS TE-CONDITION-GAP-DESKTOP
+PASS TE-HINT-GAP-DESKTOP
+PASS TE-HINT-LINE-HEIGHT-DESKTOP
+PASS TE-OTHER-HINTS-UNCHANGED-DESKTOP
+PASS TE-CLASS-GATES-DESKTOP
+PASS TE-NO-ERRORS-DESKTOP
+22/22 checks passed
