@@ -1,0 +1,2134 @@
+{
+ "phone-today": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 178,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 214,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 178,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 148,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 228,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 288,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 283,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 228,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 207,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 241,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 175,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 175,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 175,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 195,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 224,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 184,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 239,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 164,
+   "rm": [
+    40,
+    40
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     34,
+     36
+    ]
+   },
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 198,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 276
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 198,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 276
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 198,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 276
+  }
+ ],
+ "phone-proposed": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 178,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 214,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 178,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 148,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 228,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 288,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 283,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 228,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 207,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 241,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 175,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 175,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 175,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 195,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 224,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 184,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 239,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 164,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 196
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 198,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 276
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 198,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 276
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 198,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 276
+  }
+ ],
+ "phone-play-proposed": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 169,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 214,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 169,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 148,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 228,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 278,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 281,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 228,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 207,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 241,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 175,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 175,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 175,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 195,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 224,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 184,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 239,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 164,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 198,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 318
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 198,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 318
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 198,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 318
+  }
+ ],
+ "phone-play-today": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 169,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 214,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 169,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 148,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 228,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 278,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 281,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 228,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 207,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 241,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 175,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 175,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 175,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 195,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 224,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 184,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 239,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 164,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 238
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 198,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 318
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 198,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 318
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 198,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 318
+  }
+ ],
+ "phone-kata": null,
+ "phone-errors": [],
+ "laptop-today": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 179,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 197,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 179,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 149,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 211,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 260,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 284,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 210,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 191,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 243,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 176,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 176,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 176,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 196,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 196,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 185,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 211,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 149,
+   "rm": [
+    27,
+    29
+   ],
+   "overlaps": {
+    "input.en-cost[number]": [
+     21,
+     25
+    ]
+   },
+   "cost": 70,
+   "nameW": 1028
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 869
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 869
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 869
+  }
+ ],
+ "laptop-proposed": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 179,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 197,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 179,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 211,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 260,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 284,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 210,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 191,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 243,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 176,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 176,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 176,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 196,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 196,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 185,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 211,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 414
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 986
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 869
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 869
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 149,
+   "rm": [
+    44,
+    44
+   ],
+   "overlaps": {},
+   "cost": null,
+   "nameW": 869
+  }
+ ],
+ "laptop-play-proposed": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 170,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 197,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 170,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 211,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 250,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 282,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 210,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 191,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 243,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 176,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 176,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 176,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 196,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 196,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 185,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 211,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 1028
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 911
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 911
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 911
+  }
+ ],
+ "laptop-play-today": [
+  {
+   "list": "advList",
+   "name": "Wealthy",
+   "spell": false,
+   "h": 170,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Leadership",
+   "spell": false,
+   "h": 197,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Kharmic Tie",
+   "spell": false,
+   "h": 170,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Social Position",
+   "spell": false,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Blissful Betrothal",
+   "spell": false,
+   "h": 211,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "advList",
+   "name": "Zakyo Toshi Citizen",
+   "spell": false,
+   "h": 250,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Lord Moon’s Curse",
+   "spell": false,
+   "h": 282,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Seven Fortunes’ Curse",
+   "spell": false,
+   "h": 210,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Blind",
+   "spell": false,
+   "h": 191,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Missing Limb",
+   "spell": false,
+   "h": 243,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Brash",
+   "spell": false,
+   "h": 176,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Overconfident",
+   "spell": false,
+   "h": 176,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Can’t Lie",
+   "spell": false,
+   "h": 176,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Contrary",
+   "spell": false,
+   "h": 196,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Rumormonger",
+   "spell": false,
+   "h": 196,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Soft-Hearted",
+   "spell": false,
+   "h": 185,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "disadvList",
+   "name": "Lost Love",
+   "spell": false,
+   "h": 211,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 456
+  },
+  {
+   "list": "techList",
+   "name": "Gaze Into Shadow",
+   "spell": false,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": 70,
+   "nameW": 1028
+  },
+  {
+   "list": "techList",
+   "name": "Sense",
+   "spell": true,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 911
+  },
+  {
+   "list": "techList",
+   "name": "Commune",
+   "spell": true,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 911
+  },
+  {
+   "list": "techList",
+   "name": "Summon",
+   "spell": true,
+   "h": 149,
+   "rm": null,
+   "overlaps": {},
+   "cost": null,
+   "nameW": 911
+  }
+ ],
+ "laptop-kata": null,
+ "laptop-errors": []
+}

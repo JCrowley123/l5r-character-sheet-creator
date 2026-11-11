@@ -18,7 +18,7 @@
 
 **What the code shows.**
 
-- The sheet records each Shugenja School's own "given" spells. Of 21 Schools, **19 give Sense, Commune and Summon**. **Fuzake Shugenja** also gives Path to Inner Peace. **Yogo Wardmaster** gives only Commune and Summon. So the rule must read each School's own list, not a fixed three.
+- The sheet records each Shugenja School's own "given" spells. Its table has 19 of 21 Schools giving Sense, Commune and Summon, Fuzake Shugenja adding Path to Inner Peace, and Yogo Wardmaster giving only Commune and Summon. **The Yogo entry is wrong**: see the book check below. The rule must still read each School's own list.
 - The creation wizard already adds a School's given spells by itself (`CW1123.addGiven`) and shows them as "Given by your School" without asking. Only the older-character review asks the player to tick them. The proposal makes the two agree.
 - Crediting a held spell is a tag on rows the character already has. Adding a missing one creates a spell row and a scroll row.
 
@@ -66,6 +66,54 @@ A short tag, "School technique" or "Path technique", in the same quiet look as "
 2. A small group for the automatic entries (points 2 and 4), mock-up first.
 3. Point 1 with G4.
 
-## The owner's replies
+## The owner's replies (11 November 2026, in chat)
 
-*(none yet)*
+- **Point 1:** agreed — a small item in G4.
+- **Point 2:** agreed to read each School's own list, not a fixed three; agreed it must not change a saved character silently; agreed it is its own unit at the heavier QA tier, not a change to 8b.1-UI-01. The owner corrected two Schools from the books: Fuzake Shugenja (Secrets of the Empire p.238: Sense, Commune, Summon, 3 Earth, 2 Water — one is automatically Path to Inner Peace — 1 Air) and Yogo Wardmaster (The Great Clans p.229: Sense, Commune, Summon, 3 Wards spells, 3 other spells, not Void), and asked for a double check of every Shugenja School.
+- **Point 3:** the owner wants the × in the top right of every card, Advantages and Disadvantages included, not overlapping anything on the card. This is 8b.1-UI-03 revision 2; mock-up below.
+- **Point 4:** agreed — no XP box and no × on automatic entries; Kata, Kiho and chosen entries keep both.
+- **Order:** agreed — (1) 8b.1-UI-03 revision, then qualify G3 and go live on the owner's word; (2) a small group for the automatic entries, mock-up first; (3) the focus ring with G4.
+
+## Book check of every Shugenja School's starting spells (11 November 2026)
+
+Read from the owner's own rulebook PDFs on this machine (`C:/Users/jcrow/OneDrive/Documents/L5R 4th edition books/`), as earlier audits did. Pages are PDF pages; the printed page is usually one to four lower (Fuzake prints as 238, Yogo as 229). Each line was compared with the sheet's table in `209.997-feat-wizard-starting-spells.js` and `209.998-feat-wizard-starting-spells-all.js`.
+
+**Result: 20 of 21 match. One is wrong: Yogo Wardmaster is missing Sense.**
+
+| School | Book, PDF page | The book's starting spells | The sheet |
+|---|---|---|---|
+| Agasha | Core, 128 | Sense, Commune, Summon, 3 Fire, 2 Earth, 1 Air | matches |
+| Asahina | Core, 113 | Sense, Commune, Summon, 3 Air, 2 Water, 1 Earth | matches |
+| Chuda (Shadowlands) | Core, 216 | Sense, Commune, Summon, 3 Maho of one Element, 2 Maho of a second non-Deficient Element, any 1 of a non-Deficient Element | matches |
+| Chuda (Snake) | Core, 227 | Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water | matches |
+| Fuzake | Secrets of the Empire, 239 | Sense, Commune, Summon, 3 Earth, 2 Water (one is Path to Inner Peace), 1 Air | matches; page not recorded in the sheet |
+| Horiuchi | Great Clans, 258–259 | Sense, Commune, Summon, 3 Earth, 2 Water, 1 Fire | matches; page not recorded |
+| Isawa | Core, 127 | Sense, Commune, Summon, 3 of one Element, 2 of another, 1 of a third, 1 of a fourth | matches |
+| Iuchi | Core, 134 | Sense, Commune, Summon, 3 Water, 2 Earth, 1 Air | matches |
+| Kitsu | Core, 121 | Sense, Commune, Summon, 3 Water, 2 Air, 1 Earth | matches |
+| Kitsune | Core, 223 | Sense, Commune, Summon, 3 Earth, 2 Water, 1 Fire | matches |
+| Komori | Core, 220 | Sense, Commune, Summon, 3 Air, 2 Water, 1 Fire | matches |
+| Kuni | Core, 110 | Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water | matches |
+| Moshi | Core, 124 | Sense, Commune, Summon, 3 Air, 3 Fire | matches |
+| Moto Death Priest | Imperial Histories, 242 | Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water | matches |
+| Ninube | Great Clans, 282 | Sense, Commune, Summon, 3 Air, 2 Fire, 1 Water | matches; page not recorded |
+| Seppun | Core, 232 | Sense, Commune, Summon, 3 Fire, 2 Earth, 1 Air | matches |
+| Soshi | Core, 130 | Sense, Commune, Summon, 3 Air, 2 Fire, 1 Water | matches |
+| Tamori | Core, 116 | Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water | matches |
+| Tonbo | Core, 221 | Sense, Commune, Summon, 3 Water, 2 Air, 1 Earth | matches |
+| **Yogo Wardmaster** | Great Clans, 230 | **Sense**, Commune, Summon, 3 Wards spells, 3 other spells (not Void) | **wrong: Sense is missing** from its given list; the Wards and other-spell boxes match; page not recorded |
+| Yoritomo | Great Clans, 170 | Sense, Commune, Summon, 3 Water, 2 Fire, 1 Air | matches; page not recorded |
+
+**What the Yogo error does today.** The creation wizard does not add Sense for a Yogo Wardmaster, and the character check does not ask for it.
+
+**Recommendation.** Fix it as a one-line bugfix unit at the start of the automatic-entries group, because that group reads these lists: add Sense to Yogo's given spells and record the five missing pages. It is not a G3 change. The book also holds Schools the sheet does not offer (one in Imperial Histories 2, and the Self-Taught and Dutiful Disciple Shugenja paths in Enemies of the Empire); they are outside this check.
+
+## 8b.1-UI-03 revision 2 · mock-up (11 November 2026)
+
+[The board](mockups/G3-UI03-R2-MOCKUP.png) (also [as a page](mockups/G3-UI03-R2-MOCKUP.html)). Scratch CSS on the G3 build, measured at 390 and 1440 px on the dense test character (`qa/ui03-r2-mockup/`):
+
+- Today the × overlaps the XP or Points box on **18 of 18** Technique, Advantage and Disadvantage cards: 34 × 36 px on a phone, 21 × 25 px on a laptop.
+- Proposed: the same clear corner the spell cards use, a 44 × 44 px target, **no overlap on any card**, and **no card taller**. The name box gives up 42 px (238 → 196 px on a phone). In Play the cards are exactly as today.
+- Not shown on the board: a Kata or Kiho card. It is the same card as the School Technique card; the test character has none.
+
+Awaiting the owner's approval of the mock-up.
