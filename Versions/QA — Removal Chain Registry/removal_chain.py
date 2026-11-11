@@ -325,6 +325,8 @@ CHAIN: tuple[Release, ...] = (
     # Group G3: the three 8b.1 follow-ups (their folders keep the finding identifiers).
     Release("PART H — Phase 15 Implementation/Release 15a/8b.1-UI-01 — Starting-Spell Review and Its Actions",
             fragment="src/sheet/209.99999999999999998-feat-spell-review-layout.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/8b.1-UI-02 — Readable Spell Name and School Tag",
+            fragment="src/sheet/209.99999999999999999-feat-spell-name-line.js"),
 )
 
 

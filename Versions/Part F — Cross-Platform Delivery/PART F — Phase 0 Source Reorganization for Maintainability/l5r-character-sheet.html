@@ -7545,6 +7545,71 @@ html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
 }
 }
 
+/* PART H PHASE 15.1.22 — Release 15a, follow-up 8b.1-UI-02: a spell row's name readable on a phone, and one School
+   tag (owner, 11 November 2026).
+   Matches only spell rows in the Techniques list. The row's first line may wrap. On a laptop it still fits on one
+   line, as before. Up to 768 px the name takes the whole first line and Cast, the casting help and Memorised take the
+   second, each at least 44 px tall there. The School-choice layer's label stays in the row but is not drawn; this
+   unit's tag stands at the end of the control line in the app's quiet tag look. The tag is never drawn without this
+   unit's body class, nor in print, where the label shows as before. The ID in each selector outranks the row's own
+   rules. Waits for body.sn15-on, which this unit's switch sets. Screen only. */
+.sn15-tag {
+  display: none;
+}
+@media screen {
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .en-name {
+  flex: 1 1 15rem;
+  min-width: 0;
+}
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .sc8-source {
+  display: none;
+}
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .sn15-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  flex: 0 1 auto;
+  order: 9;
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(90, 77, 49, .12);
+  color: var(--ink-soft);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-transform: none;
+}
+}
+@media screen and (max-width: 768px) {
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .en-name {
+  flex: 1 1 100%;
+}
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-cast-btn,
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .cast-why-btn {
+  min-height: 44px;
+  margin: 0;
+}
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-memo-label {
+  min-height: 44px;
+  gap: 7px;
+  margin: 0;
+  padding: 0 2px;
+}
+html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-memo-label > .spell-memo-checkbox {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -56484,6 +56549,83 @@ return fontkitCache=module.exports;}
   SR15.install();
   // ============ END PART H PHASE 15.1.21 ============
 
+  // ============ PART H PHASE 15.1.22 — SPELL ROWS: A READABLE NAME AND ONE SCHOOL TAG ============
+  // Phase 15, Release 15a, follow-up 8b.1-UI-02 (group G3), approved as mocked up by the owner on 11 November 2026.
+  // The number 22 is this unit's marker only; the finding keeps its identifier, 8b.1-UI-02.
+  // A spell row held its name, the School-choice layer's "School: ..." label, Cast, the casting help and Memorised on
+  // one line that could not wrap. On a phone the name box was left 20 px wide, with no room for text at all.
+  // The stylesheet (1140-spell-name-line.css) lets that line wrap: on a phone the name takes the first line and the
+  // controls the second; on a laptop the row stays one line. The School-choice layer's label is kept in the row, with
+  // its text, but is not drawn; this unit draws one short tag at the end of the control line instead: "School spell"
+  // for a character with one School, the School name or names (the label's own text) for a character with several.
+  // A reward has no label, so it gets no tag. The tag is read from the label the School-choice layer drew, never from
+  // the saved record, and is not part of the save: the grant data on the row is untouched.
+  // The sweep runs after every recalculation (a second School changes the wording) and when the list's rows change.
+  // It writes only what differs, so its own change settles at once.
+  // Everything waits for body.sn15-on, which the switch sets: with the switch off the rows are exactly as before.
+  const SPELL_NAME_LINE_ENABLED = true;
+
+  const SN15 = (function(){
+    const api = {installed: false, observer: null};
+    api.enabled = function(){ return SPELL_NAME_LINE_ENABLED; };
+    api.ROWS = '#techList .entry[data-spell-element]';
+    api.ONE = 'School spell';
+    api.many = function(){
+      try { return typeof getSchoolsList === 'function' && getSchoolsList().length > 1; } catch(e){ return false; }
+    };
+    // What the tag should read for this row: nothing without the School-choice layer's own label.
+    api.text = function(row, many){
+      const source = row.querySelector(':scope > .entry-top > .sc8-source');
+      if(!source) return '';
+      const names = source.textContent.replace(/^School:\s*/, '').trim();
+      if(!names) return '';
+      return many ? names : api.ONE;
+    };
+    api.sweep = function(){
+      if(!document.body.classList.contains('sn15-on')) return 0;
+      const many = api.many();
+      let changed = 0;
+      document.querySelectorAll(api.ROWS).forEach(function(row){
+        const top = row.querySelector(':scope > .entry-top');
+        if(!top) return;
+        const want = api.text(row, many);
+        let tag = top.querySelector(':scope > .sn15-tag');
+        if(!want){
+          if(tag){ tag.remove(); changed++; }
+          return;
+        }
+        if(!tag){
+          tag = document.createElement('span');
+          tag.className = 'sn15-tag';
+          top.appendChild(tag);
+          changed++;
+        }
+        if(tag.textContent !== want){ tag.textContent = want; changed++; }
+      });
+      return changed;
+    };
+    api.install = function(){
+      if(api.installed || !SPELL_NAME_LINE_ENABLED) return false;
+      const list = document.getElementById('techList');
+      if(!list) return false;
+      api.installed = true;
+      document.body.classList.add('sn15-on');
+      if(typeof recalcAll === 'function'){
+        const sn15Recalc = recalcAll;
+        recalcAll = function(){ const out = sn15Recalc.apply(this, arguments); api.sweep(); return out; };
+      }
+      if(typeof MutationObserver === 'function'){
+        api.observer = new MutationObserver(api.sweep);
+        api.observer.observe(list, {childList: true, subtree: true});
+      }
+      api.sweep();
+      return true;
+    };
+    return api;
+  })();
+  SN15.install();
+  // ============ END PART H PHASE 15.1.22 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -57466,6 +57608,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.21 BEGIN spell-review-layout-seam
   if(typeof SR15 === 'object' && SR15) Object.assign(window.__L5R_TEST__, {SR15, SPELL_REVIEW_LAYOUT_ENABLED});
   // END SR15 spell-review-layout-seam
+  // PART H PHASE 15.1.22 BEGIN spell-name-line-seam
+  if(typeof SN15 === 'object' && SN15) Object.assign(window.__L5R_TEST__, {SN15, SPELL_NAME_LINE_ENABLED});
+  // END SN15 spell-name-line-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

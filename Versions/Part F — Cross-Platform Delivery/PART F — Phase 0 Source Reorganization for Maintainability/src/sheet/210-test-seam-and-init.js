@@ -980,6 +980,9 @@
   // PART H PHASE 15.1.21 BEGIN spell-review-layout-seam
   if(typeof SR15 === 'object' && SR15) Object.assign(window.__L5R_TEST__, {SR15, SPELL_REVIEW_LAYOUT_ENABLED});
   // END SR15 spell-review-layout-seam
+  // PART H PHASE 15.1.22 BEGIN spell-name-line-seam
+  if(typeof SN15 === 'object' && SN15) Object.assign(window.__L5R_TEST__, {SN15, SPELL_NAME_LINE_ENABLED});
+  // END SN15 spell-name-line-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
