@@ -45,6 +45,8 @@
       group.dataset.sr15Want = hit[2];
       const count = document.createElement('span');
       count.className = 'sr15-count';
+      // A space between the two, so the heading's text reads "Water 2 of 3 chosen", not "Water2 of 3 chosen".
+      legend.appendChild(document.createTextNode(' '));
       legend.appendChild(count);
     };
     api.tally = function(){

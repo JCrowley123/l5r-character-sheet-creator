@@ -11,10 +11,10 @@ from pathlib import Path
 import hashlib, importlib.util, re, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART H — Phase 15 Implementation/Release 15a/8b.1-UI-03 — Remove Apart from Memorised'
-PREDECESSOR_SHA = '7f56eb1f9d3674e7d0334720b4e473384231231999b3026a1973eae7507cd40f'   # 8b.1-UI-02 — Readable Spell Name and School Tag
-PREDECESSOR_BYTES = 17625751
-BEFORE_PREDECESSOR_SHA = 'b3395d846f5d6398b4bcf15214575bdf1a38e1f69f06e5c6b6e74a24b2acea16'
-BEFORE_PREDECESSOR_BYTES = 17619334
+PREDECESSOR_SHA = '4f121ab46b9654219b589dfdde71cf8989f00ff1a92ea5f152151e53539569ca'   # 8b.1-UI-02 — Readable Spell Name and School Tag
+PREDECESSOR_BYTES = 17626337
+BEFORE_PREDECESSOR_SHA = '390f3cd1df02639b086e8dfc3ba3c883bbb62cdfb27ddf906b72c7b923fef19c'
+BEFORE_PREDECESSOR_BYTES = 17619920
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// PART H PHASE 15.1.23 BEGIN spell-remove-corner-seam'
 Q = Path(__file__).resolve().parent

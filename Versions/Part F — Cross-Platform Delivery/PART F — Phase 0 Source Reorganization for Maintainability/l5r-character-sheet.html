@@ -7427,8 +7427,10 @@ html body.sr15-on #sc8Dialog.sr15-review > p,
 html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > p {
   grid-column: 1 / -1;
 }
+/* The message is a status region: it stays rendered while empty, so a refusal written into it is announced. An empty
+   one takes no room. */
 html body.sr15-on #sc8Dialog.sr15-review > #sc8Message:empty {
-  display: none;
+  margin: 0;
 }
 html body.sr15-on #sc8Dialog.sr15-review > #sc8Body {
   display: contents;
@@ -7442,6 +7444,9 @@ html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
   display: grid;
   gap: 12px;
   min-height: 0;
+  /* A second limit, for a browser that does not shrink this row to the dialog's own maximum height: the groups never
+     take more than the screen less the title, the instruction and the action bar, so the bar cannot be pushed out. */
+  max-height: calc(100dvh - 2rem - 13rem);
   overflow: auto;
   margin: 0 0 12px;
   padding: 0 2px 12px;
@@ -7613,7 +7618,7 @@ html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-mem
 /* PART H PHASE 15.1.23 — Release 15a, follow-up 8b.1-UI-03: Remove in its own clear corner of a spell row, apart from
    Memorised (owner, 11 November 2026).
    Matches only spell rows in the Techniques list. Remove stays in the card's top-right corner, where every other
-   card has it, with a 44 x 44 px target on the row's first line that never reaches the line below. From 769 px the row's line stops 42 px short
+   card has it, with a 44 x 44 px target on the row's first line that never reaches the line below. Above 768 px the row's line stops 42 px short
    of the card's edge. Up to 768 px the line may wrap, and the name takes the first line and stops 42 px short; the
    name is written to shrink, so it fits beside Remove whether or not another layer has already given it the line.
    In Play (the pm12-play body class of Phase 12 (Part K)) Remove is not drawn, by that phase's own rule, and the
@@ -7634,7 +7639,8 @@ html body.sx15-on #techList .entry[data-spell-element] > .rm-btn {
   padding: 0;
 }
 }
-@media screen and (min-width: 769px) {
+/* Starts just above 768 px, so no fractional width falls between this range and the one below. */
+@media screen and (min-width: 768.02px) {
 /* On one line the description follows directly, so the target sits 1 px higher and ends above it. */
 html body.sx15-on #techList .entry[data-spell-element] > .rm-btn {
   top: 4px;
@@ -56553,6 +56559,8 @@ return fontkitCache=module.exports;}
       group.dataset.sr15Want = hit[2];
       const count = document.createElement('span');
       count.className = 'sr15-count';
+      // A space between the two, so the heading's text reads "Water 2 of 3 chosen", not "Water2 of 3 chosen".
+      legend.appendChild(document.createTextNode(' '));
       legend.appendChild(count);
     };
     api.tally = function(){

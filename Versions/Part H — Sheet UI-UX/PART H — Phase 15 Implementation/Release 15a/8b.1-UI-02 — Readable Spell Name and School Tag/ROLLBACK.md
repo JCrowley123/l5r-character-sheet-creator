@@ -24,7 +24,7 @@ It adds no save field and changes no character data. The tag is a drawn element 
 2. From this folder, run `python -B qa/remove-phase.py <scratch copy>`. It refuses the live tree, a foreign marker inside its block, and a missing block.
 3. Run the scratch copy's `build/recombine.py --verify`.
 
-With nothing later present, the rebuild is exactly 8b.1-UI-01: 17,619,334 bytes, SHA-256 `b3395d846f5d6398b4bcf15214575bdf1a38e1f69f06e5c6b6e74a24b2acea16`. Removing 8b.1-UI-01 next gives live G2 exactly (`77936023…82f0`). `qa/test-removal.py` proves both, and that 8b.1-UI-01 can be removed with this unit kept.
+With nothing later present, the rebuild is exactly 8b.1-UI-01: 17,619,920 bytes, SHA-256 `390f3cd1df02639b086e8dfc3ba3c883bbb62cdfb27ddf906b72c7b923fef19c`. Removing 8b.1-UI-01 next gives live G2 exactly (`77936023…82f0`). `qa/test-removal.py` proves both, and that 8b.1-UI-01 can be removed with this unit kept.
 
 **Switching it off instead:** set `SPELL_NAME_LINE_ENABLED = false`. The rows are exactly as before.
 

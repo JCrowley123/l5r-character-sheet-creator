@@ -20,8 +20,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('spell-remove-corner-se
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:SPELL_REMOVE_CORNER_ENABLED|SX15|sx15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.1\.23(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = '7f56eb1f9d3674e7d0334720b4e473384231231999b3026a1973eae7507cd40f'
-PRE_RELEASE_BYTES = 17625751
+PRE_RELEASE_SHA = '4f121ab46b9654219b589dfdde71cf8989f00ff1a92ea5f152151e53539569ca'
+PRE_RELEASE_BYTES = 17626337
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

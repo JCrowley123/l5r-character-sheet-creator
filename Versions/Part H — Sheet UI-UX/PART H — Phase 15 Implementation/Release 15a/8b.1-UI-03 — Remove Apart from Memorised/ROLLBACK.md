@@ -24,7 +24,7 @@ It adds no save field, no element and no listener, and changes no character data
 2. From this folder, run `python -B qa/remove-phase.py <scratch copy>`. It refuses the live tree, a foreign marker inside its block, and a missing block.
 3. Run the scratch copy's `build/recombine.py --verify`.
 
-With nothing later present, the rebuild is exactly 8b.1-UI-02: 17,625,751 bytes, SHA-256 `7f56eb1f9d3674e7d0334720b4e473384231231999b3026a1973eae7507cd40f`. Removing 8b.1-UI-02 next gives 8b.1-UI-01 exactly (`b3395d84…ea16`), and 8b.1-UI-01 after that gives live G2 exactly (`77936023…82f0`). `qa/test-removal.py` proves the first two steps, and that 8b.1-UI-02 can be removed with this unit kept.
+With nothing later present, the rebuild is exactly 8b.1-UI-02: 17,626,337 bytes, SHA-256 `4f121ab46b9654219b589dfdde71cf8989f00ff1a92ea5f152151e53539569ca`. Removing 8b.1-UI-02 next gives 8b.1-UI-01 exactly (`390f3cd1…f19c`), and 8b.1-UI-01 after that gives live G2 exactly (`77936023…82f0`). `qa/test-removal.py` proves the first two steps, and that 8b.1-UI-02 can be removed with this unit kept.
 
 **Switching it off instead:** set `SPELL_REMOVE_CORNER_ENABLED = false`. The rows are exactly as before.
 

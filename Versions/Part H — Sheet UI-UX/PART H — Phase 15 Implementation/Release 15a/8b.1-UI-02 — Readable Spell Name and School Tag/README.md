@@ -31,8 +31,8 @@ The label stays in the row with its text, so anything that reads it still finds 
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With UI-02 (this branch) | `7f56eb1f9d3674e7d0334720b4e473384231231999b3026a1973eae7507cd40f` | 17,625,751 |
-| UI-02 removed (8b.1-UI-01) | `b3395d846f5d6398b4bcf15214575bdf1a38e1f69f06e5c6b6e74a24b2acea16` | 17,619,334 |
+| With UI-02 (this branch), restacked on 8b.1-UI-01 revision 1 | `4f121ab46b9654219b589dfdde71cf8989f00ff1a92ea5f152151e53539569ca` | 17,626,337 |
+| UI-02 removed (8b.1-UI-01) | `390f3cd1df02639b086e8dfc3ba3c883bbb62cdfb27ddf906b72c7b923fef19c` | 17,619,920 |
 
 ## Light checks (11 November)
 
@@ -52,6 +52,10 @@ The label stays in the row with its text, so anything that reads it still finds 
 | A11 | 22/22 |
 
 While wiring, one rebuild could not rewrite the output file (a Windows file lock; `OSError 22`). The file already held the same bytes; the rebuild was repeated and verified before anything was recorded. No check was affected.
+
+**Restacked on 8b.1-UI-01 revision 1 (11 November).** The group's code review changed 8b.1-UI-01, so this branch was merged forward and rebuilt. This unit's own fragments are unchanged. Its first build was `7f56eb1f…d40f` (17,625,751 bytes); its preview passed 199/199. Every row of the table above was run again on the restacked build.
+
+**Recorded from the review, not changed:** on a narrow laptop window (about 769 to 850 px) a character with two Schools may see the long School-names tag drop to a second line. Nothing overlaps.
 
 **Not yet covered here:** iPhone Safari and Laptop Edge (the owner's device round), a file export and re-import, and the group's full qualification.
 

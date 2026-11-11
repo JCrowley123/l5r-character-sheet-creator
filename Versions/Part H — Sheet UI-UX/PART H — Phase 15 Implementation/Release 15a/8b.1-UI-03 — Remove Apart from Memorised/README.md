@@ -28,8 +28,8 @@ With 8b.1-UI-02 present, a laptop card keeps its height and a phone card is no t
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With UI-03 (this branch; the whole group) | `f79b079d70f741d2bdf4de7bb29b527f314aa6d150582e8d04ac624472cb7d8c` | 17,629,787 |
-| UI-03 removed (8b.1-UI-02) | `7f56eb1f9d3674e7d0334720b4e473384231231999b3026a1973eae7507cd40f` | 17,625,751 |
+| With UI-03 (this branch; the whole group), revision 1 | `15268822a339d55ecbf421bca7a0f76063254a34702be5820759bf6038e30ff8` | 17,630,476 |
+| UI-03 removed (8b.1-UI-02) | `4f121ab46b9654219b589dfdde71cf8989f00ff1a92ea5f152151e53539569ca` | 17,626,337 |
 | All of G3 removed (live G2) | `7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0` | 17,609,230 |
 
 ## Light checks (11 November)
@@ -58,6 +58,10 @@ With 8b.1-UI-02 present, a laptop card keeps its height and a phone card is no t
 | Phase 8 (Part J): casting help | 36/36 |
 | A11 | 22/22 |
 
-**Not yet done for the group:** the read-only code review, the owner's device checklist and round (iPhone Safari, Laptop Edge), and full qualification.
+4. **The group's code review** (read-only, 11 November) found nothing serious. One point was taken in this unit: its two width ranges met at 768 and 769 px and left a gap between them, where the larger target applied but nothing kept its corner clear (a width such as 768.5 px under zoom). The wide range now starts just above 768 px. The build before that was `f79b079d…7d8c` (17,629,787 bytes); its preview passed 223/223. Every row of the table below was run again on the revised build.
+
+**Declared:** this unit's harness names `.sn15-tag` and `.sc8-source` among the things that must not sit under the cross. It reads them only if they are drawn; with 8b.1-UI-02 removed the first is simply absent.
+
+**Not yet done for the group:** the owner's device checklist and round (iPhone Safari, Laptop Edge), and full qualification.
 
 See [ROLLBACK.md](ROLLBACK.md).
