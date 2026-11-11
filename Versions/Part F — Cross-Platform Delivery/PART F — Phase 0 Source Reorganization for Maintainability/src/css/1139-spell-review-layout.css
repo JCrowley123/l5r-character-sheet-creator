@@ -1,0 +1,139 @@
+/* PART H PHASE 15.1.21 — Release 15a, follow-up 8b.1-UI-01: the starting-spell review as option cards with live counts
+   and one action bar (owner, 11 November 2026).
+   Matches only a dialog this unit has marked (sr15-review), and only while it is open, so a closed dialog stays
+   hidden and the ordinary chooser, which sheds the class, keeps its own layout.
+   The dialog is a grid of seven rows: the title, the (hidden) introduction, the message, up to two instruction lines,
+   the groups, and the actions. The body's own box is not drawn (display: contents), so its instruction lines, the
+   groups and Confirm take grid places of their own beside the dialog's Later, without any of them leaving its parent.
+   Only the groups scroll; the last row keeps Later and Confirm in view. Each held spell is the pickers' option card
+   (a 1 px line border, 6 px radius, .9 rem text) at least 44 px tall. The ID in each selector outranks the dialog's
+   own rules. Waits for body.sr15-on, which this unit's switch sets. Screen only. */
+@media screen {
+html body.sr15-on #sc8Dialog.sr15-review[open] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-rows: auto auto auto auto auto minmax(0, 1fr) auto;
+  overflow: hidden;
+}
+html body.sr15-on #sc8Dialog.sr15-review > h2,
+html body.sr15-on #sc8Dialog.sr15-review > p,
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > p {
+  grid-column: 1 / -1;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Message:empty {
+  display: none;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body {
+  display: contents;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > p {
+  margin: .2rem 0 .6rem;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
+  grid-column: 1 / -1;
+  grid-row: 6;
+  display: grid;
+  gap: 12px;
+  min-height: 0;
+  overflow: auto;
+  margin: 0 0 12px;
+  padding: 0 2px 12px;
+  border-bottom: 1px solid var(--line);
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups > fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups > fieldset > legend {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 4px;
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-count {
+  float: right;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(90, 77, 49, .12);
+  color: var(--ink-soft);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-count[data-state="done"] {
+  background: var(--ink-soft);
+  color: var(--paper);
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-count[data-state="over"] {
+  background: #a3332a;
+  color: #fff;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups > fieldset > div + div {
+  margin-top: 4px;
+}
+html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  min-height: 44px;
+  margin: 0;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .9rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell:has(input:checked) {
+  border-color: var(--ink-soft);
+  background: var(--paper);
+  font-weight: 600;
+}
+html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell > input.oc8-spell {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Done,
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > .oc8-confirm {
+  grid-row: 7;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 12px;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Done {
+  grid-column: 2;
+  margin-right: 8px;
+  border: 1px solid var(--ink-soft);
+  background: transparent;
+  color: var(--ink);
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > .oc8-confirm {
+  grid-column: 3;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+}
+@media screen and (min-width: 800px) {
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+}
+}

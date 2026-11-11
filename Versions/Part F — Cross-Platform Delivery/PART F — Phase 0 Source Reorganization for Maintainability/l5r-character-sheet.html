@@ -7405,6 +7405,146 @@ html body.ir15-on #advConfigGrid .ir15-item .adv-config-info {
   display: none !important;
 }
 
+/* PART H PHASE 15.1.21 — Release 15a, follow-up 8b.1-UI-01: the starting-spell review as option cards with live counts
+   and one action bar (owner, 11 November 2026).
+   Matches only a dialog this unit has marked (sr15-review), and only while it is open, so a closed dialog stays
+   hidden and the ordinary chooser, which sheds the class, keeps its own layout.
+   The dialog is a grid of seven rows: the title, the (hidden) introduction, the message, up to two instruction lines,
+   the groups, and the actions. The body's own box is not drawn (display: contents), so its instruction lines, the
+   groups and Confirm take grid places of their own beside the dialog's Later, without any of them leaving its parent.
+   Only the groups scroll; the last row keeps Later and Confirm in view. Each held spell is the pickers' option card
+   (a 1 px line border, 6 px radius, .9 rem text) at least 44 px tall. The ID in each selector outranks the dialog's
+   own rules. Waits for body.sr15-on, which this unit's switch sets. Screen only. */
+@media screen {
+html body.sr15-on #sc8Dialog.sr15-review[open] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-rows: auto auto auto auto auto minmax(0, 1fr) auto;
+  overflow: hidden;
+}
+html body.sr15-on #sc8Dialog.sr15-review > h2,
+html body.sr15-on #sc8Dialog.sr15-review > p,
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > p {
+  grid-column: 1 / -1;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Message:empty {
+  display: none;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body {
+  display: contents;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > p {
+  margin: .2rem 0 .6rem;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
+  grid-column: 1 / -1;
+  grid-row: 6;
+  display: grid;
+  gap: 12px;
+  min-height: 0;
+  overflow: auto;
+  margin: 0 0 12px;
+  padding: 0 2px 12px;
+  border-bottom: 1px solid var(--line);
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups > fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups > fieldset > legend {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 4px;
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-count {
+  float: right;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(90, 77, 49, .12);
+  color: var(--ink-soft);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-count[data-state="done"] {
+  background: var(--ink-soft);
+  color: var(--paper);
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-count[data-state="over"] {
+  background: #a3332a;
+  color: #fff;
+}
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups > fieldset > div + div {
+  margin-top: 4px;
+}
+html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  min-height: 44px;
+  margin: 0;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .9rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell:has(input:checked) {
+  border-color: var(--ink-soft);
+  background: var(--paper);
+  font-weight: 600;
+}
+html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell > input.oc8-spell {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Done,
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > .oc8-confirm {
+  grid-row: 7;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 12px;
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Done {
+  grid-column: 2;
+  margin-right: 8px;
+  border: 1px solid var(--ink-soft);
+  background: transparent;
+  color: var(--ink);
+}
+html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > .oc8-confirm {
+  grid-column: 3;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+}
+@media screen and (min-width: 800px) {
+html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+}
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -56250,6 +56390,100 @@ return fontkitCache=module.exports;}
   IR15.install();
   // ============ END PART H PHASE 15.1.4.1 ============
 
+  // ============ PART H PHASE 15.1.21 — STARTING-SPELL REVIEW: OPTION CARDS, LIVE COUNTS AND ONE ACTION BAR ============
+  // Phase 15, Release 15a, follow-up 8b.1-UI-01 (group G3), approved as mocked up by the owner on 11 November 2026.
+  // The number 21 is this unit's marker only; the finding keeps its identifier, 8b.1-UI-01.
+  // The older-holdings review of starting spells drew its groups as boxed fieldsets with tall rows, put Confirm
+  // against the last box and 2 px left of it, and left Later below on its own. This unit lays the same review out as
+  // the app's other pickers: each held spell is an option card, the groups scroll, and Later and Confirm share one bar
+  // under a divider. Each group's heading counts the ticks as they are made ("2 of 3 chosen"), where the older-holdings
+  // layer wrote "3 left" once and never changed it.
+  // It rebinds the School-choice dialog's render by property and, after each render, looks at what was drawn. A review
+  // of spells (the older-holdings layer's Confirm and its tick boxes, both directly under the dialog's body) is
+  // dressed; anything else, the ordinary chooser included, has the dressing class taken off. Nothing is moved out of
+  // its parent: Confirm stays in the body, which the older-holdings layer's own guard requires, and Later stays the
+  // dialog's own last child. The groups are wrapped in one scrolling box inside the body, which the next render
+  // replaces along with everything else there. The stylesheet (1139-spell-review-layout.css) does the rest.
+  // The count is display of the draft only: it reads the tick boxes and writes no value, save, roll, undo or focus.
+  // Everything waits for body.sr15-on, which the switch sets: with the switch off the review is exactly as before.
+  const SPELL_REVIEW_LAYOUT_ENABLED = true;
+
+  const SR15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return SPELL_REVIEW_LAYOUT_ENABLED; };
+    // The heading the older-holdings layer writes for a group with a number still owed: "Water · 3 left".
+    api.LEFT = /^(.*?) · (\d+) left$/;
+    api.GIVEN = 'Given by your School';
+    api.body = function(dialog){ return dialog ? dialog.querySelector(':scope > #sc8Body') : null; };
+    api.isReview = function(dialog){
+      const body = api.body(dialog);
+      return !!body && !!body.querySelector(':scope > .oc8-confirm') && !!body.querySelector('fieldset input.oc8-spell');
+    };
+    api.label = function(chosen, want){
+      if(chosen > want) return chosen + ' of ' + want + ' · deselect ' + (chosen - want);
+      return chosen + ' of ' + want + ' chosen' + (chosen === want ? ' ✓' : '');
+    };
+    // A group's heading: its name, then the running count where the layer gave a number.
+    api.head = function(group){
+      const legend = group.querySelector(':scope > legend');
+      if(!legend || legend.querySelector('.sr15-name')) return;
+      const hit = api.LEFT.exec(legend.textContent);
+      const name = document.createElement('span');
+      name.className = 'sr15-name';
+      name.textContent = hit ? (hit[1] === 'Given' ? api.GIVEN : hit[1]) : legend.textContent;
+      legend.textContent = '';
+      legend.appendChild(name);
+      if(!hit) return;
+      group.dataset.sr15Want = hit[2];
+      const count = document.createElement('span');
+      count.className = 'sr15-count';
+      legend.appendChild(count);
+    };
+    api.tally = function(){
+      document.querySelectorAll('#sc8Dialog .sr15-groups > fieldset[data-sr15-want]').forEach(function(group){
+        const count = group.querySelector(':scope > legend > .sr15-count');
+        if(!count) return;
+        const want = Number(group.dataset.sr15Want), chosen = group.querySelectorAll('input.oc8-spell:checked').length;
+        const text = api.label(chosen, want), state = chosen > want ? 'over' : chosen === want ? 'done' : 'open';
+        if(count.textContent !== text) count.textContent = text;
+        if(count.dataset.state !== state) count.dataset.state = state;
+      });
+    };
+    api.dress = function(){
+      const dialog = document.getElementById('sc8Dialog');
+      if(!dialog) return false;
+      if(!document.body.classList.contains('sr15-on') || !api.isReview(dialog)){
+        dialog.classList.remove('sr15-review');
+        return false;
+      }
+      const body = api.body(dialog);
+      if(!body.querySelector(':scope > .sr15-groups')){
+        const sets = Array.from(body.querySelectorAll(':scope > fieldset'));
+        const groups = document.createElement('div');
+        groups.className = 'sr15-groups';
+        sets[0].before(groups);
+        sets.forEach(function(set){ groups.appendChild(set); api.head(set); });
+        // The listener goes with the box when the next render replaces the body's contents.
+        groups.addEventListener('change', api.tally);
+      }
+      dialog.classList.add('sr15-review');
+      api.tally();
+      return true;
+    };
+    api.install = function(){
+      if(api.installed || !SPELL_REVIEW_LAYOUT_ENABLED) return false;
+      if(typeof SC8 !== 'object' || !SC8 || typeof SC8.render !== 'function') return false;
+      api.installed = true;
+      document.body.classList.add('sr15-on');
+      const sr15Render = SC8.render;
+      SC8.render = function(){ const out = sr15Render.apply(this, arguments); api.dress(); return out; };
+      return true;
+    };
+    return api;
+  })();
+  SR15.install();
+  // ============ END PART H PHASE 15.1.21 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -57229,6 +57463,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.4.1 BEGIN inline-rules-seam
   if(typeof IR15 === 'object' && IR15) Object.assign(window.__L5R_TEST__, {IR15, INLINE_RULES_ENABLED});
   // END IR15 inline-rules-seam
+  // PART H PHASE 15.1.21 BEGIN spell-review-layout-seam
+  if(typeof SR15 === 'object' && SR15) Object.assign(window.__L5R_TEST__, {SR15, SPELL_REVIEW_LAYOUT_ENABLED});
+  // END SR15 spell-review-layout-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -322,6 +322,9 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999999999996-feat-text-edges.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers",
             fragment="src/sheet/209.99999999999999997-feat-inline-rules.js"),
+    # Group G3: the three 8b.1 follow-ups (their folders keep the finding identifiers).
+    Release("PART H — Phase 15 Implementation/Release 15a/8b.1-UI-01 — Starting-Spell Review and Its Actions",
+            fragment="src/sheet/209.99999999999999998-feat-spell-review-layout.js"),
 )
 
 

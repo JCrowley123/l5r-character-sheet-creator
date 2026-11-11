@@ -977,6 +977,9 @@
   // PART H PHASE 15.1.4.1 BEGIN inline-rules-seam
   if(typeof IR15 === 'object' && IR15) Object.assign(window.__L5R_TEST__, {IR15, INLINE_RULES_ENABLED});
   // END IR15 inline-rules-seam
+  // PART H PHASE 15.1.21 BEGIN spell-review-layout-seam
+  if(typeof SR15 === 'object' && SR15) Object.assign(window.__L5R_TEST__, {SR15, SPELL_REVIEW_LAYOUT_ENABLED});
+  // END SR15 spell-review-layout-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
