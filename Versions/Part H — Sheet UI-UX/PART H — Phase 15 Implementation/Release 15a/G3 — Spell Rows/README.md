@@ -15,7 +15,9 @@
 - **Code review:** [qa/code-review.md](qa/code-review.md).
 - **Whole-group removal** restores live G2 exactly (`77936023…82f0`, 17,609,230 bytes); each unit can also be removed alone with the other two kept.
 
-**Next:** confirm and build the 8b.1-UI-03 revision (the × outside the XP box on the other Techniques cards), a short re-look at checks 1 and 6 on the iPhone, then one qualification for the accepted units, then the owner's go-live word. Qualification arithmetic if all three are accepted and stay screen-only: candidate 7,148 + 84 = **7,232**; retained **7,075**. Pin the exact ids before running.
+**8b.1-UI-03 revision 2 is built** (11 November, approved by the owner): the × in its own corner on every Technique, Kata, Kiho, Advantage and Disadvantage card, and the number box narrowed to 52 px. Light checks pass; see the unit's README.
+
+**Next:** the owner's device checks of revision 2 (checks 18–21 in the doc) and a short re-look at checks 1 and 6, then one qualification for the accepted units, then the owner's go-live word. Qualification arithmetic if all three are accepted and stay screen-only: candidate 7,148 + 84 = **7,232**; retained **7,075**. Pin the exact ids before running.
 
 **Environment notes from the build:** the tree is LF throughout. On this Windows machine a rebuild occasionally cannot rewrite `l5r-character-sheet.html` (`OSError 22`, a file lock); the file is left as it was, so run it again and gate every commit on `build.py --check-drift`. Harness contexts block web fonts, which makes a name box 3 px shorter than on a device.
 

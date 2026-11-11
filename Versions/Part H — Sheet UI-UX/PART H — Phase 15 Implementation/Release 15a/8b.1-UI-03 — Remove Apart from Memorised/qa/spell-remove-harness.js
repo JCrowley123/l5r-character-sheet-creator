@@ -6,9 +6,13 @@
 // taps at the edges of the targets, the saved character, and the same rows with the layer's body class taken away.
 // The character is built in the page from a fresh one: a School Technique, two School spells, a reward, and a reward
 // with the longest name in the catalogue. Thresholds hold with or without the unit before this one (8b.1-UI-02).
+// Revision 2 (11 November 2026) adds a Kata and the dense test character's six Advantages and eleven Disadvantages
+// (this folder's own copy, cards-fixture.json), and the SX-CARDS-* checks. SX-OTHER-CARDS-UNTOUCHED was retired:
+// its premise (no other card is touched) is the one the owner's revision reverses.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
+const CARDS = require('./cards-fixture.json');
 const sheet = path.resolve(process.argv[2]);
 const seen = {};
 const set = (id, ok, detail) => {
@@ -28,18 +32,39 @@ function install() {
   const T = window.__L5R_TEST__, fresh = T.collectData(), copy = v => JSON.parse(JSON.stringify(v));
   const H = {};
   const grant = name => ({version: 1, stage: 'starting', kind: 'spell', school: 'Kitsu Shugenja', name, created: false});
-  H.data = () => {
+  H.data = cards => {
     const d = copy(fresh);
     d.fields.f_clan = 'Lion'; d.fields.f_school = 'Kitsu Shugenja';
     d.fields.f_schoolsData = JSON.stringify([{name: 'Kitsu Shugenja', frozen: false, frozenRank: null, floorRank: 1, anchorInsightRank: 0}]);
     d.skills = [];
     const spell = (name, g) => { const s = T.SPELL_LIBRARY.find(s => s.name === name); return Object.assign({name, cost: 0, desc: 'Layout sample text for ' + name + '.', spellElement: s.element.toLowerCase(), spellMastery: String(s.mastery), isMemorised: false}, g ? {schoolChoice: g} : {}); };
     d.tech = [{name: 'Eyes of the Ancestors', cost: 0, desc: 'School Technique'}, spell('Sense', grant('Sense')), spell('Clarity of Purpose', grant('Clarity of Purpose')), spell("Jurojin's Balm"), spell('Wrath of Kaze-no-Kami (Hurricane)')];
+    if (cards) { d.tech.push({name: 'Strength of the Crow', cost: '2', desc: 'Kata (layout sample)'}); d.adv = copy(cards.adv); d.disadv = copy(cards.disadv); }
     d.equip = [{name: 'Spell Scroll — Sense', qty: '1', notes: '', schoolChoice: grant('Sense')}, {name: 'Spell Scroll — Clarity of Purpose', qty: '1', notes: '', schoolChoice: grant('Clarity of Purpose')},
       {name: "Spell Scroll — Jurojin's Balm", qty: '1', notes: ''}, {name: 'Spell Scroll — Wrath of Kaze-no-Kami (Hurricane)', qty: '1', notes: ''}];
     return d;
   };
-  H.load = mode => { T.applyData(H.data()); T.MODES12.set(mode || 'management'); };
+  H.load = (mode, cards) => { T.applyData(H.data(cards)); T.MODES12.set(mode || 'management'); };
+  // Every card that is not a spell, in the three lists revision 2 covers.
+  H.cards = () => ['techList', 'advList', 'disadvList'].flatMap(id => [...document.querySelectorAll('#' + id + ' > .entry:not([data-spell-element])')].map(row => {
+    const R = e => { const r = e.getBoundingClientRect(); return {x: r.left, y: r.top, w: r.width, h: r.height, right: r.right, bottom: r.bottom}; };
+    const drawn = e => !!e && e.getClientRects().length > 0 && getComputedStyle(e).visibility !== 'hidden';
+    const rm = row.querySelector(':scope > .rm-btn'), b = drawn(rm) ? R(rm) : null, card = R(row), hits = {};
+    if (b) for (const e of row.querySelectorAll('input, textarea, select, button, label, small, span[class]')) {
+      if (e === rm || rm.contains(e) || !drawn(e)) continue; const a = R(e);
+      const w = Math.min(a.right, b.right) - Math.max(a.x, b.x), h = Math.min(a.bottom, b.bottom) - Math.max(a.y, b.y);
+      if (w > 0.5 && h > 0.5) hits[e.tagName + '.' + String(e.className).split(' ')[0]] = [Math.round(w), Math.round(h)];
+    }
+    const name = row.querySelector('.en-name'), cost = row.querySelector('.en-cost'), top = row.querySelector('.entry-top');
+    return {list: id, value: name ? name.value : '', h: card.h, rm: b, inside: !b || (b.x >= card.x && b.right <= card.right && b.y >= card.y && b.bottom <= card.bottom), overlaps: hits,
+      name: name ? R(name).w : 0, nameFits: !name || name.scrollWidth <= name.clientWidth, pad: getComputedStyle(top).paddingRight,
+      cost: cost && drawn(cost) ? {w: R(cost).w, align: getComputedStyle(cost).textAlign, value: cost.value} : null};
+  }));
+  H.cardsOff = () => { const b = document.body; b.classList.remove('sx15-on'); const r = H.cards(); b.classList.add('sx15-on'); return r; };
+  // Whether a number fits the box with the box focused (a desktop browser then shows its up and down arrows).
+  H.digitsFit = () => { const box = document.querySelector('#advList > .entry .en-cost'), old = box.value, out = {};
+    for (const v of ['8', '88', '888', '-12']) { box.value = v; box.focus(); out[v] = box.scrollWidth <= box.clientWidth; }
+    box.value = old; box.blur(); return out; };
   H.rows = () => [...document.querySelectorAll('#techList .entry')].map(row => {
     const R = e => { const r = e.getBoundingClientRect(); return {x: r.left, y: r.top, w: r.width, h: r.height, right: r.right, bottom: r.bottom}; };
     const drawn = e => !!e && e.getClientRects().length > 0 && getComputedStyle(e).visibility !== 'hidden';
@@ -80,7 +105,7 @@ const near = (a, b, t = 0.75) => Math.abs(a - b) <= t;
     for (const [D, opts] of Object.entries(DEVICES)) {
       const PHONE = D === 'PHONE';
       const {context, page, errors} = await open(browser, opts);
-      const load = async mode => { await page.evaluate(m => window.SXH.load(m), mode); await goTab(page, 'Techniques'); };
+      const load = async (mode, cards) => { await page.evaluate(([m, c]) => window.SXH.load(m, c), [mode, cards || null]); await goTab(page, 'Techniques'); };
       const rows = () => page.evaluate(() => window.SXH.rows());
       const names = async () => (await rows()).map(r => r.value);
 
@@ -100,8 +125,6 @@ const near = (a, b, t = 0.75) => Math.abs(a - b) <= t;
       await check('SX-NAME-READABLE-' + D, async () => [spells.every(r => r.fits && r.room >= (PHONE ? 250 : 650) && r.overflow <= 0) && spells[3].value === LONG, spells.map(r => [r.value, r.room, r.fits])]);
       await check('SX-HEIGHT-' + D, async () => [spells.every((r, i) => PHONE ? r.height - offSpells[i].height <= 50 && r.height >= offSpells[i].height - 0.75 : near(r.height, offSpells[i].height)),
         spells.map((r, i) => [r.height, offSpells[i].height])]);
-      await check('SX-OTHER-CARDS-UNTOUCHED-' + D, async () => [JSON.stringify([tech.rm, tech.wrap, tech.padRight, tech.height, tech.room]) === JSON.stringify([offTech.rm, offTech.wrap, offTech.padRight, offTech.height, offTech.room]) &&
-        tech.rm.w < 44.5 && tech.wrap === 'nowrap', {on: [tech.rm, tech.wrap, tech.padRight], off: [offTech.rm, offTech.wrap, offTech.padRight]}]);
       // With the body class off, the cross is its old size and covers something on every spell row again.
       await check('SX-CLASS-OFF-' + D, async () => [offSpells.every(r => r.rm && r.rm.w < 44 && Object.keys(r.overlaps).length >= 1) && (await rows()).filter(r => r.spell).every(r => Object.keys(r.overlaps).length === 0),
         offSpells.map(r => [r.rm && r.rm.w, r.overlaps])]);
@@ -136,6 +159,36 @@ const near = (a, b, t = 0.75) => Math.abs(a - b) <= t;
         await page.evaluate(() => window.__L5R_TEST__.MODES12.set('management'));
         return [s.length === 4 && s.every((r, i) => !r.rm && r.fits && (PHONE ? r.room >= 298 : near(r.room, o[i].room, 1)) && near(r.height, o[i].height) || (PHONE && !r.rm && r.fits && r.room >= 298 && r.height - o[i].height <= 50)),
           s.map((r, i) => [!!r.rm, r.room, o[i].room, r.height, o[i].height])];
+      });
+
+      // ---- Revision 2: every other card in the three lists.
+      await load('management', CARDS);
+      const cards = await page.evaluate(() => window.SXH.cards()), cardsOff = await page.evaluate(() => window.SXH.cardsOff());
+      const kinds = l => cards.filter(c => c.list === l).length;
+      await check('SX-CARDS-CORNER-CLEAR-' + D, async () => [kinds('techList') === 2 && kinds('advList') === CARDS.adv.length && kinds('disadvList') === CARDS.disadv.length &&
+        cards.every(c => c.rm && c.rm.w >= 44 && c.rm.h >= 44 && c.inside && Object.keys(c.overlaps).length === 0) &&
+        // with the class off the old cross sits on the number box on every card, so this check can fail
+        cardsOff.every(c => Object.keys(c.overlaps).length >= 1), cards.filter(c => !c.rm || Object.keys(c.overlaps).length).map(c => [c.value, c.rm, c.overlaps]).slice(0, 4)]);
+      await check('SX-CARDS-NUMBER-BOX-' + D, async () => { const fit = await page.evaluate(() => window.SXH.digitsFit());
+        return [cards.every(c => c.cost && near(c.cost.w, 52) && c.cost.align === 'center') && cardsOff.every(c => c.cost && near(c.cost.w, 70)) &&
+          fit['8'] && fit['88'] && fit['888'] && fit['-12'], {fit, widths: [...new Set(cards.map(c => c.cost && Math.round(c.cost.w)))]}]; });
+      await check('SX-CARDS-NAME-ROOM-' + D, async () => [cards.every((c, i) => c.nameFits && c.name >= cardsOff[i].name - 24.75 && c.name < cardsOff[i].name) && (!PHONE || cards.every(c => c.name >= 210)),
+        cards.map((c, i) => [c.value, Math.round(c.name), Math.round(cardsOff[i].name)]).slice(0, 4)]);
+      await check('SX-CARDS-HEIGHT-' + D, async () => [cards.every((c, i) => near(c.h, cardsOff[i].h)), cards.map((c, i) => [c.value, c.h, cardsOff[i].h]).filter(x => !near(x[1], x[2]))]);
+      await check('SX-CARDS-REMOVE-EDGE-' + D, async () => {
+        await goTab(page, 'Adv & Disadv');
+        const before = await page.evaluate(() => { const d = window.__L5R_TEST__.collectData(); return {adv: d.adv.map(a => a.name), disadv: d.disadv.length}; });
+        const rm = page.locator('#advList > .entry').nth(1).locator(':scope > .rm-btn'); await rm.scrollIntoViewIfNeeded(); await settle(page);
+        const rb = await rm.boundingBox(); await rm.click({position: {x: 3, y: rb.height - 3}}); await settle(page);
+        const after = await page.evaluate(() => { const d = window.__L5R_TEST__.collectData(); return {adv: d.adv.map(a => a.name), disadv: d.disadv.length}; });
+        return [JSON.stringify(after.adv) === JSON.stringify(before.adv.filter((n, i) => i !== 1)) && after.disadv === before.disadv, {before, after}];
+      });
+      await check('SX-CARDS-PLAY-' + D, async () => {
+        await load('play', CARDS);
+        const p = await page.evaluate(() => window.SXH.cards()), o = await page.evaluate(() => window.SXH.cardsOff());
+        await page.evaluate(() => window.__L5R_TEST__.MODES12.set('management'));
+        return [p.length === o.length && p.every((c, i) => !c.rm && c.pad === '0px' && c.nameFits && c.name >= o[i].name && near(c.h, o[i].h) && c.cost && c.cost.value === o[i].cost.value),
+          p.map((c, i) => [c.value, !!c.rm, c.pad, Math.round(c.name), Math.round(o[i].name)]).slice(0, 4)];
       });
 
       await check('SX-NO-ERRORS-' + D, async () => [errors.length === 0, errors]);

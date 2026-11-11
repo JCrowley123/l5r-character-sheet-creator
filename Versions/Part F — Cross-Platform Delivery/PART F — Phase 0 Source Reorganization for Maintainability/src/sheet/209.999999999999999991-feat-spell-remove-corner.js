@@ -6,8 +6,10 @@
   // on a laptop, so a tap meant for one could reach the other.
   // Remove keeps that corner. The stylesheet (1141-spell-remove-corner.css) gives it a 44 x 44 px target there and
   // keeps the corner clear: on a laptop the row's line stops short of it; on a phone the name takes the first line
-  // and stops short of it, and the rest of the row moves below. Nothing else on the row is moved or resized, and no
-  // other card is touched. In Play, where Remove is not drawn, the corner is given back.
+  // and stops short of it, and the rest of the row moves below. Nothing else on the row is moved or resized, and (until
+  // revision 2) no other card was touched. In Play, where Remove is not drawn, the corner is given back.
+  // Revision 2 (owner, 11 November 2026): every other card in Techniques, Kata & Spells and in Advantages &
+  // Disadvantages gets the same clear corner, and its XP or Points box narrows so the name keeps its room.
   // This fragment holds only the switch and the body class; all the work is styling.
   // Everything waits for body.sx15-on, which the switch sets: with the switch off the rows are exactly as before.
   const SPELL_REMOVE_CORNER_ENABLED = true;

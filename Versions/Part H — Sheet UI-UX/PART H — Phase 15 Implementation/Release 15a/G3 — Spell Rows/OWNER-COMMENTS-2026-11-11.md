@@ -120,4 +120,4 @@ Read from the owner's own rulebook PDFs on this machine (`C:/Users/jcrow/OneDriv
 
 **Narrower number box, added to the board.** The box goes from 70 to 52 px, centred. On a phone the name box is 238 px today, 196 with the first mock-up, **214 with the narrower box**. At 52 px three digits and a negative number still show on the laptop with the browser's up/down arrows visible; at 44 px they do not, so 44 was rejected. No overlap on any card, no card taller, every name in the test character fits.
 
-Awaiting the owner's approval of the narrower version.
+**Approved:** "No I am happy, build UI-03 revision 2" (11 November 2026). Built the same day; see the unit's README.

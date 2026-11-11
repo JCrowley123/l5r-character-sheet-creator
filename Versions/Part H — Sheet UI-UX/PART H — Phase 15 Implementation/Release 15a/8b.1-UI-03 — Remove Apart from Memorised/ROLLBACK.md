@@ -11,7 +11,7 @@
 | Kind | Item |
 |---|---|
 | Fragment | `src/sheet/209.999999999999999991-feat-spell-remove-corner.js`. Holds `SX15` and the switch. Sets the `sx15-on` body class. Nothing else. |
-| Fragment | `src/css/1141-spell-remove-corner.css`. Every rule waits for `body.sx15-on`. |
+| Fragment | `src/css/1141-spell-remove-corner.css`. Every rule waits for `body.sx15-on`. Revision 2's four rules (the other cards in `#techList`, `#advList` and `#disadvList`, and their number box) are at its end. |
 | Manifest | The two entries naming those files, each right after 8b.1-UI-02's. |
 | Shared block | `src/sheet/210-test-seam-and-init.js`, block `spell-remove-corner-seam` (a guarded `Object.assign`), right after 8b.1-UI-02's. |
 | Registry | Its `CHAIN` entry in `QA — Removal Chain Registry/removal_chain.py`, after 8b.1-UI-02's. |
@@ -31,6 +31,6 @@ With nothing later present, the rebuild is exactly 8b.1-UI-02: 17,626,337 bytes,
 ## Dependencies
 
 - **Phase 12 (Part K), Play and Management modes — soft, by class name.** This unit's stylesheet names that phase's `pm12-play` body class to give the corner back in Play. It calls nothing. Without that phase there is no Play mode and the rules never match. That phase's remover may refuse while a later layer names its class: remove this unit first (the removal chain does so in order).
-- **The trunk.** The spell row's own `.rm-btn`, `.entry-top` and `.en-name` from `makeEntry`.
+- **The trunk.** Every card's own `.rm-btn`, `.entry-top`, `.en-name` and `.en-cost` from `makeEntry`, and the base `.entry .entry-top input[type=number]` width it narrows.
 - **8b.1-UI-02 — none either way, with one declared conditional fixture.** Neither names the other. Up to 768 px both let the row's line wrap and both give the name the first line; the few declarations are duplicated so that either can be removed alone. **Declared conditional fixture:** 8b.1-UI-02's harness check `SN-CLASS-OFF-PHONE` expects the line to wrap with that unit's class off when `window.__L5R_TEST__.SX15` is present, and not to wrap otherwise (same id and count). It passes 28/28 both ways.
 - **Nothing depends on this unit.**

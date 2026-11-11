@@ -7623,6 +7623,10 @@ html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-mem
    name is written to shrink, so it fits beside Remove whether or not another layer has already given it the line.
    In Play (the pm12-play body class of Phase 12 (Part K)) Remove is not drawn, by that phase's own rule, and the
    corner is given back. The ID in each selector outranks the row's own rules.
+   Revision 2 (owner, 11 November 2026): every other card in Techniques, Kata & Spells and in Advantages &
+   Disadvantages gets the same clear corner, and its number box (XP or Points) narrows from 70 to 52 px, centred, so
+   the name keeps most of its room. 52 px still shows three digits, or a negative number, beside a desktop browser's
+   up and down arrows. These rules are at the end of this file.
    Waits for body.sx15-on, which this unit's switch sets. Screen only. */
 @media screen {
 html body.sx15-on #techList .entry[data-spell-element] > .rm-btn {
@@ -7664,6 +7668,34 @@ html body.sx15-on #techList .entry[data-spell-element] > .entry-top > .en-name {
 }
 html body.sx15-on.pm12-play #techList .entry[data-spell-element] > .entry-top > .en-name {
   margin-right: 0;
+}
+}
+/* Revision 2: the other cards. A spell card keeps the rules above. */
+@media screen {
+html body.sx15-on :is(#techList, #advList, #disadvList) > .entry:not([data-spell-element]) > .rm-btn {
+  top: 5px;
+  right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+}
+html body.sx15-on :is(#techList, #advList, #disadvList) > .entry:not([data-spell-element]) > .entry-top {
+  padding-right: 42px;
+}
+html body.sx15-on.pm12-play :is(#techList, #advList, #disadvList) > .entry:not([data-spell-element]) > .entry-top {
+  padding-right: 0;
+}
+html body.sx15-on :is(#techList, #advList, #disadvList) > .entry > .entry-top > input.en-cost {
+  flex: none;
+  width: 52px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
 }
 }
 
@@ -56693,8 +56725,10 @@ return fontkitCache=module.exports;}
   // on a laptop, so a tap meant for one could reach the other.
   // Remove keeps that corner. The stylesheet (1141-spell-remove-corner.css) gives it a 44 x 44 px target there and
   // keeps the corner clear: on a laptop the row's line stops short of it; on a phone the name takes the first line
-  // and stops short of it, and the rest of the row moves below. Nothing else on the row is moved or resized, and no
-  // other card is touched. In Play, where Remove is not drawn, the corner is given back.
+  // and stops short of it, and the rest of the row moves below. Nothing else on the row is moved or resized, and (until
+  // revision 2) no other card was touched. In Play, where Remove is not drawn, the corner is given back.
+  // Revision 2 (owner, 11 November 2026): every other card in Techniques, Kata & Spells and in Advantages &
+  // Disadvantages gets the same clear corner, and its XP or Points box narrows so the name keeps its room.
   // This fragment holds only the switch and the body class; all the work is styling.
   // Everything waits for body.sx15-on, which the switch sets: with the switch off the rows are exactly as before.
   const SPELL_REMOVE_CORNER_ENABLED = true;
