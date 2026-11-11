@@ -20,8 +20,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('spell-name-line-seam',
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:SPELL_NAME_LINE_ENABLED|SN15|sn15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.1\.22(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = 'b3395d846f5d6398b4bcf15214575bdf1a38e1f69f06e5c6b6e74a24b2acea16'
-PRE_RELEASE_BYTES = 17619334
+PRE_RELEASE_SHA = '390f3cd1df02639b086e8dfc3ba3c883bbb62cdfb27ddf906b72c7b923fef19c'
+PRE_RELEASE_BYTES = 17619920
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

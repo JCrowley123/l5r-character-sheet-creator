@@ -34,3 +34,5 @@ With nothing later present, the rebuild is exactly live G2: 17,609,230 bytes, SH
 - **The Older School Choices fix — reads only.** This unit recognises a spell review by that fix's `.oc8-confirm` and `input.oc8-spell`, restyles its `.oc8-held-spell`, and reads the "· N left" its headings carry. It calls nothing there. Without that fix no dialog is ever dressed. If that fix changes the heading wording, the headings fall back to their own text with no count.
 - **Paragon (Phase 4.5.18, Part I) — the harness only.** The harness reads Paragon's option card as the look to match. The unit itself does not use it.
 - **Nothing depends on this unit.** The two later G3 units do not read it and are proved to work with it removed.
+
+**The first build of this unit** was `b3395d84…ea16`; revision 1 (the code review) is `390f3cd1…f19c`. Removal restores live G2 from either.
