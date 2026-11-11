@@ -1,12 +1,12 @@
 {
-  "commit": "0e0929b9a578362c5fbf1bd99dbf65f1addd9798",
+  "commit": "ae600dff6382b023a7271754b52cc0e5dd279f25",
   "ref": "claude/release-15a-ui03",
   "url": "https://claude-release-15a-ui03.l5r-character-sheet-creator.pages.dev/",
-  "checked_utc": "2026-11-11T22:17:43.110584+00:00",
-  "source_sha256": "15268822a339d55ecbf421bca7a0f76063254a34702be5820759bf6038e30ff8",
-  "page_sha256": "1b4251fc616c95c172dfdcfd70ca02bd0acdc59c1d5fc08bbe77ff7f709c1f98",
-  "page_bytes": 17637253,
-  "service_worker_build": "cfeebb86e152b1e2",
+  "checked_utc": "2026-11-11T23:27:49.593982+00:00",
+  "source_sha256": "6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029",
+  "page_sha256": "4a7dc1d02df360ce2cfc26d8c580bd19deaaef9a74d98182f0fd63055f3cf524",
+  "page_bytes": 17638734,
+  "service_worker_build": "2dd41ff32a1df137",
   "g3_units": [
     "8b.1-UI-01",
     "8b.1-UI-02",
@@ -14,7 +14,7 @@
   ],
   "expected": {
     "harnesses": 11,
-    "checks": 223
+    "checks": 233
   },
   "harnesses": {
     "8b.1-UI-01 \u2014 Starting-Spell Review and Its Actions/spell-review-harness.js": {
@@ -35,10 +35,10 @@
     },
     "8b.1-UI-03 \u2014 Remove Apart from Memorised/spell-remove-harness.js": {
       "counts": [
-        "24",
-        "24"
+        "34",
+        "34"
       ],
-      "expected": 24,
+      "expected": 34,
       "passed": true
     },
     "BUGFIX \u2014 Older School Choices/older-review-harness.js": {

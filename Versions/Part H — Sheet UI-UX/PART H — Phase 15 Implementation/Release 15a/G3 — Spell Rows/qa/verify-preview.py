@@ -24,6 +24,9 @@ R15A = QA.parent.parent
 UNITS = [('8b.1-UI-01', 'PART H PHASE 15.1.21', R15A / '8b.1-UI-01 — Starting-Spell Review and Its Actions/qa/spell-review-harness.js', 32),
          ('8b.1-UI-02', 'PART H PHASE 15.1.22', R15A / '8b.1-UI-02 — Readable Spell Name and School Tag/qa/spell-name-harness.js', 28),
          ('8b.1-UI-03', 'PART H PHASE 15.1.23', R15A / '8b.1-UI-03 — Remove Apart from Memorised/qa/spell-remove-harness.js', 24)]
+# Each unit's count is read from its own pinned list, so a revision that changes the pins cannot leave a stale number
+# here (8b.1-UI-03 revision 2 did: the preview passed 34/34 and this script, still expecting 24, reported a failure).
+UNITS = [(u, m, h, len(json.load(open(h.parent / 'expected-checks.json', encoding='utf-8'))['checks'])) for u, m, h, _ in UNITS]
 RETAINED = [(V / 'BUGFIX — Older School Choices/qa/older-review-harness.js', 20),
             (V / 'BUGFIX — Older School Choices/qa/legacy-grants-harness.js', 4),
             (V / 'BUGFIX — Older School Choices/qa/allocation-boundaries-harness.js', 5),

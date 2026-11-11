@@ -9,8 +9,9 @@ This is the light-check scope. It is not G2's 2,500-check preview run, not the g
 | 8b.1-UI-01, revision 1 | `claude/release-15a-ui01` · `6455973d` | [claude-release-15a-ui01](https://claude-release-15a-ui01.l5r-character-sheet-creator.pages.dev/) | `390f3cd1…f19c` | **171/171**, 9 harnesses |
 | 8b.1-UI-02, restacked | `claude/release-15a-ui02` · `f8f544b6` | [claude-release-15a-ui02](https://claude-release-15a-ui02.l5r-character-sheet-creator.pages.dev/) | `4f121ab4…69ca` | **199/199**, 10 harnesses |
 | 8b.1-UI-03, revision 1 (the whole group) | `claude/release-15a-ui03` · `0e0929b9` | [claude-release-15a-ui03](https://claude-release-15a-ui03.l5r-character-sheet-creator.pages.dev/) | `15268822…0ff8` | **223/223**, 11 harnesses |
+| 8b.1-UI-03, **revision 2** (the whole group; current) | `claude/release-15a-ui03` · `ae600dff` | [claude-release-15a-ui03](https://claude-release-15a-ui03.l5r-character-sheet-creator.pages.dev/) | `6c555d29…c029` | **233/233**, 11 harnesses |
 
-These are the builds after the code review (see `qa/code-review.md`). The first builds (`bf01511a`, `c062372b`, `36db038b`) were verified the same way at 17:14 UTC and passed 171/171, 199/199 and 223/223; the owner's device round ran while the revisions were being pushed.
+The first three rows are the builds after the code review; the last is the owner's revision 2, which replaced revision 1 on the same preview. Its first verification run reported FAILED although every harness passed (UI-03 34/34): the script still expected UI-03's old count of 24. The script now reads each unit's count from its pinned list; the second run passed. These are the builds after the code review (see `qa/code-review.md`). The first builds (`bf01511a`, `c062372b`, `36db038b`) were verified the same way at 17:14 UTC and passed 171/171, 199/199 and 223/223; the owner's device round ran while the revisions were being pushed.
 
 Each preview's application base is the one before it; UI-01's is exact live G2 (`77936023…82f0`). The deployed page is the source build plus the install header, which is why its size differs from the source (for the whole group: 17,637,253 bytes, `1b4251fc…1f98`).
 

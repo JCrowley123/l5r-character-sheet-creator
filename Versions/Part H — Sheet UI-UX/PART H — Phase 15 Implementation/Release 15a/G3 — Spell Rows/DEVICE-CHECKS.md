@@ -54,6 +54,14 @@ Claude's findings and recommendations on each are in [OWNER-COMMENTS-2026-11-11.
 16. The × is in the same corner as on the School Technique card.
 17. Play: no ×; the name uses the full width; cards no taller than on the UI-02 preview.
 
+**8b.1-UI-03 revision 2** (built 11 November after the owner's Revise; on the UI-03 preview). Results pending.
+
+18. The × in the top-right corner of the School Technique card, clear of the XP box; the same on every Advantage and Disadvantage card.
+19. The XP and Points boxes narrower with the number centred and the names wider than in the first mock-up; 888 shows in full in a Points box.
+20. A tap near the edge of one Advantage's × removes only that Advantage.
+21. Play: no ×, nothing overlaps, no card taller than in Manage.
+- Check 1 and check 6 again, because the review window gained a safety height limit in the code-review revision.
+
 Not shown by this character, and covered by the harnesses: the red "deselect 1" count, and the School-name tag for a character with several Schools.
 
 The steps that rely on the app outside G3 (import, the review button, Confirm, the Earth chooser, Save, reload, the Equipment labels) were dry-run on the final build at 390 px before the doc was handed over.
