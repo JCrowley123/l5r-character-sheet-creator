@@ -116,4 +116,8 @@ Read from the owner's own rulebook PDFs on this machine (`C:/Users/jcrow/OneDriv
 - Proposed: the same clear corner the spell cards use, a 44 × 44 px target, **no overlap on any card**, and **no card taller**. The name box gives up 42 px (238 → 196 px on a phone). In Play the cards are exactly as today.
 - Not shown on the board: a Kata or Kiho card. It is the same card as the School Technique card; the test character has none.
 
-Awaiting the owner's approval of the mock-up.
+**The owner's reply (11 November):** "yes" to question 1 (the Revise was the × on the XP box) and 2 (Advantages and Disadvantages included). Happy with the mock-up as a whole, but asked whether the number box is too big, and whether it would be better narrower with the name wider.
+
+**Narrower number box, added to the board.** The box goes from 70 to 52 px, centred. On a phone the name box is 238 px today, 196 with the first mock-up, **214 with the narrower box**. At 52 px three digits and a negative number still show on the laptop with the browser's up/down arrows visible; at 44 px they do not, so 44 was rejected. No overlap on any card, no card taller, every name in the test character fits.
+
+Awaiting the owner's approval of the narrower version.
