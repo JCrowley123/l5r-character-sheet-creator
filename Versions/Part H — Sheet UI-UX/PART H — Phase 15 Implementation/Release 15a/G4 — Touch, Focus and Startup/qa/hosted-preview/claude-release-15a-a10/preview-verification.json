@@ -1,0 +1,126 @@
+{
+  "commit": "e9707bd6a144fd622665e3283de4b23f4e51b31d",
+  "ref": "claude/release-15a-a10",
+  "url": "https://claude-release-15a-a10.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-12T15:00:09.192571+00:00",
+  "source_sha256": "c872c1b30fdffd3a2c8c5c4043020d1653a81da8912e9eae70a96c62bdc3f16f",
+  "page_sha256": "506ade21360c7d4934005c25a99bd81c5f59fbc74a942cd7d0a0142d2957f13a",
+  "page_bytes": 17647776,
+  "service_worker_build": "9351112dcdeaddcf",
+  "g4_units": [
+    "A09",
+    "A10"
+  ],
+  "expected": {
+    "harnesses": 13,
+    "checks": 252
+  },
+  "harnesses": {
+    "A09 \u2014 Phone Text Entry and Repeated Taps/phone-text-entry-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "A10 \u2014 Cross-Page Actions Move Focus/cross-page-focus-harness.js": {
+      "counts": [
+        "23",
+        "23"
+      ],
+      "expected": 23,
+      "passed": true
+    },
+    "BUGFIX \u2014 Advanced Schools Pointer/school-pointer-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Compact Advanced Schools Button/school-button-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "BUGFIX \u2014 Characteristic Card Editing/card-editing-harness.js": {
+      "counts": [
+        "46",
+        "46"
+      ],
+      "expected": 46,
+      "passed": true
+    },
+    "BUGFIX \u2014 Screen Focus from the App Bar/screen-focus-harness.js": {
+      "counts": [
+        "11",
+        "11"
+      ],
+      "expected": 11,
+      "passed": true
+    },
+    "BUGFIX \u2014 Search Focus on Close/search-focus-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Carousel Settles on Its Destination/carousel-destination-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/older-review-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.2 Play Mode Identity/identity-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "8b.1-UI-01 \u2014 Starting-Spell Review and Its Actions/spell-review-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "A11 \u2014 Explanatory Text Gaps and One Left Edge/text-edges-harness.js": {
+      "counts": [
+        "22",
+        "22"
+      ],
+      "expected": 22,
+      "passed": true
+    },
+    "PART F \u2014 Phase 0.6.2 Splash Screen/splash-harness.js": {
+      "counts": [
+        "19",
+        "19"
+      ],
+      "expected": 19,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}
