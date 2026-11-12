@@ -2,7 +2,9 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **9 November 2026** (Codex). **Release 15a G2 is live and verified** on the owner's go-live instruction. Main was fast-forwarded to `93b27c61`; application `77936023…82f0`. Production checks passed **2,523/2,523**, browser/offline **22/22**. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+Local records updated **12 November 2026** (Claude). **Release 15a G3 is qualified**; G2 remains live until G3 goes live. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+
+**Earlier:** Local records updated **9 November 2026** (Codex). **Release 15a G2 is live and verified** on the owner's go-live instruction. Main was fast-forwarded to `93b27c61`; application `77936023…82f0`. Production checks passed **2,523/2,523**, browser/offline **22/22**. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
 
 **Historical publication and status, 4 November 2026:** Local records updated **4 November 2026** (Codex; Claude's publication and review the same day). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. Claude republished the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) from this record and published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) on 4 November at about 15:25 UTC; both were opened and checked. The next build choice is still pending.
 
@@ -23,6 +25,12 @@ Local records updated **9 November 2026** (Codex). **Release 15a G2 is live and 
 ---
 
 ## 1. Where things stand
+
+<!-- g3-15a-qualification-part1 -->
+**12 November 2026 · G3 qualified (Claude).** Release 15a G3, the three spell-row follow-ups, is accepted and qualified. 8b.1-UI-01 (the starting-spell review as option cards with live counts and one action bar), 8b.1-UI-02 (a readable spell name and one School tag) and 8b.1-UI-03 revision 2 (the remove button in its own corner on every Technique, Advantage and Disadvantage card, and a 52 px number box) are on `claude/release-15a-ui03`. Application `6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029`, 17,631,957 bytes. The owner approved Claude's mock-ups on 11 November, passed 34/34 device checks (UI-01 and UI-02 Accept, UI-03 Revise), then 12/12 on revision 2 (Accept).
+
+Negative variants: predictions committed before discovery; 13 of 15 matched at once, and the two differences were a harness that switched its own unit back on (fixed in all three harnesses, same ids and counts, declared) and a masked mutation (replaced); a second discovery of the four affected cases matched exactly. The chain passed first time: group removal 21/21 (all of G3 removed restores G2 `77936023…82f0` exactly), all 15 variants on their exact pins, dependencies 3/3. One full pass, first execution: candidate **7,242/7,242** and retained **7,075/7,075** (24.05 and 21.68 minutes). Screen-only tier; no 4× CPU screen. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-qualification-part1 -->
 
 <!-- g2-15a-live-part1 -->
 **9 November 2026 · G2 live (Codex).** Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
@@ -152,6 +160,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- g3-15a-next-part2 -->
+**12 November 2026 · after G3 (Claude).** Agreed with the owner, in this order: (1) G3 go-live; (2) a small group for automatic entries, mock-up first: a one-line fix for Yogo Wardmaster's missing Sense (a book check found 20 of 21 Shugenja Schools right), the School's given spells credited on import without a review click and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques (Kata, Kiho and chosen entries keep both); (3) the gold focus ring after a dialog closes, with G4. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-next-part2 -->
 
 <!-- g2-15a-live-part2 -->
 **9 November 2026 · G2 live (Codex).** G2 go-live and production verification are complete. G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work. A04.2 is gated on completion of the rules read pass. No later group is authorized by this release record.
@@ -337,6 +349,10 @@ Ranked by impact for each point spent, with what each step needs first.
 **Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- g3-15a-qualification-part3 -->
+**12 November 2026 · G3 (Claude).** Review, mock-ups, build, revision, qualification and records by Claude across 11–12 November on a Pro plan; the five-hour limit was reached once. Weekly meter at the start of the full pass: 50% all models, 84% Fable. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-qualification-part3 -->
 
 <!-- g2-15a-qualification-part3 -->
 **9 November 2026 · G2 qualification (Codex).** G2 was built by Claude on 7 November (about 9 Claude weekly points, 84% to 93%, as reported in the kickoff). Qualification and records are by Codex; its account-wide readings are recorded separately in the handover, with no whole-session cost inferred.
@@ -623,6 +639,10 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- g3-15a-parked-part4 -->
+**12 November 2026 · after G3 (Claude).** Agreed with the owner, in this order: (1) G3 go-live; (2) a small group for automatic entries, mock-up first: a one-line fix for Yogo Wardmaster's missing Sense (a book check found 20 of 21 Shugenja Schools right), the School's given spells credited on import without a review click and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques (Kata, Kiho and chosen entries keep both); (3) the gold focus ring after a dialog closes, with G4. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-parked-part4 -->
 
 <!-- g2-15a-qualification-part4 -->
 **9 November 2026 · G2 qualification (Codex).** **A04.2 — one pattern for a configured row.** Parked until the rules read pass is done. One line: a filled choice badge at the far left, Change in Manage only, then the i explaining every choice. Below: a summary of the chosen option, written from the later rules read. Say Applied automatically or Reminder in words. Bishamon's Clan-coloured note becomes plain summary text. Mock-up first; not part of G2.
@@ -1960,6 +1980,12 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- g3-15a-qualification-part6 -->
+**12 November 2026 · G3 qualified (Claude).** Release 15a G3, the three spell-row follow-ups, is accepted and qualified. 8b.1-UI-01 (the starting-spell review as option cards with live counts and one action bar), 8b.1-UI-02 (a readable spell name and one School tag) and 8b.1-UI-03 revision 2 (the remove button in its own corner on every Technique, Advantage and Disadvantage card, and a 52 px number box) are on `claude/release-15a-ui03`. Application `6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029`, 17,631,957 bytes. The owner approved Claude's mock-ups on 11 November, passed 34/34 device checks (UI-01 and UI-02 Accept, UI-03 Revise), then 12/12 on revision 2 (Accept).
+
+Negative variants: predictions committed before discovery; 13 of 15 matched at once, and the two differences were a harness that switched its own unit back on (fixed in all three harnesses, same ids and counts, declared) and a masked mutation (replaced); a second discovery of the four affected cases matched exactly. The chain passed first time: group removal 21/21 (all of G3 removed restores G2 `77936023…82f0` exactly), all 15 variants on their exact pins, dependencies 3/3. One full pass, first execution: candidate **7,242/7,242** and retained **7,075/7,075** (24.05 and 21.68 minutes). Screen-only tier; no 4× CPU screen. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-qualification-part6 -->
 
 <!-- g2-15a-live-part6 -->
 **9 November 2026 · G2 live (Codex), after qualification.** Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.

@@ -1,5 +1,15 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
+<!-- g3-15a-roadmap -->
+## Release 15a G3 — 12 November 2026
+
+**12 November 2026 · G3 qualified (Claude).** Release 15a G3, the three spell-row follow-ups, is accepted and qualified. 8b.1-UI-01 (the starting-spell review as option cards with live counts and one action bar), 8b.1-UI-02 (a readable spell name and one School tag) and 8b.1-UI-03 revision 2 (the remove button in its own corner on every Technique, Advantage and Disadvantage card, and a 52 px number box) are on `claude/release-15a-ui03`. Application `6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029`, 17,631,957 bytes. The owner approved Claude's mock-ups on 11 November, passed 34/34 device checks (UI-01 and UI-02 Accept, UI-03 Revise), then 12/12 on revision 2 (Accept).
+
+Negative variants: predictions committed before discovery; 13 of 15 matched at once, and the two differences were a harness that switched its own unit back on (fixed in all three harnesses, same ids and counts, declared) and a masked mutation (replaced); a second discovery of the four affected cases matched exactly. The chain passed first time: group removal 21/21 (all of G3 removed restores G2 `77936023…82f0` exactly), all 15 variants on their exact pins, dependencies 3/3. One full pass, first execution: candidate **7,242/7,242** and retained **7,075/7,075** (24.05 and 21.68 minutes). Screen-only tier; no 4× CPU screen. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+
+**12 November 2026 · after G3 (Claude).** Agreed with the owner, in this order: (1) G3 go-live; (2) a small group for automatic entries, mock-up first: a one-line fix for Yogo Wardmaster's missing Sense (a book check found 20 of 21 Shugenja Schools right), the School's given spells credited on import without a review click and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques (Kata, Kiho and chosen entries keep both); (3) the gold focus ring after a dialog closes, with G4. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-roadmap -->
+
 <!-- g2-15a-qualification-roadmap -->
 ## Current G2 production — 9 November 2026
 

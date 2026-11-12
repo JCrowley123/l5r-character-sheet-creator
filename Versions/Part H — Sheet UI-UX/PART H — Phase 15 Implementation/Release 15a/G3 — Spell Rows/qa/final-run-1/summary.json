@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-11-12T03:24:38.929170+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7242,
+      "total": 7242,
+      "orchestration": {
+        "expected": 7242,
+        "passed": 7242,
+        "total": 7242,
+        "leafTotal": 7242,
+        "wrapperCount": 115,
+        "leafCount": 194,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 194,
+        "fingerprint": "5a2cd84c278ce1e7fb9a5d1d38efa5a134b22c6046ec496e07c9bdcbfd0c15d6",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 24.05
+    },
+    {
+      "label": "04-retained",
+      "passed": 7075,
+      "total": 7075,
+      "orchestration": {
+        "expected": 7075,
+        "passed": 7075,
+        "total": 7075,
+        "leafTotal": 7075,
+        "wrapperCount": 100,
+        "leafCount": 189,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 189,
+        "fingerprint": "44ba5128309fba70620bc7ee7f2c6a356f99b9ab1345e8bafea1f3609c75d2c4",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 21.68
+    }
+  ],
+  "source_sha256": "6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029",
+  "source_bytes": 17631957,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/8b.1-UI-03 \u2014 Remove Apart from Memorised",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/8b.1-UI-02 \u2014 Readable Spell Name and School Tag",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/8b.1-UI-01 \u2014 Starting-Spell Review and Its Actions"
+  ],
+  "restoration": {
+    "sha256": "7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0",
+    "bytes": 17609230,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-12T04:10:39.933776+00:00"
+}
