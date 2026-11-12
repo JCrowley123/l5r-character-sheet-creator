@@ -336,6 +336,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999999999993-feat-cross-page-focus.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/A10.1 — The Page Ring Only for the Keyboard",
             fragment="src/sheet/209.999999999999999994-feat-keyboard-page-ring.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A17 — The Splash Fills the Screen",
+            fragment="src/css/1145-splash-fill.css"),
 )
 
 

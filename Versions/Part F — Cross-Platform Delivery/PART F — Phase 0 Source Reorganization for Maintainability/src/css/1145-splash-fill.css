@@ -1,0 +1,25 @@
+/* PART H PHASE 15.1.27 — Release 15a, A17 (FT-41): the splash fills the screen without cutting off the title (owner,
+   12 November 2026). The artwork was shown whole (contain) on its paper colour, so any screen that did not match one of
+   the three pictures got paper bands. Now the picture fills the screen (cover), with a focal point for each picture
+   chosen so the title and the scroll with its red seal stay in view: portrait 50% 45%, square 50% 35% (the title sits
+   high), landscape 45% 50%. The media ranges are those of the picture's sources: portrait up to 2 : 3, landscape from
+   3 : 2 (this unit's script in the splash markup moves the landscape picture's start from 4 : 3 to 3 : 2, so a laptop
+   window near 1440 x 1000 shows the square picture and keeps more of it), square between.
+   Only the picture's fit changes: the splash's cover, timing, tap guard and leaving are its own layer's, untouched.
+   Waits for #l5rSplash.sf15-on, which this unit's script in the splash markup sets. Screen only. */
+@media screen {
+html #l5rSplash.sf15-on .l5r-splash-art img {
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+}
+@media screen and (max-aspect-ratio: 2/3) {
+html #l5rSplash.sf15-on .l5r-splash-art img {
+  object-position: 50% 45%;
+}
+}
+@media screen and (min-aspect-ratio: 3/2) {
+html #l5rSplash.sf15-on .l5r-splash-art img {
+  object-position: 45% 50%;
+}
+}

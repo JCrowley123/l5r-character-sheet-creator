@@ -155,14 +155,19 @@ async function main() {
     });
 
     // One picture by screen shape: a phone, a foldable opened out, a laptop. Always whole (contain).
+    // Declared conditional (Release 15a, A17, 12 November 2026): with A17's splash fill present the picture fills the
+    // screen (cover) instead of being shown whole; the same three pictures by shape. Same id and count either way.
     await section('S-ART', async () => {
-      const shown = [];
+      const shown = [], filled = [];
       for (const viewport of [{width: 390, height: 844}, {width: 900, height: 900}, {width: 1280, height: 720}]) {
         const {context, page} = await open(noScript, {viewport});
         shown.push(await picture(page));
+        filled.push(await page.evaluate(() => !!(window.SF15 && window.SF15.installed)));
         await context.close();
       }
-      check('S-ART-BY-SHAPE', shown, ['portrait contain', 'square contain', 'wide contain']);
+      const fit = filled.every(Boolean) ? 'cover' : 'contain';
+      check('S-ART-BY-SHAPE', filled.every(f => f === filled[0]) ? shown : 'A17 present on some pages only',
+        ['portrait ' + fit, 'square ' + fit, 'wide ' + fit]);
     });
 
     // The test switch: leaves as soon as the sheet is ready, fading, and lets taps through (5a's behaviour).

@@ -995,6 +995,9 @@
   // PART H PHASE 15.1.26 BEGIN keyboard-page-ring-seam
   if(typeof KR15 === 'object' && KR15) Object.assign(window.__L5R_TEST__, {KR15, KEYBOARD_PAGE_RING_ENABLED});
   // END KR15 keyboard-page-ring-seam
+  // PART H PHASE 15.1.27 BEGIN splash-fill-seam
+  if(typeof window.SF15 === 'object' && window.SF15) Object.assign(window.__L5R_TEST__, {SF15: window.SF15});
+  // END SF15 splash-fill-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,0 +1,46 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "sw-checks|Release 15a/A01|Release 15a/A02|Carousel Keeps|PART K — Phase 12 Play",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/qa/floating-strip-harness.js",
+   "passed": 23,
+   "total": 23,
+   "status": 0,
+   "seconds": 74,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/qa/review-reminder-harness.js",
+   "passed": 31,
+   "total": 31,
+   "status": 0,
+   "seconds": 31,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12 Play and Management Modes/qa/modes-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 20,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js",
+   "passed": 10,
+   "total": 10,
+   "status": 0,
+   "seconds": 68,
+   "ok": true
+  },
+  {
+   "harness": "QA — Cycle 5 Release 5a 2026-10-21/qa/sw-checks.js",
+   "passed": 60,
+   "total": 61,
+   "status": 1,
+   "seconds": 171,
+   "ok": false
+  }
+ ]
+}

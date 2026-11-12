@@ -31,3 +31,10 @@ None in other layers' code: the logic needs only its own markup, and the ready s
 nothing else listens for. Two test files preload this folder's `qa/splash-fast.cjs` (Release 5a.2's test switch):
 `QA — Cycle 5 Release 5a 2026-10-21/qa/flat-suite-runner.js` (`SPLASH_FAST`) and `qa/verify-live.py` there. Remove
 those references when you delete this folder.
+
+**Declared (12 November 2026, Release 15a A17).** A17 (`PART H PHASE 15.1.27`) puts one marked block, `splash-fill-art`,
+inside this layer's `splash-design` block (after the landscape picture's source, before the `img`); its END line hands
+the lines after it back to this layer (`// PART F PHASE 0.6.2 (continued)`). While A17 is present this layer's remover
+refuses (a foreign marker inside its block): remove A17 first; the removal chain does so in order. A17 also changes this
+layer's harness check `S-ART-BY-SHAPE` into a conditional: the expected fit is `cover` when A17's splash fill is present
+and `contain` otherwise (same id and count). See `Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A17 — The Splash Fills the Screen/ROLLBACK.md`.
