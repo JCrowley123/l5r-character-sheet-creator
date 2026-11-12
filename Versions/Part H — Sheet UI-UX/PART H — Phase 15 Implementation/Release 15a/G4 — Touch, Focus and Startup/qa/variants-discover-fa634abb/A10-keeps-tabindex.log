@@ -1,0 +1,27 @@
+  detail CP-RETURN-PHONE: {"active":"Identity","focus":{"tag":"BUTTON","id":"car-tab-1","text":"Identity","page":null,"editable":false,"tabindex":"0","marked":false,"outline":"none 3px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":true,"panel":{"top":323.375,"bottom":592.984375,"hidden":false},"vh":844,"leftovers":0,"h3tab":"-1"}
+  detail CP-NEXT-TAB-DESKTOP: {"active":"Techniques","focus":{"tag":"SELECT","id":"advancedSchoolPicker","text":"— choose an Advanced School —The Lion's ","page":"car-panel-5","editable":true,"tabindex":null,"marked":false,"outline":"auto 1px"},"techId":"car-panel-5","identityInert":true,"identityHidden":"true","techInert":false,"panel":{"top":313.46875,"bottom":535.375,"hidden":false},"vh":1000,"leftovers":0,"h3tab":"-1"}
+  detail CP-RETURN-DESKTOP: {"active":"Identity","focus":{"tag":"BUTTON","id":"car-tab-1","text":"Identity","page":null,"editable":false,"tabindex":"0","marked":false,"outline":"none 3px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":true,"panel":{"top":313.46875,"bottom":535.375,"hidden":false},"vh":1000,"leftovers":0,"h3tab":"-1"}
+PASS CP-SEAM-PHONE
+PASS CP-ROW-PHONE
+PASS CP-HIDDEN-BUTTON-PHONE
+PASS CP-FOCUS-PHONE
+PASS CP-INERT-PHONE
+PASS CP-NO-KEYBOARD-PHONE
+PASS CP-NO-RING-PHONE
+PASS CP-PANEL-IN-VIEW-PHONE
+FAIL CP-RETURN-PHONE
+PASS CP-NO-ERRORS-PHONE
+PASS CP-SEAM-DESKTOP
+PASS CP-ROW-DESKTOP
+PASS CP-ROW-CLASS-OFF-DESKTOP
+PASS CP-HIDDEN-BUTTON-DESKTOP
+PASS CP-FOCUS-DESKTOP
+PASS CP-INERT-DESKTOP
+FAIL CP-NEXT-TAB-DESKTOP
+PASS CP-NO-RING-DESKTOP
+PASS CP-PANEL-IN-VIEW-DESKTOP
+FAIL CP-RETURN-DESKTOP
+PASS CP-ENTER-KEY-DESKTOP
+PASS CP-FOCUS-CLASS-OFF-DESKTOP
+PASS CP-NO-ERRORS-DESKTOP
+20/23 checks passed

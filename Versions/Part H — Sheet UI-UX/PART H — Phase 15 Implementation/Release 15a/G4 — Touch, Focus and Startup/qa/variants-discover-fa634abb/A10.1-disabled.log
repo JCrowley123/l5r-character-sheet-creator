@@ -1,0 +1,28 @@
+  detail KR-SEAM-PHONE: {"on":false,"api":false,"cls":false}
+  detail KR-NO-RING-AFTER-WINDOW-PHONE: {"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}
+  detail KR-CLASS-OFF-RING-PHONE: {"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}
+  detail KR-NO-RING-AFTER-TAP-PHONE: {"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}
+  detail KR-TYPING-IS-NOT-KEYBOARD-PHONE: {"typed":{"tag":"INPUT","page":false,"id":"f_name","visible":true,"outline":{"style":"auto","width":"1px","color":"rgb(16, 16, 16)","offset":"0px"},"keyboard":false},"f":{"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}}
+  detail KR-SEAM-DESKTOP: {"on":false,"api":false,"cls":false}
+  detail KR-RING-BY-TAB-DESKTOP: {"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}
+  detail KR-RING-AFTER-WINDOW-BY-KEYS-DESKTOP: {"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}
+  detail KR-MOUSE-CLEARS-KEYBOARD-DESKTOP: {"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}
+  detail KR-NO-RING-AFTER-WINDOW-BY-MOUSE-DESKTOP: {"tag":"SECTION","page":true,"id":"car-panel-1","visible":true,"outline":{"style":"solid","width":"2px","color":"rgb(169, 132, 63)","offset":"-3px"},"keyboard":false}
+  detail KR-TAB-FROM-A-BOX-DESKTOP: {"before":{"tag":"INPUT","page":false,"id":"f_name","visible":true,"outline":{"style":"auto","width":"1px","color":"rgb(16, 16, 16)","offset":"0px"},"keyboard":false},"after":{"tag":"INPUT","page":false,"id":"f_clan","visible":true,"outline":{"style":"auto","width":"1px","color":"rgb(16, 16, 16)","offset":"0px"},"keyboard":false}}
+FAIL KR-SEAM-PHONE
+FAIL KR-NO-RING-AFTER-WINDOW-PHONE
+PASS KR-FOCUS-STILL-RETURNED-PHONE
+FAIL KR-CLASS-OFF-RING-PHONE
+FAIL KR-NO-RING-AFTER-TAP-PHONE
+FAIL KR-TYPING-IS-NOT-KEYBOARD-PHONE
+PASS KR-NO-ERRORS-PHONE
+FAIL KR-SEAM-DESKTOP
+FAIL KR-RING-BY-TAB-DESKTOP
+PASS KR-RING-SAME-AS-BEFORE-DESKTOP
+FAIL KR-RING-AFTER-WINDOW-BY-KEYS-DESKTOP
+FAIL KR-NO-RING-AFTER-WINDOW-BY-MOUSE-DESKTOP
+FAIL KR-MOUSE-CLEARS-KEYBOARD-DESKTOP
+FAIL KR-TAB-FROM-A-BOX-DESKTOP
+PASS KR-OTHER-RINGS-KEPT-DESKTOP
+PASS KR-NO-ERRORS-DESKTOP
+5/16 checks passed

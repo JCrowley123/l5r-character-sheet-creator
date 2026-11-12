@@ -1,0 +1,40 @@
+  detail SF-SEAM: {"sf":{"enabled":false,"installed":false,"landscapeFrom":null},"cls":false,"media":["(max-aspect-ratio: 2/3)","(min-aspect-ratio: 4/3)"]}
+  detail SF-FILLS-PHONE-APP: {"art":"portrait","want":"portrait","m":{"nw":853,"nh":1843,"fit":"contain","position":"50% 50%","drawn":{"x":0,"y":0.6811254396248501,"right":390,"bottom":843.3188745603752},"vw":390,"vh":844,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-PHONE-SAFARI: {"art":"portrait","want":"portrait","m":{"nw":853,"nh":1843,"fit":"contain","position":"50% 50%","drawn":{"x":41.33966359196961,"y":0,"right":348.6603364080304,"bottom":664},"vw":390,"vh":664,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-PHONE-LANDSCAPE: {"art":"landscape","want":"landscape","m":{"nw":2000,"nh":1125,"fit":"contain","position":"50% 50%","drawn":{"x":75.33333333333331,"y":0,"right":768.6666666666667,"bottom":390},"vw":844,"vh":390,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-NARROW-LANDSCAPE: {"art":"landscape","want":"landscape","m":{"nw":2000,"nh":1125,"fit":"contain","position":"50% 50%","drawn":{"x":119.77777777777777,"y":0,"right":724.2222222222222,"bottom":340},"vw":844,"vh":340,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-TABLET-PORTRAIT: {"art":"square","want":"square","m":{"nw":2000,"nh":2000,"fit":"contain","position":"50% 50%","drawn":{"x":0,"y":128,"right":768,"bottom":896},"vw":768,"vh":1024,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-TABLET-LANDSCAPE: {"art":"landscape","want":"square","m":{"nw":2000,"nh":1125,"fit":"contain","position":"50% 50%","drawn":{"x":0,"y":96,"right":1024,"bottom":672},"vw":1024,"vh":768,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-LAPTOP: {"art":"landscape","want":"square","m":{"nw":2000,"nh":1125,"fit":"contain","position":"50% 50%","drawn":{"x":0,"y":95,"right":1440,"bottom":905},"vw":1440,"vh":1000,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-LAPTOP-16X9: {"art":"landscape","want":"landscape","m":{"nw":2000,"nh":1125,"fit":"contain","position":"50% 50%","drawn":{"x":0,"y":0,"right":1536,"bottom":864},"vw":1536,"vh":864,"splashCovers":true,"cls":false}}
+  detail SF-FILLS-LAPTOP-BROWSER: {"art":"landscape","want":"landscape","m":{"nw":2000,"nh":1125,"fit":"contain","position":"50% 50%","drawn":{"x":105.22222222222229,"y":5.684341886080802e-14,"right":1260.7777777777778,"bottom":650},"vw":1366,"vh":650,"splashCovers":true,"cls":false}}
+  detail SF-SWITCH-POINT: {"1024x768":"landscape","1300x1000":"square","1440x1000":"landscape","1500x1000":"landscape","1600x1000":"landscape"}
+  detail SF-CLASS-OFF: {"r":{"nw":2000,"nh":1125,"fit":"contain","position":"50% 50%","drawn":{"x":75.33333333333331,"y":0,"right":768.6666666666667,"bottom":390},"vw":844,"vh":390,"splashCovers":true,"cls":false},"back":false}
+  detail SF-ROTATION: {"a":"portrait","b":"landscape"}
+  detail SF-STAYS-THEN-LEAVES: {"early":{"t":4877.199999988079,"there":true},"atReady":{"t":4880.899999991059,"there":true},"after":{"t":9202.09999999404,"scripts":0,"test":false}}
+FAIL SF-SEAM
+FAIL SF-FILLS-PHONE-APP
+PASS SF-TITLE-PHONE-APP
+FAIL SF-FILLS-PHONE-SAFARI
+PASS SF-TITLE-PHONE-SAFARI
+FAIL SF-FILLS-PHONE-LANDSCAPE
+PASS SF-TITLE-PHONE-LANDSCAPE
+FAIL SF-FILLS-NARROW-LANDSCAPE
+PASS SF-TITLE-NARROW-LANDSCAPE
+FAIL SF-FILLS-TABLET-PORTRAIT
+PASS SF-TITLE-TABLET-PORTRAIT
+FAIL SF-FILLS-TABLET-LANDSCAPE
+PASS SF-TITLE-TABLET-LANDSCAPE
+FAIL SF-FILLS-LAPTOP
+PASS SF-TITLE-LAPTOP
+FAIL SF-FILLS-LAPTOP-16X9
+PASS SF-TITLE-LAPTOP-16X9
+FAIL SF-FILLS-LAPTOP-BROWSER
+PASS SF-TITLE-LAPTOP-BROWSER
+FAIL SF-SWITCH-POINT
+FAIL SF-CLASS-OFF
+FAIL SF-ROTATION
+FAIL SF-STAYS-THEN-LEAVES
+PASS SF-LEAVES-ON-ERROR
+PASS SF-NO-ERRORS
+11/25 checks passed

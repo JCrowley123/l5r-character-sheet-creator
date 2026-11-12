@@ -54,3 +54,7 @@ Candidate: G3 7,242 + A09 20 + A10 23 + A10.1 16 + A17 25 = **7,326**; 198 leave
 Retained, all of G4 removed (G3 as live): 8b.1-UI-01 32 + 8b.1-UI-02 28 + 8b.1-UI-03 34 + G3's retained 7,075 = **7,169**; 192 leaves (`retained-list.json`). Excludes the same 73 live-site checks as G1's, G2's and G3's retained runs.
 
 The group removal must restore G3 exactly. It runs every kept G4 harness on each singly removed build, the splash layer's harness with A17 removed (its declared conditional the other way), and 8b.1-UI-03 removed with G4 kept. G4 is behaviour tier (focus and startup): the 4× CPU screen and two full passes follow the chain.
+
+## Discovery
+
+Discovery ran once on 12 November 2026, after the predictions were committed and pushed (`711085a7`). Evidence: `variants-discover.log` and `variants-discover-fa634abb/summary.json`. **All 20 cases matched every predicted failed-check id exactly**, each with a complete pinned count: A09 10/20 (baseline and disabled), 13/20, 18/20, 19/20; A10 14/23 (baseline and disabled), 22/23, 20/23, 22/23; A10.1 5/16 (baseline and disabled), 11/16, 15/16, 13/16; A17 11/25 (baseline and disabled), 15/25, 20/25, 23/25. No correction, no second discovery. The qualification chain asserts all 20 pins.

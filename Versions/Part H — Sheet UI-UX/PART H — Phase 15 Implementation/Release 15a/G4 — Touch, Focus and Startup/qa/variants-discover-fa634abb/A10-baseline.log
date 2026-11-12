@@ -1,0 +1,33 @@
+  detail CP-SEAM-PHONE: {"api":false,"cls":false}
+  detail CP-FOCUS-PHONE: {"active":"Techniques","focus":{"tag":"BUTTON","id":"ap7Go","text":"Go to Advanced Schools","page":"car-panel-1","editable":false,"tabindex":null,"marked":false,"outline":"none 3px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":false,"panel":{"top":320.375,"bottom":589.984375,"hidden":false},"vh":844,"leftovers":0,"h3tab":null}
+  detail CP-INERT-PHONE: {"active":"Techniques","focus":{"tag":"BUTTON","id":"ap7Go","text":"Go to Advanced Schools","page":"car-panel-1","editable":false,"tabindex":null,"marked":false,"outline":"none 3px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":false,"panel":{"top":320.375,"bottom":589.984375,"hidden":false},"vh":844,"leftovers":0,"h3tab":null}
+  detail CP-SEAM-DESKTOP: {"api":false,"cls":false}
+  detail CP-ROW-DESKTOP: {"line":{"x":153,"y":465.25,"w":1134,"h":29.5,"right":1287,"bottom":494.75},"lines":1,"last":{"y":469.5,"h":17,"bottom":486.5,"right":473.171875},"button":{"x":475.671875,"y":469.25,"w":165.78125,"h":25.5,"right":641.453125,"bottom":494.75},"drawn":true,"hidden":false,"display":"inline-block","centreOffset":4,"sameLine":true}
+  detail CP-FOCUS-DESKTOP: {"active":"Techniques","focus":{"tag":"BUTTON","id":"ap7Go","text":"Go to Advanced Schools","page":"car-panel-1","editable":false,"tabindex":null,"marked":false,"outline":"none 3px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":false,"panel":{"top":313.46875,"bottom":535.375,"hidden":false},"vh":1000,"leftovers":0,"h3tab":null}
+  detail CP-INERT-DESKTOP: {"active":"Techniques","focus":{"tag":"BUTTON","id":"ap7Go","text":"Go to Advanced Schools","page":"car-panel-1","editable":false,"tabindex":null,"marked":false,"outline":"none 3px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":false,"panel":{"top":313.46875,"bottom":535.375,"hidden":false},"vh":1000,"leftovers":0,"h3tab":null}
+  detail CP-NEXT-TAB-DESKTOP: {"active":"Identity","focus":{"tag":"INPUT","id":"ce7-honor-rank","text":"","page":"car-panel-1","editable":true,"tabindex":null,"marked":false,"outline":"auto 1px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":true,"panel":{"top":313.46875,"bottom":535.375,"hidden":false},"vh":1000,"leftovers":0,"h3tab":null}
+  detail CP-ENTER-KEY-DESKTOP: {"active":"Techniques","focus":{"tag":"BUTTON","id":"ap7Go","text":"Go to Advanced Schools","page":"car-panel-1","editable":false,"tabindex":null,"marked":false,"outline":"auto 1px"},"techId":"car-panel-5","identityInert":false,"identityHidden":null,"techInert":false,"panel":{"top":313.46875,"bottom":535.375,"hidden":false},"vh":1000,"leftovers":0,"h3tab":null}
+FAIL CP-SEAM-PHONE
+PASS CP-ROW-PHONE
+PASS CP-HIDDEN-BUTTON-PHONE
+FAIL CP-FOCUS-PHONE
+FAIL CP-INERT-PHONE
+PASS CP-NO-KEYBOARD-PHONE
+PASS CP-NO-RING-PHONE
+PASS CP-PANEL-IN-VIEW-PHONE
+PASS CP-RETURN-PHONE
+PASS CP-NO-ERRORS-PHONE
+FAIL CP-SEAM-DESKTOP
+FAIL CP-ROW-DESKTOP
+PASS CP-ROW-CLASS-OFF-DESKTOP
+PASS CP-HIDDEN-BUTTON-DESKTOP
+FAIL CP-FOCUS-DESKTOP
+FAIL CP-INERT-DESKTOP
+FAIL CP-NEXT-TAB-DESKTOP
+PASS CP-NO-RING-DESKTOP
+PASS CP-PANEL-IN-VIEW-DESKTOP
+PASS CP-RETURN-DESKTOP
+FAIL CP-ENTER-KEY-DESKTOP
+PASS CP-FOCUS-CLASS-OFF-DESKTOP
+PASS CP-NO-ERRORS-DESKTOP
+14/23 checks passed

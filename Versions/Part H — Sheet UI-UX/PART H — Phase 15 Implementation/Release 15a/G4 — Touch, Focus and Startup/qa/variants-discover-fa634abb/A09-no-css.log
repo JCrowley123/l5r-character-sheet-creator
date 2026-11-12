@@ -1,0 +1,28 @@
+  detail TX-PAGES-16-PHONE: {"count":167,"pages":9,"small":["Identity: input#ce7-honor-rank.ce7-edit 14","Identity: input#ce7-honor-points.ce7-edit 14","Identity: input#ce7-glory-rank.ce7-edit 14","Identity: input#ce7-glory-points.ce7-edit 14","Identity: input#ce7-status-rank.ce7-edit 14","Identity: input#ce7-status-points.ce7-edit 14","Identity: input#ce7-taint-rank.ce7-edit 14","Identity: input#ce7-taint-points.ce7-edit 14","Rings & Traits: select#wm7-picker 13.3333","Skills: input.sk-name 14.72"]}
+  detail TX-BUTTONS-PHONE: ["auto"]
+  detail TX-EVERY-BOX-16-PHONE: {"n":226,"small":["select#charSelect 15.2","textarea 15.68","textarea 15.68","textarea 15.68","textarea 15.68","input#ce7-honor-rank.ce7-edit 14","input#ce7-honor-points.ce7-edit 14","input#ce7-glory-rank.ce7-edit 14","input#ce7-glory-points.ce7-edit 14","input#ce7-status-rank.ce7-edit 14"]}
+  detail TX-CLASS-OFF-PHONE: [["/\\.ce7-edit/",[14,14],[14,14]],["/\\.sk-name/",[14.72,14.72],[14.72,14.72]],["/\\.sk-rank/",[14.72,14.72],[14.72,14.72]],["/\\.en-desc/",[14.4,14.4],[14.4,14.4]],["/#wm7-picker/",[13.3333],[13.3333]],["/#f_notes/",[15.68],[15.68]]]
+  detail TX-PLAY-PHONE: {"small":["Skills: input.sk-name","Skills: input.sk-rank","Skills: input.sk-name","Skills: input.sk-rank","Skills: input.sk-name","Skills: input.sk-rank"],"over":[]}
+  detail TX-PAGES-16-TABLET: {"count":167,"pages":9,"small":["Identity: input#ce7-honor-rank.ce7-edit 14","Identity: input#ce7-honor-points.ce7-edit 14","Identity: input#ce7-glory-rank.ce7-edit 14","Identity: input#ce7-glory-points.ce7-edit 14","Identity: input#ce7-status-rank.ce7-edit 14","Identity: input#ce7-status-points.ce7-edit 14","Identity: input#ce7-taint-rank.ce7-edit 14","Identity: input#ce7-taint-points.ce7-edit 14","Rings & Traits: select#wm7-picker 13.3333","Skills: input.sk-name 14.72"]}
+  detail TX-BUTTONS-TABLET: ["auto"]
+PASS TX-SEAM-PHONE
+PASS TX-VIEWPORT-PHONE
+FAIL TX-PAGES-16-PHONE
+FAIL TX-EVERY-BOX-16-PHONE
+PASS TX-NONE-SMALLER-PHONE
+FAIL TX-CLASS-OFF-PHONE
+PASS TX-NO-OVERFLOW-PHONE
+FAIL TX-BUTTONS-PHONE
+PASS TX-ZOOM-KEPT-PHONE
+PASS TX-STEPPER-TWICE-PHONE
+FAIL TX-PLAY-PHONE
+PASS TX-NO-ERRORS-PHONE
+PASS TX-SEAM-TABLET
+FAIL TX-PAGES-16-TABLET
+FAIL TX-BUTTONS-TABLET
+PASS TX-NO-ERRORS-TABLET
+PASS TX-SEAM-DESKTOP
+PASS TX-UNCHANGED-DESKTOP
+PASS TX-BUTTONS-DESKTOP
+PASS TX-NO-ERRORS-DESKTOP
+13/20 checks passed
