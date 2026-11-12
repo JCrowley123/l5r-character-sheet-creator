@@ -11,6 +11,8 @@
 // its premise (no other card is touched) is the one the owner's revision reverses.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
+// Hygiene (12 November 2026, found by G3's variant discovery): a check that takes this unit's page class away puts it
+// back only if it was there, so a build with the unit switched off is never switched on by this harness.
 const pins = require('./expected-checks.json');
 const CARDS = require('./cards-fixture.json');
 const sheet = path.resolve(process.argv[2]);
@@ -60,7 +62,7 @@ function install() {
       name: name ? R(name).w : 0, nameFits: !name || name.scrollWidth <= name.clientWidth, pad: getComputedStyle(top).paddingRight,
       cost: cost && drawn(cost) ? {w: R(cost).w, align: getComputedStyle(cost).textAlign, value: cost.value} : null};
   }));
-  H.cardsOff = () => { const b = document.body; b.classList.remove('sx15-on'); const r = H.cards(); b.classList.add('sx15-on'); return r; };
+  H.cardsOff = () => { const b = document.body; const had = b.classList.contains('sx15-on'); b.classList.remove('sx15-on'); const r = H.cards(); if (had) b.classList.add('sx15-on'); return r; };
   // Whether a number fits the box with the box focused (a desktop browser then shows its up and down arrows).
   H.digitsFit = () => { const box = document.querySelector('#advList > .entry .en-cost'), old = box.value, out = {};
     for (const v of ['8', '88', '888', '-12']) { box.value = v; box.focus(); out[v] = box.scrollWidth <= box.clientWidth; }
@@ -80,7 +82,7 @@ function install() {
       room: Math.max(0, name.clientWidth - parseFloat(s.paddingLeft) - parseFloat(s.paddingRight)), fits: name.scrollWidth <= name.clientWidth,
       wrap: getComputedStyle(top).flexWrap, padRight: getComputedStyle(top).paddingRight, checked: box ? box.checked : null, grant: !!row.dataset.sc8Grant, overflow: row.scrollWidth - row.clientWidth};
   });
-  H.off = () => { const b = document.body; b.classList.remove('sx15-on'); const r = H.rows(); b.classList.add('sx15-on'); return r; };
+  H.off = () => { const b = document.body; const had = b.classList.contains('sx15-on'); b.classList.remove('sx15-on'); const r = H.rows(); if (had) b.classList.add('sx15-on'); return r; };
   window.SXH = H;
 }
 async function open(browser, opts) {

@@ -36,3 +36,5 @@ With nothing later present, the rebuild is exactly live G2: 17,609,230 bytes, SH
 - **Nothing depends on this unit.** The two later G3 units do not read it and are proved to work with it removed.
 
 **The first build of this unit** was `b3395d84…ea16`; revision 1 (the code review) is `390f3cd1…f19c`. Removal restores live G2 from either.
+
+**Declared harness hygiene (12 November 2026, found by G3's variant discovery):** where this unit's harness takes the unit's page class away to compare, it now puts the class back only if it was there, so a build with the unit switched off is never switched on by its own harness. Same ids, counts and assertions; the harness passes in full on the frozen candidate. See `G3 — Spell Rows/qa/VARIANT-PINS.md`.

@@ -10,6 +10,8 @@
 // this harness needs no fixture file from another folder.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
+// Hygiene (12 November 2026, found by G3's variant discovery): a check that takes this unit's page class away puts it
+// back only if it was there, so a build with the unit switched off is never switched on by this harness.
 const pins = require('./expected-checks.json');
 const sheet = path.resolve(process.argv[2]);
 const seen = {};
@@ -202,8 +204,8 @@ const near = (a, b, t = 1.5) => Math.abs(a - b) <= t;
       await check('SR-SWITCH-CLASS-OFF-' + D, async () => {
         await base();
         const r = await page.evaluate(() => { const T = window.__L5R_TEST__, b = document.body, S = window.SRH; const on = S.state();
-          b.classList.remove('sr15-on'); T.SC8.render(); const off = S.state(), legends = S.heads().map(x => x.legend);
-          b.classList.add('sr15-on'); T.SC8.render(); const back = S.state();
+          const had = b.classList.contains('sr15-on'); b.classList.remove('sr15-on'); T.SC8.render(); const off = S.state(), legends = S.heads().map(x => x.legend);
+          if (had) b.classList.add('sr15-on'); T.SC8.render(); const back = S.state();
           return {on: on.dressed, off: {dressed: off.dressed, display: off.display, wrapper: off.wrapper, setsInBody: off.setsInBody, confirmInBody: off.confirmInBody}, legends, back: back.dressed && back.setsInWrapper === 4}; });
         await close();
         return [r.on && !r.off.dressed && r.off.display === 'block' && !r.off.wrapper && r.off.setsInBody === 4 && r.off.confirmInBody &&

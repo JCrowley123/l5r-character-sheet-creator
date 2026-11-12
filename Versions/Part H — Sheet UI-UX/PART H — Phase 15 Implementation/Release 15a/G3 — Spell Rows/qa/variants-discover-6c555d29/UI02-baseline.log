@@ -1,0 +1,50 @@
+  detail SN-SEAM-PHONE: {"api":false,"cls":false}
+  detail SN-NAME-READABLE-PHONE: [["Sense",0,false,0],["Clarity of Purpose",0,false,0],["Jurojin's Balm",100,true,0],["Wrath of Kaze-no-Kami (Hurricane)",100,false,0]]
+  detail SN-LINES-PHONE: [{"name":{"x":36,"y":573.234375,"w":20,"h":34,"right":56,"bottom":607.234375,"mid":590.234375},"cast":{"x":165.90625,"y":573.234375,"w":52.765625,"h":34,"right":218.671875,"bottom":607.234375,"mid":590.234375},"memo":{"x":266.671875,"y":573.234375,"w":87.328125,"h":30,"right":354,"bottom":603.234375,"mid":588.234375},"tag":null},{"name":{"x":36,"y":728.546875,"w":20,"h":34,"right":56,"bottom":762.546875,"mid":745.546875},"cast":{"x":165.90625,"y":728.546875,"w":52.765625,"h":34,"right":218.671875,"bottom":762.546875,"mid":745.546875},"memo":{"x":266.671875,"y":728.546875,"w":87.328125,"h":30,"right":354,"bottom":758.546875,"mid":743.546875},"tag":null},{"name":{"x":36,"y":883.859375,"w":119.90625,"h":34,"right":155.90625,"bottom":917.859375,"mid":900.859375},"cast":{"x":165.90625,"y":883.859375,"w":52.765625,"h":34,"right":218.671875,"bottom":917.859375,"mid":900.859375},"memo":{"x":266.
+  detail SN-TAG-SCHOOL-PHONE: [null,{"text":"School: Kitsu Shugenja","drawn":true},{"x":36,"y":573.234375,"w":318,"h":34,"right":354,"bottom":607.234375,"mid":590.234375},{"x":266.671875,"y":573.234375,"w":87.328125,"h":30,"right":354,"bottom":603.234375,"mid":588.234375}]
+  detail SN-CONTROLS-PHONE: {"off":{"cast":34,"why":34,"memo":30},"on":[34,34,30]}
+  detail SN-DATA-UNCHANGED-PHONE: {"same":true,"grants":true,"back":0}
+  detail SN-TAG-FOLLOWS-GRANT-PHONE: {"record":{"version":1,"stage":"starting","kind":"spell","school":"Kitsu Shugenja","name":"Sense","created":false},"gone":0,"back":null}
+  detail SN-EDIT-SAVE-REOPEN-PHONE: {"t":{"name":"Jurojin's Balm, renamed","cost":0,"desc":"Layout sample text for Jurojin's Balm.","spellElement":"earth","spellMastery":"1","spellKeywords":"","spellIsMaho":false,"isMemorised":false,"memorisationXpCost":""},"row":["Jurojin's Balm, renamed",0],"first":null}
+  detail SN-MEMO-TAP-PHONE: "exception: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#techList .entry[data-spell-element]').nth(1).locator('.spell-memo-label')\u001b[22m\n\u001b[2m    - locator resolved to <label class=\"spell-memo-label\" title=\"Memorise this spell — spends 1 XP (its Mastery Rank) while checked\">…</label>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into vie"
+  detail SN-MULTI-SCHOOL-PHONE: "exception: Cannot read properties of null (reading 'text')"
+  detail SN-PLAY-PHONE: [[true,true,0,false,null],[true,true,0,false,null],[true,true,100,true,null],[true,true,100,false,null]]
+  detail SN-CLASS-OFF-PHONE: {"off":{"wrap":"nowrap","tag":null,"source":true},"on":{"wrap":"nowrap","tag":null,"source":true},"corner":false}
+  detail SN-SEAM-DESKTOP: {"api":false,"cls":false}
+  detail SN-TAG-SCHOOL-DESKTOP: [null,{"text":"School: Kitsu Shugenja","drawn":true},{"x":166,"y":563.328125,"w":1108,"h":34,"right":1274,"bottom":597.328125,"mid":580.328125},{"x":1181.0625,"y":563.328125,"w":92.9375,"h":30,"right":1274,"bottom":593.328125,"mid":578.328125}]
+  detail SN-DATA-UNCHANGED-DESKTOP: {"same":true,"grants":true,"back":0}
+  detail SN-TAG-FOLLOWS-GRANT-DESKTOP: {"record":{"version":1,"stage":"starting","kind":"spell","school":"Kitsu Shugenja","name":"Sense","created":false},"gone":0,"back":null}
+  detail SN-EDIT-SAVE-REOPEN-DESKTOP: {"t":{"name":"Jurojin's Balm, renamed","cost":0,"desc":"Layout sample text for Jurojin's Balm.","spellElement":"earth","spellMastery":"1","spellKeywords":"","spellIsMaho":false,"isMemorised":false,"memorisationXpCost":""},"row":["Jurojin's Balm, renamed",0],"first":null}
+  detail SN-MEMO-TAP-DESKTOP: "exception: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#techList .entry[data-spell-element]').nth(1).locator('.spell-memo-label')\u001b[22m\n\u001b[2m    - locator resolved to <label class=\"spell-memo-label\" title=\"Memorise this spell — spends 1 XP (its Mastery Rank) while checked\">…</label>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling in"
+  detail SN-MULTI-SCHOOL-DESKTOP: "exception: Cannot read properties of null (reading 'text')"
+  detail SN-PLAY-DESKTOP: "exception: Cannot read properties of null (reading 'drawn')"
+  detail SN-CLASS-OFF-DESKTOP: {"off":{"wrap":"nowrap","tag":null,"source":true},"on":{"wrap":"nowrap","tag":null,"source":true},"corner":false}
+FAIL SN-SEAM-PHONE
+FAIL SN-NAME-READABLE-PHONE
+FAIL SN-LINES-PHONE
+FAIL SN-TAG-SCHOOL-PHONE
+PASS SN-REWARD-NO-TAG-PHONE
+FAIL SN-CONTROLS-PHONE
+FAIL SN-DATA-UNCHANGED-PHONE
+FAIL SN-TAG-FOLLOWS-GRANT-PHONE
+FAIL SN-EDIT-SAVE-REOPEN-PHONE
+FAIL SN-MEMO-TAP-PHONE
+FAIL SN-MULTI-SCHOOL-PHONE
+FAIL SN-PLAY-PHONE
+FAIL SN-CLASS-OFF-PHONE
+PASS SN-NO-ERRORS-PHONE
+FAIL SN-SEAM-DESKTOP
+PASS SN-NAME-READABLE-DESKTOP
+PASS SN-LINES-DESKTOP
+FAIL SN-TAG-SCHOOL-DESKTOP
+PASS SN-REWARD-NO-TAG-DESKTOP
+PASS SN-CONTROLS-DESKTOP
+FAIL SN-DATA-UNCHANGED-DESKTOP
+FAIL SN-TAG-FOLLOWS-GRANT-DESKTOP
+FAIL SN-EDIT-SAVE-REOPEN-DESKTOP
+FAIL SN-MEMO-TAP-DESKTOP
+FAIL SN-MULTI-SCHOOL-DESKTOP
+FAIL SN-PLAY-DESKTOP
+FAIL SN-CLASS-OFF-DESKTOP
+PASS SN-NO-ERRORS-DESKTOP
+7/28 checks passed

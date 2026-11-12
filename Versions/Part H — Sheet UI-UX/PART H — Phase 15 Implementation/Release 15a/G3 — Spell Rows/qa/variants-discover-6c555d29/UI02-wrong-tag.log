@@ -1,0 +1,37 @@
+  detail SN-TAG-SCHOOL-PHONE: [{"text":"School","drawn":true,"box":{"x":300.65625,"y":624.828125,"w":53.34375,"h":20.796875,"right":354,"bottom":645.625,"mid":635.2265625}},{"text":"School: Kitsu Shugenja","drawn":false},{"x":36,"y":573.234375,"w":318,"h":84,"right":354,"bottom":657.234375,"mid":615.234375},{"x":136.765625,"y":613.234375,"w":92.328125,"h":44,"right":229.09375,"bottom":657.234375,"mid":635.234375}]
+  detail SN-TAG-FOLLOWS-GRANT-PHONE: {"record":{"version":1,"stage":"starting","kind":"spell","school":"Kitsu Shugenja","name":"Sense","created":false},"gone":0,"back":{"text":"School","drawn":true,"box":{"x":300.65625,"y":624.828125,"w":53.34375,"h":20.796875,"right":354,"bottom":645.625,"mid":635.2265625}}}
+  detail SN-EDIT-SAVE-REOPEN-PHONE: {"t":{"name":"Jurojin's Balm, renamed","cost":0,"desc":"Layout sample text for Jurojin's Balm.","spellElement":"earth","spellMastery":"1","spellKeywords":"","spellIsMaho":false,"isMemorised":false,"memorisationXpCost":""},"row":["Jurojin's Balm, renamed",0],"first":{"text":"School","drawn":true,"box":{"x":300.65625,"y":400.828125,"w":53.34375,"h":20.796875,"right":354,"bottom":421.625,"mid":411.2265625}}}
+  detail SN-PLAY-PHONE: [[true,true,298,true,"School"],[true,true,298,true,"School"],[true,true,298,true,null],[true,true,298,true,null]]
+  detail SN-TAG-SCHOOL-DESKTOP: [{"text":"School","drawn":true,"box":{"x":1178.65625,"y":569.921875,"w":53.34375,"h":20.796875,"right":1232,"bottom":590.71875,"mid":580.3203125}},{"text":"School: Kitsu Shugenja","drawn":false},{"x":166,"y":563.328125,"w":1108,"h":34,"right":1274,"bottom":597.328125,"mid":580.328125},{"x":1075.71875,"y":563.328125,"w":92.9375,"h":30,"right":1168.65625,"bottom":593.328125,"mid":578.328125}]
+  detail SN-TAG-FOLLOWS-GRANT-DESKTOP: {"record":{"version":1,"stage":"starting","kind":"spell","school":"Kitsu Shugenja","name":"Sense","created":false},"gone":0,"back":{"text":"School","drawn":true,"box":{"x":1178.65625,"y":569.921875,"w":53.34375,"h":20.796875,"right":1232,"bottom":590.71875,"mid":580.3203125}}}
+  detail SN-EDIT-SAVE-REOPEN-DESKTOP: {"t":{"name":"Jurojin's Balm, renamed","cost":0,"desc":"Layout sample text for Jurojin's Balm.","spellElement":"earth","spellMastery":"1","spellKeywords":"","spellIsMaho":false,"isMemorised":false,"memorisationXpCost":""},"row":["Jurojin's Balm, renamed",0],"first":{"text":"School","drawn":true,"box":{"x":1178.65625,"y":569.921875,"w":53.34375,"h":20.796875,"right":1232,"bottom":590.71875,"mid":580.3203125}}}
+  detail SN-PLAY-DESKTOP: [[true,true,821,true,"School"],[true,true,821,true,"School"],[true,true,884,true,null],[true,true,884,true,null]]
+PASS SN-SEAM-PHONE
+PASS SN-NAME-READABLE-PHONE
+PASS SN-LINES-PHONE
+FAIL SN-TAG-SCHOOL-PHONE
+PASS SN-REWARD-NO-TAG-PHONE
+PASS SN-CONTROLS-PHONE
+PASS SN-DATA-UNCHANGED-PHONE
+FAIL SN-TAG-FOLLOWS-GRANT-PHONE
+FAIL SN-EDIT-SAVE-REOPEN-PHONE
+PASS SN-MEMO-TAP-PHONE
+PASS SN-MULTI-SCHOOL-PHONE
+FAIL SN-PLAY-PHONE
+PASS SN-CLASS-OFF-PHONE
+PASS SN-NO-ERRORS-PHONE
+PASS SN-SEAM-DESKTOP
+PASS SN-NAME-READABLE-DESKTOP
+PASS SN-LINES-DESKTOP
+FAIL SN-TAG-SCHOOL-DESKTOP
+PASS SN-REWARD-NO-TAG-DESKTOP
+PASS SN-CONTROLS-DESKTOP
+PASS SN-DATA-UNCHANGED-DESKTOP
+FAIL SN-TAG-FOLLOWS-GRANT-DESKTOP
+FAIL SN-EDIT-SAVE-REOPEN-DESKTOP
+PASS SN-MEMO-TAP-DESKTOP
+PASS SN-MULTI-SCHOOL-DESKTOP
+FAIL SN-PLAY-DESKTOP
+PASS SN-CLASS-OFF-DESKTOP
+PASS SN-NO-ERRORS-DESKTOP
+20/28 checks passed

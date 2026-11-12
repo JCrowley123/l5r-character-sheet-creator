@@ -9,6 +9,8 @@
 // (8b.1-UI-03), which narrows the Manage name box on a phone by the width of the Remove corner.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
+// Hygiene (12 November 2026, found by G3's variant discovery): a check that takes this unit's page class away puts it
+// back only if it was there, so a build with the unit switched off is never switched on by this harness.
 const pins = require('./expected-checks.json');
 const sheet = path.resolve(process.argv[2]);
 const seen = {};
@@ -99,7 +101,7 @@ const sameLine = (a, b) => a.y < b.bottom && b.y < a.bottom;
       await check('SN-REWARD-NO-TAG-' + D, async () => [[balm, long].every(r => r.tags === 0 && !r.source && !r.grant) && tech && tech.tags === 0 && tech.wrap === 'nowrap' && tech.value === 'Eyes of the Ancestors',
         {balm: [balm.tags, balm.source], tech: tech && [tech.tags, tech.wrap]}]);
       await check('SN-CONTROLS-' + D, async () => {
-        const off = await page.evaluate(() => { const b = document.body; b.classList.remove('sn15-on'); const r = window.SNH.rows().filter(x => x.spell)[2]; b.classList.add('sn15-on'); return {cast: r.cast.h, why: r.why.h, memo: r.memo.h}; });
+        const off = await page.evaluate(() => { const b = document.body; const had = b.classList.contains('sn15-on'); b.classList.remove('sn15-on'); const r = window.SNH.rows().filter(x => x.spell)[2]; if (had) b.classList.add('sn15-on'); return {cast: r.cast.h, why: r.why.h, memo: r.memo.h}; });
         return [spells.every(r => PHONE ? r.cast.h >= 44 && r.why.h >= 44 && r.memo.h >= 44 : near(r.cast.h, off.cast, 0.5) && near(r.why.h, off.why, 0.5) && near(r.memo.h, off.memo, 0.5)), {off, on: [sense.cast.h, sense.why.h, sense.memo.h]}];
       });
 
@@ -107,7 +109,7 @@ const sameLine = (a, b) => a.y < b.bottom && b.y < a.bottom;
       await check('SN-DATA-UNCHANGED-' + D, async () => {
         const r = await page.evaluate(() => { const T = window.__L5R_TEST__, b = document.body, on = JSON.stringify(T.collectData());
           const want = JSON.stringify(window.SNH.data(false).tech.map(t => t.schoolChoice || null)), got = JSON.stringify(T.collectData().tech.map(t => t.schoolChoice || null));
-          b.classList.remove('sn15-on'); document.querySelectorAll('.sn15-tag').forEach(t => t.remove()); const off = JSON.stringify(T.collectData()); b.classList.add('sn15-on'); T.recalcAll();
+          const had = b.classList.contains('sn15-on'); b.classList.remove('sn15-on'); document.querySelectorAll('.sn15-tag').forEach(t => t.remove()); const off = JSON.stringify(T.collectData()); if (had) b.classList.add('sn15-on'); T.recalcAll();
           return {same: on === off, grants: want === got, back: document.querySelectorAll('#techList .sn15-tag').length}; });
         return [r.same && r.grants && r.back === 2, r];
       });
@@ -157,7 +159,7 @@ const sameLine = (a, b) => a.y < b.bottom && b.y < a.bottom;
 
       await check('SN-CLASS-OFF-' + D, async () => {
         await load(false);
-        const r = await page.evaluate(() => { const b = document.body; b.classList.remove('sn15-on'); const off = window.SNH.rows().filter(x => x.spell)[0]; b.classList.add('sn15-on'); const on = window.SNH.rows().filter(x => x.spell)[0];
+        const r = await page.evaluate(() => { const b = document.body; const had = b.classList.contains('sn15-on'); b.classList.remove('sn15-on'); const off = window.SNH.rows().filter(x => x.spell)[0]; if (had) b.classList.add('sn15-on'); const on = window.SNH.rows().filter(x => x.spell)[0];
           return {off: {wrap: off.wrap, tag: off.tag && off.tag.drawn, source: off.source && off.source.drawn}, on: {wrap: on.wrap, tag: on.tag && on.tag.drawn, source: on.source && on.source.drawn}, corner: !!window.__L5R_TEST__.SX15}; });
         // Declared conditional fixture (both ROLLBACK files): up to 768 px the next unit, 8b.1-UI-03, also lets the line
         // wrap, to keep Remove's corner clear. With that unit present on a phone, this unit's class off leaves the line

@@ -1,0 +1,17 @@
+12 mutations unique.
+UI01:baseline MATCH {"extra": [], "missing": []} [5, 32]
+UI02:baseline MATCH {"extra": [], "missing": []} [7, 28]
+UI03:baseline MATCH {"extra": [], "missing": []} [14, 34]
+UI01:disabled MATCH {"extra": [], "missing": []} [5, 32]
+UI01:no-css MATCH {"extra": [], "missing": []} [15, 32]
+UI01:no-tick MATCH {"extra": [], "missing": []} [28, 32]
+UI01:unfilled-confirm MATCH {"extra": [], "missing": []} [30, 32]
+UI02:disabled MATCH {"extra": [], "missing": []} [10, 28]
+UI02:no-css MATCH {"extra": [], "missing": []} [18, 28]
+UI02:wrong-tag MATCH {"extra": [], "missing": []} [20, 28]
+UI02:short-controls DIFF {"extra": [], "missing": ["SN-CONTROLS-PHONE"]} [28, 28]
+UI03:disabled DIFF {"extra": [], "missing": ["SX-CARDS-CORNER-CLEAR-DESKTOP", "SX-CARDS-CORNER-CLEAR-PHONE", "SX-CARDS-NAME-ROOM-DESKTOP", "SX-CARDS-NAME-ROOM-PHONE", "SX-CARDS-NUMBER-BOX-DESKTOP", "SX-CARDS-NUMBER-BOX-PHONE", "SX-CLASS-OFF-DESKTOP", "SX-CLASS-OFF-PHONE", "SX-SCHOOL-REMOVE-DESKTOP", "SX-SCHOOL-REMOVE-PHONE"]} [28, 34]
+UI03:no-css MATCH {"extra": [], "missing": []} [20, 34]
+UI03:narrow-spell-target MATCH {"extra": [], "missing": []} [32, 34]
+UI03:wide-number-box MATCH {"extra": [], "missing": []} [30, 34]
+Discovery done.

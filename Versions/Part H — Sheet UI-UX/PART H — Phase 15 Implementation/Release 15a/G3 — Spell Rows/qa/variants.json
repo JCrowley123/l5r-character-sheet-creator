@@ -151,9 +151,6 @@
     "SN-TAG-SCHOOL-DESKTOP",
     "SN-TAG-SCHOOL-PHONE"
   ],
-  "UI02:short-controls": [
-    "SN-CONTROLS-PHONE"
-  ],
   "UI03:baseline": [
     "SX-CARDS-CORNER-CLEAR-DESKTOP",
     "SX-CARDS-CORNER-CLEAR-PHONE",
@@ -219,5 +216,8 @@
     "SX-CARDS-NAME-ROOM-PHONE",
     "SX-CARDS-NUMBER-BOX-DESKTOP",
     "SX-CARDS-NUMBER-BOX-PHONE"
+  ],
+  "UI02:phone-block-off": [
+    "SN-CONTROLS-PHONE"
   ]
 }

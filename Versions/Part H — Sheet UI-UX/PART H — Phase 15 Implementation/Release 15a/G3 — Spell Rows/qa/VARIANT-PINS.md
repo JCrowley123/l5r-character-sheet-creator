@@ -15,7 +15,7 @@
 | UI02:disabled | 18 |
 | UI02:no-css | 10 |
 | UI02:wrong-tag | 8 |
-| UI02:short-controls | 1 |
+| UI02:phone-block-off (replaces short-controls; see Discovery) | 1 |
 | UI03:baseline | 20 |
 | UI03:disabled | 16 |
 | UI03:no-css | 14 |
@@ -31,7 +31,7 @@
 - **UI02 baseline (live G2):** on a laptop the name already has room, sits on one line with Cast, and the controls compare equal to themselves; rewards have no tag. Everything about the tag, the phone line, Memorised (the old cross covers it) and Play fails.
 - **UI02 disabled (UI-03 present):** UI-03 already gives a phone name its own line, with room and a clear Memorised. The phone line fails (the School label comes before Cast), and every tag check fails.
 - **UI02 no-css:** the tag exists and is drawn as plain text after the controls; the label is still drawn and the laptop row does not wrap. Data, grants, editing and Memorised pass; the drawn label fails the tag, multi-School and class-off checks, the laptop name loses room, and the phone controls are short.
-- **UI02 wrong-tag / short-controls:** the tag's own words; the phone controls' 44 px height.
+- **UI02 wrong-tag / phone-block-off:** the tag's own words; the phone controls' 44 px height (with UI-02's phone rules gone, Cast and its help fall back to 37 px and Memorised to 33 px; UI-03 still gives the name its own line, so nothing else changes).
 - **UI03 baseline (live G2):** the old 40 / 27 px cross covers the number box, Memorised and the School name. Heights, the old common corner, Play, the laptop name and the card checks that only compare with themselves pass.
 - **UI03 disabled (UI-02 present):** the phone name is on its own line, so Memorised and the edge taps are clear, but the cross still covers the name or the tag and every card's number box.
 - **UI03 no-css:** as disabled, but the seam is present.
@@ -47,4 +47,9 @@ The group removal must restore G2 exactly. It runs every kept G3 harness on each
 
 ## Discovery
 
-*(not yet run)*
+Discovery ran once on 12 November 2026, after the predictions were committed and pushed (`56e8111f`). Evidence: `variants-discover.log` and `variants-discover-6c555d29/summary.json`. **13 of 15 cases matched every predicted failed-check id exactly**, each with exit 1 and a complete pinned count. Two did not:
+
+1. **UI03:disabled: 6 failures, not the predicted 16.** UI-03's harness took the unit's page class away and then added it back unconditionally (`SXH.off`, `SXH.cardsOff`). On a build with the unit switched off, that switched the unit on part-way through, so every later check saw it working. The prediction was right; the harness was wrong. UI-01's harness (one place) and UI-02's (three places) had the same pattern; there it happened not to change any discovered result, but the same build could be switched on in the same way. **Fix, in all three harnesses:** a check puts the class back only if it was there. Same ids, counts and assertions; this is G2's A11 lesson. Declared in each unit's ROLLBACK.
+2. **UI02:short-controls: no failure, predicted 1.** The mutation lowered Cast's and the help button's minimum height, but the row stretches them to Memorised's 44 px, so the check it targeted still held, rightly. The case was a weak mutation, not a harness fault. **Replaced** by `UI02:phone-block-off`, which takes UI-02's whole phone block away (one unique string); predicted failure: `SN-CONTROLS-PHONE` only.
+
+No prediction was widened. Before the second discovery, the fixed harnesses were run once on the frozen candidate to confirm they still pass in full. The second discovery runs only the cases these corrections can affect: the three disabled cases (the only builds where a harness could switch its unit on) and the replacement mutation.

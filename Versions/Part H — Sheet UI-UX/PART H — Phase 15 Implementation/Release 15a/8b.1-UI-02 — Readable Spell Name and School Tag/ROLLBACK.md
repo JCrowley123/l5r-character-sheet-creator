@@ -35,3 +35,5 @@ With nothing later present, the rebuild is exactly 8b.1-UI-01: 17,619,920 bytes,
 - **8b.1-UI-01:** no dependency either way. Each is proved with the other removed.
 - **8b.1-UI-03 — declared conditional fixture.** This unit's harness check `SN-CLASS-OFF-PHONE` expects the line to wrap with this unit's class off when `window.__L5R_TEST__.SX15` is present (that unit also wraps the line on a phone), and not to wrap otherwise. Same id and count; 28/28 both ways. Apart from that, this unit does not read it. That unit's phone rule gives the name a margin beside Remove; this unit's name line is written to shrink, so the two fit together without either naming the other.
 - **Nothing depends on this unit.**
+
+**Declared harness hygiene (12 November 2026, found by G3's variant discovery):** where this unit's harness takes the unit's page class away to compare, it now puts the class back only if it was there, so a build with the unit switched off is never switched on by its own harness. Same ids, counts and assertions; the harness passes in full on the frozen candidate. See `G3 — Spell Rows/qa/VARIANT-PINS.md`.
