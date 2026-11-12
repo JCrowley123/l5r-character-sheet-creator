@@ -1,0 +1,11 @@
+/* PART H PHASE 15.1.26 — Release 15a, A10.1: the page's focus ring only for the keyboard (owner, 12 November 2026).
+   The carousel draws a 2 px gold ring inside a page that holds focus (.car-page:focus-visible). After a tap, or when
+   a closing window gives focus back to the page, that ring is not drawn; when the page is reached with the keyboard
+   (this unit's fragment marks it with body.kr15-keyboard) it is drawn exactly as before. Only pages: every other
+   control keeps its own ring.
+   Waits for body.kr15-on, which this unit's switch sets. Screen only. */
+@media screen {
+html body.kr15-on:not(.kr15-keyboard) .car-page:focus-visible {
+  outline: none;
+}
+}

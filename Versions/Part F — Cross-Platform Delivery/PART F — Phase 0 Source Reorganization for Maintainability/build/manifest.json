@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "c872c1b30fdffd3a2c8c5c4043020d1653a81da8912e9eae70a96c62bdc3f16f",
+  "expect_sha256": "354d223000cca447ad84a035cd66821b1b83fc64f34341a7925201e0aa7b45f7",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -188,6 +188,7 @@
     { "file": "src/css/1141-spell-remove-corner.css", "note": "PART H PHASE 15.1.23 - Release 15a 8b.1-UI-03, Remove in its own clear corner of a spell row, apart from Memorised" },
     { "file": "src/css/1142-phone-text-entry.css", "note": "PART H PHASE 15.1.24 - Release 15a A09, editable boxes at 16 px on phones and buttons that answer a quick second tap" },
     { "file": "src/css/1143-cross-page-focus.css", "note": "PART H PHASE 15.1.25 - Release 15a A10, the Advanced Schools hint and button in one row, and no ring on the heading focused after a cross-page button" },
+    { "file": "src/css/1144-keyboard-page-ring.css", "note": "PART H PHASE 15.1.26 - Release 15a A10.1, the page focus ring only when the page is reached with the keyboard" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -529,6 +530,7 @@
     { "file": "src/sheet/209.999999999999999991-feat-spell-remove-corner.js", "note": "PART H PHASE 15.1.23 - Release 15a 8b.1-UI-03, the switch for the spell row Remove corner" },
     { "file": "src/sheet/209.999999999999999992-feat-phone-text-entry.js", "note": "PART H PHASE 15.1.24 - Release 15a A09, the switch for phone text entry and repeated taps" },
     { "file": "src/sheet/209.999999999999999993-feat-cross-page-focus.js", "note": "PART H PHASE 15.1.25 - Release 15a A10, cross-page buttons move focus to the heading of what they opened" },
+    { "file": "src/sheet/209.999999999999999994-feat-keyboard-page-ring.js", "note": "PART H PHASE 15.1.26 - Release 15a A10.1, notes keyboard or pointer for the page focus ring" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

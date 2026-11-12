@@ -992,6 +992,9 @@
   // PART H PHASE 15.1.25 BEGIN cross-page-focus-seam
   if(typeof CP15 === 'object' && CP15) Object.assign(window.__L5R_TEST__, {CP15, CROSS_PAGE_FOCUS_ENABLED});
   // END CP15 cross-page-focus-seam
+  // PART H PHASE 15.1.26 BEGIN keyboard-page-ring-seam
+  if(typeof KR15 === 'object' && KR15) Object.assign(window.__L5R_TEST__, {KR15, KEYBOARD_PAGE_RING_ENABLED});
+  // END KR15 keyboard-page-ring-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

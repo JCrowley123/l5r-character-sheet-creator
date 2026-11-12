@@ -1,0 +1,142 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Older School Choices|Release 15a/A01|8b\\.1-UI-01|Screen Focus|Search Focus|Carousel|PART K — Phase 12 Play|PART K — Phase 12\\.8|PART K — Phase 11\\.2\\.5|Manage Button|Card Editing|PART K — Phase 14 Search",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-01 — Starting-Spell Review and Its Actions/qa/spell-review-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/qa/review-reminder-harness.js",
+   "passed": 31,
+   "total": 31,
+   "status": 0,
+   "seconds": 26,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/allocation-boundaries-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/legacy-grants-harness.js",
+   "passed": 4,
+   "total": 4,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/older-review-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.5 School Choices from the Character Check/qa/review-regression-harness.js",
+   "passed": 6,
+   "total": 6,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.5 School Choices from the Character Check/qa/school-choices-harness.js",
+   "passed": 30,
+   "total": 30,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Characteristic Card Editing/qa/card-editing-harness.js",
+   "passed": 46,
+   "total": 46,
+   "status": 0,
+   "seconds": 39,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12 Play and Management Modes/qa/modes-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 26,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.8 Play Mode Toolbar/qa/toolbar-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Manage Button Clipping/qa/manage-toggle-harness.js",
+   "passed": 36,
+   "total": 36,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14 Search/qa/search-harness.js",
+   "passed": 62,
+   "total": 62,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/search-focus-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/dependency-harness.js",
+   "passed": 15,
+   "total": 15,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Screen Focus from the App Bar/qa/screen-focus-harness.js",
+   "passed": 11,
+   "total": 11,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Carousel Settles on Its Destination/qa/carousel-destination-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 18,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js",
+   "passed": 10,
+   "total": 10,
+   "status": 0,
+   "seconds": 137,
+   "ok": true
+  }
+ ]
+}
