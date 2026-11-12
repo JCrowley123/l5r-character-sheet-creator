@@ -63,7 +63,7 @@
    "passed": 46,
    "total": 46,
    "status": 0,
-   "seconds": 39,
+   "seconds": 25,
    "ok": true
   },
   {
@@ -71,7 +71,7 @@
    "passed": 25,
    "total": 25,
    "status": 0,
-   "seconds": 26,
+   "seconds": 11,
    "ok": true
   },
   {
@@ -95,7 +95,7 @@
    "passed": 62,
    "total": 62,
    "status": 0,
-   "seconds": 5,
+   "seconds": 4,
    "ok": true
   },
   {
@@ -111,7 +111,7 @@
    "passed": 15,
    "total": 15,
    "status": 0,
-   "seconds": 6,
+   "seconds": 5,
    "ok": true
   },
   {
@@ -127,7 +127,7 @@
    "passed": 9,
    "total": 9,
    "status": 0,
-   "seconds": 18,
+   "seconds": 21,
    "ok": true
   },
   {
@@ -135,7 +135,7 @@
    "passed": 10,
    "total": 10,
    "status": 0,
-   "seconds": 137,
+   "seconds": 62,
    "ok": true
   }
  ]

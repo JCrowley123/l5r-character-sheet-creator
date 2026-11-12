@@ -2,7 +2,7 @@
 
 Group G4, unit 3 of 4. The owner's item of 12 November 2026, raised at G3's device round ([G3's owner comments](<../G3 — Spell Rows/OWNER-COMMENTS-2026-11-11.md>), point 1), put beside A10 as A10.1. The owner approved option A of the mock-up on 12 November 2026 ([G4 mock-ups](<../G4 — Touch, Focus and Startup/MOCKUP.md>)). Built on 12 November 2026 (Claude), on branch `claude/release-15a-a10.1`, stacked on A10.
 
-**Built and light-checked. Not device-checked, not qualified, not live.**
+**Built, light-checked, and revised once after G4's code review (revision 1). Not device-checked, not qualified, not live.**
 
 ## What changes
 
@@ -12,7 +12,7 @@ Group G4, unit 3 of 4. The owner's item of 12 November 2026, raised at G3's devi
 
 ## How it is built
 
-- `src/sheet/209.999999999999999994-feat-keyboard-page-ring.js` — `KR15` and the switch `KEYBOARD_PAGE_RING_ENABLED`. Sets the `kr15-on` body class; a navigation key (Tab, the arrows, Enter, Escape, Space, Home, End, Page Up, Page Down) adds `kr15-keyboard`, a tap, click or touch takes it away.
+- `src/sheet/209.999999999999999994-feat-keyboard-page-ring.js` — `KR15` and the switch `KEYBOARD_PAGE_RING_ENABLED`. Sets the `kr15-on` body class; a navigation key (Tab, the arrows, Enter, Escape, Space, Home, End, Page Up, Page Down) adds `kr15-keyboard`, except keys typed into a text box, where only Tab and Escape do (revision 1); a tap, click or touch takes it away.
 - `src/css/1144-keyboard-page-ring.css` — one rule: no page ring unless `kr15-keyboard`. Screen only.
 - One guarded seam block, `keyboard-page-ring-seam`.
 
@@ -20,7 +20,8 @@ Group G4, unit 3 of 4. The owner's item of 12 November 2026, raised at G3's devi
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With A10.1 (this branch) | `354d223000cca447ad84a035cd66821b1b83fc64f34341a7925201e0aa7b45f7` | 17,644,597 |
+| With A10.1, revision 1 (this branch) | `3e58e368606f7d8ffe66f674778f922b73c0798109334ad89e1efc2a15fa6258` | 17,645,385 |
+| Revision 0 (before the code review) | `354d223000cca447ad84a035cd66821b1b83fc64f34341a7925201e0aa7b45f7` | 17,644,597 |
 | A10.1 removed (A10) | `c872c1b30fdffd3a2c8c5c4043020d1653a81da8912e9eae70a96c62bdc3f16f` | 17,640,999 |
 
 ## Light checks (12 November)
@@ -41,5 +42,22 @@ Then 13/14, then 14/14 on the candidate. On G3 as live the same harness gives 5/
 | Own harness with A10 removed (A10.1 kept; `34b2a1aa…b3ec`) | 14/14 |
 | A09's and A10's harnesses on this build | 20/20, 23/23 |
 | The touched layers' own harnesses: Older School Choices, A01, 8b.1-UI-01, Phase 11.2.5 (Part K) School choices, Search and app-bar focus, the carousel fixes, Phase 12 and 12.8 (Part K), Phase 14 (Part K) Search, Manage button, characteristic card editing (summary in `G4 — Touch, Focus and Startup/qa/light/a10.1-summary.json`) | 17/17 harnesses, 391/391 checks |
+
+## Revision 1 (G4's code review, 12 November 2026)
+
+The review found that Enter, Space and the arrow keys counted as the keyboard even when typed into a text box. An iPhone's on-screen keyboard sends Enter for Return and Space for every space, so a window closed by Return in its own search box would have given focus back to the page with the ring drawn: the owner's report again. Now, inside a text box, only Tab and Escape count; a checkbox, a picker and a button still count every navigation key. Two checks were added and pinned before their first run (`qa/expected-checks.json`, 14 + 2 = **16**):
+
+- `KR-TYPING-IS-NOT-KEYBOARD-PHONE`: type a space and Return in the name box, then give the page focus as a closing window does: no keyboard mark, no ring.
+- `KR-TAB-FROM-A-BOX-DESKTOP`: Tab from a text box still marks the keyboard.
+
+| Check, revision 1 | Result |
+|---|---|
+| Own harness (16) | 16/16 |
+| Own harness on revision 0 | 15/16: `KR-TYPING-IS-NOT-KEYBOARD-PHONE` fails there with the gold ring drawn, which confirms the defect |
+| Own harness with A10 removed (`63cc9c16…91e3`) | 16/16 |
+| `qa/test-removal.py` | 10/10 |
+| `feature-dependencies.py` | every reference inside this unit's own blocks |
+| A09's and A10's harnesses on this build | 20/20, 23/23 |
+| The same 17 touched-layer harnesses | 17/17, 391/391 |
 
 See [ROLLBACK.md](ROLLBACK.md).

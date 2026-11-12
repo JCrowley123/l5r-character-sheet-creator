@@ -7,6 +7,7 @@
   "KR-FOCUS-STILL-RETURNED-PHONE",
   "KR-CLASS-OFF-RING-PHONE",
   "KR-NO-RING-AFTER-TAP-PHONE",
+  "KR-TYPING-IS-NOT-KEYBOARD-PHONE",
   "KR-NO-ERRORS-PHONE",
   "KR-SEAM-DESKTOP",
   "KR-RING-BY-TAB-DESKTOP",
@@ -14,7 +15,9 @@
   "KR-RING-AFTER-WINDOW-BY-KEYS-DESKTOP",
   "KR-NO-RING-AFTER-WINDOW-BY-MOUSE-DESKTOP",
   "KR-MOUSE-CLEARS-KEYBOARD-DESKTOP",
+  "KR-TAB-FROM-A-BOX-DESKTOP",
   "KR-OTHER-RINGS-KEPT-DESKTOP",
   "KR-NO-ERRORS-DESKTOP"
- ]
+ ],
+ "revision1": "12 November 2026, pinned before their first run, after G4's code review: KR-TYPING-IS-NOT-KEYBOARD-PHONE and KR-TAB-FROM-A-BOX-DESKTOP added (keys typed into a text box do not mark the keyboard, except Tab and Escape). 14 + 2 = 16."
 }

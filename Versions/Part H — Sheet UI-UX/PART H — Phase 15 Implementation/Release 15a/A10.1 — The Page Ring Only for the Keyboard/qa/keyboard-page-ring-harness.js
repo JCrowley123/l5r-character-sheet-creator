@@ -92,6 +92,16 @@ async function open(browser, opts) {
         // A tap on the page's own text: the page takes focus and no ring is drawn.
         await pointAtPage();
         await check('KR-NO-RING-AFTER-TAP-PHONE', async () => { const f = await focus(); return [f.page && f.outline.style === 'none' && !f.keyboard, f]; });
+        // Typing in a text box, Return included (an iPhone's keyboard sends Enter and Space), is not the keyboard: a
+        // window that then gives focus back to the page draws no ring. Revision 1, after G4's code review.
+        await check('KR-TYPING-IS-NOT-KEYBOARD-PHONE', async () => {
+          const box = page.locator('#f_name'); await box.scrollIntoViewIfNeeded(); await box.tap();
+          await page.keyboard.type(' a'); await page.keyboard.press('Enter'); await settle(page);
+          const typed = await focus();
+          await page.evaluate(() => window.KRH.identity().focus({preventScroll: true})); await settle(page);
+          const f = await focus();
+          return [typed.tag === 'INPUT' && !typed.keyboard && f.page && !f.keyboard && f.outline.style === 'none', {typed, f}];
+        });
       } else {
         // Reach the page with the Tab key from the tab bar: the ring is drawn, exactly as before.
         const tabToPage = async () => { await page.getByRole('tab', {name: 'Identity', exact: true}).click(); await settle(page);
@@ -109,6 +119,14 @@ async function open(browser, opts) {
         await page.evaluate(() => window.KRH.identity().focus());
         await openWindow(); await later();
         await check('KR-NO-RING-AFTER-WINDOW-BY-MOUSE-DESKTOP', async () => { const f = await focus(); return [f.page && !f.keyboard && f.outline.style === 'none', f]; });
+        // Tab from a text box still marks the keyboard. Revision 1, after G4's code review.
+        await check('KR-TAB-FROM-A-BOX-DESKTOP', async () => {
+          await page.locator('#f_name').click(); await settle(page);
+          const before = await focus();
+          await page.keyboard.press('Tab'); await settle(page);
+          const after = await focus();
+          return [before.tag === 'INPUT' && !before.keyboard && after.keyboard, {before, after}];
+        });
         // Every other control keeps its own focus look: a text box clicked into looks the same with or without the class.
         await check('KR-OTHER-RINGS-KEPT-DESKTOP', async () => {
           await page.locator('#f_name').click(); await settle(page);
