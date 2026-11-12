@@ -1,0 +1,166 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Advanced Schools|School Pointer|PART K — Phase 12\\.2|PART K — Phase 12\\.6|PART K — Phase 12 Play|Screen Focus|Search Focus|Carousel|Card Editing|Release 15a/A0[1-4]|Release 15a/A11",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A11 — Explanatory Text Gaps and One Left Edge/qa/text-edges-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers/qa/inline-rules-harness.js",
+   "passed": 56,
+   "total": 56,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/qa/info-pattern-harness.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 14,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03.1 — Masteries in the Skill Information/qa/skill-masteries-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/qa/compact-skills-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 50,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/qa/floating-strip-harness.js",
+   "passed": 23,
+   "total": 23,
+   "status": 0,
+   "seconds": 73,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/qa/review-reminder-harness.js",
+   "passed": 31,
+   "total": 31,
+   "status": 0,
+   "seconds": 26,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Compact Advanced Schools Button/qa/school-button-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Advanced Schools Pointer/qa/school-pointer-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Characteristic Card Editing/qa/card-editing-harness.js",
+   "passed": 46,
+   "total": 46,
+   "status": 0,
+   "seconds": 27,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12 Play and Management Modes/qa/modes-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.2 Play Mode Identity/qa/identity-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.6 Play Mode Techniques/qa/techniques-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.7 Advanced Schools/qa/advanced-schools-harness.js",
+   "passed": 196,
+   "total": 196,
+   "status": 0,
+   "seconds": 17,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.7.1 Supplemental Advanced Schools/qa/supplemental-harness.js",
+   "passed": 156,
+   "total": 156,
+   "status": 0,
+   "seconds": 16,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/search-focus-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/dependency-harness.js",
+   "passed": 15,
+   "total": 15,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Screen Focus from the App Bar/qa/screen-focus-harness.js",
+   "passed": 11,
+   "total": 11,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Carousel Settles on Its Destination/qa/carousel-destination-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js",
+   "passed": 10,
+   "total": 10,
+   "status": 0,
+   "seconds": 49,
+   "ok": true
+  }
+ ]
+}

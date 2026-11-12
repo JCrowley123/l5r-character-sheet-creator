@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 7,
+  "fields": {
+    "f_ancestor": "",
+    "f_name": "7b.1 checks — Matsu",
+    "f_clan": "Lion",
+    "f_family": "Matsu",
+    "f_school": "Matsu Bushi",
+    "f_gender": "",
+    "f_rank": "1",
+    "f_insightRank": "1",
+    "f_insightPts": "117",
+    "f_insightToNextRank": "33",
+    "f_insightBonus": "0",
+    "f_age": "",
+    "f_taint": "0",
+    "f_schoolsData": "[{\"name\":\"Matsu Bushi\",\"frozen\":false,\"frozenRank\":null,\"floorRank\":1,\"anchorInsightRank\":0}]",
+    "f_advancedSchoolData": "",
+    "f_familyApplied": "",
+    "f_schoolApplied": "",
+    "f_schoolAffinity": "",
+    "f_schoolDeficiencyElement": "",
+    "f_schoolTechGranted": "{\"school\":\"Matsu Bushi\",\"techs\":[]}",
+    "f_monkKihoElement": "",
+    "f_pathTaken": "",
+    "f_monkSpecialisation": "",
+    "f_honorRank": "6",
+    "f_honorPts": "0",
+    "f_gloryRank": "1",
+    "f_gloryPts": "0",
+    "f_statusRank": "1",
+    "f_statusPts": "0",
+    "f_xpTotal": "40",
+    "f_xpAdjust": "0",
+    "f_xpSpent": "139",
+    "f_xpRemain": "-99",
+    "f_woundMultiplier": "2",
+    "f_armorName": "",
+    "f_armorTN": "0",
+    "f_armorRed": "0",
+    "f_baseTN": "15",
+    "f_currentTN": "15",
+    "f_initiative": "3k2",
+    "f_woundsTaken": "0",
+    "f_koku": "0",
+    "f_bu": "0",
+    "f_zeni": "0",
+    "f_appearance": "",
+    "f_personality": "",
+    "f_history": "",
+    "f_notes": ""
+  },
+  "rings": {
+    "air": "2",
+    "earth": "2",
+    "fire": "2",
+    "water": "2",
+    "void": "2"
+  },
+  "traits": {
+    "reflexes": "2",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "5",
+    "intelligence": "2",
+    "strength": "5",
+    "perception": "2"
+  },
+  "traitsFree": {
+    "reflexes": "2",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "2",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "voidFree": "2",
+  "voidCurrent": "2",
+  "spellUsed": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  },
+  "spellBonusUsed": "0",
+  "skills": [
+    {
+      "name": "Battle",
+      "trait": "Perception",
+      "rank": "5",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    },
+    {
+      "name": "Kenjutsu",
+      "trait": "Agility",
+      "rank": "3",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    },
+    {
+      "name": "Kyujutsu",
+      "trait": "Reflexes",
+      "rank": "3",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    },
+    {
+      "name": "Spears",
+      "trait": "Agility",
+      "rank": "3",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    },
+    {
+      "name": "Polearms",
+      "trait": "Agility",
+      "rank": "3",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    }
+  ],
+  "weapons": [],
+  "equip": [],
+  "adv": [
+    {
+      "name": "Multiple Schools",
+      "cost": "",
+      "desc": ""
+    },
+    {
+      "name": "Seven Fortunes’ Blessing",
+      "cost": "4",
+      "desc": "",
+      "config": {
+        "type": "fortuneBlessing",
+        "revision": 1,
+        "fortune": "Jurojin",
+        "value": "Jurojin"
+      }
+    }
+  ],
+  "disadv": [],
+  "tech": [],
+  "spellBonusUsedVisual": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  }
+}

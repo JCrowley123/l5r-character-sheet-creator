@@ -332,6 +332,8 @@ CHAIN: tuple[Release, ...] = (
     # Group G4: touch, focus and startup.
     Release("PART H — Phase 15 Implementation/Release 15a/A09 — Phone Text Entry and Repeated Taps",
             fragment="src/sheet/209.999999999999999992-feat-phone-text-entry.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A10 — Cross-Page Actions Move Focus",
+            fragment="src/sheet/209.999999999999999993-feat-cross-page-focus.js"),
 )
 
 

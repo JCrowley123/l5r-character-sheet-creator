@@ -1,0 +1,25 @@
+/* PART H PHASE 15.1.25 — Release 15a, A10 (FT-50, FT-52): cross-page actions move focus (owner, 12 November 2026).
+   The Advanced Schools hint and its Go to Advanced Schools button share one wrapping row, centred on each other: on a
+   laptop they sit on one line; on a phone the hint fills the line and the button wraps below it, at its own 44 px
+   touch height. The heading that takes focus after a cross-page button (this unit's fragment marks it while it holds
+   focus) draws no ring: it is not a control, and the ring would only outline a title.
+   The ID in each selector outranks the hint line's own rules. A hidden button stays hidden (its hidden attribute).
+   Waits for body.cp15-on, which this unit's switch sets. Screen only. */
+@media screen {
+html body.cp15-on #ap7Pointer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 4px;
+}
+html body.cp15-on #ap7Pointer > .ap7-go {
+  margin-top: 0;
+}
+html body.cp15-on #ap7Pointer > .ap7-go[hidden] {
+  display: none;
+}
+html body.cp15-on [data-cp15-target]:focus {
+  outline: none;
+}
+}

@@ -989,6 +989,9 @@
   // PART H PHASE 15.1.24 BEGIN phone-text-entry-seam
   if(typeof TX15 === 'object' && TX15) Object.assign(window.__L5R_TEST__, {TX15, PHONE_TEXT_ENTRY_ENABLED});
   // END TX15 phone-text-entry-seam
+  // PART H PHASE 15.1.25 BEGIN cross-page-focus-seam
+  if(typeof CP15 === 'object' && CP15) Object.assign(window.__L5R_TEST__, {CP15, CROSS_PAGE_FOCUS_ENABLED});
+  // END CP15 cross-page-focus-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
