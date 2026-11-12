@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-11-12T20:58:04.872265+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7326,
+      "total": 7326,
+      "orchestration": {
+        "expected": 7326,
+        "passed": 7326,
+        "total": 7326,
+        "leafTotal": 7326,
+        "wrapperCount": 116,
+        "leafCount": 198,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 198,
+        "fingerprint": "3dd470a4ea405584f56e37d71f3bb2e3e91f37b8b57e8d43c99a4fc2de457d72",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 25.06
+    },
+    {
+      "label": "04-retained",
+      "passed": 7169,
+      "total": 7169,
+      "orchestration": {
+        "expected": 7169,
+        "passed": 7169,
+        "total": 7169,
+        "leafTotal": 7169,
+        "wrapperCount": 101,
+        "leafCount": 192,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 192,
+        "fingerprint": "878736d0db7cbf2a5148b887ba8908aeaa4eaddaf466d7dc828ca943db9d3c3c",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.27
+    }
+  ],
+  "source_sha256": "fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb",
+  "source_bytes": 17648272,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A17 \u2014 The Splash Fills the Screen",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A10.1 \u2014 The Page Ring Only for the Keyboard",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A10 \u2014 Cross-Page Actions Move Focus",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A09 \u2014 Phone Text Entry and Repeated Taps"
+  ],
+  "restoration": {
+    "sha256": "6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029",
+    "bytes": 17631957,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-12T21:45:45.393017+00:00"
+}

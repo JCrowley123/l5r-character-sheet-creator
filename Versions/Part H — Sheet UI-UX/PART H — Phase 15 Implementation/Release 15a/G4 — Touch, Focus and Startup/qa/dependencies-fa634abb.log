@@ -1,0 +1,69 @@
+== PART H PHASE 15.1.24 exit 0
+fragment : src/sheet/209.999999999999999992-feat-phone-text-entry.js
+marker   : PART H PHASE 15.1.24
+surface  : 5 name(s) -- 1142-phone-text-entry, PHONE_TEXT_ENTRY_ENABLED, TX15, phone-text-entry-seam, tx15-on
+
+src\css\1142-phone-text-entry.css
+    own      9  [PART H PHASE 15.1.24 +8]  Waits for body.tx15-on, which this unit's switch sets. Screen only. */
+    own     11  [PART H PHASE 15.1.24 +10]  html body.tx15-on:not(#tx15-a):not(#tx15-b) :is(input:not([type=checkbox]):not([type=radio]):not
+    own     14  [PART H PHASE 15.1.24 +13]  html body.tx15-on :is(button, input[type=button], input[type=submit], input[type=reset], [role="
+
+src\sheet\210-test-seam-and-init.js
+    own    989  [PART H PHASE 15.1.24 +0]  // PART H PHASE 15.1.24 BEGIN phone-text-entry-seam
+    own    990  [PART H PHASE 15.1.24 +1]  if(typeof TX15 === 'object' && TX15) Object.assign(window.__L5R_TEST__, {TX15, PHONE_TEXT_ENTRY_
+    own    991  [PART H PHASE 15.1.24 +2]  // END TX15 phone-text-entry-seam
+
+every reference is inside a block PART H PHASE 15.1.24 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.25 exit 0
+fragment : src/sheet/209.999999999999999993-feat-cross-page-focus.js
+marker   : PART H PHASE 15.1.25
+surface  : 6 name(s) -- 1143-cross-page-focus, CP15, CROSS_PAGE_FOCUS_ENABLED, cp15-on, cross-page-focus-seam, data-cp15-target
+
+src\css\1143-cross-page-focus.css
+    own      7  [PART H PHASE 15.1.25 +6]  Waits for body.cp15-on, which this unit's switch sets. Screen only. */
+    own      9  [PART H PHASE 15.1.25 +8]  html body.cp15-on #ap7Pointer {
+    own     16  [PART H PHASE 15.1.25 +15]  html body.cp15-on #ap7Pointer > .ap7-go {
+    own     19  [PART H PHASE 15.1.25 +18]  html body.cp15-on #ap7Pointer > .ap7-go[hidden] {
+    own     22  [PART H PHASE 15.1.25 +21]  html body.cp15-on [data-cp15-target]:focus {
+
+src\sheet\210-test-seam-and-init.js
+    own    992  [PART H PHASE 15.1.25 +0]  // PART H PHASE 15.1.25 BEGIN cross-page-focus-seam
+    own    993  [PART H PHASE 15.1.25 +1]  if(typeof CP15 === 'object' && CP15) Object.assign(window.__L5R_TEST__, {CP15, CROSS_PAGE_FOCUS_
+    own    994  [PART H PHASE 15.1.25 +2]  // END CP15 cross-page-focus-seam
+
+every reference is inside a block PART H PHASE 15.1.25 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.26 exit 0
+fragment : src/sheet/209.999999999999999994-feat-keyboard-page-ring.js
+marker   : PART H PHASE 15.1.26
+surface  : 6 name(s) -- 1144-keyboard-page-ring, KEYBOARD_PAGE_RING_ENABLED, KR15, keyboard-page-ring-seam, kr15-keyboard, kr15-on
+
+src\css\1144-keyboard-page-ring.css
+    own      4  [PART H PHASE 15.1.26 +3]  (this unit's fragment marks it with body.kr15-keyboard) it is drawn exactly as before. Only page
+    own      6  [PART H PHASE 15.1.26 +5]  Waits for body.kr15-on, which this unit's switch sets. Screen only. */
+    own      8  [PART H PHASE 15.1.26 +7]  html body.kr15-on:not(.kr15-keyboard) .car-page:focus-visible {
+
+src\sheet\210-test-seam-and-init.js
+    own    995  [PART H PHASE 15.1.26 +0]  // PART H PHASE 15.1.26 BEGIN keyboard-page-ring-seam
+    own    996  [PART H PHASE 15.1.26 +1]  if(typeof KR15 === 'object' && KR15) Object.assign(window.__L5R_TEST__, {KR15, KEYBOARD_PAGE_RIN
+    own    997  [PART H PHASE 15.1.26 +2]  // END KR15 keyboard-page-ring-seam
+
+every reference is inside a block PART H PHASE 15.1.26 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.27 exit 0
+fragment : src/css/1145-splash-fill.css
+marker   : PART H PHASE 15.1.27
+surface  : 3 name(s) -- 1145-splash-fill, sf15-on, splash-fill-seam
+
+src\markup\10-swipe-tab-shell.html
+    own     11  [PART H PHASE 15.1.27 +2]  /* Release 15a, A17 (owner, 12 November 2026): the splash picture fills the screen; css/1145-spl
+    own     24  [PART H PHASE 15.1.27 +15]  splash.classList.add('sf15-on');
+
+src\sheet\210-test-seam-and-init.js
+    own    998  [PART H PHASE 15.1.27 +0]  // PART H PHASE 15.1.27 BEGIN splash-fill-seam
+    own   1000  [PART H PHASE 15.1.27 +2]  // END SF15 splash-fill-seam
+
+every reference is inside a block PART H PHASE 15.1.27 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 4/4

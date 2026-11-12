@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-release-15a-g4\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\G4 — Touch, Focus and Startup\qa\run-final-twice.py", line 19, in <module>
+    assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0] == 1, 'Mains power required'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Mains power required
+exit 1

@@ -1,5 +1,15 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
+<!-- g4-15a-roadmap -->
+## Release 15a G4 — 12 November 2026
+
+**12 November 2026 · G4 qualified (Claude).** Release 15a G4, touch, focus and startup, is accepted and qualified. A09 (editable boxes at 16 px on phones and touch screens; buttons take a quick second tap as a press, not a zoom), A10 (the Advanced Schools hint and button in one row; a cross-page button moves focus to the heading of what it opened), A10.1 revision 1 (the page's gold focus ring only for the keyboard; keys typed into a text box do not count) and A17 (the splash picture fills the screen with the title and seal in view; the square picture up to 3 : 2) are on `claude/release-15a-a17`. Application `fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb`, 17,648,272 bytes. A18 (the first Manage tap on an iPhone) is closed as not reproduced: the owner's first tap is quick, and the test browser measured 45–62 ms, no slower than the second. The owner approved the mock-ups ("I am happy with the recommendations suggested"), passed the device round except check 4 (double-tap zoom on text, which the live app does not do either) and accepted all four ("Accept A09").
+
+Negative variants: twenty cases predicted and pushed before discovery; all twenty matched exactly at the first discovery. The chain passed first time: group removal 32/32 (all of G4 removed restores G3 `6c555d29…c029` exactly), all 20 variants on their exact pins, dependencies 4/4, the 4× CPU screen 137/137 leaves. Two full passes, each on its first execution: candidate **7,326/7,326** and retained **7,169/7,169** (run 1: 25.25 and 22.26 minutes; run 2: 25.06 and 22.27 minutes). The code review found one defect, fixed as A10.1 revision 1. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
+
+**12 November 2026 · after G4 (Claude).** Next, as agreed with the owner: (1) G4 go-live on the owner's word (fast-forward `main`, then production verification and the browser/offline smoke); (2) the automatic-entries group, mock-up first: Yogo Wardmaster's missing Sense, the School's given spells credited on import and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
+<!-- end-g4-15a-roadmap -->
+
 <!-- g3-15a-roadmap -->
 ## Release 15a G3 — 12 November 2026
 

@@ -1,0 +1,22 @@
+16 mutations unique.
+A09:baseline: failed exactly its 10 pinned checks
+A10:baseline: failed exactly its 9 pinned checks
+A10.1:baseline: failed exactly its 11 pinned checks
+A17:baseline: failed exactly its 14 pinned checks
+A09:disabled: failed exactly its 10 pinned checks
+A09:no-css: failed exactly its 7 pinned checks
+A09:touch-auto: failed exactly its 2 pinned checks
+A09:rings-shrunk: failed exactly its 1 pinned checks
+A10:disabled: failed exactly its 9 pinned checks
+A10:no-css: failed exactly its 1 pinned checks
+A10:keeps-tabindex: failed exactly its 3 pinned checks
+A10:phone-gap: failed exactly its 1 pinned checks
+A10.1:disabled: failed exactly its 11 pinned checks
+A10.1:no-css: failed exactly its 5 pinned checks
+A10.1:typing-counts: failed exactly its 1 pinned checks
+A10.1:no-pointer-clear: failed exactly its 3 pinned checks
+A17:disabled: failed exactly its 14 pinned checks
+A17:no-css: failed exactly its 10 pinned checks
+A17:old-switch-point: failed exactly its 5 pinned checks
+A17:focal-bottom: failed exactly its 2 pinned checks
+All 20 negative variants matched their pinned failures.

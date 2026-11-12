@@ -1,0 +1,1920 @@
+[
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A09 \u2014 Phone Text Entry and Repeated Taps\\qa\\phone-text-entry-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "passed": true,
+    "seconds": 37.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A10 \u2014 Cross-Page Actions Move Focus\\qa\\cross-page-focus-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      23,
+      23
+    ],
+    "passed": true,
+    "seconds": 27.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A10.1 \u2014 The Page Ring Only for the Keyboard\\qa\\keyboard-page-ring-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ],
+    "passed": true,
+    "seconds": 20.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A17 \u2014 The Splash Fills the Screen\\qa\\splash-fill-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 41.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\8b.1-UI-01 \u2014 Starting-Spell Review and Its Actions\\qa\\spell-review-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 22.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\8b.1-UI-02 \u2014 Readable Spell Name and School Tag\\qa\\spell-name-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      28,
+      28
+    ],
+    "passed": true,
+    "seconds": 20.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\8b.1-UI-03 \u2014 Remove Apart from Memorised\\qa\\spell-remove-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      34,
+      34
+    ],
+    "passed": true,
+    "seconds": 25.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A05 \u2014 Missing Limb Picker\\qa\\limb-picker-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      22,
+      22
+    ],
+    "passed": true,
+    "seconds": 21.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A06 \u2014 Grant Actions and Their State\\qa\\grant-actions-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "passed": true,
+    "seconds": 20.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A07 \u2014 The Moon Row\\qa\\moon-row-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      26,
+      26
+    ],
+    "passed": true,
+    "seconds": 22.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A11 \u2014 Explanatory Text Gaps and One Left Edge\\qa\\text-edges-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      22,
+      22
+    ],
+    "passed": true,
+    "seconds": 19.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A04.1 \u2014 One Way to Show Choices in Pickers\\qa\\inline-rules-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      56,
+      56
+    ],
+    "passed": true,
+    "seconds": 31.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A04 \u2014 One Information Pattern\\qa\\info-pattern-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      35,
+      35
+    ],
+    "passed": true,
+    "seconds": 34.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A15 \u2014 Court Badges\\qa\\court-badges-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      33,
+      33
+    ],
+    "passed": true,
+    "seconds": 90.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A16 \u2014 No Bottom i in the Seven Pickers\\qa\\picker-info-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "passed": true,
+    "seconds": 38.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A03.1 \u2014 Masteries in the Skill Information\\qa\\skill-masteries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      19,
+      19
+    ],
+    "passed": true,
+    "seconds": 28.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A03 \u2014 Top-Aligned Columns and Compact Skill Cards\\qa\\compact-skills-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "passed": true,
+    "seconds": 102.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 15 Implementation\\Release 15a\\A02 \u2014 Floating Controls Above the Tabs\\qa\\floating-strip-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      23,
+      23
+    ],
+    "passed": true,
+    "seconds": 102.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.2.6 Rank Advancement Spell Choices\\qa\\rank-spell-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      36,
+      36
+    ],
+    "passed": true,
+    "seconds": 18.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Older School Choices\\qa\\older-review-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "passed": true,
+    "seconds": 13.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.2.5 School Choices from the Character Check\\qa\\school-choices-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      30,
+      30
+    ],
+    "passed": true,
+    "seconds": 30.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Free Choice Note Clears\\qa\\free-choice-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "seconds": 25.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Empty Quiver Cancels\\qa\\quiver-cancel-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      6,
+      6
+    ],
+    "passed": true,
+    "seconds": 8.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Moon Resist Label\\qa\\moon-label-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      5,
+      5
+    ],
+    "passed": true,
+    "seconds": 9.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 After-Preview Refund\\qa\\refund-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "seconds": 27.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Moon Curse Full Moon\\qa\\moon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 33.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Creation Cap of Four\\qa\\cap-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "passed": true,
+    "seconds": 17.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Empty Quiver Rolls On\\qa\\quiver-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      8,
+      8
+    ],
+    "passed": true,
+    "seconds": 9.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7.1 Audit Log\\qa\\audit-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 27.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Advantage Set Rules\\qa\\set-rules-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "passed": true,
+    "seconds": 34.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Instigator Blackmail Count\\qa\\instigator-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      14,
+      14
+    ],
+    "passed": true,
+    "seconds": 10.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Compact Advanced Schools Button\\qa\\school-button-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "seconds": 11.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Void Raise Not on Initiative\\qa\\void-raise-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "seconds": 9.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Hotei Where the Sheet Spends Void\\qa\\hotei-auto-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ],
+    "passed": true,
+    "seconds": 15.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Skill List Hides Held Skills\\qa\\skill-list-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "seconds": 9.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Gender From Identity and the Wizard\\qa\\gender-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "seconds": 6.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Advanced Schools Pointer\\qa\\school-pointer-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "seconds": 10.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Wizard Skill Remove\\qa\\wizard-remove-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      5,
+      5
+    ],
+    "passed": true,
+    "seconds": 5.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Jurojin Reminder Steps\\qa\\jurojin-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      6,
+      6
+    ],
+    "passed": true,
+    "seconds": 4.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Characteristic Card Editing\\qa\\card-editing-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      46,
+      46
+    ],
+    "passed": true,
+    "seconds": 52.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Wound Settings Preview\\qa\\wound-preview-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      18,
+      18
+    ],
+    "passed": true,
+    "seconds": 12.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      51,
+      51
+    ],
+    "passed": true,
+    "seconds": 27.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-expansion-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      48,
+      48
+    ],
+    "passed": true,
+    "seconds": 22.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      163,
+      163
+    ],
+    "passed": true,
+    "seconds": 44.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1 UI-UX Foundations\\qa\\ui-foundations-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "seconds": 11.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 2 Quick-Access Sidebar\\qa\\quick-access-sidebar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      19,
+      19
+    ],
+    "passed": true,
+    "seconds": 8.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 5 Character Creation Linting\\qa\\character-validator-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 11.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.3 Configuration Repairs\\qa\\adv-config-repairs-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      39,
+      39
+    ],
+    "passed": true,
+    "seconds": 23.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.4 Configuration UX Pass\\qa\\adv-config-ux-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      28,
+      28
+    ],
+    "passed": true,
+    "seconds": 20.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.5 Eligibility Gates\\qa\\adv-eligibility-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      41,
+      41
+    ],
+    "passed": true,
+    "seconds": 19.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      29,
+      29
+    ],
+    "passed": true,
+    "seconds": 26.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 23.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami\\qa\\disadv-dependant-wrath-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      55,
+      55
+    ],
+    "passed": true,
+    "seconds": 47.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.9 Doubt\\qa\\disadv-doubt-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      38,
+      38
+    ],
+    "passed": true,
+    "seconds": 14.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.10 Cursed by the Realm\\qa\\disadv-realm-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      62,
+      62
+    ],
+    "passed": true,
+    "seconds": 35.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.11 Seven Fortunes Curse\\qa\\disadv-fortune-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      74,
+      74
+    ],
+    "passed": true,
+    "seconds": 36.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.12 Seven Fortunes Curse Bishamon\\qa\\disadv-bishamon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      51,
+      51
+    ],
+    "passed": true,
+    "seconds": 23.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      136,
+      136
+    ],
+    "passed": true,
+    "seconds": 37.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      225,
+      225
+    ],
+    "passed": true,
+    "seconds": 40.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      53,
+      53
+    ],
+    "passed": true,
+    "seconds": 17.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      91,
+      91
+    ],
+    "passed": true,
+    "seconds": 36.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.17 Wealthy Koku Grant\\qa\\wealthy-grant-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      87,
+      87
+    ],
+    "passed": true,
+    "seconds": 46.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.18 Paragon\\qa\\paragon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      80,
+      80
+    ],
+    "passed": true,
+    "seconds": 34.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.19 Soul of Artistry\\qa\\soul-artistry-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      92,
+      92
+    ],
+    "passed": true,
+    "seconds": 41.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.20 Void Versatility\\qa\\void-versatility-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      66,
+      66
+    ],
+    "passed": true,
+    "seconds": 53.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing\\qa\\fortune-blessing-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      77,
+      77
+    ],
+    "passed": true,
+    "seconds": 100.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.22 Naishou Citizen\\qa\\naishou-citizen-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      36,
+      36
+    ],
+    "passed": true,
+    "seconds": 44.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      67,
+      67
+    ],
+    "passed": true,
+    "seconds": 89.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "passed": true,
+    "seconds": 61.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Spell Slots Tab on Safari\\qa\\safari-tab-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      19,
+      19
+    ],
+    "passed": true,
+    "seconds": 27.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      70,
+      70
+    ],
+    "passed": true,
+    "seconds": 179.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      43,
+      43
+    ],
+    "passed": true,
+    "seconds": 73.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 48.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "passed": true,
+    "seconds": 61.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 49.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      71,
+      71
+    ],
+    "passed": true,
+    "seconds": 230.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "passed": true,
+    "seconds": 84.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 24.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.1 Play Mode Clan and School\\qa\\clan-school-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      14,
+      14
+    ],
+    "passed": true,
+    "seconds": 21.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 15.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.3 Play Mode Rings and Traits\\qa\\rings-traits-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ],
+    "passed": true,
+    "seconds": 14.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 17.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.6 Play Mode Techniques\\qa\\techniques-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ],
+    "passed": true,
+    "seconds": 16.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      212,
+      212
+    ],
+    "passed": true,
+    "seconds": 69.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Dependant Inline Typing\\qa\\dependant-typing-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      73,
+      73
+    ],
+    "passed": true,
+    "seconds": 102.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.7 Play Mode Combat\\qa\\combat-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      55,
+      55
+    ],
+    "passed": true,
+    "seconds": 83.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 12.8 Play Mode Toolbar\\qa\\toolbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "passed": true,
+    "seconds": 30.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      349,
+      349
+    ],
+    "passed": true,
+    "seconds": 179.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Manage Button Clipping\\qa\\manage-toggle-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      36,
+      36
+    ],
+    "passed": true,
+    "seconds": 22.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Multiple Schools Keep Earlier Techniques\\qa\\ms-techniques-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 32.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      28,
+      28
+    ],
+    "passed": true,
+    "seconds": 25.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      175,
+      175
+    ],
+    "passed": true,
+    "seconds": 105.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.25 Clan and School Prices\\qa\\clan-prices-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "passed": true,
+    "seconds": 67.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.26 Dice Rolling Entries\\qa\\dice-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      110,
+      110
+    ],
+    "passed": true,
+    "seconds": 42.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      156,
+      156
+    ],
+    "passed": true,
+    "seconds": 123.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      38,
+      38
+    ],
+    "passed": true,
+    "seconds": 10.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Minor Clan Defender Paragon Gate\\qa\\paragon-gate-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 17.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      117,
+      117
+    ],
+    "passed": true,
+    "seconds": 34.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      71,
+      71
+    ],
+    "passed": true,
+    "seconds": 20.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.29 Wound Entries\\qa\\wound-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "passed": true,
+    "seconds": 31.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.30 Automatic Roll Entries\\qa\\automatic-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      41,
+      41
+    ],
+    "passed": true,
+    "seconds": 13.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      101,
+      101
+    ],
+    "passed": true,
+    "seconds": 26.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      69,
+      69
+    ],
+    "passed": true,
+    "seconds": 21.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 14 Search\\qa\\search-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      62,
+      62
+    ],
+    "passed": true,
+    "seconds": 18.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.33 Void and Initiative Entries\\qa\\void-initiative-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      44,
+      44
+    ],
+    "passed": true,
+    "seconds": 22.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.34 Blind Armor TN Note\\qa\\blind-note-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "passed": true,
+    "seconds": 8.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Characters Screen Top Bar\\qa\\topbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      30,
+      30
+    ],
+    "passed": true,
+    "seconds": 12.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "passed": true,
+    "seconds": 17.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\appbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 11.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 14.1 Search Facets\\qa\\facets-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      44,
+      44
+    ],
+    "passed": true,
+    "seconds": 15.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 11.1 Export to PDF\\qa\\pdf-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      33,
+      33
+    ],
+    "passed": true,
+    "seconds": 14.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Skill Traits\\qa\\skill-traits-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      38,
+      38
+    ],
+    "passed": true,
+    "seconds": 8.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Skill Traits\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      8,
+      8
+    ],
+    "passed": true,
+    "seconds": 15.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Search Focus on Close\\qa\\search-focus-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "seconds": 16.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Search Focus on Close\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      15,
+      15
+    ],
+    "passed": true,
+    "seconds": 21.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Printed Weapon Text\\qa\\printed-weapons-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      15,
+      15
+    ],
+    "passed": true,
+    "seconds": 14.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Screen Focus from the App Bar\\qa\\screen-focus-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "passed": true,
+    "seconds": 11.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Carousel Settles on Its Destination\\qa\\carousel-destination-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "seconds": 53.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Printed Weapon Columns\\qa\\printed-weapon-columns-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 21.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Printed Skills and Equipment Tables\\qa\\printed-skills-equipment-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      18,
+      18
+    ],
+    "passed": true,
+    "seconds": 19.9,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "passed": true,
+    "seconds": 19.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART K \u2014 Phase 13 Library\\qa\\library-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      187,
+      187
+    ],
+    "passed": true,
+    "seconds": 178.0,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.37 Supplement Advantages and Disadvantages\\qa\\supplement-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      26,
+      26
+    ],
+    "passed": true,
+    "seconds": 9.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.38 Supplement Price Choices\\qa\\choices-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      18,
+      18
+    ],
+    "passed": true,
+    "seconds": 7.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.39 Supplement Skill Pickers\\qa\\skill-pickers-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      24,
+      24
+    ],
+    "passed": true,
+    "seconds": 9.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy\\qa\\shifting-enemy-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      13,
+      13
+    ],
+    "passed": true,
+    "seconds": 7.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\PART I \u2014 Phase 4.5.42 Inheritance and the Printed Heirlooms\\qa\\printed-heirlooms-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      13,
+      13
+    ],
+    "passed": true,
+    "seconds": 7.7,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Yomi Sees the Ancestor\\qa\\yomi-ancestor-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "seconds": 10.6,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Roll Preview Opens at the Top\\qa\\roll-preview-top-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      10,
+      10
+    ],
+    "passed": true,
+    "seconds": 9.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Typed Initiative Is the Dice\\qa\\typed-initiative-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "passed": true,
+    "seconds": 14.2,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Void Card Reasons on a Phone\\qa\\void-reasons-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      14,
+      14
+    ],
+    "passed": true,
+    "seconds": 9.1,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Social Rank and Points\\qa\\social-rank-points-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      30,
+      30
+    ],
+    "passed": true,
+    "seconds": 9.3,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Taint Points and Growth\\qa\\taint-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      26,
+      26
+    ],
+    "passed": true,
+    "seconds": 12.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Honour Resistance Bonus\\qa\\honour-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "passed": true,
+    "seconds": 7.8,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\wound-multiplier-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      31,
+      31
+    ],
+    "passed": true,
+    "seconds": 14.4,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 Compact Characteristic Controls\\qa\\compact-points-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      33,
+      33
+    ],
+    "passed": true,
+    "seconds": 15.5,
+    "cpu_rate": "4"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\BUGFIX \u2014 PDF Save and Print Workflow\\qa\\save-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      30,
+      30
+    ],
+    "passed": true,
+    "seconds": 12.1,
+    "cpu_rate": "4"
+  }
+]
