@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **12 November 2026** (Claude). **Release 15a G3 is qualified**; G2 remains live until G3 goes live. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+Local records updated **12 November 2026** (Claude). **Release 15a G3 is live and verified.** [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
 
 **Earlier:** Local records updated **9 November 2026** (Codex). **Release 15a G2 is live and verified** on the owner's go-live instruction. Main was fast-forwarded to `93b27c61`; application `77936023…82f0`. Production checks passed **2,523/2,523**, browser/offline **22/22**. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
 
@@ -25,6 +25,10 @@ Local records updated **12 November 2026** (Claude). **Release 15a G3 is qualifi
 ---
 
 ## 1. Where things stand
+
+<!-- g3-15a-live-part1 -->
+**12 November 2026 · G3 live (Claude).** On the owner's instruction ("happy with moving onto qualifying and go live"), `main` was fast-forwarded to `7d3bb4c3` without a merge commit or force. Production: all seven deployed files match the qualified build; 62 application harnesses passed 2,669/2,669 on the downloaded production files; browser/offline smoke 22/22. Deployed page `4a7dc1d02df360ce2cfc26d8c580bd19deaaef9a74d98182f0fd63055f3cf524` (17,638,734 bytes), service-worker build `2dd41ff32a1df137`. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-live-part1 -->
 
 <!-- g3-15a-qualification-part1 -->
 **12 November 2026 · G3 qualified (Claude).** Release 15a G3, the three spell-row follow-ups, is accepted and qualified. 8b.1-UI-01 (the starting-spell review as option cards with live counts and one action bar), 8b.1-UI-02 (a readable spell name and one School tag) and 8b.1-UI-03 revision 2 (the remove button in its own corner on every Technique, Advantage and Disadvantage card, and a 52 px number box) are on `claude/release-15a-ui03`. Application `6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029`, 17,631,957 bytes. The owner approved Claude's mock-ups on 11 November, passed 34/34 device checks (UI-01 and UI-02 Accept, UI-03 Revise), then 12/12 on revision 2 (Accept).
@@ -1980,6 +1984,10 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- g3-15a-live-part6 -->
+**12 November 2026 · G3 live (Claude).** On the owner's instruction ("happy with moving onto qualifying and go live"), `main` was fast-forwarded to `7d3bb4c3` without a merge commit or force. Production: all seven deployed files match the qualified build; 62 application harnesses passed 2,669/2,669 on the downloaded production files; browser/offline smoke 22/22. Deployed page `4a7dc1d02df360ce2cfc26d8c580bd19deaaef9a74d98182f0fd63055f3cf524` (17,638,734 bytes), service-worker build `2dd41ff32a1df137`. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+<!-- end-g3-15a-live-part6 -->
 
 <!-- g3-15a-qualification-part6 -->
 **12 November 2026 · G3 qualified (Claude).** Release 15a G3, the three spell-row follow-ups, is accepted and qualified. 8b.1-UI-01 (the starting-spell review as option cards with live counts and one action bar), 8b.1-UI-02 (a readable spell name and one School tag) and 8b.1-UI-03 revision 2 (the remove button in its own corner on every Technique, Advantage and Disadvantage card, and a 52 px number box) are on `claude/release-15a-ui03`. Application `6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029`, 17,631,957 bytes. The owner approved Claude's mock-ups on 11 November, passed 34/34 device checks (UI-01 and UI-02 Accept, UI-03 Revise), then 12/12 on revision 2 (Accept).
