@@ -1,0 +1,294 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Phase 15 Implementation|Characteristic|Advanced Schools|PART K — Phase 12|School Pointer|Manage Button|Screen Focus|Search Focus|Carousel",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-01 — Starting-Spell Review and Its Actions/qa/spell-review-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-02 — Readable Spell Name and School Tag/qa/spell-name-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-03 — Remove Apart from Memorised/qa/spell-remove-harness.js",
+   "passed": 34,
+   "total": 34,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A05 — Missing Limb Picker/qa/limb-picker-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A06 — Grant Actions and Their State/qa/grant-actions-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A07 — The Moon Row/qa/moon-row-harness.js",
+   "passed": 26,
+   "total": 26,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A11 — Explanatory Text Gaps and One Left Edge/qa/text-edges-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers/qa/inline-rules-harness.js",
+   "passed": 56,
+   "total": 56,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/qa/info-pattern-harness.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 14,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A15 — Court Badges/qa/court-badges-harness.js",
+   "passed": 33,
+   "total": 33,
+   "status": 0,
+   "seconds": 25,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/qa/picker-info-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03.1 — Masteries in the Skill Information/qa/skill-masteries-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/qa/compact-skills-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 51,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/qa/floating-strip-harness.js",
+   "passed": 23,
+   "total": 23,
+   "status": 0,
+   "seconds": 73,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/qa/review-reminder-harness.js",
+   "passed": 31,
+   "total": 31,
+   "status": 0,
+   "seconds": 26,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Compact Advanced Schools Button/qa/school-button-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Advanced Schools Pointer/qa/school-pointer-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Characteristic Card Editing/qa/card-editing-harness.js",
+   "passed": 46,
+   "total": 46,
+   "status": 0,
+   "seconds": 34,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12 Play and Management Modes/qa/modes-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.1 Play Mode Clan and School/qa/clan-school-harness.js",
+   "passed": 14,
+   "total": 14,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.2 Play Mode Identity/qa/identity-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.3 Play Mode Rings and Traits/qa/rings-traits-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.4 Play Mode Skills/qa/skills-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.6 Play Mode Techniques/qa/techniques-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.5 Play Mode Advantages and Disadvantages/qa/advantages-harness.js",
+   "passed": 212,
+   "total": 212,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.7 Play Mode Combat/qa/combat-harness.js",
+   "passed": 55,
+   "total": 55,
+   "status": 0,
+   "seconds": 40,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.8 Play Mode Toolbar/qa/toolbar-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Manage Button Clipping/qa/manage-toggle-harness.js",
+   "passed": 36,
+   "total": 36,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.7 Advanced Schools/qa/advanced-schools-harness.js",
+   "passed": 196,
+   "total": 196,
+   "status": 0,
+   "seconds": 17,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.7.1 Supplemental Advanced Schools/qa/supplemental-harness.js",
+   "passed": 156,
+   "total": 156,
+   "status": 0,
+   "seconds": 17,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/search-focus-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/dependency-harness.js",
+   "passed": 15,
+   "total": 15,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Screen Focus from the App Bar/qa/screen-focus-harness.js",
+   "passed": 11,
+   "total": 11,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Carousel Settles on Its Destination/qa/carousel-destination-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js",
+   "passed": 10,
+   "total": 10,
+   "status": 0,
+   "seconds": 57,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Compact Characteristic Controls/qa/compact-points-harness.js",
+   "passed": 33,
+   "total": 33,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  }
+ ]
+}

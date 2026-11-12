@@ -986,6 +986,9 @@
   // PART H PHASE 15.1.23 BEGIN spell-remove-corner-seam
   if(typeof SX15 === 'object' && SX15) Object.assign(window.__L5R_TEST__, {SX15, SPELL_REMOVE_CORNER_ENABLED});
   // END SX15 spell-remove-corner-seam
+  // PART H PHASE 15.1.24 BEGIN phone-text-entry-seam
+  if(typeof TX15 === 'object' && TX15) Object.assign(window.__L5R_TEST__, {TX15, PHONE_TEXT_ENTRY_ENABLED});
+  // END TX15 phone-text-entry-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

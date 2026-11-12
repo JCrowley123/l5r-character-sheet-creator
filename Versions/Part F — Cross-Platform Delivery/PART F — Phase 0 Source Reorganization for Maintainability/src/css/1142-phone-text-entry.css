@@ -1,0 +1,17 @@
+/* PART H PHASE 15.1.24 — Release 15a, A09 (FT-49): phone text entry and repeated taps (owner, 12 November 2026).
+   On phones and touch screens (the same range as the carousel's own touch rules: up to 768 px, or no hover with a
+   coarse pointer):
+   - every editable box (text, number and search boxes, text areas, pickers) is drawn at 16 px, the size below which
+     iPhone Safari zooms in on a tap. The five Ring boxes are already larger and keep their own size.
+   - buttons answer a quick second tap as a second press (touch-action: manipulation): Safari no longer takes it as a
+     zoom. Only buttons: the page, text and empty space keep double-tap zoom, and pinch zoom works everywhere.
+   The two extra IDs in the first selector outrank the boxes' own rules, which name one ID at most.
+   Waits for body.tx15-on, which this unit's switch sets. Screen only. */
+@media screen and (max-width: 768px), screen and (hover: none) and (pointer: coarse) {
+html body.tx15-on:not(#tx15-a):not(#tx15-b) :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]):not([type=hidden]):not([type=button]):not([type=submit]):not([type=reset]):not([type=color]):not([type=image]), textarea, select):not([id^="ring_"]) {
+  font-size: 16px;
+}
+html body.tx15-on :is(button, input[type=button], input[type=submit], input[type=reset], [role="button"]) {
+  touch-action: manipulation;
+}
+}

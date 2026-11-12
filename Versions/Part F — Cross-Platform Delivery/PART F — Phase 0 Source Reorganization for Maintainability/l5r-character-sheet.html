@@ -7699,6 +7699,24 @@ html body.sx15-on :is(#techList, #advList, #disadvList) > .entry > .entry-top > 
 }
 }
 
+/* PART H PHASE 15.1.24 — Release 15a, A09 (FT-49): phone text entry and repeated taps (owner, 12 November 2026).
+   On phones and touch screens (the same range as the carousel's own touch rules: up to 768 px, or no hover with a
+   coarse pointer):
+   - every editable box (text, number and search boxes, text areas, pickers) is drawn at 16 px, the size below which
+     iPhone Safari zooms in on a tap. The five Ring boxes are already larger and keep their own size.
+   - buttons answer a quick second tap as a second press (touch-action: manipulation): Safari no longer takes it as a
+     zoom. Only buttons: the page, text and empty space keep double-tap zoom, and pinch zoom works everywhere.
+   The two extra IDs in the first selector outrank the boxes' own rules, which name one ID at most.
+   Waits for body.tx15-on, which this unit's switch sets. Screen only. */
+@media screen and (max-width: 768px), screen and (hover: none) and (pointer: coarse) {
+html body.tx15-on:not(#tx15-a):not(#tx15-b) :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]):not([type=hidden]):not([type=button]):not([type=submit]):not([type=reset]):not([type=color]):not([type=image]), textarea, select):not([id^="ring_"]) {
+  font-size: 16px;
+}
+html body.tx15-on :is(button, input[type=button], input[type=submit], input[type=reset], [role="button"]) {
+  touch-action: manipulation;
+}
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -56747,6 +56765,34 @@ return fontkitCache=module.exports;}
   SX15.install();
   // ============ END PART H PHASE 15.1.23 ============
 
+  // ============ PART H PHASE 15.1.24 — PHONE TEXT ENTRY AND REPEATED TAPS ============
+  // Phase 15, Release 15a, finding A09 (FT-49, group G4), approved as mocked up by the owner on 12 November 2026.
+  // The number 24 is this unit's marker only; the finding keeps its identifier, A09.
+  // The owner's three iPhone reports: a quick double press on a button or stepper zooms instead of pressing twice;
+  // typing in a box zooms in and stays zoomed; double-tap sometimes will not zoom back out. iPhone Safari zooms in on
+  // any text box whose text is under 16 px, and treats a quick second tap on a button as a zoom. On a phone the sheet
+  // drew 34 kinds of box at 13.3 to 15.7 px.
+  // The stylesheet (1142-phone-text-entry.css) makes every editable box at least 16 px on phones and touch screens and
+  // lets buttons answer a quick second tap (touch-action: manipulation, buttons only). Pinch zoom, and double-tap zoom
+  // on text and empty space, are kept; the viewport is never forced back. Laptops with a mouse are unchanged.
+  // This fragment holds only the switch and the body class; all the work is styling.
+  // Everything waits for body.tx15-on, which the switch sets: with the switch off the sheet is exactly as before.
+  const PHONE_TEXT_ENTRY_ENABLED = true;
+
+  const TX15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return PHONE_TEXT_ENTRY_ENABLED; };
+    api.install = function(){
+      if(api.installed || !PHONE_TEXT_ENTRY_ENABLED) return false;
+      api.installed = true;
+      document.body.classList.add('tx15-on');
+      return true;
+    };
+    return api;
+  })();
+  TX15.install();
+  // ============ END PART H PHASE 15.1.24 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -57735,6 +57781,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.23 BEGIN spell-remove-corner-seam
   if(typeof SX15 === 'object' && SX15) Object.assign(window.__L5R_TEST__, {SX15, SPELL_REMOVE_CORNER_ENABLED});
   // END SX15 spell-remove-corner-seam
+  // PART H PHASE 15.1.24 BEGIN phone-text-entry-seam
+  if(typeof TX15 === 'object' && TX15) Object.assign(window.__L5R_TEST__, {TX15, PHONE_TEXT_ENTRY_ENABLED});
+  // END TX15 phone-text-entry-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
