@@ -1,0 +1,39 @@
+  detail SN-LINES-PHONE: [{"name":{"x":36,"y":573.234375,"w":276,"h":34,"right":312,"bottom":607.234375,"mid":590.234375},"cast":{"x":159.34375,"y":613.234375,"w":52.765625,"h":24,"right":212.109375,"bottom":637.234375,"mid":625.234375},"memo":{"x":260.109375,"y":613.234375,"w":87.328125,"h":20,"right":347.4375,"bottom":633.234375,"mid":623.234375},"tag":{"text":"School spell","drawn":true,"box":{"x":36,"y":643.234375,"w":72.1875,"h":20.5625,"right":108.1875,"bottom":663.796875,"mid":653.515625}}},{"name":{"x":36,"y":785.109375,"w":276,"h":34,"right":312,"bottom":819.109375,"mid":802.109375},"cast":{"x":159.34375,"y":825.109375,"w":52.765625,"h":24,"right":212.109375,"bottom":849.109375,"mid":837.109375},"memo":{"x":260.109375,"y":825.109375,"w":87.328125,"h":20,"right":347.4375,"bottom":845.109375,"mid":835.109375},"tag":{"text":"School spell","drawn":true,"box":{"x":36,"y":855.109375,"w":72.1875,"h":20.5625,"r
+  detail SN-TAG-SCHOOL-PHONE: [{"text":"School spell","drawn":true,"box":{"x":36,"y":643.234375,"w":72.1875,"h":20.5625,"right":108.1875,"bottom":663.796875,"mid":653.515625}},{"text":"School: Kitsu Shugenja","drawn":true},{"x":36,"y":573.234375,"w":318,"h":90.5625,"right":354,"bottom":663.796875,"mid":618.515625},{"x":260.109375,"y":613.234375,"w":87.328125,"h":20,"right":347.4375,"bottom":633.234375,"mid":623.234375}]
+  detail SN-CONTROLS-PHONE: {"off":{"cast":24,"why":24,"memo":20},"on":[24,24,20]}
+  detail SN-MULTI-SCHOOL-PHONE: [[{"text":"Kitsu Shugenja","drawn":true,"box":{"x":36,"y":422.34375,"w":90.125,"h":20.5625,"right":126.125,"bottom":442.90625,"mid":432.625}},{"text":"School: Kitsu Shugenja","drawn":true},0],[{"text":"Kitsu Shugenja · Isawa Shugenja","drawn":true,"box":{"x":133.328125,"y":634.21875,"w":194.890625,"h":23,"right":328.21875,"bottom":657.21875,"mid":645.71875}},{"text":"School: Kitsu Shugenja · Isawa Shugenja","drawn":true},0]]
+  detail SN-CLASS-OFF-PHONE: {"off":{"wrap":"wrap","tag":true,"source":true},"on":{"wrap":"wrap","tag":true,"source":true},"corner":true}
+  detail SN-NAME-READABLE-DESKTOP: [["Sense",630,true,0],["Clarity of Purpose",630,true,0],["Jurojin's Balm",842,true,0],["Wrath of Kaze-no-Kami (Hurricane)",842,true,0]]
+  detail SN-TAG-SCHOOL-DESKTOP: [{"text":"School spell","drawn":true,"box":{"x":1153.328125,"y":563.328125,"w":78.671875,"h":34,"right":1232,"bottom":597.328125,"mid":580.328125}},{"text":"School: Kitsu Shugenja","drawn":true},{"x":166,"y":563.328125,"w":1108,"h":34,"right":1274,"bottom":597.328125,"mid":580.328125},{"x":1050.390625,"y":563.328125,"w":92.9375,"h":30,"right":1143.328125,"bottom":593.328125,"mid":578.328125}]
+  detail SN-MULTI-SCHOOL-DESKTOP: [[{"text":"Kitsu Shugenja","drawn":true,"box":{"x":1133.78125,"y":567.921875,"w":98.21875,"h":34,"right":1232,"bottom":601.921875,"mid":584.921875}},{"text":"School: Kitsu Shugenja","drawn":true},0],[{"text":"Kitsu Shugenja · Isawa Shugenja","drawn":true,"box":{"x":1019.59375,"y":724.0625,"w":212.40625,"h":34,"right":1232,"bottom":758.0625,"mid":741.0625}},{"text":"School: Kitsu Shugenja · Isawa Shugenja","drawn":true},0]]
+  detail SN-PLAY-DESKTOP: [[true,true,672,true,"School spell"],[true,true,672,true,"School spell"],[true,true,884,true,null],[true,true,884,true,null]]
+  detail SN-CLASS-OFF-DESKTOP: {"off":{"wrap":"nowrap","tag":true,"source":true},"on":{"wrap":"nowrap","tag":true,"source":true},"corner":true}
+PASS SN-SEAM-PHONE
+PASS SN-NAME-READABLE-PHONE
+FAIL SN-LINES-PHONE
+FAIL SN-TAG-SCHOOL-PHONE
+PASS SN-REWARD-NO-TAG-PHONE
+FAIL SN-CONTROLS-PHONE
+PASS SN-DATA-UNCHANGED-PHONE
+PASS SN-TAG-FOLLOWS-GRANT-PHONE
+PASS SN-EDIT-SAVE-REOPEN-PHONE
+PASS SN-MEMO-TAP-PHONE
+FAIL SN-MULTI-SCHOOL-PHONE
+PASS SN-PLAY-PHONE
+FAIL SN-CLASS-OFF-PHONE
+PASS SN-NO-ERRORS-PHONE
+PASS SN-SEAM-DESKTOP
+FAIL SN-NAME-READABLE-DESKTOP
+PASS SN-LINES-DESKTOP
+FAIL SN-TAG-SCHOOL-DESKTOP
+PASS SN-REWARD-NO-TAG-DESKTOP
+PASS SN-CONTROLS-DESKTOP
+PASS SN-DATA-UNCHANGED-DESKTOP
+PASS SN-TAG-FOLLOWS-GRANT-DESKTOP
+PASS SN-EDIT-SAVE-REOPEN-DESKTOP
+PASS SN-MEMO-TAP-DESKTOP
+FAIL SN-MULTI-SCHOOL-DESKTOP
+FAIL SN-PLAY-DESKTOP
+FAIL SN-CLASS-OFF-DESKTOP
+PASS SN-NO-ERRORS-DESKTOP
+18/28 checks passed

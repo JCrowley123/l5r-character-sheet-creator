@@ -1,0 +1,17 @@
+12 mutations unique.
+UI01:baseline: failed exactly its 27 pinned checks
+UI02:baseline: failed exactly its 21 pinned checks
+UI03:baseline: failed exactly its 20 pinned checks
+UI01:disabled: failed exactly its 27 pinned checks
+UI01:no-css: failed exactly its 17 pinned checks
+UI01:no-tick: failed exactly its 4 pinned checks
+UI01:unfilled-confirm: failed exactly its 2 pinned checks
+UI02:disabled: failed exactly its 18 pinned checks
+UI02:no-css: failed exactly its 10 pinned checks
+UI02:wrong-tag: failed exactly its 8 pinned checks
+UI02:phone-block-off: failed exactly its 1 pinned checks
+UI03:disabled: failed exactly its 16 pinned checks
+UI03:no-css: failed exactly its 14 pinned checks
+UI03:narrow-spell-target: failed exactly its 2 pinned checks
+UI03:wide-number-box: failed exactly its 4 pinned checks
+All 15 negative variants matched their pinned failures.

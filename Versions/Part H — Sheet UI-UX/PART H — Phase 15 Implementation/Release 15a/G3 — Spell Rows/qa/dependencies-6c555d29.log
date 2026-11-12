@@ -1,0 +1,55 @@
+== PART H PHASE 15.1.21 exit 0
+g.sr15-review .sr15-count[data-state="over"] {
+    own     86  [PART H PHASE 15.1.21 +85]  html body.sr15-on #sc8Dialog.sr15-review .sr15-groups > fieldset > div + div {
+    own     89  [PART H PHASE 15.1.21 +88]  html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell {
+    own    107  [PART H PHASE 15.1.21 +106]  html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell:has(input:checked) {
+    own    112  [PART H PHASE 15.1.21 +111]  html body.sr15-on #sc8Dialog.sr15-review .oc8-held-spell > input.oc8-spell {
+    own    118  [PART H PHASE 15.1.21 +117]  html body.sr15-on #sc8Dialog.sr15-review > #sc8Done,
+    own    119  [PART H PHASE 15.1.21 +118]  html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > .oc8-confirm {
+    own    125  [PART H PHASE 15.1.21 +124]  html body.sr15-on #sc8Dialog.sr15-review > #sc8Done {
+    own    132  [PART H PHASE 15.1.21 +131]  html body.sr15-on #sc8Dialog.sr15-review > #sc8Body > .oc8-confirm {
+    own    140  [PART H PHASE 15.1.21 +139]  html body.sr15-on #sc8Dialog.sr15-review .sr15-groups {
+
+src\sheet\210-test-seam-and-init.js
+    own    980  [PART H PHASE 15.1.21 +0]  // PART H PHASE 15.1.21 BEGIN spell-review-layout-seam
+    own    981  [PART H PHASE 15.1.21 +1]  if(typeof SR15 === 'object' && SR15) Object.assign(window.__L5R_TEST__, {SR15, SPELL_REVIEW_LAYO
+    own    982  [PART H PHASE 15.1.21 +2]  // END SR15 spell-review-layout-seam
+
+every reference is inside a block PART H PHASE 15.1.21 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.22 exit 0
+entry-top {
+    own     17  [PART H PHASE 15.1.22 +16]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .en-name {
+    own     21  [PART H PHASE 15.1.22 +20]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .sc8-source {
+    own     24  [PART H PHASE 15.1.22 +23]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .sn15-tag {
+    own     44  [PART H PHASE 15.1.22 +43]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .en-name {
+    own     47  [PART H PHASE 15.1.22 +46]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-cast-btn,
+    own     48  [PART H PHASE 15.1.22 +47]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .cast-why-btn {
+    own     52  [PART H PHASE 15.1.22 +51]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-memo-label {
+    own     58  [PART H PHASE 15.1.22 +57]  html body.sn15-on #techList .entry[data-spell-element] > .entry-top > .spell-memo-label > .spell
+
+src\sheet\210-test-seam-and-init.js
+    own    983  [PART H PHASE 15.1.22 +0]  // PART H PHASE 15.1.22 BEGIN spell-name-line-seam
+    own    984  [PART H PHASE 15.1.22 +1]  if(typeof SN15 === 'object' && SN15) Object.assign(window.__L5R_TEST__, {SN15, SPELL_NAME_LINE_E
+    own    985  [PART H PHASE 15.1.22 +2]  // END SN15 spell-name-line-seam
+
+every reference is inside a block PART H PHASE 15.1.22 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.23 exit 0
+PART H PHASE 15.1.23 +37]  html body.sx15-on.pm12-play #techList .entry[data-spell-element] > .entry-top {
+    own     43  [PART H PHASE 15.1.23 +42]  html body.sx15-on #techList .entry[data-spell-element] > .entry-top {
+    own     47  [PART H PHASE 15.1.23 +46]  html body.sx15-on #techList .entry[data-spell-element] > .entry-top > .en-name {
+    own     52  [PART H PHASE 15.1.23 +51]  html body.sx15-on.pm12-play #techList .entry[data-spell-element] > .entry-top > .en-name {
+    own     58  [PART H PHASE 15.1.23 +57]  html body.sx15-on :is(#techList, #advList, #disadvList) > .entry:not([data-spell-element]) > .rm
+    own     70  [PART H PHASE 15.1.23 +69]  html body.sx15-on :is(#techList, #advList, #disadvList) > .entry:not([data-spell-element]) > .en
+    own     73  [PART H PHASE 15.1.23 +72]  html body.sx15-on.pm12-play :is(#techList, #advList, #disadvList) > .entry:not([data-spell-eleme
+    own     76  [PART H PHASE 15.1.23 +75]  html body.sx15-on :is(#techList, #advList, #disadvList) > .entry > .entry-top > input.en-cost {
+
+src\sheet\210-test-seam-and-init.js
+    own    986  [PART H PHASE 15.1.23 +0]  // PART H PHASE 15.1.23 BEGIN spell-remove-corner-seam
+    own    987  [PART H PHASE 15.1.23 +1]  if(typeof SX15 === 'object' && SX15) Object.assign(window.__L5R_TEST__, {SX15, SPELL_REMOVE_CORN
+    own    988  [PART H PHASE 15.1.23 +2]  // END SX15 spell-remove-corner-seam
+
+every reference is inside a block PART H PHASE 15.1.23 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 3/3

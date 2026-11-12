@@ -1,0 +1,37 @@
+  detail SR-COUNTS-LIVE-PHONE: {"one":{"legend":"Water 1 of 3 chosen","name":"Water","count":"1 of 3 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":1},"three":{"legend":"Water 3 of 3 chosen","name":"Water","count":"3 of 3 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":3},"two":[{"legend":"Given by your School 0 of 3 chosen","name":"Given by your School","count":"0 of 3 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0},{"legend":"Water 2 of 3 chosen","name":"Water","count":"2 of 3 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":2},{"legend":"Air 0 of 2 chosen","name":"Air","count":"0 of 2 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0},{"legend":"Earth 0 of 1 chosen","name":"Earth","count":"0 of 1 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0}]}
+  detail SR-CONFIRM-SAVES-PHONE: {"ready":[{"legend":"Given by your School 3 of 3 chosen","name":"Given by your School","count":"3 of 3 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":3},{"legend":"Water 3 of 3 chosen","name":"Water","count":"3 of 3 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":3},{"legend":"Air 2 of 2 chosen","name":"Air","count":"2 of 2 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":2},{"legend":"Earth 0 of 1 chosen","name":"Earth","count":"0 of 1 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0}],"saved":{"school":8,"reward":false,"earth":true,"others":false}}
+  detail SR-COUNTS-LIVE-DESKTOP: {"one":{"legend":"Water 1 of 3 chosen","name":"Water","count":"1 of 3 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":1},"three":{"legend":"Water 3 of 3 chosen","name":"Water","count":"3 of 3 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":3},"two":[{"legend":"Given by your School 0 of 3 chosen","name":"Given by your School","count":"0 of 3 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0},{"legend":"Water 2 of 3 chosen","name":"Water","count":"2 of 3 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":2},{"legend":"Air 0 of 2 chosen","name":"Air","count":"0 of 2 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0},{"legend":"Earth 0 of 1 chosen","name":"Earth","count":"0 of 1 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0}]}
+  detail SR-CONFIRM-SAVES-DESKTOP: {"ready":[{"legend":"Given by your School 3 of 3 chosen","name":"Given by your School","count":"3 of 3 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":3},{"legend":"Water 3 of 3 chosen","name":"Water","count":"3 of 3 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":3},{"legend":"Air 2 of 2 chosen","name":"Air","count":"2 of 2 chosen","state":"done","bg":"rgb(90, 79, 67)","ticked":2},{"legend":"Earth 0 of 1 chosen","name":"Earth","count":"0 of 1 chosen","state":"open","bg":"rgba(90, 77, 49, 0.12)","ticked":0}],"saved":{"school":8,"reward":false,"earth":true,"others":false}}
+PASS SR-SEAM-PHONE
+PASS SR-DRESSED-NOTHING-MOVED-PHONE
+PASS SR-ACTIONS-ONE-BAR-PHONE
+PASS SR-COMMON-INSET-AND-GAP-PHONE
+PASS SR-OPTION-CARDS-PHONE
+PASS SR-COUNTS-START-PHONE
+PASS SR-COLUMNS-PHONE
+FAIL SR-COUNTS-LIVE-PHONE
+PASS SR-LATER-NO-WRITES-PHONE
+FAIL SR-CONFIRM-SAVES-PHONE
+PASS SR-CHOOSER-UNDRESSED-PHONE
+PASS SR-LONG-LIST-SCROLLS-PHONE
+PASS SR-COUNTS-OVER-REFUSED-PHONE
+PASS SR-SWITCH-CLASS-OFF-PHONE
+PASS SR-SLOT-SCHOOL-PHONE
+PASS SR-NO-ERRORS-PHONE
+PASS SR-SEAM-DESKTOP
+PASS SR-DRESSED-NOTHING-MOVED-DESKTOP
+PASS SR-ACTIONS-ONE-BAR-DESKTOP
+PASS SR-COMMON-INSET-AND-GAP-DESKTOP
+PASS SR-OPTION-CARDS-DESKTOP
+PASS SR-COUNTS-START-DESKTOP
+PASS SR-COLUMNS-DESKTOP
+FAIL SR-COUNTS-LIVE-DESKTOP
+PASS SR-LATER-NO-WRITES-DESKTOP
+FAIL SR-CONFIRM-SAVES-DESKTOP
+PASS SR-CHOOSER-UNDRESSED-DESKTOP
+PASS SR-LONG-LIST-SCROLLS-DESKTOP
+PASS SR-COUNTS-OVER-REFUSED-DESKTOP
+PASS SR-SWITCH-CLASS-OFF-DESKTOP
+PASS SR-SLOT-SCHOOL-DESKTOP
+PASS SR-NO-ERRORS-DESKTOP
+28/32 checks passed

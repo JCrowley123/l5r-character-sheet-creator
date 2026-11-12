@@ -1,0 +1,568 @@
+{
+  "checked_utc": "2026-11-12T03:20:56.965788+00:00",
+  "cases": [
+    {
+      "id": "UI01:baseline",
+      "expected_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE",
+        "SR-COLUMNS-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-PHONE",
+        "SR-CONFIRM-SAVES-DESKTOP",
+        "SR-CONFIRM-SAVES-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE",
+        "SR-COUNTS-OVER-REFUSED-DESKTOP",
+        "SR-COUNTS-OVER-REFUSED-PHONE",
+        "SR-COUNTS-START-DESKTOP",
+        "SR-COUNTS-START-PHONE",
+        "SR-DRESSED-NOTHING-MOVED-DESKTOP",
+        "SR-DRESSED-NOTHING-MOVED-PHONE",
+        "SR-LATER-NO-WRITES-DESKTOP",
+        "SR-LATER-NO-WRITES-PHONE",
+        "SR-LONG-LIST-SCROLLS-DESKTOP",
+        "SR-LONG-LIST-SCROLLS-PHONE",
+        "SR-OPTION-CARDS-DESKTOP",
+        "SR-OPTION-CARDS-PHONE",
+        "SR-SEAM-DESKTOP",
+        "SR-SEAM-PHONE",
+        "SR-SLOT-SCHOOL-DESKTOP",
+        "SR-SLOT-SCHOOL-PHONE",
+        "SR-SWITCH-CLASS-OFF-DESKTOP",
+        "SR-SWITCH-CLASS-OFF-PHONE"
+      ],
+      "actual_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE",
+        "SR-COLUMNS-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-PHONE",
+        "SR-CONFIRM-SAVES-DESKTOP",
+        "SR-CONFIRM-SAVES-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE",
+        "SR-COUNTS-OVER-REFUSED-DESKTOP",
+        "SR-COUNTS-OVER-REFUSED-PHONE",
+        "SR-COUNTS-START-DESKTOP",
+        "SR-COUNTS-START-PHONE",
+        "SR-DRESSED-NOTHING-MOVED-DESKTOP",
+        "SR-DRESSED-NOTHING-MOVED-PHONE",
+        "SR-LATER-NO-WRITES-DESKTOP",
+        "SR-LATER-NO-WRITES-PHONE",
+        "SR-LONG-LIST-SCROLLS-DESKTOP",
+        "SR-LONG-LIST-SCROLLS-PHONE",
+        "SR-OPTION-CARDS-DESKTOP",
+        "SR-OPTION-CARDS-PHONE",
+        "SR-SEAM-DESKTOP",
+        "SR-SEAM-PHONE",
+        "SR-SLOT-SCHOOL-DESKTOP",
+        "SR-SLOT-SCHOOL-PHONE",
+        "SR-SWITCH-CLASS-OFF-DESKTOP",
+        "SR-SWITCH-CLASS-OFF-PHONE"
+      ],
+      "counts": [
+        5,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI02:baseline",
+      "expected_failures": [
+        "SN-CLASS-OFF-DESKTOP",
+        "SN-CLASS-OFF-PHONE",
+        "SN-CONTROLS-PHONE",
+        "SN-DATA-UNCHANGED-DESKTOP",
+        "SN-DATA-UNCHANGED-PHONE",
+        "SN-EDIT-SAVE-REOPEN-DESKTOP",
+        "SN-EDIT-SAVE-REOPEN-PHONE",
+        "SN-LINES-PHONE",
+        "SN-MEMO-TAP-DESKTOP",
+        "SN-MEMO-TAP-PHONE",
+        "SN-MULTI-SCHOOL-DESKTOP",
+        "SN-MULTI-SCHOOL-PHONE",
+        "SN-NAME-READABLE-PHONE",
+        "SN-PLAY-DESKTOP",
+        "SN-PLAY-PHONE",
+        "SN-SEAM-DESKTOP",
+        "SN-SEAM-PHONE",
+        "SN-TAG-FOLLOWS-GRANT-DESKTOP",
+        "SN-TAG-FOLLOWS-GRANT-PHONE",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "actual_failures": [
+        "SN-CLASS-OFF-DESKTOP",
+        "SN-CLASS-OFF-PHONE",
+        "SN-CONTROLS-PHONE",
+        "SN-DATA-UNCHANGED-DESKTOP",
+        "SN-DATA-UNCHANGED-PHONE",
+        "SN-EDIT-SAVE-REOPEN-DESKTOP",
+        "SN-EDIT-SAVE-REOPEN-PHONE",
+        "SN-LINES-PHONE",
+        "SN-MEMO-TAP-DESKTOP",
+        "SN-MEMO-TAP-PHONE",
+        "SN-MULTI-SCHOOL-DESKTOP",
+        "SN-MULTI-SCHOOL-PHONE",
+        "SN-NAME-READABLE-PHONE",
+        "SN-PLAY-DESKTOP",
+        "SN-PLAY-PHONE",
+        "SN-SEAM-DESKTOP",
+        "SN-SEAM-PHONE",
+        "SN-TAG-FOLLOWS-GRANT-DESKTOP",
+        "SN-TAG-FOLLOWS-GRANT-PHONE",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "counts": [
+        7,
+        28
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI03:baseline",
+      "expected_failures": [
+        "SX-CARDS-CORNER-CLEAR-DESKTOP",
+        "SX-CARDS-CORNER-CLEAR-PHONE",
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE",
+        "SX-CLASS-OFF-DESKTOP",
+        "SX-CLASS-OFF-PHONE",
+        "SX-CORNER-CLEAR-DESKTOP",
+        "SX-CORNER-CLEAR-PHONE",
+        "SX-NAME-READABLE-PHONE",
+        "SX-PLAY-PHONE",
+        "SX-SCHOOL-REMOVE-DESKTOP",
+        "SX-SCHOOL-REMOVE-PHONE",
+        "SX-SEAM-DESKTOP",
+        "SX-SEAM-PHONE",
+        "SX-TAP-EDGES-DESKTOP",
+        "SX-TAP-EDGES-PHONE",
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "actual_failures": [
+        "SX-CARDS-CORNER-CLEAR-DESKTOP",
+        "SX-CARDS-CORNER-CLEAR-PHONE",
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE",
+        "SX-CLASS-OFF-DESKTOP",
+        "SX-CLASS-OFF-PHONE",
+        "SX-CORNER-CLEAR-DESKTOP",
+        "SX-CORNER-CLEAR-PHONE",
+        "SX-NAME-READABLE-PHONE",
+        "SX-PLAY-PHONE",
+        "SX-SCHOOL-REMOVE-DESKTOP",
+        "SX-SCHOOL-REMOVE-PHONE",
+        "SX-SEAM-DESKTOP",
+        "SX-SEAM-PHONE",
+        "SX-TAP-EDGES-DESKTOP",
+        "SX-TAP-EDGES-PHONE",
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "counts": [
+        14,
+        34
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI01:disabled",
+      "expected_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE",
+        "SR-COLUMNS-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-PHONE",
+        "SR-CONFIRM-SAVES-DESKTOP",
+        "SR-CONFIRM-SAVES-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE",
+        "SR-COUNTS-OVER-REFUSED-DESKTOP",
+        "SR-COUNTS-OVER-REFUSED-PHONE",
+        "SR-COUNTS-START-DESKTOP",
+        "SR-COUNTS-START-PHONE",
+        "SR-DRESSED-NOTHING-MOVED-DESKTOP",
+        "SR-DRESSED-NOTHING-MOVED-PHONE",
+        "SR-LATER-NO-WRITES-DESKTOP",
+        "SR-LATER-NO-WRITES-PHONE",
+        "SR-LONG-LIST-SCROLLS-DESKTOP",
+        "SR-LONG-LIST-SCROLLS-PHONE",
+        "SR-OPTION-CARDS-DESKTOP",
+        "SR-OPTION-CARDS-PHONE",
+        "SR-SEAM-DESKTOP",
+        "SR-SEAM-PHONE",
+        "SR-SLOT-SCHOOL-DESKTOP",
+        "SR-SLOT-SCHOOL-PHONE",
+        "SR-SWITCH-CLASS-OFF-DESKTOP",
+        "SR-SWITCH-CLASS-OFF-PHONE"
+      ],
+      "actual_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE",
+        "SR-COLUMNS-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-PHONE",
+        "SR-CONFIRM-SAVES-DESKTOP",
+        "SR-CONFIRM-SAVES-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE",
+        "SR-COUNTS-OVER-REFUSED-DESKTOP",
+        "SR-COUNTS-OVER-REFUSED-PHONE",
+        "SR-COUNTS-START-DESKTOP",
+        "SR-COUNTS-START-PHONE",
+        "SR-DRESSED-NOTHING-MOVED-DESKTOP",
+        "SR-DRESSED-NOTHING-MOVED-PHONE",
+        "SR-LATER-NO-WRITES-DESKTOP",
+        "SR-LATER-NO-WRITES-PHONE",
+        "SR-LONG-LIST-SCROLLS-DESKTOP",
+        "SR-LONG-LIST-SCROLLS-PHONE",
+        "SR-OPTION-CARDS-DESKTOP",
+        "SR-OPTION-CARDS-PHONE",
+        "SR-SEAM-DESKTOP",
+        "SR-SEAM-PHONE",
+        "SR-SLOT-SCHOOL-DESKTOP",
+        "SR-SLOT-SCHOOL-PHONE",
+        "SR-SWITCH-CLASS-OFF-DESKTOP",
+        "SR-SWITCH-CLASS-OFF-PHONE"
+      ],
+      "counts": [
+        5,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI01:no-css",
+      "expected_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE",
+        "SR-COLUMNS-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE",
+        "SR-COUNTS-OVER-REFUSED-DESKTOP",
+        "SR-COUNTS-OVER-REFUSED-PHONE",
+        "SR-DRESSED-NOTHING-MOVED-DESKTOP",
+        "SR-DRESSED-NOTHING-MOVED-PHONE",
+        "SR-LONG-LIST-SCROLLS-DESKTOP",
+        "SR-LONG-LIST-SCROLLS-PHONE",
+        "SR-OPTION-CARDS-DESKTOP",
+        "SR-OPTION-CARDS-PHONE",
+        "SR-SLOT-SCHOOL-DESKTOP",
+        "SR-SLOT-SCHOOL-PHONE"
+      ],
+      "actual_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE",
+        "SR-COLUMNS-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-DESKTOP",
+        "SR-COMMON-INSET-AND-GAP-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE",
+        "SR-COUNTS-OVER-REFUSED-DESKTOP",
+        "SR-COUNTS-OVER-REFUSED-PHONE",
+        "SR-DRESSED-NOTHING-MOVED-DESKTOP",
+        "SR-DRESSED-NOTHING-MOVED-PHONE",
+        "SR-LONG-LIST-SCROLLS-DESKTOP",
+        "SR-LONG-LIST-SCROLLS-PHONE",
+        "SR-OPTION-CARDS-DESKTOP",
+        "SR-OPTION-CARDS-PHONE",
+        "SR-SLOT-SCHOOL-DESKTOP",
+        "SR-SLOT-SCHOOL-PHONE"
+      ],
+      "counts": [
+        15,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI01:no-tick",
+      "expected_failures": [
+        "SR-CONFIRM-SAVES-DESKTOP",
+        "SR-CONFIRM-SAVES-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE"
+      ],
+      "actual_failures": [
+        "SR-CONFIRM-SAVES-DESKTOP",
+        "SR-CONFIRM-SAVES-PHONE",
+        "SR-COUNTS-LIVE-DESKTOP",
+        "SR-COUNTS-LIVE-PHONE"
+      ],
+      "counts": [
+        28,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI01:unfilled-confirm",
+      "expected_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE"
+      ],
+      "actual_failures": [
+        "SR-ACTIONS-ONE-BAR-DESKTOP",
+        "SR-ACTIONS-ONE-BAR-PHONE"
+      ],
+      "counts": [
+        30,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI02:disabled",
+      "expected_failures": [
+        "SN-CLASS-OFF-DESKTOP",
+        "SN-CLASS-OFF-PHONE",
+        "SN-CONTROLS-PHONE",
+        "SN-DATA-UNCHANGED-DESKTOP",
+        "SN-DATA-UNCHANGED-PHONE",
+        "SN-EDIT-SAVE-REOPEN-DESKTOP",
+        "SN-EDIT-SAVE-REOPEN-PHONE",
+        "SN-LINES-PHONE",
+        "SN-MULTI-SCHOOL-DESKTOP",
+        "SN-MULTI-SCHOOL-PHONE",
+        "SN-PLAY-DESKTOP",
+        "SN-PLAY-PHONE",
+        "SN-SEAM-DESKTOP",
+        "SN-SEAM-PHONE",
+        "SN-TAG-FOLLOWS-GRANT-DESKTOP",
+        "SN-TAG-FOLLOWS-GRANT-PHONE",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "actual_failures": [
+        "SN-CLASS-OFF-DESKTOP",
+        "SN-CLASS-OFF-PHONE",
+        "SN-CONTROLS-PHONE",
+        "SN-DATA-UNCHANGED-DESKTOP",
+        "SN-DATA-UNCHANGED-PHONE",
+        "SN-EDIT-SAVE-REOPEN-DESKTOP",
+        "SN-EDIT-SAVE-REOPEN-PHONE",
+        "SN-LINES-PHONE",
+        "SN-MULTI-SCHOOL-DESKTOP",
+        "SN-MULTI-SCHOOL-PHONE",
+        "SN-PLAY-DESKTOP",
+        "SN-PLAY-PHONE",
+        "SN-SEAM-DESKTOP",
+        "SN-SEAM-PHONE",
+        "SN-TAG-FOLLOWS-GRANT-DESKTOP",
+        "SN-TAG-FOLLOWS-GRANT-PHONE",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "counts": [
+        10,
+        28
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI02:no-css",
+      "expected_failures": [
+        "SN-CLASS-OFF-DESKTOP",
+        "SN-CLASS-OFF-PHONE",
+        "SN-CONTROLS-PHONE",
+        "SN-LINES-PHONE",
+        "SN-MULTI-SCHOOL-DESKTOP",
+        "SN-MULTI-SCHOOL-PHONE",
+        "SN-NAME-READABLE-DESKTOP",
+        "SN-PLAY-DESKTOP",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "actual_failures": [
+        "SN-CLASS-OFF-DESKTOP",
+        "SN-CLASS-OFF-PHONE",
+        "SN-CONTROLS-PHONE",
+        "SN-LINES-PHONE",
+        "SN-MULTI-SCHOOL-DESKTOP",
+        "SN-MULTI-SCHOOL-PHONE",
+        "SN-NAME-READABLE-DESKTOP",
+        "SN-PLAY-DESKTOP",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "counts": [
+        18,
+        28
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI02:wrong-tag",
+      "expected_failures": [
+        "SN-EDIT-SAVE-REOPEN-DESKTOP",
+        "SN-EDIT-SAVE-REOPEN-PHONE",
+        "SN-PLAY-DESKTOP",
+        "SN-PLAY-PHONE",
+        "SN-TAG-FOLLOWS-GRANT-DESKTOP",
+        "SN-TAG-FOLLOWS-GRANT-PHONE",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "actual_failures": [
+        "SN-EDIT-SAVE-REOPEN-DESKTOP",
+        "SN-EDIT-SAVE-REOPEN-PHONE",
+        "SN-PLAY-DESKTOP",
+        "SN-PLAY-PHONE",
+        "SN-TAG-FOLLOWS-GRANT-DESKTOP",
+        "SN-TAG-FOLLOWS-GRANT-PHONE",
+        "SN-TAG-SCHOOL-DESKTOP",
+        "SN-TAG-SCHOOL-PHONE"
+      ],
+      "counts": [
+        20,
+        28
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI02:phone-block-off",
+      "expected_failures": [
+        "SN-CONTROLS-PHONE"
+      ],
+      "actual_failures": [
+        "SN-CONTROLS-PHONE"
+      ],
+      "counts": [
+        27,
+        28
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI03:disabled",
+      "expected_failures": [
+        "SX-CARDS-CORNER-CLEAR-DESKTOP",
+        "SX-CARDS-CORNER-CLEAR-PHONE",
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE",
+        "SX-CLASS-OFF-DESKTOP",
+        "SX-CLASS-OFF-PHONE",
+        "SX-CORNER-CLEAR-DESKTOP",
+        "SX-CORNER-CLEAR-PHONE",
+        "SX-SCHOOL-REMOVE-DESKTOP",
+        "SX-SCHOOL-REMOVE-PHONE",
+        "SX-SEAM-DESKTOP",
+        "SX-SEAM-PHONE",
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "actual_failures": [
+        "SX-CARDS-CORNER-CLEAR-DESKTOP",
+        "SX-CARDS-CORNER-CLEAR-PHONE",
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE",
+        "SX-CLASS-OFF-DESKTOP",
+        "SX-CLASS-OFF-PHONE",
+        "SX-CORNER-CLEAR-DESKTOP",
+        "SX-CORNER-CLEAR-PHONE",
+        "SX-SCHOOL-REMOVE-DESKTOP",
+        "SX-SCHOOL-REMOVE-PHONE",
+        "SX-SEAM-DESKTOP",
+        "SX-SEAM-PHONE",
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "counts": [
+        18,
+        34
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI03:no-css",
+      "expected_failures": [
+        "SX-CARDS-CORNER-CLEAR-DESKTOP",
+        "SX-CARDS-CORNER-CLEAR-PHONE",
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE",
+        "SX-CLASS-OFF-DESKTOP",
+        "SX-CLASS-OFF-PHONE",
+        "SX-CORNER-CLEAR-DESKTOP",
+        "SX-CORNER-CLEAR-PHONE",
+        "SX-SCHOOL-REMOVE-DESKTOP",
+        "SX-SCHOOL-REMOVE-PHONE",
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "actual_failures": [
+        "SX-CARDS-CORNER-CLEAR-DESKTOP",
+        "SX-CARDS-CORNER-CLEAR-PHONE",
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE",
+        "SX-CLASS-OFF-DESKTOP",
+        "SX-CLASS-OFF-PHONE",
+        "SX-CORNER-CLEAR-DESKTOP",
+        "SX-CORNER-CLEAR-PHONE",
+        "SX-SCHOOL-REMOVE-DESKTOP",
+        "SX-SCHOOL-REMOVE-PHONE",
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "counts": [
+        20,
+        34
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI03:narrow-spell-target",
+      "expected_failures": [
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "actual_failures": [
+        "SX-TARGET-DESKTOP",
+        "SX-TARGET-PHONE"
+      ],
+      "counts": [
+        32,
+        34
+      ],
+      "exit": 1
+    },
+    {
+      "id": "UI03:wide-number-box",
+      "expected_failures": [
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE"
+      ],
+      "actual_failures": [
+        "SX-CARDS-NAME-ROOM-DESKTOP",
+        "SX-CARDS-NAME-ROOM-PHONE",
+        "SX-CARDS-NUMBER-BOX-DESKTOP",
+        "SX-CARDS-NUMBER-BOX-PHONE"
+      ],
+      "counts": [
+        30,
+        34
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "started_utc": "2026-11-12T03:19:11.784192+00:00",
+  "sha256": "6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029",
+  "stages": [
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-12T03:19:11.795665+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-12T03:20:56.863936+00:00"
+    },
+    {
+      "label": "variants-final",
+      "started_utc": "2026-11-12T03:20:56.876395+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-12T03:24:08.923424+00:00"
+    },
+    {
+      "label": "dependencies",
+      "started_utc": "2026-11-12T03:24:08.936946+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-12T03:24:14.279677+00:00"
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-11-12T03:24:14.280092+00:00"
+}
