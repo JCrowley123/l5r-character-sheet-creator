@@ -1,0 +1,393 @@
+{
+  "source_sha256": "6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029",
+  "captured_utc": "2026-11-12T09:35:00.547Z",
+  "browser": "153.0.8010.12",
+  "viewportMeta": "width=device-width, initial-scale=1.0",
+  "A09": {
+    "pages": {
+      "Clan & School": {
+        "editable": 4,
+        "under16": 0,
+        "sizes": [],
+        "examples": [],
+        "buttons": 3,
+        "touchAction": {
+          "auto": 3
+        }
+      },
+      "Identity": {
+        "editable": 27,
+        "under16": 8,
+        "sizes": [
+          "14px"
+        ],
+        "examples": [
+          {
+            "sig": "input[text]#ce7-taint-points.ce7-edit",
+            "font": "14px",
+            "ro": false
+          }
+        ],
+        "buttons": 13,
+        "touchAction": {
+          "auto": 13
+        }
+      },
+      "Rings & Traits": {
+        "editable": 14,
+        "under16": 1,
+        "sizes": [
+          "13.3333px"
+        ],
+        "examples": [
+          {
+            "sig": "select#wm7-picker",
+            "font": "13.3333px",
+            "ro": false
+          }
+        ],
+        "buttons": 6,
+        "touchAction": {
+          "auto": 6
+        }
+      },
+      "Skills": {
+        "editable": 16,
+        "under16": 15,
+        "sizes": [
+          "14.72px"
+        ],
+        "examples": [
+          {
+            "sig": "input[text].sk-name",
+            "font": "14.72px",
+            "ro": false
+          },
+          {
+            "sig": "input[text].sk-trait",
+            "font": "14.72px",
+            "ro": false
+          },
+          {
+            "sig": "input[number].sk-rank",
+            "font": "14.72px",
+            "ro": false
+          }
+        ],
+        "buttons": 23,
+        "touchAction": {
+          "auto": 23
+        }
+      },
+      "Adv & Disadv": {
+        "editable": 8,
+        "under16": 2,
+        "sizes": [
+          "14.4px"
+        ],
+        "examples": [
+          {
+            "sig": "textarea.en-desc",
+            "font": "14.4px",
+            "ro": false
+          }
+        ],
+        "buttons": 6,
+        "touchAction": {
+          "auto": 6
+        }
+      },
+      "Techniques": {
+        "editable": 2,
+        "under16": 1,
+        "sizes": [
+          "14.68px"
+        ],
+        "examples": [
+          {
+            "sig": "select#advancedSchoolPicker",
+            "font": "14.68px",
+            "ro": false
+          }
+        ],
+        "buttons": 2,
+        "touchAction": {
+          "auto": 2
+        }
+      },
+      "Equipment": {
+        "editable": 0,
+        "under16": 0,
+        "sizes": [],
+        "examples": [],
+        "buttons": 0,
+        "touchAction": {}
+      },
+      "Background": {
+        "editable": 0,
+        "under16": 0,
+        "sizes": [],
+        "examples": [],
+        "buttons": 0,
+        "touchAction": {}
+      }
+    },
+    "errors": []
+  },
+  "A10": {
+    "phone": {
+      "geo": {
+        "line": {
+          "x": 23,
+          "y": 430.1,
+          "w": 344,
+          "h": 64.5,
+          "bottom": 494.7
+        },
+        "text": "Advanced Schools are on the Techniques page, under Advanced School.",
+        "textLines": 1,
+        "lastTextLine": {
+          "y": 430.1,
+          "h": 15,
+          "bottom": 445.1
+        },
+        "button": {
+          "x": 23,
+          "y": 450.7,
+          "w": 165.8,
+          "h": 44,
+          "bottom": 494.7
+        },
+        "buttonFont": "10px",
+        "textCentreY": 437.6,
+        "buttonCentreY": 472.7,
+        "centreOffset": 35.1,
+        "buttonBelowText": true
+      },
+      "after": {
+        "tag": "BUTTON",
+        "id": "ap7Go",
+        "cls": "ghost ap7-go",
+        "text": "Go to Advanced Schools",
+        "page": false,
+        "pageSlug": "identity",
+        "ring": false
+      },
+      "state": {
+        "active": "Techniques",
+        "identityInert": false,
+        "panelTop": 320.5,
+        "panelHeading": "Advanced School",
+        "headingTag": "H3"
+      },
+      "tabNext": null,
+      "errors": []
+    },
+    "laptop": {
+      "geo": {
+        "line": {
+          "x": 153,
+          "y": 469.8,
+          "w": 1134,
+          "h": 29.5,
+          "bottom": 499.3
+        },
+        "text": "Advanced Schools are on the Techniques page, under Advanced School.",
+        "textLines": 1,
+        "lastTextLine": {
+          "y": 474.1,
+          "h": 17,
+          "bottom": 491.1
+        },
+        "button": {
+          "x": 475.7,
+          "y": 473.8,
+          "w": 165.8,
+          "h": 25.5,
+          "bottom": 499.3
+        },
+        "buttonFont": "10px",
+        "textCentreY": 482.6,
+        "buttonCentreY": 486.6,
+        "centreOffset": 4,
+        "buttonBelowText": false
+      },
+      "after": {
+        "tag": "BUTTON",
+        "id": "ap7Go",
+        "cls": "ghost ap7-go",
+        "text": "Go to Advanced Schools",
+        "page": false,
+        "pageSlug": "identity",
+        "ring": false
+      },
+      "state": {
+        "active": "Techniques",
+        "identityInert": false,
+        "panelTop": 318.1,
+        "panelHeading": "Advanced School",
+        "headingTag": "H3"
+      },
+      "tabNext": {
+        "tag": "INPUT",
+        "id": "ce7-honor-rank",
+        "cls": "ce7-edit",
+        "text": "",
+        "page": false,
+        "pageSlug": "identity",
+        "ring": true
+      },
+      "errors": []
+    }
+  },
+  "ring": {
+    "before": {
+      "tag": "SECTION",
+      "id": "car-panel-1",
+      "cls": "car-page",
+      "text": "Identity\n            \n              Char",
+      "page": true,
+      "pageSlug": "identity",
+      "ring": true
+    },
+    "after": {
+      "tag": "SECTION",
+      "id": "car-panel-1",
+      "cls": "car-page",
+      "text": "Identity\n            \n              Char",
+      "page": true,
+      "pageSlug": "identity",
+      "ring": true
+    },
+    "rules": [
+      ".car-page:focus-visible { outline: 2px solid var(--gold); outline-offset: -3px; }"
+    ],
+    "errors": []
+  },
+  "A18": {
+    "cpu1x": [
+      {
+        "first": {
+          "inputToClick": 39.3,
+          "clickToPainted": 22.3,
+          "inputToPainted": 61.6,
+          "mode": "management"
+        },
+        "second": {
+          "inputToClick": 15.9,
+          "clickToPainted": 33.8,
+          "inputToPainted": 49.7,
+          "mode": "management"
+        },
+        "back": {
+          "inputToClick": 23,
+          "clickToPainted": 27.7,
+          "inputToPainted": 50.7,
+          "mode": "play"
+        }
+      },
+      {
+        "first": {
+          "inputToClick": 18.6,
+          "clickToPainted": 26.2,
+          "inputToPainted": 44.8,
+          "mode": "management"
+        },
+        "second": {
+          "inputToClick": 8.3,
+          "clickToPainted": 28.7,
+          "inputToPainted": 37,
+          "mode": "management"
+        },
+        "back": {
+          "inputToClick": 12.9,
+          "clickToPainted": 28.5,
+          "inputToPainted": 41.4,
+          "mode": "play"
+        }
+      },
+      {
+        "first": {
+          "inputToClick": 16.7,
+          "clickToPainted": 28.5,
+          "inputToPainted": 45.2,
+          "mode": "management"
+        },
+        "second": {
+          "inputToClick": 17,
+          "clickToPainted": 25.4,
+          "inputToPainted": 42.4,
+          "mode": "management"
+        },
+        "back": {
+          "inputToClick": 15.4,
+          "clickToPainted": 33.4,
+          "inputToPainted": 48.8,
+          "mode": "play"
+        }
+      }
+    ],
+    "cpu4x": [
+      {
+        "first": {
+          "inputToClick": 21.8,
+          "clickToPainted": 156.7,
+          "inputToPainted": 178.5,
+          "mode": "management"
+        },
+        "second": {
+          "inputToClick": 26.5,
+          "clickToPainted": 196.1,
+          "inputToPainted": 222.6,
+          "mode": "management"
+        },
+        "back": {
+          "inputToClick": 40.1,
+          "clickToPainted": 234.9,
+          "inputToPainted": 275,
+          "mode": "play"
+        }
+      },
+      {
+        "first": {
+          "inputToClick": 22.6,
+          "clickToPainted": 124.2,
+          "inputToPainted": 146.8,
+          "mode": "management"
+        },
+        "second": {
+          "inputToClick": 29.1,
+          "clickToPainted": 155.4,
+          "inputToPainted": 184.5,
+          "mode": "management"
+        },
+        "back": {
+          "inputToClick": 24.1,
+          "clickToPainted": 200.6,
+          "inputToPainted": 224.7,
+          "mode": "play"
+        }
+      },
+      {
+        "first": {
+          "inputToClick": 21.4,
+          "clickToPainted": 118.6,
+          "inputToPainted": 140,
+          "mode": "management"
+        },
+        "second": {
+          "inputToClick": 23.8,
+          "clickToPainted": 199.9,
+          "inputToPainted": 223.7,
+          "mode": "management"
+        },
+        "back": {
+          "inputToClick": 22,
+          "clickToPainted": 195.3,
+          "inputToPainted": 217.3,
+          "mode": "play"
+        }
+      }
+    ]
+  }
+}

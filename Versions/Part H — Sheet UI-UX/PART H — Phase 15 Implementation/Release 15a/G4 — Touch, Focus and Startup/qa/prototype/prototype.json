@@ -1,0 +1,79 @@
+{
+  "A09": {
+    "Skills": {
+      "before": [
+        "14.72px",
+        "14.72px",
+        "14.72px"
+      ],
+      "after": [
+        "16px 176x33 overflow false",
+        "16px 176x33 overflow false",
+        "16px 176x33 overflow false"
+      ],
+      "changed": 37,
+      "pageOverflow": false
+    },
+    "Identity": {
+      "before": [
+        "14px",
+        "14px",
+        "14px"
+      ],
+      "after": [
+        "16px 159x36 overflow false",
+        "16px 159x36 overflow false",
+        "16px 159x36 overflow false"
+      ],
+      "changed": 37,
+      "pageOverflow": false
+    },
+    "touchAction": {
+      "buttons": {
+        "manipulation": 127
+      },
+      "page": "auto",
+      "body": "auto"
+    },
+    "errors": []
+  },
+  "A10": {
+    "phone": {
+      "geo": {
+        "buttonH": 44,
+        "centreOffset": 37,
+        "sameLine": false,
+        "lineH": 67
+      },
+      "focus": {
+        "active": "H3 Advanced School",
+        "identityInert": true,
+        "keyboardOpen": false
+      },
+      "tabNext": null,
+      "errors": []
+    },
+    "laptop": {
+      "geo": {
+        "buttonH": 26,
+        "centreOffset": 0.4,
+        "sameLine": true,
+        "lineH": 26
+      },
+      "focus": {
+        "active": "H3 Advanced School",
+        "identityInert": true,
+        "keyboardOpen": false
+      },
+      "tabNext": "SELECT#advancedSchoolPicker on techniques",
+      "errors": []
+    }
+  },
+  "ring": {
+    "after": {
+      "page": true,
+      "outline": "none"
+    },
+    "errors": []
+  }
+}
