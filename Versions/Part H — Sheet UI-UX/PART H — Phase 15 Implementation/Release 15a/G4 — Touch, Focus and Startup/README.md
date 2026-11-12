@@ -2,7 +2,7 @@
 
 ## Current state (12 November 2026, Claude)
 
-**All four units built and light-checked; code review done (one fix, A10.1 revision 1); previews not yet verified; not device-checked. Not qualified, not live.** G3 is live (`main` `5d14ebe3`, application `6c555d29…c029`, 17,631,957 bytes).
+**All four units accepted by the owner at the device round (12 November). Code review done (one fix, A10.1 revision 1); every preview verified on its deployed files. Not qualified, not live.** G3 is live (`main` `5d14ebe3`, application `6c555d29…c029`, 17,631,957 bytes).
 
 - **Kickoff:** [G3 — Spell Rows/KICKOFF-15A-G4.md](<../G3 — Spell Rows/KICKOFF-15A-G4.md>). Ordering question answered 12 November: **G4 now**, the automatic-entries group after.
 - **Reproduction:** [REPRODUCTION.md](REPRODUCTION.md). **Mock-ups and the owner's decision:** [MOCKUP.md](MOCKUP.md) — "I am happy with the recommendations suggested" (all five as recommended).
@@ -25,4 +25,7 @@
 - **Code review:** [qa/code-review.md](qa/code-review.md). One medium finding, fixed (A10.1 revision 1, two checks added); one low finding in A10 recorded, not changed; A09 and A17 none.
 - **Load note:** the splash layer's `S-FADES-AFTER-READY-AND-5S` failed once on both A17 and G3 as live while the owner's own Chrome was busy, and passed 19/19 on both when run again. Run the full passes with other browsers closed.
 
-**Next, in order:** verify each preview's deployed files (G3's `verify-preview.py`, constants changed); the owner's device checklist as a Claude Doc (Pass/Fail per device, Accept/Revise/Remove per unit) with a repository mirror, including A09's three iPhone cases on Safari **and** the installed app, and A18 step 1. Then qualification of the accepted units: variants pinned before discovery, the chain, the 4× CPU screen, **two** full passes. **Counts if all four are accepted:** candidate 7,242 + 20 + 23 + 16 + 25 = **7,326** (no older harness changes its count; `S-ART-BY-SHAPE` keeps its id); retained **7,169**.
+- **Previews** (`qa/verify-preview.py`, on the deployed files): A09 229/229, A10 252/252, A10.1 268/268, A17 293/293.
+- **Device round:** [DEVICE-CHECKS.md](DEVICE-CHECKS.md), mirroring the Claude Doc. A09, A10, A10.1, A17 **Accept**; A18 closed as not reproduced (the first Manage tap is quick on the owner's iPhone), nothing built.
+
+**Next:** qualification of the accepted units: variants pinned before discovery, the chain, the 4× CPU screen, **two** full passes. **Counts if all four are accepted:** candidate 7,242 + 20 + 23 + 16 + 25 = **7,326** (no older harness changes its count; `S-ART-BY-SHAPE` keeps its id); retained **7,169**.

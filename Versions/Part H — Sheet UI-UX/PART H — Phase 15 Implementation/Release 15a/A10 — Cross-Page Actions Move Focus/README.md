@@ -2,7 +2,7 @@
 
 Group G4, unit 2 of 4. Finding A10 of the Phase 15 audit (FT-50 and FT-52, the owner's notes of 29 October). The owner approved the mock-up on 12 November 2026 ([G4 mock-ups](<../G4 — Touch, Focus and Startup/MOCKUP.md>)). Built on 12 November 2026 (Claude), on branch `claude/release-15a-a10`, stacked on A09.
 
-**Built and light-checked. Not device-checked, not qualified, not live.**
+**Accepted by the owner at G4's device round, 12 November 2026** ([DEVICE-CHECKS.md](<../G4 — Touch, Focus and Startup/DEVICE-CHECKS.md>)). Not qualified, not live.
 
 ## What changes
 

@@ -2,7 +2,7 @@
 
 Group G4, unit 3 of 4. The owner's item of 12 November 2026, raised at G3's device round ([G3's owner comments](<../G3 — Spell Rows/OWNER-COMMENTS-2026-11-11.md>), point 1), put beside A10 as A10.1. The owner approved option A of the mock-up on 12 November 2026 ([G4 mock-ups](<../G4 — Touch, Focus and Startup/MOCKUP.md>)). Built on 12 November 2026 (Claude), on branch `claude/release-15a-a10.1`, stacked on A10.
 
-**Built, light-checked, and revised once after G4's code review (revision 1). Not device-checked, not qualified, not live.**
+**Accepted by the owner at G4's device round, 12 November 2026** ([DEVICE-CHECKS.md](<../G4 — Touch, Focus and Startup/DEVICE-CHECKS.md>)). Not qualified, not live.
 
 ## What changes
 

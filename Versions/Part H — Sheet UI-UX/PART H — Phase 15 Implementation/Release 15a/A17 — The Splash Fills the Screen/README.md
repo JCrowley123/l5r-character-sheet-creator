@@ -2,7 +2,7 @@
 
 Group G4, unit 4 of 4. Finding A17 of the Phase 15 audit (FT-41; ruling Q6: fill the splash while keeping the title). The owner approved the mock-up on 12 November 2026 ([G4 mock-ups](<../G4 — Touch, Focus and Startup/MOCKUP.md>)). Built on 12 November 2026 (Claude), on branch `claude/release-15a-a17`, stacked on A10.1.
 
-**Built and light-checked. Not device-checked, not qualified, not live.**
+**Accepted by the owner at G4's device round, 12 November 2026** ([DEVICE-CHECKS.md](<../G4 — Touch, Focus and Startup/DEVICE-CHECKS.md>)). Not qualified, not live.
 
 ## What changes
 

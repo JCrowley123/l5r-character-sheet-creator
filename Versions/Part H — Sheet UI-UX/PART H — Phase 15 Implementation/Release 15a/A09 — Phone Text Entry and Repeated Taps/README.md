@@ -2,7 +2,7 @@
 
 Group G4, unit 1 of 4. Finding A09 of the Phase 15 audit (FT-49, the owner's iPhone zoom reports of 28 October). The owner approved the mock-up on 12 November 2026 ([G4 mock-ups](<../G4 — Touch, Focus and Startup/MOCKUP.md>)). Built on 12 November 2026 (Claude), on branch `claude/release-15a-a09`, stacked on the G4 records branch.
 
-**Built and light-checked. Not device-checked, not qualified, not live.**
+**Accepted by the owner at G4's device round, 12 November 2026** ([DEVICE-CHECKS.md](<../G4 — Touch, Focus and Startup/DEVICE-CHECKS.md>)). Not qualified, not live. Check 4 (double-tap zoom on text) failed because its expectation was wrong: double-tap does not zoom there on the live app either; the owner accepted A09 as built.
 
 ## What changes
 
