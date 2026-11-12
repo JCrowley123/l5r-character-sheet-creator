@@ -1,0 +1,47 @@
+  detail SN-SEAM-PHONE: {"on":false,"api":false,"cls":false}
+  detail SN-LINES-PHONE: [{"name":{"x":36,"y":573.234375,"w":276,"h":34,"right":312,"bottom":607.234375,"mid":590.234375},"cast":{"x":159.34375,"y":613.234375,"w":52.765625,"h":24,"right":212.109375,"bottom":637.234375,"mid":625.234375},"memo":{"x":260.109375,"y":613.234375,"w":87.328125,"h":20,"right":347.4375,"bottom":633.234375,"mid":623.234375},"tag":null},{"name":{"x":36,"y":758.546875,"w":276,"h":34,"right":312,"bottom":792.546875,"mid":775.546875},"cast":{"x":159.34375,"y":798.546875,"w":52.765625,"h":24,"right":212.109375,"bottom":822.546875,"mid":810.546875},"memo":{"x":260.109375,"y":798.546875,"w":87.328125,"h":20,"right":347.4375,"bottom":818.546875,"mid":808.546875},"tag":null},{"name":{"x":36,"y":943.859375,"w":276,"h":34,"right":312,"bottom":977.859375,"mid":960.859375},"cast":{"x":36,"y":983.859375,"w":52.765625,"h":24,"right":88.765625,"bottom":1007.859375,"mid":995.859375},"memo":{"x":136.76562
+  detail SN-TAG-SCHOOL-PHONE: [null,{"text":"School: Kitsu Shugenja","drawn":true},{"x":36,"y":573.234375,"w":318,"h":64,"right":354,"bottom":637.234375,"mid":605.234375},{"x":260.109375,"y":613.234375,"w":87.328125,"h":20,"right":347.4375,"bottom":633.234375,"mid":623.234375}]
+  detail SN-CONTROLS-PHONE: {"off":{"cast":24,"why":24,"memo":20},"on":[24,24,20]}
+  detail SN-DATA-UNCHANGED-PHONE: {"same":true,"grants":true,"back":0}
+  detail SN-TAG-FOLLOWS-GRANT-PHONE: {"record":{"version":1,"stage":"starting","kind":"spell","school":"Kitsu Shugenja","name":"Sense","created":false},"gone":0,"back":null}
+  detail SN-EDIT-SAVE-REOPEN-PHONE: {"t":{"name":"Jurojin's Balm, renamed","cost":0,"desc":"Layout sample text for Jurojin's Balm.","spellElement":"earth","spellMastery":"1","spellKeywords":"","spellIsMaho":false,"isMemorised":false,"memorisationXpCost":""},"row":["Jurojin's Balm, renamed",0],"first":null}
+  detail SN-MULTI-SCHOOL-PHONE: "exception: Cannot read properties of null (reading 'text')"
+  detail SN-PLAY-PHONE: "exception: Cannot read properties of null (reading 'drawn')"
+  detail SN-CLASS-OFF-PHONE: {"off":{"wrap":"wrap","tag":null,"source":true},"on":{"wrap":"wrap","tag":null,"source":true},"corner":true}
+  detail SN-SEAM-DESKTOP: {"on":false,"api":false,"cls":false}
+  detail SN-TAG-SCHOOL-DESKTOP: [null,{"text":"School: Kitsu Shugenja","drawn":true},{"x":166,"y":563.328125,"w":1108,"h":34,"right":1274,"bottom":597.328125,"mid":580.328125},{"x":1139.0625,"y":563.328125,"w":92.9375,"h":30,"right":1232,"bottom":593.328125,"mid":578.328125}]
+  detail SN-DATA-UNCHANGED-DESKTOP: {"same":true,"grants":true,"back":0}
+  detail SN-TAG-FOLLOWS-GRANT-DESKTOP: {"record":{"version":1,"stage":"starting","kind":"spell","school":"Kitsu Shugenja","name":"Sense","created":false},"gone":0,"back":null}
+  detail SN-EDIT-SAVE-REOPEN-DESKTOP: {"t":{"name":"Jurojin's Balm, renamed","cost":0,"desc":"Layout sample text for Jurojin's Balm.","spellElement":"earth","spellMastery":"1","spellKeywords":"","spellIsMaho":false,"isMemorised":false,"memorisationXpCost":""},"row":["Jurojin's Balm, renamed",0],"first":null}
+  detail SN-MULTI-SCHOOL-DESKTOP: "exception: Cannot read properties of null (reading 'text')"
+  detail SN-PLAY-DESKTOP: "exception: Cannot read properties of null (reading 'drawn')"
+  detail SN-CLASS-OFF-DESKTOP: {"off":{"wrap":"nowrap","tag":null,"source":true},"on":{"wrap":"nowrap","tag":null,"source":true},"corner":true}
+FAIL SN-SEAM-PHONE
+PASS SN-NAME-READABLE-PHONE
+FAIL SN-LINES-PHONE
+FAIL SN-TAG-SCHOOL-PHONE
+PASS SN-REWARD-NO-TAG-PHONE
+FAIL SN-CONTROLS-PHONE
+FAIL SN-DATA-UNCHANGED-PHONE
+FAIL SN-TAG-FOLLOWS-GRANT-PHONE
+FAIL SN-EDIT-SAVE-REOPEN-PHONE
+PASS SN-MEMO-TAP-PHONE
+FAIL SN-MULTI-SCHOOL-PHONE
+FAIL SN-PLAY-PHONE
+FAIL SN-CLASS-OFF-PHONE
+PASS SN-NO-ERRORS-PHONE
+FAIL SN-SEAM-DESKTOP
+PASS SN-NAME-READABLE-DESKTOP
+PASS SN-LINES-DESKTOP
+FAIL SN-TAG-SCHOOL-DESKTOP
+PASS SN-REWARD-NO-TAG-DESKTOP
+PASS SN-CONTROLS-DESKTOP
+FAIL SN-DATA-UNCHANGED-DESKTOP
+FAIL SN-TAG-FOLLOWS-GRANT-DESKTOP
+FAIL SN-EDIT-SAVE-REOPEN-DESKTOP
+PASS SN-MEMO-TAP-DESKTOP
+FAIL SN-MULTI-SCHOOL-DESKTOP
+FAIL SN-PLAY-DESKTOP
+FAIL SN-CLASS-OFF-DESKTOP
+PASS SN-NO-ERRORS-DESKTOP
+10/28 checks passed

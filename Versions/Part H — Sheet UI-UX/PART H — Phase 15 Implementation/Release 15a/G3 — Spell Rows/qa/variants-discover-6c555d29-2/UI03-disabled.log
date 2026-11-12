@@ -1,0 +1,51 @@
+  detail SX-SEAM-PHONE: {"on":false,"api":false,"cls":false}
+  detail SX-CORNER-CLEAR-PHONE: [["Sense",{".en-name":[34,34]}],["Clarity of Purpose",{".en-name":[34,34]}],["Jurojin's Balm",{".en-name":[34,34]}],["Wrath of Kaze-no-Kami (Hurricane)",{".en-name":[34,34]}]]
+  detail SX-TARGET-PHONE: [{"x":320,"y":569.234375,"w":40,"h":40,"right":360,"bottom":609.234375},{"x":320,"y":774.546875,"w":40,"h":40,"right":360,"bottom":814.546875},{"x":320,"y":979.859375,"w":40,"h":40,"right":360,"bottom":1019.859375},{"x":320,"y":1185.171875,"w":40,"h":40,"right":360,"bottom":1225.171875}]
+  detail SX-CLASS-OFF-PHONE: [[40,{".en-name":[34,34]}],[40,{".en-name":[34,34]}],[40,{".en-name":[34,34]}],[40,{".en-name":[34,34]}]]
+  detail SX-SCHOOL-REMOVE-PHONE: {"left":[["Clarity of Purpose",true],["Jurojin's Balm",false],["Wrath of Kaze-no-Kami (Hurricane)",false]],"saved":["Clarity of Purpose"]}
+  detail SX-CARDS-CORNER-CLEAR-PHONE: [["Eyes of the Ancestors",{"x":320,"y":54.03125,"w":40,"h":40,"right":360,"bottom":94.03125},{"INPUT.en-cost":[34,34]}],["Strength of the Crow",{"x":320,"y":1030.59375,"w":40,"h":40,"right":360,"bottom":1070.59375},{"INPUT.en-cost":[34,34]}],["Wealthy",{"x":-70,"y":395.28125,"w":40,"h":40,"right":-30,"bottom":435.28125},{"INPUT.en-cost":[34,34]}],["Leadership",{"x":-70,"y":580.59375,"w":40,"h":40,"right":-30,"bottom":620.59375},{"INPUT.en-cost":[34,34]}]]
+  detail SX-CARDS-NUMBER-BOX-PHONE: {"fit":{"8":true,"88":true,"888":true,"-12":true},"widths":[70]}
+  detail SX-CARDS-NAME-ROOM-PHONE: [["Eyes of the Ancestors",238,238],["Strength of the Crow",238,238],["Wealthy",238,238],["Leadership",238,238]]
+  detail SX-SEAM-DESKTOP: {"on":false,"api":false,"cls":false}
+  detail SX-CORNER-CLEAR-DESKTOP: [["Sense",{".sn15-tag":[21,17]}],["Clarity of Purpose",{".sn15-tag":[21,17]}],["Jurojin's Balm",{".spell-memo-label":[21,24]}],["Wrath of Kaze-no-Kami (Hurricane)",{".spell-memo-label":[21,24]}]]
+  detail SX-TARGET-DESKTOP: [{"x":1252.5625,"y":559.328125,"w":27.4375,"h":28,"right":1280,"bottom":587.328125},{"x":1252.5625,"y":715.46875,"w":27.4375,"h":28,"right":1280,"bottom":743.46875},{"x":1252.5625,"y":871.609375,"w":27.4375,"h":28,"right":1280,"bottom":899.609375},{"x":1252.5625,"y":1027.75,"w":27.4375,"h":28,"right":1280,"bottom":1055.75}]
+  detail SX-CLASS-OFF-DESKTOP: [[27.4375,{".sn15-tag":[21,17]}],[27.4375,{".sn15-tag":[21,17]}],[27.4375,{".spell-memo-label":[21,24]}],[27.4375,{".spell-memo-label":[21,24]}]]
+  detail SX-SCHOOL-REMOVE-DESKTOP: {"left":[["Clarity of Purpose",true],["Jurojin's Balm",false],["Wrath of Kaze-no-Kami (Hurricane)",false]],"saved":["Clarity of Purpose"]}
+  detail SX-CARDS-CORNER-CLEAR-DESKTOP: [["Eyes of the Ancestors",{"x":1252.5625,"y":407.78125,"w":27.4375,"h":28,"right":1280,"bottom":435.78125},{"INPUT.en-cost":[21,24]}],["Strength of the Crow",{"x":1252.5625,"y":1188.484375,"w":27.4375,"h":28,"right":1280,"bottom":1216.484375},{"INPUT.en-cost":[21,24]}],["Wealthy",{"x":-759.4375,"y":348.21875,"w":27.4375,"h":28,"right":-732,"bottom":376.21875},{"INPUT.en-cost":[21,24]}],["Leadership",{"x":-759.4375,"y":534.359375,"w":27.4375,"h":28,"right":-732,"bottom":562.359375},{"INPUT.en-cost":[21,24]}]]
+  detail SX-CARDS-NUMBER-BOX-DESKTOP: {"fit":{"8":true,"88":true,"888":true,"-12":true},"widths":[70]}
+  detail SX-CARDS-NAME-ROOM-DESKTOP: [["Eyes of the Ancestors",1028,1028],["Strength of the Crow",1028,1028],["Wealthy",456,456],["Leadership",456,456]]
+FAIL SX-SEAM-PHONE
+FAIL SX-CORNER-CLEAR-PHONE
+FAIL SX-TARGET-PHONE
+PASS SX-SAME-CORNER-PHONE
+PASS SX-NAME-READABLE-PHONE
+PASS SX-HEIGHT-PHONE
+FAIL SX-CLASS-OFF-PHONE
+PASS SX-TAP-EDGES-PHONE
+FAIL SX-SCHOOL-REMOVE-PHONE
+PASS SX-PLAY-PHONE
+FAIL SX-CARDS-CORNER-CLEAR-PHONE
+FAIL SX-CARDS-NUMBER-BOX-PHONE
+FAIL SX-CARDS-NAME-ROOM-PHONE
+PASS SX-CARDS-HEIGHT-PHONE
+PASS SX-CARDS-REMOVE-EDGE-PHONE
+PASS SX-CARDS-PLAY-PHONE
+PASS SX-NO-ERRORS-PHONE
+FAIL SX-SEAM-DESKTOP
+FAIL SX-CORNER-CLEAR-DESKTOP
+FAIL SX-TARGET-DESKTOP
+PASS SX-SAME-CORNER-DESKTOP
+PASS SX-NAME-READABLE-DESKTOP
+PASS SX-HEIGHT-DESKTOP
+FAIL SX-CLASS-OFF-DESKTOP
+PASS SX-TAP-EDGES-DESKTOP
+FAIL SX-SCHOOL-REMOVE-DESKTOP
+PASS SX-PLAY-DESKTOP
+FAIL SX-CARDS-CORNER-CLEAR-DESKTOP
+FAIL SX-CARDS-NUMBER-BOX-DESKTOP
+FAIL SX-CARDS-NAME-ROOM-DESKTOP
+PASS SX-CARDS-HEIGHT-DESKTOP
+PASS SX-CARDS-REMOVE-EDGE-DESKTOP
+PASS SX-CARDS-PLAY-DESKTOP
+PASS SX-NO-ERRORS-DESKTOP
+18/34 checks passed
