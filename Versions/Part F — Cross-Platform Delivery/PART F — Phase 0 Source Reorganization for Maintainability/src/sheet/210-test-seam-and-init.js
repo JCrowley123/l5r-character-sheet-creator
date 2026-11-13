@@ -998,6 +998,9 @@
   // PART H PHASE 15.1.27 BEGIN splash-fill-seam
   if(typeof window.SF15 === 'object' && window.SF15) Object.assign(window.__L5R_TEST__, {SF15: window.SF15});
   // END SF15 splash-fill-seam
+  // PART H PHASE 15.1.28 BEGIN yogo-given-spells-seam
+  if(typeof YG15 === 'object' && YG15) Object.assign(window.__L5R_TEST__, {YG15, YOGO_GIVEN_SPELLS_ENABLED});
+  // END YG15 yogo-given-spells-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

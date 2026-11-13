@@ -54,6 +54,17 @@ const LINES = {
     ['Ward spells: choose 3', 'Other spells, not Void: choose 3']],
   'Yoritomo Shugenja': ['Rulebook page not yet recorded', SCC, [['Water', 3], ['Fire', 2], ['Air', 1]]],
 };
+// Release 15a, unit AE1 (13 November 2026): when that unit is in the build, Yogo Wardmaster's given spells include
+// Sense (The Great Clans p.229) and five Schools carry their book pages. A declared conditional, recorded in AE1's
+// README and ROLLBACK: the same ids and count; without AE1 the lines above are expected exactly as before.
+const AE1_LINES = {
+  'Fuzake Shugenja': ['Secrets of the Empire p.238'].concat(LINES['Fuzake Shugenja'].slice(1)),
+  'Horiuchi Shugenja': ['The Great Clans p.257–258'].concat(LINES['Horiuchi Shugenja'].slice(1)),
+  'Ninube Shugenja': ['The Great Clans p.281'].concat(LINES['Ninube Shugenja'].slice(1)),
+  'Yogo Wardmaster [Shugenja]': ['The Great Clans p.229', SCC, null,
+    'Sense, Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells', LINES['Yogo Wardmaster [Shugenja]'][4]],
+  'Yoritomo Shugenja': ['The Great Clans p.169'].concat(LINES['Yoritomo Shugenja'].slice(1)),
+};
 // The owner's quoted Yogo list, under the sheet's own spell names.
 const YOGO_WARDS = ['To Seek the Truth', 'By the Light of the Moon', "Benten's Touch", 'Summon Fog', 'Armor of Earth',
   'Courage of the Seven Thunders', 'Force of Will', 'Wholeness of the World', 'Extinguish', 'Fires of Purity', 'Disrupt the Aura',
@@ -197,7 +208,9 @@ async function main() {
       const page = await fresh(browser);
       check('CW5-ENABLED', await page.evaluate(() => window.__L5R_TEST__.WIZARD_STARTING_SPELLS_ALL_ENABLED));
       // One check per School: its source, given spells and line as the step states it.
-      for (const [school, line] of Object.entries(LINES)) {
+      const ae1 = await page.evaluate(() => !!(window.__L5R_TEST__.YG15 && window.__L5R_TEST__.YOGO_GIVEN_SPELLS_ENABLED));
+      for (const [school, recorded] of Object.entries(LINES)) {
+        const line = ae1 && AE1_LINES[school] ? AE1_LINES[school] : recorded;
         const describe = line[3] || line[1].join(', ') + ', ' + line[2].map(p => p[1] + ' ' + p[0]).join(', ');
         check('CW5-LINE-' + slug(school), await page.evaluate((s) => { const C = window.__L5R_TEST__.CW1123, d = C.forSchool(s);
           return d && [d.source, d.given, d.choose || null, C.describe(d)]; }, school), [line[0], line[1], line[3] && !line[2] ? null : line[2], describe]);
@@ -238,10 +251,12 @@ async function main() {
     });
 
     // Every School, through the wizard: the step states its line and draws its boxes.
-    for (const [school, line] of Object.entries(LINES)) {
+    for (const [school, recorded] of Object.entries(LINES)) {
       await scenario('walk ' + school, async () => {
         const page = await fresh(browser);
         await toSpells(page, school);
+        const ae1 = await page.evaluate(() => !!(window.__L5R_TEST__.YG15 && window.__L5R_TEST__.YOGO_GIVEN_SPELLS_ENABLED));
+        const line = ae1 && AE1_LINES[school] ? AE1_LINES[school] : recorded;
         const describe = line[3] || line[1].join(', ') + ', ' + line[2].map(p => p[1] + ' ' + p[0]).join(', ');
         const boxes = line[4] || line[2].map(p => p[0] + ': choose ' + p[1]);
         check('CW5-WALK-' + slug(school), [await allotment(page), await labels(page), await learned(page), page.errors],

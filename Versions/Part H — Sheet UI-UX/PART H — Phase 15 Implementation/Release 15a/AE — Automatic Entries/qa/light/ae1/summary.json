@@ -1,0 +1,166 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Phase 11\\.2|Older School|School Choices|8b\\.1-UI-0|Kitsune|Rank Advancement|Gift of the Lady|Spell Names|Starting Spells Are Scrolls",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-01 — Starting-Spell Review and Its Actions/qa/spell-review-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-02 — Readable Spell Name and School Tag/qa/spell-name-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-03 — Remove Apart from Memorised/qa/spell-remove-harness.js",
+   "passed": 34,
+   "total": 34,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.6 Rank Advancement Spell Choices/qa/rank-spell-harness.js",
+   "passed": 36,
+   "total": 36,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/allocation-boundaries-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/legacy-grants-harness.js",
+   "passed": 4,
+   "total": 4,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/older-review-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.5 School Choices from the Character Check/qa/review-regression-harness.js",
+   "passed": 6,
+   "total": 6,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.5 School Choices from the Character Check/qa/school-choices-harness.js",
+   "passed": 30,
+   "total": 30,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Starting Spells Are Scrolls/qa/scrolls-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2 Creation Wizard/qa/wizard-harness.js",
+   "passed": 43,
+   "total": 43,
+   "status": 0,
+   "seconds": 14,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.1 Wizard Skills and Advantages/qa/wizard2-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/qa/wizard3-harness.js",
+   "passed": 52,
+   "total": 52,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.3 Wizard Starting Spells/qa/wizard4-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Kitsune Shugenja Listed Under Mantis/qa/kitsune-mantis-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.4 Wizard Starting Spells for Every School/qa/wizard5-harness.js",
+   "passed": 71,
+   "total": 71,
+   "status": 0,
+   "seconds": 43,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Names Match the Books/qa/spell-names-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Names Match the Books/qa/dependency-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Gift of the Lady per School and Imperial Histories Volumes/qa/gift-ih-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Gift of the Lady per School and Imperial Histories Volumes/qa/dependency-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  }
+ ]
+}
