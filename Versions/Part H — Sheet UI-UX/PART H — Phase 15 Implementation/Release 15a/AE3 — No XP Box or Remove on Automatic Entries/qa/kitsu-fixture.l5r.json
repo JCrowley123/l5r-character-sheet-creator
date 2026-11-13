@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 5,
+  "fields": {
+    "f_name": "Older Kitsu test character",
+    "f_clan": "Lion",
+    "f_school": "Kitsu Shugenja",
+    "f_schoolsData": "[{\"name\":\"Kitsu Shugenja\",\"frozen\":false,\"frozenRank\":null,\"floorRank\":1,\"anchorInsightRank\":0}]",
+    "f_schoolApplied": "{\"school\":\"Kitsu Shugenja\",\"skillGrants\":[{\"name\":\"Battle\",\"createdRow\":true},{\"name\":\"Calligraphy\",\"createdRow\":true},{\"name\":\"Etiquette\",\"createdRow\":true},{\"name\":\"Lore: History\",\"createdRow\":true},{\"name\":\"Lore: Theology\",\"createdRow\":true},{\"name\":\"Spellcraft\",\"createdRow\":true}]}"
+  },
+  "skills": [
+    {
+      "name": "Battle",
+      "trait": "Perception",
+      "rank": "1",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Calligraphy",
+      "trait": "Intelligence",
+      "rank": "1",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Etiquette",
+      "trait": "Awareness",
+      "rank": "1",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Lore: History",
+      "trait": "Intelligence",
+      "rank": "1",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Lore: Theology",
+      "trait": "Intelligence",
+      "rank": "1",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Spellcraft",
+      "trait": "Intelligence",
+      "rank": "1",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Defense",
+      "trait": "Reflexes",
+      "rank": "3",
+      "school": true,
+      "freeFloor": "0"
+    }
+  ],
+  "tech": [
+    {
+      "name": "Eyes of the Ancestors",
+      "cost": 0,
+      "desc": "School Technique"
+    },
+    {
+      "name": "Sense",
+      "cost": 0,
+      "spellElement": "universal",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Commune",
+      "cost": 0,
+      "spellElement": "universal",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Summon",
+      "cost": 0,
+      "spellElement": "universal",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Reflective Pool",
+      "cost": 0,
+      "spellElement": "water",
+      "spellMastery": "2",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Reversal of Fortunes",
+      "cost": 0,
+      "spellElement": "water",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Clarity of Purpose",
+      "cost": 0,
+      "spellElement": "water",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Blessed Wind",
+      "cost": 0,
+      "spellElement": "air",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Tempest of Air",
+      "cost": 0,
+      "spellElement": "air",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Jurojin's Balm",
+      "cost": 0,
+      "spellElement": "earth",
+      "spellMastery": "1",
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    }
+  ],
+  "equip": [
+    {
+      "name": "Spell Scroll — Sense",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Commune",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Summon",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Reflective Pool",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Reversal of Fortunes",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Clarity of Purpose",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Blessed Wind",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Tempest of Air",
+      "qty": "1",
+      "notes": "Test scroll"
+    },
+    {
+      "name": "Spell Scroll — Jurojin's Balm",
+      "qty": "1",
+      "notes": "Test scroll"
+    }
+  ]
+}

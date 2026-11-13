@@ -98,6 +98,10 @@ async function open(browser, opts) {
   // so this layer's review is checked as it works without AE2 (AE2 credits a School's given spells on opening; its
   // own harness checks that). Same ids and count; without AE2 this line does nothing.
   await page.evaluate(() => { const T = window.__L5R_TEST__; if (T && T.GS15) T.GS15.paused = true; });
+  // Release 15a AE3 (13 November 2026), a declared conditional: when AE3 is in the build its body class is taken away
+  // for this page, so this layer's clear corner is checked as it works without AE3 (AE3 takes the × off a School's
+  // given spells and School Techniques; its own harness checks that). Same ids and count; without AE3 it does nothing.
+  await page.evaluate(() => document.body.classList.remove('ax15-on'));
   await page.waitForFunction(() => !document.getElementById('l5rSplash'));
   await page.evaluate(() => { try { window.__L5R_TEST__.CL11.close(); } catch (e) {} });
   await page.evaluate(install);

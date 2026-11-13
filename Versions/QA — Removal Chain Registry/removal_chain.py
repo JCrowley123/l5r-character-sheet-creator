@@ -343,6 +343,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999999999995-feat-yogo-given-spells.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/AE2 — Given Spells Credited on Opening",
             fragment="src/sheet/209.999999999999999996-feat-given-spells-on-opening.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/AE3 — No XP Box or Remove on Automatic Entries",
+            fragment="src/sheet/209.999999999999999997-feat-automatic-entry-controls.js"),
 )
 
 

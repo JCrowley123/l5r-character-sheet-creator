@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "8eb7aecc7021d260fe24a2dd9897455cc0d85ff3292c040d52923cd0bccbb2ef",
+  "expect_sha256": "33f861ebc133ea1a4b687ed0034d94da285caff8562869a0188d69c63478c997",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -190,6 +190,7 @@
     { "file": "src/css/1143-cross-page-focus.css", "note": "PART H PHASE 15.1.25 - Release 15a A10, the Advanced Schools hint and button in one row, and no ring on the heading focused after a cross-page button" },
     { "file": "src/css/1144-keyboard-page-ring.css", "note": "PART H PHASE 15.1.26 - Release 15a A10.1, the page focus ring only when the page is reached with the keyboard" },
     { "file": "src/css/1145-splash-fill.css", "note": "PART H PHASE 15.1.27 - Release 15a A17, the splash picture fills the screen; its script is a block in the splash markup" },
+    { "file": "src/css/1146-automatic-entry-controls.css", "note": "PART H PHASE 15.1.30 - Release 15a AE3, no XP box and no remove button on automatic entries, the tag on the name line with a fallback on the left" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -534,6 +535,7 @@
     { "file": "src/sheet/209.999999999999999994-feat-keyboard-page-ring.js", "note": "PART H PHASE 15.1.26 - Release 15a A10.1, notes keyboard or pointer for the page focus ring" },
     { "file": "src/sheet/209.999999999999999995-feat-yogo-given-spells.js", "note": "PART H PHASE 15.1.28 - Release 15a AE1, Yogo Wardmaster's given spells include Sense, and five Schools' book pages" },
     { "file": "src/sheet/209.999999999999999996-feat-given-spells-on-opening.js", "note": "PART H PHASE 15.1.29 - Release 15a AE2, a School's given spells credited when a character is opened, with a note until the player saves" },
+    { "file": "src/sheet/209.999999999999999997-feat-automatic-entry-controls.js", "note": "PART H PHASE 15.1.30 - Release 15a AE3, marks automatic entries and lays out their tag" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
