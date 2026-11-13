@@ -1,0 +1,62 @@
+{
+  "checked_utc": "2026-11-13T21:21:32.404623+00:00",
+  "cases": [
+    {
+      "id": "AE3:baseline",
+      "expected_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "actual_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "counts": [
+        6,
+        20
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": false
+}
