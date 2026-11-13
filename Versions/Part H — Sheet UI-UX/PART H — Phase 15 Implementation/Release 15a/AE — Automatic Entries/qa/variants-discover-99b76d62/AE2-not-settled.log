@@ -1,0 +1,25 @@
+  detail GS-FIRST-OPEN-DONE-PHONE: null
+  detail GS-REMOVED-STAYS-REMOVED-PHONE: {"now":{"note":[{"school":"Kitsu Shugenja","marked":[],"added":["Sense"]}],"spells":[["Commune",{"school":"Kitsu Shugenja","others":[],"created":false}],["Reflective Pool",null],["Reversal of Fortunes",null],["Clarity of Purpose",null],["Blessed Wind",null],["Tempest of Air",null],["Jurojin's Balm",null],["Summon",{"school":"Kitsu Shugenja","others":[],"created":true}],["Sense",{"school":"Kitsu Shugenja","others":[],"created":true}]],"scrolls":[["Commune",{"school":"Kitsu Shugenja","others":[],"created":false}],["Reflective Pool",null],["Reversal of Fortunes",null],["Clarity of Purpose",null],["Blessed Wind",null],["Tempest of Air",null],["Jurojin's Balm",null],["Summon",{"school":"Kitsu Shugenja","others":[],"created":true}],["Sense",{"school":"Kitsu Shugenja","others":[],"created":true}]]},"lines":[{"rule":"given-spells-credited","title":"Kitsu Shugenja: Sense added as your School’s sp
+  detail GS-WIZARD-OPEN-WAITS-DESKTOP: {"during":[0,0],"doneDuring":null,"after":[1,1],"doneAfter":null}
+PASS GS-SEAM-PHONE
+PASS GS-HELD-MARKED-PHONE
+PASS GS-OTHERS-UNTOUCHED-PHONE
+FAIL GS-FIRST-OPEN-DONE-PHONE
+PASS GS-NOTE-FIRST-PHONE
+PASS GS-REVIEW-CHOICES-ONLY-PHONE
+PASS GS-MISSING-ADDED-PHONE
+PASS GS-REOPEN-NOTHING-TWICE-PHONE
+PASS GS-LISTED-AUTOSAVE-KEEPS-NOTE-PHONE
+PASS GS-SAVE-CLEARS-NOTE-PHONE
+FAIL GS-REMOVED-STAYS-REMOVED-PHONE
+PASS GS-REMOVED-NOT-LISTED-PHONE
+PASS GS-NO-ERRORS-PHONE
+FAIL GS-WIZARD-OPEN-WAITS-DESKTOP
+PASS GS-EXPORT-CLEARS-NOTE-DESKTOP
+PASS GS-EXPORTED-FILE-WITHOUT-NOTE-DESKTOP
+PASS GS-SAVE-AS-CLEARS-NOTE-DESKTOP
+PASS GS-CREDITED-NOTHING-TO-SAY-DESKTOP
+PASS GS-NOT-SHUGENJA-NOTHING-DESKTOP
+PASS GS-OPENED-IN-PLAY-ADDS-DESKTOP
+PASS GS-NO-ERRORS-DESKTOP
+18/21 checks passed
