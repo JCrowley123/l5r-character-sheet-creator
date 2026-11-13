@@ -1,5 +1,5 @@
 Preview page matches the committed build byte for byte.
-Service worker matches build 9193a74c625f6348.
+Service worker matches build a332038ae6889177.
 == AE1 — Sense for the Yogo Wardmaster/yogo-given-spells-harness.js
 PASS YG-SEAM-PHONE
 PASS YG-YOGO-GIVEN-PHONE
@@ -20,23 +20,28 @@ PASS YG-NO-ERRORS-DESKTOP
 PASS GS-SEAM-PHONE
 PASS GS-HELD-MARKED-PHONE
 PASS GS-OTHERS-UNTOUCHED-PHONE
+PASS GS-FIRST-OPEN-DONE-PHONE
 PASS GS-NOTE-FIRST-PHONE
 PASS GS-REVIEW-CHOICES-ONLY-PHONE
 PASS GS-MISSING-ADDED-PHONE
 PASS GS-REOPEN-NOTHING-TWICE-PHONE
 PASS GS-LISTED-AUTOSAVE-KEEPS-NOTE-PHONE
 PASS GS-SAVE-CLEARS-NOTE-PHONE
+PASS GS-REMOVED-STAYS-REMOVED-PHONE
+PASS GS-REMOVED-NOT-LISTED-PHONE
 PASS GS-NO-ERRORS-PHONE
+PASS GS-WIZARD-OPEN-WAITS-DESKTOP
 PASS GS-EXPORT-CLEARS-NOTE-DESKTOP
 PASS GS-EXPORTED-FILE-WITHOUT-NOTE-DESKTOP
 PASS GS-SAVE-AS-CLEARS-NOTE-DESKTOP
 PASS GS-CREDITED-NOTHING-TO-SAY-DESKTOP
 PASS GS-NOT-SHUGENJA-NOTHING-DESKTOP
+PASS GS-OPENED-IN-PLAY-ADDS-DESKTOP
 PASS GS-NO-ERRORS-DESKTOP
-16/16 checks passed
+21/21 checks passed
 
 == PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js
-Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-ae-preview-grr9ctyx\site\index.html
+Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-ae-preview-t0dr3nsw\site\index.html
 PASS CW5-ENABLED
 PASS CW5-LINE-AGASHA-SHUGENJA
 PASS CW5-LINE-ASAHINA-SHUGENJA
@@ -178,7 +183,7 @@ PASS SC8R-PAID-MEMORISED-SPELL-KEPT
 6/6 checks passed
 
 == PART K — Phase 11 Characters List and Save Model/characters-harness.js
-Characters list checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-ae-preview-grr9ctyx\site\index.html
+Characters list checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-ae-preview-t0dr3nsw\site\index.html
 PASS CL-ENABLED
 PASS CL-START-EMPTY-STAYS-ON-SHEET
 PASS CL-TOOLBAR-BUTTON-FIRST
@@ -415,7 +420,7 @@ PASS SX-NO-ERRORS-DESKTOP
 34/34 checks passed
 
 == PART K — Phase 12.6 Play Mode Techniques/techniques-harness.js
-Techniques in Play checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-ae-preview-grr9ctyx\site\index.html
+Techniques in Play checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-ae-preview-t0dr3nsw\site\index.html
 PASS TQ126-ENABLED
 PASS TQ126-MANAGEMENT-NAME-TYPES
 PASS TQ126-PLAY-ENTRY-LOCKED

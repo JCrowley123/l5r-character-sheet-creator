@@ -2,7 +2,7 @@
 
 The owner's rule of 11 November 2026: what the rules give a character automatically is not a choice, so it gets no review, no XP box and no remove button, and a character should be functional when it is opened. Three units, mocked up and approved on 13 November 2026 ([MOCKUP.md](MOCKUP.md); reproduction on G4 as live: [REPRODUCTION.md](REPRODUCTION.md)). This folder holds the group's shared records only; each unit has its own folder.
 
-Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-15a-g5`, from `main` at `60a5262a` (G4 as live). Not yet code-reviewed, device-checked, qualified or live.
+Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-15a-g5`, from `main` at `60a5262a` (G4 as live). Code-reviewed and device-checked; all three units accepted. Not yet qualified or live.
 
 **Light checks on the tip:** every harness in G4's candidate list passes on AE3 (198 harnesses, 7,326 checks, after the two declared conditionals), plus the three units' own harnesses (13 + 16 + 20).
 
@@ -10,7 +10,11 @@ Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-1
 
 **Previews on their deployed files** (`qa/hosted-preview/`): AE1 377/377, AE2 393/393, AE3 (revision 1) 413/413.
 
-**Device round:** the Claude Doc [Automatic entries device checks](https://claude.ai/artifact/MSCwtNQk4adKdxV6DBxxhn); mirror [DEVICE-CHECKS.md](DEVICE-CHECKS.md). AE1 and AE3 accepted; AE2 revised (revision 2, the owner's option B, and the Play-mode cause of check 9) and to be checked again.
+**Device round:** the Claude Doc [Automatic entries device checks](https://claude.ai/artifact/MSCwtNQk4adKdxV6DBxxhn); mirror [DEVICE-CHECKS.md](DEVICE-CHECKS.md). **All three accepted on 13 November 2026**: AE1, AE2 revision 2 (the owner's option B and the Play-mode cause of check 9) after its re-checks R1–R4 passed, and AE3 revision 1.
+
+**Light checks on the tip after the restack:** every harness in G4's candidate list, 198/198 harnesses and 7,326/7,326 checks on the first run (`qa/light/tip-all-run.log`), plus the units' own 13 + 21 + 20. Previews on their deployed files: AE2 398/398, AE3 418/418.
+
+**Next:** the qualification after the weekly reset on 18 November (variants pinned before discovery, the removal chain, the 4× CPU screen, two full passes on their first executions), then go-live only on the owner's word.
 
 ## Units
 

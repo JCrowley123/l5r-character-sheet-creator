@@ -2,7 +2,7 @@
 
 The automatic-entries group, unit 1 of 3. From the owner's rule of 11 November 2026 and the book check of all 21 Shugenja Schools the same day ([G3's owner comments](<../G3 — Spell Rows/OWNER-COMMENTS-2026-11-11.md>)). Approved as mocked up by the owner on 13 November 2026 ([the group's mock-ups](<../AE — Automatic Entries/MOCKUP.md>)). Built on 13 November 2026 (Claude), on branch `claude/release-15a-ae1`, stacked on the group's records branch `claude/release-15a-ae` (from `main` at G4 as live).
 
-Not yet device-checked, qualified or live.
+**Accepted by the owner at the group's device round, 13 November 2026** ([DEVICE-CHECKS.md](<../AE — Automatic Entries/DEVICE-CHECKS.md>)). Not qualified, not live.
 
 ## What changes
 

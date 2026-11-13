@@ -1,19 +1,19 @@
 {
-  "commit": "2159ae0997027fee9f5400ad90438dac498722c5",
+  "commit": "d40c85919809cf34039ca97f0b3e7cca90e2b395",
   "ref": "claude/release-15a-ae2",
   "url": "https://claude-release-15a-ae2.l5r-character-sheet-creator.pages.dev/",
-  "checked_utc": "2026-11-13T16:59:04.410893+00:00",
-  "source_sha256": "ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715",
-  "page_sha256": "250ea1ec083e12fb1018fbdad1d2d7eae0ada78ed7fe3fdd8ad5c176715d2493",
-  "page_bytes": 17667730,
-  "service_worker_build": "9193a74c625f6348",
+  "checked_utc": "2026-11-13T18:44:27.513674+00:00",
+  "source_sha256": "8eb7aecc7021d260fe24a2dd9897455cc0d85ff3292c040d52923cd0bccbb2ef",
+  "page_sha256": "074003161a595a1d62902d933e7251c25833e7c33bd94b016cccb2f59c382f2a",
+  "page_bytes": 17671108,
+  "service_worker_build": "a332038ae6889177",
   "units": [
     "AE1",
     "AE2"
   ],
   "expected": {
     "harnesses": 11,
-    "checks": 393
+    "checks": 398
   },
   "harnesses": {
     "AE1 \u2014 Sense for the Yogo Wardmaster/yogo-given-spells-harness.js": {
@@ -26,10 +26,10 @@
     },
     "AE2 \u2014 Given Spells Credited on Opening/given-spells-harness.js": {
       "counts": [
-        "16",
-        "16"
+        "21",
+        "21"
       ],
-      "expected": 16,
+      "expected": 21,
       "passed": true
     },
     "PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js": {

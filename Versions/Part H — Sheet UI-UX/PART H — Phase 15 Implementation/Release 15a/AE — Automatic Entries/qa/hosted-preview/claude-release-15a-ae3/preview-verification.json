@@ -1,12 +1,12 @@
 {
-  "commit": "b39d8bee3f311f1b8cc6dd839cea38ebd743f274",
+  "commit": "977ae99f43710c3a44c0f6a214ec1361c38be099",
   "ref": "claude/release-15a-ae3",
   "url": "https://claude-release-15a-ae3.l5r-character-sheet-creator.pages.dev/",
-  "checked_utc": "2026-11-13T17:10:24.050571+00:00",
-  "source_sha256": "3217c5518edf018783507c52569580d005760d37ea16e99300de65073ae49b12",
-  "page_sha256": "a7f347413591eb33afb364f487195745674cdd4dad5c7f33adcac8afb98f4ef6",
-  "page_bytes": 17678710,
-  "service_worker_build": "085dd479745b8220",
+  "checked_utc": "2026-11-13T18:49:54.833662+00:00",
+  "source_sha256": "99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8",
+  "page_sha256": "85c5b8b0d612d9b7c4381b9c41ef7e0669cbb1c3b7a3238d8659168a6dc9af57",
+  "page_bytes": 17682088,
+  "service_worker_build": "1dd9768a09706ced",
   "units": [
     "AE1",
     "AE2",
@@ -14,7 +14,7 @@
   ],
   "expected": {
     "harnesses": 12,
-    "checks": 413
+    "checks": 418
   },
   "harnesses": {
     "AE1 \u2014 Sense for the Yogo Wardmaster/yogo-given-spells-harness.js": {
@@ -27,10 +27,10 @@
     },
     "AE2 \u2014 Given Spells Credited on Opening/given-spells-harness.js": {
       "counts": [
-        "16",
-        "16"
+        "21",
+        "21"
       ],
-      "expected": 16,
+      "expected": 21,
       "passed": true
     },
     "AE3 \u2014 No XP Box or Remove on Automatic Entries/automatic-entry-controls-harness.js": {

@@ -2,7 +2,7 @@
 
 The automatic-entries group, unit 3 of 3. The owner's rule of 11 November 2026 ([G3's owner comments](<../G3 — Spell Rows/OWNER-COMMENTS-2026-11-11.md>), point 4), approved on 13 November 2026 as layout A with a fallback on the left ([the group's mock-ups](<../AE — Automatic Entries/MOCKUP.md>)). Built on 13 November 2026 (Claude), on branch `claude/release-15a-ae3` (the group's tip), stacked on AE2.
 
-Not yet device-checked, qualified or live.
+**Accepted by the owner at the group's device round, 13 November 2026** ([DEVICE-CHECKS.md](<../AE — Automatic Entries/DEVICE-CHECKS.md>)). Not qualified, not live.
 
 ## What changes
 
