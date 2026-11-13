@@ -1001,6 +1001,9 @@
   // PART H PHASE 15.1.28 BEGIN yogo-given-spells-seam
   if(typeof YG15 === 'object' && YG15) Object.assign(window.__L5R_TEST__, {YG15, YOGO_GIVEN_SPELLS_ENABLED});
   // END YG15 yogo-given-spells-seam
+  // PART H PHASE 15.1.29 BEGIN given-spells-on-opening-seam
+  if(typeof GS15 === 'object' && GS15) Object.assign(window.__L5R_TEST__, {GS15, GIVEN_SPELLS_ON_OPENING_ENABLED});
+  // END GS15 given-spells-on-opening-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

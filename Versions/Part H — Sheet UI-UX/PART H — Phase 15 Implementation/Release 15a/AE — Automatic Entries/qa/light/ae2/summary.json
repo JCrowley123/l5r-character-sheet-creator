@@ -1,0 +1,326 @@
+{
+ "sheet": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\claude\\08134b58138d4f7c\\d380a052-603c-4dbb-ae9e-9e05c5364fb3\\scratchpad\\builds\\ae2.html",
+ "pattern": "Phase 11|Phase 7|Audit|Phase 5 Character|PDF|Older School|School Choices|Starting Spell|Rank Advancement|Spell Names|Gift of the Lady|Kitsune|Undone Change|8b\\.1-UI-0|A01 |A10\\.1|Free Choice|Overspend|Phase 8 Why",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A10.1 — The Page Ring Only for the Keyboard/qa/keyboard-page-ring-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-01 — Starting-Spell Review and Its Actions/qa/spell-review-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-02 — Readable Spell Name and School Tag/qa/spell-name-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/8b.1-UI-03 — Remove Apart from Memorised/qa/spell-remove-harness.js",
+   "passed": 34,
+   "total": 34,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/qa/review-reminder-harness.js",
+   "passed": 31,
+   "total": 31,
+   "status": 0,
+   "seconds": 27,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.6 Rank Advancement Spell Choices/qa/rank-spell-harness.js",
+   "passed": 36,
+   "total": 36,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/allocation-boundaries-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/legacy-grants-harness.js",
+   "passed": 4,
+   "total": 4,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Older School Choices/qa/older-review-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.5 School Choices from the Character Check/qa/review-regression-harness.js",
+   "passed": 6,
+   "total": 6,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.5 School Choices from the Character Check/qa/school-choices-harness.js",
+   "passed": 30,
+   "total": 30,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Overspend One Line/qa/one-line-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Free Choice Note Clears/qa/free-choice-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Wizard Overspend Warns/qa/overspend-warns-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Undone Change Not Unsaved Work/qa/undone-change-harness.js",
+   "passed": 6,
+   "total": 6,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Starting Spells Are Scrolls/qa/scrolls-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "Part J — Data Integrity & Validation/PART J — Phase 7.1 Audit Log/qa/audit-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part J — Data Integrity & Validation/PART J — Phase 5 Character Creation Linting/qa/character-validator-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "Part J — Data Integrity & Validation/PART J — Phase 8 Why Cant I Cast This/qa/casting-diagnostics-harness.js",
+   "passed": 36,
+   "total": 36,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11 Characters List and Save Model/qa/characters-harness.js",
+   "passed": 70,
+   "total": 70,
+   "status": 0,
+   "seconds": 84,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2 Creation Wizard/qa/wizard-harness.js",
+   "passed": 43,
+   "total": 43,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.1 Wizard Skills and Advantages/qa/wizard2-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/qa/wizard3-harness.js",
+   "passed": 52,
+   "total": 52,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.3 Wizard Starting Spells/qa/wizard4-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Kitsune Shugenja Listed Under Mantis/qa/kitsune-mantis-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.4 Wizard Starting Spells for Every School/qa/wizard5-harness.js",
+   "passed": 71,
+   "total": 71,
+   "status": 0,
+   "seconds": 58,
+   "ok": true
+  },
+  {
+   "harness": "Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/qa/save-format-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.3 App Bar/qa/appbar-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.3 App Bar/qa/dependency-harness.js",
+   "passed": 14,
+   "total": 14,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.1 Export to PDF/qa/pdf-harness.js",
+   "passed": 33,
+   "total": 33,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Names Match the Books/qa/spell-names-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Names Match the Books/qa/dependency-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Gift of the Lady per School and Imperial Histories Volumes/qa/gift-ih-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Gift of the Lady per School and Imperial Histories Volumes/qa/dependency-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Template PDF Export/qa/template-pdf-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Template PDF Export/qa/coverage-harness.js",
+   "passed": 15,
+   "total": 15,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Template PDF Export/qa/school-choices-harness.js",
+   "passed": 4,
+   "total": 4,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — PDF Field Fit and Rules/qa/pdf-fit-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Optional PDF Details Appendix/qa/appendix-harness.js",
+   "passed": 15,
+   "total": 15,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — PDF Save and Print Workflow/qa/save-harness.js",
+   "passed": 30,
+   "total": 30,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  }
+ ]
+}

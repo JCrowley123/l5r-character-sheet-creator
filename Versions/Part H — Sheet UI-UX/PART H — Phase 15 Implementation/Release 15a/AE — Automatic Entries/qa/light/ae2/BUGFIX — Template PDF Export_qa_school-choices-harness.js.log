@@ -1,0 +1,5 @@
+PASS affinity snapshot
+PASS affinity plan
+PASS deficiency snapshot
+PASS deficiency plan
+4/4 checks passed

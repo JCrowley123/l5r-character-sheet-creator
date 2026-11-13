@@ -9,6 +9,10 @@ async function fresh(browser,school='Kitsu Shugenja'){
   await context.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//,r=>r.abort('blockedbyclient'));
   const p=await context.newPage();await p.goto(URL,{waitUntil:'domcontentloaded'});
   await p.waitForFunction(()=>window.__L5R_TEST__?.CL11?.ready,null,{timeout:60000});
+  // Release 15a AE2 (13 November 2026), a declared conditional: when AE2 is in the build it is paused for this page,
+  // so this layer's review is checked as it works without AE2 (AE2 credits a School's given spells on opening; its
+  // own harness checks that). Same ids and count; without AE2 this line does nothing.
+  await p.evaluate(() => { const T = window.__L5R_TEST__; if (T && T.GS15) T.GS15.paused = true; });
   // Import fixture: the existing sheet supports multiple held Schools and memorised spells without scrolls.
   await p.evaluate(s=>{const T=window.__L5R_TEST__,d=T.collectData();d.fields.f_schoolsData=JSON.stringify([{name:s,frozen:false,frozenRank:null,floorRank:1,anchorInsightRank:0}]);d.fields.f_school=s;T.applyData(d);},school);
   return p;

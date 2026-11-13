@@ -94,6 +94,10 @@ async function open(browser, opts) {
   page.on('pageerror', e => errors.push(String(e)));
   await page.goto(pathToFileURL(sheet).href, {waitUntil: 'domcontentloaded'});
   await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready);
+  // Release 15a AE2 (13 November 2026), a declared conditional: when AE2 is in the build it is paused for this page,
+  // so this layer's review is checked as it works without AE2 (AE2 credits a School's given spells on opening; its
+  // own harness checks that). Same ids and count; without AE2 this line does nothing.
+  await page.evaluate(() => { const T = window.__L5R_TEST__; if (T && T.GS15) T.GS15.paused = true; });
   await page.waitForFunction(() => !document.getElementById('l5rSplash'));
   await page.evaluate(() => { try { window.__L5R_TEST__.CL11.close(); } catch (e) {} });
   await page.evaluate(install);

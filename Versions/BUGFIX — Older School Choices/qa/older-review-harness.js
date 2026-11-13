@@ -14,6 +14,10 @@ async function run(){
     await page.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//,r => r.abort());
     await page.goto(pathToFileURL(path.resolve(process.argv[2])).href,{waitUntil:'domcontentloaded'});
     await page.waitForFunction(() => window.__L5R_TEST__?.CL11?.ready,null,{timeout:60000});
+    // Release 15a AE2 (13 November 2026), a declared conditional: when AE2 is in the build it is paused for this page,
+    // so this layer's review is checked as it works without AE2 (AE2 credits a School's given spells on opening; its
+    // own harness checks that). Same ids and count; without AE2 this line does nothing.
+    await page.evaluate(() => { const T = window.__L5R_TEST__; if (T && T.GS15) T.GS15.paused = true; });
     Object.assign(results, await page.evaluate(incoming => {
       const T=window.__L5R_TEST__, out={}, school='Kitsu Shugenja';
       const eight=['Sense','Commune','Summon','Reflective Pool','Reversal of Fortunes','Clarity of Purpose','Blessed Wind','Tempest of Air'];

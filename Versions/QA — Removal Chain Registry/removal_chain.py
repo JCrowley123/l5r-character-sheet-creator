@@ -341,6 +341,8 @@ CHAIN: tuple[Release, ...] = (
     # The automatic-entries group (the owner's rule of 11 November 2026).
     Release("PART H — Phase 15 Implementation/Release 15a/AE1 — Sense for the Yogo Wardmaster",
             fragment="src/sheet/209.999999999999999995-feat-yogo-given-spells.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/AE2 — Given Spells Credited on Opening",
+            fragment="src/sheet/209.999999999999999996-feat-given-spells-on-opening.js"),
 )
 
 
