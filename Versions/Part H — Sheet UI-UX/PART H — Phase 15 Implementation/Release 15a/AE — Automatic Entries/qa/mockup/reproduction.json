@@ -1,0 +1,1675 @@
+{
+ "source_sha256": "fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb",
+ "captured_utc": "2026-11-13T12:07:26.121Z",
+ "phone": {
+  "yogo_today": {
+   "note": "Yogo Wardmaster [Shugenja] starts with Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells (Rulebook page not yet recorded). Each is added to your Equipment as its Spell Scroll and learned.",
+   "given": "Given by your School\n\nCommune, Summon.",
+   "learned": [
+    "Commune",
+    "Summon"
+   ],
+   "scrolls": [
+    "Commune",
+    "Summon"
+   ],
+   "errors": []
+  },
+  "yogo_proposed": {
+   "note": "Yogo Wardmaster [Shugenja] starts with Sense, Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells (The Great Clans p.229). Each is added to your Equipment as its Spell Scroll and learned.",
+   "given": "Given by your School\n\nSense, Commune, Summon.",
+   "learned": [
+    "Sense",
+    "Commune",
+    "Summon"
+   ],
+   "scrolls": [
+    "Sense",
+    "Commune",
+    "Summon"
+   ],
+   "errors": []
+  },
+  "kitsu_today-all": {
+   "check": [
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Given by your School 0 of 3 chosen",
+     "items": [
+      "Sense",
+      "Commune",
+      "Summon"
+     ]
+    },
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "errors": []
+  },
+  "kitsu_today-missing": {
+   "check": [
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Given by your School 0 of 3 chosen",
+     "items": [
+      "Sense",
+      "Commune"
+     ]
+    },
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "errors": []
+  },
+  "kitsu_proposed-all": {
+   "check": [
+    "ℹ Kitsu Shugenja: Sense, Commune and Summon marked as your School’s spells Every Kitsu Shugenja is given these three, so there was nothing to choose.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "checkBeforeOpen": [
+    "ℹ Kitsu Shugenja: Sense, Commune and Summon marked as your School’s spells Every Kitsu Shugenja is given these three, so there was nothing to choose.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "errors": []
+  },
+  "kitsu_proposed-missing": {
+   "check": [
+    "ℹ Kitsu Shugenja: Sense and Commune marked as your School’s spells; Summon added Every Kitsu Shugenja is given these three. Summon was missing, so it was added with its Spell Scroll.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "checkBeforeOpen": [
+    "ℹ Kitsu Shugenja: Sense and Commune marked as your School’s spells; Summon added Every Kitsu Shugenja is given these three. Summon was missing, so it was added with its Spell Scroll.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "errors": []
+  },
+  "tech_today": {
+   "added": {
+    "kiho": "Breaking Blow (Fire 3, Martial) — 6 XP · Fire = 3",
+    "kata": null
+   },
+   "manage": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 214,
+     "xp": "0",
+     "remove": true,
+     "tag": null,
+     "h": 195
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 276,
+     "xp": null,
+     "remove": true,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 276,
+     "xp": null,
+     "remove": true,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 276,
+     "xp": null,
+     "remove": true,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 214,
+     "xp": "6",
+     "remove": true,
+     "tag": null,
+     "h": 238
+    }
+   ],
+   "fit": {
+    "src": [
+     "BROTHERHOOD_SCHOOL_LIBRARY",
+     "schoolsForPicker",
+     "findAnySchoolLibraryEntry",
+     "ALL_SCHOOL_TECHNIQUES",
+     "activeSchoolIsBrotherhood",
+     "findSchoolLibraryEntry",
+     "schoolCasterCategory",
+     "ALTERNATE_PATH_LIBRARY",
+     "SCHOOL_NAME_ALIASES",
+     "resolveSchoolName",
+     "allSchoolEntries",
+     "getPathTaken",
+     "savePathTaken",
+     "findPath",
+     "pathAtRank",
+     "pathsTaken",
+     "pathClauseMatches",
+     "pathAvailableFor",
+     "pathsAvailableAt",
+     "pathRequirementsUnmet",
+     "pathNarrativeRequirements",
+     "assertPathSchoolsResolve",
+     "renderPathPicker",
+     "getSchoolApplied",
+     "saveSchoolApplied",
+     "revertSchoolApplied",
+     "renderAppliedSchoolAffinity",
+     "kihoSchoolRank",
+     "MIRUMOTO_SCHOOL",
+     "isMirumotoSchoolName",
+     "getSchoolsList",
+     "saveSchoolsList",
+     "schoolGrantedRankForSkill",
+     "inferSchoolFreeFloor",
+     "ruleMissingSchoolSkills",
+     "ruleSchoolChoiceSlots",
+     "ruleSchoolRankOverInsight",
+     "validatorSchoolEntries",
+     "castingRuleSchoolRestriction",
+     "SCHOOL_SKILL_ROWS_FIX_ENABLED",
+     "SCHOOL_SKILL_ROWS",
+     "hasSchoolSkillOverlap",
+     "schoolConcreteSkillNames",
+     "ALTERNATE_PATHS_ENABLED",
+     "effectiveSchoolRankForElement",
+     "effectiveSchoolRankForSpell",
+     "ADVANCED_SCHOOLS_ENABLED",
+     "ADVANCED_SCHOOL_LIBRARY",
+     "addAdvancedSchoolToCharacter",
+     "addSchoolToCharacter",
+     "refreshMultipleSchoolsUI",
+     "SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED",
+     "SUPPLEMENTAL_ADVANCED_SCHOOL_DATA",
+     "MISSING_BASIC_SCHOOLS_ENABLED",
+     "MISSING_BASIC_SCHOOL_DATA",
+     "SCHOOL_LIBRARY",
+     "MINOR_CLAN_SCHOOL_LIBRARY",
+     "SCHOOLREF1432",
+     "SCHOOLLORE9",
+     "SCHOOL_FLAVOUR_ENABLED",
+     "SCHOOL_POINTER_ENABLED",
+     "SCHOOL_LIST_GENDER_ENABLED",
+     "SCHOOL_CHOICES_ENABLED"
+    ],
+    "paths": 214,
+    "adv": 23,
+    "room": 194,
+    "count": 631,
+    "over": 10,
+    "longest": [
+     [
+      "Forge Your Own Fate (Master of Games)",
+      247
+     ],
+     [
+      "Strike From Above Strike From Below",
+      233
+     ],
+     [
+      "Never This Sacred Ground Shall Fall",
+      223
+     ],
+     [
+      "The World in the Palm of the Hand",
+      217
+     ]
+    ]
+   },
+   "play": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 256,
+     "xp": "0",
+     "remove": false,
+     "tag": null,
+     "h": 195
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 256,
+     "xp": "6",
+     "remove": false,
+     "tag": null,
+     "h": 238
+    }
+   ],
+   "errors": []
+  },
+  "tech_proposed": {
+   "added": {
+    "kiho": "Breaking Blow (Fire 3, Martial) — 6 XP · Fire = 3",
+    "kata": null
+   },
+   "manage": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 191,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 195
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 214,
+     "xp": "6",
+     "remove": true,
+     "tag": null,
+     "h": 238
+    }
+   ],
+   "fit": {
+    "src": [
+     "BROTHERHOOD_SCHOOL_LIBRARY",
+     "schoolsForPicker",
+     "findAnySchoolLibraryEntry",
+     "ALL_SCHOOL_TECHNIQUES",
+     "activeSchoolIsBrotherhood",
+     "findSchoolLibraryEntry",
+     "schoolCasterCategory",
+     "ALTERNATE_PATH_LIBRARY",
+     "SCHOOL_NAME_ALIASES",
+     "resolveSchoolName",
+     "allSchoolEntries",
+     "getPathTaken",
+     "savePathTaken",
+     "findPath",
+     "pathAtRank",
+     "pathsTaken",
+     "pathClauseMatches",
+     "pathAvailableFor",
+     "pathsAvailableAt",
+     "pathRequirementsUnmet",
+     "pathNarrativeRequirements",
+     "assertPathSchoolsResolve",
+     "renderPathPicker",
+     "getSchoolApplied",
+     "saveSchoolApplied",
+     "revertSchoolApplied",
+     "renderAppliedSchoolAffinity",
+     "kihoSchoolRank",
+     "MIRUMOTO_SCHOOL",
+     "isMirumotoSchoolName",
+     "getSchoolsList",
+     "saveSchoolsList",
+     "schoolGrantedRankForSkill",
+     "inferSchoolFreeFloor",
+     "ruleMissingSchoolSkills",
+     "ruleSchoolChoiceSlots",
+     "ruleSchoolRankOverInsight",
+     "validatorSchoolEntries",
+     "castingRuleSchoolRestriction",
+     "SCHOOL_SKILL_ROWS_FIX_ENABLED",
+     "SCHOOL_SKILL_ROWS",
+     "hasSchoolSkillOverlap",
+     "schoolConcreteSkillNames",
+     "ALTERNATE_PATHS_ENABLED",
+     "effectiveSchoolRankForElement",
+     "effectiveSchoolRankForSpell",
+     "ADVANCED_SCHOOLS_ENABLED",
+     "ADVANCED_SCHOOL_LIBRARY",
+     "addAdvancedSchoolToCharacter",
+     "addSchoolToCharacter",
+     "refreshMultipleSchoolsUI",
+     "SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED",
+     "SUPPLEMENTAL_ADVANCED_SCHOOL_DATA",
+     "MISSING_BASIC_SCHOOLS_ENABLED",
+     "MISSING_BASIC_SCHOOL_DATA",
+     "SCHOOL_LIBRARY",
+     "MINOR_CLAN_SCHOOL_LIBRARY",
+     "SCHOOLREF1432",
+     "SCHOOLLORE9",
+     "SCHOOL_FLAVOUR_ENABLED",
+     "SCHOOL_POINTER_ENABLED",
+     "SCHOOL_LIST_GENDER_ENABLED",
+     "SCHOOL_CHOICES_ENABLED"
+    ],
+    "paths": 214,
+    "adv": 23,
+    "room": 171,
+    "count": 631,
+    "over": 31,
+    "longest": [
+     [
+      "Forge Your Own Fate (Master of Games)",
+      247
+     ],
+     [
+      "Strike From Above Strike From Below",
+      233
+     ],
+     [
+      "Never This Sacred Ground Shall Fall",
+      223
+     ],
+     [
+      "The World in the Palm of the Hand",
+      217
+     ]
+    ]
+   },
+   "play": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 191,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 195
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 256,
+     "xp": "6",
+     "remove": false,
+     "tag": null,
+     "h": 238
+    }
+   ],
+   "errors": []
+  },
+  "tech_proposed-b": {
+   "added": {
+    "kiho": "Breaking Blow (Fire 3, Martial) — 6 XP · Fire = 3",
+    "kata": null
+   },
+   "manage": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 221
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 214,
+     "xp": "6",
+     "remove": true,
+     "tag": null,
+     "h": 238
+    }
+   ],
+   "fit": {
+    "src": [
+     "BROTHERHOOD_SCHOOL_LIBRARY",
+     "schoolsForPicker",
+     "findAnySchoolLibraryEntry",
+     "ALL_SCHOOL_TECHNIQUES",
+     "activeSchoolIsBrotherhood",
+     "findSchoolLibraryEntry",
+     "schoolCasterCategory",
+     "ALTERNATE_PATH_LIBRARY",
+     "SCHOOL_NAME_ALIASES",
+     "resolveSchoolName",
+     "allSchoolEntries",
+     "getPathTaken",
+     "savePathTaken",
+     "findPath",
+     "pathAtRank",
+     "pathsTaken",
+     "pathClauseMatches",
+     "pathAvailableFor",
+     "pathsAvailableAt",
+     "pathRequirementsUnmet",
+     "pathNarrativeRequirements",
+     "assertPathSchoolsResolve",
+     "renderPathPicker",
+     "getSchoolApplied",
+     "saveSchoolApplied",
+     "revertSchoolApplied",
+     "renderAppliedSchoolAffinity",
+     "kihoSchoolRank",
+     "MIRUMOTO_SCHOOL",
+     "isMirumotoSchoolName",
+     "getSchoolsList",
+     "saveSchoolsList",
+     "schoolGrantedRankForSkill",
+     "inferSchoolFreeFloor",
+     "ruleMissingSchoolSkills",
+     "ruleSchoolChoiceSlots",
+     "ruleSchoolRankOverInsight",
+     "validatorSchoolEntries",
+     "castingRuleSchoolRestriction",
+     "SCHOOL_SKILL_ROWS_FIX_ENABLED",
+     "SCHOOL_SKILL_ROWS",
+     "hasSchoolSkillOverlap",
+     "schoolConcreteSkillNames",
+     "ALTERNATE_PATHS_ENABLED",
+     "effectiveSchoolRankForElement",
+     "effectiveSchoolRankForSpell",
+     "ADVANCED_SCHOOLS_ENABLED",
+     "ADVANCED_SCHOOL_LIBRARY",
+     "addAdvancedSchoolToCharacter",
+     "addSchoolToCharacter",
+     "refreshMultipleSchoolsUI",
+     "SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED",
+     "SUPPLEMENTAL_ADVANCED_SCHOOL_DATA",
+     "MISSING_BASIC_SCHOOLS_ENABLED",
+     "MISSING_BASIC_SCHOOL_DATA",
+     "SCHOOL_LIBRARY",
+     "MINOR_CLAN_SCHOOL_LIBRARY",
+     "SCHOOLREF1432",
+     "SCHOOLLORE9",
+     "SCHOOL_FLAVOUR_ENABLED",
+     "SCHOOL_POINTER_ENABLED",
+     "SCHOOL_LIST_GENDER_ENABLED",
+     "SCHOOL_CHOICES_ENABLED"
+    ],
+    "paths": 214,
+    "adv": 23,
+    "room": 298,
+    "count": 631,
+    "over": 0,
+    "longest": [
+     [
+      "Forge Your Own Fate (Master of Games)",
+      247
+     ],
+     [
+      "Strike From Above Strike From Below",
+      233
+     ],
+     [
+      "Never This Sacred Ground Shall Fall",
+      223
+     ],
+     [
+      "The World in the Palm of the Hand",
+      217
+     ]
+    ]
+   },
+   "play": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 221
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 318,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 207
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 256,
+     "xp": "6",
+     "remove": false,
+     "tag": null,
+     "h": 238
+    }
+   ],
+   "errors": []
+  }
+ },
+ "laptop": {
+  "yogo_today": {
+   "note": "Yogo Wardmaster [Shugenja] starts with Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells (Rulebook page not yet recorded). Each is added to your Equipment as its Spell Scroll and learned.",
+   "given": "Given by your School\n\nCommune, Summon.",
+   "learned": [
+    "Commune",
+    "Summon"
+   ],
+   "scrolls": [
+    "Commune",
+    "Summon"
+   ],
+   "errors": []
+  },
+  "yogo_proposed": {
+   "note": "Yogo Wardmaster [Shugenja] starts with Sense, Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells (The Great Clans p.229). Each is added to your Equipment as its Spell Scroll and learned.",
+   "given": "Given by your School\n\nSense, Commune, Summon.",
+   "learned": [
+    "Sense",
+    "Commune",
+    "Summon"
+   ],
+   "scrolls": [
+    "Sense",
+    "Commune",
+    "Summon"
+   ],
+   "errors": []
+  },
+  "kitsu_today-all": {
+   "check": [
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Given by your School 0 of 3 chosen",
+     "items": [
+      "Sense",
+      "Commune",
+      "Summon"
+     ]
+    },
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "errors": []
+  },
+  "kitsu_today-missing": {
+   "check": [
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Given by your School 0 of 3 chosen",
+     "items": [
+      "Sense",
+      "Commune"
+     ]
+    },
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "errors": []
+  },
+  "kitsu_proposed-all": {
+   "check": [
+    "ℹ Kitsu Shugenja: Sense, Commune and Summon marked as your School’s spells Every Kitsu Shugenja is given these three, so there was nothing to choose.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "checkBeforeOpen": [
+    "ℹ Kitsu Shugenja: Sense, Commune and Summon marked as your School’s spells Every Kitsu Shugenja is given these three, so there was nothing to choose.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "errors": []
+  },
+  "kitsu_proposed-missing": {
+   "check": [
+    "ℹ Kitsu Shugenja: Sense and Commune marked as your School’s spells; Summon added Every Kitsu Shugenja is given these three. Summon was missing, so it was added with its Spell Scroll.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "groups": [
+    {
+     "legend": "Water 0 of 3 chosen",
+     "items": [
+      "Reflective Pool",
+      "Reversal of Fortunes",
+      "Clarity of Purpose"
+     ]
+    },
+    {
+     "legend": "Air 0 of 2 chosen",
+     "items": [
+      "Blessed Wind",
+      "Tempest of Air"
+     ]
+    },
+    {
+     "legend": "Earth 0 of 1 chosen",
+     "items": [
+      "Jurojin's Balm"
+     ]
+    }
+   ],
+   "checkBeforeOpen": [
+    "ℹ Kitsu Shugenja: Sense and Commune marked as your School’s spells; Summon added Every Kitsu Shugenja is given these three. Summon was missing, so it was added with its Spell Scroll.",
+    "ℹ 35 XP unspent Not a problem — noted in case the character was meant to be finished.",
+    "ℹ Kitsu Shugenja: review starting spells Identify starting spells among the spells already on this character. REVIEW STARTING SPELLS"
+   ],
+   "errors": []
+  },
+  "tech_today": {
+   "added": {
+    "kiho": "Breaking Blow (Fire 3, Martial) — 6 XP · Fire = 3",
+    "kata": null
+   },
+   "manage": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 1004,
+     "xp": "0",
+     "remove": true,
+     "tag": null,
+     "h": 149
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 779,
+     "xp": null,
+     "remove": true,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 779,
+     "xp": null,
+     "remove": true,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 779,
+     "xp": null,
+     "remove": true,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 1004,
+     "xp": "6",
+     "remove": true,
+     "tag": null,
+     "h": 149
+    }
+   ],
+   "fit": {
+    "src": [
+     "BROTHERHOOD_SCHOOL_LIBRARY",
+     "schoolsForPicker",
+     "findAnySchoolLibraryEntry",
+     "ALL_SCHOOL_TECHNIQUES",
+     "activeSchoolIsBrotherhood",
+     "findSchoolLibraryEntry",
+     "schoolCasterCategory",
+     "ALTERNATE_PATH_LIBRARY",
+     "SCHOOL_NAME_ALIASES",
+     "resolveSchoolName",
+     "allSchoolEntries",
+     "getPathTaken",
+     "savePathTaken",
+     "findPath",
+     "pathAtRank",
+     "pathsTaken",
+     "pathClauseMatches",
+     "pathAvailableFor",
+     "pathsAvailableAt",
+     "pathRequirementsUnmet",
+     "pathNarrativeRequirements",
+     "assertPathSchoolsResolve",
+     "renderPathPicker",
+     "getSchoolApplied",
+     "saveSchoolApplied",
+     "revertSchoolApplied",
+     "renderAppliedSchoolAffinity",
+     "kihoSchoolRank",
+     "MIRUMOTO_SCHOOL",
+     "isMirumotoSchoolName",
+     "getSchoolsList",
+     "saveSchoolsList",
+     "schoolGrantedRankForSkill",
+     "inferSchoolFreeFloor",
+     "ruleMissingSchoolSkills",
+     "ruleSchoolChoiceSlots",
+     "ruleSchoolRankOverInsight",
+     "validatorSchoolEntries",
+     "castingRuleSchoolRestriction",
+     "SCHOOL_SKILL_ROWS_FIX_ENABLED",
+     "SCHOOL_SKILL_ROWS",
+     "hasSchoolSkillOverlap",
+     "schoolConcreteSkillNames",
+     "ALTERNATE_PATHS_ENABLED",
+     "effectiveSchoolRankForElement",
+     "effectiveSchoolRankForSpell",
+     "ADVANCED_SCHOOLS_ENABLED",
+     "ADVANCED_SCHOOL_LIBRARY",
+     "addAdvancedSchoolToCharacter",
+     "addSchoolToCharacter",
+     "refreshMultipleSchoolsUI",
+     "SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED",
+     "SUPPLEMENTAL_ADVANCED_SCHOOL_DATA",
+     "MISSING_BASIC_SCHOOLS_ENABLED",
+     "MISSING_BASIC_SCHOOL_DATA",
+     "SCHOOL_LIBRARY",
+     "MINOR_CLAN_SCHOOL_LIBRARY",
+     "SCHOOLREF1432",
+     "SCHOOLLORE9",
+     "SCHOOL_FLAVOUR_ENABLED",
+     "SCHOOL_POINTER_ENABLED",
+     "SCHOOL_LIST_GENDER_ENABLED",
+     "SCHOOL_CHOICES_ENABLED"
+    ],
+    "paths": 214,
+    "adv": 23,
+    "room": 984,
+    "count": 631,
+    "over": 0,
+    "longest": [
+     [
+      "Forge Your Own Fate (Master of Games)",
+      247
+     ],
+     [
+      "Strike From Above Strike From Below",
+      233
+     ],
+     [
+      "Never This Sacred Ground Shall Fall",
+      223
+     ],
+     [
+      "The World in the Palm of the Hand",
+      217
+     ]
+    ]
+   },
+   "play": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 1046,
+     "xp": "0",
+     "remove": false,
+     "tag": null,
+     "h": 149
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 1046,
+     "xp": "6",
+     "remove": false,
+     "tag": null,
+     "h": 149
+    }
+   ],
+   "errors": []
+  },
+  "tech_proposed": {
+   "added": {
+    "kiho": "Breaking Blow (Fire 3, Martial) — 6 XP · Fire = 3",
+    "kata": null
+   },
+   "manage": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 981,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 149
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 1004,
+     "xp": "6",
+     "remove": true,
+     "tag": null,
+     "h": 149
+    }
+   ],
+   "fit": {
+    "src": [
+     "BROTHERHOOD_SCHOOL_LIBRARY",
+     "schoolsForPicker",
+     "findAnySchoolLibraryEntry",
+     "ALL_SCHOOL_TECHNIQUES",
+     "activeSchoolIsBrotherhood",
+     "findSchoolLibraryEntry",
+     "schoolCasterCategory",
+     "ALTERNATE_PATH_LIBRARY",
+     "SCHOOL_NAME_ALIASES",
+     "resolveSchoolName",
+     "allSchoolEntries",
+     "getPathTaken",
+     "savePathTaken",
+     "findPath",
+     "pathAtRank",
+     "pathsTaken",
+     "pathClauseMatches",
+     "pathAvailableFor",
+     "pathsAvailableAt",
+     "pathRequirementsUnmet",
+     "pathNarrativeRequirements",
+     "assertPathSchoolsResolve",
+     "renderPathPicker",
+     "getSchoolApplied",
+     "saveSchoolApplied",
+     "revertSchoolApplied",
+     "renderAppliedSchoolAffinity",
+     "kihoSchoolRank",
+     "MIRUMOTO_SCHOOL",
+     "isMirumotoSchoolName",
+     "getSchoolsList",
+     "saveSchoolsList",
+     "schoolGrantedRankForSkill",
+     "inferSchoolFreeFloor",
+     "ruleMissingSchoolSkills",
+     "ruleSchoolChoiceSlots",
+     "ruleSchoolRankOverInsight",
+     "validatorSchoolEntries",
+     "castingRuleSchoolRestriction",
+     "SCHOOL_SKILL_ROWS_FIX_ENABLED",
+     "SCHOOL_SKILL_ROWS",
+     "hasSchoolSkillOverlap",
+     "schoolConcreteSkillNames",
+     "ALTERNATE_PATHS_ENABLED",
+     "effectiveSchoolRankForElement",
+     "effectiveSchoolRankForSpell",
+     "ADVANCED_SCHOOLS_ENABLED",
+     "ADVANCED_SCHOOL_LIBRARY",
+     "addAdvancedSchoolToCharacter",
+     "addSchoolToCharacter",
+     "refreshMultipleSchoolsUI",
+     "SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED",
+     "SUPPLEMENTAL_ADVANCED_SCHOOL_DATA",
+     "MISSING_BASIC_SCHOOLS_ENABLED",
+     "MISSING_BASIC_SCHOOL_DATA",
+     "SCHOOL_LIBRARY",
+     "MINOR_CLAN_SCHOOL_LIBRARY",
+     "SCHOOLREF1432",
+     "SCHOOLLORE9",
+     "SCHOOL_FLAVOUR_ENABLED",
+     "SCHOOL_POINTER_ENABLED",
+     "SCHOOL_LIST_GENDER_ENABLED",
+     "SCHOOL_CHOICES_ENABLED"
+    ],
+    "paths": 214,
+    "adv": 23,
+    "room": 961,
+    "count": 631,
+    "over": 0,
+    "longest": [
+     [
+      "Forge Your Own Fate (Master of Games)",
+      247
+     ],
+     [
+      "Strike From Above Strike From Below",
+      233
+     ],
+     [
+      "Never This Sacred Ground Shall Fall",
+      223
+     ],
+     [
+      "The World in the Palm of the Hand",
+      217
+     ]
+    ]
+   },
+   "play": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 981,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 149
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 1046,
+     "xp": "6",
+     "remove": false,
+     "tag": null,
+     "h": 149
+    }
+   ],
+   "errors": []
+  },
+  "tech_proposed-b": {
+   "added": {
+    "kiho": "Breaking Blow (Fire 3, Martial) — 6 XP · Fire = 3",
+    "kata": null
+   },
+   "manage": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 981,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 149
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 1004,
+     "xp": "6",
+     "remove": true,
+     "tag": null,
+     "h": 149
+    }
+   ],
+   "fit": {
+    "src": [
+     "BROTHERHOOD_SCHOOL_LIBRARY",
+     "schoolsForPicker",
+     "findAnySchoolLibraryEntry",
+     "ALL_SCHOOL_TECHNIQUES",
+     "activeSchoolIsBrotherhood",
+     "findSchoolLibraryEntry",
+     "schoolCasterCategory",
+     "ALTERNATE_PATH_LIBRARY",
+     "SCHOOL_NAME_ALIASES",
+     "resolveSchoolName",
+     "allSchoolEntries",
+     "getPathTaken",
+     "savePathTaken",
+     "findPath",
+     "pathAtRank",
+     "pathsTaken",
+     "pathClauseMatches",
+     "pathAvailableFor",
+     "pathsAvailableAt",
+     "pathRequirementsUnmet",
+     "pathNarrativeRequirements",
+     "assertPathSchoolsResolve",
+     "renderPathPicker",
+     "getSchoolApplied",
+     "saveSchoolApplied",
+     "revertSchoolApplied",
+     "renderAppliedSchoolAffinity",
+     "kihoSchoolRank",
+     "MIRUMOTO_SCHOOL",
+     "isMirumotoSchoolName",
+     "getSchoolsList",
+     "saveSchoolsList",
+     "schoolGrantedRankForSkill",
+     "inferSchoolFreeFloor",
+     "ruleMissingSchoolSkills",
+     "ruleSchoolChoiceSlots",
+     "ruleSchoolRankOverInsight",
+     "validatorSchoolEntries",
+     "castingRuleSchoolRestriction",
+     "SCHOOL_SKILL_ROWS_FIX_ENABLED",
+     "SCHOOL_SKILL_ROWS",
+     "hasSchoolSkillOverlap",
+     "schoolConcreteSkillNames",
+     "ALTERNATE_PATHS_ENABLED",
+     "effectiveSchoolRankForElement",
+     "effectiveSchoolRankForSpell",
+     "ADVANCED_SCHOOLS_ENABLED",
+     "ADVANCED_SCHOOL_LIBRARY",
+     "addAdvancedSchoolToCharacter",
+     "addSchoolToCharacter",
+     "refreshMultipleSchoolsUI",
+     "SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED",
+     "SUPPLEMENTAL_ADVANCED_SCHOOL_DATA",
+     "MISSING_BASIC_SCHOOLS_ENABLED",
+     "MISSING_BASIC_SCHOOL_DATA",
+     "SCHOOL_LIBRARY",
+     "MINOR_CLAN_SCHOOL_LIBRARY",
+     "SCHOOLREF1432",
+     "SCHOOLLORE9",
+     "SCHOOL_FLAVOUR_ENABLED",
+     "SCHOOL_POINTER_ENABLED",
+     "SCHOOL_LIST_GENDER_ENABLED",
+     "SCHOOL_CHOICES_ENABLED"
+    ],
+    "paths": 214,
+    "adv": 23,
+    "room": 961,
+    "count": 631,
+    "over": 0,
+    "longest": [
+     [
+      "Forge Your Own Fate (Master of Games)",
+      247
+     ],
+     [
+      "Strike From Above Strike From Below",
+      233
+     ],
+     [
+      "Never This Sacred Ground Shall Fall",
+      223
+     ],
+     [
+      "The World in the Palm of the Hand",
+      217
+     ]
+    ]
+   },
+   "play": [
+    {
+     "name": "Gaze Into Shadow",
+     "spell": false,
+     "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 ",
+     "nameW": 981,
+     "xp": null,
+     "remove": false,
+     "tag": "School technique",
+     "h": 149
+    },
+    {
+     "name": "Sense",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Detect the presence, rough",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Commune",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Ask a local elemental spir",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Summon",
+     "spell": true,
+     "desc": "[Spell — Universal 1] Conjure roughly one cubic ",
+     "nameW": 821,
+     "xp": null,
+     "remove": false,
+     "tag": "School spell",
+     "h": 149
+    },
+    {
+     "name": "Breaking Blow",
+     "spell": false,
+     "desc": "[Kiho — Fire 3, Martial] Unarmed strikes inflict",
+     "nameW": 1046,
+     "xp": "6",
+     "remove": false,
+     "tag": null,
+     "h": 149
+    }
+   ],
+   "errors": []
+  }
+ },
+ "browser": "153.0.8010.12",
+ "merge_all": {
+  "afterGiven": [
+   {
+    "name": "Sense",
+    "keys": [
+     "name",
+     "cost",
+     "desc",
+     "spellElement",
+     "spellMastery",
+     "spellKeywords",
+     "spellIsMaho",
+     "isMemorised",
+     "memorisationXpCost",
+     "schoolChoice"
+    ]
+   },
+   {
+    "name": "Commune",
+    "keys": [
+     "name",
+     "cost",
+     "desc",
+     "spellElement",
+     "spellMastery",
+     "spellKeywords",
+     "spellIsMaho",
+     "isMemorised",
+     "memorisationXpCost",
+     "schoolChoice"
+    ]
+   },
+   {
+    "name": "Summon",
+    "keys": [
+     "name",
+     "cost",
+     "desc",
+     "spellElement",
+     "spellMastery",
+     "spellKeywords",
+     "spellIsMaho",
+     "isMemorised",
+     "memorisationXpCost",
+     "schoolChoice"
+    ]
+   }
+  ],
+  "afterScrolls": [
+   "Spell Scroll — Sense",
+   "Spell Scroll — Commune",
+   "Spell Scroll — Summon"
+  ],
+  "errors": []
+ },
+ "merge_missing": {
+  "afterGiven": [
+   {
+    "name": "Sense",
+    "keys": [
+     "name",
+     "cost",
+     "desc",
+     "spellElement",
+     "spellMastery",
+     "spellKeywords",
+     "spellIsMaho",
+     "isMemorised",
+     "memorisationXpCost",
+     "schoolChoice"
+    ]
+   },
+   {
+    "name": "Commune",
+    "keys": [
+     "name",
+     "cost",
+     "desc",
+     "spellElement",
+     "spellMastery",
+     "spellKeywords",
+     "spellIsMaho",
+     "isMemorised",
+     "memorisationXpCost",
+     "schoolChoice"
+    ]
+   },
+   {
+    "name": "Summon",
+    "keys": [
+     "name",
+     "cost",
+     "desc",
+     "spellElement",
+     "spellMastery",
+     "spellKeywords",
+     "spellIsMaho",
+     "isMemorised",
+     "memorisationXpCost",
+     "schoolChoice"
+    ]
+   }
+  ],
+  "afterScrolls": [
+   "Spell Scroll — Sense",
+   "Spell Scroll — Commune",
+   "Spell Scroll — Summon"
+  ],
+  "errors": []
+ }
+}

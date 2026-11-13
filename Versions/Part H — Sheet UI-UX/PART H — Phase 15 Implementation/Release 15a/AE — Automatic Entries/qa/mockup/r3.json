@@ -1,0 +1,107 @@
+{
+ "source_sha256": "fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb",
+ "captured_utc": "2026-11-13T13:11:37.051Z",
+ "browser": "153.0.8010.12",
+ "right": {
+  "manage": [
+   {
+    "name": "The Way of the Crab",
+    "wrapped": false,
+    "cut": false,
+    "h": 173,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 245,
+    "tagRight": 354,
+    "cardRight": 367
+   },
+   {
+    "name": "The Mountain Does Not Move",
+    "wrapped": true,
+    "cut": false,
+    "h": 184,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 245,
+    "tagRight": 354,
+    "cardRight": 367
+   }
+  ],
+  "play": [
+   {
+    "name": "The Way of the Crab",
+    "wrapped": false,
+    "cut": false,
+    "h": 173,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 245,
+    "tagRight": 354,
+    "cardRight": 367
+   },
+   {
+    "name": "The Mountain Does Not Move",
+    "wrapped": true,
+    "cut": false,
+    "h": 184,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 245,
+    "tagRight": 354,
+    "cardRight": 367
+   }
+  ],
+  "errors": []
+ },
+ "left": {
+  "manage": [
+   {
+    "name": "The Way of the Crab",
+    "wrapped": false,
+    "cut": false,
+    "h": 173,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 245,
+    "tagRight": 354,
+    "cardRight": 367
+   },
+   {
+    "name": "The Mountain Does Not Move",
+    "wrapped": true,
+    "cut": false,
+    "h": 184,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 36,
+    "tagRight": 145,
+    "cardRight": 367
+   }
+  ],
+  "play": [
+   {
+    "name": "The Way of the Crab",
+    "wrapped": false,
+    "cut": false,
+    "h": 173,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 245,
+    "tagRight": 354,
+    "cardRight": 367
+   },
+   {
+    "name": "The Mountain Does Not Move",
+    "wrapped": true,
+    "cut": false,
+    "h": 184,
+    "nameLeft": 36,
+    "nameTextLeft": 46,
+    "tagLeft": 36,
+    "tagRight": 145,
+    "cardRight": 367
+   }
+  ],
+  "errors": []
+ }
+}

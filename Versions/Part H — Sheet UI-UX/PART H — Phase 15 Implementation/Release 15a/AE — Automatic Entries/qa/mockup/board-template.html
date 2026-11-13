@@ -1,0 +1,275 @@
+<title>Automatic Entries Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, the same look as the G4 board; each unit is a band of today | proposed pairs that stack on a phone. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem;margin-top:14px}
+p{margin:0;max-width:70ch}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:74ch}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+code{font-size:.85em;background:var(--chip);padding:1px 5px;border-radius:4px;word-break:break-word}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:12px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--new);border-radius:6px;padding:12px 14px;max-width:none}
+.rec b{color:var(--new)}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;max-width:none}
+.note b{color:var(--warn)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.pair.three{grid-template-columns:1fr 1fr 1fr}
+.stack{display:flex;flex-direction:column;gap:14px}
+.phonepair{max-width:760px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+figcaption .o{color:var(--warn);font-weight:600}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.78rem;letter-spacing:.03em}
+td.t{color:var(--today)} td.n{color:var(--new)}
+.summary td:first-child{white-space:nowrap;font-weight:600}
+.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.decide ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:720px){.pair,.pair.three{grid-template-columns:1fr}h1{font-size:1.7rem}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">Release 15a · the automatic-entries group</span>
+  <h1>Automatic entries: today beside proposed</h1>
+  <p class="lede">Three units from your rule of 11 November: what the rules give a character is not a choice, so it gets no review, no XP box and no remove button, and a character should work as soon as it is opened. Every picture is the live app in a test browser; the proposed pictures have the change applied only in that browser. Nothing is built: the build starts only on your approval.</p>
+  <p class="meta">Live build <code>fa634abb…00cb</code>, 17,648,272 bytes, <code>main</code> at <code>60a5262a</code> (G4 live; the same bytes as production). Captured 13 November 2026 in Chromium 153 at 390 × 844 (phone, touch) and 1440 × 1000 (laptop). Test characters: the older Kitsu Shugenja used for the starting-spell review (and a copy of it without Summon), the dense Kuni Shugenja from the audit with a Kiho bought through the sheet's picker, and a new Yogo Wardmaster made in the creation wizard. No page errors at either size.</p>
+</header>
+
+<section id="round3">
+  <span class="tag">Round 3 · AE3's fallback, your question of 13 November</span>
+  <h2>The fallback's tag on the left of its new line</h2>
+  <p>You approved layout A with the fallback and asked whether, on a card that falls back, the tag should start the new line on the left instead of sitting at its right end. Below are two cards a Hida Bushi of Rank 2 would have: Rank 1's name fits, so its card is one line; Rank 2's does not, so its card falls back.</p>
+  <h3>Play · phone</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{r3-p-right}}" alt="Fallback with the tag on the right of its new line"><figcaption><span class="o">Tag on the right.</span> A gap after the name and another before the tag; the tag looks cut loose from the name.</figcaption></figure>
+    <figure><img src="{{r3-p-left}}" alt="Fallback with the tag on the left of its new line"><figcaption><span class="n">Tag on the left.</span> The tag reads straight after the name, and its text lines up with the name's.</figcaption></figure>
+  </div>
+  <h3>Manage · phone</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{r3-m-right}}" alt="Manage, tag on the right"><figcaption><span class="o">Tag on the right.</span></figcaption></figure>
+    <figure><img src="{{r3-m-left}}" alt="Manage, tag on the left, flush with the name box and the description box"><figcaption><span class="n">Tag on the left.</span> Flush with the left edge of the name box and the description box below it.</figcaption></figure>
+  </div>
+  <ul>
+    <li><b>Your worry about the tag moving.</b> It does change side between a one-line card and a fallback card. But the order never changes: the tag always comes after the name, as a word that does not fit drops to the start of the next line. Wrapping text already works like that, so it reads as natural rather than as a jump.</li>
+    <li>Fallback cards are few: on a 390 px phone, 31 of the 631 names; on a 430 px phone, 16; on a laptop, none. A character has at most one or two of them, beside cards on one line, as in the pictures.</li>
+    <li>Nothing else changes: same tag, same 6 px gap, the same 26 px of height on a fallback card.</li>
+  </ul>
+  <div class="rec"><b>Recommendation: the tag on the left.</b> Your reasoning holds: it follows the name in reading order and leaves no gap on either side.</div>
+</section>
+
+<section id="round2">
+  <span class="tag">Round 2 · your replies of 13 November</span>
+  <h2>Where each unit stands</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Unit</th><th>Your reply</th><th>Now proposed</th></tr>
+    <tr><td>AE1</td><td>Approved as recommended.</td><td class="n">Approved. Nothing more to decide.</td></tr>
+    <tr><td>AE2</td><td>The idea is right, but the note should only be there after the first import, until a manual save.</td><td>Revision 1, below.</td></tr>
+    <tr><td>AE3</td><td>Layout A (tag beside the name), especially in Play. Is any name long enough to fill the box?</td><td>Yes, 31 are, so: layout A, with the tag moving under the name only on a card whose name does not fit. Below.</td></tr>
+  </table></div>
+
+  <h3>AE2 revision 1 · how long the note stays</h3>
+  <ul>
+    <li>The note appears when the sheet makes the change: the first time an older character is opened, whether it came from a file or from the Characters list. (An import from the Characters list stores the file as it is, so the change happens when you first open it.)</li>
+    <li>The note is kept with the character, so it is still there if you close and reopen it, <b>until you save the character yourself</b>: Save, Save As New or Export JSON. Then it is gone for good.</li>
+    <li>Autosave does not count. The sheet autosaves a listed character a moment after it changes, so if autosave cleared the note, it could go before you had seen it.</li>
+    <li>The change itself happens only once: reopening never marks or adds the spells again.</li>
+    <li>The note says how it goes away, so nobody wonders why it is still there.</li>
+  </ul>
+  <div class="pair">
+    <figure><img src="{{r1-phone-note}}" alt="The note with its last sentence: This note goes once you save the character."><figcaption><span class="n">Revision 1, phone.</span> The same note, with one more sentence at the end.</figcaption></figure>
+    <figure><img src="{{r1-laptop-note}}" alt="The same note on a laptop"><figcaption><span class="n">Revision 1, laptop.</span></figcaption></figure>
+  </div>
+  <div class="rec"><b>Recommendation: approve revision 1.</b> It keeps the note only until you have saved the character yourself, as you asked. Saving it marks the note as read.</div>
+
+  <h3>AE3 · your question: does any name come close to filling the box?</h3>
+  <p>Yes. On a 390 px phone (most iPhones) the name box in layout A has room for 171 px of text. <b>31 of the sheet's 631</b> School, Path and Advanced School Technique names are longer, and some come from well-known Schools: Hida Bushi's Rank 2 and Rank 5, Mirumoto Bushi's Rank 2, Bayushi Bushi's Rank 4 and 5, Shinjo Bushi's Rank 4, the Moto Death Priest's Rank 1. On a 430 px phone (the largest iPhones) it is 16. In Play the name cannot be edited, so the end of a long name cannot be seen.</p>
+  <div class="pair three">
+    <figure><img src="{{hida-p-today}}" alt="Today in Play: The Mountain Does Not Move, whole"><figcaption><span class="t">Today, Play.</span> The whole name shows, beside an XP box of "0".</figcaption></figure>
+    <figure><img src="{{hida-p-A}}" alt="Layout A in Play: The Mountain Does Not M, cut off"><figcaption><span class="o">Layout A, Play.</span> Reads "The Mountain Does Not M". Manage is the same.</figcaption></figure>
+    <figure><img src="{{hida-p-fallback}}" alt="Layout A with the fallback in Play: the whole name, the tag under it"><figcaption><span class="n">A with the fallback, Play.</span> This card's name does not fit, so its tag moves under it. The whole name shows.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-tech-play-proposed}}" alt="Gaze Into Shadow in Play with the tag on the same line"><figcaption><span class="n">A with the fallback, a name that fits</span> (most cards): one line, exactly your layout A.</figcaption></figure>
+    <figure><img src="{{hida-m-fallback}}" alt="The long name in Manage with the tag under it"><figcaption><span class="n">A with the fallback, Manage</span>, for a long name.</figcaption></figure>
+  </div>
+  <ul>
+    <li>Every card whose name fits looks exactly like layout A. Only a card whose name would be cut puts its tag on the next line. The sheet checks this when the card is drawn, when the screen size changes and when the name is edited.</li>
+    <li>On a laptop every name fits, so every card is one line.</li>
+    <li>Pure layout A is worse on an Advanced School card: "Advanced School technique" is a longer tag, so its name has even less room.</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Names longer than layout A's room on a 390 px phone (171 px)</th><th>From</th><th>Width</th><th>Cut today too?</th></tr>
+{{names-rows}}
+  </table></div>
+  <p class="meta">"Cut today too" is in Manage today, where the XP box and × take room (10 names). In Play today only the first name is cut.</p>
+  <div class="rec"><b>Recommendation: layout A, with the fallback.</b> Your layout on nearly every card, and no Technique name is ever cut off.</div>
+</section>
+
+<section>
+  <span class="tag">First round · 13 November</span>
+  <h2>At a glance</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Unit</th><th>What you will notice</th><th>Tier</th><th>Recommendation</th></tr>
+    <tr><td>AE1 · Yogo Wardmaster's given spells</td><td>A new Yogo Wardmaster gets Sense with Commune and Summon. Five Schools show their book page instead of "page not yet recorded".</td><td>Behaviour</td><td>Approve</td></tr>
+    <tr><td>AE2 · Given spells credited on opening</td><td>Opening an older character marks Sense, Commune and Summon as School spells by itself (adding any that is missing, with its scroll) and says so in the character check. The review asks only about the real choices.</td><td>Behaviour</td><td>Approve</td></tr>
+    <tr><td>AE3 · No XP box or × on automatic entries</td><td>School, Path and Advanced School Techniques lose the XP box and the ×, with a quiet "School technique" tag. A School's given spells lose the ×. Kata, Kiho and chosen spells keep both.</td><td>Screen-only</td><td>Approve, layout B</td></tr>
+  </table></div>
+  <p class="meta">AE1–AE3 are proposed names, like A10.1 was. Built, each gets its own folder, switch, marker (15.1.28 to 15.1.30), harness, remover and removal-chain entry after A17.</p>
+  <div class="note"><b>Allowance.</b> Weekly use is at 81% (all models; Fable 84%), resetting 18 November at 01:00 UTC. G4 took about 22 points from build to qualification. If you approve, the build, light checks and code review should fit this week; the device round may; the qualification (the 4× CPU screen and two full passes, as AE1 and AE2 are behaviour tier) is unlikely to fit before the reset and would run after it.</div>
+</section>
+
+<section id="ae1">
+  <span class="tag">AE1 · behaviour tier · a data fix</span>
+  <h2>Yogo Wardmaster's given spells</h2>
+  <p>The book check of all 21 Shugenja Schools on 11 November found 20 right and one wrong: the sheet gives a Yogo Wardmaster only Commune and Summon, but The Great Clans p.229 reads "Sense, Commune, Summon, 3 Wards spells, 3 other spells (not Void)". So the creation wizard never adds Sense, and the character check never asks for it.</p>
+  <h3>Phone · the wizard's Spells step for a new Yogo Wardmaster</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-yogo-today}}" alt="Today: starts with Commune, Summon; given by your School: Commune, Summon"><figcaption><span class="t">Today.</span> Given: Commune, Summon. Learned: Commune, Summon, with their two scrolls. Source: "Rulebook page not yet recorded".</figcaption></figure>
+    <figure><img src="{{phone-yogo-proposed}}" alt="Proposed: starts with Sense, Commune, Summon; given by your School: Sense, Commune, Summon"><figcaption><span class="n">Proposed.</span> Given: Sense, Commune, Summon. Learned: all three, with their three scrolls. Source: "The Great Clans p.229".</figcaption></figure>
+  </div>
+  <h3>Laptop</h3>
+  <div class="pair">
+    <figure><img src="{{laptop-yogo-today}}" alt="Today on a laptop"><figcaption><span class="t">Today.</span></figcaption></figure>
+    <figure><img src="{{laptop-yogo-proposed}}" alt="Proposed on a laptop"><figcaption><span class="n">Proposed.</span></figcaption></figure>
+  </div>
+  <h3>The five book pages</h3>
+  <p>Read from your PDFs today. The sheet records the printed page, which is one lower than the PDF page in these two books.</p>
+  <div class="tbl"><table>
+    <tr><th>School</th><th>Today</th><th>Proposed</th></tr>
+    <tr><td>Fuzake Shugenja</td><td class="t">Secrets of the Empire, page not yet recorded</td><td class="n">Secrets of the Empire p.238</td></tr>
+    <tr><td>Horiuchi Shugenja</td><td class="t">Rulebook page not yet recorded</td><td class="n">The Great Clans p.257–258</td></tr>
+    <tr><td>Ninube Shugenja</td><td class="t">Great Clans, page not yet recorded</td><td class="n">The Great Clans p.281</td></tr>
+    <tr><td>Yogo Wardmaster</td><td class="t">Rulebook page not yet recorded</td><td class="n">The Great Clans p.229</td></tr>
+    <tr><td>Yoritomo Shugenja</td><td class="t">Rulebook page not yet recorded</td><td class="n">The Great Clans p.169</td></tr>
+  </table></div>
+  <ul>
+    <li>The Yogo line also gains Sense in its wording: "Sense, Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells". The Ward and other-spell boxes are unchanged.</li>
+    <li>A Yogo Wardmaster made before this fix has no Sense. With AE1 alone the character check lists "Sense (given by your School)" under "Still to choose", and the School's spell window offers an "Add Sense" button; with AE2 as well, it is added when the character is opened, with a note.</li>
+    <li>The wizard's own test (Phase 11.2.4) pins Yogo's old list and the "page not yet recorded" text. AE1 updates those pins and declares it, as A17 did for the splash test.</li>
+  </ul>
+  <div class="rec"><b>Recommendation: approve.</b> It is the book's own line, and the one School the check found wrong.</div>
+</section>
+
+<section id="ae2">
+  <span class="tag">AE2 · behaviour tier · changes what is saved</span>
+  <h2>Given spells credited on opening</h2>
+  <p>Today an older Shugenja character is asked to tick Sense, Commune and Summon in the starting-spell review, beside the real choices. If one of them is missing, nothing says so: the copy without Summon still shows "0 of 3 chosen" over two boxes, and Summon is offered only after Confirm, as an "Add Summon" button.</p>
+  <h3>Phone · the character check (the copy without Summon)</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-check-today-missing}}" alt="Today: the check says review starting spells and does not mention the missing Summon"><figcaption><span class="t">Today.</span> One line: "review starting spells". Summon's absence is not mentioned.</figcaption></figure>
+    <figure><img src="{{phone-check-proposed-missing}}" alt="Proposed: a note says Sense and Commune were marked as School spells and Summon was added"><figcaption><span class="n">Proposed.</span> A note says what the sheet did: two spells marked, Summon added with its scroll. The review line stays for the real choices.</figcaption></figure>
+  </div>
+  <h3>Phone · the starting-spell review (the full older Kitsu)</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-review-today-all}}" alt="Today: the review lists Given by your School with Sense, Commune and Summon to tick"><figcaption><span class="t">Today.</span> Four groups: "Given by your School" (Sense, Commune, Summon) to tick, then Water, Air and Earth.</figcaption></figure>
+    <figure><img src="{{phone-review-proposed-all}}" alt="Proposed: the review lists only Water, Air and Earth"><figcaption><span class="n">Proposed.</span> Only the choices: Water 3, Air 2, Earth 1. Sense, Commune and Summon are already School spells.</figcaption></figure>
+  </div>
+  <h3>Laptop</h3>
+  <div class="stack">
+    <figure><img src="{{laptop-check-today-missing}}" alt="Today: the character check on a laptop"><figcaption><span class="t">Today.</span> The character check.</figcaption></figure>
+    <figure><img src="{{laptop-check-proposed-missing}}" alt="Proposed: the character check on a laptop with the note"><figcaption><span class="n">Proposed.</span> The same note at the top.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{laptop-review-today-all}}" alt="Today: the review on a laptop"><figcaption><span class="t">Today.</span> The review.</figcaption></figure>
+    <figure><img src="{{laptop-review-proposed-all}}" alt="Proposed: the review on a laptop"><figcaption><span class="n">Proposed.</span> The review, choices only.</figcaption></figure>
+  </div>
+  <h3>How it would work</h3>
+  <ul>
+    <li><b>Each School's own list.</b> Sense, Commune and Summon for 19 Schools; Fuzake adds Path to Inner Peace; Yogo has all three once AE1 is in.</li>
+    <li><b>Every time a character is opened,</b> from a file or from the Characters list, for every Shugenja School it has. When there is nothing to do, nothing is shown.</li>
+    <li><b>Held spells</b> are marked as that School's spells, with their scrolls, exactly as ticking them in the review does today. <b>Missing ones</b> are added with their Spell Scroll, the same way the wizard adds them.</li>
+    <li><b>Never silent.</b> One note per School names each spell and says "marked" or "added". The wording in the pictures is a draft.</li>
+    <li>A second Shugenja School's given spells are usually already held; they are credited to both Schools, as the review already does.</li>
+    <li>It is part of opening the character, so it is not an undo step. Choosing a School on the sheet is unchanged (the wizard already adds these spells).</li>
+  </ul>
+  <div class="rec"><b>Recommendation: approve.</b> It is your proposal with the two conditions you agreed: each School's own list, and a note instead of a silent change.</div>
+</section>
+
+<section id="ae3">
+  <span class="tag">AE3 · screen-only · hides controls, writes nothing</span>
+  <h2>No XP box or × on automatic entries</h2>
+  <p>The sheet adds School Techniques itself at 0 XP and takes them back itself when the School, Path or Rank goes. A × on them misleads: nothing records the removal, so the Technique comes back the next time the School's Techniques are applied. The same is true of a School's given spells.</p>
+  <h3>Phone · Manage</h3>
+  <div class="pair three">
+    <figure><img src="{{phone-tech-top-today}}" alt="Today: the School Technique card with an XP box showing 0 and a remove button; Sense with a remove button"><figcaption><span class="t">Today.</span> XP box "0" and × on the School Technique; × on Sense. Name box 214 px; 10 of the sheet's 631 School, Path and Advanced Technique names do not fit it.</figcaption></figure>
+    <figure><img src="{{phone-tech-top-proposed-b}}" alt="Layout B: the name takes the whole line and the School technique tag sits under it at the right"><figcaption><span class="n">Layout B, recommended.</span> The name takes the whole line (318 px; all 631 names fit) and the tag sits under it, as spell cards already do on a phone. The card is 26 px taller.</figcaption></figure>
+    <figure><img src="{{phone-tech-top-proposed}}" alt="Layout A: the tag beside the name on one line"><figcaption><span class="o">Layout A, not recommended.</span> The tag beside the name keeps the card's height but narrows the name box to 191 px: 31 of 631 names no longer fit.</figcaption></figure>
+  </div>
+  <p>Sense, Commune and Summon lose the × in both layouts, and their name box takes back the empty corner (276 → 318 px), as it already does in Play.</p>
+  <h3>Phone · what keeps both, and Play</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-tech-last-today}}" alt="A Kiho bought for 6 XP keeps its XP box and remove button"><figcaption>A Kiho bought for 6 XP: <b>unchanged</b>, XP box and × kept. Kata and chosen spells are the same.</figcaption></figure>
+    <div class="stack">
+      <figure><img src="{{phone-tech-play-today}}" alt="Today in Play: the School Technique shows an XP box with 0"><figcaption><span class="t">Today, Play.</span> The XP box still shows "0".</figcaption></figure>
+      <figure><img src="{{phone-tech-play-proposed-b}}" alt="Proposed in Play: the tag instead of the XP box"><figcaption><span class="n">Proposed, Play.</span> The tag instead.</figcaption></figure>
+    </div>
+  </div>
+  <h3>Laptop · Manage (one line in both layouts)</h3>
+  <div class="stack">
+    <figure><img src="{{laptop-tech-top-today}}" alt="Today on a laptop"><figcaption><span class="t">Today.</span></figcaption></figure>
+    <figure><img src="{{laptop-tech-top-proposed-b}}" alt="Proposed on a laptop"><figcaption><span class="n">Proposed.</span> The tag where the XP box was. Every name fits either way.</figcaption></figure>
+  </div>
+  <h3>The rule, card by card</h3>
+  <div class="tbl"><table>
+    <tr><th>Card</th><th>XP box</th><th>×</th><th>Tag</th></tr>
+    <tr><td>School Technique, Path Technique, Advanced School Technique</td><td class="n">none</td><td class="n">none (goes when its School, Path or Rank goes)</td><td>School technique · Path technique · Advanced School technique</td></tr>
+    <tr><td>A School's given spells, while that School is on the character</td><td>none today</td><td class="n">none</td><td>School spell (as today)</td></tr>
+    <tr><td>Kata and Kiho bought with XP; a free Kiho the player picked</td><td>kept</td><td>kept</td><td>none</td></tr>
+    <tr><td>A chosen School spell, a reward spell</td><td>none today</td><td>kept</td><td>as today</td></tr>
+  </table></div>
+  <ul>
+    <li>Only cards the sheet itself added and labelled ("[School Technique — Rank N, School]" at the start of the description) change. A Technique typed in by hand keeps both controls, because the sheet would not take it back either.</li>
+    <li>A School Technique with any XP figure other than 0 keeps its box, so nothing that counts toward XP is hidden.</li>
+    <li>The XP box is hidden, not removed: the saved character is exactly as today.</li>
+    <li>The given spells' × is in your table of 11 November ("no ×") but was not in the unit's first description, so it is named here for your approval. If the School leaves the character, the × comes back.</li>
+  </ul>
+  <div class="rec"><b>Recommendation: approve, with layout B.</b> No name is cut off on a phone, which matters more than 26 px of height.</div>
+</section>
+
+<section>
+  <h2>How the three fit together</h2>
+  <ul>
+    <li>Each can be removed alone. AE2 reads whatever each School's list says, so it works with or without AE1. AE3 reads the same lists and the School-spell mark, so it works with or without AE2.</li>
+    <li>Not shown: the Path and Advanced School tags (no test character has one; same card), Fuzake's Path to Inner Peace, and native Safari. The pictures come from Chromium.</li>
+    <li>How the proposed pictures were made, all in the test browser only: AE1 by changing Yogo's line in the page; AE2 by building the after-state with the sheet's own Confirm and "Add Summon" buttons, and drawing the note in the character check's own style; AE3 with scratch styling.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="decide">
+    <h2>Your decision (round 3)</h2>
+    <ol>
+      <li><b>AE1</b> · Approved on 13 November.</li>
+      <li><b>AE2 revision 1</b> · The note stays until you save the character yourself (Save, Save As New or Export JSON); autosave does not count. Recommended: approve.</li>
+      <li><b>AE3</b> · Layout A with the fallback (approved on 13 November), the fallback's tag on the left of its new line; given spells' × included. Recommended: approve with the tag on the left.</li>
+    </ol>
+    <p class="meta">"Approve as recommended" covers AE2 and AE3. Approval starts the build.</p>
+  </div>
+</section>
+</div>

@@ -1,0 +1,740 @@
+{
+ "source_sha256": "fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb",
+ "captured_utc": "2026-11-13T12:44:19.605Z",
+ "browser": "153.0.8010.12",
+ "count": 631,
+ "390-today": {
+  "manage": {
+   "box": 214,
+   "room": 194,
+   "font": "16px \"EB Garamond\", serif",
+   "over": [
+    [
+     "Forge Your Own Fate (Master of Games)",
+     "Path: Master of Games [Courtier]",
+     247
+    ],
+    [
+     "Strike From Above Strike From Below",
+     "Bayushi Bushi, Rank 4",
+     233
+    ],
+    [
+     "Never This Sacred Ground Shall Fall",
+     "Path: Isawa Temple Guardians [Shugenja]",
+     223
+    ],
+    [
+     "The World in the Palm of the Hand",
+     "Path: Asahina Fetishist [Shugenja]",
+     217
+    ],
+    [
+     "Strike the Center (Eyes of Nanashi)",
+     "Path: Eyes of Nanashi [Bushi]",
+     215
+    ],
+    [
+     "Blessings of the Shi-Tien Yen-Wang",
+     "Moto Death Priest [Shugenja], Rank 1",
+     213
+    ],
+    [
+     "Shelter the Blameless (Yotsu Bushi)",
+     "Yotsu Bushi School (Heroes of Rokugan) [Bushi], Rank 4",
+     213
+    ],
+    [
+     "The Pincers Hold, The Tail Strikes",
+     "Bayushi Bushi, Rank 5",
+     211
+    ],
+    [
+     "The Ebb and Flow of Deception",
+     "Path: Kitsuki Debater [Courtier]",
+     198
+    ],
+    [
+     "Wisdom is the Greatest Weapon",
+     "Suzume Bushi, Rank 3",
+     195
+    ]
+   ]
+  },
+  "shots": {
+   "manageShort": {
+    "h": 195,
+    "nameBox": 214,
+    "cut": false,
+    "wrapped": false
+   },
+   "manageLong": {
+    "h": 195,
+    "nameBox": 214,
+    "cut": true,
+    "wrapped": false
+   },
+   "playLong": {
+    "h": 195,
+    "nameBox": 256,
+    "cut": false,
+    "wrapped": false
+   },
+   "playShort": {
+    "h": 195,
+    "nameBox": 256,
+    "cut": false,
+    "wrapped": false
+   }
+  },
+  "play": {
+   "box": 256,
+   "room": 236,
+   "font": "16px \"EB Garamond\", serif",
+   "over": 1
+  },
+  "errors": []
+ },
+ "390-A": {
+  "manage": {
+   "box": 191,
+   "room": 171,
+   "font": "16px \"EB Garamond\", serif",
+   "over": [
+    [
+     "Forge Your Own Fate (Master of Games)",
+     "Path: Master of Games [Courtier]",
+     247
+    ],
+    [
+     "Strike From Above Strike From Below",
+     "Bayushi Bushi, Rank 4",
+     233
+    ],
+    [
+     "Never This Sacred Ground Shall Fall",
+     "Path: Isawa Temple Guardians [Shugenja]",
+     223
+    ],
+    [
+     "The World in the Palm of the Hand",
+     "Path: Asahina Fetishist [Shugenja]",
+     217
+    ],
+    [
+     "Strike the Center (Eyes of Nanashi)",
+     "Path: Eyes of Nanashi [Bushi]",
+     215
+    ],
+    [
+     "Blessings of the Shi-Tien Yen-Wang",
+     "Moto Death Priest [Shugenja], Rank 1",
+     213
+    ],
+    [
+     "Shelter the Blameless (Yotsu Bushi)",
+     "Yotsu Bushi School (Heroes of Rokugan) [Bushi], Rank 4",
+     213
+    ],
+    [
+     "The Pincers Hold, The Tail Strikes",
+     "Bayushi Bushi, Rank 5",
+     211
+    ],
+    [
+     "The Ebb and Flow of Deception",
+     "Path: Kitsuki Debater [Courtier]",
+     198
+    ],
+    [
+     "Wisdom is the Greatest Weapon",
+     "Suzume Bushi, Rank 3",
+     195
+    ],
+    [
+     "Know the Rhythm of the Heart",
+     "Kitsuki Investigator [Courtier], Rank 3",
+     194
+    ],
+    [
+     "The Mountain Does Not Move",
+     "Hida Bushi, Rank 2",
+     193
+    ],
+    [
+     "The Calm in Midst of Thunder",
+     "Mirumoto Bushi, Rank 2",
+     193
+    ],
+    [
+     "Daylight Wastes No Movement",
+     "Hiruma Bushi, Rank 5",
+     192
+    ],
+    [
+     "Fortune Favors the Mortal Man",
+     "Toku Bushi, Rank 5",
+     192
+    ],
+    [
+     "The Immovable Hand of Peace",
+     "Ide Emissary [Courtier], Rank 5",
+     190
+    ],
+    [
+     "The Dark Sword of Bitter Lies",
+     "Path: Bitter Lies Swordsman [Bushi]",
+     185
+    ],
+    [
+     "Swimming Beneath the Waves",
+     "Path: Scales of the Carp [Courtier]",
+     183
+    ],
+    [
+     "The Storm of Heaven’s Wrath",
+     "Path: The Rising Sun [Bushi]",
+     183
+    ],
+    [
+     "Wearing Down the Mountain",
+     "Hida Pragmatist [Bushi], Rank 2",
+     182
+    ],
+    [
+     "Bearing the Emperor’s Shame",
+     "Path: Brotherhood Spy [Monk]",
+     181
+    ],
+    [
+     "The Mountain Does Not Fall",
+     "Hida Bushi, Rank 5",
+     180
+    ],
+    [
+     "Darkness Cannot be Trapped",
+     "Daigotsu Courtier, Rank 3",
+     180
+    ],
+    [
+     "The Eternal Stone Unleashed",
+     "Hida Pragmatist [Bushi], Rank 1",
+     179
+    ],
+    [
+     "Spirit of the Blade Unleashed",
+     "Shinjo Bushi, Rank 4",
+     178
+    ],
+    [
+     "The Wind Blows Many Ways",
+     "Morito Bushi, Rank 2",
+     177
+    ],
+    [
+     "The Largesse of Fukurokujin",
+     "The Temple of Heavenly Wisdom [Monk], Rank 1",
+     177
+    ],
+    [
+     "The Way of Magari-Yarijutsu",
+     "Lion Elite Spearmen [Bushi], Rank 1",
+     175
+    ],
+    [
+     "The Dark Kami’s Discretion",
+     "Path: Chuda Subversive [Shugenja]",
+     174
+    ],
+    [
+     "The Strength of Opposition",
+     "Heichi Bushi, Rank 2",
+     172
+    ],
+    [
+     "My Strength Has No Limits",
+     "Advanced: Obsidian Warrior",
+     172
+    ]
+   ]
+  },
+  "shots": {
+   "manageShort": {
+    "h": 195,
+    "nameBox": 191,
+    "cut": false,
+    "wrapped": false
+   },
+   "manageLong": {
+    "h": 195,
+    "nameBox": 191,
+    "cut": true,
+    "wrapped": false
+   },
+   "playLong": {
+    "h": 195,
+    "nameBox": 191,
+    "cut": true,
+    "wrapped": false
+   },
+   "playShort": {
+    "h": 195,
+    "nameBox": 191,
+    "cut": false,
+    "wrapped": false
+   }
+  },
+  "play": {
+   "box": 191,
+   "room": 171,
+   "font": "16px \"EB Garamond\", serif",
+   "over": 31
+  },
+  "errors": []
+ },
+ "390-fallback": {
+  "manage": {
+   "box": 191,
+   "room": 171,
+   "font": "16px \"EB Garamond\", serif",
+   "over": [
+    [
+     "Forge Your Own Fate (Master of Games)",
+     "Path: Master of Games [Courtier]",
+     247
+    ],
+    [
+     "Strike From Above Strike From Below",
+     "Bayushi Bushi, Rank 4",
+     233
+    ],
+    [
+     "Never This Sacred Ground Shall Fall",
+     "Path: Isawa Temple Guardians [Shugenja]",
+     223
+    ],
+    [
+     "The World in the Palm of the Hand",
+     "Path: Asahina Fetishist [Shugenja]",
+     217
+    ],
+    [
+     "Strike the Center (Eyes of Nanashi)",
+     "Path: Eyes of Nanashi [Bushi]",
+     215
+    ],
+    [
+     "Blessings of the Shi-Tien Yen-Wang",
+     "Moto Death Priest [Shugenja], Rank 1",
+     213
+    ],
+    [
+     "Shelter the Blameless (Yotsu Bushi)",
+     "Yotsu Bushi School (Heroes of Rokugan) [Bushi], Rank 4",
+     213
+    ],
+    [
+     "The Pincers Hold, The Tail Strikes",
+     "Bayushi Bushi, Rank 5",
+     211
+    ],
+    [
+     "The Ebb and Flow of Deception",
+     "Path: Kitsuki Debater [Courtier]",
+     198
+    ],
+    [
+     "Wisdom is the Greatest Weapon",
+     "Suzume Bushi, Rank 3",
+     195
+    ],
+    [
+     "Know the Rhythm of the Heart",
+     "Kitsuki Investigator [Courtier], Rank 3",
+     194
+    ],
+    [
+     "The Mountain Does Not Move",
+     "Hida Bushi, Rank 2",
+     193
+    ],
+    [
+     "The Calm in Midst of Thunder",
+     "Mirumoto Bushi, Rank 2",
+     193
+    ],
+    [
+     "Daylight Wastes No Movement",
+     "Hiruma Bushi, Rank 5",
+     192
+    ],
+    [
+     "Fortune Favors the Mortal Man",
+     "Toku Bushi, Rank 5",
+     192
+    ],
+    [
+     "The Immovable Hand of Peace",
+     "Ide Emissary [Courtier], Rank 5",
+     190
+    ],
+    [
+     "The Dark Sword of Bitter Lies",
+     "Path: Bitter Lies Swordsman [Bushi]",
+     185
+    ],
+    [
+     "Swimming Beneath the Waves",
+     "Path: Scales of the Carp [Courtier]",
+     183
+    ],
+    [
+     "The Storm of Heaven’s Wrath",
+     "Path: The Rising Sun [Bushi]",
+     183
+    ],
+    [
+     "Wearing Down the Mountain",
+     "Hida Pragmatist [Bushi], Rank 2",
+     182
+    ],
+    [
+     "Bearing the Emperor’s Shame",
+     "Path: Brotherhood Spy [Monk]",
+     181
+    ],
+    [
+     "The Mountain Does Not Fall",
+     "Hida Bushi, Rank 5",
+     180
+    ],
+    [
+     "Darkness Cannot be Trapped",
+     "Daigotsu Courtier, Rank 3",
+     180
+    ],
+    [
+     "The Eternal Stone Unleashed",
+     "Hida Pragmatist [Bushi], Rank 1",
+     179
+    ],
+    [
+     "Spirit of the Blade Unleashed",
+     "Shinjo Bushi, Rank 4",
+     178
+    ],
+    [
+     "The Wind Blows Many Ways",
+     "Morito Bushi, Rank 2",
+     177
+    ],
+    [
+     "The Largesse of Fukurokujin",
+     "The Temple of Heavenly Wisdom [Monk], Rank 1",
+     177
+    ],
+    [
+     "The Way of Magari-Yarijutsu",
+     "Lion Elite Spearmen [Bushi], Rank 1",
+     175
+    ],
+    [
+     "The Dark Kami’s Discretion",
+     "Path: Chuda Subversive [Shugenja]",
+     174
+    ],
+    [
+     "The Strength of Opposition",
+     "Heichi Bushi, Rank 2",
+     172
+    ],
+    [
+     "My Strength Has No Limits",
+     "Advanced: Obsidian Warrior",
+     172
+    ]
+   ]
+  },
+  "shots": {
+   "manageShort": {
+    "h": 195,
+    "nameBox": 191,
+    "cut": false,
+    "wrapped": false
+   },
+   "manageLong": {
+    "h": 221,
+    "nameBox": 318,
+    "cut": false,
+    "wrapped": true
+   },
+   "playLong": {
+    "h": 221,
+    "nameBox": 318,
+    "cut": false,
+    "wrapped": true
+   },
+   "playShort": {
+    "h": 195,
+    "nameBox": 191,
+    "cut": false,
+    "wrapped": false
+   }
+  },
+  "play": {
+   "box": 191,
+   "room": 171,
+   "font": "16px \"EB Garamond\", serif",
+   "over": 31
+  },
+  "errors": []
+ },
+ "430-today": {
+  "manage": {
+   "box": 230,
+   "room": 210,
+   "font": "16px \"EB Garamond\", serif",
+   "over": [
+    [
+     "Forge Your Own Fate (Master of Games)",
+     "Path: Master of Games [Courtier]",
+     247
+    ],
+    [
+     "Strike From Above Strike From Below",
+     "Bayushi Bushi, Rank 4",
+     233
+    ],
+    [
+     "Never This Sacred Ground Shall Fall",
+     "Path: Isawa Temple Guardians [Shugenja]",
+     223
+    ],
+    [
+     "The World in the Palm of the Hand",
+     "Path: Asahina Fetishist [Shugenja]",
+     217
+    ],
+    [
+     "Strike the Center (Eyes of Nanashi)",
+     "Path: Eyes of Nanashi [Bushi]",
+     215
+    ],
+    [
+     "Blessings of the Shi-Tien Yen-Wang",
+     "Moto Death Priest [Shugenja], Rank 1",
+     213
+    ],
+    [
+     "Shelter the Blameless (Yotsu Bushi)",
+     "Yotsu Bushi School (Heroes of Rokugan) [Bushi], Rank 4",
+     213
+    ],
+    [
+     "The Pincers Hold, The Tail Strikes",
+     "Bayushi Bushi, Rank 5",
+     211
+    ]
+   ]
+  },
+  "play": {
+   "box": 272,
+   "room": 252,
+   "font": "16px \"EB Garamond\", serif",
+   "over": 0
+  },
+  "errors": []
+ },
+ "430-A": {
+  "manage": {
+   "box": 207,
+   "room": 187,
+   "font": "16px \"EB Garamond\", serif",
+   "over": [
+    [
+     "Forge Your Own Fate (Master of Games)",
+     "Path: Master of Games [Courtier]",
+     247
+    ],
+    [
+     "Strike From Above Strike From Below",
+     "Bayushi Bushi, Rank 4",
+     233
+    ],
+    [
+     "Never This Sacred Ground Shall Fall",
+     "Path: Isawa Temple Guardians [Shugenja]",
+     223
+    ],
+    [
+     "The World in the Palm of the Hand",
+     "Path: Asahina Fetishist [Shugenja]",
+     217
+    ],
+    [
+     "Strike the Center (Eyes of Nanashi)",
+     "Path: Eyes of Nanashi [Bushi]",
+     215
+    ],
+    [
+     "Blessings of the Shi-Tien Yen-Wang",
+     "Moto Death Priest [Shugenja], Rank 1",
+     213
+    ],
+    [
+     "Shelter the Blameless (Yotsu Bushi)",
+     "Yotsu Bushi School (Heroes of Rokugan) [Bushi], Rank 4",
+     213
+    ],
+    [
+     "The Pincers Hold, The Tail Strikes",
+     "Bayushi Bushi, Rank 5",
+     211
+    ],
+    [
+     "The Ebb and Flow of Deception",
+     "Path: Kitsuki Debater [Courtier]",
+     198
+    ],
+    [
+     "Wisdom is the Greatest Weapon",
+     "Suzume Bushi, Rank 3",
+     195
+    ],
+    [
+     "Know the Rhythm of the Heart",
+     "Kitsuki Investigator [Courtier], Rank 3",
+     194
+    ],
+    [
+     "The Mountain Does Not Move",
+     "Hida Bushi, Rank 2",
+     193
+    ],
+    [
+     "The Calm in Midst of Thunder",
+     "Mirumoto Bushi, Rank 2",
+     193
+    ],
+    [
+     "Daylight Wastes No Movement",
+     "Hiruma Bushi, Rank 5",
+     192
+    ],
+    [
+     "Fortune Favors the Mortal Man",
+     "Toku Bushi, Rank 5",
+     192
+    ],
+    [
+     "The Immovable Hand of Peace",
+     "Ide Emissary [Courtier], Rank 5",
+     190
+    ]
+   ]
+  },
+  "play": {
+   "box": 207,
+   "room": 187,
+   "font": "16px \"EB Garamond\", serif",
+   "over": 16
+  },
+  "errors": []
+ },
+ "430-fallback": {
+  "manage": {
+   "box": 207,
+   "room": 187,
+   "font": "16px \"EB Garamond\", serif",
+   "over": [
+    [
+     "Forge Your Own Fate (Master of Games)",
+     "Path: Master of Games [Courtier]",
+     247
+    ],
+    [
+     "Strike From Above Strike From Below",
+     "Bayushi Bushi, Rank 4",
+     233
+    ],
+    [
+     "Never This Sacred Ground Shall Fall",
+     "Path: Isawa Temple Guardians [Shugenja]",
+     223
+    ],
+    [
+     "The World in the Palm of the Hand",
+     "Path: Asahina Fetishist [Shugenja]",
+     217
+    ],
+    [
+     "Strike the Center (Eyes of Nanashi)",
+     "Path: Eyes of Nanashi [Bushi]",
+     215
+    ],
+    [
+     "Blessings of the Shi-Tien Yen-Wang",
+     "Moto Death Priest [Shugenja], Rank 1",
+     213
+    ],
+    [
+     "Shelter the Blameless (Yotsu Bushi)",
+     "Yotsu Bushi School (Heroes of Rokugan) [Bushi], Rank 4",
+     213
+    ],
+    [
+     "The Pincers Hold, The Tail Strikes",
+     "Bayushi Bushi, Rank 5",
+     211
+    ],
+    [
+     "The Ebb and Flow of Deception",
+     "Path: Kitsuki Debater [Courtier]",
+     198
+    ],
+    [
+     "Wisdom is the Greatest Weapon",
+     "Suzume Bushi, Rank 3",
+     195
+    ],
+    [
+     "Know the Rhythm of the Heart",
+     "Kitsuki Investigator [Courtier], Rank 3",
+     194
+    ],
+    [
+     "The Mountain Does Not Move",
+     "Hida Bushi, Rank 2",
+     193
+    ],
+    [
+     "The Calm in Midst of Thunder",
+     "Mirumoto Bushi, Rank 2",
+     193
+    ],
+    [
+     "Daylight Wastes No Movement",
+     "Hiruma Bushi, Rank 5",
+     192
+    ],
+    [
+     "Fortune Favors the Mortal Man",
+     "Toku Bushi, Rank 5",
+     192
+    ],
+    [
+     "The Immovable Hand of Peace",
+     "Ide Emissary [Courtier], Rank 5",
+     190
+    ]
+   ]
+  },
+  "play": {
+   "box": 207,
+   "room": 187,
+   "font": "16px \"EB Garamond\", serif",
+   "over": 16
+  },
+  "errors": []
+ }
+}

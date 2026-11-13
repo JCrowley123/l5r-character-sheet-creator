@@ -1,0 +1,55 @@
+{
+ "source_sha256": "fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb",
+ "captured_utc": "2026-11-13T12:45:50.648Z",
+ "browser": "153.0.8010.12",
+ "r1-phone-note.png": [],
+ "r1-laptop-note.png": [],
+ "today": {
+  "manage": {
+   "h": 157,
+   "nameBox": 214,
+   "cut": false,
+   "wrapped": false
+  },
+  "play": {
+   "h": 157,
+   "nameBox": 256,
+   "cut": false,
+   "wrapped": false
+  },
+  "visible": "The Mountain Does Not Move",
+  "errors": []
+ },
+ "A": {
+  "manage": {
+   "h": 157,
+   "nameBox": 191,
+   "cut": true,
+   "wrapped": false
+  },
+  "play": {
+   "h": 157,
+   "nameBox": 191,
+   "cut": true,
+   "wrapped": false
+  },
+  "visible": "The Mountain Does Not ",
+  "errors": []
+ },
+ "fallback": {
+  "manage": {
+   "h": 184,
+   "nameBox": 318,
+   "cut": false,
+   "wrapped": true
+  },
+  "play": {
+   "h": 184,
+   "nameBox": 318,
+   "cut": false,
+   "wrapped": true
+  },
+  "visible": "The Mountain Does Not Move",
+  "errors": []
+ }
+}
