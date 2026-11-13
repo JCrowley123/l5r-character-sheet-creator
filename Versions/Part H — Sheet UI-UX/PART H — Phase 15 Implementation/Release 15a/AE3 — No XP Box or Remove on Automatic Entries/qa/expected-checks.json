@@ -13,6 +13,7 @@
   "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
   "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
   "AX-PATH-TAG-PHONE",
+  "AX-TAPS-DO-NOT-REMEASURE-PHONE",
   "AX-SAVE-UNCHANGED-PHONE",
   "AX-CLASS-OFF-AS-BEFORE-PHONE",
   "AX-NO-ERRORS-PHONE",
@@ -21,5 +22,6 @@
   "AX-ONE-LINE-DESKTOP",
   "AX-PRINT-AS-BEFORE-DESKTOP",
   "AX-NO-ERRORS-DESKTOP"
- ]
+ ],
+ "revision1": "13 November 2026, pinned before its first run, after the group's code review: AX-TAPS-DO-NOT-REMEASURE-PHONE added (taps and keys that only rewrite the body's classes do not re-measure the cards; the mode changing still does). 19 + 1 = 20."
 }

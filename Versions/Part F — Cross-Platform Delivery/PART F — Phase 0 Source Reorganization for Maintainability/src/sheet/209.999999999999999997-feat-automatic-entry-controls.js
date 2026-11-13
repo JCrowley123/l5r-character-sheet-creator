@@ -114,9 +114,16 @@
         recalcAll = function(){ const out = ax15Recalc.apply(this, arguments); api.queue(); return out; };
       }
       if(typeof MutationObserver === 'function'){
-        // Cards added or removed, a School record written on a card, and the mode or other body classes changing.
+        // Cards added or removed, and a School record written on a card.
         new MutationObserver(api.queue).observe(list, {childList: true, subtree: true, attributes: true, attributeFilter: ['data-sc8-grant']});
-        new MutationObserver(api.queue).observe(document.body, {attributes: true, attributeFilter: ['class']});
+        // The mode changing (Manage or Play). Only that: other layers change the body's classes on taps and keys
+        // (A10.1's keyboard mark among them), and re-measuring the cards each time would be wasted (the group's code
+        // review, 13 November 2026).
+        let play = document.body.classList.contains('pm12-play');
+        new MutationObserver(function(){
+          const now = document.body.classList.contains('pm12-play');
+          if(now !== play){ play = now; api.queue(); }
+        }).observe(document.body, {attributes: true, attributeFilter: ['class']});
       }
       // A name edited, the window resized, or the list given its width (a page laid out after it was hidden).
       list.addEventListener('input', api.queue);

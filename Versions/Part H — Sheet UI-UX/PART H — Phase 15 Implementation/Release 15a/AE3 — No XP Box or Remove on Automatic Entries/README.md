@@ -23,7 +23,8 @@ Not yet device-checked, qualified or live.
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With AE3 (this branch, the group's tip) | `1ca9277d82ffd7c39d0d6561b4d20e75c04929603e936e5c80b8cf9b86096762` | 17,671,502 |
+| With AE3, revision 1 (this branch, the group's tip) | `3217c5518edf018783507c52569580d005760d37ea16e99300de65073ae49b12` | 17,671,933 |
+| Revision 0 (before the code review) | `1ca9277d82ffd7c39d0d6561b4d20e75c04929603e936e5c80b8cf9b86096762` | 17,671,502 |
 | AE3 removed (AE2) | `ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715` | 17,660,953 |
 
 ## Light checks (13 November)
@@ -42,5 +43,20 @@ Not yet device-checked, qualified or live.
 8b.1-UI-03's `spell-remove-harness.js` checks the × in its clear corner on spell rows, Sense among them. When AE3 is in the build, the harness takes AE3's body class (`ax15-on`) away for its page, so it keeps checking its own corner as it works without AE3; AE3's own harness checks the combined behaviour. Same ids and count; without AE3 the line does nothing.
 
 Not covered by the harness: a real Advanced School and a real Alternate Path. No test character holds either; the harness checks the label with the sheet's own Advanced School label written on a card, and the Path tag by recording a Path at Rank 1 on the test character. The device round should look at one character with each if the owner has one.
+
+## Revision 1 (the group's code review, 13 November 2026)
+
+The review found that the unit re-measured the Technique cards whenever the body's classes changed. A10.1 adds its keyboard mark on navigation keys and takes it away on taps, and other layers change the body's classes too, so every such tap or key cost a forced layout per Technique card: harmless at normal speed, wasted under the 4× CPU screen. The observer now acts only when the mode changes (Manage or Play); cards changing, a name edited, the window resized and the list's own size are watched as before. One check added and pinned before its first run (`qa/expected-checks.json`, 19 + 1 = **20**):
+
+- `AX-TAPS-DO-NOT-REMEASURE-PHONE`: four taps and Tab presses cause no sweep; switching to Play still does.
+
+| Check, revision 1 | Result |
+|---|---|
+| Own harness (20) | 20/20 |
+| Own harness on revision 0 | 19/20: `AX-TAPS-DO-NOT-REMEASURE-PHONE` fails there with four sweeps for four taps, which confirms the finding |
+| Own harness with AE2 removed (`899315f5…dc05`) | 20/20 |
+| `qa/test-removal.py` | 10/10 |
+| `feature-dependencies.py` | every reference inside this unit's own blocks |
+| The touched layers' harnesses: 8b.1-UI-01 to UI-03, A01, A10.1, Phase 12 and 12.1 to 12.8 (Part K) | 14/14 harnesses, 550/550 checks |
 
 See [ROLLBACK.md](ROLLBACK.md).

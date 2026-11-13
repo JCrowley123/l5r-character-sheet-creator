@@ -158,6 +158,24 @@ async function open(browser, opts, file, name) {
           return {path: p.name, tech: p.tech, tag, kind, after: (row.querySelector('.ax15-tag') || {}).textContent || null}; }, SHORT);
         return [r.tag === 'Path technique' && r.kind === 'path' && r.after === 'School technique', r];
       });
+      // Revision 1 (the group's code review): A10.1 rewrites the body's classes on every tap and key; only the mode
+      // changing may make this unit re-measure the cards.
+      await check('AX-TAPS-DO-NOT-REMEASURE-PHONE', async () => {
+        await page.evaluate(() => { const T = window.__L5R_TEST__, real = T.AX15.sweep; window.AXH.sweeps = 0;
+          T.AX15.sweep = function(){ window.AXH.sweeps++; return real.apply(this, arguments); }; });
+        await settle(page);
+        await page.evaluate(() => { window.AXH.sweeps = 0; });
+        for (let i = 0; i < 4; i++) {
+          await page.evaluate(() => { const b = document.body; b.dispatchEvent(new PointerEvent('pointerdown', {bubbles: true}));
+            document.dispatchEvent(new KeyboardEvent('keydown', {key: 'Tab', bubbles: true})); b.classList.remove('kr15-keyboard'); });
+          await settle(page);
+        }
+        const taps = await page.evaluate(() => window.AXH.sweeps);
+        await page.evaluate(() => window.__L5R_TEST__.MODES12.set('play')); await settle(page);
+        const mode = await page.evaluate(() => window.AXH.sweeps);
+        await page.evaluate(() => window.__L5R_TEST__.MODES12.set('management')); await settle(page);
+        return [taps === 0 && mode > 0, {taps, mode}];
+      });
       await check('AX-SAVE-UNCHANGED-PHONE', async () => {
         const r = await page.evaluate(() => { const T = window.__L5R_TEST__, on = JSON.stringify(T.collectData()); const off = window.AXH.without(() => JSON.stringify(T.collectData())); return {same: on === off, cost: JSON.parse(on).tech.find(t => t.name === 'Gaze Into Shadow').cost}; });
         return [r.same && Number(r.cost) === 0, r];

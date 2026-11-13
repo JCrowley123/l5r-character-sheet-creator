@@ -1,0 +1,110 @@
+{
+  "commit": "2159ae0997027fee9f5400ad90438dac498722c5",
+  "ref": "claude/release-15a-ae2",
+  "url": "https://claude-release-15a-ae2.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-13T16:59:04.410893+00:00",
+  "source_sha256": "ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715",
+  "page_sha256": "250ea1ec083e12fb1018fbdad1d2d7eae0ada78ed7fe3fdd8ad5c176715d2493",
+  "page_bytes": 17667730,
+  "service_worker_build": "9193a74c625f6348",
+  "units": [
+    "AE1",
+    "AE2"
+  ],
+  "expected": {
+    "harnesses": 11,
+    "checks": 393
+  },
+  "harnesses": {
+    "AE1 \u2014 Sense for the Yogo Wardmaster/yogo-given-spells-harness.js": {
+      "counts": [
+        "13",
+        "13"
+      ],
+      "expected": 13,
+      "passed": true
+    },
+    "AE2 \u2014 Given Spells Credited on Opening/given-spells-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/older-review-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js": {
+      "counts": [
+        "30",
+        "30"
+      ],
+      "expected": 30,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11 Characters List and Save Model/characters-harness.js": {
+      "counts": [
+        "70",
+        "70"
+      ],
+      "expected": 70,
+      "passed": true
+    },
+    "PART J \u2014 Phase 7 Save Format and Migration/save-format-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    },
+    "BUGFIX \u2014 Clan and School Pickers Follow the Character/cfs-sync-harness.js": {
+      "counts": [
+        "72",
+        "72"
+      ],
+      "expected": 72,
+      "passed": true
+    },
+    "8b.1-UI-03 \u2014 Remove Apart from Memorised/spell-remove-harness.js": {
+      "counts": [
+        "34",
+        "34"
+      ],
+      "expected": 34,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.6 Play Mode Techniques/techniques-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}
