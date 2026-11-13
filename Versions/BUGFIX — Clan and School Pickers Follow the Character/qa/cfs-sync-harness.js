@@ -57,6 +57,10 @@ async function main() {
       page.on('pageerror', e => errors.push(String(e)));
       await page.goto(url);
       await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready, null, {timeout: 60000});
+      // Release 15a AE2 (13 November 2026), a declared conditional: when AE2 is in the build it is paused for this page,
+      // so a saved Shugenja reopens exactly as saved (AE2 would add its School's given spells; its own harness checks
+      // that). Same ids and count; without AE2 this line does nothing.
+      await page.evaluate(() => { const T = window.__L5R_TEST__; if (T && T.GS15) T.GS15.paused = true; });
       await page.evaluate(() => { if (window.__L5R_TEST__.CL11.isOpen()) window.__L5R_TEST__.CL11.close(); });
       return {context, page};
     };
@@ -214,6 +218,10 @@ async function main() {
       await page.waitForTimeout(600);
       await page.reload();
       await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready, null, {timeout: 60000});
+      // Release 15a AE2 (13 November 2026), a declared conditional: when AE2 is in the build it is paused for this page,
+      // so a saved Shugenja reopens exactly as saved (AE2 would add its School's given spells; its own harness checks
+      // that). Same ids and count; without AE2 this line does nothing.
+      await page.evaluate(() => { const T = window.__L5R_TEST__; if (T && T.GS15) T.GS15.paused = true; });
       const ids = await page.evaluate(() => Array.from(document.getElementById('charSelect').options).filter(o => o.value).map(o => [o.text, o.value]));
       const lion = ids.find(x => /Test Lion/.test(x[0])), crane = ids.find(x => /Test Crane/.test(x[0]));
       check('CFS-LIST-BOTH-SAVED', [!!lion, !!crane], [true, true]);

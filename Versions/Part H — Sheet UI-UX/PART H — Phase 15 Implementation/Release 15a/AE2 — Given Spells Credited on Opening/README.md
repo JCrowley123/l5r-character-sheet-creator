@@ -21,7 +21,7 @@ Not yet device-checked, qualified or live.
 
 ## Declared conditionals in other layers' tests
 
-Five harnesses build their characters by loading saves of older Shugenja and check the review's "Given by your School" group or count spell rows. With AE2 those states change, as approved. Each now sets `GS15.paused` when AE2 is in the build, so it keeps checking its own layer as it works without AE2; AE2's own harness checks the combined behaviour. Same ids and counts; without AE2 the line does nothing.
+Six harnesses build their characters by loading saves of Shugenja and check the review's "Given by your School" group, count spell rows, or compare a reopened save with the saved one. With AE2 those states change, as approved. Each now sets `GS15.paused` when AE2 is in the build, so it keeps checking its own layer as it works without AE2; AE2's own harness checks the combined behaviour. Same ids and counts; without AE2 the line does nothing.
 
 | Harness | Without the pause, on AE2 | With it |
 |---|---|---|
@@ -30,6 +30,7 @@ Five harnesses build their characters by loading saves of older Shugenja and che
 | 8b.1-UI-03 `spell-remove-harness.js` | 26/34 | 34/34 |
 | Older School Choices `older-review-harness.js` | 17/20 | 20/20 |
 | Phase 11.2.5 (Part K) `review-regression-harness.js` | 4/6 (Sense, Commune and Summon added to its blank Shugenja: 6 rows for 3, 4 for 1) | 6/6 |
+| Clan and School Pickers Follow the Character `cfs-sync-harness.js` | 71/72: `CFS-lion-DATA-INTACT` (its saved Kitsu Shugenja has no spells and reopens with Sense, Commune and Summon); found by the full run on the group's tip | 72/72 |
 
 ## Build
 
