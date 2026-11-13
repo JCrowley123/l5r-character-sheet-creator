@@ -1,6 +1,6 @@
 # Release 15a G4 — Touch, Focus and Startup — handover
 
-12 November 2026 (Claude). **Accepted and qualified. Not live:** G3 remains live until the owner's go-live word.
+12 November 2026 (Claude). **Accepted, qualified and live** (13 November).
 
 **12 November 2026 · G4 qualified (Claude).** A09 (editable boxes at 16 px on phones and touch screens; buttons take a quick second tap as a press, not a zoom), A10 (the Advanced Schools hint and button in one row; a cross-page button moves focus to the heading of what it opened), A10.1 revision 1 (the page's gold focus ring only for the keyboard; keys typed into a text box do not count) and A17 (the splash picture fills the screen with the title and seal in view; the square picture up to 3 : 2) are on `claude/release-15a-a17`. Application `fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb`, 17,648,272 bytes. A18 (the first Manage tap on an iPhone) is closed as not reproduced: the owner's first tap is quick, and the test browser measured 45–62 ms, no slower than the second.
 
@@ -38,3 +38,9 @@ Each unit's folder has its README (what changed, builds, light checks, every fai
 ## Usage
 
 Claude readings on a Pro plan, 12 November: weekly all models 53% at the start, 60% after the build, 69% before qualification, 75% after the two passes (Fable 84% throughout); the five-hour limit was reached once, before the code review.
+
+## Production
+
+**13 November 2026 · G4 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `e6dc3248` without a merge commit or force. Production: all seven deployed files match the qualified build; 74 application harnesses passed 3,091/3,091 on the downloaded production files (G4's four units and the layers they touch, the splash layer's harness among them); browser/offline smoke 22/22. Deployed page `de2ea7d4f0910f68…`, 17,655,049 bytes; application `fa634abb…00cb`; service worker build `dac892eac0085111`.
+
+Evidence: [qa/live/live-verification.json](qa/live/live-verification.json), [qa/live/live-qa.log](qa/live/live-qa.log), [qa/live/live-browser-smoke.json](qa/live/live-browser-smoke.json), `qa/verify-live.log`, `qa/browser-smoke.log`. The checks ran on the downloaded production files with G3's `verify-live.py` (G4's units added) and the Older School Choices browser smoke.

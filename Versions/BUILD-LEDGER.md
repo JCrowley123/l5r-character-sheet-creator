@@ -26,6 +26,10 @@ Local records updated **12 November 2026** (Claude). **Release 15a G3 is live an
 
 ## 1. Where things stand
 
+<!-- g4-15a-live-part1 -->
+**13 November 2026 · G4 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `e6dc3248` without a merge commit or force. Production: all seven deployed files match the qualified build; 74 application harnesses passed 3,091/3,091 on the downloaded production files (G4's four units and the layers they touch, the splash layer's harness among them); browser/offline smoke 22/22. Deployed page `de2ea7d4f0910f68…`, 17,655,049 bytes; application `fa634abb…00cb`; service worker build `dac892eac0085111`. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
+<!-- end-g4-15a-live-part1 -->
+
 <!-- g4-15a-qualification-part1 -->
 **12 November 2026 · G4 qualified (Claude).** Release 15a G4, touch, focus and startup, is accepted and qualified. A09 (editable boxes at 16 px on phones and touch screens; buttons take a quick second tap as a press, not a zoom), A10 (the Advanced Schools hint and button in one row; a cross-page button moves focus to the heading of what it opened), A10.1 revision 1 (the page's gold focus ring only for the keyboard; keys typed into a text box do not count) and A17 (the splash picture fills the screen with the title and seal in view; the square picture up to 3 : 2) are on `claude/release-15a-a17`. Application `fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb`, 17,648,272 bytes. A18 (the first Manage tap on an iPhone) is closed as not reproduced: the owner's first tap is quick, and the test browser measured 45–62 ms, no slower than the second. The owner approved the mock-ups ("I am happy with the recommendations suggested"), passed the device round except check 4 (double-tap zoom on text, which the live app does not do either) and accepted all four ("Accept A09").
 
@@ -2002,6 +2006,10 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- g4-15a-live-part6 -->
+**13 November 2026 · G4 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `e6dc3248` without a merge commit or force. Production: all seven deployed files match the qualified build; 74 application harnesses passed 3,091/3,091 on the downloaded production files (G4's four units and the layers they touch, the splash layer's harness among them); browser/offline smoke 22/22. Deployed page `de2ea7d4f0910f68…`, 17,655,049 bytes; application `fa634abb…00cb`; service worker build `dac892eac0085111`. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
+<!-- end-g4-15a-live-part6 -->
 
 <!-- g4-15a-qualification-part6 -->
 **12 November 2026 · G4 qualified (Claude).** Release 15a G4, touch, focus and startup, is accepted and qualified. A09 (editable boxes at 16 px on phones and touch screens; buttons take a quick second tap as a press, not a zoom), A10 (the Advanced Schools hint and button in one row; a cross-page button moves focus to the heading of what it opened), A10.1 revision 1 (the page's gold focus ring only for the keyboard; keys typed into a text box do not count) and A17 (the splash picture fills the screen with the title and seal in view; the square picture up to 3 : 2) are on `claude/release-15a-a17`. Application `fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb`, 17,648,272 bytes. A18 (the first Manage tap on an iPhone) is closed as not reproduced: the owner's first tap is quick, and the test browser measured 45–62 ms, no slower than the second. The owner approved the mock-ups ("I am happy with the recommendations suggested"), passed the device round except check 4 (double-tap zoom on text, which the live app does not do either) and accepted all four ("Accept A09").

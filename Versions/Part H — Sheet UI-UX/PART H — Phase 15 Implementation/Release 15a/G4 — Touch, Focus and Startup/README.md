@@ -2,7 +2,7 @@
 
 ## Current state (12 November 2026, Claude)
 
-**All four units accepted and QUALIFIED (12 November). Not live: G3 stays live until the owner's go-live word.** See [HANDOVER.md](HANDOVER.md): discovery 20/20 first time; chain first time (removal 32/32, variants 20/20, dependencies 4/4, 4× CPU 137/137); two full passes first time, 7,326/7,326 and 7,169/7,169 each. G3 is live (`main` `5d14ebe3`, application `6c555d29…c029`, 17,631,957 bytes).
+**All four units accepted, QUALIFIED (12 November) and LIVE (13 November; `main` `e6dc3248`; production 3,091/3,091, smoke 22/22).** See [HANDOVER.md](HANDOVER.md): discovery 20/20 first time; chain first time (removal 32/32, variants 20/20, dependencies 4/4, 4× CPU 137/137); two full passes first time, 7,326/7,326 and 7,169/7,169 each. G3 is live (`main` `5d14ebe3`, application `6c555d29…c029`, 17,631,957 bytes).
 
 - **Kickoff:** [G3 — Spell Rows/KICKOFF-15A-G4.md](<../G3 — Spell Rows/KICKOFF-15A-G4.md>). Ordering question answered 12 November: **G4 now**, the automatic-entries group after.
 - **Reproduction:** [REPRODUCTION.md](REPRODUCTION.md). **Mock-ups and the owner's decision:** [MOCKUP.md](MOCKUP.md) — "I am happy with the recommendations suggested" (all five as recommended).
@@ -28,4 +28,4 @@
 - **Previews** (`qa/verify-preview.py`, on the deployed files): A09 229/229, A10 252/252, A10.1 268/268, A17 293/293.
 - **Device round:** [DEVICE-CHECKS.md](DEVICE-CHECKS.md), mirroring the Claude Doc. A09, A10, A10.1, A17 **Accept**; A18 closed as not reproduced (the first Manage tap is quick on the owner's iPhone), nothing built.
 
-**Next:** G4 go-live on the owner's word (fast-forward `main`, production verification, browser/offline smoke); then the automatic-entries group.
+**Next:** the automatic-entries group, mock-up first.
