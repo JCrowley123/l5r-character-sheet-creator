@@ -1,0 +1,435 @@
+{
+  "checked_utc": "2026-11-13T21:33:33.690458+00:00",
+  "cases": [
+    {
+      "id": "AE1:baseline",
+      "expected_failures": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-SEAM-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "actual_failures": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-SEAM-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-SEAM-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "counts": [
+        5,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE2:baseline",
+      "expected_failures": {
+        "stops": "page.waitForFunction: Timeout",
+        "counts": [
+          0,
+          21
+        ],
+        "before_stop": [
+          "GS-FIRST-OPEN-DONE-PHONE",
+          "GS-HELD-MARKED-PHONE",
+          "GS-MISSING-ADDED-PHONE",
+          "GS-NOTE-FIRST-PHONE",
+          "GS-REOPEN-NOTHING-TWICE-PHONE",
+          "GS-REVIEW-CHOICES-ONLY-PHONE",
+          "GS-SEAM-PHONE"
+        ]
+      },
+      "actual_failures": [],
+      "failed_before_any_stop": [
+        "GS-FIRST-OPEN-DONE-PHONE",
+        "GS-HELD-MARKED-PHONE",
+        "GS-MISSING-ADDED-PHONE",
+        "GS-NOTE-FIRST-PHONE",
+        "GS-REOPEN-NOTHING-TWICE-PHONE",
+        "GS-REVIEW-CHOICES-ONLY-PHONE",
+        "GS-SEAM-PHONE"
+      ],
+      "counts": [
+        0,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE3:baseline",
+      "expected_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "actual_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "counts": [
+        6,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE1:disabled",
+      "expected_failures": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-SEAM-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "actual_failures": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-SEAM-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-SEAM-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "counts": [
+        5,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE1:no-sense",
+      "expected_failures": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE"
+      ],
+      "actual_failures": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "YG-CHECK-ASKS-FOR-SENSE-PHONE",
+        "YG-FIVE-PAGES-PHONE",
+        "YG-WIZARD-ADDS-SENSE-DESKTOP",
+        "YG-WIZARD-ADDS-SENSE-PHONE",
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-GIVEN-PHONE"
+      ],
+      "counts": [
+        7,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE1:no-line",
+      "expected_failures": [
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "actual_failures": [
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "YG-WIZARD-SAYS-SO-PHONE",
+        "YG-YOGO-LINE-PHONE"
+      ],
+      "counts": [
+        11,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE2:disabled",
+      "expected_failures": {
+        "stops": "page.waitForFunction: Timeout",
+        "counts": [
+          0,
+          21
+        ],
+        "before_stop": [
+          "GS-FIRST-OPEN-DONE-PHONE",
+          "GS-HELD-MARKED-PHONE",
+          "GS-MISSING-ADDED-PHONE",
+          "GS-NOTE-FIRST-PHONE",
+          "GS-REOPEN-NOTHING-TWICE-PHONE",
+          "GS-REVIEW-CHOICES-ONLY-PHONE",
+          "GS-SEAM-PHONE"
+        ]
+      },
+      "actual_failures": [],
+      "failed_before_any_stop": [
+        "GS-FIRST-OPEN-DONE-PHONE",
+        "GS-HELD-MARKED-PHONE",
+        "GS-MISSING-ADDED-PHONE",
+        "GS-NOTE-FIRST-PHONE",
+        "GS-REOPEN-NOTHING-TWICE-PHONE",
+        "GS-REVIEW-CHOICES-ONLY-PHONE",
+        "GS-SEAM-PHONE"
+      ],
+      "counts": [
+        0,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE2:play-gate",
+      "expected_failures": [
+        "GS-OPENED-IN-PLAY-ADDS-DESKTOP"
+      ],
+      "actual_failures": [
+        "GS-OPENED-IN-PLAY-ADDS-DESKTOP"
+      ],
+      "failed_before_any_stop": [
+        "GS-OPENED-IN-PLAY-ADDS-DESKTOP"
+      ],
+      "counts": [
+        20,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE2:not-settled",
+      "expected_failures": [
+        "GS-FIRST-OPEN-DONE-PHONE",
+        "GS-REMOVED-STAYS-REMOVED-PHONE",
+        "GS-WIZARD-OPEN-WAITS-DESKTOP"
+      ],
+      "actual_failures": [
+        "GS-FIRST-OPEN-DONE-PHONE",
+        "GS-REMOVED-STAYS-REMOVED-PHONE",
+        "GS-WIZARD-OPEN-WAITS-DESKTOP"
+      ],
+      "failed_before_any_stop": [
+        "GS-FIRST-OPEN-DONE-PHONE",
+        "GS-REMOVED-STAYS-REMOVED-PHONE",
+        "GS-WIZARD-OPEN-WAITS-DESKTOP"
+      ],
+      "counts": [
+        18,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE3:disabled",
+      "expected_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "actual_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PATH-TAG-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE",
+        "AX-SEAM-PHONE",
+        "AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE",
+        "AX-TAPS-DO-NOT-REMEASURE-PHONE"
+      ],
+      "counts": [
+        6,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE3:no-css",
+      "expected_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CLASS-OFF-AS-BEFORE-PHONE",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE"
+      ],
+      "actual_failures": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CLASS-OFF-AS-BEFORE-PHONE",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP",
+        "AX-CLASS-OFF-AS-BEFORE-PHONE",
+        "AX-CORNER-GIVEN-BACK-PHONE",
+        "AX-GIVEN-SPELL-NO-REMOVE-PHONE",
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE",
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE",
+        "AX-ONE-LINE-DESKTOP",
+        "AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE",
+        "AX-PLAY-TAG-NO-XP-PHONE",
+        "AX-PRINT-AS-BEFORE-DESKTOP",
+        "AX-SCHOOL-TECH-PLAIN-PHONE"
+      ],
+      "counts": [
+        9,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE3:fallback-right",
+      "expected_failures": [
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE"
+      ],
+      "actual_failures": [
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "AX-LONG-NAME-FALLS-BACK-LEFT-PHONE"
+      ],
+      "counts": [
+        19,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "AE3:any-xp",
+      "expected_failures": [
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE"
+      ],
+      "actual_failures": [
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "AX-NONZERO-XP-KEEPS-BOTH-PHONE"
+      ],
+      "counts": [
+        19,
+        20
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

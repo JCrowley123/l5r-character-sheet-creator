@@ -1,0 +1,56 @@
+
+PART I PHASE 4.5 — Modal-Configured Advantages/Disadvantages
+
+  PASS  Elemental Blessing + Fire resolves to a 1 XP discount on Fire’s two Traits  — {"effect":"traitXpDiscount","ring":"Fire","traits":["agility","intelligence"],"amount":1}
+  PASS  an unconfigured entry resolves to no effect at all  — null
+  PASS  a pick that names no real Ring resolves to no effect  — null
+  PASS  Lord Moon’s Curse + Medium resolves to a 5-point entry cost  — {"effect":"entryCost","cost":5}
+  PASS  an Advantage with no variable choice has no schema  — null
+  PASS  a name typed with a straight apostrophe still matches the library’s curly one  — "severityTier"
+  PASS  the Ring picker offers the four elemental Rings and not Void  — ["Air","Earth","Fire","Water"]
+  PASS  every severity-tier price is a number the entry’s own library text states  — []
+  PASS    (audited 24 tier prices across 10 entries)
+  PASS  every configurable name exists in the sheet’s own Advantage/Disadvantage libraries  — []
+  PASS  with nothing configured, no Trait is discounted  — 0
+  PASS  the picker offers Fire and the entry takes it  — {"ok":true}
+  PASS  a blessed Trait is discounted 1 XP per Rank actually bought  — 2
+  PASS  raising Agility to 4 costs what L5R’s own Trait rule says, independently computed  — 28
+  PASS  with Fire blessed, that same Trait costs the rule’s price minus one per Rank bought  — 26
+  PASS  the discount covers BOTH of the blessed Ring’s Traits and no other Ring’s  — {"agility":2,"intelligence":2,"reflexes":0,"stamina":0,"strength":0}
+  PASS  a Trait still at its free floor is discounted nothing — there is no bought Rank to cheapen  — 0
+  PASS  the discount can never exceed what the Trait itself costs  — true
+  PASS  an unconfigured Elemental Blessing costs its points and discounts nothing  — 4
+  PASS  configuring it for Fire takes exactly 3 XP off the tracker (2 Agility Ranks + 1 Intelligence)  — 3
+  PASS  re-picking to Water clears Fire’s discount entirely and applies Water’s (nothing bought there)  — 44
+  PASS  removing the entry reverses its effect completely — cost and discount both  — 40
+  PASS  choosing the High tier writes 7 into the entry’s own cost field  — "7"
+  PASS  the High tier reaches the XP tracker as a 7-point Disadvantage  — 7
+  PASS  dropping to the Low tier moves the total by exactly the difference, with no double-count  — 4
+  PASS  an unconfigured variable entry is visibly flagged as needing a choice  — {"unconfigured":true,"text":"Needs a choice"}
+  PASS  once configured the flag is replaced by what was actually picked  — {"configured":true,"warned":false,"mentionsRing":true,"mentionsTraits":true}
+  PASS  an Advantage with no choice to make grows no configuration control  — false
+  PASS  renaming a configured entry drops its pick, its control and its discount together  — {"row":false,"stored":false,"discount":0}
+  PASS  a configured entry saves as {..., config:{type, value}}  — {"type":"ringPick","value":"Water"}
+  PASS  an entry with no choice to make writes no config key at all  — false
+  PASS  the pick survives a full save/load round-trip, and still discounts after it  — {"restored":{"type":"ringPick","value":"Water"},"flaggedUnconfigured":true,"discountsStrength":2}
+  PASS  an unconfigured roll-effect entry contributes nothing to any roll  — []
+  PASS  Chosen by the Oracles gives +1k1 on a Ring Roll of the chosen Ring  — [{"label":"Chosen by the Oracles","rolled":1,"kept":1,"total":0,"informational":false}]
+  PASS  …and nothing on a Ring Roll of any other Ring  — []
+  PASS  …and a 3k3 Fire Ring Roll really becomes 4k4 once the pipeline folds it  — {"rolled":4,"kept":4}
+  PASS  …and nothing on a Trait Roll or a Skill Roll  — [[],[]]
+  PASS  Chosen by the Oracles offers Void; Elemental Blessing does not  — {"oracles":["Air","Earth","Fire","Water","Void"],"blessing":["Air","Earth","Fire","Water"]}
+  PASS  …and a Void pick works on a Void Ring Roll, the case RINGS alone could not express  — [{"label":"Chosen by the Oracles","rolled":1,"kept":1,"total":0,"informational":false}]
+  PASS  Friendly Kami gives +1k1 on a Universal spell cast in the chosen Element  — [{"label":"Friendly Kami","rolled":1,"kept":1,"total":0,"informational":false}]
+  PASS  …on all three Universal spells, and on no other spell  — {"Commune":1,"Sense":1,"Summon":1,"Path to Inner Peace":0}
+  PASS  …and nothing when the same spell is cast in a different Element  — []
+  PASS  …and nothing on a Maho casting, which is not a kami spell at all  — []
+  PASS  Friend of the Elements reports a Free Raise on both the chosen Ring’s Traits  — [[{"label":"Friend of the Elements","rolled":0,"kept":0,"total":0,"informational":true}],[{"label":"Friend of the Elements","rolled":0,"kept":0,"total":0,"informational":true}]]
+  PASS  …and nothing on a Trait belonging to another Ring  — []
+  PASS  …and the pool it produces is IDENTICAL to the pool with no modifier at all  — {"rolled":3,"kept":3,"same":true,"reported":true}
+  PASS  the phase registers exactly one contributor, last in priority order  — [{"id":"adv-config","priority":60}]
+  PASS  no option label overflows its tile, in any configurable entry’s picker  — []
+  PASS  the trunk’s own Element picker still gets its fixed 78×78 nowrap tile  — {"width":"78px","height":"78px","whiteSpace":"nowrap"}
+  PASS  the phase exports both kill-switches as enabled  — [true,true]
+  PASS  no uncaught page errors
+
+51/51 checks passed

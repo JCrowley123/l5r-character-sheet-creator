@@ -1,0 +1,20 @@
+  detail YG-YOGO-GIVEN-PHONE: ["Commune","Summon"]
+  detail YG-FIVE-PAGES-PHONE: {"Fuzake Shugenja":["Secrets of the Empire p.238",["Sense","Commune","Summon","Path to Inner Peace"]],"Horiuchi Shugenja":["The Great Clans p.257–258",["Sense","Commune","Summon"]],"Ninube Shugenja":["The Great Clans p.281",["Sense","Commune","Summon"]],"Yogo Wardmaster [Shugenja]":["The Great Clans p.229",["Commune","Summon"]],"Yoritomo Shugenja":["The Great Clans p.169",["Sense","Commune","Summon"]]}
+  detail YG-WIZARD-ADDS-SENSE-PHONE: {"learned":["Commune","Summon"],"scrolls":["Commune","Summon"]}
+  detail YG-WIZARD-SAYS-SO-PHONE: {"note":"Yogo Wardmaster [Shugenja] starts with Sense, Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells (The Great Clans p.229). Each is added to your Equipment as its Spell Scroll and learned.","given":"Commune, Summon."}
+  detail YG-CHECK-ASKS-FOR-SENSE-PHONE: {"removed":false}
+  detail YG-WIZARD-ADDS-SENSE-DESKTOP: {"learned":["Commune","Summon"],"scrolls":["Commune","Summon"]}
+PASS YG-SEAM-PHONE
+FAIL YG-YOGO-GIVEN-PHONE
+PASS YG-YOGO-LINE-PHONE
+FAIL YG-FIVE-PAGES-PHONE
+PASS YG-OTHER-SCHOOLS-UNCHANGED-PHONE
+PASS YG-YOGO-BOXES-UNCHANGED-PHONE
+FAIL YG-WIZARD-ADDS-SENSE-PHONE
+FAIL YG-WIZARD-SAYS-SO-PHONE
+PASS YG-WIZARD-WARD-BOXES-PHONE
+FAIL YG-CHECK-ASKS-FOR-SENSE-PHONE
+PASS YG-NO-ERRORS-PHONE
+FAIL YG-WIZARD-ADDS-SENSE-DESKTOP
+PASS YG-NO-ERRORS-DESKTOP
+7/13 checks passed

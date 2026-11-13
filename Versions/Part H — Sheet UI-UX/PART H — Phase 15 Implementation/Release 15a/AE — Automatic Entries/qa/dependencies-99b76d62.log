@@ -1,0 +1,43 @@
+== PART H PHASE 15.1.28 exit 0
+fragment : src/sheet/209.999999999999999995-feat-yogo-given-spells.js
+marker   : PART H PHASE 15.1.28
+surface  : 3 name(s) -- YG15, YOGO_GIVEN_SPELLS_ENABLED, yogo-given-spells-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1001  [PART H PHASE 15.1.28 +0]  // PART H PHASE 15.1.28 BEGIN yogo-given-spells-seam
+    own   1002  [PART H PHASE 15.1.28 +1]  if(typeof YG15 === 'object' && YG15) Object.assign(window.__L5R_TEST__, {YG15, YOGO_GIVEN_SPELLS
+    own   1003  [PART H PHASE 15.1.28 +2]  // END YG15 yogo-given-spells-seam
+
+every reference is inside a block PART H PHASE 15.1.28 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.29 exit 0
+fragment : src/sheet/209.999999999999999996-feat-given-spells-on-opening.js
+marker   : PART H PHASE 15.1.29
+surface  : 6 name(s) -- GIVEN_SPELLS_ON_OPENING_ENABLED, GS15, given-spells-credited, given-spells-on-opening-seam, givenSpellsNote, givenSpellsSettled
+
+src\sheet\210-test-seam-and-init.js
+    own   1004  [PART H PHASE 15.1.29 +0]  // PART H PHASE 15.1.29 BEGIN given-spells-on-opening-seam
+    own   1005  [PART H PHASE 15.1.29 +1]  if(typeof GS15 === 'object' && GS15) Object.assign(window.__L5R_TEST__, {GS15, GIVEN_SPELLS_ON_O
+    own   1006  [PART H PHASE 15.1.29 +2]  // END GS15 given-spells-on-opening-seam
+
+every reference is inside a block PART H PHASE 15.1.29 owns -- surgical removal covers all of them.
+
+== PART H PHASE 15.1.30 exit 0
+T H PHASE 15.1.30 +9]  .ax15-tag {
+    own     14  [PART H PHASE 15.1.30 +13]  html body.ax15-on #techList > .entry.ax15-auto > .rm-btn {
+    own     17  [PART H PHASE 15.1.30 +16]  html body.ax15-on #techList > .entry.ax15-auto:not([data-spell-element]) > .entry-top > input.en
+    own     20  [PART H PHASE 15.1.30 +19]  html body.ax15-on #techList > .entry.ax15-auto > .entry-top {
+    own     23  [PART H PHASE 15.1.30 +22]  html body.ax15-on #techList > .entry.ax15-auto[data-spell-element] > .entry-top > .en-name {
+    own     26  [PART H PHASE 15.1.30 +25]  html body.ax15-on #techList > .entry.ax15-auto:not([data-spell-element]) > .entry-top > .ax15-ta
+    own     44  [PART H PHASE 15.1.30 +43]  html body.ax15-on #techList > .entry.ax15-auto.ax15-wrap > .entry-top {
+    own     48  [PART H PHASE 15.1.30 +47]  html body.ax15-on #techList > .entry.ax15-auto.ax15-wrap > .entry-top > .en-name {
+    own     52  [PART H PHASE 15.1.30 +51]  html body.ax15-on #techList > .entry.ax15-auto.ax15-wrap > .entry-top > .ax15-tag {
+
+src\sheet\210-test-seam-and-init.js
+    own   1007  [PART H PHASE 15.1.30 +0]  // PART H PHASE 15.1.30 BEGIN automatic-entry-controls-seam
+    own   1008  [PART H PHASE 15.1.30 +1]  if(typeof AX15 === 'object' && AX15) Object.assign(window.__L5R_TEST__, {AX15, AUTOMATIC_ENTRY_C
+    own   1009  [PART H PHASE 15.1.30 +2]  // END AX15 automatic-entry-controls-seam
+
+every reference is inside a block PART H PHASE 15.1.30 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 3/3

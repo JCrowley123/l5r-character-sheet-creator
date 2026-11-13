@@ -1,0 +1,15 @@
+10 mutations unique.
+AE1:baseline: failed exactly its 8 pinned checks
+AE2:baseline: stopped as pinned, after exactly its 7 pinned failures
+AE3:baseline: failed exactly its 14 pinned checks
+AE1:disabled: failed exactly its 8 pinned checks
+AE1:no-sense: failed exactly its 6 pinned checks
+AE1:no-line: failed exactly its 2 pinned checks
+AE2:disabled: stopped as pinned, after exactly its 7 pinned failures
+AE2:play-gate: failed exactly its 1 pinned checks
+AE2:not-settled: failed exactly its 3 pinned checks
+AE3:disabled: failed exactly its 14 pinned checks
+AE3:no-css: failed exactly its 11 pinned checks
+AE3:fallback-right: failed exactly its 1 pinned checks
+AE3:any-xp: failed exactly its 1 pinned checks
+All 13 negative variants matched their pinned failures.

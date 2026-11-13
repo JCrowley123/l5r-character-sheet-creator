@@ -1,0 +1,22 @@
+  detail YG-SEAM-PHONE: null
+  detail YG-YOGO-GIVEN-PHONE: ["Commune","Summon"]
+  detail YG-YOGO-LINE-PHONE: {"source":"Rulebook page not yet recorded","given":["Commune","Summon"],"line":"Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells","slots":[{"want":3,"ward":true,"label":"Ward spells","noun":["Ward spell","Ward spells"]},{"want":3,"notElements":["Void"],"label":"Other spells, not Void","noun":["other spell (not Void)","other spells (not Void)"]}]}
+  detail YG-FIVE-PAGES-PHONE: {"Fuzake Shugenja":["Secrets of the Empire, page not yet recorded",["Sense","Commune","Summon","Path to Inner Peace"]],"Horiuchi Shugenja":["Rulebook page not yet recorded",["Sense","Commune","Summon"]],"Ninube Shugenja":["Great Clans, page not yet recorded",["Sense","Commune","Summon"]],"Yogo Wardmaster [Shugenja]":["Rulebook page not yet recorded",["Commune","Summon"]],"Yoritomo Shugenja":["Rulebook page not yet recorded",["Sense","Commune","Summon"]]}
+  detail YG-WIZARD-ADDS-SENSE-PHONE: {"learned":["Commune","Summon"],"scrolls":["Commune","Summon"]}
+  detail YG-WIZARD-SAYS-SO-PHONE: {"note":"Yogo Wardmaster [Shugenja] starts with Commune, Summon, 3 Ward spells, 3 other spells that are not Void spells (Rulebook page not yet recorded). Each is added to your Equipment as its Spell Scroll and learned.","given":"Commune, Summon."}
+  detail YG-CHECK-ASKS-FOR-SENSE-PHONE: {"removed":false}
+  detail YG-WIZARD-ADDS-SENSE-DESKTOP: {"learned":["Commune","Summon"],"scrolls":["Commune","Summon"]}
+FAIL YG-SEAM-PHONE
+FAIL YG-YOGO-GIVEN-PHONE
+FAIL YG-YOGO-LINE-PHONE
+FAIL YG-FIVE-PAGES-PHONE
+PASS YG-OTHER-SCHOOLS-UNCHANGED-PHONE
+PASS YG-YOGO-BOXES-UNCHANGED-PHONE
+FAIL YG-WIZARD-ADDS-SENSE-PHONE
+FAIL YG-WIZARD-SAYS-SO-PHONE
+PASS YG-WIZARD-WARD-BOXES-PHONE
+FAIL YG-CHECK-ASKS-FOR-SENSE-PHONE
+PASS YG-NO-ERRORS-PHONE
+FAIL YG-WIZARD-ADDS-SENSE-DESKTOP
+PASS YG-NO-ERRORS-DESKTOP
+5/13 checks passed

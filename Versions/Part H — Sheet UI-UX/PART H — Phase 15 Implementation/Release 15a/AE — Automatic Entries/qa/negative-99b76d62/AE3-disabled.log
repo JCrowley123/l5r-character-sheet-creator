@@ -1,0 +1,35 @@
+  detail AX-SEAM-PHONE: [false,false,false]
+  detail AX-SCHOOL-TECH-PLAIN-PHONE: {"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192}
+  detail AX-CORNER-GIVEN-BACK-PHONE: {"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192}
+  detail AX-LONG-NAME-FALLS-BACK-LEFT-PHONE: {"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":true,"h":192}
+  detail AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE: {"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192}
+  detail AX-GIVEN-SPELL-NO-REMOVE-PHONE: {"xp":false,"remove":true,"tag":null,"name":{"x":36,"y":635.5625,"right":312,"bottom":669.5625,"w":276,"h":34},"tagBox":null,"inner":{"left":36,"right":354,"right0":354},"cut":false,"h":204}
+  detail AX-PLAY-TAG-NO-XP-PHONE: {"xp":true,"remove":false,"tag":null,"name":{"x":36,"y":324.03125,"right":292,"bottom":358.03125,"w":256,"h":34},"tagBox":null,"inner":{"left":36,"right":354,"right0":354},"cut":false,"h":192}
+  detail AX-NONZERO-XP-KEEPS-BOTH-PHONE: {"c":{"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192},"back":{"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192}}
+  detail AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE: {"other":{"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192},"advanced":{"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192},"back":{"xp":true,"remove":true,"tag":null,"name":{"x":36,"y":434.03125,"right":250,"bottom":468.03125,"w":214,"h":34},"tagBox":null,"inner":{"left":36,"right":312,"right0":354},"cut":false,"h":192}}
+  detail AX-PATH-TAG-PHONE: {"path":"Student of Hitsu-do [Monk]","tech":"The Way of Fire","tag":null,"kind":"","after":null}
+  detail AX-TAPS-DO-NOT-REMEASURE-PHONE: {"taps":0,"mode":0}
+  detail AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP: {"sense":{"xp":false,"remove":true,"tag":null,"name":{"x":166,"y":567.921875,"right":936.3125,"bottom":601.921875,"w":770.3125,"h":34},"tagBox":null,"inner":{"left":166,"right":1232,"right0":1274},"cut":false,"h":146},"pool":{"xp":false,"remove":true,"tag":null,"name":{"x":166,"y":1036.34375,"right":936.3125,"bottom":1070.34375,"w":770.3125,"h":34},"tagBox":null,"inner":{"left":166,"right":1232,"right0":1274},"cut":false,"h":146},"balm":{"xp":false,"remove":true,"tag":null,"name":{"x":166,"y":1817.046875,"right":1028.296875,"bottom":1851.046875,"w":862.296875,"h":34},"tagBox":null,"inner":{"left":166,"right":1232,"right0":1274},"cut":false,"h":146},"poolSchool":true}
+  detail AX-ONE-LINE-DESKTOP: {"xp":true,"remove":true,"tag":null,"name":{"x":166,"y":411.78125,"right":1170,"bottom":445.78125,"w":1004,"h":34},"tagBox":null,"inner":{"left":166,"right":1232,"right0":1274},"cut":false,"h":146}
+  detail AX-PRINT-AS-BEFORE-DESKTOP: {"on":"block|2px|0px|70px;none|6px|0px|auto;flex|0px|0px|1384px;block|2px|0px|1304px","off":"block|2px|0px|70px;none|6px|0px|auto;flex|0px|0px|1384px;block|2px|0px|1304px","tag":null}
+FAIL AX-SEAM-PHONE
+FAIL AX-SCHOOL-TECH-PLAIN-PHONE
+FAIL AX-CORNER-GIVEN-BACK-PHONE
+FAIL AX-LONG-NAME-FALLS-BACK-LEFT-PHONE
+FAIL AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE
+FAIL AX-GIVEN-SPELL-NO-REMOVE-PHONE
+PASS AX-KIHO-KEEPS-BOTH-PHONE
+FAIL AX-PLAY-TAG-NO-XP-PHONE
+FAIL AX-NONZERO-XP-KEEPS-BOTH-PHONE
+FAIL AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE
+FAIL AX-PATH-TAG-PHONE
+FAIL AX-TAPS-DO-NOT-REMEASURE-PHONE
+PASS AX-SAVE-UNCHANGED-PHONE
+PASS AX-CLASS-OFF-AS-BEFORE-PHONE
+PASS AX-NO-ERRORS-PHONE
+FAIL AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP
+PASS AX-HAND-TYPED-TECH-KEEPS-BOTH-DESKTOP
+FAIL AX-ONE-LINE-DESKTOP
+FAIL AX-PRINT-AS-BEFORE-DESKTOP
+PASS AX-NO-ERRORS-DESKTOP
+6/20 checks passed
