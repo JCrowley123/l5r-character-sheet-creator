@@ -5,18 +5,25 @@
   "GS-SEAM-PHONE",
   "GS-HELD-MARKED-PHONE",
   "GS-OTHERS-UNTOUCHED-PHONE",
+  "GS-FIRST-OPEN-DONE-PHONE",
   "GS-NOTE-FIRST-PHONE",
   "GS-REVIEW-CHOICES-ONLY-PHONE",
   "GS-MISSING-ADDED-PHONE",
   "GS-REOPEN-NOTHING-TWICE-PHONE",
   "GS-LISTED-AUTOSAVE-KEEPS-NOTE-PHONE",
   "GS-SAVE-CLEARS-NOTE-PHONE",
+  "GS-REMOVED-STAYS-REMOVED-PHONE",
+  "GS-REMOVED-NOT-LISTED-PHONE",
   "GS-NO-ERRORS-PHONE",
+  "GS-WIZARD-OPEN-WAITS-DESKTOP",
   "GS-EXPORT-CLEARS-NOTE-DESKTOP",
   "GS-EXPORTED-FILE-WITHOUT-NOTE-DESKTOP",
   "GS-SAVE-AS-CLEARS-NOTE-DESKTOP",
   "GS-CREDITED-NOTHING-TO-SAY-DESKTOP",
   "GS-NOT-SHUGENJA-NOTHING-DESKTOP",
+  "GS-OPENED-IN-PLAY-ADDS-DESKTOP",
   "GS-NO-ERRORS-DESKTOP"
- ]
+ ],
+ "revision2": "13 November 2026, pinned before their first run, after the device round (the owner's option B): GS-FIRST-OPEN-DONE-PHONE, GS-REMOVED-STAYS-REMOVED-PHONE, GS-REMOVED-NOT-LISTED-PHONE and GS-WIZARD-OPEN-WAITS-DESKTOP added (once per School; a removed given spell stays removed and is not listed; nothing is half-added, and nothing is done while the wizard is open). 16 + 4 = 20.",
+ "revision2b": "13 November 2026, pinned before its first run, after the owner's screen recording of check 9: GS-OPENED-IN-PLAY-ADDS-DESKTOP added (a character opened from the Characters list while the sheet is in Play gets its missing given spell with its scroll; Play mode's gate had stopped the Technique picker). 20 + 1 = 21."
 }

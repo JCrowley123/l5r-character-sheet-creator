@@ -36,7 +36,7 @@ Six harnesses build their characters by loading saves of Shugenja and check the 
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With AE2 (this branch) | `ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715` | 17,660,953 |
+| With AE2, revision 1 | `ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715` | 17,660,953 |
 | AE2 removed (AE1) | `2c21296bf13c44283a4a43393f0512b187752cd7dad62804e2e0c2627139f17a` | 17,651,074 |
 
 ## Light checks (13 November)
@@ -50,5 +50,37 @@ Six harnesses build their characters by loading saves of Shugenja and check the 
 | `feature-dependencies.py` | every reference inside this unit's own blocks |
 | The five harnesses above, with the pause | 5/5 harnesses, 120/120 checks |
 | The touched layers' own harnesses: saving and opening (the Characters list, Phase 7 save format and Phase 7.1 audit log, Part J), the character check (Phase 5) and casting help (Phase 8), the creation wizard and its five later phases, School choices and Older School Choices, A01, A10.1, 8b.1-UI-01 to UI-03, the app bar, PDF export (seven), Starting Spells Are Scrolls, Spell Names, Gift of the Lady, Kitsune, the overspend and free-choice fixes, Undone Change (log: `AE — Automatic Entries/qa/light/ae2-run.log`) | 40/40 harnesses, 955/955 checks |
+
+## Revision 2 (the device round, 13 November 2026: the owner's option B)
+
+**What the owner found (check 9).** Sense and its scroll removed after the character had been saved; on reopening, the scroll came back alone, with no spell and no note, on iPhone and laptop. Not reproduced in the test browser along the same steps, but one related failure was: with the creation wizard still open, the add went through the wizard's School-choice path and was refused. The add step depended on other layers' state and could fail part-way or quietly.
+
+**The owner's question and decision.** Spells are prayers read from scrolls; a player may lose them for story reasons. The owner chose option B: handle a School's given spells once, on the character's first opening, with the note; a later removal is the player's choice.
+
+**What changes:**
+
+- **Once per School.** After the first opening the School is recorded with the character (`givenSpellsSettled`). A given spell removed after that is not added again.
+- **Not listed either.** For a School already done, the character check's starting-spell line no longer lists a removed given spell as "Still to choose … (given by your School)". Both the School-choice layer's line and Phase 11.2.3's read `CW1123.open`, which this unit now filters for those Schools.
+- **Both or neither.** A missing spell is added with its scroll or not at all; a scroll added for a spell that could not be learned is taken away again. Nothing is claimed in the note for it, and the School is not recorded as done, so the next opening tries again.
+- **Not while another path is open.** Nothing is done while a School-choice window or the creation wizard is open; the next opening does it.
+- **In Play too: the cause of check 9.** The owner's screen recording (Edge, the AE2 preview) showed the path: another saved character was opened, then the Kitsu again, from the Characters list, so the sheet was in Play. Phase 12's gate (Part K) stops every event on the Technique picker in Play, so the spell was never learned after its scroll had been added. Reproduced in the test browser exactly so. The unit now lifts that gate for its own add and puts it back at once (`MODES12.mode`); the mode the player sees does not change. The harness's earlier opening paths went through the toolbar's Load, which switches to Manage, and so missed it.
+
+Five checks added, each pinned before its first run (`qa/expected-checks.json`, 16 + 4 + 1 = **21**): `GS-FIRST-OPEN-DONE-PHONE`, `GS-REMOVED-STAYS-REMOVED-PHONE`, `GS-REMOVED-NOT-LISTED-PHONE`, `GS-WIZARD-OPEN-WAITS-DESKTOP`, and, after the recording, `GS-OPENED-IN-PLAY-ADDS-DESKTOP`.
+
+| Build | SHA-256 | Bytes |
+|---|---|---|
+| With AE2, revision 2 (this branch) | `8eb7aecc7021d260fe24a2dd9897455cc0d85ff3292c040d52923cd0bccbb2ef` | 17,664,331 |
+| Revision 2 before the Play fix | `f9b7f7894e3a1d7f115c47ce389fccc8870ad9736c1d5033d301c73c42816b2f` | 17,663,813 |
+
+| Check, revision 2 | Result |
+|---|---|
+| Own harness (21) | 20/20 on the first run of the four; then 21/21 with the Play fix |
+| Own harness on revision 2 before the Play fix | 20/21: `GS-OPENED-IN-PLAY-ADDS-DESKTOP` fails there, with no Summon scroll left behind and no claim in the note (both or neither already held) |
+| The owner's steps (scratch `probe9c`) on this build | Sense stays removed, no scroll comes back, no note |
+| Own harness on revision 1 | 17/20: the first-opening record, a removed spell staying removed, and the wizard check fail there (the "not listed" check passes trivially on revision 1, which adds the spell back) |
+| Own harness with AE1 removed (`1dc59f06…1f04`) | 20/20 |
+| `qa/test-removal.py` | 10/10 |
+| `feature-dependencies.py` (with both save fields) | every reference inside this unit's own blocks |
+| The touched layers' own harnesses, on revision 2 before the Play fix (the Play fix touches only the add) | 42/42 harnesses, 1,043/1,043 checks; the whole candidate list runs again on the group's tip |
 
 See [ROLLBACK.md](ROLLBACK.md).

@@ -89,6 +89,11 @@ const stored = (page, id) => page.evaluate(i => { const t = localStorage.getItem
         const ok = OTHERS.every(n => { const s = first.spells.find(x => x[0] === n), c = first.scrolls.find(x => x[0] === n); return s && c && s[1] === null && c[1] === null; });
         return [ok, first];
       });
+      // Revision 2: the School is recorded as done with the character.
+      await check('GS-FIRST-OPEN-DONE-PHONE', async () => {
+        const done = await page.evaluate(() => window.__L5R_TEST__.collectData().givenSpellsSettled || null);
+        return [same(done, [SCHOOL]), done];
+      });
       await check('GS-NOTE-FIRST-PHONE', async () => {
         const l = await lines(page);
         return [l.length > 0 && same([l[0].rule, l[0].title, l[0].detail], ['given-spells-credited'].concat(NOTE_ALL)) && l.filter(x => x.rule === 'given-spells-credited').length === 1, l];
@@ -135,12 +140,52 @@ const stored = (page, id) => page.evaluate(i => { const t = localStorage.getItem
         const credited = GIVEN.every(n => { const s = now.spells.find(x => x[0] === n); return s && s[1] && s[1].school === SCHOOL; });
         return [!after.givenSpellsNote && !now.note && !l.some(x => x.rule === 'given-spells-credited') && credited, {stored: after.givenSpellsNote, l, now}];
       });
+      // Revision 2: after the character was saved, the player removes Sense and its scroll (the sheet's own
+      // confirmation), saves, opens another character and comes back: Sense stays removed, and is not listed.
+      let back = null;
+      await check('GS-REMOVED-STAYS-REMOVED-PHONE', async () => {
+        await page.evaluate(() => { const T = window.__L5R_TEST__; T.SC8.spellRow('Sense').querySelector('.rm-btn').click(); });
+        await settle(page);
+        await page.evaluate(() => { const s = window.__L5R_TEST__.SC8.scrollRow('Sense'); if (s) s.querySelector('.rm-btn').click(); });
+        await settle(page);
+        await page.evaluate(() => { const o = document.getElementById('appConfirmOverlay'); if (o && o.style.display === 'flex') document.getElementById('appConfirmOk').click(); });
+        await settle(page);
+        await page.evaluate(() => document.getElementById('btnSave').click());
+        await page.waitForFunction(id => { const t = localStorage.getItem('l5r-sheet:local:l5r-char:' + id); return t && !JSON.parse(t).tech.some(r => r.name === 'Sense'); }, LISTED, {timeout: 10000});
+        await page.evaluate(() => { document.getElementById('charSelect').value = ''; document.getElementById('btnLoad').click(); });
+        await page.waitForFunction(() => document.getElementById('f_name').value !== 'Older Kitsu test character II');
+        await page.evaluate(id => { document.getElementById('charSelect').value = id; document.getElementById('btnLoad').click(); }, LISTED);
+        await page.waitForFunction(() => document.getElementById('f_name').value === 'Older Kitsu test character II');
+        await settle(page);
+        back = {now: await saved(page), lines: await lines(page)};
+        return [!back.now.spells.some(x => x[0] === 'Sense') && !back.now.scrolls.some(x => x[0] === 'Sense') && !back.now.note &&
+          !back.lines.some(x => x.rule === 'given-spells-credited'), back];
+      });
+      await check('GS-REMOVED-NOT-LISTED-PHONE', async () => {
+        const all = back ? back.lines.map(x => x.title + ' ' + x.detail).join(' | ') : '';
+        return [!!back && !/Sense \(given by your School\)/.test(all), all];
+      });
       await check('GS-NO-ERRORS-PHONE', async () => [errors.length === 0, errors]);
       await context.close();
     }
     // ---------- Desktop ----------
     {
       const {context, page, errors} = await open(browser, DEVICES.DESKTOP);
+      // Revision 2: a character opened while the creation wizard is still open: nothing is half-added (no scroll on its
+      // own) and the School is not recorded as done; once the wizard is closed, the next opening adds Summon.
+      await check('GS-WIZARD-OPEN-WAITS-DESKTOP', async () => {
+        await page.evaluate(() => document.getElementById('cl11Toolbar').click());
+        await page.click('#cl11Create');
+        await page.waitForFunction(() => window.__L5R_TEST__.CW112.isOpen());
+        await importFile(page, FX('kitsu-no-summon'), KITSU);
+        const during = await saved(page), doneDuring = await page.evaluate(() => window.__L5R_TEST__.collectData().givenSpellsSettled || null);
+        await page.evaluate(() => { const T = window.__L5R_TEST__; T.CW112.close(); T.applyData(T.collectData()); });
+        await settle(page);
+        const after = await saved(page), doneAfter = await page.evaluate(() => window.__L5R_TEST__.collectData().givenSpellsSettled || null);
+        const count = (st, n) => [st.spells.filter(x => x[0] === n).length, st.scrolls.filter(x => x[0] === n).length];
+        return [same(count(during, 'Summon'), [0, 0]) && doneDuring === null && same(count(after, 'Summon'), [1, 1]) && same(doneAfter, [SCHOOL]),
+          {during: count(during, 'Summon'), doneDuring, after: count(after, 'Summon'), doneAfter}];
+      });
       await importFile(page, FX('kitsu-no-summon'), KITSU);
       let file = null;
       await check('GS-EXPORT-CLEARS-NOTE-DESKTOP', async () => {
@@ -176,6 +221,25 @@ const stored = (page, id) => page.evaluate(i => { const t = localStorage.getItem
         await importFile(page, FX('matsu-fixture'), '7b.1 checks — Matsu');
         const l = await lines(page), now = await saved(page);
         return [!l.some(x => x.rule === 'given-spells-credited') && !now.note && now.spells.length === 0 && now.scrolls.length === 0, {l, now}];
+      });
+      // Revision 2: the owner's recording. In Play, open a stored character that lacks Summon from the Characters list:
+      // Summon comes back with its scroll and the note (Play mode's gate had stopped the Technique picker).
+      await check('GS-OPENED-IN-PLAY-ADDS-DESKTOP', async () => {
+        await page.evaluate(text => { const id = 'c_ae2_play';
+          localStorage.setItem('l5r-sheet:local:l5r-char:' + id, text);
+          const list = JSON.parse(localStorage.getItem('l5r-sheet:local:l5r-char-index') || '[]');
+          list.push({id, name: 'Older Kitsu test character', clan: 'Lion', updatedAt: 2});
+          localStorage.setItem('l5r-sheet:local:l5r-char-index', JSON.stringify(list)); }, fs.readFileSync(FX('kitsu-no-summon'), 'utf8'));
+        // A blank sheet first (nothing unsaved to confirm), then Play, then the stored character from the Characters list.
+        await page.evaluate(() => { document.getElementById('charSelect').value = ''; document.getElementById('btnLoad').click(); });
+        await page.waitForFunction(() => document.getElementById('f_name').value === '');
+        await page.evaluate(() => window.__L5R_TEST__.MODES12.set('play'));
+        await page.evaluate(() => window.__L5R_TEST__.CL11.openCharacter('c_ae2_play'));
+        await page.waitForFunction(n => document.getElementById('f_name').value === n, KITSU);
+        await settle(page);
+        const now = await saved(page), l = await lines(page), play = await page.evaluate(() => window.__L5R_TEST__.MODES12.isPlay());
+        const s1 = now.spells.filter(x => x[0] === 'Summon'), c1 = now.scrolls.filter(x => x[0] === 'Summon');
+        return [play && s1.length === 1 && c1.length === 1 && l.length > 0 && same([l[0].title, l[0].detail], NOTE_MIXED), {play, s1, c1, l: l.slice(0, 1)}];
       });
       await check('GS-NO-ERRORS-DESKTOP', async () => [errors.length === 0, errors]);
       await context.close();

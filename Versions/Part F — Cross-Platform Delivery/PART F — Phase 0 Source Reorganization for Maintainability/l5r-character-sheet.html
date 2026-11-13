@@ -57043,28 +57043,36 @@ return fontkitCache=module.exports;}
   YG15.install();
   // ============ END PART H PHASE 15.1.28 ============
 
-  // ============ PART H PHASE 15.1.29 — A SCHOOL'S GIVEN SPELLS CREDITED WHEN A CHARACTER IS OPENED ============
+  // ============ PART H PHASE 15.1.29 — A SCHOOL'S GIVEN SPELLS CREDITED WHEN A CHARACTER IS FIRST OPENED ============
   // Phase 15, Release 15a, unit AE2 (the automatic-entries group), approved by the owner on 13 November 2026 as
-  // revision 1 of the mock-up. The number 29 is this unit's marker only; the unit keeps its identifier, AE2.
+  // revision 1 of the mock-up, and revised the same day after the device round (revision 2, the owner's option B).
+  // The number 29 is this unit's marker only; the unit keeps its identifier, AE2.
   // The owner's rule (11 November 2026): what the rules give a character is not a choice. Every Shugenja School gives
   // its own spells (Sense, Commune and Summon; Fuzake adds Path to Inner Peace), yet an older character was asked to
   // tick them in the starting-spell review, and one that lacked one was not told.
-  // Now, whenever a character is opened (a file, or the Characters list), for each Shugenja School on it, the School's
+  // The first time a character is opened (a file, or the Characters list) with a Shugenja School on it, the School's
   // own given list (Phase 11.2.3/11.2.4's table) is read. A held spell, and its scroll, are marked as that School's,
-  // exactly as ticking it in the older-holdings review does; a missing one is added with its Spell Scroll through the
-  // wizard's own path, and marked as created for the School. One note per School in the character check names each
-  // spell and says "marked" or "added". The sheet never changes a saved character silently.
+  // exactly as ticking it in the older-holdings review does; a missing one is added with its Spell Scroll, and marked as
+  // created for the School. One note per School in the character check names each spell and says "marked" or
+  // "added". The sheet never changes a saved character silently.
+  // Revision 2 (the owner's option B, 13 November 2026): this happens once for each School. The School is then recorded
+  // as done with the character (the save's "givenSpellsSettled"). Spells are prayers read from scrolls, and a player
+  // may lose them for story reasons, so a given spell removed after that is the player's choice: it is not added
+  // again, and the character check no longer lists it as still to choose. A missing spell is added with its scroll or
+  // not at all (never a scroll alone), never through a School-choice window or the creation wizard, and nothing is
+  // done while either is open; a School whose spells could not all be added is not recorded as done, so the next
+  // opening tries again.
   // The note is kept with the character (the save's "givenSpellsNote") until the player saves it themselves: Save,
-  // Save As New or Export JSON. Autosave does not clear it, and an exported file never carries it. Opening the
-  // character again before that shows the same note; the spells are not marked or added twice.
+  // Save As New or Export JSON. Autosave does not clear it, and an exported file never carries it.
   // Nothing here autosaves while a character is being opened (the Characters list's own id is still the previous
   // character's then). The older-holdings review, which runs first, then finds only the real choices left.
   const GIVEN_SPELLS_ON_OPENING_ENABLED = true;
 
   const GS15 = (function(){
     // paused: set only by a test page that checks an earlier layer's review as it works without this unit.
-    const api = {installed: false, paused: false, notes: [], KEY: 'givenSpellsNote', RULE: 'given-spells-credited'};
+    const api = {installed: false, paused: false, notes: [], settled: [], KEY: 'givenSpellsNote', SETTLED: 'givenSpellsSettled', RULE: 'given-spells-credited'};
     api.enabled = function(){ return GIVEN_SPELLS_ON_OPENING_ENABLED; };
+    const GIVEN = ' (given by your School)';
     const norm = function(s){ return String(s || '').trim().toLowerCase(); };
     const spellByName = function(n){ return SPELL_LIBRARY.find(function(s){ return norm(s.name) === norm(n); }) || null; };
     const names = function(list){
@@ -57090,14 +57098,30 @@ return fontkitCache=module.exports;}
       if(SC8Logic.belongs(record, school)) return;
       SC8.write(row, record ? SC8Logic.addSchool(record, school) : grant(school, name, created));
     };
-    // One School: mark the given spells it holds, add the ones it lacks. {school, marked, added}, or null.
+    // Add one missing spell with its scroll, or nothing: a scroll this added for a spell that could not be learned is
+    // taken away again. True when the spell row is there afterwards.
+    api.add = function(s){
+      if(!s.maho && !spellEligibility(s).eligible) return false;
+      const hadScroll = SC8.scrollRow(s.name);
+      // A saved character usually opens in Play, where Phase 12's gate (Part K) stops every event on the Technique
+      // picker, so the spell would never be learned. The gate is lifted for this one add and put back at once; the
+      // mode the player sees does not change. (Found at the device round: the scroll came back alone.)
+      const play = typeof MODES12 === 'object' && MODES12 && MODES12.mode === 'play';
+      if(play) MODES12.mode = 'management';
+      try { CW1122.addSpell(SPELL_LIBRARY.indexOf(s)); } finally { if(play) MODES12.mode = 'play'; }
+      if(SC8.spellRow(s.name)) return true;
+      const scroll = SC8.scrollRow(s.name);
+      if(scroll && scroll !== hadScroll) scroll.remove();
+      return false;
+    };
+    // One School: mark the given spells it holds, add the ones it lacks. {school, marked, added, complete}.
     api.credit = function(school){
       const data = CW1123.forSchool(school);
-      if(!data || !Array.isArray(data.given)) return null;
-      const out = {school: school, marked: [], added: []};
+      const out = {school: school, marked: [], added: [], complete: true};
+      if(!data || !Array.isArray(data.given)) return out;
       data.given.forEach(function(given){
         const s = spellByName(given);
-        if(!s) return;
+        if(!s){ out.complete = false; return; }
         const held = SC8.spellRow(s.name);
         if(held){
           if(SC8Logic.belongs(SC8.read(held, 'spell'), school)) return;
@@ -57107,32 +57131,40 @@ return fontkitCache=module.exports;}
           out.marked.push(s.name);
           return;
         }
-        if(!s.maho && !spellEligibility(s).eligible) return;
         const hadScroll = !!SC8.scrollRow(s.name);
-        CW1122.addSpell(SPELL_LIBRARY.indexOf(s));
-        const row = SC8.spellRow(s.name);
-        if(!row) return;
-        tag(row, 'spell', school, s.name, true);
+        if(!api.add(s)){ out.complete = false; return; }
+        tag(SC8.spellRow(s.name), 'spell', school, s.name, true);
         const scroll = SC8.scrollRow(s.name);
         if(scroll) tag(scroll, 'scroll', school, s.name, !hadScroll);
         out.added.push(s.name);
       });
-      return out.marked.length || out.added.length ? out : null;
+      return out;
+    };
+    // Not while a School-choice window or the creation wizard is open: their own paths decide what is added there.
+    api.busy = function(){
+      return (typeof SC8.inPicker === 'function' && SC8.inPicker()) || (typeof CW112 === 'object' && CW112 && typeof CW112.isOpen === 'function' && CW112.isOpen());
     };
     api.afterOpen = function(data){
       api.notes = api.clean(data && data[api.KEY]);
+      api.settled = names(data && data[api.SETTLED]);
       let changed = false;
-      const seen = [];
-      getSchoolsList().forEach(function(entry){
-        const school = entry && typeof entry.name === 'string' ? entry.name : '';
-        if(!school || seen.indexOf(school) >= 0) return;
-        seen.push(school);
-        const done = api.credit(school);
-        if(done){ api.merge(done); changed = true; }
-      });
+      if(!api.busy()){
+        getSchoolsList().forEach(function(entry){
+          const school = entry && typeof entry.name === 'string' ? entry.name : '';
+          if(!school || api.settled.indexOf(school) >= 0 || !CW1123.forSchool(school)) return;
+          const done = api.credit(school);
+          if(done.marked.length || done.added.length){ api.merge(done); changed = true; }
+          if(done.complete) api.settled.push(school);
+        });
+      }
       if(changed) recalcAll();
       renderValidationReport();
       return changed;
+    };
+    // The School a given list belongs to: the School-choice layer's School in scope, else a School already done.
+    api.schoolOf = function(data){
+      const candidates = (SC8.scope ? [SC8.scope] : []).concat(api.settled);
+      return candidates.find(function(n){ return CW1123.forSchool(n) === data; }) || '';
     };
     const list = function(items){
       return items.length < 2 ? items.join('') : items.slice(0, -1).join(', ') + ' and ' + items[items.length - 1];
@@ -57172,7 +57204,7 @@ return fontkitCache=module.exports;}
       // The note is shown first among the character check's lines, where the change it describes is easiest to see.
       if(typeof CHARACTER_VALIDATOR_RULES !== 'undefined' && Array.isArray(CHARACTER_VALIDATOR_RULES)) CHARACTER_VALIDATOR_RULES.unshift({id: api.RULE, fn: api.findings});
       const clear = clearAllRows;
-      clearAllRows = function(){ api.notes = []; return clear.apply(this, arguments); };
+      clearAllRows = function(){ api.notes = []; api.settled = []; return clear.apply(this, arguments); };
       const apply = applyData;
       applyData = function(data){
         const result = apply.apply(this, arguments);
@@ -57185,10 +57217,23 @@ return fontkitCache=module.exports;}
         if(data && typeof data === 'object'){
           if(api.notes.length) data[api.KEY] = api.notes.map(function(n){ return {school: n.school, marked: n.marked.slice(), added: n.added.slice()}; });
           else delete data[api.KEY];
+          if(api.settled.length) data[api.SETTLED] = api.settled.slice();
+          else delete data[api.SETTLED];
           // Not saved: tells an export of the open character from one of a stored character.
           Object.defineProperty(data, 'gs15Open', {value: true, enumerable: false});
         }
         return data;
+      };
+      // A School already done: a given spell the player removed is not listed as still to choose. The character
+      // check's starting-spell lines (Phase 11.2.3 and the School-choice layer) both read this list.
+      const open = CW1123.open;
+      CW1123.open = function(data){
+        const out = open.apply(this, arguments);
+        if(!Array.isArray(out) || !api.settled.length || !data || !Array.isArray(data.given)) return out;
+        const school = api.schoolOf(data);
+        if(!school || api.settled.indexOf(school) < 0) return out;
+        const quiet = data.given.map(function(n){ return n + GIVEN; });
+        return out.filter(function(item){ return quiet.indexOf(item) < 0; });
       };
       const save = saveCharacter;
       saveCharacter = function(){
