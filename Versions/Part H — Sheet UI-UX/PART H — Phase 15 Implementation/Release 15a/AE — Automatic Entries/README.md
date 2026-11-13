@@ -8,7 +8,9 @@ Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-1
 
 **Code review:** [qa/code-review.md](qa/code-review.md), 13 November 2026. One finding (AE3 re-measured the cards on every tap and key), fixed as AE3 revision 1.
 
-**Previews on their deployed files** (`qa/hosted-preview/`): AE1 377/377, AE2 393/393.
+**Previews on their deployed files** (`qa/hosted-preview/`): AE1 377/377, AE2 393/393, AE3 (revision 1) 413/413.
+
+**Device round:** the Claude Doc [Automatic entries device checks](https://claude.ai/artifact/MSCwtNQk4adKdxV6DBxxhn); mirror [DEVICE-CHECKS.md](DEVICE-CHECKS.md). Results not yet in.
 
 ## Units
 
