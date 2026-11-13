@@ -24,7 +24,7 @@ It writes nothing: no save field, and the XP box is hidden, not removed, so ever
 2. From this folder, run `python -B qa/remove-phase.py <scratch copy>`. It refuses the live tree, a foreign marker inside its block, and a missing block.
 3. Run the scratch copy's `build/recombine.py --verify`.
 
-With nothing later present, the rebuild is exactly AE2: 17,660,953 bytes, SHA-256 `ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715`. `qa/test-removal.py` proves that, then that AE2 removed next gives AE1 exactly, and that AE2 can be removed with this unit kept.
+With nothing later present, the rebuild is exactly AE2 (revision 2): 17,664,331 bytes, SHA-256 `8eb7aecc7021d260fe24a2dd9897455cc0d85ff3292c040d52923cd0bccbb2ef`. `qa/test-removal.py` proves that, then that AE2 removed next gives AE1 exactly, and that AE2 can be removed with this unit kept.
 
 **Switching it off instead:** set `AUTOMATIC_ENTRY_CONTROLS_ENABLED = false`. The cards are exactly as before.
 

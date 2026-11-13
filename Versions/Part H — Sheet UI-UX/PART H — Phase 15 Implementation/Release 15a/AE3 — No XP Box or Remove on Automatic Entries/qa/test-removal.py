@@ -11,8 +11,8 @@ from pathlib import Path
 import hashlib, importlib.util, re, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART H — Phase 15 Implementation/Release 15a/AE3 — No XP Box or Remove on Automatic Entries'
-PREDECESSOR_SHA = 'ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715'   # AE2 — Given Spells Credited on Opening
-PREDECESSOR_BYTES = 17660953
+PREDECESSOR_SHA = '8eb7aecc7021d260fe24a2dd9897455cc0d85ff3292c040d52923cd0bccbb2ef'   # AE2 — Given Spells Credited on Opening
+PREDECESSOR_BYTES = 17664331
 BEFORE_PREDECESSOR_SHA = '2c21296bf13c44283a4a43393f0512b187752cd7dad62804e2e0c2627139f17a'
 BEFORE_PREDECESSOR_BYTES = 17651074
 SEAM = 'src/sheet/210-test-seam-and-init.js'
@@ -20,7 +20,7 @@ BEGIN = '// PART H PHASE 15.1.30 BEGIN automatic-entry-controls-seam'
 Q = Path(__file__).resolve().parent
 PREDECESSOR_REMOVER = Q.parent.parent / 'AE2 — Given Spells Credited on Opening' / 'qa' / 'remove-phase.py'
 # The predecessor's own surface rule (its remover's SURFACE_RE), bounded so base64 data is not a hit.
-PREDECESSOR_SURFACE = re.compile(r"(?<![\w+/])(?:GIVEN_SPELLS_ON_OPENING_ENABLED|GS15|gs15[\w-]*|givenSpellsNote|given-spells-credited)(?![\w+/])")
+PREDECESSOR_SURFACE = re.compile(r"(?<![\w+/])(?:GIVEN_SPELLS_ON_OPENING_ENABLED|GS15|gs15[\w-]*|givenSpellsNote|givenSpellsSettled|given-spells-credited)(?![\w+/])")
 PREDECESSOR_MARKER = re.compile(r"PART H PHASE 15\.1\.29(?![\d.]*\d)")
 KEEP = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else None   # where to keep the predecessor-removed build, if wanted
 

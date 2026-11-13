@@ -20,8 +20,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('automatic-entry-contro
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:AUTOMATIC_ENTRY_CONTROLS_ENABLED|AX15|ax15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.1\.30(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = 'ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715'
-PRE_RELEASE_BYTES = 17660953
+PRE_RELEASE_SHA = '8eb7aecc7021d260fe24a2dd9897455cc0d85ff3292c040d52923cd0bccbb2ef'
+PRE_RELEASE_BYTES = 17664331
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

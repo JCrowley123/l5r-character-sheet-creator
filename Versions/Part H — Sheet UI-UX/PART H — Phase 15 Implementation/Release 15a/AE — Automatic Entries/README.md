@@ -10,15 +10,15 @@ Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-1
 
 **Previews on their deployed files** (`qa/hosted-preview/`): AE1 377/377, AE2 393/393, AE3 (revision 1) 413/413.
 
-**Device round:** the Claude Doc [Automatic entries device checks](https://claude.ai/artifact/MSCwtNQk4adKdxV6DBxxhn); mirror [DEVICE-CHECKS.md](DEVICE-CHECKS.md). Results not yet in.
+**Device round:** the Claude Doc [Automatic entries device checks](https://claude.ai/artifact/MSCwtNQk4adKdxV6DBxxhn); mirror [DEVICE-CHECKS.md](DEVICE-CHECKS.md). AE1 and AE3 accepted; AE2 revised (revision 2, the owner's option B, and the Play-mode cause of check 9) and to be checked again.
 
 ## Units
 
 | Unit | Marker | Tag / switch | Own checks | Tier | Branch | Build |
 |---|---|---|---:|---|---|---|
 | [AE1 Sense for the Yogo Wardmaster](<../AE1 — Sense for the Yogo Wardmaster/README.md>) | `PART H PHASE 15.1.28` | `YG15` / `YOGO_GIVEN_SPELLS_ENABLED` | 13 | Behaviour | `claude/release-15a-ae1` | `2c21296b…f17a`, 17,651,074 |
-| [AE2 Given Spells Credited on Opening](<../AE2 — Given Spells Credited on Opening/README.md>) | `PART H PHASE 15.1.29` | `GS15` / `GIVEN_SPELLS_ON_OPENING_ENABLED` | 16 | Behaviour | `claude/release-15a-ae2` | `ab562fd1…5715`, 17,660,953 |
-| [AE3 No XP Box or Remove on Automatic Entries](<../AE3 — No XP Box or Remove on Automatic Entries/README.md>) | `PART H PHASE 15.1.30` | `AX15` / `AUTOMATIC_ENTRY_CONTROLS_ENABLED` | 20 | Screen-only | `claude/release-15a-ae3` (the tip) | `3217c551…9b12`, 17,671,933 (revision 1) |
+| [AE2 Given Spells Credited on Opening](<../AE2 — Given Spells Credited on Opening/README.md>) | `PART H PHASE 15.1.29` | `GS15` / `GIVEN_SPELLS_ON_OPENING_ENABLED` | 21 | Behaviour | `claude/release-15a-ae2` | `8eb7aecc…b2ef`, 17,664,331 (revision 2) |
+| [AE3 No XP Box or Remove on Automatic Entries](<../AE3 — No XP Box or Remove on Automatic Entries/README.md>) | `PART H PHASE 15.1.30` | `AX15` / `AUTOMATIC_ENTRY_CONTROLS_ENABLED` | 20 | Screen-only | `claude/release-15a-ae3` (the tip) | `99b76d62…15b8`, 17,675,311 (revision 1, on AE2 revision 2) |
 
 The records branch `claude/release-15a-ae` (the approval) sits under AE1. All three are registered in the removal chain after A17. All of the group removed is G4 as live: `fa634abb…00cb`, 17,648,272 bytes.
 
@@ -32,7 +32,7 @@ Same ids and counts throughout.
 
 ## Counts for the qualification
 
-Candidate: G4's 7,326 + 13 + 16 + 20 = **7,375**. Retained (all of the group removed = G4 as live): 7,326 − 73 live-site checks = **7,253**. Behaviour tier (AE1, AE2): the 4× CPU screen and two full passes, both first time.
+Candidate: G4's 7,326 + 13 + 21 + 20 = **7,380**. Retained (all of the group removed = G4 as live): 7,326 − 73 live-site checks = **7,253**. Behaviour tier (AE1, AE2): the 4× CPU screen and two full passes, both first time.
 
 ## Light-check tooling
 

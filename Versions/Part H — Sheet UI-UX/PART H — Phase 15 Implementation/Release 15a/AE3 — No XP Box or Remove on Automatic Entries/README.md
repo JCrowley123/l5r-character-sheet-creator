@@ -23,9 +23,10 @@ Not yet device-checked, qualified or live.
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With AE3, revision 1 (this branch, the group's tip) | `3217c5518edf018783507c52569580d005760d37ea16e99300de65073ae49b12` | 17,671,933 |
+| With AE3, revision 1, restacked on AE2 revision 2 (this branch, the group's tip) | `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8` | 17,675,311 |
+| Revision 1 on AE2 revision 1 | `3217c5518edf018783507c52569580d005760d37ea16e99300de65073ae49b12` | 17,671,933 |
 | Revision 0 (before the code review) | `1ca9277d82ffd7c39d0d6561b4d20e75c04929603e936e5c80b8cf9b86096762` | 17,671,502 |
-| AE3 removed (AE2) | `ab562fd16ef71d3e3a059771957788b18d6e677acb1c44dbd7ea2034e29e5715` | 17,660,953 |
+| AE3 removed (AE2 revision 2) | `8eb7aecc7021d260fe24a2dd9897455cc0d85ff3292c040d52923cd0bccbb2ef` | 17,664,331 |
 
 ## Light checks (13 November)
 
@@ -58,5 +59,9 @@ The review found that the unit re-measured the Technique cards whenever the body
 | `qa/test-removal.py` | 10/10 |
 | `feature-dependencies.py` | every reference inside this unit's own blocks |
 | The touched layers' harnesses: 8b.1-UI-01 to UI-03, A01, A10.1, Phase 12 and 12.1 to 12.8 (Part K) | 14/14 harnesses, 550/550 checks |
+
+## Restacked on AE2 revision 2 (13 November 2026)
+
+No change to this unit. Its branch was rebased onto AE2 revision 2 and each commit rebuilt; the remover's and removal proof's predecessor is now AE2 revision 2 (constants only). On the new tip: own harness 20/20, 20/20 with AE2 removed (`899315f5…dc05`, unchanged), `qa/test-removal.py` 10/10, AE1 13/13 and AE2 21/21.
 
 See [ROLLBACK.md](ROLLBACK.md).
