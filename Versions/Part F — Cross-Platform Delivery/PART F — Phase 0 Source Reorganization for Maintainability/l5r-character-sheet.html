@@ -7837,6 +7837,82 @@ html body.ax15-on #techList > .entry.ax15-auto.ax15-wrap > .entry-top > .ax15-ta
 }
 }
 
+/* PART H PHASE 15.1.32 — Release 15a, A12: one closed "Resisting?" line in the roll preview's "Declare for this roll"
+   (the owner's ruling of 7 October 2026; approved 14 November 2026). This unit's fragment moves the registry's own
+   resistance choices into details.rs15-line; these rules draw the line: a bordered row like the Combat sections'
+   disclosures, "Resisting?" with a turning triangle, the count on the right, and the ticked choices named under it
+   while the line is closed. The choices inside keep the registry's own look (59.91-roll-declarations.css). Own classes
+   only; nothing here applies without the fragment's markup. */
+.rs15-line {
+  margin: 4px 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdf8;
+  min-width: 0;
+}
+.rs15-line > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  min-height: 32px;
+  padding: 6px 10px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.rs15-line > summary::-webkit-details-marker {
+  display: none;
+}
+.rs15-q {
+  font-weight: 600;
+}
+.rs15-q::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 5px 0 5px 7px;
+  border-color: transparent transparent transparent var(--ink-soft);
+  transition: transform 0.15s;
+}
+.rs15-line[open] > summary .rs15-q::before {
+  transform: rotate(90deg);
+}
+.rs15-count {
+  margin-left: auto;
+  font-size: 0.85em;
+  color: var(--ink-soft);
+}
+.rs15-line.rs15-has > summary .rs15-count {
+  color: var(--shu-dark);
+  font-weight: 600;
+}
+.rs15-chosen {
+  flex-basis: 100%;
+  font-size: 0.85em;
+  color: var(--shu-dark);
+  overflow-wrap: anywhere;
+}
+.rs15-line[open] > summary .rs15-chosen {
+  display: none;
+}
+.rs15-body {
+  padding: 0 10px 8px;
+}
+.rs15-body > .rd4515-source:first-child {
+  margin-top: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rs15-q::before {
+    transition: none;
+  }
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -57627,6 +57703,130 @@ return fontkitCache=module.exports;}
   QT15.install();
   // ============ END PART H PHASE 15.1.31 ============
 
+  // ============ PART H PHASE 15.1.32 — ONE RESISTING? LINE ============
+  // Phase 15, Release 15a, unit A12 (group G5, undo and the roll preview), approved by the owner on 14 November 2026,
+  // "ring-fenced with extra care": R6, the owner's ruling of 7 October 2026, one closed "Resisting?" line. The number
+  // 32 is this unit's marker only; the unit keeps its identifier, A12.
+  // The roll preview's "Declare for this roll" (Part I 4.5.15's registry, RD4515) lists every choice that might apply
+  // to a roll. The resistance choices are offered on every Skill, Trait, Ring and dice-tray roll, because the sheet
+  // cannot tell which roll is a resistance, and they took most of the section. Here they sit in one native disclosure
+  // at the top of the section, closed when a preview opens: "Resisting?" and how many choices it holds. Opened, it
+  // shows the registry's own labelled choices and notes, Honour's first, each under its source. A ticked choice is
+  // named with its bonus on the closed line ("1 chosen", "Honour +4"), so a ticked resistance is never hidden.
+  // The choices it gathers are the fifteen resistances listed in KEYS; every other choice stays where it is.
+  // Ring-fenced:
+  //   - It changes no other layer's code. It wraps only the roll preview's optional hook rd4515PreviewHtml, by name,
+  //     and rearranges the markup the registry has already made; it reads the registry (offered, armed) and never
+  //     arms, clears or recomputes a choice. The checkboxes are the registry's own, so the preview's own listeners
+  //     tick them as before; bonuses, totals and the reset for each roll are the registry's.
+  //   - With no resistance choice on a roll, with the switch off, or while paused (tests only), the markup is the
+  //     registry's, unchanged. Anything unexpected in that markup, or any error here, leaves it unchanged too.
+  //   - Nothing is saved: the line's open state lives only while one preview is open.
+  const RESISTING_LINE_ENABLED = true;
+
+  const RS15 = (function(){
+    const api = {installed: false, paused: false};
+    // The resistance choices: Honour's own (Core Rulebook p.91); four Advantages (4.5.27); Seven Fortunes' Blessing
+    // (4.5.21); Touch of the Spirit Realms (4.5.24); the Ancestors' resistance gifts (Phase 4.8).
+    api.KEYS = Object.freeze(['honour-resistance:resist',
+      'situational-entries:balance', 'situational-entries:clear-thinker', 'situational-entries:heartless', 'situational-entries:irreproachable',
+      'fortune-blessing:jurojin', 'fortune-blessing:hotei', 'spirit-realms:meido', 'spirit-realms:tengoku',
+      'ancestors:kaimetsu-provoked', 'ancestors:moto-resist', 'ancestors:yamatsu-resist', 'ancestors:hitomi-resist',
+      'ancestors:reichin-fear', 'ancestors:reichin-bloodspeaker']);
+    let shown = {context: null, open: false};   // the one preview open now, and whether its line is open
+    api.enabled = function(){
+      return RESISTING_LINE_ENABLED && typeof RD4515 === 'object' && !!RD4515 && RD4515.enabled() && typeof rd4515PreviewHtml === 'function';
+    };
+    // "Honour +4", "Balance +1k0", "Ancestor +1k1": the choice's name (or its source's) and its bonus.
+    api.short = function(offer){
+      const label = String(offer.label), at = label.lastIndexOf(' — '), named = /^([^:]+):/.exec(label);
+      const bonus = at < 0 ? '' : label.slice(at + 3).replace(/ to the total$/, '');
+      return (named ? named[1] : offer.providerLabel) + (bonus ? ' ' + bonus : '');
+    };
+    // The registry's finished markup for this roll, with the resistance choices moved into the line; or the markup
+    // as it came.
+    api.html = function(context, html){
+      if(api.paused || typeof html !== 'string' || !html) return html;
+      const offers = RD4515.offered(context).filter(function(o){ return api.KEYS.indexOf(o.key) !== -1; });
+      if(!offers.length) return html;
+      if(shown.context !== context) shown = {context: context, open: false};
+      const armed = RD4515.armed(context);
+      const box = document.createElement('template');
+      box.innerHTML = html;
+      const block = box.content.firstElementChild, head = block && block.firstElementChild;
+      if(!block || box.content.children.length !== 1 || !block.classList.contains('rd4515-declare') || !head || !head.classList.contains('rd4515-head')) return html;
+      const inputs = {};
+      block.querySelectorAll('input[data-rd4515-key]').forEach(function(i){ inputs[i.getAttribute('data-rd4515-key')] = i; });
+      const moved = [];
+      for(const offer of offers){
+        const input = inputs[offer.key], label = input && input.parentNode;
+        if(!label || label.tagName !== 'LABEL' || !label.classList.contains('rd4515-opt') || label.parentNode !== block) return html;
+        const note = label.nextElementSibling && label.nextElementSibling.classList.contains('rd4515-opt-note') ? label.nextElementSibling : null;
+        moved.push({offer: offer, label: label, note: note});
+      }
+      // Honour's own choice first; the rest in the registry's order.
+      moved.sort(function(a, b){ return (a.offer.provider === 'honour-resistance' ? 0 : 1) - (b.offer.provider === 'honour-resistance' ? 0 : 1); });
+      const line = document.createElement('details'), summary = document.createElement('summary'), body = document.createElement('div');
+      line.className = 'rs15-line';
+      body.className = 'rs15-body';
+      let source = null;
+      moved.forEach(function(m){
+        if(m.offer.providerLabel !== source){
+          source = m.offer.providerLabel;
+          const h = document.createElement('div');
+          h.className = 'rd4515-source';
+          h.textContent = source;
+          body.appendChild(h);
+        }
+        body.appendChild(m.label);
+        if(m.note) body.appendChild(m.note);
+      });
+      // A source heading left with nothing under it goes.
+      Array.prototype.slice.call(block.children).forEach(function(el){
+        if(el.classList.contains('rd4515-source') && !(el.nextElementSibling && el.nextElementSibling.classList.contains('rd4515-opt'))) el.remove();
+      });
+      const chosen = moved.filter(function(m){ return armed.indexOf(m.offer.key) !== -1; });
+      const q = document.createElement('span'), count = document.createElement('span');
+      q.className = 'rs15-q';
+      q.textContent = 'Resisting?';
+      count.className = 'rs15-count';
+      count.textContent = chosen.length ? chosen.length + ' chosen' : moved.length + (moved.length === 1 ? ' option' : ' options');
+      summary.appendChild(q);
+      summary.appendChild(count);
+      if(chosen.length){
+        const names = document.createElement('span');
+        names.className = 'rs15-chosen';
+        names.textContent = chosen.map(function(m){ return api.short(m.offer); }).join(' · ');
+        summary.appendChild(names);
+        line.classList.add('rs15-has');
+      }
+      if(shown.open) line.setAttribute('open', '');
+      line.appendChild(summary);
+      line.appendChild(body);
+      head.after(line);
+      return box.innerHTML;
+    };
+    api.install = function(){
+      if(api.installed || !api.enabled()) return false;
+      // UI hook: the roll preview asks this name for the registry's markup (the Smart Roll Preview, through a typeof guard).
+      const previous = rd4515PreviewHtml;
+      rd4515PreviewHtml = function(context){
+        const html = previous.apply(this, arguments);
+        try { return api.html(context, html); } catch(e){ return html; }
+      };
+      // The line's open state for this preview, kept across the preview's redraw on every tick.
+      document.addEventListener('toggle', function(event){
+        const t = event.target;
+        if(t && t.classList && t.classList.contains('rs15-line')) shown.open = t.open;
+      }, true);
+      api.installed = true;
+      return true;
+    };
+    return api;
+  })();
+  RS15.install();
+  // ============ END PART H PHASE 15.1.32 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -58639,6 +58839,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.31 BEGIN quick-tap-undo-seam
   if(typeof QT15 === 'object' && QT15) Object.assign(window.__L5R_TEST__, {QT15, QUICK_TAP_UNDO_ENABLED});
   // END QT15 quick-tap-undo-seam
+  // PART H PHASE 15.1.32 BEGIN resisting-line-seam
+  if(typeof RS15 === 'object' && RS15) Object.assign(window.__L5R_TEST__, {RS15, RESISTING_LINE_ENABLED});
+  // END RS15 resisting-line-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

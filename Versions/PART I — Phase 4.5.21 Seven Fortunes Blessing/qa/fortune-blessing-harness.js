@@ -100,6 +100,8 @@ async function main() {
     const errors = []; page.on('pageerror', e => errors.push(String(e)));
     await page.goto(pathToFileURL(path.resolve(process.argv[2])).href, {waitUntil:'domcontentloaded'});
     await page.waitForFunction(() => !!window.__L5R_TEST__);
+    // Release 15a A12 (declared in its README): with A12 in the build its Resisting line is paused for this page, so this harness checks its own layer as before; A12's harness checks the two together.
+    await page.evaluate(() => { const R = window.__L5R_TEST__.RS15; if (R) R.paused = true; });
 
     await section('FB-START', async () => {
       check('FB-ENABLED', await page.evaluate(() => window.__L5R_TEST__.ADV_FORTUNE_BLESSING_ENABLED));

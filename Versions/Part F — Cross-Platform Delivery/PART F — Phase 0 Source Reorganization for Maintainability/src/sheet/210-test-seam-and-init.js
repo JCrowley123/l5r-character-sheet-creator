@@ -1010,6 +1010,9 @@
   // PART H PHASE 15.1.31 BEGIN quick-tap-undo-seam
   if(typeof QT15 === 'object' && QT15) Object.assign(window.__L5R_TEST__, {QT15, QUICK_TAP_UNDO_ENABLED});
   // END QT15 quick-tap-undo-seam
+  // PART H PHASE 15.1.32 BEGIN resisting-line-seam
+  if(typeof RS15 === 'object' && RS15) Object.assign(window.__L5R_TEST__, {RS15, RESISTING_LINE_ENABLED});
+  // END RS15 resisting-line-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

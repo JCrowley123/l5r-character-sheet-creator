@@ -1,0 +1,8 @@
+  PASS  Spell Slots reaches the tab bar synchronously, in the same task as recalcAll()  — [object Object]
+  PASS  Spell Slots tab present after a real Apply-School tap  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Spell Slots, Equipment, Background
+  PASS  Spell Slots tab still present after navigating through four other tabs  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Spell Slots, Combat, Equipment, Background
+  PASS  Spell Slots tab absent again for a fresh (non-caster) character  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Combat, Equipment, Background
+  PASS  refreshVisibility() exists on window.__L5R_CAROUSEL__ and returns false when nothing changed  — [object Object]
+  PASS  no uncaught page errors
+
+6/6 checks passed

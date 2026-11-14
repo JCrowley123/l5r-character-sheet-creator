@@ -1,0 +1,38 @@
+  PASS  the phase exports getCastingDiagnostics on the test seam
+  PASS  all seven built-in rules are registered  — ["school-restriction","ishiken-do","rank-too-low","deficiency-lockout","wrong-element","missing-scroll","not-memorised","no-slots","void-versatility"]
+  PASS  an ordinary spell on a Bushi character is a blocker  — ["blocker"]
+  PASS  ...and the finding names the School that locked the path  — true
+  PASS  a Maho spell on a Bushi character raises no school restriction  — 0
+  PASS  the context's effective School Rank matches an independently computed one  — 2
+  PASS  a spell above that Rank is a blocker  — ["blocker"]
+  PASS  a spell exactly at that Rank raises no rank finding  — 0
+  PASS  a Deficiency drops the effective Rank as the oracle predicts  — 1
+  PASS  the Deficiency lockout is a blocker  — ["blocker"]
+  PASS  ...and the plain rank-too-low finding stays silent, so the gate is reported once  — 0
+  PASS  the oracle confirms the Equipment table holds one scroll and not the other  — [true,false]
+  PASS  a spell with no scroll and not memorised is a blocker  — ["blocker"]
+  PASS  memorising it removes the scroll requirement entirely  — 0
+  PASS  holding the scroll clears the blocker and leaves the "not memorised" note  — [0,["note"]]
+  PASS  a Universal spell some Elements can still cast is a caution, not a blocker  — ["caution"]
+  PASS  a Universal spell no Element can cast is a blocker  — ["blocker"]
+  PASS  element slots gone but bonus slots left is a caution  — ["caution"]
+  PASS  every slot spent is a blocker  — ["blocker"]
+  PASS  a Maho spell never reports a slot problem, because it spends none  — 0
+  PASS  a Universal spell with slots everywhere reports no slot problem  — null
+  PASS  one Element out of slots is a note that names the Elements still open  — ["note",true]
+  PASS  every castable Element out, bonus pool left, is a caution  — "caution"
+  PASS  every castable Element out and the bonus pool spent is a blocker  — "blocker"
+  PASS  castable is true exactly when there are no blockers  — true
+  PASS  the built-in blocker fires before any contributor is added  — 1
+  PASS  a registered contributor can add a finding  — true
+  PASS  a contributor can suppress a built-in blocker  — 0
+  PASS  ...and the suppressed blocker is shown as LIFTED, not silently dropped  — true
+  PASS  a contributor that throws is contained and the others still report  — true
+  PASS  unregistering restores the original report  — [1,-1]
+  PASS  a spell entry gets the diagnostic button  — true
+  PASS  the modal paints one row per finding  — 1
+  PASS  a blocked spell shows the blocked badge on its button  — true
+  PASS  closing the modal hides it  — "none"
+  PASS  no uncaught page errors  — []
+
+36/36 checks passed

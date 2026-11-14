@@ -1,0 +1,18 @@
+== a12-build
+OK   77/77  PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js  (14 s)
+OK   50/50  PART I — Phase 4.5.24 Touch of the Spirit Realms/qa/spirit-realms-harness.js  (11 s)
+OK   117/117  PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js  (11 s)
+OK   20/20  BUGFIX — Honour Resistance Bonus/qa/honour-harness.js  (3 s)
+LIGHT 4/4 harnesses, 264/264 checks
+== a08-build
+OK   77/77  PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js  (13 s)
+OK   50/50  PART I — Phase 4.5.24 Touch of the Spirit Realms/qa/spirit-realms-harness.js  (12 s)
+OK   117/117  PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js  (11 s)
+OK   20/20  BUGFIX — Honour Resistance Bonus/qa/honour-harness.js  (2 s)
+LIGHT 4/4 harnesses, 264/264 checks
+== pred-ae3
+OK   77/77  PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js  (13 s)
+OK   50/50  PART I — Phase 4.5.24 Touch of the Spirit Realms/qa/spirit-realms-harness.js  (12 s)
+OK   117/117  PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js  (11 s)
+OK   20/20  BUGFIX — Honour Resistance Bonus/qa/honour-harness.js  (3 s)
+LIGHT 4/4 harnesses, 264/264 checks

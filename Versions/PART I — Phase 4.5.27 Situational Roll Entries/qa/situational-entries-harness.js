@@ -148,6 +148,8 @@ async function main() {
     await page.goto(pathToFileURL(path.resolve(process.argv[2])).href);
     await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_CAROUSEL__?.isReady?.() &&
       (!window.__L5R_TEST__.CL11 || window.__L5R_TEST__.CL11.ready));
+    // Release 15a A12 (declared in its README): with A12 in the build its Resisting line is paused for this page, so this harness checks its own layer as before; A12's harness checks the two together.
+    await page.evaluate(() => { const R = window.__L5R_TEST__.RS15; if (R) R.paused = true; });
     await page.evaluate(() => { const T = window.__L5R_TEST__; T.CL11?.close?.();
       window.__SIT = {add(name, dis = false, config = null) {
         const lib = (dis ? T.DISADV_LIBRARY : T.ADV_LIBRARY).find(x => x.name === name);

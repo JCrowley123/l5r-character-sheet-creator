@@ -1,0 +1,19 @@
+  PASS  no Clan applied: --shu-dark is the sheet's own default, not any Clan's  — #7c2620
+  PASS  no Clan applied: watermark and colophon both hidden  — [object Object]
+  PASS  no Clan applied: the Void pip is Void's own neutral grey, not the brand maroon  — #5a5450
+  PASS  Crab applied: --shu-dark matches CLAN_THEME_PALETTE.Crab.shuDark  — #7d4c21
+  PASS  Crab applied: watermark and colophon both visible  — [object Object]
+  PASS  Crab applied: the active tab's own text colour matches the Clan  — #7d4c21
+  PASS  Crab applied: a section heading (Clan & School's own) matches the Clan  — #7d4c21
+  PASS  switched to Crane: --shu-dark now matches Crane, not Crab  — #21557d
+  PASS  reset to baseline: --shu-dark reverts to the sheet's own default  — #7c2620
+  PASS  reset to baseline: watermark and colophon both hidden again  — [object Object]
+  PASS  Scorpion applied: the Delete button stays the sheet's real maroon, not Scorpion's  — #a3332a
+  PASS  sanity: Scorpion's own shuDark is NOT the same colour as the protected maroon
+  PASS  Scorpion applied: the Void pip stays Void's own grey, not Scorpion's  — #5a5450
+  PASS  sanity: Scorpion's own shu is NOT the same colour as Void's grey
+  PASS  Spider (no mon art): falls back to the sheet's own default, not left on Scorpion's  — #7c2620
+  PASS  Spider (no mon art): watermark and colophon both hidden  — [object Object]
+  PASS  no uncaught page errors
+
+17/17 checks passed

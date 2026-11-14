@@ -1,0 +1,75 @@
+/* PART H PHASE 15.1.32 — Release 15a, A12: one closed "Resisting?" line in the roll preview's "Declare for this roll"
+   (the owner's ruling of 7 October 2026; approved 14 November 2026). This unit's fragment moves the registry's own
+   resistance choices into details.rs15-line; these rules draw the line: a bordered row like the Combat sections'
+   disclosures, "Resisting?" with a turning triangle, the count on the right, and the ticked choices named under it
+   while the line is closed. The choices inside keep the registry's own look (59.91-roll-declarations.css). Own classes
+   only; nothing here applies without the fragment's markup. */
+.rs15-line {
+  margin: 4px 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdf8;
+  min-width: 0;
+}
+.rs15-line > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  min-height: 32px;
+  padding: 6px 10px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.rs15-line > summary::-webkit-details-marker {
+  display: none;
+}
+.rs15-q {
+  font-weight: 600;
+}
+.rs15-q::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 5px 0 5px 7px;
+  border-color: transparent transparent transparent var(--ink-soft);
+  transition: transform 0.15s;
+}
+.rs15-line[open] > summary .rs15-q::before {
+  transform: rotate(90deg);
+}
+.rs15-count {
+  margin-left: auto;
+  font-size: 0.85em;
+  color: var(--ink-soft);
+}
+.rs15-line.rs15-has > summary .rs15-count {
+  color: var(--shu-dark);
+  font-weight: 600;
+}
+.rs15-chosen {
+  flex-basis: 100%;
+  font-size: 0.85em;
+  color: var(--shu-dark);
+  overflow-wrap: anywhere;
+}
+.rs15-line[open] > summary .rs15-chosen {
+  display: none;
+}
+.rs15-body {
+  padding: 0 10px 8px;
+}
+.rs15-body > .rd4515-source:first-child {
+  margin-top: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rs15-q::before {
+    transition: none;
+  }
+}
