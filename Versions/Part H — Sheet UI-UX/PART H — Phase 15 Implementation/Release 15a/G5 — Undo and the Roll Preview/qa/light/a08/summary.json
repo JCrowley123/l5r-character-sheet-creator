@@ -1,0 +1,102 @@
+{
+ "sheet": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\claude\\08134b58138d4f7c\\b3d35ba5-7943-423c-a320-accea8dced29\\scratchpad\\g5\\a08-build.html",
+ "pattern": "A09 — Phone|Undone Change|Phase 7.1 Audit Log|Characteristic Card Editing|Phase 11 Characters List|Phase 12 Play and Management|Phase 7 Save Format|Social Rank and Points|Taint Points|Imperial Scion|Compact Characteristic|Honour Resistance",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A09 — Phone Text Entry and Repeated Taps/qa/phone-text-entry-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 48,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Undone Change Not Unsaved Work/qa/undone-change-harness.js",
+   "passed": 6,
+   "total": 6,
+   "status": 0,
+   "seconds": 34,
+   "ok": true
+  },
+  {
+   "harness": "Part J — Data Integrity & Validation/PART J — Phase 7.1 Audit Log/qa/audit-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Characteristic Card Editing/qa/card-editing-harness.js",
+   "passed": 46,
+   "total": 46,
+   "status": 0,
+   "seconds": 46,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11 Characters List and Save Model/qa/characters-harness.js",
+   "passed": 70,
+   "total": 70,
+   "status": 0,
+   "seconds": 131,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12 Play and Management Modes/qa/modes-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 33,
+   "ok": true
+  },
+  {
+   "harness": "Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/qa/save-format-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Social Rank and Points/qa/social-rank-points-harness.js",
+   "passed": 30,
+   "total": 30,
+   "status": 0,
+   "seconds": 17,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Taint Points and Growth/qa/taint-harness.js",
+   "passed": 26,
+   "total": 26,
+   "status": 0,
+   "seconds": 31,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Imperial Scion Shared Status/qa/scion-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 21,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Honour Resistance Bonus/qa/honour-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 21,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Compact Characteristic Controls/qa/compact-points-harness.js",
+   "passed": 33,
+   "total": 33,
+   "status": 0,
+   "seconds": 25,
+   "ok": true
+  }
+ ]
+}

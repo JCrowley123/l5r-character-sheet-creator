@@ -345,6 +345,9 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999999999996-feat-given-spells-on-opening.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/AE3 — No XP Box or Remove on Automatic Entries",
             fragment="src/sheet/209.999999999999999997-feat-automatic-entry-controls.js"),
+    # Group G5: undo and the roll preview.
+    Release("PART H — Phase 15 Implementation/Release 15a/A08 — One Undo for Quick Taps",
+            fragment="src/sheet/209.999999999999999998-feat-quick-tap-undo.js"),
 )
 
 

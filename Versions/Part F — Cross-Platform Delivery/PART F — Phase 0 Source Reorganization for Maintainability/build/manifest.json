@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8",
+  "expect_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -536,6 +536,7 @@
     { "file": "src/sheet/209.999999999999999995-feat-yogo-given-spells.js", "note": "PART H PHASE 15.1.28 - Release 15a AE1, Yogo Wardmaster's given spells include Sense, and five Schools' book pages" },
     { "file": "src/sheet/209.999999999999999996-feat-given-spells-on-opening.js", "note": "PART H PHASE 15.1.29 - Release 15a AE2, a School's given spells credited when a character is opened, with a note until the player saves" },
     { "file": "src/sheet/209.999999999999999997-feat-automatic-entry-controls.js", "note": "PART H PHASE 15.1.30 - Release 15a AE3, marks automatic entries and lays out their tag" },
+    { "file": "src/sheet/209.999999999999999998-feat-quick-tap-undo.js", "note": "PART H PHASE 15.1.31 - Release 15a A08, quick taps on one card within five seconds are one change for Undo and History" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

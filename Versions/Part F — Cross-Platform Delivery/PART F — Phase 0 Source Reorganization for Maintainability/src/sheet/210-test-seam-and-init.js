@@ -1007,6 +1007,9 @@
   // PART H PHASE 15.1.30 BEGIN automatic-entry-controls-seam
   if(typeof AX15 === 'object' && AX15) Object.assign(window.__L5R_TEST__, {AX15, AUTOMATIC_ENTRY_CONTROLS_ENABLED});
   // END AX15 automatic-entry-controls-seam
+  // PART H PHASE 15.1.31 BEGIN quick-tap-undo-seam
+  if(typeof QT15 === 'object' && QT15) Object.assign(window.__L5R_TEST__, {QT15, QUICK_TAP_UNDO_ENABLED});
+  // END QT15 quick-tap-undo-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

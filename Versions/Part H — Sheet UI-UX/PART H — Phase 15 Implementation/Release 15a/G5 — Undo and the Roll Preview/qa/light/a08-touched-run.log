@@ -1,0 +1,13 @@
+OK   20/20  Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A09 — Phone Text Entry and Repeated Taps/qa/phone-text-entry-harness.js  (48 s)
+OK   6/6  BUGFIX — Undone Change Not Unsaved Work/qa/undone-change-harness.js  (34 s)
+OK   17/17  Part J — Data Integrity & Validation/PART J — Phase 7.1 Audit Log/qa/audit-harness.js  (12 s)
+OK   46/46  BUGFIX — Characteristic Card Editing/qa/card-editing-harness.js  (46 s)
+OK   70/70  PART K — Phase 11 Characters List and Save Model/qa/characters-harness.js  (131 s)
+OK   25/25  PART K — Phase 12 Play and Management Modes/qa/modes-harness.js  (33 s)
+OK   45/45  Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/qa/save-format-harness.js  (19 s)
+OK   30/30  BUGFIX — Social Rank and Points/qa/social-rank-points-harness.js  (17 s)
+OK   26/26  BUGFIX — Taint Points and Growth/qa/taint-harness.js  (31 s)
+OK   12/12  BUGFIX — Imperial Scion Shared Status/qa/scion-harness.js  (21 s)
+OK   20/20  BUGFIX — Honour Resistance Bonus/qa/honour-harness.js  (21 s)
+OK   33/33  BUGFIX — Compact Characteristic Controls/qa/compact-points-harness.js  (25 s)
+LIGHT 12/12 harnesses, 350/350 checks
