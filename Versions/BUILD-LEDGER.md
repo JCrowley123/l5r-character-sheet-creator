@@ -26,6 +26,10 @@ Local records updated **12 November 2026** (Claude). **Release 15a G3 is live an
 
 ## 1. Where things stand
 
+<!-- ae-15a-live-part1 -->
+**14 November 2026 · Automatic entries live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `8676634b` without a merge commit or force. Production: all seven deployed files match the qualified build; 80 application harnesses passed 3,332/3,332 on the downloaded production files (the group's three units and the layers they touch, among them the wizard, the older-holdings review, the Characters list, the save format and the spell rows); browser/offline smoke 22/22. Deployed page `85c5b8b0d612d9b7…`, 17,682,088 bytes; application `99b76d62…15b8`; service worker build `1dd9768a09706ced`. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-live-part1 -->
+
 <!-- ae-15a-qualification-part1 -->
 **13 November 2026 · Automatic entries qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").
 
@@ -2024,6 +2028,10 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- ae-15a-live-part6 -->
+**14 November 2026 · Automatic entries live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `8676634b` without a merge commit or force. Production: all seven deployed files match the qualified build; 80 application harnesses passed 3,332/3,332 on the downloaded production files (the group's three units and the layers they touch, among them the wizard, the older-holdings review, the Characters list, the save format and the spell rows); browser/offline smoke 22/22. Deployed page `85c5b8b0d612d9b7…`, 17,682,088 bytes; application `99b76d62…15b8`; service worker build `1dd9768a09706ced`. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-live-part6 -->
 
 <!-- ae-15a-qualification-part6 -->
 **13 November 2026 · Automatic entries qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").

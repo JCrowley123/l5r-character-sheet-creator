@@ -1,6 +1,6 @@
 # Release 15a · the automatic-entries group — handover
 
-13 November 2026 (Claude). **Accepted and qualified. Not live:** G4 stays live until the owner's go-live word.
+13 November 2026 (Claude). **Accepted, qualified and live** (14 November).
 
 **13 November 2026 · the group qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").
 
@@ -38,3 +38,9 @@ Go-live only on the owner's word: fast-forward `main` to the group's tip (no mer
 ## Usage
 
 Claude readings on a Pro plan, 13 November, for the qualification: weekly all models 58% at the start, 62% before the two full passes, 63% after them (Fable 0% throughout); the five-hour limit was not reached.
+
+## Production
+
+**14 November 2026 · Automatic entries live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `8676634b` without a merge commit or force. Production: all seven deployed files match the qualified build; 80 application harnesses passed 3,332/3,332 on the downloaded production files (the group's three units and the layers they touch, among them the wizard, the older-holdings review, the Characters list, the save format and the spell rows); browser/offline smoke 22/22. Deployed page `85c5b8b0d612d9b7…`, 17,682,088 bytes; application `99b76d62…15b8`; service worker build `1dd9768a09706ced`.
+
+Evidence: [qa/live/live-verification.json](qa/live/live-verification.json), [qa/live/live-qa.log](qa/live/live-qa.log), [qa/live/live-browser-smoke.json](qa/live/live-browser-smoke.json), `qa/verify-live.log`, `qa/browser-smoke.log`. The checks ran on the downloaded production files with G4's `verify-live.py` (this group's units added) and the Older School Choices browser smoke.

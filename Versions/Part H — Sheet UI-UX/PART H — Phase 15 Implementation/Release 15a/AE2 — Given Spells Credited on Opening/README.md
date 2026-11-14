@@ -2,7 +2,7 @@
 
 The automatic-entries group, unit 2 of 3. The owner's proposal of 11 November 2026 ([G3's owner comments](<../G3 — Spell Rows/OWNER-COMMENTS-2026-11-11.md>), point 2), approved on 13 November 2026 as revision 1 of the mock-up ([the group's mock-ups](<../AE — Automatic Entries/MOCKUP.md>)). Built on 13 November 2026 (Claude), on branch `claude/release-15a-ae2`, stacked on AE1.
 
-**Accepted by the owner at the group's device round, 13 November 2026** ([DEVICE-CHECKS.md](<../AE — Automatic Entries/DEVICE-CHECKS.md>)), as revision 2, after the re-checks R1–R4. Qualified with the group on 13 November 2026 ([handover](<../AE — Automatic Entries/HANDOVER.md>)); not live.
+**Accepted by the owner at the group's device round, 13 November 2026** ([DEVICE-CHECKS.md](<../AE — Automatic Entries/DEVICE-CHECKS.md>)), as revision 2, after the re-checks R1–R4. Qualified with the group on 13 November 2026 ([handover](<../AE — Automatic Entries/HANDOVER.md>)); live on 14 November 2026.
 
 ## What changes
 
