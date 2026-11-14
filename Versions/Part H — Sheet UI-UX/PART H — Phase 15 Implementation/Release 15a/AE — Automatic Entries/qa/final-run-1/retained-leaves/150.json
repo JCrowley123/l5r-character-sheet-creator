@@ -1,0 +1,20 @@
+{
+  "fingerprint": "d42a98dc7f7142a20e4aac09a4cf24782389af8a637290e76cdf3d0cb3ecd890",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\BUGFIX — Skill Traits\\qa\\dependency-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:35:52.259Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS ST-DEP-CONTROL\nPASS ST-DEP-CONTROL-ERRORS\nPASS ST-DEP-FIX-OFF\nPASS ST-DEP-FIX-OFF-ERRORS\nPASS ST-DEP-SCHOOL-ROWS-OFF\nPASS ST-DEP-SCHOOL-ROWS-OFF-ERRORS\nPASS ST-DEP-SEARCH-OFF\nPASS ST-DEP-SEARCH-OFF-ERRORS\n8/8 checks passed\n",
+    "stderr": ""
+  }
+}

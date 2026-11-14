@@ -1,0 +1,20 @@
+{
+  "fingerprint": "d42a98dc7f7142a20e4aac09a4cf24782389af8a637290e76cdf3d0cb3ecd890",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\BUGFIX — Older School Choices\\qa\\older-review-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:22:34.819Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS REVIEW-BUTTON-MANAGE\nPASS PLAY-READ-ONLY\nPASS NINE-OWNED-UNSELECTED\nPASS LATER-NO-WRITES\nPASS REWARD-RETAINED\nPASS EIGHT-NO-DUPLICATES\nPASS ONLY-EARTH-OWED\nPASS RELOAD-RETAINS-REVIEW\nPASS LAST-EARTH-GRANTED-ONCE\nPASS ALL-REWARDS-REMEMBERED\nPASS MODERN-EQUIPMENT-NO-REVIEW\nPASS PARTIAL-GRANTS-PRESERVED\nPASS OVER-QUOTA-ATOMIC\nPASS COMPLEX-ALLOTMENT-ENFORCED\nPASS AMBIGUOUS-SKILL-EXISTING-ONLY\nPASS MULTI-SCHOOL-NO-DOUBLE-ASSIGNMENT\nPASS FIXED-AND-UNTICKED-EXCLUDED\nPASS RESTRICTED-SKILL-ELIGIBILITY\nPASS EXPLICIT-SKILL-CONFLICT-REPORTED\nPASS NO-SCRIPT-ERRORS\n20/20 checks passed\n",
+    "stderr": ""
+  }
+}

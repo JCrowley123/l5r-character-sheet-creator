@@ -1,0 +1,20 @@
+{
+  "fingerprint": "d42a98dc7f7142a20e4aac09a4cf24782389af8a637290e76cdf3d0cb3ecd890",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\BUGFIX — Hotei Where the Sheet Spends Void\\qa\\hotei-auto-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:23:55.583Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS HT-CURSED\nPASS HT-PARAGON-PRICE\nPASS HT-PARAGON-SHORT\nPASS HT-PARAGON-CHARGE\nPASS HT-PARAGON-PLAIN\nPASS HT-PARAGON-TEXT\nPASS HT-ANC-PAY\nPASS HT-ANC-SHORT\nPASS HT-ANC-PLAIN\nPASS HT-ANC-NOTE\nPASS HT-OUTCOME\nPASS HT-ROW-NOTE\nPASS HT-STATUS\nPASS HT-STATUS-PLAIN\nPASS HT-BUTTON\nPASS HT-NO-ERRORS\n16/16 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e2d52eb5fd369c15144d4db26caab48283d30290771f93ca66d071fff6805cf7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\BUGFIX — After-Preview Refund\\qa\\refund-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:46:43.346Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS RF-ENABLED\nPASS RF-DP-THEN-GIFT-CANCEL\nPASS RF-DP-THEN-GIFT-X\nPASS RF-DP-THEN-ROLL-WITHOUT\nPASS RF-PREVIEW-VOID-BACK\nPASS RF-PREVIEW-CANCEL-NOTHING\nPASS RF-DP-ROLLS\nPASS RF-LOGIC\nPASS RF-NO-ERRORS\n9/9 checks passed\n",
+    "stderr": ""
+  }
+}

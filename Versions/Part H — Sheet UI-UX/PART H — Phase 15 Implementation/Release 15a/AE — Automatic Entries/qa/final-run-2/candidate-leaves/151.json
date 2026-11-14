@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e2d52eb5fd369c15144d4db26caab48283d30290771f93ca66d071fff6805cf7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\BUGFIX — Search Focus on Close\\qa\\search-focus-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:59:39.365Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS SF-SWITCH\nPASS SF-BACK-RETURNS-FOCUS\nPASS SF-BACK-KEEPS-PLACE\nPASS SF-ESCAPE-RETURNS-FOCUS\nPASS SF-SECOND-ESCAPE-CLOSES\nPASS SF-FILTERS-KEPT\nPASS SF-NO-KEYBOARD\nPASS SF-STALE-OPENER-FALLBACK\nPASS SF-REOPENED-ENTRY-RETURNS-FOCUS\nPASS SF-FOCUS-ELSEWHERE-LEFT\nPASS SF-CHARACTER-AND-STORAGE-UNCHANGED\nPASS SF-NO-PAGE-ERRORS\n12/12 checks passed\n",
+    "stderr": ""
+  }
+}

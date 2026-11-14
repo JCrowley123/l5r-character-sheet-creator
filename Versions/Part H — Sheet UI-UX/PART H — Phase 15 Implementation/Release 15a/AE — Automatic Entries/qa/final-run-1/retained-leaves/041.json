@@ -1,0 +1,20 @@
+{
+  "fingerprint": "d42a98dc7f7142a20e4aac09a4cf24782389af8a637290e76cdf3d0cb3ecd890",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\BUGFIX — School List Gender Tick\\qa\\list-gender-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:23:43.606Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS GP-ENABLED\nPASS GP-FEMALE\nPASS GP-MALE\nPASS GP-EMPTY\nPASS GP-ONE-NOTE\nPASS GP-MALE-TICK\nPASS GP-GENDER-EDIT\nPASS GP-NO-ERRORS\n8/8 checks passed\n",
+    "stderr": ""
+  }
+}

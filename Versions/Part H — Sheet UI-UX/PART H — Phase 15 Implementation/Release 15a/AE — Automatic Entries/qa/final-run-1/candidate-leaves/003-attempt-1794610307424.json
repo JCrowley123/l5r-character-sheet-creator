@@ -1,0 +1,20 @@
+{
+  "fingerprint": "80bb2fbfc32e311bdbe7600e27c4909160830fc0ab0e899a88fc6620a5250c21",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE3 — No XP Box or Remove on Automatic Entries\\qa\\automatic-entry-controls-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T22:51:47.424Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS AX-SEAM-PHONE\nPASS AX-SCHOOL-TECH-PLAIN-PHONE\nPASS AX-CORNER-GIVEN-BACK-PHONE\nPASS AX-LONG-NAME-FALLS-BACK-LEFT-PHONE\nPASS AX-SHORT-NAME-ONE-LINE-AGAIN-PHONE\nPASS AX-GIVEN-SPELL-NO-REMOVE-PHONE\nPASS AX-KIHO-KEEPS-BOTH-PHONE\nPASS AX-PLAY-TAG-NO-XP-PHONE\nPASS AX-NONZERO-XP-KEEPS-BOTH-PHONE\nPASS AX-OTHER-SCHOOL-LABEL-KEEPS-BOTH-PHONE\nPASS AX-PATH-TAG-PHONE\nPASS AX-TAPS-DO-NOT-REMEASURE-PHONE\nPASS AX-SAVE-UNCHANGED-PHONE\nPASS AX-CLASS-OFF-AS-BEFORE-PHONE\nPASS AX-NO-ERRORS-PHONE\nPASS AX-CHOSEN-AND-REWARD-SPELLS-KEEP-REMOVE-DESKTOP\nPASS AX-HAND-TYPED-TECH-KEEPS-BOTH-DESKTOP\nPASS AX-ONE-LINE-DESKTOP\nPASS AX-PRINT-AS-BEFORE-DESKTOP\nPASS AX-NO-ERRORS-DESKTOP\n20/20 checks passed\n",
+    "stderr": ""
+  }
+}

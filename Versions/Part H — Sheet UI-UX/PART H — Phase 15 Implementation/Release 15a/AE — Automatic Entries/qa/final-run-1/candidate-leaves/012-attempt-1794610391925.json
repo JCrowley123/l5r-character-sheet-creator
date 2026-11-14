@@ -1,0 +1,20 @@
+{
+  "fingerprint": "80bb2fbfc32e311bdbe7600e27c4909160830fc0ab0e899a88fc6620a5250c21",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A06 — Grant Actions and Their State\\qa\\grant-actions-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T22:53:11.925Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS GA-SEAM-PHONE\nPASS GA-ZAKYO-GROUP-PHONE\nPASS GA-ZAKYO-STATE-PHONE\nPASS GA-ZAKYO-ADD-STILL-WORKS-PHONE\nPASS GA-WEALTHY-RECORDED-UNCHANGED-PHONE\nPASS GA-WEALTHY-UNRECORDED-PHONE\nPASS GA-WEALTHY-EXCESS-PHONE\nPASS GA-HOVER-KEEPS-FULL-OPACITY-PHONE\nPASS GA-CLASS-GATES-PHONE\nPASS GA-NO-ERRORS-PHONE\nPASS GA-SEAM-DESKTOP\nPASS GA-ZAKYO-GROUP-DESKTOP\nPASS GA-ZAKYO-STATE-DESKTOP\nPASS GA-ZAKYO-ADD-STILL-WORKS-DESKTOP\nPASS GA-WEALTHY-RECORDED-UNCHANGED-DESKTOP\nPASS GA-WEALTHY-UNRECORDED-DESKTOP\nPASS GA-WEALTHY-EXCESS-DESKTOP\nPASS GA-HOVER-KEEPS-FULL-OPACITY-DESKTOP\nPASS GA-CLASS-GATES-DESKTOP\nPASS GA-NO-ERRORS-DESKTOP\n20/20 checks passed\n",
+    "stderr": ""
+  }
+}

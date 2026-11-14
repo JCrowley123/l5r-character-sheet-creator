@@ -1,0 +1,20 @@
+{
+  "fingerprint": "d42a98dc7f7142a20e4aac09a4cf24782389af8a637290e76cdf3d0cb3ecd890",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A03.1 — Masteries in the Skill Information\\qa\\skill-masteries-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:20:13.257Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS SM-SEAM-PHONE\nPASS SM-MATCHES-THE-CARD-PHONE\nPASS SM-REACHED-MARKED-PHONE\nPASS SM-READABLE-PHONE\nPASS SM-PLACE-PHONE\nPASS SM-DEBUG-UNCHANGED-PHONE\nPASS SM-FOLLOWS-RANK-PHONE\nPASS SM-CLASS-GATES-PHONE\nPASS SM-NO-ERRORS-PHONE\nPASS SM-SEAM-DESKTOP\nPASS SM-MATCHES-THE-CARD-DESKTOP\nPASS SM-REACHED-MARKED-DESKTOP\nPASS SM-READABLE-DESKTOP\nPASS SM-PLACE-DESKTOP\nPASS SM-DEBUG-UNCHANGED-DESKTOP\nPASS SM-FOLLOWS-RANK-DESKTOP\nPASS SM-CLASS-GATES-DESKTOP\nPASS SM-NO-ERRORS-DESKTOP\nPASS SM-CUSTOM-SKILL\n19/19 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "0d6f34a496f7f8d8e4d1fe23403d383ae9b45870cf90bb31a0b73eecc3037f2c",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A02 — Floating Controls Above the Tabs\\qa\\floating-strip-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-14T00:11:07.416Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "  note landscape page height 193px\nPASS SEAM-PRESENT\nPASS NO-BAND\nPASS PHONE-CONTROLS-IN-CORNERS\nPASS PHONE-HEADINGS-CLEAR\nPASS PHONE-END-CLEAR\nPASS COMBAT-WOUND-PLUS-REACHABLE\nPASS TOP-HIDDEN-AT-START\nPASS TOP-SHOWN-AFTER-SCROLL\nPASS ONE-TOP-CONTROL\nPASS TOP-RETURNS\nPASS QA-OPENS-UPWARD\nPASS QA-PANEL-BESIDE-BUTTON\nPASS QA-CLOSES\nPASS DICE-OPENS\nPASS PAGE-POSITION-KEPT\nPASS TABS-REACHABLE\nPASS SEARCH-IN-APP-BAR\nPASS OVERLAYS-ABOVE\nPASS PRINT-HIDDEN\nPASS SMALL-PHONE-CLEAR\nPASS LANDSCAPE-CLEAR\nPASS DESKTOP-CLEAR\nPASS NO-SCRIPT-ERRORS\n23/23 checks passed\n",
+    "stderr": ""
+  }
+}

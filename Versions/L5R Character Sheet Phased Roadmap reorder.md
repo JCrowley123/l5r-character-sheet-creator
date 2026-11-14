@@ -1,5 +1,15 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
+<!-- ae-15a-roadmap -->
+## Release 15a automatic entries — 13 November 2026
+
+**13 November 2026 · Automatic entries qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").
+
+Negative variants: thirteen cases predicted and pushed before discovery; twelve matched exactly at the first discovery. One prediction was wrong: on G4 as live, AE3's harness fails 14 checks, not 16, because the sheet re-adds a renamed School Technique and two later checks read that second card. The pin was corrected and explained before the chain, and a second discovery of that one case matched. AE2's harness stops early on a build without the unit, so the checker gained one pinned form: the stop, its count and the exact failures before it. The chain passed first time: group removal 29/29 (all of the group removed restores G4 as live `fa634abb…00cb` exactly), all 13 variants on their pins, dependencies 3/3, the 4× CPU screen 161/161 leaves (G4's leaves plus those that open a character or use the wizard). Two full passes, each on its first execution (22:51 UTC on 13 November to 00:30 UTC on 14 November): candidate **7,380/7,380** and retained **7,253/7,253** (run 1: 25.92 and 23.15 minutes; run 2: 25.53 and 23.20 minutes). The code review found one defect, fixed as AE3 revision 1. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+
+**13 November 2026 · after automatic entries (Claude).** Next: the group's go-live, only on the owner's word (fast-forward `main` to the group's tip, then production verification and the browser/offline smoke). Nothing after the group is agreed yet. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-roadmap -->
+
 <!-- g4-15a-roadmap -->
 ## Release 15a G4 — 12 November 2026
 

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e2d52eb5fd369c15144d4db26caab48283d30290771f93ca66d071fff6805cf7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE1 — Sense for the Yogo Wardmaster\\qa\\yogo-given-spells-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:40:57.392Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS YG-SEAM-PHONE\nPASS YG-YOGO-GIVEN-PHONE\nPASS YG-YOGO-LINE-PHONE\nPASS YG-FIVE-PAGES-PHONE\nPASS YG-OTHER-SCHOOLS-UNCHANGED-PHONE\nPASS YG-YOGO-BOXES-UNCHANGED-PHONE\nPASS YG-WIZARD-ADDS-SENSE-PHONE\nPASS YG-WIZARD-SAYS-SO-PHONE\nPASS YG-WIZARD-WARD-BOXES-PHONE\nPASS YG-CHECK-ASKS-FOR-SENSE-PHONE\nPASS YG-NO-ERRORS-PHONE\nPASS YG-WIZARD-ADDS-SENSE-DESKTOP\nPASS YG-NO-ERRORS-DESKTOP\n13/13 checks passed\n",
+    "stderr": ""
+  }
+}

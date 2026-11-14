@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-11-13T23:40:46.359327+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7380,
+      "total": 7380,
+      "orchestration": {
+        "expected": 7380,
+        "passed": 7380,
+        "total": 7380,
+        "leafTotal": 7380,
+        "wrapperCount": 117,
+        "leafCount": 201,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 201,
+        "fingerprint": "e2d52eb5fd369c15144d4db26caab48283d30290771f93ca66d071fff6805cf7",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 25.53
+    },
+    {
+      "label": "04-retained",
+      "passed": 7253,
+      "total": 7253,
+      "orchestration": {
+        "expected": 7253,
+        "passed": 7253,
+        "total": 7253,
+        "leafTotal": 7253,
+        "wrapperCount": 102,
+        "leafCount": 196,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 196,
+        "fingerprint": "0d6f34a496f7f8d8e4d1fe23403d383ae9b45870cf90bb31a0b73eecc3037f2c",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 23.2
+    }
+  ],
+  "source_sha256": "99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8",
+  "source_bytes": 17675311,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/AE3 \u2014 No XP Box or Remove on Automatic Entries",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/AE2 \u2014 Given Spells Credited on Opening",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/AE1 \u2014 Sense for the Yogo Wardmaster"
+  ],
+  "restoration": {
+    "sha256": "fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb",
+    "bytes": 17648272,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-14T00:29:48.981782+00:00"
+}

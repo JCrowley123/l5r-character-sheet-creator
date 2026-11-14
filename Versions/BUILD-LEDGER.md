@@ -26,6 +26,12 @@ Local records updated **12 November 2026** (Claude). **Release 15a G3 is live an
 
 ## 1. Where things stand
 
+<!-- ae-15a-qualification-part1 -->
+**13 November 2026 · Automatic entries qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").
+
+Negative variants: thirteen cases predicted and pushed before discovery; twelve matched exactly at the first discovery. One prediction was wrong: on G4 as live, AE3's harness fails 14 checks, not 16, because the sheet re-adds a renamed School Technique and two later checks read that second card. The pin was corrected and explained before the chain, and a second discovery of that one case matched. AE2's harness stops early on a build without the unit, so the checker gained one pinned form: the stop, its count and the exact failures before it. The chain passed first time: group removal 29/29 (all of the group removed restores G4 as live `fa634abb…00cb` exactly), all 13 variants on their pins, dependencies 3/3, the 4× CPU screen 161/161 leaves (G4's leaves plus those that open a character or use the wizard). Two full passes, each on its first execution (22:51 UTC on 13 November to 00:30 UTC on 14 November): candidate **7,380/7,380** and retained **7,253/7,253** (run 1: 25.92 and 23.15 minutes; run 2: 25.53 and 23.20 minutes). The code review found one defect, fixed as AE3 revision 1. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-qualification-part1 -->
+
 <!-- g4-15a-live-part1 -->
 **13 November 2026 · G4 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `e6dc3248` without a merge commit or force. Production: all seven deployed files match the qualified build; 74 application harnesses passed 3,091/3,091 on the downloaded production files (G4's four units and the layers they touch, the splash layer's harness among them); browser/offline smoke 22/22. Deployed page `de2ea7d4f0910f68…`, 17,655,049 bytes; application `fa634abb…00cb`; service worker build `dac892eac0085111`. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
 <!-- end-g4-15a-live-part1 -->
@@ -174,6 +180,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- ae-15a-next-part2 -->
+**13 November 2026 · after automatic entries (Claude).** Next: the group's go-live, only on the owner's word (fast-forward `main` to the group's tip, then production verification and the browser/offline smoke). Nothing after the group is agreed yet. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-next-part2 -->
 
 <!-- g4-15a-next-part2 -->
 **12 November 2026 · after G4 (Claude).** Next, as agreed with the owner: (1) G4 go-live on the owner's word (fast-forward `main`, then production verification and the browser/offline smoke); (2) the automatic-entries group, mock-up first: Yogo Wardmaster's missing Sense, the School's given spells credited on import and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
@@ -367,6 +377,10 @@ Ranked by impact for each point spent, with what each step needs first.
 **Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- ae-15a-qualification-part3 -->
+**13 November 2026 · Automatic entries qualification (Claude).** Variants, discovery, the chain and two full passes by Claude on 13 November (the second pass ended at 00:30 UTC on 14 November) on a Pro plan, started before the weekly reset at the owner's word ("Start now"); the five-hour limit was not reached. Weekly meter, all models: 58% at the start, 62% before the two full passes, 63% after them (Fable 0% throughout). [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-qualification-part3 -->
 
 <!-- g4-15a-qualification-part3 -->
 **12 November 2026 · G4 (Claude).** Kickoff, reproduction, mock-ups, build, code review, previews, device round and qualification by Claude on 12 November on a Pro plan; the five-hour limit was reached once (before the code review). Weekly meter, all models: 53% at the start, 69% before qualification, 75% after the two passes (Fable 84% throughout). [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
@@ -661,6 +675,10 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- ae-15a-parked-part4 -->
+**13 November 2026 · after automatic entries (Claude).** Next: the group's go-live, only on the owner's word (fast-forward `main` to the group's tip, then production verification and the browser/offline smoke). Nothing after the group is agreed yet. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-parked-part4 -->
 
 <!-- g4-15a-parked-part4 -->
 **12 November 2026 · after G4 (Claude).** Next, as agreed with the owner: (1) G4 go-live on the owner's word (fast-forward `main`, then production verification and the browser/offline smoke); (2) the automatic-entries group, mock-up first: Yogo Wardmaster's missing Sense, the School's given spells credited on import and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
@@ -2006,6 +2024,12 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- ae-15a-qualification-part6 -->
+**13 November 2026 · Automatic entries qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").
+
+Negative variants: thirteen cases predicted and pushed before discovery; twelve matched exactly at the first discovery. One prediction was wrong: on G4 as live, AE3's harness fails 14 checks, not 16, because the sheet re-adds a renamed School Technique and two later checks read that second card. The pin was corrected and explained before the chain, and a second discovery of that one case matched. AE2's harness stops early on a build without the unit, so the checker gained one pinned form: the stop, its count and the exact failures before it. The chain passed first time: group removal 29/29 (all of the group removed restores G4 as live `fa634abb…00cb` exactly), all 13 variants on their pins, dependencies 3/3, the 4× CPU screen 161/161 leaves (G4's leaves plus those that open a character or use the wizard). Two full passes, each on its first execution (22:51 UTC on 13 November to 00:30 UTC on 14 November): candidate **7,380/7,380** and retained **7,253/7,253** (run 1: 25.92 and 23.15 minutes; run 2: 25.53 and 23.20 minutes). The code review found one defect, fixed as AE3 revision 1. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+<!-- end-ae-15a-qualification-part6 -->
 
 <!-- g4-15a-live-part6 -->
 **13 November 2026 · G4 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `e6dc3248` without a merge commit or force. Production: all seven deployed files match the qualified build; 74 application harnesses passed 3,091/3,091 on the downloaded production files (G4's four units and the layers they touch, the splash layer's harness among them); browser/offline smoke 22/22. Deployed page `de2ea7d4f0910f68…`, 17,655,049 bytes; application `fa634abb…00cb`; service worker build `dac892eac0085111`. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)

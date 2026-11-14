@@ -2,7 +2,7 @@
 
 The owner's rule of 11 November 2026: what the rules give a character automatically is not a choice, so it gets no review, no XP box and no remove button, and a character should be functional when it is opened. Three units, mocked up and approved on 13 November 2026 ([MOCKUP.md](MOCKUP.md); reproduction on G4 as live: [REPRODUCTION.md](REPRODUCTION.md)). This folder holds the group's shared records only; each unit has its own folder.
 
-Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-15a-g5`, from `main` at `60a5262a` (G4 as live). Code-reviewed and device-checked; all three units accepted. Not yet qualified or live.
+Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-15a-g5`, from `main` at `60a5262a` (G4 as live). Code-reviewed and device-checked; all three units accepted. **Qualified on 13 November 2026; not live:** G4 stays live until the owner's go-live word. See [HANDOVER.md](HANDOVER.md): discovery 12/13, one pin corrected and matched; chain first time (removal 29/29, variants 13/13, dependencies 3/3, 4× CPU 161/161); two full passes first time, 7,380/7,380 and 7,253/7,253 each.
 
 **Light checks on the tip:** every harness in G4's candidate list passes on AE3 (198 harnesses, 7,326 checks, after the two declared conditionals), plus the three units' own harnesses (13 + 16 + 20).
 
@@ -14,7 +14,7 @@ Built on 13 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-1
 
 **Light checks on the tip after the restack:** every harness in G4's candidate list, 198/198 harnesses and 7,326/7,326 checks on the first run (`qa/light/tip-all-run.log`), plus the units' own 13 + 21 + 20. Previews on their deployed files: AE2 398/398, AE3 418/418.
 
-**Next:** the qualification after the weekly reset on 18 November (variants pinned before discovery, the removal chain, the 4× CPU screen, two full passes on their first executions), then go-live only on the owner's word.
+**Next:** go-live only on the owner's word (fast-forward `main` to this tip, production verification with `qa/verify-live.py`, the browser/offline smoke). The qualification ran on 13 November, before the weekly reset, at the owner's word ("Start now").
 
 ## Units
 

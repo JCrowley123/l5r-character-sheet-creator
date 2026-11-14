@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e2d52eb5fd369c15144d4db26caab48283d30290771f93ca66d071fff6805cf7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\PART K — Phase 11.2.5 School Choices from the Character Check\\qa\\school-choices-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE — Automatic Entries\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-13T23:46:14.538Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS SC8-ENABLED\nPASS SC8-REPORT-READ-ONLY\nPASS SC8-MANAGE-BUTTONS\nPASS SC8-PLAY-REPORT-ONLY\nPASS SC8-OPEN-READ-ONLY\nPASS SC8-SKILL-PICKER-REUSED\nPASS SC8-FREE-SCHOOL-SKILL\nPASS SC8-SKILL-NOTE-CLEARS\nPASS SC8-SKILL-RELOAD\nPASS SC8-UNTICK-REOPENS\nPASS SC8-DELETE-REOPENS\nPASS SC8-SCHOOL-ISOLATION\nPASS SC8-ADOPT-SKILL\nPASS SC8-UNDO-PRESERVES-PAID-SKILL\nPASS SC8-REWARD-DOES-NOT-COUNT\nPASS SC8-ELEMENT-PICKER-REUSED\nPASS SC8-GIVEN-SOURCE\nPASS SC8-ADOPT-SPELL\nPASS SC8-SPELL-SOURCE\nPASS SC8-SPELL-RELOAD\nPASS SC8-RENAME-REOPENS\nPASS SC8-LATER-KEEPS-OWED\nPASS SC8-ESCAPE-CLOSES\nPASS SC8-CHARACTER-SWITCH-CLOSES\nPASS SC8-COMPLEX-ALLOTMENT\nPASS SC8-WIZARD-SKILL-SOURCE\nPASS SC8-WIZARD-SPELL-SOURCE\nPASS SC8-MALFORMED-RECORDS\nPASS SC8-PHONE-FITS\nPASS SC8-NO-PAGE-ERRORS\n30/30 checks passed\n",
+    "stderr": ""
+  }
+}
