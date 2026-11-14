@@ -1,0 +1,184 @@
+<title>G5 Undo and Resisting Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, the same look as the G4 and AE boards; each unit is a band of today | proposed pairs that stack on a phone. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem;margin-top:14px}
+p{margin:0;max-width:70ch}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:74ch}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+code{font-size:.85em;background:var(--chip);padding:1px 5px;border-radius:4px;word-break:break-word}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:12px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--new);border-radius:6px;padding:12px 14px;max-width:none}
+.rec b{color:var(--new)}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;max-width:none}
+.note b{color:var(--warn)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.stack{display:flex;flex-direction:column;gap:8px;min-width:0}
+.phonepair{max-width:760px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.78rem;letter-spacing:.03em}
+td.t{color:var(--today)} td.n{color:var(--new)}
+.summary td:first-child,.rules td:first-child{white-space:nowrap;font-weight:600}
+.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.decide ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:720px){.pair{grid-template-columns:1fr}h1{font-size:1.7rem}.summary td:first-child,.rules td:first-child{white-space:normal}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">Release 15a · group G5 · undo and the roll preview</span>
+  <h1>Quick-tap Undo and one Resisting? line: today beside proposed</h1>
+  <p class="lede">The two findings you chose for G5: A08 (one Undo for a burst of quick − / + taps) and A12 (the resistance choices folded into one closed line in the roll preview). A19 and A20 come next as G6, after the 18 November reset. Every picture is the live app in a test browser; the proposed pictures have the change applied only in that browser. Nothing is built: the build starts only on your approval.</p>
+  <p class="meta">Live build <code>99b76d62…15b8</code>, 17,675,311 bytes, <code>main</code> at <code>c5dd578b</code> (the automatic-entries group live; the same application bytes as production). Captured 14 November 2026 in Chromium 153 at 390 × 844 (phone, touch) and 1440 × 1000 (laptop), in Play. Test characters: the audit's dense Kuni Shugenja (Honour Rank 4, 7 points; it also has Missing Limb), and a copy of it with Balance, Clear Thinker, Heartless and Irreproachable added. No page errors at either size.</p>
+</header>
+
+<section id="summary">
+  <span class="tag">At a glance</span>
+  <h2>The two units</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Unit</th><th>Today</th><th>Proposed</th><th>Tier</th></tr>
+    <tr><td>A08</td><td class="t">Three taps on Honour's +, then Undo: only the last tap comes back (4.7 → 5.0 → 4.9). Taps two seconds apart make three History entries.</td><td class="n">Taps on the same card within 5 seconds of each other are one change: Undo goes back to 4.7 in one step, and History has one entry.</td><td>Behaviour</td></tr>
+    <tr><td>A12</td><td class="t">Each resistance choice takes two to four lines in "Declare for this roll". With Honour and four resist Advantages the section is 605 px tall on a phone, and the Roll button is out of sight on the phone and the laptop.</td><td class="n">One closed "Resisting?" line that says how many choices it holds. Opening it shows the same choices as today. A ticked choice is named on the line even when it is closed. The section is 180 px, and Roll is in view.</td><td>Screen-only</td></tr>
+  </table></div>
+  <p>Because A08 changes Undo, the group is qualified as behaviour tier: the 4× CPU screen, then two full passes, both first time. Proposed names: <b>A08 — One Undo for Quick Taps</b> (marker <code>PART H PHASE 15.1.31</code>) and <b>A12 — One Resisting? Line</b> (<code>15.1.32</code>), each with its own folder, switch, harness, remover and removal-chain entry after AE3, in a group folder <b>G5 — Undo and the Roll Preview</b>.</p>
+</section>
+
+<section id="a08">
+  <span class="tag">A08 · FT-47 · your rulings of 28 October and Q4</span>
+  <h2>One Undo for a burst of quick − / + taps</h2>
+  <p>Honour, Glory, Status and Taint each have − and + buttons, in Play and in Manage. Today each tap is its own change: Undo holds only the last tap and then disappears. You asked for taps close together to count as one change, with a gap of 4–5 seconds because an accidental zoom can cost a few seconds; Q4 settled it as a rolling five-second group.</p>
+
+  <h3>Laptop · after three taps on Honour's +, about two seconds apart</h3>
+  <div class="stack">
+    <figure><img src="{{laptop-a08-taps-today}}" alt="Today: Honour Rank 5 Points 0, message 'Honour: Rank 5, Points 0.' and an Undo button"><figcaption><span class="t">Today.</span> Honour 4.7 became 5.0. The message names only the new value.</figcaption></figure>
+    <figure><img src="{{laptop-a08-taps-proposed}}" alt="Proposed: the same card, message 'Honour: Rank 5, Points 0. Undo takes back all 3 taps.'"><figcaption><span class="n">Proposed.</span> The same value; the message says what Undo will do.</figcaption></figure>
+  </div>
+  <h3>Laptop · after Undo</h3>
+  <div class="stack">
+    <figure><img src="{{laptop-a08-undo-today}}" alt="Today after Undo: Honour Rank 4 Points 9"><figcaption><span class="t">Today.</span> Rank 4, Points 9: only the third tap came back, and Undo is gone, so the other two have to be taken back by hand.</figcaption></figure>
+    <figure><img src="{{laptop-a08-undo-proposed}}" alt="Proposed after Undo: Honour Rank 4 Points 7"><figcaption><span class="n">Proposed.</span> Rank 4, Points 7: the value before the first tap, in one step.</figcaption></figure>
+  </div>
+
+  <h3>Phone · the Honour card and the message under the four cards</h3>
+  <p>On a phone the four cards are stacked, so the message line sits under the Taint card. Each pair below is the Honour card and that line.</p>
+  <div class="pair phonepair">
+    <div class="stack">
+      <figure><img src="{{phone-a08-taps-today-card}}" alt="Today, phone: Honour card at Rank 5, Points 0"><img src="{{phone-a08-taps-today-line}}" alt="Today, phone: message 'Honour: Rank 5, Points 0.' and Undo"><figcaption><span class="t">Today, after three taps.</span></figcaption></figure>
+      <figure><img src="{{phone-a08-undo-today-card}}" alt="Today, phone, after Undo: Honour Rank 4, Points 9"><img src="{{phone-a08-undo-today-line}}" alt="Today, phone: 'Undone. Honour: Rank 4, Points 9.'"><figcaption><span class="t">Today, after Undo:</span> 4.9.</figcaption></figure>
+    </div>
+    <div class="stack">
+      <figure><img src="{{phone-a08-taps-proposed-card}}" alt="Proposed, phone: Honour card at Rank 5, Points 0"><img src="{{phone-a08-taps-proposed-line}}" alt="Proposed, phone: 'Honour: Rank 5, Points 0. Undo takes back all 3 taps.'"><figcaption><span class="n">Proposed, after three taps.</span></figcaption></figure>
+      <figure><img src="{{phone-a08-undo-proposed-card}}" alt="Proposed, phone, after Undo: Honour Rank 4, Points 7"><img src="{{phone-a08-undo-proposed-line}}" alt="Proposed, phone: 'Undone. Honour: Rank 4, Points 7.'"><figcaption><span class="n">Proposed, after Undo:</span> 4.7.</figcaption></figure>
+    </div>
+  </div>
+
+  <h3>Phone · History (the sheet's ⋯ menu), six seconds after the third tap</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-a08-history-today}}" alt="Today: History lists Honor 4.7 → 4.8, 4.8 → 4.9, 4.9 → 5.0"><figcaption><span class="t">Today.</span> Three entries, one per tap. (History writes an entry once the sheet has been still for 1.5 seconds, so taps closer together than that already make one entry today.) The 31 October entries come with the test character.</figcaption></figure>
+    <figure><img src="{{phone-a08-history-proposed}}" alt="Proposed: History lists Honor 4.7 → 5.0 once"><figcaption><span class="n">Proposed.</span> One entry, Honor 4.7 → 5.0, the same change Undo takes back.</figcaption></figure>
+  </div>
+
+  <h3>The rule</h3>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Joins the group</td><td>Another − or + on the same card within 5 seconds of the previous tap. − and + both count, whatever number is in the box between them.</td></tr>
+    <tr><td>Ends the group</td><td>5 seconds without a tap; a tap on another card; typing a Rank or Points value; Set Rank; Recognition by your lord; Undo; opening, loading, saving or resetting the character; any other change to the character, such as a roll, a Void Point or an edit elsewhere. Moving between pages or scrolling does not end it.</td></tr>
+    <tr><td>Undo</td><td>Goes back to the value before the group's first tap, in one step. It stays on screen exactly as long as it does today (20 seconds after the last tap, or until you save). There is still one Undo at a time: a new change replaces it, as today.</td></tr>
+    <tr><td>History</td><td>One entry for the group, written when the group ends. A group you undo before it ends leaves no entry, as quick taps undone today do. The Undo itself is an entry, as today.</td></tr>
+    <tr><td>Message</td><td>One tap: word for word as today. Two or more: "Honour: Rank 5, Points 0. Undo takes back all 3 taps." After Undo: "Undone. Honour: Rank 4, Points 7."</td></tr>
+    <tr><td>Unchanged</td><td>The values each tap gives, Rank changes at 10 points, limits, Taint, Recognition, the 20-second Undo window, autosave and the save format. Nothing new is saved.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve A08 as shown.</b> It is Q4 as ruled. The extra words in the message appear only when a group holds two or more taps, so a single tap reads exactly as today and you can see what Undo will do before you press it.</div>
+</section>
+
+<section id="a12">
+  <span class="tag">A12 · R6 · your ruling of 7 October: one closed Resisting? line</span>
+  <h2>The resistance choices in one closed line</h2>
+  <p>The roll preview's "Declare for this roll" lists every choice that might apply to the roll. The resistance choices are offered on every Skill, Trait, Ring and dice-tray roll, because the sheet cannot tell which roll is a resistance. Each takes a line or two for its label and another one or two for its note, and they appear in two or three places: Honour's own choice at the end, Balance, Clear Thinker, Heartless and Irreproachable under Advantages at the start.</p>
+
+  <h3>Phone · a Willpower Trait roll, as it opens</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-a12-resist-view-today}}" alt="Today: the roll preview on a phone; Declare for this roll fills the lower half and runs below the screen"><figcaption><span class="t">Today.</span> The Declare section runs off the screen; Honour's choice and the Roll button are below it.</figcaption></figure>
+    <figure><img src="{{phone-a12-resist-view-proposed}}" alt="Proposed: the roll preview with one closed 'Resisting? 5 options' line; Roll and Cancel are in view"><figcaption><span class="n">Proposed.</span> One closed line, "Resisting? · 5 options". Missing Limb stays as it is. Roll 4k4 and Cancel are in view without scrolling.</figcaption></figure>
+  </div>
+
+  <h3>Phone · the whole Declare section</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-a12-resist-declare-today}}" alt="Today: Declare for this roll with Advantages (four choices), Disadvantages (Missing Limb), Honour (one choice)"><figcaption><span class="t">Today.</span> 605 px tall.</figcaption></figure>
+    <div class="stack">
+      <figure><img src="{{phone-a12-resist-declare-proposed}}" alt="Proposed, closed: Resisting? 5 options, then Missing Limb"><figcaption><span class="n">Proposed, closed.</span> 180 px tall. Every roll's preview opens with the line closed.</figcaption></figure>
+      <figure><img src="{{phone-a12-resist-declare-chosen}}" alt="Proposed, closed with a choice ticked: Resisting? 1 chosen, Honour +4"><figcaption><span class="n">Proposed, closed after ticking Honour's choice.</span> "1 chosen", and the choice is named with its bonus: a ticked resistance is never hidden. The roll shows +4 to the total, as today.</figcaption></figure>
+    </div>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{phone-a12-resist-declare-open}}" alt="Proposed, open: Honour's choice first, then the four Advantages, each with its note"><figcaption><span class="n">Proposed, open.</span> The same choices and notes as today, Honour first, each under its source. It stays open while you tick (the preview redraws on every tick).</figcaption></figure>
+    <div class="stack">
+      <figure><img src="{{phone-a12-honour-declare-today}}" alt="Today, a character with Honour only: Missing Limb, then Honour's choice with a three-line note"><figcaption><span class="t">Today, the common case:</span> a character whose only resistance choice is Honour's. Five lines for it.</figcaption></figure>
+      <figure><img src="{{phone-a12-honour-declare-proposed}}" alt="Proposed, Honour only: Resisting? 1 option"><figcaption><span class="n">Proposed:</span> "Resisting? · 1 option".</figcaption></figure>
+    </div>
+  </div>
+
+  <h3>Laptop · the same roll</h3>
+  <div class="stack">
+    <figure><img src="{{laptop-a12-resist-view-today}}" alt="Today on a laptop: the preview scrolls; Honour's choice is cut at the bottom and Roll is out of sight"><figcaption><span class="t">Today.</span> Even at 1000 px high, Honour's choice is cut at the bottom of the preview and Roll is out of sight.</figcaption></figure>
+    <figure><img src="{{laptop-a12-resist-view-proposed}}" alt="Proposed on a laptop: the preview fits; Resisting? 5 options; Roll in view"><figcaption><span class="n">Proposed.</span> The whole preview fits, Roll included.</figcaption></figure>
+  </div>
+
+  <h3>Which choices go in the line</h3>
+  <p>Every choice that is a resistance, or a Contested Roll against an effect used on you: fifteen in the sheet today. A character sees only the ones it has.</p>
+  <div class="tbl"><table class="rules">
+    <tr><th>Source</th><th>Choices</th></tr>
+    <tr><td>Honour</td><td>Resisting Intimidation, Temptation or Fear (Core Rulebook p.91)</td></tr>
+    <tr><td>Advantages</td><td>Balance, Clear Thinker, Heartless, Irreproachable</td></tr>
+    <tr><td>Seven Fortunes' Blessing</td><td>Jurojin (poison or disease), Hotei (an effect that would take your Void Points)</td></tr>
+    <tr><td>Touch of the Spirit Realms</td><td>Meido (social manipulation), Tengoku (Shadowlands Taint, Earth Ring rolls only)</td></tr>
+    <tr><td>Ancestor</td><td>Kaimetsu-Uo (provocation), Moto (restraint or mental influence), Togashi Yamatsu (possession or magical control), Matsu Hitomi (Temptation, Intimidation or Fear), Usagi Reichin (Fear, and a Bloodspeaker's Fear)</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Stays where it is:</b> every other choice, for example Missing Limb, Dangerous Beauty, Imperial Spouse, Precise Memory, Wary and the Ancestors' other gifts, and the separate Void Point, Kharmic Tie and curse boxes above.</li>
+    <li><b>Unchanged:</b> every bonus and total, Balance including Honour once, Usagi Reichin's "in place of" pair, the choices being cleared for every roll, and nothing being saved. The line changes where the choices are shown, not what they do.</li>
+    <li>The line is a native disclosure, as the Combat sections use, so it works by tap, click and keyboard, and a screen reader announces it as collapsed or expanded.</li>
+  </ul>
+  <div class="rec"><b>Recommendation: approve A12 as shown.</b> It is your 7 October ruling and the audit's proposal: closed on every roll, the count on the line, the existing choices inside, and a ticked choice always named.</div>
+</section>
+
+<section id="next">
+  <span class="tag">Your decision</span>
+  <h2>What I need from you</h2>
+  <div class="decide">
+    <p>One reply covers both: <b>"Approve as recommended"</b>, or for either unit, Revise with what to change.</p>
+    <ol>
+      <li><b>A08</b> · Approve, or Revise (for example: keep today's message word for word, or another window than 5 seconds).</li>
+      <li><b>A12</b> · Approve, or Revise (for example: which choices go in the line, or what the closed line says).</li>
+    </ol>
+    <p>On approval I record it, then build A08 and A12 as two stacked branches with previews, run the light checks and one code review, and send you a device checklist. Weekly usage was 64% when this group started (reset 18 November, 01:00 UTC); G5 should fit before the reset, qualification included.</p>
+  </div>
+</section>
+</div>

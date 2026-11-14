@@ -1,0 +1,19 @@
+# G5 · Undo and the roll preview: reproduction on the automatic-entries group as live
+
+14 November 2026 (Claude). Source SHA-256 `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes, `main` at `c5dd578b` (the same application bytes as production, verified by the automatic-entries group's live checks; rebuilt here with `recombine.py --verify`, byte-identical). Chromium 153.0.8010.12 from the project's QA tools, 390 × 844 touch (device scale 2) and 1440 × 1000, one browser job at a time, with the suite's two preloads (navigation budget, splash test switch). Characters opened from a file, then switched to Play. Test characters: the audit's dense Kuni Shugenja (`A03 …/qa/a03-fixtures.json`, `dense`: Honour Rank 4, 7 points; Missing Limb among its Disadvantages) and a copy with Balance, Clear Thinker, Heartless and Irreproachable added to its Advantages. Scratch evidence, not qualification; native Safari not used. No page errors in any run.
+
+Scripts and results: `qa/mockup/` (`repro.cjs` with `common.cjs`, run through `run.sh`, which sets the QA environment and the two preloads; `embed.py` builds the board from `board-template.html` (`--webp 85`: the pictures are re-encoded as WebP to keep the board small); `reproduction.json` holds every value below).
+
+## A08 — quick − / + taps
+
+- Code: Phase 7's compact points (`CP7`, `209.9999999999975-bugfix-compact-points-ui.js`) keeps one Undo record, `last`, replaced by every change; Undo restores its `before` and clears it. Card editing (`CE7`, `…983-bugfix-card-editing-ui.js`) hides Undo 20 seconds after the last change and on a save. History is Phase 7.1's audit log (`AL71`, `209.999999999999993-feat-audit-log.js`): it compares the sheet with itself once it has been still for 1.5 seconds.
+- Three quick taps on Honour's + (phone and laptop): Rank 4, Points 7 → Rank 5, Points 0, "Honour: Rank 5, Points 0." with Undo. Undo: "Undone. Honour: Rank 4, Points 9."; Undo gone.
+- Three taps about 2 seconds apart, then 6 seconds: History has three new Honour entries, 4.7 → 4.8, 4.8 → 4.9, 4.9 → 5.0; Undo adds 5.0 → 4.9.
+- Proposal applied in the page (wrapping `CP7.adjust` and `AL71.check`, and a second Undo listener): Undo returns to Rank 4, Points 7 in both cases; History has one entry, 4.7 → 5.0, and Undo adds 5.0 → 4.7. With two or more taps the message reads "Honour: Rank 5, Points 0. Undo takes back all 3 taps."; after Undo "Undone. Honour: Rank 4, Points 7."
+
+## A12 — resistance choices in the roll preview
+
+- Code: Part I 4.5.15's registry (`RD4515`, `209.927-feat-roll-declarations.js`) draws "Declare for this roll" from eleven providers, grouped by provider label in registration order; the roll preview (`208-feat-roll-preview.js`) rebuilds its whole body on every tick. Honour's choice is `HR7` (`209.9999999999967-bugfix-honour-ui.js`); the four Advantages are 4.5.27's situational entries (`SIT4527`). Fifteen offers across five providers are resistances (MOCKUP.md lists them).
+- Willpower Trait Roll, the copy with the four Advantages, phone: the Declare section (Advantages: four choices with notes; Disadvantages: Missing Limb; Honour: one choice) is 605 px tall; the preview scrolls (1,062 px of content in 671 px) and Roll is out of sight. Laptop: 552 px, Honour's choice cut at the preview's bottom edge, Roll out of sight.
+- The same roll for the dense character (Honour's choice and Missing Limb only), phone: 245 px.
+- Proposal applied in the page (rearranging the finished markup after each redraw): the closed "Resisting? · 5 options" line makes the section 180 px on the phone and 170 px on the laptop, and Roll is in view at both sizes. Opened: Honour first, then the four Advantages, each with its note. Ticking Honour's choice keeps the line open; closed again it reads "1 chosen · Honour +4". The roll reads "+4 to total", as it does today with the same choice.

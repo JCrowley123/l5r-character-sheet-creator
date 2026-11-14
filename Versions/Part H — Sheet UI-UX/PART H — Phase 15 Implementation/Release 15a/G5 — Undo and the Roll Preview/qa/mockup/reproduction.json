@@ -1,0 +1,360 @@
+{
+ "source_sha256": "99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8",
+ "captured_utc": "2026-11-14T13:41:33.939Z",
+ "phone": {
+  "a08_quick_today": {
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0.",
+    "undoShown": true
+   },
+   "afterUndo": {
+    "rank": "4",
+    "points": "9",
+    "notice": "Undone. Honour: Rank 4, Points 9.",
+    "undoShown": false
+   },
+   "errors": []
+  },
+  "a08_spaced_today": {
+   "historyBefore": [
+    "5.0 → 2.5"
+   ],
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0.",
+    "undoShown": true
+   },
+   "historyAfterTaps": [
+    "5.0 → 2.5",
+    "4.7 → 4.8",
+    "4.8 → 4.9",
+    "4.9 → 5.0"
+   ],
+   "afterUndo": {
+    "rank": "4",
+    "points": "9",
+    "notice": "Undone. Honour: Rank 4, Points 9.",
+    "undoShown": false
+   },
+   "historyAfterUndo": [
+    "5.0 → 2.5",
+    "4.7 → 4.8",
+    "4.8 → 4.9",
+    "4.9 → 5.0",
+    "5.0 → 4.9"
+   ],
+   "errors": []
+  },
+  "a12_resist_today": {
+   "atOpen": {
+    "declareHeight": 605,
+    "previewScrollHeight": 1062,
+    "previewClientHeight": 671,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": false,
+    "declareText": "Declare for this roll | Advantages | Balance: Resisting Intimidation or Temptation, adding your Honor Rank — +1k0 | Your whole Honor Rank is added to the total once; points are ignored. Core Rulebook p.146. | Clear Thinker: Contested Roll against someone trying to confuse or manipulate you — +1k0 | Core Rulebook p.147. | Heartless: Resisting Courtier, Sincerity or Temptation used to persuade, seduce or change your mind — +1k0 | The Great Clans p.136. | Irreproachable: Contested Roll in which the other side uses Temptation — +1k0 | Core Rulebook p.151. | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Honour | Resisting Intimidation, Temptation or Fear — +4 to the total | Select when this roll resists one of those effects. Balance already includes this bonus. Core Rulebook p.91. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb",
+     "honour-resistance:resist"
+    ]
+   },
+   "rollText": "10 | 4 | ROLLED | 10 | 4 | KEPT | 4k4 | +4 to total | Willpower 4 | 4k4 — rolled and kept | Honour: resistance | +4 to total — Whole Honour Rank; points are ignored. Core Rulebook p.91. | SPEND A VOID POINT ON THIS ROLL | +1k1 to a Skill, Trait, Ring, or Spell Casting roll",
+   "errors": []
+  },
+  "a12_honour_today": {
+   "atOpen": {
+    "declareHeight": 245,
+    "previewScrollHeight": 702,
+    "previewClientHeight": 671,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": true,
+    "declareText": "Declare for this roll | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Honour | Resisting Intimidation, Temptation or Fear — +4 to the total | Select when this roll resists one of those effects. Balance already includes this bonus. Core Rulebook p.91. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "checks-conditions:missing-limb",
+     "honour-resistance:resist"
+    ]
+   },
+   "errors": []
+  },
+  "a08_quick_proposed": {
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0. Undo takes back all 3 taps.",
+    "undoShown": true
+   },
+   "afterUndo": {
+    "rank": "4",
+    "points": "7",
+    "notice": "Undone. Honour: Rank 4, Points 7.",
+    "undoShown": false
+   },
+   "errors": []
+  },
+  "a08_spaced_proposed": {
+   "historyBefore": [
+    "5.0 → 2.5"
+   ],
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0. Undo takes back all 3 taps.",
+    "undoShown": true
+   },
+   "historyAfterTaps": [
+    "5.0 → 2.5",
+    "4.7 → 5.0"
+   ],
+   "afterUndo": {
+    "rank": "4",
+    "points": "7",
+    "notice": "Undone. Honour: Rank 4, Points 7.",
+    "undoShown": false
+   },
+   "historyAfterUndo": [
+    "5.0 → 2.5",
+    "4.7 → 5.0",
+    "5.0 → 4.7"
+   ],
+   "errors": []
+  },
+  "a12_resist_proposed": {
+   "atOpen": {
+    "declareHeight": 180,
+    "previewScrollHeight": 637,
+    "previewClientHeight": 637,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": true,
+    "declareText": "Declare for this roll | Resisting? | 5 options | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "honour-resistance:resist",
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb"
+    ]
+   },
+   "opened": {
+    "declareHeight": 693,
+    "previewScrollHeight": 1150,
+    "previewClientHeight": 671,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": false,
+    "declareText": "Declare for this roll | Resisting? | 5 options | Honour | Resisting Intimidation, Temptation or Fear — +4 to the total | Select when this roll resists one of those effects. Balance already includes this bonus. Core Rulebook p.91. | Advantages | Balance: Resisting Intimidation or Temptation, adding your Honor Rank — +1k0 | Your whole Honor Rank is added to the total once; points are ignored. Core Rulebook p.146. | Clear Thinker: Contested Roll against someone trying to confuse or manipulate you — +1k0 | Core Rulebook p.147. | Heartless: Resisting Courtier, Sincerity or Temptation used to persuade, seduce or change your mind — +1k0 | The Great Clans p.136. | Irreproachable: Contested Roll in which the other side uses Temptation — +1k0 | Core Rulebook p.151. | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "honour-resistance:resist",
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb"
+    ]
+   },
+   "afterTickStillOpen": true,
+   "chosenClosed": {
+    "declareHeight": 202,
+    "previewScrollHeight": 699,
+    "previewClientHeight": 671,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": true,
+    "declareText": "Declare for this roll | Resisting? | 1 chosen | Honour +4 | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "honour-resistance:resist",
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb"
+    ]
+   },
+   "rollText": "10 | 4 | ROLLED | 10 | 4 | KEPT | 4k4 | +4 to total | Willpower 4 | 4k4 — rolled and kept | Honour: resistance | +4 to total — Whole Honour Rank; points are ignored. Core Rulebook p.91. | SPEND A VOID POINT ON THIS ROLL | +1k1 to a Skill, Trait, Ring, or Spell Casting roll",
+   "errors": []
+  },
+  "a12_honour_proposed": {
+   "atOpen": {
+    "declareHeight": 180,
+    "previewScrollHeight": 637,
+    "previewClientHeight": 637,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": true,
+    "declareText": "Declare for this roll | Resisting? | 1 option | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "honour-resistance:resist",
+     "checks-conditions:missing-limb"
+    ]
+   },
+   "errors": []
+  }
+ },
+ "laptop": {
+  "a08_quick_today": {
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0.",
+    "undoShown": true
+   },
+   "afterUndo": {
+    "rank": "4",
+    "points": "9",
+    "notice": "Undone. Honour: Rank 4, Points 9.",
+    "undoShown": false
+   },
+   "errors": []
+  },
+  "a08_spaced_today": {
+   "historyBefore": [
+    "5.0 → 2.5"
+   ],
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0.",
+    "undoShown": true
+   },
+   "historyAfterTaps": [
+    "5.0 → 2.5",
+    "4.7 → 4.8",
+    "4.8 → 4.9",
+    "4.9 → 5.0"
+   ],
+   "afterUndo": {
+    "rank": "4",
+    "points": "9",
+    "notice": "Undone. Honour: Rank 4, Points 9.",
+    "undoShown": false
+   },
+   "historyAfterUndo": [
+    "5.0 → 2.5",
+    "4.7 → 4.8",
+    "4.8 → 4.9",
+    "4.9 → 5.0",
+    "5.0 → 4.9"
+   ],
+   "errors": []
+  },
+  "a12_resist_today": {
+   "atOpen": {
+    "declareHeight": 552,
+    "previewScrollHeight": 953,
+    "previewClientHeight": 796,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": false,
+    "declareText": "Declare for this roll | Advantages | Balance: Resisting Intimidation or Temptation, adding your Honor Rank — +1k0 | Your whole Honor Rank is added to the total once; points are ignored. Core Rulebook p.146. | Clear Thinker: Contested Roll against someone trying to confuse or manipulate you — +1k0 | Core Rulebook p.147. | Heartless: Resisting Courtier, Sincerity or Temptation used to persuade, seduce or change your mind — +1k0 | The Great Clans p.136. | Irreproachable: Contested Roll in which the other side uses Temptation — +1k0 | Core Rulebook p.151. | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Honour | Resisting Intimidation, Temptation or Fear — +4 to the total | Select when this roll resists one of those effects. Balance already includes this bonus. Core Rulebook p.91. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb",
+     "honour-resistance:resist"
+    ]
+   },
+   "rollText": "10 | 4 | ROLLED | 10 | 4 | KEPT | 4k4 | +4 to total | Willpower 4 | 4k4 — rolled and kept | Honour: resistance | +4 to total — Whole Honour Rank; points are ignored. Core Rulebook p.91. | SPEND A VOID POINT ON THIS ROLL | +1k1 to a Skill, Trait, Ring, or Spell Casting roll",
+   "errors": []
+  },
+  "a08_quick_proposed": {
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0. Undo takes back all 3 taps.",
+    "undoShown": true
+   },
+   "afterUndo": {
+    "rank": "4",
+    "points": "7",
+    "notice": "Undone. Honour: Rank 4, Points 7.",
+    "undoShown": false
+   },
+   "errors": []
+  },
+  "a08_spaced_proposed": {
+   "historyBefore": [
+    "5.0 → 2.5"
+   ],
+   "afterTaps": {
+    "rank": "5",
+    "points": "0",
+    "notice": "Honour: Rank 5, Points 0. Undo takes back all 3 taps.",
+    "undoShown": true
+   },
+   "historyAfterTaps": [
+    "5.0 → 2.5",
+    "4.7 → 5.0"
+   ],
+   "afterUndo": {
+    "rank": "4",
+    "points": "7",
+    "notice": "Undone. Honour: Rank 4, Points 7.",
+    "undoShown": false
+   },
+   "historyAfterUndo": [
+    "5.0 → 2.5",
+    "4.7 → 5.0",
+    "5.0 → 4.7"
+   ],
+   "errors": []
+  },
+  "a12_resist_proposed": {
+   "atOpen": {
+    "declareHeight": 170,
+    "previewScrollHeight": 571,
+    "previewClientHeight": 571,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": true,
+    "declareText": "Declare for this roll | Resisting? | 5 options | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "honour-resistance:resist",
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb"
+    ]
+   },
+   "opened": {
+    "declareHeight": 618,
+    "previewScrollHeight": 1019,
+    "previewClientHeight": 796,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": false,
+    "declareText": "Declare for this roll | Resisting? | 5 options | Honour | Resisting Intimidation, Temptation or Fear — +4 to the total | Select when this roll resists one of those effects. Balance already includes this bonus. Core Rulebook p.91. | Advantages | Balance: Resisting Intimidation or Temptation, adding your Honor Rank — +1k0 | Your whole Honor Rank is added to the total once; points are ignored. Core Rulebook p.146. | Clear Thinker: Contested Roll against someone trying to confuse or manipulate you — +1k0 | Core Rulebook p.147. | Heartless: Resisting Courtier, Sincerity or Temptation used to persuade, seduce or change your mind — +1k0 | The Great Clans p.136. | Irreproachable: Contested Roll in which the other side uses Temptation — +1k0 | Core Rulebook p.151. | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "honour-resistance:resist",
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb"
+    ]
+   },
+   "afterTickStillOpen": true,
+   "chosenClosed": {
+    "declareHeight": 192,
+    "previewScrollHeight": 613,
+    "previewClientHeight": 613,
+    "rollButton": "Roll 4k4",
+    "rollButtonVisibleWithoutScroll": true,
+    "declareText": "Declare for this roll | Resisting? | 1 chosen | Honour +4 | Disadvantages | Missing Limb: Uses your missing limb: TN +10 | Reported as -10 to the total. Core Rulebook p.161. | Declared for this roll only; nothing is saved.",
+    "keys": [
+     "honour-resistance:resist",
+     "situational-entries:balance",
+     "situational-entries:clear-thinker",
+     "situational-entries:heartless",
+     "situational-entries:irreproachable",
+     "checks-conditions:missing-limb"
+    ]
+   },
+   "rollText": "10 | 4 | ROLLED | 10 | 4 | KEPT | 4k4 | +4 to total | Willpower 4 | 4k4 — rolled and kept | Honour: resistance | +4 to total — Whole Honour Rank; points are ignored. Core Rulebook p.91. | SPEND A VOID POINT ON THIS ROLL | +1k1 to a Skill, Trait, Ring, or Spell Casting roll",
+   "errors": []
+  }
+ }
+}
