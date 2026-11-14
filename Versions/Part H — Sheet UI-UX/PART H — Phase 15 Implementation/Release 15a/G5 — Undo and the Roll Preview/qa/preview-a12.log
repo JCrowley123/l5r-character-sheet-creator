@@ -1,0 +1,38 @@
+Checking deployed files: quick-tap-undo-harness.js
+Checking deployed files: resisting-line-harness.js
+Checking deployed files: compact-points-harness.js
+Checking deployed files: card-editing-harness.js
+Checking deployed files: audit-harness.js
+Checking deployed files: undone-change-harness.js
+Checking deployed files: characters-harness.js
+Checking deployed files: taint-harness.js
+Checking deployed files: phone-text-entry-harness.js
+Checking deployed files: roll-preview-harness.js
+Checking deployed files: roll-declarations-harness.js
+Checking deployed files: roll-preview-top-harness.js
+Checking deployed files: fortune-blessing-harness.js
+Checking deployed files: spirit-realms-harness.js
+Checking deployed files: situational-entries-harness.js
+Checking deployed files: situational-buttons-harness.js
+Checking deployed files: ancestors-harness.js
+Checking deployed files: honour-harness.js
+PASS A08 — One Undo for Quick Taps/quick-tap-undo-harness.js 21/21
+PASS A12 — One Resisting Line/resisting-line-harness.js 18/18
+PASS BUGFIX — Compact Characteristic Controls/compact-points-harness.js 33/33
+PASS BUGFIX — Characteristic Card Editing/card-editing-harness.js 46/46
+PASS PART J — Phase 7.1 Audit Log/audit-harness.js 17/17
+PASS BUGFIX — Undone Change Not Unsaved Work/undone-change-harness.js 6/6
+PASS PART K — Phase 11 Characters List and Save Model/characters-harness.js 70/70
+PASS BUGFIX — Taint Points and Growth/taint-harness.js 26/26
+PASS A09 — Phone Text Entry and Repeated Taps/phone-text-entry-harness.js 20/20
+PASS PART G — Phase 3 Smart Roll Preview/roll-preview-harness.js 50/50
+PASS PART I — Phase 4.5.15 Roll Declaration Registry/roll-declarations-harness.js 53/53
+PASS BUGFIX — Roll Preview Opens at the Top/roll-preview-top-harness.js 10/10
+PASS PART I — Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js 77/77
+PASS PART I — Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js 50/50
+PASS PART I — Phase 4.5.27 Situational Roll Entries/situational-entries-harness.js 117/117
+PASS PART I — Phase 4.5.28 Situational Entry Buttons and Gates/situational-buttons-harness.js 71/71
+PASS PART I — Phase 4.8 Ancestors/ancestors-harness.js 349/349
+PASS BUGFIX — Honour Resistance Bonus/honour-harness.js 20/20
+units in the page: A08, A12 | page 417e5b1363a7 17702851 | source f76786334a9c
+PREVIEW PASSED: 1054/1054 on the deployed files

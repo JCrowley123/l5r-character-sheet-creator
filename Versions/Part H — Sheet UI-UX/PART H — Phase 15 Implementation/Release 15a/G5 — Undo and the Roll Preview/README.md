@@ -2,7 +2,7 @@
 
 Two findings of the Phase 15 audit, grouped by the owner on 14 November 2026 as the design rules' 6 November plan proposed (A19 and A20 follow as G6, after the 18 November reset). Mocked up and approved on 14 November 2026 ([MOCKUP.md](MOCKUP.md); reproduction on the automatic-entries group as live: [REPRODUCTION.md](REPRODUCTION.md)). The owner asked for A12 to be ring-fenced with extra care. This folder holds the group's shared records only; each unit has its own folder.
 
-Built on 14 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-15a-group5`, from `main` at `c5dd578b` (the automatic-entries group live). Code-reviewed ([qa/code-review.md](qa/code-review.md): no change needed, three low findings recorded). Not yet device-checked or qualified.
+Built on 14 November 2026 (Claude) in the worktree `C:/Users/jcrow/l5r-release-15a-group5`, from `main` at `c5dd578b` (the automatic-entries group live). Code-reviewed ([qa/code-review.md](qa/code-review.md): no change needed, three low findings recorded). Previews verified on their deployed files (`qa/verify-preview.py`): A08 1,036/1,036, A12 1,054/1,054 (the first attempt stopped on a network error, not a check, and was run again). Device round: the Claude Doc [G5 device checks](https://claude.ai/artifact/VwpvN5pYU7j8uZQ1YNDHVS); mirror [DEVICE-CHECKS.md](DEVICE-CHECKS.md). Not yet device-checked or qualified.
 
 ## Units
 

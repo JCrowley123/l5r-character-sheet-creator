@@ -1,0 +1,166 @@
+{
+  "commit": "e7cd508c45fd1f6e4812aea6fc8b2da5bbb6a683",
+  "ref": "claude/release-15a-a12",
+  "url": "https://claude-release-15a-a12.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-14T17:20:17.328831+00:00",
+  "source_sha256": "f76786334a9c51da07f8bd6283bc6eb784f479e6cf79286cdc290f72e093bc41",
+  "page_sha256": "417e5b1363a79117869b478442c1c4e443329ad02b2e8198869f13a21651e3de",
+  "page_bytes": 17702851,
+  "service_worker_build": "a85418f191419888",
+  "units": [
+    "A08",
+    "A12"
+  ],
+  "expected": {
+    "harnesses": 18,
+    "checks": 1054
+  },
+  "harnesses": {
+    "A08 \u2014 One Undo for Quick Taps/quick-tap-undo-harness.js": {
+      "counts": [
+        "21",
+        "21"
+      ],
+      "expected": 21,
+      "passed": true
+    },
+    "A12 \u2014 One Resisting Line/resisting-line-harness.js": {
+      "counts": [
+        "18",
+        "18"
+      ],
+      "expected": 18,
+      "passed": true
+    },
+    "BUGFIX \u2014 Compact Characteristic Controls/compact-points-harness.js": {
+      "counts": [
+        "33",
+        "33"
+      ],
+      "expected": 33,
+      "passed": true
+    },
+    "BUGFIX \u2014 Characteristic Card Editing/card-editing-harness.js": {
+      "counts": [
+        "46",
+        "46"
+      ],
+      "expected": 46,
+      "passed": true
+    },
+    "PART J \u2014 Phase 7.1 Audit Log/audit-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Undone Change Not Unsaved Work/undone-change-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11 Characters List and Save Model/characters-harness.js": {
+      "counts": [
+        "70",
+        "70"
+      ],
+      "expected": 70,
+      "passed": true
+    },
+    "BUGFIX \u2014 Taint Points and Growth/taint-harness.js": {
+      "counts": [
+        "26",
+        "26"
+      ],
+      "expected": 26,
+      "passed": true
+    },
+    "A09 \u2014 Phone Text Entry and Repeated Taps/phone-text-entry-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "PART G \u2014 Phase 3 Smart Roll Preview/roll-preview-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.15 Roll Declaration Registry/roll-declarations-harness.js": {
+      "counts": [
+        "53",
+        "53"
+      ],
+      "expected": 53,
+      "passed": true
+    },
+    "BUGFIX \u2014 Roll Preview Opens at the Top/roll-preview-top-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js": {
+      "counts": [
+        "77",
+        "77"
+      ],
+      "expected": 77,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.27 Situational Roll Entries/situational-entries-harness.js": {
+      "counts": [
+        "117",
+        "117"
+      ],
+      "expected": 117,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates/situational-buttons-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
+      "counts": [
+        "349",
+        "349"
+      ],
+      "expected": 349,
+      "passed": true
+    },
+    "BUGFIX \u2014 Honour Resistance Bonus/honour-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}

@@ -1,0 +1,157 @@
+{
+  "commit": "6dd99349c3662563f8fa25da594d90a5cbedc7a0",
+  "ref": "claude/release-15a-a08",
+  "url": "https://claude-release-15a-a08.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-14T17:13:46.196271+00:00",
+  "source_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+  "page_sha256": "87f82af7c0fefbe735ee9b510ab68e62285b01c7170e73c4def912f59a9e672f",
+  "page_bytes": 17692705,
+  "service_worker_build": "896459a52b224a4f",
+  "units": [
+    "A08"
+  ],
+  "expected": {
+    "harnesses": 17,
+    "checks": 1036
+  },
+  "harnesses": {
+    "A08 \u2014 One Undo for Quick Taps/quick-tap-undo-harness.js": {
+      "counts": [
+        "21",
+        "21"
+      ],
+      "expected": 21,
+      "passed": true
+    },
+    "BUGFIX \u2014 Compact Characteristic Controls/compact-points-harness.js": {
+      "counts": [
+        "33",
+        "33"
+      ],
+      "expected": 33,
+      "passed": true
+    },
+    "BUGFIX \u2014 Characteristic Card Editing/card-editing-harness.js": {
+      "counts": [
+        "46",
+        "46"
+      ],
+      "expected": 46,
+      "passed": true
+    },
+    "PART J \u2014 Phase 7.1 Audit Log/audit-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Undone Change Not Unsaved Work/undone-change-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11 Characters List and Save Model/characters-harness.js": {
+      "counts": [
+        "70",
+        "70"
+      ],
+      "expected": 70,
+      "passed": true
+    },
+    "BUGFIX \u2014 Taint Points and Growth/taint-harness.js": {
+      "counts": [
+        "26",
+        "26"
+      ],
+      "expected": 26,
+      "passed": true
+    },
+    "A09 \u2014 Phone Text Entry and Repeated Taps/phone-text-entry-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "PART G \u2014 Phase 3 Smart Roll Preview/roll-preview-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.15 Roll Declaration Registry/roll-declarations-harness.js": {
+      "counts": [
+        "53",
+        "53"
+      ],
+      "expected": 53,
+      "passed": true
+    },
+    "BUGFIX \u2014 Roll Preview Opens at the Top/roll-preview-top-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js": {
+      "counts": [
+        "77",
+        "77"
+      ],
+      "expected": 77,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.27 Situational Roll Entries/situational-entries-harness.js": {
+      "counts": [
+        "117",
+        "117"
+      ],
+      "expected": 117,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates/situational-buttons-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
+      "counts": [
+        "349",
+        "349"
+      ],
+      "expected": 349,
+      "passed": true
+    },
+    "BUGFIX \u2014 Honour Resistance Bonus/honour-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}
