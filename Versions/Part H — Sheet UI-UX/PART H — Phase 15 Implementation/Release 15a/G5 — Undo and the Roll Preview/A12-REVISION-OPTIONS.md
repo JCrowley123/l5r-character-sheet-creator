@@ -71,3 +71,5 @@
 Status: awaiting the owner's word on whether to mock up the effect-first design. Nothing is changed.
 
 **Mock-ups:** five designs for the effect-first approach, ranked, are in [RESISTANCE-MOCKUPS.md](RESISTANCE-MOCKUPS.md) (recommended: A, buttons in a row). Awaiting the owner.
+
+**Combined design:** five versions of A with the owner's buttons beside abilities and a list that follows the roll, ranked, are in [COMBINED-RESISTING-MOCKUPS.md](COMBINED-RESISTING-MOCKUPS.md) (recommended: version 1, likely first with "Something else…"). Awaiting the owner.

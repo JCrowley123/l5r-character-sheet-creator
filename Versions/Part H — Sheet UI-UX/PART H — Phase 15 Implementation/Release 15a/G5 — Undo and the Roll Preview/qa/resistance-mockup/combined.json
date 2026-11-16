@@ -1,0 +1,149 @@
+{
+ "source_sha256": "f76786334a9c51da07f8bd6283bc6eb784f479e6cf79286cdc290f72e093bc41",
+ "captured_utc": "2026-11-16T15:10:04.749Z",
+ "character": "Honour 6; Balance, Clear Thinker, Wary, Touch of the Spirit Realms (Tengoku); Missing Limb",
+ "phone": {
+  "today-will": {
+   "declareHeight": 457,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 242,
+   "others": 4
+  },
+  "today-earth": {
+   "declareHeight": 552,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 338,
+   "others": 5
+  },
+  "today-agi": {
+   "declareHeight": 457,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 242,
+   "others": 4
+  },
+  "v1-will": {
+   "declareHeight": 225,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 11,
+   "others": 1
+  },
+  "v1-earth": {
+   "declareHeight": 225,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 11,
+   "others": 1
+  },
+  "v1-agi": {
+   "declareHeight": 193,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "v1-earth-else": {
+   "declareHeight": 300,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 86,
+   "others": 1
+  },
+  "v1-will-after": {
+   "declareHeight": 324,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 110,
+   "others": 1
+  },
+  "v2-will": {
+   "declareHeight": 317,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 103,
+   "others": 1
+  },
+  "v2-earth": {
+   "declareHeight": 225,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 11,
+   "others": 1
+  },
+  "v3-will": {
+   "declareHeight": 225,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 11,
+   "others": 1
+  },
+  "v3-earth": {
+   "declareHeight": 225,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 11,
+   "others": 1
+  },
+  "v3-agi": {
+   "declareHeight": 143,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "v4-will": {
+   "declareHeight": 193,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "v4-band": {
+   "declareHeight": 304,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 90,
+   "others": 1
+  },
+  "v5-will": {
+   "declareHeight": 300,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 86,
+   "others": 1
+  },
+  "v5-earth": {
+   "declareHeight": 300,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 86,
+   "others": 1
+  },
+  "v5-agi": {
+   "declareHeight": 302,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 88,
+   "others": 1
+  },
+  "errors": []
+ },
+ "laptop": {
+  "v1-will": {
+   "declareHeight": 214,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "v2-will": {
+   "declareHeight": 306,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "v3-will": {
+   "declareHeight": 214,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "v5-will": {
+   "declareHeight": 290,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "v4-band": {
+   "declareHeight": 294,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0,
+   "others": 1
+  },
+  "errors": []
+ }
+}
