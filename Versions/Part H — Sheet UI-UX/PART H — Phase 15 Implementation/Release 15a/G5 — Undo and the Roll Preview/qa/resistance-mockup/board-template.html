@@ -1,0 +1,241 @@
+<title>Five Resisting Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, the same look as the G5 board; the ranking first, then one band per mock-up (phone before | phone after | laptop), then the decision. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem}
+p{margin:0;max-width:70ch}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:14px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.tag.first{color:var(--new)}
+.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--new);border-radius:6px;padding:12px 14px;max-width:none}
+.rec b{color:var(--new)}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;max-width:none}
+.note b{color:var(--warn)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start;max-width:700px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+.pc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pc>div{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.pc h3{font-family:var(--body);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.pc .pro h3{color:var(--new)} .pc .con h3{color:var(--today)}
+.facts{font-size:.86rem;color:var(--soft);max-width:none;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.78rem;letter-spacing:.03em}
+td.t{color:var(--today)} td.n{color:var(--new)}
+.ranks td:first-child{font-weight:600;white-space:nowrap}
+.ranks tr.top td{background:var(--card)}
+.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.decide ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:720px){.trio,.pair,.pc{grid-template-columns:1fr}h1{font-size:1.7rem}.ranks td:first-child{white-space:normal}figure img{max-width:340px}}
+</style>
+<div class="wrap">
+<header>
+  <span class="tag">L5R character sheet · Release 15a · resistance, effect first</span>
+  <h1>Resisting something? Five mock-ups</h1>
+  <p class="lede">Each design asks the one thing a player always knows: what the GM has just asked them to resist. The sheet then adds what the character has for it. All five are drawn inside the real app with the same character: Honour 6, Balance, Clear Thinker, and a Missing Limb choice that is not a resistance.</p>
+  <p class="meta">16 November 2026 · drawn on the A12 build with A12 switched off, so the starting point is the live app · phone 390 × 844, laptop 1440 × 1000 · mock-ups only, nothing is built</p>
+</header>
+
+<section>
+  <h2>Ranking</h2>
+  <p class="rec"><b>Recommended: A · Buttons in a row.</b> The effects are in sight on every roll, one tap declares one, and the sheet says what it added. It is less than half the height of today's list on the phone, and the Roll button stays on screen.</p>
+  <div class="tbl"><table class="ranks">
+    <tr><th>Rank</th><th>Mock-up</th><th>Taps to declare</th><th>In sight before any tap</th><th>Height on the phone, at rest</th><th>Roll button on screen when the preview opens (phone)</th></tr>
+    <tr class="top"><td class="n">1</td><td><b>A · Buttons in a row</b></td><td>1</td><td>The effects</td><td>218 px</td><td class="n">Yes</td></tr>
+    <tr><td>2</td><td>B · Open list that shows what each adds</td><td>1</td><td>The effects and every bonus</td><td>310 px</td><td class="t">No, 96 px below</td></tr>
+    <tr><td>3</td><td>C · One closed line</td><td>2</td><td>The effects, in small print</td><td>182 px</td><td class="n">Yes</td></tr>
+    <tr><td>4</td><td>D · Drop-down</td><td>2, through the phone's picker</td><td>Nothing</td><td>220 px</td><td class="n">Yes</td></tr>
+    <tr><td>5</td><td>E · A Resist… button on the sheet</td><td>2, before the preview</td><td>One button on the page</td><td>Not in the preview</td><td class="n">Yes</td></tr>
+    <tr><td></td><td>For reference: the live app today</td><td>1 per box, after reading each</td><td>Every box and note</td><td>457 px</td><td class="t">No, 242 px below</td></tr>
+    <tr><td></td><td>For reference: A12 as built</td><td>2</td><td>A count ("3 options")</td><td>180 px</td><td class="n">Yes</td></tr>
+  </table></div>
+  <p class="facts">Heights are the whole "Declare for this roll" block for this character, measured in the app. About 100 px of each figure is the Missing Limb choice, which every design leaves as it is.</p>
+</section>
+
+<section>
+  <h2>What all five share</h2>
+  <ul>
+    <li><b>Only effects you have something for.</b> Every samurai sees Intimidation, Temptation and Fear, because Honour applies to them. Poison, Taint and the rest appear only when the character has a gift for them.</li>
+    <li><b>The sheet adds what certainly applies, once,</b> and says so on a line: "Added: Honour +6 · Balance +1k0". The app's own list at the top of the preview still names each bonus with its page reference.</li>
+    <li><b>It asks when only the player can know.</b> Clear Thinker is offered as a tick box, "only if they are trying to confuse or manipulate you". It is never added silently.</li>
+    <li><b>Choices that are not resistances stay as they are,</b> like Missing Limb here.</li>
+  </ul>
+  <p class="note"><b>Still yours to rule on:</b> where each of the fifteen abilities sits, and whether it is added or asked. Clear Thinker under Temptation is an example, not a ruling. That table comes after you choose a design.</p>
+  <div class="pair">
+    <figure><img src="{{phone-today}}" alt="The live app's list for this character: Balance, Clear Thinker, Missing Limb and Honour's box, each with a note"><figcaption><span class="t">Today, live app</span> · four boxes to read and judge</figcaption></figure>
+    <figure><img src="{{phone-a12}}" alt="A12 as built: one closed line, Resisting?, 3 options, above the Missing Limb choice"><figcaption><span class="t">A12 as built</span> · the same boxes behind one line</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <span class="tag first">Rank 1 · recommended</span>
+  <h2>A · Buttons in a row</h2>
+  <p>The effects sit in one row of buttons. Tap one and it fills in; tap it again to clear it. The line below says what was added, and any "only if" ability is asked there.</p>
+  <div class="trio">
+    <figure><img src="{{phone-m1-before}}" alt="Phone: Resisting? with three buttons, Intimidation, Temptation, Fear"><figcaption>Phone · before choosing</figcaption></figure>
+    <figure><img src="{{phone-m1-after}}" alt="Phone: Temptation filled in; Added: Honour +6, Balance +1k0; a tick box for Clear Thinker"><figcaption><span class="n">Phone · after tapping Temptation</span></figcaption></figure>
+    <figure><img src="{{laptop-m1-after}}" alt="Laptop: the same row with Temptation chosen"><figcaption>Laptop · after tapping Temptation</figcaption></figure>
+  </div>
+  <div class="trio">
+    <figure><img src="{{phone-m1-view-before}}" alt="The whole roll preview on the phone with the row of buttons above the Roll button"><figcaption>Phone · the whole preview when it opens</figcaption></figure>
+    <figure><img src="{{phone-m1-view-after}}" alt="The whole preview after choosing Temptation: the app's total reads 5k4 +6 with Balance and Honour listed"><figcaption><span class="n">Phone · after Temptation.</span> The total and the list at the top are the app's own.</figcaption></figure>
+    <figure><img src="{{phone-m1-gift}}" alt="A fourth button, Poison or disease, chosen; Added: Jurojin's Blessing +2k0"><figcaption>With a gift: Jurojin's Blessing adds a "Poison or disease" button. Without the gift there is no button, and the roll is plain Earth.</figcaption></figure>
+  </div>
+  <div class="pc">
+    <div class="pro"><h3>For</h3><ul>
+      <li>Nothing to remember: the effects are named on every roll, with no tap to find them.</li>
+      <li>One tap to declare, one to clear.</li>
+      <li>Small. 218 px against 457 px today, and the Roll button stays on screen.</li>
+      <li>A gift shows up as its own button, so the button itself reminds you that you have it.</li>
+      <li>Large touch targets (44 px high).</li>
+    </ul></div>
+    <div class="con"><h3>Against</h3><ul>
+      <li>The row is there on every ordinary roll, including the many that resist nothing.</li>
+      <li>A character with several gifts gets two or three rows of buttons on a phone.</li>
+      <li>Which abilities sit behind a button shows only after the tap.</li>
+      <li>Buttons are a new control in the preview, where everything else is a tick box.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Rank 2</span>
+  <h2>B · Open list that shows what each adds</h2>
+  <p>Every effect is a row, always open, with the bonuses it would bring written under it. Choose one row.</p>
+  <div class="trio">
+    <figure><img src="{{phone-m3-before}}" alt="Phone: three rows, Intimidation, Temptation and Fear, each with its bonuses beneath"><figcaption>Phone · before choosing</figcaption></figure>
+    <figure><img src="{{phone-m3-after}}" alt="Phone: Temptation chosen and outlined, reading Added: Honour +6, Balance +1k0; Clear Thinker asked below"><figcaption><span class="n">Phone · after choosing Temptation</span></figcaption></figure>
+    <figure><img src="{{laptop-m3-after}}" alt="Laptop: the same list with Temptation chosen"><figcaption>Laptop · after choosing Temptation</figcaption></figure>
+  </div>
+  <div class="pc">
+    <div class="pro"><h3>For</h3><ul>
+      <li>The best reminder of the five: you see which abilities apply to what before you choose.</li>
+      <li>One tap to declare.</li>
+      <li>A plain list, like the rest of the preview.</li>
+    </ul></div>
+    <div class="con"><h3>Against</h3><ul>
+      <li>The tallest at rest: 310 px, and on this phone the Roll button starts 96 px off screen. That was the complaint A12 set out to fix.</li>
+      <li>One more row for every gift.</li>
+      <li>The same words repeat ("Honour +6" three times here).</li>
+      <li>A lot to carry on every roll that resists nothing.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Rank 3</span>
+  <h2>C · One closed line</h2>
+  <p>A12's line, asking about effects. Closed, it names the effects in small print; open, it lists them to choose from.</p>
+  <div class="trio">
+    <figure><img src="{{phone-m2-before}}" alt="Phone: one closed line, Resisting?, with Intimidation, Temptation, Fear in small print"><figcaption>Phone · closed, before choosing</figcaption></figure>
+    <figure><img src="{{phone-m2-after}}" alt="Phone: the line open with Temptation chosen, the Added line and Clear Thinker's box"><figcaption><span class="n">Phone · open, Temptation chosen</span></figcaption></figure>
+    <figure><img src="{{laptop-m2-after}}" alt="Laptop: the line open with Temptation chosen"><figcaption>Laptop · open, Temptation chosen</figcaption></figure>
+  </div>
+  <div class="pc">
+    <div class="pro"><h3>For</h3><ul>
+      <li>The smallest at rest (182 px); the Roll button stays on screen.</li>
+      <li>Reuses the line that is already built and passed your device checks.</li>
+      <li>Quiet on rolls that resist nothing.</li>
+    </ul></div>
+    <div class="con"><h3>Against</h3><ul>
+      <li>The choices are behind a tap, so two taps to declare.</li>
+      <li>Easy to pass over, which is the problem you want solved.</li>
+      <li>Open, it is the tallest of the five (425 px).</li>
+      <li>It goes against your earlier preference for play information in sight.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Rank 4</span>
+  <h2>D · Drop-down</h2>
+  <p>One box that reads "Nothing" until you pick an effect from the phone's own picker.</p>
+  <div class="trio">
+    <figure><img src="{{phone-m4-before}}" alt="Phone: a drop-down under Resisting? reading Nothing"><figcaption>Phone · before choosing</figcaption></figure>
+    <figure><img src="{{phone-m4-after}}" alt="Phone: the drop-down reading Temptation, with the Added line and Clear Thinker's box"><figcaption><span class="n">Phone · after choosing Temptation</span></figcaption></figure>
+    <figure><img src="{{laptop-m4-after}}" alt="Laptop: the drop-down reading Temptation"><figcaption>Laptop · after choosing Temptation</figcaption></figure>
+  </div>
+  <div class="pc">
+    <div class="pro"><h3>For</h3><ul>
+      <li>One line, however many effects the character has.</li>
+      <li>A standard control with keyboard and screen-reader support built in.</li>
+    </ul></div>
+    <div class="con"><h3>Against</h3><ul>
+      <li>At rest it says "Nothing", so it reminds you of nothing.</li>
+      <li>Two taps, and the phone's picker covers the preview while you choose.</li>
+      <li>The list cannot show what each effect adds.</li>
+      <li>Drop-downs are easy to overlook.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Rank 5</span>
+  <h2>E · A Resist… button on the sheet</h2>
+  <p>The question moves out of the preview. Tap Resist… on Rings &amp; Traits, pick the effect, and the sheet opens the roll with the bonuses already in place.</p>
+  <div class="trio">
+    <figure><img src="{{phone-m5-before}}" alt="Phone: a Resist… button on the Rings and Traits page with a small menu: Intimidation, Temptation, Fear"><figcaption>Phone · the button and its menu on the page</figcaption></figure>
+    <figure><img src="{{phone-m5-after}}" alt="Phone: the preview opened from Resist…, a band reading Resisting Temptation with a Change button, and the Added line"><figcaption><span class="n">Phone · the preview it opens</span></figcaption></figure>
+    <figure><img src="{{laptop-m5-after}}" alt="Laptop: the preview opened from Resist…"><figcaption>Laptop · the preview it opens</figcaption></figure>
+  </div>
+  <div class="pc">
+    <div class="pro"><h3>For</h3><ul>
+      <li>Starts from the situation, which helps most when a player does not know which roll to make.</li>
+      <li>Ordinary rolls keep a clean preview.</li>
+    </ul></div>
+    <div class="con"><h3>Against</h3><ul>
+      <li>Needs a ruling on which roll each effect opens, and a GM may call for a different one.</li>
+      <li>A roll opened the usual way gets no help, so it needs one of the other designs as well.</li>
+      <li>A new control on the page; your earlier feedback was against permanent additions on the phone.</li>
+      <li>The largest build of the five.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Recommendation: A · Buttons in a row</h2>
+  <ul>
+    <li><b>It does what you asked for.</b> A player with a poor memory sees the effects on every roll and taps the one the GM named. The sheet works out which abilities apply.</li>
+    <li><b>It is the cleanest that keeps everything in sight.</b> C and D are as small but hide the choices; B shows more but pushes the Roll button off the phone's screen.</li>
+    <li><b>It answers the poison question.</b> A gift adds a button; no gift, no button, and the roll is plain Earth.</li>
+    <li><b>B's strength is kept.</b> The bonuses are named the moment you tap, and the app's own list at the top gives each one's page reference.</li>
+    <li><b>It closes no doors.</b> E could be added later: Resist… would open the preview with a button already pressed.</li>
+  </ul>
+  <p class="note"><b>What A costs:</b> a row of buttons on every ordinary roll, and two or three rows for a character with several gifts. If that proves too much on your phone, C is the fallback with the same behaviour behind one line.</p>
+  <div class="decide">
+    <h3>Your decision</h3>
+    <ol>
+      <li><b>Approve A</b> as recommended, or name another letter, or ask for changes.</li>
+      <li>Next comes the rules table for your rulings: one line for each of the fifteen abilities, saying which effect it belongs to and whether it is added or asked.</li>
+      <li>Then the build as its own group, with A12 taken out. A08 is accepted and can go ahead separately on your word.</li>
+    </ol>
+  </div>
+</section>
+</div>

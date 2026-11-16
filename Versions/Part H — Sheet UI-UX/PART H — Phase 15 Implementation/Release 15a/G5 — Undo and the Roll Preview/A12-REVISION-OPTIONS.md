@@ -69,3 +69,5 @@
 - **For G5.** A08 is accepted and does not depend on A12, so the group can go ahead with A08 alone if the owner says so. That is a separate decision.
 
 Status: awaiting the owner's word on whether to mock up the effect-first design. Nothing is changed.
+
+**Mock-ups:** five designs for the effect-first approach, ranked, are in [RESISTANCE-MOCKUPS.md](RESISTANCE-MOCKUPS.md) (recommended: A, buttons in a row). Awaiting the owner.

@@ -1,0 +1,137 @@
+{
+ "source_sha256": "f76786334a9c51da07f8bd6283bc6eb784f479e6cf79286cdc290f72e093bc41",
+ "captured_utc": "2026-11-16T14:19:08.056Z",
+ "character": "Honour 6, Balance, Clear Thinker, Missing Limb",
+ "phone": {
+  "today": {
+   "declareHeight": 457,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 242
+  },
+  "a12": {
+   "declareHeight": 180,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m1-before": {
+   "declareHeight": 218,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 4
+  },
+  "m1-after": {
+   "declareHeight": 317,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 103
+  },
+  "m2-before": {
+   "declareHeight": 182,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m2-after": {
+   "declareHeight": 425,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 211
+  },
+  "m3-before": {
+   "declareHeight": 310,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 96
+  },
+  "m3-after": {
+   "declareHeight": 380,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 166
+  },
+  "m4-before": {
+   "declareHeight": 220,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 6
+  },
+  "m4-after": {
+   "declareHeight": 319,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 105
+  },
+  "m5-after": {
+   "declareHeight": 304,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 90
+  },
+  "m1-gift": {
+   "declareHeight": 298,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 84
+  },
+  "m1-view-after": {
+   "declareHeight": 317,
+   "rollButtonInViewAtOpen": false,
+   "scrollNeeded": 202,
+   "rollText": "10 | 5 | ROLLED | 10 | 4 | KEPT | 5k4 | +6 to total | base 4k4 | Willpower 4 | 4k4 — rolled and kept | Balance"
+  },
+  "errors": []
+ },
+ "laptop": {
+  "today": {
+   "declareHeight": 403,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 8
+  },
+  "a12": {
+   "declareHeight": 170,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m1-before": {
+   "declareHeight": 208,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m1-after": {
+   "declareHeight": 307,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m2-before": {
+   "declareHeight": 172,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m2-after": {
+   "declareHeight": 415,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 20
+  },
+  "m3-before": {
+   "declareHeight": 300,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m3-after": {
+   "declareHeight": 369,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m4-before": {
+   "declareHeight": 210,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m4-after": {
+   "declareHeight": 309,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m5-after": {
+   "declareHeight": 294,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "m1-gift": {
+   "declareHeight": 287,
+   "rollButtonInViewAtOpen": true,
+   "scrollNeeded": 0
+  },
+  "errors": []
+ }
+}
