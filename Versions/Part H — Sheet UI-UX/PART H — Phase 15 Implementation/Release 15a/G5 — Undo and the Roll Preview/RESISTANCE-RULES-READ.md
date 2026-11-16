@@ -6,6 +6,7 @@
 - **Not read:** every other passage (#1–#485, the Core passages without the word "resist" in #486–#574, and #575–#823).
 - **How:** `qa/resistance-rules-read/resistance_passages.py` builds a stable numbered list of 823 passages from the owner's PDFs and prints them to the screen only. Nothing from the books is saved; everything below is in our own words with the printed page.
 - **Caution:** each passage was read as a few lines of extracted text, some cut short. Rows marked "confirm" need the page itself.
+- **Confirmed on the page by the owner (16 November 2026):** Failure of Bushido (Honor), Paragon's Courage and Honor entries, and the Yoritomo Courtier's Rank 5 Technique. Those rows are settled.
 
 ## What the books say so far
 
@@ -30,16 +31,16 @@ Honour's rule (Core p.91, #502): add the Honour Rank to any roll made to resist 
 | Irreproachable (Advantage) | Temptation | +1k0 on a Contested Roll where the other side uses Temptation | none of its own | Core p.151 | #546 | Yes, matches |
 | Seven Fortunes' Blessing, Jurojin (Advantage) | Poison, disease | A bonus when resisting the effects of a disease or poison (figure cut off in the passage; the sheet uses +2k0) | none named | Core p.154 | #553 | Yes; confirm the figure |
 | Touch of the Spirit Realms, Tengoku (Advantage) | Taint | A bonus on rolls to resist the Taint (the sheet uses +2k0 on Earth Ring Rolls) | Earth Ring | Core p.154 | #553 | Yes; confirm the wording |
-| An Advantage with one entry per Bushido virtue (probably Paragon; confirm), Courage | Intimidation, Fear | +1k1 on any roll to resist Intimidation or to overcome Fear | none of its own | Core p.152 | #547 | **To check:** not among the fifteen choices |
-| The same Advantage, Honor | Temptation, Intimidation | Twice the Honour Rank instead of the normal bonus | none of its own | Core p.152 | #548 | **To check:** not among the fifteen choices |
+| Paragon, Courage (Advantage) | Intimidation, Fear | +1k1 on any roll to resist Intimidation or to overcome a Fear effect. Confirmed by the owner | none of its own | Core p.152 | #547 | **Reminder only:** the sheet's Paragon entry has this wording, but it is not offered in the roll preview |
+| Paragon, Honor (Advantage) | Temptation, Intimidation | May add twice the Honour Rank, instead of the normal bonus, to rolls to resist Temptation or Intimidation. Confirmed by the owner | none of its own | Core p.152 | #548 | **Reminder only:** the sheet's Paragon entry has this wording, but it is not offered in the roll preview |
 | Magic Resistance (Advantage, three ranks) | Elemental spells aimed at you | Each rank raises the caster's Spell Casting TN by 3; not maho, gaijin or non-human magic | not a roll by the character | Core p.151 | #546 | To check; not a roll-preview matter |
-| Failure of Bushido, Honor (Disadvantage) | Intimidation, Temptation | Cannot add the Honour Rank to rolls to resist Intimidation or Temptation. **Fear is not mentioned** | — | Core p.159 | #560 | **Possible disagreement**, below |
+| Failure of Bushido, Honor (Disadvantage, 3 points) | Intimidation, Temptation | Cannot add the Honour Rank to any roll to resist Intimidation or Temptation. **Fear is not mentioned.** Confirmed by the owner | — | Core p.159 | #560 | **Differs:** the sheet removes Honour's whole choice, Fear included. See question 1 |
 | Bad Health (Disadvantage) | Disease | Earth Ring counts one rank lower for resisting diseases (and for Wound Ranks) | Earth | Core p.156 | #555 | To check |
 | A Disadvantage on p.156 (name not in the passage; confirm) | Taint | −1k0 on any roll to resist acquiring the Taint; limited to members of a named group | none named | Core p.156 | #554 | To check |
 | A Disadvantage with one entry per Spirit Realm (name to confirm), Jigoku | Taint | −1k1 on any roll to resist the Taint | none named | Core p.158 | #558 | To check |
 | Seven Fortunes' Curse, Jurojin (Disadvantage) | Poison, disease | −2k0 to resist all poisons and diseases | none named | Core p.162 | #566 | To check |
 | Rumormonger (Disadvantage) | The urge to spread a rumour | Must pass a **Willpower Trait Roll**, TN 5 × the Glory Rank of the highest-Glory person in the rumour | Willpower Trait Roll | Core p.161 | #564 | To check |
-| A Mantis School Technique next to the Yoritomo text (confirm School and Rank) | Intimidation, Temptation, Fear | A bonus on rolls to resist an Intimidation or Temptation Skill Roll or a Fear effect; the extract reads +5k0 (**confirm the figure on the page**) | none of its own | Core p.121 | #516 | To check |
+| Yoritomo Courtier School, Rank 5, Strength in All Things (School Technique) | Intimidation, Temptation, Fear | +5k0 on any roll to resist an Intimidation or Temptation Skill Roll or a Fear effect (and when using Intimidation on someone else). Confirmed by the owner | none of its own | Core p.121 | #516 | **Text only:** the sheet's Technique text matches the book (+5k0, p.121), but it is not offered in the roll preview |
 | Asako Loremaster, Rank 4 (School Technique) | Being influenced (Courtier, Temptation, Intimidation) | After failing a Contested Social Skill Roll to resist influence, may roll again using Intelligence, and must keep it. Not against Fear | re-roll of the same roll | Core p.125 | #517 | To check |
 | Courage of the Seven Thunders (Earth spell, Mastery 1) | Fear | Targets get +5k0 to resist any Fear effect; +3k0 if not of the seven original Great Clans; nothing with a full Rank of Taint | none of its own | Core p.173 | #574 | To check |
 
@@ -53,7 +54,7 @@ Noted and set aside: a weapon entry that raises the TN to resist poison on its b
 
 ## Open questions for the owner (so far)
 
-1. **Failure of Bushido (Honor) and Fear.** The book bars the Honour Rank against Intimidation and Temptation only. The sheet removes Honour's whole choice when this Disadvantage is set, which also removes it for Fear. Should Fear keep Honour's bonus?
-2. **The virtue Advantage (probably Paragon).** Courage gives +1k1 against Intimidation and Fear, and Honor doubles the Honour Rank against Temptation and Intimidation. Neither is among the sheet's fifteen resistance choices. Does the sheet apply them elsewhere?
-3. **The Mantis Technique's +5k0** needs checking on the page.
+1. **Failure of Bushido (Honor) and Fear.** Confirmed on the page: the book bars the Honour Rank against Intimidation and Temptation only. The sheet removes Honour's whole choice when this Disadvantage is set, which also removes it against Fear. Should the sheet keep Honour's bonus against Fear? That would be a change to the sheet; nothing is changed yet.
+2. **Paragon.** Confirmed on the page: Courage gives +1k1 to resist Intimidation or overcome Fear, and Honor lets the character add twice the Honour Rank against Temptation or Intimidation instead of the normal bonus. Neither is among the sheet's fifteen resistance choices: the sheet shows both as reminder text on the Advantage and does not offer them in the roll preview (found by searching the Paragon file, not by running the app). Should the new design add them?
+3. **Yoritomo Courtier, Rank 5.** Confirmed on the page: +5k0. The sheet has the Technique's text, matching the book, but does not offer it in the roll preview (found by search, not by running the app). Should the new design add it?
 4. Penalties (Jurojin's Curse, the two Taint Disadvantages, Bad Health): should the sheet apply or ask about penalties to resistance rolls as it does bonuses?
