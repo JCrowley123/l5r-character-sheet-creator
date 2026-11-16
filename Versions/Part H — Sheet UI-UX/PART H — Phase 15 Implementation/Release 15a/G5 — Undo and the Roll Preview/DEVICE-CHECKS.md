@@ -32,4 +32,23 @@
 9. Laptop: Tab to the line, Enter opens, Space closes.
 10. Optional: a Blessing, Spirit Realm or resisting Ancestor choice sits inside the line.
 
-**Results:** not yet run.
+## Results — reported 16 November 2026
+
+The owner ran every check on the iPhone and the laptop and marked the checklist.
+
+| Unit | iPhone | Laptop | Decision |
+|---|---|---|---|
+| A08 · one Undo for quick taps | 1–9 Pass | 1–9 Pass | **Accept** (no notes) |
+| A12 · one Resisting? line | 1–10 Pass (check 9 is laptop only; marked Pass) | 1–10 Pass | **Revise** (notes below) |
+
+### The owner's A12 notes (summary)
+
+"The tests run and pass as described and as expected." The doubt is about the approach, not the build:
+
+- With Balance, the open line shows both Honour's choice ("Resisting Intimidation, Temptation or Fear — +6 to the total") and Balance's ("Resisting Intimidation or Temptation, adding your Honor Rank — +1k0"). That may confuse, since Balance only applies to Intimidation or Temptation, and it says Honour is added: are both needed?
+- Tried on the preview: Honour's alone gives +6; Balance alone gives +1k0 and +6; both ticked give +1k0 and +6. Honour is counted once, as wanted.
+- Idea: every samurai keeps the plain resistance choice, but where an Advantage or Technique is "better" (Balance), show only that one, with the real number: "Balance: Resisting Intimidation or Temptation — +1k0 and +6 to the total".
+- Balance is the only "better" case that comes to mind. Poison and Taint are Earth or Stamina rolls with no bonus every samurai has, so it is unclear how a resistance line helps there.
+- Asked for: feedback on this reasoning, three options with pros and cons, and a recommendation.
+
+The review and the three options are in [A12-REVISION-OPTIONS.md](A12-REVISION-OPTIONS.md). Nothing is changed in A12 until the owner chooses.
