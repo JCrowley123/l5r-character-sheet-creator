@@ -54,3 +54,18 @@
 - Option 3 is worth remembering only if more "includes" cases turn up; today there is one.
 
 **If chosen:** a small mock-up (today beside the proposal, with and without Balance, phone and laptop) for approval; then the unit, light checks, a preview and a short device re-look; then G5 is qualified once with A08, A12 and the new unit. Weekly usage is at 75% with the reset on 18 November 01:00 UTC, so the qualification may fall just after the reset.
+
+## Later on 16 November: the owner's follow-up, and the recommendation revised to Option 3
+
+**The owner's follow-up (summary).** Still not convinced A12 is the right approach. Removing A12, adding a unit and extra work are not concerns; the aim is to get it right and give players the best UI and UX. The guiding principle for the app: clean, simple, easy to understand, accessible to all players, with D&D Beyond as the reference to improve on. The owner's own difficulty in TTRPGs is forgetting what abilities a character has and how or when they apply, and the sheet should not punish players with poor memory, ADHD/ADD or a misread rule.
+
+**Revised recommendation: Option 3, in the shape below.** The recommendation of Option 2 above weighed fitting this group and keeping A12's ring-fence. With those set aside and this aim named, Option 2 no longer wins: it tidies one pair of boxes but still asks the player which of their abilities apply, which is the thing the owner wants the sheet to carry.
+
+- Today's design (the live app, A12, Options 1 and 2) lists abilities and asks the player to judge each one. The player always knows something simpler: what the GM has just asked them to resist. The sheet knows which abilities the character has and what each applies to.
+- **Shape.** (1) One question on the roll preview, with only the effects this character has something for: Intimidation, Temptation and Fear for every samurai (Honour); poison or disease, Taint and the rest only with a gift. (2) Pick one: the sheet applies everything that certainly applies, counted once, and names each with its source. (3) Anything that turns on a detail only the player knows is asked there, not applied silently (for example Irreproachable: "only in a Contested Roll where the other side uses Temptation"). (4) Nothing to add, nothing shown.
+- **Correction to a con above.** "It adds more screens than it saves" does not hold for this shape: a typical character sees three effects in a row, with no extra screen.
+- **What stays.** The rules code of the fifteen choices and their totals: the registry can tick a choice on the player's behalf (`RD4515.toggle`), so a new unit decides which are ticked. A12 would come out with its remover.
+- **What it needs.** A rules table for the owner to approve, one line per choice: which effect or effects, and "apply" or "ask". A few are loosely worded and need the owner's naming (Clear Thinker, Heartless, Meido). Then its own mock-up, build, device round and qualification; not within this week's usage.
+- **For G5.** A08 is accepted and does not depend on A12, so the group can go ahead with A08 alone if the owner says so. That is a separate decision.
+
+Status: awaiting the owner's word on whether to mock up the effect-first design. Nothing is changed.
