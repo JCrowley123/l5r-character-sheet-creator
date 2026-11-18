@@ -1,0 +1,10 @@
+{
+  "check": "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+  "change": "The check's 7.5-second wait keeps the page awake: a no-op evaluated in the page every 250 ms until the same 7.5 seconds have passed. Deadline, assertion, check ids, count and expected-checks.json unchanged; no application change.",
+  "old_harness_sha256": "332d0c317f23af2b5b9d99bf5fd285f59222b2e79eecb602a6d500aed2325577",
+  "new_harness_sha256": "1f700503ff637bad70893eefb1c8c34b47cefc4a441bde4ba88ff0664d3d4a05",
+  "expected_checks_sha256": "b0b3761074c0268a02342025cebe20e063d927160f10fdc1a726d7b3b021d036",
+  "character_sha256": "8b925cb5e6c9ca6cf1805c9b823ed613d10fd973ca1a6a4f67ae5efb1088c4c3",
+  "app_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+  "failed_chain_commit": "c49f90b2"
+}

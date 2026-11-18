@@ -280,7 +280,9 @@ const fresh = async (page, seeds) => { await page.evaluate(s => { window.QTH.fre
         await goTab(page, 'Identity');
         const n0 = await page.evaluate(() => window.QTH.mark());
         for (let i = 0; i < 3; i++) { await plus(page, P); if (i < 2) await wait(2000); }
-        await wait(7500);
+        // The same 7.5 seconds with the page kept awake (a no-op every 250 ms), as a phone's page is: under the 4x CPU
+        // screen an idle page's timers can sleep until something wakes it (G5 qa/A08-UNDER-LOAD-INVESTIGATION.md).
+        for (const end = Date.now() + 7500; Date.now() < end;) { await page.evaluate(() => 0); await wait(Math.max(0, Math.min(250, end - Date.now()))); }
         const stored = await page.evaluate(id => JSON.parse(localStorage.getItem('l5r-sheet:local:l5r-char:' + id)), savedId);
         const history = (stored.auditLog || []).slice(n0).filter(e => e.what === 'Honor').map(e => e.from + '→' + e.to);
         const a = await look(page), play = await page.evaluate(() => window.__L5R_TEST__.MODES12.isPlay());
