@@ -1,0 +1,33 @@
+  detail QT-SEAM-PHONE: {"qt":false,"on":false}
+  detail QT-QUICK-BURST-ONE-UNDO-PHONE: {"a":{"honor":"5.0","notice":"Honour: Rank 5, Points 0.","undo":true},"b":{"honor":"4.9","notice":"Undone. Honour: Rank 4, Points 9.","undo":false}}
+  detail QT-HISTORY-ONE-ENTRY-PHONE: ["4.7→4.8","4.8→4.9","4.9→5.0"]
+  detail QT-SPACED-TAPS-ONE-GROUP-PHONE: {"a":{"honor":"5.0","notice":"Honour: Rank 5, Points 0.","undo":true},"b":{"honor":"4.9","notice":"Undone. Honour: Rank 4, Points 9.","undo":false}}
+  detail QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE: {"history":["4.7→4.8"],"b":{"honor":"4.8","notice":"Undone. Honour: Rank 4, Points 8.","undo":false}}
+  detail QT-MINUS-AND-PLUS-ONE-GROUP-PHONE: {"a":{"honor":"4.8","notice":"Honour: Rank 4, Points 8.","undo":true},"b":{"honor":"4.9","notice":"Undone. Honour: Rank 4, Points 9.","undo":false}}
+  detail QT-PAGE-MOVE-KEEPS-GROUP-PHONE: {"a":{"honor":"4.9","notice":"Honour: Rank 4, Points 9.","undo":true},"b":{"honor":"4.8","notice":"Undone. Honour: Rank 4, Points 8.","undo":false}}
+  detail QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE: {"history":["4.7→4.8","4.8→4.9"],"top":"18/11/2026 18:25Honor: 4.8 → 4.9","a":{"honor":"5.0","notice":"Honour: Rank 5, Points 0.","undo":true},"b":{"honor":"4.9","notice":"Undone. Honour: Rank 4, Points 9.","undo":false}}
+  detail QT-TAINT-GROUP-PHONE: {"a":{"taint":"2.6","notice":"Taint: Rank 2, Points 6."},"b":{"taint":"2.5","notice":"Undone. Taint: Rank 2, Points 5."},"history":["2.3→2.5"]}
+  detail QT-SAVE-DATA-UNCHANGED-PHONE: {"during":["adv","auditLog","disadv","equip","fields","givenSpellsNote","givenSpellsSettled","rings","schemaVersion","schoolReviewVersion","skills","spellBonusUsed","spellBonusUsedVisual","spellUsed","tech","traits","traitsFree","voidCurrent","voidFree","weapons"],"keys":["adv","auditLog","disadv","equip","fields","givenSpellsNote","givenSpellsSettled","rings","schemaVersion","schoolReviewVersion","skills","spellBonusUsed","spellBonusUsedVisual","spellUsed","tech","traits","traitsFree","voidCurrent","voidFree","weapons"],"equal":false}
+  detail QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP: {"play":true,"history":["4.9→5.0","5.0→5.1","5.1→5.2"],"a":{"honor":"5.2","notice":"Honour: Rank 5, Points 2.","undo":true},"b":{"honor":"5.1","notice":"Undone. Honour: Rank 5, Points 1.","undo":false}}
+FAIL QT-SEAM-PHONE
+PASS QT-ONE-TAP-AS-BEFORE-PHONE
+FAIL QT-QUICK-BURST-ONE-UNDO-PHONE
+FAIL QT-SPACED-TAPS-ONE-GROUP-PHONE
+FAIL QT-HISTORY-ONE-ENTRY-PHONE
+FAIL QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE
+PASS QT-GAP-OVER-FIVE-SECONDS-NEW-GROUP-PHONE
+FAIL QT-MINUS-AND-PLUS-ONE-GROUP-PHONE
+PASS QT-OTHER-CARD-ENDS-PHONE
+FAIL QT-PAGE-MOVE-KEEPS-GROUP-PHONE
+FAIL QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE
+FAIL QT-TAINT-GROUP-PHONE
+FAIL QT-SAVE-DATA-UNCHANGED-PHONE
+PASS QT-NO-ERRORS-PHONE
+PASS QT-TYPED-VALUE-ENDS-DESKTOP
+PASS QT-RECOGNITION-ENDS-DESKTOP
+PASS QT-EDIT-ELSEWHERE-ENDS-DESKTOP
+PASS QT-OPEN-DROPS-GROUP-DESKTOP
+PASS QT-SAVE-ENDS-GROUP-DESKTOP
+FAIL QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP
+PASS QT-NO-ERRORS-DESKTOP
+10/21 checks passed

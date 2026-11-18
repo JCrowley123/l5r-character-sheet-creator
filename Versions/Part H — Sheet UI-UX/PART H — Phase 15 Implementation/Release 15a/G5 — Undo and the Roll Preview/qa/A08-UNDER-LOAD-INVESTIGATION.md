@@ -44,3 +44,21 @@ Only the listed-character check's wait changes, in A08's harness: for the same 7
 ## Scoped proof, then a guarded continuation
 
 The corrected harness runs, once each, on every input its result depends on: the candidate at normal speed; the candidate at 4x CPU with the screen's preloads (the failed condition); the AE3-removed build that the removal proof ran A08's harness on; and the baseline and five mutations, each of which must fail exactly its pinned checks. Evidence: `a08-wait-validation/`. A continuation (`continue-after-a08-wait.py`) then checks the original failure exactly as kept, the proof and the file hashes, and records the qualification as a separate file; the two full passes start only from that record. The first chain is not described as an uninterrupted pass.
+
+## Result of the scoped proof
+
+Committed and pushed before it ran (`8deb1df3`); ran once, 18 November 2026, and **passed 9/9 first time** (`a08-wait-validation.log`, `a08-wait-validation/summary.json` and one log per case):
+
+| Input | Result |
+|---|---|
+| The candidate, normal speed | 21/21 |
+| The candidate at 4x CPU, the screen's preloads | 21/21 |
+| AE3 removed, A08 kept (`be0e9412…`, 17,674,948 bytes) | 21/21 |
+| Baseline (the automatic-entries group as live) | 10/21, exactly its 11 pinned failures |
+| Disabled | 10/21, exactly its 11 pinned failures |
+| No catch-up | 13/21, exactly its 8 |
+| No merge | 18/21, exactly its 3 |
+| No edit end | 20/21, exactly its 1 |
+| No click end | 20/21, exactly its 1 |
+
+Qualification therefore was not an uninterrupted first chain: the chain's first three stages passed, the 4x CPU screen passed 162 of 163 leaves, and A08's leaf passed only after this correction, in the scoped proof.

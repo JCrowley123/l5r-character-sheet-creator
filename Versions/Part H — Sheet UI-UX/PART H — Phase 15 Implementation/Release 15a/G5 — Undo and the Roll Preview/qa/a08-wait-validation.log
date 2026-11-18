@@ -1,0 +1,11 @@
+PASS candidate [21, 21]
+PASS candidate-cpu4 [21, 21]
+PASS AE3-removed [21, 21]
+PASS A08:baseline [10, 21]
+PASS A08:disabled [10, 21]
+PASS A08:no-catch-up [13, 21]
+PASS A08:no-merge [18, 21]
+PASS A08:no-edit-end [20, 21]
+PASS A08:no-click-end [20, 21]
+SCOPED PROOF PASSED: 9/9
+exit 0
