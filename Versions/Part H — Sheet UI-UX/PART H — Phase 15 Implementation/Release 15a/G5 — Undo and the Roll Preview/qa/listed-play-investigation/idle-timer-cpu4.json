@@ -1,0 +1,1 @@
+{"cpu":"4","runs":[{"mode":"quiet","fired":{"t1200":1392}},{"mode":"awake","fired":{"t1200":1279,"t5000":5123}},{"mode":"quiet","fired":{"t1200":1220,"t5000":5185}},{"mode":"awake","fired":{"t1200":1268,"t5000":5118}}]}

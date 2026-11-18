@@ -1,0 +1,8 @@
+5 mutations unique.
+A08:baseline: failed exactly its 11 pinned checks
+A08:disabled: failed exactly its 11 pinned checks
+A08:no-catch-up: failed exactly its 8 pinned checks
+A08:no-merge: failed exactly its 3 pinned checks
+A08:no-edit-end: failed exactly its 1 pinned checks
+A08:no-click-end: failed exactly its 1 pinned checks
+All 6 negative variants matched their pinned failures.

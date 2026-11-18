@@ -1,0 +1,195 @@
+{
+  "checked_utc": "2026-11-18T16:53:31.852374+00:00",
+  "cases": [
+    {
+      "id": "A08:baseline",
+      "expected_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SEAM-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "actual_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SEAM-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SEAM-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "counts": [
+        10,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A08:disabled",
+      "expected_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SEAM-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "actual_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SEAM-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SEAM-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "counts": [
+        10,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A08:no-catch-up",
+      "expected_failures": [
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "actual_failures": [
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+        "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+        "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+        "QT-QUICK-BURST-ONE-UNDO-PHONE",
+        "QT-SAVE-DATA-UNCHANGED-PHONE",
+        "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+        "QT-TAINT-GROUP-PHONE",
+        "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+      ],
+      "counts": [
+        13,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A08:no-merge",
+      "expected_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP"
+      ],
+      "actual_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP"
+      ],
+      "failed_before_any_stop": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+        "QT-HISTORY-ONE-ENTRY-PHONE",
+        "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP"
+      ],
+      "counts": [
+        18,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A08:no-edit-end",
+      "expected_failures": [
+        "QT-EDIT-ELSEWHERE-ENDS-DESKTOP"
+      ],
+      "actual_failures": [
+        "QT-EDIT-ELSEWHERE-ENDS-DESKTOP"
+      ],
+      "failed_before_any_stop": [
+        "QT-EDIT-ELSEWHERE-ENDS-DESKTOP"
+      ],
+      "counts": [
+        20,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "A08:no-click-end",
+      "expected_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE"
+      ],
+      "actual_failures": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE"
+      ],
+      "failed_before_any_stop": [
+        "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE"
+      ],
+      "counts": [
+        20,
+        21
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

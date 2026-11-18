@@ -1,0 +1,13 @@
+== PART H PHASE 15.1.31 exit 0
+fragment : src/sheet/209.999999999999999998-feat-quick-tap-undo.js
+marker   : PART H PHASE 15.1.31
+surface  : 3 name(s) -- QT15, QUICK_TAP_UNDO_ENABLED, quick-tap-undo-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1010  [PART H PHASE 15.1.31 +0]  // PART H PHASE 15.1.31 BEGIN quick-tap-undo-seam
+    own   1011  [PART H PHASE 15.1.31 +1]  if(typeof QT15 === 'object' && QT15) Object.assign(window.__L5R_TEST__, {QT15, QUICK_TAP_UNDO_EN
+    own   1012  [PART H PHASE 15.1.31 +2]  // END QT15 quick-tap-undo-seam
+
+every reference is inside a block PART H PHASE 15.1.31 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 1/1

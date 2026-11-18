@@ -1,0 +1,12 @@
+removal-final passed
+variants-final passed
+dependencies passed
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-release-15a-g5-a08\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\G5 — Undo and the Roll Preview\qa\qualify-before-full.py", line 40, in <module>
+    run('under-load-final',[sys.executable,'-B',str(Q/'run-under-load.py'),'under-load-final-'+PREFIX,'4'])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-release-15a-g5-a08\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\G5 — Undo and the Roll Preview\qa\qualify-before-full.py", line 31, in run
+    assert result.returncode==0,label+' failed; later stages were not started'
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: under-load-final failed; later stages were not started
+exit 1

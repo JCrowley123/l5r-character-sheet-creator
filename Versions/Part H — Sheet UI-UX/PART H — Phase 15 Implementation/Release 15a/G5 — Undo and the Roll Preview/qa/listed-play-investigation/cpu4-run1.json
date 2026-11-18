@@ -1,0 +1,223 @@
+{
+ "label": "cpu4-run1",
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "cpu": "4",
+ "atCheck": {
+  "t": 13748,
+  "stored": [
+   "Honor 4.9→5.0",
+   "Honor 5.0→5.1",
+   "Honor 5.1→5.2"
+  ],
+  "memory": [
+   "Honor 4.9→5.0",
+   "Honor 5.0→5.1",
+   "Honor 5.1→5.2"
+  ],
+  "look": {
+   "honor": "5.2",
+   "notice": "Honour: Rank 5, Points 2. Undo takes back all 3 taps.",
+   "undo": true
+  }
+ },
+ "later": [
+  {
+   "t": 13757,
+   "stored": [
+    "Honor 4.9→5.0",
+    "Honor 5.0→5.1",
+    "Honor 5.1→5.2"
+   ],
+   "memory": [
+    "Honor 4.9→5.2"
+   ]
+  },
+  {
+   "t": 14263,
+   "stored": [
+    "Honor 4.9→5.0",
+    "Honor 5.0→5.1",
+    "Honor 5.1→5.2"
+   ],
+   "memory": [
+    "Honor 4.9→5.2"
+   ]
+  },
+  {
+   "t": 14781,
+   "stored": [
+    "Honor 4.9→5.0",
+    "Honor 5.0→5.1",
+    "Honor 5.1→5.2"
+   ],
+   "memory": [
+    "Honor 4.9→5.2"
+   ]
+  },
+  {
+   "t": 15284,
+   "stored": [
+    "Honor 4.9→5.0",
+    "Honor 5.0→5.1",
+    "Honor 5.1→5.2"
+   ],
+   "memory": [
+    "Honor 4.9→5.2"
+   ]
+  },
+  {
+   "t": 15796,
+   "stored": [
+    "Honor 4.9→5.2"
+   ],
+   "memory": [
+    "Honor 4.9→5.2"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "t": 3,
+   "ms": 4,
+   "what": "History look",
+   "info": []
+  },
+  {
+   "t": 10,
+   "ms": 0,
+   "what": "autosave"
+  },
+  {
+   "t": 585,
+   "ms": 1,
+   "what": "History restarted (merge)"
+  },
+  {
+   "t": 621,
+   "ms": 3,
+   "what": "History look",
+   "info": []
+  },
+  {
+   "t": 931,
+   "what": "mark"
+  },
+  {
+   "t": 931,
+   "ms": 2,
+   "what": "History look",
+   "info": []
+  },
+  {
+   "t": 1171,
+   "ms": 0,
+   "what": "group end"
+  },
+  {
+   "t": 1171,
+   "ms": 3,
+   "what": "History look",
+   "info": []
+  },
+  {
+   "t": 1171,
+   "ms": 234,
+   "what": "tap"
+  },
+  {
+   "t": 1496,
+   "what": "harness: tap 1 returned"
+  },
+  {
+   "t": 2648,
+   "ms": 4,
+   "what": "History look",
+   "info": [
+    "Honor 4.9→5.0"
+   ]
+  },
+  {
+   "t": 2648,
+   "ms": 11,
+   "what": "autosave"
+  },
+  {
+   "t": 3582,
+   "ms": 171,
+   "what": "tap"
+  },
+  {
+   "t": 3808,
+   "what": "harness: tap 2 returned"
+  },
+  {
+   "t": 4880,
+   "ms": 2,
+   "what": "History look",
+   "info": [
+    "Honor 5.0→5.1"
+   ]
+  },
+  {
+   "t": 4880,
+   "ms": 5,
+   "what": "autosave"
+  },
+  {
+   "t": 5919,
+   "ms": 236,
+   "what": "tap"
+  },
+  {
+   "t": 6230,
+   "what": "harness: tap 3 returned"
+  },
+  {
+   "t": 7539,
+   "ms": 1,
+   "what": "History look",
+   "info": [
+    "Honor 5.1→5.2"
+   ]
+  },
+  {
+   "t": 7539,
+   "ms": 4,
+   "what": "autosave"
+  },
+  {
+   "t": 13750,
+   "ms": 2,
+   "what": "History look",
+   "info": []
+  },
+  {
+   "t": 13752,
+   "ms": 0,
+   "what": "History restarted (merge)"
+  },
+  {
+   "t": 13752,
+   "ms": 2,
+   "what": "History look",
+   "info": []
+  },
+  {
+   "t": 13750,
+   "ms": 4,
+   "what": "group end"
+  },
+  {
+   "t": 15285,
+   "ms": 4,
+   "what": "History look",
+   "info": []
+  },
+  {
+   "t": 15285,
+   "ms": 8,
+   "what": "autosave"
+  }
+ ],
+ "errors": []
+}
