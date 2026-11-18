@@ -1,5 +1,7 @@
 # Release 15a · A12 — One Resisting Line
 
+**Withdrawn, 18 November 2026 (the owner).** Device round: revise. The owner then chose to replace this unit with an effect-first resistance design and, on 18 November, moved that work out of Release 15a into a phase of its own after Phase 15. This unit never goes live; G5 goes on as A08 alone. The build and records below are kept on this branch for the resistance phase. See the group's [README](<../G5 — Undo and the Roll Preview/README.md>).
+
 Group G5 (undo and the roll preview), unit 2 of 2. R6, the owner's ruling of 7 October 2026 (one closed "Resisting?" line), approved as mocked up on 14 November 2026 with the owner's instruction to ring-fence it with extra care ([the group's mock-ups](<../G5 — Undo and the Roll Preview/MOCKUP.md>)). The mock-up board called it "A12 — One Resisting? Line"; the folder drops the question mark, which a Windows folder name cannot hold. Built on 14 November 2026 (Claude), on branch `claude/release-15a-a12`, stacked on A08.
 
 ## What changes
