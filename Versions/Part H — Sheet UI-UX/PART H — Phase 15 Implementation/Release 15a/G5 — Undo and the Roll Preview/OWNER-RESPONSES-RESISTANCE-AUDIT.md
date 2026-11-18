@@ -12,10 +12,14 @@ The audit's report and data are left exactly as ChatGPT delivered them; this fil
 
 - The rules as written (Core p.159, confirmed by the owner) bar the Honour Rank against Intimidation and Temptation only. They do not mention Fear.
 - The read found a second case: **Brash** (Core p.157). Its provocation check is a Willpower Trait Roll at TN 25 with the Honour Rank added. The sheet's Honor-tenet gate removes that Honour bonus too, which the book does not say.
-- So "as per the RAW" and "do not keep the bonus" point opposite ways for Fear and Brash. **The owner has not yet said which is meant.**
+- So "as per the RAW" and "do not keep the bonus" point opposite ways for Fear and Brash.
 - "A different Failure of Bushido leaves Honour alone" is already how the sheet works: its gate looks only for the Honor tenet.
 
-**Status:** open, awaiting the owner's choice between the rules as written (Honour kept against Fear and in Brash's check) and a house rule (Honour barred for every resistance).
+**The owner's ruling (18 November 2026): rules as written.** With Failure of Bushido (Honor), the Honour Rank is barred only from rolls to resist Intimidation or Temptation. It is still added against Fear and in Brash's provocation check. Any other Failure of Bushido leaves Honour alone, as now.
+
+**What this means for the sheet (not yet built):** today the gate removes Honour from the whole Honour resistance entry, which covers Intimidation, Temptation and Fear together, and from Brash's check. The Fear part belongs to the resistance redesign, where each effect is chosen on its own: the gate then applies to Intimidation and Temptation only. Brash's part does not depend on the redesign (its check is a separate button, `209.9999998-feat-checks-conditions.js`) and could be fixed on its own. This is audit discrepancy 1.
+
+**Status:** decided. Nothing in the app is changed yet.
 
 ## 2 · Paragon
 
@@ -56,4 +60,4 @@ The audit's report and data are left exactly as ChatGPT delivered them; this fil
 
 ## The audit's other thirteen questions
 
-ChatGPT's report holds seventeen questions; the four above are the first four. The other thirteen (scope of optional rules, recovery from Dazed and Stunned, external spells, stacking, and several single rulings) and the five other corrections it found (Shosuro Blade, Dharma, Apotheosis of Fire, Wholeness in All, Epilepsy) have not yet been put to the owner. They are to be taken one at a time, not all at once.
+ChatGPT's report holds seventeen questions; the four above are the first four. Question 5 (which optional and exceptional rules belong in the menu) was put to the owner on 18 November with Claude's recommendation; the answer is not yet in. The other thirteen (scope of optional rules, recovery from Dazed and Stunned, external spells, stacking, and several single rulings) and the five other corrections it found (Shosuro Blade, Dharma, Apotheosis of Fire, Wholeness in All, Epilepsy) have not yet been put to the owner. They are to be taken one at a time, not all at once.
