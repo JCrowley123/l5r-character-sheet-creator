@@ -1,0 +1,289 @@
+{
+  "started_utc": "2026-11-18T18:28:45.427455+00:00",
+  "sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+  "original_failed_chain": "qualification-6d47849b.json",
+  "original_failed_chain_sha256": "9edcaa9c2b442dae16751a9b0e7adf81e7a6ce068f9efa13f98291f8067ea6ed",
+  "original_under_load": {
+    "passed": 162,
+    "total": 163,
+    "log_sha256": "320258fb541390312b61fedf667c29d5946560b1ffbbcd5fe7dcd61fba480e34",
+    "results_sha256": "bb73d7e8c5945db1ffa629c965c6565cdfa4236503c22fac560da10c9629d48f"
+  },
+  "wait_change": {
+    "check": "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+    "change": "The check's 7.5-second wait keeps the page awake: a no-op evaluated in the page every 250 ms until the same 7.5 seconds have passed. Deadline, assertion, check ids, count and expected-checks.json unchanged; no application change.",
+    "old_harness_sha256": "332d0c317f23af2b5b9d99bf5fd285f59222b2e79eecb602a6d500aed2325577",
+    "new_harness_sha256": "1f700503ff637bad70893eefb1c8c34b47cefc4a441bde4ba88ff0664d3d4a05",
+    "expected_checks_sha256": "b0b3761074c0268a02342025cebe20e063d927160f10fdc1a726d7b3b021d036",
+    "character_sha256": "8b925cb5e6c9ca6cf1805c9b823ed613d10fd973ca1a6a4f67ae5efb1088c4c3",
+    "app_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+    "failed_chain_commit": "c49f90b2"
+  },
+  "proof": {
+    "started_utc": "2026-11-18T18:21:11.847692+00:00",
+    "app_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+    "change": {
+      "check": "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+      "change": "The check's 7.5-second wait keeps the page awake: a no-op evaluated in the page every 250 ms until the same 7.5 seconds have passed. Deadline, assertion, check ids, count and expected-checks.json unchanged; no application change.",
+      "old_harness_sha256": "332d0c317f23af2b5b9d99bf5fd285f59222b2e79eecb602a6d500aed2325577",
+      "new_harness_sha256": "1f700503ff637bad70893eefb1c8c34b47cefc4a441bde4ba88ff0664d3d4a05",
+      "expected_checks_sha256": "b0b3761074c0268a02342025cebe20e063d927160f10fdc1a726d7b3b021d036",
+      "character_sha256": "8b925cb5e6c9ca6cf1805c9b823ed613d10fd973ca1a6a4f67ae5efb1088c4c3",
+      "app_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+      "failed_chain_commit": "c49f90b2"
+    },
+    "cases": [
+      {
+        "label": "candidate",
+        "page_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+        "page_bytes": 17685928,
+        "cpu_rate": null,
+        "exit": 0,
+        "counts": [
+          21,
+          21
+        ],
+        "failed": [],
+        "expected_failures": null,
+        "passed": true,
+        "log_sha256": "872165dfae86fb3bbe27f6d819cc34e6f5895287c26a975b050ce17e5b5cd342"
+      },
+      {
+        "label": "candidate-cpu4",
+        "page_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+        "page_bytes": 17685928,
+        "cpu_rate": "4",
+        "exit": 0,
+        "counts": [
+          21,
+          21
+        ],
+        "failed": [],
+        "expected_failures": null,
+        "passed": true,
+        "log_sha256": "872165dfae86fb3bbe27f6d819cc34e6f5895287c26a975b050ce17e5b5cd342"
+      },
+      {
+        "label": "AE3-removed",
+        "page_sha256": "be0e94121d33ff1a791ff48dff1b76ab886c95d019f005edf65e61816838b0f9",
+        "page_bytes": 17674948,
+        "cpu_rate": null,
+        "exit": 0,
+        "counts": [
+          21,
+          21
+        ],
+        "failed": [],
+        "expected_failures": null,
+        "passed": true,
+        "log_sha256": "872165dfae86fb3bbe27f6d819cc34e6f5895287c26a975b050ce17e5b5cd342"
+      },
+      {
+        "label": "A08:baseline",
+        "page_sha256": "99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8",
+        "page_bytes": 17675311,
+        "cpu_rate": null,
+        "exit": 1,
+        "counts": [
+          10,
+          21
+        ],
+        "failed": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+          "QT-HISTORY-ONE-ENTRY-PHONE",
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+          "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+          "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+          "QT-QUICK-BURST-ONE-UNDO-PHONE",
+          "QT-SAVE-DATA-UNCHANGED-PHONE",
+          "QT-SEAM-PHONE",
+          "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+          "QT-TAINT-GROUP-PHONE",
+          "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+        ],
+        "expected_failures": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+          "QT-HISTORY-ONE-ENTRY-PHONE",
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+          "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+          "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+          "QT-QUICK-BURST-ONE-UNDO-PHONE",
+          "QT-SAVE-DATA-UNCHANGED-PHONE",
+          "QT-SEAM-PHONE",
+          "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+          "QT-TAINT-GROUP-PHONE",
+          "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+        ],
+        "passed": true,
+        "log_sha256": "bf7ca763c38d49cf651f8f47eb3308f38ed417f5cdbb6852bc052a4f2673a2df"
+      },
+      {
+        "label": "A08:disabled",
+        "page_sha256": "5e6724288cc227043ed89da5f698ca5714661a2abdc117dd0d920f5e17bddff0",
+        "page_bytes": 17685929,
+        "cpu_rate": null,
+        "exit": 1,
+        "counts": [
+          10,
+          21
+        ],
+        "failed": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+          "QT-HISTORY-ONE-ENTRY-PHONE",
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+          "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+          "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+          "QT-QUICK-BURST-ONE-UNDO-PHONE",
+          "QT-SAVE-DATA-UNCHANGED-PHONE",
+          "QT-SEAM-PHONE",
+          "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+          "QT-TAINT-GROUP-PHONE",
+          "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+        ],
+        "expected_failures": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+          "QT-HISTORY-ONE-ENTRY-PHONE",
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+          "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+          "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+          "QT-QUICK-BURST-ONE-UNDO-PHONE",
+          "QT-SAVE-DATA-UNCHANGED-PHONE",
+          "QT-SEAM-PHONE",
+          "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+          "QT-TAINT-GROUP-PHONE",
+          "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+        ],
+        "passed": true,
+        "log_sha256": "52f537ed6760fee9e443942e27a9ac59bfebb00e44e6778ea66d12827e7d2643"
+      },
+      {
+        "label": "A08:no-catch-up",
+        "page_sha256": "f171d4b778d686981a714640e08c75fcbd64be597ce0f337741a1d9b4f22e9ad",
+        "page_bytes": 17685925,
+        "cpu_rate": null,
+        "exit": 1,
+        "counts": [
+          13,
+          21
+        ],
+        "failed": [
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+          "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+          "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+          "QT-QUICK-BURST-ONE-UNDO-PHONE",
+          "QT-SAVE-DATA-UNCHANGED-PHONE",
+          "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+          "QT-TAINT-GROUP-PHONE",
+          "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+        ],
+        "expected_failures": [
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP",
+          "QT-MINUS-AND-PLUS-ONE-GROUP-PHONE",
+          "QT-PAGE-MOVE-KEEPS-GROUP-PHONE",
+          "QT-QUICK-BURST-ONE-UNDO-PHONE",
+          "QT-SAVE-DATA-UNCHANGED-PHONE",
+          "QT-SPACED-TAPS-ONE-GROUP-PHONE",
+          "QT-TAINT-GROUP-PHONE",
+          "QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE"
+        ],
+        "passed": true,
+        "log_sha256": "bf9d8a10b281c3c23a0bc1742c9041a0b10e55267f4b6f77dc3eab3c6b712c53"
+      },
+      {
+        "label": "A08:no-merge",
+        "page_sha256": "ebb89d318d2da5bfe908b973f36a9fc2c26b3ca50ed48dc708447888629d0280",
+        "page_bytes": 17685926,
+        "cpu_rate": null,
+        "exit": 1,
+        "counts": [
+          18,
+          21
+        ],
+        "failed": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+          "QT-HISTORY-ONE-ENTRY-PHONE",
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP"
+        ],
+        "expected_failures": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE",
+          "QT-HISTORY-ONE-ENTRY-PHONE",
+          "QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP"
+        ],
+        "passed": true,
+        "log_sha256": "fddd95f8a4376e084867238b606f2e54abcf099e35547ea7d4b998eb3749d6c4"
+      },
+      {
+        "label": "A08:no-edit-end",
+        "page_sha256": "b9d6131514b2fd4dcbb049b42a878511fdca18e5755f5c7b811bb23cc89519fc",
+        "page_bytes": 17685829,
+        "cpu_rate": null,
+        "exit": 1,
+        "counts": [
+          20,
+          21
+        ],
+        "failed": [
+          "QT-EDIT-ELSEWHERE-ENDS-DESKTOP"
+        ],
+        "expected_failures": [
+          "QT-EDIT-ELSEWHERE-ENDS-DESKTOP"
+        ],
+        "passed": true,
+        "log_sha256": "5016ed9299b0b677b0b84ac50686b13c28bc1be53c7dbe4baddf1bca70ca8373"
+      },
+      {
+        "label": "A08:no-click-end",
+        "page_sha256": "dabd5adaab4eb00ec5c8e84846f1f8f20ca9ad6a46059296474df14cea6d0cf7",
+        "page_bytes": 17685885,
+        "cpu_rate": null,
+        "exit": 1,
+        "counts": [
+          20,
+          21
+        ],
+        "failed": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE"
+        ],
+        "expected_failures": [
+          "QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE"
+        ],
+        "passed": true,
+        "log_sha256": "0163014f357622feac27009b0f0823c06561a0ac2924a9291b3ad0dc1249118c"
+      }
+    ],
+    "passed": true,
+    "finished_utc": "2026-11-18T18:28:24.439648+00:00"
+  },
+  "proof_sha256": "714ed1f6e5552470cbf39345e7f85edc4e82adb5add081af91a793ca6f03b53b",
+  "stages": [
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-18T16:52:09.724735+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-18T16:53:31.702400+00:00",
+      "from_original_chain": true
+    },
+    {
+      "label": "variants-final",
+      "started_utc": "2026-11-18T16:53:31.725080+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-18T16:58:19.700231+00:00",
+      "from_original_chain": true
+    },
+    {
+      "label": "dependencies",
+      "started_utc": "2026-11-18T16:58:19.725671+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-18T16:58:20.456512+00:00",
+      "from_original_chain": true
+    },
+    {
+      "label": "under-load-a08-proof",
+      "exit": 0,
+      "original_failure_preserved": true,
+      "note": "The 162 other leaves passed in the original screen; A08's harness, corrected, passed 21/21 at 4x CPU in the scoped proof."
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-11-18T18:28:45.427455+00:00"
+}
