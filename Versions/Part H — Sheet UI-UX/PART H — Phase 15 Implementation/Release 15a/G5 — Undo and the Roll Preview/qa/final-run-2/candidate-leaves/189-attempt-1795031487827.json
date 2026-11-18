@@ -1,0 +1,20 @@
+{
+  "fingerprint": "884659c69755baad78139bba85be5f1ff2fab55145859f5a7bcb25028e990d85",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\BUGFIX — Typed Initiative Is the Dice\\qa\\typed-initiative-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T19:51:27.827Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS IDT-SWITCH\nPASS IDT-LABEL\nPASS IDT-TYPED-AFTER-VOID\nPASS IDT-TYPED-HOLDS-NO-BONUS\nPASS IDT-TYPED-BEFORE-VOID\nPASS IDT-TYPED-AFTER-QUICK\nPASS IDT-TYPED-AGAIN\nPASS IDT-EMPTY-REFUSED\nPASS IDT-ROLLED-UNCHANGED\nPASS IDT-LOGIC-SET\nPASS IDT-NO-PAGE-ERRORS\n11/11 checks passed\n",
+    "stderr": ""
+  }
+}

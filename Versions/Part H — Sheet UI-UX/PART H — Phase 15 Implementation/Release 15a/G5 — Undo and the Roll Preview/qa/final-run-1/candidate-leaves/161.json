@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b785c0eff2b399971a0a9c64c114e55ce667769f86453f52b36636077142b447",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\BUGFIX — Carousel Settles on Its Destination\\qa\\carousel-destination-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T18:51:02.656Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS CDS-TAB-STAYS-ON-DESTINATION\nPASS CDS-STALE-SETTLE-ARRIVES\nPASS CDS-STALE-SETTLE-FOCUS\nPASS CDS-RESIZE-150MS\nPASS CDS-RESIZE-400MS\nPASS CDS-ALREADY-THERE-SETTLES\nPASS CDS-LATER-STEP-WINS\nPASS CDS-FINGER-TAKES-OVER\nPASS CDS-NO-PAGE-ERRORS\n9/9 checks passed\n",
+    "stderr": ""
+  }
+}

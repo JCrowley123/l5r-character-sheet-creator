@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-11-18T19:23:24.511397+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7401,
+      "total": 7401,
+      "orchestration": {
+        "expected": 7401,
+        "passed": 7401,
+        "total": 7401,
+        "leafTotal": 7401,
+        "wrapperCount": 118,
+        "leafCount": 202,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 202,
+        "fingerprint": "884659c69755baad78139bba85be5f1ff2fab55145859f5a7bcb25028e990d85",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 28.28
+    },
+    {
+      "label": "04-retained",
+      "passed": 7307,
+      "total": 7307,
+      "orchestration": {
+        "expected": 7307,
+        "passed": 7307,
+        "total": 7307,
+        "leafTotal": 7307,
+        "wrapperCount": 103,
+        "leafCount": 199,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 199,
+        "fingerprint": "2c71eceedc7b471280e9b440409fc727b6236b26a7239f171bbc28acd7df2803",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 25.44
+    }
+  ],
+  "source_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+  "source_bytes": 17685928,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A08 \u2014 One Undo for Quick Taps"
+  ],
+  "restoration": {
+    "sha256": "99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8",
+    "bytes": 17675311,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-18T20:17:26.972087+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b785c0eff2b399971a0a9c64c114e55ce667769f86453f52b36636077142b447",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\BUGFIX — Wizard Overspend Warns\\qa\\overspend-warns-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T18:35:42.551Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS XW-ENABLED\nPASS XW-TRAITS-NEXT-OPEN\nPASS XW-TRAITS-WARNING\nPASS XW-NAME-STILL-BLOCKS\nPASS XW-EVERY-STEP-OPEN\nPASS XW-ADV-BUSY-BLOCKS\nPASS XW-KIHO-STEP-OPEN\nPASS XW-REVIEW-WARNING\nPASS XW-REVIEW-FINDING-KEPT\nPASS XW-REVIEW-OTHER-ERROR-BLOCKS\nPASS XW-FINISH-OPEN\nPASS XW-FINISH-WARNS\nPASS XW-FINISH-STAY\nPASS XW-FINISH-GOES-ON\nPASS XW-FINISH-ONCE\nPASS XW-NO-ERRORS\nPASS XW-WITHIN-NO-WARNING\n17/17 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b785c0eff2b399971a0a9c64c114e55ce667769f86453f52b36636077142b447",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\BUGFIX — Moon Resist Label\\qa\\moon-label-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T18:35:50.993Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS MR-ENABLED\nPASS MR-LABEL\nPASS MR-FOLLOWS-LEVEL\nPASS MR-SAME-ROLL\nPASS MR-NO-ERRORS\n5/5 checks passed\n",
+    "stderr": ""
+  }
+}

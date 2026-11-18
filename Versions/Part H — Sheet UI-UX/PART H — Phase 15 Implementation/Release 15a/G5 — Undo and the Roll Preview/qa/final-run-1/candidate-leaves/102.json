@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b785c0eff2b399971a0a9c64c114e55ce667769f86453f52b36636077142b447",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\BUGFIX — Kitsune Shugenja Listed Under Mantis\\qa\\kitsune-mantis-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 2400000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T18:44:04.255Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Kitsune Shugenja [Mantis] removal checks against: C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html\nPASS KM-MANTIS-PICKER\nPASS KM-NOT-IN-LIBRARY\nPASS KM-FOX-UNCHANGED\nPASS KM-SHUGENJA-SCHOOLS\nPASS KM-FAMILY-KEPT\nPASS KM-NO-PAGE-ERRORS-LIBRARY\nPASS KM-WIZARD-MANTIS-CARDS\nPASS KM-WIZARD-FOX-CARDS\nPASS KM-OLD-SAVE-LOADS\n\n9/9 checks passed\n",
+    "stderr": ""
+  }
+}

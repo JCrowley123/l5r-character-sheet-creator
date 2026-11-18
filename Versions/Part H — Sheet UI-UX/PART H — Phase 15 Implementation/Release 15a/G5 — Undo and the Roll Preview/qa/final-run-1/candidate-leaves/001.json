@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b785c0eff2b399971a0a9c64c114e55ce667769f86453f52b36636077142b447",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A08 — One Undo for Quick Taps\\qa\\quick-tap-undo-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T18:29:54.966Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS QT-SEAM-PHONE\nPASS QT-ONE-TAP-AS-BEFORE-PHONE\nPASS QT-QUICK-BURST-ONE-UNDO-PHONE\nPASS QT-SPACED-TAPS-ONE-GROUP-PHONE\nPASS QT-HISTORY-ONE-ENTRY-PHONE\nPASS QT-UNDO-IN-WINDOW-NO-ENTRY-PHONE\nPASS QT-GAP-OVER-FIVE-SECONDS-NEW-GROUP-PHONE\nPASS QT-MINUS-AND-PLUS-ONE-GROUP-PHONE\nPASS QT-OTHER-CARD-ENDS-PHONE\nPASS QT-PAGE-MOVE-KEEPS-GROUP-PHONE\nPASS QT-HISTORY-MENU-ENDS-AND-MERGES-PHONE\nPASS QT-TAINT-GROUP-PHONE\nPASS QT-SAVE-DATA-UNCHANGED-PHONE\nPASS QT-NO-ERRORS-PHONE\nPASS QT-TYPED-VALUE-ENDS-DESKTOP\nPASS QT-RECOGNITION-ENDS-DESKTOP\nPASS QT-EDIT-ELSEWHERE-ENDS-DESKTOP\nPASS QT-OPEN-DROPS-GROUP-DESKTOP\nPASS QT-SAVE-ENDS-GROUP-DESKTOP\nPASS QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP\nPASS QT-NO-ERRORS-DESKTOP\n21/21 checks passed\n",
+    "stderr": ""
+  }
+}

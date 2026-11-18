@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b785c0eff2b399971a0a9c64c114e55ce667769f86453f52b36636077142b447",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\PART K — Phase 13 Library\\qa\\library-dependency.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T18:54:08.124Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS D13-PREMISE-PAGE-MOUNTS\nPASS D13-PREMISE-SEARCH-LINKED\nPASS D13-OFF-LOGIC-RECOGNISES\nPASS D13-OFF-LOGIC-CITATIONS\nPASS D13-OFF-PLACEHOLDER-STAYS\nPASS D13-OFF-SEARCH-PLAIN\nPASS D13-OFF-NO-PAGE-ERRORS\n7/7 checks passed\n",
+    "stderr": ""
+  }
+}

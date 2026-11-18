@@ -1,0 +1,20 @@
+{
+  "fingerprint": "884659c69755baad78139bba85be5f1ff2fab55145859f5a7bcb25028e990d85",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms\\qa\\printed-heirlooms-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g5-a08\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G5 — Undo and the Roll Preview\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-18T19:51:11.828Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS S442-SWITCH\nPASS S442-LEAVE-THE-LIST\nPASS S442-LEAVE-THE-WIZARD-LIST\nPASS S442-NOTE-AS-TYPED\nPASS S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE\nPASS S442-OTHER-HEIRLOOM-STAYS\nPASS S442-FALCON-PRICED-BY-ITS-RULES\nPASS S442-ARMOR-OPENS-ITS-PICKER\nPASS S442-ARMOR-CANCELLED-NEEDS-A-CHOICE\nPASS S442-SEARCH-KEEPS-ALL-FOUR\nPASS S442-OLD-INHERITANCE-ROW-QUIET\nPASS S442-SAVED-HEIRLOOMS-OPEN\nPASS S442-NO-PAGE-ERRORS\n\n13/13 checks passed\n",
+    "stderr": ""
+  }
+}
