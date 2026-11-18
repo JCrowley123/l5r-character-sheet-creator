@@ -1,5 +1,7 @@
 # Release 15a · A08 — One Undo for Quick Taps
 
+**18 November 2026:** A12 was withdrawn from G5 (the owner moved the resistance redesign into a phase of its own), so G5 is this unit alone and `claude/release-15a-a08` is the group tip. See the group's [README](<../G5 — Undo and the Roll Preview/README.md>).
+
 Group G5 (undo and the roll preview), unit 1 of 2. FT-47 (the owner, 28 October 2026), ruled at Q4 on 1 November 2026 as a rolling five-second group; approved as mocked up on 14 November 2026 ([the group's mock-ups](<../G5 — Undo and the Roll Preview/MOCKUP.md>)). Built on 14 November 2026 (Claude), on branch `claude/release-15a-a08`, stacked on the group's records branch `claude/release-15a-g5` (from `main` at `c5dd578b`, the automatic-entries group live).
 
 ## What changes

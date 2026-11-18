@@ -1,0 +1,82 @@
+[
+ {
+  "mode": "play",
+  "name": "honor",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":4,\"points\":7}",
+  "after": "{\"rank\":4,\"points\":7}"
+ },
+ {
+  "mode": "play",
+  "name": "glory",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":3,\"points\":12}",
+  "after": "{\"rank\":3,\"points\":12}"
+ },
+ {
+  "mode": "play",
+  "name": "status",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":1,\"points\":0}",
+  "after": "{\"rank\":1,\"points\":0}"
+ },
+ {
+  "mode": "play",
+  "name": "taint",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":2,\"points\":3}",
+  "after": "{\"rank\":2,\"points\":3}"
+ },
+ {
+  "mode": "play",
+  "errors": []
+ },
+ {
+  "mode": "management",
+  "name": "honor",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":4,\"points\":7}",
+  "after": "{\"rank\":4,\"points\":7}"
+ },
+ {
+  "mode": "management",
+  "name": "glory",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":3,\"points\":12}",
+  "after": "{\"rank\":3,\"points\":12}"
+ },
+ {
+  "mode": "management",
+  "name": "status",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":1,\"points\":0}",
+  "after": "{\"rank\":1,\"points\":0}"
+ },
+ {
+  "mode": "management",
+  "name": "taint",
+  "taps": 3,
+  "undoTaps": 3,
+  "backToStart": true,
+  "before": "{\"rank\":2,\"points\":3}",
+  "after": "{\"rank\":2,\"points\":3}"
+ },
+ {
+  "mode": "management",
+  "errors": []
+ }
+]

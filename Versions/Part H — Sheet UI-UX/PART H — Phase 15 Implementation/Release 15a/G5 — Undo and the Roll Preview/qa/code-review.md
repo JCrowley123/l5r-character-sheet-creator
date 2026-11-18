@@ -1,0 +1,36 @@
+# G5 · Undo and the roll preview: code review (read-only), 14 November 2026
+
+Claude. Scope: the application diff `c5dd578b..claude/release-15a-a12` (Phase 0 `src/`, the manifest, the seam blocks, the removal-chain registry), reviewed one unit at a time with findings written down before the next unit. The harnesses were read for whether their checks can fail; their results are in each unit's README.
+
+## A08 — One Undo for Quick Taps (`6dd99349`)
+
+Read: `209.999999999999999998-feat-quick-tap-undo.js`, the seam block, the manifest entry; for the interfaces, Phase 7's compact controls (`CP7`: `adjust`, `commit`, `undo`, `clear`, the private `last` record and `write`), card editing (`CE7`: its `commit`, `clear` and `render` wrappers, the 20-second timer, `saved` and `identified`, its own Undo listener), the social Rank and points layer (`RP7.write`, `RP7.changed`), Taint (`TA7.write`), the audit log (`AL71`: `check`, `schedule`, `restart`, the `recalcAll`, `applyData`, `collectData` and `resetToBaseline` wrappers), the Characters list's autosave (`CL11.prepare`, `flush`, `schedule`), `saveCharacter` and the undone-change fix (`AU8`).
+
+- **Wrapper order.** The fragment loads after CP7 and CE7, so each wrapper is outermost: a tap runs `QT15 → CP7.adjust → CP7.commit (QT15 → CE7 → CP7)`, and CE7 still arms its 20-second Undo on every tap. `CP7.clear` (a load or a reset, through CP7's own `applyData` and `resetToBaseline` wrappers) runs QT15's drop first, then CE7's and CP7's.
+- **Undo's order.** The Undo button's listeners run CP7's (bound at mount), CE7's, then QT15's. QT15's capture-phase listener on the same button runs first, so CP7's own write for the Undo (and the input event `RP7.changed` sends) is not taken for an edit elsewhere. The bubble listener writes the rest of the way back only when CP7 has just succeeded: Undo hidden again, no alert, and the card at the value before the group's last tap. A failed CP7 Undo (the value changed elsewhere) shows CP7's alert, and QT15 writes nothing.
+- **One Undo at a time is kept.** `pending` is cleared by any other commit to the four cards, by a single-tap group, by `clear` and by Undo's expiry, so QT15 never takes back a group once CP7's own record has moved on.
+- **History.** Nothing is held: AL71 keeps writing entries during a group, so `collectData` (a save, autosave's `prepare`, a snapshot) always carries them. The merge runs only when every entry since the group's start is about its card, on the same sheet (`epoch`, `currentId`), and the log still holds the entry the group started after. `AL71.restart` replaces the log and clears the look; the `AL71.check` right after it takes a fresh look, so a change made a moment later is still recorded. AL71's entries are re-created by `restart`; nothing else keeps them (the History panel re-reads on show, the Characters list's History reads the stored copy).
+- **Saving.** A click on Save, Save As or Export is a click on another control, caught in the capture phase before the button's own handler, so the save carries the merged History. `CL11.schedule` after a merge only matters for a listed character and writes nothing when the stored copy is already current (`CL11.prepare` compares).
+- **Ending a group.** The document-level `click` listener only ends an open group; the open card's − and +, the amount boxes, Undo and the page tabs and arrows are left out. The `input` and `change` listener ignores the taps' own events (`tapping`) and Undo's (`undoing`).
+
+**Finding A08-1 (low, no change).** The `input` and `change` listener would end a group if another layer sent an input event later than the tap, outside it. None does on the four cards: a probe tapped each card three times two seconds apart, in Play and in Manage, and each stayed one group (`qa/review-probe.json`). Recorded so that a future layer that echoes events after a tap knows it would split a group (Undo would then take back only the later taps).
+
+**Finding A08-2 (low, no change).** An Export JSON pressed during a group carries the merged History (the click ends the group first); an export made by script without a click (none in the sheet) would carry the per-tap entries. Recorded.
+
+## A12 — One Resisting Line (the commit that adds this record; build `f7678633…bc41`)
+
+Read: `209.999999999999999999-feat-resisting-line.js`, `1147-resisting-line.css`, the seam block, the manifest entries; for the interfaces, the declaration registry (`RD4515`: `offered`, `armed`, `html`, `start`, the provider ids and their keys), the roll preview's render, its listeners and its `typeof` hooks (`208-feat-roll-preview.js`), Honour's resistance (`HR7`, `HR7.balance`), the situational entries (`SIT4527`), Seven Fortunes' Blessing (`FB4521`), Touch of the Spirit Realms (`TR4524`), the Ancestors (`ANC48`, including the price gate that reads `RD4515.armed`), the registry's stylesheet.
+
+- **Ring-fence.** The only rebinding is `rd4515PreviewHtml`, the preview's own optional hook, called through a `typeof` guard; the previous function is called first and its result is the input. No registry or provider function, property or state is changed; `offered` and `armed` are read only. The checkbox elements are moved, not re-made, so their `data-rd4515-key` attributes and the preview's `change` listeners (attached after `innerHTML`) are the registry's.
+- **Fails open.** Any of: no resistance offer, more than one root element, a root that is not the registry's block, a first child that is not its heading, a choice whose checkbox is not inside a label directly under the block, or an exception, returns the registry's string unchanged.
+- **Open state.** Kept per roll context (each roll makes its own context), set only by the `toggle` event of an `rs15-line`; a re-render with the line open recreates it open, so the `toggle` event that follows keeps the state. Nothing is stored.
+- **Totals.** The registry's modifiers are untouched, so Balance including Honour once (`HR7.balance`) and Usagi Reichin's "in place of" rule (in `ANC48`'s modifiers) are as before; the harness reads the preview with the unit on and paused and finds the same text outside the section.
+- **Keys.** The fifteen keys are the resistance offers of five providers, read from their declaration tables; `RS-ALL-FIFTEEN-GATHERED-DESKTOP` gathers all fifteen and leaves a non-resistance Ancestor gift out.
+
+**Finding A12-1 (low, no change; for the device round).** On the closed line a chosen Blessing, Realm or Ancestor choice is named by its source, since their labels carry no name ("Ancestor +1k1", "Seven Fortunes’ Blessing +2k0"); Kaimetsu-Uo's reads "Ancestor no +1k1 from Kaimetsu-Uo". This is what was approved ("names each choice with its bonus"); the device round can say whether a gift's own name would read better.
+
+- **Scroll.** The preview redraws its body on every tick; its card keeps its scroll across the redraw (Roll Preview Opens at the Top moves it to the top only when a preview opens, in its `showRollPreview` wrapper), so ticking a choice low in the open line leaves the view where it was. The device round should still tick one on a phone.
+
+## Result
+
+No change needed in either unit. Three low findings recorded, for the device round and for future layers.
