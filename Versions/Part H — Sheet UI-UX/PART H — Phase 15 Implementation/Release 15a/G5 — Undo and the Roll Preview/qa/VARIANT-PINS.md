@@ -31,3 +31,7 @@ Retained, A08 removed (the automatic-entries group as live): AE1 13 + AE2 21 + A
 4× CPU screen: **163 leaves**, the automatic-entries group's 161 (its pattern, kept), A08's harness, and the undone-change fix's harness, which the added Phase 7 terms (compact controls, card editing, History) pick up.
 
 The group removal must restore the automatic-entries group as live exactly, by the removal chain and by A08's own remover; AE3 (the unit before the group) is removed with A08 kept, and A08's harness runs in full on that build. A08 declares no conditional in another layer's tests. A light run of the removal proof before the chain: `light/removal-group-light-run.log` (9/9; its first light run, `light/removal-group-light-run-1-script-error.log`, passed all nine checks but the script could not add up a regex match, fixed with `bool()` before this record). A08 changes values in Undo and History, so the group is behaviour tier: the 4× CPU screen and two full passes follow the chain.
+
+## Discovery
+
+Discovery ran once on 18 November 2026, after the predictions were committed and pushed (`d7262389`). Evidence: `variants-discover.log` and `variants-discover-6d47849b/summary.json`. **All 6 cases matched every predicted id exactly**, each with its pinned count: baseline 10/21 and disabled 10/21 (the same eleven failures), no-catch-up 13/21, no-merge 18/21, no-edit-end 20/21, no-click-end 20/21. No correction was needed; the qualification chain asserts every pin as written.
