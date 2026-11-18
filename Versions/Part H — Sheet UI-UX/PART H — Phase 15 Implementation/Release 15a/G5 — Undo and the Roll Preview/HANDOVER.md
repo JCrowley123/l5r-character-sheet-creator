@@ -1,6 +1,6 @@
 # Release 15a · group G5 (A08 alone) — handover
 
-18 November 2026 (Claude). **Accepted and qualified; not live.** Go-live waits for the owner's word.
+18 November 2026 (Claude). **Accepted, qualified and live** (18 November).
 
 **18 November 2026 · G5 qualified (Claude).** G5 is A08 (One Undo for Quick Taps) alone. A12 (one Resisting line) was withdrawn when the owner moved the resistance redesign into a phase of its own after Phase 15 ("Yes, pin it"); its records stay on `claude/release-15a-a12`. A08 is on `claude/release-15a-a08`, the group tip. Application `6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1`, 17,685,928 bytes. The owner approved the mock-ups ("approve as recommended", 14 November) and accepted A08 at the device round (checks 1–9 pass on iPhone and laptop, no notes; 16 November).
 
@@ -36,8 +36,14 @@ What it does: when − and + taps on the same Honour, Glory, Status or Taint car
 
 ## Next
 
-Go-live only on the owner's word: fast-forward `main` to `claude/release-15a-a08` (no merge commit, no force). Then verify production on the downloaded production files with `qa/verify-live.py` (the automatic-entries group's script with A08 and the layers it touches added) and run the browser/offline smoke. After G5, G6 (A19 and A20) completes Release 15a; Release 15b, the resistance phase and the Techniques phase follow.
+G6 (A19, undo the most recent Void-card spend; A20, choose a Trait for one Skill roll) completes Release 15a; neither is mocked up yet. Release 15b, the resistance phase and the Techniques phase follow.
 
 ## Usage
 
 Claude readings on a Pro plan, 18 November, after the two full passes: weekly all models 6% (the weekly limit reset on 18 November), five-hour limit 30%.
+
+## Production
+
+**18 November 2026 · A08 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded from `c5dd578b` to `22033522` at 22:55 UTC, with no merge commit and no force. The deploy was current about three minutes later. Production: all seven deployed files match the qualified build. 87 application harnesses passed **3,464/3,464** on the downloaded production files: A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once. A08 adds its own 21 checks and the twelve layers of its light check (History, the undone-change rule, the Characters list, the save format, the characteristic cards and the Taint, Social and Honour layers). The browser/offline smoke passed **22/22**. Deployed page `87f82af7c0fefbe7…`, 17,692,705 bytes (the same page the A08 preview served); application `6d47849b…44b1`; service worker build `896459a52b224a4f`.
+
+Evidence: [qa/live/live-verification.json](qa/live/live-verification.json), [qa/live/live-qa.log](qa/live/live-qa.log), [qa/live/live-browser-smoke.json](qa/live/live-browser-smoke.json), `qa/verify-live.log`, `qa/browser-smoke.log`. The checks ran on the downloaded production files with `qa/verify-live.py` (the automatic-entries group's script with A08 added) and the Older School Choices browser smoke.
