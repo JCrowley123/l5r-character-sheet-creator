@@ -1,0 +1,21 @@
+  detail TC-ROLL-USES-CHOICE-PHONE: {"open":true,"notation":"5k2","emphasis":"Emphasis (Control)","explode":false}
+  detail TC-UNSKILLED-KEEPS-RULE-DESKTOP: {"a":{"open":true,"title":"Athletics (Unskilled)","pool":"3k3","base":["Strength 3 | 3k3 — the Trait sets the dice kept","Unskilled | no Skill Rank to add — the Trait rolls and keeps alone"],"select":"Strength","groups":[["Usual for Athletics",["Strength 3"]],["Named for Athletics (Core p.139)",["Agility 3"]],["Named for Athletics (Book of Earth p.8)",["Stamina 2"]],["Other Traits (the GM’s call, Core p.79)",["Willpower 4","Reflexes 2","Awareness 2","Perception 3","Intelligence 3"]]],"note":null,"ticked":[],"go":"Roll 3k3"},"b":{"open":true,"title":"Athletics (Unskilled)","pool":"2k2","base":["Stamina 2 | 2k2 — the Trait sets the dice kept","Unskilled | no Skill Rank to add — the Trait rolls and keeps alone"],"select":"Stamina","groups":[["Usual for Athletics",["Strength 3"]],["Named for Athletics (Core p.139)",["Agility 3"]],["Named for Athletics (Book of Earth p.8)",["Stamina 2"]],["Other Traits (the GM’s call, Core p.79)",["Willpower 4","Reflexes 2","Awareness 2","Perception 3","Intelligence 3"]]],"note":"This roll only; Athletics is usually Strength. Book of Earth p.8: the GM may call for Stamina, for endurance.","ticked":[],"go":"Roll 2k2"},"r":{"open":true,"notation":"3k3","e
+PASS TC-SEAM-PHONE
+PASS TC-OPENS-ON-USUAL-PHONE
+PASS TC-LIST-ORDER-PHONE
+PASS TC-OTHER-TRAIT-POOL-PHONE
+PASS TC-TICKS-KEPT-PHONE
+FAIL TC-ROLL-USES-CHOICE-PHONE
+PASS TC-SAVED-TRAIT-UNCHANGED-PHONE
+PASS TC-REOPENS-ON-USUAL-PHONE
+PASS TC-NO-ERRORS-PHONE
+PASS TC-CANCEL-FORGETS-DESKTOP
+PASS TC-BACK-TO-USUAL-DESKTOP
+FAIL TC-UNSKILLED-KEEPS-RULE-DESKTOP
+PASS TC-BOOK-NOTE-DESKTOP
+PASS TC-NOT-ON-TRAIT-ROLL-DESKTOP
+PASS TC-NOT-ON-ATTACK-DESKTOP
+PASS TC-KEYBOARD-CHOICE-DESKTOP
+PASS TC-TWO-TRAIT-SKILL-DESKTOP
+PASS TC-NO-ERRORS-DESKTOP
+16/18 checks passed

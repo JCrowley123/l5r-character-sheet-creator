@@ -1,0 +1,29 @@
+  detail VU-TOUCH-SAVE-KEEPS-UNDO-PHONE: {"touch":"Touch of the Void — Willpower vs TN 30","a":{"points":"2","pending":"{}","round":1,"spend":"damage","voidTN":false,"armorTN":0,"initiative":0,"wounds":"15","owed":0,"line":"","undo":false,"greyed":6,"status":"Void spent: 25 damage reduced to 15 Wounds."},"b":{"points":"2","pending":"{}","round":1,"spend":"damage","voidTN":false,"armorTN":0,"initiative":0,"wounds":"15","owed":0,"line":"","undo":false,"greyed":6,"status":"Void spent: 25 damage reduced to 15 Wounds."}}
+  detail VU-TOUCH-SAVE-KEEPS-UNDO-DESKTOP: {"touch":"Touch of the Void — Willpower vs TN 30","a":{"points":"2","pending":"{}","round":1,"spend":"tn","voidTN":true,"armorTN":10,"initiative":0,"wounds":"0","owed":0,"line":"","undo":false,"greyed":6,"status":"Void spent: +10 TN to be hit — until the end of this Round."},"b":{"points":"2","pending":"{}","round":1,"spend":"tn","voidTN":true,"armorTN":10,"initiative":0,"wounds":"0","owed":0,"line":"","undo":false,"greyed":6,"status":"Void spent: +10 TN to be hit — until the end of this Round."}}
+  detail VU-TOUCH-SAVE-THEN-ROLL-ENDS-DESKTOP: {"a":{"points":"2","pending":"{}","round":1,"spend":"tn","voidTN":true,"armorTN":10,"initiative":0,"wounds":"0","owed":0,"line":"","undo":false,"greyed":6,"status":"Void spent: +10 TN to be hit — until the end of this Round."},"r":{"pool":"5k2","touch":null},"b":{"points":"2","pending":"{}","round":1,"spend":"tn","voidTN":true,"armorTN":10,"initiative":0,"wounds":"0","owed":0,"line":"","undo":false,"greyed":6,"status":""}}
+PASS VU-SEAM-PHONE
+PASS VU-NO-LINE-BEFORE-SPEND-PHONE
+PASS VU-K1-SPENT-LINE-PHONE
+PASS VU-K1-UNDO-RESTORES-PHONE
+PASS VU-K1-NO-TOUCH-ROLL-AFTER-UNDO-PHONE
+PASS VU-TN-TOUCH-CANCELLED-UNDO-PHONE
+PASS VU-ROLL-ENDS-PHONE
+PASS VU-CANCELLED-PREVIEW-KEEPS-PHONE
+FAIL VU-TOUCH-SAVE-KEEPS-UNDO-PHONE
+PASS VU-NO-ERRORS-PHONE
+PASS VU-NEXT-ROUND-ENDS-DESKTOP
+PASS VU-RESET-ENDS-DESKTOP
+PASS VU-LATEST-SPEND-ONLY-DESKTOP
+PASS VU-DOUBLE-UNDO-ONCE-DESKTOP
+PASS VU-PIP-TAP-ENDS-DESKTOP
+PASS VU-PREVIEW-VOID-SPEND-NOT-COVERED-DESKTOP
+PASS VU-DAMAGE-UNDO-DESKTOP
+PASS VU-INITIATIVE-UNDO-DESKTOP
+PASS VU-HOTEI-TWO-POINTS-UNDO-DESKTOP
+PASS VU-OPEN-ENDS-DESKTOP
+PASS VU-KEYBOARD-UNDO-FOCUS-DESKTOP
+PASS VU-SAVE-DATA-UNCHANGED-DESKTOP
+FAIL VU-TOUCH-SAVE-KEEPS-UNDO-DESKTOP
+FAIL VU-TOUCH-SAVE-THEN-ROLL-ENDS-DESKTOP
+PASS VU-NO-ERRORS-DESKTOP
+22/25 checks passed

@@ -1,0 +1,11 @@
+6 mutations unique.
+A19:baseline: failed exactly its 21 pinned checks
+A20:baseline: failed exactly its 13 pinned checks
+A19.1:baseline: failed exactly its 4 pinned checks
+A19:disabled: failed exactly its 21 pinned checks
+A19:touch-save-ends: failed exactly its 3 pinned checks
+A19:no-drop: failed exactly its 4 pinned checks
+A20:disabled: failed exactly its 13 pinned checks
+A20:no-pool: failed exactly its 2 pinned checks
+A19.1:disabled: failed exactly its 4 pinned checks
+All 9 negative variants matched their pinned failures.
