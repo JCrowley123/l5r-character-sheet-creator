@@ -1,0 +1,86 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "12\\.7 Play Mode Combat|1\\.6 Combat Tab|Void Card Reasons|4\\.5\\.33 Void|Phase 12 Play and Management|Phase 2 Quick-Access|Hotei Where|4\\.5\\.36 Weakness|Moon Curse Full|A07 — The Moon Row",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A07 — The Moon Row/qa/moon-row-harness.js",
+   "passed": 26,
+   "total": 26,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Moon Curse Full Moon/qa/moon-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Hotei Where the Sheet Spends Void/qa/hotei-auto-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/qa/wound-bar-harness.js",
+   "passed": 23,
+   "total": 23,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/qa/quick-access-sidebar-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12 Play and Management Modes/qa/modes-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.7 Play Mode Combat/qa/combat-harness.js",
+   "passed": 55,
+   "total": 55,
+   "status": 0,
+   "seconds": 37,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.33 Void and Initiative Entries/qa/void-initiative-harness.js",
+   "passed": 44,
+   "total": 44,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/weakness-hotei-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Void Card Reasons on a Phone/qa/void-reasons-harness.js",
+   "passed": 14,
+   "total": 14,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  }
+ ]
+}

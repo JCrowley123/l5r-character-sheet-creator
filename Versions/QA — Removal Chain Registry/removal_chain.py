@@ -353,6 +353,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999999999999-feat-void-spend-undo.js"),
     Release("PART H — Phase 15 Implementation/Release 15a/A20 — A Trait for One Skill Roll",
             fragment="src/sheet/209.9999999999999999991-feat-skill-trait-choice.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A19.1 — The Damage Row Fits a Phone",
+            fragment="src/sheet/209.9999999999999999992-feat-damage-row-fit.js"),
 )
 
 

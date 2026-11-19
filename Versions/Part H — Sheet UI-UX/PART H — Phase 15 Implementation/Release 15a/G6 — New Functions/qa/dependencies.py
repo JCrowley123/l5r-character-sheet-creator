@@ -4,7 +4,8 @@ these units. Each unit is searched with its seam block's name."""
 import subprocess, sys
 UNITS = [('src/sheet/209.999999999999999999-feat-void-spend-undo.js', 'PART H PHASE 15.1.33', ['void-spend-undo-seam']),
          ('src/sheet/209.9999999999999999991-feat-skill-trait-choice.js', 'PART H PHASE 15.1.34',
-          ['skill-trait-choice-seam', 'trait-choice-base', 'trait-choice-control', 'trait-choice-pool'])]
+          ['skill-trait-choice-seam', 'trait-choice-base', 'trait-choice-control', 'trait-choice-pool']),
+         ('src/sheet/209.9999999999999999992-feat-damage-row-fit.js', 'PART H PHASE 15.1.35', ['damage-row-fit-seam'])]
 failed = 0
 for fragment, marker, also in UNITS:
     r = subprocess.run([sys.executable, '-B', 'qa/feature-dependencies.py', fragment, marker, '--also', *also], capture_output=True, text=True, encoding='utf-8')

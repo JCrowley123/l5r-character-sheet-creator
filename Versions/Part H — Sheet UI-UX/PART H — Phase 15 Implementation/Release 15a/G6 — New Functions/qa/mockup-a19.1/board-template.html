@@ -1,0 +1,97 @@
+<title>G6 Damage Row Mock-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, the same look as the G5 and G6 boards; today | proposed pairs that stack on a phone. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem;margin-top:14px}
+p{margin:0;max-width:70ch}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:74ch}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+code{font-size:.85em;background:var(--chip);padding:1px 5px;border-radius:4px;word-break:break-word}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:12px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--new);border-radius:6px;padding:12px 14px;max-width:none}
+.rec b{color:var(--new)}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;max-width:none}
+.note b{color:var(--warn)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.stack{display:flex;flex-direction:column;gap:8px;min-width:0}
+.phonepair{max-width:760px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.78rem;letter-spacing:.03em}
+td.t{color:var(--today)} td.n{color:var(--new)}
+.summary td:first-child,.rules td:first-child{white-space:nowrap;font-weight:600}
+.optlist{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;max-width:420px;font-size:.88rem}
+.optlist dt{font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--soft);margin-top:8px}
+.optlist dt:first-child{margin-top:0}
+.optlist dd{margin:2px 0 0 12px}
+.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.decide ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:720px){.pair,.trio{grid-template-columns:1fr}h1{font-size:1.7rem}.summary td:first-child,.rules td:first-child{white-space:normal}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">Release 15a · group G6 · A19.1</span>
+  <h1>The damage row fits a phone: today beside proposed</h1>
+  <p class="lede">From your device round: on the Combat page's Void card, "Reduce damage by 10" opens a row whose Apply button wraps onto four lines on a phone, with Cancel running past the card's edge. The row is like that on the live app too; A19 did not cause it. You chose to fix it as a small unit of its own in G6, A19.1, mock-up first. Every picture is the live app in a test browser; the proposed pictures have the change applied only in that browser. Nothing is built.</p>
+  <p class="meta">Live build <code>6d47849b…44b1</code> (<code>main</code> at <code>1ebf26b4</code>). Captured 19 November 2026 in Chromium 153.0.8010.12 at 390 × 844 (phone, touch) and 1440 × 1000 (laptop), in Play, with 25 typed as the damage announced. No page errors.</p>
+</header>
+
+<section id="phone">
+  <span class="tag">Phone</span>
+  <h2>The row after tapping "Reduce damage by 10"</h2>
+  <div class="pair phonepair">
+    <figure><img src="{{a19-1-phone-today}}" alt="Today on a phone: Apply wrapped onto four lines, Cancel running past the card's right edge"><figcaption><span class="t">Today.</span> "Reduce by 10 &amp; take Wounds" wraps onto four lines (86 px tall) and Cancel runs from 309 to 388 px, past the card's edge at 352 px.</figcaption></figure>
+    <figure><img src="{{a19-1-phone-proposed}}" alt="Proposed on a phone: the amount on the first line, Apply and Cancel side by side beneath it, each on one line"><figcaption><span class="n">Proposed.</span> "Damage announced" and the box on the first line; the two buttons beneath, each the card's full width and each on one line. Nothing past the card's edge.</figcaption></figure>
+  </div>
+</section>
+
+<section id="laptop">
+  <span class="tag">Laptop</span>
+  <h2>The same row on a laptop</h2>
+  <div class="stack">
+    <figure><img src="{{a19-1-laptop-today}}" alt="Today on a laptop: the row on one line"><figcaption><span class="t">Today.</span> One line.</figcaption></figure>
+    <figure><img src="{{a19-1-laptop-proposed}}" alt="Proposed on a laptop: the row on one line, as today"><figcaption><span class="n">Proposed.</span> One line, exactly as today (every edge measured the same, to the pixel).</figcaption></figure>
+  </div>
+</section>
+
+<section id="rule">
+  <span class="tag">The change</span>
+  <h2>What A19.1 does</h2>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Layout</td><td>The row may wrap onto a second line. Each button keeps its words on one line. Where there is room, as on a laptop, the row stays one line.</td></tr>
+    <tr><td>Phone</td><td>"Damage announced" and the box on the first line; "Reduce by 10 &amp; take Wounds" and then "Cancel" beneath, each the card's full width, inside the card. (Side by side they do not fit: the first button needs 222 px on one line and the row has 292.)</td></tr>
+    <tr><td>Unchanged</td><td>The words, the buttons, what they do, A19's Undo line, print (the row is hidden in print), and everything else on the card.</td></tr>
+    <tr><td>Unit</td><td>Screen-only, its own folder, switch, stylesheet, harness, remover and removal-chain entry (marker <code>PART H PHASE 15.1.35</code>), stacked after A20, so A19 and A20 stay removable by themselves.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve A19.1 as shown.</b> It is a layout change only, it fixes what you saw, and it leaves the laptop as it is.</div>
+</section>
+</div>

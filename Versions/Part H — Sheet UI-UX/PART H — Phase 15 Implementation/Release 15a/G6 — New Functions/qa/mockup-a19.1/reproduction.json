@@ -1,0 +1,129 @@
+{
+ "source_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+ "captured_utc": "2026-11-19T11:59:11.531Z",
+ "proposal_css": "#voidDamageRow{flex-wrap:wrap;row-gap:8px}\n#voidDamageApply,#voidDamageCancel{white-space:nowrap}\n@media (max-width:640px){#voidDamageApply,#voidDamageCancel{flex:1 1 auto}}",
+ "phone_today": {
+  "panelRight": 352,
+  "rowHeight": 86,
+  "docScroll": 390,
+  "vw": 390,
+  "label": {
+   "left": 49,
+   "right": 118,
+   "top": 605,
+   "height": 27
+  },
+  "input": {
+   "left": 124,
+   "right": 212,
+   "top": 603,
+   "height": 31
+  },
+  "apply": {
+   "left": 218,
+   "right": 303,
+   "top": 575,
+   "height": 86
+  },
+  "cancel": {
+   "left": 309,
+   "right": 388,
+   "top": 601,
+   "height": 35
+  },
+  "errors": []
+ },
+ "phone_proposed": {
+  "panelRight": 352,
+  "rowHeight": 117,
+  "docScroll": 390,
+  "vw": 390,
+  "label": {
+   "left": 49,
+   "right": 165,
+   "top": 584,
+   "height": 14
+  },
+  "input": {
+   "left": 171,
+   "right": 259,
+   "top": 575,
+   "height": 31
+  },
+  "apply": {
+   "left": 49,
+   "right": 341,
+   "top": 614,
+   "height": 35
+  },
+  "cancel": {
+   "left": 49,
+   "right": 341,
+   "top": 657,
+   "height": 35
+  },
+  "errors": []
+ },
+ "laptop_today": {
+  "panelRight": 1272,
+  "rowHeight": 35,
+  "docScroll": 1440,
+  "vw": 1440,
+  "label": {
+   "left": 179,
+   "right": 295,
+   "top": 757,
+   "height": 14
+  },
+  "input": {
+   "left": 301,
+   "right": 389,
+   "top": 750,
+   "height": 29
+  },
+  "apply": {
+   "left": 395,
+   "right": 617,
+   "top": 747,
+   "height": 35
+  },
+  "cancel": {
+   "left": 623,
+   "right": 702,
+   "top": 747,
+   "height": 35
+  },
+  "errors": []
+ },
+ "laptop_proposed": {
+  "panelRight": 1272,
+  "rowHeight": 35,
+  "docScroll": 1440,
+  "vw": 1440,
+  "label": {
+   "left": 179,
+   "right": 295,
+   "top": 757,
+   "height": 14
+  },
+  "input": {
+   "left": 301,
+   "right": 389,
+   "top": 750,
+   "height": 29
+  },
+  "apply": {
+   "left": 395,
+   "right": 617,
+   "top": 747,
+   "height": 35
+  },
+  "cancel": {
+   "left": 623,
+   "right": 702,
+   "top": 747,
+   "height": 35
+  },
+  "errors": []
+ }
+}

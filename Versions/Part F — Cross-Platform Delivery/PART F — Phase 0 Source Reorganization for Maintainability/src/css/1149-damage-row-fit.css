@@ -1,0 +1,18 @@
+/* PART H PHASE 15.1.35 — Release 15a, A19.1: the damage row fits a phone (owner, 19 November 2026, as mocked up).
+   The Combat page's Void card row that "Reduce damage by 10" opens may wrap; its two buttons keep their words on one
+   line; at 640 px wide or less each button takes the row's full width, beneath the amount. Waits for body.dr15-on,
+   which this unit's switch sets. The row sits in the card's print-hidden panel, so print is unchanged. */
+body.dr15-on #voidDamageRow {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+body.dr15-on #voidDamageApply,
+body.dr15-on #voidDamageCancel {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  body.dr15-on #voidDamageApply,
+  body.dr15-on #voidDamageCancel {
+    flex: 1 1 auto;
+  }
+}

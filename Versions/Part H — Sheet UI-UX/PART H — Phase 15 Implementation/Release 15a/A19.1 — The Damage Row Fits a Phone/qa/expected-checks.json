@@ -1,0 +1,15 @@
+{
+ "unit": "Release 15a A19.1 (PART H PHASE 15.1.35)",
+ "pinned": "19 November 2026, before the first run",
+ "checks": [
+  "DR-SEAM-PHONE",
+  "DR-ROW-INSIDE-CARD-PHONE",
+  "DR-BUTTONS-ONE-LINE-PHONE",
+  "DR-BUTTONS-FULL-WIDTH-PHONE",
+  "DR-APPLY-STILL-WORKS-PHONE",
+  "DR-NO-ERRORS-PHONE",
+  "DR-ONE-LINE-DESKTOP",
+  "DR-CANCEL-STILL-WORKS-DESKTOP",
+  "DR-NO-ERRORS-DESKTOP"
+ ]
+}

@@ -7914,6 +7914,25 @@ html body.ax15-on #techList > .entry.ax15-auto.ax15-wrap > .entry-top > .ax15-ta
   margin: 2px 0 6px;
 }
 
+/* PART H PHASE 15.1.35 — Release 15a, A19.1: the damage row fits a phone (owner, 19 November 2026, as mocked up).
+   The Combat page's Void card row that "Reduce damage by 10" opens may wrap; its two buttons keep their words on one
+   line; at 640 px wide or less each button takes the row's full width, beneath the amount. Waits for body.dr15-on,
+   which this unit's switch sets. The row sits in the card's print-hidden panel, so print is unchanged. */
+body.dr15-on #voidDamageRow {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+body.dr15-on #voidDamageApply,
+body.dr15-on #voidDamageCancel {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  body.dr15-on #voidDamageApply,
+  body.dr15-on #voidDamageCancel {
+    flex: 1 1 auto;
+  }
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -58149,6 +58168,30 @@ return fontkitCache=module.exports;}
   function tc1534Pool(context){ return TC15.enabled() ? TC15.chosenPool(context) : null; }
   // ============ END PART H PHASE 15.1.34 TC15 ============
 
+  // ============ PART H PHASE 15.1.35 — THE DAMAGE ROW FITS A PHONE ============
+  // Phase 15, Release 15a, unit A19.1 (group G6, new functions), approved by the owner on 19 November 2026 as mocked up,
+  // after G6's device round: on the Combat page's Void card, the row "Reduce damage by 10" opens wrapped its Apply button
+  // onto four lines on a phone and ran Cancel past the card's edge (as on the live app; A19 did not cause it). The number
+  // 35 is this unit's marker only; the unit keeps its identifier, A19.1.
+  // Screen only: this fragment marks the page (body.dr15-on) so that the unit's stylesheet lets the row wrap, keeps each
+  // button's words on one line and, at 640 px wide or less, gives each button the row's full width beneath the amount.
+  // Words, buttons, what they do and print are unchanged. Nothing is saved.
+  const DAMAGE_ROW_FIT_ENABLED = true;
+
+  const DR15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return DAMAGE_ROW_FIT_ENABLED === true && !!document.getElementById('voidDamageRow'); };
+    api.install = function(){
+      if(api.installed || !api.enabled() || !document.body) return false;
+      document.body.classList.add('dr15-on');
+      api.installed = true;
+      return true;
+    };
+    return api;
+  })();
+  if(DAMAGE_ROW_FIT_ENABLED) DR15.install();
+  // ============ END PART H PHASE 15.1.35 DR15 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -59167,6 +59210,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.34 BEGIN skill-trait-choice-seam
   if(typeof TC15 === 'object' && TC15) Object.assign(window.__L5R_TEST__, {TC15, SKILL_TRAIT_CHOICE_ENABLED});
   // END TC15 skill-trait-choice-seam
+  // PART H PHASE 15.1.35 BEGIN damage-row-fit-seam
+  if(typeof DR15 === 'object' && DR15) Object.assign(window.__L5R_TEST__, {DR15, DAMAGE_ROW_FIT_ENABLED});
+  // END DR15 damage-row-fit-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -23,14 +23,15 @@ OUT = QA / 'hosted-preview' / PREVIEW
 NODE = shutil.which('node') or r'C:\Program Files\nodejs\node.exe'
 R15A = QA.parent.parent
 UNITS = [('A19', 'PART H PHASE 15.1.33', R15A / 'A19 — Undo the Last Void Spend/qa/void-spend-undo-harness.js'),
-         ('A20', 'PART H PHASE 15.1.34', R15A / 'A20 — A Trait for One Skill Roll/qa/skill-trait-choice-harness.js')]
+         ('A20', 'PART H PHASE 15.1.34', R15A / 'A20 — A Trait for One Skill Roll/qa/skill-trait-choice-harness.js'),
+         ('A19.1', 'PART H PHASE 15.1.35', R15A / 'A19.1 — The Damage Row Fits a Phone/qa/damage-row-harness.js')]
 # Each unit's count is read from its own pinned list (G3's lesson: a revision that changes the pins cannot leave a stale number).
 UNITS = [(u, m, h, len(json.load(open(h.parent / 'expected-checks.json', encoding='utf-8'))['checks'])) for u, m, h in UNITS]
 SPLASH = F / 'PART F — Phase 0.6.2 Splash Screen/qa/splash-harness.js'
 # The retained harnesses of the layers the group touches, with the counts their light run gave on the unit's own build
 # (qa/light/<unit>/summary.json, one per unit, merged; a harness listed twice keeps one entry).
 RETAINED = {}
-for unit in ('a19', 'a20'):
+for unit in ('a19', 'a20', 'a19.1'):
     summary = QA / 'light' / unit / 'summary.json'
     if summary.is_file():
         for row in json.load(open(summary, encoding='utf-8'))['rows']:

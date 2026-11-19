@@ -1016,6 +1016,9 @@
   // PART H PHASE 15.1.34 BEGIN skill-trait-choice-seam
   if(typeof TC15 === 'object' && TC15) Object.assign(window.__L5R_TEST__, {TC15, SKILL_TRAIT_CHOICE_ENABLED});
   // END TC15 skill-trait-choice-seam
+  // PART H PHASE 15.1.35 BEGIN damage-row-fit-seam
+  if(typeof DR15 === 'object' && DR15) Object.assign(window.__L5R_TEST__, {DR15, DAMAGE_ROW_FIT_ENABLED});
+  // END DR15 damage-row-fit-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
