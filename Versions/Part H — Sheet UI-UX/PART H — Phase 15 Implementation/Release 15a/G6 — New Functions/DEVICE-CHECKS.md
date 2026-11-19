@@ -61,4 +61,13 @@ With a phone screenshot of the Combat page's damage row: "Reduce by 10 & take Wo
 
 **Text wrapping.** Not A19's: the damage row is the same on the live app (measured at 390 px, touch: the Apply button 86 px tall over four lines, Cancel from 309 to 388 px against the card's right edge at 352 px; `qa/damage-row-live-a08-phone.png`), from Part C Feature 4 and Phase 1.6. A19 adds nothing to that row. Proposed: a small screen-only unit of its own in G6 (A19.1, as A03.1 and A04.1 were), laying the row out to fit a phone (the amount on one line, the two buttons beneath), so A19 stays removable by itself.
 
-Waiting on the owner's choice for both.
+## The owner's choices, 19 November 2026 (verbatim, in the Claude session)
+
+| Question | Answer |
+|---|---|
+| A19, check 8: should Touch of the Void's own save leave Undo in place? | "Keep Undo (Recommended)" |
+| The damage row on the phone | "New unit A19.1 in G6 (Recommended)" |
+
+- **A19 is revised:** Touch of the Void's own Willpower save no longer ends Undo; Undo then says the save made for that spend no longer counts. Every other roll still ends Undo. A19 is re-checked (its harness gains a check for this), and A20, stacked on it, is rebuilt and re-checked on top.
+- **A19.1 joins G6:** the Combat page's damage row laid out to fit a phone, screen-only, its own unit (marker to be assigned when built), mock-up first.
+- **A20 is accepted** as built.
