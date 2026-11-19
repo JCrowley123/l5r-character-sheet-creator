@@ -34,6 +34,31 @@
 9. A Trait roll and a weapon attack: no drop-down.
 10. Manage → Skills afterwards: every Skill keeps its own Trait.
 
-## Results
+## Results (the owner, 19 November 2026, in the checklist)
 
-Waiting on the owner.
+| Unit | iPhone | Laptop | Decision |
+|---|---|---|---|
+| A19 | 9 Pass, check 8 Fail | 9 Pass, check 8 Fail | **Revise** |
+| A20 | 10 Pass | 10 Pass | **Accept** |
+
+The owner's notes on A19, verbatim:
+
+> "When I ran test 8 it failed.
+>
+> There was no undo button.  I suspect that's because I had touch of the void, and so when I applied the damage reduction it asked me for the willpower save, once I did that there was no undo.
+>
+> Maybe the roll then advanced the process and so undo was not being offered.
+>
+> I tested this without the disadvantage touch of the void and the undo button was there and worked as expected
+>
+> I also noticed issue with the text wrapping."
+
+With a phone screenshot of the Combat page's damage row: "Reduce by 10 & take Wounds" wrapped onto four lines and Cancel running past the card's right edge.
+
+## Review (Claude, 19 November 2026)
+
+**Check 8.** The owner's reading is right. With Touch of the Void, damage reduction opens the Willpower roll at once (it makes no roll of its own). Rolling it opened the result window, and A19 ends Undo at any roll the sheet makes, as approved ("One you rolled is a roll, so Undo has already gone"). Without Touch of the Void there is no such roll, so Undo stayed, as the owner found. The checklist's check 5 said to cancel that roll; check 8 did not, so the check met the rule rather than a defect. The question is whether the rule is right: Touch of the Void's roll is part of the spend, not the next roll the spend is used on, and a player who spent by mistake meets it straight away. Proposed revision: Touch of the Void's own Willpower roll does not end Undo; Undo then also says the Willpower roll made for that spend no longer counts (the sheet does not track Dazed, so the player tells the GM). Every other roll still ends Undo.
+
+**Text wrapping.** Not A19's: the damage row is the same on the live app (measured at 390 px, touch: the Apply button 86 px tall over four lines, Cancel from 309 to 388 px against the card's right edge at 352 px; `qa/damage-row-live-a08-phone.png`), from Part C Feature 4 and Phase 1.6. A19 adds nothing to that row. Proposed: a small screen-only unit of its own in G6 (A19.1, as A03.1 and A04.1 were), laying the row out to fit a phone (the amount on one line, the two buttons beneath), so A19 stays removable by itself.
+
+Waiting on the owner's choice for both.
