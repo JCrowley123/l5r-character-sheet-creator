@@ -19,7 +19,7 @@ Each unit has its own folder, switch, fragments, harness, remover, removal proof
 
 ## Status
 
-- **19 November 2026: both units built and light-checked; the device round is with the owner.** A19: own harness 22/22, removal 10/10, dependencies clean, touched layers 26/26 (1,226 checks), preview verified (27/27 harnesses, 1,248 checks on the deployed page). A20: own harness 18/18, removal 10/10, dependencies clean, touched layers 33/33 (1,606 checks). Details in each unit's README; the review in `qa/code-review.md`.
+- **19 November 2026: both units built and light-checked; the device round is with the owner.** A19: own harness 22/22, removal 10/10, dependencies clean, touched layers 26/26 (1,226 checks), preview verified (27/27 harnesses, 1,248 checks on the deployed page). A20: own harness 18/18, removal 10/10, dependencies clean, touched layers 33/33 (1,606 checks), preview verified (52/52 harnesses, 2,547 checks on the deployed page, A19 and A20 together). Details in each unit's README; the review in `qa/code-review.md`.
 - **Device round:** [G6 Device Round Checklist](https://claude.ai/artifact/3XbGrSnc5z1T9uM2KUwtbz), mirrored in [DEVICE-CHECKS.md](DEVICE-CHECKS.md). Accept / Revise / Remove for each unit.
 - **Planned qualification counts** (behaviour tier, after acceptance): candidate = G5's 7,401 + A19's 22 + A20's 18 = 7,441; retained (G6 removed = A08 as live) 7,307, as G5's.
 - Nothing is qualified or live. Go-live only on the owner's word: fast-forward `main` to the qualified tip, no merge commit or force.
