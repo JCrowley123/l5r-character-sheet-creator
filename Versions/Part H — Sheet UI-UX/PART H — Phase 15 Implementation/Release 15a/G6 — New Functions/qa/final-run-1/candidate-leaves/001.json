@@ -1,0 +1,20 @@
+{
+  "fingerprint": "94c97af3b10119a4dd6cb9f7845c44189be6190e1465d8297fecca9e35d33ab2",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A19 — Undo the Last Void Spend\\qa\\void-spend-undo-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G6 — New Functions\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-19T14:14:29.064Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS VU-SEAM-PHONE\nPASS VU-NO-LINE-BEFORE-SPEND-PHONE\nPASS VU-K1-SPENT-LINE-PHONE\nPASS VU-K1-UNDO-RESTORES-PHONE\nPASS VU-K1-NO-TOUCH-ROLL-AFTER-UNDO-PHONE\nPASS VU-TN-TOUCH-CANCELLED-UNDO-PHONE\nPASS VU-ROLL-ENDS-PHONE\nPASS VU-CANCELLED-PREVIEW-KEEPS-PHONE\nPASS VU-TOUCH-SAVE-KEEPS-UNDO-PHONE\nPASS VU-NO-ERRORS-PHONE\nPASS VU-NEXT-ROUND-ENDS-DESKTOP\nPASS VU-RESET-ENDS-DESKTOP\nPASS VU-LATEST-SPEND-ONLY-DESKTOP\nPASS VU-DOUBLE-UNDO-ONCE-DESKTOP\nPASS VU-PIP-TAP-ENDS-DESKTOP\nPASS VU-PREVIEW-VOID-SPEND-NOT-COVERED-DESKTOP\nPASS VU-DAMAGE-UNDO-DESKTOP\nPASS VU-INITIATIVE-UNDO-DESKTOP\nPASS VU-HOTEI-TWO-POINTS-UNDO-DESKTOP\nPASS VU-OPEN-ENDS-DESKTOP\nPASS VU-KEYBOARD-UNDO-FOCUS-DESKTOP\nPASS VU-SAVE-DATA-UNCHANGED-DESKTOP\nPASS VU-TOUCH-SAVE-KEEPS-UNDO-DESKTOP\nPASS VU-TOUCH-SAVE-THEN-ROLL-ENDS-DESKTOP\nPASS VU-NO-ERRORS-DESKTOP\n25/25 checks passed\n",
+    "stderr": ""
+  }
+}

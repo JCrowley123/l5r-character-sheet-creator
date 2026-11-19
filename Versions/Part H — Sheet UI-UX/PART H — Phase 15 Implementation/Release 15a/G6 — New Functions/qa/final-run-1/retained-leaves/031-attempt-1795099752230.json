@@ -1,0 +1,20 @@
+{
+  "fingerprint": "daa9878637aa159cd0b9d929e4a0ee011bd29c03b878e661a74d427b15d45621",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\BUGFIX — Free Choice Note Clears\\qa\\free-choice-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G6 — New Functions\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-19T14:49:12.229Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS FC-ENABLED\nPASS FC-BOTH-OPEN\nPASS FC-ONE-FILLED\nPASS FC-ALL-FILLED\nPASS FC-UNTICK-REOPENS\nPASS FC-REVIEW-NO-NOTE\nPASS FC-NO-ERRORS\nPASS FC-LOGIC-SIZES\nPASS FC-LOGIC-FAMILY-AND-SCHOOLS\n9/9 checks passed\n",
+    "stderr": ""
+  }
+}

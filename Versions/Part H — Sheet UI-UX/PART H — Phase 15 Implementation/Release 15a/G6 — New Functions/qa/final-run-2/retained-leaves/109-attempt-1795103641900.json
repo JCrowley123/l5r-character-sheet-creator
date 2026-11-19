@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b37c0561099a5109060815b5c1fc50f68396a1cd3a7feb0c7b5f5078b5265148",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\BUGFIX — Import File Picker Filter\\qa\\import-filter-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\G6 — New Functions\\qa",
+    "timeout": 2400000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-19T15:54:01.900Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Import file picker filter checks against: C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-g6-final-1xxh900l\\phase0\\l5r-character-sheet.html\nPASS IF-ENABLED\nPASS IF-NO-FILTER-TOOLBAR\nPASS IF-NO-FILTER-LIST\nPASS IF-NO-FILTER-LIST-REOPENED\nPASS IF-OLD-SAVE-IMPORTS\nPASS IF-NO-PAGE-ERRORS\nPASS IF-TOOLBAR-OLD-SAVE-LOADS\nPASS IF-NOT-JSON-REFUSED\nPASS IF-NOT-A-SAVE-REFUSED\nPASS IF-NO-PAGE-ERRORS-REFUSALS\n\n10/10 checks passed\n",
+    "stderr": ""
+  }
+}

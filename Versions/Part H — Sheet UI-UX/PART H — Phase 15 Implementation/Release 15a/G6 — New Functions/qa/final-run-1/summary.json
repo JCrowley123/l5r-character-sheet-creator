@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-11-19T14:13:23.981860+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7453,
+      "total": 7453,
+      "orchestration": {
+        "expected": 7453,
+        "passed": 7453,
+        "total": 7453,
+        "leafTotal": 7453,
+        "wrapperCount": 119,
+        "leafCount": 205,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 205,
+        "fingerprint": "94c97af3b10119a4dd6cb9f7845c44189be6190e1465d8297fecca9e35d33ab2",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 29.1
+    },
+    {
+      "label": "04-retained",
+      "passed": 7328,
+      "total": 7328,
+      "orchestration": {
+        "expected": 7328,
+        "passed": 7328,
+        "total": 7328,
+        "leafTotal": 7328,
+        "wrapperCount": 104,
+        "leafCount": 200,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 200,
+        "fingerprint": "daa9878637aa159cd0b9d929e4a0ee011bd29c03b878e661a74d427b15d45621",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 26.1
+    }
+  ],
+  "source_sha256": "921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150",
+  "source_bytes": 17718601,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A19.1 \u2014 The Damage Row Fits a Phone",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A20 \u2014 A Trait for One Skill Roll",
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A19 \u2014 Undo the Last Void Spend"
+  ],
+  "restoration": {
+    "sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+    "bytes": 17685928,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-19T15:09:00.236762+00:00"
+}
