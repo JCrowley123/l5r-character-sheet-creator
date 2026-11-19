@@ -1,0 +1,13 @@
+  detail VU-SEAM-PHONE: {"vu":false}
+  detail VU-K1-SPENT-LINE-PHONE: {"points":"2","pending":"{\"k1\":true}","round":1,"spend":"k1","voidTN":false,"armorTN":0,"initiative":0,"wounds":"0","owed":1,"line":"","undo":false,"greyed":6,"status":"Void spent: +1k1 to a Skill, Trait, Ring, or Spell Casting roll — applies to your next roll."}
+locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#vu15Line button').first()[22m
+
+    at press (C:\Users\jcrow\l5r-release-15a-g6\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A19 — Undo the Last Void Spend\qa\void-spend-undo-harness.js:80:100)
+    at undo (C:\Users\jcrow\l5r-release-15a-g6\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A19 — Undo the Last Void Spend\qa\void-spend-undo-harness.js:82:31)
+    at C:\Users\jcrow\l5r-release-15a-g6\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A19 — Undo the Last Void Spend\qa\void-spend-undo-harness.js:143:13 {
+  log: [ "  - waiting for locator('#vu15Line button').first()" ],
+  name: 'TimeoutError'
+}
+0/22 checks passed

@@ -348,6 +348,9 @@ CHAIN: tuple[Release, ...] = (
     # Group G5: undo and the roll preview.
     Release("PART H — Phase 15 Implementation/Release 15a/A08 — One Undo for Quick Taps",
             fragment="src/sheet/209.999999999999999998-feat-quick-tap-undo.js"),
+    # Group G6: new functions.
+    Release("PART H — Phase 15 Implementation/Release 15a/A19 — Undo the Last Void Spend",
+            fragment="src/sheet/209.999999999999999999-feat-void-spend-undo.js"),
 )
 
 

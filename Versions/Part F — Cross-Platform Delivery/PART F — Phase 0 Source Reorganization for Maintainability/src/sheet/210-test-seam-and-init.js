@@ -1010,6 +1010,9 @@
   // PART H PHASE 15.1.31 BEGIN quick-tap-undo-seam
   if(typeof QT15 === 'object' && QT15) Object.assign(window.__L5R_TEST__, {QT15, QUICK_TAP_UNDO_ENABLED});
   // END QT15 quick-tap-undo-seam
+  // PART H PHASE 15.1.33 BEGIN void-spend-undo-seam
+  if(typeof VU15 === 'object' && VU15) Object.assign(window.__L5R_TEST__, {VU15, VOID_SPEND_UNDO_ENABLED});
+  // END VU15 void-spend-undo-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

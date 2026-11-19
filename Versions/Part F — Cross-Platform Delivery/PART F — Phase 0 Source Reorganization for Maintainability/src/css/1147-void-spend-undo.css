@@ -1,0 +1,34 @@
+/* PART H PHASE 15.1.33 — Release 15a, A19: Undo the last Void spend (owner, 19 November 2026, as mocked up).
+   The line under the Void card's buttons after a card spend: an Undo button (the card's own ghost button, as Next
+   Round and Reset) and what was spent; after Undo, what was put back. Drawn only by this unit's fragment, hidden when
+   there is nothing to say, and inside the card's print-hidden panel. */
+.vu15-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  background: rgba(169, 132, 63, .08);
+  font-size: .92em;
+  line-height: 1.35;
+}
+.vu15-line[hidden] {
+  display: none;
+}
+.vu15-line:focus {
+  outline: none;
+}
+.vu15-line:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.vu15-line button.vu15-undo {
+  flex: 0 0 auto;
+  margin: 0;
+}
+.vu15-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
