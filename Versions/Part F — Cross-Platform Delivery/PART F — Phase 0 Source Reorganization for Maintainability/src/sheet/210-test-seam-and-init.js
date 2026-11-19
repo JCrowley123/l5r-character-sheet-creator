@@ -1013,6 +1013,9 @@
   // PART H PHASE 15.1.33 BEGIN void-spend-undo-seam
   if(typeof VU15 === 'object' && VU15) Object.assign(window.__L5R_TEST__, {VU15, VOID_SPEND_UNDO_ENABLED});
   // END VU15 void-spend-undo-seam
+  // PART H PHASE 15.1.34 BEGIN skill-trait-choice-seam
+  if(typeof TC15 === 'object' && TC15) Object.assign(window.__L5R_TEST__, {TC15, SKILL_TRAIT_CHOICE_ENABLED});
+  // END TC15 skill-trait-choice-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,0 +1,41 @@
+/* PART H PHASE 15.1.34 — Release 15a, A20: a Trait for one Skill roll (owner, 19 November 2026, as mocked up, with the
+   book-named Traits listed first).
+   The Trait line of a Skill roll's preview holds a drop-down; a Trait other than the usual one is outlined, with a
+   "This roll only" note under the line. Drawn only by this unit's fragment, inside the roll preview. The row's own label
+   stays in the page with its words, out of sight: the drop-down shows the same Trait and value. */
+.rp-baserow.tc15-has-choice > .rp-mod-label.tc15-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.rp-baserow select.tc15-trait {
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  background: var(--paper, #fffaf0);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  padding: 2px 26px 2px 8px;
+  max-width: 13em;
+}
+.rp-baserow select.tc15-trait:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.rp-baserow.tc15-changed select.tc15-trait {
+  border-color: var(--shu);
+  box-shadow: 0 0 0 2px rgba(170, 51, 51, .18);
+}
+.tc15-note {
+  font-size: .85em;
+  font-style: italic;
+  color: var(--shu-dark);
+  margin: 2px 0 6px;
+}

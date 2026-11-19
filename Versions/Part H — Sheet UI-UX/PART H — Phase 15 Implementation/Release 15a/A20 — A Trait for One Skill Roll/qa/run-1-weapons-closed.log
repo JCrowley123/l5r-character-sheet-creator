@@ -1,0 +1,19 @@
+  detail TC-NOT-ON-ATTACK-DESKTOP: "exception: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#weaponsBody .wp-roll-btn').first()\u001b[22m\n\u001b[2m    - locator resolved to <button data-d10=\"1\" type=\"button\" title=\"Roll attack\" aria-label=\"Roll attack\" class=\"dice-btn wp-roll-btn\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ×"
+PASS TC-SEAM-PHONE
+PASS TC-OPENS-ON-USUAL-PHONE
+PASS TC-LIST-ORDER-PHONE
+PASS TC-OTHER-TRAIT-POOL-PHONE
+PASS TC-TICKS-KEPT-PHONE
+PASS TC-ROLL-USES-CHOICE-PHONE
+PASS TC-SAVED-TRAIT-UNCHANGED-PHONE
+PASS TC-REOPENS-ON-USUAL-PHONE
+PASS TC-NO-ERRORS-PHONE
+PASS TC-CANCEL-FORGETS-DESKTOP
+PASS TC-BACK-TO-USUAL-DESKTOP
+PASS TC-UNSKILLED-KEEPS-RULE-DESKTOP
+PASS TC-BOOK-NOTE-DESKTOP
+PASS TC-NOT-ON-TRAIT-ROLL-DESKTOP
+FAIL TC-NOT-ON-ATTACK-DESKTOP
+PASS TC-KEYBOARD-CHOICE-DESKTOP
+PASS TC-NO-ERRORS-DESKTOP
+16/17 checks passed

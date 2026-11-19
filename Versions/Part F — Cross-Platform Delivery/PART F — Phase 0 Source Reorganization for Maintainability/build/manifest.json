@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9",
+  "expect_sha256": "8d6a0a0a23bdb583edbcaf94bb8fdc9dd5b1426ad0c4bc31ca8ee5e1be62a4eb",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -192,6 +192,7 @@
     { "file": "src/css/1145-splash-fill.css", "note": "PART H PHASE 15.1.27 - Release 15a A17, the splash picture fills the screen; its script is a block in the splash markup" },
     { "file": "src/css/1146-automatic-entry-controls.css", "note": "PART H PHASE 15.1.30 - Release 15a AE3, no XP box and no remove button on automatic entries, the tag on the name line with a fallback on the left" },
     { "file": "src/css/1147-void-spend-undo.css", "note": "PART H PHASE 15.1.33 - Release 15a A19, the Undo line under the Void card's buttons after a card spend" },
+    { "file": "src/css/1148-skill-trait-choice.css", "note": "PART H PHASE 15.1.34 - Release 15a A20, the Trait drop-down and its this-roll-only note in a Skill roll's preview" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -539,6 +540,7 @@
     { "file": "src/sheet/209.999999999999999997-feat-automatic-entry-controls.js", "note": "PART H PHASE 15.1.30 - Release 15a AE3, marks automatic entries and lays out their tag" },
     { "file": "src/sheet/209.999999999999999998-feat-quick-tap-undo.js", "note": "PART H PHASE 15.1.31 - Release 15a A08, quick taps on one card within five seconds are one change for Undo and History" },
     { "file": "src/sheet/209.999999999999999999-feat-void-spend-undo.js", "note": "PART H PHASE 15.1.33 - Release 15a A19, Undo the most recent Void card spend until the next roll, Next Round or Reset" },
+    { "file": "src/sheet/209.9999999999999999991-feat-skill-trait-choice.js", "note": "PART H PHASE 15.1.34 - Release 15a A20, choose a Trait for one Skill roll in its preview, the book-named Traits first" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -275,6 +275,11 @@
       const onKey = (e)=>{ if(e.key === 'Escape') finish(false); };
 
       function render(){
+        // PART H PHASE 15.1.34 BEGIN trait-choice-base
+        // A Skill roll's Trait may be changed for this roll in the preview: the pool is then read from the request, which
+        // that unit keeps current (Release 15a, A20).
+        const baseRolled = req.baseRolled, baseKept = req.baseKept;
+        // END TC15 trait-choice-base
         const basis = projectRoll(context, baseRolled, baseKept);
         const adj = basis.adj;
         const rows = buildRollModifierRows(adj, 0);
@@ -396,6 +401,10 @@
           '</div>';
 
         body.innerHTML = html;
+        // PART H PHASE 15.1.34 BEGIN trait-choice-control
+        // The Trait line becomes a drop-down for this roll only, redrawing the preview in place (Release 15a, A20).
+        if(typeof tc1534Decorate === 'function') tc1534Decorate(body, req, render);
+        // END TC15 trait-choice-control
 
         Array.prototype.forEach.call(body.querySelectorAll('[data-void-key]'), cb=>{
           cb.addEventListener('change', ()=>{

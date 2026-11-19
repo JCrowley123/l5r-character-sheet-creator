@@ -1,0 +1,270 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15a-g6\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Phase 1\\.5 Roll Pipeline|Phase 3 Smart Roll Preview|Phase 4 Explain|After-Preview Refund|Roll Preview Opens|4\\.5\\.15 Roll Declaration|4\\.5\\.10 Cursed|4\\.5\\.11 Seven Fortunes Curse|4\\.5\\.12 Seven Fortunes Curse Bishamon|4\\.5\\.27 Situational|4\\.5\\.28 Situational|4\\.5\\.30 Automatic Roll|4\\.5\\.26 Dice Rolling|Rank 0 Skill Rolls|BUGFIX — Skill Traits/qa/skill-traits|Modal-Configured Advantages-Disadvantages|4\\.5\\.2 Disadvantages|4\\.5\\.9 Doubt|4\\.5\\.7 Unlucky|4\\.5\\.8 Dependant|4\\.5\\.20 Void Versatility|4\\.5\\.21 Seven Fortunes Blessing|4\\.5\\.23 Dark Paragon|4\\.5\\.24 Touch of the Spirit|4\\.5\\.36 Weakness|Honour Resistance|Negative Roll Modifier|Empty Quiver Rolls On|Apply School Skill Rows|12\\.4 Play Mode Skills|A03 — Top-Aligned|A08 — One Undo",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A08 — One Undo for Quick Taps/qa/quick-tap-undo-harness.js",
+   "passed": 21,
+   "total": 21,
+   "status": 0,
+   "seconds": 44,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/qa/compact-skills-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 46,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — After-Preview Refund/qa/refund-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Empty Quiver Rolls On/qa/quiver-harness.js",
+   "passed": 8,
+   "total": 8,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-harness.js",
+   "passed": 51,
+   "total": 51,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-expansion-harness.js",
+   "passed": 48,
+   "total": 48,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.2 Disadvantages/qa/disadv-config-harness.js",
+   "passed": 163,
+   "total": 163,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 1.5 Roll Pipeline Consolidation/qa/roll-pipeline-baseline.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 3 Smart Roll Preview/qa/roll-preview-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 4 Explain This Roll/qa/roll-breakdown-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.7 Unlucky/qa/disadv-unlucky-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.8 Dependant and Wrath of the Kami/qa/disadv-dependant-wrath-harness.js",
+   "passed": 55,
+   "total": 55,
+   "status": 0,
+   "seconds": 34,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.9 Doubt/qa/disadv-doubt-harness.js",
+   "passed": 38,
+   "total": 38,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.10 Cursed by the Realm/qa/disadv-realm-harness.js",
+   "passed": 62,
+   "total": 62,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.11 Seven Fortunes Curse/qa/disadv-fortune-harness.js",
+   "passed": 74,
+   "total": 74,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon/qa/disadv-bishamon-harness.js",
+   "passed": 51,
+   "total": 51,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Negative Roll Modifier Display/qa/negative-roll-modifier-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+   "passed": 53,
+   "total": 53,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.20 Void Versatility/qa/void-versatility-harness.js",
+   "passed": 66,
+   "total": 66,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js",
+   "passed": 77,
+   "total": 77,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.23 Dark Paragon/qa/dark-paragon-harness.js",
+   "passed": 67,
+   "total": 67,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.24 Touch of the Spirit Realms/qa/spirit-realms-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Apply School Skill Rows/qa/school-skill-rows-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.4 Play Mode Skills/qa/skills-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Rank 0 Skill Rolls Explode/qa/rank-zero-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.26 Dice Rolling Entries/qa/dice-entries-harness.js",
+   "passed": 110,
+   "total": 110,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js",
+   "passed": 117,
+   "total": 117,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/situational-buttons-harness.js",
+   "passed": 71,
+   "total": 71,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js",
+   "passed": 41,
+   "total": 41,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Skill Traits/qa/skill-traits-harness.js",
+   "passed": 38,
+   "total": 38,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/weakness-hotei-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Roll Preview Opens at the Top/qa/roll-preview-top-harness.js",
+   "passed": 10,
+   "total": 10,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Honour Resistance Bonus/qa/honour-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  }
+ ]
+}

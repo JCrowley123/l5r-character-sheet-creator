@@ -1,0 +1,237 @@
+{
+  "commit": "56dccb47dddc9629269ac854bd40e835a3c5b730",
+  "ref": "claude/release-15a-a19",
+  "url": "https://claude-release-15a-a19.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-19T02:12:13.362577+00:00",
+  "source_sha256": "0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9",
+  "page_sha256": "12cca9cf2cbd4e25c465e5eed1f2eeb10ce65411ce39eab69fcd6a7cd92f5fb7",
+  "page_bytes": 17708174,
+  "service_worker_build": "e0ecd3896627659c",
+  "units": [
+    "A19"
+  ],
+  "expected": {
+    "harnesses": 27,
+    "checks": 1248
+  },
+  "harnesses": {
+    "A19 \u2014 Undo the Last Void Spend/void-spend-undo-harness.js": {
+      "counts": [
+        "22",
+        "22"
+      ],
+      "expected": 22,
+      "passed": true
+    },
+    "BUGFIX \u2014 After-Preview Refund/refund-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "BUGFIX \u2014 Ancestor Corrections (Void Offer, Info Button, Clan Picker)/ancfix-harness.js": {
+      "counts": [
+        "28",
+        "28"
+      ],
+      "expected": 28,
+      "passed": true
+    },
+    "BUGFIX \u2014 Ancestor Gifts Used and Favour/ancestor-gifts-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Hotei Where the Sheet Spends Void/hotei-auto-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    },
+    "BUGFIX \u2014 Moon Curse Full Moon/moon-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Roll Preview Opens at the Top/roll-preview-top-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "BUGFIX \u2014 Void Card Reasons on a Phone/void-reasons-harness.js": {
+      "counts": [
+        "14",
+        "14"
+      ],
+      "expected": 14,
+      "passed": true
+    },
+    "BUGFIX \u2014 Void Raise Not on Initiative/void-raise-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.20 Void Versatility/void-versatility-harness.js": {
+      "counts": [
+        "66",
+        "66"
+      ],
+      "expected": 66,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.23 Dark Paragon/dark-paragon-harness.js": {
+      "counts": [
+        "67",
+        "67"
+      ],
+      "expected": 67,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.29 Wound Entries/wound-entries-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js": {
+      "counts": [
+        "101",
+        "101"
+      ],
+      "expected": 101,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.33 Void and Initiative Entries/void-initiative-harness.js": {
+      "counts": [
+        "44",
+        "44"
+      ],
+      "expected": 44,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
+      "counts": [
+        "349",
+        "349"
+      ],
+      "expected": 349,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11 Characters List and Save Model/characters-harness.js": {
+      "counts": [
+        "70",
+        "70"
+      ],
+      "expected": 70,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12 Play and Management Modes/modes-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.7 Play Mode Combat/combat-harness.js": {
+      "counts": [
+        "55",
+        "55"
+      ],
+      "expected": 55,
+      "passed": true
+    },
+    "PART G \u2014 Phase 1.5 Roll Pipeline Consolidation/roll-pipeline-baseline.js": {
+      "counts": [
+        "35",
+        "35"
+      ],
+      "expected": 35,
+      "passed": true
+    },
+    "PART G \u2014 Phase 3 Smart Roll Preview/roll-preview-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART G \u2014 Phase 4 Explain This Roll/roll-breakdown-harness.js": {
+      "counts": [
+        "22",
+        "22"
+      ],
+      "expected": 22,
+      "passed": true
+    },
+    "PART H \u2014 Phase 1.6 Combat Tab Streamlining/wound-bar-harness.js": {
+      "counts": [
+        "23",
+        "23"
+      ],
+      "expected": 23,
+      "passed": true
+    },
+    "A07 \u2014 The Moon Row/moon-row-harness.js": {
+      "counts": [
+        "26",
+        "26"
+      ],
+      "expected": 26,
+      "passed": true
+    },
+    "A08 \u2014 One Undo for Quick Taps/quick-tap-undo-harness.js": {
+      "counts": [
+        "21",
+        "21"
+      ],
+      "expected": 21,
+      "passed": true
+    },
+    "PART H \u2014 Phase 2 Quick-Access Sidebar/quick-access-sidebar-harness.js": {
+      "counts": [
+        "19",
+        "19"
+      ],
+      "expected": 19,
+      "passed": true
+    },
+    "PART J \u2014 Phase 7 Save Format and Migration/save-format-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}

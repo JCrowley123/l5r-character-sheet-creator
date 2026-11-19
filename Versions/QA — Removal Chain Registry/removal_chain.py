@@ -351,6 +351,8 @@ CHAIN: tuple[Release, ...] = (
     # Group G6: new functions.
     Release("PART H — Phase 15 Implementation/Release 15a/A19 — Undo the Last Void Spend",
             fragment="src/sheet/209.999999999999999999-feat-void-spend-undo.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A20 — A Trait for One Skill Roll",
+            fragment="src/sheet/209.9999999999999999991-feat-skill-trait-choice.js"),
 )
 
 

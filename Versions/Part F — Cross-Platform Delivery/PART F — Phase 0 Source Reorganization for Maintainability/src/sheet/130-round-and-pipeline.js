@@ -206,6 +206,10 @@
       const proceed = await rollPreviewGate({ title, context, baseRolled, baseKept, opts });
       if(!proceed) return null;
     }
+    // PART H PHASE 15.1.34 BEGIN trait-choice-pool
+    // A Trait chosen in the preview for this one Skill roll sets the pool rolled (Release 15a, A20).
+    if(typeof tc1534Pool === 'function'){ const tc1534 = tc1534Pool(context); if(tc1534){ baseRolled = tc1534.rolled; baseKept = tc1534.kept; } }
+    // END TC15 trait-choice-pool
     // Resolved AFTER the gate on purpose: the player may have armed a Void effect inside the
     // preview, and these two lines are what read it.
     const mods = getPreRollModifiers(context);

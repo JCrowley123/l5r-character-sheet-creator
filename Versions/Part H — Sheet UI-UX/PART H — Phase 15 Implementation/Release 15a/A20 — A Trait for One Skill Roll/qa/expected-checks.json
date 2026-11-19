@@ -1,0 +1,25 @@
+{
+ "unit": "Release 15a A20 (PART H PHASE 15.1.34)",
+ "pinned": "19 November 2026, before the first run",
+ "checks": [
+  "TC-SEAM-PHONE",
+  "TC-OPENS-ON-USUAL-PHONE",
+  "TC-LIST-ORDER-PHONE",
+  "TC-OTHER-TRAIT-POOL-PHONE",
+  "TC-TICKS-KEPT-PHONE",
+  "TC-ROLL-USES-CHOICE-PHONE",
+  "TC-SAVED-TRAIT-UNCHANGED-PHONE",
+  "TC-REOPENS-ON-USUAL-PHONE",
+  "TC-NO-ERRORS-PHONE",
+  "TC-CANCEL-FORGETS-DESKTOP",
+  "TC-BACK-TO-USUAL-DESKTOP",
+  "TC-UNSKILLED-KEEPS-RULE-DESKTOP",
+  "TC-BOOK-NOTE-DESKTOP",
+  "TC-NOT-ON-TRAIT-ROLL-DESKTOP",
+  "TC-NOT-ON-ATTACK-DESKTOP",
+  "TC-KEYBOARD-CHOICE-DESKTOP",
+  "TC-TWO-TRAIT-SKILL-DESKTOP",
+  "TC-NO-ERRORS-DESKTOP"
+ ],
+ "amended": "19 November 2026, after run 3 (17/17): TC-TWO-TRAIT-SKILL-DESKTOP added for the code review's finding (Ninjutsu and Sailing hold two Traits); the 17 earlier ids unchanged"
+}

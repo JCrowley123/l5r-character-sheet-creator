@@ -1,0 +1,13 @@
+  detail TC-SEAM-PHONE: {"tc":false}
+  detail TC-OPENS-ON-USUAL-PHONE: {"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"}
+  detail TC-LIST-ORDER-PHONE: null
+locator.selectOption: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#rollPreviewBody select')[22m
+
+    at pick (C:\Users\jcrow\l5r-release-15a-g6\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A20 — A Trait for One Skill Roll\qa\skill-trait-choice-harness.js:87:85)
+    at C:\Users\jcrow\l5r-release-15a-g6\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A20 — A Trait for One Skill Roll\qa\skill-trait-choice-harness.js:120:13 {
+  log: [ "  - waiting for locator('#rollPreviewBody select')" ],
+  name: 'TimeoutError'
+}
+0/18 checks passed

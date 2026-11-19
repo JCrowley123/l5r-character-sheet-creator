@@ -22,7 +22,8 @@ PREVIEW = re.sub(r'^https?://|\.l5r-character-sheet-creator\.pages\.dev/?$', '',
 OUT = QA / 'hosted-preview' / PREVIEW
 NODE = shutil.which('node') or r'C:\Program Files\nodejs\node.exe'
 R15A = QA.parent.parent
-UNITS = [('A19', 'PART H PHASE 15.1.33', R15A / 'A19 — Undo the Last Void Spend/qa/void-spend-undo-harness.js')]
+UNITS = [('A19', 'PART H PHASE 15.1.33', R15A / 'A19 — Undo the Last Void Spend/qa/void-spend-undo-harness.js'),
+         ('A20', 'PART H PHASE 15.1.34', R15A / 'A20 — A Trait for One Skill Roll/qa/skill-trait-choice-harness.js')]
 # Each unit's count is read from its own pinned list (G3's lesson: a revision that changes the pins cannot leave a stale number).
 UNITS = [(u, m, h, len(json.load(open(h.parent / 'expected-checks.json', encoding='utf-8'))['checks'])) for u, m, h in UNITS]
 SPLASH = F / 'PART F — Phase 0.6.2 Splash Screen/qa/splash-harness.js'
