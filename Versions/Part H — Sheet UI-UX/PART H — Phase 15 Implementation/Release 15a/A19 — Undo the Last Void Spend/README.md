@@ -9,6 +9,23 @@ Group G6 (new functions), unit 1 of 2. FT-24 as the owner ruled it on 9 October 
 - **Undo goes away** at any roll the sheet makes (the result window opening; a preview cancelled is not a roll), at Next Round and Reset, at another card spend (which takes its place), when a character is opened or the sheet reset, and on any other change to those values (a pip tap, a Void Point spent in a roll preview). A roll preview briefly arms and clears the one-roll effects while it works out its offers; nothing is judged while one is open.
 - **Not covered:** Void Points spent outside the card (the roll preview's own Void option, Lost Love, Dark Paragon's Determination, an Ancestor's gift, pip taps). The roll preview's refund (RF7) and History (AL71) are untouched; History records the spend and the Undo as ordinary changes. Nothing new is saved.
 
+## Revision 1 (19 November 2026, after the owner's device round)
+
+The owner's device round passed every check but one, on both devices: check 8, damage reduction with Touch of the Void. Its Willpower roll opens straight after the spend; the owner rolled it, and A19 then ended Undo, as approved ("any roll the sheet makes"). The owner chose "Keep Undo (Recommended)": Touch of the Void's own Willpower roll is part of the spend, not the next roll the spend is used on, so it no longer ends Undo.
+
+- While Touch of the Void's roll is under way (`VI4533.check`, wrapped by property), its result window does not end Undo. The line then reads, for example, "Spent: damage reduced by 10; 15 Wounds taken. Touch of the Void's Willpower roll was made; after Undo it no longer counts."
+- After Undo: "Undone: the Void Point is back; the 15 Wounds taken back. The Touch of the Void roll made for it no longer counts: tell the GM if it left you Dazed." The sheet does not track Dazed.
+- Every other roll still ends Undo, including one made after Touch of the Void's roll.
+- Build `bd035d20fc2d26c887e69faf0dae420aa670cf633000103e06a16e55840a8f8d`, 17,702,871 bytes. The record of the first build stays below.
+- Records: the owner's results and choices in [G6 DEVICE-CHECKS.md](<../G6 — New Functions/DEVICE-CHECKS.md>).
+
+| Check (revision 1) | Result |
+|---|---|
+| Own harness, 25 checks (22 + 3 pinned for the revision before its first run: the save rolled keeps Undo on the phone, after damage reduction, and on the laptop, after +10 TN; another roll after it still ends Undo) | 25/25 on the first run (`qa/rev1-run-1.log`) |
+| `qa/test-removal.py` | 10/10 (`qa/rev1-removal.log`) |
+| `feature-dependencies.py` | every reference inside this unit's own block (`qa/rev1-dependencies.log`) |
+| The same 26 touched harnesses | 26/26, 1,226/1,226 (`G6 — New Functions/qa/light/a19-rev1-touched-run.log`) |
+
 ## How it is built
 
 - `src/sheet/209.999999999999999999-feat-void-spend-undo.js` — `VU15` and the switch `VOID_SPEND_UNDO_ENABLED`. Click listeners on the card's button holder and the damage row, capture before a button's own handler and bubble after it, record the values just before and after a spend; a spend is recorded only when the Void Points went down. Undo writes the earlier values back and redraws through the sheet's own functions. `renderVoidPanel` and `renderVoidPips` are wrapped so the line follows every redraw of the card and the pips (every recalc and every pip tap); `applyData` and `resetToBaseline` are wrapped to end it. Observers on the roll preview (judge again when it closes) and on the result window (a roll ends it).
@@ -19,7 +36,8 @@ Group G6 (new functions), unit 1 of 2. FT-24 as the owner ruled it on 9 October 
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With A19 (this branch) | `0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9` | 17,701,397 |
+| With A19, revision 1 (this branch) | `bd035d20fc2d26c887e69faf0dae420aa670cf633000103e06a16e55840a8f8d` | 17,702,871 |
+| With A19, first build (19 November, before the device round) | `0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9` | 17,701,397 |
 | A19 removed (A08, G5 as live) | `6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1` | 17,685,928 |
 
 ## Light checks (19 November)

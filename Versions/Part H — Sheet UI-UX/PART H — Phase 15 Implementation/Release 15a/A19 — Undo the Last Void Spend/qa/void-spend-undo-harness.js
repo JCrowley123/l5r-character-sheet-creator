@@ -94,6 +94,24 @@ async function cancelTouch(page, phone, ms = 1500) {
   }
   return null;
 }
+// Touch of the Void's Willpower roll, when it opens: rolled (Roll, then the result window closed). Its title, or null.
+async function rollTouch(page, phone, ms = 1500) {
+  for (const end = Date.now() + ms; Date.now() < end;) {
+    if (await page.evaluate(() => window.VUH.preview())) {
+      const title = await page.evaluate(() => window.VUH.previewTitle());
+      await press(page, phone, '#rollPreviewGo');
+      await page.waitForFunction(() => window.VUH.result());
+      await wait(200);
+      await press(page, phone, '#rollModalClose');
+      await wait(300);
+      return title;
+    }
+    await wait(100);
+  }
+  return null;
+}
+const TOUCH_MADE = ' Touch of the Void’s Willpower roll was made; after Undo it no longer counts.';
+const TOUCH_UNDONE = ' The Touch of the Void roll made for it no longer counts: tell the GM if it left you Dazed.';
 // A fresh fight: the character opened again, the Round tracker reset, Combat active or not, no roll owed.
 async function fresh(page, phone, combat, file = TOUCH, name = TOUCH_NAME) {
   if (await page.evaluate(() => window.VUH.preview())) await press(page, phone, '#rollPreviewCancel');
@@ -180,6 +198,22 @@ async function intimidation(page, phone, {roll = true, voidOnRoll = false} = {})
         await undo(page, P);
         const b = await look(page);
         return [r.pool === '7k3' && a.undo && a.line === SPENT_K1 && b.points === '3' && b.pending === '{}' && b.owed === 0 && b.line === UNDONE_K1, {r, a, b}];
+      });
+      // Revision 1 (the owner's device round, 19 November 2026): Touch of the Void's own save, rolled, keeps Undo.
+      await check('VU-TOUCH-SAVE-KEEPS-UNDO-PHONE', async () => {
+        await fresh(page, P, true);
+        await press(page, P, '#voidSpendButtons button[data-void="damage"]');
+        await page.fill('#voidDamageInput', '25');
+        await press(page, P, '#voidDamageApply');
+        const touch = await rollTouch(page, P);
+        await goTab(page, 'Combat');
+        const a = await look(page);
+        await undo(page, P);
+        const b = await look(page);
+        return [touch === 'Touch of the Void — Willpower vs TN 30' && a.undo && a.wounds === '15' &&
+          a.line === 'Spent: damage reduced by 10; 15 Wounds taken.' + TOUCH_MADE &&
+          b.wounds === '0' && b.points === '3' && b.spend === null && !b.undo &&
+          b.line === 'Undone: the Void Point is back; the 15 Wounds taken back.' + TOUCH_UNDONE, {touch, a, b}];
       });
       await check('VU-NO-ERRORS-PHONE', async () => [errors.length === 0, errors]);
       await context.close();
@@ -301,6 +335,29 @@ async function intimidation(page, phone, {roll = true, voidOnRoll = false} = {})
         const text = JSON.stringify(after);
         return [same(before, after) && during.voidCurrent === '2' && after.voidCurrent === '3' && !/vu15|VU15/.test(text) &&
           same(Object.keys(before).sort(), Object.keys(after).sort()), {before: before.voidCurrent, during: during.voidCurrent, after: after.voidCurrent}];
+      });
+      await check('VU-TOUCH-SAVE-KEEPS-UNDO-DESKTOP', async () => {
+        await fresh(page, P, true);
+        await spend(page, P, 'tn');
+        const touch = await rollTouch(page, P);
+        await goTab(page, 'Combat');
+        const a = await look(page);
+        await undo(page, P);
+        const b = await look(page);
+        return [touch === 'Touch of the Void — Willpower vs TN 30' && a.undo && a.armorTN === 10 &&
+          a.line === 'Spent: +10 TN to be hit, this Round.' + TOUCH_MADE &&
+          b.armorTN === 0 && b.points === '3' && b.spend === null && !b.voidTN && b.owed === 0 &&
+          b.line === 'Undone: the Void Point is back; Armor TN back to normal.' + TOUCH_UNDONE, {touch, a, b}];
+      });
+      await check('VU-TOUCH-SAVE-THEN-ROLL-ENDS-DESKTOP', async () => {
+        await fresh(page, P, true);
+        await spend(page, P, 'tn');
+        const touch = await rollTouch(page, P);
+        await goTab(page, 'Combat');
+        const a = await look(page);
+        const r = await intimidation(page, P);
+        const b = await look(page);
+        return [touch !== null && a.undo && r.pool === '5k2' && !b.undo && b.line === '' && b.armorTN === 10, {a, r, b}];
       });
       await check('VU-NO-ERRORS-DESKTOP', async () => [errors.length === 0, errors]);
       await context.close();

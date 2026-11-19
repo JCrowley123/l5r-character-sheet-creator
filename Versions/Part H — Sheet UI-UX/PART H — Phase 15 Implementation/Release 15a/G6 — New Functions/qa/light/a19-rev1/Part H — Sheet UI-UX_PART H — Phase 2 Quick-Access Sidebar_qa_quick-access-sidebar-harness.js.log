@@ -1,0 +1,21 @@
+  PASS  panel starts hidden, toggle starts aria-expanded=false  — [object Object]
+  PASS  opening the panel shows aria-expanded=true and is no longer hidden  — [object Object]
+  PASS  Void value and pip count match #void_current/#ring_void on open  — [object Object]
+  PASS  Spell Slots row hidden for a non-caster character  — true
+  PASS  Wounds value matches #woundSummaryLine verbatim on open  — Healthy — No TN penalty — 0 of 38 wound points
+  PASS  Armor TN matches #f_currentTN on open  — 15
+  PASS  Initiative matches #f_initiative on open  — 3k2
+  PASS  close button hides the panel and resets aria-expanded  — [object Object]
+  PASS  clicking outside the panel closes it
+  PASS  Escape closes an open panel
+  PASS  spending a Void point (real pip click) updates the OPEN panel instantly  — [object Object]
+  PASS  taking a wound (real stepper click) updates the OPEN panel instantly  — [object Object]
+  PASS  Spell Slots row appears once the panel next renders for a caster  — false
+  PASS  Spell Slots value matches the independent oracle for a caster  — Air 2/2 · Earth 2/2 · Fire 2/2 · Water 2/2 · Void 2/2
+  PASS  Bonus (shared) value matches the independent oracle for a caster  — Bonus (shared): 2/2
+  PASS  casting a spell (renderAllSpellSlots(), the Cast button's own render path) updates the OPEN panel instantly  — [object Object]
+  PASS  spending a bonus slot (real bonus-pip click) updates the OPEN panel instantly  — [object Object]
+  PASS  clicking a Quick Access void pip does not spend Void (read-only mirror)  — 1
+  PASS  no uncaught page errors
+
+19/19 checks passed

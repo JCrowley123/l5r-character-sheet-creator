@@ -8,8 +8,10 @@
   // back exactly the values from just before that spend, once: the Void Points, the armed one-roll effect (including
   // one it replaced), the current Round's Void entries (its spend and the +10 TN), the skirmish Initiative flag and the
   // Wounds a damage reduction added. A Touch of the Void Willpower roll still waiting for that spend is dropped
-  // (VI4533.owed); one already opened and cancelled is not owed again, and one rolled is a roll.
-  // The line goes at any roll the sheet makes (the result window opens; a cancelled preview is not a roll), at Next
+  // (VI4533.owed); one already opened and cancelled is not owed again. Revised after the owner's device round of
+  // 19 November 2026 ("Keep Undo"): Touch of the Void's own Willpower roll is part of the spend, so rolling it does not
+  // end Undo; Undo then says that roll no longer counts (the sheet does not track Dazed, so the player tells the GM).
+  // The line goes at any other roll the sheet makes (the result window opens; a cancelled preview is not a roll), at Next
   // Round and Reset, at another card spend (which takes its place), when another character is opened or the sheet is
   // reset, and on any other change to those values (a pip tap, a Void Point spent in a roll preview). After Undo it reads
   // "Undone: …" with no button until the next change. Spends outside the card are not covered. The roll preview's refund
@@ -30,6 +32,7 @@
     let done = null;   // after Undo, until the next change: {message, after}
     let pre = null;    // the values just before a click on the card, until the click has been handled
     let undoing = false;
+    let touchRolling = 0;   // Touch of the Void's own Willpower roll under way (VI4533.check)
     api.enabled = function(){ return VOID_SPEND_UNDO_ENABLED === true && typeof spendVoid === 'function' && !!$('voidSpendButtons'); };
     const num = function(id){ const el = $(id); return el ? el.value : null; };
     const owed = function(){ return typeof VI4533 === 'object' && VI4533 && Number.isFinite(VI4533.owed) ? VI4533.owed : 0; };
@@ -63,6 +66,7 @@
     }
     function touchText(){
       if(!last || last.owed <= 0) return '';
+      if(last.touchRolled) return ' Touch of the Void’s Willpower roll was made; after Undo it no longer counts.';
       if(waiting() > 0) return ' Touch of the Void’s Willpower roll comes after ' + (ONE_ROLL[last.key] ? 'that roll' : 'your next roll') + '; Undo drops it.';
       return ' Touch of the Void’s Willpower roll was not made.';
     }
@@ -70,7 +74,8 @@
       const points = L.key === 'hotei' ? 'both Void Points are back' : 'the Void Point is back';
       const effect = L.key === 'damage' ? 'the ' + L.wounds + ' Wound' + (L.wounds === 1 ? '' : 's') + ' taken back'
         : L.key === 'hotei' ? '' : UNDONE[L.key];
-      return 'Undone: ' + points + (effect ? '; ' + effect : '') + (dropped ? '; no Touch of the Void roll.' : '.');
+      return 'Undone: ' + points + (effect ? '; ' + effect : '') + (dropped ? '; no Touch of the Void roll.' : '.') +
+        (L.touchRolled ? ' The Touch of the Void roll made for it no longer counts: tell the GM if it left you Dazed.' : '');
     }
     // A roll preview arms and clears the one-roll effects while it works out what it can offer, and hands them back
     // exactly as found when it closes, so nothing is judged while one is open.
@@ -202,11 +207,27 @@
         row.addEventListener('click', function(e){ if(e.target && e.target.closest && e.target.closest('#voidDamageApply')) before('damage'); }, true);
         row.addEventListener('click', after);
       }
-      // Any roll made ends it: the result window opening.
+      // Touch of the Void's own Willpower roll is part of the spend (owner, 19 November 2026): while it is under way its
+      // result window does not end Undo. Wrapped by property, as the roll is asked for (VI4533.check).
+      if(typeof VI4533 === 'object' && VI4533 && typeof VI4533.check === 'function'){
+        const vu15PreviousTouch = VI4533.check;
+        const vu15TouchDone = function(){ touchRolling = Math.max(0, touchRolling - 1); draw(); };
+        VI4533.check = function(){
+          touchRolling += 1;
+          let out;
+          try { out = vu15PreviousTouch.apply(this, arguments); }
+          catch(e){ vu15TouchDone(); throw e; }
+          Promise.resolve(out).then(vu15TouchDone, vu15TouchDone);
+          return out;
+        };
+      }
+      // Any other roll made ends it: the result window opening.
       const result = $('rollModalOverlay');
       if(result && typeof MutationObserver === 'function'){
         new MutationObserver(function(){
-          if((last || done) && getComputedStyle(result).display !== 'none') api.end();
+          if(!(last || done) || getComputedStyle(result).display === 'none') return;
+          if(touchRolling > 0){ if(last) last.touchRolled = true; draw(); return; }
+          api.end();
         }).observe(result, {attributes: true, attributeFilter: ['style', 'class', 'hidden']});
       }
       // A roll preview closing: judge again, and say whether Touch of the Void's roll was made.
