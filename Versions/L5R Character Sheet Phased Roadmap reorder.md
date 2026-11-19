@@ -1,5 +1,13 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
+<!-- review-15a-roadmap -->
+## Cycle review after Release 15a — 19 November 2026
+
+**19 November 2026 · Cycle review after Release 15a (Claude).** 15a cost about 229 Claude weekly points against 94 (58–150) planned, and 15b is re-estimated at about 120 (85–182). All of 15a (26 built units; not 28) removed in a scratch tree rebuilds Release 8c's application `139e0810…2551`, 17,525,378 bytes, byte for byte (13/13). The ledger page is republished. The owner is asked three things in one Claude Doc, [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): 15b's groups and order (recommended: 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 · 5 B12, B13); B14 and B01 kept in 15b (B14's line is not on the resisting rows); and a stage with 15a removed in each group's chain. Nothing in 15b is mocked up or built. These records are on `claude/release-15b-kickoff`, not on `main`. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+
+**19 November 2026 · after the review (Claude).** Proposed, waiting for the owner's decision in the [work order](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): Release 15b in five groups, about 120 (85–182) points. 1 · totals and their breakdowns (A14, B02, B04, B14), 22 (16–32); 2 · labels and wording (B01, B03, B05, B09), 18 (13–28); 3 · reference text (B06, B10, B11, B16), 20 (14–30); 4 · Search controls (B07, B08; behaviour tier), 28 (20–42); 5 · print and About (B12, B13), 32 (22–50). B15 is kept as it is. Then Phase 15's closure, 4 (3–6), the resistance phase and Techniques as modifiers, each on the owner's word. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+<!-- end-review-15a-roadmap -->
+
 <!-- g6-15a-roadmap -->
 ## Release 15a G6 — 19 November 2026
 

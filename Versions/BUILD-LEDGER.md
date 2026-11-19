@@ -2,7 +2,9 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **19 November 2026** (Claude). **Release 15a is complete: G6 is live and verified** (G5 went live on 18 November). [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>).
+Local records updated **19 November 2026** (Claude). **The cycle review after Release 15a is done, and Release 15b's work order is with the owner:** [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP). [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>).
+
+**Earlier:** Local records updated **19 November 2026** (Claude). **Release 15a is complete: G6 is live and verified** (G5 went live on 18 November). [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>).
 
 **Earlier:** Local records updated **12 November 2026** (Claude). **Release 15a G3 is live and verified.** [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
 
@@ -27,6 +29,10 @@ Local records updated **19 November 2026** (Claude). **Release 15a is complete: 
 ---
 
 ## 1. Where things stand
+
+<!-- review-15a-part1 -->
+**19 November 2026 · Cycle review after Release 15a (Claude).** 15a cost about 229 Claude weekly points against 94 (58–150) planned, and 15b is re-estimated at about 120 (85–182). All of 15a (26 built units; not 28) removed in a scratch tree rebuilds Release 8c's application `139e0810…2551`, 17,525,378 bytes, byte for byte (13/13). The ledger page is republished. The owner is asked three things in one Claude Doc, [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): 15b's groups and order (recommended: 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 · 5 B12, B13); B14 and B01 kept in 15b (B14's line is not on the resisting rows); and a stage with 15a removed in each group's chain. Nothing in 15b is mocked up or built. These records are on `claude/release-15b-kickoff`, not on `main`. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+<!-- end-review-15a-part1 -->
 
 <!-- g6-15a-live-part1 -->
 **19 November 2026 · G6 live; Release 15a complete (Claude).** On the owner's word ("I have now done the tests they all pass I am happy for this to move to the go live"), `main` was fast-forwarded from `1ebf26b4` to `c359fa3a` at 16:06 UTC without a merge commit or force (records `0838e5c9`). Production: all seven deployed files match the qualified build; 118 application harnesses passed 4,930/4,930 on the downloaded production files (A19's 25, A20's 18 and A19.1's 9 checks, and the layers of their light checks: the roll pipeline and preview, the declaration registry and its providers, the dice, situational and automatic entries, the Void card and Initiative, the wound bar and Play Mode Combat); browser/offline smoke 22/22. Deployed page `d3bec9e6c11bab70…`, 17,725,378 bytes; application `921f3ac9…6150`; service worker build `2d60065ab4f57fea`. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
@@ -206,6 +212,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- review-15a-next-part2 -->
+**19 November 2026 · after the review (Claude).** Proposed, waiting for the owner's decision in the [work order](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): Release 15b in five groups, about 120 (85–182) points. 1 · totals and their breakdowns (A14, B02, B04, B14), 22 (16–32); 2 · labels and wording (B01, B03, B05, B09), 18 (13–28); 3 · reference text (B06, B10, B11, B16), 20 (14–30); 4 · Search controls (B07, B08; behaviour tier), 28 (20–42); 5 · print and About (B12, B13), 32 (22–50). B15 is kept as it is. Then Phase 15's closure, 4 (3–6), the resistance phase and Techniques as modifiers, each on the owner's word. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+<!-- end-review-15a-next-part2 -->
 
 <!-- g6-15a-next-part2 -->
 **19 November 2026 · after G6 (Claude).** Release 15a is complete: G1 to G6 and the automatic-entries group are live; A12 was withdrawn into the resistance phase and A18 was closed. Next, in the order already agreed: Release 15b, then the resistance phase (the owner leans to versions 1 and 2, to resume as one merged whole-row design; Q5 of the rules read is open), then the phase that applies School Techniques, Kata and Kiho as modifiers. None is started; each starts on the owner's word. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
@@ -407,6 +417,10 @@ Ranked by impact for each point spent, with what each step needs first.
 **Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- review-15a-cost-part3 -->
+**19 November 2026 · Release 15a in total, and the review (Claude).** 15a cost about **229** Claude weekly points against 94 (58–150) planned on 4 November: A01 8, A02 18, A03 27, G1 19, G2 12 (Claude's build; Codex qualified it), G3 53, G4 22, the automatic-entries group 30, G5 17 and G6 23, each from its first reading to the next group's. On 13 November the meter fell from about 99% to 58% with no weekly reset, so the stretches either side are added. A12's resistance mock-ups (about 7) and Claude's part of the resistance rules read (about 13) moved with A12 to the resistance phase and are not counted. The review itself: weekly all models 30% at the start (23:25 UTC), 32% after the work-order doc (23:39 UTC) and 34% after the ledger page was read in full and republished (23:45 UTC); five-hour 15%, 29% and 42%. About 4 points against the 4 (3–6) planned. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+<!-- end-review-15a-cost-part3 -->
 
 <!-- g6-15a-cost-part3 -->
 **19 November 2026 · G5 and G6 (Claude).** G5: build, device round and qualification by Claude from 14 to 18 November on a Pro plan; reading after its two full passes on 18 November, after the weekly reset: weekly all models 6%, five-hour limit 30%. G6: mock-ups, build, two device rounds, A19's revision, A19.1, qualification and go-live by Claude on 19 November; reading after the go-live: weekly all models 29%, five-hour limit 4%. The 23-point rise also covers G5's go-live checks, and the weekly meter is shared with any other session on the account, so it is an upper bound for G6, not split further. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
@@ -709,6 +723,10 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- review-15a-parked-part4 -->
+**19 November 2026 · what 15a left open (Claude).** Into 15b: A03's print note (on paper, Advantages start 836 px lower) goes to B12, and the colophon's mon over the tab bar to B13. Recorded only: a Void pip tap does not redraw the Void card's note (G6); A19's Undo covers card spends only; AE2's and A08's review edges; A11's three layout observations; the untested app bar at the bottom, screen readers and the Fold's narrow outer screen. Still parked: FU-15a-1, the stats header (with the Combat tab), FT-59, A04.2 and a "Needs a choice" character-check rule. The full table is in the review. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+<!-- end-review-15a-parked-part4 -->
 
 <!-- g6-15a-parked-part4 -->
 **19 November 2026 · after G6 (Claude).** Release 15a is complete: G1 to G6 and the automatic-entries group are live; A12 was withdrawn into the resistance phase and A18 was closed. Next, in the order already agreed: Release 15b, then the resistance phase (the owner leans to versions 1 and 2, to resume as one merged whole-row design; Q5 of the rules read is open), then the phase that applies School Techniques, Kata and Kiho as modifiers. None is started; each starts on the owner's word. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
@@ -2062,6 +2080,10 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- review-15a-part6 -->
+**19 November 2026 · Cycle review after Release 15a (Claude).** 15a cost about 229 Claude weekly points against 94 (58–150) planned, and 15b is re-estimated at about 120 (85–182). All of 15a (26 built units; not 28) removed in a scratch tree rebuilds Release 8c's application `139e0810…2551`, 17,525,378 bytes, byte for byte (13/13). The ledger page is republished. The owner is asked three things in one Claude Doc, [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): 15b's groups and order (recommended: 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 · 5 B12, B13); B14 and B01 kept in 15b (B14's line is not on the resisting rows); and a stage with 15a removed in each group's chain. Nothing in 15b is mocked up or built. These records are on `claude/release-15b-kickoff`, not on `main`. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+<!-- end-review-15a-part6 -->
 
 <!-- g6-15a-live-part6 -->
 **19 November 2026 · G6 live; Release 15a complete (Claude).** On the owner's word ("I have now done the tests they all pass I am happy for this to move to the go live"), `main` was fast-forwarded from `1ebf26b4` to `c359fa3a` at 16:06 UTC without a merge commit or force (records `0838e5c9`). Production: all seven deployed files match the qualified build; 118 application harnesses passed 4,930/4,930 on the downloaded production files (A19's 25, A20's 18 and A19.1's 9 checks, and the layers of their light checks: the roll pipeline and preview, the declaration registry and its providers, the dice, situational and automatic entries, the Void card and Initiative, the wound bar and Play Mode Combat); browser/offline smoke 22/22. Deployed page `d3bec9e6c11bab70…`, 17,725,378 bytes; application `921f3ac9…6150`; service worker build `2d60065ab4f57fea`. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
