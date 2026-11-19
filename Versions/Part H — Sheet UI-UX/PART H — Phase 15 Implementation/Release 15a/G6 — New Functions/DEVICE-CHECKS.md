@@ -71,3 +71,21 @@ With a phone screenshot of the Combat page's damage row: "Reduce by 10 & take Wo
 - **A19 is revised:** Touch of the Void's own Willpower save no longer ends Undo; Undo then says the save made for that spend no longer counts. Every other roll still ends Undo. A19 is re-checked (its harness gains a check for this), and A20, stacked on it, is rebuilt and re-checked on top.
 - **A19.1 joins G6:** the Combat page's damage row laid out to fit a phone, screen-only, its own unit (marker to be assigned when built), mock-up first.
 - **A20 is accepted** as built.
+
+## Round 2: A19 revision 1 and A19.1 (added to the checklist doc, 19 November 2026)
+
+On the A19.1 preview (https://claude-release-15a-a19-1.l5r-character-sheet-creator.pages.dev/, all three units); the A19 preview has A19's revision alone. Play, Combat page, Combat active; Touch of the Void for 1 and 2.
+
+1. Reduce damage by 10 (25), roll the Willpower save, close its result: Undo still there and says the save was made; Undo puts the Wounds and the point back and says the save no longer counts.
+2. +10 TN, roll its save, then a Skill roll: the line has gone after the Skill roll.
+3. iPhone, Reduce damage by 10: the amount and box on one line, then the two buttons beneath, each full width and on one line, inside the card.
+4. Laptop: the row on one line, as before.
+5. Apply 25, then reopen and Cancel: Apply takes 15 Wounds and a point; Cancel closes the row and spends nothing.
+
+Decisions: A19 (revised) and A19.1, Accept / Revise / Remove.
+
+### Round 2 results (the owner, 19 November 2026)
+
+All five checks Pass on the iPhone and the laptop. A19 (revised): **Accept**. A19.1: **Accept**. The owner, verbatim: "I have now done the tests they all pass I am happy for this to move to the go live".
+
+With A20 accepted in round 1, all three units of G6 are accepted. Next: the group's qualification (behaviour tier), then go-live on the owner's word, which this message gives.

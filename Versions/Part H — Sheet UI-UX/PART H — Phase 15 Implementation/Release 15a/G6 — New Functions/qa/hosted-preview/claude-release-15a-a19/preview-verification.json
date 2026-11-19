@@ -1,26 +1,26 @@
 {
-  "commit": "56dccb47dddc9629269ac854bd40e835a3c5b730",
+  "commit": "1bbf690874d3056b11f1dd50991e90c60da9941c",
   "ref": "claude/release-15a-a19",
   "url": "https://claude-release-15a-a19.l5r-character-sheet-creator.pages.dev/",
-  "checked_utc": "2026-11-19T02:12:13.362577+00:00",
-  "source_sha256": "0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9",
-  "page_sha256": "12cca9cf2cbd4e25c465e5eed1f2eeb10ce65411ce39eab69fcd6a7cd92f5fb7",
-  "page_bytes": 17708174,
-  "service_worker_build": "e0ecd3896627659c",
+  "checked_utc": "2026-11-19T12:21:33.394308+00:00",
+  "source_sha256": "bd035d20fc2d26c887e69faf0dae420aa670cf633000103e06a16e55840a8f8d",
+  "page_sha256": "d754da970267d42c82d244da147db72a6e421697ca4a0c719bb59716300fa465",
+  "page_bytes": 17709648,
+  "service_worker_build": "eafb57460742d334",
   "units": [
     "A19"
   ],
   "expected": {
-    "harnesses": 27,
-    "checks": 1248
+    "harnesses": 51,
+    "checks": 2532
   },
   "harnesses": {
     "A19 \u2014 Undo the Last Void Spend/void-spend-undo-harness.js": {
       "counts": [
-        "22",
-        "22"
+        "25",
+        "25"
       ],
-      "expected": 22,
+      "expected": 25,
       "passed": true
     },
     "BUGFIX \u2014 After-Preview Refund/refund-harness.js": {
@@ -47,6 +47,30 @@
       "expected": 12,
       "passed": true
     },
+    "BUGFIX \u2014 Apply School Skill Rows/school-skill-rows-harness.js": {
+      "counts": [
+        "37",
+        "37"
+      ],
+      "expected": 37,
+      "passed": true
+    },
+    "BUGFIX \u2014 Empty Quiver Rolls On/quiver-harness.js": {
+      "counts": [
+        "8",
+        "8"
+      ],
+      "expected": 8,
+      "passed": true
+    },
+    "BUGFIX \u2014 Honour Resistance Bonus/honour-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
     "BUGFIX \u2014 Hotei Where the Sheet Spends Void/hotei-auto-harness.js": {
       "counts": [
         "16",
@@ -63,12 +87,36 @@
       "expected": 17,
       "passed": true
     },
+    "BUGFIX \u2014 Negative Roll Modifier Display/negative-roll-modifier-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Rank 0 Skill Rolls Explode/rank-zero-harness.js": {
+      "counts": [
+        "19",
+        "19"
+      ],
+      "expected": 19,
+      "passed": true
+    },
     "BUGFIX \u2014 Roll Preview Opens at the Top/roll-preview-top-harness.js": {
       "counts": [
         "10",
         "10"
       ],
       "expected": 10,
+      "passed": true
+    },
+    "BUGFIX \u2014 Skill Traits/skill-traits-harness.js": {
+      "counts": [
+        "38",
+        "38"
+      ],
+      "expected": 38,
       "passed": true
     },
     "BUGFIX \u2014 Void Card Reasons on a Phone/void-reasons-harness.js": {
@@ -87,12 +135,76 @@
       "expected": 12,
       "passed": true
     },
+    "PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-expansion-harness.js": {
+      "counts": [
+        "48",
+        "48"
+      ],
+      "expected": 48,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-harness.js": {
+      "counts": [
+        "51",
+        "51"
+      ],
+      "expected": 51,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.10 Cursed by the Realm/disadv-realm-harness.js": {
+      "counts": [
+        "62",
+        "62"
+      ],
+      "expected": 62,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.11 Seven Fortunes Curse/disadv-fortune-harness.js": {
+      "counts": [
+        "74",
+        "74"
+      ],
+      "expected": 74,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.12 Seven Fortunes Curse Bishamon/disadv-bishamon-harness.js": {
+      "counts": [
+        "51",
+        "51"
+      ],
+      "expected": 51,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.15 Roll Declaration Registry/roll-declarations-harness.js": {
+      "counts": [
+        "53",
+        "53"
+      ],
+      "expected": 53,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.2 Disadvantages/disadv-config-harness.js": {
+      "counts": [
+        "163",
+        "163"
+      ],
+      "expected": 163,
+      "passed": true
+    },
     "PART I \u2014 Phase 4.5.20 Void Versatility/void-versatility-harness.js": {
       "counts": [
         "66",
         "66"
       ],
       "expected": 66,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js": {
+      "counts": [
+        "77",
+        "77"
+      ],
+      "expected": 77,
       "passed": true
     },
     "PART I \u2014 Phase 4.5.23 Dark Paragon/dark-paragon-harness.js": {
@@ -103,12 +215,52 @@
       "expected": 67,
       "passed": true
     },
+    "PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.26 Dice Rolling Entries/dice-entries-harness.js": {
+      "counts": [
+        "110",
+        "110"
+      ],
+      "expected": 110,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.27 Situational Roll Entries/situational-entries-harness.js": {
+      "counts": [
+        "117",
+        "117"
+      ],
+      "expected": 117,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates/situational-buttons-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
     "PART I \u2014 Phase 4.5.29 Wound Entries/wound-entries-harness.js": {
       "counts": [
         "45",
         "45"
       ],
       "expected": 45,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.30 Automatic Roll Entries/automatic-entries-harness.js": {
+      "counts": [
+        "41",
+        "41"
+      ],
+      "expected": 41,
       "passed": true
     },
     "PART I \u2014 Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js": {
@@ -135,6 +287,30 @@
       "expected": 45,
       "passed": true
     },
+    "PART I \u2014 Phase 4.5.7 Unlucky/disadv-unlucky-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami/disadv-dependant-wrath-harness.js": {
+      "counts": [
+        "55",
+        "55"
+      ],
+      "expected": 55,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.9 Doubt/disadv-doubt-harness.js": {
+      "counts": [
+        "38",
+        "38"
+      ],
+      "expected": 38,
+      "passed": true
+    },
     "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
       "counts": [
         "349",
@@ -157,6 +333,14 @@
         "25"
       ],
       "expected": 25,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.4 Play Mode Skills/skills-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
       "passed": true
     },
     "PART K \u2014 Phase 12.7 Play Mode Combat/combat-harness.js": {
@@ -197,6 +381,14 @@
         "23"
       ],
       "expected": 23,
+      "passed": true
+    },
+    "A03 \u2014 Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js": {
+      "counts": [
+        "37",
+        "37"
+      ],
+      "expected": 37,
       "passed": true
     },
     "A07 \u2014 The Moon Row/moon-row-harness.js": {

@@ -86,7 +86,8 @@ async function openRow(page, phone) {
       await check('DR-APPLY-STILL-WORKS-PHONE', async () => {
         await press(page, P, '#voidDamageApply');
         const s = await page.evaluate(() => window.DRH.state());
-        return [s.wounds === '15' && s.points === '2' && !s.shown && /^(Undo)?Spent: damage reduced by 10; 15 Wounds taken\.$/.test(s.line), s];
+        // A19's Undo line is A19's to test: here it may be there (A19 present) or not (A19 removed), never anything else.
+        return [s.wounds === '15' && s.points === '2' && !s.shown && (s.line === '' || /^(Undo)?Spent: damage reduced by 10; 15 Wounds taken\.$/.test(s.line)), s];
       });
       await check('DR-NO-ERRORS-PHONE', async () => [errors.length === 0, errors]);
       await context.close();
