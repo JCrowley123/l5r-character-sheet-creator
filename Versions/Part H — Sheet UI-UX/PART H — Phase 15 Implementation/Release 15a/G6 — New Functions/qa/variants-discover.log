@@ -1,0 +1,11 @@
+6 mutations unique.
+A19:baseline MATCH {"extra": [], "missing": []} [4, 25]
+A20:baseline MATCH {"extra": [], "missing": []} [5, 18]
+A19.1:baseline MATCH {"extra": [], "missing": []} [5, 9]
+A19:disabled MATCH {"extra": [], "missing": []} [4, 25]
+A19:touch-save-ends MATCH {"extra": [], "missing": []} [22, 25]
+A19:no-drop MATCH {"extra": [], "missing": []} [21, 25]
+A20:disabled MATCH {"extra": [], "missing": []} [5, 18]
+A20:no-pool MATCH {"extra": [], "missing": []} [16, 18]
+A19.1:disabled MATCH {"extra": [], "missing": []} [5, 9]
+Discovery done.

@@ -1,27 +1,27 @@
 {
-  "commit": "abad998995412024fb4aeac93f79bff70484aaa2",
+  "commit": "fc18f142b06432b91c78acdf2befbf10068bb977",
   "ref": "claude/release-15a-a20",
   "url": "https://claude-release-15a-a20.l5r-character-sheet-creator.pages.dev/",
-  "checked_utc": "2026-11-19T02:38:36.598307+00:00",
-  "source_sha256": "8d6a0a0a23bdb583edbcaf94bb8fdc9dd5b1426ad0c4bc31ca8ee5e1be62a4eb",
-  "page_sha256": "b1ea4b7750b173a6e3ae9e87cc5fe423fe15b78a896ff2870cef9889c9d1b65b",
-  "page_bytes": 17721571,
-  "service_worker_build": "c3c5ca8c8d3b1847",
+  "checked_utc": "2026-11-19T12:31:35.717310+00:00",
+  "source_sha256": "fe8422cd2d6c82d5a2919955979dfacde7bc7cccd27add857485995c8946b75f",
+  "page_sha256": "4bc9989e60845face7d9d45506ba4a2cba45c6fa4f19a224b1e9929d66a495d6",
+  "page_bytes": 17723045,
+  "service_worker_build": "984bb65e1523de3c",
   "units": [
     "A19",
     "A20"
   ],
   "expected": {
     "harnesses": 52,
-    "checks": 2547
+    "checks": 2550
   },
   "harnesses": {
     "A19 \u2014 Undo the Last Void Spend/void-spend-undo-harness.js": {
       "counts": [
-        "22",
-        "22"
+        "25",
+        "25"
       ],
-      "expected": 22,
+      "expected": 25,
       "passed": true
     },
     "A20 \u2014 A Trait for One Skill Roll/skill-trait-choice-harness.js": {

@@ -37,4 +37,4 @@ The group removal must restore G5 (A08) as live exactly, by the removal chain; A
 
 ## Discovery
 
-Not yet run.
+Discovery ran once on 19 November 2026, after the predictions were committed and pushed (`30067683`). Evidence: `variants-discover.log` and `variants-discover-921f3ac9/summary.json`. **All 9 cases matched every predicted id exactly**, each with its pinned count: A19 baseline 4/25 and disabled 4/25, touch-save-ends 22/25, no-drop 21/25; A20 baseline 5/18 and disabled 5/18, no-pool 16/18; A19.1 baseline 5/9 and disabled 5/9. No correction was needed; the qualification chain asserts every pin as written.

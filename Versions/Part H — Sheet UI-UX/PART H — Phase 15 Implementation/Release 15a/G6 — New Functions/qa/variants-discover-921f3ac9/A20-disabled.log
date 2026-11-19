@@ -1,0 +1,32 @@
+  detail TC-SEAM-PHONE: {"tc":false,"on":false}
+  detail TC-OPENS-ON-USUAL-PHONE: {"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"}
+  detail TC-LIST-ORDER-PHONE: null
+  detail TC-OTHER-TRAIT-POOL-PHONE: {"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"}
+  detail TC-TICKS-KEPT-PHONE: {"c1":{"open":true,"title":"Intimidation","pool":"7k3","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":["k1"],"go":"Roll 7k3"},"c2":{"open":true,"title":"Intimidation","pool":"7k3","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":["k1"],"go":"Roll 7k3"}}
+  detail TC-ROLL-USES-CHOICE-PHONE: {"open":true,"notation":"5k2","emphasis":"Emphasis (Control)","explode":false}
+  detail TC-REOPENS-ON-USUAL-PHONE: {"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"}
+  detail TC-CANCEL-FORGETS-DESKTOP: {"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"}
+  detail TC-BACK-TO-USUAL-DESKTOP: {"a":{"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"},"b":{"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"}}
+  detail TC-UNSKILLED-KEEPS-RULE-DESKTOP: {"a":{"open":true,"title":"Athletics (Unskilled)","pool":"3k3","base":["Strength 3 | 3k3 — the Trait sets the dice kept","Unskilled | no Skill Rank to add — the Trait rolls and keeps alone"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 3k3"},"b":{"open":true,"title":"Athletics (Unskilled)","pool":"3k3","base":["Strength 3 | 3k3 — the Trait sets the dice kept","Unskilled | no Skill Rank to add — the Trait rolls and keeps alone"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 3k3"},"r":{"open":true,"notation":"3k3","emphasis":false,"explode":true}}
+  detail TC-BOOK-NOTE-DESKTOP: "exception: Cannot read properties of null (reading 'slice')"
+  detail TC-KEYBOARD-CHOICE-DESKTOP: {"a":{"open":true,"title":"Intimidation","pool":"5k2","base":["Awareness 2 | 2k2 — the Trait sets the dice kept","Intimidation Rank 3 | +3k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 5k2"},"focused":false}
+  detail TC-TWO-TRAIT-SKILL-DESKTOP: {"a":{"open":true,"title":"Sailing","pool":"4k3","base":["Agility or Intelligence 3 | 3k3 — the Trait sets the dice kept","Sailing Rank 1 | +1k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 4k3"},"b":{"open":true,"title":"Sailing","pool":"4k3","base":["Agility or Intelligence 3 | 3k3 — the Trait sets the dice kept","Sailing Rank 1 | +1k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 4k3"},"c":{"open":true,"title":"Sailing","pool":"4k3","base":["Agility or Intelligence 3 | 3k3 — the Trait sets the dice kept","Sailing Rank 1 | +1k0"],"select":null,"groups":null,"note":null,"ticked":[],"go":"Roll 4k3"}}
+FAIL TC-SEAM-PHONE
+FAIL TC-OPENS-ON-USUAL-PHONE
+FAIL TC-LIST-ORDER-PHONE
+FAIL TC-OTHER-TRAIT-POOL-PHONE
+FAIL TC-TICKS-KEPT-PHONE
+FAIL TC-ROLL-USES-CHOICE-PHONE
+PASS TC-SAVED-TRAIT-UNCHANGED-PHONE
+FAIL TC-REOPENS-ON-USUAL-PHONE
+PASS TC-NO-ERRORS-PHONE
+FAIL TC-CANCEL-FORGETS-DESKTOP
+FAIL TC-BACK-TO-USUAL-DESKTOP
+FAIL TC-UNSKILLED-KEEPS-RULE-DESKTOP
+FAIL TC-BOOK-NOTE-DESKTOP
+PASS TC-NOT-ON-TRAIT-ROLL-DESKTOP
+PASS TC-NOT-ON-ATTACK-DESKTOP
+FAIL TC-KEYBOARD-CHOICE-DESKTOP
+FAIL TC-TWO-TRAIT-SKILL-DESKTOP
+PASS TC-NO-ERRORS-DESKTOP
+5/18 checks passed

@@ -1,5 +1,5 @@
 Preview page matches the committed build byte for byte.
-Service worker matches build c3c5ca8c8d3b1847.
+Service worker matches build 984bb65e1523de3c.
 == A19 — Undo the Last Void Spend/void-spend-undo-harness.js
 PASS VU-SEAM-PHONE
 PASS VU-NO-LINE-BEFORE-SPEND-PHONE
@@ -9,6 +9,7 @@ PASS VU-K1-NO-TOUCH-ROLL-AFTER-UNDO-PHONE
 PASS VU-TN-TOUCH-CANCELLED-UNDO-PHONE
 PASS VU-ROLL-ENDS-PHONE
 PASS VU-CANCELLED-PREVIEW-KEEPS-PHONE
+PASS VU-TOUCH-SAVE-KEEPS-UNDO-PHONE
 PASS VU-NO-ERRORS-PHONE
 PASS VU-NEXT-ROUND-ENDS-DESKTOP
 PASS VU-RESET-ENDS-DESKTOP
@@ -22,8 +23,10 @@ PASS VU-HOTEI-TWO-POINTS-UNDO-DESKTOP
 PASS VU-OPEN-ENDS-DESKTOP
 PASS VU-KEYBOARD-UNDO-FOCUS-DESKTOP
 PASS VU-SAVE-DATA-UNCHANGED-DESKTOP
+PASS VU-TOUCH-SAVE-KEEPS-UNDO-DESKTOP
+PASS VU-TOUCH-SAVE-THEN-ROLL-ENDS-DESKTOP
 PASS VU-NO-ERRORS-DESKTOP
-22/22 checks passed
+25/25 checks passed
 
 == A20 — A Trait for One Skill Roll/skill-trait-choice-harness.js
 PASS TC-SEAM-PHONE
@@ -105,7 +108,7 @@ PASS AG-NO-ERRORS
 12/12 checks passed
 
 == BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js
-Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-cqe0mce7\site\index.html
+Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-nmd4ht9_\site\index.html
 PASS SSR-ENABLED
 PASS SSR-LIBRARY-MIRUMOTO
 PASS SSR-LIBRARY-SHIBA
@@ -236,7 +239,7 @@ PASS NEGMOD-PURE-03 both helpers use U+2212 MINUS SIGN, not U+002D HYPHEN-MINUS 
 PASS NEGMOD-SEAM-01 kill-switch and both helpers are exported — flag=true fns=2
 
 12/12 checks passed
-NEGATIVE_ROLL_MOD_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-g6-preview-cqe0mce7\\site\\index.html","passed":12,"total":12}
+NEGATIVE_ROLL_MOD_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-g6-preview-nmd4ht9_\\site\\index.html","passed":12,"total":12}
 
 == BUGFIX — Rank 0 Skill Rolls Explode/rank-zero-harness.js
 PASS R0-table-DICE
@@ -393,9 +396,9 @@ PART I PHASE 4.5 — Variable-Advantage Completion Pass
   PASS  changing Clan replaces only the owned row with the new Clan’s exact base profile  — {"id":"kakita-blade","clan":"Crane","cost":"5","owned":1,"name":"Kakita Blade","totalWeapons":2}
   PASS  removing Sacred Weapon removes only its tagged row and preserves the manual Katana  — {"rows":1,"names":["Katana"],"tagged":0}
   PASS  every Clan has exactly the approved Sacred Weapon identity, cost, and row count  — [["Crab","kaiu-blade","Kaiu Blade",6,1],["Crane","kakita-blade","Kakita Blade",5,1],["Dragon","twin-sister-blades","Twin Sister Blades",3,2],["Lion","akodo-blade","Akodo Blade",6,1],["Mantis","storm-kama","Storm Kama",6,2],["Phoenix","inquisitors-strike","Inquisitor’s Strike",6,1],["Scorpion","shosuro-blade","Shosuro Blade",5,1],["Spider","black-steel-blade","Black Steel Blade",6,1],["Unicorn","moto-scimitar","Moto Scimitar",6,1]]
-  PASS  save/load and JSON import/export preserve every advanced config object exactly  — [{"name":"Allies","config":{"influence":2,"devotion":4,"value":"Influence 2 / Devotion 4","type":"dualTierPick"}},{"name":"Gentry","config":{"type":"severityTier","value":"Town"}},{"name":"Kharmic Tie","config":{"value":"Rank 4","rank":4,"target":"Aiko","remaining":2,"sourceId":"kharmic-persist","type":"rankPick"}},{"name":"Languages","config":{"value":"Human: Rokugani","languageType":"Human","language":"Rokugani","type":"languagePick"}},{"name":"Luck","config":{"value":"Rank 3","rank":3,"remaining":1,"type":"rankPick"}},{"name":"Magic Resistance","config":{"value":"Rank 1","rank":1,"type":"rankPick"}},{"name":"Sacred Weapon","config":{"value":"kaiu-blade","clan":"Crab","sourceId":"sacred-mwmxotef-eo5qjbv6","type":"clanWeaponAutoPick"}},{"name":"Great Potential","config":{"value":"Kenjutsu","skill":"Kenjutsu","type":"skillPick"}}]
+  PASS  save/load and JSON import/export preserve every advanced config object exactly  — [{"name":"Allies","config":{"influence":2,"devotion":4,"value":"Influence 2 / Devotion 4","type":"dualTierPick"}},{"name":"Gentry","config":{"type":"severityTier","value":"Town"}},{"name":"Kharmic Tie","config":{"value":"Rank 4","rank":4,"target":"Aiko","remaining":2,"sourceId":"kharmic-persist","type":"rankPick"}},{"name":"Languages","config":{"value":"Human: Rokugani","languageType":"Human","language":"Rokugani","type":"languagePick"}},{"name":"Luck","config":{"value":"Rank 3","rank":3,"remaining":1,"type":"rankPick"}},{"name":"Magic Resistance","config":{"value":"Rank 1","rank":1,"type":"rankPick"}},{"name":"Sacred Weapon","config":{"value":"kaiu-blade","clan":"Crab","sourceId":"sacred-mwniumgl-cfgyq83t","type":"clanWeaponAutoPick"}},{"name":"Great Potential","config":{"value":"Kenjutsu","skill":"Kenjutsu","type":"skillPick"}}]
   PASS  persisted Kharmic and Luck pips reappear in the session-resource sidebar  — Session ResourcesLuck●○○ 1/3Kharmic Tie — Aiko●●○○ 2/4
-  PASS  Sacred Weapon ownership tags survive save/load with their source identity  — [{"source":"sacred-mwmxotef-eo5qjbv6","weapon":"kaiu-blade","index":"0"}]
+  PASS  Sacred Weapon ownership tags survive save/load with their source identity  — [{"source":"sacred-mwniumgl-cfgyq83t","weapon":"kaiu-blade","index":"0"}]
   PASS  the expansion leaves the one Phase 4.5 registry contributor shape intact  — [["adv-config",60]]
   PASS  no uncaught page errors
 
@@ -491,7 +494,7 @@ PASS REALM4510-TENGOKU-04 Outside the temple it applies nothing
 PASS REALM4510-DAMAGE-01 No branch contributes to a damage roll carrying the attack’s skillName
 PASS REALM4510-DAMAGE-02 D45 excludes damage BEFORE consulting this phase’s module
 PASS REALM4510-TOTAL-01 The displayed total is exactly 10 below the kept dice
-PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  15 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
+PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  21 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
 PASS REALM4510-DECLARE-01 Undeclared, it contributes nothing
 PASS REALM4510-DECLARE-02 The preview offers the declaration
 PASS REALM4510-DECLARE-03 …unchecked when the preview opens
@@ -503,7 +506,7 @@ PASS REALM4510-DECLARE-08 Another realm’s character sees an unchanged preview
 PASS REALM4510-TOSHIGOKU-01 The row offers the Willpower check
 PASS REALM4510-TOSHIGOKU-02 It contributes no automatic modifier to anything
 PASS REALM4510-TOSHIGOKU-03 Invoking it opens a real roll preview
-PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 7 Target Number: 15 You are overcome by the urge to fight. Tell t
+PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 23 Target Number: 15 You master the urge and hold back. Keeping 2
 PASS REALM4510-YOMI-01 With no ancestral entry it says so plainly
 PASS REALM4510-YOMI-02 It names Inheritance, the entry the audit names — Ancestral: Inheritance, Haunted — resolve with your GM
 PASS REALM4510-YOMI-03 It names Haunted, the entry measuring the libraries found — Ancestral: Inheritance, Haunted — resolve with your GM
@@ -1781,9 +1784,9 @@ PASS UNLUCKY457-PRICE-05 Rank 10 awards 20 XP, so no rank cap was invented
 PASS UNLUCKY457-PRICE-06 The row says the second result is the one that stands — Rank 10 — the GM may force 10 rerolls per session, keeping the second result; 10/10 left Value: 20 XP.
 PASS UNLUCKY457-REROLL-01 Twenty real invocations were driven — ran 20
 PASS UNLUCKY457-REROLL-02 The displayed total is the REROLL every single time
-PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 12 higher, 8 lower of 20
-PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":14,"statedOriginal":14,"reroll":19,"shown":19},{"original":14,"statedOriginal":14,"reroll":29,"shown":29},{"original":20,"statedOriginal":20,"reroll":23,"shown":23}]
-PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":28,"statedOriginal":28,"reroll":19,"shown":19},{"original":25,"statedOriginal":25,"reroll":21,"shown":21},{"original":19,"statedOriginal":19,"reroll":17,"shown":17}]
+PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 8 higher, 11 lower of 20
+PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":19,"statedOriginal":19,"reroll":25,"shown":25},{"original":17,"statedOriginal":17,"reroll":18,"shown":18},{"original":19,"statedOriginal":19,"reroll":23,"shown":23}]
+PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":29,"statedOriginal":29,"reroll":17,"shown":17},{"original":39,"statedOriginal":39,"reroll":11,"shown":11},{"original":28,"statedOriginal":28,"reroll":22,"shown":22}]
 PASS UNLUCKY457-USES-01 The count walks 3/3 → 2/3 → 1/3 → 0/3 and then disables
 PASS UNLUCKY457-USES-02 The row shows the pool spent, not the entry vanished
 PASS UNLUCKY457-ISOLATION-01 The only thing an invoke changes on the character is Unlucky’s own counter
@@ -1902,7 +1905,7 @@ PASS DOUBT459-SCOPE-INITIATIVE A initiative roll is untouched
 PASS DOUBT459-SCOPE-NODICE It moves no dice in either direction, only the total
 PASS DOUBT459-TOTAL-01 The displayed total is exactly 5 below the kept dice
 PASS DOUBT459-TOTAL-02 The breakdown names the required Raise, not just a number — 
-      14
+      13
       
       
       Ten Dice Rule bonus: +-5 (already included in the total above)
@@ -2283,7 +2286,7 @@ PASS ANC48-END-NO-ERRORS
 349/349 checks passed
 
 == PART K — Phase 11 Characters List and Save Model/characters-harness.js
-Characters list checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-cqe0mce7\site\index.html
+Characters list checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-nmd4ht9_\site\index.html
 PASS CL-ENABLED
 PASS CL-START-EMPTY-STAYS-ON-SHEET
 PASS CL-TOOLBAR-BUTTON-FIRST
@@ -2358,7 +2361,7 @@ PASS CL-NO-PAGE-ERRORS-SHARE
 70/70 checks passed
 
 == PART K — Phase 12 Play and Management Modes/modes-harness.js
-Play and Management modes (part 1) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-cqe0mce7\site\index.html
+Play and Management modes (part 1) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-nmd4ht9_\site\index.html
 PASS PM12-ENABLED
 PASS PM12-BLANK-SHEET-IS-MANAGEMENT
 PASS PM12-MANAGEMENT-TYPING-WORKS
@@ -2388,7 +2391,7 @@ PASS PM12-NO-PAGE-ERRORS-WIZARD
 25/25 checks passed
 
 == PART K — Phase 12.4 Play Mode Skills/skills-harness.js
-Skills in Play (part 5) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-cqe0mce7\site\index.html
+Skills in Play (part 5) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-g6-preview-nmd4ht9_\site\index.html
 PASS SK124-ENABLED
 PASS SK124-MANAGEMENT-RANK-TYPES
 PASS SK124-MANAGEMENT-ADD-SKILL-WORKS

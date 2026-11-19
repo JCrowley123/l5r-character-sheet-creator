@@ -1,0 +1,14 @@
+  detail DR-SEAM-PHONE: {"dr":false}
+  detail DR-ROW-INSIDE-CARD-PHONE: {"shown":true,"row":{"left":49,"right":341,"top":561,"bottom":635,"width":292,"height":74},"panel":{"left":38,"right":352,"top":259,"bottom":667,"width":314,"height":407},"label":{"left":49,"right":121,"top":585,"bottom":612,"width":72,"height":27},"input":{"left":127,"right":215,"top":584,"bottom":612,"width":88,"height":28},"apply":{"left":221,"right":309,"top":561,"bottom":635,"width":88,"height":74},"cancel":{"left":315,"right":397,"top":582,"bottom":614,"width":82,"height":32},"docScroll":390,"vw":390}
+  detail DR-BUTTONS-ONE-LINE-PHONE: {"shown":true,"row":{"left":49,"right":341,"top":561,"bottom":635,"width":292,"height":74},"panel":{"left":38,"right":352,"top":259,"bottom":667,"width":314,"height":407},"label":{"left":49,"right":121,"top":585,"bottom":612,"width":72,"height":27},"input":{"left":127,"right":215,"top":584,"bottom":612,"width":88,"height":28},"apply":{"left":221,"right":309,"top":561,"bottom":635,"width":88,"height":74},"cancel":{"left":315,"right":397,"top":582,"bottom":614,"width":82,"height":32},"docScroll":390,"vw":390}
+  detail DR-BUTTONS-FULL-WIDTH-PHONE: {"shown":true,"row":{"left":49,"right":341,"top":561,"bottom":635,"width":292,"height":74},"panel":{"left":38,"right":352,"top":259,"bottom":667,"width":314,"height":407},"label":{"left":49,"right":121,"top":585,"bottom":612,"width":72,"height":27},"input":{"left":127,"right":215,"top":584,"bottom":612,"width":88,"height":28},"apply":{"left":221,"right":309,"top":561,"bottom":635,"width":88,"height":74},"cancel":{"left":315,"right":397,"top":582,"bottom":614,"width":82,"height":32},"docScroll":390,"vw":390}
+FAIL DR-SEAM-PHONE
+FAIL DR-ROW-INSIDE-CARD-PHONE
+FAIL DR-BUTTONS-ONE-LINE-PHONE
+FAIL DR-BUTTONS-FULL-WIDTH-PHONE
+PASS DR-APPLY-STILL-WORKS-PHONE
+PASS DR-NO-ERRORS-PHONE
+PASS DR-ONE-LINE-DESKTOP
+PASS DR-CANCEL-STILL-WORKS-DESKTOP
+PASS DR-NO-ERRORS-DESKTOP
+5/9 checks passed
