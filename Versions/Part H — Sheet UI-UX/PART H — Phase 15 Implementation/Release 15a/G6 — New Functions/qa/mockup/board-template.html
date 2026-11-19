@@ -1,0 +1,199 @@
+<title>G6 Void Undo and Trait Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, the same look as the G4, AE and G5 boards; each unit is a band of today | proposed pairs that stack on a phone. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem;margin-top:14px}
+p{margin:0;max-width:70ch}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:74ch}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+code{font-size:.85em;background:var(--chip);padding:1px 5px;border-radius:4px;word-break:break-word}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:12px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--new);border-radius:6px;padding:12px 14px;max-width:none}
+.rec b{color:var(--new)}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;max-width:none}
+.note b{color:var(--warn)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.stack{display:flex;flex-direction:column;gap:8px;min-width:0}
+.phonepair{max-width:760px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.78rem;letter-spacing:.03em}
+td.t{color:var(--today)} td.n{color:var(--new)}
+.summary td:first-child,.rules td:first-child{white-space:nowrap;font-weight:600}
+.optlist{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;max-width:420px;font-size:.88rem}
+.optlist dt{font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--soft);margin-top:8px}
+.optlist dt:first-child{margin-top:0}
+.optlist dd{margin:2px 0 0 12px}
+.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.decide ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:720px){.pair,.trio{grid-template-columns:1fr}h1{font-size:1.7rem}.summary td:first-child,.rules td:first-child{white-space:normal}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">Release 15a · group G6 · new functions</span>
+  <h1>Undo a Void spend, and pick a Trait for one Skill roll: today beside proposed</h1>
+  <p class="lede">The last two findings of Release 15a. A19 puts an Undo on the Void card for the most recent spend made there, as you ruled for FT-24 on 9 October. A20 lets a Skill roll use another Trait for that one roll (FT-28), from the roll preview. Every picture is the live app in a test browser; the proposed pictures have the change applied only in that browser. Nothing is built: the build starts only on your approval.</p>
+  <p class="meta">Live build <code>6d47849b…44b1</code>, 17,685,928 bytes, <code>main</code> at <code>1ebf26b4</code> (A08 live; the same application bytes as production). Captured 19 November 2026 in Chromium 153.0.8010.12 at 390 × 844 (phone, touch) and 1440 × 1000 (laptop), in Play. Test character: the audit's dense Kuni Shugenja with its Advantages and Disadvantages replaced by Touch of the Void alone (Void 3, 3 Void Points; Intimidation Rank 3 on Awareness 2, with the Control Emphasis; Willpower 4). No page errors at either size.</p>
+</header>
+
+<section id="summary">
+  <span class="tag">At a glance</span>
+  <h2>The two units</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Unit</th><th>Today</th><th>Proposed</th><th>Tier</th></tr>
+    <tr><td>A19</td><td class="t">A mistaken tap on a Void card button cannot be taken back. A blank pip gives the point back, but the effect stays armed, the Round still counts as spent, and Touch of the Void's Willpower roll still follows.</td><td class="n">After a card spend the card shows "Undo" and what was spent. Undo puts back exactly what that spend changed and drops its waiting Willpower roll, once. It goes away at the next roll, Next Round or Reset.</td><td>Behaviour</td></tr>
+    <tr><td>A20</td><td class="t">A Skill roll always uses the Skill's own Trait. For another pairing you change the Skill's Trait in Manage (which changes the character) or roll by hand in the dice tray (no Emphasis, no modifiers).</td><td class="n">The Trait line of a Skill roll's preview is a drop-down. It starts on the Skill's own Trait and lists the Traits the books name for that Skill first. Another choice is marked "this roll only", and the next roll starts on the usual Trait again.</td><td>Behaviour</td></tr>
+  </table></div>
+  <p>Both change rolls or undo, so both are behaviour tier: the 4× CPU screen, then two full passes, both first time. Proposed names: <b>A19 — Undo the Last Void Spend</b> (marker <code>PART H PHASE 15.1.33</code>) and <b>A20 — A Trait for One Skill Roll</b> (<code>15.1.34</code>), each with its own folder, switch, harness, remover and removal-chain entry after A08, in the group folder <b>G6 — New Functions</b>. 15.1.32 is skipped because the withdrawn A12 used it on its own branch.</p>
+</section>
+
+<section id="a19">
+  <span class="tag">A19 · FT-24 · your ruling of 9 October · Q7</span>
+  <h2>Undo the most recent Void card spend</h2>
+  <p>The Void card is on the Combat page. Your ruling on 9 October: an Undo on the Void card for the most recent spend made there, which gives the point back, takes back its effect and drops its Willpower roll, until the next roll, Next Round or Reset. The audit adds: put back the exact values, once, and keep it apart from the roll preview's refund and from History.</p>
+
+  <h3>Phone · a mistaken +1k1 in a fight</h3>
+  <div class="trio">
+    <figure><img src="{{a19-phone-before}}" alt="The Void card before any spend: 3 Void Points remaining, every button available"><figcaption>Before: 3 Void Points, Combat active, Round 1.</figcaption></figure>
+    <figure><img src="{{a19-phone-today-spent}}" alt="Today after tapping +1k1: every button greyed out, 'Void already spent this Round', no way back on the card"><figcaption><span class="t">Today, after the tap.</span> 2 Void Points, +1k1 armed for the next roll, the Round's spend used, every button greyed. Nothing on the card takes it back.</figcaption></figure>
+    <figure><img src="{{a19-phone-proposed-spent}}" alt="Proposed after tapping +1k1: an Undo button and 'Spent: +1k1 on your next roll. Touch of the Void's Willpower roll comes after that roll; Undo drops it.'"><figcaption><span class="n">Proposed, after the tap.</span> The same state, plus an Undo line under the buttons saying what was spent and what Undo will drop.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{a19-phone-today-pip}}" alt="Today after tapping a blank Void pip: the card still says next roll +1k1 and Void already spent this Round"><figcaption><span class="t">Today, the only way back: a blank pip</span> (on the Rings &amp; Traits page). The point returns, but +1k1 stays armed, the Round stays spent and every button stays grey. The card's note even still reads "2 Void Points remaining" with 3 back.</figcaption></figure>
+    <figure><img src="{{a19-phone-proposed-undone}}" alt="Proposed after Undo: 3 Void Points remaining, all buttons available, 'Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll.'"><figcaption><span class="n">Proposed, after Undo.</span> 3 Void Points, nothing armed, "Nothing spent this round", every button back. The line confirms what was undone and offers no second Undo.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{a19-phone-today-next-preview}}" alt="Today, the next Intimidation roll: Void +1k1 and Touch of the Void +2k1 still applied, 7k3"><figcaption><span class="t">Today, the next roll after the pip:</span> the +1k1 (+2k1 with Touch of the Void) still rides on it, 7k3 for free.</figcaption></figure>
+    <figure><img src="{{a19-phone-today-touch-check}}" alt="Today, after that roll: Touch of the Void — Willpower vs TN 30 opens"><figcaption><span class="t">Today, after that roll:</span> Touch of the Void's Willpower roll opens. With Undo, the same roll is a plain 5k2 and no Willpower roll follows (checked).</figcaption></figure>
+  </div>
+
+  <h3>Phone · a spend that makes no roll, with Touch of the Void</h3>
+  <p>For +10 TN, +10 Initiative, damage reduction and Kiho, Touch of the Void's Willpower roll opens at once. Cancelling it cancels only that roll, as you found on 9 October.</p>
+  <div class="trio">
+    <figure><img src="{{a19-phone-touch-check-at-once}}" alt="Touch of the Void — Willpower vs TN 30 opens straight after tapping +10 TN to be hit"><figcaption>Both: the Willpower roll opens straight after the tap on +10 TN.</figcaption></figure>
+    <figure><img src="{{a19-phone-today-tn-cancelled}}" alt="Today after cancelling it: Armor TN +10 this round, Void spent, no way back"><figcaption><span class="t">Today, after Cancel.</span> The point is gone and Armor TN +10 stays for the Round, with nothing to take it back.</figcaption></figure>
+    <figure><img src="{{a19-phone-proposed-tn-cancelled}}" alt="Proposed after cancelling it: Undo, 'Spent: +10 TN to be hit, this Round. Touch of the Void's Willpower roll was not made.'"><figcaption><span class="n">Proposed, after Cancel.</span> Undo puts back the point, the Armor TN and the Round's spend (checked: Armor TN bonus 10 → 0).</figcaption></figure>
+  </div>
+
+  <h3>Laptop · after the mistaken +1k1, and after Undo</h3>
+  <div class="stack">
+    <figure><img src="{{a19-laptop-today-spent}}" alt="Laptop today: Void card after the spend, all buttons grey"><figcaption><span class="t">Today.</span></figcaption></figure>
+    <figure><img src="{{a19-laptop-proposed-spent}}" alt="Laptop proposed: the Undo line under the buttons"><figcaption><span class="n">Proposed.</span> One line under the buttons, only while there is something to undo.</figcaption></figure>
+    <figure><img src="{{a19-laptop-proposed-undone}}" alt="Laptop proposed after Undo: 3 Void Points remaining, nothing spent this round"><figcaption><span class="n">Proposed, after Undo.</span></figcaption></figure>
+  </div>
+
+  <h3>The rule</h3>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Covers</td><td>The spends made from the Void card: its six buttons (+1k1; Unskilled roll made Skilled; +10 TN; +10 Initiative; damage reduction; Kiho) and Hotei's Curse's two-point button when that Curse is on the sheet (Undo gives both points back).</td></tr>
+    <tr><td>Puts back</td><td>Exactly the values from just before that spend, once: the Void Points; the armed one-roll effect (including one it replaced: Skilled, then +1k1, then Undo leaves Skilled armed); the Round's Void spend; Armor TN; skirmish Initiative; the Wounds a damage reduction added.</td></tr>
+    <tr><td>Touch of the Void</td><td>A Willpower roll still waiting for that spend is dropped. One you cancelled is not owed again. One you rolled is a roll, so Undo has already gone.</td></tr>
+    <tr><td>Goes away</td><td>At any roll the sheet makes (a preview you cancel is not a roll); Next Round; Reset; another card spend (Undo then covers only that one); any other change to the Void Points, the armed effect, the Round or the Wounds (a pip tap, a Void Point spent in a roll preview, loading another character).</td></tr>
+    <tr><td>Once</td><td>After Undo the line reads "Undone: …" with no button; a double tap undoes once.</td></tr>
+    <tr><td>Not covered</td><td>Void Points spent outside the card: the roll preview's own Void option (its roll follows at once), Lost Love's button, Dark Paragon's Determination, an Ancestor's gift, a pip tap. The preview's refund when a roll is cancelled stays as it is, apart from this. History is unchanged: it records the spend and the Undo as ordinary Void Points changes, and has no undo of its own.</td></tr>
+    <tr><td>Saved</td><td>Nothing new. Undo's own state is forgotten when the page closes, like the Round tracker.</td></tr>
+  </table></div>
+
+  <h3>The audit's edge cases, run on the scratch version (laptop)</h3>
+  <div class="tbl"><table class="rules">
+    <tr><th>Case</th><th>Result</th></tr>
+    <tr><td>Next Round</td><td>Undo gone; the armed +1k1 stays for the next roll, as today.</td></tr>
+    <tr><td>Reset</td><td>Undo gone; Reset clears the spend as today.</td></tr>
+    <tr><td>Two spends</td><td>Skilled, then +1k1 (out of combat): Undo gives one point back (1 → 2) and leaves Skilled armed.</td></tr>
+    <tr><td>Double undo</td><td>A double click undoes once; no button remains.</td></tr>
+    <tr><td>A pip tap</td><td>Undo gone.</td></tr>
+    <tr><td>A roll</td><td>Undo gone once the roll is made.</td></tr>
+    <tr><td>A cancelled preview</td><td>Undo stays and still works (3 points, nothing armed, no Willpower roll owed).</td></tr>
+    <tr><td>Damage reduction</td><td>25 announced → 15 Wounds taken; Undo: Wounds 15 → 0, Void Points 2 → 3.</td></tr>
+    <tr><td>+10 Initiative</td><td>Undo: the skirmish Initiative bonus 10 → 0.</td></tr>
+  </table></div>
+  <div class="note"><b>Noticed in passing, not part of A19:</b> today a pip tap does not redraw the Void card's note, so after the pip in the picture above it still says "2 Void Points remaining" with 3 back. It corrects itself at the next redraw. A19's Undo redraws the card, so its own case is right; the pip case would be a separate small fix.</div>
+  <div class="rec"><b>Recommendation: approve A19 as shown.</b> It is your 9 October ruling, with the audit's limits. The line appears only after a card spend and next to the buttons you just tapped, so there is no permanent row on the phone, and it says what Undo will do before you press it.</div>
+</section>
+
+<section id="a20">
+  <span class="tag">A20 · FT-28 · your ruling of 10 October · Q7</span>
+  <h2>Choose a Trait for one Skill roll</h2>
+  <p>The books treat a Skill roll as a Skill and Trait pair that the GM names; each Skill has a usual Trait (Core Rulebook p.79). Some uses name another Trait: the Skill Traits audit of 10 October found eight (for example Athletics with Agility for throwing, p.139; Intimidation with Willpower for Control, pp.121 and 229), and the Book of Earth (pp.8–9) lists Willpower and Stamina pairings a GM may call for, including Willpower for Intimidation where it suits better than Awareness. I re-read those pages for this board.</p>
+
+  <h3>Phone · an Intimidation roll</h3>
+  <div class="trio">
+    <figure><img src="{{a20-phone-today-preview}}" alt="Today: the preview reads Awareness 2 and Intimidation Rank 3, Roll 5k2"><figcaption><span class="t">Today.</span> Awareness 2 + Intimidation Rank 3: 5k2. The Trait is fixed.</figcaption></figure>
+    <figure><img src="{{a20-phone-proposed-preview}}" alt="Proposed: the Trait line is a drop-down reading Awareness 2; Roll 5k2"><figcaption><span class="n">Proposed, on opening.</span> The same roll; the Trait line is a drop-down set to the usual Trait.</figcaption></figure>
+    <figure><img src="{{a20-phone-proposed-willpower}}" alt="Proposed with Willpower 4 chosen: 7k4, outlined in red, 'This roll only; Intimidation is usually Awareness. Book of Earth p.9: the GM may allow Willpower for Intimidation.'"><figcaption><span class="n">Proposed, Willpower chosen.</span> 7k4. Outlined, with "This roll only" and the book page under it. Everything else in the preview is as before.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{a20-phone-proposed-reopened}}" alt="Proposed: the next Intimidation roll opens on Awareness 2 again, 5k2"><figcaption><span class="n">Proposed, the next Intimidation roll</span> opens on Awareness again (5k2). After the Willpower roll the Skill row and the saved character still say Awareness, and the result still showed the Emphasis (Control) re-roll (checked).</figcaption></figure>
+    <div class="stack">
+      <p><b>What the drop-down holds</b> (a phone shows it in its own picker; each Trait with its value):</p>
+      <dl class="optlist">
+        <dt>Usual for Intimidation</dt><dd>Awareness 2</dd>
+        <dt>Named for Intimidation (Book of Earth p.9)</dt><dd>Willpower 4</dd>
+        <dt>Other Traits (the GM's call, Core p.79)</dt><dd>Stamina 2 · Reflexes 2 · Strength 3 · Perception 3 · Agility 3 · Intelligence 3</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h3>Laptop · the same roll</h3>
+  <div class="trio">
+    <figure><img src="{{a20-laptop-today-preview}}" alt="Laptop today: Awareness 2, 5k2"><figcaption><span class="t">Today.</span></figcaption></figure>
+    <figure><img src="{{a20-laptop-proposed-preview}}" alt="Laptop proposed on opening: Awareness 2 drop-down"><figcaption><span class="n">Proposed, on opening.</span></figcaption></figure>
+    <figure><img src="{{a20-laptop-proposed-willpower}}" alt="Laptop proposed with Willpower chosen: 7k4 and the this-roll-only line"><figcaption><span class="n">Proposed, Willpower chosen.</span></figcaption></figure>
+  </div>
+
+  <h3>The rule</h3>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Where</td><td>The preview of every roll made from a Skill: trained, and Unskilled from the untrained list. Not weapon attacks, Trait or Ring rolls, spells or the dice tray.</td></tr>
+    <tr><td>Starts on</td><td>The Skill's own Trait as the sheet holds it (the catalogue Trait, or one you set by hand in Manage).</td></tr>
+    <tr><td>Listed</td><td>The usual Trait; then any Trait the books name for that Skill, with its page (from the Skill Traits audit and the Book of Earth list); then every other Trait. Void appears only for Iaijutsu (Focus, Core p.87).</td></tr>
+    <tr><td>Changes</td><td>The dice: (Trait + Skill Rank) keep Trait, or Trait keep Trait when Unskilled (10s still do not explode), and anything the sheet adds that depends on the Trait. The Skill Rank, the Emphasis reroll, the Unskilled rule, Void offers, declarations and every other modifier stay; anything already ticked stays ticked when the Trait changes.</td></tr>
+    <tr><td>Marked</td><td>A Trait that is not the usual one is outlined, with "This roll only; Intimidation is usually Awareness." and, for a book-named Trait, its page.</td></tr>
+    <tr><td>Resets</td><td>Each time the preview opens, it starts on the usual Trait. Cancel forgets the choice.</td></tr>
+    <tr><td>Saved</td><td>Nothing: the Skill's Trait in the character and the save file does not change, and no XP is worked out from the choice.</td></tr>
+  </table></div>
+  <div class="note"><b>About the scratch version:</b> to keep every number the sheet's own, it reopens the preview with the chosen Trait through the sheet's Skill roll. The build will redraw the preview in place instead, so ticks you have already made are kept.</div>
+  <div class="rec"><b>Recommendation: approve A20 as shown, with the book-named Traits listed first.</b> It follows your "remind, not remember" principle: when the GM asks for an unusual pairing, the sheet already shows the one the books name and where. The smaller alternative is a plain list of every Trait with no book pairings; it needs no per-Skill table, but the player has to know which pairing applies.</div>
+</section>
+
+<section id="decide">
+  <span class="tag">Your decisions</span>
+  <h2>Three short questions</h2>
+  <div class="decide">
+    <ol>
+      <li><b>Grouping.</b> Recommended: one G6 with both units, as planned. They touch different parts of the sheet (the Void card and the roll preview) and are separately removable, and one qualification serves both. The alternative is two groups of one, each qualified and taken live on its own: A19 could go live sooner, at the cost of a second qualification.</li>
+      <li><b>A19, Undo the last Void spend:</b> approve as shown (recommended), revise, or drop.</li>
+      <li><b>A20, a Trait for one Skill roll:</b> approve with the book-named Traits first (recommended), approve with a plain list, revise, or drop.</li>
+    </ol>
+    <p>Approval permits the build and preview stage only: each unit on its own stacked branch, light checks, one code review, then your device round with Accept / Revise / Remove for each. Qualification and go-live come after, only on your word.</p>
+  </div>
+</section>
+</div>

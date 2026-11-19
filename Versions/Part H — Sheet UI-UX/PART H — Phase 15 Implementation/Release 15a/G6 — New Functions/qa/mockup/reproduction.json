@@ -1,0 +1,941 @@
+{
+ "source_sha256": "6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1",
+ "captured_utc": "2026-11-19T00:19:36.844Z",
+ "phone": {
+  "a19_today": {
+   "before": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": null,
+    "status": "Imported \"G6 test\". Save to keep it in your library."
+   },
+   "spent": {
+    "points": "2",
+    "pending": "{\"k1\":true}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 1,
+    "panelNote": "2 Void Points remaining · next roll: +1k1",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": "Void spent: +1k1 to a Skill, Trait, Ring, or Spell Casting roll — applies to your next roll."
+   },
+   "afterPip": {
+    "points": "3",
+    "pending": "{\"k1\":true}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 1,
+    "panelNote": "2 Void Points remaining · next roll: +1k1",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": "Void spent: +1k1 to a Skill, Trait, Ring, or Spell Casting roll — applies to your next roll."
+   },
+   "nextPreview": {
+    "title": "Intimidation",
+    "pool": "7k3",
+    "base": [
+     "Awareness 22k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [
+     "Void: +1k1+1k1",
+     "Touch of the Void: Void +2k1+1k0"
+    ],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 7k3"
+   },
+   "touchCheckOpened": true,
+   "touchCheck": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "pool": "4k4",
+    "base": [
+     "Willpower 44k4 — rolled and kept"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 4k4"
+   },
+   "afterRoll": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": ""
+   },
+   "errors": [],
+   "tnCheckOpened": true,
+   "tnCheck": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "pool": "4k4",
+    "base": [
+     "Willpower 44k4 — rolled and kept"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 4k4"
+   },
+   "tnAfterCancel": {
+    "points": "2",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"tn\",\"voidTN\":true}}",
+    "armorTNBonus": 10,
+    "touchOwed": 0,
+    "panelNote": "2 Void Points remaining · Armor TN +10 this round",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (tn), voidTN",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": "Void spent: +10 TN to be hit — until the end of this Round."
+   },
+   "errors2": []
+  },
+  "a20_today": {
+   "preview": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 22k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "errors": []
+  },
+  "a19_proposed": {
+   "before": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": null,
+    "status": "Imported \"G6 test\". Save to keep it in your library."
+   },
+   "spent": {
+    "points": "2",
+    "pending": "{\"k1\":true}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 1,
+    "panelNote": "2 Void Points remaining · next roll: +1k1",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": "UndoSpent: +1k1 on your next roll. Touch of the Void’s Willpower roll comes after that roll; Undo drops it.",
+    "status": "Void spent: +1k1 to a Skill, Trait, Ring, or Spell Casting roll — applies to your next roll."
+   },
+   "afterUndo": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll.",
+    "status": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll."
+   },
+   "undoButtonsLeft": 0,
+   "nextPreview": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 22k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "touchCheckOpened": false,
+   "afterRoll": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": null,
+    "status": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll."
+   },
+   "errors": [],
+   "tnCheckOpened": true,
+   "tnCheck": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "pool": "4k4",
+    "base": [
+     "Willpower 44k4 — rolled and kept"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 4k4"
+   },
+   "tnAfterCancel": {
+    "points": "2",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"tn\",\"voidTN\":true}}",
+    "armorTNBonus": 10,
+    "touchOwed": 0,
+    "panelNote": "2 Void Points remaining · Armor TN +10 this round",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (tn), voidTN",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": "UndoSpent: +10 TN to be hit, this Round. Touch of the Void’s Willpower roll was not made.",
+    "status": "Void spent: +10 TN to be hit — until the end of this Round."
+   },
+   "tnAfterUndo": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": "Undone: the Void Point is back; Armor TN back to normal.",
+    "status": "Undone: the Void Point is back; Armor TN back to normal."
+   },
+   "errors2": []
+  },
+  "a20_proposed": {
+   "preview": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 2Willpower 4Stamina 2Reflexes 2Strength 3Perception 3Agility 3Intelligence 32k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": "Awareness",
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "willpower": {
+    "title": "Intimidation",
+    "pool": "7k4",
+    "base": [
+     "Awareness 2Willpower 4Stamina 2Reflexes 2Strength 3Perception 3Agility 3Intelligence 34k4 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": "Willpower",
+    "note": "This roll only; Intimidation is usually Awareness. Book of Earth p.9: the GM may allow Willpower for Intimidation.",
+    "go": "Roll 7k4"
+   },
+   "result": {
+    "title": "Intimidation",
+    "notation": "7k4",
+    "emphasisOffer": true
+   },
+   "saved": {
+    "rowTrait": "Awareness",
+    "savedTrait": "Awareness"
+   },
+   "reopened": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 2Willpower 4Stamina 2Reflexes 2Strength 3Perception 3Agility 3Intelligence 32k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": "Awareness",
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "errors": []
+  }
+ },
+ "laptop": {
+  "a19_today": {
+   "before": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": null,
+    "status": "Imported \"G6 test\". Save to keep it in your library."
+   },
+   "spent": {
+    "points": "2",
+    "pending": "{\"k1\":true}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 1,
+    "panelNote": "2 Void Points remaining · next roll: +1k1",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": "Void spent: +1k1 to a Skill, Trait, Ring, or Spell Casting roll — applies to your next roll."
+   },
+   "afterPip": {
+    "points": "3",
+    "pending": "{\"k1\":true}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 1,
+    "panelNote": "2 Void Points remaining · next roll: +1k1",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": ""
+   },
+   "nextPreview": {
+    "title": "Intimidation",
+    "pool": "7k3",
+    "base": [
+     "Awareness 22k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [
+     "Void: +1k1+1k1",
+     "Touch of the Void: Void +2k1+1k0"
+    ],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 7k3"
+   },
+   "touchCheckOpened": true,
+   "touchCheck": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "pool": "4k4",
+    "base": [
+     "Willpower 44k4 — rolled and kept"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 4k4"
+   },
+   "afterRoll": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": ""
+   },
+   "errors": [],
+   "tnCheckOpened": true,
+   "tnCheck": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "pool": "4k4",
+    "base": [
+     "Willpower 44k4 — rolled and kept"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 4k4"
+   },
+   "tnAfterCancel": {
+    "points": "2",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"tn\",\"voidTN\":true}}",
+    "armorTNBonus": 10,
+    "touchOwed": 0,
+    "panelNote": "2 Void Points remaining · Armor TN +10 this round",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (tn), voidTN",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": null,
+    "status": "Void spent: +10 TN to be hit — until the end of this Round."
+   },
+   "errors2": []
+  },
+  "a20_today": {
+   "preview": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 22k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "errors": []
+  },
+  "a19_proposed": {
+   "before": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": null,
+    "status": "Imported \"G6 test\". Save to keep it in your library."
+   },
+   "spent": {
+    "points": "2",
+    "pending": "{\"k1\":true}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"k1\"}}",
+    "armorTNBonus": 0,
+    "touchOwed": 1,
+    "panelNote": "2 Void Points remaining · next roll: +1k1",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (k1)",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": "UndoSpent: +1k1 on your next roll. Touch of the Void’s Willpower roll comes after that roll; Undo drops it.",
+    "status": "Void spent: +1k1 to a Skill, Trait, Ring, or Spell Casting roll — applies to your next roll."
+   },
+   "afterUndo": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll.",
+    "status": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll."
+   },
+   "undoButtonsLeft": 0,
+   "nextPreview": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 22k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "touchCheckOpened": false,
+   "afterRoll": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": null,
+    "status": ""
+   },
+   "errors": [],
+   "tnCheckOpened": true,
+   "tnCheck": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "pool": "4k4",
+    "base": [
+     "Willpower 44k4 — rolled and kept"
+    ],
+    "mods": [],
+    "traitChoice": null,
+    "note": null,
+    "go": "Roll 4k4"
+   },
+   "tnAfterCancel": {
+    "points": "2",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{\"1\":{\"void\":\"tn\",\"voidTN\":true}}",
+    "armorTNBonus": 10,
+    "touchOwed": 0,
+    "panelNote": "2 Void Points remaining · Armor TN +10 this round",
+    "blanket": "Void already spent this Round",
+    "roundNote": "This round: void (tn), voidTN",
+    "disabled": [
+     "k1",
+     "skill",
+     "tn",
+     "init",
+     "damage",
+     "kiho"
+    ],
+    "undo": "UndoSpent: +10 TN to be hit, this Round. Touch of the Void’s Willpower roll was not made.",
+    "status": "Void spent: +10 TN to be hit — until the end of this Round."
+   },
+   "tnAfterUndo": {
+    "points": "3",
+    "pending": "{}",
+    "round": "1",
+    "ledger": "{}",
+    "armorTNBonus": 0,
+    "touchOwed": 0,
+    "panelNote": "3 Void Points remaining",
+    "blanket": "",
+    "roundNote": "Nothing spent this round.",
+    "disabled": [],
+    "undo": "Undone: the Void Point is back; Armor TN back to normal.",
+    "status": "Undone: the Void Point is back; Armor TN back to normal."
+   },
+   "errors2": []
+  },
+  "a20_proposed": {
+   "preview": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 2Willpower 4Stamina 2Reflexes 2Strength 3Perception 3Agility 3Intelligence 32k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": "Awareness",
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "willpower": {
+    "title": "Intimidation",
+    "pool": "7k4",
+    "base": [
+     "Awareness 2Willpower 4Stamina 2Reflexes 2Strength 3Perception 3Agility 3Intelligence 34k4 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": "Willpower",
+    "note": "This roll only; Intimidation is usually Awareness. Book of Earth p.9: the GM may allow Willpower for Intimidation.",
+    "go": "Roll 7k4"
+   },
+   "result": {
+    "title": "Intimidation",
+    "notation": "7k4",
+    "emphasisOffer": true
+   },
+   "saved": {
+    "rowTrait": "Awareness",
+    "savedTrait": "Awareness"
+   },
+   "reopened": {
+    "title": "Intimidation",
+    "pool": "5k2",
+    "base": [
+     "Awareness 2Willpower 4Stamina 2Reflexes 2Strength 3Perception 3Agility 3Intelligence 32k2 — the Trait sets the dice kept",
+     "Intimidation Rank 3+3k0"
+    ],
+    "mods": [],
+    "traitChoice": "Awareness",
+    "note": null,
+    "go": "Roll 5k2"
+   },
+   "errors": []
+  },
+  "a19_edges": {
+   "nextRound": {
+    "touchChecksCancelled": 0,
+    "before": 1,
+    "after": 0,
+    "state": {
+     "points": "2",
+     "pending": "{\"k1\":true}",
+     "round": "2",
+     "ledger": "{\"1\":{\"void\":\"k1\"}}",
+     "armorTNBonus": 0,
+     "touchOwed": 1,
+     "panelNote": "2 Void Points remaining · next roll: +1k1",
+     "blanket": "",
+     "roundNote": "Nothing spent this round.",
+     "disabled": [],
+     "undo": null,
+     "status": "Round 2."
+    },
+    "errors": []
+   },
+   "reset": {
+    "touchChecksCancelled": 1,
+    "before": 1,
+    "after": 0,
+    "state": {
+     "points": "2",
+     "pending": "{}",
+     "round": "1",
+     "ledger": "{\"1\":{\"stance\":\"Attack\"}}",
+     "armorTNBonus": 0,
+     "touchOwed": 0,
+     "panelNote": "2 Void Points remaining",
+     "blanket": "",
+     "roundNote": "This round: stance (Attack)",
+     "disabled": [],
+     "undo": null,
+     "status": "Combat rounds reset."
+    },
+    "errors": []
+   },
+   "latestOnlyAndDoubleUndo": {
+    "touchChecksCancelled": 0,
+    "afterFirst": {
+     "points": "2",
+     "pending": "{\"skill\":true}",
+     "round": "1",
+     "ledger": "{}",
+     "armorTNBonus": 0,
+     "touchOwed": 1,
+     "panelNote": "2 Void Points remaining · next roll: +1 Skill",
+     "blanket": "out of combat — combat-only options disabled",
+     "roundNote": "Nothing spent this round.",
+     "disabled": [
+      "tn",
+      "init"
+     ],
+     "undo": "UndoSpent: your next Unskilled roll made Skilled. Touch of the Void’s Willpower roll comes after that roll; Undo drops it.",
+     "status": "Void spent: Make an Unskilled roll Skilled (Rank 0 → 1) — 10s explode — applies to your next roll."
+    },
+    "beforeUndo": {
+     "points": "1",
+     "pending": "{\"k1\":true}",
+     "round": "1",
+     "ledger": "{}",
+     "armorTNBonus": 0,
+     "touchOwed": 2,
+     "panelNote": "1 Void Point remaining · next roll: +1k1",
+     "blanket": "out of combat — combat-only options disabled",
+     "roundNote": "Nothing spent this round.",
+     "disabled": [
+      "tn",
+      "init"
+     ],
+     "undo": "UndoSpent: +1k1 on your next roll. Touch of the Void’s Willpower roll comes after that roll; Undo drops it.",
+     "status": "Void spent: +1k1 to a Skill, Trait, Ring, or Spell Casting roll — applies to your next roll."
+    },
+    "afterDoubleClick": {
+     "points": "2",
+     "pending": "{\"skill\":true}",
+     "round": "1",
+     "ledger": "{}",
+     "armorTNBonus": 0,
+     "touchOwed": 1,
+     "panelNote": "2 Void Points remaining · next roll: +1 Skill",
+     "blanket": "out of combat — combat-only options disabled",
+     "roundNote": "Nothing spent this round.",
+     "disabled": [
+      "tn",
+      "init"
+     ],
+     "undo": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll.",
+     "status": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll."
+    },
+    "buttonsLeft": 0,
+    "errors": []
+   },
+   "pipTap": {
+    "touchChecksCancelled": 0,
+    "before": 1,
+    "after": 0,
+    "state": {
+     "points": "3",
+     "pending": "{\"k1\":true}",
+     "round": "1",
+     "ledger": "{\"1\":{\"void\":\"k1\"}}",
+     "armorTNBonus": 0,
+     "touchOwed": 1,
+     "panelNote": "2 Void Points remaining · next roll: +1k1",
+     "blanket": "Void already spent this Round",
+     "roundNote": "This round: void (k1)",
+     "disabled": [
+      "k1",
+      "skill",
+      "tn",
+      "init",
+      "damage",
+      "kiho"
+     ],
+     "undo": null,
+     "status": ""
+    },
+    "errors": []
+   },
+   "roll": {
+    "touchChecksCancelled": 1,
+    "before": 1,
+    "preview": {
+     "title": "Intimidation",
+     "pool": "7k3",
+     "base": [
+      "Awareness 22k2 — the Trait sets the dice kept",
+      "Intimidation Rank 3+3k0"
+     ],
+     "mods": [
+      "Void: +1k1+1k1",
+      "Touch of the Void: Void +2k1+1k0"
+     ],
+     "traitChoice": null,
+     "note": null,
+     "go": "Roll 7k3"
+    },
+    "after": 0,
+    "state": {
+     "points": "2",
+     "pending": "{}",
+     "round": "1",
+     "ledger": "{\"1\":{\"void\":\"k1\"}}",
+     "armorTNBonus": 0,
+     "touchOwed": 0,
+     "panelNote": "2 Void Points remaining",
+     "blanket": "Void already spent this Round",
+     "roundNote": "This round: void (k1)",
+     "disabled": [
+      "k1",
+      "skill",
+      "tn",
+      "init",
+      "damage",
+      "kiho"
+     ],
+     "undo": null,
+     "status": ""
+    },
+    "errors": []
+   },
+   "cancelledPreview": {
+    "touchChecksCancelled": 0,
+    "before": 1,
+    "after": 1,
+    "undone": {
+     "points": "3",
+     "pending": "{}",
+     "round": "1",
+     "ledger": "{}",
+     "armorTNBonus": 0,
+     "touchOwed": 0,
+     "panelNote": "3 Void Points remaining",
+     "blanket": "",
+     "roundNote": "Nothing spent this round.",
+     "disabled": [],
+     "undo": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll.",
+     "status": "Undone: the Void Point is back; +1k1 cleared; no Touch of the Void roll."
+    },
+    "errors": []
+   },
+   "damage": {
+    "touchChecksCancelled": 1,
+    "spent": {
+     "points": "2",
+     "pending": "{}",
+     "round": "1",
+     "ledger": "{\"1\":{\"void\":\"damage\"}}",
+     "armorTNBonus": 0,
+     "touchOwed": 0,
+     "panelNote": "2 Void Points remaining",
+     "blanket": "Void already spent this Round",
+     "roundNote": "This round: void (damage)",
+     "disabled": [
+      "k1",
+      "skill",
+      "tn",
+      "init",
+      "damage",
+      "kiho"
+     ],
+     "undo": "UndoSpent: damage reduced by 10. Touch of the Void’s Willpower roll was not made.",
+     "status": "Void spent: 25 damage reduced to 15 Wounds."
+    },
+    "wounds": "15",
+    "undone": {
+     "points": "3",
+     "pending": "{}",
+     "round": "1",
+     "ledger": "{}",
+     "armorTNBonus": 0,
+     "touchOwed": 0,
+     "panelNote": "3 Void Points remaining",
+     "blanket": "",
+     "roundNote": "Nothing spent this round.",
+     "disabled": [],
+     "undo": "Undone: the Void Point is back; the Wounds taken back.",
+     "status": "Undone: the Void Point is back; the Wounds taken back."
+    },
+    "woundsAfter": "0",
+    "errors": []
+   },
+   "initiative": {
+    "touchChecksCancelled": 1,
+    "spent": {
+     "points": "2",
+     "pending": "{}",
+     "round": "1",
+     "ledger": "{\"1\":{\"void\":\"init\"}}",
+     "armorTNBonus": 0,
+     "touchOwed": 0,
+     "panelNote": "2 Void Points remaining · Initiative +10 this round",
+     "blanket": "Void already spent this Round",
+     "roundNote": "This round: void (init)",
+     "disabled": [
+      "k1",
+      "skill",
+      "tn",
+      "init",
+      "damage",
+      "kiho"
+     ],
+     "undo": "UndoSpent: +10 Initiative, this skirmish. Touch of the Void’s Willpower roll was not made.",
+     "status": "Void spent: +10 Initiative (skirmish) — for the duration of this skirmish."
+    },
+    "initBonus": 10,
+    "undone": {
+     "points": "3",
+     "pending": "{}",
+     "round": "1",
+     "ledger": "{}",
+     "armorTNBonus": 0,
+     "touchOwed": 0,
+     "panelNote": "3 Void Points remaining",
+     "blanket": "",
+     "roundNote": "Nothing spent this round.",
+     "disabled": [],
+     "undo": "Undone: the Void Point is back; Initiative back to normal.",
+     "status": "Undone: the Void Point is back; Initiative back to normal."
+    },
+    "initBonusAfter": 0,
+    "errors": []
+   }
+  }
+ }
+}
