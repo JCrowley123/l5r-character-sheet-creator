@@ -41,8 +41,9 @@ One page differs from the audit: Etiquette (Courtesy) with Willpower, resisting 
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With A20 (this branch, on A19) | `8d6a0a0a23bdb583edbcaf94bb8fdc9dd5b1426ad0c4bc31ca8ee5e1be62a4eb` | 17,714,794 |
-| A20 removed (A19) | `0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9` | 17,701,397 |
+| With A20 (this branch, on A19 revision 1) | `fe8422cd2d6c82d5a2919955979dfacde7bc7cccd27add857485995c8946b75f` | 17,716,268 |
+| A20 removed (A19 revision 1) | `bd035d20fc2d26c887e69faf0dae420aa670cf633000103e06a16e55840a8f8d` | 17,702,871 |
+| Before A19's revision (A20 accepted on this build) | `8d6a0a0a23bdb583edbcaf94bb8fdc9dd5b1426ad0c4bc31ca8ee5e1be62a4eb` | 17,714,794 |
 
 ## Light checks (19 November)
 
@@ -55,6 +56,10 @@ One page differs from the audit: Etiquette (Courtesy) with Willpower, resisting 
 | The harnesses of the layers it touches, from G5's candidate list (the roll pipeline, Smart Roll Preview, Explain This Roll, the preview's refund and its top, the declaration registry and its providers: Cursed by the Realm, Seven Fortunes' Curse and Bishamon, the situational entries and buttons, the automatic roll entries; the dice entries; the Rank 0 and Skill Traits fixes; the Advantage and Disadvantage configuration, Doubt, Unlucky, Dependant; Void Versatility, Seven Fortunes' Blessing, Dark Paragon, the Spirit Realms, Weakness; Honour; the negative-modifier display; the quiver; school Skill rows; Play Mode Skills; A03; A08) | 33/33 harnesses, 1,606/1,606 on the final build (`G6 — New Functions/qa/light/a20-touched-run.log`). The first run, on `340d8f60…3a77`, was 32/33, 1,604/1,606: Smart Roll Preview 48/50 read the Trait row's label, which then held the drop-down (`light/a20-touched-run-1-label-fault.log`; fixed, see the code review). |
 | A19's harness on this build | 22/22 (`A19 — Undo the Last Void Spend/qa/run-on-a20-build.log`). |
 | Preview `https://claude-release-15a-a20.l5r-character-sheet-creator.pages.dev/` (G6 `qa/verify-preview.py`) | The page, service worker, manifest and icons match the committed build byte for byte (page `b1ea4b77…`, 17,721,571 bytes, source `8d6a0a0a…`); on the deployed page A19's and A20's harnesses and the touched harnesses of both units, 52/52, 2,547/2,547. Result: `G6 — New Functions/qa/hosted-preview/claude-release-15a-a20/`. |
+
+## Carried onto A19's revision (19 November 2026)
+
+The owner accepted A20 at the device round. A19 was then revised (Touch of the Void's own save keeps Undo), and that commit was carried onto this branch; A20's code is unchanged. Its remover and removal proof now name A19 revision 1 as the predecessor. On the new build: A20's harness 18/18 (`qa/run-7-on-a19r1.log`), A19's 25/25 (`A19 — Undo the Last Void Spend/qa/rev1-run-on-a20-build.log`), removal 10/10 (`qa/rev-a19r1-removal.log`), dependencies clean (`G6 — New Functions/qa/dependencies-a19r1-a20.log`); the preview check runs every touched harness again on the deployed page.
 
 ## Not covered by the harness
 

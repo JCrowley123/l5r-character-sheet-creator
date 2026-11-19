@@ -11,8 +11,8 @@ from pathlib import Path
 import hashlib, importlib.util, re, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART H — Phase 15 Implementation/Release 15a/A20 — A Trait for One Skill Roll'
-PREDECESSOR_SHA = '0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9'   # A19 — Undo the Last Void Spend
-PREDECESSOR_BYTES = 17701397
+PREDECESSOR_SHA = 'bd035d20fc2d26c887e69faf0dae420aa670cf633000103e06a16e55840a8f8d'   # A19 — Undo the Last Void Spend, revision 1
+PREDECESSOR_BYTES = 17702871
 BEFORE_PREDECESSOR_SHA = '6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1'
 BEFORE_PREDECESSOR_BYTES = 17685928
 SEAM = 'src/sheet/210-test-seam-and-init.js'

@@ -1,0 +1,25 @@
+  PASS  Armor & TN and Weapons default collapsed; Stance and Void default open  — {"armorTn":false,"weapons":false,"stance":true,"voidD":true}
+  PASS  wound bar renders exactly 8 segments  — count=8
+  PASS  bar's current segment matches old per-card classification (40 cases)  — all 40 agreed
+  PASS  summary line names level, penalty and X of total  — Grazed — TN of all rolls +5 — 17 of 38 wound points
+  PASS  next-level line gives the correct remaining count  — 2 wounds to Hurt
+  PASS  slider mirrors the number box  — 17
+  PASS  current segment aria-label is not colour-only  — Grazed — TN of all rolls +5
+  PASS  stepper writes back to the number box and the slider together  — {"number":"18","slider":"18"}
+  PASS  slider drag writes back to the number box  — 38
+  PASS  Out shows the end-state message, not a distance  — Already at the last level.
+  PASS  stepper disables exactly at the maximum, not before  — {"number":"38","next":"Already at the last level.","stepUpDisabled":true,"stepDownDisabled":false}
+  PASS  stepper disables exactly at zero  — disabled=true
+  PASS  a non-current segment opens its own info modal  — {"display":"flex","title":"Down","pen":"TN of all rolls +40"}
+  PASS  modal penalty text matches the segment tapped  — TN of all rolls +40
+  PASS  TN/Initiative info opens the shared stance-info overlay  — {"display":"flex","title":"TN & Initiative","armorOpen":false}
+  PASS  opening the info popup does not also toggle the details open  — armorOpen=false
+  PASS  Attack/Damage info opens with the right title  — Attack & Damage
+  PASS  opening it does not toggle Weapons details open  — weaponsOpen=false
+  PASS  disabled-reason caption states the out-of-combat reason  — out of combat — combat-only options disabled
+  PASS  disabled-reason caption sits above the button list, not below  — beforeButtons=true
+  PASS  disabled-reason caption clears once combat is active  — text=""
+  PASS  wound penalty still reaches the pre-roll modifier pipeline  — {"level":"Grazed","penalty":-5,"mods":[{"source":"wounds","label":"Wound Penalty","totalDelta":-5,"note":"Grazed"}]}
+  PASS  no uncaught page errors
+
+23/23 checks passed

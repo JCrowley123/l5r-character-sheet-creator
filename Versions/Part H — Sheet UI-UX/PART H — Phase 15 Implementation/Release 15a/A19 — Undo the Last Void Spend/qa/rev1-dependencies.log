@@ -1,0 +1,10 @@
+fragment : src/sheet/209.999999999999999999-feat-void-spend-undo.js
+marker   : PART H PHASE 15.1.33
+surface  : 3 name(s) -- VOID_SPEND_UNDO_ENABLED, VU15, void-spend-undo-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1013  [PART H PHASE 15.1.33 +0]  // PART H PHASE 15.1.33 BEGIN void-spend-undo-seam
+    own   1014  [PART H PHASE 15.1.33 +1]  if(typeof VU15 === 'object' && VU15) Object.assign(window.__L5R_TEST__, {VU15, VOID_SPEND_UNDO_E
+    own   1015  [PART H PHASE 15.1.33 +2]  // END VU15 void-spend-undo-seam
+
+every reference is inside a block PART H PHASE 15.1.33 owns -- surgical removal covers all of them.

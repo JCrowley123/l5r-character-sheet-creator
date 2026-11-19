@@ -23,8 +23,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('skill-trait-choice-sea
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:SKILL_TRAIT_CHOICE_ENABLED|TC15|tc15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.1\.34(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = '0ee228674c0110313e83d0a19e2b8800abd4fd2c376ca07f3e3d13d37ef25dc9'
-PRE_RELEASE_BYTES = 17701397
+PRE_RELEASE_SHA = 'bd035d20fc2d26c887e69faf0dae420aa670cf633000103e06a16e55840a8f8d'
+PRE_RELEASE_BYTES = 17702871
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")
