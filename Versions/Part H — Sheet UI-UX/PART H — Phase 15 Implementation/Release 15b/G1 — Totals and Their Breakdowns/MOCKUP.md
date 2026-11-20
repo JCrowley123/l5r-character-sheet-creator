@@ -16,7 +16,63 @@ The [work order of 19 November](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96Wi
 
 ## The owner's answers on the board
 
-Not yet given. The board asks four questions, one per unit: approve as shown (recommended), revise, or drop. Record the owner's words here verbatim when they come.
+The board asked four questions, one per unit: approve as shown (recommended), revise, or drop.
+
+### Round 1, 20 November 2026 (in this Claude session), verbatim
+
+> I am happy with the most of the mock ups the revisions I think I would make are:
+> 1) In the roll preview for wounds I think I would just have the total and rank.  I don't think the calculation or explanation is needed at all.
+>
+> So in the wound penalty section it would say -5 to total -- nicked
+>
+> The reason for this is that I think the new "i" icon does a good enough explanation for how the penalty is calculated.  Do you agree?
+>
+> 2) I don't think the card needs to say the catalogue price or card price.  I don't think this is needed at all after all.  I think the descriptions are clear in their explanation that certain clans or types of characters pay less.  I can not see a reason for this.  Please provide 3 strong reasons reasons why we should keep the distinction between price vs catalogue.
+>
+> 3) This has been made clearer by the example of Kharmic tie, but the card looks too busy.  There are 3 seperate "i" icons, a change button, a reset button, 3 pips showing the uses, a line that says Rank 3; 3/3 uses remaining, and then a badge with the targets name but the line also lists the target.
+>
+> This needs to be cut down and simplified.
+>
+> I would have expected a UI of a single change button, a single "i" icon the 3 pips and the reset.  Please help me with a new UI/UX for kharmic tie.
+>
+> Other than the points raised above I am happy with the mock ups
+
+Read as:
+
+- **A14: revise.** The roll preview's Wound Penalty row reads "−5 to total — Nicked", with no arithmetic. The informational "3 → 5 … already included" row still goes. The rest of A14 is approved as shown.
+- **B02: in question.** The owner asked for three strong reasons to keep it. Claude's answer and the owner's ruling follow in round 2.
+- **B04 and B14: approved as shown.**
+- **Kharmic Tie: a new request** (not one of the four units). A simpler card, mocked up in round 2.
+
+### Round 2, 20 November 2026 (Claude): the board's new top section
+
+The same board link, version 2, adds a round-2 section above round 1, which is unchanged below it. Pictures and values come from one run of `qa/mockup/repro.cjs` with `ONLY=kt,a14r`, plus a re-run of the proposed Kharmic Tie after its window was simplified. Values are in `qa/mockup/reproduction-round2.json`, and there were no page errors.
+
+- **A14, the preview as revised:** one row, "Wound Penalty −5 to total — Nicked" (today's first row unchanged). The informational row is removed, and the penalty is still −5.
+- **Claude's answer on A14:** agreed. The figure and the level name match the Wounds line, and the sum is one tap away. B14 keeps "Taint Rank 4 × 2 (Lost)" as approved, because Jigoku has no level name to stand for the figure.
+- **Claude's answer on B02:** three strong reasons could not be given honestly. The best case, ranked:
+  1. The row does not say its cost includes a discount ("remind, not remember"). Moderate, because Blissful Betrothal's own note names the entries it changes.
+  2. Checking the XP total against the book. Weak.
+  3. Consistency with the Clan-price note (FT-13). Weak, because dropping leaves today as it is.
+  - **Recommendation: drop B02.** Nothing is built, and today's notes stay as they are.
+- **Kharmic Tie, proposed:**
+  - **One row:** the badge "Aiko · Rank 3", the pips, Reset session, then Change (Manage only) and one i at the right.
+  - **What goes:** the "Target: Aiko — Rank 3; 2/3 uses remaining" line, and the two i's that Phase 4.54 added from the badge's and Reset's `title` texts.
+  - **The one i's window:** the rule in a sentence, each use +1k1, the uses left, and what Reset session and Change do.
+  - **Row height:** phone Play 58 → 28 px; phone Manage 60 → 56; laptop Manage 68 → 28; laptop Play 32 → 28.
+  - **Reset session** still restores the uses (●●○ → ●●●) and the row keeps its shape after the redraw.
+  - **Recommendation:** approve as a fifth group-1 unit, **B17 — One Row for Kharmic Tie** (`PART H PHASE 15.2.5`), screen-only.
+- **Recorded, not proposed:**
+  - Luck, Unlucky, Dark Paragon, the Ancestor card and the once-per-session entries have the same "Reset session" with a title-borne i. That belongs to A04.2, still parked.
+  - The empty Description box takes the most room on the card in Play.
+- **The board's three questions:**
+  1. A14 as revised: confirm or revise.
+  2. B02: drop or keep.
+  3. Kharmic Tie: approve as a fifth unit, revise, or drop.
+
+The owner's round-2 answers: not yet given. Record them here verbatim.
+
+**Usage, round 2:** weekly meter 38% → 39%, five-hour 3% → 9% (14:08 → 14:15 UTC).
 
 ## The units as proposed
 
@@ -39,4 +95,11 @@ Each unit gets its own folder under `Release 15b/`, with a switch, harness, remo
 - **B02, provisional prices.** Today a provisional Clan price adds "— fixed when you leave Management." The new line must keep that. The catalogue figure comes from Feature 4.5.25's price table (`e.base`) and Phase 4.5.32's `dataset.dsx4532.base`. The scratch version took the page from a one-entry map; the build reads it from the price table.
 - **B04, the terms.** These come from `recalcAll`'s own terms (stance, Void, two weapons, Way of the Dragon, Shiba's gift, Weakness on Reflexes), each by name. The scratch version grouped them into one row, and the test character had none. Only `#bl4534QaNote` is hidden.
 - **B14.** Feature 4.5.24's modifier note and card note (`TR4524`).
+- **A14 as revised (round 2).** The preview row's own text is not changed: only the informational row (`WND4529.rollNote`) goes. Part C Feature 3's `wounds` modifier keeps "−5 to total — Nicked".
+- **B17, if approved (round 2).**
+  - **The summary line** is Feature 4.5's `kharmicTie` summary (`209.81`); the badge, pips and Reset come from `209.81` and `209.82`.
+  - **No titles:** remove the badge's and Reset's `title`s so Phase 4.54 adds no i. A04 moves an i out of a button, so check that nothing is left behind.
+  - **Accessible names:** give Reset, Change and the one i accessible names; keep the pips' spoken label.
+  - **The page:** the sheet records no page for Kharmic Tie. Take it from a rules check, with the book only in a temporary folder.
+  - **Harnesses:** search every harness that pins "Target: … uses remaining" or the badge text before changing them (kickoff §9).
 - **Counts for the first group** (kickoff §8.5): candidate 7,453 plus the group's new checks; retained, with the group removed, 7,380 on 203 leaves. Removing the group must restore `921f3ac9…6150`, 17,718,601 bytes, exactly.

@@ -115,6 +115,41 @@ async function b14(b,phone,dev,proposed){
  r.errors=p.errors;R[dev]['b14_'+k]=r;await c.close();
 }
 
+// ---------------- Round 2 (owner, 20 November): A14's preview as revised; Kharmic Tie's card ----------------
+async function a14r(b,phone,dev){
+ const r={};const fx=write(out,'a14');
+ const {c,p}=await open(b,phone,fx.file,fx.name);await mode(p,'play');await setWounds(p,WOUNDS);
+ await P.a14(p,true);
+ r.preview=await rollPreview(p,phone,'Defense');r.penalty=await p.evaluate(()=>window.__L5R_TEST__.getWoundPenalty());
+ await shot(p,phone,`a14-${dev}-rev1-preview.png`,['#rollPreviewOverlay > *']);await cancelPreview(p,phone);
+ r.errors=p.errors;R[dev].a14_rev1=r;await c.close();
+}
+async function kt(b,phone,dev,proposed){
+ const k=proposed?'proposed':'today',r={};const fx=write(out,'kt');
+ const {c,p}=await open(b,phone,fx.file,fx.name);await mode(p,'management');
+ if(proposed)await P.kt(p);
+ await tab(p,'Adv & Disadv');
+ const card='#advList .entry';
+ const row=()=>p.evaluate(()=>{const d=document.querySelector('#advList .entry .adv-config-row');const vis=e=>e&&e.getClientRects().length>0;
+  return {text:d.innerText.replace(/\s+/g,' ').trim(),infoButtons:[...d.querySelectorAll('.adv-config-info,.g1-i')].filter(vis).length,
+   buttons:[...d.querySelectorAll('button')].filter(vis).map(b=>b.getAttribute('aria-label')||b.textContent.trim()),height:Math.round(d.getBoundingClientRect().height)};});
+ for(const m of ['management','play']){
+  await mode(p,m);await tab(p,'Adv & Disadv');
+  r[m]=await row();await shot(p,phone,`kt-${dev}-${k}-${m}.png`,[card]);
+  if(proposed){
+   await press(p,phone,p.locator(`${card} .g1-kt-i`));await wait(300);r[m+'_info']=await txt(p,'#stanceInfoOverlay > *');
+   await shot(p,phone,`kt-${dev}-proposed-${m}-info.png`,['#stanceInfoOverlay > *']);await press(p,phone,p.locator('#stanceInfoClose'));
+  } else {
+   r[m+'_infos']=[];const n=await p.locator(`${card} .adv-config-row .adv-config-info`).count();
+   for(let i=0;i<n;i++){await press(p,phone,p.locator(`${card} .adv-config-row .adv-config-info`).nth(i));await wait(250);
+    r[m+'_infos'].push(await txt(p,'#stanceInfoOverlay > *'));await press(p,phone,p.locator('#stanceInfoClose'));}
+  }
+ }
+ // Reset still works and the card keeps its shape after the redraw.
+ await press(p,phone,p.locator(`${card} .adv-config-reset-session`));r.afterReset=await row();
+ r.errors=p.errors;R[dev]['kt_'+k]=r;await c.close();
+}
+
 (async()=>{
  const b=await chromium.launch();
  const only=(process.env.ONLY||'a14,b02,b04,b14').split(',');
@@ -125,7 +160,9 @@ async function b14(b,phone,dev,proposed){
    if(only.includes('b02'))await b02(b,phone,dev,proposed);
    if(only.includes('b04'))await b04(b,phone,dev,proposed);
    if(only.includes('b14'))await b14(b,phone,dev,proposed);
+   if(only.includes('kt'))await kt(b,phone,dev,proposed);
   }
+  if(only.includes('a14r'))for(const [phone,dev] of [[true,'phone'],[false,'laptop']])await a14r(b,phone,dev);
  } finally {fs.writeFileSync(path.join(out,'reproduction.json'),JSON.stringify(R,null,1));await b.close();}
  console.log('done',sha);
 })().catch(e=>{console.error(e);process.exit(1);});

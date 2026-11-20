@@ -1,0 +1,185 @@
+{
+ "source_sha256": "921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150",
+ "captured_utc": {
+  "a14_rev1_and_kt_today": "2026-11-20T14:10:33.060Z",
+  "kt_proposed": "2026-11-20T14:11:31.779Z"
+ },
+ "phone": {
+  "a14_rev1": {
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Wound Penalty-5 to total — Nicked"
+    ],
+    "go": "Roll 3k2"
+   },
+   "penalty": -5,
+   "errors": []
+  },
+  "kt_today": {
+   "management": {
+    "text": "Target: Aiko — Rank 3; 2/3 uses remaining CHANGE Target: Aiko ●●○ Reset session",
+    "infoButtons": 2,
+    "buttons": [
+     "Change",
+     "Explain: Target: Aiko",
+     "Reset session",
+     "Explain: Kharmic Tie"
+    ],
+    "height": 60
+   },
+   "management_infos": [
+    "Target: Aiko ✕ The chosen person for this Kharmic Tie",
+    "Reset session ✕ Restore this advantage to its per-session maximum"
+   ],
+   "play": {
+    "text": "Target: Aiko — Rank 3; 2/3 uses remaining Target: Aiko ●●○ Reset session",
+    "infoButtons": 2,
+    "buttons": [
+     "Explain: Target: Aiko",
+     "Reset session",
+     "Explain: Kharmic Tie"
+    ],
+    "height": 58
+   },
+   "play_infos": [
+    "Target: Aiko ✕ The chosen person for this Kharmic Tie",
+    "Reset session ✕ Restore this advantage to its per-session maximum"
+   ],
+   "afterReset": {
+    "text": "Target: Aiko — Rank 3; 3/3 uses remaining Target: Aiko ●●● Reset session",
+    "infoButtons": 2,
+    "buttons": [
+     "Explain: Target: Aiko",
+     "Reset session",
+     "Explain: Kharmic Tie"
+    ],
+    "height": 58
+   },
+   "errors": []
+  },
+  "kt_proposed": {
+   "management": {
+    "text": "Aiko · Rank 3 ●●○ Reset session CHANGE",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Change Kharmic Tie: person or Rank",
+     "Kharmic Tie information"
+    ],
+    "height": 56
+   },
+   "management_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset session gives back all 3 at the start of a session. Change picks another person or Rank; the Rank sets the cost.",
+   "play": {
+    "text": "Aiko · Rank 3 ●●○ Reset session",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "play_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset session gives back all 3 at the start of a session.",
+   "afterReset": {
+    "text": "Aiko · Rank 3 ●●● Reset session",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "errors": []
+  }
+ },
+ "laptop": {
+  "a14_rev1": {
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Wound Penalty-5 to total — Nicked"
+    ],
+    "go": "Roll 3k2"
+   },
+   "penalty": -5,
+   "errors": []
+  },
+  "kt_today": {
+   "management": {
+    "text": "Target: Aiko — Rank 3; 2/3 uses remaining CHANGE Target: Aiko ●●○ Reset session",
+    "infoButtons": 2,
+    "buttons": [
+     "Change",
+     "Explain: Target: Aiko",
+     "Reset session",
+     "Explain: Kharmic Tie"
+    ],
+    "height": 68
+   },
+   "management_infos": [
+    "Target: Aiko ✕ The chosen person for this Kharmic Tie",
+    "Reset session ✕ Restore this advantage to its per-session maximum"
+   ],
+   "play": {
+    "text": "Target: Aiko — Rank 3; 2/3 uses remaining Target: Aiko ●●○ Reset session",
+    "infoButtons": 2,
+    "buttons": [
+     "Explain: Target: Aiko",
+     "Reset session",
+     "Explain: Kharmic Tie"
+    ],
+    "height": 32
+   },
+   "play_infos": [
+    "Target: Aiko ✕ The chosen person for this Kharmic Tie",
+    "Reset session ✕ Restore this advantage to its per-session maximum"
+   ],
+   "afterReset": {
+    "text": "Target: Aiko — Rank 3; 3/3 uses remaining Target: Aiko ●●● Reset session",
+    "infoButtons": 2,
+    "buttons": [
+     "Explain: Target: Aiko",
+     "Reset session",
+     "Explain: Kharmic Tie"
+    ],
+    "height": 32
+   },
+   "errors": []
+  },
+  "kt_proposed": {
+   "management": {
+    "text": "Aiko · Rank 3 ●●○ Reset session CHANGE",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Change Kharmic Tie: person or Rank",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "management_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset session gives back all 3 at the start of a session. Change picks another person or Rank; the Rank sets the cost.",
+   "play": {
+    "text": "Aiko · Rank 3 ●●○ Reset session",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "play_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset session gives back all 3 at the start of a session.",
+   "afterReset": {
+    "text": "Aiko · Rank 3 ●●● Reset session",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "errors": []
+  }
+ }
+}

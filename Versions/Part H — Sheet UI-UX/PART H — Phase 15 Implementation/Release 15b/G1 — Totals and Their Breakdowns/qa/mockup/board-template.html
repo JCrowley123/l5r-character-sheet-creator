@@ -58,11 +58,83 @@ td.t{color:var(--today)} td.n{color:var(--new)}
 
 <div class="wrap">
 <header>
-  <span class="tag">Release 15b · group 1 · totals and their breakdowns</span>
+  <span class="tag">Release 15b · group 1 · totals and their breakdowns · round 2</span>
   <h1>One figure, then how it is worked out: today beside proposed</h1>
   <p class="lede">Group 1 of Release 15b, as you approved on 20 November: A14 (the Wound penalty), B02 (actual and catalogue price), B04 (Blind's line under Armor TN) and B14 (Jigoku's total). All four use one pattern. The sheet shows the figure that applies, and then the arithmetic from your current values. The reasons and page references sit behind the standard i. No number changes. Every picture is the live app in a test browser, and the proposed pictures have the change applied only in that browser. Nothing is built until you approve.</p>
   <p class="meta">Live build <code>921f3ac9…6150</code>, 17,718,601 bytes, <code>main</code> at <code>3b499a88</code> (Release 15a live). Captured 20 November 2026 in the project's QA Chromium at 390 × 844 (phone, touch) and 1440 × 1000 (laptop). Test characters: the audit's dense Kuni Shugenja, with only the entries each finding needs (named in each section). No page errors at either size.</p>
 </header>
+
+<section id="round2">
+  <span class="tag">Round 2 · your answers of 20 November</span>
+  <h2>What changed after your answers</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Unit</th><th>Your answer</th><th>Now</th></tr>
+    <tr><td>A14</td><td class="t">Revise: the roll preview shows the total and the rank only. The i explains the sum.</td><td class="n">"−5 to total — Nicked". The "3 → 5 … already included" row still goes. The rest of A14 is as approved.</td></tr>
+    <tr><td>B02</td><td class="t">Not needed. You asked for three strong reasons to keep it.</td><td class="n">Recommended: drop it. The reasons, honestly ranked, are below.</td></tr>
+    <tr><td>B04, B14</td><td class="t">Approved as shown.</td><td class="n">Built as shown.</td></tr>
+    <tr><td>Kharmic Tie</td><td class="t">The card is too busy. You expected one Change, one i, the pips and Reset.</td><td class="n">A new card, below. Recommended as a fifth group-1 unit.</td></tr>
+  </table></div>
+
+  <h3>A14: the roll preview, revised</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{a14-phone-rev1-preview}}" alt="Revised preview: one Wound Penalty row, −5 to total — Nicked"><figcaption><span class="n">Revised, phone.</span> One Wound Penalty row: "−5 to total — Nicked". The informational row has gone.</figcaption></figure>
+    <figure><img src="{{a14-laptop-rev1-preview}}" alt="Revised preview on the laptop: one Wound Penalty row, −5 to total — Nicked"><figcaption><span class="n">Revised, laptop.</span> The sum sits behind the Wounds line's i, as you said.</figcaption></figure>
+  </div>
+  <p>B14 keeps "Taint Rank 4 × 2 (Lost)" after its total, as you approved. Wounds has a level name, "Nicked", to stand for the figure. Jigoku has none, so its short sum does that job.</p>
+
+  <h3>B02: the case for keeping it</h3>
+  <p>I can't give you three strong reasons. The best case, strongest first:</p>
+  <ol>
+    <li><b>The row doesn't say its cost includes a discount.</b> Social Position shows 4 where the book says 6, and the reason is on another card, Blissful Betrothal's. Your "remind, not remember" rule leans this way. <i>Moderate:</i> you set Blissful Betrothal up yourself, and its note says exactly which entries it changes.</li>
+    <li><b>Checking the XP total against the book,</b> for example by a GM. <i>Weak:</i> Blissful Betrothal's note and Large's Crab-price note already answer it.</li>
+    <li><b>Consistency, your note of 8 October (FT-13):</b> Clan prices have a note, but Blissful Betrothal's four don't. <i>Weak:</i> dropping B02 leaves this as it is today, and it misleads no one.</li>
+  </ol>
+  <div class="rec"><b>Recommendation: drop B02.</b> Nothing is built for it. Today's notes stay exactly as they are: Large's "Crab price: 3 XP (catalogue 4)." (with "— fixed when you leave Management." while the price is provisional), "Cost set by hand…", "Fixed when bought…", and Blissful Betrothal's own note.</div>
+
+  <h3>Kharmic Tie: one row</h3>
+  <p>Test character: a Kharmic Tie at Rank 3, tied to Aiko, with one use spent this session (2 of 3 left). No Blissful Betrothal. The same character in Play and in Manage.</p>
+  <div class="pair phonepair">
+    <figure><img src="{{kt-phone-today-play}}" alt="Today, phone, Play: 'Target: Aiko — Rank 3; 2/3 uses remaining', then a 'Target: Aiko' badge with an i, the pips, Reset session and a second i"><figcaption><span class="t">Today, Play.</span> The person three times, two i's, and a line that repeats the pips.</figcaption></figure>
+    <figure><img src="{{kt-phone-proposed-play}}" alt="Proposed, phone, Play: one line with the badge 'Aiko · Rank 3', the pips, Reset session and one i"><figcaption><span class="n">Proposed, Play.</span> One line: the badge, the pips, Reset session, and one i. The row is 28 px high instead of 58.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{kt-phone-today-management}}" alt="Today, phone, Manage: the summary line with Change, the badge with an i, the pips, Reset session and a second i"><figcaption><span class="t">Today, Manage.</span></figcaption></figure>
+    <figure><img src="{{kt-phone-proposed-management}}" alt="Proposed, phone, Manage: the badge, the pips and Reset session; Change and the i on the next line, at the right"><figcaption><span class="n">Proposed, Manage.</span> The same order, with Change before the i. On a phone, Change and the i move to a second line, at the right.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{kt-laptop-today-management}}" alt="Today, laptop, Manage: two lines of controls with two i's"><figcaption><span class="t">Today, laptop, Manage.</span></figcaption></figure>
+    <figure><img src="{{kt-laptop-proposed-management}}" alt="Proposed, laptop, Manage: one line, the badge, the pips, Reset session, then Change and the i at the right"><figcaption><span class="n">Proposed, laptop, Manage.</span> One line.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{kt-phone-proposed-play-info}}" alt="The one i's window, Play: Kharmic Tie, Rank 3, tied to Aiko; the rule; Each use +1k1; Uses left this session 2 of 3; what the preview and Reset session do"><figcaption><span class="n">The one i, phone, Play.</span> The rule in one sentence, each use, the uses left, and what Reset session does.</figcaption></figure>
+    <figure><img src="{{kt-laptop-proposed-management-info}}" alt="The one i's window, Manage: the same, plus what Change does"><figcaption><span class="n">The one i, laptop, Manage.</span> In Manage it also says what Change does.</figcaption></figure>
+  </div>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>The row</td><td>The person and the Rank once, in the badge ("Aiko · Rank 3"); then the pips and Reset session; then Change (Manage only) and one i. It is one line on a laptop, and one line on a phone in Play. The Rank stays in the badge because the cost box doesn't always show it (with Blissful Betrothal, Rank 3 costs 1).</td></tr>
+    <tr><td>Goes</td><td>The line "Target: Aiko — Rank 3; 2/3 uses remaining" (the badge and the pips say it); the i inside the badge ("The chosen person for this Kharmic Tie"); and the i after Reset session ("Restore this advantage to its per-session maximum").</td></tr>
+    <tr><td>The one i</td><td>The rule in a sentence, each use (+1k1), the uses left in words, and what Reset session and Change do. The sheet records no page for Kharmic Tie, so the build adds one from a rules check.</td></tr>
+    <tr><td>Stays</td><td>What Reset session and Change do; the roll preview's offer on attack rolls ("nothing is spent until you roll"); the pips' spoken label ("2 of 3 Kharmic Tie uses remaining"); the cost box; an unconfigured Tie's "Choose…" button.</td></tr>
+    <tr><td>Elsewhere</td><td>Luck, Unlucky, Dark Paragon, the Ancestor card and the once-per-session entries each have the same Reset session with its own i. This card is the first use of your A04.2 row pattern (badge, Change, one i). A04.2 brings the others in line when it is unparked; they are not changed here.</td></tr>
+    <tr><td>Not changed</td><td>The empty Description box, which takes the most room on this card in Play. Hiding it when it is empty would be a separate small unit.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve as shown, as a fifth group-1 unit,</b> <b>B17 — One Row for Kharmic Tie</b> (marker <code>PART H PHASE 15.2.5</code>), screen-only. It is what you described: one Change, one i, the pips and Reset, with the person named once.</div>
+
+  <div class="decide">
+    <ol>
+      <li><b>A14 as revised</b> ("−5 to total — Nicked"): confirm (recommended), or revise.</li>
+      <li><b>B02:</b> drop (recommended), or keep as first shown.</li>
+      <li><b>Kharmic Tie's card:</b> approve as shown, as a fifth group-1 unit (recommended), revise, or drop.</li>
+    </ol>
+    <p>Approval permits the build and preview stage only, as in round 1. B04 and B14 are already approved.</p>
+  </div>
+</section>
+
+<section id="round1-head">
+  <span class="tag">Round 1 · as first shown on 20 November</span>
+  <h2>The first board, unchanged</h2>
+  <p>Your answers to round 1 are in the table at the top.</p>
+</section>
 
 <section id="summary">
   <span class="tag">At a glance</span>
@@ -185,7 +257,7 @@ td.t{color:var(--today)} td.n{color:var(--new)}
 
 <section id="decide">
   <span class="tag">Your decisions</span>
-  <h2>Four short questions</h2>
+  <h2>Round 1: four short questions (answered 20 November)</h2>
   <div class="decide">
     <ol>
       <li><b>A14, the Wound penalty once:</b> approve as shown (recommended), revise, or drop.</li>

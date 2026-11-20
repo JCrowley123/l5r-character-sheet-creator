@@ -23,6 +23,10 @@ const FIX={
  // B04: Blind alone (Reflexes 2: base 2 + 5 = 7).
  b04(){const f=base('G1 blind');f.adv=[];f.disadv=[{name:'Blind',cost:'6',desc:''}];return f;},
  // B14: Touch of the Spirit Realms (Jigoku), Lost, Taint Rank 4.
+ // Kharmic Tie (owner, round 1): Rank 3, tied to Aiko, one use spent this session (2 of 3 left). No Blissful Betrothal.
+ kt(){const f=base('G1 Kharmic Tie');
+  f.adv=[{name:'Kharmic Tie',cost:'3',desc:'',config:{type:'rankPick',value:'Rank 3',rank:3,target:'Aiko',remaining:2}}];
+  f.disadv=[];return f;},
  b14(){const f=base('G1 jigoku');f.fields.f_taint='4.2';
   f.adv=[{name:'Touch of the Spirit Realms',cost:'5',desc:'',config:{type:'spiritRealmTouch',revision:1,value:'Jigoku',realm:'Jigoku',lost:true}}];
   f.disadv=[];return f;},

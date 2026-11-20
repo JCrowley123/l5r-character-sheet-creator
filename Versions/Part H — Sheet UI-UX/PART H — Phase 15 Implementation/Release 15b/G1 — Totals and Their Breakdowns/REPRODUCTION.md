@@ -89,6 +89,35 @@ Play. A Defense roll (Reflexes), and the Advantage card.
 - **The card:** "Adding +8 — Taint Rank 4 × 2 (Lost)."
 - **The pool:** unchanged.
 
+## Round 2 (owner's answers of 20 November)
+
+`ONLY=kt,a14r` through `run.sh`, about 14:10 UTC; the proposed Kharmic Tie re-run after its window lost the total-style row. Values: `qa/mockup/reproduction-round2.json`. No page errors.
+
+**A14 as revised:** the Defense preview has one Wound Penalty row, "−5 to total — Nicked". The penalty is still −5.
+
+**Kharmic Tie,** test character `kt`: Rank 3, tied to Aiko, 2 of 3 uses left, cost 3, no Blissful Betrothal.
+
+**Today:**
+
+- **Manage:** "Target: Aiko — Rank 3; 2/3 uses remaining", Change, a "Target: Aiko" badge with an i, ●●○, Reset session, and a second i.
+- **Play:** the same, without Change.
+- **The i's:** the badge's says "The chosen person for this Kharmic Tie", and the other says "Restore this advantage to its per-session maximum".
+
+**Proposed:**
+
+- **The row:** "Aiko · Rank 3", ●●○, Reset session, then Change (Manage only) and one i.
+- **The window:** the rule; each use +1k1; uses left 2 of 3; what the roll preview, Reset session and (in Manage) Change do.
+- **After Reset session:** ●●●.
+
+**Row heights:**
+
+| | Today | Proposed |
+|---|---|---|
+| Phone, Manage | 60 px | 56 px |
+| Phone, Play | 58 px | 28 px |
+| Laptop, Manage | 68 px | 28 px |
+| Laptop, Play | 32 px | 28 px |
+
 ## Book pages
 
 None were extracted. Every page reference is the one the sheet already records:

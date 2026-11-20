@@ -37,9 +37,10 @@ async function helpers(p){
 }
 
 // ---------------- A14: one net Wound penalty; its parts behind the i ----------------
-async function a14(p){
+// rev (owner, round 1): the preview row keeps today's "−5 to total — Nicked"; only the informational row goes.
+async function a14(p,rev=false){
  await helpers(p);
- await p.evaluate(()=>{
+ await p.evaluate(rev=>{
   const T=window.__L5R_TEST__,W=T.WND4529,G=window.__g1,$=id=>document.getElementById(id);
   const strip=s=>String(s||'').replace(/ \([^()]*\)(?= —|$)/,'');   // drops "(Low Pain Threshold +5, Strength of the Earth −3)"
   const PAGE={'Low Pain Threshold':'Disadvantage, Core Rulebook p.160','Strength of the Earth':'Advantage, Core Rulebook p.154'};
@@ -70,12 +71,13 @@ async function a14(p){
     const label=row.querySelector('.rp-mod-label'),txt=row.querySelector('.rp-mod-txt');
     if(!label||label.textContent.trim()!=='Wound Penalty'||!txt)return;
     if(/→/.test(txt.textContent)){row.remove();return;}
+    if(rev)return;
     const x=parts();if(!x.adj.length)return;
     const want=txt.textContent.split(' — ')[0]+' — '+level()+' '+x.size+x.adj.map(a=>' '+a.sign+' '+a.name+' '+a.amount).join('');
     if(txt.textContent!==want)txt.textContent=want;});
   },{childList:true,subtree:true,characterData:true});
   T.recalcAll();
- });
+ },rev);
  await settle(p);
 }
 
@@ -154,4 +156,50 @@ async function b14(p){
  });
  await settle(p);
 }
-module.exports={a14,b02,b04,b14};
+// ---------------- Kharmic Tie (owner, round 1): one badge, the pips, Reset, Change, one i ----------------
+// The person and the Rank once, in the badge; the "Target: … uses remaining" line goes (the pips say it); the badge's
+// and Reset's titles go, so Phase 4.54 adds no i; one i at the end holds the rule and the state in words.
+async function kt(p){
+ await helpers(p);
+ await p.evaluate(()=>{
+  const T=window.__L5R_TEST__,G=window.__g1,$=id=>document.getElementById(id);
+  const css=document.createElement('style');css.textContent=`
+   .entry.g1-kt .adv-config-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+   .entry.g1-kt .adv-config-summary{display:none}
+   .entry.g1-kt .adv-config-badge{order:1;margin:0}
+   .entry.g1-kt .adv-config-kharmic-controls{order:2;display:inline-flex;align-items:center;gap:12px;margin:0}
+   .entry.g1-kt .g1-kt-end{order:3;display:inline-flex;align-items:center;gap:10px;margin-left:auto}
+   .entry.g1-kt .g1-kt-end .g1-i{margin-left:0}
+   .entry.g1-kt .adv-config-pips{letter-spacing:2px;font-size:1.05em}`;
+  document.head.appendChild(css);
+  function show(div){
+   const c=JSON.parse(div.dataset.advConfig||'{}'),who=G.esc(c.target||''),rank=c.rank||0,left=c.remaining??rank;
+   const manage=document.body.classList.contains('pm12-management')||!div.querySelector('.adv-config-btn[data-pm12-locked]');
+   G.info('Kharmic Tie',`Rank ${rank} · tied to ${c.target||''}`,
+    `<p class="g1-rule">Before a weapon attack roll, declare that you are fighting for or protecting ${who}: +1k1 to that roll. Once per session for each Rank.</p>`+
+    `<table class="g1-bd"><tr><td>Each use</td><td>+1k1</td></tr><tr><td>Uses left this session</td><td>${left} of ${rank}</td></tr></table>`+
+    `<p class="g1-rule">An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. <b>Reset session</b> gives back all ${rank} at the start of a session.`+
+    (manage?` <b>Change</b> picks another person or Rank; the Rank sets the cost.`:'')+`</p>`);
+  }
+  function apply(){
+   document.querySelectorAll('#advList .entry').forEach(div=>{
+    if(div.querySelector('.en-name')?.value!=='Kharmic Tie')return;
+    const row=div.querySelector('.adv-config-row');if(!row)return;
+    const c=JSON.parse(div.dataset.advConfig||'{}');div.classList.add('g1-kt');
+    row.querySelectorAll('.adv-config-info').forEach(b=>b.remove());
+    const badge=row.querySelector('.adv-config-badge'),reset=row.querySelector('.adv-config-reset-session'),change=row.querySelector('.adv-config-btn');
+    if(badge){badge.removeAttribute('title');const t=`${c.target} · Rank ${c.rank}`;if(badge.textContent!==t)badge.textContent=t;}
+    if(reset){reset.removeAttribute('title');reset.setAttribute('aria-label',`Reset session: all ${c.rank} Kharmic Tie uses back`);}
+    if(change){change.removeAttribute('title');change.setAttribute('aria-label','Change Kharmic Tie: person or Rank');}
+    let end=row.querySelector('.g1-kt-end');
+    if(!end){end=document.createElement('span');end.className='g1-kt-end';row.appendChild(end);}
+    if(change&&change.parentElement!==end)end.appendChild(change);
+    if(!end.querySelector('.g1-i')){const i=G.mkI(null,'Kharmic Tie information',()=>show(div));i.classList.add('g1-kt-i');end.appendChild(i);}
+   });
+  }
+  G.watch($('advList'),apply,{childList:true,subtree:true,attributes:true,attributeFilter:['data-adv-config','title']});
+  T.recalcAll();
+ });
+ await settle(p);
+}
+module.exports={a14,b02,b04,b14,kt};
