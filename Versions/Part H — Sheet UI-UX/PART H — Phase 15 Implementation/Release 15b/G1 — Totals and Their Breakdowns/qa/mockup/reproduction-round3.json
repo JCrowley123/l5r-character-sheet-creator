@@ -1,0 +1,140 @@
+{
+ "source_sha256": "921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150",
+ "captured_utc": "2026-11-20T16:21:43.420Z",
+ "phone": {
+  "kt_r3": {
+   "management": {
+    "text": "Aiko · Rank 3 ●●○ Reset CHANGE",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Change Kharmic Tie: person or Rank",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "management_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 3 at the start of a session. Change picks another person or Rank; the Rank sets the cost.",
+   "play": {
+    "text": "Aiko · Rank 3 ●●○ Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "play_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 3 at the start of a session.",
+   "afterReset": {
+    "text": "Aiko · Rank 3 ●●● Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "errors": []
+  },
+  "kt_r3_long": {
+   "management": {
+    "text": "Kakita Yoshiko · Rank 5 ●●●●● Reset CHANGE",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 5 Kharmic Tie uses back",
+     "Change Kharmic Tie: person or Rank",
+     "Kharmic Tie information"
+    ],
+    "height": 55
+   },
+   "management_info": "Kharmic Tie RANK 5 · TIED TO KAKITA YOSHIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Kakita Yoshiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 5 of 5 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 5 at the start of a session. Change picks another person or Rank; the Rank sets the cost.",
+   "play": {
+    "text": "Kakita Yoshiko · Rank 5 ●●●●● Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 5 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "play_info": "Kharmic Tie RANK 5 · TIED TO KAKITA YOSHIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Kakita Yoshiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 5 of 5 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 5 at the start of a session.",
+   "afterReset": {
+    "text": "Kakita Yoshiko · Rank 5 ●●●●● Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 5 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "errors": []
+  }
+ },
+ "laptop": {
+  "kt_r3": {
+   "management": {
+    "text": "Aiko · Rank 3 ●●○ Reset CHANGE",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Change Kharmic Tie: person or Rank",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "management_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 3 at the start of a session. Change picks another person or Rank; the Rank sets the cost.",
+   "play": {
+    "text": "Aiko · Rank 3 ●●○ Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "play_info": "Kharmic Tie RANK 3 · TIED TO AIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 2 of 3 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 3 at the start of a session.",
+   "afterReset": {
+    "text": "Aiko · Rank 3 ●●● Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 3 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "errors": []
+  },
+  "kt_r3_long": {
+   "management": {
+    "text": "Kakita Yoshiko · Rank 5 ●●●●● Reset CHANGE",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 5 Kharmic Tie uses back",
+     "Change Kharmic Tie: person or Rank",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "management_info": "Kharmic Tie RANK 5 · TIED TO KAKITA YOSHIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Kakita Yoshiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 5 of 5 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 5 at the start of a session. Change picks another person or Rank; the Rank sets the cost.",
+   "play": {
+    "text": "Kakita Yoshiko · Rank 5 ●●●●● Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 5 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "play_info": "Kharmic Tie RANK 5 · TIED TO KAKITA YOSHIKO ✕ Before a weapon attack roll, declare that you are fighting for or protecting Kakita Yoshiko: +1k1 to that roll. Once per session for each Rank. Each use +1k1 Uses left this session 5 of 5 An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset gives back all 5 at the start of a session.",
+   "afterReset": {
+    "text": "Kakita Yoshiko · Rank 5 ●●●●● Reset",
+    "infoButtons": 1,
+    "buttons": [
+     "Reset session: all 5 Kharmic Tie uses back",
+     "Kharmic Tie information"
+    ],
+    "height": 28
+   },
+   "errors": []
+  }
+ }
+}

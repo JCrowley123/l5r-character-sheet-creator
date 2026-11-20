@@ -70,9 +70,35 @@ The same board link, version 2, adds a round-2 section above round 1, which is u
   2. B02: drop or keep.
   3. Kharmic Tie: approve as a fifth unit, revise, or drop.
 
-The owner's round-2 answers: not yet given. Record them here verbatim.
-
 **Usage, round 2:** weekly meter 38% → 39%, five-hour 3% → 9% (14:08 → 14:15 UTC).
+
+### Round 2 answers, 20 November 2026 (in this Claude session), verbatim
+
+> I approve as recommended.  The only change I would make is to see if the change and i buttons can sit on the same row for khamic tie
+
+Read as:
+
+- **A14: approved as revised.** The roll preview's Wound Penalty row reads "−5 to total — Nicked"; the informational row goes.
+- **B02: dropped.** Nothing is built; today's price notes stay as they are.
+- **Kharmic Tie: approved as B17 — One Row for Kharmic Tie** (`PART H PHASE 15.2.5`), screen-only, with one change: Change and the i sit on the badge's row (on a phone in Manage they had wrapped to a second line). Round 3 below shows whether they fit.
+
+### Round 3, 20 November 2026 (Claude): the board's new top section
+
+Version 3 of the same board link adds a round-3 section above round 2; rounds 2 and 1 are unchanged below it. The pictures come from one run of `qa/mockup/repro.cjs` with `ONLY=kt3`, and the values are in `qa/mockup/reproduction-round3.json`. There were no page errors.
+
+- **Why they wrapped:** on a phone in Manage the row needed 347 px (badge 76, pips and Reset session 138, Change and the i 110, two gaps) and had 318.
+- **The two changes:**
+  - **The button reads "Reset"**, as the owner called it, instead of "Reset session". That saves 48 px. The accessible name stays "Reset session: all 3 Kharmic Tie uses back", and the i's window says "Reset gives back all 3 at the start of a session."
+  - **Change and the i are pinned to the first line, at the right.** The badge, the pips and Reset wrap on the left only when a long name needs the room.
+- **Result, "Aiko · Rank 3":** one line (28 px) on a phone in both Manage and Play, and on a laptop.
+- **Result, "Kakita Yoshiko · Rank 5":** on a phone in Manage, Change and the i stay on the badge's line and the pips and Reset go under it (55 px). In Play, and on a laptop, it is one line.
+- **Reset** still refills the pips (●●○ → ●●●), and the row keeps its shape after the redraw.
+- **Other "Reset session" cards** (Luck, Unlucky and the rest) keep their label. A04.2 can give them the short "Reset" when it is unparked.
+- **The board's question:** Kharmic Tie, round 3: approve (recommended), or revise.
+
+The owner's round-3 answer: not yet given. Record it here verbatim.
+
+**Usage, rounds 2–3 answers:** weekly meter 40%, five-hour 17% at 16:25 UTC.
 
 ## The units as proposed
 
@@ -96,8 +122,9 @@ Each unit gets its own folder under `Release 15b/`, with a switch, harness, remo
 - **B04, the terms.** These come from `recalcAll`'s own terms (stance, Void, two weapons, Way of the Dragon, Shiba's gift, Weakness on Reflexes), each by name. The scratch version grouped them into one row, and the test character had none. Only `#bl4534QaNote` is hidden.
 - **B14.** Feature 4.5.24's modifier note and card note (`TR4524`).
 - **A14 as revised (round 2).** The preview row's own text is not changed: only the informational row (`WND4529.rollNote`) goes. Part C Feature 3's `wounds` modifier keeps "−5 to total — Nicked".
-- **B17, if approved (round 2).**
+- **B17 (approved in round 2; the row as in round 3, pending the owner's word).**
   - **The summary line** is Feature 4.5's `kharmicTie` summary (`209.81`); the badge, pips and Reset come from `209.81` and `209.82`.
+  - **The layout (round 3):** a two-column row, with the badge and the Kharmic controls wrapping in the left column and Change and the i in the right column, held to the first line. The scratch version used a zero-width 28 px strut so a wrapped first line keeps the badge centred against Change; the build can do the same, or set a 28 px line on the left column. Reset's visible text becomes "Reset" on this card only; `209.82` writes "Reset session" in its markup, so change it there for `kharmicTie`, not by a later rewrite.
   - **No titles:** remove the badge's and Reset's `title`s so Phase 4.54 adds no i. A04 moves an i out of a button, so check that nothing is left behind.
   - **Accessible names:** give Reset, Change and the one i accessible names; keep the pips' spoken label.
   - **The page:** the sheet records no page for Kharmic Tie. Take it from a rules check, with the book only in a temporary folder.

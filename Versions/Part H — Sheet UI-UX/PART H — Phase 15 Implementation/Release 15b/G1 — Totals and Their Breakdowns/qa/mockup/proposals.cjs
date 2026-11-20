@@ -159,9 +159,12 @@ async function b14(p){
 // ---------------- Kharmic Tie (owner, round 1): one badge, the pips, Reset, Change, one i ----------------
 // The person and the Rank once, in the badge; the "Target: … uses remaining" line goes (the pips say it); the badge's
 // and Reset's titles go, so Phase 4.54 adds no i; one i at the end holds the rule and the state in words.
-async function kt(p){
+// Round 3 (owner, 20 Nov: "see if the change and i buttons can sit on the same row"): Change and the i are pinned to
+// the badge's line at the right; the badge, pips and Reset wrap on the left only when a long name needs it; the button
+// reads "Reset" (its accessible name keeps "Reset session").
+async function kt(p,r3=false){
  await helpers(p);
- await p.evaluate(()=>{
+ await p.evaluate(r3=>{
   const T=window.__L5R_TEST__,G=window.__g1,$=id=>document.getElementById(id);
   const css=document.createElement('style');css.textContent=`
    .entry.g1-kt .adv-config-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
@@ -170,7 +173,12 @@ async function kt(p){
    .entry.g1-kt .adv-config-kharmic-controls{order:2;display:inline-flex;align-items:center;gap:12px;margin:0}
    .entry.g1-kt .g1-kt-end{order:3;display:inline-flex;align-items:center;gap:10px;margin-left:auto}
    .entry.g1-kt .g1-kt-end .g1-i{margin-left:0}
-   .entry.g1-kt .adv-config-pips{letter-spacing:2px;font-size:1.05em}`;
+   .entry.g1-kt .adv-config-pips{letter-spacing:2px;font-size:1.05em}`+(r3?`
+   .entry.g1-kt .adv-config-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;column-gap:12px}
+   .entry.g1-kt .g1-kt-main{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;min-width:0}
+   .entry.g1-kt .g1-kt-main::before{content:'';width:0;height:28px;margin-right:-12px}
+   .entry.g1-kt .g1-kt-main .adv-config-badge{max-width:100%;overflow-wrap:anywhere}
+   .entry.g1-kt .g1-kt-end{margin-left:0;min-height:28px}`:'');
   document.head.appendChild(css);
   function show(div){
    const c=JSON.parse(div.dataset.advConfig||'{}'),who=G.esc(c.target||''),rank=c.rank||0,left=c.remaining??rank;
@@ -178,7 +186,7 @@ async function kt(p){
    G.info('Kharmic Tie',`Rank ${rank} · tied to ${c.target||''}`,
     `<p class="g1-rule">Before a weapon attack roll, declare that you are fighting for or protecting ${who}: +1k1 to that roll. Once per session for each Rank.</p>`+
     `<table class="g1-bd"><tr><td>Each use</td><td>+1k1</td></tr><tr><td>Uses left this session</td><td>${left} of ${rank}</td></tr></table>`+
-    `<p class="g1-rule">An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. <b>Reset session</b> gives back all ${rank} at the start of a session.`+
+    `<p class="g1-rule">An attack's roll preview offers the Tie while a use is left; nothing is spent until you roll. <b>${r3?'Reset':'Reset session'}</b> gives back all ${rank} at the start of a session.`+
     (manage?` <b>Change</b> picks another person or Rank; the Rank sets the cost.`:'')+`</p>`);
   }
   function apply(){
@@ -189,17 +197,21 @@ async function kt(p){
     row.querySelectorAll('.adv-config-info').forEach(b=>b.remove());
     const badge=row.querySelector('.adv-config-badge'),reset=row.querySelector('.adv-config-reset-session'),change=row.querySelector('.adv-config-btn');
     if(badge){badge.removeAttribute('title');const t=`${c.target} · Rank ${c.rank}`;if(badge.textContent!==t)badge.textContent=t;}
-    if(reset){reset.removeAttribute('title');reset.setAttribute('aria-label',`Reset session: all ${c.rank} Kharmic Tie uses back`);}
+    if(reset){reset.removeAttribute('title');reset.setAttribute('aria-label',`Reset session: all ${c.rank} Kharmic Tie uses back`);if(r3&&reset.textContent!=='Reset')reset.textContent='Reset';}
     if(change){change.removeAttribute('title');change.setAttribute('aria-label','Change Kharmic Tie: person or Rank');}
     let end=row.querySelector('.g1-kt-end');
     if(!end){end=document.createElement('span');end.className='g1-kt-end';row.appendChild(end);}
     if(change&&change.parentElement!==end)end.appendChild(change);
     if(!end.querySelector('.g1-i')){const i=G.mkI(null,'Kharmic Tie information',()=>show(div));i.classList.add('g1-kt-i');end.appendChild(i);}
+    if(r3){let main=row.querySelector('.g1-kt-main');if(!main){main=document.createElement('span');main.className='g1-kt-main';row.insertBefore(main,row.firstChild);}
+     const ctl=row.querySelector('.adv-config-kharmic-controls');
+     if(badge&&badge.parentElement!==main)main.appendChild(badge);if(ctl&&ctl.parentElement!==main)main.appendChild(ctl);
+     if(end.previousElementSibling!==main||end.parentElement!==row)row.appendChild(end);}
    });
   }
   G.watch($('advList'),apply,{childList:true,subtree:true,attributes:true,attributeFilter:['data-adv-config','title']});
   T.recalcAll();
- });
+ },r3);
  await settle(p);
 }
 module.exports={a14,b02,b04,b14,kt};

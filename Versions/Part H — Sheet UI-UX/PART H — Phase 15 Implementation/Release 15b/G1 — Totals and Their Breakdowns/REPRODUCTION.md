@@ -118,6 +118,32 @@ Play. A Defense roll (Reflexes), and the Advantage card.
 | Laptop, Manage | 68 px | 28 px |
 | Laptop, Play | 32 px | 28 px |
 
+## Round 3 (owner's answer of 20 November: Change and the i on the badge's row)
+
+`ONLY=kt3` through `run.sh`, about 16:15 UTC. Values: `qa/mockup/reproduction-round3.json`. No page errors.
+
+**Test characters:**
+
+- `kt`, as in round 2.
+- `ktLong`: Kharmic Tie Rank 5, tied to Kakita Yoshiko, 5 of 5 uses left, cost 5.
+
+**The change:** in `proposals.cjs`, `kt(p, true)` makes two changes:
+
+- Reset's visible text becomes "Reset". Its accessible name is unchanged.
+- The row becomes a two-column grid. The left column wraps the badge, then the pips and Reset; Change and the i sit in the right column, on the first line.
+
+**Before the change** (a phone in Manage, measured by a scratch probe), the row was 318 px wide. The badge took 75.5, the pips and Reset session 137.8 (Reset session alone 94.8), and Change with the i 110.1, plus two 12 px gaps: 347.4 in all. With "Reset", Reset is 47 px.
+
+| | `kt` (Aiko · Rank 3) | `ktLong` (Kakita Yoshiko · Rank 5) |
+|---|---|---|
+| Phone, Manage | 28 px, one line | 55 px: Change and the i on the badge's line, the pips and Reset below |
+| Phone, Play | 28 px | 28 px |
+| Laptop, Manage and Play | 28 px | 28 px |
+
+- **Centres in the first line:** the badge, Change and the i are all at 14 px, on both cards.
+- **After Reset:** ●●○ → ●●● on `kt`; on `ktLong` the pips were already full.
+- **The i's window:** the same as round 2, except that it now says "Reset gives back all 3 at the start of a session."
+
 ## Book pages
 
 None were extracted. Every page reference is the one the sheet already records:

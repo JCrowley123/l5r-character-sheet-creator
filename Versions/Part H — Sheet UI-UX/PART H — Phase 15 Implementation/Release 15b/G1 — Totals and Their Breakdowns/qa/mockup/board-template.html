@@ -58,14 +58,58 @@ td.t{color:var(--today)} td.n{color:var(--new)}
 
 <div class="wrap">
 <header>
-  <span class="tag">Release 15b · group 1 · totals and their breakdowns · round 2</span>
+  <span class="tag">Release 15b · group 1 · totals and their breakdowns · round 3</span>
   <h1>One figure, then how it is worked out: today beside proposed</h1>
   <p class="lede">Group 1 of Release 15b, as you approved on 20 November: A14 (the Wound penalty), B02 (actual and catalogue price), B04 (Blind's line under Armor TN) and B14 (Jigoku's total). All four use one pattern. The sheet shows the figure that applies, and then the arithmetic from your current values. The reasons and page references sit behind the standard i. No number changes. Every picture is the live app in a test browser, and the proposed pictures have the change applied only in that browser. Nothing is built until you approve.</p>
   <p class="meta">Live build <code>921f3ac9…6150</code>, 17,718,601 bytes, <code>main</code> at <code>3b499a88</code> (Release 15a live). Captured 20 November 2026 in the project's QA Chromium at 390 × 844 (phone, touch) and 1440 × 1000 (laptop). Test characters: the audit's dense Kuni Shugenja, with only the entries each finding needs (named in each section). No page errors at either size.</p>
 </header>
 
+<section id="round3">
+  <span class="tag">Round 3 · your answers to round 2, 20 November</span>
+  <h2>Change and the i on the badge's row</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Item</th><th>Your answer</th><th>Now</th></tr>
+    <tr><td>A14</td><td class="t">Approved as revised.</td><td class="n">The preview reads "−5 to total — Nicked".</td></tr>
+    <tr><td>B02</td><td class="t">Dropped.</td><td class="n">Nothing is built; today's price notes stay.</td></tr>
+    <tr><td>Kharmic Tie (B17)</td><td class="t">Approved, with one change: see if Change and the i can sit on the same row.</td><td class="n">They can. Below.</td></tr>
+  </table></div>
+
+  <p>In round 2, on a phone in Manage, Change and the i dropped to a second line. The row needed 347 pixels and a phone gives it 318. Two changes make it fit:</p>
+  <ol>
+    <li><b>The button reads "Reset"</b> instead of "Reset session", as you called it. That saves 48 pixels. A screen reader still hears "Reset session: all 3 Kharmic Tie uses back", and the i says what it does.</li>
+    <li><b>Change and the i are pinned to the first line</b>, at the right. If a long name needs the room, the pips and Reset move under the badge, but Change and the i stay on the badge's line.</li>
+  </ol>
+
+  <div class="pair phonepair">
+    <figure><img src="{{kt-phone-proposed-management}}" alt="Round 2, phone, Manage: Change and the i on a second line"><figcaption><span class="t">Round 2, Manage.</span> Change and the i on a second line. The row is 56 px high.</figcaption></figure>
+    <figure><img src="{{kt-phone-r3-management}}" alt="Round 3, phone, Manage: one line with the badge Aiko · Rank 3, the pips, Reset, Change and the i"><figcaption><span class="n">Round 3, Manage.</span> One line: the badge, the pips, Reset, Change and the i. 28 px high.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{kt-phone-r3-play}}" alt="Round 3, phone, Play: one line with the badge, the pips, Reset and the i"><figcaption><span class="n">Round 3, Play.</span> The same line without Change. 28 px high.</figcaption></figure>
+    <figure><img src="{{kt-phone-r3-long-management}}" alt="Round 3, phone, Manage, a long name: the badge Kakita Yoshiko · Rank 5 with Change and the i on its line; the five pips and Reset below"><figcaption><span class="n">A long name, Manage.</span> "Kakita Yoshiko · Rank 5": Change and the i stay on the badge's line, and the pips and Reset go under it. In Play this name fits on one line.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{kt-laptop-r3-management}}" alt="Round 3, laptop, Manage: one line"><figcaption><span class="n">Laptop, Manage.</span> One line, as in round 2, now with "Reset".</figcaption></figure>
+    <figure><img src="{{kt-phone-r3-management-info}}" alt="The one i's window: the rule, each use +1k1, uses left 2 of 3, what Reset and Change do"><figcaption><span class="n">The one i, phone, Manage.</span> As in round 2, with "Reset" to match the button.</figcaption></figure>
+  </div>
+  <div class="tbl"><table class="rules">
+    <tr><th>Row height</th><th>Round 2</th><th>Round 3</th></tr>
+    <tr><td>Phone, Manage</td><td>56 px</td><td>28 px (55 with a long name)</td></tr>
+    <tr><td>Phone, Play</td><td>28 px</td><td>28 px</td></tr>
+    <tr><td>Laptop, Manage and Play</td><td>28 px</td><td>28 px</td></tr>
+  </table></div>
+  <p>Reset still refills the pips (●●○ to ●●●), and the row keeps its shape afterwards. Luck, Unlucky and the other cards with "Reset session" keep that label for now. When A04.2 is unparked, it can give them the same short "Reset".</p>
+  <div class="rec"><b>Recommendation: approve round 3.</b> Then group 1 is settled: A14 as revised, B04, B14 and B17, with B02 dropped. The build can start.</div>
+  <div class="decide">
+    <ol>
+      <li><b>Kharmic Tie, round 3</b> (Change and the i on the badge's row, the button reads "Reset"): approve (recommended), or revise.</li>
+    </ol>
+    <p>Approval permits the build and preview stage only. Nothing reaches main or the live site without your word.</p>
+  </div>
+</section>
+
 <section id="round2">
-  <span class="tag">Round 2 · your answers of 20 November</span>
+  <span class="tag">Round 2 · your answers of 20 November (answered: approved as recommended)</span>
   <h2>What changed after your answers</h2>
   <div class="tbl"><table class="summary">
     <tr><th>Unit</th><th>Your answer</th><th>Now</th></tr>

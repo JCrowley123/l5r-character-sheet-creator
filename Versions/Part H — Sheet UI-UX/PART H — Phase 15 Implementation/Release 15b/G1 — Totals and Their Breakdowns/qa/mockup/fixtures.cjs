@@ -27,6 +27,9 @@ const FIX={
  kt(){const f=base('G1 Kharmic Tie');
   f.adv=[{name:'Kharmic Tie',cost:'3',desc:'',config:{type:'rankPick',value:'Rank 3',rank:3,target:'Aiko',remaining:2}}];
   f.disadv=[];return f;},
+ // Round 3: a long name at Rank 5, all uses left, to show the row on a phone when the badge needs the room.
+ ktLong(){const f=FIX.kt();f.fields.f_name='G1 Kharmic Tie long';
+  f.adv[0].cost='5';f.adv[0].config={type:'rankPick',value:'Rank 5',rank:5,target:'Kakita Yoshiko',remaining:5};return f;},
  b14(){const f=base('G1 jigoku');f.fields.f_taint='4.2';
   f.adv=[{name:'Touch of the Spirit Realms',cost:'5',desc:'',config:{type:'spiritRealmTouch',revision:1,value:'Jigoku',realm:'Jigoku',lost:true}}];
   f.disadv=[];return f;},

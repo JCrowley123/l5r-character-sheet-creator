@@ -124,10 +124,10 @@ async function a14r(b,phone,dev){
  await shot(p,phone,`a14-${dev}-rev1-preview.png`,['#rollPreviewOverlay > *']);await cancelPreview(p,phone);
  r.errors=p.errors;R[dev].a14_rev1=r;await c.close();
 }
-async function kt(b,phone,dev,proposed){
- const k=proposed?'proposed':'today',r={};const fx=write(out,'kt');
+async function kt(b,phone,dev,proposed,r3=false,fixture='kt'){
+ const k=r3?(fixture==='kt'?'r3':'r3-long'):proposed?'proposed':'today',r={};const fx=write(out,fixture);
  const {c,p}=await open(b,phone,fx.file,fx.name);await mode(p,'management');
- if(proposed)await P.kt(p);
+ if(proposed)await P.kt(p,r3);
  await tab(p,'Adv & Disadv');
  const card='#advList .entry';
  const row=()=>p.evaluate(()=>{const d=document.querySelector('#advList .entry .adv-config-row');const vis=e=>e&&e.getClientRects().length>0;
@@ -138,7 +138,7 @@ async function kt(b,phone,dev,proposed){
   r[m]=await row();await shot(p,phone,`kt-${dev}-${k}-${m}.png`,[card]);
   if(proposed){
    await press(p,phone,p.locator(`${card} .g1-kt-i`));await wait(300);r[m+'_info']=await txt(p,'#stanceInfoOverlay > *');
-   await shot(p,phone,`kt-${dev}-proposed-${m}-info.png`,['#stanceInfoOverlay > *']);await press(p,phone,p.locator('#stanceInfoClose'));
+   await shot(p,phone,`kt-${dev}-${k}-${m}-info.png`,['#stanceInfoOverlay > *']);await press(p,phone,p.locator('#stanceInfoClose'));
   } else {
    r[m+'_infos']=[];const n=await p.locator(`${card} .adv-config-row .adv-config-info`).count();
    for(let i=0;i<n;i++){await press(p,phone,p.locator(`${card} .adv-config-row .adv-config-info`).nth(i));await wait(250);
@@ -147,7 +147,7 @@ async function kt(b,phone,dev,proposed){
  }
  // Reset still works and the card keeps its shape after the redraw.
  await press(p,phone,p.locator(`${card} .adv-config-reset-session`));r.afterReset=await row();
- r.errors=p.errors;R[dev]['kt_'+k]=r;await c.close();
+ r.errors=p.errors;R[dev]['kt_'+k.replace('-','_')]=r;await c.close();
 }
 
 (async()=>{
@@ -162,6 +162,8 @@ async function kt(b,phone,dev,proposed){
    if(only.includes('b14'))await b14(b,phone,dev,proposed);
    if(only.includes('kt'))await kt(b,phone,dev,proposed);
   }
+  // Round 3 (owner: Change and the i on the badge's row): the agreed card and a long name, phone and laptop.
+  if(only.includes('kt3'))for(const [phone,dev] of [[true,'phone'],[false,'laptop']]){await kt(b,phone,dev,true,true);await kt(b,phone,dev,true,true,'ktLong');}
   if(only.includes('a14r'))for(const [phone,dev] of [[true,'phone'],[false,'laptop']])await a14r(b,phone,dev);
  } finally {fs.writeFileSync(path.join(out,'reproduction.json'),JSON.stringify(R,null,1));await b.close();}
  console.log('done',sha);
