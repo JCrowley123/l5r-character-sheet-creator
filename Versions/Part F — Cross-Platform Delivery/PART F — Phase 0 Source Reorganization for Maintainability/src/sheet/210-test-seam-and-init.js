@@ -1019,6 +1019,9 @@
   // PART H PHASE 15.1.35 BEGIN damage-row-fit-seam
   if(typeof DR15 === 'object' && DR15) Object.assign(window.__L5R_TEST__, {DR15, DAMAGE_ROW_FIT_ENABLED});
   // END DR15 damage-row-fit-seam
+  // PART H PHASE 15.2.1 BEGIN net-wound-penalty-seam
+  if(typeof WP15 === 'object' && WP15) Object.assign(window.__L5R_TEST__, {WP15, NET_WOUND_PENALTY_ENABLED});
+  // END WP15 net-wound-penalty-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

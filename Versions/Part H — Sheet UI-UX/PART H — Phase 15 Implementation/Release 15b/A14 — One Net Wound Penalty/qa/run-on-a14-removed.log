@@ -1,0 +1,30 @@
+  detail WP-SEAM-PHONE: {"wp":false}
+  detail WP-LINE-NET-PHONE: "Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) — 12 of 38 wound points"
+  detail WP-LEVEL-NAMES-NET-PHONE: ["Healthy — No TN penalty","Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3)","Grazed — TN of all rolls +7 (Low Pain Threshold +5, Strength of the Earth −3)","Hurt — TN of all rolls +12 (Low Pain Threshold +5, Strength of the Earth −3)","Injured — TN of all rolls +17 (Low Pain Threshold +5, Strength of the Earth −3)","Crippled — TN of all rolls +22 (Low Pain Threshold +5, Strength of the Earth −3)","Down — TN of all rolls +42 (Low Pain Threshold +5, Strength of the Earth −3)","Out — Unconscious"]
+  detail WP-LINE-I-PHONE: {"text":"Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) — 12 of 38 wound points","button":null,"box":{"left":23,"right":367,"top":1357,"bottom":1424,"width":344,"height":67},"card":{"left":10,"right":380,"top":172,"bottom":1545,"width":370,"height":1373},"docScroll":390,"vw":390}
+  detail WP-WINDOW-BREAKDOWN-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#woundSummaryLine button').first()\u001b[22m\n"
+  detail WP-LEVEL-OWN-SUMS-PHONE: {"open":true,"title":"Grazed","pen":"TN of all rolls +7 (Low Pain Threshold +5, Strength of the Earth −3)","rows":[],"after":[],"text":"Increase the TN of all rolls made by +5 while Grazed. A grazed character is injured, but still able to function without tremendous difficulty."}
+  detail WP-QA-NET-AND-I-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#qaWoundsValue button').first()\u001b[22m\n"
+  detail WP-PREVIEW-ONE-ROW-PHONE: ["Wound Penalty-5 to total — Nicked","Wound Penalty3 → 5 (Low Pain Threshold +5, Strength of the Earth −3) — already included in the Wound Penalty."]
+  detail WP-CANCELLED-EXPLAINED-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#woundSummaryLine button').first()\u001b[22m\n"
+  detail WP-PRINT-HIDES-I-PHONE: {"before":null,"shown":false}
+  detail WP-LINE-AND-I-DESKTOP: "exception: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#woundSummaryLine button').first()\u001b[22m\n"
+  detail WP-PREVIEW-ONE-ROW-DESKTOP: ["Wound Penalty-5 to total — Nicked","Wound Penalty3 → 5 (Low Pain Threshold +5, Strength of the Earth −3) — already included in the Wound Penalty."]
+FAIL WP-SEAM-PHONE
+FAIL WP-LINE-NET-PHONE
+FAIL WP-LEVEL-NAMES-NET-PHONE
+FAIL WP-LINE-I-PHONE
+FAIL WP-WINDOW-BREAKDOWN-PHONE
+FAIL WP-LEVEL-OWN-SUMS-PHONE
+FAIL WP-QA-NET-AND-I-PHONE
+FAIL WP-PREVIEW-ONE-ROW-PHONE
+PASS WP-PENALTY-UNCHANGED-PHONE
+FAIL WP-CANCELLED-EXPLAINED-PHONE
+PASS WP-NO-ENTRIES-NO-I-PHONE
+PASS WP-HEALTHY-NO-I-PHONE
+FAIL WP-PRINT-HIDES-I-PHONE
+PASS WP-NO-ERRORS-PHONE
+FAIL WP-LINE-AND-I-DESKTOP
+FAIL WP-PREVIEW-ONE-ROW-DESKTOP
+PASS WP-NO-ERRORS-DESKTOP
+5/17 checks passed

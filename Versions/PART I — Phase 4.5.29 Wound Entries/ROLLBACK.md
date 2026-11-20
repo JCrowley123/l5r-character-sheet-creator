@@ -47,3 +47,9 @@ safe: it holds no state.
 
 No later release depends on this one. No retained harness changed. The removal chain registry gained one
 entry, at its end.
+
+## Release 15b A14 — one net Wound penalty (20 November 2026)
+
+**A later unit now reads this release.** Release 15b A14 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/A14 — One Net Wound Penalty/`) reads `WND4529` (`adjusters`, `adjustersText`, `adjustSize`, `PEN_RE`, `ENTRIES`) and replaces `WND4529.rollNote` with an empty list. This release's remover matches `WND4529` as its surface, so it refuses while A14 is present: **remove A14 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/wound-entries-harness.js` is conditional on A14. While `WP15` is on the seam, the four display checks expect the penalty without the bracketed names, and the three roll checks expect no informational line. It has the same ids and count, and with A14 removed every line runs as before.

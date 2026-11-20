@@ -13,6 +13,12 @@
  * are absolute, and they test sizes, never the sign. The CONTRACT section fails loudly if the
  * core stops doing what the release relies on -- see THE CONTRACT at the top of the fragment.
  * node wound-entries-harness.js <sheet.html>
+ *
+ * Conditional on Release 15b A14 (PART H PHASE 15.2.1, one net Wound penalty), declared in A14's and this phase's
+ * ROLLBACK.md (20 November 2026): with A14 present the track, its pop-up and Quick Access show the one penalty that
+ * applies without the entries' names in brackets (A14's i explains it), and a roll has no informational Wound Penalty
+ * line. So the display checks expect no bracketed names and the roll checks expect no line. Same ids, same count;
+ * with A14 removed every line runs as before.
  */
 'use strict';
 const {chromium} = require('playwright');
@@ -29,6 +35,8 @@ async function section(id, fn) {
   try { await fn(); } catch (error) { check(id + '-EXCEPTION', String(error.stack || error), 'no exception'); }
 }
 const SOTE = 'Strength of the Earth', LPT = 'Low Pain Threshold', BH = 'Bad Health', PW = 'Permanent Wound';
+let NET = false; // Release 15b A14 present (read once the page is ready)
+const NAMED = text => NET ? '' : text; // the bracketed names Phase 4.5.29 adds, which A14 takes off
 
 // In-page helpers: set Earth (through Stamina and Willpower), the entries, and Wounds taken.
 async function setup(page, {adv = [], dis = [], earth = 2} = {}) {
@@ -72,6 +80,7 @@ async function main() {
     await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_CAROUSEL__?.isReady?.() &&
       (!window.__L5R_TEST__.CL11 || window.__L5R_TEST__.CL11.ready));
     await page.evaluate(() => window.__L5R_TEST__.CL11?.close?.());
+    NET = await page.evaluate(() => !!(window.__L5R_TEST__.WP15 && window.__L5R_TEST__.WP15.installed && window.__L5R_TEST__.NET_WOUND_PENALTY_ENABLED));
 
     await section('WE-START', async () => {
       check('WE-SEAM', await page.evaluate(() => window.__L5R_TEST__.WOUND_ENTRIES_ENABLED === true && !!window.__L5R_TEST__.WND4529));
@@ -211,24 +220,24 @@ async function main() {
       await setup(page, {adv:[SOTE], earth:2});
       const lim = (await limits(page, 2)).sheet;
       await setTaken(page, firstAtEachLevel(lim)[2]);   // Grazed
-      const expected = await page.evaluate(taken => { const T = window.__L5R_TEST__, g = T.WOUND_LEVELS[2];
+      const expected = await page.evaluate(({taken, named}) => { const T = window.__L5R_TEST__, g = T.WOUND_LEVELS[2];
         const size = Math.abs(Number(g.pen)), adjusted = Math.max(0, size - 3);
-        const text = T.WND4529.coreFormat(Object.assign({}, g, {pen:(g.pen.trim().startsWith('-') ? '-' : '') + adjusted})) + ' (Strength of the Earth −3)';
+        const text = T.WND4529.coreFormat(Object.assign({}, g, {pen:(g.pen.trim().startsWith('-') ? '-' : '') + adjusted})) + named;
         const max = T.computeWoundThresholds(+document.getElementById('ring_earth').value).slice(-1)[0];
-        return {text, summary:g.name + ' — ' + text + ' — ' + taken + ' of ' + max + ' wound points'}; }, firstAtEachLevel(lim)[2]);
+        return {text, summary:g.name + ' — ' + text + ' — ' + taken + ' of ' + max + ' wound points'}; }, {taken:firstAtEachLevel(lim)[2], named:NAMED(' (Strength of the Earth −3)')});
       const s = await state(page);
       check('WE-DISPLAY-SUMMARY', s.summary, expected.summary);
       check('WE-DISPLAY-QUICK-ACCESS-MIRRORS', s.qa === null || s.qa === s.summary);
       check('WE-DISPLAY-SEGMENT-AND-POPUP', await page.evaluate(() => { const seg = document.querySelectorAll('#woundBar .wound-seg')[2];
         seg.click(); const pen = document.getElementById('woundInfoPen').textContent; document.getElementById('woundInfoClose').click();
-        return [seg.getAttribute('aria-label').includes('(Strength of the Earth −3)'), pen.includes('(Strength of the Earth −3)')]; }), [true, true]);
-      check('WE-DISPLAY-CANCELLED-READS-NONE', await page.evaluate(() => { const T = window.__L5R_TEST__, n = T.WOUND_LEVELS[1];
-        return T.formatWoundPenalty(n) === T.WND4529.coreFormat(Object.assign({}, n, {pen:'—'})) + ' (Strength of the Earth −3)'; }));
+        return [seg.getAttribute('aria-label').includes('(Strength of the Earth −3)'), pen.includes('(Strength of the Earth −3)')]; }), [!NET, !NET]);
+      check('WE-DISPLAY-CANCELLED-READS-NONE', await page.evaluate(named => { const T = window.__L5R_TEST__, n = T.WOUND_LEVELS[1];
+        return T.formatWoundPenalty(n) === T.WND4529.coreFormat(Object.assign({}, n, {pen:'—'})) + named; }, NAMED(' (Strength of the Earth −3)')));
       check('WE-DISPLAY-HEALTHY-AND-OUT-UNTOUCHED', await page.evaluate(() => { const T = window.__L5R_TEST__, L = T.WOUND_LEVELS;
         return [L[0], L[L.length - 1]].map(l => T.formatWoundPenalty(l) === T.WND4529.coreFormat(l)); }), [true, true]);
       await setup(page, {adv:[SOTE], dis:[LPT], earth:2});
-      check('WE-DISPLAY-BOTH-NAMED', await page.evaluate(() => /\(Low Pain Threshold \+5, Strength of the Earth −3\)$/.test(
-        window.__L5R_TEST__.formatWoundPenalty(window.__L5R_TEST__.WOUND_LEVELS[1]))));
+      check('WE-DISPLAY-BOTH-NAMED', await page.evaluate(net => { const text = window.__L5R_TEST__.formatWoundPenalty(window.__L5R_TEST__.WOUND_LEVELS[1]);
+        return net ? !text.includes('(') : /\(Low Pain Threshold \+5, Strength of the Earth −3\)$/.test(text); }, NET));
     });
 
     // ---- Rolls: the penalty that reaches the dice, and the line that explains it ----
@@ -242,17 +251,17 @@ async function main() {
       await setTaken(page, firstAtEachLevel(lim)[2]);
       const core = (await state(page)).core;
       check('WE-ROLL-GRAZED-STRENGTH', await roll('TRAIT', {traitName:'Agility'}),
-        {wound:[Math.sign(core) * (Math.abs(core) - 3)], line:[Math.abs(core) + ' → ' + (Math.abs(core) - 3) + ' (Strength of the Earth −3)']});
+        {wound:[Math.sign(core) * (Math.abs(core) - 3)], line:NET ? [] : [Math.abs(core) + ' → ' + (Math.abs(core) - 3) + ' (Strength of the Earth −3)']});
       await setTaken(page, firstAtEachLevel(lim)[1]);
       const nickedCore = (await state(page)).core;
       check('WE-ROLL-NICKED-CANCELLED-STILL-EXPLAINED', await roll('SKILL', {skillName:'Athletics', traitName:'Strength', skillRank:2}),
-        {wound:[], line:[Math.abs(nickedCore) + ' → 0 (Strength of the Earth −3)']});
+        {wound:[], line:NET ? [] : [Math.abs(nickedCore) + ' → 0 (Strength of the Earth −3)']});
       check('WE-ROLL-DAMAGE-UNTOUCHED', await roll('DAMAGE', {skillName:'Kenjutsu'}), {wound:[], line:[]});
       await setup(page, {dis:[LPT], earth:2});
       await setTaken(page, firstAtEachLevel((await limits(page, 2)).sheet)[1]);
       const lptCore = (await state(page)).core;
       check('WE-ROLL-LOW-PAIN', await roll('SPELL', {spellName:'Sense', element:'Air'}),
-        {wound:[Math.sign(lptCore) * (Math.abs(lptCore) + 5)], line:[Math.abs(lptCore) + ' → ' + (Math.abs(lptCore) + 5) + ' (Low Pain Threshold +5)']});
+        {wound:[Math.sign(lptCore) * (Math.abs(lptCore) + 5)], line:NET ? [] : [Math.abs(lptCore) + ' → ' + (Math.abs(lptCore) + 5) + ' (Low Pain Threshold +5)']});
       // The real dice: a 5k3 Trait roll at Grazed with Strength of the Earth. Kept dice 7+6+5 = 18,
       // plus the core's own Grazed penalty with its size cut by 3 and its sign kept.
       await setup(page, {adv:[SOTE], earth:2});

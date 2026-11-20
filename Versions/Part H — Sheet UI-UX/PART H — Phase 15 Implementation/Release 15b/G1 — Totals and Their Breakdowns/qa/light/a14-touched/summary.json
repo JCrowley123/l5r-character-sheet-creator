@@ -1,0 +1,86 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15b\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Phase 4\\.5\\.29 Wound Entries|Campaign Wound Multipliers|Phase 4\\.5\\.32 Damage, Sessions|Phase 4 Explain This Roll|Phase 1\\.6 Combat Tab|Phase 2 Quick-Access|Phase 9 Clan-Themed|A04 — One Information|A19\\.1 —|A19 — Undo",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A19 — Undo the Last Void Spend/qa/void-spend-undo-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 55,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A19.1 — The Damage Row Fits a Phone/qa/damage-row-harness.js",
+   "passed": 9,
+   "total": 9,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/qa/info-pattern-harness.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 14,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 4 Explain This Roll/qa/roll-breakdown-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/qa/wound-bar-harness.js",
+   "passed": 23,
+   "total": 23,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/qa/quick-access-sidebar-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 9 Clan-Themed Look/qa/clan-theming-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.29 Wound Entries/qa/wound-entries-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.32 Damage, Sessions and XP/qa/damage-sessions-xp-harness.js",
+   "passed": 69,
+   "total": 69,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Campaign Wound Multipliers/qa/wound-multiplier-harness.js",
+   "passed": 31,
+   "total": 31,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  }
+ ]
+}

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150",
+  "expect_sha256": "0bd322b99cf89633b7feba8685c9f3320c2ffecb96f4b8b178c1959a53c99677",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -194,6 +194,7 @@
     { "file": "src/css/1147-void-spend-undo.css", "note": "PART H PHASE 15.1.33 - Release 15a A19, the Undo line under the Void card's buttons after a card spend" },
     { "file": "src/css/1148-skill-trait-choice.css", "note": "PART H PHASE 15.1.34 - Release 15a A20, the Trait drop-down and its this-roll-only note in a Skill roll's preview" },
     { "file": "src/css/1149-damage-row-fit.css", "note": "PART H PHASE 15.1.35 - Release 15a A19.1, the Void card's damage row wraps to fit a phone" },
+    { "file": "src/css/1150-net-wound-penalty.css", "note": "PART H PHASE 15.2.1 - Release 15b A14, the Wounds line's i and the breakdown in a level's window" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -543,6 +544,7 @@
     { "file": "src/sheet/209.999999999999999999-feat-void-spend-undo.js", "note": "PART H PHASE 15.1.33 - Release 15a A19, Undo the most recent Void card spend until the next roll, Next Round or Reset" },
     { "file": "src/sheet/209.9999999999999999991-feat-skill-trait-choice.js", "note": "PART H PHASE 15.1.34 - Release 15a A20, choose a Trait for one Skill roll in its preview, the book-named Traits first" },
     { "file": "src/sheet/209.9999999999999999992-feat-damage-row-fit.js", "note": "PART H PHASE 15.1.35 - Release 15a A19.1, marks the page so the damage row fits a phone" },
+    { "file": "src/sheet/209.9999999999999999993-feat-net-wound-penalty.js", "note": "PART H PHASE 15.2.1 - Release 15b A14, one net Wound penalty with its parts behind an i" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
