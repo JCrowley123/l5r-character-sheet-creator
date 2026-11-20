@@ -128,7 +128,15 @@ Read as:
   - On a phone in Manage, the pips and "Reset session" sit under the badge, 2 lines (about 56 px).
   - On a phone in Play and on a laptop, it is one line.
   - If B18 picks "Reset", the phone's Manage row becomes one line with no further change.
-- **The owner's ruling:** not yet given. Record it here verbatim.
+### The owner's ruling on the naming unit, 20 November 2026, verbatim
+
+> Approve as proposed
+
+(The button answer in this Claude session.) Read as:
+
+- **B18 — One Name per Button Job is a new 15b unit.** It runs in three stages: an inventory, the owner's ruling on each group, then a build group of its own. Its place in 15b's order is set when the rulings are in, and its Reset rows are scheduled with A04.2.
+- **B17 builds with today's "Reset session".** Change and the i are pinned to the badge's line.
+- **Group 1 is settled:** A14 (as revised), B04, B14 and B17. B02 is dropped.
 
 **Usage, rounds 2–3 answers:** weekly meter 40%, five-hour 17% at 16:25 UTC.
 
@@ -154,9 +162,10 @@ Each unit gets its own folder under `Release 15b/`, with a switch, harness, remo
 - **B04, the terms.** These come from `recalcAll`'s own terms (stance, Void, two weapons, Way of the Dragon, Shiba's gift, Weakness on Reflexes), each by name. The scratch version grouped them into one row, and the test character had none. Only `#bl4534QaNote` is hidden.
 - **B14.** Feature 4.5.24's modifier note and card note (`TR4524`).
 - **A14 as revised (round 2).** The preview row's own text is not changed: only the informational row (`WND4529.rollNote`) goes. Part C Feature 3's `wounds` modifier keeps "−5 to total — Nicked".
-- **B17 (approved in round 2; the row as in round 3, pending the owner's word).**
-  - **The summary line** is Feature 4.5's `kharmicTie` summary (`209.81`); the badge, pips and Reset come from `209.81` and `209.82`.
-  - **The layout (round 3):** a two-column row, with the badge and the Kharmic controls wrapping in the left column and Change and the i in the right column, held to the first line. The scratch version used a zero-width 28 px strut so a wrapped first line keeps the badge centred against Change; the build can do the same, or set a 28 px line on the left column. Reset's visible text becomes "Reset" on this card only; `209.82` writes "Reset session" in its markup, so change it there for `kharmicTie`, not by a later rewrite.
+- **B17 (approved: round 3's layout, with today's "Reset session" label, per the B18 ruling).**
+  - **The summary line** is Feature 4.5's `kharmicTie` summary (`209.81`); the badge, pips and Reset session come from `209.81` and `209.82`.
+  - **The layout (round 3):** a two-column row. The badge and the Kharmic controls wrap in the left column; Change and the i sit in the right column, held to the first line. The scratch version used a zero-width 28 px strut so a wrapped first line keeps the badge centred against Change; the build can do the same, or set a 28 px line on the left column.
+  - **The label:** do not change "Reset session"; B18 decides the word for every card at once. On a phone in Manage, the pips and Reset session therefore wrap under the badge (about 56 px). In Play and on a laptop the row is one line. The i's window says "Reset session".
   - **No titles:** remove the badge's and Reset's `title`s so Phase 4.54 adds no i. A04 moves an i out of a button, so check that nothing is left behind.
   - **Accessible names:** give Reset, Change and the one i accessible names; keep the pips' spoken label.
   - **The page:** the sheet records no page for Kharmic Tie. Take it from a rules check, with the book only in a temporary folder.

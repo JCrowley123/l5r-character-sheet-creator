@@ -97,3 +97,14 @@ The owner gave the same answer in two places, verbatim: the button "Approve as r
 3. **The 15a-removed stage.** Each group's chain gains a stage that removes all of 15a, keeps the group and runs the group's own harnesses.
 
 Group 1's mock-ups followed the same day: [MOCKUP.md](<../Release 15b/G1 — Totals and Their Breakdowns/MOCKUP.md>). The weekly meter read 35% at the start (00:55 UTC).
+
+**Group 1 settled after three rounds, 20 November** (the owner's words verbatim in MOCKUP.md):
+
+- **To build:** A14 (the roll preview reads "−5 to total — Nicked"), B04, B14 and a new unit, **B17 — One Row for Kharmic Tie** (`PART H PHASE 15.2.5`).
+- **Dropped:** B02.
+- **A new unit for 15b:** the owner noted that Phase 15 is a consistency pass ("reset" on one card, "reset session" on others), which led to **B18 — One Name per Button Job**. The owner approved it as proposed:
+  - an inventory of every button by job;
+  - the owner's ruling on each group;
+  - a build group of its own, with its Reset rows scheduled with A04.2.
+- **Meanwhile, B17 keeps "Reset session".**
+- **Usage:** the weekly meter read 40% at 16:25 UTC.
