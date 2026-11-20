@@ -4,7 +4,7 @@
 
 ## The owner's decisions before the mock-ups, 20 November 2026
 
-The [work order of 19 November](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP) (a Claude Doc; [review note](<../../Release 15a/REVIEW-AFTER-15A.md>)) asked three questions. The owner answered in the Claude session with the button "Approve as recommended", and that answer is recorded in the doc's Decision column on all three rows.
+The [work order of 19 November](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP) (a Claude Doc; [review note](<../../Release 15a/REVIEW-AFTER-15A.md>)) asked three questions. The owner gave the same answer in two places, verbatim: the button "Approve as recommended" in the Claude session, and "approve the three 15b decisions as recommended" in the session that started it. That answer is recorded in the doc's Decision column on all three rows.
 
 | Decision | Approved |
 |---|---|

@@ -90,7 +90,7 @@ Claude, Opus 5.5, Pro plan, account-wide meters: weekly all models 30% and five-
 
 ## 6. The owner's decisions, 20 November 2026
 
-In the Claude session, the owner answered with the button "Approve as recommended" (verbatim). The answer is recorded in the work-order doc's Decision column on all three rows.
+The owner gave the same answer in two places, verbatim: the button "Approve as recommended" in this Claude session, and "approve the three 15b decisions as recommended" in the session that started it. The answer is recorded in the work-order doc's Decision column on all three rows.
 
 1. **Groups and order.** 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 (behaviour tier) · 5 B12, B13.
 2. **B14 and B01.** Both stay in 15b.
