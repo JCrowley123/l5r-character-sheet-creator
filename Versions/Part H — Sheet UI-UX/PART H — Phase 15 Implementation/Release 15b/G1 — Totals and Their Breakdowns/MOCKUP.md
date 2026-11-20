@@ -96,7 +96,39 @@ Version 3 of the same board link adds a round-3 section above round 2; rounds 2 
 - **Other "Reset session" cards** (Luck, Unlucky and the rest) keep their label. A04.2 can give them the short "Reset" when it is unparked.
 - **The board's question:** Kharmic Tie, round 3: approve (recommended), or revise.
 
-The owner's round-3 answer: not yet given. Record it here verbatim.
+### Round 3 answer, 20 November 2026 (in this Claude session), verbatim
+
+> I approve round 3.  But I think we need to make a note that again phase 15 was meant to be a UI/UX consistency pass.
+>
+> If in one place I use the phrase reset and in another I have reset session.  I feel that an additional unit is needed to check the whole sheet to see if there are other buttons that do similar jobs but should maybe have one consistent naming convention.
+>
+> What are your thoughts on this?
+
+Read as:
+
+- **B17: approved as in round 3.** Group 1 to build: A14 (as revised), B04, B14, B17. B02 dropped.
+- **The owner's note:** Phase 15 is a UI/UX consistency pass. A label changed in one place ("Reset") while the same job elsewhere keeps another ("Reset session") works against that.
+- **A new unit asked about:** a sheet-wide check of buttons that do similar jobs, for one naming convention. Claude's view and the owner's ruling follow.
+
+### Claude's view on the naming unit, 20 November 2026
+
+- **Agreed.** Round 3 renamed one card's button while six others with the same job kept the old word. Round 3 should have raised the label as a sheet-wide question, not a one-card fix.
+- **A first scan of the source** (a text search, not an inventory) finds several families:
+  - "Reset session" in seven files (Kharmic Tie, Luck, Dark Paragon, Unlucky, the Ancestor card twice, the once-per-session entries), and a plain "Reset" on the combat round counter.
+  - Change, Choose… and Edit.
+  - Remove, Delete and ×.
+  - Done, Close and Cancel.
+  - Use, Use it and Use it now.
+  - Some differences may carry meaning, such as Remove an entry vs Delete a saved character. The aim is one name per job, not one name for everything.
+- **Proposed: a new unit, B18 — One Name per Button Job,** in three stages, like the resistance rules read:
+  1. **Inventory**, read-only. For every button and button-like control: its visible label, its spoken name, its job, its card and its mode, grouped by job. For each group, it notes whether a difference carries meaning, and proposes one word.
+  2. **The owner rules on each group.**
+  3. **The build**, its own group after the inventory, screen-only. Labels and spoken names change, the harnesses that pin labels are updated, and no behaviour changes. Where it meets A04.2 (the Reset rows), the two are scheduled together.
+- **B17 meanwhile:** it builds with today's "Reset session", and B18 decides the word for all seven at once. Change and the i stay pinned to the badge's line, as approved. From round 3's measured widths:
+  - On a phone in Manage, the pips and "Reset session" sit under the badge, 2 lines (about 56 px).
+  - On a phone in Play and on a laptop, it is one line.
+  - If B18 picks "Reset", the phone's Manage row becomes one line with no further change.
+- **The owner's ruling:** not yet given. Record it here verbatim.
 
 **Usage, rounds 2–3 answers:** weekly meter 40%, five-hour 17% at 16:25 UTC.
 
