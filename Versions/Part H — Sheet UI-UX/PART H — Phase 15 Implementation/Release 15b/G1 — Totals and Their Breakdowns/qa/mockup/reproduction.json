@@ -1,0 +1,332 @@
+{
+ "source_sha256": "921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150",
+ "captured_utc": "2026-11-20T01:09:07.227Z",
+ "phone": {
+  "a14_today": {
+   "track": "WOUNDS Healthy: Earth ×5 · Each later level: Earth ×2 Change the multiplier in Management → Rings & Traits → Campaign wounds. Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) — 12 of 38 wound points 3 wounds to Grazed − +",
+   "segments": [
+    "Healthy — No TN penalty",
+    "Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Grazed — TN of all rolls +7 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Hurt — TN of all rolls +12 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Injured — TN of all rolls +17 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Crippled — TN of all rolls +22 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Down — TN of all rolls +42 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Out — Unconscious"
+   ],
+   "penalty": -5,
+   "info": "Nicked TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) ✕ Increase the TN of all rolls made by +3 while Nicked. A character who has been nicked has suffered a mild but distracting injury.",
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) — 12 of 38 wound points ARMOR TN 15 INITIATIVE 3k2 Score not set",
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Wound Penalty-5 to total — Nicked",
+     "Wound Penalty3 → 5 (Low Pain Threshold +5, Strength of the Earth −3) — already included in the Wound Penalty."
+    ],
+    "go": "Roll 3k2"
+   },
+   "errors": []
+  },
+  "b02_today": {
+   "rows": [
+    {
+     "name": "Blissful Betrothal",
+     "cost": "3",
+     "notes": [
+      "Gentry, Social Position and Wealthy (and that Kharmic Tie) cost 2 less each, never below 1."
+     ]
+    },
+    {
+     "name": "Social Position",
+     "cost": "4",
+     "notes": []
+    },
+    {
+     "name": "Kharmic Tie",
+     "cost": "1",
+     "notes": []
+    },
+    {
+     "name": "Large",
+     "cost": "3",
+     "notes": [
+      "+1k0 damage with Large melee weapons, in the damage dice.",
+      "Crab price: 3 XP (catalogue 4)."
+     ]
+    }
+   ],
+   "order": {
+    "sp": 2,
+    "tie": 3,
+    "large": 4,
+    "bb": 1
+   },
+   "errors": []
+  },
+  "b04_today": {
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Healthy — No TN penalty — 0 of 38 wound points ARMOR TN 7 Blind: Reflexes 2 + 5 = 7 INITIATIVE 3k2 Score not set",
+   "card": "Armor & TN Ⓘ ARMOR NAME ARMOR TN BONUS REDUCTION BASE TN TO BE HIT (AUTO) Blind: Reflexes 2 + 5 = 7 (Core Rulebook p.156) CURRENT TN TO BE HIT (AUTO) INITIATIVE (AUTO) 10 Initiative Score: not set yet Roll Initiative, or type the total you rolled. SET SCORE",
+   "info": "TN & Initiative ARMOR & TN ✕ Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).",
+   "errors": []
+  },
+  "b14_today": {
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Touch of the Spirit Realms (Jigoku)+8 to total — Lost: twice Taint Rank 4"
+    ],
+    "go": "Roll 3k2"
+   },
+   "card": "Jigoku i Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skill and Trait rolls using a Physical Trait; if you are Lost, add twice your Taint Rank. Added automatically from your Taint Rank; tick Lost when you are. Adding 8 (Taint Rank 4, doubled: Lost). Lost (twice your Taint Rank)",
+   "errors": []
+  },
+  "a14_proposed": {
+   "track": "WOUNDS Healthy: Earth ×5 · Each later level: Earth ×2 Change the multiplier in Management → Rings & Traits → Campaign wounds. Nicked — TN of all rolls +5 — 12 of 38 wound points 3 wounds to Grazed − +",
+   "segments": [
+    "Healthy — No TN penalty",
+    "Nicked — TN of all rolls +5",
+    "Grazed — TN of all rolls +7",
+    "Hurt — TN of all rolls +12",
+    "Injured — TN of all rolls +17",
+    "Crippled — TN of all rolls +22",
+    "Down — TN of all rolls +42",
+    "Out — Unconscious"
+   ],
+   "penalty": -5,
+   "info": "Nicked TN of all rolls +5 ✕ Nicked Wound Rank penalty +3 Low Pain Threshold Disadvantage, Core Rulebook p.160 +5 Strength of the Earth Advantage, Core Rulebook p.154 −3 TN of all rolls +5 Increase the TN of all rolls made by +3 while Nicked. A character who has been nicked has suffered a mild but distracting injury.",
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Nicked — TN of all rolls +5 — 12 of 38 wound points ARMOR TN 15 INITIATIVE 3k2 Score not set",
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Wound Penalty-5 to total — Nicked 3 + Low Pain Threshold 5 − Strength of the Earth 3"
+    ],
+    "go": "Roll 3k2"
+   },
+   "errors": []
+  },
+  "b02_proposed": {
+   "rows": [
+    {
+     "name": "Blissful Betrothal",
+     "cost": "3",
+     "notes": [
+      "Gentry, Social Position and Wealthy (and that Kharmic Tie) cost 2 less each, never below 1."
+     ]
+    },
+    {
+     "name": "Social Position",
+     "cost": "4",
+     "notes": []
+    },
+    {
+     "name": "Kharmic Tie",
+     "cost": "1",
+     "notes": []
+    },
+    {
+     "name": "Large",
+     "cost": "3",
+     "notes": [
+      "+1k0 damage with Large melee weapons, in the damage dice.",
+      "Crab price: 3 XP (catalogue 4)."
+     ]
+    }
+   ],
+   "order": {
+    "sp": 2,
+    "tie": 3,
+    "large": 4,
+    "bb": 1
+   },
+   "info_sp": "Social Position ACTUAL 4 XP · CATALOGUE 6 XP ✕ Catalogue price 6 XP Blissful Betrothal 2 less, never below 1. Core Rulebook p.146 −2 Actual price 4 XP",
+   "info_tie": "Kharmic Tie ACTUAL 1 XP · CATALOGUE 3 XP ✕ Catalogue price 3 XP Blissful Betrothal Your Tie is to your spouse: 2 less, never below 1. Core Rulebook p.146 −2 Actual price 1 XP",
+   "info_large": "Large ACTUAL 3 XP · CATALOGUE 4 XP ✕ Catalogue price 4 XP Crab price Core Rulebook p.151 −1 Actual price 3 XP",
+   "errors": []
+  },
+  "b04_proposed": {
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Healthy — No TN penalty — 0 of 38 wound points ARMOR TN 7 INITIATIVE 3k2 Score not set",
+   "info": "Armor TN 7 TO BE HIT ✕ Base: Blind, Reflexes 2 + 5 Blind: Reflexes + 5 instead of Reflexes × 5 + 5. Core Rulebook p.156 7 Armor TN Bonus +0 Armor TN 7",
+   "combatInfo": "TN & Initiative ARMOR & TN ✕ Base: Blind, Reflexes 2 + 5 Blind: Reflexes + 5 instead of Reflexes × 5 + 5. Core Rulebook p.156 7 Armor TN Bonus +0 Armor TN 7 Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).",
+   "errors": []
+  },
+  "b14_proposed": {
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Touch of the Spirit Realms (Jigoku)+8 to total — Taint Rank 4 × 2 (Lost)"
+    ],
+    "go": "Roll 3k2"
+   },
+   "card": "Jigoku i Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skill and Trait rolls using a Physical Trait; if you are Lost, add twice your Taint Rank. Added automatically from your Taint Rank; tick Lost when you are. Adding +8 — Taint Rank 4 × 2 (Lost). Lost (twice your Taint Rank)",
+   "errors": []
+  }
+ },
+ "laptop": {
+  "a14_today": {
+   "track": "WOUNDS Healthy: Earth ×5 · Each later level: Earth ×2 Change the multiplier in Management → Rings & Traits → Campaign wounds. Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) — 12 of 38 wound points 3 wounds to Grazed − +",
+   "segments": [
+    "Healthy — No TN penalty",
+    "Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Grazed — TN of all rolls +7 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Hurt — TN of all rolls +12 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Injured — TN of all rolls +17 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Crippled — TN of all rolls +22 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Down — TN of all rolls +42 (Low Pain Threshold +5, Strength of the Earth −3)",
+    "Out — Unconscious"
+   ],
+   "penalty": -5,
+   "info": "Nicked TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) ✕ Increase the TN of all rolls made by +3 while Nicked. A character who has been nicked has suffered a mild but distracting injury.",
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) — 12 of 38 wound points ARMOR TN 15 INITIATIVE 3k2 Score not set",
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Wound Penalty-5 to total — Nicked",
+     "Wound Penalty3 → 5 (Low Pain Threshold +5, Strength of the Earth −3) — already included in the Wound Penalty."
+    ],
+    "go": "Roll 3k2"
+   },
+   "errors": []
+  },
+  "b02_today": {
+   "rows": [
+    {
+     "name": "Blissful Betrothal",
+     "cost": "3",
+     "notes": [
+      "Gentry, Social Position and Wealthy (and that Kharmic Tie) cost 2 less each, never below 1."
+     ]
+    },
+    {
+     "name": "Social Position",
+     "cost": "4",
+     "notes": []
+    },
+    {
+     "name": "Kharmic Tie",
+     "cost": "1",
+     "notes": []
+    },
+    {
+     "name": "Large",
+     "cost": "3",
+     "notes": [
+      "+1k0 damage with Large melee weapons, in the damage dice.",
+      "Crab price: 3 XP (catalogue 4)."
+     ]
+    }
+   ],
+   "order": {
+    "sp": 2,
+    "tie": 3,
+    "large": 4,
+    "bb": 1
+   },
+   "errors": []
+  },
+  "b04_today": {
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Healthy — No TN penalty — 0 of 38 wound points ARMOR TN 7 Blind: Reflexes 2 + 5 = 7 INITIATIVE 3k2 Score not set",
+   "card": "Armor & TN Ⓘ ARMOR NAME ARMOR TN BONUS REDUCTION BASE TN TO BE HIT (AUTO) Blind: Reflexes 2 + 5 = 7 (Core Rulebook p.156) CURRENT TN TO BE HIT (AUTO) INITIATIVE (AUTO) 10 Initiative Score: not set yet Roll Initiative, or type the total you rolled. SET SCORE",
+   "info": "TN & Initiative ARMOR & TN ✕ Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).",
+   "errors": []
+  },
+  "b14_today": {
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Touch of the Spirit Realms (Jigoku)+8 to total — Lost: twice Taint Rank 4"
+    ],
+    "go": "Roll 3k2"
+   },
+   "card": "Jigoku i Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skill and Trait rolls using a Physical Trait; if you are Lost, add twice your Taint Rank. Added automatically from your Taint Rank; tick Lost when you are. Adding 8 (Taint Rank 4, doubled: Lost). Lost (twice your Taint Rank)",
+   "errors": []
+  },
+  "a14_proposed": {
+   "track": "WOUNDS Healthy: Earth ×5 · Each later level: Earth ×2 Change the multiplier in Management → Rings & Traits → Campaign wounds. Nicked — TN of all rolls +5 — 12 of 38 wound points 3 wounds to Grazed − +",
+   "segments": [
+    "Healthy — No TN penalty",
+    "Nicked — TN of all rolls +5",
+    "Grazed — TN of all rolls +7",
+    "Hurt — TN of all rolls +12",
+    "Injured — TN of all rolls +17",
+    "Crippled — TN of all rolls +22",
+    "Down — TN of all rolls +42",
+    "Out — Unconscious"
+   ],
+   "penalty": -5,
+   "info": "Nicked TN of all rolls +5 ✕ Nicked Wound Rank penalty +3 Low Pain Threshold Disadvantage, Core Rulebook p.160 +5 Strength of the Earth Advantage, Core Rulebook p.154 −3 TN of all rolls +5 Increase the TN of all rolls made by +3 while Nicked. A character who has been nicked has suffered a mild but distracting injury.",
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Nicked — TN of all rolls +5 — 12 of 38 wound points ARMOR TN 15 INITIATIVE 3k2 Score not set",
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Wound Penalty-5 to total — Nicked 3 + Low Pain Threshold 5 − Strength of the Earth 3"
+    ],
+    "go": "Roll 3k2"
+   },
+   "errors": []
+  },
+  "b02_proposed": {
+   "rows": [
+    {
+     "name": "Blissful Betrothal",
+     "cost": "3",
+     "notes": [
+      "Gentry, Social Position and Wealthy (and that Kharmic Tie) cost 2 less each, never below 1."
+     ]
+    },
+    {
+     "name": "Social Position",
+     "cost": "4",
+     "notes": []
+    },
+    {
+     "name": "Kharmic Tie",
+     "cost": "1",
+     "notes": []
+    },
+    {
+     "name": "Large",
+     "cost": "3",
+     "notes": [
+      "+1k0 damage with Large melee weapons, in the damage dice.",
+      "Crab price: 3 XP (catalogue 4)."
+     ]
+    }
+   ],
+   "order": {
+    "sp": 2,
+    "tie": 3,
+    "large": 4,
+    "bb": 1
+   },
+   "info_sp": "Social Position ACTUAL 4 XP · CATALOGUE 6 XP ✕ Catalogue price 6 XP Blissful Betrothal 2 less, never below 1. Core Rulebook p.146 −2 Actual price 4 XP",
+   "info_tie": "Kharmic Tie ACTUAL 1 XP · CATALOGUE 3 XP ✕ Catalogue price 3 XP Blissful Betrothal Your Tie is to your spouse: 2 less, never below 1. Core Rulebook p.146 −2 Actual price 1 XP",
+   "info_large": "Large ACTUAL 3 XP · CATALOGUE 4 XP ✕ Catalogue price 4 XP Crab price Core Rulebook p.151 −1 Actual price 3 XP",
+   "errors": []
+  },
+  "b04_proposed": {
+   "quickAccess": "Quick Access ✕ VOID 3 / 3 SPELL SLOTS (AVAILABLE/TOTAL) Air 2/2 · Earth 2/2 · Fire 3/3 · Water 3/3 · Void 3/3 Bonus (shared): 3/3 WOUNDS Healthy — No TN penalty — 0 of 38 wound points ARMOR TN 7 INITIATIVE 3k2 Score not set",
+   "info": "Armor TN 7 TO BE HIT ✕ Base: Blind, Reflexes 2 + 5 Blind: Reflexes + 5 instead of Reflexes × 5 + 5. Core Rulebook p.156 7 Armor TN Bonus +0 Armor TN 7",
+   "combatInfo": "TN & Initiative ARMOR & TN ✕ Base: Blind, Reflexes 2 + 5 Blind: Reflexes + 5 instead of Reflexes × 5 + 5. Core Rulebook p.156 7 Armor TN Bonus +0 Armor TN 7 Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).",
+   "errors": []
+  },
+  "b14_proposed": {
+   "preview": {
+    "title": "Defense",
+    "pool": "3k2",
+    "mods": [
+     "Touch of the Spirit Realms (Jigoku)+8 to total — Taint Rank 4 × 2 (Lost)"
+    ],
+    "go": "Roll 3k2"
+   },
+   "card": "Jigoku i Requires Shadowlands Taint. Add your Taint Rank to attack rolls and to Skill and Trait rolls using a Physical Trait; if you are Lost, add twice your Taint Rank. Added automatically from your Taint Rank; tick Lost when you are. Adding +8 — Taint Rank 4 × 2 (Lost). Lost (twice your Taint Rank)",
+   "errors": []
+  }
+ }
+}

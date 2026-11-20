@@ -2,7 +2,7 @@
 
 Claude, on the kickoff for Release 15b ([KICKOFF-15B.md](<G6 — New Functions/KICKOFF-15B.md>), §2). This is the light review the [4 November work order](<../../../REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) puts between 15a and 15b. It ran no full suite and no browser. Branch `claude/release-15b-kickoff`, from `main` `3b499a88` (application `921f3ac9…6150`, 17,718,601 bytes, confirmed).
 
-**The owner's decisions are asked in one Claude Doc: [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP).** Nothing in 15b is mocked up or built until the owner answers.
+**The owner's decisions were asked in one Claude Doc: [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP). On 20 November the owner approved all three as recommended (§6).**
 
 ## 1. What 15a cost
 
@@ -87,3 +87,13 @@ A code read only, no browser; the group's mock-up will take real screenshots.
 ## 5. Usage
 
 Claude, Opus 5.5, Pro plan, account-wide meters: weekly all models 30% and five-hour 15% at 23:25 UTC (start); 32% and 29% at 23:39 UTC, after the work-order doc; 34% and 42% at 23:45 UTC, after the ledger page was read in full and republished. The review cost about 4 points against its 4 (3–6) estimate. The weekly meter resets on 25 November at 01:00 UTC.
+
+## 6. The owner's decisions, 20 November 2026
+
+In the Claude session, the owner answered with the button "Approve as recommended" (verbatim). The answer is recorded in the work-order doc's Decision column on all three rows.
+
+1. **Groups and order.** 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 (behaviour tier) · 5 B12, B13.
+2. **B14 and B01.** Both stay in 15b.
+3. **The 15a-removed stage.** Each group's chain gains a stage that removes all of 15a, keeps the group and runs the group's own harnesses.
+
+Group 1's mock-ups followed the same day: [MOCKUP.md](<../Release 15b/G1 — Totals and Their Breakdowns/MOCKUP.md>). The weekly meter read 35% at the start (00:55 UTC).

@@ -1,0 +1,200 @@
+<title>15b Group 1 Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, the same look as the 15a boards (G4 to G6); each unit is a band of today | proposed pairs that stack on a phone. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem;margin-top:14px}
+p{margin:0;max-width:70ch}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:74ch}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+code{font-size:.85em;background:var(--chip);padding:1px 5px;border-radius:4px;word-break:break-word}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:12px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--new);border-radius:6px;padding:12px 14px;max-width:none}
+.rec b{color:var(--new)}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;max-width:none}
+.note b{color:var(--warn)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.stack{display:flex;flex-direction:column;gap:8px;min-width:0}
+.phonepair{max-width:760px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.78rem;letter-spacing:.03em}
+td.t{color:var(--today)} td.n{color:var(--new)}
+.summary td:first-child,.rules td:first-child{white-space:nowrap;font-weight:600}
+.optlist{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;max-width:420px;font-size:.88rem}
+.optlist dt{font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--soft);margin-top:8px}
+.optlist dt:first-child{margin-top:0}
+.optlist dd{margin:2px 0 0 12px}
+.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.decide ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:720px){.pair,.trio{grid-template-columns:1fr}h1{font-size:1.7rem}.summary td:first-child,.rules td:first-child{white-space:normal}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">Release 15b · group 1 · totals and their breakdowns</span>
+  <h1>One figure, then how it is worked out: today beside proposed</h1>
+  <p class="lede">Group 1 of Release 15b, as you approved on 20 November: A14 (the Wound penalty), B02 (actual and catalogue price), B04 (Blind's line under Armor TN) and B14 (Jigoku's total). All four use one pattern. The sheet shows the figure that applies, and then the arithmetic from your current values. The reasons and page references sit behind the standard i. No number changes. Every picture is the live app in a test browser, and the proposed pictures have the change applied only in that browser. Nothing is built until you approve.</p>
+  <p class="meta">Live build <code>921f3ac9…6150</code>, 17,718,601 bytes, <code>main</code> at <code>3b499a88</code> (Release 15a live). Captured 20 November 2026 in the project's QA Chromium at 390 × 844 (phone, touch) and 1440 × 1000 (laptop). Test characters: the audit's dense Kuni Shugenja, with only the entries each finding needs (named in each section). No page errors at either size.</p>
+</header>
+
+<section id="summary">
+  <span class="tag">At a glance</span>
+  <h2>The four units</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Unit</th><th>Today</th><th>Proposed</th></tr>
+    <tr><td>A14</td><td class="t">"Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3)". The +5 reads like Low Pain Threshold's +5, and the window under it says Nicked is +3. The roll preview shows two Wound Penalty rows.</td><td class="n">"Nicked — TN of all rolls +5", with an i. Its window lists Nicked +3, Low Pain Threshold +5, Strength of the Earth −3 and the total, +5. The roll preview has one row: "−5 to total — Nicked 3 + Low Pain Threshold 5 − Strength of the Earth 3".</td></tr>
+    <tr><td>B02</td><td class="t">Large says "Crab price: 3 XP (catalogue 4)." Social Position under Blissful Betrothal (6 → 4) and a Kharmic Tie to your spouse (3 → 1) show only the lower number, with no note.</td><td class="n">Every row whose price another entry changed says "Actual 4 XP · catalogue 6 XP", with an i. Its window lists the catalogue price, each change with its page, and the actual price.</td></tr>
+    <tr><td>B04</td><td class="t">Quick Access shows "Armor TN 7" with "Blind: Reflexes 2 + 5 = 7" under it. The Combat card's ⓘ gives the general formula and never mentions Blind.</td><td class="n">Quick Access shows "Armor TN 7" with an i. That i and the Combat card's ⓘ show one breakdown: the base (Blind: Reflexes 2 + 5), the Armor TN Bonus and the total.</td></tr>
+    <tr><td>B14</td><td class="t">"+8 to total — Lost: twice Taint Rank 4" in the roll preview, and "Adding 8 (Taint Rank 4, doubled: Lost)." on the card.</td><td class="n">"+8 to total — Taint Rank 4 × 2 (Lost)" and "Adding +8 — Taint Rank 4 × 2 (Lost).", built from your current Taint Rank and the Lost tick.</td></tr>
+  </table></div>
+  <p>All four are screen-only: they change wording and add an i, and change no number. Proposed names, each with its own folder, switch, harness, remover and removal-chain entry after A19.1, in the group folder <b>G1 — Totals and Their Breakdowns</b> under Release 15b: <b>A14 — One Net Wound Penalty</b> (marker <code>PART H PHASE 15.2.1</code>), <b>B02 — Actual and Catalogue Price</b> (<code>15.2.2</code>), <b>B04 — One Armor TN Breakdown</b> (<code>15.2.3</code>) and <b>B14 — Jigoku's Total, Then Its Arithmetic</b> (<code>15.2.4</code>).</p>
+</section>
+
+<section id="a14">
+  <span class="tag">A14 · your note on check W2.3, 8 October · Q1</span>
+  <h2>Explain the Wound penalty once</h2>
+  <p>Your two-entry example: Low Pain Threshold (Disadvantage) and Strength of the Earth (Advantage) together, the character Nicked. Earth 2, campaign multiplier 2, 12 of 38 wound points. You wrote that the sum was right but confusing: Nicked's own 3, then +5 and −3, net +5.</p>
+
+  <h3>The Wounds line on the Combat page</h3>
+  <div class="stack">
+    <figure><img src="{{a14-laptop-today-track}}" alt="Today: Nicked — TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3) — 12 of 38 wound points"><figcaption><span class="t">Today.</span> The adjusters sit in brackets after the total, but the rank's own +3 is missing.</figcaption></figure>
+    <figure><img src="{{a14-laptop-proposed-track}}" alt="Proposed: Nicked — TN of all rolls +5 — 12 of 38 wound points, then an i"><figcaption><span class="n">Proposed.</span> One figure, the one that applies, then the i.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{a14-phone-today-info}}" alt="Today's window from the track: Nicked, TN of all rolls +5 (Low Pain Threshold +5, Strength of the Earth −3), then 'Increase the TN of all rolls made by +3 while Nicked.'"><figcaption><span class="t">Today, a tap on the track.</span> The heading says +5, and the rule under it says +3.</figcaption></figure>
+    <figure><img src="{{a14-phone-proposed-info}}" alt="Proposed window: Nicked +3 (Wound Rank penalty), Low Pain Threshold +5 (Disadvantage, Core Rulebook p.160), Strength of the Earth −3 (Advantage, Core Rulebook p.154), TN of all rolls +5, then the rule"><figcaption><span class="n">Proposed, the i (or a tap on the track).</span> The rank's own +3, each entry signed with its page, the total, then the rank's rule. A tap on another level shows that level's sums.</figcaption></figure>
+  </div>
+
+  <h3>The roll preview</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{a14-phone-today-preview}}" alt="Today's preview: Wound Penalty −5 to total — Nicked; then a second Wound Penalty row: 3 → 5 (Low Pain Threshold +5, Strength of the Earth −3) — already included in the Wound Penalty"><figcaption><span class="t">Today.</span> Two Wound Penalty rows. The second one only explains the first.</figcaption></figure>
+    <figure><img src="{{a14-phone-proposed-preview}}" alt="Proposed preview: one row, Wound Penalty −5 to total — Nicked 3 + Low Pain Threshold 5 − Strength of the Earth 3"><figcaption><span class="n">Proposed.</span> One row: the amount, then the sum that makes it.</figcaption></figure>
+  </div>
+
+  <h3>Quick Access</h3>
+  <div class="pair">
+    <figure><img src="{{a14-laptop-today-qa}}" alt="Today: Quick Access Wounds repeats the line with its brackets"><figcaption><span class="t">Today.</span> Quick Access repeats the Wounds line word for word.</figcaption></figure>
+    <figure><img src="{{a14-laptop-proposed-qa}}" alt="Proposed: Quick Access Wounds, Nicked — TN of all rolls +5 — 12 of 38 wound points, with an i"><figcaption><span class="n">Proposed.</span> It still repeats the line, so the net figure appears here too, with an i that opens the same window.</figcaption></figure>
+  </div>
+
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Changes</td><td>The Wounds line, each level's name for screen readers, the window a level opens, Quick Access and the roll preview's Wound Penalty row: one figure each, and the sum behind the i or after the dash.</td></tr>
+    <tr><td>Stays</td><td>The arithmetic and its floors (Low Pain Threshold +5 on every rank with a penalty, Healthy stays at none; Strength of the Earth −3, never below none); the thresholds; Bad Health and Permanent Wound, which change thresholds rather than penalties, and keep their notes on their cards.</td></tr>
+    <tr><td>No entries</td><td>A character without these entries sees no change, because the line already shows one number. The i appears only when an entry changes the penalty.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve A14 as shown.</b> The figure you play with comes first, everywhere it appears. The sum is one tap away and starts from the rank's own penalty, so +3, +5 and −3 add up on screen.</div>
+</section>
+
+<section id="b02">
+  <span class="tag">B02 · FT-13, your note of 8 October · Q1</span>
+  <h2>Actual and catalogue price, the same way on every row</h2>
+  <p>Test character: Blissful Betrothal with "Your Kharmic Tie is to your spouse" ticked; Social Position (catalogue 6); a Kharmic Tie at Rank 3 (3); Large at the Crab price (catalogue 4, Crab 3, Core Rulebook p.151). Manage, Advantages.</p>
+  <div class="pair phonepair">
+    <figure><img src="{{b02-phone-today-rows}}" alt="Today: Social Position 4 with no note; Kharmic Tie 1 with no note; Large 3 with 'Crab price: 3 XP (catalogue 4).'"><figcaption><span class="t">Today.</span> Social Position and Kharmic Tie show only the lower price. Large has a note in a different wording.</figcaption></figure>
+    <figure><img src="{{b02-phone-proposed-rows}}" alt="Proposed: under each name, 'Actual 4 XP · catalogue 6 XP', 'Actual 1 XP · catalogue 3 XP', 'Actual 3 XP · catalogue 4 XP', each with an i"><figcaption><span class="n">Proposed.</span> One line under the name and cost of each changed row, with an i.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{b02-laptop-proposed-info-sp}}" alt="Social Position window: Catalogue price 6 XP; Blissful Betrothal −2, 2 less, never below 1, Core Rulebook p.146; Actual price 4 XP"><figcaption><span class="n">Proposed, Social Position's i.</span> The Kharmic Tie reads the same, with "Your Tie is to your spouse".</figcaption></figure>
+    <figure><img src="{{b02-laptop-proposed-info-large}}" alt="Large window: Catalogue price 4 XP; Crab price −1, Core Rulebook p.151; Actual price 3 XP"><figcaption><span class="n">Proposed, Large's i.</span> The Clan price is in the same form.</figcaption></figure>
+  </div>
+  <div class="stack">
+    <figure><img src="{{b02-laptop-proposed-rows}}" alt="Laptop proposed: the three rows with their Actual · catalogue lines"><figcaption><span class="n">Proposed, laptop.</span></figcaption></figure>
+  </div>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Rows</td><td>Every price another entry changes. That covers the Clan, family and School-type prices (39 entries, Feature 4.5.25) and Blissful Betrothal's four (Gentry, a Kharmic Tie to your spouse, Social Position, Wealthy). A row changed by both lists both, in the order applied. A Disadvantage worth more to a Clan reads the same way.</td></tr>
+    <tr><td>Numbers</td><td>Read from the sheet's price engines, never worked out again here. Prices are as they are today.</td></tr>
+    <tr><td>Stays</td><td>The note for a cost you typed ("Cost set by hand. Book price: …"), the note for a price fixed when bought that the book has since changed ("Fixed when bought: …"), and Blissful Betrothal's own note on its card. Each of these says something different from the new line.</td></tr>
+    <tr><td>Where</td><td>Where today's Clan note shows: under the row, in Manage and in Play.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve B02 as shown.</b> You can see at a glance which costs are discounted and by how much. The reason, with its page, is one tap away, in the same form for every kind of discount.</div>
+</section>
+
+<section id="b04">
+  <span class="tag">B04 · FT-20 · Q8</span>
+  <h2>Blind's line under Armor TN</h2>
+  <p>Test character: Blind (Disadvantage), Reflexes 2, no armour. Blind's base is Reflexes + 5 = 7, not Reflexes × 5 + 5 (Core Rulebook p.156). Play, Combat page.</p>
+  <div class="pair">
+    <figure><img src="{{b04-laptop-today-qa}}" alt="Today: Quick Access Armor TN 7, then 'Blind: Reflexes 2 + 5 = 7'"><figcaption><span class="t">Today.</span> The rule sits under the value and competes with it.</figcaption></figure>
+    <figure><img src="{{b04-laptop-proposed-qa}}" alt="Proposed: Quick Access Armor TN 7 with an i"><figcaption><span class="n">Proposed.</span> The value and an i, like Wounds above it.</figcaption></figure>
+  </div>
+  <div class="trio">
+    <figure><img src="{{b04-laptop-today-info}}" alt="Today: the Combat card's TN and Initiative window: Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus."><figcaption><span class="t">Today, the Combat card's ⓘ.</span> The general formula only. For a Blind character it is wrong.</figcaption></figure>
+    <figure><img src="{{b04-laptop-proposed-info}}" alt="Proposed: Armor TN window: Base: Blind, Reflexes 2 + 5 = 7, with its page; Armor TN Bonus +0; Armor TN 7"><figcaption><span class="n">Proposed, Quick Access's i.</span> Each part of the total, with Blind's page.</figcaption></figure>
+    <figure><img src="{{b04-laptop-proposed-combat-info}}" alt="Proposed: the Combat card's window shows the same breakdown above its formula"><figcaption><span class="n">Proposed, the Combat card's ⓘ.</span> The same breakdown above the formula.</figcaption></figure>
+  </div>
+  <div class="stack">
+    <figure><img src="{{b04-laptop-today-card}}" alt="The Combat card's Armor and TN section: under Base TN to be Hit, 'Blind: Reflexes 2 + 5 = 7 (Core Rulebook p.156)'"><figcaption><b>Unchanged:</b> the line under Base TN on the Combat card, from your call of 9 October. This is the one place the rule stays in view.</figcaption></figure>
+  </div>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Breakdown</td><td>The base (Blind: Reflexes + 5 with its page, or Reflexes × 5 + 5), the Armor TN Bonus with the armour's name, then each other bonus in effect, by name: stance, a Void Point, two weapons, Way of the Dragon, Shiba's gift, Weakness. Then the total. The scratch version groups the others into one row; this character has none.</td></tr>
+    <tr><td>Without Blind</td><td>The same breakdown, with the base "Reflexes 3 × 5 + 5". Quick Access's i is there for every character.</td></tr>
+    <tr><td>Stays</td><td>Every number; the Combat card's Blind line; the Initiative part of the Combat window.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve B04 as shown.</b> Quick Access keeps the figure you play with. The whole sum is one tap away and is correct for Blind, which the Combat window's formula is not today.</div>
+</section>
+
+<section id="b14">
+  <span class="tag">B14 · the A01–A16 device round's Lost wording · Q8</span>
+  <h2>Jigoku's total, then its arithmetic</h2>
+  <p>Test character: Touch of the Spirit Realms (Jigoku) with Lost ticked, Taint Rank 4. The Advantage adds your Taint Rank to attack rolls and to rolls using a Physical Trait, twice when Lost (Core Rulebook pp.154–155). Shown: a Defense roll (Reflexes) and the card in Play. As you approved, this stays in 15b. It is not a resisting row.</p>
+  <div class="pair phonepair">
+    <figure><img src="{{b14-phone-today-preview}}" alt="Today's preview: Touch of the Spirit Realms (Jigoku) +8 to total — Lost: twice Taint Rank 4"><figcaption><span class="t">Today.</span> The condition comes before the sum: "Lost: twice Taint Rank 4".</figcaption></figure>
+    <figure><img src="{{b14-phone-proposed-preview}}" alt="Proposed preview: Touch of the Spirit Realms (Jigoku) +8 to total — Taint Rank 4 × 2 (Lost)"><figcaption><span class="n">Proposed.</span> The total, then the sum, then why it is doubled.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{b14-laptop-today-card}}" alt="Today's card: Adding 8 (Taint Rank 4, doubled: Lost)."><figcaption><span class="t">Today, the card.</span></figcaption></figure>
+    <figure><img src="{{b14-laptop-proposed-card}}" alt="Proposed card: Adding +8 — Taint Rank 4 × 2 (Lost)."><figcaption><span class="n">Proposed, the card.</span> The same form as the preview.</figcaption></figure>
+  </div>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Wording</td><td>Lost: "+8 to total — Taint Rank 4 × 2 (Lost)", and on the card "Adding +8 — Taint Rank 4 × 2 (Lost)." Not Lost: "+4 to total — Taint Rank 4", and "Adding +4 — Taint Rank 4." Built from your current Taint Rank and the Lost tick, never fixed numbers.</td></tr>
+    <tr><td>Stays</td><td>The formula and when it applies (attack rolls and Physical-Trait rolls); Taint Rank 0 adds nothing and keeps its flag; the Lost tick. Cursed by the Realm (Jigoku), the Disadvantage, is not touched: its penalty is a resisting row, left for the resistance phase.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve B14 as shown.</b> It is the same pattern as A14's preview row: the amount, then the sum from your values.</div>
+</section>
+
+<section id="decide">
+  <span class="tag">Your decisions</span>
+  <h2>Four short questions</h2>
+  <div class="decide">
+    <ol>
+      <li><b>A14, the Wound penalty once:</b> approve as shown (recommended), revise, or drop.</li>
+      <li><b>B02, actual and catalogue price:</b> approve as shown (recommended), revise, or drop.</li>
+      <li><b>B04, Blind under Armor TN:</b> approve as shown (recommended), revise, or drop.</li>
+      <li><b>B14, Jigoku's total:</b> approve as shown (recommended), revise, or drop.</li>
+    </ol>
+    <p>Approval permits the build and preview stage only. Each unit gets its own stacked branch, light checks and one code review. Then comes your device round, with Accept, Revise or Remove for each unit. Each unit is also checked with all of 15a removed, as you approved. Qualification and go-live come after that, and only on your word.</p>
+  </div>
+</section>
+</div>
+
