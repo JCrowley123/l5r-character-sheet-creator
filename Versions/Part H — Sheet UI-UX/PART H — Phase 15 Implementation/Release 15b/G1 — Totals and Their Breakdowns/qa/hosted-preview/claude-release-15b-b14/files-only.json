@@ -1,0 +1,22 @@
+{
+  "commit": "e60f7ed2911caee888ba52662b9fb47c8f006676",
+  "ref": "claude/release-15b-b14",
+  "url": "https://claude-release-15b-b14.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-21T00:44:41.146691+00:00",
+  "source_sha256": "65b81f74b2dd82cea0ea334fb92c0da7936ae33b01e9008a01d5533df4ef5939",
+  "page_sha256": "28c7934b4c7c6e45bd062eb331d29a8b5ed192defbd0a2bda0b41af48e06ead9",
+  "page_bytes": 17747842,
+  "service_worker_build": "8df1790a449d94c7",
+  "units": [
+    "A14",
+    "B04",
+    "B14"
+  ],
+  "expected": {
+    "harnesses": 50,
+    "checks": 3225
+  },
+  "harnesses": {},
+  "files_only": true,
+  "passed": true
+}

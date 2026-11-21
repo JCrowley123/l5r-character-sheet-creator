@@ -1,0 +1,104 @@
+Checking deployed files: net-wound-harness.js
+Checking deployed files: armor-tn-harness.js
+Checking deployed files: jigoku-total-harness.js
+Checking deployed files: kharmic-row-harness.js
+Checking deployed files: set-rules-harness.js
+Checking deployed files: ancfix-harness.js
+Checking deployed files: wound-multiplier-harness.js
+Checking deployed files: spell-slot-accounting-harness.js
+Checking deployed files: void-raise-harness.js
+Checking deployed files: adv-config-expansion-harness.js
+Checking deployed files: adv-config-harness.js
+Checking deployed files: disadv-realm-harness.js
+Checking deployed files: named-advantages-harness.js
+Checking deployed files: court-servant-harness.js
+Checking deployed files: roll-declarations-harness.js
+Checking deployed files: heart-vengeance-harness.js
+Checking deployed files: paragon-harness.js
+Checking deployed files: soul-artistry-harness.js
+Checking deployed files: disadv-config-harness.js
+Checking deployed files: void-versatility-harness.js
+Checking deployed files: fortune-blessing-harness.js
+Checking deployed files: naishou-citizen-harness.js
+Checking deployed files: dark-paragon-harness.js
+Checking deployed files: spirit-realms-harness.js
+Checking deployed files: situational-entries-harness.js
+Checking deployed files: situational-buttons-harness.js
+Checking deployed files: wound-entries-harness.js
+Checking deployed files: automatic-entries-harness.js
+Checking deployed files: checks-conditions-harness.js
+Checking deployed files: damage-sessions-xp-harness.js
+Checking deployed files: void-initiative-harness.js
+Checking deployed files: blind-note-harness.js
+Checking deployed files: weakness-hotei-harness.js
+Checking deployed files: adv-config-ux-harness.js
+Checking deployed files: shifting-enemy-harness.js
+Checking deployed files: disadv-doubt-harness.js
+Checking deployed files: alternate-paths-harness.js
+Checking deployed files: ancestors-harness.js
+Checking deployed files: advantages-harness.js
+Checking deployed files: roll-preview-harness.js
+Checking deployed files: roll-breakdown-harness.js
+Checking deployed files: wound-bar-harness.js
+Checking deployed files: info-pattern-harness.js
+Checking deployed files: inline-rules-harness.js
+Checking deployed files: court-badges-harness.js
+Checking deployed files: picker-info-harness.js
+Checking deployed files: void-spend-undo-harness.js
+Checking deployed files: damage-row-harness.js
+Checking deployed files: skill-trait-choice-harness.js
+Checking deployed files: quick-access-sidebar-harness.js
+Checking deployed files: clan-theming-harness.js
+PASS A14 — One Net Wound Penalty/net-wound-harness.js 17/17
+PASS B04 — One Armor TN Breakdown/armor-tn-harness.js 12/12
+PASS B14 — Jigoku's Total, Then Its Arithmetic/jigoku-total-harness.js 10/10
+PASS B17 — One Row for Kharmic Tie/kharmic-row-harness.js 13/13
+PASS BUGFIX — Advantage Set Rules/set-rules-harness.js 50/50
+PASS BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/ancfix-harness.js 28/28
+PASS BUGFIX — Campaign Wound Multipliers/wound-multiplier-harness.js 31/31
+PASS BUGFIX — Spell Slot Accounting/spell-slot-accounting-harness.js 52/52
+PASS BUGFIX — Void Raise Not on Initiative/void-raise-harness.js 12/12
+PASS PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-expansion-harness.js 48/48
+PASS PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-harness.js 51/51
+PASS PART I — Phase 4.5.10 Cursed by the Realm/disadv-realm-harness.js 62/62
+PASS PART I — Phase 4.5.13 Named Advantages/named-advantages-harness.js 136/136
+PASS PART I — Phase 4.5.14 Darling of the Court and Servant/court-servant-harness.js 225/225
+PASS PART I — Phase 4.5.15 Roll Declaration Registry/roll-declarations-harness.js 53/53
+PASS PART I — Phase 4.5.16 Heart of Vengeance/heart-vengeance-harness.js 91/91
+PASS PART I — Phase 4.5.18 Paragon/paragon-harness.js 80/80
+PASS PART I — Phase 4.5.19 Soul of Artistry/soul-artistry-harness.js 92/92
+PASS PART I — Phase 4.5.2 Disadvantages/disadv-config-harness.js 163/163
+PASS PART I — Phase 4.5.20 Void Versatility/void-versatility-harness.js 66/66
+PASS PART I — Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js 77/77
+PASS PART I — Phase 4.5.22 Naishou Citizen/naishou-citizen-harness.js 36/36
+PASS PART I — Phase 4.5.23 Dark Paragon/dark-paragon-harness.js 67/67
+PASS PART I — Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js 50/50
+PASS PART I — Phase 4.5.27 Situational Roll Entries/situational-entries-harness.js 117/117
+PASS PART I — Phase 4.5.28 Situational Entry Buttons and Gates/situational-buttons-harness.js 71/71
+PASS PART I — Phase 4.5.29 Wound Entries/wound-entries-harness.js 45/45
+PASS PART I — Phase 4.5.30 Automatic Roll Entries/automatic-entries-harness.js 41/41
+PASS PART I — Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js 101/101
+PASS PART I — Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js 69/69
+PASS PART I — Phase 4.5.33 Void and Initiative Entries/void-initiative-harness.js 44/44
+PASS PART I — Phase 4.5.34 Blind Armor TN Note/blind-note-harness.js 11/11
+PASS PART I — Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js 45/45
+PASS PART I — Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js 28/28
+PASS PART I — Phase 4.5.41 A Changing Sworn Enemy/shifting-enemy-harness.js 13/13
+PASS PART I — Phase 4.5.9 Doubt/disadv-doubt-harness.js 38/38
+PASS PART I — Phase 4.6 Alternate Paths/alternate-paths-harness.js 175/175
+PASS PART I — Phase 4.8 Ancestors/ancestors-harness.js 349/349
+PASS PART K — Phase 12.5 Play Mode Advantages and Disadvantages/advantages-harness.js 212/212
+PASS PART G — Phase 3 Smart Roll Preview/roll-preview-harness.js 50/50
+PASS PART G — Phase 4 Explain This Roll/roll-breakdown-harness.js 22/22
+PASS PART H — Phase 1.6 Combat Tab Streamlining/wound-bar-harness.js 23/23
+PASS A04 — One Information Pattern/info-pattern-harness.js 35/35
+PASS A04.1 — One Way to Show Choices in Pickers/inline-rules-harness.js 56/56
+PASS A15 — Court Badges/court-badges-harness.js 33/33
+PASS A16 — No Bottom i in the Seven Pickers/picker-info-harness.js 50/50
+PASS A19 — Undo the Last Void Spend/void-spend-undo-harness.js 25/25
+PASS A19.1 — The Damage Row Fits a Phone/damage-row-harness.js 9/9
+PASS A20 — A Trait for One Skill Roll/skill-trait-choice-harness.js 18/18
+PASS PART H — Phase 2 Quick-Access Sidebar/quick-access-sidebar-harness.js 19/19
+PASS PART H — Phase 9 Clan-Themed Look/clan-theming-harness.js 17/17
+units in the page: A14, B04, B14, B17 | page 0036400e1138 17757586 | source 5ac767c6c368
+PREVIEW PASSED: 3238/3238 on the deployed files

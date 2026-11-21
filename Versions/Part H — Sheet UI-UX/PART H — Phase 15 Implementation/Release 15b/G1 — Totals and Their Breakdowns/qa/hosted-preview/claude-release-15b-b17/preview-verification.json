@@ -1,0 +1,432 @@
+{
+  "commit": "e2c0971e11b711e0ea9b62fa82c982f5967b72ab",
+  "ref": "claude/release-15b-b17",
+  "url": "https://claude-release-15b-b17.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-21T00:44:22.372045+00:00",
+  "source_sha256": "5ac767c6c3680126cfe664aef41e7312d98f24eee842ec679e38ed664dde574d",
+  "page_sha256": "0036400e1138471fb883e1d58efc47b0b8d47a6657104a82b86f3223778badc5",
+  "page_bytes": 17757586,
+  "service_worker_build": "40a5ee3f5b408a43",
+  "units": [
+    "A14",
+    "B04",
+    "B14",
+    "B17"
+  ],
+  "expected": {
+    "harnesses": 51,
+    "checks": 3238
+  },
+  "harnesses": {
+    "A14 \u2014 One Net Wound Penalty/net-wound-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "B04 \u2014 One Armor TN Breakdown/armor-tn-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "B14 \u2014 Jigoku's Total, Then Its Arithmetic/jigoku-total-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "B17 \u2014 One Row for Kharmic Tie/kharmic-row-harness.js": {
+      "counts": [
+        "13",
+        "13"
+      ],
+      "expected": 13,
+      "passed": true
+    },
+    "BUGFIX \u2014 Advantage Set Rules/set-rules-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "BUGFIX \u2014 Ancestor Corrections (Void Offer, Info Button, Clan Picker)/ancfix-harness.js": {
+      "counts": [
+        "28",
+        "28"
+      ],
+      "expected": 28,
+      "passed": true
+    },
+    "BUGFIX \u2014 Campaign Wound Multipliers/wound-multiplier-harness.js": {
+      "counts": [
+        "31",
+        "31"
+      ],
+      "expected": 31,
+      "passed": true
+    },
+    "BUGFIX \u2014 Spell Slot Accounting/spell-slot-accounting-harness.js": {
+      "counts": [
+        "52",
+        "52"
+      ],
+      "expected": 52,
+      "passed": true
+    },
+    "BUGFIX \u2014 Void Raise Not on Initiative/void-raise-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-expansion-harness.js": {
+      "counts": [
+        "48",
+        "48"
+      ],
+      "expected": 48,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-harness.js": {
+      "counts": [
+        "51",
+        "51"
+      ],
+      "expected": 51,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.10 Cursed by the Realm/disadv-realm-harness.js": {
+      "counts": [
+        "62",
+        "62"
+      ],
+      "expected": 62,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.13 Named Advantages/named-advantages-harness.js": {
+      "counts": [
+        "136",
+        "136"
+      ],
+      "expected": 136,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.14 Darling of the Court and Servant/court-servant-harness.js": {
+      "counts": [
+        "225",
+        "225"
+      ],
+      "expected": 225,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.15 Roll Declaration Registry/roll-declarations-harness.js": {
+      "counts": [
+        "53",
+        "53"
+      ],
+      "expected": 53,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.16 Heart of Vengeance/heart-vengeance-harness.js": {
+      "counts": [
+        "91",
+        "91"
+      ],
+      "expected": 91,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.18 Paragon/paragon-harness.js": {
+      "counts": [
+        "80",
+        "80"
+      ],
+      "expected": 80,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.19 Soul of Artistry/soul-artistry-harness.js": {
+      "counts": [
+        "92",
+        "92"
+      ],
+      "expected": 92,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.2 Disadvantages/disadv-config-harness.js": {
+      "counts": [
+        "163",
+        "163"
+      ],
+      "expected": 163,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.20 Void Versatility/void-versatility-harness.js": {
+      "counts": [
+        "66",
+        "66"
+      ],
+      "expected": 66,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js": {
+      "counts": [
+        "77",
+        "77"
+      ],
+      "expected": 77,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.22 Naishou Citizen/naishou-citizen-harness.js": {
+      "counts": [
+        "36",
+        "36"
+      ],
+      "expected": 36,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.23 Dark Paragon/dark-paragon-harness.js": {
+      "counts": [
+        "67",
+        "67"
+      ],
+      "expected": 67,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.27 Situational Roll Entries/situational-entries-harness.js": {
+      "counts": [
+        "117",
+        "117"
+      ],
+      "expected": 117,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates/situational-buttons-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.29 Wound Entries/wound-entries-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.30 Automatic Roll Entries/automatic-entries-harness.js": {
+      "counts": [
+        "41",
+        "41"
+      ],
+      "expected": 41,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js": {
+      "counts": [
+        "101",
+        "101"
+      ],
+      "expected": 101,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js": {
+      "counts": [
+        "69",
+        "69"
+      ],
+      "expected": 69,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.33 Void and Initiative Entries/void-initiative-harness.js": {
+      "counts": [
+        "44",
+        "44"
+      ],
+      "expected": 44,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.34 Blind Armor TN Note/blind-note-harness.js": {
+      "counts": [
+        "11",
+        "11"
+      ],
+      "expected": 11,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js": {
+      "counts": [
+        "28",
+        "28"
+      ],
+      "expected": 28,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy/shifting-enemy-harness.js": {
+      "counts": [
+        "13",
+        "13"
+      ],
+      "expected": 13,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.9 Doubt/disadv-doubt-harness.js": {
+      "counts": [
+        "38",
+        "38"
+      ],
+      "expected": 38,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.6 Alternate Paths/alternate-paths-harness.js": {
+      "counts": [
+        "175",
+        "175"
+      ],
+      "expected": 175,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
+      "counts": [
+        "349",
+        "349"
+      ],
+      "expected": 349,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages/advantages-harness.js": {
+      "counts": [
+        "212",
+        "212"
+      ],
+      "expected": 212,
+      "passed": true
+    },
+    "PART G \u2014 Phase 3 Smart Roll Preview/roll-preview-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART G \u2014 Phase 4 Explain This Roll/roll-breakdown-harness.js": {
+      "counts": [
+        "22",
+        "22"
+      ],
+      "expected": 22,
+      "passed": true
+    },
+    "PART H \u2014 Phase 1.6 Combat Tab Streamlining/wound-bar-harness.js": {
+      "counts": [
+        "23",
+        "23"
+      ],
+      "expected": 23,
+      "passed": true
+    },
+    "A04 \u2014 One Information Pattern/info-pattern-harness.js": {
+      "counts": [
+        "35",
+        "35"
+      ],
+      "expected": 35,
+      "passed": true
+    },
+    "A04.1 \u2014 One Way to Show Choices in Pickers/inline-rules-harness.js": {
+      "counts": [
+        "56",
+        "56"
+      ],
+      "expected": 56,
+      "passed": true
+    },
+    "A15 \u2014 Court Badges/court-badges-harness.js": {
+      "counts": [
+        "33",
+        "33"
+      ],
+      "expected": 33,
+      "passed": true
+    },
+    "A16 \u2014 No Bottom i in the Seven Pickers/picker-info-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "A19 \u2014 Undo the Last Void Spend/void-spend-undo-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "A19.1 \u2014 The Damage Row Fits a Phone/damage-row-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "A20 \u2014 A Trait for One Skill Roll/skill-trait-choice-harness.js": {
+      "counts": [
+        "18",
+        "18"
+      ],
+      "expected": 18,
+      "passed": true
+    },
+    "PART H \u2014 Phase 2 Quick-Access Sidebar/quick-access-sidebar-harness.js": {
+      "counts": [
+        "19",
+        "19"
+      ],
+      "expected": 19,
+      "passed": true
+    },
+    "PART H \u2014 Phase 9 Clan-Themed Look/clan-theming-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}
