@@ -360,6 +360,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999999999993-feat-net-wound-penalty.js"),
     Release("PART H — Phase 15 Implementation/Release 15b/B04 — One Armor TN Breakdown",
             fragment="src/sheet/209.9999999999999999994-feat-armor-tn-breakdown.js"),
+    Release("PART H — Phase 15 Implementation/Release 15b/B14 — Jigoku's Total, Then Its Arithmetic",
+            fragment="src/sheet/209.9999999999999999995-feat-jigoku-total-first.js"),
 )
 
 

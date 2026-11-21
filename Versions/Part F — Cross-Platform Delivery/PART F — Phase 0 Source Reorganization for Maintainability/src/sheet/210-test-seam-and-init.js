@@ -1025,6 +1025,9 @@
   // PART H PHASE 15.2.3 BEGIN armor-tn-breakdown-seam
   if(typeof AT15 === 'object' && AT15) Object.assign(window.__L5R_TEST__, {AT15, ARMOR_TN_BREAKDOWN_ENABLED});
   // END AT15 armor-tn-breakdown-seam
+  // PART H PHASE 15.2.4 BEGIN jigoku-total-first-seam
+  if(typeof JK15 === 'object' && JK15) Object.assign(window.__L5R_TEST__, {JK15, JIGOKU_TOTAL_FIRST_ENABLED});
+  // END JK15 jigoku-total-first-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

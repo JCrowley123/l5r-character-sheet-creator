@@ -1,0 +1,230 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15b\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Advantage Set Rules|Ancestor Corrections|Spell Slot Accounting|Void Raise Not on Initiative|Phase 4\\.5 Modal-Configured|Phase 4\\.5\\.10 Cursed|Phase 4\\.5\\.15 Roll Decl|Phase 4\\.5\\.16 Heart|Phase 4\\.5\\.19 Soul|Phase 4\\.5\\.2 Disadv|Phase 4\\.5\\.20 Void Vers|Phase 4\\.5\\.21 Seven|Phase 4\\.5\\.23 Dark|Phase 4\\.5\\.24 Touch|Phase 4\\.5\\.27 Situational|Phase 4\\.5\\.28 Situational|Phase 4\\.5\\.30 Automatic|Phase 4\\.5\\.33 Void and|Phase 4\\.5\\.9 Doubt|Phase 4\\.6 Alternate|Phase 4\\.8 Ancestors|Phase 12\\.5 Play Mode Adv|Phase 3 Smart Roll|Phase 4 Explain This Roll|A16 — No Bottom|A19 — Undo|A20 — A Trait",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A19 — Undo the Last Void Spend/qa/void-spend-undo-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 55,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A20 — A Trait for One Skill Roll/qa/skill-trait-choice-harness.js",
+   "passed": 18,
+   "total": 18,
+   "status": 0,
+   "seconds": 16,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/qa/picker-info-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Advantage Set Rules/qa/set-rules-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Void Raise Not on Initiative/qa/void-raise-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-harness.js",
+   "passed": 51,
+   "total": 51,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-expansion-harness.js",
+   "passed": 48,
+   "total": 48,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.2 Disadvantages/qa/disadv-config-harness.js",
+   "passed": 163,
+   "total": 163,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 3 Smart Roll Preview/qa/roll-preview-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 4 Explain This Roll/qa/roll-breakdown-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.9 Doubt/qa/disadv-doubt-harness.js",
+   "passed": 38,
+   "total": 38,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.10 Cursed by the Realm/qa/disadv-realm-harness.js",
+   "passed": 62,
+   "total": 62,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+   "passed": 53,
+   "total": 53,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.16 Heart of Vengeance/qa/heart-vengeance-harness.js",
+   "passed": 91,
+   "total": 91,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.19 Soul of Artistry/qa/soul-artistry-harness.js",
+   "passed": 92,
+   "total": 92,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.20 Void Versatility/qa/void-versatility-harness.js",
+   "passed": 66,
+   "total": 66,
+   "status": 0,
+   "seconds": 18,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js",
+   "passed": 77,
+   "total": 77,
+   "status": 0,
+   "seconds": 18,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.23 Dark Paragon/qa/dark-paragon-harness.js",
+   "passed": 67,
+   "total": 67,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.24 Touch of the Spirit Realms/qa/spirit-realms-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 15,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Slot Accounting/qa/spell-slot-accounting-harness.js",
+   "passed": 52,
+   "total": 52,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.5 Play Mode Advantages and Disadvantages/qa/advantages-harness.js",
+   "passed": 212,
+   "total": 212,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.8 Ancestors/qa/ancestors-harness.js",
+   "passed": 349,
+   "total": 349,
+   "status": 0,
+   "seconds": 36,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/qa/ancfix-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.6 Alternate Paths/qa/alternate-paths-harness.js",
+   "passed": 175,
+   "total": 175,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js",
+   "passed": 117,
+   "total": 117,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/situational-buttons-harness.js",
+   "passed": 71,
+   "total": 71,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js",
+   "passed": 41,
+   "total": 41,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.33 Void and Initiative Entries/qa/void-initiative-harness.js",
+   "passed": 44,
+   "total": 44,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  }
+ ]
+}

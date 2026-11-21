@@ -40,3 +40,9 @@ See the README's measured QA for the byte-identical removal, the 4.5.15 refusal 
 ## Release 15a A16 — no bottom i in the picker (7 November 2026)
 
 Release 15a A16 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/`), under the owner's ruling Q3, stops drawing this release's bottom information button inside the configuration window: its script removes `#advConfigGrid > .tr4524-info` whenever the picker draws it, while `body.bi15-on` is set (its stylesheet keeps it from being painted in the moment before). It calls nothing here and changes nothing in this release's fragment. The row's i on the Advantages list (the same class, outside the window) is unaffected, and A16's harness measures that every sentence of the bottom panel is still on the row or behind its i after Confirm. A16 names `tr4524-info`, so this release's remover may refuse while A16 is present: remove A16 first (the removal chain does so in order).
+
+## Release 15b B14 — Jigoku's total first (21 November 2026)
+
+**A later unit now reads this release.** Release 15b B14 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B14 — Jigoku's Total, Then Its Arithmetic/`) wraps `TR4524.modifiers` and `TR4524.refresh` to word Jigoku's total first ("+8 to total — Taint Rank 4 × 2 (Lost)"; "Adding +8 — Taint Rank 4 × 2 (Lost)."). The figures are this release's own. This release's remover matches `TR4524` as its surface, so it refuses while B14 is present: **remove B14 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/spirit-realms-harness.js` is conditional on B14: while `JK15` is on the seam, `TR-JIGOKU-LOST` and `TR-LOST-TICK` expect B14's card line. It has the same ids and count, and with B14 removed every line runs as before.

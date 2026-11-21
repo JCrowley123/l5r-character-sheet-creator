@@ -1,0 +1,16 @@
+{
+ "unit": "Release 15b B14 (PART H PHASE 15.2.4)",
+ "pinned": "21 November 2026, before the first run",
+ "checks": [
+  "JK-SEAM-PHONE",
+  "JK-PREVIEW-LOST-PHONE",
+  "JK-CARD-LOST-PHONE",
+  "JK-TOTAL-AND-POOL-UNCHANGED-PHONE",
+  "JK-NOT-LOST-PHONE",
+  "JK-NO-TAINT-UNCHANGED-PHONE",
+  "JK-NO-ERRORS-PHONE",
+  "JK-PREVIEW-LOST-DESKTOP",
+  "JK-CARD-LOST-DESKTOP",
+  "JK-NO-ERRORS-DESKTOP"
+ ]
+}

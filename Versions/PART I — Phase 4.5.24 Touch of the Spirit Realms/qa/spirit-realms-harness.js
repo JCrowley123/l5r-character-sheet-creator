@@ -4,6 +4,11 @@
  * Shugenja 1 less (4, 7, 6 -- the last two an interpretation carrying a confirm-with-GM note).
  * School Skills come from the printed School rows; dice are counted on real rolls.
  * node spirit-realms-harness.js <sheet.html>
+ *
+ * Conditional on Release 15b B14 (PART H PHASE 15.2.4, Jigoku's total first), declared in B14's and this feature's
+ * ROLLBACK.md (21 November 2026): with B14 present Jigoku's card line reads "Adding +6 — Taint Rank 3 × 2 (Lost)."
+ * instead of "Adding 6 (Taint Rank 3, doubled: Lost).", so TR-JIGOKU-LOST and TR-LOST-TICK expect those words. The
+ * figures, the dice and every other check are unchanged. Same ids, same count; with B14 removed every line runs as before.
  */
 'use strict';
 const {chromium} = require('playwright');
@@ -18,6 +23,8 @@ function check(id, actual, expected = true) {
   console.log(`${pass ? 'PASS' : 'FAIL'} ${id}${pass ? '' : ` actual=${JSON.stringify(actual)} expected=${JSON.stringify(expected)}`}`);
 }
 let PAGE = null;
+let TOTAL_FIRST = false; // Release 15b B14 present (read once the page is ready)
+const lostLine = (total, taint) => TOTAL_FIRST ? 'Adding +' + total + ' — Taint Rank ' + taint + ' × 2 (Lost).' : 'Adding ' + total + ' (Taint Rank ' + taint + ', doubled: Lost).';
 async function closeAll(page) {
   await page.evaluate(() => {
     ['rollPreviewOverlay', 'rollModalOverlay', 'appConfirmOverlay', 'advConfigModalOverlay', 'stanceInfoOverlay']
@@ -99,6 +106,7 @@ async function main() {
     const errors = []; page.on('pageerror', e => errors.push(String(e)));
     await page.goto(pathToFileURL(path.resolve(process.argv[2])).href, {waitUntil:'domcontentloaded'});
     await page.waitForFunction(() => !!window.__L5R_TEST__);
+    TOTAL_FIRST = await page.evaluate(() => !!(window.__L5R_TEST__.JK15 && window.__L5R_TEST__.JK15.installed && window.__L5R_TEST__.JIGOKU_TOTAL_FIRST_ENABLED));
 
     await section('TR-START', async () => {
       check('TR-ENABLED', await page.evaluate(() => window.__L5R_TEST__.ADV_SPIRIT_REALMS_ENABLED));
@@ -229,7 +237,7 @@ async function main() {
       await setup(page, {adv:[tr('Jigoku', {lost:false})], taint:3});
       check('TR-JIGOKU-SCOPE', await jig(), [[3], [3], [3], [3], [], [], [], [], [], []]);
       await setup(page, {adv:[tr('Jigoku', {lost:true})], taint:3});
-      check('TR-JIGOKU-LOST', [(await mods(page, 'ATTACK', {skillName:'Kenjutsu', traitName:'Agility'})), (await row(page)).notes[0]], [[[0, 0, 6]], 'Adding 6 (Taint Rank 3, doubled: Lost).']);
+      check('TR-JIGOKU-LOST', [(await mods(page, 'ATTACK', {skillName:'Kenjutsu', traitName:'Agility'})), (await row(page)).notes[0]], [[[0, 0, 6]], lostLine(6, 3)]);
       await setup(page, {adv:[tr('Jigoku', {lost:true})], taint:0});
       const untainted = await row(page);
       check('TR-JIGOKU-NO-TAINT', [await jig(), untainted.flags.some(f => /Requires Shadowlands Taint: your Taint Rank is 0/.test(f)), untainted.badge], [J.map(() => []), true, 'Jigoku']);
@@ -283,7 +291,7 @@ async function main() {
       await page.waitForFunction(() => /Lost/.test(document.querySelector('#advList .tr4524-note')?.textContent || ''));
       const r = await row(page);
       check('TR-LOST-TICK', [r.config, r.lost, r.notes[0], await mods(page, 'TRAIT', {traitName:'Strength'})],
-        [cfg('Jigoku', {lost:true}), true, 'Adding 4 (Taint Rank 2, doubled: Lost).', [[0, 0, 4]]]);
+        [cfg('Jigoku', {lost:true}), true, lostLine(4, 2), [[0, 0, 4]]]);
     });
 
     await section('TR-PERSISTENCE', async () => {

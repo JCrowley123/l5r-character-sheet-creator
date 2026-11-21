@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "56f51ab38339f13e8f64bc417ec3bef0b6c768bbfd226194943ab64800e5d156",
+  "expect_sha256": "65b81f74b2dd82cea0ea334fb92c0da7936ae33b01e9008a01d5533df4ef5939",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -547,6 +547,7 @@
     { "file": "src/sheet/209.9999999999999999992-feat-damage-row-fit.js", "note": "PART H PHASE 15.1.35 - Release 15a A19.1, marks the page so the damage row fits a phone" },
     { "file": "src/sheet/209.9999999999999999993-feat-net-wound-penalty.js", "note": "PART H PHASE 15.2.1 - Release 15b A14, one net Wound penalty with its parts behind an i" },
     { "file": "src/sheet/209.9999999999999999994-feat-armor-tn-breakdown.js", "note": "PART H PHASE 15.2.3 - Release 15b B04, one Armor TN breakdown behind Quick Access's i and the Combat card's formula i" },
+    { "file": "src/sheet/209.9999999999999999995-feat-jigoku-total-first.js", "note": "PART H PHASE 15.2.4 - Release 15b B14, Jigoku's total first, then Taint Rank (x 2 when Lost), in the roll preview and on the card" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
