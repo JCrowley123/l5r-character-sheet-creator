@@ -1,0 +1,208 @@
+<title>Button Names Ruling</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: one column of question cards, a suggestion box inside each, big tap targets for a phone.
+   Palette: cool paper, ink, an indigo accent and a teal for "my suggestion". */
+:root{
+  --bg:#f2f4f7; --panel:#ffffff; --ink:#1b2430; --muted:#5a6676; --line:#d9dee6;
+  --accent:#2d4a80; --accent-ink:#ffffff; --sug-bg:#e3f1ee; --sug-line:#9fd0c8; --sug-ink:#10504a;
+  --ok:#1b7a4b; --warn:#9a5b00;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-head:'Space Grotesk','Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10151b; --panel:#18202a; --ink:#e7ecf2; --muted:#9aa7b7; --line:#2a3542;
+  --accent:#8fb0ea; --accent-ink:#0f1a2b; --sug-bg:#14332f; --sug-line:#2f6f66; --sug-ink:#a9e3da;
+  --ok:#6fd49a; --warn:#e0a94a; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#10151b; --panel:#18202a; --ink:#e7ecf2; --muted:#9aa7b7; --line:#2a3542;
+  --accent:#8fb0ea; --accent-ink:#0f1a2b; --sug-bg:#14332f; --sug-line:#2f6f66; --sug-ink:#a9e3da;
+  --ok:#6fd49a; --warn:#e0a94a; color-scheme:dark;}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1{font-family:var(--font-head);font-size:1.7rem;line-height:1.15;margin:0 0 4px;text-wrap:balance}
+h2{font-family:var(--font-head);font-size:1.15rem;line-height:1.25;margin:0;text-wrap:balance}
+h3{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px;font-weight:600}
+p{margin:0 0 8px}
+.lead{color:var(--muted)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.bar b{font-variant-numeric:tabular-nums}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+.q header{display:flex;gap:12px;align-items:flex-start}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-variant-numeric:tabular-nums}
+.q header h2{flex:1;min-width:0;padding-top:3px}
+.status{flex:none;font-size:.78rem;font-weight:600;color:var(--ok);padding-top:6px}
+.job{color:var(--muted);margin:8px 0 0}
+ul.today{margin:0;padding-left:20px}
+ul.today li{margin:3px 0}
+code,.w{font-family:var(--font-body);font-weight:600;background:color-mix(in srgb,var(--accent) 10%,transparent);padding:1px 6px;border-radius:5px;white-space:normal}
+.suggest{background:var(--sug-bg);border:1px solid var(--sug-line);border-radius:10px;padding:12px 14px;margin-top:14px;color:var(--sug-ink)}
+.suggest h3{margin-top:0;color:var(--sug-ink)}
+.suggest .word{font-family:var(--font-head);font-size:1.25rem;font-weight:700;margin:0 0 6px}
+.suggest p{color:var(--ink)}
+fieldset{border:0;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px;min-height:48px;cursor:pointer;background:var(--bg)}
+.opt:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 35%,transparent)}
+.opt input{margin-top:3px;width:20px;height:20px;flex:none;accent-color:var(--accent)}
+.opt span{min-width:0}
+.opt small{display:block;color:var(--muted)}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px;margin-top:8px}
+textarea{min-height:64px;resize:vertical}
+label.note{display:block;margin-top:12px;font-size:.9rem;color:var(--muted)}
+.saved{font-size:.8rem;color:var(--muted);min-height:1.2em;margin-top:6px}
+.rest ul{margin:6px 0 0;padding-left:20px}
+button.main{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:12px 18px;min-height:48px;cursor:pointer}
+button.main:focus-visible,.opt:focus-within,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.summary{white-space:pre-wrap;font-size:.9rem;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;margin:8px 0 12px}
+.fine{font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.opt{transition:border-color .15s,box-shadow .15s}}
+</style>
+
+<main>
+  <div>
+    <h1>One name per button</h1>
+    <p class="lead">I read all 405 buttons on the sheet and sorted them by what they do. In 14 of the 23 jobs, buttons that do the same thing carry different words. Each card shows the words today, my suggestion, and why. Choose one answer per card. Nothing is changed on the sheet until you have answered.</p>
+  </div>
+  <div class="bar" id="bar"><span><b id="count">0</b> of 14 answered</span><span class="fine" id="where">Saving…</span></div>
+  <div id="cards" style="display:contents"></div>
+  <section class="q rest">
+    <header><div class="num" aria-hidden="true">+</div><h2>The rest I would leave alone</h2></header>
+    <p class="job">These jobs already use one word, or each button has its own name and no twin.</p>
+    <ul>
+      <li>Undo (the Void spend line, the Honour, Glory, Status and Taint cards)</li>
+      <li>Moving around: the tabs, the app bar, back and next arrows</li>
+      <li>Applying a choice to the sheet: Apply Family, Apply School, Set Rank</li>
+      <li>Manage and Done (the switch between Play and Manage)</li>
+      <li>Choosing from a list: skills, Rings, stances, search results, dice</li>
+      <li>Ticks in the roll preview, the pips you tap, headings that open and close, one-off actions</li>
+    </ul>
+    <label class="note" for="restNote">Anything here you want changed, or anything I missed (optional)</label>
+    <textarea id="restNote" placeholder="Write it here"></textarea>
+    <div class="saved" id="savedRest"></div>
+  </section>
+  <section class="q">
+    <h2>Your answers</h2>
+    <div class="summary" id="summary" aria-live="polite">No answers yet.</div>
+    <button class="main" id="copy" type="button">Copy my answers</button>
+    <p class="fine" id="copyMsg" style="margin-top:8px">They save as you go. Copy is only a backup, in case this page cannot save.</p>
+  </section>
+</main>
+
+<script>
+(function(){
+var Q=[
+ {id:'G01',title:'Giving back a once-per-session use',job:'The button that puts an ability’s uses back to full for a new game session.',
+  today:['“Reset session” on seven cards: Kharmic Tie, Luck, Dark Paragon, Great Destiny, Haunted, Unlucky and the Ancestor card','“Reset” on the combat round counter (it restarts the round count)'],
+  word:'Reset',why:'It is the word you used for Kharmic Tie. It fits the one-row Kharmic Tie card on a phone, and the card already says which ability it belongs to. A screen reader still says “Reset Luck for a new session”.',
+  keep:'Keep “Reset session” (and call the round button “Reset rounds”)',after:'This also settles B17: the Kharmic Tie row becomes one line on a phone.'},
+ {id:'G02',title:'Opening a choice again',job:'The button that reopens something you already picked.',
+  today:['“Choose…” before you have chosen, “Change” after, on Advantage cards (the same button)','“Choose again” in the creation wizard','Screen readers say “Configure Paragon” (and similar) on nine kinds of Advantage card, not the word written on the button','No button anywhere says “Edit” or “Pick”'],
+  word:'Change',why:'One word for reopening a choice. “Choose…” stays for the very first time, because that difference means something. The wizard’s “Choose again” becomes “Change”. A screen reader says “Change Paragon”.',keep:'Keep as it is'},
+ {id:'G03',title:'Taking something off the sheet',job:'The buttons that remove an entry, or erase something saved.',
+  today:['✕ on rows (skills, Advantages, items, weapons, emphases): a screen reader says just “✕”','“Remove” in the wizard and on Darling of the Court','“Delete” for a saved character and for a Library book'],
+  word:'Remove, and Delete',why:'Two words for two different acts, so both stay: Remove takes an entry off this sheet (the ✕ picture stays), Delete erases a saved character or book for good. Each ✕ should tell a screen reader what it removes, for example “Remove Kenjutsu”.',keep:'Keep as it is (the ✕ stays unnamed)'},
+ {id:'G04',title:'The ✕ in a window’s corner',job:'The small ✕ that closes a window.',
+  today:['The ✕ is on every window; its tooltip says “Close” on 10 windows and “Cancel” on 4','One shared window shows every message and question; its ✕ always says “Cancel”, even when it only shows a message (Kiho rules, Affinity, Weapon Info)','A screen reader says just “✕”'],
+  word:'Close or Cancel, by what the window is',why:'Keep the ✕. Say “Close” for a window that only shows you something, “Cancel” for a window holding a choice you have not kept yet, and read it aloud with the window’s name.',keep:'Keep as it is'},
+ {id:'G05',title:'The buttons at a window’s foot',job:'The buttons that answer or dismiss a window.',
+  today:['Messages: “OK” (38 times) or “Got it” (5)','Questions: “OK”, “Yes”, “Confirm”, and named ones such as “Delete”, “Discard it”, “Replace”','Backing out: “Cancel” (21), “No”, “Stay”, “Keep my choices”','Finishing a working window: “Done”'],
+  word:'OK · Confirm · Cancel · Done',why:'Messages say “OK” (“Got it” goes). A plain yes says “Confirm” unless the action has its own name (“Delete”). Backing out says “Cancel”. “Done” stays for windows where changes already apply as you go.',keep:'Keep as it is'},
+ {id:'G06',title:'Using an ability now',job:'The button that uses a once-per-session ability.',
+  today:['“Use” on Great Destiny','“Use Control” (and its siblings) on Dark Paragon','“Use it now” on an Ancestor card'],
+  word:'Use',why:'One verb. The card names the ability, so “Use” is enough; where one card holds several, the name stays after it.',keep:'Keep “Use it now” on the Ancestor card'},
+ {id:'G07',title:'Spending a Void Point',job:'The button that spends one Void Point.',
+  today:['Seven buttons on the Void card read “Spend Void: …”','Lost Love’s button reads “Spend a Void Point”'],
+  word:'Spend Void',why:'The same pattern as the Void card, and shorter on a phone.',keep:'Keep “Spend a Void Point”'},
+ {id:'G08',title:'Rolling again',job:'The buttons that roll all or part of a roll again.',
+  today:['“Re-roll 1s”, “Re-roll selected”, “Re-roll with Kakita” (with a hyphen)','“Reroll with Dark Paragon” (without)','“Spend Luck (2/3)”, “Spend Toku’s Luck”','“GM invokes Unlucky (1/2)”, “Add Sun Tao’s die”'],
+  word:'Reroll with {source}',why:'One spelling, and one pattern for rerolls you choose (“Reroll with Luck (2/3)”). “GM invokes Unlucky” stays (it is the GM’s call) and so does “Add Sun Tao’s die” (it adds a die).',keep:'Keep as it is'},
+ {id:'G09',title:'Clearing what you entered',job:'The buttons that empty the dice you built or the filters you set.',
+  today:['“Clear” in the dice tray (two places)','“Clear filters” in Search'],
+  word:'Clear (as it is)',why:'Already one word. Only the read-aloud name of the dice tray’s two buttons should say what they clear.',keep:'Keep as it is'},
+ {id:'G10',title:'Adding something',job:'The buttons that add an entry to a list.',
+  today:['“+ Add Skill”, “+ Add Advantage”, “+ Add Item” and six more in the same pattern','But “+ Emph”, “+Book” and the Library’s “Add book” drift from it','“Add court” is built twice, once with a “+”','“Create New Character” starts the whole wizard'],
+  word:'+ Add {thing}',why:'Fix the drifters: “+ Emph” becomes “+ Add Emphasis” and “+Book” becomes “+ Add Book”. “Create New Character” keeps its own word because it is a bigger act.',keep:'Keep as it is'},
+ {id:'G11',title:'Rolling the dice',job:'The buttons that make a roll.',
+  today:['“Roll” for dice and attacks, “Cast” for spells, “Check” for rule checks: three different acts','Touch of the Void’s button is only “Willpower (TN 30)”','Your earlier ruling already settles the Disadvantage check words (B01)'],
+  word:'Check (TN 30)',why:'Keep Roll, Cast and Check as they are. Only Touch of the Void’s bare “Willpower (TN 30)” should read “Check (TN 30)”, like the others.',keep:'Keep every roll button as it is'},
+ {id:'G12',title:'The information buttons',job:'The small buttons that open an explanation.',
+  today:['“i” on most; “ⓘ” on the Combat cards; an eye on weapons','Read aloud as “Kharmic Tie information” in most places, “Explain: Kharmic Tie” on Advantage cards, “About Ancestors”','“?” on a spell asks a different question (“Why can’t I cast this?”)'],
+  word:'i, read aloud as “{thing} information”',why:'“{thing} information” is already the most used pattern and many tests check it, so moving the others to it is the smallest change. The “?” stays.',keep:'Keep as it is'},
+ {id:'G14',title:'Plus and minus buttons',job:'The − and + buttons next to a number.',
+  today:['The − and + look the same everywhere','Read aloud as Add/Subtract, Increase/Decrease, One more/One fewer, Gain/Lose, Raise/Lower','Two steppers on Rings & Traits have no read-aloud name at all','Unlucky’s pair means something else (a use the GM forced, or one given back)'],
+  word:'Increase / Decrease {thing}',why:'One pair of verbs for every counter. The glyphs stay; Unlucky’s pair stays.',keep:'Keep as it is'},
+ {id:'G16',title:'Saving and exporting',job:'The buttons that save, copy, print and hand over the character.',
+  today:['“Save”, “Save As a copy”, “Print”, “Import JSON”, “History”: different acts, different words','“Export JSON” next to “Export to PDF”'],
+  word:'Export PDF',why:'Drop the “to” so the two read as a pair: “Export JSON” and “Export PDF”.',keep:'Keep “Export to PDF”'}
+];
+var cards=document.getElementById('cards'),state={},db=null,saveT={};
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+Q.forEach(function(q,i){
+  var s=document.createElement('section');s.className='q';s.id='q-'+q.id;
+  s.innerHTML='<header><div class="num" aria-hidden="true">'+(i+1)+'</div><h2>'+esc(q.title)+'</h2><span class="status" id="st-'+q.id+'" hidden>Answered</span></header>'+
+   '<p class="job">'+esc(q.job)+'</p><h3>Today</h3><ul class="today">'+q.today.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul>'+
+   '<div class="suggest"><h3>My suggestion</h3><p class="word">'+esc(q.word)+'</p><p>'+esc(q.why)+(q.after?' '+esc(q.after):'')+'</p></div>'+
+   '<fieldset><legend class="fine" style="padding:0 0 4px">Your answer</legend>'+
+   '<label class="opt"><input type="radio" name="r-'+q.id+'" value="suggest"><span>Use my suggestion<small>'+esc(q.word)+'</small></span></label>'+
+   '<label class="opt"><input type="radio" name="r-'+q.id+'" value="keep"><span>'+esc(q.keep)+'</span></label>'+
+   '<label class="opt"><input type="radio" name="r-'+q.id+'" value="other"><span>Another word<input type="text" id="o-'+q.id+'" placeholder="Type the word" aria-label="Another word for '+esc(q.title)+'"></span></label></fieldset>'+
+   '<label class="note" for="n-'+q.id+'">A note (optional)</label><textarea id="n-'+q.id+'"></textarea><div class="saved" id="sv-'+q.id+'"></div>';
+  cards.appendChild(s);
+  s.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',function(){collect(q.id,true)})});
+  s.querySelector('#o-'+q.id).addEventListener('input',function(){s.querySelector('input[value=other]').checked=true;collect(q.id,false)});
+  s.querySelector('#n-'+q.id).addEventListener('input',function(){collect(q.id,false)});
+});
+function read(id){var c=document.querySelector('input[name="r-'+id+'"]:checked');return {choice:c?c.value:'',other:document.getElementById('o-'+id).value.trim(),note:document.getElementById('n-'+id).value.trim()}}
+function collect(id,now){var a=read(id);state[id]=a;render();clearTimeout(saveT[id]);saveT[id]=setTimeout(function(){persist(id)},now?0:700)}
+function persist(id){
+  var a=state[id],q=Q.filter(function(x){return x.id===id})[0],title=q?q.title:id,doc={id:id,title:title,choice:a.choice,other:a.other,note:a.note,suggestion:q?q.word:'',keepOption:q?q.keep:'',updated:new Date().toISOString()};
+  try{localStorage.setItem('b18-'+id,JSON.stringify(doc))}catch(e){}
+  var el=document.getElementById(id==='REST'?'savedRest':'sv-'+id);
+  if(!db){if(el)el.textContent='Kept in this browser only';return}
+  db.collection('answers').doc(id).set(doc).then(function(){if(el)el.textContent='Saved'},function(){if(el)el.textContent='Could not save; use Copy at the bottom'});
+}
+function label(q,a){if(a.choice==='suggest')return 'my suggestion ('+q.word+')';if(a.choice==='keep')return q.keep;if(a.choice==='other')return 'another word: '+(a.other||'(not typed yet)');return '(not answered)'}
+function render(){
+  var n=0,lines=[];
+  Q.forEach(function(q,i){var a=state[q.id];var ok=a&&a.choice&&(a.choice!=='other'||a.other);var st=document.getElementById('st-'+q.id);st.hidden=!ok;if(ok)n++;
+    lines.push((i+1)+'. '+q.title+': '+(a?label(q,a):'(not answered)')+(a&&a.note?' — note: '+a.note:''));});
+  var rest=document.getElementById('restNote').value.trim();if(rest)lines.push('Rest: '+rest);
+  document.getElementById('count').textContent=n;
+  document.getElementById('summary').textContent=lines.join('\n');
+}
+function apply(id,d){
+  if(id==='REST'){var t=document.getElementById('restNote');if(document.activeElement!==t&&d.note!==undefined)t.value=d.note||'';return}
+  var r=document.querySelector('input[name="r-'+id+'"][value="'+d.choice+'"]');var active=document.activeElement;
+  if(r&&!(active&&active.closest&&active.closest('#q-'+id)))r.checked=true;
+  var o=document.getElementById('o-'+id),n=document.getElementById('n-'+id);if(!o)return;
+  if(active!==o)o.value=d.other||'';if(active!==n)n.value=d.note||'';
+  state[id]={choice:d.choice||'',other:d.other||'',note:d.note||''};
+}
+document.getElementById('restNote').addEventListener('input',function(){clearTimeout(saveT.REST);saveT.REST=setTimeout(function(){
+  var d={id:'REST',title:'The rest I would leave alone',note:document.getElementById('restNote').value.trim(),updated:new Date().toISOString()};
+  try{localStorage.setItem('b18-REST',JSON.stringify(d))}catch(e){}
+  var el=document.getElementById('savedRest');
+  if(!db){el.textContent='Kept in this browser only';return}
+  db.collection('answers').doc('REST').set(d).then(function(){el.textContent='Saved'},function(){el.textContent='Could not save'});
+  render();},700)});
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('summary').textContent,m=document.getElementById('copyMsg');
+  try{navigator.clipboard.writeText(t).then(function(){m.textContent='Copied.'},function(){sel()})}catch(e){sel()}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('summary'));var s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent='Select and copy the text above.'}
+});
+// from this browser first, then from the shared store
+try{Q.concat([{id:'REST'}]).forEach(function(q){var v=localStorage.getItem('b18-'+q.id);if(v)apply(q.id,JSON.parse(v))})}catch(e){}
+render();
+var done=false;
+var timer=setTimeout(function(){if(!done){document.getElementById('where').textContent='Saving in this browser only'}},10000);
+(window.claude&&window.claude.use?window.claude.use('db'):Promise.resolve(null)).then(function(d){
+  done=true;clearTimeout(timer);db=d;
+  document.getElementById('where').textContent=db?'Answers save as you go':'Saving in this browser only';
+  if(!db)return;
+  db.collection('answers').onSnapshot(function(snap){snap.docs.forEach(function(doc){var d=doc.data();if(d)apply(doc.id,d)});render()},function(){document.getElementById('where').textContent='Saving in this browser only'});
+}).catch(function(){document.getElementById('where').textContent='Saving in this browser only'});
+})();
+</script>
