@@ -13,6 +13,11 @@
    The handful of numeric contracts below come from the user-approved Phase 4.5 completion
    scope, rather than reading back the implementation's schema.  That keeps an accidentally
    edited option, cost, or clan profile able to fail this harness.
+
+   Conditional on Release 15b B17 (PART H PHASE 15.2.5, one row for Kharmic Tie), declared in B17's and this phase's
+   ROLLBACK.md (21 November 2026): with B17 present the Kharmic Tie badge reads the person and the Rank
+   ("Aiko · Rank 3") instead of "Target: Aiko", so the badge check looks for those words. The reset-session control
+   and every other check are unchanged. Same checks, same count; with B17 removed every line runs as before.
    ============================================================================= */
 
 'use strict';
@@ -217,6 +222,8 @@ async function main() {
   page.on('pageerror', (error) => pageErrors.push(String(error)));
   await page.goto(pathToFileURL(path.resolve(file)).href, { waitUntil: 'commit' });
   await page.waitForFunction(() => !!window.__L5R_TEST__, null, { timeout: 30000 });
+  // Release 15b B17 present: the Kharmic Tie badge names the person and the Rank (declared above).
+  const ONE_ROW = await page.evaluate(() => !!(window.__L5R_TEST__.KT15 && window.__L5R_TEST__.KT15.installed && window.__L5R_TEST__.KHARMIC_TIE_ROW_ENABLED));
 
   const present = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
@@ -319,7 +326,7 @@ async function main() {
     kharmic.targetModal.confirm === 'Next' && kharmic.rankModal.visible && kharmic.rankModal.confirm === 'Confirm');
   const kharmicUI = await entrySnapshot(page);
   truth('Kharmic Tie displays the target badge and a reset-session control',
-    kharmicUI.badges.includes('Target: Aiko') && kharmicUI.rowText.includes('Reset session'));
+    kharmicUI.badges.includes(ONE_ROW ? 'Aiko · Rank 3' : 'Target: Aiko') && kharmicUI.rowText.includes('Reset session'));
   same('Kharmic Tie starts with one persistent use per selected Rank and charges its Rank',
     { cost: kharmicUI.cost, target: kharmicUI.config.target, rank: kharmicUI.config.rank, remaining: kharmicUI.config.remaining,
       hasSourceId: typeof kharmicUI.config.sourceId === 'string' && kharmicUI.config.sourceId.startsWith('kharmic-') },

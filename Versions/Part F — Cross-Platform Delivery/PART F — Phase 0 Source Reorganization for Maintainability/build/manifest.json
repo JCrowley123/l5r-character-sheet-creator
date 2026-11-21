@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "65b81f74b2dd82cea0ea334fb92c0da7936ae33b01e9008a01d5533df4ef5939",
+  "expect_sha256": "6fb8be32085496f096e794759362e06da9432d8df52799776fba445424443e26",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -196,6 +196,7 @@
     { "file": "src/css/1149-damage-row-fit.css", "note": "PART H PHASE 15.1.35 - Release 15a A19.1, the Void card's damage row wraps to fit a phone" },
     { "file": "src/css/1150-net-wound-penalty.css", "note": "PART H PHASE 15.2.1 - Release 15b A14, the Wounds line's i and the breakdown in a level's window" },
     { "file": "src/css/1151-armor-tn-breakdown.css", "note": "PART H PHASE 15.2.3 - Release 15b B04, Quick Access's Armor TN i and the breakdown table; Blind's Quick Access line hidden" },
+    { "file": "src/css/1152-kharmic-tie-row.css", "note": "PART H PHASE 15.2.5 - Release 15b B17, Kharmic Tie's one row and its window's table" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -548,6 +549,7 @@
     { "file": "src/sheet/209.9999999999999999993-feat-net-wound-penalty.js", "note": "PART H PHASE 15.2.1 - Release 15b A14, one net Wound penalty with its parts behind an i" },
     { "file": "src/sheet/209.9999999999999999994-feat-armor-tn-breakdown.js", "note": "PART H PHASE 15.2.3 - Release 15b B04, one Armor TN breakdown behind Quick Access's i and the Combat card's formula i" },
     { "file": "src/sheet/209.9999999999999999995-feat-jigoku-total-first.js", "note": "PART H PHASE 15.2.4 - Release 15b B14, Jigoku's total first, then Taint Rank (x 2 when Lost), in the roll preview and on the card" },
+    { "file": "src/sheet/209.9999999999999999996-feat-kharmic-tie-row.js", "note": "PART H PHASE 15.2.5 - Release 15b B17, one row for Kharmic Tie: badge, pips, Reset session, Change and one i" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -1028,6 +1028,9 @@
   // PART H PHASE 15.2.4 BEGIN jigoku-total-first-seam
   if(typeof JK15 === 'object' && JK15) Object.assign(window.__L5R_TEST__, {JK15, JIGOKU_TOTAL_FIRST_ENABLED});
   // END JK15 jigoku-total-first-seam
+  // PART H PHASE 15.2.5 BEGIN kharmic-tie-row-seam
+  if(typeof KT15 === 'object' && KT15) Object.assign(window.__L5R_TEST__, {KT15, KHARMIC_TIE_ROW_ENABLED});
+  // END KT15 kharmic-tie-row-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

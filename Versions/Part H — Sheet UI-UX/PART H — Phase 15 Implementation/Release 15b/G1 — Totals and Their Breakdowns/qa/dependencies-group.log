@@ -1,0 +1,49 @@
+== A14 PART H PHASE 15.2.1 exit 0
+fragment : src/sheet/209.9999999999999999993-feat-net-wound-penalty.js
+marker   : PART H PHASE 15.2.1
+surface  : 3 name(s) -- NET_WOUND_PENALTY_ENABLED, WP15, net-wound-penalty-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1022  [PART H PHASE 15.2.1 +0]  // PART H PHASE 15.2.1 BEGIN net-wound-penalty-seam
+    own   1023  [PART H PHASE 15.2.1 +1]  if(typeof WP15 === 'object' && WP15) Object.assign(window.__L5R_TEST__, {WP15, NET_WOUND_PENALTY
+    own   1024  [PART H PHASE 15.2.1 +2]  // END WP15 net-wound-penalty-seam
+
+every reference is inside a block PART H PHASE 15.2.1 owns -- surgical removal covers all of them.
+
+== B04 PART H PHASE 15.2.3 exit 0
+fragment : src/sheet/209.9999999999999999994-feat-armor-tn-breakdown.js
+marker   : PART H PHASE 15.2.3
+surface  : 3 name(s) -- ARMOR_TN_BREAKDOWN_ENABLED, AT15, armor-tn-breakdown-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1025  [PART H PHASE 15.2.3 +0]  // PART H PHASE 15.2.3 BEGIN armor-tn-breakdown-seam
+    own   1026  [PART H PHASE 15.2.3 +1]  if(typeof AT15 === 'object' && AT15) Object.assign(window.__L5R_TEST__, {AT15, ARMOR_TN_BREAKDOW
+    own   1027  [PART H PHASE 15.2.3 +2]  // END AT15 armor-tn-breakdown-seam
+
+every reference is inside a block PART H PHASE 15.2.3 owns -- surgical removal covers all of them.
+
+== B14 PART H PHASE 15.2.4 exit 0
+fragment : src/sheet/209.9999999999999999995-feat-jigoku-total-first.js
+marker   : PART H PHASE 15.2.4
+surface  : 3 name(s) -- JIGOKU_TOTAL_FIRST_ENABLED, JK15, jigoku-total-first-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1028  [PART H PHASE 15.2.4 +0]  // PART H PHASE 15.2.4 BEGIN jigoku-total-first-seam
+    own   1029  [PART H PHASE 15.2.4 +1]  if(typeof JK15 === 'object' && JK15) Object.assign(window.__L5R_TEST__, {JK15, JIGOKU_TOTAL_FIRS
+    own   1030  [PART H PHASE 15.2.4 +2]  // END JK15 jigoku-total-first-seam
+
+every reference is inside a block PART H PHASE 15.2.4 owns -- surgical removal covers all of them.
+
+== B17 PART H PHASE 15.2.5 exit 0
+fragment : src/sheet/209.9999999999999999996-feat-kharmic-tie-row.js
+marker   : PART H PHASE 15.2.5
+surface  : 3 name(s) -- KHARMIC_TIE_ROW_ENABLED, KT15, kharmic-tie-row-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1031  [PART H PHASE 15.2.5 +0]  // PART H PHASE 15.2.5 BEGIN kharmic-tie-row-seam
+    own   1032  [PART H PHASE 15.2.5 +1]  if(typeof KT15 === 'object' && KT15) Object.assign(window.__L5R_TEST__, {KT15, KHARMIC_TIE_ROW_E
+    own   1033  [PART H PHASE 15.2.5 +2]  // END KT15 kharmic-tie-row-seam
+
+every reference is inside a block PART H PHASE 15.2.5 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 4/4

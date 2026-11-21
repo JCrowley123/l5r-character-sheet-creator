@@ -1,0 +1,5 @@
+net-wound-harness 17/17 checks passed
+armor-tn-harness 12/12 checks passed
+jigoku-total-harness 10/10 checks passed
+kharmic-row-harness 13/13 checks passed
+6fb8be32085496f096e794759362e06da9432d8df52799776fba445424443e26

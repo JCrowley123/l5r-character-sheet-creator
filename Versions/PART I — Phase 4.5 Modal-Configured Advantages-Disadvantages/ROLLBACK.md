@@ -365,3 +365,9 @@ when the reader is absent or the base configuration is disabled; it does not
 rewrite saved characters. Remove the gate before removing this provider as a
 compound rollback, or deliberately retain that documented behavior. Other
 consumers of this base layer still follow their own removal requirements.
+
+## Release 15b B17 — one row for Kharmic Tie (21 November 2026)
+
+**A later unit now reads this phase.** Release 15b B17 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B17 — One Row for Kharmic Tie/`) wraps `refreshAdvConfigControl` and reshapes a configured Kharmic Tie's row into one row: the badge "Aiko · Rank 3", the pips and Reset session, then Change and one i. The summary line is hidden on screen, and the badge's and Reset session's titles are removed. It reads `readAdvConfig`, `resolveAdvDisadvEffect`, `normalizeAdvName`, this phase's row classes and the `kharmicTie` effect's `target`, `rank` and `remaining`. This phase's remover does not match those names, so it is not blocked; remove B17 first all the same, as the removal chain does.
+
+**Declared fixture correction.** `qa/adv-config-expansion-harness.js` is conditional on B17. While `KT15` is on the seam, the Kharmic Tie badge check looks for "Aiko · Rank 3" instead of "Target: Aiko". It has the same checks and count, and with B17 removed every line runs as before.

@@ -1,0 +1,110 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15b\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Phase 4\\.5 Modal-Configured|Phase 4\\.5\\.32 Damage|Phase 4\\.5\\.41|Phase 12\\.5 Play Mode Adv|Phase 4\\.5\\.4 Configuration|A04 — One Information|A04\\.1 —|A15 — Court|A16 — No Bottom|Phase 2 Quick-Access|Phase 4\\.5\\.2 Disadv|Phase 4\\.5\\.14 Darling",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers/qa/inline-rules-harness.js",
+   "passed": 56,
+   "total": 56,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/qa/info-pattern-harness.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A15 — Court Badges/qa/court-badges-harness.js",
+   "passed": 33,
+   "total": 33,
+   "status": 0,
+   "seconds": 26,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/qa/picker-info-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-harness.js",
+   "passed": 51,
+   "total": 51,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-expansion-harness.js",
+   "passed": 48,
+   "total": 48,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.2 Disadvantages/qa/disadv-config-harness.js",
+   "passed": 163,
+   "total": 163,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/qa/quick-access-sidebar-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.4 Configuration UX Pass/qa/adv-config-ux-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.14 Darling of the Court and Servant/qa/court-servant-harness.js",
+   "passed": 225,
+   "total": 225,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.5 Play Mode Advantages and Disadvantages/qa/advantages-harness.js",
+   "passed": 212,
+   "total": 212,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.32 Damage, Sessions and XP/qa/damage-sessions-xp-harness.js",
+   "passed": 69,
+   "total": 69,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.41 A Changing Sworn Enemy/qa/shifting-enemy-harness.js",
+   "passed": 13,
+   "total": 13,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  }
+ ]
+}

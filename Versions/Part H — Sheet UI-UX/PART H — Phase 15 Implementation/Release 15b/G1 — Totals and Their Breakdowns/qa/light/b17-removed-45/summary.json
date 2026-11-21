@@ -1,0 +1,22 @@
+{
+ "sheet": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\claude\\08134b58138d4f7c\\1fc325b5-caf2-4c9a-a33f-8e1baea2efb0\\scratchpad\\build\\b17-removed.html",
+ "pattern": "Phase 4\\.5 Modal-Configured",
+ "rows": [
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-harness.js",
+   "passed": 51,
+   "total": 51,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-expansion-harness.js",
+   "passed": 48,
+   "total": 48,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  }
+ ]
+}
