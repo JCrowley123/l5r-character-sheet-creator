@@ -1,0 +1,50 @@
+/* PART H PHASE 15.2.3 — Release 15b, B04: one Armor TN breakdown (owner, 20 November 2026, as mocked up).
+   Quick Access's Armor TN i, Blind's line under it hidden (Feature 4.5.34 (Part I); the Combat card's Blind line under
+   Base TN stays), and the breakdown table in the information window. The i is a .sk-info-btn with no text of its own;
+   its letter comes from the ::after below, which the standard information ring's own ::after outranks where present.
+   Waits for body.at15-on, which this unit's switch sets. Screen only: print hides .sk-info-btn and .print-hide, and the
+   window is not printed. */
+@media screen {
+  body.at15-on #qaArmorTNValue + #bl4534QaNote {
+    display: none;
+  }
+  body.at15-on .at15-info {
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  body.at15-on .at15-info::after {
+    content: 'i';
+    font-family: Georgia, serif;
+    font-style: normal;
+  }
+  body.at15-on .at15-breakdown {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2px 0 12px;
+    font-variant-numeric: tabular-nums;
+  }
+  body.at15-on .at15-breakdown td {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(42, 36, 32, .14);
+    vertical-align: top;
+  }
+  body.at15-on .at15-breakdown td:last-child {
+    text-align: right;
+    white-space: nowrap;
+    padding-left: 16px;
+    font-weight: 600;
+  }
+  body.at15-on .at15-breakdown small {
+    display: block;
+    color: var(--ink-soft);
+    font-size: .82em;
+  }
+  body.at15-on .at15-breakdown tr.at15-total td {
+    border-bottom: 0;
+    border-top: 2px solid currentColor;
+    font-weight: 700;
+  }
+  body.at15-on .at15-formula {
+    margin: 0;
+  }
+}

@@ -1022,6 +1022,9 @@
   // PART H PHASE 15.2.1 BEGIN net-wound-penalty-seam
   if(typeof WP15 === 'object' && WP15) Object.assign(window.__L5R_TEST__, {WP15, NET_WOUND_PENALTY_ENABLED});
   // END WP15 net-wound-penalty-seam
+  // PART H PHASE 15.2.3 BEGIN armor-tn-breakdown-seam
+  if(typeof AT15 === 'object' && AT15) Object.assign(window.__L5R_TEST__, {AT15, ARMOR_TN_BREAKDOWN_ENABLED});
+  // END AT15 armor-tn-breakdown-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

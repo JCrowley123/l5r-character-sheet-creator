@@ -18,3 +18,7 @@ manifest entries and the `blind-armor-note-seam` block, and refuses on any lefto
 this read; removing 4.5.31 means removing this release first (the removal chain does so). On the trunk:
 `refreshAllAdvConfigControls`, `getTraitValueByName`, `#f_baseTN`, `#qaArmorTNValue`.
 The removal chain registry gained one entry, at its end.
+
+## Release 15b B04 — one Armor TN breakdown (20 November 2026)
+
+**A later unit now reads this release.** Release 15b B04 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B04 — One Armor TN Breakdown/`) calls `BL4534.text(false)` to name Blind in its Armor TN breakdown, and hides `#bl4534QaNote` (Quick Access's line) while its i shows the breakdown. The Combat card's line under Base TN stays. This release's remover matches `BL4534` and `bl4534…` as its surface, so it refuses while B04 is present: **remove B04 first**; the removal chain does this in order.

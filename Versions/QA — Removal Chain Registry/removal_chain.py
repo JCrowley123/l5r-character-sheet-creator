@@ -358,6 +358,8 @@ CHAIN: tuple[Release, ...] = (
     # Release 15b, group 1: totals and their breakdowns.
     Release("PART H — Phase 15 Implementation/Release 15b/A14 — One Net Wound Penalty",
             fragment="src/sheet/209.9999999999999999993-feat-net-wound-penalty.js"),
+    Release("PART H — Phase 15 Implementation/Release 15b/B04 — One Armor TN Breakdown",
+            fragment="src/sheet/209.9999999999999999994-feat-armor-tn-breakdown.js"),
 )
 
 

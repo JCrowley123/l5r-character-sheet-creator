@@ -1,0 +1,182 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15b\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "Ancestor Corrections|Phase 4\\.5\\.13 Named|Phase 4\\.5\\.14 Darling|Phase 4\\.5\\.16 Heart|Phase 4\\.5\\.18 Paragon|Phase 4\\.5\\.19 Soul|Phase 4\\.5\\.20 Void Vers|Phase 4\\.5\\.21 Seven|Phase 4\\.5\\.22 Naishou|Phase 4\\.5\\.23 Dark|Phase 4\\.5\\.24 Touch|Phase 4\\.5\\.31 Checks|Phase 4\\.5\\.34 Blind|Phase 4\\.5\\.36 Weakness|Phase 4\\.5\\.4 Configuration|Phase 4\\.8 Ancestors|Phase 1\\.6 Combat|A04 — One Information|A04\\.1 —|A15 — Court|A16 — No Bottom|Phase 2 Quick-Access",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers/qa/inline-rules-harness.js",
+   "passed": 56,
+   "total": 56,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/qa/info-pattern-harness.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A15 — Court Badges/qa/court-badges-harness.js",
+   "passed": 33,
+   "total": 33,
+   "status": 0,
+   "seconds": 25,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/qa/picker-info-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/qa/wound-bar-harness.js",
+   "passed": 23,
+   "total": 23,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/qa/quick-access-sidebar-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.4 Configuration UX Pass/qa/adv-config-ux-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.13 Named Advantages/qa/named-advantages-harness.js",
+   "passed": 136,
+   "total": 136,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.14 Darling of the Court and Servant/qa/court-servant-harness.js",
+   "passed": 225,
+   "total": 225,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.16 Heart of Vengeance/qa/heart-vengeance-harness.js",
+   "passed": 91,
+   "total": 91,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.18 Paragon/qa/paragon-harness.js",
+   "passed": 80,
+   "total": 80,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.19 Soul of Artistry/qa/soul-artistry-harness.js",
+   "passed": 92,
+   "total": 92,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.20 Void Versatility/qa/void-versatility-harness.js",
+   "passed": 66,
+   "total": 66,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js",
+   "passed": 77,
+   "total": 77,
+   "status": 0,
+   "seconds": 18,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.22 Naishou Citizen/qa/naishou-citizen-harness.js",
+   "passed": 36,
+   "total": 36,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.23 Dark Paragon/qa/dark-paragon-harness.js",
+   "passed": 67,
+   "total": 67,
+   "status": 0,
+   "seconds": 19,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.24 Touch of the Spirit Realms/qa/spirit-realms-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 15,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.8 Ancestors/qa/ancestors-harness.js",
+   "passed": 349,
+   "total": 349,
+   "status": 0,
+   "seconds": 36,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/qa/ancfix-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js",
+   "passed": 101,
+   "total": 101,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.34 Blind Armor TN Note/qa/blind-note-harness.js",
+   "passed": 11,
+   "total": 11,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/weakness-hotei-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  }
+ ]
+}

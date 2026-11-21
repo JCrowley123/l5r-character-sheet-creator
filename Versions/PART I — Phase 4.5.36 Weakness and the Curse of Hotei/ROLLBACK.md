@@ -38,3 +38,7 @@ without this layer they assert the original expectations. Their pre-change copie
   edit to any of them.
 
 - **Release 15a A04 — One Information Pattern** (7 November 2026, `Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/`) folds this phase's `.hotei4536-note` behind Hotei's row i, word for word. It calls nothing here. This phase's remover matches `hotei4536-` as its surface, so it refuses while A04 is present: remove A04 first (the removal chain does so in order). No edit to this phase's fragment is required.
+
+## Release 15b B04 — one Armor TN breakdown (20 November 2026)
+
+**A later unit now reads this release.** Release 15b B04 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B04 — One Armor TN Breakdown/`) calls `weakness4536Reflexes` (guarded) to say in its Armor TN breakdown that Weakness lowered Reflexes. This release's remover matches `weakness4536…` as its surface, so it refuses while B04 is present: **remove B04 first**; the removal chain does this in order.

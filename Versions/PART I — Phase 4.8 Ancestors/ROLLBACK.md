@@ -138,3 +138,7 @@ grid is never the screen's first; the Review line follows School): 43/43 with an
 ## Depended on by (Release 6a)
 
 - **BUGFIX — Yomi Sees the Ancestor:** reads `ANC48.current()` (guarded). Remove it first.
+
+## Release 15b B04 — one Armor TN breakdown (20 November 2026)
+
+**A later unit now reads this release.** Release 15b B04 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B04 — One Armor TN Breakdown/`) calls `ancestorArmorTNBonus` (guarded) to name Shiba's gift in its Armor TN breakdown. This release's remover matches `ancestorArmorTNBonus` as its surface, so it refuses while B04 is present: **remove B04 first**; the removal chain does this in order.
