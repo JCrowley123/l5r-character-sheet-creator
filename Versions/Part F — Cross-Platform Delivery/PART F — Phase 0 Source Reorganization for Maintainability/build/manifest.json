@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "6fb8be32085496f096e794759362e06da9432d8df52799776fba445424443e26",
+  "expect_sha256": "5ac767c6c3680126cfe664aef41e7312d98f24eee842ec679e38ed664dde574d",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],

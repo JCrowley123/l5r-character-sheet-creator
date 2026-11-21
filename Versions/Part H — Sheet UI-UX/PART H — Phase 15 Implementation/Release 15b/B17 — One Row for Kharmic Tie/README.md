@@ -67,7 +67,9 @@ What goes:
 
 | Build | SHA-256 | Bytes |
 |---|---|---|
-| With B17 (this branch, on B14): group 1 complete | `6fb8be32085496f096e794759362e06da9432d8df52799776fba445424443e26` | 17,750,156 |
+| With B17 (this branch, on B14): group 1 complete | `5ac767c6c3680126cfe664aef41e7312d98f24eee842ec679e38ed664dde574d` | 17,750,809 |
+| First build of B17, before the i's size was fixed (see below) | `6fb8be32085496f096e794759362e06da9432d8df52799776fba445424443e26` | 17,750,156 |
+| Release 15a removed, group 1 kept (`G1 — Totals and Their Breakdowns/qa/remove-15a-keep-group.py`) | `9889c42605d9aedfddd1705e848e1771516cc916b695065471b42ab7fd0a825f` | 17,557,586 |
 | B17 removed (B14) | `65b81f74b2dd82cea0ea334fb92c0da7936ae33b01e9008a01d5533df4ef5939` | 17,741,065 |
 
 ## Light checks (21 November)
@@ -78,7 +80,14 @@ What goes:
 | `qa/test-removal.py` | 10/10 (`qa/removal.log`) |
 | The harnesses of the layers it touches (Phase 4.5 and its completion pass, Disadvantages, Configuration UX, Darling of the Court, Damage Sessions and XP with Blissful Betrothal, A Changing Sworn Enemy, Phase 12.5's Play controls, Quick Access, A04, A04.1, A15, A16) | 13/13 harnesses, 1,002/1,002 (`G1 — Totals and Their Breakdowns/qa/light/b17-touched-run.log`) |
 | Phase 4.5's harnesses, conditional on B17, on the build with B17 removed (B14) | 2/2 harnesses, 99/99 (`G1 — Totals and Their Breakdowns/qa/light/b17-removed-45-run.log`) |
-| All four of the group's harnesses on the group's build (`6fb8be32…3e26`) | A14 17/17, B04 12/12, B14 10/10, B17 13/13 (`G1 — Totals and Their Breakdowns/qa/light/own-on-group-6fb8be32/`) |
+| All four of the group's harnesses on the first build (`6fb8be32…3e26`) | A14 17/17, B04 12/12, B14 10/10, B17 13/13 (`G1 — Totals and Their Breakdowns/qa/light/own-on-group-6fb8be32/`) |
+| **The "15a removed, group kept" check** (the owner's decision 3) on the first build | All 26 Release 15a units removed, rebuild verifies; A14 17/17, B04 12/12, B14 10/10, but **B17 10/13** (`G1 — Totals and Their Breakdowns/qa/light/own-on-15a-removed-ca319f80/`). Without A04's ring the sheet's phone rule made the i 40 px tall, so it sat 6 px off the badge's line (and the row was 40 px high in Play). **Fixed:** the i is 28 px with an 8 px touch reach (44 px) under `body.kt15-on`, the same as A04 draws it, whether or not A04 is there. |
+| B17's harness on the fixed build | 13/13 (`qa/run-3-touch-size.log`) |
+| `qa/test-removal.py` on the fixed build | 10/10 (`qa/removal-2-touch-size.log`) |
+| The dependency check, B17, on the fixed build | 1/1 (`G1 — Totals and Their Breakdowns/qa/dependencies-b17-touch-size.log`) |
+| The harnesses of the layers it touches, on the fixed build | 13/13 harnesses, 1,002/1,002 (`G1 — Totals and Their Breakdowns/qa/light/b17-touched-run-2-touch-size.log`) |
+| All four of the group's harnesses on the fixed group build (`5ac767c6…574d`) | A14 17/17, B04 12/12, B14 10/10, B17 13/13 (`G1 — Totals and Their Breakdowns/qa/light/own-on-group-5ac767c6/`) |
+| The same on Release 15a removed, group kept (`9889c426…825f`) | A14 17/17, B04 12/12, B14 10/10, B17 13/13 (`G1 — Totals and Their Breakdowns/qa/light/own-on-15a-removed-9889c426/`) |
 | The dependency check, all four units (`G1 — Totals and Their Breakdowns/qa/dependencies.py`) | 4/4: every reference inside each unit's own blocks (`G1 — Totals and Their Breakdowns/qa/dependencies-group.log`) |
 
 ## Not covered by the harness

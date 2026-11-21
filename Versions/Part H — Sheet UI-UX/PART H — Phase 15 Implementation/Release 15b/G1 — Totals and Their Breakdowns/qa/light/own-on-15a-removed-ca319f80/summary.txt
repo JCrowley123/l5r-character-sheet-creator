@@ -1,0 +1,10 @@
+net-wound-harness 17/17 checks passed
+armor-tn-harness 12/12 checks passed
+jigoku-total-harness 10/10 checks passed
+kharmic-row-harness 10/13 checks passed
+  detail KT-CHANGE-AND-I-ON-BADGE-LINE-MANAGE-PHONE: {"text":"Aiko · Rank 3 ●●○ Reset session CHANGE","badges":[{"text":"Aiko · Rank 3","title":null,"box":{"left":36,"right":115,"top":443,"bottom":463,"mid":453,"height":20}}],"buttons":[{"name":"Reset session: all 3 Kharmic Tie uses back","text":"Reset session","title":null,"box":{"left":79,"right":174,"top":476,"bottom":494,"mid":485,"hei
+  detail KT-PLAY-ONE-LINE-PHONE: {"text":"Aiko · Rank 3 ●●○ Reset session","badges":[{"text":"Aiko · Rank 3","title":null,"box":{"left":36,"right":115,"top":388,"bottom":408,"mid":398,"height":20}}],"buttons":[{"name":"Reset session: all 3 Kharmic Tie uses back","text":"Reset session","title":null,"box":{"left":170,"right":265,"top":389,"bottom":408,"mid":398,"height":19}},{"name":"Kharmic
+  detail KT-LONG-NAME-PHONE: {"r":{"text":"Kakita Yoshiko · Rank 5 ●●●●● Reset session CHANGE","badges":[{"text":"Kakita Yoshiko · Rank 5","title":null,"box":{"left":36,"right":165,"top":443,"bottom":463,"mid":453,"height":20}}],"buttons":[{"name":"Reset session: all 5 Kharmic Tie uses back","text":"Reset session","title":null,"box":{"left":100,"right":195,"top":476,"bottom":494,"mid":
+FAIL KT-CHANGE-AND-I-ON-BADGE-LINE-MANAGE-PHONE
+FAIL KT-PLAY-ONE-LINE-PHONE
+FAIL KT-LONG-NAME-PHONE

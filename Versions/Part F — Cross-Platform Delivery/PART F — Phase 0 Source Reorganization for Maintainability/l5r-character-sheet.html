@@ -8086,8 +8086,26 @@ body.dr15-on #voidDamageCancel {
   body.kt15-on .kt15-end .adv-config-btn {
     margin: 0;
   }
-  body.kt15-on .kt15-info {
+  /* The i is 28 px with an 8 px touch reach (44 px), as the standard ring draws it, whether or not that ring is in
+     use: without it the sheet's phone rule makes a .sk-info-btn 40 px tall, which would sit 6 px off the badge's line
+     (found by the "15a removed, group kept" check, 21 November 2026). */
+  body.kt15-on .kt15-end .kt15-info {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    min-height: 28px;
     margin-left: 0;
+    padding: 0;
+  }
+  body.kt15-on .kt15-end .kt15-info::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
   }
   body.kt15-on .kt15-info::after {
     content: 'i';
