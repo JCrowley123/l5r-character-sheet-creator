@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-11-23T16:35:05.999968+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7505,
+      "total": 7505,
+      "orchestration": {
+        "expected": 7505,
+        "passed": 7505,
+        "total": 7505,
+        "leafTotal": 7505,
+        "wrapperCount": 120,
+        "leafCount": 209,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 209,
+        "fingerprint": "f49d71408db175add562b8cd85198bfee49206e09fa342fa75382f6a80670356",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 29.17
+    },
+    {
+      "label": "04-retained",
+      "passed": 7380,
+      "total": 7380,
+      "orchestration": {
+        "expected": 7380,
+        "passed": 7380,
+        "total": 7380,
+        "leafTotal": 7380,
+        "wrapperCount": 105,
+        "leafCount": 203,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 203,
+        "fingerprint": "be4b77f315c8e1547911596d2a43d02436bb9fe462eca01ab2572fc5bed34b69",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 26.73
+    }
+  ],
+  "source_sha256": "5ac767c6c3680126cfe664aef41e7312d98f24eee842ec679e38ed664dde574d",
+  "source_bytes": 17750809,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15b/B17 \u2014 One Row for Kharmic Tie",
+    "PART H \u2014 Phase 15 Implementation/Release 15b/B14 \u2014 Jigoku's Total, Then Its Arithmetic",
+    "PART H \u2014 Phase 15 Implementation/Release 15b/B04 \u2014 One Armor TN Breakdown",
+    "PART H \u2014 Phase 15 Implementation/Release 15b/A14 \u2014 One Net Wound Penalty"
+  ],
+  "restoration": {
+    "sha256": "921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150",
+    "bytes": 17718601,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-23T17:31:20.537992+00:00"
+}
