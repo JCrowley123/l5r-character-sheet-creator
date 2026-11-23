@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-11-23T16:31:10.042686+00:00",
+  "sha256": "5ac767c6c3680126cfe664aef41e7312d98f24eee842ec679e38ed664dde574d",
+  "stages": [
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-23T16:31:10.055722+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-23T16:34:47.905303+00:00"
+    },
+    {
+      "label": "dependencies",
+      "started_utc": "2026-11-23T16:34:47.918716+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-23T16:34:50.316539+00:00"
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-11-23T16:34:50.316907+00:00"
+}
