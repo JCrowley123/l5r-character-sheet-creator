@@ -1,5 +1,17 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
+<!-- g1-15b-roadmap -->
+## Release 15b group 1 — 23 November 2026
+
+**23 November 2026 · Release 15b group 1 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `3b499a88` to `e638e052` at 19:56 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `5ac767c6…574d`, deployed page `0036400e1138…`, service worker build `40a5ee3f5b408a43`); 130 application harnesses passed 5,541/5,541 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
+
+**23 November 2026 · Release 15b group 1 qualified (Claude).** Release 15b's first group is four screen-only units on stacked branches: A14 (One Net Wound Penalty: with Low Pain Threshold or Strength of the Earth the Wounds line, each level's spoken name, the level's window and Quick Access show the one penalty that applies, an i opens the rank's penalty, each entry with its page and the total, and the roll preview keeps one row, "-5 to total — Nicked"), B04 (One Armor TN Breakdown: Quick Access's Armor TN has an i and Blind's line there goes; the i and the Combat card's formula i show one table that adds up), B14 (Jigoku's Total, Then Its Arithmetic: "+8 to total — Taint Rank 4 × 2 (Lost)") and B17 (One Row for Kharmic Tie: the badge "Aiko · Rank 3", the pips and Reset session, then Change and one i on the badge's line), markers `PART H PHASE 15.2.1`, `.3`, `.4` and `.5`. B02 (actual and catalogue price) was dropped at the mock-ups, and the owner's consistency note added B18 (One Name per Button Job) to 15b; B17 keeps "Reset session" until B18 rules. The owner accepted all four at the device round (22/22 checks on iPhone and laptop).
+
+Every stage passed first time. The chain ran once (16:31 to 16:35 UTC): group removal 30/30 (all four removed restores Release 15a as live `921f3ac9…6150` exactly; A14, B04 and B14 each removed alone and A19.1 removed with the group kept, with every kept harness run in full; and, the owner's decision 3, all 26 Release 15a units removed with the group kept, on which all four harnesses passed) and dependencies 4/4. One full pass followed (16:35 to 17:31 UTC): candidate **7,505/7,505** (209 leaves) and retained **7,380/7,380** (203 leaves), restoring Release 15a exactly. Light checks found one fault, fixed before the device round: without Release 15a, B17's i grew to the sheet's 40 px phone size; it now keeps 28 px.
+
+**23 November 2026 · after 15b group 1 (Claude).** Next: the owner's rulings on B18's button inventory (405 controls in 23 job groups, on branch `claude/jovial-rubin-993414`, not merged), then Release 15b group 2 (B01, B03, B05, B09), mock-ups first. Parked from group 1's device round: the Combat page's i's (with the Combat tab overhaul), Jigoku's dashed realm badge with a whole-sheet badge check, and a Taint phase after Phase 15 ("Lost" to follow the Taint Rank; Core p.278).
+<!-- end-g1-15b-roadmap -->
+
 <!-- review-15a-roadmap -->
 ## Cycle review after Release 15a — 19 November 2026
 

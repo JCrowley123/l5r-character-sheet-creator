@@ -1,6 +1,6 @@
 # Release 15b · group 1 (A14, B04, B14, B17) — handover
 
-23 November 2026 (Claude). **Accepted and qualified; not live.** Group 1 is the first group of Release 15b. The qualification passed every stage first time.
+23 November 2026 (Claude). **Accepted, qualified and live** (23 November). Group 1 is the first group of Release 15b. The qualification passed every stage first time.
 
 **What group 1 is:** four units on stacked branches.
 
@@ -99,10 +99,32 @@ Claude, Opus 5.5, Pro plan; account-wide weekly meter:
 | 20 November, the owner's "Build here" | 40% |
 | 21 November, group built, previews verified, checklist made | 53% |
 | 23 November, after the device round (before qualification) | 56% |
-| 23 November, after the full pass and these records | 57% |
+| 23 November, after the full pass | 57% |
+| 23 November, after the go-live and its production checks | 60% |
+
+## Production
+
+**23 November 2026 · group 1 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `3b499a88` to `e638e052` at 19:56 UTC, with no merge commit and no force. The deploy was current within about twenty minutes.
+
+Production checks:
+
+- **Files:** all seven deployed files match the qualified build.
+  - Deployed page `0036400e1138471f…`, 17,757,586 bytes.
+  - Application `5ac767c6…574d`.
+  - Service worker build `40a5ee3f5b408a43`.
+- **Harnesses:** 130 application harnesses passed **5,541/5,541** on the downloaded production files.
+  - A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once.
+  - Group 1 adds A14's 17, B04's 12, B14's 10 and B17's 13 checks, and the layers of their light checks.
+- **Browser/offline smoke:** **22/22**.
+
+**Evidence:**
+- [qa/live/live-verification.json](qa/live/live-verification.json), [qa/live/live-qa.log](qa/live/live-qa.log) and [qa/live/live-browser-smoke.json](qa/live/live-browser-smoke.json);
+- `qa/verify-live.log` and `qa/browser-smoke.log`.
+
+**How they ran:** on the downloaded production files, with `qa/verify-live.py` (G6's script with the four units added) and the Older School Choices browser smoke.
+
+The ledger (MD and HTML: the header and parts 1, 2, 3, 4 and 6), the roadmap and a CLAUDE.md pointer are updated. The weekly meter read 60% after the production checks.
 
 ## Next
 
-- **Go-live** on the owner's word only: fast-forward `main`, with no merge commit and no force.
-- **Then:** check production, and write the ledger, roadmap and CLAUDE.md records.
-- **After that:** B18's rulings (its inventory is on `claude/jovial-rubin-993414`, not merged) and Release 15b group 2.
+- **Next:** B18's rulings (its inventory is on `claude/jovial-rubin-993414`, not merged) and Release 15b group 2.

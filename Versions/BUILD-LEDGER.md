@@ -2,7 +2,9 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **19 November 2026** (Claude). **The cycle review after Release 15a is done, and Release 15b's work order is with the owner:** [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP). [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>).
+Local records updated **23 November 2026** (Claude). **Release 15b group 1 is live and verified.** [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
+
+**Earlier:** Local records updated **19 November 2026** (Claude). **The cycle review after Release 15a is done, and Release 15b's work order is with the owner:** [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP). [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>).
 
 **Earlier:** Local records updated **19 November 2026** (Claude). **Release 15a is complete: G6 is live and verified** (G5 went live on 18 November). [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>).
 
@@ -29,6 +31,16 @@ Local records updated **19 November 2026** (Claude). **The cycle review after Re
 ---
 
 ## 1. Where things stand
+
+<!-- g1-15b-live-part1 -->
+**23 November 2026 · Release 15b group 1 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `3b499a88` to `e638e052` at 19:56 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `5ac767c6…574d`, deployed page `0036400e1138…`, service worker build `40a5ee3f5b408a43`); 130 application harnesses passed 5,541/5,541 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
+<!-- end-g1-15b-live-part1 -->
+
+<!-- g1-15b-qualification-part1 -->
+**23 November 2026 · Release 15b group 1 qualified (Claude).** Release 15b's first group is four screen-only units on stacked branches: A14 (One Net Wound Penalty: with Low Pain Threshold or Strength of the Earth the Wounds line, each level's spoken name, the level's window and Quick Access show the one penalty that applies, an i opens the rank's penalty, each entry with its page and the total, and the roll preview keeps one row, "-5 to total — Nicked"), B04 (One Armor TN Breakdown: Quick Access's Armor TN has an i and Blind's line there goes; the i and the Combat card's formula i show one table that adds up), B14 (Jigoku's Total, Then Its Arithmetic: "+8 to total — Taint Rank 4 × 2 (Lost)") and B17 (One Row for Kharmic Tie: the badge "Aiko · Rank 3", the pips and Reset session, then Change and one i on the badge's line), markers `PART H PHASE 15.2.1`, `.3`, `.4` and `.5`. B02 (actual and catalogue price) was dropped at the mock-ups, and the owner's consistency note added B18 (One Name per Button Job) to 15b; B17 keeps "Reset session" until B18 rules. The owner accepted all four at the device round (22/22 checks on iPhone and laptop).
+
+Every stage passed first time. The chain ran once (16:31 to 16:35 UTC): group removal 30/30 (all four removed restores Release 15a as live `921f3ac9…6150` exactly; A14, B04 and B14 each removed alone and A19.1 removed with the group kept, with every kept harness run in full; and, the owner's decision 3, all 26 Release 15a units removed with the group kept, on which all four harnesses passed) and dependencies 4/4. One full pass followed (16:35 to 17:31 UTC): candidate **7,505/7,505** (209 leaves) and retained **7,380/7,380** (203 leaves), restoring Release 15a exactly. Light checks found one fault, fixed before the device round: without Release 15a, B17's i grew to the sheet's 40 px phone size; it now keeps 28 px.
+<!-- end-g1-15b-qualification-part1 -->
 
 <!-- review-15a-part1 -->
 **19 November 2026 · Cycle review after Release 15a (Claude).** 15a cost about 229 Claude weekly points against 94 (58–150) planned, and 15b is re-estimated at about 120 (85–182). All of 15a (26 built units; not 28) removed in a scratch tree rebuilds Release 8c's application `139e0810…2551`, 17,525,378 bytes, byte for byte (13/13). The ledger page is republished. The owner is asked three things in one Claude Doc, [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): 15b's groups and order (recommended: 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 · 5 B12, B13); B14 and B01 kept in 15b (B14's line is not on the resisting rows); and a stage with 15a removed in each group's chain. Nothing in 15b is mocked up or built. These records are on `claude/release-15b-kickoff`, not on `main`. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
@@ -212,6 +224,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- g1-15b-next-part2 -->
+**23 November 2026 · after 15b group 1 (Claude).** Next: the owner's rulings on B18's button inventory (405 controls in 23 job groups, on branch `claude/jovial-rubin-993414`, not merged), then Release 15b group 2 (B01, B03, B05, B09), mock-ups first. Parked from group 1's device round: the Combat page's i's (with the Combat tab overhaul), Jigoku's dashed realm badge with a whole-sheet badge check, and a Taint phase after Phase 15 ("Lost" to follow the Taint Rank; Core p.278).
+<!-- end-g1-15b-next-part2 -->
 
 <!-- review-15a-next-part2 -->
 **19 November 2026 · after the review (Claude).** Proposed, waiting for the owner's decision in the [work order](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): Release 15b in five groups, about 120 (85–182) points. 1 · totals and their breakdowns (A14, B02, B04, B14), 22 (16–32); 2 · labels and wording (B01, B03, B05, B09), 18 (13–28); 3 · reference text (B06, B10, B11, B16), 20 (14–30); 4 · Search controls (B07, B08; behaviour tier), 28 (20–42); 5 · print and About (B12, B13), 32 (22–50). B15 is kept as it is. Then Phase 15's closure, 4 (3–6), the resistance phase and Techniques as modifiers, each on the owner's word. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
@@ -417,6 +433,10 @@ Ranked by impact for each point spent, with what each step needs first.
 **Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- g1-15b-cost-part3 -->
+**23 November 2026 · 15b group 1 (Claude).** Mock-ups (three rounds), build, device round, qualification and go-live by Claude from 20 to 23 November on a Pro plan, with no weekly reset in between: weekly all models 35% at the start of the mock-ups, 40% at "Build here", 53% built and previewed, 57% after the full pass and 60% after the go-live and its production checks, so about 25 weekly points for the group (the B18 inventory session, Sonnet, ran in the same window and is included).
+<!-- end-g1-15b-cost-part3 -->
 
 <!-- review-15a-cost-part3 -->
 **19 November 2026 · Release 15a in total, and the review (Claude).** 15a cost about **229** Claude weekly points against 94 (58–150) planned on 4 November: A01 8, A02 18, A03 27, G1 19, G2 12 (Claude's build; Codex qualified it), G3 53, G4 22, the automatic-entries group 30, G5 17 and G6 23, each from its first reading to the next group's. On 13 November the meter fell from about 99% to 58% with no weekly reset, so the stretches either side are added. A12's resistance mock-ups (about 7) and Claude's part of the resistance rules read (about 13) moved with A12 to the resistance phase and are not counted. The review itself: weekly all models 30% at the start (23:25 UTC), 32% after the work-order doc (23:39 UTC) and 34% after the ledger page was read in full and republished (23:45 UTC); five-hour 15%, 29% and 42%. About 4 points against the 4 (3–6) planned. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
@@ -723,6 +743,10 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- g1-15b-parked-part4 -->
+**23 November 2026 · from 15b group 1's device round (Claude).** Three of the owner's observations, none for group 1: (1) the Combat page's formula i's beside Armor & TN and Weapons are a gold ⓘ in a gold ring, and each stance tile has a small grey ⓘ, unlike the standard ink ring (with the Combat tab overhaul); (2) Touch of the Spirit Realms draws its realm as the dashed badge, and the owner asks for a whole-sheet check for missing or mismatched badges when it is fixed; (3) a Taint phase after Phase 15: Jigoku's "Lost" tick reads like "lost your way" and can be ticked with no Taint; the owner suggests it follow the Taint Rank (5, or 7 for a character whose Ring reached 6 first; Core p.278). B18's rulings are pending.
+<!-- end-g1-15b-parked-part4 -->
 
 <!-- review-15a-parked-part4 -->
 **19 November 2026 · what 15a left open (Claude).** Into 15b: A03's print note (on paper, Advantages start 836 px lower) goes to B12, and the colophon's mon over the tab bar to B13. Recorded only: a Void pip tap does not redraw the Void card's note (G6); A19's Undo covers card spends only; AE2's and A08's review edges; A11's three layout observations; the untested app bar at the bottom, screen readers and the Fold's narrow outer screen. Still parked: FU-15a-1, the stats header (with the Combat tab), FT-59, A04.2 and a "Needs a choice" character-check rule. The full table is in the review. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
@@ -2080,6 +2104,16 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- g1-15b-live-part6 -->
+**23 November 2026 · Release 15b group 1 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `3b499a88` to `e638e052` at 19:56 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `5ac767c6…574d`, deployed page `0036400e1138…`, service worker build `40a5ee3f5b408a43`); 130 application harnesses passed 5,541/5,541 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
+<!-- end-g1-15b-live-part6 -->
+
+<!-- g1-15b-qualification-part6 -->
+**23 November 2026 · Release 15b group 1 qualified (Claude).** Release 15b's first group is four screen-only units on stacked branches: A14 (One Net Wound Penalty: with Low Pain Threshold or Strength of the Earth the Wounds line, each level's spoken name, the level's window and Quick Access show the one penalty that applies, an i opens the rank's penalty, each entry with its page and the total, and the roll preview keeps one row, "-5 to total — Nicked"), B04 (One Armor TN Breakdown: Quick Access's Armor TN has an i and Blind's line there goes; the i and the Combat card's formula i show one table that adds up), B14 (Jigoku's Total, Then Its Arithmetic: "+8 to total — Taint Rank 4 × 2 (Lost)") and B17 (One Row for Kharmic Tie: the badge "Aiko · Rank 3", the pips and Reset session, then Change and one i on the badge's line), markers `PART H PHASE 15.2.1`, `.3`, `.4` and `.5`. B02 (actual and catalogue price) was dropped at the mock-ups, and the owner's consistency note added B18 (One Name per Button Job) to 15b; B17 keeps "Reset session" until B18 rules. The owner accepted all four at the device round (22/22 checks on iPhone and laptop).
+
+Every stage passed first time. The chain ran once (16:31 to 16:35 UTC): group removal 30/30 (all four removed restores Release 15a as live `921f3ac9…6150` exactly; A14, B04 and B14 each removed alone and A19.1 removed with the group kept, with every kept harness run in full; and, the owner's decision 3, all 26 Release 15a units removed with the group kept, on which all four harnesses passed) and dependencies 4/4. One full pass followed (16:35 to 17:31 UTC): candidate **7,505/7,505** (209 leaves) and retained **7,380/7,380** (203 leaves), restoring Release 15a exactly. Light checks found one fault, fixed before the device round: without Release 15a, B17's i grew to the sheet's 40 px phone size; it now keeps 28 px.
+<!-- end-g1-15b-qualification-part6 -->
 
 <!-- review-15a-part6 -->
 **19 November 2026 · Cycle review after Release 15a (Claude).** 15a cost about 229 Claude weekly points against 94 (58–150) planned, and 15b is re-estimated at about 120 (85–182). All of 15a (26 built units; not 28) removed in a scratch tree rebuilds Release 8c's application `139e0810…2551`, 17,525,378 bytes, byte for byte (13/13). The ledger page is republished. The owner is asked three things in one Claude Doc, [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): 15b's groups and order (recommended: 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 · 5 B12, B13); B14 and B01 kept in 15b (B14's line is not on the resisting rows); and a stage with 15a removed in each group's chain. Nothing in 15b is mocked up or built. These records are on `claude/release-15b-kickoff`, not on `main`. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
