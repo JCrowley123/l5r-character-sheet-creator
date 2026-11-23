@@ -1,0 +1,6032 @@
+{
+ "source_sha256": "5ac767c6c3680126cfe664aef41e7312d98f24eee842ec679e38ed664dde574d",
+ "captured_utc": "2026-11-23T22:43:41.465Z",
+ "phone": {
+  "b01_today": {
+   "play": {
+    "Brash": {
+     "text": "CHECK (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Check (TN 25)",
+       "shown": "CHECK (TN 25)",
+       "spoken": "Brash: Willpower Trait Roll when threatened or insulted",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Overconfident: Perception Trait Roll to see that a foe is clearly better than you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Can’t Lie: Willpower Trait Roll when a lie is told in front of you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN CHECK",
+     "buttons": [
+      {
+       "label": "Check",
+       "shown": "CHECK",
+       "spoken": "Contrary: Willpower Trait Roll when a dispute is going on",
+       "width": 62,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK CHECK (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Check (TN 5 × Glory)",
+       "shown": "CHECK (TN 5 × GLORY)",
+       "spoken": "Rumormonger: Willpower Trait Roll to keep a rumor to yourself",
+       "width": 168,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 69,
+     "lines": 3
+    },
+    "Soft-Hearted": {
+     "text": "CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Soft-Hearted: Willpower Trait Roll to kill",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 30,
+     "lines": 1
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) SPEND A VOID POINT At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Spend a Void Point",
+       "shown": "SPEND A VOID POINT",
+       "spoken": "Lost Love: spend a Void Point to set the memory aside",
+       "width": 154,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 84,
+     "lines": 4
+    }
+   },
+   "management": {
+    "Brash": {
+     "text": "CHECK (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Check (TN 25)",
+       "shown": "CHECK (TN 25)",
+       "spoken": "Brash: Willpower Trait Roll when threatened or insulted",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Overconfident: Perception Trait Roll to see that a foe is clearly better than you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Can’t Lie: Willpower Trait Roll when a lie is told in front of you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN CHECK",
+     "buttons": [
+      {
+       "label": "Check",
+       "shown": "CHECK",
+       "spoken": "Contrary: Willpower Trait Roll when a dispute is going on",
+       "width": 62,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK CHECK (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Check (TN 5 × Glory)",
+       "shown": "CHECK (TN 5 × GLORY)",
+       "spoken": "Rumormonger: Willpower Trait Roll to keep a rumor to yourself",
+       "width": 168,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 69,
+     "lines": 3
+    },
+    "Soft-Hearted": {
+     "text": "CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Soft-Hearted: Willpower Trait Roll to kill",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 30,
+     "lines": 1
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) SPEND A VOID POINT At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Spend a Void Point",
+       "shown": "SPEND A VOID POINT",
+       "spoken": "Lost Love: spend a Void Point to set the memory aside",
+       "width": 154,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 84,
+     "lines": 4
+    }
+   },
+   "brashResult": {
+    "title": "Brash — Willpower vs TN 25",
+    "note": "You keep your temper."
+   },
+   "errors": []
+  },
+  "b03_today": {
+   "outOfCombat": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 64,
+     "lines": 3
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 73,
+     "lines": 3
+    }
+   },
+   "before": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 64,
+     "lines": 3
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 73,
+     "lines": 3
+    }
+   },
+   "leadResult": {
+    "title": "Leadership — 1k1 + School Rank 1, for one ally",
+    "body": "8 School Rank: +1 (already included in the total above) Keeping 1 of 1 (suggested 1) + 1 bonus 7 Click a die to keep or drop it. 10s explode and reroll, adding onto the same die. Suggested keep: 1."
+   },
+   "after": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 73,
+     "lines": 3
+    }
+   },
+   "manage": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 73,
+     "lines": 3
+    }
+   },
+   "errors": []
+  },
+  "b05_today": {
+   "touchButton": "Willpower (TN 30)",
+   "touchSuccess": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You keep your head."
+   },
+   "touchFailure": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You are Dazed for one Round. Tell the GM: the sheet does not track Dazed."
+   },
+   "touchErrors": [],
+   "moonButton": "Resist Lord Moon (TN 20)",
+   "moonSuccess": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll passed. You keep control tonight."
+   },
+   "moonAlert": null,
+   "moonFailure": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll failed."
+   },
+   "moonErrors": []
+  },
+  "b09_today": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Willpower)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "highlighted": "Intimidation (Willpower)",
+   "added": {
+    "name": "Intimidation",
+    "trait": "Awareness",
+    "text": "👁 R5: +5 on any Contested Roll using this skill + EMPH Rank 1+ required to purchase an Emphasis. 0 xp 10 ✕"
+   },
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Willpower",
+     "row": "Awareness",
+     "match": false
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b09all_today": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Calligraphy",
+     "text": "Calligraphy (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Spellcraft",
+     "text": "Spellcraft (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Defense",
+     "text": "Defense (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Willpower)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Calligraphy",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Spellcraft",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Defense",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Willpower",
+     "row": "Awareness",
+     "match": false
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b01_proposed": {
+   "play": {
+    "Brash": {
+     "text": "RESIST INSULT (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Resist insult (TN 25)",
+       "shown": "RESIST INSULT (TN 25)",
+       "spoken": "Resist insult (TN 25): Brash, Willpower roll when threatened or insulted",
+       "width": 164,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "MEASURE THE ENEMY (TN 20)",
+     "buttons": [
+      {
+       "label": "Measure the enemy (TN 20)",
+       "shown": "MEASURE THE ENEMY (TN 20)",
+       "spoken": "Measure the enemy (TN 20): Overconfident, Perception roll to see that a foe is clearly better than you",
+       "width": 208,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "DISCRETION CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Discretion check (TN 20)",
+       "shown": "DISCRETION CHECK (TN 20)",
+       "spoken": "Discretion check (TN 20): Can’t Lie, Willpower roll when a lie is told in front of you",
+       "width": 196,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN COOPERATE",
+     "buttons": [
+      {
+       "label": "Cooperate",
+       "shown": "COOPERATE",
+       "spoken": "Cooperate: Contrary, Willpower roll when a dispute is going on",
+       "width": 96,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK RESIST GOSSIP (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Resist gossip (TN 5 × Glory)",
+       "shown": "RESIST GOSSIP (TN 5 × GLORY)",
+       "spoken": "Resist gossip (TN 5 × Glory): Rumormonger, Willpower roll to keep a rumor to yourself",
+       "width": 221,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 69,
+     "lines": 3
+    },
+    "Soft-Hearted": {
+     "text": "RESOLVE CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Resolve check (TN 20)",
+       "shown": "RESOLVE CHECK (TN 20)",
+       "spoken": "Resolve check (TN 20): Soft-Hearted, Willpower roll to kill",
+       "width": 174,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 58,
+     "lines": 3
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) STEADY YOURSELF — SPEND VOID At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Steady yourself — Spend Void",
+       "shown": "STEADY YOURSELF — SPEND VOID",
+       "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+       "width": 235,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 84,
+     "lines": 4
+    }
+   },
+   "management": {
+    "Brash": {
+     "text": "RESIST INSULT (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Resist insult (TN 25)",
+       "shown": "RESIST INSULT (TN 25)",
+       "spoken": "Resist insult (TN 25): Brash, Willpower roll when threatened or insulted",
+       "width": 164,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "MEASURE THE ENEMY (TN 20)",
+     "buttons": [
+      {
+       "label": "Measure the enemy (TN 20)",
+       "shown": "MEASURE THE ENEMY (TN 20)",
+       "spoken": "Measure the enemy (TN 20): Overconfident, Perception roll to see that a foe is clearly better than you",
+       "width": 208,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "DISCRETION CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Discretion check (TN 20)",
+       "shown": "DISCRETION CHECK (TN 20)",
+       "spoken": "Discretion check (TN 20): Can’t Lie, Willpower roll when a lie is told in front of you",
+       "width": 196,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN COOPERATE",
+     "buttons": [
+      {
+       "label": "Cooperate",
+       "shown": "COOPERATE",
+       "spoken": "Cooperate: Contrary, Willpower roll when a dispute is going on",
+       "width": 96,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK RESIST GOSSIP (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Resist gossip (TN 5 × Glory)",
+       "shown": "RESIST GOSSIP (TN 5 × GLORY)",
+       "spoken": "Resist gossip (TN 5 × Glory): Rumormonger, Willpower roll to keep a rumor to yourself",
+       "width": 221,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 69,
+     "lines": 3
+    },
+    "Soft-Hearted": {
+     "text": "RESOLVE CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Resolve check (TN 20)",
+       "shown": "RESOLVE CHECK (TN 20)",
+       "spoken": "Resolve check (TN 20): Soft-Hearted, Willpower roll to kill",
+       "width": 174,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 58,
+     "lines": 3
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) STEADY YOURSELF — SPEND VOID At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Steady yourself — Spend Void",
+       "shown": "STEADY YOURSELF — SPEND VOID",
+       "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+       "width": 235,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 84,
+     "lines": 4
+    }
+   },
+   "brashResult": {
+    "title": "Brash — Willpower vs TN 25",
+    "note": "You keep your temper."
+   },
+   "errors": []
+  },
+  "b03_proposed": {
+   "outOfCombat": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 64,
+     "lines": 3
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 73,
+     "lines": 3
+    }
+   },
+   "before": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 64,
+     "lines": 3
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 73,
+     "lines": 3
+    }
+   },
+   "leadResult": {
+    "title": "Leadership — 1k1 + School Rank 1, for one ally",
+    "body": "8 School Rank: +1 (already included in the total above) Keeping 1 of 1 (suggested 1) + 1 bonus 7 Click a die to keep or drop it. 10s explode and reroll, adding onto the same die. Suggested keep: 1."
+   },
+   "after": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "manage": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "errors": []
+  },
+  "b05_proposed": {
+   "touchButton": "Willpower (TN 30)",
+   "touchSuccess": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You remain in control."
+   },
+   "touchFailure": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You are Dazed for one Round. Tell the GM: the sheet does not track Dazed."
+   },
+   "touchErrors": [],
+   "moonButton": "Resist Lord Moon (TN 20)",
+   "moonSuccess": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll passed. You remain in control tonight."
+   },
+   "moonAlert": null,
+   "moonFailure": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll failed."
+   },
+   "moonErrors": []
+  },
+  "b09_proposed": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Awareness)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "highlighted": "Intimidation (Awareness)",
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b09all_proposed": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Calligraphy",
+     "text": "Calligraphy (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Spellcraft",
+     "text": "Spellcraft (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Defense",
+     "text": "Defense (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Awareness)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Calligraphy",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Spellcraft",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Defense",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b01_siblings": {
+   "epilepsy": {
+    "text": "AVOID (TN 15) END SEIZURE (TN 10)",
+    "buttons": [
+     {
+      "label": "Avoid (TN 15)",
+      "shown": "AVOID (TN 15)",
+      "spoken": "Epilepsy: Willpower Trait Roll to avoid a seizure",
+      "width": 108,
+      "disabled": false,
+      "title": ""
+     },
+     {
+      "label": "End seizure (TN 10)",
+      "shown": "END SEIZURE (TN 10)",
+      "spoken": "Epilepsy: Willpower Trait Roll to end a seizure",
+      "width": 154,
+      "disabled": false,
+      "title": ""
+     }
+    ],
+    "notes": [],
+    "rowHeight": 20,
+    "lines": 1
+   },
+   "touch": {
+    "text": "WILLPOWER (TN 30) After every Void Point you spend. A Void Point on a roll gives +2k1, added in the roll.",
+    "buttons": [
+     {
+      "label": "Willpower (TN 30)",
+      "shown": "WILLPOWER (TN 30)",
+      "spoken": "Willpower (TN 30)",
+      "width": 147,
+      "disabled": false,
+      "title": ""
+     }
+    ],
+    "notes": [
+     "After every Void Point you spend. A Void Point on a roll gives +2k1, added in the roll."
+    ],
+    "rowHeight": 64,
+    "lines": 3
+   },
+   "moon": {
+    "label": "Resist Lord Moon (TN 20)",
+    "shown": "RESIST LORD MOON (TN 20)"
+   },
+   "errors": []
+  }
+ },
+ "laptop": {
+  "b01_today": {
+   "play": {
+    "Brash": {
+     "text": "CHECK (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Check (TN 25)",
+       "shown": "CHECK (TN 25)",
+       "spoken": "Brash: Willpower Trait Roll when threatened or insulted",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Overconfident: Perception Trait Roll to see that a foe is clearly better than you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Can’t Lie: Willpower Trait Roll when a lie is told in front of you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN CHECK",
+     "buttons": [
+      {
+       "label": "Check",
+       "shown": "CHECK",
+       "spoken": "Contrary: Willpower Trait Roll when a dispute is going on",
+       "width": 62,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK CHECK (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Check (TN 5 × Glory)",
+       "shown": "CHECK (TN 5 × GLORY)",
+       "spoken": "Rumormonger: Willpower Trait Roll to keep a rumor to yourself",
+       "width": 168,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Soft-Hearted": {
+     "text": "CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Soft-Hearted: Willpower Trait Roll to kill",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 30,
+     "lines": 1
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) SPEND A VOID POINT At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Spend a Void Point",
+       "shown": "SPEND A VOID POINT",
+       "spoken": "Lost Love: spend a Void Point to set the memory aside",
+       "width": 154,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 56,
+     "lines": 3
+    }
+   },
+   "management": {
+    "Brash": {
+     "text": "CHECK (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Check (TN 25)",
+       "shown": "CHECK (TN 25)",
+       "spoken": "Brash: Willpower Trait Roll when threatened or insulted",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Overconfident: Perception Trait Roll to see that a foe is clearly better than you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Can’t Lie: Willpower Trait Roll when a lie is told in front of you",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN CHECK",
+     "buttons": [
+      {
+       "label": "Check",
+       "shown": "CHECK",
+       "spoken": "Contrary: Willpower Trait Roll when a dispute is going on",
+       "width": 62,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK CHECK (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Check (TN 5 × Glory)",
+       "shown": "CHECK (TN 5 × GLORY)",
+       "spoken": "Rumormonger: Willpower Trait Roll to keep a rumor to yourself",
+       "width": 168,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Soft-Hearted": {
+     "text": "CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Check (TN 20)",
+       "shown": "CHECK (TN 20)",
+       "spoken": "Soft-Hearted: Willpower Trait Roll to kill",
+       "width": 113,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 30,
+     "lines": 1
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) SPEND A VOID POINT At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Spend a Void Point",
+       "shown": "SPEND A VOID POINT",
+       "spoken": "Lost Love: spend a Void Point to set the memory aside",
+       "width": 154,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 56,
+     "lines": 3
+    }
+   },
+   "brashResult": {
+    "title": "Brash — Willpower vs TN 25",
+    "note": "You keep your temper."
+   },
+   "errors": []
+  },
+  "b03_today": {
+   "outOfCombat": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "before": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "leadResult": {
+    "title": "Leadership — 1k1 + School Rank 1, for one ally",
+    "body": "8 School Rank: +1 (already included in the total above) Keeping 1 of 1 (suggested 1) + 1 bonus 7 Click a die to keep or drop it. 10s explode and reroll, adding onto the same die. Suggested keep: 1."
+   },
+   "after": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "manage": {
+    "leadership": {
+     "text": "LEAD AN ALLY (SCHOOL RANK + 1K1) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally (School Rank + 1k1)",
+       "shown": "LEAD AN ALLY (SCHOOL RANK + 1K1)",
+       "spoken": "Lead an ally (School Rank + 1k1)",
+       "width": 252,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "quick": {
+     "text": "DID NOT ACT FIRST: +REFLEXES Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Did not act first: +Reflexes",
+       "shown": "DID NOT ACT FIRST: +REFLEXES",
+       "spoken": "Did not act first: +Reflexes",
+       "width": 220,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "errors": []
+  },
+  "b05_today": {
+   "touchButton": "Willpower (TN 30)",
+   "touchSuccess": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You keep your head."
+   },
+   "touchFailure": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You are Dazed for one Round. Tell the GM: the sheet does not track Dazed."
+   },
+   "touchErrors": [],
+   "moonButton": "Resist Lord Moon (TN 20)",
+   "moonSuccess": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll passed. You keep control tonight."
+   },
+   "moonAlert": null,
+   "moonFailure": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll failed."
+   },
+   "moonErrors": []
+  },
+  "b09_today": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Willpower)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "highlighted": "Intimidation (Willpower)",
+   "added": {
+    "name": "Intimidation",
+    "trait": "Awareness",
+    "text": "👁 R5: +5 on any Contested Roll using this skill + EMPH Rank 1+ required to purchase an Emphasis. 0 xp 10 ✕"
+   },
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Willpower",
+     "row": "Awareness",
+     "match": false
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b09all_today": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Calligraphy",
+     "text": "Calligraphy (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Spellcraft",
+     "text": "Spellcraft (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Defense",
+     "text": "Defense (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Willpower)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Calligraphy",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Spellcraft",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Defense",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Willpower",
+     "row": "Awareness",
+     "match": false
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b01_proposed": {
+   "play": {
+    "Brash": {
+     "text": "RESIST INSULT (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Resist insult (TN 25)",
+       "shown": "RESIST INSULT (TN 25)",
+       "spoken": "Resist insult (TN 25): Brash, Willpower roll when threatened or insulted",
+       "width": 164,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "MEASURE THE ENEMY (TN 20)",
+     "buttons": [
+      {
+       "label": "Measure the enemy (TN 20)",
+       "shown": "MEASURE THE ENEMY (TN 20)",
+       "spoken": "Measure the enemy (TN 20): Overconfident, Perception roll to see that a foe is clearly better than you",
+       "width": 208,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "DISCRETION CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Discretion check (TN 20)",
+       "shown": "DISCRETION CHECK (TN 20)",
+       "spoken": "Discretion check (TN 20): Can’t Lie, Willpower roll when a lie is told in front of you",
+       "width": 196,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN COOPERATE",
+     "buttons": [
+      {
+       "label": "Cooperate",
+       "shown": "COOPERATE",
+       "spoken": "Cooperate: Contrary, Willpower roll when a dispute is going on",
+       "width": 96,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK RESIST GOSSIP (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Resist gossip (TN 5 × Glory)",
+       "shown": "RESIST GOSSIP (TN 5 × GLORY)",
+       "spoken": "Resist gossip (TN 5 × Glory): Rumormonger, Willpower roll to keep a rumor to yourself",
+       "width": 221,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Soft-Hearted": {
+     "text": "RESOLVE CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Resolve check (TN 20)",
+       "shown": "RESOLVE CHECK (TN 20)",
+       "spoken": "Resolve check (TN 20): Soft-Hearted, Willpower roll to kill",
+       "width": 174,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 30,
+     "lines": 1
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) STEADY YOURSELF — SPEND VOID At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Steady yourself — Spend Void",
+       "shown": "STEADY YOURSELF — SPEND VOID",
+       "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+       "width": 235,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 56,
+     "lines": 3
+    }
+   },
+   "management": {
+    "Brash": {
+     "text": "RESIST INSULT (TN 25) Adds your Honor Rank.",
+     "buttons": [
+      {
+       "label": "Resist insult (TN 25)",
+       "shown": "RESIST INSULT (TN 25)",
+       "spoken": "Resist insult (TN 25): Brash, Willpower roll when threatened or insulted",
+       "width": 164,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Adds your Honor Rank."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Overconfident": {
+     "text": "MEASURE THE ENEMY (TN 20)",
+     "buttons": [
+      {
+       "label": "Measure the enemy (TN 20)",
+       "shown": "MEASURE THE ENEMY (TN 20)",
+       "spoken": "Measure the enemy (TN 20): Overconfident, Perception roll to see that a foe is clearly better than you",
+       "width": 208,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Can’t Lie": {
+     "text": "DISCRETION CHECK (TN 20)",
+     "buttons": [
+      {
+       "label": "Discretion check (TN 20)",
+       "shown": "DISCRETION CHECK (TN 20)",
+       "spoken": "Discretion check (TN 20): Can’t Lie, Willpower roll when a lie is told in front of you",
+       "width": 196,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "Contrary": {
+     "text": "TN COOPERATE",
+     "buttons": [
+      {
+       "label": "Cooperate",
+       "shown": "COOPERATE",
+       "spoken": "Cooperate: Contrary, Willpower roll when a dispute is going on",
+       "width": 96,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Rumormonger": {
+     "text": "GLORY RANK RESIST GOSSIP (TN 5 × GLORY)",
+     "buttons": [
+      {
+       "label": "Resist gossip (TN 5 × Glory)",
+       "shown": "RESIST GOSSIP (TN 5 × GLORY)",
+       "spoken": "Resist gossip (TN 5 × Glory): Rumormonger, Willpower roll to keep a rumor to yourself",
+       "width": 221,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 41,
+     "lines": 2
+    },
+    "Soft-Hearted": {
+     "text": "RESOLVE CHECK (TN 20) WRACKED WITH GUILT (TN +10)",
+     "buttons": [
+      {
+       "label": "Resolve check (TN 20)",
+       "shown": "RESOLVE CHECK (TN 20)",
+       "spoken": "Resolve check (TN 20): Soft-Hearted, Willpower roll to kill",
+       "width": 174,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [],
+     "rowHeight": 30,
+     "lines": 1
+    },
+    "Lost Love": {
+     "text": "REMINDED OF YOUR LOSS (TN +5) STEADY YOURSELF — SPEND VOID At most twice a day, an hour apart.",
+     "buttons": [
+      {
+       "label": "Steady yourself — Spend Void",
+       "shown": "STEADY YOURSELF — SPEND VOID",
+       "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+       "width": 235,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "At most twice a day, an hour apart."
+     ],
+     "rowHeight": 56,
+     "lines": 3
+    }
+   },
+   "brashResult": {
+    "title": "Brash — Willpower vs TN 25",
+    "note": "You keep your temper."
+   },
+   "errors": []
+  },
+  "b03_proposed": {
+   "outOfCombat": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": true,
+       "title": "Start a combat round first."
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "before": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage."
+     ],
+     "rowHeight": 46,
+     "lines": 2
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Each Round you did not act first, in the Reactions Stage. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": false,
+       "title": ""
+      }
+     ],
+     "notes": [
+      "Each Round you did not act first, in the Reactions Stage."
+     ],
+     "rowHeight": 48,
+     "lines": 2
+    }
+   },
+   "leadResult": {
+    "title": "Leadership — 1k1 + School Rank 1, for one ally",
+    "body": "8 School Rank: +1 (already included in the total above) Keeping 1 of 1 (suggested 1) + 1 bonus 7 Click a die to keep or drop it. 10s explode and reroll, adding onto the same die. Suggested keep: 1."
+   },
+   "after": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    }
+   },
+   "manage": {
+    "leadership": {
+     "text": "LEAD AN ALLY 1k1 + 1 (School Rank) This Round: 8 to one ally’s Initiative Score.",
+     "buttons": [
+      {
+       "label": "Lead an ally",
+       "shown": "LEAD AN ALLY",
+       "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+       "width": 106,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "This Round: 8 to one ally’s Initiative Score."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    },
+    "quick": {
+     "text": "USE +2 (Reflexes) Initiative Score +2 this skirmish. No Initiative Score yet (Combat card).",
+     "buttons": [
+      {
+       "label": "Use",
+       "shown": "USE",
+       "spoken": "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish",
+       "width": 44,
+       "disabled": true,
+       "title": "Already used this Round."
+      }
+     ],
+     "notes": [
+      "Initiative Score +2 this skirmish."
+     ],
+     "rowHeight": 20,
+     "lines": 1
+    }
+   },
+   "errors": []
+  },
+  "b05_proposed": {
+   "touchButton": "Willpower (TN 30)",
+   "touchSuccess": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You remain in control."
+   },
+   "touchFailure": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "notation": "4k4",
+    "note": "You are Dazed for one Round. Tell the GM: the sheet does not track Dazed."
+   },
+   "touchErrors": [],
+   "moonButton": "Resist Lord Moon (TN 20)",
+   "moonSuccess": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll passed. You remain in control tonight."
+   },
+   "moonAlert": null,
+   "moonFailure": {
+    "title": "Lord Moon’s Curse — Willpower vs TN 20",
+    "notation": "4k4",
+    "note": "Willpower roll failed."
+   },
+   "moonErrors": []
+  },
+  "b09_proposed": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Awareness)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "highlighted": "Intimidation (Awareness)",
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b09all_proposed": {
+   "options": [
+    {
+     "group": "High",
+     "value": "Acting",
+     "text": "Acting (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Artisan",
+     "text": "Artisan (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Calligraphy",
+     "text": "Calligraphy (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Courtier",
+     "text": "Courtier (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Divination",
+     "text": "Divination (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Etiquette",
+     "text": "Etiquette (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Games",
+     "text": "Games (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Investigation",
+     "text": "Investigation (Perception)"
+    },
+    {
+     "group": "High",
+     "value": "Lore",
+     "text": "Lore (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Medicine",
+     "text": "Medicine (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Meditation",
+     "text": "Meditation (Void)"
+    },
+    {
+     "group": "High",
+     "value": "Perform",
+     "text": "Perform (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Sincerity",
+     "text": "Sincerity (Awareness)"
+    },
+    {
+     "group": "High",
+     "value": "Spellcraft",
+     "text": "Spellcraft (Intelligence)"
+    },
+    {
+     "group": "High",
+     "value": "Tea Ceremony",
+     "text": "Tea Ceremony (Void)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Athletics",
+     "text": "Athletics (Strength)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Battle",
+     "text": "Battle (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Defense",
+     "text": "Defense (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Horsemanship",
+     "text": "Horsemanship (Agility)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Hunting",
+     "text": "Hunting (Perception)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Iaijutsu",
+     "text": "Iaijutsu (Reflexes)"
+    },
+    {
+     "group": "Bugei",
+     "value": "Jiujutsu",
+     "text": "Jiujutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Chain Weapons",
+     "text": "Chain Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Heavy Weapons",
+     "text": "Heavy Weapons (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kenjutsu",
+     "text": "Kenjutsu (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Knives",
+     "text": "Knives (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Kyujutsu",
+     "text": "Kyujutsu (Reflexes)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Polearms",
+     "text": "Polearms (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Spears",
+     "text": "Spears (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "Staves",
+     "text": "Staves (Agility)"
+    },
+    {
+     "group": "Weapon",
+     "value": "War Fan",
+     "text": "War Fan (Agility)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Cannon",
+     "text": "Cannon (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Firearms",
+     "text": "Firearms (Intelligence)"
+    },
+    {
+     "group": "Weapon (Low)",
+     "value": "Ninjutsu",
+     "text": "Ninjutsu (Agility or Reflexes)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Animal Handling",
+     "text": "Animal Handling (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Commerce",
+     "text": "Commerce (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Craft",
+     "text": "Craft (Awareness)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Engineering",
+     "text": "Engineering (Intelligence)"
+    },
+    {
+     "group": "Merchant",
+     "value": "Sailing",
+     "text": "Sailing (Agility or Intelligence)"
+    },
+    {
+     "group": "Low",
+     "value": "Forgery",
+     "text": "Forgery (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Intimidation",
+     "text": "Intimidation (Awareness)"
+    },
+    {
+     "group": "Low",
+     "value": "Sleight of Hand",
+     "text": "Sleight of Hand (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Stealth",
+     "text": "Stealth (Agility)"
+    },
+    {
+     "group": "Low",
+     "value": "Temptation",
+     "text": "Temptation (Awareness)"
+    }
+   ],
+   "compare": [
+    {
+     "name": "Acting",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Artisan",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Calligraphy",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Courtier",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Divination",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Etiquette",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Games",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Investigation",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Lore",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Medicine",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Meditation",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Perform",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sincerity",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Spellcraft",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Tea Ceremony",
+     "label": "Void",
+     "row": "Void",
+     "match": true
+    },
+    {
+     "name": "Athletics",
+     "label": "Strength",
+     "row": "Strength",
+     "match": true
+    },
+    {
+     "name": "Battle",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Defense",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Horsemanship",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Hunting",
+     "label": "Perception",
+     "row": "Perception",
+     "match": true
+    },
+    {
+     "name": "Iaijutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Jiujutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Chain Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Heavy Weapons",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kenjutsu",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Knives",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Kyujutsu",
+     "label": "Reflexes",
+     "row": "Reflexes",
+     "match": true
+    },
+    {
+     "name": "Polearms",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Spears",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Staves",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "War Fan",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Cannon",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Firearms",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Ninjutsu",
+     "label": "Agility or Reflexes",
+     "row": "Agility or Reflexes",
+     "match": true
+    },
+    {
+     "name": "Animal Handling",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Commerce",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Craft",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Engineering",
+     "label": "Intelligence",
+     "row": "Intelligence",
+     "match": true
+    },
+    {
+     "name": "Sailing",
+     "label": "Agility or Intelligence",
+     "row": "Agility or Intelligence",
+     "match": true
+    },
+    {
+     "name": "Forgery",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Intimidation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    },
+    {
+     "name": "Sleight of Hand",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Stealth",
+     "label": "Agility",
+     "row": "Agility",
+     "match": true
+    },
+    {
+     "name": "Temptation",
+     "label": "Awareness",
+     "row": "Awareness",
+     "match": true
+    }
+   ],
+   "subjects": [
+    {
+     "name": "Perform: Biwa",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Perform: Song",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Games: Go",
+     "asAdded": "Awareness",
+     "named": "Intelligence",
+     "note": ""
+    },
+    {
+     "name": "Games: Kemari",
+     "asAdded": "Awareness",
+     "named": "Agility",
+     "note": ""
+    },
+    {
+     "name": "Games: Letters",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": ""
+    },
+    {
+     "name": "Craft: Bowyer",
+     "asAdded": "Awareness",
+     "named": "Awareness",
+     "note": "Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+    }
+   ],
+   "elsewhere": {
+    "catalogue": "Awareness",
+    "searchTags": [
+     "Low",
+     "Awareness"
+    ],
+    "searchTrait": "Awareness",
+    "untrained": {
+     "trait": "Awareness",
+     "title": "Unskilled Roll — Awareness (10s do not explode)"
+    }
+   },
+   "errors": []
+  },
+  "b01_siblings": {
+   "epilepsy": {
+    "text": "AVOID (TN 15) END SEIZURE (TN 10)",
+    "buttons": [
+     {
+      "label": "Avoid (TN 15)",
+      "shown": "AVOID (TN 15)",
+      "spoken": "Epilepsy: Willpower Trait Roll to avoid a seizure",
+      "width": 108,
+      "disabled": false,
+      "title": ""
+     },
+     {
+      "label": "End seizure (TN 10)",
+      "shown": "END SEIZURE (TN 10)",
+      "spoken": "Epilepsy: Willpower Trait Roll to end a seizure",
+      "width": 154,
+      "disabled": false,
+      "title": ""
+     }
+    ],
+    "notes": [],
+    "rowHeight": 20,
+    "lines": 1
+   },
+   "touch": {
+    "text": "WILLPOWER (TN 30) After every Void Point you spend. A Void Point on a roll gives +2k1, added in the roll.",
+    "buttons": [
+     {
+      "label": "Willpower (TN 30)",
+      "shown": "WILLPOWER (TN 30)",
+      "spoken": "Willpower (TN 30)",
+      "width": 147,
+      "disabled": false,
+      "title": ""
+     }
+    ],
+    "notes": [
+     "After every Void Point you spend. A Void Point on a roll gives +2k1, added in the roll."
+    ],
+    "rowHeight": 46,
+    "lines": 2
+   },
+   "moon": {
+    "label": "Resist Lord Moon (TN 20)",
+    "shown": "RESIST LORD MOON (TN 20)"
+   },
+   "errors": []
+  }
+ }
+}

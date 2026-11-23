@@ -1,0 +1,282 @@
+<title>15b Group 2 Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, the same look as group 1's board and the 15a boards; each unit is a band of today | proposed pairs that stack on a phone. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem;margin-top:14px}
+p{margin:0;max-width:70ch}
+ul,ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:74ch}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+code{font-size:.85em;background:var(--chip);padding:1px 5px;border-radius:4px;word-break:break-word}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:12px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--new);border-radius:6px;padding:12px 14px;max-width:none}
+.rec b{color:var(--new)}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;max-width:none;display:flex;flex-direction:column;gap:8px}
+.note > b:first-child{color:var(--warn)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.stack{display:flex;flex-direction:column;gap:8px;min-width:0}
+.phonepair{max-width:760px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.78rem;letter-spacing:.03em}
+td.t{color:var(--today)} td.n{color:var(--new)}
+td.y{color:var(--warn);font-weight:600}
+.summary td:first-child,.rules td:first-child{white-space:nowrap;font-weight:600}
+.lbl{font-size:.8em;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.decide ol{padding-left:22px;gap:6px}
+@media (max-width:720px){.pair{grid-template-columns:1fr}h1{font-size:1.7rem}.summary td:first-child,.rules td:first-child{white-space:normal}.lbl{white-space:normal}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">Release 15b · group 2 · labels and wording · round 1</span>
+  <h1>Buttons and lines that say what they do: today beside proposed</h1>
+  <p class="lede">Group 2 of Release 15b, as you approved on 20 November: B01 (the check buttons on seven Disadvantages), B03 (Leadership's button), B05 (Touch of the Void's success line) and B09 (the Traits in the Skills picker). You settled the words for B01, B03 and B05 on 1 November (Q8). This board shows them on today's sheet. It also asks the question you raised on 20 November: where another part of the sheet does the same job, does it change too? Every picture is the live app in a test browser, and the proposed pictures have the change applied only in that browser. Nothing is built until you approve.</p>
+  <p class="meta">Live build <code>5ac767c6…574d</code>, 17,750,809 bytes, <code>main</code> at <code>acdb6f75</code> (group 1 live). Captured 23 November 2026 in the project's QA Chromium at 390 × 844 (phone, touch) and 1440 × 1000 (laptop). Test characters: the audit's dense Kuni Shugenja, with only the entries each finding needs (named in each section). No page errors in any of the 26 runs.</p>
+</header>
+
+<section id="summary">
+  <span class="tag">At a glance</span>
+  <h2>The four units</h2>
+  <div class="tbl"><table class="summary">
+    <tr><th>Unit</th><th>Today</th><th>Proposed</th><th>Waits on a B18 answer?</th></tr>
+    <tr><td>B01</td><td class="t">Six cards say "Check (TN 25)", "Check (TN 20)", "Check" or "Check (TN 5 × Glory)". Lost Love says "Spend a Void Point". A screen reader hears "Brash: Willpower Trait Roll…", never the word on the button.</td><td class="n">"Resist insult (TN 25)", "Measure the enemy (TN 20)", "Discretion check (TN 20)", "Cooperate", "Resist gossip (TN 5 × Glory)", "Resolve check (TN 20)" and "Steady yourself — Spend Void". A screen reader hears the label first.</td><td class="y">Lost Love's "Spend Void" only (G07)</td></tr>
+    <tr><td>B03</td><td class="t">"Lead an ally (School Rank + 1k1)", a button 252 px wide. Quick, on the same feature: "Did not act first: +Reflexes".</td><td class="n">"Lead an ally", with "1k1 + 1 (School Rank)" beside it. Quick: "Use", with "+2 (Reflexes)" beside it.</td><td class="y">Quick's "Use" only (G06)</td></tr>
+    <tr><td>B05</td><td class="t">Touch of the Void: "You keep your head." Lord Moon's Curse: "Willpower roll passed. You keep control tonight."</td><td class="n">"You remain in control." and "Willpower roll passed. You remain in control tonight."</td><td>No</td></tr>
+    <tr><td>B09</td><td class="t">The Skills picker says "Intimidation (Willpower)". The row it adds says Awareness.</td><td class="n">"Intimidation (Awareness)", read from the corrected list whenever the picker is drawn.</td><td>No</td></tr>
+  </table></div>
+  <p>All four are screen-only. Words change, and no number, roll, cost or save does. Proposed names, each with its own folder, switch, harness, remover and removal-chain entry after group 1's B17, in the group folder <b>G2 — Action Labels and Wording</b>: <b>B01 — Check Buttons Named for What They Do</b>, <b>B03 — Lead an Ally</b>, <b>B05 — You Remain in Control</b> and <b>B09 — Skill Picker Traits from the Final List</b>. Markers are given at build, from <code>PART H PHASE 15.2.6</code>.</p>
+</section>
+
+<section id="b18">
+  <span class="tag">B18 · one name per button job</span>
+  <h2>How this group meets B18</h2>
+  <p>B18's inventory sorted the sheet's 405 buttons into 23 jobs. Your answers to its 14 questions are still to come, and this board decides none of them. Each label below sits in a B18 job. Where its word depends on an answer you have not given yet, the table says so.</p>
+  <div class="tbl"><table>
+    <tr><th>Label</th><th>B18 job</th><th>B18's suggestion</th><th>Depends on an open answer?</th></tr>
+    <tr><td>The six check buttons (B01)</td><td>G11 Rolling the dice</td><td>Keep Roll, Cast and Check as they are. Its card says your B01 ruling already settles these six.</td><td>No</td></tr>
+    <tr><td>Lost Love's button (B01)</td><td>G07 Spending a Void Point</td><td>"Spend Void", as the Void card's seven buttons say</td><td class="y">Yes, G07. If you keep "Spend a Void Point", the label reads "Steady yourself — Spend a Void Point".</td></tr>
+    <tr><td>Leadership's button (B03)</td><td>G11 Rolling the dice</td><td>Named for what it rolls</td><td>No. The formula stays in view beside it, so no new i is needed (G12).</td></tr>
+    <tr><td>Quick's button (B03, the same feature)</td><td>Not in the inventory. The nearest job is G06 Using an ability now.</td><td>"Use", with the card naming the ability</td><td class="y">Yes, G06. If you keep each ability's own words there, Quick gets a short name of its own instead, such as "Act sooner".</td></tr>
+    <tr><td>The success lines (B05)</td><td>Not a button</td><td>None</td><td>No</td></tr>
+    <tr><td>The Skills picker (B09)</td><td>G19 Choosing one thing from a list</td><td>As they are (not asked)</td><td>No</td></tr>
+  </table></div>
+  <div class="note">
+    <b>Two things for B18's record. Neither is decided here.</b>
+    <p><b>G11 and Touch of the Void.</b> G11 asks whether Touch of the Void's "Willpower (TN 30)" should read "Check (TN 30)", "like the others". After B01 the others no longer say Check. Epilepsy already says "Avoid (TN 15)". Lord Moon's Curse says "Resist Lord Moon (TN 20)", from your ruling of 29 October that its button should say what it is for. B01 names the other six for what they do. That would leave two buttons on the Disadvantage cards that do not: Touch of the Void's "Willpower (TN 30)" and Cursed by the Realm (Toshigoku)'s "Check (TN …)". G11's answer may want a name for what each of them does. That stays G11's question.</p>
+    <p><b>Three buttons the inventory missed:</b> Epilepsy's "Avoid (TN 15)" and "End seizure (TN 10)" (job G11), and Quick's button (job G06).</p>
+  </div>
+</section>
+
+<section id="b01">
+  <span class="tag">B01 · FT-11 · Q8, settled 1 November</span>
+  <h2>Check buttons named for what they do</h2>
+  <p>Test character: the seven Disadvantages, with Willpower 4, Perception 3 and Honour Rank 4. The pictures are in Play. Manage shows the same buttons, at the same sizes.</p>
+  <div class="tbl"><table>
+    <tr><th>Card</th><th>What the check is for (Core Rulebook, in our words)</th><th>Today</th><th>Proposed</th></tr>
+    <tr><td>Brash</td><td>Threatened or insulted: Willpower, TN 25, adding your Honour Rank, or you attack at once (p.157)</td><td class="t lbl">Check (TN 25)</td><td class="n lbl">Resist insult (TN 25)</td></tr>
+    <tr><td>Overconfident</td><td>Facing a clearly better foe: Perception, TN 20, to see it and back off (p.161)</td><td class="t lbl">Check (TN 20)</td><td class="n lbl">Measure the enemy (TN 20)</td></tr>
+    <tr><td>Can't Lie</td><td>A lie told in front of you: Willpower, TN 20, or you correct it (p.157)</td><td class="t lbl">Check (TN 20)</td><td class="n lbl">Discretion check (TN 20)</td></tr>
+    <tr><td>Contrary</td><td>A dispute: Willpower against a TN the GM sets, or you argue your side (p.158)</td><td class="t lbl">TN [15] Check</td><td class="n lbl">TN [15] Cooperate</td></tr>
+    <tr><td>Rumormonger</td><td>A rumour to pass on: Willpower, TN 5 × the Glory Rank involved, to keep it to yourself (p.161)</td><td class="t lbl">Check (TN 5 × Glory)</td><td class="n lbl">Resist gossip (TN 5 × Glory)</td></tr>
+    <tr><td>Soft-Hearted</td><td>To kill: Willpower, TN 20 (p.162)</td><td class="t lbl">Check (TN 20)</td><td class="n lbl">Resolve check (TN 20)</td></tr>
+    <tr><td>Lost Love</td><td>Reminded of the loss: every TN +5 until you spend a Void Point, at most twice a day, an hour apart (p.160)</td><td class="t lbl">Spend a Void Point</td><td class="n lbl">Steady yourself — Spend Void</td></tr>
+  </table></div>
+  <p><b>What a screen reader hears.</b> Today: "Brash: Willpower Trait Roll when threatened or insulted". It never says the word on the button, so a voice-control user cannot say what they see. Proposed, the label comes first: "Resist insult (TN 25): Brash, Willpower roll when threatened or insulted", and "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside".</p>
+
+  <h3>Phone, Play</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{b01-phone-today-play-1}}" alt="Today, phone: Brash with Check (TN 25) and Overconfident with Check (TN 20)"><figcaption><span class="t">Today.</span> Brash and Overconfident both say Check.</figcaption></figure>
+    <figure><img src="{{b01-phone-proposed-play-1}}" alt="Proposed, phone: Brash with Resist insult (TN 25) and Overconfident with Measure the enemy (TN 20)"><figcaption><span class="n">Proposed.</span> Each says what the roll is for. Brash keeps "Adds your Honor Rank."</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{b01-phone-today-play-2}}" alt="Today, phone: Contrary with a TN box and Check; Rumormonger with a Glory Rank box and Check (TN 5 × Glory)"><figcaption><span class="t">Today.</span> Contrary and Rumormonger, with their boxes.</figcaption></figure>
+    <figure><img src="{{b01-phone-proposed-play-2}}" alt="Proposed, phone: Contrary with TN box and Cooperate; Rumormonger with Glory Rank box and Resist gossip (TN 5 × Glory)"><figcaption><span class="n">Proposed.</span> The boxes stay where they are. Rows keep their height.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{b01-phone-today-play-3}}" alt="Today, phone: Soft-Hearted with Check (TN 20) and the Wracked with guilt switch on one line; Lost Love with its switch and Spend a Void Point"><figcaption><span class="t">Today.</span> Soft-Hearted and Lost Love.</figcaption></figure>
+    <figure><img src="{{b01-phone-proposed-play-3}}" alt="Proposed, phone: Soft-Hearted with Resolve check (TN 20), its switch now on the next line; Lost Love with Steady yourself — Spend Void"><figcaption><span class="n">Proposed.</span> Soft-Hearted's switch moves under its button (30 → 58 px). Every other row keeps its height.</figcaption></figure>
+  </div>
+  <h3>Phone, Manage</h3>
+  <div class="pair phonepair">
+    <figure><img src="{{b01-phone-today-manage-1}}" alt="Today, phone, Manage: Brash and Overconfident with Check buttons"><figcaption><span class="t">Today, Manage.</span> The same buttons as in Play.</figcaption></figure>
+    <figure><img src="{{b01-phone-proposed-manage-1}}" alt="Proposed, phone, Manage: Resist insult (TN 25) and Measure the enemy (TN 20)"><figcaption><span class="n">Proposed, Manage.</span> The same as in Play.</figcaption></figure>
+  </div>
+  <h3>Laptop</h3>
+  <div class="pair">
+    <figure><img src="{{b01-laptop-today-play-1}}" alt="Today, laptop: Brash, Overconfident, Can't Lie and Contrary, each with a Check button"><figcaption><span class="t">Today.</span> Four cards, four Checks.</figcaption></figure>
+    <figure><img src="{{b01-laptop-proposed-play-1}}" alt="Proposed, laptop: Resist insult (TN 25), Measure the enemy (TN 20), Discretion check (TN 20), Cooperate"><figcaption><span class="n">Proposed.</span> No row changes height on a laptop.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{b01-laptop-today-play-2}}" alt="Today, laptop: Rumormonger, Soft-Hearted, Lost Love"><figcaption><span class="t">Today.</span></figcaption></figure>
+    <figure><img src="{{b01-laptop-proposed-play-2}}" alt="Proposed, laptop: Resist gossip (TN 5 × Glory), Resolve check (TN 20), Steady yourself — Spend Void"><figcaption><span class="n">Proposed.</span></figcaption></figure>
+  </div>
+
+  <h3>The same job elsewhere on the sheet</h3>
+  <div class="pair">
+    <figure><img src="{{b01-laptop-siblings}}" alt="Today, laptop: Epilepsy with Avoid (TN 15) and End seizure (TN 10); Lord Moon's Curse with Resist Lord Moon (TN 20); Touch of the Void with Willpower (TN 30)"><figcaption><span class="t">Today, unchanged by B01.</span> Epilepsy and Lord Moon's Curse already say what their checks are for, with the TN in brackets. B01 uses the same shape. Touch of the Void's "Willpower (TN 30)" is B18's G11 question (above).</figcaption></figure>
+    <div class="stack">
+      <p>Epilepsy and Lord Moon's Curse show that B01's shape is already the sheet's own: what the roll is for, then the TN. With B01, every check button on a Disadvantage card says what it is for, except Touch of the Void's and Cursed by the Realm (Toshigoku)'s.</p>
+      <p>The picture also shows three looks for these buttons: small and outlined (Epilepsy, and B01's seven), larger and outlined (Lord Moon), and filled dark (Touch of the Void, Leadership and Quick). That is not B01's job. It is recorded for a later unit.</p>
+    </div>
+  </div>
+
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Changes</td><td>The seven labels and what a screen reader hears for each.</td></tr>
+    <tr><td>Stays</td><td>The TN in each label; Contrary's TN box and Rumormonger's Glory Rank box; Brash's "Adds your Honor Rank."; the Wracked with guilt and Reminded of your loss switches; "At most twice a day, an hour apart."; what each button does; and the result window. Brash's still reads "Brash — Willpower vs TN 25" and "You keep your temper."</td></tr>
+    <tr><td>Size</td><td>The buttons are 34 to 95 px wider (Overconfident 113 → 208 px). On a phone every row keeps its height except Soft-Hearted's. On a laptop none changes.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve B01 as shown.</b> These are your Q8 words. The TN stays in each label, as on Epilepsy and Lord Moon's Curse, and a screen reader hears the label first. Lost Love's "Spend Void" follows your G07 answer.</div>
+</section>
+
+<section id="b03">
+  <span class="tag">B03 · FT-19 · Q8, settled 1 November</span>
+  <h2>Lead an ally</h2>
+  <p>Test character: Leadership (School Rank 1) and Quick (Reflexes 2), in Play, with a combat round started so that the buttons can be used. Quick is the one other button on the same feature (Phase 4.5.33) whose label is a condition and a formula, so it is shown too. Outside a combat round both buttons are greyed out, as today.</p>
+  <div class="tbl"><table>
+    <tr><th>Card</th><th>The rule (Core Rulebook, in our words)</th><th>Today</th><th>Proposed</th></tr>
+    <tr><td>Leadership</td><td>Once a Round, in the Reactions Stage: roll 1k1 + your School Rank and add it to one ally's Initiative Score until the next Reactions Stage (p.151)</td><td class="t"><span class="lbl">Lead an ally (School Rank + 1k1)</span>, 252 px</td><td class="n"><span class="lbl">Lead an ally</span>, 106 px, then "1k1 + 1 (School Rank)" with your School Rank filled in</td></tr>
+    <tr><td>Quick</td><td>Each Round you did not act first, in the Reactions Stage: add your Reflexes to your Initiative Score for the rest of the skirmish (p.152)</td><td class="t"><span class="lbl">Did not act first: +Reflexes</span>, 220 px</td><td class="n"><span class="lbl">Use</span>, 44 px, then "+2 (Reflexes)"</td></tr>
+  </table></div>
+  <p><b>What a screen reader hears.</b> Today, the label. Proposed: "Lead an ally: roll 1k1 + 1 (School Rank) for one ally's Initiative Score" and "Use Quick: add 2 (Reflexes) to your Initiative Score for the rest of the skirmish".</p>
+
+  <div class="pair phonepair">
+    <figure><img src="{{b03-phone-today-before}}" alt="Today, phone: Lead an ally (School Rank + 1k1) and Did not act first: +Reflexes"><figcaption><span class="t">Today, before use.</span> The formula is inside the button, written as a rule, not as your number.</figcaption></figure>
+    <figure><img src="{{b03-phone-proposed-before}}" alt="Proposed, phone: Lead an ally, then 1k1 + 1 (School Rank); Use, then +2 (Reflexes)"><figcaption><span class="n">Proposed, before use.</span> The button says what you do. Your own numbers sit beside it. The notes under them are unchanged, and both rows keep today's height.</figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{b03-phone-today-after}}" alt="Today, phone, after use: This Round: 8 to one ally's Initiative Score; Initiative Score +2 this skirmish"><figcaption><span class="t">Today, after use.</span> Both buttons are greyed out until the next Round.</figcaption></figure>
+    <figure><img src="{{b03-phone-proposed-after}}" alt="Proposed, phone, after use: the same lines, with the shorter buttons"><figcaption><span class="n">Proposed, after use.</span> The same lines. Quick's row gets shorter (73 → 48 px).</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{b03-laptop-today-before}}" alt="Today, laptop: Leadership and Quick"><figcaption><span class="t">Today, laptop.</span></figcaption></figure>
+    <figure><img src="{{b03-laptop-proposed-before}}" alt="Proposed, laptop: Lead an ally 1k1 + 1 (School Rank); Use +2 (Reflexes)"><figcaption><span class="n">Proposed, laptop.</span> The same heights as today.</figcaption></figure>
+  </div>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Changes</td><td>The two labels, a short amount beside each, and what a screen reader hears.</td></tr>
+    <tr><td>Stays</td><td>The notes ("Once a Round, in the Reactions Stage: …", "Each Round you did not act first…", "No Initiative Score yet (Combat card)."); the lines after use ("This Round: 8 to one ally's Initiative Score.", "Initiative Score +2 this skirmish."); the roll and its window ("Leadership — 1k1 + School Rank 1, for one ally"); once a Round; greyed out outside a combat round.</td></tr>
+    <tr><td>Not changed</td><td>Outside a combat round, the reason a button is greyed out ("Start a combat round first.") is only in a tooltip, which a phone does not show. Recorded, not proposed.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve Leadership and Quick on one pattern, as shown.</b> Leadership is your Q8 wording, with the formula beside the button and your School Rank filled in, so the amount is in view before you press it. Quick follows the same pattern. Its word, "Use", is B18's G06 suggestion. If your G06 answer keeps each ability's own words, Quick gets a short name of its own instead, such as "Act sooner".</div>
+  <p><b>The alternative:</b> Leadership only. Quick keeps "Did not act first: +Reflexes".</p>
+</section>
+
+<section id="b05">
+  <span class="tag">B05 · FT-22 · Q8, settled 1 November</span>
+  <h2>You remain in control</h2>
+  <p>Touch of the Void (Core Rulebook p.162, in our words): after every Void Point you spend, a Willpower roll against TN 30, or you are Dazed for one Round. The roll opens by itself after a spend, or from the card's button. Test character: Willpower 4. The dice are fixed at 9s so the roll passes (36 against 30).</p>
+  <div class="pair phonepair">
+    <figure><img src="{{b05-phone-today-touch}}" alt="Today, phone: Touch of the Void — Willpower vs TN 30, 36, You keep your head."><figcaption><span class="t">Today.</span> "You keep your head."</figcaption></figure>
+    <figure><img src="{{b05-phone-proposed-touch}}" alt="Proposed, phone: Touch of the Void — Willpower vs TN 30, 36, You remain in control."><figcaption><span class="n">Proposed.</span> "You remain in control." Nothing else in the window changes.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{b05-laptop-today-touch}}" alt="Today, laptop: You keep your head."><figcaption><span class="t">Today, laptop.</span></figcaption></figure>
+    <figure><img src="{{b05-laptop-proposed-touch}}" alt="Proposed, laptop: You remain in control."><figcaption><span class="n">Proposed, laptop.</span></figcaption></figure>
+  </div>
+
+  <h3>The same job elsewhere on the sheet</h3>
+  <p>Every check with a TN shows a line when it passes. Each one says what passing means for that rule. Only one other does the same job as Touch of the Void's: Lord Moon's Curse (Core Rulebook p.160), where failing means you lose control of your character for the night.</p>
+  <div class="pair">
+    <figure><img src="{{b05-laptop-today-moon}}" alt="Today, laptop: Lord Moon's Curse — Willpower vs TN 20: Willpower roll passed. You keep control tonight."><figcaption><span class="t">Today.</span> "You keep control tonight."</figcaption></figure>
+    <figure><img src="{{b05-laptop-proposed-moon}}" alt="Proposed, laptop: Willpower roll passed. You remain in control tonight."><figcaption><span class="n">Proposed.</span> "You remain in control tonight." One job, one phrase.</figcaption></figure>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Check</th><th>Its success line today</th><th>Proposed</th></tr>
+    <tr><td>Touch of the Void</td><td class="t">You keep your head.</td><td class="n">You remain in control.</td></tr>
+    <tr><td>Lord Moon's Curse</td><td class="t">Willpower roll passed. You keep control tonight.</td><td class="n">Willpower roll passed. You remain in control tonight.</td></tr>
+    <tr><td>Brash</td><td>You keep your temper.</td><td>As it is</td></tr>
+    <tr><td>Can't Lie</td><td>You let the lie stand.</td><td>As it is</td></tr>
+    <tr><td>Contrary</td><td>You hold your tongue.</td><td>As it is</td></tr>
+    <tr><td>Overconfident</td><td>You see the danger and may back off.</td><td>As it is</td></tr>
+    <tr><td>Rumormonger</td><td>You keep it to yourself.</td><td>As it is</td></tr>
+    <tr><td>Soft-Hearted</td><td>You can do it. Afterwards, turn on "Wracked with guilt": every TN is 10 higher for a day.</td><td>As it is</td></tr>
+    <tr><td>Epilepsy</td><td>No seizure. / The seizure ends.</td><td>As it is</td></tr>
+    <tr><td>Cursed by the Realm (Toshigoku)</td><td>You master the urge and hold back.</td><td>As it is</td></tr>
+    <tr><td>Disadvantage Willpower gates</td><td>Willpower check passed.</td><td>As it is</td></tr>
+    <tr><td>Check Taint growth</td><td>Taint does not grow.</td><td>As it is</td></tr>
+    <tr><td>Casting a spell</td><td>Spell cast successfully.</td><td>As it is</td></tr>
+    <tr><td>Any other roll with a TN</td><td>Success.</td><td>As it is</td></tr>
+  </table></div>
+  <div class="tbl"><table class="rules">
+    <tr><th>What</th><th>Proposed</th></tr>
+    <tr><td>Stays</td><td>The failure lines: "You are Dazed for one Round. Tell the GM: the sheet does not track Dazed." and "Willpower roll failed." (with Lord Moon's message after it); the title, the TN, the dice; when the roll opens.</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve "You remain in control." for Touch of the Void, as you wrote it in Q8, and the same words for Lord Moon's Curse.</b> Both lines say that you keep control, so they use one phrase.</div>
+  <p><b>The alternative:</b> Touch of the Void only. Lord Moon's line stays "You keep control tonight."</p>
+</section>
+
+<section id="b09">
+  <span class="tag">B09 · FT-29 · parked by you, then Q1</span>
+  <h2>The Skills picker's Traits from the final list</h2>
+  <p>The picker under "Add from skill list" is written when the sheet starts. A later fix (Skill Traits, Core Rulebook pp.136–137 and 143–144 as the sheet records them) then changes Intimidation from Willpower to Awareness. The picker is never written again, so it still says Willpower, while the row it adds says Awareness. The roll has always used the row's Trait. Test character: the dense character without its Intimidation row, in Manage, on the Skills page. The picker is drawn open as a list here, because a closed picker cannot be photographed. A phone shows the same words in its own picker.</p>
+  <div class="pair phonepair">
+    <figure><img src="{{b09-phone-today-picker}}" alt="Today, phone: the picker lists Intimidation (Willpower)"><figcaption><span class="t">Today.</span> "Intimidation (Willpower)".</figcaption></figure>
+    <figure><img src="{{b09-phone-proposed-picker}}" alt="Proposed, phone: the picker lists Intimidation (Awareness)"><figcaption><span class="n">Proposed.</span> "Intimidation (Awareness)". Every other entry is unchanged.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="{{b09-laptop-today-picker}}" alt="Today, laptop: Intimidation (Willpower)"><figcaption><span class="t">Today, laptop.</span></figcaption></figure>
+    <figure><img src="{{b09-laptop-proposed-picker}}" alt="Proposed, laptop: Intimidation (Awareness)"><figcaption><span class="n">Proposed, laptop.</span></figcaption></figure>
+  </div>
+  <div class="pair phonepair">
+    <figure><img src="{{b09-phone-today-row}}" alt="Today, phone: the Intimidation row added from the picker, Trait Awareness"><figcaption><span class="t">Today, the row it adds.</span> Trait: Awareness.</figcaption></figure>
+    <div class="stack">
+      <h3>Every Skill in the picker against the row it adds</h3>
+      <p>On a character with no Skills, the picker offers 44. Each was added through the picker and its row read. 43 match. Intimidation does not: the picker says Willpower and the row says Awareness. With the proposal, all 44 match.</p>
+      <p>The other places that show a Skill's Trait already say Awareness: Search's entry for Intimidation, the Untrained Skills list, and the Skill's i window, which reads the row.</p>
+    </div>
+  </div>
+  <h3>Skills whose Trait follows a subject</h3>
+  <div class="tbl"><table>
+    <tr><th>Skill</th><th>The picker says</th><th>The row as added</th><th>The row once you name the subject</th></tr>
+    <tr><td>Perform</td><td>Awareness</td><td>Awareness</td><td>Biwa: Agility. Song: Awareness.</td></tr>
+    <tr><td>Games</td><td>Awareness</td><td>Awareness</td><td>Go: Intelligence. Kemari: Agility. Letters: Awareness.</td></tr>
+    <tr><td>Craft</td><td>Awareness</td><td>Awareness</td><td>Awareness, with the note "Trait varies by craft; the GM sets it (Core Rulebook p.143)."</td></tr>
+  </table></div>
+  <div class="rec"><b>Recommendation: approve B09 as shown.</b> The picker reads each Skill's Trait from the list as it stands after every fix, whenever the picker is drawn. Today only Intimidation changes, and a later correction would follow by itself. Labels only: rows, rolls and saves are untouched, and A20's one-roll Trait choice is separate.</div>
+  <p><b>The alternative:</b> also name the range for the subject Skills, as the picker already does for Sailing ("Sailing (Agility or Intelligence)"): "Perform (Agility or Awareness)", "Games (Agility, Awareness or Intelligence)", "Craft (GM sets it)". I don't recommend it. The row starts at Awareness and corrects itself when you name the subject, so the picker would no longer match the row it adds.</p>
+</section>
+
+<section id="decide">
+  <span class="tag">Your decisions</span>
+  <h2>Round 1: four short questions</h2>
+  <div class="decide">
+    <ol>
+      <li><b>B01, check buttons named for what they do:</b> approve as shown (recommended), or revise.</li>
+      <li><b>B03, Lead an ally:</b> approve Leadership and Quick on one pattern (recommended), Leadership only, or revise.</li>
+      <li><b>B05, You remain in control:</b> approve with Lord Moon's line too (recommended), Touch of the Void only, or revise.</li>
+      <li><b>B09, the Skills picker's Traits:</b> approve as shown (recommended), also name the subject Skills' range, or revise.</li>
+    </ol>
+    <p>Approval permits the build and preview stage only. Each unit gets its own stacked branch, light checks and one code review. Then comes your device round, with Accept, Revise or Remove for each unit, and each unit is also checked with all of 15a removed. Qualification and go-live come after that, and only on your word.</p>
+    <p>Lost Love's "Spend Void" and Quick's "Use" follow your B18 answers (G07 and G06). If those answers come after this group is built, the two words change with B18's own build.</p>
+  </div>
+  <p class="meta">No book text was extracted for this board. Every page reference is the one the sheet already records in its own code.</p>
+</section>
+</div>
