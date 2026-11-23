@@ -1,25 +1,15 @@
 # Rokugan Build Ledger
 
-The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
+The record of the L5R 4th Edition character sheet's build: what is live, what is next, what it has cost, and every dated update. **Start with part 1**, which says where things stand now. Parts 1 to 4 are rewritten at each update, so they always read as current. Part 6 keeps every dated update, newest first, as it was written.
 
-Local records updated **23 November 2026** (Claude). **Release 15b group 1 is live and verified.** [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
-
-**Earlier:** Local records updated **19 November 2026** (Claude). **The cycle review after Release 15a is done, and Release 15b's work order is with the owner:** [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP). [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>).
-
-**Earlier:** Local records updated **19 November 2026** (Claude). **Release 15a is complete: G6 is live and verified** (G5 went live on 18 November). [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>).
-
-**Earlier:** Local records updated **12 November 2026** (Claude). **Release 15a G3 is live and verified.** [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-
-**Earlier:** Local records updated **9 November 2026** (Codex). **Release 15a G2 is live and verified** on the owner's go-live instruction. Main was fast-forwarded to `93b27c61`; application `77936023…82f0`. Production checks passed **2,523/2,523**, browser/offline **22/22**. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-
-**Historical publication and status, 4 November 2026:** Local records updated **4 November 2026** (Codex; Claude's publication and review the same day). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. Claude republished the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) from this record and published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) on 4 November at about 15:25 UTC; both were opened and checked. The next build choice is still pending.
+Updated **23 November 2026** (Claude) and reorganised that day at the owner's request. Nothing was removed. The dated paragraphs that had gathered at the top of parts 1 to 4 now sit in their update's entry in part 6, and the earlier summaries are in part 8.
 
 **Contents**
 
-1. [Where things stand](#1-where-things-stand)
-2. [What is left, the estimate and the build order](#2-what-is-left-the-estimate-and-the-build-order)
-3. [What has been built, and what each step cost](#3-what-has-been-built-and-what-each-step-cost)
-4. [Parked items, waiting for review](#4-parked-items-waiting-for-review)
+1. [Now](#1-now)
+2. [What is next](#2-what-is-next)
+3. [What it has cost](#3-what-it-has-cost)
+4. [Parked items](#4-parked-items)
 5. [Each phase in detail](#5-each-phase-in-detail)
 6. [The update log, newest first](#6-the-update-log-newest-first)
 7. [What each phase has cost (the detailed cost records)](#7-what-each-phase-has-cost)
@@ -30,487 +20,97 @@ Local records updated **23 November 2026** (Claude). **Release 15b group 1 is li
 
 ---
 
-## 1. Where things stand
+## 1. Now
 
-<!-- g1-15b-live-part1 -->
-**23 November 2026 · Release 15b group 1 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `3b499a88` to `e638e052` at 19:56 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `5ac767c6…574d`, deployed page `0036400e1138…`, service worker build `40a5ee3f5b408a43`); 130 application harnesses passed 5,541/5,541 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
-<!-- end-g1-15b-live-part1 -->
+- **Live:** Release 15b group 1 (A14, B04, B14 and B17), on top of all 26 units of Release 15a. It went live on 23 November 2026 (`main` `e638e052`, application `5ac767c6…574d`). On the live files, 130 harnesses passed 5,541/5,541 checks, and the browser and offline test passed 22/22.
+- **Waiting on you:** your rulings on B18's button inventory (405 controls in 23 groups), on [its ruling page](https://claude.ai/artifact/CfJNQtsc9wsm5vpGP7NW76).
+- **Next:** Release 15b group 2 (B01, B03, B05 and B09), mock-ups first. What is next has the rest of the order.
+- **Cost so far:** Phase 15 has used about 258 weekly points: about 229 for Release 15a, 4 for the review after it and 25 for 15b group 1. The weekly meter read 60% after group 1's go-live, and it resets on 25 November.
 
-<!-- g1-15b-qualification-part1 -->
-**23 November 2026 · Release 15b group 1 qualified (Claude).** Release 15b's first group is four screen-only units on stacked branches: A14 (One Net Wound Penalty: with Low Pain Threshold or Strength of the Earth the Wounds line, each level's spoken name, the level's window and Quick Access show the one penalty that applies, an i opens the rank's penalty, each entry with its page and the total, and the roll preview keeps one row, "-5 to total — Nicked"), B04 (One Armor TN Breakdown: Quick Access's Armor TN has an i and Blind's line there goes; the i and the Combat card's formula i show one table that adds up), B14 (Jigoku's Total, Then Its Arithmetic: "+8 to total — Taint Rank 4 × 2 (Lost)") and B17 (One Row for Kharmic Tie: the badge "Aiko · Rank 3", the pips and Reset session, then Change and one i on the badge's line), markers `PART H PHASE 15.2.1`, `.3`, `.4` and `.5`. B02 (actual and catalogue price) was dropped at the mock-ups, and the owner's consistency note added B18 (One Name per Button Job) to 15b; B17 keeps "Reset session" until B18 rules. The owner accepted all four at the device round (22/22 checks on iPhone and laptop).
+### Phase 15 so far
 
-Every stage passed first time. The chain ran once (16:31 to 16:35 UTC): group removal 30/30 (all four removed restores Release 15a as live `921f3ac9…6150` exactly; A14, B04 and B14 each removed alone and A19.1 removed with the group kept, with every kept harness run in full; and, the owner's decision 3, all 26 Release 15a units removed with the group kept, on which all four harnesses passed) and dependencies 4/4. One full pass followed (16:35 to 17:31 UTC): candidate **7,505/7,505** (209 leaves) and retained **7,380/7,380** (203 leaves), restoring Release 15a exactly. Light checks found one fault, fixed before the device round: without Release 15a, B17's i grew to the sheet's 40 px phone size; it now keeps 28 px.
-<!-- end-g1-15b-qualification-part1 -->
+Phase 15 is the UI consistency pass. Each finding is its own removable unit, and you accept it on your devices before it goes live. Release 15a is complete, and Release 15b has started. Newest first; each group's name links to its handover.
 
-<!-- review-15a-part1 -->
-**19 November 2026 · Cycle review after Release 15a (Claude).** 15a cost about 229 Claude weekly points against 94 (58–150) planned, and 15b is re-estimated at about 120 (85–182). All of 15a (26 built units; not 28) removed in a scratch tree rebuilds Release 8c's application `139e0810…2551`, 17,525,378 bytes, byte for byte (13/13). The ledger page is republished. The owner is asked three things in one Claude Doc, [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): 15b's groups and order (recommended: 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 · 5 B12, B13); B14 and B01 kept in 15b (B14's line is not on the resisting rows); and a stage with 15a removed in each group's chain. Nothing in 15b is mocked up or built. These records are on `claude/release-15b-kickoff`, not on `main`. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
-<!-- end-review-15a-part1 -->
+| Group | Units | Live | Full pass | Live checks | Points |
+|---|---|---|---|---|---:|
+| [15b group 1 · Totals and their breakdowns](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>) | A14, B04, B14, B17 | 23 Nov | 7,505 / 7,380 | 5,541 + 22 | about 25 |
+| [15a G6 · New functions](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>) | A19 revision 1, A20, A19.1 | 19 Nov | 7,453 / 7,328 ×2 | 4,930 + 22 | 23 |
+| [15a G5 · Undo and the roll preview](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G5 — Undo and the Roll Preview/HANDOVER.md>) | A08 | 18 Nov | 7,401 / 7,307 ×2 | 3,464 + 22 | 17 |
+| [15a · Automatic entries](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>) | AE1, AE2, AE3 | 14 Nov | 7,380 / 7,253 ×2 | 3,332 + 22 | 30 |
+| [15a G4 · Touch, focus and startup](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>) | A09, A10, A10.1, A17 | 13 Nov | 7,326 / 7,169 ×2 | 3,091 + 22 | 22 |
+| [15a G3 · Spell rows](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>) | 8b.1-UI-01, 02, 03 | 12 Nov | 7,242 / 7,075 | 2,669 + 22 | 53 |
+| [15a G2 · Small layout fixes](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>) | A05, A06, A07, A11, A04.1 | 9 Nov | 7,148 / 6,929 | 2,523 + 22 | 12 |
+| [15a G1 · Information pattern](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>) | A04, A15, A16, A03.1 | 7 Nov | 7,002 / 6,792 | 1,799 + 22 | 19 |
+| [15a A03 · Top-aligned columns, compact Skill cards](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>) | A03 (revision 2) | 6 Nov | 6,865 / 6,755 ×2 | 550 + 22 | 27 |
+| [15a A02 · Floating controls](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>) | A02 (revision 2) | 5 Nov | 6,828 / 6,732 ×2 | 496 + 22 | 18 |
+| [15a A01 · One reminder per School choice](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>) | A01 | 4 Nov | 6,805 / 6,701 ×2 | 411 + 24 | 8 |
+| **Release 15a in all** | **26 units** | 4–19 Nov |  |  | **229** |
 
-<!-- g6-15a-live-part1 -->
-**19 November 2026 · G6 live; Release 15a complete (Claude).** On the owner's word ("I have now done the tests they all pass I am happy for this to move to the go live"), `main` was fast-forwarded from `1ebf26b4` to `c359fa3a` at 16:06 UTC without a merge commit or force (records `0838e5c9`). Production: all seven deployed files match the qualified build; 118 application harnesses passed 4,930/4,930 on the downloaded production files (A19's 25, A20's 18 and A19.1's 9 checks, and the layers of their light checks: the roll pipeline and preview, the declaration registry and its providers, the dice, situational and automatic entries, the Void card and Initiative, the wound bar and Play Mode Combat); browser/offline smoke 22/22. Deployed page `d3bec9e6c11bab70…`, 17,725,378 bytes; application `921f3ac9…6150`; service worker build `2d60065ab4f57fea`. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
-<!-- end-g6-15a-live-part1 -->
+*Full pass:* the checks with the group in place, then with it removed. ×2 means two full passes. Every qualifying pass passed on its first execution; A02, G2 and G5 each had an earlier failure or stop, recorded in their entries in part 6. *Live checks:* the application checks on the downloaded live files, plus the browser and offline test. *Points:* the Claude weekly meter; G2's 12 is Claude's build, and Codex qualified it.
 
-<!-- g6-15a-qualification-part1 -->
-**19 November 2026 · G6 qualified (Claude).** Release 15a's last group is three units on stacked branches: A19 revision 1 (Undo the Last Void Spend: one line under the Combat page's Void card offers Undo after a spend and puts back exactly what that spend changed, once; Touch of the Void's own save keeps the offer), A20 (A Trait for One Skill Roll: where the book allows another Trait for a Skill, the roll preview's Trait row is a drop-down for that one roll, and the saved character is unchanged) and A19.1 (the Void card's damage row fits a phone: Apply and Cancel stacked full width at 640 px and less). The group tip is `claude/release-15a-a19-1`. Application `921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150`, 17,718,601 bytes. The owner approved the A19 and A20 mock-ups as shown. At the first device round A20 was accepted and A19 marked revise (Touch of the Void's save ended Undo); the owner chose to keep Undo through that save and to add A19.1, whose mock-up was approved as shown. At the second round every check passed on iPhone and laptop and A19 revision 1 and A19.1 were accepted ("I have now done the tests they all pass I am happy for this to move to the go live").
+Left out on purpose: A12 was withdrawn into the resistance phase, A18 was closed, and B02 was dropped at group 1's mock-ups.
 
-Every stage passed first time. Nine variant cases (three baselines, six mutations) were predicted and pushed before discovery (`30067683`), and all nine matched. The chain ran once (12:49 to 14:12 UTC): group removal 16/16 (all three removed restores G5, A08, as live `6d47849b…44b1` exactly; A19 and A20 each removed alone, and A08 removed with the group kept, with every kept harness run in full), all nine variants on their pins, dependencies 3/3, the 4× CPU screen 170/170 leaves. Two full passes, each on its first execution (14:13 to 16:04 UTC): candidate **7,453/7,453** and retained **7,328/7,328** (run 1: 29.10 and 26.10 minutes; run 2: 29.15 and 25.89 minutes). [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
-<!-- end-g6-15a-qualification-part1 -->
+### Before Phase 15
 
-<!-- g5-15a-live-part1 -->
-**18 November 2026 · G5 live (Claude; recorded here on 19 November).** On the owner's instruction ("Go live"), `main` was fast-forwarded from `c5dd578b` to `22033522` without a merge commit or force (records `1ebf26b4`). Production: all seven deployed files match the qualified build; 87 application harnesses passed 3,464/3,464 on the downloaded production files (A08's 21 checks and the twelve layers of its light check among them); browser/offline smoke 22/22. Deployed page `87f82af7c0fefbe7…`, 17,692,705 bytes; application `6d47849b…44b1`; service worker build `896459a52b224a4f`. [G5 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G5 — Undo and the Roll Preview/HANDOVER.md>)
-<!-- end-g5-15a-live-part1 -->
+Before Phase 15, 21 of the 25 phases were built and checked between 9 September and 4 November 2026 (part 5): phase by phase until mid-October, then in Cycles 1 to 8. That cost about 830 weekly points (part 3). Cycle 8's last release, 8c (the rank-spell choices), went live on 4 November, and Cycle 8 was closed that day. Its entry in part 6 has the reassessment and the work order that led into Phase 15.
 
-<!-- g5-15a-qualification-part1 -->
-**18 November 2026 · G5 qualified (Claude; recorded here on 19 November).** Release 15a's G5 is A08 alone (One Undo for Quick Taps: − and + taps on the same Honour, Glory, Status or Taint card that each come within five seconds of the last count as one change; Undo takes the whole group back in one step, and History gets one entry for it). A12 (one Resisting line) was withdrawn when the owner moved the resistance redesign into a phase of its own after Phase 15 ("Yes, pin it"); its records stay on `claude/release-15a-a12`. A08 is on `claude/release-15a-a08`. Application `6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1`, 17,685,928 bytes. The owner approved the mock-ups ("approve as recommended", 14 November) and accepted A08 at the device round (16 November).
+## 2. What is next
 
-The qualification was not an uninterrupted first chain. Six variant cases were predicted and pushed before discovery, and all six matched. The chain ran once: group removal 9/9 (A08 removed restores the automatic-entries group as live `99b76d62…15b8` exactly), all six variants on their pins, dependencies 1/1, then the 4× CPU screen stopped at 162/163 leaves, A08's own harness 20/21 (`QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP`). The failed chain is kept as it ran (`c49f90b2`) and was not run again. Cause: under the screen's CPU throttle a page left idle can sleep past a timer's deadline, and the check left the page alone for 7.5 seconds. Only that check's wait changed (`8deb1df3`: the page is woken every 250 ms for the same 7.5 seconds; the assertion, ids and count are unchanged and no application file changed). A scoped proof passed 9/9 first time (`713873af`) and a guarded continuation recorded the qualification (`81c652e7`). Two full passes, each on its first execution (18:28 to 20:17 UTC on 18 November): candidate **7,401/7,401** and retained **7,307/7,307** (run 1: 28.37 and 25.68 minutes; run 2: 28.28 and 25.44 minutes). [G5 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G5 — Undo and the Roll Preview/HANDOVER.md>)
-<!-- end-g5-15a-qualification-part1 -->
+### Release 15b
 
-<!-- ae-15a-live-part1 -->
-**14 November 2026 · Automatic entries live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `8676634b` without a merge commit or force. Production: all seven deployed files match the qualified build; 80 application harnesses passed 3,332/3,332 on the downloaded production files (the group's three units and the layers they touch, among them the wizard, the older-holdings review, the Characters list, the save format and the spell rows); browser/offline smoke 22/22. Deployed page `85c5b8b0d612d9b7…`, 17,682,088 bytes; application `99b76d62…15b8`; service worker build `1dd9768a09706ced`. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
-<!-- end-ae-15a-live-part1 -->
+Release 15b follows the [work order of 19 November 2026](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP), which you approved on 20 November. Each group goes the same way: mock-ups first, then the build, your device round, qualification, and go-live on your word.
 
-<!-- ae-15a-qualification-part1 -->
-**13 November 2026 · Automatic entries qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").
+| Step | Units | State |
+|---|---|---|
+| **B18 · One name per button job** | every button's label, sheet-wide | Inventory done on 21 November (405 controls in 23 groups); waiting for your rulings, then its own build group |
+| **Group 2** | B01, B03, B05, B09 | Next, mock-ups first |
+| **Group 3** | B06, B10, B11, B16 | Waiting |
+| **Group 4** | B07, B08 (behaviour) | Waiting |
+| **Group 5** | B12, B13 | Waiting; takes A03's print note (B12) and the colophon's mon (B13) |
+| Group 1 | A14, B04, B14, B17 | Live on 23 November; B02 dropped |
 
-Negative variants: thirteen cases predicted and pushed before discovery; twelve matched exactly at the first discovery. One prediction was wrong: on G4 as live, AE3's harness fails 14 checks, not 16, because the sheet re-adds a renamed School Technique and two later checks read that second card. The pin was corrected and explained before the chain, and a second discovery of that one case matched. AE2's harness stops early on a build without the unit, so the checker gained one pinned form: the stop, its count and the exact failures before it. The chain passed first time: group removal 29/29 (all of the group removed restores G4 as live `fa634abb…00cb` exactly), all 13 variants on their pins, dependencies 3/3, the 4× CPU screen 161/161 leaves (G4's leaves plus those that open a character or use the wizard). Two full passes, each on its first execution (22:51 UTC on 13 November to 00:30 UTC on 14 November): candidate **7,380/7,380** and retained **7,253/7,253** (run 1: 25.92 and 23.15 minutes; run 2: 25.53 and 23.20 minutes). The code review found one defect, fixed as AE3 revision 1. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
-<!-- end-ae-15a-qualification-part1 -->
+15b was re-estimated on 19 November at about 120 weekly points (85–182). Group 1 used about 25.
 
-<!-- g4-15a-live-part1 -->
-**13 November 2026 · G4 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `e6dc3248` without a merge commit or force. Production: all seven deployed files match the qualified build; 74 application harnesses passed 3,091/3,091 on the downloaded production files (G4's four units and the layers they touch, the splash layer's harness among them); browser/offline smoke 22/22. Deployed page `de2ea7d4f0910f68…`, 17,655,049 bytes; application `fa634abb…00cb`; service worker build `dac892eac0085111`. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
-<!-- end-g4-15a-live-part1 -->
+### After Phase 15
 
-<!-- g4-15a-qualification-part1 -->
-**12 November 2026 · G4 qualified (Claude).** Release 15a G4, touch, focus and startup, is accepted and qualified. A09 (editable boxes at 16 px on phones and touch screens; buttons take a quick second tap as a press, not a zoom), A10 (the Advanced Schools hint and button in one row; a cross-page button moves focus to the heading of what it opened), A10.1 revision 1 (the page's gold focus ring only for the keyboard; keys typed into a text box do not count) and A17 (the splash picture fills the screen with the title and seal in view; the square picture up to 3 : 2) are on `claude/release-15a-a17`. Application `fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb`, 17,648,272 bytes. A18 (the first Manage tap on an iPhone) is closed as not reproduced: the owner's first tap is quick, and the test browser measured 45–62 ms, no slower than the second. The owner approved the mock-ups ("I am happy with the recommendations suggested"), passed the device round except check 4 (double-tap zoom on text, which the live app does not do either) and accepted all four ("Accept A09").
+In the order agreed after G6, each starting only on your word:
 
-Negative variants: twenty cases predicted and pushed before discovery; all twenty matched exactly at the first discovery. The chain passed first time: group removal 32/32 (all of G4 removed restores G3 `6c555d29…c029` exactly), all 20 variants on their exact pins, dependencies 4/4, the 4× CPU screen 137/137 leaves. Two full passes, each on its first execution: candidate **7,326/7,326** and retained **7,169/7,169** (run 1: 25.25 and 22.26 minutes; run 2: 25.06 and 22.27 minutes). The code review found one defect, fixed as A10.1 revision 1. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
-<!-- end-g4-15a-qualification-part1 -->
+1. **The resistance phase:** each resist shows its own bonus. You lean to versions 1 and 2, resumed as one whole-row design. The rules read is complete (245 rows); its question 5 is still open.
+2. **School Techniques, Kata and Kiho as modifiers,** applied the way Advantages are.
 
-<!-- g3-15a-live-part1 -->
-**12 November 2026 · G3 live (Claude).** On the owner's instruction ("happy with moving onto qualifying and go live"), `main` was fast-forwarded to `7d3bb4c3` without a merge commit or force. Production: all seven deployed files match the qualified build; 62 application harnesses passed 2,669/2,669 on the downloaded production files; browser/offline smoke 22/22. Deployed page `4a7dc1d02df360ce2cfc26d8c580bd19deaaef9a74d98182f0fd63055f3cf524` (17,638,734 bytes), service-worker build `2dd41ff32a1df137`. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-<!-- end-g3-15a-live-part1 -->
+**Raised since, not yet placed:** a Taint phase, in which "Lost" follows the Taint Rank (5, or 7 when a Ring reached 6 first; Core Rulebook p.278). It came from group 1's device round.
 
-<!-- g3-15a-qualification-part1 -->
-**12 November 2026 · G3 qualified (Claude).** Release 15a G3, the three spell-row follow-ups, is accepted and qualified. 8b.1-UI-01 (the starting-spell review as option cards with live counts and one action bar), 8b.1-UI-02 (a readable spell name and one School tag) and 8b.1-UI-03 revision 2 (the remove button in its own corner on every Technique, Advantage and Disadvantage card, and a 52 px number box) are on `claude/release-15a-ui03`. Application `6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029`, 17,631,957 bytes. The owner approved Claude's mock-ups on 11 November, passed 34/34 device checks (UI-01 and UI-02 Accept, UI-03 Revise), then 12/12 on revision 2 (Accept).
+**Placed on 4 November as candidates after Phase 15, not approved:** the Combat tab, which will also take the stats header and the Combat page's i's; ronin; tattoos; sync stages A and B; the career planner; the PDF fixes and the core-book-style redraw; and FT-16, fuller Search descriptions. Their estimates are in Claude's review of 4 November (the 4 November entries in part 6).
 
-Negative variants: predictions committed before discovery; 13 of 15 matched at once, and the two differences were a harness that switched its own unit back on (fixed in all three harnesses, same ids and counts, declared) and a masked mutation (replaced); a second discovery of the four affected cases matched exactly. The chain passed first time: group removal 21/21 (all of G3 removed restores G2 `77936023…82f0` exactly), all 15 variants on their exact pins, dependencies 3/3. One full pass, first execution: candidate **7,242/7,242** and retained **7,075/7,075** (24.05 and 21.68 minutes). Screen-only tier; no 4× CPU screen. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-<!-- end-g3-15a-qualification-part1 -->
+## 3. What it has cost
 
-<!-- g2-15a-live-part1 -->
-**9 November 2026 · G2 live (Codex).** Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
+### Phase 15
 
-Production checked on 9 November 2026: all seven deployed files match the qualified build byte for byte; 57 application harnesses passed 2,523/2,523 on the downloaded production files, and the fresh browser/offline smoke passed 22/22. Application checks completed at 2026-11-09T12:46:26.627998+00:00; browser/offline checks completed at 2026-11-09T12:46:38.319Z. Deployed page SHA-256 bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107 (17,616,007 bytes); service-worker build f9a4bcad8d36d92a. No feature check or failed full pass was retried.
+A point is 1% of the Claude Pro weekly allowance, read from the account's usage meter.
 
-[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-live-part1 -->
-
-<!-- cycle8-close-part1 -->
-<!-- claude-publish-part1 -->
-**4 November — published and reviewed (Claude).** The ledger page is republished and the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field on both choices; the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links its successor. Claude's review placed the work planned since 1 November (the Combat tab, ronin, tattoos, sync, the career planner and the 27 October PDF export plan) as step 8 candidates; nothing new is approved. **Owner's choice, 4 November: Release 15a A01, in a fresh session**; optional step 4 not taken. A01 starts from the [conditional A01 kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/KICKOFF-15A-A01.md>).
-<!-- end-claude-publish-part1 -->
-
-<!-- a01-15a-part1 -->
-**4 November · Release 15a A01 built and qualified (Claude); accepted and live.** At the wizard's Review each open School choice now shows once: the top *Still to choose* box drops any item a card for that School already names, and a choice no card names (the monk's Lore subject, free Kiho picks) becomes its own card beside that School's card. Cards, the overspend warning and Finish's confirmation are unchanged. Both planned full passes succeeded on their first executions, 6,805/6,805 candidate and 6,701/6,701 retained each, and both removals rebuilt Release 8c exactly. The owner's [device checks](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8) passed 12/12 on iPhone Safari and Edge; the owner **accepted A01** the same day. Branch `claude/release-15a-a01`, application `cffde624…0414`; live on 4 November (main `6cdbe2e6`, merged on the owner's go-live word); production verified: page and service worker byte for byte, 411/411 checks on the downloaded files, browser and offline 24/24. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
-<!-- end-a01-15a-part1 -->
-
-<!-- a02-15a-part1 -->
-**4–5 November · Release 15a A02, revision 2 accepted and live (Claude).** Revision 1 put the floating controls on a 52 px band above the tabs. It passed all 11 device checks, but the owner chose **Revise**: the band felt separate from the sheet and, on the iPhone, took page height. Revision 2 has no band. Quick Access floats bottom-left, the dice bottom-right, and return-to-top sits above the dice (beside it on a phone held sideways), all just above the tab bar. Every page has room at its end so nothing is left under a button. On a phone, headings covered at the top go from 19 to 0, controls on the tabs from 21 to 0, and content covered at the end of a page from 16 to 0; page height is unchanged. Part-way down a page, content passes under the corners, which the owner accepted. **Full passes 5 and 6 both passed on their first executions** (6,828/6,828 candidate, 6,732/6,732 retained, removal back to A01 exactly). An always-visible stats header was parked for the Combat tab. The owner's device checks passed (20 of 20; two n/a) and they accepted it. On their go-live word, `main` was fast-forwarded to `2097ec0f` (no merge commit, no force), and production was verified: the live page `8a972827…` and service worker `a05aaf784ac466c9` match the accepted build byte for byte, 496/496 on the downloaded files, browser and offline 22/22. Application `91d45109…6dc0`. A03 is next, in its own session ([A03 kickoff](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/KICKOFF-15A-A03.md>)). [Device checks](https://claude.ai/artifact/JHui5U5LGSWu7Xmkiceiyn) · [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
-<!-- end-a02-15a-part1 -->
-
-<!-- a03-15a-part1 -->
-**5–6 November · Release 15a A03, revision 2 accepted and live (Claude).** On a wide screen the Advantage and Disadvantage columns start level: on the dense test character their headings were 1,092–2,249 px apart, and are 0 px now. On a phone, revision 1 put each Skill card's fields and Masteries under a labelled **Details** control. The owner passed all 12 of its device checks, then chose **Revise**: Details hid what is used at the table. Revision 2 hides nothing behind a control. In Play a card shows the name, Rank and d10, one summary line (Trait, Emphases, School) beside the eye, and the Masteries already reached. In Manage it shows every field straight away, packed tighter, with every Mastery and Remove last. Play cards go from 324–490 px to 114–158 px on the long test character (about 5 to a phone screen instead of 1.7); Manage cards from 372–601 px to 241–470 px. A laptop grid lining up the two lists' cards was prototyped and declined by the owner. Both full passes of revision 2 (3 and 4) passed on their first executions: candidate 6,865/6,865 and retained 6,755/6,755 each, with removal rebuilding A02 (`91d45109…6dc0`) exactly. The owner passed all 17 device-check boxes on iPhone Safari and Laptop Edge and **accepted** revision 2 on 6 November and gave the go-live word the same day. `main` was fast-forwarded to `46a7929d` (application `e73b7c0c…de06`), and production was verified byte for byte (550/550 on the downloaded files, browser and offline smoke 22/22). [Revision 2 device checks](https://claude.ai/artifact/NuGaGAL8e4tDvjMJWfdnxy) · [revision 1 checks and the owner's comments](https://claude.ai/artifact/CNTa2BVhtR2iHWrQ5EaNTM) · [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
-
-**7 November · Release 15a G1 (A04, A15, A16, A03.1), accepted, qualified and live (Claude).** G1 is built as four removable units on stacked branches:
-
-- **A04, one information pattern:** one circled i for Skills, Advantages, Disadvantages and the Void card, with accessible names and 44 px tap areas. The i no longer sits inside "Choose…", and Hotei's rule is behind its i.
-- **A15, court badges:** tap a court to fill it in the Clan colour (in session), tap again to empty it. The radio and the tick box are gone.
-- **A16:** the seven pickers' bottom i is removed.
-- **A03.1:** the owner's Masteries list in the Skill window.
-
-One review found no blocking defect, and its eight findings are fixed. The previews passed on the deployed files (973 to 1,799 checks each). The owner passed every device check (36/36) and **accepted all four** on 7 November.
-
-Qualification passed:
-
-- 25 negative variants matched their pins.
-- Group removal 34/34: the whole group removed rebuilds A03 `e73b7c0c…de06` exactly.
-- Dependencies 4/4.
-- **One full pass, first time:** 7,002/7,002 and 6,792/6,792.
-
-Group build `2dcf6f20…6af6`, branch `claude/release-15a-a03.1`. On the owner's go-live word (7 November), `main` was fast-forwarded to `22c1d724` (no merge commit, no force). Production was verified: the live page `490f4a38…` and service worker `616c5772…` match the committed build byte for byte, 1,799/1,799 on the downloaded files, browser and offline smoke 22/22.
-
-The owner's two comments are G2 work: Advantage card text alignment goes into A11, and inline rule text in pickers is a new G2 unit. FT-59 (a mon and colour for every Clan) is parked.
-
-[Device checks](https://claude.ai/artifact/BFg3Gg19jUM9EJEshc2T2i) · [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
-<!-- end-a03-15a-part1 -->
-
-**4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
-
-Release 8c application `919a5e35` passed both planned full passes first time (6,774 candidate / 6,665 retained each) and production checks (380 application, 24 browser/offline, eight walkthrough). The final source hash is `139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551`; production evidence is recorded at `962782da`.
-
-**Next decision:** recommend Release 15a, A01 only; optional step 4 remains available. [Reassessment and proposed work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) · [Readable work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.html>). The original before-reset reason for step 4 expired at 01:00 UTC today. No next build or revised budget is approved by this closure.
-<!-- end-cycle8-close-part1 -->
-
-### Dated milestones (historical snapshots; current status above)
-
-
-**3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
-
-<!-- rank-spell-8c-part1 -->
-**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Both planned full passes succeeded on their first executions with 6,774/6,774 candidate and 6,665/6,665 retained checks each. Both removals restored the exact predecessor. The owner confirmed the iPhone and Edge checklist passed. Release 8c went live on 4 November and passed 380 deployment, 24 browser/offline and eight walkthrough checks. Step 3b is complete. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
-<!-- end-rank-spell-8c-part1 -->
-
-<!-- older-school-choices-part1 -->
-**2 November · Release 8b.1 older characters.** Both full passes completed on their first executions. Osamu’s ticked Rank 3 Defense fills his free Skill at the existing 5 XP. Confirming his eight starting spells leaves one Earth choice and preserves Jurojin’s Balm as a reward. Release 8b.1 went live on 3 November. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
-<!-- end-older-school-choices-part1 -->
-
-<!-- release8b-part1 -->
-**Release 8b, 2 November 2026 (Codex).** Release 8b went live on 2 November from main commit 78f7037f (application commit 9c9798ef). In Manage, the School scroll and free Skill notes open the wizard’s pickers. An older character can claim an existing choice there without adding a duplicate. Only choices made through a School picker count. Remote Control was confirmed on with the iPhone paired. Discovery passed 6709/6709. Both planned full passes passed 6709/6709 candidate and 6600/6600 retained, with fresh execution, no reused leaves, and exact Release 8a.1 restoration twice. Targeted checks: 36 feature plus 279 historical checks at 4x CPU, 14 exact variant cases (12 mutations and two controls), six removal checks and clean dependencies. Local preview passed 315/315 verification, 20/20 first-open/offline and 6/6 control checks; seven hosted preview files match those bytes. One initial launcher failed before any suite check when Windows rejected the verifier’s truncating write. That failure is preserved; isolated scratch verification and eight guard cases passed before a one-use pre-suite continuation. No failed suite was rerun; this was not an uninterrupted first-time launch. Production matched all seven tested files. The downloaded files passed 315/315 checks, the live first-open and offline checks passed 20/20, and the phone-width touch controls passed 6/6. Owner iPhone and Edge results are pending. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
-<!-- end-release8b-part1 -->
-
-**2 November · Release 8b device feedback.** Owner device testing found that an older Kitsu save could receive a second free Skill and extra Water and Air spells. Four checks reproduced the issue. Defense at Rank 3 accounts for the free Skill. The owner identified Jurojin’s Balm as a later reward. The proposed Manage review would leave one starting Earth choice. Design first, then build and test both corrections together. [Older School choices design](<BUGFIX — Older School Choices/DESIGN.md>).
-
-
-**Q1–Q8 accepted, 1 November 2026.** Owner accepted Q1–Q8 as recommended on 1 November 2026. The approved Phase 15 delivery rules govern implementation: one independently removable finding at a time, owner testing/acceptance before progression, all 15a before 15b, and removal of any finding/group/phase preserves retained work and character data. A13/B15 are accepted retain-current-design decisions; A19/FT-24 and A20/FT-28 are included. Earlier grouped-delivery estimates require revision. Q1–Q8 are settled and must not be asked again without a material change. Implementation has not started; the 8b/8c work order remains in place. [accepted Q1–Q8 rulings](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-RULINGS-2026-11-01.md>).
-
-<!-- phase15-design-rules-2026-11-01 -->
-**Owner ruling, 1 November 2026: Phase 15 is an umbrella with release groups 15a and 15b, each finding a separately owned, independently removable unit. Investigate/build/test one finding, provide the previous accepted state for comparison, and wait for the owner’s accept/revise/remove decision before progressing. Finish 15a before 15b. Removing a finding must preserve later findings; removing 15a must preserve 15b; removing Phase 15 must preserve unrelated work and character data. Prove these removal operations. This supersedes shared implementation across findings and requires revised estimates; it does not start implementation or change the 8b/8c work order. Q1–Q8 were subsequently accepted on 1 November.** [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>).
-
-<!-- phase15-audit-2026-10-31 -->
-**31 October 2026 (Codex): Phase 15 audit delivered for owner review, no application build. 36 findings and complete parked-item mapping; Q1–Q8 accepted 1 November. Proposed 15a 20 (15–27), 15b 12 (9–16), in historical Claude planning points; FT-24/FT-28 are explicit functional layers. 8b/8c remain next in order, each with scope approval.** [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
-
-First-pass QA goal not achieved: preflight 345/345 at 4× CPU and discovery 6,673/6,673 passed. Full run 1 passed 6,673 candidate / 6,579 retained, exact restoration. Full run 2 stopped at 6,657 completed checks: Spell Names page-load timeout omitted 16 checks; retained run 2 did not start. No full retry. Scoped font-CDN isolation in that logic harness passed 16/16 and all seven exact negative cases at 4× CPU. No application source changed; final edited harness has targeted evidence, not two full qualifications.
-
-**Live, 30 October (Claude): Release 8a.1**, step 2 of the work order: two removable layers from your 8a device checks. *The overspend, quieter* (your ruling, 30 October): one line above the buttons, only on the step where the overspend first appears, in the place of "Some of your School's choices are still open"; no amber box anywhere; Review keeps only the sheet's own "Overspent by" item; Finish still asks once. *The free-choice note* (your note): "Bayushi Bushi: 1 free Skill choice still open" while it is open, and nothing once the choice is made and ticked as a School Skill. One review: one low defect (a step that left the wizard kept the line), fixed with its own check. The full suite twice, first time: 6,673/6,673, the two removed back to 8a's build byte for byte, 6,579/6,579. Live: 202/202 on the downloaded files, browser and offline 18/18, the walk 8/8. Your re-tests: section R of the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE).
-
-**Live, 30 October (Claude): Release 8a**, step 1 of the work order: two removable layers and the suite's under-load fixes. *The wizard's XP gate* (your ruling, 29 October): no step blocks Next while more than 40 XP is spent; each step shows a warning in its place, Review says it in plain words with the amount over, and Finish asks once (Finish or Stay) and goes on. *The audit log's finding 4* (your answer, 30 October): a change undone on a sheet not yet saved no longer makes opening another character ask to discard it; a real change still asks. *Under load:* the Characters list harness, and the one other check a 4× CPU sweep of the whole suite found (Dependant typing's autosave), now wait for the save itself; no check was loosened. One review: one defect (Finish could run twice), reproduced first and fixed. The full suite twice, first time: 6,652/6,652, the two removed back to main's build byte for byte, 6,556/6,556. Live: 185/185 on the downloaded files, browser and offline 17/17, the checklist walk 9/9. Your device checks: the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE).
-
-**Reassessed, 30 October (Claude): Cycle 7 is finished.** Every release is live and every device check passed, so Phase 7 is done. The ledger page was republished, the ledger, the roadmap, the end-of-project review and the 28 October work order reassessed, and the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) written; **you agreed it the same day**, with all four questions as recommended. Next is Release 8a, the wizard's XP gate, which also fixes the checks that fail only under load so the full suite passes first time.
-
-**Live, 30 October (Claude): Release 7c.1**, two removable layers for your rulings on the 7c device checks. *C1:* an empty quiver's picker says there is nothing to fire and offers Cancel only, which ends the attack unrolled. *A3:* Lord Moon's Curse's button reads "Resist Lord Moon (TN n)". One review: no defects; two variants added from it. The full suite twice, first time: 6,629/6,629, the two removed back to 7c's build exactly, 6,545/6,545. Live: 78/78 on the downloaded files, browser and offline 16/16, the checklist walk 16/16.
-
-**Live, 29 October (Claude): Release 7c**, six removable layers, the last release of Cycle 7. *R26:* Lord Moon's Curse gains a Full moon tonight tick (one Void Point more than the Void Ring until sunrise, spent last) and a Willpower roll at TN 15, 20 or 25; the creation wizard stops Traits, the Void Ring and Skills at 4 (Core p.103); an empty quiver offers Roll without an arrow. *R22:* the wizard's Spells step says starting spells are scrolls in Equipment (Core p.164). *The after-preview refund* (your ruling): nothing a roll pays is kept when a later question cancels it. *Phase 7.1, the audit log* (your answers): a read-only History of what costs or awards something, newest first, in the sheet's ⋯ menu and in each character's menu in the Characters list, saved with the character. One review: three defects and one lower finding reproduced with checks pinned first, then fixed; two recorded. The full suite passed twice (runs 2 and 3; run 1 stopped on a stale per-harness count with every check passing): 6,618/6,618, the six removed back to 7b.2's build exactly, 6,478/6,478. Live: 678/678 on the downloaded files, browser and offline 15/15, the checklist walk 16/16.
-
-**Live, 29 October (Claude): Release 7b.2**, three removable layers for the rulings read in the reading session. *R23:* Core p.148's set rules, held as data. Paragon rules out Dark Paragon and Failure of Bushido; Consumed rules out Failure of Bushido and Dark Paragon; Touch of the Spirit Realms rules out Cursed by the Realm; each set may be held once. A Fortune's Blessing and Curse may be held together, but not of one Fortune (your Q1). Ruled-out entries are greyed with the reason in the Advantage and Disadvantage lists, the wizard and the Fortune choices. A held pair is kept and flagged on both rows, with one Character check warning, and a GM override per character in Management lifts any rule. *R11:* The World of the Daimyo, The Daimyo's Path and Child of Chikushudo as Search reference entries, beside Naga and Nezumi (your Q3). *R17:* the Scorpion Instigator counts configured Blackmail rows on different people (four needed), and its four-people confirmation goes (your Q4). R20 needed nothing (closed). One review: one finding reproduced and fixed; one more found by a new variant and fixed. The full suite twice, first time: 6,551/6,551, the three removed back to main `bee8c0b` byte for byte, then 6,404/6,404. Merged on your word to main `605512e` and verified live on 29 October: the page and service worker byte for byte (17,412,730 bytes, service worker `eda2fd1921930172`), 427/427 checks on the downloaded live files, browser and offline 13/13, and the checklist walk 16/16. Your device checks: the [Release 7b.2 Device Checks](https://claude.ai/artifact/SYNyXRANr16hrHGwS2Hgyb): all fifteen Pass on the iPhone and in Edge, 29 October, with no notes; no 7b.2.1 is needed. [QA evidence](QA%20%E2%80%94%20Release%207b.2%202026-10-29/HANDOVER.md).
-
-**Live, 29 October (Claude): Release 7b.1.1**, three removable layers for your 7b.1 device-check findings. *D1:* the Lion's Pride chosen from the Advanced School list ticks its box at once with a Female Identity, with its line. *B2:* a cast cancelled at an Ancestor gift's question (Cancel roll or ✕) gives its spell slot back, once. *E1:* Go to Advanced Schools with Check Taint growth's text, padding and border; compact with a mouse, 44 px on touch. One review: no correctness defects; one wording fix, two notes recorded. The full suite twice, first time: 6,477/6,477, the three removed back to main `55f980d` byte for byte, then 6,379/6,379. Merged on your word to main `b484bbc` and verified live on 29 October: the page and service worker byte for byte (17,392,489 bytes, service worker `01101213cdc9f918`), 500/500 checks on the downloaded live files, browser and offline 12/12, and the re-test walk 7/7. Your re-tests, section I of the [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z), passed on 29 October.
-
-**Live, 28 October (Claude): Release 7b.1**, eight removable layers for your rulings that need no books: R7 the Void Point's +1k1 not on Initiative; R10 Hotei's Curse where the sheet spends Void; R14 held Skills leave Add from Skill List; R15 Gender in Identity meets a gender requirement, and the wizard asks Gender and Age; R16 a pointer to the Advanced Schools; R21 Remove in the wizard's Skills step; R24 Jurojin's reminder steps; R25 a used once-a-session gift, and the favour list. One review: five findings, each fixed with checks pinned first. The full suite twice (runs 3 and 4): 6,452/6,452, the eight removed back to main `b9ebcb8` byte for byte, then 6,292/6,292. Merged on your word to main `5970447` and verified live: the page matches the build byte for byte (17,389,041 bytes, `61479fd1…`, service worker `e6d08102dee51f93`), 486/486 checks on the downloaded live files, browser and offline 11/11. **The checklist walk on the live site: 16/17.** D1 fails: with a Female Identity, choosing the Lion's Pride from the Advanced School list leaves its box unticked until Gender is edited again. Your ruling, 28 October: the checklist now, the fix in 7b.1.1 with whatever your checks find. **Your device checks, 28 October: 13 of 16 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z)): B2 Fail (a spell slot kept when a gift cancels the roll, older than 7b.1), D1 not run (known), E1 Pass with a note (the button too big). All three go to 7b.1.1 (part 4). [QA evidence](QA%20%E2%80%94%20Release%207b.1%202026-10-28/HANDOVER.md).
-
-**Live, 28 October (Claude):** the Cycle 7a device follow-up, two removable layers from your Edge and iPhone checks. *Characteristic Card Editing:* Rank and Points typed into the four cards in Management, with Recognition and the Taint growth check inside their cards. *Wound Settings Preview:* the eight wound thresholds beside the campaign multipliers. Codex built both; Claude fixed six review findings and ran the full suite twice, first time: 6,365/6,365, both layers removed back to main `e58fe09` byte for byte, then 6,228/6,228. Merged on your word to main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. **Your device checks, 28 October: all 14 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk)); two notes are in part 4. [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
-
-**Live update, 27 October:** Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Your Edge and iPhone checks of the refinements passed 9 of 10 on 27 October; the tenth became the device follow-up.
-
-*27 October 2026 — follow-up refinements on the working branch; original Cycle 7a remains live.*
-
-<!-- refinements-status-start -->
-Five follow-up layers implement the owner’s Edge/iPhone observations: campaign wound multipliers, compact characteristic controls, PDF field fit, an optional details appendix and named PDF save/print. The single review finding was fixed and its regression checks passed.
-
-After correcting the QA harness version expectation and test scheduling, two fresh full QA runs passed: each candidate 6,301/6,301 across 145 suites; each retained 6,102/6,102 across 138 suites. No results reused. Removing the five layers restored main 6245576 byte for byte. The initial failed run (6,283/6,301) is retained; the first-pass goal was not met.
-
-Merge and deployment approved and completed on 27 October. Your Edge and iPhone checks followed the same day, save and print included (9 of 10 Pass). The published ledger was republished on 28 October.
-<!-- refinements-status-end -->
-
-
-- **Live and accepted:** Release 15a A01 (4 November, main `6cdbe2e6`) on top of Release 8c, including the 8b.1 older-character correction; all Cycle 8 device decisions recorded.
-- **Qualification:** both 8c full passes passed on first execution; production verified 4 November. See the current cycle-closure summary above.
-- **Next:** owner choice between recommended A01 and optional FT-16 first catalogue.
-- **Allowance:** Claude's old weekly readings are historical. Codex readings and uncertainty are kept separately in part 3.
-
-| Status | Phases |
-|---|---|
-| ✅ **Done: 21** | 0, 0.5, 0.6, 1, 1.5, 1.6, 2, 3, 4, 4.5, 4.6, 4.7, 4.8, 5, 7, 8, 11, 11.1, 12, 13, 14 |
-| 🟡 **Part done: 2** | 6 (the SynergyEngine comes after the project), 9 (the colophon and the floating buttons, with Phase 15) |
-| 🔵 **Waiting for a device: 1** | 0.7, the Android app: seven tests on an Android phone |
-| ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
-
-## 2. What is left, the estimate and the build order
-
-<!-- g1-15b-next-part2 -->
-**23 November 2026 · after 15b group 1 (Claude).** Next: the owner's rulings on B18's button inventory (405 controls in 23 job groups, on branch `claude/jovial-rubin-993414`, not merged), then Release 15b group 2 (B01, B03, B05, B09), mock-ups first. Parked from group 1's device round: the Combat page's i's (with the Combat tab overhaul), Jigoku's dashed realm badge with a whole-sheet badge check, and a Taint phase after Phase 15 ("Lost" to follow the Taint Rank; Core p.278).
-<!-- end-g1-15b-next-part2 -->
-
-<!-- review-15a-next-part2 -->
-**19 November 2026 · after the review (Claude).** Proposed, waiting for the owner's decision in the [work order](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): Release 15b in five groups, about 120 (85–182) points. 1 · totals and their breakdowns (A14, B02, B04, B14), 22 (16–32); 2 · labels and wording (B01, B03, B05, B09), 18 (13–28); 3 · reference text (B06, B10, B11, B16), 20 (14–30); 4 · Search controls (B07, B08; behaviour tier), 28 (20–42); 5 · print and About (B12, B13), 32 (22–50). B15 is kept as it is. Then Phase 15's closure, 4 (3–6), the resistance phase and Techniques as modifiers, each on the owner's word. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
-<!-- end-review-15a-next-part2 -->
-
-<!-- g6-15a-next-part2 -->
-**19 November 2026 · after G6 (Claude).** Release 15a is complete: G1 to G6 and the automatic-entries group are live; A12 was withdrawn into the resistance phase and A18 was closed. Next, in the order already agreed: Release 15b, then the resistance phase (the owner leans to versions 1 and 2, to resume as one merged whole-row design; Q5 of the rules read is open), then the phase that applies School Techniques, Kata and Kiho as modifiers. None is started; each starts on the owner's word. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
-<!-- end-g6-15a-next-part2 -->
-
-<!-- ae-15a-next-part2 -->
-**13 November 2026 · after automatic entries (Claude).** Next: the group's go-live, only on the owner's word (fast-forward `main` to the group's tip, then production verification and the browser/offline smoke). Nothing after the group is agreed yet. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
-<!-- end-ae-15a-next-part2 -->
-
-<!-- g4-15a-next-part2 -->
-**12 November 2026 · after G4 (Claude).** Next, as agreed with the owner: (1) G4 go-live on the owner's word (fast-forward `main`, then production verification and the browser/offline smoke); (2) the automatic-entries group, mock-up first: Yogo Wardmaster's missing Sense, the School's given spells credited on import and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
-<!-- end-g4-15a-next-part2 -->
-
-<!-- g3-15a-next-part2 -->
-**12 November 2026 · after G3 (Claude).** Agreed with the owner, in this order: (1) G3 go-live; (2) a small group for automatic entries, mock-up first: a one-line fix for Yogo Wardmaster's missing Sense (a book check found 20 of 21 Shugenja Schools right), the School's given spells credited on import without a review click and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques (Kata, Kiho and chosen entries keep both); (3) the gold focus ring after a dialog closes, with G4. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-<!-- end-g3-15a-next-part2 -->
-
-<!-- g2-15a-live-part2 -->
-**9 November 2026 · G2 live (Codex).** G2 go-live and production verification are complete. G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work. A04.2 is gated on completion of the rules read pass. No later group is authorized by this release record.
-
-[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-live-part2 -->
-
-<!-- cycle8-close-part2 -->
-### Current reassessment and proposed work order — 4 November 2026
-
-The owner explicitly closes Cycle 8 after step 3b. The ledger, roadmap, R1–R27 end-of-project rulings, Phase 15 decisions and remaining notes were reviewed. [Full work order, with every finding and estimate](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) is the current planning record; the next build choice is pending.
-
-| Next work | Proposed order and status | Claude planning points |
+| Work | When | Points |
 |---|---|---:|
-| Optional step 4 | FT-16 first catalogue only if selected; named catalogue and inventory still to agree. The original pre-reset opportunity has ended. | 5 (3–8), included in FT-16 |
-| Step 5 — 15a | Recommend A01 first, then A02–A12, A15–A20; three 8b.1 UI follow-ups afterwards, each separate. Owner acceptance between findings. | 94 (58–150), including A01 5 (3–8) |
-| Review after 15a | Group-removal evidence, records/republish, revised order before 15b. | 4 (3–6) |
-| Step 6 — 15b | Proposed A14, then B01–B14, B16; sequence confirmed before first build. | 57 (37–93) |
-| Step 7 — fixes | Reserve; fix each increment's device findings before moving on. | 10 (6–18) |
-| Step 8 — Phase 15 closure | Final removal evidence and reassessment; weigh sync, separate Manage and career planning against FT-16. | 4 (3–6) |
-| Step 9 — FT-16 | All Search entries, catalogue by catalogue; subtract any step 4 work. | 45 (30–60) |
+| Release 15b group 1 | 20–23 Nov 2026 | about 25 |
+| The review after Release 15a | 19 Nov 2026 | about 4 |
+| Release 15a, 26 units (by group in part 1) | 4–19 Nov 2026 | about 229 |
+| Everything before Phase 15: the phases, then Cycles 1 to 8 | 9 Sep – 4 Nov 2026 | about 830 |
+| **Planned:** the rest of Release 15b | from 24 Nov 2026 | about 95 (60–157) |
 
-**Provisional remaining envelope: 169 (107–273) before FT-16; 214 (137–333) including its full allowance.** These judgment-based Claude planning estimates price individual delivery, not two grouped releases; they are not measured Codex cost or an approved budget. Reforecast after A01/A02. No reliable completion date yet. A13 and B15 retain the existing design. Q1–Q8 remain settled.
+15a was planned at 94 (58–150) and cost about 229. 15b is estimated at about 120 (85–182) in all, so the rest of it is that estimate less group 1's 25.
 
-The 30 October grouped totals and calendar dates below are historical. The new order preserves one finding at a time, independent removal, full QA and explicit owner acceptance. It does not authorize any Phase 15 build or merge.
-<!-- end-cycle8-close-part2 -->
+Not counted in 15a: A12's resistance mock-ups (about 7) and Claude's share of the resistance rules read (about 13), which moved to the resistance phase. On 13 November the meter fell from about 99% to 58% with no weekly reset, so 15a's figures add the stretches on either side.
 
-<!-- claude-review-part2 -->
-**Claude's review, 4 November: work planned since 1 November, placed for step 8 (not approved).**
-
-| Candidate | Placement and gate | Rough points |
-|---|---|---:|
-| Combat tab, Method B ([plan](https://claude.ai/artifact/QMcfgBGEq14EoiYHtPatZc), FT-53 to FT-58 later) | Step 8 candidate, about 12 units under the Phase 15 rules. 15a's A02, A05, A12, A14 and A19 are built so it can reuse them. Reads Core's combat chapter first. | 80 (55–125) |
-| Ronin, Method B, with Made ronin and Accepted back | Step 8 candidate. Its five open rulings in one batch first; Core p. 234 and Imperial Histories 1 p. 275 read. | 34 (22–50) |
-| Tattoos, Method B | Step 8 candidate. A reading phase of every book and both wikis first, at a five-hour reset. | 30 (20–45) |
-| Sync stage A: save-race fix, sync metadata, Save all / Merge | First candidate at step 8 (data safety). The save-race fix comes first; raised earlier if a character is lost. | 10 (7–15) |
-| Sync stage B: Cloudflare D1 with passkey sign-in | After stage A; free tier, opt-in. | 32 (25–45) |
-| Career planner (FT-03) with future options (FT-02) | Step 8 candidate; rules-based, no AI. | 28 (20–35) |
-| PDF export fixes (approved as ideas, 27 Oct) | The 15 fixes and appendix tidy from the 27 October review: Rate of Wound Heal, Initiative, koku, equipment noise, advantage choices, full name, the always-added extra page, weapon-type overflow, internal labels, clan-discount notes, a condensed font and size scale, the wrapped-line space bug, a cleaned Bushi template, the wound caption, filling empty Notes space first; footnote numbers only for marked items; one merged details section. One rules question first: Kakita Rank 1's Initiative bonus. Step 8 candidate; independent of Phase 15's screens. | 15 (10–24) |
-| PDF core-book-style redraw (your plan, 27 Oct) | After the fixes: prototype page 2 first; if the look is worth it, a second selectable sheet style beside the L5RCM look, with original artwork, A4 and a print-friendly option. | 30 (20–45), prototype 6 (4–10) |
-
-These sit outside the 169 / 214 envelope; together about 259 (179–384) more, first rough scenarios re-estimated when chosen. Provisional step 8 order: sync stage A and the PDF export fixes, the Combat tab, ronin and tattoos, the PDF redraw if its prototype is liked, the career planner, sync stage B, with FT-16 weighed against each. [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA).
-<!-- end-claude-review-part2 -->
-
-<!-- a01-15a-part2 -->
-**4 November · Release 15a A01.** A01, estimated 5 (3–8), is built and qualified on branch `claude/release-15a-a01` and was **accepted by the owner on 4 November**; it went live the same day on the owner's go-live word. A02 has not started. New owner request from the device pass, recorded as **FU-15a-1** outside the totals: a Kiho, Kata or spell already learnt should leave the picker, in the wizard and on the sheet, as Skills already do. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
-<!-- end-a01-15a-part2 -->
-
-<!-- a02-15a-part2 -->
-**4–5 November · Release 15a A02.** A02, estimated 5 (3–8). Revision 1 qualified after a harness fix (see part 6), and the owner chose Revise on their devices. **Revision 2 was accepted on the owner's devices and is live** (`main` `2097ec0f`, production verified byte for byte). A03 starts next in its own session, from the [A03 kickoff](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/KICKOFF-15A-A03.md>). A02 has now used about 17 weekly points against its 5 (revision 1 about 11, with its failed pass, investigation and harness fix; revision 2 about 5). The reforecast the work order asks for can be made from A01 and A02; it is not made here. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
-<!-- end-a02-15a-part2 -->
-
-<!-- a03-15a-part2 -->
-**5–6 November · Release 15a A03.** A03, estimated 5 (3–8), is built and qualified on branch `claude/release-15a-a03`, in two revisions. Revision 1 used about 9 weekly points; the owner's Revise and revision 2 brought the total to about 24. The reforecast stated at A03's start is an estimate only, not a budget approval: about 7 (5–10) for a clean unit like A03, so the other 15 units of 15a would need about 100 more weekly points (80–150). That is several weeks rather than the old grouped 20, and revisions on the owner's devices come on top (A02 and A03 each needed one). The owner passed every device check on revision 2, accepted it and gave the go-live word on 6 November: it is live (`main` `46a7929d`). A04 has not started. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
-
-**6–7 November · Release 15a G1.** The kickoff estimated 11 points (A04 5, A15 3, A16 3), about 10–15 under the grouped process. Four units were built, A03.1 included, after three mock-up rounds; the group used about 19 weekly points. All four were accepted on 7 November and qualified first time (7,002/7,002, 6,792/6,792); it is live (`main` `22c1d724`). Next is G2: A05, A06, A07, A11 (with the owner's alignment comment) and a new picker unit. [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
-<!-- end-a03-15a-part2 -->
-
-### Earlier planning snapshots — historical estimates and decisions
-
-
-<!-- rank-spell-8c-part2 -->
-**3 November · Step 3b.** Step 3b is complete after owner device acceptance and verified production deployment on 4 November. The reading covers all 21 supported shugenja Schools. Future advances are tracked automatically. In Manage, a player can report how many picks an older School Rank is missing. Past ranks receive no automatic award. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
-<!-- end-rank-spell-8c-part2 -->
-
-<!-- older-school-choices-part2 -->
-**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is live after iPhone and laptop Edge acceptance on 3 November. Step 3b is the separately scoped reading and level-up picker. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
-<!-- end-older-school-choices-part2 -->
-
-<!-- release8b-part2 -->
-**Release 8b, 2 November 2026 (Codex).** Owner checks Release 8b on iPhone and Edge. Step 3b requires separate approval for the sourcebook reading on spells per Insight Rank and the Release 8c level-up picker. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
-<!-- end-release8b-part2 -->
-
-
-**Phase 15 delivery rule, 1 November:** 15a/15b are release groups delivered finding by finding with owner acceptance between steps. Individual, release-group and whole-phase removal must preserve retained work. The earlier grouped-delivery estimates need revising. [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>) is authoritative for this process.
-
-**Audit proposal, 31 October:** Audit delivered; Q1–Q8 are settled; next is approval of step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit. [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
-
-### The work order (30 October 2026, agreed then; historical, superseded by the 4 November reassessment)
-
-In full, with the reasons, in the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB). **Agreed on 30 October** with all four questions as recommended: this order, with 8a in a fresh session; the XP gate as its own release, with the suite's under-load fixes; the audit log's finding 4 fixed in 8a; and any points left before 4 November spent on FT-16's first catalogue. About **53 points** are left before FT-16 (range 38–75), most likely finished around **7 November** (range 5–10 November); FT-16 adds about 45 (around 11 November, range 8–15). The 28 October work order below is kept as history.
-
-| Step | Work | Points |
-|---|---|---:|
-| 1 | Release 8a: the wizard's XP gate (a warning on the last step and at Finish, not a block; your ruling, 29 Oct); the checks that fail only under load fixed without loosening any, the Characters list harness's autosave wait first; the audit log's finding 4 | 9 (6–13) |
-| 2 | Fixes after 8a's device checks, as 8a.1; **done 30 Oct, live at `5bfcb18e`, about 7** | 3 (2–5) |
-| 3 | Phase 15 audit delivered 31 Oct (Codex), no app build; Q1–Q8 accepted 1 November; full-run failure preserved | Historical estimate 4 (3–5); Codex cost unmeasured |
-| 3a | Release 8b: School choices from the character check (your idea, refined; added 30 Oct): in Manage, the check's notes for School scrolls and the free Skill choice become buttons opening the wizard's own pickers; each pick marked as the School's, so a reward scroll never satisfies the check; the check stays read-only. Your original concept kept on file to switch to if testing disappoints | 10 (8–12) |
-| 3b | Reading (each School's spells per Insight Rank, from the books), then Release 8c: the level-up picker, with Later; skipped picks stay owed and are reached from 8b's button | 8 (6–11) |
-| 4 | FT-16's first catalogue, only with points left before the 4 November reset, at the start of a 5-hour window | about 5 of FT-16's 45 |
-| 5 | Proposed Release 15a: audit A01–A12, A15–A20, including FT-24/FT-28 as separate functional layers; scope accepted 1 November; individual delivery/start pending | 20 (15–27) |
-| 6 | Proposed Release 15b: audit A14 and B01–B14/B16; text, Search and browser print; scope accepted 1 November; individual delivery/start pending | 12 (9–16) |
-| 7 | Fixes after 15a and 15b | 6 (4–10) |
-| 8 | The reassessment after Phase 15: this page republished, the next work order; sync, Manage as its own screen and the career planner weighed against FT-16 | 4 (3–6) |
-| 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
-
-Each release, as agreed: **the full suite passes first time and is never re-run to get a pass.** A check that fails only under load is fixed by waiting for the event itself (a long ceiling ends only a hung run), and a check that something did not happen waits past the app's own timer; no assertion is dropped and no expected value widened. A fresh session; the reviewer helper before the full suite, with the runner's per-harness counts updated for any checks it adds; the changed harnesses at 4× CPU, the affected groups, then one discovery run; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background on mains power; minor fixes after your device checks at once, as an x.1 release.
-
-**30 October, the Cycle 7 reassessment:** this page republished, everything reassessed, the work order above written and agreed, Release 8a's kickoff written; about 4 points against 4 (2–6).
-
-**30 October, Release 8a (step 1):** the wizard's XP gate and the audit log's finding 4 built as two layers; the suite's under-load waits fixed (the Characters list harness, and Dependant typing's, the only other one the 4× sweep found); one review (one defect fixed); the full suite twice, first time; merged and live (`e8310bec`), about 14 points against 9 (6–13). The live walk passed 9 of 9; your device checks are waiting.
-
-**30 October, Release 8a.1 (step 2):** the overspend as one line on the step where it first appears, no box, Review keeping only the sheet's own item; the free-choice note only while a choice is open; two layers, one review (one low defect fixed with its check); the full suite twice, first time; merged and live (`5bfcb18e`), about 7 points against 3 (2–5). The live walk passed 8 of 8; your re-tests are section R of the Device Checks.
-
-**30 October, added on your word:** steps 3a (Release 8b, the School choices from the character check, your idea refined) and 3b (a reading, then Release 8c, the level-up picker), between the Phase 15 audit and Release 15a. About **62 points** are now left before FT-16 (roughly 46–85), most likely finished around **9 November**. The [Work Order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) doc carries the same rows.
-
-### The work order (28 October 2026, agreed the same day; history)
-
-In full, with the reasons, in the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd). **Agreed on 28 October** with all four recommendations: 7b.1 starts in a fresh session; the older save race stays parked (part 4); this page is republished once per cycle. Your addition: after each cycle, a new work order (the row below). About **97 points** are left before FT-16 (range 72–124), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November). The 23 October rows, estimate and build order below are kept as history.
-
-| Step | Work | Points |
-|---|---|---:|
-| 1 | Release 7b.1: the rulings that need no books (R7, R10, R14, R15, R16, R21, R24, R25) | 15 (12–18) |
-| 2 | Reading session, no build, at the start of a 5-hour window (R23, R11, R17, R20, R22, R26); one batch of questions | 4 (3–5) |
-| 3 | Release 7b.2: R23 the set rules, R11, R17, R20 | 15 (12–20) |
-| 4 | Release 7c: R26 (Lord Moon's Curse, the Ring cap, the empty quiver), R22, Phase 7's audit log and the after-preview refund: nothing a roll pays is kept when a later question cancels it (Dark Paragon's Determination first; your ruling, 29 Oct) | 23 (18–31) |
-| 5 | A small fix release after each device check (row F) | 9 (6–15) |
-| After each cycle | Your addition, 28 October: a fresh session republishes this page, reassesses the ledger, the roadmap, the end-of-project review and the work order, and writes the next work order. Due after Cycle 7, after Phase 15 and after FT-16 | 4 (2–6) for the two before FT-16 |
-| 6 | Phase 15's audit, no build | 4 (3–5) |
-| 7 | Release 15a: layout and controls (R6, FT-47, FT-49, FT-41, FT-42, FT-48, FT-50 to FT-52 and the rest) | 15 (11–20) |
-| 8 | Release 15b: text, Search and print | 12 (9–16) |
-| 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
-
-Each release: a fresh session; the reviewer helper before the full suite; the changed checks under 4× CPU load and the affected groups first; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background; minor fixes after your device checks at once, as an x.1 release. After each cycle, in a fresh session: this page republished, then a reassessment of the ledger, the roadmap, the end-of-project review and the work order, and the next work order.
-
-**28 October, Release 7b.1 (step 1):** built, through the full suite twice, merged and live (`5970447`), about 14 points against 15. The live walk passed 16 of 17; D1 waits for 7b.1.1 (step 5) with whatever your device checks find.
-
-**28–29 October, Release 7b.1.1 (step 5):** D1, B2 and E1 from your device checks, built, through the full suite twice, merged and live (`b484bbc`), about 9 points against 6 (4–9). The live walk passed 7 of 7; your re-tests are waiting.
-
-**29 October, Release 7b.2 (step 3):** R23, R11 and R17 built (R20 needed nothing), through the full suite twice, first time, merged and live (`605512e`), about 9 points against 15 (12–20). The live walk passed 16 of 16; your device checks passed 15 of 15, with no notes.
-
-**29 October, Release 7c (step 4):** R26, R22, the after-preview refund and Phase 7's audit log built as six layers, through the full suite twice (runs 2 and 3, first time; run 1 stopped on a stale per-harness count with every check passing), merged and live (`799da9f`), about 16 points against 23 (18–31). The live walk passed 16 of 16; your device checks: 13 of 15 Pass, B3 and B4 to re-run; your rulings became 7c.1.
-
-**29–30 October, Release 7c.1 (step 5):** your two rulings from the 7c device checks (C1 the empty quiver's Cancel, A3 the moon's button) built as two layers, through the full suite twice, first time, merged and live (`a31251f2`), about 8 points against 9 (6–15). The live walk passed 16 of 16; your re-tests passed on the iPhone and in Edge (30 October).
-
-**28 October:** the device follow-up (row F) is built, through the full suite twice, merged and live; your device checks passed 14/14 on the iPhone and in Edge.
-
-**27 October amendment:** R5 wound thresholds and campaign multipliers were brought forward into the follow-up refinements. Release and device acceptance remain pending. Other 7b/7c scope and the historical estimates below are unchanged.
-
-### Remaining work, with the historical 23 October estimate
-
-**25 October amendment:** row A is live. R1–R4 in row C and R13/FT-31 are live; rows C–G otherwise retain their scope. Figures below have not been re-estimated after this work.
-
-Every row was weighed on its merits, the ones that need the sourcebooks included. The FT numbers are the backlog's, in full in the roadmap's *Deferred and declined* section; the R numbers are your rulings in the [desk review](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp), listed in the roadmap's section *Desk review rulings, 23 October 2026*.
-
-|  | Work left | Points | Most likely | Needs first |
-|---|---|---:|---:|---|
-| A | **Two new bugs and three roll-screen fixes:** FT-44 after Apply → Cancel the Clan and School pickers keep the new choice; FT-45 Yomi does not see Phase 4.8's Ancestor; FT-21 the roll preview keeps its scroll; FT-23 a typed Initiative total; FT-38 a greyed-out Void card button's reason on a phone. Moved forward from Phase 15 on your yes of 23 October. | 10–16 | 12 | Nothing |
-| C | **Building your review rulings:** Honour, Glory and Status as Rank and points with a meeting with your lord (R1–R4); Taint as Rank and points with a growth check (R2); the book's wound ranks (R5); no +1k1 on Initiative (R7); Hotei where the sheet spends the Void (R10); the three Station and shapeshifter entries as reference (R11); the Skill list without held Skills (R14); gender and age (R15); the Advanced School pointer (R16); the Core p.148 set rules (R23); the wizard's Skill Remove (R21); Ancestor gifts (R25); Lord Moon's Curse, the Ring cap and the empty quiver (R26); and a reading layer for R17, R20, R22 and R26. | 30–46 | 37 | Book reading at the start of a 5-hour window |
-| D | **Phase 7's audit log.** | 5–10 | 7 | Your ruling: at the end |
-| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-17 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, FT-47 to FT-52, the resist line (R6), the colophon and the floating buttons. | 18–32 | 24 | The audit |
-| F | **Follow-ups from your device checks.** Nearly every cycle has needed one: the Library's 1.1 and 2d, Cycle 5's 5a.2 and 5c.1. | 7–14 | 11 | Your device checks |
-|  | **Total** | **70–118** | **about 91** |  |
-| G | **FT-16, a fuller own-words description for every Search entry** (about 1,500), your ruling R12: its own cycle after Phase 15, catalogue by catalogue, so it does not hold up the rest. | 30–60 | 45 | The books, at the start of 5-hour windows |
-
-**Row B, the desk review, is done** (23 October, about 2 points with the records). Your rulings, in short: R5, R6, R7, R8, R9, R11, R15–R18, R20, R22, R25 and R27 as recommended; R1–R4, R12–R14, R21, R23, R24 and R26 with your own notes; R10 as recommended with Hotei's full scope noted for later; R19 kept open until the end of the project. The six details C1–C6 as recommended. Manage stays in place (R8); Print on the list is closed, since Export to PDF is there (R9); R13/FT-31 was brought forward by the owner on 24 October and is live in 7a.
-
-### The estimate
-
-**Historical estimate, 23 October; not a current forecast.** About **91 points** of work are left (range 70–118). **Most likely finished around 2 November** (range 30 October – 7 November), if each week's allowance is used and your rulings and device checks come as promptly as they have. Row G adds about 45 (30–60); with it, most likely around **5 November** (range 3–14 November).
-
-- **Against the morning's estimate (23 October):** that read about 80 (55–115), most likely 1 November. The review cost about 2 against 4. Your rulings widen row C from about 16 to about 37: Honour, Glory and Status gain the meeting with your lord and the pip display; Taint gains Rank and points and its growth check; the set rules of Core p.148 and Lord Moon's Curse's full design are new. FT-16 leaves row E (about 6) and becomes row G at its full scope.
-- **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
-- **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
-
-**Current next decision (4 November):** recommended A01 or optional FT-16 first catalogue; see the proposed work order above. Nothing has started.
-
-### The build order (23 October 2026, history; the 28 October work order is above)
-
-Ranked by impact for each point spent, with what each step needs first.
-
-1. **This week, before 28 October 01:00 UTC** (about 17 points left; unused points are lost at the reset):
-   - **1a. The end-of-project desk review. Done** (23 October; rulings recorded).
-   - **1b. Cycle 6, Release 6a: five fixes. Done, live** (24 October, `7b0e7f1`; about 8 points, the full suite twice): FT-44, FT-45, FT-21, FT-23 and FT-38. Your checklist: the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi).
-2. **The week from 28 October** (about 100 points):
-   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a R1–R4 plus the owner-added original-template PDF: live and checked on your devices; 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
-   - **2b. Phase 15, the UI consistency pass** (E · about 18–32 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print.
-   - **2c. Follow-ups from the device checks** (F · about 7–14 points). As each check shows them. The Cycle 7a device follow-up: built, through the full suite and live on 28 October (`c0da641`, about 7 points); your device checks 14/14 Pass.
-   - **2d. FT-16, every Search entry described** (G · about 30–60 points), after Phase 15, catalogue by catalogue.
-3. **Whenever you choose: Phase 0.7's seven Android tests** (no build unless one fails). On an Android phone; the tests are listed under Phase 0.7 below.
-4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And from your review rulings: FT-02 and FT-03 (R18); Hotei's full scope (R10); the Station rules (R11); A03's and A09's precepts (R24).
-
-**Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
-
-## 3. What has been built, and what each step cost
-
-<!-- g1-15b-cost-part3 -->
-**23 November 2026 · 15b group 1 (Claude).** Mock-ups (three rounds), build, device round, qualification and go-live by Claude from 20 to 23 November on a Pro plan, with no weekly reset in between: weekly all models 35% at the start of the mock-ups, 40% at "Build here", 53% built and previewed, 57% after the full pass and 60% after the go-live and its production checks, so about 25 weekly points for the group (the B18 inventory session, Sonnet, ran in the same window and is included).
-<!-- end-g1-15b-cost-part3 -->
-
-<!-- review-15a-cost-part3 -->
-**19 November 2026 · Release 15a in total, and the review (Claude).** 15a cost about **229** Claude weekly points against 94 (58–150) planned on 4 November: A01 8, A02 18, A03 27, G1 19, G2 12 (Claude's build; Codex qualified it), G3 53, G4 22, the automatic-entries group 30, G5 17 and G6 23, each from its first reading to the next group's. On 13 November the meter fell from about 99% to 58% with no weekly reset, so the stretches either side are added. A12's resistance mock-ups (about 7) and Claude's part of the resistance rules read (about 13) moved with A12 to the resistance phase and are not counted. The review itself: weekly all models 30% at the start (23:25 UTC), 32% after the work-order doc (23:39 UTC) and 34% after the ledger page was read in full and republished (23:45 UTC); five-hour 15%, 29% and 42%. About 4 points against the 4 (3–6) planned. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
-<!-- end-review-15a-cost-part3 -->
-
-<!-- g6-15a-cost-part3 -->
-**19 November 2026 · G5 and G6 (Claude).** G5: build, device round and qualification by Claude from 14 to 18 November on a Pro plan; reading after its two full passes on 18 November, after the weekly reset: weekly all models 6%, five-hour limit 30%. G6: mock-ups, build, two device rounds, A19's revision, A19.1, qualification and go-live by Claude on 19 November; reading after the go-live: weekly all models 29%, five-hour limit 4%. The 23-point rise also covers G5's go-live checks, and the weekly meter is shared with any other session on the account, so it is an upper bound for G6, not split further. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
-<!-- end-g6-15a-cost-part3 -->
-
-<!-- ae-15a-qualification-part3 -->
-**13 November 2026 · Automatic entries qualification (Claude).** Variants, discovery, the chain and two full passes by Claude on 13 November (the second pass ended at 00:30 UTC on 14 November) on a Pro plan, started before the weekly reset at the owner's word ("Start now"); the five-hour limit was not reached. Weekly meter, all models: 58% at the start, 62% before the two full passes, 63% after them (Fable 0% throughout). [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
-<!-- end-ae-15a-qualification-part3 -->
-
-<!-- g4-15a-qualification-part3 -->
-**12 November 2026 · G4 (Claude).** Kickoff, reproduction, mock-ups, build, code review, previews, device round and qualification by Claude on 12 November on a Pro plan; the five-hour limit was reached once (before the code review). Weekly meter, all models: 53% at the start, 69% before qualification, 75% after the two passes (Fable 84% throughout). [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
-<!-- end-g4-15a-qualification-part3 -->
-
-<!-- g3-15a-qualification-part3 -->
-**12 November 2026 · G3 (Claude).** Review, mock-ups, build, revision, qualification and records by Claude across 11–12 November on a Pro plan; the five-hour limit was reached once. Weekly meter at the start of the full pass: 50% all models, 84% Fable. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-<!-- end-g3-15a-qualification-part3 -->
-
-<!-- g2-15a-qualification-part3 -->
-**9 November 2026 · G2 qualification (Codex).** G2 was built by Claude on 7 November (about 9 Claude weekly points, 84% to 93%, as reported in the kickoff). Qualification and records are by Codex; its account-wide readings are recorded separately in the handover, with no whole-session cost inferred.
-
-[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-qualification-part3 -->
-
-<!-- claude-publish-part3 -->
-**4 November — Claude publication and review.** Claude meters (five-hour / weekly used): 9% / 6% at 15:09 UTC at the start; 19% / 7% at 15:15 UTC after reading the records and all 2,569 lines of the live ledger page; 25% / 8% at 15:19 UTC after the work-order doc, before the republish. Model Opus 5.5, effort high. About 2 weekly points by publication. Claude's week runs to 11 November, 01:00 UTC.
-<!-- end-claude-publish-part3 -->
-
-<!-- a01-15a-part3 -->
-**4 November · Release 15a A01 (Claude, claude-opus-5-5, effort high).** Account meters from the desktop app: 32% five-hour / 9% weekly at 15:36 UTC; 57% / 12% at 15:59; 0% / 14% at 16:56 after the five-hour reset; 13% / 16% at 18:45 UTC, after both full passes and the records. Weekly use moved by about 7 points against the 5 (3–8) estimate. The two full passes ran on the machine, not on the allowance. Readings are account-wide and kept separate from Codex's. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
-<!-- end-a01-15a-part3 -->
-
-<!-- a02-15a-part3 -->
-**4–5 November · Release 15a A02 (Claude, claude-opus-5-5).** Account meters from the desktop app, five-hour / weekly. Revision 1: 22% / 17% at the start (19:55 UTC); 56% / 21% before full QA (20:50); 16% / 25% after the first pair of passes and the pass 2 investigation (00:51 on 5 November); 19% / 28% at its end (13:24), after the harness fix and re-qualification. Revision 2: 6% / 29% at the start (18:13); 30% / 32% before full QA (18:58); 40% / 34% at the end (21:56); 6% / 35% after go-live (23:29). Weekly use moved by about 17 points in all, against the 5 (3–8) estimate: about 11 for revision 1 and about 5 for revision 2. The qualification chains and the full passes ran on the machine, not on the allowance. Readings are account-wide and kept separate from Codex's. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
-<!-- end-a02-15a-part3 -->
-
-<!-- a03-15a-part3 -->
-**5–6 November · Release 15a A03 (Claude, claude-opus-5-5).** Account meters from the desktop app, five-hour / weekly. Revision 1: 10% / 35% at the start (23:34 UTC, 5 November); 52% / 41% before full QA (00:17); 75% / 44% after both passes (03:36); 78% / 44% at its end (03:45). Revision 2: 15% / 46% at its start (09:15); 59% / 56% before its qualification chain (11:15); 73% / 58% (12:54) before full QA; 10% / 59% (14:48) at the end; 21% / 61% (15:24) after the go-live and production verification. Weekly use moved by about 24 points in all against the 5 (3–8) estimate. The qualification chains and the full passes ran on the machine, not on the allowance. Readings are account-wide and kept separate from Codex's. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
-
-**6–7 November · Release 15a G1 (Claude, claude-opus-5-5).** Account meters, five-hour / weekly: 32% / 62% at the start (17:37 UTC, 6 November); 44% / 64% after the mock-ups; 7% / 65% after revision 2 of the mock-ups; 59% / 72% after the build; 94% / 76% at the owner's review; 32% / 81% before qualification (07:15, 7 November); 34% / 81% at the end (08:11). About 19 weekly points against the 10–15 estimate. The variant runs and the full pass ran on the machine. Readings are account-wide and kept separate from Codex's. [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
-<!-- end-a03-15a-part3 -->
+### Before Phase 15 (9 September to 4 November 2026)
 
 **4 November — Claude kickoff preparation.** Shared Codex readings after preliminary reads at 03:43 UTC: 76% five-hour / 73% weekly; after drafting at 03:46 UTC: 80% / 74%. These do not include the entire turn and are not an exclusive step cost. Model/effort were not exposed. The full Claude kickoff is saved with the cycle-closure work order.
 
-<!-- cycle8-close-part3 -->
-**4 November — cycle-end accounting.** The old Claude week ended at 01:00 UTC; its roughly 99% reading is historical, not today's allowance. Release 8a and 8a.1 cost about 14 and 7 Claude points; their estimates were 9 and 3. Later audit/8b/8b.1/8c work used Codex and is recorded separately. Account resets, shared usage and missing baselines prevent an exact combined Cycle 8 cost. Do not add Claude and Codex percentages or use the old totals to predict a finish date.
-
-This reassessment's first available Codex reading, after initial reading, was approximately 03:26 UTC: 43% five-hour / 68% weekly used. Model/effort were not exposed. [Current planning estimates and measurement limits](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>).
-End-of-review Codex reading, 4 November 03:36 UTC: 65% five-hour / 72% weekly used. These are shared-account observations, not an exact isolated cost.
-<!-- end-cycle8-close-part3 -->
-
 Deployment on 3 November used the shared account readings of 23% / 30% at 02:46 UTC and 32% / 31% after production verification at 02:51 UTC (five-hour / weekly usage).
-
-<!-- rank-spell-8c-part3 -->
-**3 November · Step 3b.** Codex account meters at the start showed 36% five-hour and 32% weekly used. Before qualification they showed 74% and 53%. Before the full passes at 16:28 UTC they showed 1% and 58%. At 18:04 UTC after both passes they showed 18% and 60%. Model and effort were unavailable. During publication on 4 November, the account moved from 8% to 25% five-hour use and 63% to 66% weekly use. These account-wide readings include activity outside this step and a five-hour window reset. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
-<!-- end-rank-spell-8c-part3 -->
-
-<!-- older-school-choices-part3 -->
-**2 November · Release 8b.1 older characters.** At 4× CPU slowdown the 16 affected harnesses passed 459/459. Discovery passed 6,738/6,738. Each full pass gave 6,738/6,738 on the candidate and 6,636/6,636 after removal. Codex five-hour / weekly usage on 2 November was 27% / 4% at 11:19 UTC, 59% / 25% before full QA at 18:48 and 63% / 26% after both passes at 20:20. The API did not expose model or reasoning effort. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
-<!-- end-older-school-choices-part3 -->
-
-<!-- release8b-part3 -->
-**Release 8b, 2 November 2026 (Codex).** Codex shared-account readings (five-hour / weekly used): 1 November 02:09 UTC start 77% / 44%; 23:07 UTC pre-full launch 0% / 80%; 23:10 UTC before actual suite checks 19% / 82%; 2 November 00:47 UTC after both passes 75% / 91%; final end-of-step reading 2 November 00:50 UTC 97% / 95%. The five-hour window rolled; these readings are not an exclusive project cost and are not added to Claude points. The desktop composer displayed GPT-6 Astra Ultra at 23:38 UTC; earlier usage API readings did not expose the selection. No reset credit used by this agent. On 2 November the deployment readings were 13% / 97% used at 09:23 UTC and 21% / 98% at 09:29 UTC after production verification (five-hour / weekly, shared account). [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
-<!-- end-release8b-part3 -->
 
 **2 November · Release 8b device feedback.** Shared Codex five-hour / weekly usage on 2 November was 1% / 0% at 11:07 UTC and 22% / 3% at 11:15 UTC after design and reproduction. The meter did not expose the model or effort. [Older School choices design](<BUGFIX — Older School Choices/DESIGN.md>).
 
-
 Points are Claude's weekly allowance, read from the usage meter as the difference between two readings. The meter is account-wide, so each figure is close, not exact, and a week's rows may not add exactly to its total, which also counts the turns between steps. A step's points include its full suite, merge, live check, device checklist and records unless its row says otherwise. Codex worked on its own allowance: its readings are listed apart and never added in.
 
-### Week by week
+#### Week by week
 
 | Claude week | What it bought | Points |
 |---|---|---:|
@@ -526,9 +126,9 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2; Releases 7c and 7c.1; the Cycle 7 reassessment; Releases 8a and 8a.1; the records and ChatGPT's kickoff | about 99 so far |
 | **Total** | about 7½ weeks of allowance | **about 830** |
 
-### Step by step
+#### Step by step
 
-#### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1, 7b.2, 7c and 7c.1, the reading session, the Cycle 7 reassessment, Releases 8a and 8a.1 and the handover to ChatGPT (about 99 so far)
+##### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1, 7b.2, 7c and 7c.1, the reading session, the Cycle 7 reassessment, Releases 8a and 8a.1 and the handover to ChatGPT (about 99 so far)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -549,7 +149,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 30 Oct | Release 8a.1: two layers (21 checks), one review (one low defect fixed, with a check), four pin corrections of mine and their re-runs, the changed harnesses at 4× CPU, the discovery run, the full suite twice (first time), the merge on your word (`5bfcb18e`), the live check (202/202; browser and offline 18/18), the walk (8/8), section R and the records. Estimated 3 (2–5) | about 7 |
 | 31 Oct | The records, this page read and republished, the roadmap, and ChatGPT's kickoff for the Phase 15 audit | about 2 |
 
-#### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
+##### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -563,7 +163,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23 Oct | The end-of-project desk review (27 rulings, no build), your answers recorded, the records. Estimated 3–5 | 2 |
 | 24 Oct | Release 6a: FT-44, FT-45, FT-21, FT-23 and FT-38, five layers, the full suite twice, the merge, live check and checklist. Estimated 10–14 | 8 |
 
-#### 16–21 Oct: Cycle 3 finished, the Library mock-ups, Cycle 4 (93)
+##### 16–21 Oct: Cycle 3 finished, the Library mock-ups, Cycle 4 (93)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -582,7 +182,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 19–20 Oct | Release 2d: the part you tap stays highlighted. The Library all in: about 66, estimated 20–40, plus about 12 for the mock-ups | 10 |
 | 20 Oct | The reassessment, the records and the Cycle 5 kickoff | about 2 |
 
-#### 14–16 Oct: Cycles 1 and 2, three print fixes, most of Cycle 3 (97)
+##### 14–16 Oct: Cycles 1 and 2, three print fixes, most of Cycle 3 (97)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -597,7 +197,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 16 Oct | The records, the ledger page republished, the Cycle 3 kickoff | 4 |
 | 16 Oct | Cycle 3 (4.5.36 D06 Weakness and Hotei's Curse) before the reset: the reading, the build, the code review and its fixes | 9 |
 
-#### 7–13 Oct: 4.5.27 to 4.5.35, Search and its facets (96)
+##### 7–13 Oct: 4.5.27 to 4.5.35, Search and its facets (96)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -615,7 +215,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 10 Oct | Your 14.1 results, the Skill-Trait audit and the records | 5 |
 | 10 Oct | The print diagnosis (a cloud session; not read) | — |
 
-#### 30 Sep – 6 Oct: Phase 12 finished, 4.8, 4.6, Phase 6, the audit (94)
+##### 30 Sep – 6 Oct: Phase 12 finished, 4.8, 4.6, Phase 6, the audit (94)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -647,7 +247,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 2 Oct | Its merge, live walk and checklist; the projection | 1 |
 | 2 Oct | The reassessment after 4.5.25 | not read |
 
-#### 23–29 Sep: A01–A16, the Characters list and wizard, Phase 12 (96)
+##### 23–29 Sep: A01–A16, the Characters list and wizard, Phase 12 (96)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -669,7 +269,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 25 Sep | 12.6: Techniques in Play | 1 |
 | 25 Sep | The project-length estimate and the records | 1 |
 
-#### 16–22 Sep: Advantages and Disadvantages, 4.5.3 to 4.5.12 (92)
+##### 16–22 Sep: Advantages and Disadvantages, 4.5.3 to 4.5.12 (92)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -686,7 +286,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 17 Sep | BUGFIX — Mastery Rank Labelling | 4 |
 |  | BUGFIX — Negative Roll Modifier Display | 6 |
 
-#### 9–15 Sep: The foundations: Phases 0 to 4, 5, 8 and 4.5 (98)
+##### 9–15 Sep: The foundations: Phases 0 to 4, 5, 8 and 4.5 (98)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -695,7 +295,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 |  | Phase 8, Casting Diagnostics | about 10 |
 |  | Phase 4.5, Modal-Configured Advantages and Disadvantages | about 10 |
 
-### Codex, on its own allowance
+#### Codex, on its own allowance
 
 **Phase 15 audit, 31 October:** Codex usage: start and pre-full readings unavailable, so whole-step cost is not measurable. Late account readings: 31 October 17:56 UTC, five-hour 77% used / weekly 29%; 23:24 UTC, five-hour 8% / weekly 34%; final recorded reading 23:27 UTC, five-hour 21% / weekly 36%. The 7-weekly-point increase between late readings is not the total audit cost and is not added to Claude's totals. GPT-6 family; exact model/effort setting unavailable; no reset credit used. Remote Control remains unverified after computer-use approval timed out.
 
@@ -733,7 +333,7 @@ Codex's figures are differences between its own meter readings, in Codex's weekl
 Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). Extensions used the account-wide weekly meter from 24 to 39, then 41 to 49 (reported at 46). The next extension began at 50 with report/cap 55/58; it was reported at 56, but the next reading during monitoring was 63, exceeding the cap. The owner was informed that meter checks were too infrequent. Final records received separate approval for 1–2 points: baseline 64, report 65, cap 66; latest recorded reading 64. These readings are account-wide proxies, not exact task billing; no reset credit was used.
 <!-- refinements-usage-end -->
 
-### What the costs teach
+#### What the costs teach
 
 - **The conversation is the largest cost.** Re-reading one long conversation was 73% of Cycle 1's cost and the largest single part of 5a's, so each release gets a fresh session.
 - **New machinery costs; reuse is cheap.** Releases that reuse what exists cost 4–7 points (5c.1, 4.5.25, Phase 12's parts); new machinery costs 12–30 (4.5.10, the Library's releases, 5a).
@@ -742,116 +342,51 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **ChatGPT's Cycle 7a cost about 271 Codex points in five days**, across four meter resets: 139 for 7a's build and first QA, 80 for the refinements, 19 for the follow-up's build and 33 for the provenance work, two deployments and a gap between stages. Both of its full suites failed on the first attempt and were rerun; Claude's finish of the follow-up passed first time.
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
-## 4. Parked items, waiting for review
+## 4. Parked items
 
-<!-- g1-15b-parked-part4 -->
-**23 November 2026 · from 15b group 1's device round (Claude).** Three of the owner's observations, none for group 1: (1) the Combat page's formula i's beside Armor & TN and Weapons are a gold ⓘ in a gold ring, and each stance tile has a small grey ⓘ, unlike the standard ink ring (with the Combat tab overhaul); (2) Touch of the Spirit Realms draws its realm as the dashed badge, and the owner asks for a whole-sheet check for missing or mismatched badges when it is fixed; (3) a Taint phase after Phase 15: Jigoku's "Lost" tick reads like "lost your way" and can be ticked with no Taint; the owner suggests it follow the Taint Rank (5, or 7 for a character whose Ring reached 6 first; Core p.278). B18's rulings are pending.
-<!-- end-g1-15b-parked-part4 -->
+### Open now
 
-<!-- review-15a-parked-part4 -->
-**19 November 2026 · what 15a left open (Claude).** Into 15b: A03's print note (on paper, Advantages start 836 px lower) goes to B12, and the colophon's mon over the tab bar to B13. Recorded only: a Void pip tap does not redraw the Void card's note (G6); A19's Undo covers card spends only; AE2's and A08's review edges; A11's three layout observations; the untested app bar at the bottom, screen readers and the Fold's narrow outer screen. Still parked: FU-15a-1, the stats header (with the Combat tab), FT-59, A04.2 and a "Needs a choice" character-check rule. The full table is in the review. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
-<!-- end-review-15a-parked-part4 -->
+Open items from Phase 15 onwards, kept until their turn. Each is written in full in its dated entry in part 6. Items parked before Phase 15 follow, as they were written.
 
-<!-- g6-15a-parked-part4 -->
-**19 November 2026 · after G6 (Claude).** Release 15a is complete: G1 to G6 and the automatic-entries group are live; A12 was withdrawn into the resistance phase and A18 was closed. Next, in the order already agreed: Release 15b, then the resistance phase (the owner leans to versions 1 and 2, to resume as one merged whole-row design; Q5 of the rules read is open), then the phase that applies School Techniques, Kata and Kiho as modifiers. None is started; each starts on the owner's word. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
-<!-- end-g6-15a-parked-part4 -->
+- **The Combat page's information buttons.** The formula i's beside Armor & TN and Weapons are a gold ⓘ in a gold ring, and each stance tile has a small grey ⓘ. Neither matches the sheet's standard ink ring. *Raised 23 Nov (15b group 1, P1) · with the Combat tab.*
+- **Touch of the Spirit Realms' dashed badge.** The realm is drawn as the dashed badge. When that is fixed, check the whole sheet for missing or mismatched badges. *Raised 23 Nov (15b group 1, P2) · not placed.*
+- **A Taint phase.** Jigoku's "Lost" tick reads like "lost your way", and it can be ticked with no Taint. It should follow the Taint Rank (Core Rulebook p.278). *Raised 23 Nov (15b group 1, P3) · its own phase after Phase 15.*
+- **FU-15a-1 · learnt Kiho, Kata and spells offered again.** The wizard's Kiho step and the sheet's Add Technique picker offer a Kiho already learnt, so Air Fist could be taken twice. Learnt entries should leave the lists, as Skills do. *Raised 4 Nov (A01 device round) · unscheduled.*
+- **Key stats always on view.** A stats header, like D&D Beyond's. The floating strip's Rest then needs a new home. *Parked 5 Nov (A02) · with the Combat tab.*
+- **FT-59 · a mon and a colour theme for every Clan.** About 12 themes, with each Minor Clan keeping its own mon. In full in the 6–7 November entry in part 6. *Parked 7 Nov · when you choose.*
+- **A04.2 · one pattern for a configured row.** A filled choice badge, Change in Manage only, then the i. B17 is its first use; Luck, Unlucky and the other "Reset session" rows wait for it. *Parked 9 Nov (G2) · after the rules read pass.*
+- **A "Needs a choice" character check.** List every Advantage or Disadvantage still at Needs a choice, as missing free Skill choices are listed today. *Your idea, 9 Nov · a small later unit.*
+- **A11's later layout notes.** On a laptop, the Rings note sits 12 px right of its label. The Armor & TN information heading in Play has its bonus note 3 px below the field. The Wounds table's first column is 8 px right of its caption. *9 Nov (G2) · later layout work.*
+- **Into Release 15b.** A03's print note (on paper, Advantages start 836 px lower) goes to B12, and the colophon's mon over the tab bar goes to B13. *19 Nov (review after 15a) · 15b group 5.*
+- **Recorded only.** A Void pip tap does not redraw the Void card's note (G6). A19's Undo covers card spends only. AE2 and A08 have review edges. Still untested: the app bar at the bottom, screen readers, and the Fold's narrow outer screen. *19 Nov (review after 15a).*
 
-<!-- ae-15a-parked-part4 -->
-**13 November 2026 · after automatic entries (Claude).** Next: the group's go-live, only on the owner's word (fast-forward `main` to the group's tip, then production verification and the browser/offline smoke). Nothing after the group is agreed yet. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
-<!-- end-ae-15a-parked-part4 -->
+### Parked before Phase 15, as recorded
 
-<!-- g4-15a-parked-part4 -->
-**12 November 2026 · after G4 (Claude).** Next, as agreed with the owner: (1) G4 go-live on the owner's word (fast-forward `main`, then production verification and the browser/offline smoke); (2) the automatic-entries group, mock-up first: Yogo Wardmaster's missing Sense, the School's given spells credited on import and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
-<!-- end-g4-15a-parked-part4 -->
-
-<!-- g3-15a-parked-part4 -->
-**12 November 2026 · after G3 (Claude).** Agreed with the owner, in this order: (1) G3 go-live; (2) a small group for automatic entries, mock-up first: a one-line fix for Yogo Wardmaster's missing Sense (a book check found 20 of 21 Shugenja Schools right), the School's given spells credited on import without a review click and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques (Kata, Kiho and chosen entries keep both); (3) the gold focus ring after a dialog closes, with G4. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-<!-- end-g3-15a-parked-part4 -->
-
-<!-- g2-15a-qualification-part4 -->
-**9 November 2026 · G2 qualification (Codex).** **A04.2 — one pattern for a configured row.** Parked until the rules read pass is done. One line: a filled choice badge at the far left, Change in Manage only, then the i explaining every choice. Below: a summary of the chosen option, written from the later rules read. Say Applied automatically or Reminder in words. Bishamon's Clan-coloured note becomes plain summary text. Mock-up first; not part of G2.
-
-**Identity character check — Needs a choice.** Owner idea outside G2: list every Advantage or Disadvantage still at Needs a choice, as missing free Skill choices are listed today. No such rule exists today. A small future unit can register one rule with Phase 5 (Part J), using the sheet's own configuration-complete test.
-
-**A11 whole-app read — later layout work.** Keep for later: the Rings note 12 px right of its label on a laptop; the Armor & TN information heading in Play and its bonus note 3 px below the field; the Wounds table's first column 8 px right of its caption.
-
-[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-qualification-part4 -->
-
-<!-- cycle8-close-part4 -->
-**4 November — remaining-work review.** The 8b.1 functional correction and 8c advancement picker are complete. Keep all three 8b.1 presentation findings as separate 15a units. The 36-finding audit contains 34 work units plus retained A13/B15; with the three follow-ups, 37 possible work units remain. [Current inventory, R1–R27 dispositions and deferred work](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>).
-
-No deferred idea was silently promoted or dropped: R6 and the UI backlog go to Phase 15; FT-16 follows it unless the owner selects optional step 4; sync/Manage/career planning are reweighed at step 8. Final Honour/Glory/Status/wound review remains validation of the accepted app. FT-08 stays open until recurrence or the final review. The older rules-audit A14 spill stays parked for owner scenarios, distinct from Phase 15 A14. Android's seven tests, conditional save-race/History concerns, wiki access and after-project engine/optimization/EPUB/Equipment/rules work retain their recorded gates.
-<!-- end-cycle8-close-part4 -->
-
-<!-- claude-review-part4 -->
-**4 November — planned work added to the review list (Claude).** The 1–4 November plan for ronin, tattoos and the Combat tab (the roadmap's *PLANNED* entry, FT-53 to FT-58), sync and the career planner are step 8 candidates in the [4 November work order](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA). Open rulings stay open: ronin's five, the Combat tab's wound-log clearing and Rest during combat. The owner's 27 October PDF export plan (15 approved fixes and the appendix tidy, then a core-book-style redraw) is added as step 8 candidates; it had been saved only in another session's memory and was missed at first.
-<!-- end-claude-review-part4 -->
-
-<!-- a01-15a-part4 -->
-**4 November · from Release 15a A01.** (1) **FU-15a-1**, the owner's device-pass request: the wizard's Kiho step and the sheet's Add Technique picker both offer a Kiho already learnt, so one can be taken twice (Air Fist twice, screenshot in A01's `qa/device-pass/`). The owner asks that learnt Kiho, Kata and spells leave the list in the wizard and on the sheet, as Skills do. It is in Release 8c; A01 does not touch it. (2) Already in 8c: naming the monk's Lore subject in the wizard adds a *1 School Skill at Rank 0* warning card. (3) Two minor review notes, recorded and not changed: a theoretical comma-bounded false match between two given-spell names (no data has one), and the A01 harness's own list parser cutting at the first ". ". [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
-<!-- end-a01-15a-part4 -->
-
-<!-- ft59-part4 -->
-**7 November · parked by the owner: FT-59, a mon and a colour theme for every Clan.** This extends Phase 9 (Part H)'s Clan look:
-
-- **Mons:** each Minor Clan gets its own mon, and so do the Spider, the Imperial families and the ronin.
-- **Colours:** about 12 themes instead of one per Clan (about 25):
-  - the seven Great Clans, as today;
-  - one theme each for the Mantis, the Spider, the Imperial families and the ronin;
-  - one colour shared by every Minor Clan, each keeping its own mon;
-  - the sheet's red with no Clan.
-- **Why, as discussed on 7 November:** a sheet shows one Clan at a time, so the mon identifies the Clan and the colour sets the mood. Text on these colours has to stay readable, which means dark shades, and about 25 dark shades would bunch together.
-- **Pairs to keep apart:** Spider and Scorpion, Mantis and Dragon, Imperial and Unicorn (or Lion), ronin and the Void grey.
-- **Rules for each new theme:** its deep shade must reach 4.5 : 1 on the paper, like the existing seven. It must also avoid the reserved colours: the Delete and worst-wound red, the gold of buttons, and the Ring colours.
-- **Link to G1:** Release 15a G1's A15 court badges fill with the Clan colour, so new themes reach them without further work.
-- **Status:** parked until the owner chooses a time. There are no mock-ups and no estimate yet, and nothing is built.
-<!-- end-ft59-part4 -->
-
-<!-- a02-15a-part4 -->
-**4–5 November · from Release 15a A02.** (1) Parked by the owner on 5 November: key stats always on view, like D&D Beyond's header. It is recorded in the roadmap's Combat tab plan and on the [Combat tab mock-up canvas](https://claude.ai/artifact/3xjspD1SqtVrRz46dvoM3h), with a note that the floating strip's Rest needs a new home. (2) Revision 2's review found that the A02 harness's "part-way" scroll went to the top, in revision 1 too. Fixed before qualification; revision 1's part-way comparison numbers were really top states. (3) Review notes, recorded and not changed: `TABS-REACHABLE` tests the middle of each tab (the tab bar's ends are covered by every sweep state's on-tabs check); no harness runs the app bar at the bottom or the Quick Access panel at its height cap; with the app bar on top, the panel is short on a phone held sideways. (4) Seen while measuring, already in A01's build and belonging to other findings: on the desktop, Advantages start far below Disadvantages when one list is empty (A03); the colophon's faint mon shows over the tab bar (B13). (5) The service-worker harness fix ([QA — PWA Harness Step Limits](<QA — PWA Harness Step Limits 2026-11-05/README.md>), commit `13f85caf`) lives on A02's branch but is its own unit: it can be merged with A02, or taken to `main` alone if A02 is removed. FU-15a-1 stays recorded and unscheduled. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
-<!-- end-a02-15a-part4 -->
-
-<!-- a03-15a-part4 -->
-**5–6 November · from Release 15a A03.** (1) Browser print still aligns the Adv & Disadv columns to the bottom (on paper Advantages start 836 px lower on the dense character). A03 is screen only; this belongs to Release 15b's B12. (2) Declared, not changed: on a phone the keyboard and screen-reader order (name, eye, the summary, the fields, Rank, roll) differs from the card's visual order, because no element is moved; three harness oracles lean on the layer (the summary rebuilt from the row's fields; heights and print compared with the page without A03; stand-in additions). (3) Revision 2 reads Phase 12 (Part K)'s `pm12-play` class, declared in both rollback files: remove A03 before Phase 12, as the removal chain does. (4) For A04: the Skill information window (the eye) shows no Masteries except its debug buttons; the owner suggested it as the home for reference detail. (5) Not verified automatically: Safari's `:has()` and `display: contents` on the owner's iPhone, screen readers, and screens under 320 px. FU-15a-1 and the 8b.1 UI follow-ups stay recorded and unscheduled. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
-<!-- end-a03-15a-part4 -->
+Recorded from 22 October to 2 November 2026, before Phase 15 began. The Phase 15 audit of 31 October mapped the parked items to its findings, and many have since been built. They are kept here as they were written.
 
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
-
-<!-- rank-spell-8c-part4 -->
-**3 November · Step 3b.** Earned spell choices stay attached to the School and rank that granted them. Choose or Later at advancement, then return via the Manage character check. The owner’s iPhone and Edge checks passed for later claims, reward scroll exclusion and save/reopen. The production walkthrough also passed on 4 November. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
-<!-- end-rank-spell-8c-part4 -->
-
-<!-- older-school-choices-part4 -->
-**2 November · Release 8b.1 older characters.** The older-save correction addresses step 3a device feedback. The new level-up picker belongs to step 3b. Phase 15’s approved findings and removal rules retain their recorded scope. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
-<!-- end-older-school-choices-part4 -->
-
-<!-- release8b-part4 -->
-**Release 8b, 2 November 2026 (Codex).** Phase 15's accepted Q1-Q8 and independent finding/release/phase removal rules remain in force. Release 8b does not implement those UI findings, Kiho actions, or level-up spell grants. The owner's original broader concept remains in the roadmap as the agreed fallback. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
-<!-- end-release8b-part4 -->
-
 
 **27 October update:** R1/R2 display and R13 export follow-ups are implemented on the refinement branch. R5 is brought forward into the same branch; it is no longer waiting to be built in 7b. Original-release device observations have been received; the refinements passed your checks 9 of 10 (27 October) and the tenth, as the device follow-up, 14/14 (28 October).
 
 Yours, recorded so nothing is lost, and not to be built until their turn comes. The letters are the rows of the work left.
 
-#### From Release 8a.1, 30 October
+##### From Release 8a.1, 30 October
 
 - **The free-choice note can go early** in two declared cases: a Skill ticked as School by hand that is not a free choice, and a family that names more than one ("Artisan (pick 2)", Shiba Artisan), whose second subject counts as a free choice. It never says "still open" for a choice that is made, except where a choice leaves no extra ticked row (unlikely: the pickers hide Skills already held). Recorded in the layer's README; 8b's School-choice buttons (step 3a) will mark each pick as the School's, which removes the guess.
 
-#### From Release 8a, 30 October
+##### From Release 8a, 30 October
 
 - **An unsaved sheet imported from a file that is a blank sheet plus a History** is now replaced without asking, and that History goes with it (the 8a review's note 9). Rare: such a History describes changes the file does not show. Recorded in the layer's README; nothing to build unless you want it.
 - **Short fixed waits that still pass under load** (Dependant typing's 80 ms after Save, the Characters list's 400 ms checks that no download came) are left as they are: the whole suite's 4× CPU sweep passed them. They move to the event-wait form only if one ever fails.
 
-#### From your Release 7c device checks, 29 October
+##### From your Release 7c device checks, 29 October
 
 | Item | Raised | Goes to |
 |---|---|---|
 | Lord Moon's Curse's row: the Full moon tonight tick and the "Medium" summary sit out of line with the rest of the card (your 7c checks, A1–A3) | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
 | The creation wizard blocks Next while the XP spent is over 40; you would rather it warn on the last step and at Finish, and let the player go on, since Disadvantages bought later can bring the total back (your 7c checks, B1–B2; the gate dates from Phase 11.2) | 29 Oct | Release 8a (your ruling, 29 Oct; the 30 October work order) |
 
-#### From Release 7c's review and QA, 29 October
+##### From Release 7c's review and QA, 29 October
 
 | Item | Raised | Goes to |
 |---|---|---|
@@ -859,13 +394,13 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 | Turning the audit log's switch off drops each character's History at its next save (7c review finding 6; written in its ROLLBACK) | 29 Oct | Only if the layer is ever rolled back |
 | The Characters list harness's autosave checks wait a fixed 1.7 seconds for a 1.2-second autosave; at 4× CPU they miss it on any build, main's too, though they pass in every full run. Waiting for the save itself would remove the margin | 29 Oct | Release 8a, with every other check that fails only under load (the 30 October work order: the full suite passes first time) |
 
-#### From Release 7b.2's review, 29 October
+##### From Release 7b.2's review, 29 October
 
 | Item | Raised | Goes to |
 |---|---|---|
 | Search's Scorpion Instigator entry still lists Blackmail as one Advantage and, with the four-people confirmation gone, no longer says "four different people"; the Advanced School list itself reports "Blackmail on 4 different people (n recorded)" | 29 Oct | E, Phase 15b (text and Search), or your call |
 
-#### From Release 7b.1.1's review, walk and your re-tests, 29 October
+##### From Release 7b.1.1's review, walk and your re-tests, 29 October
 
 | Item | Raised | Goes to |
 |---|---|---|
@@ -874,7 +409,7 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 | FT-50 Go to Advanced Schools sits lower than its hint text (your re-test I6, Edge): an inline button in a line of italic text; lay the line out so the text and the button are centred | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
 | FT-51 Help text sits hard against the boxes above it: the Insight note under Identity's boxes and the Spent XP note under Experience (your screenshot, 29 Oct) | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
 
-#### From Release 7b.1's checklist walk and your device checks, 28 October
+##### From Release 7b.1's checklist walk and your device checks, 28 October
 
 | Item | Raised | Goes to |
 |---|---|---|
@@ -883,7 +418,7 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 | B2's spell slot: casting with an Ancestor gift that cannot be paid (Kuni with too few Void Points), the gift's question "Roll without it?" answered Cancel roll or ✕ cancels the roll but keeps the spell slot spent. The Ancestor layer's gate wraps the preview after the spell-slot refund layer, so the refund sees the preview go ahead. Older than 7b.1 (Phase 4.8 with the Spell Slot Accounting fix); R10 makes it easy to reach (check B2, iPhone and Edge) | 28 Oct | Built in 7b.1.1, live 29 Oct; your re-tests I3–I5 |
 | E1's button: Go to Advanced Schools is too big beside its one-line hint (Edge screenshot in the doc); the layer gave it a 44 px minimum height everywhere (check E1) | 28 Oct | Built in 7b.1.1, live 29 Oct; your re-test I6 |
 
-#### From your device checks of the Cycle 7a follow-up, 28 October
+##### From your device checks of the Cycle 7a follow-up, 28 October
 
 | Item | Raised | Goes to |
 |---|---|---|
@@ -891,7 +426,7 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 | FT-48 Which page holds the wound multiplier: Rings & Traits beside Earth, since Combat is hidden in Management (check D1) | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
 | FT-49 Zoom on the iPhone, to investigate: a quick double press on buttons and steppers zooms instead of pressing twice (double-tap zoom elsewhere stays); typing in a box zooms in and stays zoomed after Enter or tapping out; double-tap sometimes will not zoom back out, only pinch does | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
 
-#### From your Cycle 5 device checks, 22–23 October
+##### From your Cycle 5 device checks, 22–23 October
 
 | Item | Raised | Goes to |
 |---|---|---|
@@ -903,7 +438,7 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 | FT-46 The World of the Daimyo, The Daimyo's Path and Child of Chikushudo | 22 Oct | C, as reference entries (R11); the Station and shapeshifter rules after the project |
 | Printing from the iPhone home-screen app does nothing (5a, F1) | 22 Oct | Nothing to build: iOS home-screen apps cannot print; Safari prints |
 
-#### Ruled in the desk review, 23 October
+##### Ruled in the desk review, 23 October
 
 The end-of-project review items, with your rulings ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp); in full in the roadmap's *Desk review rulings, 23 October 2026*).
 
@@ -934,7 +469,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | R26 Lord Moon's Curse, the Ring cap, the empty quiver | As recommended, and Lord Moon to your design: a full-moon tick on the row; an extra Void Point on the Void card, used last; a Willpower roll button with the result message styled like Enlightened Madness's. TN 15, 20 and 25 for levels 1, 2 and 3, as the entry reads (C5) | C, 7c |
 | R27 Student of the Past; Uncentered | As recommended: both closed | Closed |
 
-#### For Phase 15, the UI consistency pass
+##### For Phase 15, the UI consistency pass
 
 **Audited 31 October:** every item in this list, the FT backlog, R6, later device notes and unnumbered items has a destination in [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>). 36 findings; 15a/15b proposals and explicit retain/decline decisions. Q1–Q8 were accepted as recommended on 1 November. This supersedes an undifferentiated E assignment; it does not authorize implementation.
 
@@ -948,7 +483,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | The A01–A16 device pass's UI items: the pickers' bottom i, A04's court chips, Jigoku's Lost wording | 24 Sep | E |
 | The Library mock-up change list | 17 Oct | Applied in Mock-ups v2 and the Library; FT-40 is open |
 
-#### Whenever you choose
+##### Whenever you choose
 
 | Item | Raised | Goes to |
 |---|---|---|
@@ -976,7 +511,7 @@ The status of every phase, then the evidence for each, by status. The roadmap de
 | 1.6 | Combat Tab Streamlining | H | ✅ Done |
 | 2 | Quick-Access Sidebar | H | ✅ Done |
 | 9 | Polish & Immersion | H | 🟡 Part done — the Clan skins and School flavour text done; the colophon and floating buttons with Phase 15 |
-| 15 | UI Consistency Pass | H | ⬜ Ahead — last, by design |
+| 15 | UI Consistency Pass | H | 🟡 In progress — Release 15a done (26 units, 4–19 November 2026); Release 15b started (group 1 live 23 November) |
 | 4.5 | Modal-Configured Advantages/Disadvantages | I | ✅ Done — with 4.5.2 to 4.5.42; the last six in Cycle 5 |
 | 4.6 | Alternate Paths for All Character Types | I | ✅ Done |
 | 4.7 | Advanced Schools and Missing Basic Schools | I | ✅ Done |
@@ -2040,6 +1575,12 @@ Report failures by **test number** and **what you saw**.
 
 ### 🟡 Started, not finished
 
+#### Phase 15 — UI Consistency Pass · Part H
+
+Its audit was delivered on 31 October 2026, and building began on 4 November with Release 15a A01. Release 15a is complete: 26 units, all live by 19 November. Release 15b began on 20 November, and group 1 went live on 23 November. Part 1 has every group so far, and part 2 the rest of the order.
+
+*As the Ahead table read until 23 November 2026:* Last by design: it reviews the finished screens. Its audit comes first. Parked for it: FT-11 to FT-14, FT-16 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, the colophon and the floating buttons. Phase 13 left this table on 20 October, when the Library was done.
+
 #### Phase 9 — Polish & Immersion · Part H
 
 **Built and verified:** Clan-themed UI skins — **17/17** checks, dropping to 16/17, 15/17 and
@@ -2082,9 +1623,7 @@ Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/
 
 ### ⬜ Ahead
 
-| Phase | Name | Part | Note |
-|---|---|---|---|
-| 15 | UI Consistency Pass | H | Last by design: it reviews the finished screens. Its audit comes first. Parked for it: FT-11 to FT-14, FT-16 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, the colophon and the floating buttons. Phase 13 left this table on 20 October, when the Library was done |
+No phase is waiting to start: Phase 15 started on 4 November 2026 (above).
 
 **Phase 10 — Future Expansions (Equipment)** sits outside the count: deferred by design, not yet assigned a Part,
 nothing scoped to build.
@@ -2105,111 +1644,224 @@ until that evening.)
 
 ## 6. The update log, newest first
 
-<!-- g1-15b-live-part6 -->
-**23 November 2026 · Release 15b group 1 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `3b499a88` to `e638e052` at 19:56 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `5ac767c6…574d`, deployed page `0036400e1138…`, service worker build `40a5ee3f5b408a43`); 130 application harnesses passed 5,541/5,541 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
-<!-- end-g1-15b-live-part6 -->
+Every update as it was written, newest first. Since 23 November 2026 each update is one entry holding everything recorded that day; the entries from 2 to 23 November were gathered the same way when the ledger was reorganised, with labels for what had sat in parts 1 to 4. Figures in older entries were true when written; where they differ from parts 1 to 4, those parts are current.
 
-<!-- g1-15b-qualification-part6 -->
+### 23 November 2026 — Claude: Release 15b group 1 (A14, B04, B14, B17) qualified and live
+
+**23 November 2026 · Release 15b group 1 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `3b499a88` to `e638e052` at 19:56 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `5ac767c6…574d`, deployed page `0036400e1138…`, service worker build `40a5ee3f5b408a43`); 130 application harnesses passed 5,541/5,541 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
+
 **23 November 2026 · Release 15b group 1 qualified (Claude).** Release 15b's first group is four screen-only units on stacked branches: A14 (One Net Wound Penalty: with Low Pain Threshold or Strength of the Earth the Wounds line, each level's spoken name, the level's window and Quick Access show the one penalty that applies, an i opens the rank's penalty, each entry with its page and the total, and the roll preview keeps one row, "-5 to total — Nicked"), B04 (One Armor TN Breakdown: Quick Access's Armor TN has an i and Blind's line there goes; the i and the Combat card's formula i show one table that adds up), B14 (Jigoku's Total, Then Its Arithmetic: "+8 to total — Taint Rank 4 × 2 (Lost)") and B17 (One Row for Kharmic Tie: the badge "Aiko · Rank 3", the pips and Reset session, then Change and one i on the badge's line), markers `PART H PHASE 15.2.1`, `.3`, `.4` and `.5`. B02 (actual and catalogue price) was dropped at the mock-ups, and the owner's consistency note added B18 (One Name per Button Job) to 15b; B17 keeps "Reset session" until B18 rules. The owner accepted all four at the device round (22/22 checks on iPhone and laptop).
 
 Every stage passed first time. The chain ran once (16:31 to 16:35 UTC): group removal 30/30 (all four removed restores Release 15a as live `921f3ac9…6150` exactly; A14, B04 and B14 each removed alone and A19.1 removed with the group kept, with every kept harness run in full; and, the owner's decision 3, all 26 Release 15a units removed with the group kept, on which all four harnesses passed) and dependencies 4/4. One full pass followed (16:35 to 17:31 UTC): candidate **7,505/7,505** (209 leaves) and retained **7,380/7,380** (203 leaves), restoring Release 15a exactly. Light checks found one fault, fixed before the device round: without Release 15a, B17's i grew to the sheet's 40 px phone size; it now keeps 28 px.
-<!-- end-g1-15b-qualification-part6 -->
 
-<!-- review-15a-part6 -->
+*What was next:*
+
+**23 November 2026 · after 15b group 1 (Claude).** Next: the owner's rulings on B18's button inventory (405 controls in 23 job groups, on branch `claude/jovial-rubin-993414`, not merged), then Release 15b group 2 (B01, B03, B05, B09), mock-ups first. Parked from group 1's device round: the Combat page's i's (with the Combat tab overhaul), Jigoku's dashed realm badge with a whole-sheet badge check, and a Taint phase after Phase 15 ("Lost" to follow the Taint Rank; Core p.278).
+
+*Cost:*
+
+**23 November 2026 · 15b group 1 (Claude).** Mock-ups (three rounds), build, device round, qualification and go-live by Claude from 20 to 23 November on a Pro plan, with no weekly reset in between: weekly all models 35% at the start of the mock-ups, 40% at "Build here", 53% built and previewed, 57% after the full pass and 60% after the go-live and its production checks, so about 25 weekly points for the group (the B18 inventory session, Sonnet, ran in the same window and is included).
+
+*Parked or left open:*
+
+**23 November 2026 · from 15b group 1's device round (Claude).** Three of the owner's observations, none for group 1: (1) the Combat page's formula i's beside Armor & TN and Weapons are a gold ⓘ in a gold ring, and each stance tile has a small grey ⓘ, unlike the standard ink ring (with the Combat tab overhaul); (2) Touch of the Spirit Realms draws its realm as the dashed badge, and the owner asks for a whole-sheet check for missing or mismatched badges when it is fixed; (3) a Taint phase after Phase 15: Jigoku's "Lost" tick reads like "lost your way" and can be ticked with no Taint; the owner suggests it follow the Taint Rank (5, or 7 for a character whose Ring reached 6 first; Core p.278). B18's rulings are pending.
+
+### 19 November 2026 — Claude: The cycle review after Release 15a, and Release 15b's work order
+
 **19 November 2026 · Cycle review after Release 15a (Claude).** 15a cost about 229 Claude weekly points against 94 (58–150) planned, and 15b is re-estimated at about 120 (85–182). All of 15a (26 built units; not 28) removed in a scratch tree rebuilds Release 8c's application `139e0810…2551`, 17,525,378 bytes, byte for byte (13/13). The ledger page is republished. The owner is asked three things in one Claude Doc, [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): 15b's groups and order (recommended: 1 A14, B02, B04, B14 · 2 B01, B03, B05, B09 · 3 B06, B10, B11, B16 · 4 B07, B08 · 5 B12, B13); B14 and B01 kept in 15b (B14's line is not on the resisting rows); and a stage with 15a removed in each group's chain. Nothing in 15b is mocked up or built. These records are on `claude/release-15b-kickoff`, not on `main`. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
-<!-- end-review-15a-part6 -->
 
-<!-- g6-15a-live-part6 -->
+*What was next:*
+
+**19 November 2026 · after the review (Claude).** Proposed, waiting for the owner's decision in the [work order](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP): Release 15b in five groups, about 120 (85–182) points. 1 · totals and their breakdowns (A14, B02, B04, B14), 22 (16–32); 2 · labels and wording (B01, B03, B05, B09), 18 (13–28); 3 · reference text (B06, B10, B11, B16), 20 (14–30); 4 · Search controls (B07, B08; behaviour tier), 28 (20–42); 5 · print and About (B12, B13), 32 (22–50). B15 is kept as it is. Then Phase 15's closure, 4 (3–6), the resistance phase and Techniques as modifiers, each on the owner's word. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+
+*Cost:*
+
+**19 November 2026 · Release 15a in total, and the review (Claude).** 15a cost about **229** Claude weekly points against 94 (58–150) planned on 4 November: A01 8, A02 18, A03 27, G1 19, G2 12 (Claude's build; Codex qualified it), G3 53, G4 22, the automatic-entries group 30, G5 17 and G6 23, each from its first reading to the next group's. On 13 November the meter fell from about 99% to 58% with no weekly reset, so the stretches either side are added. A12's resistance mock-ups (about 7) and Claude's part of the resistance rules read (about 13) moved with A12 to the resistance phase and are not counted. The review itself: weekly all models 30% at the start (23:25 UTC), 32% after the work-order doc (23:39 UTC) and 34% after the ledger page was read in full and republished (23:45 UTC); five-hour 15%, 29% and 42%. About 4 points against the 4 (3–6) planned. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+
+*Parked or left open:*
+
+**19 November 2026 · what 15a left open (Claude).** Into 15b: A03's print note (on paper, Advantages start 836 px lower) goes to B12, and the colophon's mon over the tab bar to B13. Recorded only: a Void pip tap does not redraw the Void card's note (G6); A19's Undo covers card spends only; AE2's and A08's review edges; A11's three layout observations; the untested app bar at the bottom, screen readers and the Fold's narrow outer screen. Still parked: FU-15a-1, the stats header (with the Combat tab), FT-59, A04.2 and a "Needs a choice" character-check rule. The full table is in the review. [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>)
+
+### 19 November 2026 — Claude: G6 (A19 revision 1, A20, A19.1) qualified and live; Release 15a complete
+
 **19 November 2026 · G6 live; Release 15a complete (Claude).** On the owner's word ("I have now done the tests they all pass I am happy for this to move to the go live"), `main` was fast-forwarded from `1ebf26b4` to `c359fa3a` at 16:06 UTC without a merge commit or force (records `0838e5c9`). Production: all seven deployed files match the qualified build; 118 application harnesses passed 4,930/4,930 on the downloaded production files (A19's 25, A20's 18 and A19.1's 9 checks, and the layers of their light checks: the roll pipeline and preview, the declaration registry and its providers, the dice, situational and automatic entries, the Void card and Initiative, the wound bar and Play Mode Combat); browser/offline smoke 22/22. Deployed page `d3bec9e6c11bab70…`, 17,725,378 bytes; application `921f3ac9…6150`; service worker build `2d60065ab4f57fea`. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
-<!-- end-g6-15a-live-part6 -->
 
-<!-- g6-15a-qualification-part6 -->
 **19 November 2026 · G6 qualified (Claude).** Release 15a's last group is three units on stacked branches: A19 revision 1 (Undo the Last Void Spend: one line under the Combat page's Void card offers Undo after a spend and puts back exactly what that spend changed, once; Touch of the Void's own save keeps the offer), A20 (A Trait for One Skill Roll: where the book allows another Trait for a Skill, the roll preview's Trait row is a drop-down for that one roll, and the saved character is unchanged) and A19.1 (the Void card's damage row fits a phone: Apply and Cancel stacked full width at 640 px and less). The group tip is `claude/release-15a-a19-1`. Application `921f3ac9e5c61bde84068a20dd5cc4ab014367e8b1b7930438cf24b4a7686150`, 17,718,601 bytes. The owner approved the A19 and A20 mock-ups as shown. At the first device round A20 was accepted and A19 marked revise (Touch of the Void's save ended Undo); the owner chose to keep Undo through that save and to add A19.1, whose mock-up was approved as shown. At the second round every check passed on iPhone and laptop and A19 revision 1 and A19.1 were accepted ("I have now done the tests they all pass I am happy for this to move to the go live").
 
 Every stage passed first time. Nine variant cases (three baselines, six mutations) were predicted and pushed before discovery (`30067683`), and all nine matched. The chain ran once (12:49 to 14:12 UTC): group removal 16/16 (all three removed restores G5, A08, as live `6d47849b…44b1` exactly; A19 and A20 each removed alone, and A08 removed with the group kept, with every kept harness run in full), all nine variants on their pins, dependencies 3/3, the 4× CPU screen 170/170 leaves. Two full passes, each on its first execution (14:13 to 16:04 UTC): candidate **7,453/7,453** and retained **7,328/7,328** (run 1: 29.10 and 26.10 minutes; run 2: 29.15 and 25.89 minutes). [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
-<!-- end-g6-15a-qualification-part6 -->
 
-<!-- g5-15a-live-part6 -->
+*What was next:*
+
+**19 November 2026 · after G6 (Claude).** Release 15a is complete: G1 to G6 and the automatic-entries group are live; A12 was withdrawn into the resistance phase and A18 was closed. Next, in the order already agreed: Release 15b, then the resistance phase (the owner leans to versions 1 and 2, to resume as one merged whole-row design; Q5 of the rules read is open), then the phase that applies School Techniques, Kata and Kiho as modifiers. None is started; each starts on the owner's word. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
+
+*Cost:*
+
+**19 November 2026 · G5 and G6 (Claude).** G5: build, device round and qualification by Claude from 14 to 18 November on a Pro plan; reading after its two full passes on 18 November, after the weekly reset: weekly all models 6%, five-hour limit 30%. G6: mock-ups, build, two device rounds, A19's revision, A19.1, qualification and go-live by Claude on 19 November; reading after the go-live: weekly all models 29%, five-hour limit 4%. The 23-point rise also covers G5's go-live checks, and the weekly meter is shared with any other session on the account, so it is an upper bound for G6, not split further. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
+
+*Parked or left open:*
+
+**19 November 2026 · after G6 (Claude).** Release 15a is complete: G1 to G6 and the automatic-entries group are live; A12 was withdrawn into the resistance phase and A18 was closed. Next, in the order already agreed: Release 15b, then the resistance phase (the owner leans to versions 1 and 2, to resume as one merged whole-row design; Q5 of the rules read is open), then the phase that applies School Techniques, Kata and Kiho as modifiers. None is started; each starts on the owner's word. [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>)
+
+### 18 November 2026 — Claude: G5 (A08) qualified and live
+
 **18 November 2026 · G5 live (Claude; recorded here on 19 November).** On the owner's instruction ("Go live"), `main` was fast-forwarded from `c5dd578b` to `22033522` without a merge commit or force (records `1ebf26b4`). Production: all seven deployed files match the qualified build; 87 application harnesses passed 3,464/3,464 on the downloaded production files (A08's 21 checks and the twelve layers of its light check among them); browser/offline smoke 22/22. Deployed page `87f82af7c0fefbe7…`, 17,692,705 bytes; application `6d47849b…44b1`; service worker build `896459a52b224a4f`. [G5 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G5 — Undo and the Roll Preview/HANDOVER.md>)
-<!-- end-g5-15a-live-part6 -->
 
-<!-- g5-15a-qualification-part6 -->
 **18 November 2026 · G5 qualified (Claude; recorded here on 19 November).** Release 15a's G5 is A08 alone (One Undo for Quick Taps: − and + taps on the same Honour, Glory, Status or Taint card that each come within five seconds of the last count as one change; Undo takes the whole group back in one step, and History gets one entry for it). A12 (one Resisting line) was withdrawn when the owner moved the resistance redesign into a phase of its own after Phase 15 ("Yes, pin it"); its records stay on `claude/release-15a-a12`. A08 is on `claude/release-15a-a08`. Application `6d47849b1dcb5aa8ac4140b1895d1f0d713426092530e183ff87c3fc4d7c44b1`, 17,685,928 bytes. The owner approved the mock-ups ("approve as recommended", 14 November) and accepted A08 at the device round (16 November).
 
 The qualification was not an uninterrupted first chain. Six variant cases were predicted and pushed before discovery, and all six matched. The chain ran once: group removal 9/9 (A08 removed restores the automatic-entries group as live `99b76d62…15b8` exactly), all six variants on their pins, dependencies 1/1, then the 4× CPU screen stopped at 162/163 leaves, A08's own harness 20/21 (`QT-LISTED-PLAY-AUTOSAVE-MERGED-DESKTOP`). The failed chain is kept as it ran (`c49f90b2`) and was not run again. Cause: under the screen's CPU throttle a page left idle can sleep past a timer's deadline, and the check left the page alone for 7.5 seconds. Only that check's wait changed (`8deb1df3`: the page is woken every 250 ms for the same 7.5 seconds; the assertion, ids and count are unchanged and no application file changed). A scoped proof passed 9/9 first time (`713873af`) and a guarded continuation recorded the qualification (`81c652e7`). Two full passes, each on its first execution (18:28 to 20:17 UTC on 18 November): candidate **7,401/7,401** and retained **7,307/7,307** (run 1: 28.37 and 25.68 minutes; run 2: 28.28 and 25.44 minutes). [G5 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G5 — Undo and the Roll Preview/HANDOVER.md>)
-<!-- end-g5-15a-qualification-part6 -->
 
-<!-- ae-15a-live-part6 -->
+### 13–14 November 2026 — Claude: The automatic-entries group (AE1, AE2, AE3) qualified and live
+
 **14 November 2026 · Automatic entries live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `8676634b` without a merge commit or force. Production: all seven deployed files match the qualified build; 80 application harnesses passed 3,332/3,332 on the downloaded production files (the group's three units and the layers they touch, among them the wizard, the older-holdings review, the Characters list, the save format and the spell rows); browser/offline smoke 22/22. Deployed page `85c5b8b0d612d9b7…`, 17,682,088 bytes; application `99b76d62…15b8`; service worker build `1dd9768a09706ced`. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
-<!-- end-ae-15a-live-part6 -->
 
-<!-- ae-15a-qualification-part6 -->
 **13 November 2026 · Automatic entries qualified (Claude).** Release 15a's automatic-entries group is accepted and qualified. AE1 (a Yogo Wardmaster is given Sense, Commune and Summon, as The Great Clans p.229 reads, and five Schools show their book page), AE2 revision 2 (opening a character credits its School's given spells once per School: held spells marked as the School's, a missing one added with its scroll, and a note in the character check until the player's own save) and AE3 revision 1 (no XP box and no remove button on School, Path and Advanced School Techniques or on a School's given spells; a quiet tag on the name's line, on its own line at the left when the name would not fit) are on `claude/release-15a-ae3`. Application `99b76d625c04e6aa22ba8508005975525bbece945b82ead8c443b593e58115b8`, 17,675,311 bytes. The owner approved the mock-ups after two revisions ("Approve as recommended") and accepted all three at the device round, AE2 as revision 2 after its re-checks ("I have ran the new checks and they pass I am happy to mark all as passed and to accept AE1, AE2 and AE3").
 
 Negative variants: thirteen cases predicted and pushed before discovery; twelve matched exactly at the first discovery. One prediction was wrong: on G4 as live, AE3's harness fails 14 checks, not 16, because the sheet re-adds a renamed School Technique and two later checks read that second card. The pin was corrected and explained before the chain, and a second discovery of that one case matched. AE2's harness stops early on a build without the unit, so the checker gained one pinned form: the stop, its count and the exact failures before it. The chain passed first time: group removal 29/29 (all of the group removed restores G4 as live `fa634abb…00cb` exactly), all 13 variants on their pins, dependencies 3/3, the 4× CPU screen 161/161 leaves (G4's leaves plus those that open a character or use the wizard). Two full passes, each on its first execution (22:51 UTC on 13 November to 00:30 UTC on 14 November): candidate **7,380/7,380** and retained **7,253/7,253** (run 1: 25.92 and 23.15 minutes; run 2: 25.53 and 23.20 minutes). The code review found one defect, fixed as AE3 revision 1. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
-<!-- end-ae-15a-qualification-part6 -->
 
-<!-- g4-15a-live-part6 -->
+*What was next:*
+
+**13 November 2026 · after automatic entries (Claude).** Next: the group's go-live, only on the owner's word (fast-forward `main` to the group's tip, then production verification and the browser/offline smoke). Nothing after the group is agreed yet. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+
+*Cost:*
+
+**13 November 2026 · Automatic entries qualification (Claude).** Variants, discovery, the chain and two full passes by Claude on 13 November (the second pass ended at 00:30 UTC on 14 November) on a Pro plan, started before the weekly reset at the owner's word ("Start now"); the five-hour limit was not reached. Weekly meter, all models: 58% at the start, 62% before the two full passes, 63% after them (Fable 0% throughout). [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+
+*Parked or left open:*
+
+**13 November 2026 · after automatic entries (Claude).** Next: the group's go-live, only on the owner's word (fast-forward `main` to the group's tip, then production verification and the browser/offline smoke). Nothing after the group is agreed yet. [Automatic entries handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/AE — Automatic Entries/HANDOVER.md>)
+
+### 12–13 November 2026 — Claude: G4 (A09, A10, A10.1, A17) qualified and live
+
 **13 November 2026 · G4 live (Claude).** On the owner's instruction ("Go live"), `main` was fast-forwarded to `e6dc3248` without a merge commit or force. Production: all seven deployed files match the qualified build; 74 application harnesses passed 3,091/3,091 on the downloaded production files (G4's four units and the layers they touch, the splash layer's harness among them); browser/offline smoke 22/22. Deployed page `de2ea7d4f0910f68…`, 17,655,049 bytes; application `fa634abb…00cb`; service worker build `dac892eac0085111`. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
-<!-- end-g4-15a-live-part6 -->
 
-<!-- g4-15a-qualification-part6 -->
 **12 November 2026 · G4 qualified (Claude).** Release 15a G4, touch, focus and startup, is accepted and qualified. A09 (editable boxes at 16 px on phones and touch screens; buttons take a quick second tap as a press, not a zoom), A10 (the Advanced Schools hint and button in one row; a cross-page button moves focus to the heading of what it opened), A10.1 revision 1 (the page's gold focus ring only for the keyboard; keys typed into a text box do not count) and A17 (the splash picture fills the screen with the title and seal in view; the square picture up to 3 : 2) are on `claude/release-15a-a17`. Application `fa634abbf96a0f47b8668245c13f0d33142c931438bc1c9d8c22c624ce4e00cb`, 17,648,272 bytes. A18 (the first Manage tap on an iPhone) is closed as not reproduced: the owner's first tap is quick, and the test browser measured 45–62 ms, no slower than the second. The owner approved the mock-ups ("I am happy with the recommendations suggested"), passed the device round except check 4 (double-tap zoom on text, which the live app does not do either) and accepted all four ("Accept A09").
 
 Negative variants: twenty cases predicted and pushed before discovery; all twenty matched exactly at the first discovery. The chain passed first time: group removal 32/32 (all of G4 removed restores G3 `6c555d29…c029` exactly), all 20 variants on their exact pins, dependencies 4/4, the 4× CPU screen 137/137 leaves. Two full passes, each on its first execution: candidate **7,326/7,326** and retained **7,169/7,169** (run 1: 25.25 and 22.26 minutes; run 2: 25.06 and 22.27 minutes). The code review found one defect, fixed as A10.1 revision 1. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
-<!-- end-g4-15a-qualification-part6 -->
 
-<!-- g3-15a-live-part6 -->
+*What was next:*
+
+**12 November 2026 · after G4 (Claude).** Next, as agreed with the owner: (1) G4 go-live on the owner's word (fast-forward `main`, then production verification and the browser/offline smoke); (2) the automatic-entries group, mock-up first: Yogo Wardmaster's missing Sense, the School's given spells credited on import and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
+
+*Cost:*
+
+**12 November 2026 · G4 (Claude).** Kickoff, reproduction, mock-ups, build, code review, previews, device round and qualification by Claude on 12 November on a Pro plan; the five-hour limit was reached once (before the code review). Weekly meter, all models: 53% at the start, 69% before qualification, 75% after the two passes (Fable 84% throughout). [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
+
+*Parked or left open:*
+
+**12 November 2026 · after G4 (Claude).** Next, as agreed with the owner: (1) G4 go-live on the owner's word (fast-forward `main`, then production verification and the browser/offline smoke); (2) the automatic-entries group, mock-up first: Yogo Wardmaster's missing Sense, the School's given spells credited on import and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques. [G4 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G4 — Touch, Focus and Startup/HANDOVER.md>)
+
+### 12 November 2026 — Claude: G3, the three spell-row follow-ups, qualified and live
+
 **12 November 2026 · G3 live (Claude).** On the owner's instruction ("happy with moving onto qualifying and go live"), `main` was fast-forwarded to `7d3bb4c3` without a merge commit or force. Production: all seven deployed files match the qualified build; 62 application harnesses passed 2,669/2,669 on the downloaded production files; browser/offline smoke 22/22. Deployed page `4a7dc1d02df360ce2cfc26d8c580bd19deaaef9a74d98182f0fd63055f3cf524` (17,638,734 bytes), service-worker build `2dd41ff32a1df137`. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-<!-- end-g3-15a-live-part6 -->
 
-<!-- g3-15a-qualification-part6 -->
 **12 November 2026 · G3 qualified (Claude).** Release 15a G3, the three spell-row follow-ups, is accepted and qualified. 8b.1-UI-01 (the starting-spell review as option cards with live counts and one action bar), 8b.1-UI-02 (a readable spell name and one School tag) and 8b.1-UI-03 revision 2 (the remove button in its own corner on every Technique, Advantage and Disadvantage card, and a 52 px number box) are on `claude/release-15a-ui03`. Application `6c555d29b35ca5f550274163cc73f9b6b47a11f3065cfbc4d2ac9bdaab38c029`, 17,631,957 bytes. The owner approved Claude's mock-ups on 11 November, passed 34/34 device checks (UI-01 and UI-02 Accept, UI-03 Revise), then 12/12 on revision 2 (Accept).
 
 Negative variants: predictions committed before discovery; 13 of 15 matched at once, and the two differences were a harness that switched its own unit back on (fixed in all three harnesses, same ids and counts, declared) and a masked mutation (replaced); a second discovery of the four affected cases matched exactly. The chain passed first time: group removal 21/21 (all of G3 removed restores G2 `77936023…82f0` exactly), all 15 variants on their exact pins, dependencies 3/3. One full pass, first execution: candidate **7,242/7,242** and retained **7,075/7,075** (24.05 and 21.68 minutes). Screen-only tier; no 4× CPU screen. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
-<!-- end-g3-15a-qualification-part6 -->
 
-<!-- g2-15a-live-part6 -->
+*What was next:*
+
+**12 November 2026 · after G3 (Claude).** Agreed with the owner, in this order: (1) G3 go-live; (2) a small group for automatic entries, mock-up first: a one-line fix for Yogo Wardmaster's missing Sense (a book check found 20 of 21 Shugenja Schools right), the School's given spells credited on import without a review click and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques (Kata, Kiho and chosen entries keep both); (3) the gold focus ring after a dialog closes, with G4. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+
+*Cost:*
+
+**12 November 2026 · G3 (Claude).** Review, mock-ups, build, revision, qualification and records by Claude across 11–12 November on a Pro plan; the five-hour limit was reached once. Weekly meter at the start of the full pass: 50% all models, 84% Fable. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+
+*Parked or left open:*
+
+**12 November 2026 · after G3 (Claude).** Agreed with the owner, in this order: (1) G3 go-live; (2) a small group for automatic entries, mock-up first: a one-line fix for Yogo Wardmaster's missing Sense (a book check found 20 of 21 Shugenja Schools right), the School's given spells credited on import without a review click and said in the character check, and no XP box or remove button on School, Path and Advanced School Techniques (Kata, Kiho and chosen entries keep both); (3) the gold focus ring after a dialog closes, with G4. [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+
+### 9 November 2026 — Codex: G2 (A05, A06, A07, A11, A04.1) qualified and live
+
 **9 November 2026 · G2 live (Codex), after qualification.** Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
 
 Production checked on 9 November 2026: all seven deployed files match the qualified build byte for byte; 57 application harnesses passed 2,523/2,523 on the downloaded production files, and the fresh browser/offline smoke passed 22/22. Application checks completed at 2026-11-09T12:46:26.627998+00:00; browser/offline checks completed at 2026-11-09T12:46:38.319Z. Deployed page SHA-256 bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107 (17,616,007 bytes); service-worker build f9a4bcad8d36d92a. No feature check or failed full pass was retried.
 
 [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-live-part6 -->
 
-<!-- g2-15a-qualification-part6 -->
 **9 November 2026 · G2 qualification (Codex).** Release 15a G2 is qualified, with go-live pending. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on claude/release-15a-a04.1. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. Main and production remain G1; no merge or deployment was performed.
 
 The 25 negative cases matched their predictions in the single discovery and their exact pins in final qualification. The original removal chain stopped at 46/47: A11 had insufficient eligible fixture rows with A05 removed, despite correct alignment. Its fixture was strengthened without changing assertions; A11 then passed 22/22 on all six affected inputs (132/132). The original failed chain remains intact. A guarded continuation validated this evidence and ran only the unstarted variants and dependencies (25/25 and 5/5). All five G2 units removed restore G1 byte-for-byte (17,586,964 bytes). The single full pass passed on its first execution: candidate 7,148/7,148 and retained 6,929/6,929, with fresh execution and no reused leaves. No assertions were widened and no failed chain or full pass was retried. No 4x CPU screen applies to this screen-only group.
 
 [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
-<!-- end-g2-15a-qualification-part6 -->
 
-<!-- a01-15a-part6 -->
-### 4 November 2026 — Claude: Release 15a A01 built, qualified, accepted and live
+*The summary at the top of the ledger then:*
 
-Remote Control on and verified; keep-awake held; usage read at start, before full QA and at the end. Reproduced today's Kuni Shugenja, Matsu Beastmaster and Order of the Nameless Gift monk Reviews first (12 states) and confirmed the audit: Kuni repeats its weapon Skill and three spell lines, Matsu its Bugei Skill, and the monk's Lore subject and Kiho picks appear only in the box.
+**9 November 2026 · G2 live (Codex).** Release 15a G2 is accepted, qualified and live. A05 Missing Limb picker, A06 grant actions and their state, A07 the Moon row, A11 text gaps and one left edge, and A04.1 inline picker rules are on main, fast-forwarded to the qualified commit 93b27c61 on the owner's explicit go-live instruction of 9 November. Application 7793602382c68895b25dc572b71bd05af33667a9c1b1d1bd76032efd744182f0, 17,609,230 bytes. The owner passed 36/36 device checks on 7 November and re-checked revised check 15 on iPhone Safari and Laptop Edge on 8 November. The fast-forward used no merge commit and no force. Production verification is complete.
 
-Built A01 as its own removable unit (`PART H PHASE 15.1.1`, switch `REVIEW_ONE_REMINDER_ENABLED`, one script, one stylesheet, one seam block, removal-chain entry). Four checks in three older wizard harnesses now expect A01's arrangement when it is present and the old box when it is not; each was proven both ways. Own 31 checks; 6/6 removal checks; 7/7 negative variants; the dependency check is clean; one read-only review found no defects. 4× CPU screen 913/913; one discovery run 6,805/6,805; then both planned full passes on mains with keep-awake, first time: 6,805/6,805 and 6,701/6,701 each, A01 removed back to `139e0810…2551` byte for byte both times. The comparison keeps identical cards and Finish in 12 of 12 states. Local package 411/411; hosted branch preview byte for byte (seven files) and 411/411.
+Production checked on 9 November 2026: all seven deployed files match the qualified build byte for byte; 57 application harnesses passed 2,523/2,523 on the downloaded production files, and the fresh browser/offline smoke passed 22/22. Application checks completed at 2026-11-09T12:46:26.627998+00:00; browser/offline checks completed at 2026-11-09T12:46:38.319Z. Deployed page SHA-256 bd1b5fd615f07afef7f87da1e0448dc1173074fe483ba57cee6afffffb0ea107 (17,616,007 bytes); service-worker build f9a4bcad8d36d92a. No feature check or failed full pass was retried.
 
-The owner's device checks ([Claude Doc](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8)): 12/12 Pass on iPhone Safari and Edge, with one request outside A01, recorded as FU-15a-1. **Owner's decision: Accept.** On the owner's go-live word, main was fast-forwarded to `6cdbe2e6` at 19:40 UTC. Production verified: the live page (`a9f86f7d…`, 17,538,310 bytes) and service worker `bc95bed68492d7da` byte for byte, 411/411 checks on the downloaded files, and the browser/offline check 24/24.
-<!-- end-a01-15a-part6 -->
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
 
-<!-- a02-15a-part6 -->
-### 4–5 November 2026 — Claude: Release 15a A02 built and qualified; revised on the owner's devices; revision 2 accepted and live
+*What was next:*
 
-Usage read at start, before full QA and at the end of each revision; keep-awake held by the QA scripts. Reproduced today's floating controls first: every tab in Play and Manage, at the top, part-way and at the end of each page, on a phone, a small phone and a desktop. The audit held: Quick Access covered each page's heading on a phone, the dice covered the lowest fields (Combat's Wounds **+** at the very end), and return-to-top sat on the tab bar, on the desktop too.
+**9 November 2026 · G2 live (Codex).** G2 go-live and production verification are complete. G3 onward, FU-15a-1, the parked stats header and FT-59 remain outside this work. A04.2 is gated on completion of the rules read pass. No later group is authorized by this release record.
 
-**Revision 1** (application `1cc41d8c…5d2c`) put the three buttons on a 52 px band above the tabs, as its own removable unit (`PART H PHASE 15.1.2`, switch `FLOATING_STRIP_ENABLED`, one script, one stylesheet, one seam block, removal-chain entry after A01). Its first pair of full passes did not meet the rule: pass 1 passed, but pass 2 failed when Phase 0.6's `pwa-harness.js` stalled for 20 minutes. Pass 2 was not re-run. The owner chose to fix the harness first, as its own unit ([QA — PWA Harness Step Limits](<QA — PWA Harness Step Limits 2026-11-05/README.md>), commit `13f85caf`): each open-ended wait got a 60 s limit that fails and names its step, and no check changed. The chain then ran again, and full passes 3 and 4 both passed first time. On the owner's devices all 11 checks passed ([revision 1 checklist](https://claude.ai/artifact/28WsHerG4EDkzZwSac8ocp)). But the owner chose **Revise**: the band made two solid bars that felt separate from the sheet, and on the iPhone it felt cramped and took page height.
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
 
-**Revision 2** follows the owner's ruling: (a) no bar, (d) the dice as a floating button, (e) return-to-top only after scrolling, and Quick Access floating bottom-left. (c), key stats always on view, was parked for the Combat tab and recorded there. The folder, files, marker and switch keep their names. The buttons sit in the bottom corners 8 px above the tab bar, with return-to-top above the dice (beside it when the screen is 500 px tall or less). Every page gets end room as tall as the corner stack: 116 px, or 64 px on a short screen. The Quick Access panel opens upward and is drawn above the corner buttons. A02's harness keeps 23 checks, with the band's checks replaced by the corners'. The variant pins were written before any run. One read-only review found one defect, in the harness: its "part-way" scroll assigned a string and went to the top, and revision 1 had the same slip. It was fixed, along with four notes: the panel above return-to-top on a 320 px phone, a 320 × 568 session, print compared with the page printed without A02, and a landscape device in the comparison. Variant discovery then matched every pin on the first run.
+*Cost:*
 
-Qualification of `91d45109…6dc0`: removal 10/10 (back to A01 exactly, then to 8c); 11/11 variants matched their pins; dependencies clean; 4× CPU screen 68/68 harnesses, 3,915/3,915; discovery 6,828/6,828. **Full passes 5 and 6 both passed on their first executions**: 6,828/6,828 and 6,732/6,732 each, with A02 removed back to `cffde624…0414` byte for byte. The comparison (phone, small phone, phone on its side, desktop, with the corrected probe) shows the same picture everywhere: no heading covered at the top, no control on the tabs, nothing covered at the end of a page, and no page height lost. Part-way down a page, content passes under the corners, as the owner accepted. The local package and the hosted branch preview each passed 496/496 on their deployed files, byte for byte with the committed build.
+**9 November 2026 · G2 qualification (Codex).** G2 was built by Claude on 7 November (about 9 Claude weekly points, 84% to 93%, as reported in the kickoff). Qualification and records are by Codex; its account-wide readings are recorded separately in the handover, with no whole-session cost inferred.
 
-**Accepted and live, 5 November.** The owner's device checks passed (20 of 20; two n/a) and they accepted it. On their go-live word, `main` was fast-forwarded to `2097ec0f` (no merge commit, no force), and production was verified: the live page `8a972827…` and service worker `a05aaf784ac466c9` match the accepted build byte for byte, 496/496 on the downloaded files, browser and offline 22/22. ([revision 2 device checks](https://claude.ai/artifact/JHui5U5LGSWu7Xmkiceiyn)). A03 is next, in its own session ([A03 kickoff](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/KICKOFF-15A-A03.md>)).
-<!-- end-a02-15a-part6 -->
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
 
-<!-- a03-15a-part6 -->
+*Parked or left open:*
+
+**9 November 2026 · G2 qualification (Codex).** **A04.2 — one pattern for a configured row.** Parked until the rules read pass is done. One line: a filled choice badge at the far left, Change in Manage only, then the i explaining every choice. Below: a summary of the chosen option, written from the later rules read. Say Applied automatically or Reminder in words. Bishamon's Clan-coloured note becomes plain summary text. Mock-up first; not part of G2.
+
+**Identity character check — Needs a choice.** Owner idea outside G2: list every Advantage or Disadvantage still at Needs a choice, as missing free Skill choices are listed today. No such rule exists today. A small future unit can register one rule with Phase 5 (Part J), using the sheet's own configuration-complete test.
+
+**A11 whole-app read — later layout work.** Keep for later: the Rings note 12 px right of its label on a laptop; the Armor & TN information heading in Play and its bonus note 3 px below the field; the Wounds table's first column 8 px right of its caption.
+
+[G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+
+### 6–7 November 2026 — Claude: Release 15a G1 (A04, A15, A16, A03.1) qualified and live; FT-59 parked
+
+**7 November · Release 15a G1 (A04, A15, A16, A03.1), accepted, qualified and live (Claude).** G1 is built as four removable units on stacked branches:
+
+- **A04, one information pattern:** one circled i for Skills, Advantages, Disadvantages and the Void card, with accessible names and 44 px tap areas. The i no longer sits inside "Choose…", and Hotei's rule is behind its i.
+- **A15, court badges:** tap a court to fill it in the Clan colour (in session), tap again to empty it. The radio and the tick box are gone.
+- **A16:** the seven pickers' bottom i is removed.
+- **A03.1:** the owner's Masteries list in the Skill window.
+
+One review found no blocking defect, and its eight findings are fixed. The previews passed on the deployed files (973 to 1,799 checks each). The owner passed every device check (36/36) and **accepted all four** on 7 November.
+
+Qualification passed:
+
+- 25 negative variants matched their pins.
+- Group removal 34/34: the whole group removed rebuilds A03 `e73b7c0c…de06` exactly.
+- Dependencies 4/4.
+- **One full pass, first time:** 7,002/7,002 and 6,792/6,792.
+
+Group build `2dcf6f20…6af6`, branch `claude/release-15a-a03.1`. On the owner's go-live word (7 November), `main` was fast-forwarded to `22c1d724` (no merge commit, no force). Production was verified: the live page `490f4a38…` and service worker `616c5772…` match the committed build byte for byte, 1,799/1,799 on the downloaded files, browser and offline smoke 22/22.
+
+The owner's two comments are G2 work: Advantage card text alignment goes into A11, and inline rule text in pickers is a new G2 unit. FT-59 (a mon and colour for every Clan) is parked.
+
+[Device checks](https://claude.ai/artifact/BFg3Gg19jUM9EJEshc2T2i) · [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
+
+*What was next:*
+
+**6–7 November · Release 15a G1.** The kickoff estimated 11 points (A04 5, A15 3, A16 3), about 10–15 under the grouped process. Four units were built, A03.1 included, after three mock-up rounds; the group used about 19 weekly points. All four were accepted on 7 November and qualified first time (7,002/7,002, 6,792/6,792); it is live (`main` `22c1d724`). Next is G2: A05, A06, A07, A11 (with the owner's alignment comment) and a new picker unit. [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
+
+*Cost:*
+
+**6–7 November · Release 15a G1 (Claude, claude-opus-5-5).** Account meters, five-hour / weekly: 32% / 62% at the start (17:37 UTC, 6 November); 44% / 64% after the mock-ups; 7% / 65% after revision 2 of the mock-ups; 59% / 72% after the build; 94% / 76% at the owner's review; 32% / 81% before qualification (07:15, 7 November); 34% / 81% at the end (08:11). About 19 weekly points against the 10–15 estimate. The variant runs and the full pass ran on the machine. Readings are account-wide and kept separate from Codex's. [G1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G1 — Information Pattern/HANDOVER.md>).
+
+*Parked or left open:*
+
+**7 November · parked by the owner: FT-59, a mon and a colour theme for every Clan.** This extends Phase 9 (Part H)'s Clan look:
+
+- **Mons:** each Minor Clan gets its own mon, and so do the Spider, the Imperial families and the ronin.
+- **Colours:** about 12 themes instead of one per Clan (about 25):
+  - the seven Great Clans, as today;
+  - one theme each for the Mantis, the Spider, the Imperial families and the ronin;
+  - one colour shared by every Minor Clan, each keeping its own mon;
+  - the sheet's red with no Clan.
+- **Why, as discussed on 7 November:** a sheet shows one Clan at a time, so the mon identifies the Clan and the colour sets the mood. Text on these colours has to stay readable, which means dark shades, and about 25 dark shades would bunch together.
+- **Pairs to keep apart:** Spider and Scorpion, Mantis and Dragon, Imperial and Unicorn (or Lion), ronin and the Void grey.
+- **Rules for each new theme:** its deep shade must reach 4.5 : 1 on the paper, like the existing seven. It must also avoid the reserved colours: the Delete and worst-wound red, the gold of buttons, and the Ring colours.
+- **Link to G1:** Release 15a G1's A15 court badges fill with the Clan colour, so new themes reach them without further work.
+- **Status:** parked until the owner chooses a time. There are no mock-ups and no estimate yet, and nothing is built.
+
 ### 5–6 November 2026 — Claude: Release 15a A03 built and qualified; revised on the owner's devices; revision 2 qualified, accepted and live
 
 Usage read at the start, before full QA and at the end of each revision; keep-awake held by the QA scripts. Reproduced on today's build (A02 live) first, with the audit's dense character, either list emptied, and an 18-Skill version with Masteries, Emphases and School ticks, on a phone, a small phone and a desktop, in Play and Manage. The audit held: on the desktop the Advantages heading sat 1,092–2,249 px from the Disadvantages heading (the carousel's grid rule aligns cells to the bottom; only this grid holds two lists), and on a phone each Skill card took 324–601 px. The scope stayed as the kickoff set it; nothing in Phase 12.4 (Part K) or Phase 4.54 (Part I) needed editing.
@@ -2221,22 +1873,114 @@ Usage read at the start, before full QA and at the end of each revision; keep-aw
 Qualification of `e73b7c0c…de06`: every chain stage passed between 11:14 and 12:51 UTC (removal 12/12, rebuilding A02 exactly; 21/21 negative variants matched their pins; dependencies clean; 113/113 harnesses and 5,317/5,317 checks at 4× CPU; discovery 6,865/6,865 over 182 leaves). Both full passes of revision 2 (3 and 4) passed on their first executions: candidate 6,865/6,865 and retained 6,755/6,755 each, with removal rebuilding A02 (`91d45109…6dc0`) exactly. The comparison: desktop headings 0 px apart in every case; phone Play cards 114–158 px (the long Skills page 7,581 → 2,908 px), Manage cards 241–470 px (8,894 → 6,537 px); the desktop Skills table unchanged to the pixel. The local package and the branch preview each passed 550/550 over 23 harnesses, the preview byte for byte with the package (page `e7cb9b99…cbc1`, service worker `946e8dc511b4b539`).
 
 The owner's [revision 2 device checks](https://claude.ai/artifact/NuGaGAL8e4tDvjMJWfdnxy) all passed: 13 checks, 17 boxes on iPhone Safari and Laptop Edge, with no comments (check 13 on the laptop and the decision were given in chat). **The owner accepted revision 2 on 6 November and gave the go-live word** ("Go live"). `main` was fast-forwarded to `46a7929d` (no merge commit, no force), and production was verified: page `e7cb9b99…cbc1` (17,560,147 bytes) and service worker `946e8dc511b4b539` byte for byte with the accepted build, 550/550 on the downloaded files, browser and offline smoke 22/22. [Revision 1's checks](https://claude.ai/artifact/CNTa2BVhtR2iHWrQ5EaNTM) keep the owner's comments.
-<!-- end-a03-15a-part6 -->
 
-<!-- claude-publish-part6 -->
+*The summary at the top of the ledger then:*
+
+**5–6 November · Release 15a A03, revision 2 accepted and live (Claude).** On a wide screen the Advantage and Disadvantage columns start level: on the dense test character their headings were 1,092–2,249 px apart, and are 0 px now. On a phone, revision 1 put each Skill card's fields and Masteries under a labelled **Details** control. The owner passed all 12 of its device checks, then chose **Revise**: Details hid what is used at the table. Revision 2 hides nothing behind a control. In Play a card shows the name, Rank and d10, one summary line (Trait, Emphases, School) beside the eye, and the Masteries already reached. In Manage it shows every field straight away, packed tighter, with every Mastery and Remove last. Play cards go from 324–490 px to 114–158 px on the long test character (about 5 to a phone screen instead of 1.7); Manage cards from 372–601 px to 241–470 px. A laptop grid lining up the two lists' cards was prototyped and declined by the owner. Both full passes of revision 2 (3 and 4) passed on their first executions: candidate 6,865/6,865 and retained 6,755/6,755 each, with removal rebuilding A02 (`91d45109…6dc0`) exactly. The owner passed all 17 device-check boxes on iPhone Safari and Laptop Edge and **accepted** revision 2 on 6 November and gave the go-live word the same day. `main` was fast-forwarded to `46a7929d` (application `e73b7c0c…de06`), and production was verified byte for byte (550/550 on the downloaded files, browser and offline smoke 22/22). [Revision 2 device checks](https://claude.ai/artifact/NuGaGAL8e4tDvjMJWfdnxy) · [revision 1 checks and the owner's comments](https://claude.ai/artifact/CNTa2BVhtR2iHWrQ5EaNTM) · [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
+
+*What was next:*
+
+**5–6 November · Release 15a A03.** A03, estimated 5 (3–8), is built and qualified on branch `claude/release-15a-a03`, in two revisions. Revision 1 used about 9 weekly points; the owner's Revise and revision 2 brought the total to about 24. The reforecast stated at A03's start is an estimate only, not a budget approval: about 7 (5–10) for a clean unit like A03, so the other 15 units of 15a would need about 100 more weekly points (80–150). That is several weeks rather than the old grouped 20, and revisions on the owner's devices come on top (A02 and A03 each needed one). The owner passed every device check on revision 2, accepted it and gave the go-live word on 6 November: it is live (`main` `46a7929d`). A04 has not started. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
+
+*Cost:*
+
+**5–6 November · Release 15a A03 (Claude, claude-opus-5-5).** Account meters from the desktop app, five-hour / weekly. Revision 1: 10% / 35% at the start (23:34 UTC, 5 November); 52% / 41% before full QA (00:17); 75% / 44% after both passes (03:36); 78% / 44% at its end (03:45). Revision 2: 15% / 46% at its start (09:15); 59% / 56% before its qualification chain (11:15); 73% / 58% (12:54) before full QA; 10% / 59% (14:48) at the end; 21% / 61% (15:24) after the go-live and production verification. Weekly use moved by about 24 points in all against the 5 (3–8) estimate. The qualification chains and the full passes ran on the machine, not on the allowance. Readings are account-wide and kept separate from Codex's. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
+
+*Parked or left open:*
+
+**5–6 November · from Release 15a A03.** (1) Browser print still aligns the Adv & Disadv columns to the bottom (on paper Advantages start 836 px lower on the dense character). A03 is screen only; this belongs to Release 15b's B12. (2) Declared, not changed: on a phone the keyboard and screen-reader order (name, eye, the summary, the fields, Rank, roll) differs from the card's visual order, because no element is moved; three harness oracles lean on the layer (the summary rebuilt from the row's fields; heights and print compared with the page without A03; stand-in additions). (3) Revision 2 reads Phase 12 (Part K)'s `pm12-play` class, declared in both rollback files: remove A03 before Phase 12, as the removal chain does. (4) For A04: the Skill information window (the eye) shows no Masteries except its debug buttons; the owner suggested it as the home for reference detail. (5) Not verified automatically: Safari's `:has()` and `display: contents` on the owner's iPhone, screen readers, and screens under 320 px. FU-15a-1 and the 8b.1 UI follow-ups stay recorded and unscheduled. [A03 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/HANDOVER.md>).
+
+### 4–5 November 2026 — Claude: Release 15a A02 built and qualified; revised on the owner's devices; revision 2 accepted and live
+
+Usage read at start, before full QA and at the end of each revision; keep-awake held by the QA scripts. Reproduced today's floating controls first: every tab in Play and Manage, at the top, part-way and at the end of each page, on a phone, a small phone and a desktop. The audit held: Quick Access covered each page's heading on a phone, the dice covered the lowest fields (Combat's Wounds **+** at the very end), and return-to-top sat on the tab bar, on the desktop too.
+
+**Revision 1** (application `1cc41d8c…5d2c`) put the three buttons on a 52 px band above the tabs, as its own removable unit (`PART H PHASE 15.1.2`, switch `FLOATING_STRIP_ENABLED`, one script, one stylesheet, one seam block, removal-chain entry after A01). Its first pair of full passes did not meet the rule: pass 1 passed, but pass 2 failed when Phase 0.6's `pwa-harness.js` stalled for 20 minutes. Pass 2 was not re-run. The owner chose to fix the harness first, as its own unit ([QA — PWA Harness Step Limits](<QA — PWA Harness Step Limits 2026-11-05/README.md>), commit `13f85caf`): each open-ended wait got a 60 s limit that fails and names its step, and no check changed. The chain then ran again, and full passes 3 and 4 both passed first time. On the owner's devices all 11 checks passed ([revision 1 checklist](https://claude.ai/artifact/28WsHerG4EDkzZwSac8ocp)). But the owner chose **Revise**: the band made two solid bars that felt separate from the sheet, and on the iPhone it felt cramped and took page height.
+
+**Revision 2** follows the owner's ruling: (a) no bar, (d) the dice as a floating button, (e) return-to-top only after scrolling, and Quick Access floating bottom-left. (c), key stats always on view, was parked for the Combat tab and recorded there. The folder, files, marker and switch keep their names. The buttons sit in the bottom corners 8 px above the tab bar, with return-to-top above the dice (beside it when the screen is 500 px tall or less). Every page gets end room as tall as the corner stack: 116 px, or 64 px on a short screen. The Quick Access panel opens upward and is drawn above the corner buttons. A02's harness keeps 23 checks, with the band's checks replaced by the corners'. The variant pins were written before any run. One read-only review found one defect, in the harness: its "part-way" scroll assigned a string and went to the top, and revision 1 had the same slip. It was fixed, along with four notes: the panel above return-to-top on a 320 px phone, a 320 × 568 session, print compared with the page printed without A02, and a landscape device in the comparison. Variant discovery then matched every pin on the first run.
+
+Qualification of `91d45109…6dc0`: removal 10/10 (back to A01 exactly, then to 8c); 11/11 variants matched their pins; dependencies clean; 4× CPU screen 68/68 harnesses, 3,915/3,915; discovery 6,828/6,828. **Full passes 5 and 6 both passed on their first executions**: 6,828/6,828 and 6,732/6,732 each, with A02 removed back to `cffde624…0414` byte for byte. The comparison (phone, small phone, phone on its side, desktop, with the corrected probe) shows the same picture everywhere: no heading covered at the top, no control on the tabs, nothing covered at the end of a page, and no page height lost. Part-way down a page, content passes under the corners, as the owner accepted. The local package and the hosted branch preview each passed 496/496 on their deployed files, byte for byte with the committed build.
+
+**Accepted and live, 5 November.** The owner's device checks passed (20 of 20; two n/a) and they accepted it. On their go-live word, `main` was fast-forwarded to `2097ec0f` (no merge commit, no force), and production was verified: the live page `8a972827…` and service worker `a05aaf784ac466c9` match the accepted build byte for byte, 496/496 on the downloaded files, browser and offline 22/22. ([revision 2 device checks](https://claude.ai/artifact/JHui5U5LGSWu7Xmkiceiyn)). A03 is next, in its own session ([A03 kickoff](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/KICKOFF-15A-A03.md>)).
+
+*The summary at the top of the ledger then:*
+
+**4–5 November · Release 15a A02, revision 2 accepted and live (Claude).** Revision 1 put the floating controls on a 52 px band above the tabs. It passed all 11 device checks, but the owner chose **Revise**: the band felt separate from the sheet and, on the iPhone, took page height. Revision 2 has no band. Quick Access floats bottom-left, the dice bottom-right, and return-to-top sits above the dice (beside it on a phone held sideways), all just above the tab bar. Every page has room at its end so nothing is left under a button. On a phone, headings covered at the top go from 19 to 0, controls on the tabs from 21 to 0, and content covered at the end of a page from 16 to 0; page height is unchanged. Part-way down a page, content passes under the corners, which the owner accepted. **Full passes 5 and 6 both passed on their first executions** (6,828/6,828 candidate, 6,732/6,732 retained, removal back to A01 exactly). An always-visible stats header was parked for the Combat tab. The owner's device checks passed (20 of 20; two n/a) and they accepted it. On their go-live word, `main` was fast-forwarded to `2097ec0f` (no merge commit, no force), and production was verified: the live page `8a972827…` and service worker `a05aaf784ac466c9` match the accepted build byte for byte, 496/496 on the downloaded files, browser and offline 22/22. Application `91d45109…6dc0`. A03 is next, in its own session ([A03 kickoff](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/KICKOFF-15A-A03.md>)). [Device checks](https://claude.ai/artifact/JHui5U5LGSWu7Xmkiceiyn) · [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
+
+*What was next:*
+
+**4–5 November · Release 15a A02.** A02, estimated 5 (3–8). Revision 1 qualified after a harness fix (see part 6), and the owner chose Revise on their devices. **Revision 2 was accepted on the owner's devices and is live** (`main` `2097ec0f`, production verified byte for byte). A03 starts next in its own session, from the [A03 kickoff](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/KICKOFF-15A-A03.md>). A02 has now used about 17 weekly points against its 5 (revision 1 about 11, with its failed pass, investigation and harness fix; revision 2 about 5). The reforecast the work order asks for can be made from A01 and A02; it is not made here. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
+
+*Cost:*
+
+**4–5 November · Release 15a A02 (Claude, claude-opus-5-5).** Account meters from the desktop app, five-hour / weekly. Revision 1: 22% / 17% at the start (19:55 UTC); 56% / 21% before full QA (20:50); 16% / 25% after the first pair of passes and the pass 2 investigation (00:51 on 5 November); 19% / 28% at its end (13:24), after the harness fix and re-qualification. Revision 2: 6% / 29% at the start (18:13); 30% / 32% before full QA (18:58); 40% / 34% at the end (21:56); 6% / 35% after go-live (23:29). Weekly use moved by about 17 points in all, against the 5 (3–8) estimate: about 11 for revision 1 and about 5 for revision 2. The qualification chains and the full passes ran on the machine, not on the allowance. Readings are account-wide and kept separate from Codex's. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
+
+*Parked or left open:*
+
+**4–5 November · from Release 15a A02.** (1) Parked by the owner on 5 November: key stats always on view, like D&D Beyond's header. It is recorded in the roadmap's Combat tab plan and on the [Combat tab mock-up canvas](https://claude.ai/artifact/3xjspD1SqtVrRz46dvoM3h), with a note that the floating strip's Rest needs a new home. (2) Revision 2's review found that the A02 harness's "part-way" scroll went to the top, in revision 1 too. Fixed before qualification; revision 1's part-way comparison numbers were really top states. (3) Review notes, recorded and not changed: `TABS-REACHABLE` tests the middle of each tab (the tab bar's ends are covered by every sweep state's on-tabs check); no harness runs the app bar at the bottom or the Quick Access panel at its height cap; with the app bar on top, the panel is short on a phone held sideways. (4) Seen while measuring, already in A01's build and belonging to other findings: on the desktop, Advantages start far below Disadvantages when one list is empty (A03); the colophon's faint mon shows over the tab bar (B13). (5) The service-worker harness fix ([QA — PWA Harness Step Limits](<QA — PWA Harness Step Limits 2026-11-05/README.md>), commit `13f85caf`) lives on A02's branch but is its own unit: it can be merged with A02, or taken to `main` alone if A02 is removed. FU-15a-1 stays recorded and unscheduled. [A02 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs/HANDOVER.md>).
+
+### 4 November 2026 — Claude: Release 15a A01 built, qualified, accepted and live
+
+Remote Control on and verified; keep-awake held; usage read at start, before full QA and at the end. Reproduced today's Kuni Shugenja, Matsu Beastmaster and Order of the Nameless Gift monk Reviews first (12 states) and confirmed the audit: Kuni repeats its weapon Skill and three spell lines, Matsu its Bugei Skill, and the monk's Lore subject and Kiho picks appear only in the box.
+
+Built A01 as its own removable unit (`PART H PHASE 15.1.1`, switch `REVIEW_ONE_REMINDER_ENABLED`, one script, one stylesheet, one seam block, removal-chain entry). Four checks in three older wizard harnesses now expect A01's arrangement when it is present and the old box when it is not; each was proven both ways. Own 31 checks; 6/6 removal checks; 7/7 negative variants; the dependency check is clean; one read-only review found no defects. 4× CPU screen 913/913; one discovery run 6,805/6,805; then both planned full passes on mains with keep-awake, first time: 6,805/6,805 and 6,701/6,701 each, A01 removed back to `139e0810…2551` byte for byte both times. The comparison keeps identical cards and Finish in 12 of 12 states. Local package 411/411; hosted branch preview byte for byte (seven files) and 411/411.
+
+The owner's device checks ([Claude Doc](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8)): 12/12 Pass on iPhone Safari and Edge, with one request outside A01, recorded as FU-15a-1. **Owner's decision: Accept.** On the owner's go-live word, main was fast-forwarded to `6cdbe2e6` at 19:40 UTC. Production verified: the live page (`a9f86f7d…`, 17,538,310 bytes) and service worker `bc95bed68492d7da` byte for byte, 411/411 checks on the downloaded files, and the browser/offline check 24/24.
+
+*The summary at the top of the ledger then:*
+
+**4 November · Release 15a A01 built and qualified (Claude); accepted and live.** At the wizard's Review each open School choice now shows once: the top *Still to choose* box drops any item a card for that School already names, and a choice no card names (the monk's Lore subject, free Kiho picks) becomes its own card beside that School's card. Cards, the overspend warning and Finish's confirmation are unchanged. Both planned full passes succeeded on their first executions, 6,805/6,805 candidate and 6,701/6,701 retained each, and both removals rebuilt Release 8c exactly. The owner's [device checks](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8) passed 12/12 on iPhone Safari and Edge; the owner **accepted A01** the same day. Branch `claude/release-15a-a01`, application `cffde624…0414`; live on 4 November (main `6cdbe2e6`, merged on the owner's go-live word); production verified: page and service worker byte for byte, 411/411 checks on the downloaded files, browser and offline 24/24. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
+
+*What was next:*
+
+**4 November · Release 15a A01.** A01, estimated 5 (3–8), is built and qualified on branch `claude/release-15a-a01` and was **accepted by the owner on 4 November**; it went live the same day on the owner's go-live word. A02 has not started. New owner request from the device pass, recorded as **FU-15a-1** outside the totals: a Kiho, Kata or spell already learnt should leave the picker, in the wizard and on the sheet, as Skills already do. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
+
+*Cost:*
+
+**4 November · Release 15a A01 (Claude, claude-opus-5-5, effort high).** Account meters from the desktop app: 32% five-hour / 9% weekly at 15:36 UTC; 57% / 12% at 15:59; 0% / 14% at 16:56 after the five-hour reset; 13% / 16% at 18:45 UTC, after both full passes and the records. Weekly use moved by about 7 points against the 5 (3–8) estimate. The two full passes ran on the machine, not on the allowance. Readings are account-wide and kept separate from Codex's. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
+
+*Parked or left open:*
+
+**4 November · from Release 15a A01.** (1) **FU-15a-1**, the owner's device-pass request: the wizard's Kiho step and the sheet's Add Technique picker both offer a Kiho already learnt, so one can be taken twice (Air Fist twice, screenshot in A01's `qa/device-pass/`). The owner asks that learnt Kiho, Kata and spells leave the list in the wizard and on the sheet, as Skills do. It is in Release 8c; A01 does not touch it. (2) Already in 8c: naming the monk's Lore subject in the wizard adds a *1 School Skill at Rank 0* warning card. (3) Two minor review notes, recorded and not changed: a theoretical comma-bounded false match between two given-spell names (no data has one), and the A01 harness's own list parser cutting at the first ". ". [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
+
 ### 4 November 2026 — Claude: ledger republished, work order published, planned work placed
 
 Remote Control on and verified; keep-awake held. Read the live ledger page in full (2,569 lines): it matched commit `aef8f188` (30 October) apart from its closing tags, so there were no outside edits to keep. Republished it from this record with its page identity, icon and tick database kept; repository links point at GitHub and the work-order links at the new doc. Published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) as a Claude Doc with a Decision dropdown on both choices, and added a successor note to the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB).
 
 The review read the ledger, roadmap, R1–R27, the saved notes and the 1–4 November plan. It placed the Combat tab, ronin, tattoos, sync stages A and B and the career planner as step 8 candidates outside the totals, with the 27 October PDF export plan (approved fixes, then a core-book-style redraw), found after first publication and corrected the same day. A01 is still recommended and the choice is pending. Nothing built; no full suite run (records only).
-<!-- end-claude-publish-part6 -->
+
+*The summary at the top of the ledger then:*
+
+**4 November — published and reviewed (Claude).** The ledger page is republished and the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field on both choices; the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links its successor. Claude's review placed the work planned since 1 November (the Combat tab, ronin, tattoos, sync, the career planner and the 27 October PDF export plan) as step 8 candidates; nothing new is approved. **Owner's choice, 4 November: Release 15a A01, in a fresh session**; optional step 4 not taken. A01 starts from the [conditional A01 kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/KICKOFF-15A-A01.md>).
+
+*What was next:*
+
+**Claude's review, 4 November: work planned since 1 November, placed for step 8 (not approved).**
+
+| Candidate | Placement and gate | Rough points |
+|---|---|---:|
+| Combat tab, Method B ([plan](https://claude.ai/artifact/QMcfgBGEq14EoiYHtPatZc), FT-53 to FT-58 later) | Step 8 candidate, about 12 units under the Phase 15 rules. 15a's A02, A05, A12, A14 and A19 are built so it can reuse them. Reads Core's combat chapter first. | 80 (55–125) |
+| Ronin, Method B, with Made ronin and Accepted back | Step 8 candidate. Its five open rulings in one batch first; Core p. 234 and Imperial Histories 1 p. 275 read. | 34 (22–50) |
+| Tattoos, Method B | Step 8 candidate. A reading phase of every book and both wikis first, at a five-hour reset. | 30 (20–45) |
+| Sync stage A: save-race fix, sync metadata, Save all / Merge | First candidate at step 8 (data safety). The save-race fix comes first; raised earlier if a character is lost. | 10 (7–15) |
+| Sync stage B: Cloudflare D1 with passkey sign-in | After stage A; free tier, opt-in. | 32 (25–45) |
+| Career planner (FT-03) with future options (FT-02) | Step 8 candidate; rules-based, no AI. | 28 (20–35) |
+| PDF export fixes (approved as ideas, 27 Oct) | The 15 fixes and appendix tidy from the 27 October review: Rate of Wound Heal, Initiative, koku, equipment noise, advantage choices, full name, the always-added extra page, weapon-type overflow, internal labels, clan-discount notes, a condensed font and size scale, the wrapped-line space bug, a cleaned Bushi template, the wound caption, filling empty Notes space first; footnote numbers only for marked items; one merged details section. One rules question first: Kakita Rank 1's Initiative bonus. Step 8 candidate; independent of Phase 15's screens. | 15 (10–24) |
+| PDF core-book-style redraw (your plan, 27 Oct) | After the fixes: prototype page 2 first; if the look is worth it, a second selectable sheet style beside the L5RCM look, with original artwork, A4 and a print-friendly option. | 30 (20–45), prototype 6 (4–10) |
+
+These sit outside the 169 / 214 envelope; together about 259 (179–384) more, first rough scenarios re-estimated when chosen. Provisional step 8 order: sync stage A and the PDF export fixes, the Combat tab, ronin and tattoos, the PDF redraw if its prototype is liked, the career planner, sync stage B, with FT-16 weighed against each. [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA).
+
+*Cost:*
+
+**4 November — Claude publication and review.** Claude meters (five-hour / weekly used): 9% / 6% at 15:09 UTC at the start; 19% / 7% at 15:15 UTC after reading the records and all 2,569 lines of the live ledger page; 25% / 8% at 15:19 UTC after the work-order doc, before the republish. Model Opus 5.5, effort high. About 2 weekly points by publication. Claude's week runs to 11 November, 01:00 UTC.
+
+*Parked or left open:*
+
+**4 November — planned work added to the review list (Claude).** The 1–4 November plan for ronin, tattoos and the Combat tab (the roadmap's *PLANNED* entry, FT-53 to FT-58), sync and the career planner are step 8 candidates in the [4 November work order](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA). Open rulings stay open: ronin's five, the Combat tab's wound-log clearing and Rest during combat. The owner's 27 October PDF export plan (15 approved fixes and the appendix tidy, then a core-book-style redraw) is added as step 8 candidates; it had been saved only in another session's memory and was missed at first.
 
 ### 4 November 2026 — Claude continuation kickoff prepared
 
 The owner requested a Claude kickoff using the original 31 October prompt as the template. Saved the [full Claude kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/CLAUDE-SESSION-KICKOFF-AFTER-CYCLE-8-2026-11-04.md>): Cycle 8 completion and current application identity, outstanding ledger/work-order publication, provisional estimates, recorded Codex usage limits, settled Q1–Q8, individual Phase 15 delivery/removal, Remote Control and first-pass QA. A01 versus optional FT-16 remains the owner’s next choice; no build or publication is claimed by preparing this file. Local links and unchanged application bytes checked.
 
-
-<!-- cycle8-close-part6 -->
 ### 4 November 2026 — Cycle 8 closed; reassessment and successor work order
 
 Owner explicitly requested closure after step 3b and application of the end-of-cycle process before selecting optional step 4 or Release 15a. Reviewed the ledger, roadmap, remaining notes, R1–R27 rulings, accepted Q1–Q8 and Phase 15 delivery/removal rules. Closed the completed application cycle; retained the three Phase 15 device findings and prior failed QA evidence.
@@ -2244,26 +1988,119 @@ Owner explicitly requested closure after step 3b and application of the end-of-c
 Saved a [new proposed work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>), its readable HTML, a conditional A01 kickoff and a publication handoff. Replaced current summaries and superseded the stale grouped forecasts. Recommend A01 next; owner choice and budget acceptance are pending. No application/test code changed and no full suite was rerun for records-only work.
 
 Both local ledger formats and the roadmap are current. The published Claude ledger and old work-order doc were not changed: this session has no Claude artifact publishing tool or connected document session. [Publication handoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/PUBLISH-HANDOFF.md>) records the outstanding publication step.
-<!-- end-cycle8-close-part6 -->
+
+*The summary at the top of the ledger then:*
+
+**4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
+
+Release 8c application `919a5e35` passed both planned full passes first time (6,774 candidate / 6,665 retained each) and production checks (380 application, 24 browser/offline, eight walkthrough). The final source hash is `139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551`; production evidence is recorded at `962782da`.
+
+**Next decision:** recommend Release 15a, A01 only; optional step 4 remains available. [Reassessment and proposed work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) · [Readable work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.html>). The original before-reset reason for step 4 expired at 01:00 UTC today. No next build or revised budget is approved by this closure.
+
+*What was next:*
+
+#### Current reassessment and proposed work order — 4 November 2026
+
+The owner explicitly closes Cycle 8 after step 3b. The ledger, roadmap, R1–R27 end-of-project rulings, Phase 15 decisions and remaining notes were reviewed. [Full work order, with every finding and estimate](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) is the current planning record; the next build choice is pending.
+
+| Next work | Proposed order and status | Claude planning points |
+|---|---|---:|
+| Optional step 4 | FT-16 first catalogue only if selected; named catalogue and inventory still to agree. The original pre-reset opportunity has ended. | 5 (3–8), included in FT-16 |
+| Step 5 — 15a | Recommend A01 first, then A02–A12, A15–A20; three 8b.1 UI follow-ups afterwards, each separate. Owner acceptance between findings. | 94 (58–150), including A01 5 (3–8) |
+| Review after 15a | Group-removal evidence, records/republish, revised order before 15b. | 4 (3–6) |
+| Step 6 — 15b | Proposed A14, then B01–B14, B16; sequence confirmed before first build. | 57 (37–93) |
+| Step 7 — fixes | Reserve; fix each increment's device findings before moving on. | 10 (6–18) |
+| Step 8 — Phase 15 closure | Final removal evidence and reassessment; weigh sync, separate Manage and career planning against FT-16. | 4 (3–6) |
+| Step 9 — FT-16 | All Search entries, catalogue by catalogue; subtract any step 4 work. | 45 (30–60) |
+
+**Provisional remaining envelope: 169 (107–273) before FT-16; 214 (137–333) including its full allowance.** These judgment-based Claude planning estimates price individual delivery, not two grouped releases; they are not measured Codex cost or an approved budget. Reforecast after A01/A02. No reliable completion date yet. A13 and B15 retain the existing design. Q1–Q8 remain settled.
+
+The 30 October grouped totals and calendar dates below are historical. The new order preserves one finding at a time, independent removal, full QA and explicit owner acceptance. It does not authorize any Phase 15 build or merge.
+
+*Cost:*
+
+**4 November — cycle-end accounting.** The old Claude week ended at 01:00 UTC; its roughly 99% reading is historical, not today's allowance. Release 8a and 8a.1 cost about 14 and 7 Claude points; their estimates were 9 and 3. Later audit/8b/8b.1/8c work used Codex and is recorded separately. Account resets, shared usage and missing baselines prevent an exact combined Cycle 8 cost. Do not add Claude and Codex percentages or use the old totals to predict a finish date.
+
+This reassessment's first available Codex reading, after initial reading, was approximately 03:26 UTC: 43% five-hour / 68% weekly used. Model/effort were not exposed. [Current planning estimates and measurement limits](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>).
+End-of-review Codex reading, 4 November 03:36 UTC: 65% five-hour / 72% weekly used. These are shared-account observations, not an exact isolated cost.
+
+*Parked or left open:*
+
+**4 November — remaining-work review.** The 8b.1 functional correction and 8c advancement picker are complete. Keep all three 8b.1 presentation findings as separate 15a units. The 36-finding audit contains 34 work units plus retained A13/B15; with the three follow-ups, 37 possible work units remain. [Current inventory, R1–R27 dispositions and deferred work](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>).
+
+No deferred idea was silently promoted or dropped: R6 and the UI backlog go to Phase 15; FT-16 follows it unless the owner selects optional step 4; sync/Manage/career planning are reweighed at step 8. Final Honour/Glory/Status/wound review remains validation of the accepted app. FT-08 stays open until recurrence or the final review. The older rules-audit A14 spill stays parked for owner scenarios, distinct from Phase 15 A14. Android's seven tests, conditional save-race/History concerns, wiki access and after-project engine/optimization/EPUB/Equipment/rules work retain their recorded gates.
+
+### 3 November 2026: Release 8b.1 live
 
 **3 November · Release 8b.1 live.** The owner approved the tested build for production. Main advanced to ac165656. Production matched the preview in all seven files. The deployed app passed 344/344 checks, the first-open and offline test passed 22/22 and the phone-width School-choice walkthrough passed 6/6. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 
+### 3 November 2026: Release 8b.1 device checks passed
+
 **3 November · Release 8b.1 device checks passed.** Recorded owner acceptance of the functional checks and verified that the phone layout leaves the spell-name field with no room to display its text. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
-<!-- rank-spell-8c-part6 -->
+### 3 November 2026 — Codex: Step 3b: Release 8c, the rank-spell choices
+
 **3 November · Step 3b.** Application commit 919a5e35 is on codex/release-8c-rank-spell-choices. Both rank-spell fragments form one removable release. Removing it restores Release 8b.1. The preview passed 380 packaged checks, 24 online/offline checks and eight walkthrough checks. Owner device acceptance is complete. Release 8c went live from main ef539f85 on 4 November. All seven hosted files matched and the 380 deployment, 24 browser/offline and eight walkthrough checks passed. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
-<!-- end-rank-spell-8c-part6 -->
 
-<!-- older-school-choices-part6 -->
+*The summary at the top of the ledger then:*
+
+**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Both planned full passes succeeded on their first executions with 6,774/6,774 candidate and 6,665/6,665 retained checks each. Both removals restored the exact predecessor. The owner confirmed the iPhone and Edge checklist passed. Release 8c went live on 4 November and passed 380 deployment, 24 browser/offline and eight walkthrough checks. Step 3b is complete. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+
+*What was next:*
+
+**3 November · Step 3b.** Step 3b is complete after owner device acceptance and verified production deployment on 4 November. The reading covers all 21 supported shugenja Schools. Future advances are tracked automatically. In Manage, a player can report how many picks an older School Rank is missing. Past ranks receive no automatic award. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+
+*Cost:*
+
+**3 November · Step 3b.** Codex account meters at the start showed 36% five-hour and 32% weekly used. Before qualification they showed 74% and 53%. Before the full passes at 16:28 UTC they showed 1% and 58%. At 18:04 UTC after both passes they showed 18% and 60%. Model and effort were unavailable. During publication on 4 November, the account moved from 8% to 25% five-hour use and 63% to 66% weekly use. These account-wide readings include activity outside this step and a five-hour window reset. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+
+*Parked or left open:*
+
+**3 November · Step 3b.** Earned spell choices stay attached to the School and rank that granted them. Choose or Later at advancement, then return via the Manage character check. The owner’s iPhone and Edge checks passed for later claims, reward scroll exclusion and save/reopen. The production walkthrough also passed on 4 November. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+
+### 2 November 2026 — Codex: Release 8b.1: older characters
+
 **2 November · Release 8b.1 older characters.** Finished both full passes on mains at 20:20 UTC. Each removal restored the exact Release 8b application. The hosted preview matched seven committed files, passed the six touch checks, and is ready for device testing. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
-<!-- end-older-school-choices-part6 -->
 
-<!-- release8b-part6 -->
+*The summary at the top of the ledger then:*
+
+**2 November · Release 8b.1 older characters.** Both full passes completed on their first executions. Osamu’s ticked Rank 3 Defense fills his free Skill at the existing 5 XP. Confirming his eight starting spells leaves one Earth choice and preserves Jurojin’s Balm as a reward. Release 8b.1 went live on 3 November. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+
+*What was next:*
+
+**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is live after iPhone and laptop Edge acceptance on 3 November. Step 3b is the separately scoped reading and level-up picker. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+
+*Cost:*
+
+**2 November · Release 8b.1 older characters.** At 4× CPU slowdown the 16 affected harnesses passed 459/459. Discovery passed 6,738/6,738. Each full pass gave 6,738/6,738 on the candidate and 6,636/6,636 after removal. Codex five-hour / weekly usage on 2 November was 27% / 4% at 11:19 UTC, 59% / 25% before full QA at 18:48 and 63% / 26% after both passes at 20:20. The API did not expose model or reasoning effort. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+
+*Parked or left open:*
+
+**2 November · Release 8b.1 older characters.** The older-save correction addresses step 3a device feedback. The new level-up picker belongs to step 3b. Phase 15’s approved findings and removal rules retain their recorded scope. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+
+### 2 November 2026 — Codex: Release 8b live
+
 **Release 8b, 2 November 2026 (Codex).** Release 8b went live on 2 November from main commit 78f7037f (application commit 9c9798ef). In Manage, the School scroll and free Skill notes open the wizard’s pickers. An older character can claim an existing choice there without adding a duplicate. Only choices made through a School picker count. Remote Control was confirmed on with the iPhone paired. Discovery passed 6709/6709. Both planned full passes passed 6709/6709 candidate and 6600/6600 retained, with fresh execution, no reused leaves, and exact Release 8a.1 restoration twice. Targeted checks: 36 feature plus 279 historical checks at 4x CPU, 14 exact variant cases (12 mutations and two controls), six removal checks and clean dependencies. Local preview passed 315/315 verification, 20/20 first-open/offline and 6/6 control checks; seven hosted preview files match those bytes. One initial launcher failed before any suite check when Windows rejected the verifier’s truncating write. That failure is preserved; isolated scratch verification and eight guard cases passed before a one-use pre-suite continuation. No failed suite was rerun; this was not an uninterrupted first-time launch. Production matched all seven tested files. The downloaded files passed 315/315 checks, the live first-open and offline checks passed 20/20, and the phone-width touch controls passed 6/6. Owner iPhone and Edge results are pending. Codex shared-account readings (five-hour / weekly used): 1 November 02:09 UTC start 77% / 44%; 23:07 UTC pre-full launch 0% / 80%; 23:10 UTC before actual suite checks 19% / 82%; 2 November 00:47 UTC after both passes 75% / 91%; final end-of-step reading 2 November 00:50 UTC 97% / 95%. The five-hour window rolled; these readings are not an exclusive project cost and are not added to Claude points. The desktop composer displayed GPT-6 Astra Ultra at 23:38 UTC; earlier usage API readings did not expose the selection. No reset credit used by this agent. On 2 November the deployment readings were 13% / 97% used at 09:23 UTC and 21% / 98% at 09:29 UTC after production verification (five-hour / weekly, shared account). [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
-<!-- end-release8b-part6 -->
+
+*The summary at the top of the ledger then:*
+
+**Release 8b, 2 November 2026 (Codex).** Release 8b went live on 2 November from main commit 78f7037f (application commit 9c9798ef). In Manage, the School scroll and free Skill notes open the wizard’s pickers. An older character can claim an existing choice there without adding a duplicate. Only choices made through a School picker count. Remote Control was confirmed on with the iPhone paired. Discovery passed 6709/6709. Both planned full passes passed 6709/6709 candidate and 6600/6600 retained, with fresh execution, no reused leaves, and exact Release 8a.1 restoration twice. Targeted checks: 36 feature plus 279 historical checks at 4x CPU, 14 exact variant cases (12 mutations and two controls), six removal checks and clean dependencies. Local preview passed 315/315 verification, 20/20 first-open/offline and 6/6 control checks; seven hosted preview files match those bytes. One initial launcher failed before any suite check when Windows rejected the verifier’s truncating write. That failure is preserved; isolated scratch verification and eight guard cases passed before a one-use pre-suite continuation. No failed suite was rerun; this was not an uninterrupted first-time launch. Production matched all seven tested files. The downloaded files passed 315/315 checks, the live first-open and offline checks passed 20/20, and the phone-width touch controls passed 6/6. Owner iPhone and Edge results are pending. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+
+*What was next:*
+
+**Release 8b, 2 November 2026 (Codex).** Owner checks Release 8b on iPhone and Edge. Step 3b requires separate approval for the sourcebook reading on spells per Insight Rank and the Release 8c level-up picker. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+
+*Cost:*
+
+**Release 8b, 2 November 2026 (Codex).** Codex shared-account readings (five-hour / weekly used): 1 November 02:09 UTC start 77% / 44%; 23:07 UTC pre-full launch 0% / 80%; 23:10 UTC before actual suite checks 19% / 82%; 2 November 00:47 UTC after both passes 75% / 91%; final end-of-step reading 2 November 00:50 UTC 97% / 95%. The five-hour window rolled; these readings are not an exclusive project cost and are not added to Claude points. The desktop composer displayed GPT-6 Astra Ultra at 23:38 UTC; earlier usage API readings did not expose the selection. No reset credit used by this agent. On 2 November the deployment readings were 13% / 97% used at 09:23 UTC and 21% / 98% at 09:29 UTC after production verification (five-hour / weekly, shared account). [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+
+*Parked or left open:*
+
+**Release 8b, 2 November 2026 (Codex).** Phase 15's accepted Q1-Q8 and independent finding/release/phase removal rules remain in force. Release 8b does not implement those UI findings, Kiho actions, or level-up spell grants. The owner's original broader concept remains in the roadmap as the agreed fallback. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+
+### 2 November 2026: Release 8b device feedback
 
 **2 November · Release 8b device feedback.** Owner device testing found that an older Kitsu save could receive a second free Skill and extra Water and Air spells. Four checks reproduced the issue. Defense at Rank 3 accounts for the free Skill. The owner identified Jurojin’s Balm as a later reward. The proposed Manage review would leave one starting Earth choice. Design first, then build and test both corrections together. [Older School choices design](<BUGFIX — Older School Choices/DESIGN.md>).
-
 
 ### 1 November 2026: Phase 15 Q1–Q8 accepted as recommended
 
@@ -2425,7 +2262,6 @@ Deployment and checklist allowance: approved 2–4 points, baseline 66, report 6
 
 [Fresh device checklist](QA%20%E2%80%94%20Cycle%207a%20Refinements%202026-10-27/Device-Checks-Live-2026-10-27.html). The published ledger remains unchanged.
 
-
 <!-- refinements-history-start -->
 ### 27 October 2026 — Cycle 7a follow-up refinements
 
@@ -2447,21 +2283,17 @@ Cycle 7a was fast-forward merged into main and deployed on 25 October 2026, at r
 
 Two browser response-capture failures were corrected without app changes or relaxed assertions; evidence retained. Deployment verification began at 42% weekly with a 47% cap, Codex only and account-wide; no reset credit. The published ledger still awaits its separate update.
 
-
-
 ### 25 October 2026 — PDF dependency packaging complete (Codex)
 
 Original-template export is ready for owner merge approval. Dependency notices travel with standalone and deployed HTML as comments; no visible PDF credits were added. New build `7781e1a2ff0c6f58dbfa742843a27dac8b53ca84d8f2ecfb24bb15c6fc166f0b`, 17,296,865 bytes. Removing only that comment restores the exact pre-notice build from both successful full suites. Final packaged-file checks: PDF 41/41, rollback 6/6, packaging 11/11. No full rerun for a comment-only change; no second reviewer. See the PDF layer's `qa/dependency-packaging.md`.
 
 Template permission is settled. Main, live verification, owner device checks and published-ledger refresh remain pending. Codex notice research used five observed account-wide points (32–37%); this implementation stage began at 37%, with a 42% stop line. Claude's usage is unchanged; no reset credit used.
 
-
 ### 25 October 2026 — Owner confirms the eight PDF templates
 
 The owner reports private confirmation that GPLv3 covers all eight templates, no separate source/permission statement is needed, and no template/output credits or notices are requested. The separate permission investigation is closed on owner-supplied evidence; the unsent upstream question is superseded. Existing metadata/licences remain intact. Library/font licence packaging remains separate. See `QA — Cycle 7 Release 7a 2026-10-25/template-owner-confirmation.md`.
 
 Documentation only: application hash and two successful QA passes unchanged. No merge/deployment. Codex's preceding provenance follow-up used approximately three account-wide points (27% to 30%); recording this confirmation began at 31%, within the existing 32% stop line. Claude usage is unchanged.
-
 
 ### 25 October 2026 — Codex: Cycle 7a built; two fresh full QA passes
 
@@ -2474,7 +2306,6 @@ Cycle 7a is built and has passed local QA twice. Merge, live verification and ow
 - [QA evidence and remaining release steps](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/README.md); [phone checklist with result dropdowns](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html).
 - Original template redistribution is unresolved; 17.2 MB build, device load impact unmeasured. No merge, deployment, device acceptance or published-ledger update claimed.
 - Codex only, separate from Claude: the work crossed meter resets and several approved continuation stages. A reconciled whole-cycle cost is unavailable; account-wide readings are not task billing. The final records stage used five observed account-wide points (21% to 26% weekly), reaching its stop line. No reset credit was used.
-
 
 Every dated entry, as written at the time. Until 23 October 2026 they were headed Current update, Previous update or Historical update; only those labels are dropped. Figures in older entries were true when written; where they differ from parts 1 to 4, the summary is current.
 
@@ -2489,7 +2320,6 @@ checklist:** the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDz
 read before these records), against 10–14 estimated.
 
 The entry as written when 6a was built:
-
 
 **Release 6a is built** on branch `claude/cycle-6-release-6a` (on top of the desk review's records), each fix its own
 removable layer (detail in each README):
@@ -7065,6 +6895,198 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 ## 8. Older notes kept for the record
 
+### The summary at the top of this ledger, as it stood before 23 November 2026
+
+These were parts 1 and 2 and the ledger's opening status lines until the reorganisation of 23 November 2026, kept as written. Figures were true when written; parts 1 to 4 are current.
+
+#### The opening status lines
+
+Local records updated **23 November 2026** (Claude). **Release 15b group 1 is live and verified.** [Group 1 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>).
+
+**Earlier:** Local records updated **19 November 2026** (Claude). **The cycle review after Release 15a is done, and Release 15b's work order is with the owner:** [Work Order — 19 November 2026: Release 15b](https://claude.ai/artifact/WqezEhpZ2mYS76kXD96WiP). [Review after 15a](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/REVIEW-AFTER-15A.md>).
+
+**Earlier:** Local records updated **19 November 2026** (Claude). **Release 15a is complete: G6 is live and verified** (G5 went live on 18 November). [G6 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>).
+
+**Earlier:** Local records updated **12 November 2026** (Claude). **Release 15a G3 is live and verified.** [G3 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G3 — Spell Rows/HANDOVER.md>).
+
+**Earlier:** Local records updated **9 November 2026** (Codex). **Release 15a G2 is live and verified** on the owner's go-live instruction. Main was fast-forwarded to `93b27c61`; application `77936023…82f0`. Production checks passed **2,523/2,523**, browser/offline **22/22**. [G2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G2 — Small Layout Fixes/HANDOVER.md>).
+
+**Historical publication and status, 4 November 2026:** Local records updated **4 November 2026** (Codex; Claude's publication and review the same day). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. Claude republished the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) from this record and published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) on 4 November at about 15:25 UTC; both were opened and checked. The next build choice is still pending.
+
+#### Where things stood (formerly part 1)
+
+##### Dated milestones (historical snapshots; current status above)
+
+**3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
+
+**2 November · Release 8b device feedback.** Owner device testing found that an older Kitsu save could receive a second free Skill and extra Water and Air spells. Four checks reproduced the issue. Defense at Rank 3 accounts for the free Skill. The owner identified Jurojin’s Balm as a later reward. The proposed Manage review would leave one starting Earth choice. Design first, then build and test both corrections together. [Older School choices design](<BUGFIX — Older School Choices/DESIGN.md>).
+
+**Q1–Q8 accepted, 1 November 2026.** Owner accepted Q1–Q8 as recommended on 1 November 2026. The approved Phase 15 delivery rules govern implementation: one independently removable finding at a time, owner testing/acceptance before progression, all 15a before 15b, and removal of any finding/group/phase preserves retained work and character data. A13/B15 are accepted retain-current-design decisions; A19/FT-24 and A20/FT-28 are included. Earlier grouped-delivery estimates require revision. Q1–Q8 are settled and must not be asked again without a material change. Implementation has not started; the 8b/8c work order remains in place. [accepted Q1–Q8 rulings](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-RULINGS-2026-11-01.md>).
+
+<!-- phase15-design-rules-2026-11-01 -->
+**Owner ruling, 1 November 2026: Phase 15 is an umbrella with release groups 15a and 15b, each finding a separately owned, independently removable unit. Investigate/build/test one finding, provide the previous accepted state for comparison, and wait for the owner’s accept/revise/remove decision before progressing. Finish 15a before 15b. Removing a finding must preserve later findings; removing 15a must preserve 15b; removing Phase 15 must preserve unrelated work and character data. Prove these removal operations. This supersedes shared implementation across findings and requires revised estimates; it does not start implementation or change the 8b/8c work order. Q1–Q8 were subsequently accepted on 1 November.** [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>).
+
+<!-- phase15-audit-2026-10-31 -->
+**31 October 2026 (Codex): Phase 15 audit delivered for owner review, no application build. 36 findings and complete parked-item mapping; Q1–Q8 accepted 1 November. Proposed 15a 20 (15–27), 15b 12 (9–16), in historical Claude planning points; FT-24/FT-28 are explicit functional layers. 8b/8c remain next in order, each with scope approval.** [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
+
+First-pass QA goal not achieved: preflight 345/345 at 4× CPU and discovery 6,673/6,673 passed. Full run 1 passed 6,673 candidate / 6,579 retained, exact restoration. Full run 2 stopped at 6,657 completed checks: Spell Names page-load timeout omitted 16 checks; retained run 2 did not start. No full retry. Scoped font-CDN isolation in that logic harness passed 16/16 and all seven exact negative cases at 4× CPU. No application source changed; final edited harness has targeted evidence, not two full qualifications.
+
+**Live, 30 October (Claude): Release 8a.1**, step 2 of the work order: two removable layers from your 8a device checks. *The overspend, quieter* (your ruling, 30 October): one line above the buttons, only on the step where the overspend first appears, in the place of "Some of your School's choices are still open"; no amber box anywhere; Review keeps only the sheet's own "Overspent by" item; Finish still asks once. *The free-choice note* (your note): "Bayushi Bushi: 1 free Skill choice still open" while it is open, and nothing once the choice is made and ticked as a School Skill. One review: one low defect (a step that left the wizard kept the line), fixed with its own check. The full suite twice, first time: 6,673/6,673, the two removed back to 8a's build byte for byte, 6,579/6,579. Live: 202/202 on the downloaded files, browser and offline 18/18, the walk 8/8. Your re-tests: section R of the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE).
+
+**Live, 30 October (Claude): Release 8a**, step 1 of the work order: two removable layers and the suite's under-load fixes. *The wizard's XP gate* (your ruling, 29 October): no step blocks Next while more than 40 XP is spent; each step shows a warning in its place, Review says it in plain words with the amount over, and Finish asks once (Finish or Stay) and goes on. *The audit log's finding 4* (your answer, 30 October): a change undone on a sheet not yet saved no longer makes opening another character ask to discard it; a real change still asks. *Under load:* the Characters list harness, and the one other check a 4× CPU sweep of the whole suite found (Dependant typing's autosave), now wait for the save itself; no check was loosened. One review: one defect (Finish could run twice), reproduced first and fixed. The full suite twice, first time: 6,652/6,652, the two removed back to main's build byte for byte, 6,556/6,556. Live: 185/185 on the downloaded files, browser and offline 17/17, the checklist walk 9/9. Your device checks: the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE).
+
+**Reassessed, 30 October (Claude): Cycle 7 is finished.** Every release is live and every device check passed, so Phase 7 is done. The ledger page was republished, the ledger, the roadmap, the end-of-project review and the 28 October work order reassessed, and the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) written; **you agreed it the same day**, with all four questions as recommended. Next is Release 8a, the wizard's XP gate, which also fixes the checks that fail only under load so the full suite passes first time.
+
+**Live, 30 October (Claude): Release 7c.1**, two removable layers for your rulings on the 7c device checks. *C1:* an empty quiver's picker says there is nothing to fire and offers Cancel only, which ends the attack unrolled. *A3:* Lord Moon's Curse's button reads "Resist Lord Moon (TN n)". One review: no defects; two variants added from it. The full suite twice, first time: 6,629/6,629, the two removed back to 7c's build exactly, 6,545/6,545. Live: 78/78 on the downloaded files, browser and offline 16/16, the checklist walk 16/16.
+
+**Live, 29 October (Claude): Release 7c**, six removable layers, the last release of Cycle 7. *R26:* Lord Moon's Curse gains a Full moon tonight tick (one Void Point more than the Void Ring until sunrise, spent last) and a Willpower roll at TN 15, 20 or 25; the creation wizard stops Traits, the Void Ring and Skills at 4 (Core p.103); an empty quiver offers Roll without an arrow. *R22:* the wizard's Spells step says starting spells are scrolls in Equipment (Core p.164). *The after-preview refund* (your ruling): nothing a roll pays is kept when a later question cancels it. *Phase 7.1, the audit log* (your answers): a read-only History of what costs or awards something, newest first, in the sheet's ⋯ menu and in each character's menu in the Characters list, saved with the character. One review: three defects and one lower finding reproduced with checks pinned first, then fixed; two recorded. The full suite passed twice (runs 2 and 3; run 1 stopped on a stale per-harness count with every check passing): 6,618/6,618, the six removed back to 7b.2's build exactly, 6,478/6,478. Live: 678/678 on the downloaded files, browser and offline 15/15, the checklist walk 16/16.
+
+**Live, 29 October (Claude): Release 7b.2**, three removable layers for the rulings read in the reading session. *R23:* Core p.148's set rules, held as data. Paragon rules out Dark Paragon and Failure of Bushido; Consumed rules out Failure of Bushido and Dark Paragon; Touch of the Spirit Realms rules out Cursed by the Realm; each set may be held once. A Fortune's Blessing and Curse may be held together, but not of one Fortune (your Q1). Ruled-out entries are greyed with the reason in the Advantage and Disadvantage lists, the wizard and the Fortune choices. A held pair is kept and flagged on both rows, with one Character check warning, and a GM override per character in Management lifts any rule. *R11:* The World of the Daimyo, The Daimyo's Path and Child of Chikushudo as Search reference entries, beside Naga and Nezumi (your Q3). *R17:* the Scorpion Instigator counts configured Blackmail rows on different people (four needed), and its four-people confirmation goes (your Q4). R20 needed nothing (closed). One review: one finding reproduced and fixed; one more found by a new variant and fixed. The full suite twice, first time: 6,551/6,551, the three removed back to main `bee8c0b` byte for byte, then 6,404/6,404. Merged on your word to main `605512e` and verified live on 29 October: the page and service worker byte for byte (17,412,730 bytes, service worker `eda2fd1921930172`), 427/427 checks on the downloaded live files, browser and offline 13/13, and the checklist walk 16/16. Your device checks: the [Release 7b.2 Device Checks](https://claude.ai/artifact/SYNyXRANr16hrHGwS2Hgyb): all fifteen Pass on the iPhone and in Edge, 29 October, with no notes; no 7b.2.1 is needed. [QA evidence](QA%20%E2%80%94%20Release%207b.2%202026-10-29/HANDOVER.md).
+
+**Live, 29 October (Claude): Release 7b.1.1**, three removable layers for your 7b.1 device-check findings. *D1:* the Lion's Pride chosen from the Advanced School list ticks its box at once with a Female Identity, with its line. *B2:* a cast cancelled at an Ancestor gift's question (Cancel roll or ✕) gives its spell slot back, once. *E1:* Go to Advanced Schools with Check Taint growth's text, padding and border; compact with a mouse, 44 px on touch. One review: no correctness defects; one wording fix, two notes recorded. The full suite twice, first time: 6,477/6,477, the three removed back to main `55f980d` byte for byte, then 6,379/6,379. Merged on your word to main `b484bbc` and verified live on 29 October: the page and service worker byte for byte (17,392,489 bytes, service worker `01101213cdc9f918`), 500/500 checks on the downloaded live files, browser and offline 12/12, and the re-test walk 7/7. Your re-tests, section I of the [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z), passed on 29 October.
+
+**Live, 28 October (Claude): Release 7b.1**, eight removable layers for your rulings that need no books: R7 the Void Point's +1k1 not on Initiative; R10 Hotei's Curse where the sheet spends Void; R14 held Skills leave Add from Skill List; R15 Gender in Identity meets a gender requirement, and the wizard asks Gender and Age; R16 a pointer to the Advanced Schools; R21 Remove in the wizard's Skills step; R24 Jurojin's reminder steps; R25 a used once-a-session gift, and the favour list. One review: five findings, each fixed with checks pinned first. The full suite twice (runs 3 and 4): 6,452/6,452, the eight removed back to main `b9ebcb8` byte for byte, then 6,292/6,292. Merged on your word to main `5970447` and verified live: the page matches the build byte for byte (17,389,041 bytes, `61479fd1…`, service worker `e6d08102dee51f93`), 486/486 checks on the downloaded live files, browser and offline 11/11. **The checklist walk on the live site: 16/17.** D1 fails: with a Female Identity, choosing the Lion's Pride from the Advanced School list leaves its box unticked until Gender is edited again. Your ruling, 28 October: the checklist now, the fix in 7b.1.1 with whatever your checks find. **Your device checks, 28 October: 13 of 16 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z)): B2 Fail (a spell slot kept when a gift cancels the roll, older than 7b.1), D1 not run (known), E1 Pass with a note (the button too big). All three go to 7b.1.1 (part 4). [QA evidence](QA%20%E2%80%94%20Release%207b.1%202026-10-28/HANDOVER.md).
+
+**Live, 28 October (Claude):** the Cycle 7a device follow-up, two removable layers from your Edge and iPhone checks. *Characteristic Card Editing:* Rank and Points typed into the four cards in Management, with Recognition and the Taint growth check inside their cards. *Wound Settings Preview:* the eight wound thresholds beside the campaign multipliers. Codex built both; Claude fixed six review findings and ran the full suite twice, first time: 6,365/6,365, both layers removed back to main `e58fe09` byte for byte, then 6,228/6,228. Merged on your word to main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. **Your device checks, 28 October: all 14 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk)); two notes are in part 4. [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
+
+**Live update, 27 October:** Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Your Edge and iPhone checks of the refinements passed 9 of 10 on 27 October; the tenth became the device follow-up.
+
+*27 October 2026 — follow-up refinements on the working branch; original Cycle 7a remains live.*
+
+<!-- refinements-status-start -->
+Five follow-up layers implement the owner’s Edge/iPhone observations: campaign wound multipliers, compact characteristic controls, PDF field fit, an optional details appendix and named PDF save/print. The single review finding was fixed and its regression checks passed.
+
+After correcting the QA harness version expectation and test scheduling, two fresh full QA runs passed: each candidate 6,301/6,301 across 145 suites; each retained 6,102/6,102 across 138 suites. No results reused. Removing the five layers restored main 6245576 byte for byte. The initial failed run (6,283/6,301) is retained; the first-pass goal was not met.
+
+Merge and deployment approved and completed on 27 October. Your Edge and iPhone checks followed the same day, save and print included (9 of 10 Pass). The published ledger was republished on 28 October.
+<!-- refinements-status-end -->
+
+- **Live and accepted:** Release 15a A01 (4 November, main `6cdbe2e6`) on top of Release 8c, including the 8b.1 older-character correction; all Cycle 8 device decisions recorded.
+- **Qualification:** both 8c full passes passed on first execution; production verified 4 November. See the current cycle-closure summary above.
+- **Next:** owner choice between recommended A01 and optional FT-16 first catalogue.
+- **Allowance:** Claude's old weekly readings are historical. Codex readings and uncertainty are kept separately in part 3.
+
+| Status | Phases |
+|---|---|
+| ✅ **Done: 21** | 0, 0.5, 0.6, 1, 1.5, 1.6, 2, 3, 4, 4.5, 4.6, 4.7, 4.8, 5, 7, 8, 11, 11.1, 12, 13, 14 |
+| 🟡 **Part done: 2** | 6 (the SynergyEngine comes after the project), 9 (the colophon and the floating buttons, with Phase 15) |
+| 🔵 **Waiting for a device: 1** | 0.7, the Android app: seven tests on an Android phone |
+| ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
+
+#### What was left, the estimate and the build order (formerly part 2)
+
+##### Earlier planning snapshots — historical estimates and decisions
+
+**Phase 15 delivery rule, 1 November:** 15a/15b are release groups delivered finding by finding with owner acceptance between steps. Individual, release-group and whole-phase removal must preserve retained work. The earlier grouped-delivery estimates need revising. [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>) is authoritative for this process.
+
+**Audit proposal, 31 October:** Audit delivered; Q1–Q8 are settled; next is approval of step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit. [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
+
+##### The work order (30 October 2026, agreed then; historical, superseded by the 4 November reassessment)
+
+In full, with the reasons, in the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB). **Agreed on 30 October** with all four questions as recommended: this order, with 8a in a fresh session; the XP gate as its own release, with the suite's under-load fixes; the audit log's finding 4 fixed in 8a; and any points left before 4 November spent on FT-16's first catalogue. About **53 points** are left before FT-16 (range 38–75), most likely finished around **7 November** (range 5–10 November); FT-16 adds about 45 (around 11 November, range 8–15). The 28 October work order below is kept as history.
+
+| Step | Work | Points |
+|---|---|---:|
+| 1 | Release 8a: the wizard's XP gate (a warning on the last step and at Finish, not a block; your ruling, 29 Oct); the checks that fail only under load fixed without loosening any, the Characters list harness's autosave wait first; the audit log's finding 4 | 9 (6–13) |
+| 2 | Fixes after 8a's device checks, as 8a.1; **done 30 Oct, live at `5bfcb18e`, about 7** | 3 (2–5) |
+| 3 | Phase 15 audit delivered 31 Oct (Codex), no app build; Q1–Q8 accepted 1 November; full-run failure preserved | Historical estimate 4 (3–5); Codex cost unmeasured |
+| 3a | Release 8b: School choices from the character check (your idea, refined; added 30 Oct): in Manage, the check's notes for School scrolls and the free Skill choice become buttons opening the wizard's own pickers; each pick marked as the School's, so a reward scroll never satisfies the check; the check stays read-only. Your original concept kept on file to switch to if testing disappoints | 10 (8–12) |
+| 3b | Reading (each School's spells per Insight Rank, from the books), then Release 8c: the level-up picker, with Later; skipped picks stay owed and are reached from 8b's button | 8 (6–11) |
+| 4 | FT-16's first catalogue, only with points left before the 4 November reset, at the start of a 5-hour window | about 5 of FT-16's 45 |
+| 5 | Proposed Release 15a: audit A01–A12, A15–A20, including FT-24/FT-28 as separate functional layers; scope accepted 1 November; individual delivery/start pending | 20 (15–27) |
+| 6 | Proposed Release 15b: audit A14 and B01–B14/B16; text, Search and browser print; scope accepted 1 November; individual delivery/start pending | 12 (9–16) |
+| 7 | Fixes after 15a and 15b | 6 (4–10) |
+| 8 | The reassessment after Phase 15: this page republished, the next work order; sync, Manage as its own screen and the career planner weighed against FT-16 | 4 (3–6) |
+| 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
+
+Each release, as agreed: **the full suite passes first time and is never re-run to get a pass.** A check that fails only under load is fixed by waiting for the event itself (a long ceiling ends only a hung run), and a check that something did not happen waits past the app's own timer; no assertion is dropped and no expected value widened. A fresh session; the reviewer helper before the full suite, with the runner's per-harness counts updated for any checks it adds; the changed harnesses at 4× CPU, the affected groups, then one discovery run; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background on mains power; minor fixes after your device checks at once, as an x.1 release.
+
+**30 October, the Cycle 7 reassessment:** this page republished, everything reassessed, the work order above written and agreed, Release 8a's kickoff written; about 4 points against 4 (2–6).
+
+**30 October, Release 8a (step 1):** the wizard's XP gate and the audit log's finding 4 built as two layers; the suite's under-load waits fixed (the Characters list harness, and Dependant typing's, the only other one the 4× sweep found); one review (one defect fixed); the full suite twice, first time; merged and live (`e8310bec`), about 14 points against 9 (6–13). The live walk passed 9 of 9; your device checks are waiting.
+
+**30 October, Release 8a.1 (step 2):** the overspend as one line on the step where it first appears, no box, Review keeping only the sheet's own item; the free-choice note only while a choice is open; two layers, one review (one low defect fixed with its check); the full suite twice, first time; merged and live (`5bfcb18e`), about 7 points against 3 (2–5). The live walk passed 8 of 8; your re-tests are section R of the Device Checks.
+
+**30 October, added on your word:** steps 3a (Release 8b, the School choices from the character check, your idea refined) and 3b (a reading, then Release 8c, the level-up picker), between the Phase 15 audit and Release 15a. About **62 points** are now left before FT-16 (roughly 46–85), most likely finished around **9 November**. The [Work Order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) doc carries the same rows.
+
+##### The work order (28 October 2026, agreed the same day; history)
+
+In full, with the reasons, in the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd). **Agreed on 28 October** with all four recommendations: 7b.1 starts in a fresh session; the older save race stays parked (part 4); this page is republished once per cycle. Your addition: after each cycle, a new work order (the row below). About **97 points** are left before FT-16 (range 72–124), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November). The 23 October rows, estimate and build order below are kept as history.
+
+| Step | Work | Points |
+|---|---|---:|
+| 1 | Release 7b.1: the rulings that need no books (R7, R10, R14, R15, R16, R21, R24, R25) | 15 (12–18) |
+| 2 | Reading session, no build, at the start of a 5-hour window (R23, R11, R17, R20, R22, R26); one batch of questions | 4 (3–5) |
+| 3 | Release 7b.2: R23 the set rules, R11, R17, R20 | 15 (12–20) |
+| 4 | Release 7c: R26 (Lord Moon's Curse, the Ring cap, the empty quiver), R22, Phase 7's audit log and the after-preview refund: nothing a roll pays is kept when a later question cancels it (Dark Paragon's Determination first; your ruling, 29 Oct) | 23 (18–31) |
+| 5 | A small fix release after each device check (row F) | 9 (6–15) |
+| After each cycle | Your addition, 28 October: a fresh session republishes this page, reassesses the ledger, the roadmap, the end-of-project review and the work order, and writes the next work order. Due after Cycle 7, after Phase 15 and after FT-16 | 4 (2–6) for the two before FT-16 |
+| 6 | Phase 15's audit, no build | 4 (3–5) |
+| 7 | Release 15a: layout and controls (R6, FT-47, FT-49, FT-41, FT-42, FT-48, FT-50 to FT-52 and the rest) | 15 (11–20) |
+| 8 | Release 15b: text, Search and print | 12 (9–16) |
+| 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
+
+Each release: a fresh session; the reviewer helper before the full suite; the changed checks under 4× CPU load and the affected groups first; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background; minor fixes after your device checks at once, as an x.1 release. After each cycle, in a fresh session: this page republished, then a reassessment of the ledger, the roadmap, the end-of-project review and the work order, and the next work order.
+
+**28 October, Release 7b.1 (step 1):** built, through the full suite twice, merged and live (`5970447`), about 14 points against 15. The live walk passed 16 of 17; D1 waits for 7b.1.1 (step 5) with whatever your device checks find.
+
+**28–29 October, Release 7b.1.1 (step 5):** D1, B2 and E1 from your device checks, built, through the full suite twice, merged and live (`b484bbc`), about 9 points against 6 (4–9). The live walk passed 7 of 7; your re-tests are waiting.
+
+**29 October, Release 7b.2 (step 3):** R23, R11 and R17 built (R20 needed nothing), through the full suite twice, first time, merged and live (`605512e`), about 9 points against 15 (12–20). The live walk passed 16 of 16; your device checks passed 15 of 15, with no notes.
+
+**29 October, Release 7c (step 4):** R26, R22, the after-preview refund and Phase 7's audit log built as six layers, through the full suite twice (runs 2 and 3, first time; run 1 stopped on a stale per-harness count with every check passing), merged and live (`799da9f`), about 16 points against 23 (18–31). The live walk passed 16 of 16; your device checks: 13 of 15 Pass, B3 and B4 to re-run; your rulings became 7c.1.
+
+**29–30 October, Release 7c.1 (step 5):** your two rulings from the 7c device checks (C1 the empty quiver's Cancel, A3 the moon's button) built as two layers, through the full suite twice, first time, merged and live (`a31251f2`), about 8 points against 9 (6–15). The live walk passed 16 of 16; your re-tests passed on the iPhone and in Edge (30 October).
+
+**28 October:** the device follow-up (row F) is built, through the full suite twice, merged and live; your device checks passed 14/14 on the iPhone and in Edge.
+
+**27 October amendment:** R5 wound thresholds and campaign multipliers were brought forward into the follow-up refinements. Release and device acceptance remain pending. Other 7b/7c scope and the historical estimates below are unchanged.
+
+##### Remaining work, with the historical 23 October estimate
+
+**25 October amendment:** row A is live. R1–R4 in row C and R13/FT-31 are live; rows C–G otherwise retain their scope. Figures below have not been re-estimated after this work.
+
+Every row was weighed on its merits, the ones that need the sourcebooks included. The FT numbers are the backlog's, in full in the roadmap's *Deferred and declined* section; the R numbers are your rulings in the [desk review](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp), listed in the roadmap's section *Desk review rulings, 23 October 2026*.
+
+|  | Work left | Points | Most likely | Needs first |
+|---|---|---:|---:|---|
+| A | **Two new bugs and three roll-screen fixes:** FT-44 after Apply → Cancel the Clan and School pickers keep the new choice; FT-45 Yomi does not see Phase 4.8's Ancestor; FT-21 the roll preview keeps its scroll; FT-23 a typed Initiative total; FT-38 a greyed-out Void card button's reason on a phone. Moved forward from Phase 15 on your yes of 23 October. | 10–16 | 12 | Nothing |
+| C | **Building your review rulings:** Honour, Glory and Status as Rank and points with a meeting with your lord (R1–R4); Taint as Rank and points with a growth check (R2); the book's wound ranks (R5); no +1k1 on Initiative (R7); Hotei where the sheet spends the Void (R10); the three Station and shapeshifter entries as reference (R11); the Skill list without held Skills (R14); gender and age (R15); the Advanced School pointer (R16); the Core p.148 set rules (R23); the wizard's Skill Remove (R21); Ancestor gifts (R25); Lord Moon's Curse, the Ring cap and the empty quiver (R26); and a reading layer for R17, R20, R22 and R26. | 30–46 | 37 | Book reading at the start of a 5-hour window |
+| D | **Phase 7's audit log.** | 5–10 | 7 | Your ruling: at the end |
+| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-17 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, FT-47 to FT-52, the resist line (R6), the colophon and the floating buttons. | 18–32 | 24 | The audit |
+| F | **Follow-ups from your device checks.** Nearly every cycle has needed one: the Library's 1.1 and 2d, Cycle 5's 5a.2 and 5c.1. | 7–14 | 11 | Your device checks |
+|  | **Total** | **70–118** | **about 91** |  |
+| G | **FT-16, a fuller own-words description for every Search entry** (about 1,500), your ruling R12: its own cycle after Phase 15, catalogue by catalogue, so it does not hold up the rest. | 30–60 | 45 | The books, at the start of 5-hour windows |
+
+**Row B, the desk review, is done** (23 October, about 2 points with the records). Your rulings, in short: R5, R6, R7, R8, R9, R11, R15–R18, R20, R22, R25 and R27 as recommended; R1–R4, R12–R14, R21, R23, R24 and R26 with your own notes; R10 as recommended with Hotei's full scope noted for later; R19 kept open until the end of the project. The six details C1–C6 as recommended. Manage stays in place (R8); Print on the list is closed, since Export to PDF is there (R9); R13/FT-31 was brought forward by the owner on 24 October and is live in 7a.
+
+##### The estimate
+
+**Historical estimate, 23 October; not a current forecast.** About **91 points** of work are left (range 70–118). **Most likely finished around 2 November** (range 30 October – 7 November), if each week's allowance is used and your rulings and device checks come as promptly as they have. Row G adds about 45 (30–60); with it, most likely around **5 November** (range 3–14 November).
+
+- **Against the morning's estimate (23 October):** that read about 80 (55–115), most likely 1 November. The review cost about 2 against 4. Your rulings widen row C from about 16 to about 37: Honour, Glory and Status gain the meeting with your lord and the pip display; Taint gains Rank and points and its growth check; the set rules of Core p.148 and Lord Moon's Curse's full design are new. FT-16 leaves row E (about 6) and becomes row G at its full scope.
+- **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
+- **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
+
+**Current next decision (4 November):** recommended A01 or optional FT-16 first catalogue; see the proposed work order above. Nothing has started.
+
+##### The build order (23 October 2026, history; the 28 October work order is above)
+
+Ranked by impact for each point spent, with what each step needs first.
+
+1. **This week, before 28 October 01:00 UTC** (about 17 points left; unused points are lost at the reset):
+   - **1a. The end-of-project desk review. Done** (23 October; rulings recorded).
+   - **1b. Cycle 6, Release 6a: five fixes. Done, live** (24 October, `7b0e7f1`; about 8 points, the full suite twice): FT-44, FT-45, FT-21, FT-23 and FT-38. Your checklist: the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi).
+2. **The week from 28 October** (about 100 points):
+   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a R1–R4 plus the owner-added original-template PDF: live and checked on your devices; 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
+   - **2b. Phase 15, the UI consistency pass** (E · about 18–32 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print.
+   - **2c. Follow-ups from the device checks** (F · about 7–14 points). As each check shows them. The Cycle 7a device follow-up: built, through the full suite and live on 28 October (`c0da641`, about 7 points); your device checks 14/14 Pass.
+   - **2d. FT-16, every Search entry described** (G · about 30–60 points), after Phase 15, catalogue by catalogue.
+3. **Whenever you choose: Phase 0.7's seven Android tests** (no build unless one fails). On an Android phone; the tests are listed under Phase 0.7 below.
+4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And from your review rulings: FT-02 and FT-03 (R18); Hotei's full scope (R10); the Station rules (R11); A03's and A09's precepts (R24).
+
+**Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
+
 ### The open-reminders checklist, as kept until 23 October 2026
 
 Its open items are now in parts 2 and 4.
@@ -7511,6 +7533,19 @@ assigned a Part, nothing scoped to build.
 ## 9. Keeping this current
 
 After each release or ruling, in this order:
+
+1. **Rewrite parts 1 to 4 in place,** so that they always read as current: what is live, what is waiting on the owner, what is next, the costs and the open parked items. Never add a dated paragraph to them. Dated paragraphs gathering at the top of each part is what made the ledger hard to read before 23 November 2026.
+2. **Add one entry at the top of part 6,** headed `### <date> — <who>: <what happened>`. It holds everything recorded that day: what was built, the checks, the owner's words, the cost, what came next and anything parked.
+3. **Change part 5 only when a phase changes status.**
+4. **Make the same changes in `BUILD-LEDGER.html`,** where each part-6 entry is a closed section at the top of the update history, and republish the [Rokugan Build Ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk).
+
+`BUILD-LEDGER.html` beside this file is the source of the published page. GitHub shows it as source rather than a
+rendered page: open it locally, or use the link above. Its tick-boxes (the Android tests, Phase 9's items) persist only
+inside the published page; this file's task-list boxes can be ticked by hand.
+
+*The rule as it read until 23 November 2026:*
+
+After each release or ruling, in this order:
 1. Add a dated entry at the top of part 6, newest first, headed `### <date> (<who>): <what happened>`: what was built,
    the checks, the cost in points and what comes next.
 2. Bring parts 1 to 4 up to date: where things stand, the work left and the build order, the step's cost under its
@@ -7518,7 +7553,3 @@ After each release or ruling, in this order:
 3. Change part 5 only when a phase changes status.
 4. Make the same changes in `BUILD-LEDGER.html` and republish the [Rokugan Build Ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk). Its
    summary sections mirror parts 1 to 4; each history entry is a closed section at the top of its update history.
-
-`BUILD-LEDGER.html` beside this file is the source of the published page. GitHub shows it as source rather than a
-rendered page: open it locally, or use the link above. Its tick-boxes (the Android tests, Phase 9's items) persist only
-inside the published page; this file's task-list boxes can be ticked by hand.
