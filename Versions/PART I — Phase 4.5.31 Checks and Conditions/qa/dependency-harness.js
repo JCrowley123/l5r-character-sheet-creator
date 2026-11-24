@@ -78,7 +78,8 @@ const variants = [
         document.getElementById('techList').appendChild(spell); T.recalcAll();
         return {seam:!!T.CHK4531,
           rows:document.querySelectorAll('#disadvList .chk4531-row').length === 4,
-          check:[...document.querySelectorAll('.chk4531-btn')].some(b => b.textContent === 'Check (TN 25)'),
+          // Release 15b B01 present: Brash's button reads "Resist insult (TN 25)" (declared in B01's and this phase's ROLLBACK.md).
+          check:[...document.querySelectorAll('.chk4531-btn')].some(b => b.textContent === (T.CN15 && T.CN15.installed && T.CHECK_BUTTON_NAMES_ENABLED ? 'Resist insult (TN 25)' : 'Check (TN 25)')),
           armor:+document.getElementById('f_baseTN').value === 8,
           gate:voidOpts.length > 0 && voidOpts.every(o => o.disabled && / — needs Ishiken-Do/.test(o.textContent)),
           lostLove:has(ctx('TRAIT', {traitName:'Strength'}), 'Lost Love'),

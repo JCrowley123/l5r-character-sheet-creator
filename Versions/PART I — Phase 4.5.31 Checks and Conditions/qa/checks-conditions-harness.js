@@ -13,6 +13,12 @@
  *   Ishiken-Do (p.151): Shugenja only; Void spells need it to be learned or cast (owner's ruling),
  *   reported never blocked, scrolls untouched.
  *   TN +N is reported as -N to the total (Doubt's convention). Never on damage; initiative has no TN.
+ * Conditional on Release 15b B01 (PART H PHASE 15.2.6, check buttons named for what they do), declared in B01's and
+ * this phase's ROLLBACK.md (24 November 2026): with B01 present seven buttons carry the owner's Q8 words (Brash
+ * "Resist insult (TN 25)", Can't Lie "Discretion check (TN 20)", Contrary "Cooperate", Overconfident "Measure the
+ * enemy (TN 20)", Rumormonger "Resist gossip (TN 5 × Glory)", Soft-Hearted "Resolve check (TN 20)", Lost Love
+ * "Steady yourself — Spend Void"), so the row checks expect those words and the presses look for them. The rolls,
+ * TNs, notes and every other check are unchanged. Same checks, same count; with B01 removed every line runs as before.
  * node checks-conditions-harness.js <sheet.html>
  */
 'use strict';
@@ -35,6 +41,12 @@ const ALL = [...DISADV, 'Ishiken-Do'];
 const LIST = name => name === 'Ishiken-Do' ? 'advList' : 'disadvList';
 const LABELS = ['Brash', 'Brash: Honor Rank', 'Lost Love', 'Soft-Hearted', 'Blind', 'Lame', 'Missing Limb', 'Disbeliever'];
 const SOCIAL = ['Acting', 'Courtier', 'Etiquette', 'Perform: Song', 'Sincerity', 'Intimidation', 'Temptation'];
+// Release 15b B01 present: the seven buttons it names, by entry and today's word (declared above).
+let NAMED = false;
+const B01 = {'Brash|Check (TN 25)':'Resist insult (TN 25)', 'Can’t Lie|Check (TN 20)':'Discretion check (TN 20)', 'Contrary|Check':'Cooperate',
+  'Overconfident|Check (TN 20)':'Measure the enemy (TN 20)', 'Rumormonger|Check (TN 5 × Glory)':'Resist gossip (TN 5 × Glory)',
+  'Soft-Hearted|Check (TN 20)':'Resolve check (TN 20)', 'Lost Love|Spend a Void Point':'Steady yourself — Spend Void'};
+const named = (name, text) => NAMED && B01[name + '|' + text] ? B01[name + '|' + text] : text;
 
 async function setup(page, entries = [], {school = null, wrongList = false, configs = {}, traits = {}} = {}) {
   await page.keyboard.press('Escape').catch(() => {});
@@ -85,7 +97,7 @@ async function press(page, name, text) {
   await page.evaluate(({name, text}) => {
     const div = [...document.querySelectorAll('#advList .entry, #disadvList .entry')].find(d => d.querySelector('.en-name').value === name);
     const b = div && [...div.querySelectorAll('.chk4531-row button')].find(x => x.textContent === text);
-    if (!b) throw Error('No ' + text + ' button on ' + name); b.click(); }, {name, text});
+    if (!b) throw Error('No ' + text + ' button on ' + name); b.click(); }, {name, text:named(name, text)});
 }
 const dice = (page, faces) => page.evaluate(faces => { let i = 0; Math.random = () => ((faces[i++ % faces.length] - 0.5) / 10); }, faces);
 async function rollCheck(page, name, text) {
@@ -120,6 +132,7 @@ async function main() {
     await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_CAROUSEL__?.isReady?.() &&
       (!window.__L5R_TEST__.CL11 || window.__L5R_TEST__.CL11.ready));
     await page.evaluate(() => window.__L5R_TEST__.CL11?.close?.());
+    NAMED = await page.evaluate(() => !!(window.__L5R_TEST__.CN15 && window.__L5R_TEST__.CN15.installed && window.__L5R_TEST__.CHECK_BUTTON_NAMES_ENABLED));
     const weapons = await page.evaluate(() => { const T = window.__L5R_TEST__;
       return {ranged:T.WEAPON_LIBRARY.find(w => T.isRangedWeapon(w)).name, melee:T.WEAPON_LIBRARY.find(w => !T.isRangedWeapon(w) && w.skill === 'Kenjutsu').name}; });
 
@@ -146,15 +159,15 @@ async function main() {
       await setup(page, ALL);
       const rows = {};
       for (const n of ALL) rows[n] = await rowOf(page, n);
-      check('CK-ROW-BRASH', [rows['Brash'].buttons, rows['Brash'].notes], [['Check (TN 25)'], ['Adds your Honor Rank.']]);
-      check('CK-ROW-CANT-LIE', rows['Can’t Lie'].buttons, ['Check (TN 20)']);
-      check('CK-ROW-CONTRARY', [rows['Contrary'].buttons, rows['Contrary'].boxes], [['Check'], ['15']]);
+      check('CK-ROW-BRASH', [rows['Brash'].buttons, rows['Brash'].notes], [[named('Brash', 'Check (TN 25)')], ['Adds your Honor Rank.']]);
+      check('CK-ROW-CANT-LIE', rows['Can’t Lie'].buttons, [named('Can’t Lie', 'Check (TN 20)')]);
+      check('CK-ROW-CONTRARY', [rows['Contrary'].buttons, rows['Contrary'].boxes], [[named('Contrary', 'Check')], ['15']]);
       check('CK-ROW-EPILEPSY', rows['Epilepsy'].buttons, ['Avoid (TN 15)', 'End seizure (TN 10)']);
-      check('CK-ROW-OVERCONFIDENT', rows['Overconfident'].buttons, ['Check (TN 20)']);
-      check('CK-ROW-RUMORMONGER', [rows['Rumormonger'].buttons, rows['Rumormonger'].boxes], [['Check (TN 5 × Glory)'], ['']]);
-      check('CK-ROW-SOFT-HEARTED', [rows['Soft-Hearted'].buttons, rows['Soft-Hearted'].switches], [['Check (TN 20)'], [['Wracked with guilt (TN +10)', false]]]);
+      check('CK-ROW-OVERCONFIDENT', rows['Overconfident'].buttons, [named('Overconfident', 'Check (TN 20)')]);
+      check('CK-ROW-RUMORMONGER', [rows['Rumormonger'].buttons, rows['Rumormonger'].boxes], [[named('Rumormonger', 'Check (TN 5 × Glory)')], ['']]);
+      check('CK-ROW-SOFT-HEARTED', [rows['Soft-Hearted'].buttons, rows['Soft-Hearted'].switches], [[named('Soft-Hearted', 'Check (TN 20)')], [['Wracked with guilt (TN +10)', false]]]);
       check('CK-ROW-LOST-LOVE', [rows['Lost Love'].buttons, rows['Lost Love'].switches, /twice a day/.test(rows['Lost Love'].notes.join(' '))],
-        [['Spend a Void Point'], [['Reminded of your loss (TN +5)', false]], true]);
+        [[named('Lost Love', 'Spend a Void Point')], [['Reminded of your loss (TN +5)', false]], true]);
       check('CK-ROW-MISSING-LIMB', rows['Missing Limb'].limb, '');
       check('CK-ROW-LAME-REMINDS-MOVE', /Water counts as 1/.test(rows['Lame'].notes.join(' ')));
       check('CK-ROW-BLIND-REMINDERS', /Reflexes \+ 5/.test(rows['Blind'].notes[0]) && /Water counts 2 lower/.test(rows['Blind'].notes[0]) &&

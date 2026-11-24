@@ -364,6 +364,9 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999999999995-feat-jigoku-total-first.js"),
     Release("PART H — Phase 15 Implementation/Release 15b/B17 — One Row for Kharmic Tie",
             fragment="src/sheet/209.9999999999999999996-feat-kharmic-tie-row.js"),
+    # Release 15b, group 2: action labels and wording.
+    Release("PART H — Phase 15 Implementation/Release 15b/B01 — Check Buttons Named for What They Do",
+            fragment="src/sheet/209.9999999999999999997-feat-check-button-names.js"),
 )
 
 

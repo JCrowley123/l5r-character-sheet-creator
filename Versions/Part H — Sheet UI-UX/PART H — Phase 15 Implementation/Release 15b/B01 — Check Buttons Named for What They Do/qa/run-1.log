@@ -1,0 +1,20 @@
+  detail CN-CONTRARY-ROLL-PHONE: "exception: locator.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Cooperate: Contrary, Willpower roll when a dispute is going on', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"ghost chk4531-btn\" aria-label=\"Cooperate: Contrary, Willpower roll when a dispute is going on\">Cooperate</button>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabl"
+  detail CN-RUMORMONGER-ROLL-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Resist gossip (TN 5 × Glory): Rumormonger, Willpower roll to keep a rumor to yourself', exact: true })\u001b[22m\n"
+  detail CN-OTHER-ROLLS-PHONE: "exception: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Measure the enemy (TN 20): Overconfident, Perception roll to see that a foe is clearly better than you', exact: true })\u001b[22m\n"
+  detail CN-LOST-LOVE-SPENDS-PHONE: "exception: locator.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .chk4531-toggle[data-chk4531=\"reminded\"]')\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"checkbox\" class=\"chk4531-toggle\" data-chk4531=\"reminded\"/>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\""
+PASS CN-SEAM-PHONE
+PASS CN-LABELS-PHONE
+PASS CN-SPOKEN-PHONE
+PASS CN-EPILEPSY-UNCHANGED-PHONE
+PASS CN-BRASH-ROLL-PHONE
+FAIL CN-CONTRARY-ROLL-PHONE
+FAIL CN-RUMORMONGER-ROLL-PHONE
+FAIL CN-OTHER-ROLLS-PHONE
+FAIL CN-LOST-LOVE-SPENDS-PHONE
+PASS CN-FITS-PHONE
+PASS CN-SURVIVES-REDRAW-PHONE
+PASS CN-NO-ERRORS-PHONE
+PASS CN-LABELS-DESKTOP
+PASS CN-FITS-DESKTOP
+PASS CN-NO-ERRORS-DESKTOP
+11/15 checks passed

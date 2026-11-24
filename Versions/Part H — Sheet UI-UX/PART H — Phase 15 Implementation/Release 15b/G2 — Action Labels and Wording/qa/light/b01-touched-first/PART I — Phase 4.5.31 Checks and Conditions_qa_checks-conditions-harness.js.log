@@ -1,0 +1,82 @@
+PASS CK-SEAM
+PASS CK-REGISTRY-STILL-SEVEN
+PASS CK-CATALOGUE
+PASS CK-TICK-PROVIDER-REGISTERED
+PASS CK-NOTHING-WITHOUT-ENTRIES
+PASS CK-NO-ROWS-WITHOUT-ENTRIES
+FAIL CK-ROW-BRASH actual=[["Resist insult (TN 25)"],["Adds your Honor Rank."]] expected=[["Check (TN 25)"],["Adds your Honor Rank."]]
+FAIL CK-ROW-CANT-LIE actual=["Discretion check (TN 20)"] expected=["Check (TN 20)"]
+FAIL CK-ROW-CONTRARY actual=[["Cooperate"],["15"]] expected=[["Check"],["15"]]
+PASS CK-ROW-EPILEPSY
+FAIL CK-ROW-OVERCONFIDENT actual=["Measure the enemy (TN 20)"] expected=["Check (TN 20)"]
+FAIL CK-ROW-RUMORMONGER actual=[["Resist gossip (TN 5 × Glory)"],[""]] expected=[["Check (TN 5 × Glory)"],[""]]
+FAIL CK-ROW-SOFT-HEARTED actual=[["Resolve check (TN 20)"],[["Wracked with guilt (TN +10)",false]]] expected=[["Check (TN 20)"],[["Wracked with guilt (TN +10)",false]]]
+FAIL CK-ROW-LOST-LOVE actual=[["Steady yourself — Spend Void"],[["Reminded of your loss (TN +5)",false]],true] expected=[["Spend a Void Point"],[["Reminded of your loss (TN +5)",false]],true]
+PASS CK-ROW-MISSING-LIMB
+PASS CK-ROW-LAME-REMINDS-MOVE
+PASS CK-ROW-BLIND-REMINDERS
+PASS CK-ROW-ISHIKEN-NON-SHUGENJA
+PASS CK-ROW-ISHIKEN-SHUGENJA-NONE
+PASS CK-PLAY-MODE
+PASS CK-MANAGE-LIMB-EDITABLE
+FAIL CK-CHECKS-EXCEPTION actual="page.evaluate: Error: No Check (TN 25) button on Brash\n    at eval (eval at evaluate (:311:30), <anonymous>:4:19)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at press (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:85:14)\n    at rollCheck (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:92:9)\n    at C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:180:21\n    at async section (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:30:9)\n    at async main (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:176:5)" expected="no exception"
+PASS CK-TICKS-UNTICKED-BY-DEFAULT
+PASS CK-LAME-AGILITY-ROLLS
+PASS CK-LAME-NOT-OTHER-TRAITS
+PASS CK-LAME-ARMED-TN-10
+PASS CK-MISSING-LIMB-EVERY-ROLL
+PASS CK-MISSING-LIMB-NOT-DAMAGE-OR-INITIATIVE
+PASS CK-MISSING-LIMB-UNCHOSEN-LABEL
+PASS CK-MISSING-LIMB-NAMES-THE-LIMB
+PASS CK-MISSING-LIMB-ARMED-TN-10
+PASS CK-DISBELIEVER-SEVEN-SOCIAL
+PASS CK-DISBELIEVER-NOT-OTHER
+PASS CK-DISBELIEVER-ARMED-TN-5
+PASS CK-PREVIEW-BOXES
+PASS CK-PREVIEW-TICK-REACHES-TOTAL
+PASS CK-SWITCHES-OFF-NOTHING
+PASS CK-LOST-LOVE-EVERY-TN
+PASS CK-LOST-LOVE-NOT-DAMAGE-INITIATIVE
+PASS CK-LOST-LOVE-SAVED
+FAIL CK-SWITCHES-EXCEPTION actual="page.evaluate: Error: No Spend a Void Point button on Lost Love\n    at eval (eval at evaluate (:311:30), <anonymous>:4:19)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at press (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:85:14)\n    at C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:275:13\n    at async section (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:30:9)\n    at async main (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:263:5)" expected="no exception"
+PASS CK-BLIND-CORE-BASELINE
+PASS CK-BLIND-ARMOR-TN
+PASS CK-BLIND-IDEMPOTENT
+PASS CK-BLIND-FOLLOWS-REFLEXES
+PASS CK-BLIND-REMOVED-CORE-BACK
+PASS CK-BLIND-RANGED
+PASS CK-BLIND-MELEE
+PASS CK-BLIND-UNARMED-IS-MELEE
+PASS CK-BLIND-NOT-DAMAGE
+PASS CK-BLIND-PERCEPTION-INFO
+PASS CK-BLIND-NOT-OTHER-ROLLS
+PASS CK-WRONG-LIST-NO-ROWS
+PASS CK-WRONG-LIST-NO-EFFECT
+PASS CK-DUPLICATE-ONCE
+PASS CK-DUPLICATE-BLIND-ARMOR-ONCE
+PASS CK-NOTHING-ELSE-SAVED
+PASS CK-ISHIKEN-PICKER-NON-SHUGENJA
+PASS CK-ISHIKEN-PICKER-SHUGENJA
+PASS CK-PICKER-SAME-SPELLS-LISTED
+PASS CK-PICKER-VOID-LISTED
+PASS CK-PICKER-VOID-GREYED-WITHOUT
+PASS CK-PICKER-OTHERS-UNCHANGED
+PASS CK-PICKER-NOTHING-GATED-WITH
+PASS CK-WIZARD-GROUPS-WITHOUT
+PASS CK-WIZARD-STEP-GREYED
+PASS CK-WIZARD-GROUPS-WITH
+PASS CK-WIZARD-STEP-NOT-GREYED-WITH
+PASS CK-ADD-VOID-REFUSED-SCROLL-KEPT
+PASS CK-ADD-VOID-WITH-ISHIKEN
+PASS CK-NO-SCHOOL-GIVES-VOID
+PASS CK-VOID-ON-LIST-FLAGGED
+PASS CK-VOID-CAST-NOT-BLOCKED
+PASS CK-VOID-ON-LIST-CLEAR-WITH
+PASS CK-UNIVERSAL-NEVER-VOID-WITHOUT
+PASS CK-UNIVERSAL-NEVER-VOID-WITH
+PASS CK-VOID-SCROLL-STILL-OFFERED
+PASS CK-ROW-LAYOUT-320
+PASS CK-TOUCH-TARGETS
+PASS CK-NO-PAGE-ERRORS
+
+71/80 checks passed

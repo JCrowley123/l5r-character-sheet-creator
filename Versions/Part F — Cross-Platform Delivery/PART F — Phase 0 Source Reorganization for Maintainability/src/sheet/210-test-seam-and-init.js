@@ -1031,6 +1031,9 @@
   // PART H PHASE 15.2.5 BEGIN kharmic-tie-row-seam
   if(typeof KT15 === 'object' && KT15) Object.assign(window.__L5R_TEST__, {KT15, KHARMIC_TIE_ROW_ENABLED});
   // END KT15 kharmic-tie-row-seam
+  // PART H PHASE 15.2.6 BEGIN check-button-names-seam
+  if(typeof CN15 === 'object' && CN15) Object.assign(window.__L5R_TEST__, {CN15, CHECK_BUTTON_NAMES_ENABLED});
+  // END CN15 check-button-names-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

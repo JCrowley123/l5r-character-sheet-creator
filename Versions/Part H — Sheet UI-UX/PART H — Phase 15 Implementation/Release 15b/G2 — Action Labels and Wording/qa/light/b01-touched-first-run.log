@@ -1,0 +1,24 @@
+OK   35/35  Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/qa/info-pattern-harness.js  (12 s)
+OK   50/50  Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/qa/picker-info-harness.js  (10 s)
+OK   51/51  PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-harness.js  (3 s)
+OK   48/48  PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-expansion-harness.js  (2 s)
+OK   163/163  PART I — Phase 4.5.2 Disadvantages/qa/disadv-config-harness.js  (5 s)
+OK   28/28  PART I — Phase 4.5.4 Configuration UX Pass/qa/adv-config-ux-harness.js  (2 s)
+OK   62/62  PART I — Phase 4.5.10 Cursed by the Realm/qa/disadv-realm-harness.js  (8 s)
+OK   53/53  PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js  (7 s)
+OK   212/212  PART K — Phase 12.5 Play Mode Advantages and Disadvantages/qa/advantages-harness.js  (10 s)
+FAIL 71/80  PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js  (2 s)
+FAIL CK-ROW-BRASH actual=[["Resist insult (TN 25)"],["Adds your Honor Rank."]] expected=[["Check (TN 25)"],["Adds your Honor Rank."]]
+FAIL CK-ROW-CANT-LIE actual=["Discretion check (TN 20)"] expected=["Check (TN 20)"]
+FAIL CK-ROW-CONTRARY actual=[["Cooperate"],["15"]] expected=[["Check"],["15"]]
+FAIL CK-ROW-OVERCONFIDENT actual=["Measure the enemy (TN 20)"] expected=["Check (TN 20)"]
+FAIL CK-ROW-RUMORMONGER actual=[["Resist gossip (TN 5 × Glory)"],[""]] expected=[["Check (TN 5 × Glory)"],[""]]
+FAIL CK-ROW-SOFT-HEARTED actual=[["Resolve check (TN 20)"],[["Wracked with guilt (TN +10)",false]]] expected=[["Check (TN 20)"],[["Wracked with guilt (TN +10)",false]]]
+FAIL CK-ROW-LOST-LOVE actual=[["Steady yourself — Spend Void"],[["Reminded of your loss (TN +5)",false]],true] expected=[["Spend a Void Point"],[["Reminded of your loss (TN +5)",false]],true]
+FAIL CK-CHECKS-EXCEPTION actual="page.evaluate: Error: No Check (TN 25) button on Brash\n    at eval (eval at evaluate (:311:30), <anonymous>:4:19)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at press (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:85:14)\n    at rollCheck (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:92:9)\n    at C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:180:21\n    at async section (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:30:9)\n    at async main (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:176:5)" expected="no exception"
+FAIL CK-SWITCHES-EXCEPTION actual="page.evaluate: Error: No Spend a Void Point button on Lost Love\n    at eval (eval at evaluate (:311:30), <anonymous>:4:19)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at press (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:85:14)\n    at C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:275:13\n    at async section (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:30:9)\n    at async main (C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js:263:5)" expected="no exception"
+OK   69/69  PART I — Phase 4.5.32 Damage, Sessions and XP/qa/damage-sessions-xp-harness.js  (2 s)
+OK   62/62  PART K — Phase 14 Search/qa/search-harness.js  (2 s)
+OK   44/44  PART K — Phase 14.1 Search Facets/qa/facets-harness.js  (3 s)
+OK   14/14  PART K — Phase 14.1 Search Facets/qa/dependency-harness.js  (5 s)
+LIGHT 13/14 harnesses, 962/971 checks

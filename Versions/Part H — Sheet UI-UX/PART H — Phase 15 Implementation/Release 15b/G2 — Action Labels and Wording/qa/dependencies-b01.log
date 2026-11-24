@@ -1,0 +1,13 @@
+== B01 PART H PHASE 15.2.6 exit 0
+fragment : src/sheet/209.9999999999999999997-feat-check-button-names.js
+marker   : PART H PHASE 15.2.6
+surface  : 3 name(s) -- CHECK_BUTTON_NAMES_ENABLED, CN15, check-button-names-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1034  [PART H PHASE 15.2.6 +0]  // PART H PHASE 15.2.6 BEGIN check-button-names-seam
+    own   1035  [PART H PHASE 15.2.6 +1]  if(typeof CN15 === 'object' && CN15) Object.assign(window.__L5R_TEST__, {CN15, CHECK_BUTTON_NAME
+    own   1036  [PART H PHASE 15.2.6 +2]  // END CN15 check-button-names-seam
+
+every reference is inside a block PART H PHASE 15.2.6 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 1/1
