@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is live, what is next, what it has cost, and every dated update. **Start with part 1**, which says where things stand now. Parts 1 to 4 are rewritten at each update, so they always read as current. Part 6 keeps every dated update, newest first, as it was written.
 
-Updated **23 November 2026** (Claude) and reorganised that day at the owner's request. Nothing was removed. The dated paragraphs that had gathered at the top of parts 1 to 4 now sit in their update's entry in part 6, and the earlier summaries are in part 8.
+Updated **24 November 2026** (Claude). Reorganised on 23 November 2026 at the owner's request. Nothing was removed. The dated paragraphs that had gathered at the top of parts 1 to 4 now sit in their update's entry in part 6, and the earlier summaries are in part 8.
 
 **Contents**
 
@@ -22,17 +22,18 @@ Updated **23 November 2026** (Claude) and reorganised that day at the owner's re
 
 ## 1. Now
 
-- **Live:** Release 15b group 1 (A14, B04, B14 and B17), on top of all 26 units of Release 15a. It went live on 23 November 2026 (`main` `e638e052`, application `5ac767c6…574d`). On the live files, 130 harnesses passed 5,541/5,541 checks, and the browser and offline test passed 22/22.
+- **Live:** Release 15b groups 1 and 2 (A14, B04, B14, B17; B01, B03, B05, B09), on top of all 26 units of Release 15a. Group 2 went live on 24 November 2026 (`main` `be14d725`, application `1f002be9…5819`). On the live files, 159 harnesses passed 6,263/6,263 checks, and the browser and offline test passed 22/22.
 - **Waiting on you:** your rulings on B18's button inventory (405 controls in 23 groups), on [its ruling page](https://claude.ai/artifact/CfJNQtsc9wsm5vpGP7NW76).
-- **Next:** Release 15b group 2 (B01, B03, B05 and B09), mock-ups first. What is next has the rest of the order.
-- **Cost so far:** Phase 15 has used about 258 weekly points: about 229 for Release 15a, 4 for the review after it and 25 for 15b group 1. The weekly meter read 60% after group 1's go-live, and it resets on 25 November.
+- **Next:** Release 15b group 3 (B06, B10, B11 and B16), mock-ups first. What is next has the rest of the order.
+- **Cost so far:** Phase 15 has used about 288 weekly points: about 229 for Release 15a, 4 for the review after it, 25 for 15b group 1 and 30 for group 2. The weekly meter read 95% after group 2's go-live, and it resets on 25 November at 01:00 UTC.
 
 ### Phase 15 so far
 
-Phase 15 is the UI consistency pass. Each finding is its own removable unit, and you accept it on your devices before it goes live. Release 15a is complete, and Release 15b has started. Newest first; each group's name links to its handover.
+Phase 15 is the UI consistency pass. Each finding is its own removable unit, and you accept it on your devices before it goes live. Release 15a is complete, and Release 15b's groups 1 and 2 are live. Newest first; each group's name links to its handover.
 
 | Group | Units | Live | Full pass | Live checks | Points |
 |---|---|---|---|---|---:|
+| [15b group 2 · Action labels and wording](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G2 — Action Labels and Wording/HANDOVER.md>) | B01, B03, B05, B09 | 24 Nov | 7,562 / 7,432 | 6,263 + 22 | about 30 |
 | [15b group 1 · Totals and their breakdowns](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G1 — Totals and Their Breakdowns/HANDOVER.md>) | A14, B04, B14, B17 | 23 Nov | 7,505 / 7,380 | 5,541 + 22 | about 25 |
 | [15a G6 · New functions](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G6 — New Functions/HANDOVER.md>) | A19 revision 1, A20, A19.1 | 19 Nov | 7,453 / 7,328 ×2 | 4,930 + 22 | 23 |
 | [15a G5 · Undo and the roll preview](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/G5 — Undo and the Roll Preview/HANDOVER.md>) | A08 | 18 Nov | 7,401 / 7,307 ×2 | 3,464 + 22 | 17 |
@@ -63,13 +64,13 @@ Release 15b follows the [work order of 19 November 2026](https://claude.ai/artif
 | Step | Units | State |
 |---|---|---|
 | **B18 · One name per button job** | every button's label, sheet-wide | Inventory done on 21 November (405 controls in 23 groups); waiting for your rulings, then its own build group |
-| **Group 2** | B01, B03, B05, B09 | Next, mock-ups first |
-| **Group 3** | B06, B10, B11, B16 | Waiting |
+| **Group 3** | B06, B10, B11, B16 | Next, mock-ups first |
 | **Group 4** | B07, B08 (behaviour) | Waiting |
 | **Group 5** | B12, B13 | Waiting; takes A03's print note (B12) and the colophon's mon (B13) |
+| Group 2 | B01, B03, B05, B09 | Live on 24 November; B01 and B03 revised in a narrow round 2 |
 | Group 1 | A14, B04, B14, B17 | Live on 23 November; B02 dropped |
 
-15b was re-estimated on 19 November at about 120 weekly points (85–182). Group 1 used about 25.
+15b was re-estimated on 19 November at about 120 weekly points (85–182). Group 1 used about 25 and group 2 about 30.
 
 ### After Phase 15
 
@@ -78,7 +79,7 @@ In the order agreed after G6, each starting only on your word:
 1. **The resistance phase:** each resist shows its own bonus. You lean to versions 1 and 2, resumed as one whole-row design. The rules read is complete (245 rows); its question 5 is still open.
 2. **School Techniques, Kata and Kiho as modifiers,** applied the way Advantages are.
 
-**Raised since, not yet placed:** a Taint phase, in which "Lost" follows the Taint Rank (5, or 7 when a Ring reached 6 first; Core Rulebook p.278). It came from group 1's device round.
+**Raised since, not yet placed:** a Taint phase, in which "Lost" follows the Taint Rank (5, or 7 when a Ring reached 6 first; Core Rulebook p.278). It came from group 1's device round. From group 2's device round: a full rules read and audit of combat before anything in the combat overhaul is built (initiative, Quick and Leadership), with status conditions such as Dazed tracked by the sheet; and a consistency unit for badges, ticks and how an entry shows its choice (part 4).
 
 **Placed on 4 November as candidates after Phase 15, not approved:** the Combat tab, which will also take the stats header and the Combat page's i's; ronin; tattoos; sync stages A and B; the career planner; the PDF fixes and the core-book-style redraw; and FT-16, fuller Search descriptions. Their estimates are in Claude's review of 4 November (the 4 November entries in part 6).
 
@@ -90,13 +91,14 @@ A point is 1% of the Claude Pro weekly allowance, read from the account's usage 
 
 | Work | When | Points |
 |---|---|---:|
+| Release 15b group 2 | 23–24 Nov 2026 | about 30 |
 | Release 15b group 1 | 20–23 Nov 2026 | about 25 |
 | The review after Release 15a | 19 Nov 2026 | about 4 |
 | Release 15a, 26 units (by group in part 1) | 4–19 Nov 2026 | about 229 |
 | Everything before Phase 15: the phases, then Cycles 1 to 8 | 9 Sep – 4 Nov 2026 | about 830 |
-| **Planned:** the rest of Release 15b | from 24 Nov 2026 | about 95 (60–157) |
+| **Planned:** the rest of Release 15b | from 25 Nov 2026 | about 65 (30–127) |
 
-15a was planned at 94 (58–150) and cost about 229. 15b is estimated at about 120 (85–182) in all, so the rest of it is that estimate less group 1's 25.
+15a was planned at 94 (58–150) and cost about 229. 15b is estimated at about 120 (85–182) in all, so the rest of it is that estimate less groups 1 and 2 (about 55).
 
 Not counted in 15a: A12's resistance mock-ups (about 7) and Claude's share of the resistance rules read (about 13), which moved to the resistance phase. On 13 November the meter fell from about 99% to 58% with no weekly reset, so 15a's figures add the stretches on either side.
 
@@ -348,6 +350,8 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 
 Open items from Phase 15 onwards, kept until their turn. Each is written in full in its dated entry in part 6. Items parked before Phase 15 follow, as they were written.
 
+- **Badges, ticks and how an entry shows its choice.** Lord Moon's full-moon tick is larger and in ordinary case beside the small-capitals ticks; Great Potential's choice is a grey pill, Elemental Blessing's and Sworn Enemy's a plain line, Lord Moon's a small-capitals label. Great Potential's badge belongs in the consistency pass. *Raised 24 Nov (15b group 2, comments 1 and 4) · a unit of its own, from B18's inventory.*
+- **Combat: a rules read and audit first.** Before anything in the combat overhaul is built, a complete read of how combat works (initiative, Quick and Leadership among it), then an audit; status conditions such as Dazed tracked and automated by the sheet. *Raised 24 Nov (15b group 2, comments 6, 7 and 9) · before the combat overhaul.*
 - **The Combat page's information buttons.** The formula i's beside Armor & TN and Weapons are a gold ⓘ in a gold ring, and each stance tile has a small grey ⓘ. Neither matches the sheet's standard ink ring. *Raised 23 Nov (15b group 1, P1) · with the Combat tab.*
 - **Touch of the Spirit Realms' dashed badge.** The realm is drawn as the dashed badge. When that is fixed, check the whole sheet for missing or mismatched badges. *Raised 23 Nov (15b group 1, P2) · not placed.*
 - **A Taint phase.** Jigoku's "Lost" tick reads like "lost your way", and it can be ticked with no Taint. It should follow the Taint Rank (Core Rulebook p.278). *Raised 23 Nov (15b group 1, P3) · its own phase after Phase 15.*
@@ -1645,6 +1649,30 @@ until that evening.)
 ## 6. The update log, newest first
 
 Every update as it was written, newest first. Since 23 November 2026 each update is one entry holding everything recorded that day; the entries from 2 to 23 November were gathered the same way when the ledger was reorganised, with labels for what had sat in parts 1 to 4. Figures in older entries were true when written; where they differ from parts 1 to 4, those parts are current.
+
+### 24 November 2026 — Claude: Release 15b group 2 (B01, B03, B05, B09) qualified and live
+
+**24 November 2026 · Release 15b group 2 live (Claude).** On the owner's word ("Go live", to the question "Put group 2 live?"), `main` was fast-forwarded from `acdb6f75` to `be14d725` at 22:53 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `1f002be9…5819`, deployed page `0f3f9b841764…`, service worker build `ac7f49e9781c15eb`); 159 application harnesses passed 6,263/6,263 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G2 — Action Labels and Wording/HANDOVER.md>).
+
+**24 November 2026 · Release 15b group 2 qualified (Claude).** Release 15b's second group is four screen-only units on stacked branches, markers `PART H PHASE 15.2.6` to `.9`: B01 (Check Buttons Named for What They Do: seven Disadvantage check buttons named for what they do, such as Brash's "Resist insult (TN 25)" and Lost Love's "Steady yourself — Spend Void", each spoken name starting with the button's words), B03 (Lead an Ally: Leadership reads "Lead an ally" and Quick reads "Use", each with its amount beside it), B05 (You Remain in Control: Touch of the Void's and Lord Moon's Curse's success lines) and B09 (Skill Picker Traits from the Final List: Intimidation reads "(Awareness)", like the row it adds). The owner approved the mock-ups as recommended and said "Build here". At the first device round every check passed; the owner accepted B05 and B09 and gave nine comments. A narrow round 2 for B01 and B03 was approved as shown: Lord Moon's resist button at the check buttons' size, Touch of the Void's button outlined and named "Keep control (TN 30)", ten failure lines without "Tell the GM", and Quick and Leadership outlined. At the second device round every check passed and both were accepted ("The checks passed and I have updated them. Please proceed").
+
+Every stage passed first time. The chain ran once (19:27 to 19:30 UTC): group removal 30/30 (all four removed restores group 1 as live `5ac767c6…574d` exactly; B01, B03 and B05 each removed alone and B17 removed with the group kept, with every kept harness run in full; and all 26 Release 15a units removed with the group kept, on which all four harnesses passed) and dependencies 4/4. One full pass followed (19:30 to 20:26 UTC): candidate **7,562/7,562** (213 leaves) and retained **7,432/7,432** (207 leaves, group 1 as live less the two live-site leaves), restoring group 1 exactly. No 4× CPU screen: B09 relabels the picker in a MutationObserver callback, a microtask, which a slower CPU cannot reorder. Feature 4.5.31's, Feature 4.5.33's and A07's harnesses now follow B01's switch, with the same ids and counts.
+
+*What was next:*
+
+**24 November 2026 · after 15b group 2 (Claude).** Next: the owner's rulings on B18's button inventory, then Release 15b group 3 (B06, B10, B11, B16), mock-ups first.
+
+*Cost:*
+
+**24 November 2026 · 15b group 2 (Claude).** Mock-ups, build, two device rounds, qualification and go-live by Claude from 23 to 24 November on a Pro plan, with no weekly reset in between: weekly all models 65% at the start of the mock-ups, 69% at "Build here", 76% built and previewed, 83% with round 2 built and previewed, 87% after the full pass and 95% after the go-live and these records, so about 30 weekly points for the group (the kickoff session's turns in the same window are included).
+
+*Parked or left open:*
+
+**24 November 2026 · from 15b group 2's device round (Claude).** Two items, neither for group 2: (1) a consistency unit for badges, ticks and how an entry shows its choice (Lord Moon's tick, Great Potential's pill, Elemental Blessing's and Sworn Enemy's plain lines, Lord Moon's small-capitals severity), from B18's inventory; (2) the owner's combat notes: a complete rules read and an audit of combat before anything in the combat overhaul is built (initiative, Quick and Leadership), with status conditions such as Dazed tracked and automated. The owner's screenshots and nine comments are in the group's DEVICE-CHECKS.md. B18's rulings are pending.
+
+*The summary at the top of the ledger then:*
+
+**24 November 2026 · Now (Claude).** Live: Release 15b groups 1 and 2 on top of all 26 units of Release 15a (`main` `be14d725`, application `1f002be9…5819`; 6,263/6,263 in 159 harnesses and 22/22 on the live files). Waiting on the owner: B18's rulings. Next: Release 15b group 3, mock-ups first. Phase 15 so far: about 288 weekly points.
 
 ### 23 November 2026 — Claude: Release 15b group 1 (A14, B04, B14, B17) qualified and live
 

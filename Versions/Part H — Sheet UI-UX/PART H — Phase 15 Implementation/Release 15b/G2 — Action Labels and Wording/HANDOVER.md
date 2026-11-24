@@ -1,6 +1,6 @@
 # Release 15b · group 2 (B01, B03, B05, B09) — handover
 
-24 November 2026 (Claude). **Accepted and qualified** (24 November). Not live: going live, and the records on `main`, need the owner's separate word. The qualification passed every stage first time.
+24 November 2026 (Claude). **Accepted, qualified and live** (24 November). The qualification passed every stage first time.
 
 **What group 2 is:** four units on stacked branches, on top of group 1 as live.
 
@@ -95,8 +95,32 @@ Claude, Opus 5.5, Pro plan; account-wide weekly meter:
 | 24 November, round 2 built and previewed | 83% |
 | 24 November, before qualification | 86% |
 | 24 November, after the full pass | 87% |
+| 24 November, after the go-live, its production checks and the records | 95% |
+
+## Production
+
+**24 November 2026 · group 2 live (Claude).** On the owner's word ("Go live", to the question "Put group 2 live?", relayed by the kickoff session), `main` was fast-forwarded from `acdb6f75` to `be14d725` at 22:53 UTC, with no merge commit and no force (14 commits). The first push was held by the session's permission check until the owner allowed it.
+
+Production checks:
+
+- **Files:** all seven deployed files match the qualified build.
+  - Deployed page `0f3f9b841764b9dfcada1b45088bff84a3a8a41dc4aadba7e81f50ad8f6c7838`, 17,780,504 bytes.
+  - Application `1f002be9…5819`.
+  - Service worker build `ac7f49e9781c15eb`.
+- **Harnesses:** 159 application harnesses passed **6,263/6,263** on the downloaded production files (23:19 UTC).
+  - A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once.
+  - Group 2 adds B01's 23, B03's 15, B05's 10 and B09's 9 checks, and the layers of their light checks (round 1's four sets and round 2's union run).
+- **Browser/offline smoke:** **22/22** (23:19 UTC).
+
+**Evidence:**
+- [qa/live/live-verification.json](qa/live/live-verification.json), [qa/live/live-qa.log](qa/live/live-qa.log) and [qa/live/live-browser-smoke.json](qa/live/live-browser-smoke.json);
+- `qa/verify-live.log` and `qa/browser-smoke.log`.
+
+**How they ran:** on the downloaded production files, with `qa/verify-live.py` (group 1's script with the four units added; group 1's light lists read from group 1's folder) and the Older School Choices browser smoke.
+
+The ledger (MD and HTML: parts 1, 2, 3, 4 and 6), the roadmap and a CLAUDE.md pointer are updated. The ledger page is not republished; that waits for the owner.
 
 ## Next
 
-- **The owner's word: "Go live?"** On it: fast-forward `main` to the tip, check the production files, and bring the ledger, roadmap and CLAUDE.md pointer up to date.
-- Then: B18's rulings, and the parked units (badges and choice display; the combat read and audit).
+- B18's rulings on its button inventory (on its ruling page), then Release 15b group 3 (B06, B10, B11, B16), mock-ups first.
+- Parked from this group: the badges, ticks and how an entry shows its choice (a unit of their own, from B18's inventory); the combat notes (a rules read and audit before the combat overhaul, with Dazed tracked as a condition).

@@ -1,5 +1,17 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
+<!-- g2-15b-roadmap -->
+## Release 15b group 2 — 24 November 2026
+
+**24 November 2026 · Release 15b group 2 live (Claude).** On the owner's word ("Go live"), `main` was fast-forwarded from `acdb6f75` to `be14d725` at 22:53 UTC without a merge commit or force. Production: all seven deployed files match the qualified build (application `1f002be9…5819`, deployed page `0f3f9b841764…`, service worker build `ac7f49e9781c15eb`); 159 application harnesses passed 6,263/6,263 on the downloaded production files (A03's 23 always run, plus each unit's own harness and the layers it touches, each counted once); the browser/offline smoke passed 22/22. [Group 2 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/G2 — Action Labels and Wording/HANDOVER.md>).
+
+**24 November 2026 · Release 15b group 2 qualified (Claude).** Release 15b's second group is four screen-only units on stacked branches, markers `PART H PHASE 15.2.6` to `.9`: B01 (Check Buttons Named for What They Do: seven Disadvantage check buttons named for what they do, such as Brash's "Resist insult (TN 25)" and Lost Love's "Steady yourself — Spend Void", each spoken name starting with the button's words; in round 2, Lord Moon's resist button at the check buttons' size, Touch of the Void's button outlined and named "Keep control (TN 30)", and ten failure lines without "Tell the GM"), B03 (Lead an Ally: Leadership reads "Lead an ally" and Quick reads "Use", each with its amount beside it, both outlined in round 2), B05 (You Remain in Control: Touch of the Void's and Lord Moon's Curse's success lines) and B09 (Skill Picker Traits from the Final List: Intimidation reads "(Awareness)", like the row it adds). The owner accepted B05 and B09 at the first device round and asked for a narrow round 2 for B01 and B03 ("Approve as shown"), which passed and was accepted at the second.
+
+Every stage passed first time. The chain ran once (19:27 to 19:30 UTC): group removal 30/30 (all four removed restores group 1 as live `5ac767c6…574d` exactly; B01, B03 and B05 each removed alone and B17 removed with the group kept, with every kept harness run in full; and all 26 Release 15a units removed with the group kept, on which all four harnesses passed) and dependencies 4/4. One full pass followed (19:30 to 20:26 UTC): candidate **7,562/7,562** (213 leaves) and retained **7,432/7,432** (207 leaves), restoring group 1 exactly. No 4× CPU screen: B09's relabelling runs in a MutationObserver callback, a microtask, which a slower CPU cannot reorder.
+
+**24 November 2026 · after 15b group 2 (Claude).** Next: the owner's rulings on B18's button inventory, then Release 15b group 3 (B06, B10, B11, B16), mock-ups first. Parked from group 2's device round: a consistency unit for badges, ticks and how an entry shows its choice (Lord Moon's tick, Great Potential's pill), and the combat notes (a full rules read and audit before the combat overhaul, with status conditions such as Dazed tracked).
+<!-- end-g2-15b-roadmap -->
+
 <!-- g1-15b-roadmap -->
 ## Release 15b group 1 — 23 November 2026
 
