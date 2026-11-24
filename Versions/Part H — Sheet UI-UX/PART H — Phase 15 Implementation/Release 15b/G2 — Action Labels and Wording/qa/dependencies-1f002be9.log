@@ -1,0 +1,56 @@
+== B01 PART H PHASE 15.2.6 exit 0
+fragment : src/sheet/209.9999999999999999997-feat-check-button-names.js
+marker   : PART H PHASE 15.2.6
+surface  : 4 name(s) -- CHECK_BUTTON_NAMES_ENABLED, CN15, check-button-names-seam, cn15-on
+
+src\css\1154-check-button-names.css
+    own      6  [PART H PHASE 15.2.6 +5]  Waits for body.cn15-on, which this unit's switch sets. */
+    own      7  [PART H PHASE 15.2.6 +6]  html body.cn15-on #disadvList button.ghost.lm7-roll{min-width:28px; min-height:0; padding:3px 8p
+
+src\sheet\210-test-seam-and-init.js
+    own   1034  [PART H PHASE 15.2.6 +0]  // PART H PHASE 15.2.6 BEGIN check-button-names-seam
+    own   1035  [PART H PHASE 15.2.6 +1]  if(typeof CN15 === 'object' && CN15) Object.assign(window.__L5R_TEST__, {CN15, CHECK_BUTTON_NAME
+    own   1036  [PART H PHASE 15.2.6 +2]  // END CN15 check-button-names-seam
+
+every reference is inside a block PART H PHASE 15.2.6 owns -- surgical removal covers all of them.
+
+== B03 PART H PHASE 15.2.7 exit 0
+fragment : src/sheet/209.9999999999999999998-feat-lead-an-ally.js
+marker   : PART H PHASE 15.2.7
+surface  : 4 name(s) -- LA15, LEAD_AN_ALLY_ENABLED, la15-amount, lead-an-ally-seam
+
+src\css\1153-lead-an-ally.css
+    own      5  [PART H PHASE 15.2.7 +4]  .la15-amount{font-size:.82rem; line-height:1.35; color:var(--ink-soft); white-space:nowrap;}
+
+src\sheet\210-test-seam-and-init.js
+    own   1037  [PART H PHASE 15.2.7 +0]  // PART H PHASE 15.2.7 BEGIN lead-an-ally-seam
+    own   1038  [PART H PHASE 15.2.7 +1]  if(typeof LA15 === 'object' && LA15) Object.assign(window.__L5R_TEST__, {LA15, LEAD_AN_ALLY_ENAB
+    own   1039  [PART H PHASE 15.2.7 +2]  // END LA15 lead-an-ally-seam
+
+every reference is inside a block PART H PHASE 15.2.7 owns -- surgical removal covers all of them.
+
+== B05 PART H PHASE 15.2.8 exit 0
+fragment : src/sheet/209.9999999999999999999-feat-remain-in-control.js
+marker   : PART H PHASE 15.2.8
+surface  : 3 name(s) -- RC15, REMAIN_IN_CONTROL_ENABLED, remain-in-control-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1040  [PART H PHASE 15.2.8 +0]  // PART H PHASE 15.2.8 BEGIN remain-in-control-seam
+    own   1041  [PART H PHASE 15.2.8 +1]  if(typeof RC15 === 'object' && RC15) Object.assign(window.__L5R_TEST__, {RC15, REMAIN_IN_CONTROL
+    own   1042  [PART H PHASE 15.2.8 +2]  // END RC15 remain-in-control-seam
+
+every reference is inside a block PART H PHASE 15.2.8 owns -- surgical removal covers all of them.
+
+== B09 PART H PHASE 15.2.9 exit 0
+fragment : src/sheet/209.99999999999999999991-feat-picker-traits.js
+marker   : PART H PHASE 15.2.9
+surface  : 3 name(s) -- PICKER_TRAITS_FINAL_ENABLED, SKP15, picker-traits-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1043  [PART H PHASE 15.2.9 +0]  // PART H PHASE 15.2.9 BEGIN picker-traits-seam
+    own   1044  [PART H PHASE 15.2.9 +1]  if(typeof SKP15 === 'object' && SKP15) Object.assign(window.__L5R_TEST__, {SKP15, PICKER_TRAITS_
+    own   1045  [PART H PHASE 15.2.9 +2]  // END SKP15 picker-traits-seam
+
+every reference is inside a block PART H PHASE 15.2.9 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 4/4

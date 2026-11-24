@@ -140,6 +140,19 @@ The owner approved round 2 as shown ("Approve as shown"; MOCKUP.md, "Round 2 ans
 
 1. **Quick's "Use" and Leadership's "Lead an ally"** are outlined like the other buttons on the cards, with no black fill. Their words, amounts and notes are as before, greyed out of a combat round.
 
-### Round 2 results
+### Round 2 results (the owner, 24 November 2026)
 
-To be recorded here, verbatim, when the owner has run the round.
+**In the checklist** (read back from the Claude Doc at revision 69):
+
+| Unit | Checks | iPhone | Laptop | Decision | Notes |
+|---|---|---|---|---|---|
+| B01, round 2 | 1–4 | Pass | Pass | **Accept** | (none in the doc) |
+| B03, round 2 | 1 | Pass | Pass | **Accept** | (none in the doc) |
+
+The doc has no comments.
+
+**In the chat** (relayed by the release-15b-kickoff session), verbatim:
+
+> The checks passed and I have updated them. Please proceed
+
+Read as: all four units of group 2 are accepted (B05 and B09 in round 1, B01 and B03 in round 2), and the group goes to qualification.

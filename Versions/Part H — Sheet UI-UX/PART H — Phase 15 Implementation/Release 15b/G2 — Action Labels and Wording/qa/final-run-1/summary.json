@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-11-24T19:30:54.369314+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 7562,
+      "total": 7562,
+      "orchestration": {
+        "expected": 7562,
+        "passed": 7562,
+        "total": 7562,
+        "leafTotal": 7562,
+        "wrapperCount": 121,
+        "leafCount": 213,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 213,
+        "fingerprint": "be5ad761b4d3dcaaf16b725f1e3a841185e2a595a0c25016f8e7e2a255bc7265",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 28.65
+    },
+    {
+      "label": "04-retained",
+      "passed": 7432,
+      "total": 7432,
+      "orchestration": {
+        "expected": 7432,
+        "passed": 7432,
+        "total": 7432,
+        "leafTotal": 7432,
+        "wrapperCount": 106,
+        "leafCount": 207,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 207,
+        "fingerprint": "d63ff38ca3461b0e3f6a470366c8bf8fc4ce5d7c438212a5d261181ce439a45b",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 26.55
+    }
+  ],
+  "source_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+  "source_bytes": 17773727,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15b/B09 \u2014 Skill Picker Traits from the Final List",
+    "PART H \u2014 Phase 15 Implementation/Release 15b/B05 \u2014 You Remain in Control",
+    "PART H \u2014 Phase 15 Implementation/Release 15b/B03 \u2014 Lead an Ally",
+    "PART H \u2014 Phase 15 Implementation/Release 15b/B01 \u2014 Check Buttons Named for What They Do"
+  ],
+  "restoration": {
+    "sha256": "5ac767c6c3680126cfe664aef41e7312d98f24eee842ec679e38ed664dde574d",
+    "bytes": 17750809,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-24T20:26:27.115780+00:00"
+}

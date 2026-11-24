@@ -170,6 +170,23 @@ B01 and B03 were rebuilt to the approved round 2, and B05 and B09 restacked on t
 - **Tip preview** (https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/, commit `91da9205`): the deployed page, service worker, manifest and icons match the committed round-2 build file for file, and **3,863/3,863** pass on the deployed files: 89 harnesses, the group's four plus the 85 touched layers (`qa/preview-b09-round2.log`, `qa/hosted-preview/claude-release-15b-b09/`). `qa/verify-preview.py` now also reads round 2's touched set (`qa/light/r2-touched/`).
 - **Device round 2:** the checklist's "Round 2" section, in the same Claude Doc (its Result and Decision dropdowns left for the owner), mirrored in [DEVICE-CHECKS.md](DEVICE-CHECKS.md). **Not qualified; `main` untouched.** Qualification of the four comes after the owner's round-2 check, and only on their word.
 
+### Round 2 device check (24 November 2026)
+
+Every round-2 check passed on iPhone and laptop, and the owner chose **Accept** for B01 and B03 (the Claude Doc at revision 69; [DEVICE-CHECKS.md](DEVICE-CHECKS.md), "Round 2 results"). The owner's word, relayed by the kickoff session, verbatim:
+
+> The checks passed and I have updated them. Please proceed
+
+Read as: the group of four goes to qualification (screen-only tier). Go-live and the records on `main` need the owner's separate word.
+
+## Qualified (24 November 2026)
+
+The owner's word to proceed is recorded above ("Round 2 device check"). The group was qualified at the screen-only tier, every stage first time, on build `1f002be9…5819` (the tip `claude/release-15b-b09`). The details are in [HANDOVER.md](HANDOVER.md).
+
+- **The chain** (19:27 to 19:30 UTC): group removal 30/30, restoring group 1 as live (`5ac767c6…574d`) exactly; each unit removed alone and B17 removed with the group kept, every kept harness in full; all 26 Release 15a units removed with the group kept; dependencies 4/4.
+- **The full pass, run once** (19:30 to 20:26 UTC): candidate **7,562/7,562** on 213 leaves; retained (group 1 as live, less the two live-site leaves) **7,432/7,432** on 207 leaves; the restore exact. Both counts were pinned by arithmetic before the run. The brief's retained figure (7,505 on 209 leaves) counted the two live-site leaves, which no retained run includes.
+- **No 4× CPU screen:** B09's MutationObserver callback is a microtask, which always completes before the next task, paint or input, so a slower CPU cannot reorder it (HANDOVER.md, "The tier question").
+- **Not live.** Going live and the records on `main` wait for the owner's word.
+
 ## For the build (not decided by the owner; settle when the build starts)
 
 - **B01.** The labels come from `CHK4531.build` (`209.9999998-feat-checks-conditions.js`); `decorateRow` rebuilds a row only when its `sig` changes, so the layer must relabel on build and on a switch-off/on. The spoken names are `aria-label`s set by `api.checkButton` (`spec.name + ': ' + spec.trait + ' Trait Roll ' + spec.why`). Lost Love's button is `api.button('Spend a Void Point', …)`. Take the word "Spend Void" from B18's G07 answer if it is in by then. Search every harness that pins "Check (TN", "Spend a Void Point" or the old spoken names (B18 found "Check" in 8 files and "Spend a Void Point" in 5, upper bounds). The resistance phase (pinned after Phase 15) will likely restyle these six; B01 sets their words.
@@ -187,3 +204,5 @@ Build (24 November): weekly 69% at the owner's "Build here" (11:44 UTC); 76% wit
 Round 1 (24 November): weekly 69% and five-hour 2% at 11:40 UTC. After the answer was recorded and the board republished as version 2 with the approval banner, the readings were 69% and 3% at 11:42 UTC.
 
 Round 2 build (24 November): weekly 79% and five-hour 3% at the start (16:51 UTC); 83% and 36% at 17:42 UTC, with round 2 built, every light check run, the tip preview verified and the checklist's round-2 section added. The weekly meter resets on 25 November at 01:00 UTC.
+
+Qualification (24 November): weekly 86% and five-hour 59% at the start (19:24 UTC); 87% and 69% at 20:27 UTC, after the chain and the full pass.
