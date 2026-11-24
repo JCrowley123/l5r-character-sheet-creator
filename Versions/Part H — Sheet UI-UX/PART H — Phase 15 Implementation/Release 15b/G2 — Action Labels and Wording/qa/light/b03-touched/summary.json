@@ -1,0 +1,142 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "4\\.5\\.33 |4\\.5\\.35 |4\\.5\\.25 |4\\.7\\.1 |Phase 14 Search/|Phase 14\\.1 |Phase 4\\.5 Modal|4\\.5\\.4 Config|Phase 12\\.5 |A04 —|A16 —|Quick Access|4\\.5\\.15 |Combat Round|4\\.5\\.27 |4\\.5\\.28 |4\\.5\\.30 ",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04 — One Information Pattern/qa/info-pattern-harness.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/qa/picker-info-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-harness.js",
+   "passed": 51,
+   "total": 51,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-expansion-harness.js",
+   "passed": 48,
+   "total": 48,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.4 Configuration UX Pass/qa/adv-config-ux-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+   "passed": 53,
+   "total": 53,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.5 Play Mode Advantages and Disadvantages/qa/advantages-harness.js",
+   "passed": 212,
+   "total": 212,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.25 Clan and School Prices/qa/clan-prices-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.7.1 Supplemental Advanced Schools/qa/supplemental-harness.js",
+   "passed": 156,
+   "total": 156,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js",
+   "passed": 117,
+   "total": 117,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/situational-buttons-harness.js",
+   "passed": 71,
+   "total": 71,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js",
+   "passed": 41,
+   "total": 41,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14 Search/qa/search-harness.js",
+   "passed": 62,
+   "total": 62,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.33 Void and Initiative Entries/qa/void-initiative-harness.js",
+   "passed": 44,
+   "total": 44,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.35 Initiative Score/qa/initiative-score-harness.js",
+   "passed": 20,
+   "total": 20,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14.1 Search Facets/qa/facets-harness.js",
+   "passed": 44,
+   "total": 44,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14.1 Search Facets/qa/dependency-harness.js",
+   "passed": 14,
+   "total": 14,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  }
+ ]
+}

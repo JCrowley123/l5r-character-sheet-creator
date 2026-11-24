@@ -1,0 +1,16 @@
+== B03 PART H PHASE 15.2.7 exit 0
+fragment : src/sheet/209.9999999999999999998-feat-lead-an-ally.js
+marker   : PART H PHASE 15.2.7
+surface  : 4 name(s) -- LA15, LEAD_AN_ALLY_ENABLED, la15-amount, lead-an-ally-seam
+
+src\css\1153-lead-an-ally.css
+    own      5  [PART H PHASE 15.2.7 +4]  .la15-amount{font-size:.82rem; line-height:1.35; color:var(--ink-soft); white-space:nowrap;}
+
+src\sheet\210-test-seam-and-init.js
+    own   1037  [PART H PHASE 15.2.7 +0]  // PART H PHASE 15.2.7 BEGIN lead-an-ally-seam
+    own   1038  [PART H PHASE 15.2.7 +1]  if(typeof LA15 === 'object' && LA15) Object.assign(window.__L5R_TEST__, {LA15, LEAD_AN_ALLY_ENAB
+    own   1039  [PART H PHASE 15.2.7 +2]  // END LA15 lead-an-ally-seam
+
+every reference is inside a block PART H PHASE 15.2.7 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 1/1

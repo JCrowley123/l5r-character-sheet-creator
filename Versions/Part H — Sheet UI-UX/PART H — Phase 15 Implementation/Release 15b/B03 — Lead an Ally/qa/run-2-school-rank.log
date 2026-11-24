@@ -1,0 +1,16 @@
+  detail LA-LEAD-ROLLS-PHONE: "exception: locator.tap: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Lead an ally: roll 1k1 + 4 (School Rank) for one ally’s Initiative Score', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"vi4533-btn\" aria-label=\"Lead an ally: roll 1k1 + 4 (School Rank) for one ally’s Initiative Score\">Lead an ally</button>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element i"
+  detail LA-QUICK-USES-PHONE: "exception: locator.tap: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Use Quick: add 4 (Reflexes) to your Initiative Score for the rest of the skirmish', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"vi4533-btn\" aria-label=\"Use Quick: add 4 (Reflexes) to your Initiative Score for the rest of the skirmish\">Use</button>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - "
+PASS LA-SEAM-PHONE
+PASS LA-LEAD-LABEL-PHONE
+PASS LA-QUICK-LABEL-PHONE
+PASS LA-NOTES-KEPT-PHONE
+PASS LA-GREYED-OUT-OF-COMBAT-PHONE
+PASS LA-ONE-LINE-PHONE
+PASS LA-AMOUNT-FOLLOWS-PHONE
+FAIL LA-LEAD-ROLLS-PHONE
+FAIL LA-QUICK-USES-PHONE
+PASS LA-NO-ERRORS-PHONE
+PASS LA-LABELS-DESKTOP
+PASS LA-ONE-LINE-DESKTOP
+PASS LA-NO-ERRORS-DESKTOP
+11/13 checks passed

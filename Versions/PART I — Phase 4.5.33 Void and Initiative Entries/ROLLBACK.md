@@ -37,3 +37,9 @@ bytes, before them).
 - **None on Phase 14 Search**, which it was built on top of.
 
 No earlier harness needed a term. The removal chain registry gained one entry, at its end.
+
+## Release 15b B03 — Lead an ally (24 November 2026)
+
+**A later unit now reads this release.** Release 15b B03 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B03 — Lead an Ally/`) wraps `VI4533.lines` and rewords two of this release's buttons: Leadership's "Lead an ally (School Rank + 1k1)" reads "Lead an ally", and Quick's "Did not act first: +Reflexes" reads "Use". Each gets its amount beside it ("1k1 + 2 (School Rank)", "+3 (Reflexes)", in its own `la15-amount` span) and a spoken name of its own. The rolls, the round ledger, once a Round, the notes and the greyed-out reasons are this release's own. This release's remover matches `VI4533` as its surface, so it refuses while B03 is present: **remove B03 first**; the removal chain does this in order.
+
+No harness of this release needed a change: `qa/void-initiative-harness.js` reads the buttons' state, titles and `.vi4533-note` notes, not the two buttons' words, and passed 44/44 with B03 present.

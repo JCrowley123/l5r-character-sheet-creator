@@ -1034,6 +1034,9 @@
   // PART H PHASE 15.2.6 BEGIN check-button-names-seam
   if(typeof CN15 === 'object' && CN15) Object.assign(window.__L5R_TEST__, {CN15, CHECK_BUTTON_NAMES_ENABLED});
   // END CN15 check-button-names-seam
+  // PART H PHASE 15.2.7 BEGIN lead-an-ally-seam
+  if(typeof LA15 === 'object' && LA15) Object.assign(window.__L5R_TEST__, {LA15, LEAD_AN_ALLY_ENABLED});
+  // END LA15 lead-an-ally-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

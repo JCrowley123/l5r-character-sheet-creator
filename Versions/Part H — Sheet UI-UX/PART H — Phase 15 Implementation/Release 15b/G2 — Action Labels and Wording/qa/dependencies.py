@@ -3,7 +3,7 @@ Each unit must report every reference inside its own marked blocks (exit 0). G1'
 searched with its seam block's name.   cd <Phase 0 folder>; python -B <this file> [unit ...]   (no unit: all four)"""
 import subprocess, sys
 UNITS = [('B01', 'src/sheet/209.9999999999999999997-feat-check-button-names.js', 'PART H PHASE 15.2.6', ['check-button-names-seam']),
-         ('B03', 'src/sheet/209.9999999999999999998-feat-lead-an-ally.js', 'PART H PHASE 15.2.7', ['lead-an-ally-seam']),
+         ('B03', 'src/sheet/209.9999999999999999998-feat-lead-an-ally.js', 'PART H PHASE 15.2.7', ['lead-an-ally-seam', 'la15-amount']),
          ('B05', 'src/sheet/209.9999999999999999999-feat-remain-in-control.js', 'PART H PHASE 15.2.8', ['remain-in-control-seam']),
          ('B09', 'src/sheet/209.99999999999999999991-feat-picker-traits.js', 'PART H PHASE 15.2.9', ['picker-traits-seam'])]
 wanted = sys.argv[1:] or [u[0] for u in UNITS]

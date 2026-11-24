@@ -367,6 +367,8 @@ CHAIN: tuple[Release, ...] = (
     # Release 15b, group 2: action labels and wording.
     Release("PART H — Phase 15 Implementation/Release 15b/B01 — Check Buttons Named for What They Do",
             fragment="src/sheet/209.9999999999999999997-feat-check-button-names.js"),
+    Release("PART H — Phase 15 Implementation/Release 15b/B03 — Lead an Ally",
+            fragment="src/sheet/209.9999999999999999998-feat-lead-an-ally.js"),
 )
 
 

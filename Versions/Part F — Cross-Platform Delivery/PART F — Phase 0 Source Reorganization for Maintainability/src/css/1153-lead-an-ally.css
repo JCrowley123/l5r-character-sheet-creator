@@ -1,0 +1,5 @@
+/* PART H PHASE 15.2.7 — Release 15b, B03: Lead an ally (owner, 24 November 2026, as recommended). The amount beside
+   Leadership's and Quick's buttons ("1k1 + 1 (School Rank)", "+2 (Reflexes)") reads like the row's own notes: the same
+   size, line height and soft ink as Feature 4.5.33's (Part I) note, declared here rather than shared, so each feature's
+   rule stays its own. */
+.la15-amount{font-size:.82rem; line-height:1.35; color:var(--ink-soft); white-space:nowrap;}
