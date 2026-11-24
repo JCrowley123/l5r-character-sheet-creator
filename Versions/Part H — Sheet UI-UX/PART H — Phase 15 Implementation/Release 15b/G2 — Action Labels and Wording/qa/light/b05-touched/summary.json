@@ -1,0 +1,398 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "[Mm]oon|[Rr]oll|[Dd]ice|[Vv]oid|[Pp]aragon|[Ll]uck|[Aa]ncestor|4\\.5\\.33|4\\.5\\.31|Rank 0|[Aa]rtistry|[Vv]ersatility|[Ss]pell [Ss]lot|[Ss]ituational|Damage, Sessions|[Ff]ortune|[Vv]engeance|[Dd]oubt|[Rr]ealm|Quiver|Scrolls|Gift Cancel|Hotei|Yomi|Typed Initiative",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A19 — Undo the Last Void Spend/qa/void-spend-undo-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 48,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A20 — A Trait for One Skill Roll/qa/skill-trait-choice-harness.js",
+   "passed": 18,
+   "total": 18,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A07 — The Moon Row/qa/moon-row-harness.js",
+   "passed": 26,
+   "total": 26,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Empty Quiver Cancels/qa/quiver-cancel-harness.js",
+   "passed": 6,
+   "total": 6,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Moon Resist Label/qa/moon-label-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Moon Curse Full Moon/qa/moon-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Empty Quiver Rolls On/qa/quiver-harness.js",
+   "passed": 8,
+   "total": 8,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Starting Spells Are Scrolls/qa/scrolls-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Gift Cancel Refunds the Spell Slot/qa/gift-refund-harness.js",
+   "passed": 8,
+   "total": 8,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Void Raise Not on Initiative/qa/void-raise-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Hotei Where the Sheet Spends Void/qa/hotei-auto-harness.js",
+   "passed": 16,
+   "total": 16,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Ancestor Gifts Used and Favour/qa/ancestor-gifts-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 1.5 Roll Pipeline Consolidation/qa/roll-pipeline-baseline.js",
+   "passed": 35,
+   "total": 35,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 3 Smart Roll Preview/qa/roll-preview-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 4 Explain This Roll/qa/roll-breakdown-harness.js",
+   "passed": 22,
+   "total": 22,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Slots Tab Visibility Race/qa/spell-slots-visibility-harness.js",
+   "passed": 6,
+   "total": 6,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.7 Unlucky/qa/disadv-unlucky-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.9 Doubt/qa/disadv-doubt-harness.js",
+   "passed": 38,
+   "total": 38,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.10 Cursed by the Realm/qa/disadv-realm-harness.js",
+   "passed": 62,
+   "total": 62,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.11 Seven Fortunes Curse/qa/disadv-fortune-harness.js",
+   "passed": 74,
+   "total": 74,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon/qa/disadv-bishamon-harness.js",
+   "passed": 51,
+   "total": 51,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Negative Roll Modifier Display/qa/negative-roll-modifier-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+   "passed": 53,
+   "total": 53,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.16 Heart of Vengeance/qa/heart-vengeance-harness.js",
+   "passed": 91,
+   "total": 91,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.18 Paragon/qa/paragon-harness.js",
+   "passed": 80,
+   "total": 80,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.19 Soul of Artistry/qa/soul-artistry-harness.js",
+   "passed": 92,
+   "total": 92,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.20 Void Versatility/qa/void-versatility-harness.js",
+   "passed": 66,
+   "total": 66,
+   "status": 0,
+   "seconds": 11,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.21 Seven Fortunes Blessing/qa/fortune-blessing-harness.js",
+   "passed": 77,
+   "total": 77,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.23 Dark Paragon/qa/dark-paragon-harness.js",
+   "passed": 67,
+   "total": 67,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.24 Touch of the Spirit Realms/qa/spirit-realms-harness.js",
+   "passed": 50,
+   "total": 50,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Slot Accounting/qa/spell-slot-accounting-harness.js",
+   "passed": 52,
+   "total": 52,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Spell Slots Tab on Safari/qa/safari-tab-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 12,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.8 Ancestors/qa/ancestors-harness.js",
+   "passed": 349,
+   "total": 349,
+   "status": 0,
+   "seconds": 24,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/qa/ancfix-harness.js",
+   "passed": 28,
+   "total": 28,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "Part G — Combat & Roll Engine/PART G — Phase 6 School Technique Text/qa/technique-text-harness.js",
+   "passed": 21,
+   "total": 21,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Rank 0 Skill Rolls Explode/qa/rank-zero-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.26 Dice Rolling Entries/qa/dice-entries-harness.js",
+   "passed": 110,
+   "total": 110,
+   "status": 0,
+   "seconds": 6,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Minor Clan Defender Paragon Gate/qa/paragon-gate-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js",
+   "passed": 117,
+   "total": 117,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/situational-buttons-harness.js",
+   "passed": 71,
+   "total": 71,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js",
+   "passed": 41,
+   "total": 41,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js",
+   "passed": 101,
+   "total": 101,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.32 Damage, Sessions and XP/qa/damage-sessions-xp-harness.js",
+   "passed": 69,
+   "total": 69,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.33 Void and Initiative Entries/qa/void-initiative-harness.js",
+   "passed": 44,
+   "total": 44,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/weakness-hotei-harness.js",
+   "passed": 45,
+   "total": 45,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Yomi Sees the Ancestor/qa/yomi-ancestor-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Roll Preview Opens at the Top/qa/roll-preview-top-harness.js",
+   "passed": 10,
+   "total": 10,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Typed Initiative Is the Dice/qa/typed-initiative-harness.js",
+   "passed": 11,
+   "total": 11,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Void Card Reasons on a Phone/qa/void-reasons-harness.js",
+   "passed": 14,
+   "total": 14,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  }
+ ]
+}

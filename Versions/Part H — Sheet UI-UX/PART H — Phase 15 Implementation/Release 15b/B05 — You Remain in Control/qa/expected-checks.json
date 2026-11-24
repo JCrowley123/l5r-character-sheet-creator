@@ -1,0 +1,16 @@
+{
+ "unit": "Release 15b B05 (PART H PHASE 15.2.8)",
+ "pinned": "24 November 2026, before the first run",
+ "checks": [
+  "RC-SEAM-PHONE",
+  "RC-TOUCH-PASSES-PHONE",
+  "RC-TOUCH-FAILS-PHONE",
+  "RC-MOON-PASSES-PHONE",
+  "RC-MOON-FAILS-PHONE",
+  "RC-OTHER-LINES-UNCHANGED-PHONE",
+  "RC-NO-ERRORS-PHONE",
+  "RC-TOUCH-PASSES-DESKTOP",
+  "RC-MOON-PASSES-DESKTOP",
+  "RC-NO-ERRORS-DESKTOP"
+ ]
+}

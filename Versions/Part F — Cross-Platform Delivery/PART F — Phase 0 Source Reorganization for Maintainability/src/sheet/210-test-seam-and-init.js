@@ -1037,6 +1037,9 @@
   // PART H PHASE 15.2.7 BEGIN lead-an-ally-seam
   if(typeof LA15 === 'object' && LA15) Object.assign(window.__L5R_TEST__, {LA15, LEAD_AN_ALLY_ENABLED});
   // END LA15 lead-an-ally-seam
+  // PART H PHASE 15.2.8 BEGIN remain-in-control-seam
+  if(typeof RC15 === 'object' && RC15) Object.assign(window.__L5R_TEST__, {RC15, REMAIN_IN_CONTROL_ENABLED});
+  // END RC15 remain-in-control-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

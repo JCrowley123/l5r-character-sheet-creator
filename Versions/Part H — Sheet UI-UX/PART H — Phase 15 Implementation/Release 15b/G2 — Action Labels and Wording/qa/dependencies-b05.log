@@ -1,0 +1,13 @@
+== B05 PART H PHASE 15.2.8 exit 0
+fragment : src/sheet/209.9999999999999999999-feat-remain-in-control.js
+marker   : PART H PHASE 15.2.8
+surface  : 3 name(s) -- RC15, REMAIN_IN_CONTROL_ENABLED, remain-in-control-seam
+
+src\sheet\210-test-seam-and-init.js
+    own   1040  [PART H PHASE 15.2.8 +0]  // PART H PHASE 15.2.8 BEGIN remain-in-control-seam
+    own   1041  [PART H PHASE 15.2.8 +1]  if(typeof RC15 === 'object' && RC15) Object.assign(window.__L5R_TEST__, {RC15, REMAIN_IN_CONTROL
+    own   1042  [PART H PHASE 15.2.8 +2]  // END RC15 remain-in-control-seam
+
+every reference is inside a block PART H PHASE 15.2.8 owns -- surgical removal covers all of them.
+
+DEPENDENCIES PASSED: 1/1
