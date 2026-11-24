@@ -1,0 +1,572 @@
+<title>Character Finder</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* Layout: one reading column on the sheet's own paper, ink and shu palette; a sticky section bar; the
+   "Try it" panel is the one interactive block, drawn like a wizard screen from the app. */
+:root {
+  --paper: #efe7d4; --card: #f7f1e2; --paper-deep: #e6dcc4; --ink: #2a2420; --ink-soft: #5a4f43;
+  --shu: #a3332a; --shu-tint: #f1dcd3; --gold: #8a6a35; --gold-tint: #efe3c6; --line: #c9bb98;
+  --air: #5f8c86; --earth: #7c6a3f; --fire: #b3492f; --water: #3f6f95; --void: #5a5450;
+  --f-display: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
+  --f-body: 'EB Garamond', Garamond, 'Times New Roman', serif;
+  --f-ui: 'Noto Sans JP', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #1c1815; --card: #25201b; --paper-deep: #2e2721; --ink: #ece3cf; --ink-soft: #b9ab94;
+  --shu: #e27a69; --shu-tint: #3d2420; --gold: #d2b072; --gold-tint: #3a3122; --line: #4b4135;
+  --air: #8dbbb4; --earth: #c2ab72; --fire: #e8876b; --water: #86b0d6; --void: #b0a8a2; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #1c1815; --card: #25201b; --paper-deep: #2e2721; --ink: #ece3cf; --ink-soft: #b9ab94;
+  --shu: #e27a69; --shu-tint: #3d2420; --gold: #d2b072; --gold-tint: #3a3122; --line: #4b4135;
+  --air: #8dbbb4; --earth: #c2ab72; --fire: #e8876b; --water: #86b0d6; --void: #b0a8a2; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 18px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper) }
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 28px 64px }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 700; line-height: 1.2; text-wrap: balance; margin: 0 }
+h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: .01em }
+h2 { font-size: 1.55rem; margin-bottom: .6rem }
+h3 { font-size: 1.15rem; margin: 1.2rem 0 .4rem }
+p { margin: 0 0 .8rem; max-width: 65ch }
+a { color: var(--shu) }
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--shu); outline-offset: 2px }
+.eyebrow, .label { font-family: var(--f-ui); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft) }
+.lede { font-size: 1.15rem; margin-top: .8rem }
+.status { font-family: var(--f-ui); font-size: .85rem; color: var(--ink-soft); border-left: 3px solid var(--gold); padding: .2rem 0 .2rem .7rem; margin: 1rem 0 }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .82em; background: var(--paper-deep); padding: .05em .3em; border-radius: 3px; overflow-wrap: anywhere }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 1.2rem 0 0 }
+.fact { border-top: 2px solid var(--shu); padding-top: .4rem }
+.fact b { display: block; font-family: var(--f-display); font-size: 1.5rem; font-variant-numeric: tabular-nums }
+.fact span { font-family: var(--f-ui); font-size: .8rem; color: var(--ink-soft) }
+
+nav.sections { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line);
+  margin: 1.6rem -4px 0; padding: .5rem 4px; overflow-x: auto; white-space: nowrap; scrollbar-width: none }
+nav.sections a { font-family: var(--f-ui); font-size: .85rem; color: var(--ink); text-decoration: none; padding: .45rem .6rem; border-radius: 999px; display: inline-block }
+nav.sections a:hover { background: var(--paper-deep) }
+section { padding-top: 2.2rem; scroll-margin-top: 3.2rem }
+section > h2 { border-bottom: 1px solid var(--line); padding-bottom: .4rem }
+
+ul.plain { margin: 0 0 1rem; padding-left: 1.2rem }
+ul.plain li { margin: .25rem 0 }
+ol.steps { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: 10px; counter-reset: s }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 2rem 1fr; gap: .6rem; align-items: start }
+ol.steps li::before { content: counter(s); font-family: var(--f-display); font-weight: 800; color: var(--shu); font-size: 1.3rem; line-height: 1.3 }
+ol.steps b { font-family: var(--f-ui); font-size: .95rem }
+
+.tbl { overflow-x: auto; margin: .6rem 0 1.2rem; border: 1px solid var(--line); border-radius: 6px; background: var(--card) }
+table { border-collapse: collapse; width: 100%; font-size: .92rem }
+th, td { text-align: left; vertical-align: top; padding: .5rem .65rem; border-bottom: 1px solid var(--line) }
+th { font-family: var(--f-ui); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); font-weight: 500 }
+tr:last-child td { border-bottom: 0 }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap }
+tfoot td { font-weight: 600 }
+
+/* chips */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: .4rem 0 }
+.chip { font-family: var(--f-ui); font-size: .72rem; padding: .15rem .5rem; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); white-space: nowrap }
+.chip.ask { background: var(--shu-tint); border-color: transparent; color: var(--shu); font-weight: 500 }
+.chip.el { color: #fff; border-color: transparent }
+.note { font-family: var(--f-ui); font-size: .85rem; border-radius: 6px; padding: .55rem .7rem; margin: .5rem 0; line-height: 1.45 }
+.note.ask { background: var(--shu-tint); color: var(--ink) }
+.note.ask b { color: var(--shu) }
+.note.know { background: var(--gold-tint); color: var(--ink) }
+
+/* Try it */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px; margin-top: .8rem }
+.panel-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap }
+.progress { height: 4px; background: var(--paper-deep); border-radius: 2px; margin: .6rem 0 1rem; overflow: hidden }
+.progress i { display: block; height: 100%; background: var(--shu); width: 0; transition: width .2s }
+.qtext { font-family: var(--f-display); font-size: 1.3rem; font-weight: 700; margin-bottom: .8rem; text-wrap: balance }
+.answers { display: grid; gap: 8px }
+.answers button, .btn { font-family: var(--f-ui); font-size: .95rem; text-align: left; min-height: 46px; padding: .6rem .85rem; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer }
+.answers button:hover { border-color: var(--shu) }
+.answers button.chosen { border-color: var(--shu); box-shadow: inset 3px 0 0 var(--shu) }
+.answers button.np { color: var(--ink-soft) }
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem }
+.btn { text-align: center }
+.btn.primary { background: var(--shu); border-color: var(--shu); color: var(--card) }
+.btn.quiet { background: transparent }
+.btn[disabled] { opacity: .45; cursor: default }
+.examples { display: flex; gap: 6px; flex-wrap: wrap; margin-top: .4rem }
+.examples button { font-family: var(--f-ui); font-size: .8rem; padding: .35rem .7rem; border-radius: 999px; border: 1px dashed var(--line); background: transparent; color: var(--ink); cursor: pointer; min-height: 36px }
+
+.res-h { font-family: var(--f-ui); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin: 1.2rem 0 .5rem }
+.res-h:first-child { margin-top: 0 }
+details.school { border: 1px solid var(--line); border-radius: 8px; background: var(--paper); margin-bottom: 8px }
+details.school.hard { border-color: var(--shu); border-width: 2px }
+details.school > summary { list-style: none; cursor: pointer; padding: .7rem .8rem; display: grid; grid-template-columns: 2.4rem 1fr auto; gap: .7rem; align-items: center }
+details.school > summary::-webkit-details-marker { display: none }
+.seal { width: 2.4rem; height: 2.4rem; border-radius: 50%; border: 2px solid var(--shu); color: var(--shu); display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 800; font-size: 1.05rem }
+.sname { display: block; font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; line-height: 1.25; min-width: 0 }
+.smeta { display: block; font-family: var(--f-ui); font-size: .76rem; color: var(--ink-soft); margin-top: .15rem }
+.score { font-family: var(--f-ui); font-size: .72rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap }
+.sbody { padding: 0 .8rem .8rem; border-top: 1px dashed var(--line); min-width: 0 }
+.sbody p { margin-top: .7rem }
+dl.facts2 { display: grid; grid-template-columns: max-content 1fr; gap: .25rem .8rem; margin: .6rem 0; font-size: .92rem }
+dl.facts2 dt { font-family: var(--f-ui); font-size: .74rem; color: var(--ink-soft); padding-top: .2rem }
+dl.facts2 dd { margin: 0; min-width: 0 }
+.buildnote { font-family: var(--f-ui); font-size: .85rem; color: var(--ink-soft); margin-top: .5rem }
+
+/* Schools list */
+.filters { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: .6rem 0 }
+.filters input, .filters select { font-family: var(--f-ui); font-size: .9rem; min-height: 44px; padding: .4rem .6rem; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); width: 100%; min-width: 0 }
+.filters input { grid-column: 1 / -1 }
+.count { font-family: var(--f-ui); font-size: .8rem; color: var(--ink-soft); margin-bottom: .5rem }
+
+/* Guides */
+.guide { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px; margin: 1rem 0; scroll-margin-top: 3.2rem }
+.guide h3:first-child { margin-top: 0; font-size: 1.4rem }
+.glance { font-family: var(--f-ui); font-size: .85rem; color: var(--ink-soft) }
+
+ol.asks { padding-left: 1.4rem }
+ol.asks li { margin: .5rem 0; padding-left: .2rem }
+ol.asks li::marker { font-family: var(--f-display); font-weight: 800; color: var(--shu) }
+footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 1rem }
+@media (max-width: 480px) { h1 { font-size: 2rem } body { font-size: 17px } .panel, .guide { padding: 14px } }
+@media (prefers-reduced-motion: reduce) { .progress i { transition: none } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Design draft · proposed Part K, Phase 11.4 · 24 November 2026</div>
+    <h1>Character Finder</h1>
+    <p class="lede">An optional questionnaire for players who don't know what to play. About a dozen multiple-choice questions narrow the app's 105 Basic Schools down to one or two strong matches and a few more worth a look. Each match opens a guide, and a Build button hands the choice to the creation wizard.</p>
+    <div class="status">Nothing is built yet. This page is for reviewing the design. The full document is <code>Versions/PART K — Phase 11.4 Character Finder/DESIGN.md</code> on branch <code>claude/serene-ride-ojsryb</code>.</div>
+    <div class="facts">
+      <div class="fact"><b>105</b><span>Basic Schools rated, every Clan</span></div>
+      <div class="fact"><b>11–12</b><span>questions per player</span></div>
+      <div class="fact"><b>105 / 105</b><span>Schools a player can be steered to</span></div>
+      <div class="fact"><b>4 / 4</b><span>sample builds pass in the real wizard</span></div>
+    </div>
+  </header>
+
+  <nav class="sections" aria-label="Sections">
+    <a href="#try">Try it</a><a href="#decided">What you decided</a><a href="#schools">All Schools</a><a href="#guides">Two guides</a><a href="#gm">GM notes</a><a href="#checks">Checks</a><a href="#plan">Plan</a><a href="#asks">Your questions</a>
+  </nav>
+
+  <section id="try">
+    <h2>Try it</h2>
+    <p>This uses the real draft questions and the real scoring over all 105 Schools, so you can see what a player would get. Tap a result to open its card. Match scores are shown here for review only, and a player would not see them.</p>
+    <div class="label">Or load an example player</div>
+    <div class="examples" id="examples"></div>
+    <div class="panel" id="panel" aria-live="polite"><p class="smeta">Loading the School data…</p></div>
+  </section>
+
+  <section id="decided">
+    <h2>What you decided</h2>
+    <ul class="plain">
+      <li><b>Every School is a candidate,</b> not only the Great Clans and the Core Rulebook. A new player doesn't know what they don't know.</li>
+      <li><b>Two questions set the comfort level:</b> how much rules detail, and how unusual a character. They change the order of results and never hide anything.</li>
+      <li><b>A guide, not a builder.</b> The player decides what to build and makes every purchase.</li>
+      <li><b>GM warnings</b> on niche or complex characters.</li>
+      <li><b>A Build button</b> that feeds the creation wizard, so the player carries on with Skills and the rest.</li>
+      <li><b>A suggested starting build</b> in every guide: Rings and Traits, Skills, Advantages and Disadvantages for a Rank 1 character.</li>
+    </ul>
+    <h3>How a player uses it</h3>
+    <ol class="steps">
+      <li><div><b>Questions.</b> Started from the wizard's Clan step ("Not sure? Help me choose") or the Characters screen. One question per screen, every one with "No preference", and "See my results now" from question 6.</div></li>
+      <li><div><b>Results.</b> One or two best matches, four more worth a look, and sometimes something different. "See all matches" lists all 105 in order.</div></li>
+      <li><div><b>Guide.</b> Who they are, how they play, how to roleplay them, a suggested starting build, where they can go later, and any reason to talk to the GM.</div></li>
+      <li><div><b>Build.</b> The wizard applies the Clan, Family and School cards itself, so Apply School still asks its own questions. The player lands on Rings &amp; Traits, with a folded "Suggested for…" panel on the next steps.</div></li>
+    </ol>
+    <p>Afterwards, optional "Bring them to life" prompts based on the book's Twenty Questions (pp. 100–102, in our own words) fill the existing Appearance, Personality, History and Notes boxes, so the save format does not change.</p>
+  </section>
+
+  <section id="schools">
+    <h2>All Schools and their ratings</h2>
+    <p>The draft rating of each School: what it plays like (main labels count double), where it feels at home, how complex and how unusual it is. Type, Honor, Family, page and Rank 1 Technique come from the app's own data. Please check the complexity and "how unusual" ratings especially.</p>
+    <div class="filters">
+      <input id="f-search" type="search" placeholder="Search a School, Clan or label" aria-label="Search Schools">
+      <select id="f-type" aria-label="Type"><option value="">Every type</option></select>
+      <select id="f-cx" aria-label="Complexity"><option value="">Any complexity</option></select>
+      <select id="f-niche" aria-label="How unusual"><option value="">Common to unusual</option></select>
+      <select id="f-gm" aria-label="GM notes"><option value="">With or without GM notes</option><option value="ask">Ask your GM</option><option value="none">No GM notes</option></select>
+    </div>
+    <div class="count" id="count"></div>
+    <div id="list"></div>
+  </section>
+
+  <section id="guides">
+    <h2>Two guides, written in full</h2>
+    <p>These show the depth intended for every School. The facts come from the app's data. The roleplay advice is our own, and is the part to check hardest.</p>
+
+    <article class="guide" id="guide-hida">
+      <h3>Hida Bushi</h3>
+      <div class="glance">Crab Clan · Hida family (+1 Strength) · Bushi · School +1 Stamina · Honor 3.5 · Straightforward · Common · Core Rulebook p.106</div>
+      <h3>Who they are</h3>
+      <p>The Crab hold the great Wall on the Empire's southern border against the Shadowlands, and the Hida are their ruling family and the heart of their army. Their School is one of the oldest in Rokugan: wear heavy armour, take the blow, then answer with a heavy weapon such as the tetsubo. Other Clans, the Crane above all, think the Crab crude. The Crab think the other Clans have no idea what is out there.</p>
+      <h3>How they play</h3>
+      <p>The party's front line. <b>Rank 1, The Way of the Crab:</b> no Armor TN penalty for heavy armour (except for Stealth) and +1k0 damage with Heavy Weapons, so wear the heaviest armour you can. Rank 2 adds Reduction equal to your Earth Ring, which is why the build raises Earth.</p>
+      <h3>Roleplaying them</h3>
+      <ul class="plain">
+        <li>You have seen what the rest of the Empire only fears. Patience with ceremony is short; patience with people who pull their weight is long.</li>
+        <li>Honor 3.5 is not dishonour. A Hida bends etiquette, not duty.</li>
+        <li>Intimidation is a social tool as well as a battle cry.</li>
+        <li>Good hooks: a sibling lost on the Wall, a grudge against the Crane, a debt to a Kuni shugenja.</li>
+        <li>Playing against type: a Hida who writes poetry about the Wall and is quietly good at it.</li>
+      </ul>
+      <h3>Suggested starting build</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Choice</th><th>XP</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Willpower 2→3</td><td class="num">12</td><td>With the School's Stamina 3 this makes Earth 3: more Wounds now, more Reduction at Rank 2</td></tr>
+          <tr><td>Agility 2→3</td><td class="num">12</td><td>Heavy Weapons attacks roll Agility</td></tr>
+          <tr><td>Heavy Weapons 1→3</td><td class="num">5</td><td>Your main attack</td></tr>
+          <tr><td>Defense, Kenjutsu, Athletics 1→2</td><td class="num">6</td><td>Defending, a backup weapon, getting about</td></tr>
+          <tr><td>Free Bugei choice: Jiujutsu</td><td class="num">0</td><td>For when you lose your weapon (Kyujutsu is the ranged option)</td></tr>
+          <tr><td>Strength of the Earth</td><td class="num">2</td><td>Wound penalties reduced by 3; Bushi price</td></tr>
+          <tr><td>Large</td><td class="num">3</td><td>+1k0 damage with large weapons; Crab price</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">40</td><td>App reads 40 / 40, no findings</td></tr></tfoot>
+      </table></div>
+      <p><b>With Disadvantages</b> (optional, 9 XP): Brash, Overconfident and Antisocial (3 at the Crab price). Spend it on Kenjutsu 3, Lore: Shadowlands 2, Jiujutsu 2 and Intimidation 2. <b>Usually not worth it at Rank 1:</b> Void 3, at 18 XP.</p>
+      <p><b>Where they can go later:</b> Crab Defender, Crab Sumai Wrestler and Tsuru's Legion (Technique Rank 2); Crab Knife-fighters and Yasuki Taskmaster (Rank 4); the Advanced School Defender of the Wall (Core p.247).</p>
+    </article>
+
+    <article class="guide" id="guide-kuni">
+      <h3>Kuni Witch-Hunter</h3>
+      <div class="glance">Crab Clan · Kuni family (+1 Intelligence) · Monk-type School · School +1 Willpower · Honor 5.5 · Some extra · Uncommon · The Great Clans p.40</div>
+      <div class="note ask"><b>Ask your GM.</b> From The Great Clans p.40, so check your GM uses this book. This character shines only if the Taint and maho are part of the campaign, so ask about that too.</div>
+      <h3>Who they are</h3>
+      <p>The Kuni are the Crab's shugenja family, known for obsessive study of the Shadowlands. The Witch-Hunters are a small band of Kuni mystic warriors who roam the whole Empire, ignoring Clan borders, to hunt maho-tsukai and Shadowlands infiltrators. Commoners welcome them. Other samurai often do not.</p>
+      <h3>How they play</h3>
+      <p>An investigator who can fight. <b>Rank 1, To See the Darkness:</b> a Contested Roll (your Investigation/Awareness against their Sincerity/Willpower) senses the Taint in someone, and you gain +1k1 to resist the Taint and to attack Shadowlands creatures or known Tainted foes.</p>
+      <h3>Roleplaying them</h3>
+      <ul class="plain">
+        <li>Most of the job is asking questions, watching faces and being unwelcome. The sword comes out last.</li>
+        <li>The great dilemma: a maho-tsukai may be a desperate, sympathetic person who made one terrible choice.</li>
+        <li>You answer to no local lord's comfort. That makes enemies, and occasionally saves a province.</li>
+        <li>Good hooks: the sorcerer who got away, a fellow hunter who fell to the Taint, a village that hid you.</li>
+        <li>Playing against type: a hunter who believes most of the Tainted can be saved.</li>
+      </ul>
+      <h3>Suggested starting build</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Choice</th><th>XP</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Stamina 2→3</td><td class="num">12</td><td>With the School's Willpower 3 this makes Earth 3, which resists the Taint</td></tr>
+          <tr><td>Agility 2→3</td><td class="num">12</td><td>With the Family's Intelligence 3 this makes Fire 3; attacks roll Agility</td></tr>
+          <tr><td>Awareness 2→3</td><td class="num">12</td><td>Your Rank 1 Technique rolls Investigation/Awareness</td></tr>
+          <tr><td>Investigation, Kenjutsu 1→2</td><td class="num">4</td><td>Finding them, then fighting them</td></tr>
+          <tr><td>Free choice: Etiquette</td><td class="num">0</td><td>You will spend time in courts that do not want you there</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">40</td><td>App reads 40 / 40, no findings</td></tr></tfoot>
+      </table></div>
+      <p><b>With Disadvantages</b> (optional, 10 XP): Driven, Sworn Enemy (the one who got away), Obligation and Can't Lie. Spend it on Irreproachable, Wary, Clear Thinker and Lore: Shadowlands 2.</p>
+      <p><b>Where they can go later:</b> the Student of Hitsu-do Path at Technique Rank 2 (Book of Fire p.179).</p>
+    </article>
+  </section>
+
+  <section id="gm">
+    <h2>GM notes</h2>
+    <p>Notes are worked out from the data, not written by hand per School, so they stay right as Schools are added. A guide can add its own note where the data can't know, as the Witch-Hunter's does.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Shown when</th><th>What the player reads</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip ask">Ask your GM</span><br>Not in the Core Rulebook</td><td>From <i>book p.N</i>: check your GM uses this book.</td></tr>
+        <tr><td>One period of history (Imperial Histories, the Snake Clan)</td><td>Belongs to one period of Rokugan's history: check it fits your campaign's era.</td></tr>
+        <tr><td>An alternate timeline</td><td>Comes from an alternate timeline: check it fits your campaign.</td></tr>
+        <tr><td>Spider Clan</td><td>Tied to the Shadowlands and often Tainted. Usually changes the whole campaign, so agree it with your GM and the other players first.</td></tr>
+        <tr><td>Ninja</td><td>A secret even within their own Clan, and exposure means disgrace or death. Your GM will need to plan around it.</td></tr>
+        <tr><td>Heretical or controversial order</td><td>Other monks may treat your character as an enemy.</td></tr>
+        <tr><td><span class="chip">Good to know</span><br>Shugenja</td><td>Casts spells: you will choose starting spells and track spell slots.</td></tr>
+        <tr><td>Brotherhood monk</td><td>Uses the kiho rules.</td></tr>
+        <tr><td>Tattooed monk</td><td>The app does not model tattoos yet.</td></tr>
+        <tr><td>Minor Clan</td><td>Your character may be the only one of their Clan in the story.</td></tr>
+        <tr><td>Honor 2.5 or lower</td><td>Other samurai may distrust them.</td></tr>
+        <tr><td>Imperial families</td><td>Serves the Imperial families rather than a Great Clan.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Result: 52 Schools have at least one "Ask your GM" note, 35 only "Good to know", and 18 neither. Use the GM filter under All Schools to see which.</p>
+  </section>
+
+  <section id="checks">
+    <h2>Checks already run on the draft</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Check</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Every School can be a best match on some set of answers</td><td class="num"><b>105 of 105</b></td></tr>
+        <tr><td>Every School can be the single top match</td><td class="num">104 of 105</td></tr>
+        <tr><td>20,000 random players: a result list shorter than 6</td><td class="num"><b>0</b></td></tr>
+        <tr><td>Most frequent best match (no School dominates)</td><td class="num">6.6% of players</td></tr>
+        <tr><td>Both sample guides' builds, with and without Disadvantages, entered in the real wizard</td><td class="num"><b>4 of 4</b> at 40 / 40 XP, no findings</td></tr>
+      </tbody>
+    </table></div>
+    <p>The only School that can't come out first is Hoshi Tsurui Zumi. It reaches second place behind its near twin, the Togashi Tattooed Order.</p>
+    <p>The first run caught a real problem: <b>Matsu Berserker could never be a best match.</b> Akodo Bushi had the same labels and always scored higher. The Matsu now have their own "all-out attack" style, which their School description supports. This check runs again whenever a rating or question changes.</p>
+  </section>
+
+  <section id="plan">
+    <h2>How it would be built</h2>
+    <ul class="plain">
+      <li>Its own fragments and marker (<code>PART K PHASE 11.4</code>), one switch, and no edits inside the wizard's fragments: the Clan-step button and "Suggested for…" panels wrap the wizard's render, as the Creation Cap of Four fix already does.</li>
+      <li>A declared dependency on the wizard (Phase 11.2) for Build. Without it the finder still works as a browser, with Build hidden.</li>
+      <li>No save-format change.</li>
+      <li>Tests: the adaptive order; the app's rankings match the prototype's on 500 fixed answer sets; every School reachable; GM notes match their rules; Build equals doing it by hand; every guide's build passes in the wizard; phone layout and touch targets; removal proof.</li>
+    </ul>
+    <h3>Content, in batches</h3>
+    <p>The first release covers every School with a card generated from the app's data, like the cards in Try it, plus the two full guides and a short introduction to each of the 25 Clans. Full guides then follow Clan by Clan:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Batch</th><th>Schools</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Crab, Crane, Dragon, Lion</td><td class="num">28</td></tr>
+        <tr><td>2</td><td>Phoenix, Scorpion, Unicorn, Mantis</td><td class="num">28</td></tr>
+        <tr><td>3</td><td>Imperial and the Minor Clans</td><td class="num">19</td></tr>
+        <tr><td>4</td><td>Brotherhood of Shinsei</td><td class="num">22</td></tr>
+        <tr><td>5</td><td>Spider</td><td class="num">6</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="asks">
+    <h2>Your questions</h2>
+    <p>Answer by number whenever suits you. Nothing is built until you approve.</p>
+    <ol class="asks">
+      <li><b>Name and place:</b> Part K, Phase 11.4, "Character Finder"? Or another name, such as "Help me choose"?</li>
+      <li><b>The one filter:</b> should "No" to magic remove every Shugenja School, or only push them down the list?</li>
+      <li><b>Entry points:</b> the wizard's Clan step and the Characters screen. Anywhere else?</li>
+      <li><b>Ratings:</b> please check complexity and "how unusual" in All Schools. The checks re-run after any change.</li>
+      <li><b>Question wording:</b> edit freely. Should there also be a quick version with only the first six questions?</li>
+      <li><b>Suggested builds:</b> hints only, as drafted, or also a "Use this build" button? That would make it a builder rather than a guide.</li>
+      <li><b>Roleplay prompts:</b> into the existing Identity boxes (no save change), or a section of their own (a save-format change)?</li>
+      <li><b>Ronin:</b> fine to leave out until the planned ronin work adds ronin Schools?</li>
+      <li><b>Guide order:</b> batches as above, starting with Crab, Crane, Dragon and Lion?</li>
+    </ol>
+  </section>
+
+  <footer>Ratings, questions and scores come from <code>prototype/ratings.py</code> and <code>prototype/finder.py</code> in the phase folder. This page uses the same data. School descriptions, Families, pages and Technique text are the app's own, in our own words.</footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var D = null;
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
+
+  // ---------- scoring: a line-for-line port of prototype/finder.py ----------
+  function questionsFor(ans) {
+    var order = ['magic', 'complexity', 'niche'];
+    var caster = ans.magic === 0;
+    if (caster) order.push('magickind', 'element');
+    else { order.push('approach'); order.push(ans.approach === 1 || ans.approach === 4 ? 'court' : 'fight'); }
+    order.push('ambition', 'home', 'rules', 'bushido');
+    if (!caster) order.push('faith');
+    order.push('companion', 'death');
+    return order;
+  }
+  function effects(ans) {
+    return questionsFor(ans).filter(function (q) { return ans[q] !== undefined && ans[q] !== null; })
+      .map(function (q) { return D.q[q].a[ans[q]][1]; });
+  }
+  function score(s, effs) {
+    var t = 0;
+    effs.forEach(function (e) {
+      if (e.tags) Object.keys(e.tags).forEach(function (k) { t += e.tags[k] * (s.p.indexOf(k) >= 0 ? 2 : s.s.indexOf(k) >= 0 ? 1 : 0); });
+      if (e.roles) Object.keys(e.roles).forEach(function (k) { if (s.r.indexOf(k) >= 0) t += e.roles[k]; });
+      if (e.homes) Object.keys(e.homes).forEach(function (k) { if (s.o.indexOf(k) >= 0) t += e.homes[k]; });
+      if (e.honor) t += e.honor[s.b] || 0;
+      if (e.cx) t += e.cx[s.x] || 0;
+      if (e.niche) t += e.niche[s.u] || 0;
+      if (e.element) { if (s.ca || s.a === e.element) t += 3; else if (s.d === e.element) t -= 2; }
+    });
+    return t;
+  }
+  function allowed(s, ans) {
+    var f = ans.magic;
+    if (f === 0) return s.r.indexOf('Shugenja') >= 0;
+    if (f === 1 || f === 2) return s.r.indexOf('Shugenja') < 0;
+    return true;
+  }
+  function recommend(ans) {
+    var effs = effects(ans);
+    var pool = D.schools.filter(function (s) { return allowed(s, ans); }).map(function (s) { return {s: s, sc: score(s, effs)}; });
+    pool.sort(function (a, b) { return (b.sc - a.sc) || (a.s.x - b.s.x) || (a.s.u - b.s.u) || (a.s.n < b.s.n ? -1 : a.s.n > b.s.n ? 1 : 0); });
+    var seen = {}, uniq = [];
+    pool.forEach(function (x) { if (!seen[x.s.n]) { seen[x.s.n] = 1; uniq.push(x); } });
+    var top = uniq[0].sc, hard = [uniq[0]];
+    if (uniq.length > 1 && (top <= 0 || uniq[1].sc >= 0.8 * top)) hard.push(uniq[1]);
+    var soft = [], clans = {};
+    hard.forEach(function (x) { clans[x.s.c] = (clans[x.s.c] || 0) + 1; });
+    for (var i = hard.length; i < uniq.length && soft.length < 4; i++) {
+      var x = uniq[i];
+      if ((clans[x.s.c] || 0) >= 2) continue;
+      soft.push(x); clans[x.s.c] = (clans[x.s.c] || 0) + 1;
+    }
+    var wild = null;
+    if (effs.some(function (e) { return e.wildcard; }) || ans.niche === undefined) {
+      var shown = {}; hard.concat(soft).forEach(function (x) { shown[x.s.n] = 1; });
+      for (var j = 0; j < uniq.length; j++) {
+        var y = uniq[j];
+        if (y.s.u === 3 && !shown[y.s.n] && y.sc >= 0.5 * top) { wild = y; break; }
+      }
+    }
+    return {hard: hard, soft: soft, wild: wild, all: uniq};
+  }
+  window.__finder = {recommend: recommend, questionsFor: questionsFor};
+
+  // ---------- School card ----------
+  var CLANS_OF = {};
+  var GUIDE = {'Hida Bushi': 'guide-hida', 'Kuni Witch-Hunter [Monk]': 'guide-kuni'};
+  var EL = {Air: 'var(--air)', Earth: 'var(--earth)', Fire: 'var(--fire)', Water: 'var(--water)', Void: 'var(--void)'};
+  function batchOf(s) {
+    if (['Crab', 'Crane', 'Dragon', 'Lion'].indexOf(s.c) >= 0) return 1;
+    if (['Phoenix', 'Scorpion', 'Unicorn', 'Mantis'].indexOf(s.c) >= 0) return 2;
+    if (s.c === 'Brotherhood of Shinsei') return 4;
+    if (s.c === 'Spider') return 5;
+    return 3;
+  }
+  function displayName(n) { return n.replace(/ \[[^\]]+\]$/, ''); }
+  function chipsFor(s) {
+    var h = '<span class="chips">';
+    h += '<span class="chip">' + esc(D.cx[s.x]) + '</span><span class="chip">' + esc(D.niche[s.u]) + '</span>';
+    if (s.a) h += '<span class="chip el" style="background:' + EL[s.a] + '">Affinity ' + esc(s.a) + '</span>';
+    if (s.ca) h += '<span class="chip">Affinity of your choice</span>';
+    if (s.ask.length) h += '<span class="chip ask">Ask your GM</span>';
+    return h + '</span>';
+  }
+  function card(s, opts) {
+    opts = opts || {};
+    var clans = CLANS_OF[s.n] || [s.c];
+    var fam = s.fam ? esc(s.fam[0]) + ' (+1 ' + esc(s.fam[1]) + ')' : (s.c === 'Brotherhood of Shinsei' ? 'None: a Brotherhood monk' : 'Any ' + esc(s.c) + ' family');
+    var plays = s.p.map(function (t) { return '<b>' + esc(D.tags[t]) + '</b>'; }).concat(s.s.map(function (t) { return esc(D.tags[t]); })).join(', ');
+    var h = '<details class="school' + (opts.hard ? ' hard' : '') + '"' + (opts.open ? ' open' : '') + '><summary>';
+    h += '<span class="seal" aria-hidden="true">' + esc(clans[0].charAt(0)) + '</span>';
+    h += '<span style="min-width:0"><span class="sname">' + esc(displayName(s.n)) + '</span><span class="smeta">' + esc(clans.join(' or ')) + ' · ' + esc(s.r.join('/')) + (s.h != null ? ' · Honor ' + s.h : '') + '</span>' + chipsFor(s) + '</span>';
+    h += '<span class="score">' + (opts.sc != null ? opts.sc + ' pts' : '') + '</span></summary><div class="sbody">';
+    if (s.lore) h += '<p>' + esc(s.lore) + '</p>';
+    h += '<dl class="facts2"><dt>Family</dt><dd>' + fam + '</dd><dt>School Trait</dt><dd>+1 ' + esc(s.ben) + '</dd>';
+    h += '<dt>Plays like</dt><dd>' + plays + '</dd><dt>At home</dt><dd>' + s.o.map(function (o) { return esc(D.homes[o]); }).join(', ') + '</dd>';
+    h += '<dt>Rank 1</dt><dd><b>' + esc(s.t1) + ':</b> ' + esc(s.t1d) + '</dd><dt>School Skills</dt><dd>' + esc(s.sk) + '</dd>';
+    h += '<dt>Source</dt><dd>' + esc(s.src) + '</dd></dl>';
+    s.ask.forEach(function (a) { h += '<div class="note ask"><b>Ask your GM.</b> ' + esc(a) + '</div>'; });
+    s.know.forEach(function (a) { h += '<div class="note know"><b>Good to know.</b> ' + esc(a) + '</div>'; });
+    if (GUIDE[s.n]) h += '<p><a href="#' + GUIDE[s.n] + '">Read the full guide, with a suggested starting build</a></p>';
+    else h += '<p class="smeta">Full guide with a suggested starting build: batch ' + batchOf(s) + '.</p>';
+    if (opts.build) h += '<div class="row"><button type="button" class="btn primary" data-build="' + esc(s.n) + '">Build this character</button></div><div class="buildnote" hidden></div>';
+    return h + '</div></details>';
+  }
+
+  // ---------- Try it ----------
+  var ans = {}, idx = 0, done = false;
+  var EXAMPLES = [
+    ['New player, classic warrior', {magic: 2, complexity: 0, niche: 0, approach: 0, fight: 0, ambition: 0, home: 0, rules: 1, bushido: 1, faith: 1, companion: 7, death: 0}],
+    ['Curious, wants something different', {magic: 1, complexity: 1, niche: 1, approach: 0, fight: 9, ambition: 0, home: 9, rules: 1, bushido: 4, faith: 0, companion: 6, death: 2}],
+    ['Wants to play a healer', {magic: 0, complexity: 1, niche: 3, magickind: 1, element: 0, ambition: 7, home: 1, rules: 0, bushido: 0, companion: 4, death: 3}]
+  ];
+  function answered() { var o = questionsFor(ans).slice(0, idx), a = {}; o.forEach(function (q) { if (ans[q] !== undefined) a[q] = ans[q]; }); return a; }
+  function renderQuestion() {
+    var order = questionsFor(ans), q = order[idx], Q = D.q[q];
+    var h = '<div class="panel-top"><span class="label">Question ' + (idx + 1) + ' of ' + order.length + '</span>';
+    h += '<button type="button" class="btn quiet" id="restart" style="min-height:36px;padding:.3rem .7rem">Start again</button></div>';
+    h += '<div class="progress"><i style="width:' + Math.round(100 * idx / order.length) + '%"></i></div>';
+    h += '<div class="qtext" id="qtext" tabindex="-1">' + esc(Q.q) + '</div><div class="answers">';
+    Q.a.forEach(function (a, i) {
+      var np = a[0] === 'No preference';
+      h += '<button type="button" data-a="' + i + '" class="' + (np ? 'np ' : '') + (ans[q] === i ? 'chosen' : '') + '">' + esc(a[0]) + '</button>';
+    });
+    h += '</div><div class="row"><button type="button" class="btn" id="back"' + (idx === 0 ? ' disabled' : '') + '>Back</button>';
+    h += '<button type="button" class="btn" id="early"' + (idx < 6 ? ' disabled' : '') + '>See my results now</button></div>';
+    $('panel').innerHTML = h;
+    $('panel').querySelectorAll('[data-a]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        ans[q] = +b.getAttribute('data-a'); idx++;
+        if (idx >= questionsFor(ans).length) { done = true; renderResults(answered()); } else renderQuestion();
+        var t = $('qtext'); if (t) t.focus({preventScroll: true});
+      });
+    });
+    $('back').addEventListener('click', function () { if (idx > 0) { idx--; renderQuestion(); } });
+    $('early').addEventListener('click', function () { done = true; renderResults(answered()); });
+    $('restart').addEventListener('click', restart);
+  }
+  function renderResults(a) {
+    var r = recommend(a);
+    var h = '<div class="panel-top"><span class="label">' + Object.keys(a).length + ' answers</span><span class="row" style="margin:0">';
+    h += '<button type="button" class="btn quiet" id="change" style="min-height:36px;padding:.3rem .7rem">Change my answers</button>';
+    h += '<button type="button" class="btn quiet" id="restart" style="min-height:36px;padding:.3rem .7rem">Start again</button></span></div>';
+    h += '<div class="res-h">Your best match' + (r.hard.length > 1 ? 'es' : '') + '</div>';
+    r.hard.forEach(function (x, i) { h += card(x.s, {hard: true, sc: x.sc, build: true, open: i === 0}); });
+    h += '<div class="res-h">Also worth a look</div>';
+    r.soft.forEach(function (x) { h += card(x.s, {sc: x.sc, build: true}); });
+    if (r.wild) { h += '<div class="res-h">Something different</div>' + card(r.wild.s, {sc: r.wild.sc, build: true}); }
+    h += '<div class="row"><button type="button" class="btn" id="all">See all matches (' + r.all.length + ')</button></div><div id="allbox" hidden></div>';
+    $('panel').innerHTML = h;
+    $('change').addEventListener('click', function () { done = false; idx = 0; renderQuestion(); });
+    $('restart').addEventListener('click', restart);
+    $('all').addEventListener('click', function () {
+      var box = $('allbox');
+      if (box.hidden) { box.innerHTML = '<div class="res-h">All matches, best first</div>' + r.all.map(function (x) { return card(x.s, {sc: x.sc, build: true}); }).join(''); box.hidden = false; $('all').textContent = 'Hide all matches'; }
+      else { box.hidden = true; $('all').textContent = 'See all matches (' + r.all.length + ')'; }
+    });
+  }
+  function restart() { ans = {}; idx = 0; done = false; renderQuestion(); }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-build]');
+    if (!b) return;
+    var s = D.schools.find(function (x) { return x.n === b.getAttribute('data-build'); });
+    var note = b.parentNode.nextElementSibling;
+    var fam = s.fam ? s.fam[0] : null;
+    note.textContent = 'In the app, Build opens the creation wizard with ' + s.c + (fam ? ', ' + fam : '') + ' and ' + displayName(s.n) +
+      ' already chosen (the School asks its own questions as usual), then carries on at Rings & Traits.';
+    note.hidden = false;
+  });
+
+  // ---------- All Schools ----------
+  var UNIQUE = [];
+  function buildList() {
+    var seen = {};
+    D.schools.forEach(function (s) {
+      (CLANS_OF[s.n] = CLANS_OF[s.n] || []).indexOf(s.c) < 0 && CLANS_OF[s.n].push(s.c);
+      if (!seen[s.n]) { seen[s.n] = 1; UNIQUE.push(s); }
+    });
+    var types = {}; UNIQUE.forEach(function (s) { s.r.forEach(function (r) { types[r] = 1; }); });
+    Object.keys(types).sort().forEach(function (t) { $('f-type').insertAdjacentHTML('beforeend', '<option>' + esc(t) + '</option>'); });
+    [1, 2, 3].forEach(function (k) {
+      $('f-cx').insertAdjacentHTML('beforeend', '<option value="' + k + '">' + esc(D.cx[k]) + '</option>');
+      $('f-niche').insertAdjacentHTML('beforeend', '<option value="' + k + '">' + esc(D.niche[k]) + '</option>');
+    });
+    ['f-search', 'f-type', 'f-cx', 'f-niche', 'f-gm'].forEach(function (id) { $(id).addEventListener('input', drawList); });
+    drawList();
+  }
+  function drawList() {
+    var q = $('f-search').value.trim().toLowerCase(), t = $('f-type').value, cx = $('f-cx').value, ni = $('f-niche').value, gm = $('f-gm').value;
+    var rows = UNIQUE.filter(function (s) {
+      if (t && s.r.indexOf(t) < 0) return false;
+      if (cx && String(s.x) !== cx) return false;
+      if (ni && String(s.u) !== ni) return false;
+      if (gm === 'ask' && !s.ask.length) return false;
+      if (gm === 'none' && (s.ask.length || s.know.length)) return false;
+      if (q) {
+        var hay = [s.n, (CLANS_OF[s.n] || []).join(' '), s.p.concat(s.s).map(function (x) { return D.tags[x]; }).join(' '), s.o.map(function (x) { return D.homes[x]; }).join(' '), s.src].join(' ').toLowerCase();
+        if (hay.indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+    $('count').textContent = rows.length + ' of ' + UNIQUE.length + ' Schools';
+    $('list').innerHTML = rows.map(function (s) { return card(s); }).join('');
+  }
+
+  function start(data) {
+    D = data;
+    buildList();
+    EXAMPLES.forEach(function (ex) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = ex[0];
+      b.addEventListener('click', function () {
+        ans = Object.assign({}, ex[1]); idx = questionsFor(ans).length; done = true; renderResults(answered());
+        $('panel').scrollIntoView({block: 'start', behavior: 'smooth'});
+      });
+      $('examples').appendChild(b);
+    });
+    renderQuestion();
+  }
+  fetch('finder-data.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(start).catch(function () {
+    $('panel').innerHTML = '<p>The School data did not load, so Try it and All Schools are unavailable. Reload the page to try again.</p>';
+  });
+})();
+</script>

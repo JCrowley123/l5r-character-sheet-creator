@@ -4,6 +4,10 @@
 The phase number 11.4 is a proposal (11.3 is the App Bar). It sits in Part K beside the creation wizard
 (Phase 11.2), which it feeds. The roadmap has no entry yet; one follows the owner's approval.
 
+**Review page:** <https://claude.ai/artifact/PoyremW11mLkwik15pEvW1>. It has this design plus a working "Try it"
+version of the questionnaire, using the same data and scoring (checked against the prototype on 400 answer
+sets, 0 mismatches). Its source is `review-page/`.
+
 **In one paragraph.** An optional questionnaire for players who do not know what to play. About a dozen
 multiple-choice questions, each with a "No preference" answer, narrow the 105 Basic Schools the app offers down
 to 1–2 **hard** recommendations, 3–4 **soft** ones, and sometimes a **something different** pick. Every
@@ -808,6 +812,8 @@ builds consistent. Each is then adjusted to its School and checked in the wizard
 | `prototype/extract-schools.js`, `schools.json` | Reads the School list, flavour text, pages and Families from the built app (run `python3 build.py` first) |
 | `prototype/verify-builds.js`, `builds.json` | Enters the suggested builds in the real wizard and prints the app's own XP and findings |
 | `prototype/design-data.json`, `examples.json` | Generated: the tables and example players as data |
+| `review-page/character-finder.html`, `finder-data.json` | The published review page and its data |
+| `review-page/extract-tech.js`, `build-data.py` | Rebuild `finder-data.json` from the built app and the prototype |
 
 To re-run everything after changing a rating or a question:
 
