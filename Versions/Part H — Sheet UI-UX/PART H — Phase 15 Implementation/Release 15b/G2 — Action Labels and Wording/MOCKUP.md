@@ -167,7 +167,8 @@ B01 and B03 were rebuilt to the approved round 2, and B05 and B09 restacked on t
   - the three harnesses that follow B01 (Feature 4.5.31's, Feature 4.5.33's and A07's) on the build with B01 removed: 3/3, 171/171, same counts (`qa/light/r2-b01-removed-following-run.log`);
   - the group's four harnesses with 15a removed: 23/23, 15/15, 10/10, 9/9 (`qa/light/r2-own-on-15a-removed-fd8fb7d0/`).
 - **Older harnesses that now follow B01** (same ids and count, declared in both ROLLBACKs): Feature 4.5.33's `void-initiative-harness.js` (Touch of the Void's words) and A07's `moon-row-harness.js` (the resist button's size). Checked and left alone, because they read neither the old words nor the size: the Moon Resist Label fix's, Feature 4.5.10's, Feature 4.5.2's (gates) and Feature 4.5.32's. **Older removers that refuse while B01 is present:** Feature 4.5.31's (as before) and now Feature 4.5.33's.
-- **Device round 2:** the checklist's "Round 2" section, in the same Claude Doc, mirrored in [DEVICE-CHECKS.md](DEVICE-CHECKS.md).
+- **Tip preview** (https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/, commit `91da9205`): the deployed page, service worker, manifest and icons match the committed round-2 build file for file, and **3,863/3,863** pass on the deployed files: 89 harnesses, the group's four plus the 85 touched layers (`qa/preview-b09-round2.log`, `qa/hosted-preview/claude-release-15b-b09/`). `qa/verify-preview.py` now also reads round 2's touched set (`qa/light/r2-touched/`).
+- **Device round 2:** the checklist's "Round 2" section, in the same Claude Doc (its Result and Decision dropdowns left for the owner), mirrored in [DEVICE-CHECKS.md](DEVICE-CHECKS.md). **Not qualified; `main` untouched.** Qualification of the four comes after the owner's round-2 check, and only on their word.
 
 ## For the build (not decided by the owner; settle when the build starts)
 
@@ -184,3 +185,5 @@ Claude, Opus 5.5, Pro plan, account-wide meters: weekly all models 65% and five-
 Build (24 November): weekly 69% at the owner's "Build here" (11:44 UTC); 76% with five-hour 52% at 12:25 UTC, the group built, checked, previewed and its checklist made.
 
 Round 1 (24 November): weekly 69% and five-hour 2% at 11:40 UTC. After the answer was recorded and the board republished as version 2 with the approval banner, the readings were 69% and 3% at 11:42 UTC.
+
+Round 2 build (24 November): weekly 79% and five-hour 3% at the start (16:51 UTC); 83% and 36% at 17:42 UTC, with round 2 built, every light check run, the tip preview verified and the checklist's round-2 section added. The weekly meter resets on 25 November at 01:00 UTC.

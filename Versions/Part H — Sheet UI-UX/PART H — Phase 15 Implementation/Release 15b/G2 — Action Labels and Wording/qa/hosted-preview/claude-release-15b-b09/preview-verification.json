@@ -1,12 +1,12 @@
 {
-  "commit": "66d825f2c738fdd2c0d9366ccee78c2d970103b0",
+  "commit": "91da9205e5e1807f22c5a1dd57b0d5298afc8e1d",
   "ref": "claude/release-15b-b09",
   "url": "https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/",
-  "checked_utc": "2026-11-24T12:33:27.051478+00:00",
-  "source_sha256": "0d8cebb174c4c4130cfab0368bb0950793d93c01285310438f9e073bb4b81637",
-  "page_sha256": "ac01ec10a8988d56647229dc826fa876ac15629276fefc8130f4c22016346ed3",
-  "page_bytes": 17772767,
-  "service_worker_build": "90f180540842c52c",
+  "checked_utc": "2026-11-24T17:41:34.808394+00:00",
+  "source_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+  "page_sha256": "0f3f9b841764b9dfcada1b45088bff84a3a8a41dc4aadba7e81f50ad8f6c7838",
+  "page_bytes": 17780504,
+  "service_worker_build": "ac7f49e9781c15eb",
   "units": [
     "B01",
     "B03",
@@ -14,24 +14,24 @@
     "B09"
   ],
   "expected": {
-    "harnesses": 88,
-    "checks": 3812
+    "harnesses": 89,
+    "checks": 3863
   },
   "harnesses": {
     "B01 \u2014 Check Buttons Named for What They Do/check-names-harness.js": {
+      "counts": [
+        "23",
+        "23"
+      ],
+      "expected": 23,
+      "passed": true
+    },
+    "B03 \u2014 Lead an Ally/lead-an-ally-harness.js": {
       "counts": [
         "15",
         "15"
       ],
       "expected": 15,
-      "passed": true
-    },
-    "B03 \u2014 Lead an Ally/lead-an-ally-harness.js": {
-      "counts": [
-        "13",
-        "13"
-      ],
-      "expected": 13,
       "passed": true
     },
     "B05 \u2014 You Remain in Control/remain-in-control-harness.js": {
@@ -504,6 +504,14 @@
         "28"
       ],
       "expected": 28,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.5 Eligibility Gates/adv-eligibility-harness.js": {
+      "counts": [
+        "41",
+        "41"
+      ],
+      "expected": 41,
       "passed": true
     },
     "PART I \u2014 Phase 4.5.7 Unlucky/disadv-unlucky-harness.js": {

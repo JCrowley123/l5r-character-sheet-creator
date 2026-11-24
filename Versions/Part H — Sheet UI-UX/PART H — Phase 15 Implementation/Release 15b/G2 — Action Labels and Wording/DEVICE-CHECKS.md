@@ -117,7 +117,7 @@ Lost Love's "Spend Void" and Quick's "Use" follow B18's answers (G07 and G06) if
 
 The owner approved round 2 as shown ("Approve as shown"; MOCKUP.md, "Round 2 answers"). B01 and B03 were rebuilt to it, with B05 and B09 restacked on them, on the tip branch `claude/release-15b-b09` only.
 
-- **Site:** https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/ (build `1f002be9…5819`).
+- **Site:** https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/ (build `1f002be9…5819`, commit `91da9205`; checked on the deployed files, 3,863/3,863).
 - **The checklist's round-2 section** is in the same Claude Doc, with the same Result choices (Pass / Fail / Not run on iPhone and on laptop) and a Decision for each unit (Accept / Revise / Remove).
 - Only the changes are checked. Round 1's checks passed, and B05 and B09 were accepted.
 
