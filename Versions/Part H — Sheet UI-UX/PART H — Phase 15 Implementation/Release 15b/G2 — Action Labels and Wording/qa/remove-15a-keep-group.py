@@ -15,7 +15,7 @@ chain = importlib.util.module_from_spec(spec)
 sys.modules['removal_chain'] = chain
 spec.loader.exec_module(chain)
 KEEP = Path(sys.argv[1]).resolve()
-GROUP = ['CN15.install()', 'LA15.install()', 'RC15.install()', 'PT15.install()']
+GROUP = ['CN15.install()', 'LA15.install()', 'RC15.install()', 'SKP15.install()']
 
 with tempfile.TemporaryDirectory(prefix='l5r-15a-off-') as folder:
     tree = Path(folder) / 'phase0'

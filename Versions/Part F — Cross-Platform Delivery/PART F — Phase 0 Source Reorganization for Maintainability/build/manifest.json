@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "4d0a42b5ed28d24ce3614b0afe66bde674da07955f724c09dce350fe43313473",
+  "expect_sha256": "0d8cebb174c4c4130cfab0368bb0950793d93c01285310438f9e073bb4b81637",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -554,6 +554,7 @@
     { "file": "src/sheet/209.9999999999999999997-feat-check-button-names.js", "note": "PART H PHASE 15.2.6 - Release 15b B01, seven Disadvantage check buttons named for what they do, the spoken name starting with the label" },
     { "file": "src/sheet/209.9999999999999999998-feat-lead-an-ally.js", "note": "PART H PHASE 15.2.7 - Release 15b B03, Leadership reads Lead an ally and Quick reads Use, each with its amount beside it" },
     { "file": "src/sheet/209.9999999999999999999-feat-remain-in-control.js", "note": "PART H PHASE 15.2.8 - Release 15b B05, Touch of the Void's and Lord Moon's Curse's success lines say You remain in control" },
+    { "file": "src/sheet/209.99999999999999999991-feat-picker-traits.js", "note": "PART H PHASE 15.2.9 - Release 15b B09, the Skills picker's Traits read from the list as it stands after every layer" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

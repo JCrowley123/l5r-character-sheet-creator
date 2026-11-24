@@ -1,0 +1,4 @@
+check-names-harness 15/15 checks passed
+lead-an-ally-harness 13/13 checks passed
+remain-in-control-harness 10/10 checks passed
+picker-traits-harness 9/9 checks passed

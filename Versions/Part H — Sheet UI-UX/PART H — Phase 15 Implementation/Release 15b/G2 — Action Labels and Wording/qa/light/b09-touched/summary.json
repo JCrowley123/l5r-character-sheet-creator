@@ -1,0 +1,222 @@
+{
+ "sheet": "C:\\Users\\jcrow\\l5r-release-15b-g2\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+ "pattern": "[Ss]kill|[Ww]izard|A03|A20|Search",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A20 — A Trait for One Skill Roll/qa/skill-trait-choice-harness.js",
+   "passed": 18,
+   "total": 18,
+   "status": 0,
+   "seconds": 13,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03.1 — Masteries in the Skill Information/qa/skill-masteries-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A03 — Top-Aligned Columns and Compact Skill Cards/qa/compact-skills-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 46,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Wizard Overspend Warns/qa/overspend-warns-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Skill List Hides Held Skills/qa/skill-list-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Gender From Identity and the Wizard/qa/gender-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Wizard Skill Remove/qa/wizard-remove-harness.js",
+   "passed": 5,
+   "total": 5,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2 Creation Wizard/qa/wizard-harness.js",
+   "passed": 43,
+   "total": 43,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.1 Wizard Skills and Advantages/qa/wizard2-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/qa/wizard3-harness.js",
+   "passed": 52,
+   "total": 52,
+   "status": 0,
+   "seconds": 9,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.3 Wizard Starting Spells/qa/wizard4-harness.js",
+   "passed": 25,
+   "total": 25,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 11.2.4 Wizard Starting Spells for Every School/qa/wizard5-harness.js",
+   "passed": 71,
+   "total": 71,
+   "status": 0,
+   "seconds": 42,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Apply School Skill Rows/qa/school-skill-rows-harness.js",
+   "passed": 37,
+   "total": 37,
+   "status": 0,
+   "seconds": 10,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 12.4 Play Mode Skills/qa/skills-harness.js",
+   "passed": 17,
+   "total": 17,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Rank 0 Skill Rolls Explode/qa/rank-zero-harness.js",
+   "passed": 19,
+   "total": 19,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14 Search/qa/search-harness.js",
+   "passed": 62,
+   "total": 62,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14.1 Search Facets/qa/facets-harness.js",
+   "passed": 44,
+   "total": 44,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14.1 Search Facets/qa/dependency-harness.js",
+   "passed": 14,
+   "total": 14,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Skill Traits/qa/skill-traits-harness.js",
+   "passed": 38,
+   "total": 38,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Skill Traits/qa/dependency-harness.js",
+   "passed": 8,
+   "total": 8,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/search-focus-harness.js",
+   "passed": 12,
+   "total": 12,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Focus on Close/qa/dependency-harness.js",
+   "passed": 15,
+   "total": 15,
+   "status": 0,
+   "seconds": 4,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14.3a Skill, Weapon and Spell References/qa/references-harness.js",
+   "passed": 32,
+   "total": 32,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "PART K — Phase 14.3a Skill, Weapon and Spell References/qa/dependency-harness.js",
+   "passed": 23,
+   "total": 23,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Search Keystroke Speed/qa/speed-harness.js",
+   "passed": 7,
+   "total": 7,
+   "status": 0,
+   "seconds": 2,
+   "ok": true
+  },
+  {
+   "harness": "BUGFIX — Printed Skills and Equipment Tables/qa/printed-skills-equipment-harness.js",
+   "passed": 18,
+   "total": 18,
+   "status": 0,
+   "seconds": 7,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.39 Supplement Skill Pickers/qa/skill-pickers-harness.js",
+   "passed": 24,
+   "total": 24,
+   "status": 0,
+   "seconds": 1,
+   "ok": true
+  }
+ ]
+}
