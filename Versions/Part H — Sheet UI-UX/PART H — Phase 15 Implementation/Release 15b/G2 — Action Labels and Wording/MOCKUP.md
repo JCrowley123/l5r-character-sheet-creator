@@ -107,7 +107,21 @@ Read as: build the four units in this session, on stacked branches, through the 
 
 ### Round 2 answers
 
-Not given yet.
+24 November 2026, the owner, by the next-step button under the question "Approve round 2 for B01 and B03 as shown?":
+
+> Approve as shown
+
+How it is read:
+- **B01 round 2 is approved as shown:**
+  - Lord Moon's and Touch of the Void's buttons take the check look;
+  - Touch of the Void is named "Keep control (TN 30)", not the alternative;
+  - the ten "Tell the GM" sentences go, with Elemental Imbalance worded as shown.
+- **B03 round 2 is approved as shown:** Quick and Leadership are outlined.
+- **Next, on the board's terms:**
+  - rebuild B01 and B03, then restack B05 and B09 on them;
+  - run the light checks;
+  - the owner runs a short device round of the changes;
+  - then the group of four goes to qualification.
 
 ## Built (24 November 2026)
 
