@@ -754,8 +754,38 @@ These are about the spoken name rather than the visible word. They are not decid
 
 ## 6. The owner’s answers
 
-Not given yet. The 14 questions are on the private ruling page, https://claude.ai/artifact/CfJNQtsc9wsm5vpGP7NW76 (source: [ruling/B18-RULING.html](ruling/B18-RULING.html)). Answers save to the page’s own store as the owner gives them; when they do, they go here verbatim.
+Given by the owner on the ruling page, **24 November 2026** (22:54 to 23:01 UTC), read from the page’s store (`https://claude.ai/artifact/CfJNQtsc9wsm5vpGP7NW76 (answers collection), read 24 November 2026`). Every word below that is in quotation marks is the owner’s, verbatim; the "Word" column is the page’s own text for the option chosen.
+
+| Group | Question | Answer | Word | Owner’s note, verbatim |
+|---|---|---|---|---|
+| G01 | Giving back a once-per-session use | Use my suggestion | Reset |  |
+| G02 | Opening a choice again | Use my suggestion | Change |  |
+| G03 | Taking something off the sheet | Use my suggestion | Remove, and Delete | “This one I am unsure of, I think before it is built I want to see a mock up comparing how it is now to how it will be” |
+| G04 | The ✕ in a window’s corner | Use my suggestion | Close or Cancel, by what the window is |  |
+| G05 | The buttons at a window’s foot | Use my suggestion | OK · Confirm · Cancel · Done |  |
+| G06 | Using an ability now | Use my suggestion | Use |  |
+| G07 | Spending a Void Point | Use my suggestion | Spend Void |  |
+| G08 | Rolling again | Use my suggestion | Reroll with {source} |  |
+| G09 | Clearing what you entered | Use my suggestion | Clear (as it is) |  |
+| G10 | Adding something | Use my suggestion | + Add {thing} |  |
+| G11 | Rolling the dice | Use my suggestion | Check (TN 30) |  |
+| G12 | The information buttons | Use my suggestion | i, read aloud as “{thing} information” |  |
+| G14 | Plus and minus buttons | Use my suggestion | Increase / Decrease {thing} |  |
+| G16 | Saving and exporting | Use my suggestion | Export PDF |  |
+
+And the note on the card for the groups left alone, verbatim:
+
+> I think as a rule of thumb, before anything is changed or built I want to see a mock up comparing how it is now, to how it will look after the change
+
+Read as:
+
+- **All 14 questions: "Use my suggestion".** The recommended words in section 3 are the owner’s rulings for G01, G02, G03, G04, G05, G06, G07, G08, G09, G10, G11, G12, G14 and G16. G09 (Clear) and G11 (Roll/Cast/Check) are rulings to keep what is there, with the single change in G11 (Touch of the Void’s "Willpower (TN 30)" becomes "Check (TN 30)").
+- **G01 settles B17’s word:** "Reset". B17 is live with "Reset session", so the build will change the Kharmic Tie row too (round 3 measured that a short name’s row is then one line on a phone in Manage).
+- **G03 is not cleared to build.** The owner chose the suggestion but is unsure of it and wants a mock-up that compares how it is now with how it will be before it is built.
+- **A rule for the whole unit:** before anything is changed or built, the owner wants a mock-up that compares how it is now with how it will look after the change. Stage 3 therefore starts with a mock-up board (today beside the proposal, phone and laptop), as the 15b process already requires, and builds only what the owner approves on it.
+- **The nine groups left alone** (Undo, Moving around, Applying, Manage and Done, Choosing from a list, Ticks, Pips, Headings, One-off actions): no objection was made, so they stay as they are.
+- **Order:** B18’s place in 15b is to be set; its Reset rows are scheduled with the parked A04.2.
 
 ## 7. Usage
 
-Weekly meter (all models, account-wide): **42%** at the start of stage 1 and **54%** at the end, so stage 1 took about **12 points**. The five-hour meter went from 9% to 95% over the same work. The weekly meter resets at 01:00 UTC on 25 November.
+Weekly meter (all models, account-wide): **42%** at the start of stage 1 and **54%** at the end, so stage 1 took about **12 points**. The five-hour meter went from 9% to 95% over the same work. The weekly meter resets at 01:00 UTC on 25 November. Recording the owner’s answers on 24 November took under one point; the account reading then was 93% weekly (other sessions had used the rest) and 24% five-hour.
