@@ -4,6 +4,10 @@
  *   Daredevil (p.147) Void +3k1 on Athletics; Touch of the Void (p.162) Void +2k1, Willpower TN 30 after a spend;
  *   the two do not stack (Athletics: +3k1). Momoku (p.161) no general Void spends. Quick (p.152) +Reflexes once a
  *   Round you did not act first, for the skirmish. Leadership (p.151) School Rank + 1k1 for an ally, once a Round.
+ * Conditional on Release 15b B01 (PART H PHASE 15.2.6, check buttons named for what they do), declared in B01's and
+ * this phase's ROLLBACK.md (24 November 2026, B01's round 2): with B01 present Touch of the Void's button reads the
+ * owner's "Keep control (TN 30)", so VI-TOUCH-ROW and VI-TOUCH-ONLY-ITS-OWN-LIST expect those words. Its roll, TN,
+ * note, state and every other check are unchanged. Same checks, same count; with B01 removed every line runs as before.
  * node void-initiative-harness.js <sheet.html>
  */
 'use strict';
@@ -21,6 +25,9 @@ async function section(id, fn) {
   try { await fn(); } catch (error) { check(id + '-EXCEPTION', String(error.stack || error), 'no exception'); }
 }
 const ADV = ['Daredevil', 'Quick', 'Leadership'];
+// Release 15b B01 present: Touch of the Void's button words (declared above).
+let NAMED = false;
+const touchWords = () => NAMED ? 'Keep control (TN 30)' : 'Willpower (TN 30)';
 
 async function setup(page, entries = [], {wrongList = false, reflexes = 3, rank = 2} = {}) {
   await page.keyboard.press('Escape').catch(() => {});
@@ -71,6 +78,7 @@ async function main() {
     await page.goto(pathToFileURL(sheet).href);
     await page.waitForFunction(() => window.__L5R_TEST__ && (!window.__L5R_TEST__.CL11 || window.__L5R_TEST__.CL11.ready), null, {timeout:60000});
     check('VI-SEAM', await page.evaluate(() => typeof window.__L5R_TEST__.VI4533), 'object');
+    NAMED = await page.evaluate(() => !!(window.__L5R_TEST__.CN15 && window.__L5R_TEST__.CN15.installed && window.__L5R_TEST__.CHECK_BUTTON_NAMES_ENABLED));
 
     await section('VI-VOID', async () => {
       await setup(page, []);
@@ -167,7 +175,7 @@ async function main() {
 
     await section('VI-TOUCH-CHECK', async () => {
       await setup(page, ['Touch of the Void']);
-      check('VI-TOUCH-ROW', await row(page, 'Touch of the Void'), {buttons:[['Willpower (TN 30)', false, '']],
+      check('VI-TOUCH-ROW', await row(page, 'Touch of the Void'), {buttons:[[touchWords(), false, '']],
         notes:['After every Void Point you spend. A Void Point on a roll gives +2k1, added in the roll.']});
       await page.evaluate(() => { let i = 0; const faces = [9, 9, 9]; Math.random = () => ((faces[i++ % faces.length] - 0.5) / 10); });
       await press(page, 'Touch of the Void');
@@ -286,7 +294,7 @@ async function main() {
       const none = await state();
       await setup(page, ['Touch of the Void']);
       check('VI-TOUCH-ONLY-ITS-OWN-LIST', [wrong.preview, none.preview, (await row(page, 'Touch of the Void')).buttons[0][0]],
-        [false, false, 'Willpower (TN 30)']);
+        [false, false, touchWords()]);
     });
 
     await section('VI-UI', async () => {

@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('remain-in-control-seam
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:REMAIN_IN_CONTROL_ENABLED|RC15|rc15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.2\.8(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = '223790bc58b04190bdb2971dac281745a578cda153c396685403657a83e05b8d'
-PRE_RELEASE_BYTES = 17759590
+PRE_RELEASE_SHA = 'feac10a6afd30eca2c0556cfcd66817a78d72401f10049a57569195e905bfc04'
+PRE_RELEASE_BYTES = 17767327
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

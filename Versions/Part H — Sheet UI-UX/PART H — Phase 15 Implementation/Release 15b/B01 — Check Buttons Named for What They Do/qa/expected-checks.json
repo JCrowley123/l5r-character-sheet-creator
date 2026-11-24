@@ -1,6 +1,6 @@
 {
  "unit": "Release 15b B01 (PART H PHASE 15.2.6)",
- "pinned": "24 November 2026, before the first run",
+ "pinned": "24 November 2026, before the first run; the eight CN-R2-* checks of round 2 pinned 24 November 2026, before their first run",
  "checks": [
   "CN-SEAM-PHONE",
   "CN-LABELS-PHONE",
@@ -16,6 +16,14 @@
   "CN-NO-ERRORS-PHONE",
   "CN-LABELS-DESKTOP",
   "CN-FITS-DESKTOP",
-  "CN-NO-ERRORS-DESKTOP"
+  "CN-NO-ERRORS-DESKTOP",
+  "CN-R2-TOUCH-NAME-PHONE",
+  "CN-R2-LOOK-PHONE",
+  "CN-R2-FAIL-LINES-PHONE",
+  "CN-R2-NO-ERRORS-PHONE",
+  "CN-R2-LOOK-DESKTOP",
+  "CN-R2-FAIL-LINES-DESKTOP",
+  "CN-R2-IMBALANCE-DESKTOP",
+  "CN-R2-NO-ERRORS-DESKTOP"
  ]
 }

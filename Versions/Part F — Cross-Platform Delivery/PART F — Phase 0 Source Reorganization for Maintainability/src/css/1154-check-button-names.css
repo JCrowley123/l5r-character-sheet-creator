@@ -1,0 +1,7 @@
+/* PART H PHASE 15.2.6 — Release 15b, B01: check buttons named for what they do, round 2 (owner, 24 November 2026,
+   "Approve as shown"; device-round comment 2). Lord Moon's Curse's "Resist Lord Moon (TN 20)" takes the size of every
+   other check button on these cards: the same minimum width, padding, type size and line height as Feature 4.5.31's
+   (Part I) check buttons, declared here rather than shared, so each feature's rule stays its own. The selector outranks
+   Release 15a A07's 44 px rule for this button; A07's column, edge and gap stay as they are.
+   Waits for body.cn15-on, which this unit's switch sets. */
+html body.cn15-on #disadvList button.ghost.lm7-roll{min-width:28px; min-height:0; padding:3px 8px; font-size:.78rem; line-height:1;}

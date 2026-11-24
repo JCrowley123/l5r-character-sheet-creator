@@ -11,6 +11,10 @@
 // Shugenja, every Trait and Void 3 (Insight 150). The School Rank expected is the one the sheet shows in its School Rank
 // box (run 1 set that box by hand, and the sheet works it out again from Insight). A bushi School: run 2's Isawa
 // Shugenja opened the new-Rank spell window when Insight rose, which covered the buttons.
+// Revision, round 2 (the owner's "Approve as shown", 24 November 2026; LA-OUTLINED-PHONE and LA-OUTLINED-DESKTOP pinned
+// before their first run): both buttons take the outlined look of the other buttons on these cards. The reference is
+// Epilepsy's "Avoid (TN 15)" (Feature 4.5.31, Part I, which no unit restyles), added to the character only for these
+// two checks, after every other check on the page has run.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
@@ -35,6 +39,8 @@ const QUICK = x => ({text: 'Use', amount: '+' + x + ' (Reflexes)', spoken: 'Use 
 const LEAD_NOTE = 'Once a Round, in the Reactions Stage: one ally adds the total until the next Reactions Stage.';
 const QUICK_NOTE = 'Each Round you did not act first, in the Reactions Stage.';
 const OUT = 'Start a combat round first.', USED = 'Already used this Round.';
+// Round 2: the look every check and feature button on these cards has (Epilepsy's "Avoid (TN 15)" is the reference).
+const LOOK = ['backgroundColor', 'borderTopColor', 'borderTopWidth', 'borderTopStyle', 'color', 'fontSize', 'paddingTop', 'paddingLeft', 'lineHeight'];
 
 function install() {
   const H = {};
@@ -70,6 +76,14 @@ function install() {
   H.ledger = key => { const L = window.__L5R_TEST__.getRoundLedger(); return Object.keys(L).map(r => L[r][key]).filter(v => v !== undefined); };
   H.roll = () => ({title: document.getElementById('rollModalTitle').textContent, dice: document.querySelectorAll('#rollDiceRow .roll-die').length,
     total: +document.getElementById('rollTotalDisplay').textContent});
+  // Round 2: the reference row, and one button's look by its entry.
+  H.addReference = () => { const T = window.__L5R_TEST__, lib = T.DISADV_LIBRARY.find(x => x.name === 'Epilepsy');
+    document.getElementById('disadvList').appendChild(T.makeEntry({name: 'Epilepsy', cost: lib.cost, desc: lib.desc}, true)); T.recalcAll(); };
+  H.look = (list, name, words, props) => {
+    const d = Array.from(document.querySelectorAll('#' + list + ' .entry')).find(x => x.querySelector('.en-name').value === name);
+    const b = d && Array.from(d.querySelectorAll('button')).filter(shown).find(x => x.textContent === words); if (!b) return null;
+    const s = getComputedStyle(b), out = {height: Math.round(b.getBoundingClientRect().height * 10) / 10};
+    props.forEach(k => { out[k] = s[k]; }); return out; };
   window.LAH = H;
 }
 async function open(browser, opts) {
@@ -95,6 +109,14 @@ const row = (page, name) => page.evaluate(n => window.LAH.row(n), name);
 // The button and its amount on one line, inside the card, nothing scrolling sideways.
 const oneLine = r => !!r && !!r.button && r.after.length > 0 && Math.abs(r.after[0].box.mid - r.button.box.mid) <= 4 &&
   r.after[0].box.left >= r.button.box.right && r.after[0].box.right <= r.card.right && r.docScroll === r.vw;
+// Round 2: Leadership's and Quick's buttons look like the reference, height within 1 px.
+async function outlined(page) {
+  await page.evaluate(() => window.LAH.addReference()); await settle(page);
+  const look = (list, name, w) => page.evaluate(([l, n, w, p]) => window.LAH.look(l, n, w, p), [list, name, w, LOOK]);
+  const r = {ref: await look('disadvList', 'Epilepsy', 'Avoid (TN 15)'), lead: await look('advList', 'Leadership', 'Lead an ally'), quick: await look('advList', 'Quick', 'Use')};
+  const alike = a => !!a && !!r.ref && LOOK.every(k => a[k] === r.ref[k]) && Math.abs(a.height - r.ref.height) <= 1;
+  return [alike(r.lead) && alike(r.quick), r];
+}
 const words = (r, want, note) => !!r && !!r.button && r.button.text === want.text && r.button.spoken === want.spoken &&
   r.after.length > 0 && r.after[0].text === want.amount && same(r.notes, [note]);
 
@@ -144,6 +166,7 @@ const words = (r, want, note) => !!r && !!r.button && r.button.text === want.tex
         return [same(ledger, [4]) && after.button.text === 'Use' && after.button.disabled === true && after.button.title === USED &&
           after.after[0].text === '+4 (Reflexes)' && same(after.notes, ['Initiative Score +4 this skirmish.']), {after, ledger}];
       });
+      await check('LA-OUTLINED-PHONE', async () => outlined(page));
       await check('LA-NO-ERRORS-PHONE', async () => [errors.length === 0, errors]);
       await context.close();
     }
@@ -154,6 +177,7 @@ const words = (r, want, note) => !!r && !!r.button && r.button.text === want.tex
       const rank = await page.evaluate(() => window.LAH.rank());
       await check('LA-LABELS-DESKTOP', async () => [rank >= 1 && words(lead, LEAD(rank), LEAD_NOTE) && words(quick, QUICK(3), QUICK_NOTE), {rank, lead, quick}]);
       await check('LA-ONE-LINE-DESKTOP', async () => [oneLine(lead) && oneLine(quick), {lead, quick}]);
+      await check('LA-OUTLINED-DESKTOP', async () => outlined(page));
       await check('LA-NO-ERRORS-DESKTOP', async () => [errors.length === 0, errors]);
       await context.close();
     }

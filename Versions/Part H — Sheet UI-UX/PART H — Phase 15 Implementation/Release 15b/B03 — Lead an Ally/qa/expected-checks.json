@@ -1,6 +1,6 @@
 {
  "unit": "Release 15b B03 (PART H PHASE 15.2.7)",
- "pinned": "24 November 2026, before the first run",
+ "pinned": "24 November 2026, before the first run; LA-OUTLINED-PHONE and LA-OUTLINED-DESKTOP of round 2 pinned 24 November 2026, before their first run",
  "checks": [
   "LA-SEAM-PHONE",
   "LA-LEAD-LABEL-PHONE",
@@ -11,9 +11,11 @@
   "LA-AMOUNT-FOLLOWS-PHONE",
   "LA-LEAD-ROLLS-PHONE",
   "LA-QUICK-USES-PHONE",
+  "LA-OUTLINED-PHONE",
   "LA-NO-ERRORS-PHONE",
   "LA-LABELS-DESKTOP",
   "LA-ONE-LINE-DESKTOP",
+  "LA-OUTLINED-DESKTOP",
   "LA-NO-ERRORS-DESKTOP"
  ]
 }

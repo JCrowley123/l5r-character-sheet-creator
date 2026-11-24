@@ -23,7 +23,7 @@ It adds no save field, no storage key and no class.
 2. From this folder, run `python -B qa/remove-phase.py <scratch copy>`. It refuses the live tree, a foreign marker inside its block, and a missing block.
 3. Run the scratch copy's `build/recombine.py --verify`.
 
-With nothing later present, the rebuild is exactly B03 on B01: 17,759,590 bytes, SHA-256 `223790bc58b04190bdb2971dac281745a578cda153c396685403657a83e05b8d`. `qa/test-removal.py` proves three things:
+With nothing later present, the rebuild is exactly B03 on B01, both at round 2: 17,767,327 bytes, SHA-256 `feac10a6afd30eca2c0556cfcd66817a78d72401f10049a57569195e905bfc04`. (Round 1's was 17,759,590 bytes, `223790bc…5b8d`.) Round 2 (24 November 2026) is on the tip branch `claude/release-15b-b09` only; the lower branches keep round 1. The builds below are round 2's, made from the tip by removing later units. `qa/test-removal.py` proves three things:
 - that rebuild;
 - that B03 removed next gives B01 exactly;
 - that B03 can be removed with this unit kept.
@@ -33,6 +33,8 @@ With nothing later present, the rebuild is exactly B03 on B01: 17,759,590 bytes,
 ## Harnesses that follow this unit
 
 None. No older harness reads either success line (see the README for the roll harnesses run with B05 present).
+
+**B05's own harness does not follow B01** (harness fix, 24 November 2026): it finds Touch of the Void's button by its row, not its words, and checks the failure line's first sentence, "You are Dazed for one Round.", which B01's round 2 keeps. It passes with B01 present and would pass without it.
 
 ## Dependencies
 

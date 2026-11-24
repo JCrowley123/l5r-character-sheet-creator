@@ -11,10 +11,10 @@ from pathlib import Path
 import hashlib, importlib.util, re, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART H — Phase 15 Implementation/Release 15b/B05 — You Remain in Control'
-PREDECESSOR_SHA = '223790bc58b04190bdb2971dac281745a578cda153c396685403657a83e05b8d'   # B03 on B01
-PREDECESSOR_BYTES = 17759590
-BEFORE_PREDECESSOR_SHA = 'c97e39f1e500b712a31dc4fc6b33b09b9e4a7996cf04dd7edfc38b2d065f1d22'   # B01 on group 1 as live
-BEFORE_PREDECESSOR_BYTES = 17755128
+PREDECESSOR_SHA = 'feac10a6afd30eca2c0556cfcd66817a78d72401f10049a57569195e905bfc04'   # B03 on B01
+PREDECESSOR_BYTES = 17767327
+BEFORE_PREDECESSOR_SHA = '9e245e2c5bf4b81d388e79be6aca13e2cc0b4a4f8c900852cbd5f66e76797a64'   # B01 on group 1 as live
+BEFORE_PREDECESSOR_BYTES = 17762561
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// PART H PHASE 15.2.8 BEGIN remain-in-control-seam'
 Q = Path(__file__).resolve().parent

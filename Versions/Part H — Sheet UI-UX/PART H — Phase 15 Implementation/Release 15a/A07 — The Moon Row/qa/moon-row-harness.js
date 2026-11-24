@@ -4,6 +4,11 @@
 // Every check id is pinned in expected-checks.json before the first run; a check that never ran is a FAIL. Oracles are
 // independent of the layer: the Lord Moon fix's own saved config and Void pips, the row's measured geometry, another
 // configured row, and the same page with the layer's body class taken away.
+// Conditional on Release 15b B01 (PART H PHASE 15.2.6, check buttons named for what they do), declared in B01's and A07's
+// ROLLBACK.md (24 November 2026, B01's round 2, the owner's device-round comment 2): with B01 present the resist button
+// takes the size of the other check buttons on these cards, so MR-RESIST-AND-ORDER and MR-PLAY-RESIST-AND-ORDER expect it
+// under 44 px with their type size (0.78 of the page's root size) instead of at 44 px. Its words, its place under the
+// toggle, its edge and every other check are unchanged. Same checks, same count; with B01 removed every line runs as before.
 const fs = require('fs'), path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
@@ -22,6 +27,9 @@ const DEVICES = {PHONE: {viewport: {width: 390, height: 844}, isMobile: true, ha
 const settle = page => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
 const goTab = async (page, tab) => { await page.evaluate(async l => { const C = window.__L5R_CAROUSEL__; if (C) { C.goToTab(l); await C.whenSettled(); } }, tab); await settle(page); };
 const NAME = 'Lord Moon’s Curse';
+// Release 15b B01 present (declared above): the resist button at the check buttons' size.
+let NAMED = false;
+const resistSize = m => NAMED ? m.roll.h < 44 && Math.abs(m.roll.size - 0.78 * m.root) < 0.05 : m.roll.h >= 44;
 function moon(name) {
   const d = [...document.querySelectorAll('#disadvList .entry')].find(x => x.querySelector('.en-name').value.trim() === name);
   if (!d) return null;
@@ -31,7 +39,7 @@ function moon(name) {
     roll = d.querySelector('.lm7-roll');
   return {sum: b(sum), sumText: sum && sum.textContent, before: sum && getComputedStyle(sum, '::before').content, beforeTransform: sum && getComputedStyle(sum, '::before').textTransform,
     tick: b(tick), tickText: tick && tick.textContent.trim(), box: b(box), checked: box && box.checked, roll: b(roll), rollText: roll && roll.textContent,
-    config: d.dataset.advConfig || ''};
+    config: d.dataset.advConfig || '', root: parseFloat(getComputedStyle(document.documentElement).fontSize)};
 }
 async function open(browser, opts) {
   const context = await browser.newContext(opts);
@@ -67,6 +75,7 @@ async function open(browser, opts) {
   try {
     for (const [D, opts] of Object.entries(DEVICES)) {
       const {context, page, errors} = await open(browser, opts);
+      NAMED = await page.evaluate(() => !!(window.__L5R_TEST__.CN15 && window.__L5R_TEST__.CN15.installed && window.__L5R_TEST__.CHECK_BUTTON_NAMES_ENABLED));
       await check('MR-SEAM-' + D, async () => {
         const r = await page.evaluate(() => { const T = window.__L5R_TEST__; return {on: T.MOON_ROW_ENABLED, api: !!(T.MR15 && T.MR15.installed), cls: document.body.classList.contains('mr15-on')}; });
         return [r.on === true && r.api && r.cls, r];
@@ -79,7 +88,7 @@ async function open(browser, opts) {
         await check('MR-' + M + 'ONE-EDGE-' + D, async () => [Math.abs(m.tick.left - m.sum.left) <= 1 && Math.abs(m.box.left - m.sum.left) <= 1 && Math.abs(m.roll.left - m.sum.left) <= 1, m]);
         await check('MR-' + M + 'TOGGLE-ROW-' + D, async () => [m.tick.h >= 44 && m.box.w >= 21.5 && m.box.h >= 21.5 && m.tick.transform === 'none' && m.tick.size >= 14 &&
           m.tickText === 'Full moon tonight (+1 Void Point, spent last)', m]);
-        await check('MR-' + M + 'RESIST-AND-ORDER-' + D, async () => [m.rollText === 'Resist Lord Moon (TN 20)' && m.roll.h >= 44 &&
+        await check('MR-' + M + 'RESIST-AND-ORDER-' + D, async () => [m.rollText === 'Resist Lord Moon (TN 20)' && resistSize(m) &&
           m.sum.bottom <= m.tick.top + 0.5 && m.tick.bottom <= m.roll.top + 0.5, m]);
       }
       await page.evaluate(() => window.__L5R_TEST__.MODES12.set('management')); await settle(page);

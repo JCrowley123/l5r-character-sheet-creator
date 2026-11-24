@@ -1,0 +1,30 @@
+{
+ "sheet": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\claude\\08134b58138d4f7c\\e98f64f8-71b5-4470-88c4-a8f879a20bdf\\scratchpad\\builds\\b01-removed.html",
+ "pattern": "4\\.5\\.31 |4\\.5\\.33 |A07 ",
+ "rows": [
+  {
+   "harness": "Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A07 — The Moon Row/qa/moon-row-harness.js",
+   "passed": 26,
+   "total": 26,
+   "status": 0,
+   "seconds": 5,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js",
+   "passed": 101,
+   "total": 101,
+   "status": 0,
+   "seconds": 3,
+   "ok": true
+  },
+  {
+   "harness": "PART I — Phase 4.5.33 Void and Initiative Entries/qa/void-initiative-harness.js",
+   "passed": 44,
+   "total": 44,
+   "status": 0,
+   "seconds": 8,
+   "ok": true
+  }
+ ]
+}

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "0d8cebb174c4c4130cfab0368bb0950793d93c01285310438f9e073bb4b81637",
+  "expect_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -198,6 +198,7 @@
     { "file": "src/css/1151-armor-tn-breakdown.css", "note": "PART H PHASE 15.2.3 - Release 15b B04, Quick Access's Armor TN i and the breakdown table; Blind's Quick Access line hidden" },
     { "file": "src/css/1152-kharmic-tie-row.css", "note": "PART H PHASE 15.2.5 - Release 15b B17, Kharmic Tie's one row and its window's table" },
     { "file": "src/css/1153-lead-an-ally.css", "note": "PART H PHASE 15.2.7 - Release 15b B03, the amount beside Leadership's and Quick's buttons" },
+    { "file": "src/css/1154-check-button-names.css", "note": "PART H PHASE 15.2.6 - Release 15b B01 round 2, Lord Moon's Curse's resist button at the check buttons' size" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 

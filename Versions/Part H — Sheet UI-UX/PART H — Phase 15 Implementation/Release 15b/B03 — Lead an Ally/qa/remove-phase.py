@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('lead-an-ally-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:LEAD_AN_ALLY_ENABLED|LA15|la15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.2\.7(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = 'c97e39f1e500b712a31dc4fc6b33b09b9e4a7996cf04dd7edfc38b2d065f1d22'
-PRE_RELEASE_BYTES = 17755128
+PRE_RELEASE_SHA = '9e245e2c5bf4b81d388e79be6aca13e2cc0b4a4f8c900852cbd5f66e76797a64'
+PRE_RELEASE_BYTES = 17762561
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

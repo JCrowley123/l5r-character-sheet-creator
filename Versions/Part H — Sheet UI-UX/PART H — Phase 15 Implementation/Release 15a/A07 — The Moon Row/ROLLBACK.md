@@ -36,4 +36,10 @@ With nothing later present, the rebuild is exactly A06: 17,595,505 bytes, SHA-25
   - If that fix were removed, A07 would match nothing.
 - **BUGFIX — Moon Resist Label (MR7):** the button's wording is its own and is unchanged. That harness passes 5/5 with A07 present.
 - **Trunk:** `#disadvList`, `.adv-config-row` and `.adv-config-summary`, and the tokens `--ink` and `--ink-soft`.
-- **Nothing depends on A07.**
+- **Nothing depends on A07.** One later unit restyles the same button; see below.
+
+## Release 15b B01, round 2 — the resist button's size (24 November 2026)
+
+**A later unit now restyles this row's button.** Release 15b B01 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B01 — Check Buttons Named for What They Do/`), in its round 2 (the owner's device-round comment 2 and "Approve as shown", 24 November 2026), gives "Resist Lord Moon (TN 20)" the size of the other check buttons on these cards: its own stylesheet, `1154-check-button-names.css`, under its own body class `cn15-on`, outranks this unit's `min-height: 44px` for `.lm7-roll`. It names neither `mr15-on` nor anything else of this unit's, so this unit's remover is unaffected, and with B01 removed this unit's 44 px rule applies again. The severity label, the full-moon toggle's 44 px line, the column, the edge and the order are this unit's own and unchanged.
+
+**Declared fixture correction.** `qa/moon-row-harness.js` is conditional on B01: while `CN15` is on the seam, `MR-RESIST-AND-ORDER-PHONE`, `MR-RESIST-AND-ORDER-DESKTOP`, `MR-PLAY-RESIST-AND-ORDER-PHONE` and `MR-PLAY-RESIST-AND-ORDER-DESKTOP` expect the button under 44 px, with type at 0.78 of the page's root size, instead of at least 44 px. Its words, its place under the toggle and every other check are unchanged. It has the same ids and count, and with B01 removed every line runs as before.

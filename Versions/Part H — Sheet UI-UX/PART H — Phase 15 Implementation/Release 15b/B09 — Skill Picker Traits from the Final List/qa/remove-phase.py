@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('picker-traits-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:PICKER_TRAITS_FINAL_ENABLED|SKP15|skp15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.2\.9(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = '4d0a42b5ed28d24ce3614b0afe66bde674da07955f724c09dce350fe43313473'
-PRE_RELEASE_BYTES = 17762714
+PRE_RELEASE_SHA = '029595b6412b10183837cf1e6ade8aeb80d78ac94ea68fdee696a280c9528983'
+PRE_RELEASE_BYTES = 17770451
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

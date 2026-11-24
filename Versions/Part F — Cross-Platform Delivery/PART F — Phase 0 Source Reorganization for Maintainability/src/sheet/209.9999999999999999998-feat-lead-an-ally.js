@@ -10,8 +10,11 @@
   // Rank and Reflexes, because the row is drawn again on every recalculation.
   // "Use" is B18's suggestion for its job group G06 (using an ability now); if B18 rules otherwise, the word changes
   // with B18's own build.
-  // Words only: the roll, once a Round, the round ledger, the notes under the buttons, the greyed-out reasons and
-  // Feature 4.5.35's (Part I) Initiative Score line are Feature 4.5.33's and 4.5.35's own. Screen only; nothing is saved.
+  // Round 2, after the owner's device round (comment 3; "Approve as shown", 24 November 2026): both buttons take the
+  // outlined look of every other button on these cards (the class ghost), in place of Feature 4.5.33's black fill.
+  // Words and look only: the roll, once a Round, the round ledger, the notes under the buttons, the greyed-out reasons
+  // and Feature 4.5.35's (Part I) Initiative Score line are Feature 4.5.33's and 4.5.35's own. Screen only; nothing is
+  // saved.
   const LEAD_AN_ALLY_ENABLED = true;
 
   const LA15 = (function(){
@@ -45,7 +48,10 @@
       let amount = null;
       if(key === 'leadership' && button.textContent === api.LEAD_WAS) amount = api.lead(button);
       else if(key === 'quick' && button.textContent === api.QUICK_WAS) amount = api.quick(button);
-      if(amount) parts.splice(1, 0, amount);
+      if(amount){
+        button.classList.add('ghost');
+        parts.splice(1, 0, amount);
+      }
       return parts;
     };
     api.install = function(){

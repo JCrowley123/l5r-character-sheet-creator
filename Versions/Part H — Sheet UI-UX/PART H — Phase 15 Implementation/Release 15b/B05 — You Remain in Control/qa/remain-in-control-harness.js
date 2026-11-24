@@ -9,6 +9,10 @@
 // laptop, through the roll preview's Go. Fixed dice: every die a 9 (a pass, 4k4 = 36) or a 1 (a failure, 4k4 = 4).
 // Character: the mock-ups' "G2 check siblings" (the audit's dense Kuni Shugenja, Willpower 4, with Epilepsy, Lord Moon's
 // Curse and Touch of the Void), copied into this folder.
+// Harness fix, 24 November 2026 (B01's round 2 renames Touch of the Void's button and shortens its failure line; B05
+// itself is unchanged): Touch of the Void's button is found by its row, the Feature 4.5.33 (Part I) button in Touch of
+// the Void's entry, not by its words; and its failure is checked by the line's first sentence, "You are Dazed for one
+// Round.", which B05 does not touch, so this harness does not depend on B01. Same ids, same count.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
@@ -26,8 +30,8 @@ async function check(id, body) {
 const DEVICES = {PHONE: {viewport: {width: 390, height: 844}, isMobile: true, hasTouch: true}, DESKTOP: {viewport: {width: 1440, height: 1000}}};
 const settle = page => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(r)))));
 
-const TOUCH = {button: 'Willpower (TN 30)', title: 'Touch of the Void — Willpower vs TN 30', pass: 'You remain in control.',
-  fail: 'You are Dazed for one Round. Tell the GM: the sheet does not track Dazed.'};
+const TOUCH = {entry: 'Touch of the Void', title: 'Touch of the Void — Willpower vs TN 30', pass: 'You remain in control.',
+  failStarts: 'You are Dazed for one Round.'};
 const MOON = {button: 'Resist Lord Moon (TN 20)', title: 'Lord Moon’s Curse — Willpower vs TN 20', pass: 'Willpower roll passed. You remain in control tonight.',
   fail: 'Willpower roll failed.'};
 const EPILEPSY = {button: 'Avoid (TN 15)', title: 'Epilepsy — Willpower vs TN 15', pass: 'No seizure.'};
@@ -51,10 +55,16 @@ async function open(browser, opts) {
 }
 const press = async (page, phone, locator) => { await locator.scrollIntoViewIfNeeded(); if (phone) await locator.tap(); else await locator.click(); await settle(page); };
 const shown = (page, id) => page.evaluate(i => { const o = document.getElementById(i); return !!o && getComputedStyle(o).display !== 'none'; }, id);
-// One roll from a Disadvantage row's button, by its words; dice fixed first. Returns what the roll window shows.
+// Touch of the Void's button: the one in its own entry's row, whatever its words.
+async function touchButton(page) {
+  const i = await page.evaluate(n => [...document.querySelectorAll('#disadvList .entry')].findIndex(d => d.querySelector('.en-name').value === n), TOUCH.entry);
+  return page.locator('#disadvList .entry').nth(i).locator('.vi4533-row button.vi4533-btn');
+}
+// One roll from a Disadvantage row's button, by its words (or, for Touch of the Void, by its row); dice fixed first.
+// Returns what the roll window shows.
 async function roll(page, phone, words, value) {
   await page.evaluate(v => { Math.random = () => v; }, value);
-  await press(page, phone, page.locator('#disadvList button', {hasText: words}).first());
+  await press(page, phone, words === TOUCH ? await touchButton(page) : page.locator('#disadvList button', {hasText: words}).first());
   if (await shown(page, 'rollPreviewOverlay')) await press(page, phone, page.locator('#rollPreviewGo'));
   await page.waitForFunction(() => getComputedStyle(document.getElementById('rollModalOverlay')).display !== 'none');
   await page.waitForSelector('#rollDiceRow .roll-die');
@@ -82,10 +92,10 @@ async function message(page, phone) {
         const r = await page.evaluate(() => { const T = window.__L5R_TEST__; return {rc: !!T.RC15 && T.RC15.installed === true, on: T.REMAIN_IN_CONTROL_ENABLED}; });
         return [r.rc && r.on === true, r];
       });
-      await check('RC-TOUCH-PASSES-PHONE', async () => { const r = await roll(page, P, TOUCH.button, 0.85);
+      await check('RC-TOUCH-PASSES-PHONE', async () => { const r = await roll(page, P, TOUCH, 0.85);
         return [r.title === TOUCH.title && r.note === TOUCH.pass, r]; });
-      await check('RC-TOUCH-FAILS-PHONE', async () => { const r = await roll(page, P, TOUCH.button, 0.05);
-        return [r.title === TOUCH.title && r.note === TOUCH.fail, r]; });
+      await check('RC-TOUCH-FAILS-PHONE', async () => { const r = await roll(page, P, TOUCH, 0.05);
+        return [r.title === TOUCH.title && r.note.indexOf(TOUCH.failStarts) === 0, r]; });
       await check('RC-MOON-PASSES-PHONE', async () => { const r = await roll(page, P, MOON.button, 0.85); const m = await message(page, P);
         return [r.title === MOON.title && r.note === MOON.pass && m === null, {r, m}]; });
       await check('RC-MOON-FAILS-PHONE', async () => { const r = await roll(page, P, MOON.button, 0.05); const m = await message(page, P);
@@ -99,7 +109,7 @@ async function message(page, phone) {
     // ---------- Laptop, Play ----------
     {
       const {context, page, errors} = await open(browser, DEVICES.DESKTOP);
-      await check('RC-TOUCH-PASSES-DESKTOP', async () => { const r = await roll(page, false, TOUCH.button, 0.85);
+      await check('RC-TOUCH-PASSES-DESKTOP', async () => { const r = await roll(page, false, TOUCH, 0.85);
         return [r.title === TOUCH.title && r.note === TOUCH.pass, r]; });
       await check('RC-MOON-PASSES-DESKTOP', async () => { const r = await roll(page, false, MOON.button, 0.85); const m = await message(page, false);
         return [r.title === MOON.title && r.note === MOON.pass && m === null, {r, m}]; });

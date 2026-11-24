@@ -1,0 +1,30 @@
+OK   A19.1 — The Damage Row Fits a Phone
+OK   A20 — A Trait for One Skill Roll
+OK   A19 — Undo the Last Void Spend
+OK   A08 — One Undo for Quick Taps
+OK   AE3 — No XP Box or Remove on Automatic Entries
+OK   AE2 — Given Spells Credited on Opening
+OK   AE1 — Sense for the Yogo Wardmaster
+OK   A17 — The Splash Fills the Screen
+OK   A10.1 — The Page Ring Only for the Keyboard
+OK   A10 — Cross-Page Actions Move Focus
+OK   A09 — Phone Text Entry and Repeated Taps
+OK   8b.1-UI-03 — Remove Apart from Memorised
+OK   8b.1-UI-02 — Readable Spell Name and School Tag
+OK   8b.1-UI-01 — Starting-Spell Review and Its Actions
+OK   A04.1 — One Way to Show Choices in Pickers
+OK   A11 — Explanatory Text Gaps and One Left Edge
+OK   A07 — The Moon Row
+OK   A06 — Grant Actions and Their State
+OK   A05 — Missing Limb Picker
+OK   A03.1 — Masteries in the Skill Information
+OK   A16 — No Bottom i in the Seven Pickers
+OK   A15 — Court Badges
+OK   A04 — One Information Pattern
+OK   A03 — Top-Aligned Columns and Compact Skill Cards
+OK   A02 — Floating Controls Above the Tabs
+OK   A01 — One Reminder per School Choice
+removed 26 Release 15a units; still present: []
+rebuild verifies; group 2 kept: True
+kept at C:\Users\jcrow\AppData\Local\Temp\claude\08134b58138d4f7c\e98f64f8-71b5-4470-88c4-a8f879a20bdf\scratchpad\builds\15a-removed-group2-kept.html sha256 fd8fb7d00b46a800dde906820554d0e8326cbe0e16ad13be19500b142eb28469 bytes 17580504
+STAGE PASSED

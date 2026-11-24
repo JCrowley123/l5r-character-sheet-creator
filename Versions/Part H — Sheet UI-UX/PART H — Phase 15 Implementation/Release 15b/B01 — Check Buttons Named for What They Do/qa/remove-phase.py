@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Surgical removal of Release 15b, unit B01 (PART H PHASE 15.2.6): check buttons named for what they do. Refuses live trees and unsafe paths. Removes this unit's one fragment, its manifest
-entry and its one marked seam block, preserving all surrounding bytes. Adapted from B17's remover (constants only; this unit's predecessor hash)."""
+"""Surgical removal of Release 15b, unit B01 (PART H PHASE 15.2.6): check buttons named for what they do. Refuses live trees and unsafe paths. Removes this unit's two fragments (the
+script and, since round 2, its stylesheet), their manifest entries and its one marked seam block, preserving all surrounding bytes. Adapted from B17's remover (constants only; this unit's
+predecessor hash)."""
 
 from __future__ import annotations
 
@@ -14,7 +15,7 @@ import sys
 # ---- This unit ----
 MARKER = "PART H PHASE 15.2.6"
 TAG = "CN15"
-FRAGMENTS = ('src/sheet/209.9999999999999999997-feat-check-button-names.js',)
+FRAGMENTS = ('src/sheet/209.9999999999999999997-feat-check-button-names.js', 'src/css/1154-check-button-names.css')
 SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('check-button-names-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:CHECK_BUTTON_NAMES_ENABLED|CN15|cn15[\w-]*)(?![\w+/])")

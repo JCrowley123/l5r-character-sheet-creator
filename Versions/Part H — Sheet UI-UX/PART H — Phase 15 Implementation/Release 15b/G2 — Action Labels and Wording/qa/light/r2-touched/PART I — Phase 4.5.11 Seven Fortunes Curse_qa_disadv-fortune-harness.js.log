@@ -1,0 +1,76 @@
+PASS F4511-PRESENT-01 The fragment is in the build and exports its module
+PASS F4511-PRESENT-02 The kill-switch reads on
+PASS F4511-PRESENT-03 Installs under the catalogue row’s own name
+PASS F4511-PRESENT-04 Awards 3 ordinarily and 6 for Hotei
+PASS F4511-PRESENT-05 DISADV_LIBRARY is on the seam, so the catalogue row can be the oracle
+PASS F4511-CAT-01 Exactly one catalogue row carries this name
+PASS F4511-CAT-02 The catalogue prices the ordinary curse at this phase’s own award
+PASS F4511-CAT-03 It is filed Spiritual, as the catalogue has it
+PASS F4511-CAT-04 The schema installs as a fortunePick with one step
+PASS F4511-CAT-05 All seven Fortunes are offered, including the two not yet automated
+PASS F4511-CAT-06 Every option carries its own explanation in the picker
+PASS F4511-CAT-07 A hand-typed straight apostrophe still finds the schema
+PASS F4511-CAT-08 A straight-apostrophe entry configures, prices and applies exactly as the curly one
+PASS F4511-XP-Benten Benten awards 3 and shows its own badge
+PASS F4511-XP-Bishamon Bishamon awards 3 and shows its own badge
+PASS F4511-XP-Daikoku Daikoku awards 3 and shows its own badge
+PASS F4511-XP-Ebisu Ebisu awards 3 and shows its own badge
+PASS F4511-XP-Fukurokujin Fukurokujin awards 3 and shows its own badge
+PASS F4511-XP-Hotei Hotei awards 6 and shows its own badge
+PASS F4511-XP-Jurojin Jurojin awards 3 and shows its own badge
+PASS F4511-XP-VALUE finalize keeps the legacy value field honest (never "Rank undefined") — {"type":"fortunePick","fortune":"Benten","value":"Benten"}
+PASS F4511-XP-SUMMARY The row summarises the rule, not just the Fortune’s name — Benten — The Fortune of Romance has turned from you: Etiquette rolls are harder, TN +10. Value: 3 XP.
+PASS F4511-XP-VALIDATE validate() refuses an unknown, missing or mistyped Fortune
+PASS F4511-BENTEN-01 Etiquette reports 10 lower, as a TN +10 and not as lost dice
+PASS F4511-BENTEN-02 The note carries the RULE, so -10 cannot be read as a dice penalty
+PASS F4511-BENTEN-03 Courtier is untouched — this is one Skill, not all Social Skills
+PASS F4511-BENTEN-04 A Ring roll is untouched
+PASS F4511-BENTEN-05 A real Etiquette roll reports its kept dice minus 10
+PASS F4511-FUKU-01 The bare Lore Skill reports 5 lower
+PASS F4511-FUKU-02 A Lore specialization is included, as the audit requires
+PASS F4511-FUKU-03 A Skill that merely CONTAINS "Lore" does not match
+PASS F4511-FUKU-04 An unrelated Skill is untouched
+PASS F4511-FUKU-05 Every "Lore: <subject>" spelling the School library uses matches
+PASS F4511-DAIKOKU-01 Commerce loses a rolled and a kept die
+PASS F4511-DAIKOKU-02 Another Merchant Skill is untouched
+PASS F4511-DAIKOKU-03 The row states the starting-koku reduction the sheet will not make — Starting outfit: one koku less — adjust when you record it. This sheet does not change your koku.
+PASS F4511-DAIKOKU-04 Koku is never debited, so no recalc can debit it twice
+PASS F4511-DAIKOKU-05 Money the player has entered is left exactly alone
+PASS F4511-EBISU-01 The declaration is offered on a Social Skill Roll
+PASS F4511-EBISU-02 It is not offered on a Skill that is not Social
+PASS F4511-EBISU-03 Undeclared, it contributes nothing at all
+PASS F4511-EBISU-04 Declared on a Social Skill Roll, it costs a rolled and a kept die
+PASS F4511-EBISU-05 Declared on a NON-Social Skill it still contributes nothing
+PASS F4511-EBISU-06 Every Skill on Feature 4.5.2’s own Social list is recognised — ["Acting","Courtier","Etiquette","Perform","Sincerity","Intimidation","Temptation"]
+PASS F4511-EBISU-07 Matching ignores case, and refuses a non-Social or empty name
+PASS F4511-JUROJIN-01 Undeclared, it contributes nothing
+PASS F4511-JUROJIN-02 Declared, it costs two ROLLED dice and no kept die
+PASS F4511-JUROJIN-03 It reaches every roll kind a resistance roll might be made with
+PASS F4511-DEFER-Bishamon-NOTE Bishamon no longer claims deferral once a later phase automates it — no 4.5.11 note, as expected
+PASS F4511-DEFER-Bishamon-MODS Bishamon moves no dice on any roll
+PASS F4511-DEFER-Hotei-NOTE Hotei no longer claims deferral once a later phase automates it — no 4.5.11 note, as expected
+PASS F4511-DEFER-Hotei-MODS Hotei moves no dice on any roll
+PASS F4511-DEFER-HOTEI-PRICE Hotei’s row states the 6-point price it was recorded at — Hotei — The Fortune of Contentment burdens you: a Technique or Advantage that needs a Void Point to activate needs two. Void spent on a roll, Kiho, Kata and spells is unchanged. Value: 6 XP.
+PASS F4511-DAMAGE-01 A damage roll carrying the attack’s own Skill gets no TN deduction
+PASS F4511-DAMAGE-02 A damage roll carrying the penalised Skill loses no dice
+PASS F4511-DAMAGE-03 Even an explicitly declared Fortune cannot reach damage
+PASS F4511-DECLARE-01 A declaration is never written into the saved config
+PASS F4511-DECLARE-02 The stored config carries no declaration key at all — {"type":"fortunePick","fortune":"Ebisu","value":"Ebisu"}
+PASS F4511-DECLARE-03 Opening the preview clears a declaration left over from before — pending=false
+PASS F4511-DECLARE-04 The preview offers the declaration, unticked, naming its Fortune
+PASS F4511-DECLARE-05 Cancelling the preview clears the declaration
+PASS F4511-BOTH-01 Both declarations are offered on a roll where both are in scope
+PASS F4511-BOTH-02 Declaring both applies both, and they do not merge or overwrite
+PASS F4511-BOTH-03 Unticking one leaves the other exactly as it was
+PASS F4511-SEAT-01 The pre-roll registry is untouched — no seat taken, nothing re-registered
+PASS F4511-SEAT-02 fortunePick is present
+PASS F4511-SEAT-03 It was appended without displacing the thirteen already there
+PASS F4511-SEAT-04 The array is still frozen after being replaced
+PASS F4511-SEAT-05 It reaches the pipeline as a D45 module, not as a contributor
+PASS F4511-GEOM-01 An automated Fortune reads as active — solid, bold, tinted
+PASS F4511-GEOM-02 Hotei reads as active once a later phase automates it, so no row understates the sheet
+PASS F4511-GEOM-03 The row note takes the full row width and sits flush left
+PASS F4511-GEOM-04 The declaration block is separated from the preview above it
+PASS F4511-ERRORS No uncaught page errors during the run
+
+FEATURE 4.5.11 — 74/74 checks passed

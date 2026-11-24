@@ -30,9 +30,10 @@ UNITS = [('B01', 'PART H PHASE 15.2.6', R15B / 'B01 — Check Buttons Named for 
 UNITS = [(u, m, h, len(json.load(open(h.parent / 'expected-checks.json', encoding='utf-8'))['checks'])) for u, m, h in UNITS]
 SPLASH = F / 'PART F — Phase 0.6.2 Splash Screen/qa/splash-harness.js'
 # The retained harnesses of the layers the group touches, with the counts their light run gave on the unit's own build
-# (qa/light/<unit>/summary.json, one per unit, merged; a harness listed twice keeps one entry).
+# (qa/light/<unit>/summary.json, one per unit, merged; a harness listed twice keeps one entry). Round 2 (24 November 2026)
+# adds its own union run on the group build, qa/light/r2-touched/ (round 1's four sets plus Feature 4.5.5's gates harness).
 RETAINED = {}
-for unit in ('b01-touched', 'b03-touched', 'b05-touched', 'b09-touched'):
+for unit in ('b01-touched', 'b03-touched', 'b05-touched', 'b09-touched', 'r2-touched'):
     summary = QA / 'light' / unit / 'summary.json'
     if summary.is_file():
         for row in json.load(open(summary, encoding='utf-8'))['rows']:

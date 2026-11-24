@@ -9,6 +9,13 @@
 // read only to say whether it is there (the seam). Buttons are found by their spoken names, the way a screen reader
 // finds them, and pressed with real taps on a touch phone and real clicks on a laptop. The test character is made on a
 // blank sheet through the test seam: the eight Disadvantages with buttons, Willpower 3, Perception 2, Honor Rank 2.
+// Revision, round 2 (the owner's "Approve as shown", 24 November 2026; the eight CN-R2-* checks pinned before their first
+// run): Lord Moon's Curse's and Touch of the Void's buttons take the check buttons' look (measured against Epilepsy's
+// "Avoid (TN 15)", which no unit touches), Touch of the Void reads "Keep control (TN 30)", and the ten failure lines read
+// as the board's round-2 table has them, without "Tell the GM". A second character, on a fresh page, carries the round-2
+// rows (Touch of the Void owes a check after every Void Point spent, so it stays off the first character, whose Lost Love
+// spends one); failures are rolled with every die a 1. Elemental Imbalance's message is reached the way Feature 4.5.2's
+// (Part I) harness reaches it: a Shugenja's Fire spell roll through the Willpower gate, the check failed.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
@@ -49,6 +56,29 @@ const SPOKEN = {
 // Epilepsy's two buttons were already named for what they do: unchanged, with the trunk's spoken names.
 const EPILEPSY = [['Avoid (TN 15)', 'Epilepsy: Willpower Trait Roll to avoid a seizure'], ['End seizure (TN 10)', 'Epilepsy: Willpower Trait Roll to end a seizure']];
 const NAMED = Object.keys(LABEL);
+// Round 2 (the board's round-2 section and its table of failure lines, approved as shown).
+const TOUCH = {text: 'Keep control (TN 30)', spoken: 'Keep control (TN 30): Touch of the Void, Willpower roll after you spend a Void Point',
+  title: 'Touch of the Void — Willpower vs TN 30'};
+const MOON = 'Resist Lord Moon (TN 20)';
+const MOON_NAME = 'Lord Moon’s Curse', REALM_NAME = 'Cursed by the Realm';
+const R2_ENTRIES = ['Epilepsy', 'Brash', 'Can’t Lie', 'Contrary', 'Overconfident', 'Rumormonger', 'Soft-Hearted', 'Touch of the Void'];
+const FAILS = {
+  'Brash': ['Brash — Willpower vs TN 25', 'You attack (or challenge) the one who provoked you, at once.'],
+  'Can’t Lie': ['Can’t Lie — Willpower vs TN 20', 'You must correct the lie.'],
+  'Contrary': ['Contrary — Willpower vs TN 25', 'You must argue your side of the dispute.'],
+  'Epilepsy': ['Epilepsy — Willpower vs TN 15', 'You have a seizure. Each round, the End seizure button rolls to end it.'],
+  'Overconfident': ['Overconfident — Perception vs TN 20', 'You do not see it, and press on.'],
+  'Rumormonger': ['Rumormonger — Willpower vs TN 15', 'You pass the rumor on.'],
+  'Soft-Hearted': ['Soft-Hearted — Willpower vs TN 20', 'You cannot bring yourself to kill.'],
+  'Touch of the Void': [TOUCH.title, 'You are Dazed for one Round.'],
+  'Toshigoku': ['Cursed by the Realm (Toshigoku) — Willpower vs TN 15', 'You are overcome by the urge to fight.']
+};
+const IMBALANCE = 'You failed the Elemental Imbalance Willpower check: the GM decides what happens. Your Spell Casting Roll still proceeds.';
+// The spoken names a failing roll is pressed by: the approved ones, Epilepsy's and Toshigoku's unchanged ones.
+const PRESS = {'Epilepsy': EPILEPSY[0][1], 'Touch of the Void': TOUCH.spoken,
+  'Toshigoku': 'Make the Toshigoku Willpower Trait Roll at TN 15, when the GM calls for it'};
+// The look a check button has: Epilepsy's "Avoid (TN 15)" is the reference.
+const LOOK = ['backgroundColor', 'borderTopColor', 'borderTopWidth', 'borderTopStyle', 'color', 'fontSize', 'paddingTop', 'paddingLeft', 'lineHeight'];
 
 function install() {
   const H = {};
@@ -77,9 +107,50 @@ function install() {
   H.box = (name, value) => { const i = entry(name).querySelector('.chk4531-input'); i.value = value; i.dispatchEvent(new Event('input', {bubbles: true})); };
   H.reminded = () => { const t = entry('Lost Love').querySelector('.chk4531-toggle'); return t ? t.checked : null; };
   H.saved = () => ((window.__L5R_TEST__.collectData().disadv.find(d => d.name === 'Lost Love') || {}).config || {}).reminded;
+  // Round 2: the round-2 character, Lord Moon's Curse at Medium and Cursed by the Realm for Toshigoku included.
+  H.setup2 = (names, moonName, realmName) => {
+    H.setup(names);
+    const T = window.__L5R_TEST__, list = document.getElementById('disadvList');
+    const moon = T.DISADV_LIBRARY.find(x => x.name === moonName);
+    list.appendChild(T.makeEntry({name: moonName, cost: moon.cost, desc: moon.desc, config: {type: 'severityTier', value: 'Medium'}}, true));
+    const realm = T.DISADV_LIBRARY.find(x => x.name === realmName);
+    const div = T.makeEntry({name: realmName, cost: realm.cost, desc: realm.desc}, true);
+    list.appendChild(div);
+    const cfg = {type: 'realmPick', realm: 'Toshigoku'};
+    if (T.D45.schema(realmName) && T.D45.schema(realmName).finalize) T.D45.schema(realmName).finalize(cfg);
+    div.dataset.advConfig = JSON.stringify(cfg);
+    T.recalcAll();
+  };
+  // One button's look and height, by its words, on one entry.
+  H.look = (name, words, props) => { const d = entry(name); if (!d) return null;
+    const b = Array.from(d.querySelectorAll('button')).filter(shown).find(x => x.textContent === words); if (!b) return null;
+    const s = getComputedStyle(b), out = {height: Math.round(b.getBoundingClientRect().height * 10) / 10};
+    props.forEach(k => { out[k] = s[k]; }); return out; };
+  H.mode = m => { window.__L5R_TEST__.MODES12.set(m); };
+  H.overlay = id => { const o = document.getElementById(id); return !!o && getComputedStyle(o).display !== 'none'; };
+  // Elemental Imbalance: a Shugenja with the Disadvantage on Fire, a Fire spell roll through the Willpower gate.
+  H.imbalance = () => {
+    const T = window.__L5R_TEST__;
+    T.resetToBaseline(); T.MODES12.set('management'); if (T.clearAllRows) T.clearAllRows();
+    [['f_school', 'Isawa Shugenja'], ['f_schoolDeficiencyElement', '']].forEach(([id, v]) => { const i = document.getElementById(id);
+      i.value = v; i.dispatchEvent(new Event('input', {bubbles: true})); i.dispatchEvent(new Event('change', {bubbles: true})); });
+    const select = document.getElementById('disadvQuickAdd');
+    select.value = 'Elemental Imbalance'; select.dispatchEvent(new Event('change', {bubbles: true}));
+    if (document.getElementById('advConfigModalOverlay').style.display !== 'none') document.getElementById('advConfigX').click();
+    const row = document.querySelector('#disadvList .entry:last-child');
+    T.writeAdvConfig(row, 'elementPick', {type: 'elementPick', rank: 3, element: 'Fire', value: 'Fire'});
+    T.recalcAll();
+    document.getElementById('trait_willpower').value = '4';
+    document.getElementById('ring_fire').value = '4';
+    document.getElementById('spell_used_fire').value = '1';
+    Math.random = () => 0;
+    const context = T.makeRollContext(T.ROLL_KINDS.SPELL, {spellName: 'Elemental gate smoke', element: 'Fire', maho: false});
+    window.__cnhGate = T.D45.gates.roll('Elemental gate smoke', context, 4, 4, {skipPreview: true, explode: false});
+    return row.querySelector('.en-name').value;
+  };
   window.CNH = H;
 }
-async function open(browser, opts) {
+async function open(browser, opts, round2) {
   const context = await browser.newContext(opts);
   await context.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//, route => route.abort('blockedbyclient'));
   const page = await context.newPage();
@@ -90,7 +161,8 @@ async function open(browser, opts) {
   await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready);
   await page.waitForFunction(() => !document.getElementById('l5rSplash'));
   await page.evaluate(install);
-  await page.evaluate(names => window.CNH.setup(names), ENTRIES);
+  if (round2) await page.evaluate(([n, m, r]) => window.CNH.setup2(n, m, r), [R2_ENTRIES, MOON_NAME, REALM_NAME]);
+  else await page.evaluate(names => window.CNH.setup(names), ENTRIES);
   await goTo(page, 'Adv & Disadv');
   return {context, page, errors};
 }
@@ -125,6 +197,35 @@ async function fits(page) {
   const ok = !!ref && rows.every(r => r.b && Math.abs(r.b.box.height - ref.box.height) <= 1 && r.b.box.left >= r.card.left && r.b.box.right <= r.card.right) &&
     scroll.doc === scroll.vw;
   return [ok, {ref: ref && ref.box, rows: rows.map(r => [r.name, r.b && r.b.box, r.card]), scroll}];
+}
+// Round 2: one failed roll, pressed by its spoken name; every die a 1. The preview, if one opens, is gone through.
+async function fail(page, phone, spoken) {
+  await page.evaluate(() => { Math.random = () => 0.05; });
+  await press(page, phone, button(page, spoken));
+  if (await page.evaluate(() => window.CNH.overlay('rollPreviewOverlay'))) await press(page, phone, page.locator('#rollPreviewGo'));
+  await page.waitForSelector('#rollDiceRow .roll-die');
+  const r = await page.evaluate(() => window.CNH.roll());
+  await press(page, phone, page.locator('#rollModalClose'));
+  await page.waitForSelector('#rollModalOverlay', {state: 'hidden'});
+  return [r.title, r.note];
+}
+async function fails(page, phone, names) {
+  const out = {};
+  for (const n of names) out[n] = await fail(page, phone, PRESS[n] || SPOKEN[n]);
+  return [names.every(n => same(out[n], FAILS[n]) && !/Tell the GM/.test(out[n][1])), out];
+}
+// Round 2: Lord Moon's and Touch of the Void's buttons look like Epilepsy's "Avoid (TN 15)", in Manage and in Play.
+async function looks(page) {
+  const out = {};
+  for (const m of ['management', 'play']) {
+    await page.evaluate(x => window.CNH.mode(x), m); await settle(page);
+    out[m] = {ref: await page.evaluate(([w, p]) => window.CNH.look('Epilepsy', w, p), [EPILEPSY[0][0], LOOK]),
+      moon: await page.evaluate(([n, w, p]) => window.CNH.look(n, w, p), [MOON_NAME, MOON, LOOK]),
+      touch: await page.evaluate(([w, p]) => window.CNH.look('Touch of the Void', w, p), [TOUCH.text, LOOK])};
+  }
+  await page.evaluate(() => window.CNH.mode('management')); await settle(page);
+  const alike = (a, ref) => !!a && !!ref && LOOK.every(k => a[k] === ref[k]) && Math.abs(a.height - ref.height) <= 1;
+  return [Object.keys(out).every(m => alike(out[m].moon, out[m].ref) && alike(out[m].touch, out[m].ref)), out];
 }
 
 (async () => {
@@ -191,6 +292,46 @@ async function fits(page) {
         same((all['Epilepsy'] || []).map(b => [b.text, b.spoken]), EPILEPSY), all]);
       await check('CN-FITS-DESKTOP', async () => fits(page));
       await check('CN-NO-ERRORS-DESKTOP', async () => [errors.length === 0, errors]);
+      await context.close();
+    }
+    // ---------- Round 2, phone ----------
+    {
+      const {context, page, errors} = await open(browser, DEVICES.PHONE, true);
+      const P = true;
+      await check('CN-R2-TOUCH-NAME-PHONE', async () => {
+        const b = button(page, TOUCH.spoken);
+        const r = {count: await b.count(), text: (await b.count()) ? await b.first().textContent() : null};
+        return [r.count === 1 && r.text === TOUCH.text, r];
+      });
+      await check('CN-R2-LOOK-PHONE', async () => looks(page));
+      await check('CN-R2-FAIL-LINES-PHONE', async () => fails(page, P, ['Brash', 'Epilepsy', 'Touch of the Void']));
+      await check('CN-R2-NO-ERRORS-PHONE', async () => [errors.length === 0, errors]);
+      await context.close();
+    }
+    // ---------- Round 2, laptop ----------
+    {
+      const {context, page, errors} = await open(browser, DEVICES.DESKTOP, true);
+      await check('CN-R2-LOOK-DESKTOP', async () => looks(page));
+      await check('CN-R2-FAIL-LINES-DESKTOP', async () => {
+        await page.evaluate(() => { window.CNH.box('Contrary', '25'); window.CNH.box('Rumormonger', '3'); }); await settle(page);
+        return fails(page, false, ['Can’t Lie', 'Contrary', 'Overconfident', 'Rumormonger', 'Soft-Hearted', 'Toshigoku']);
+      });
+      await check('CN-R2-IMBALANCE-DESKTOP', async () => {
+        const added = await page.evaluate(() => window.CNH.imbalance());
+        await page.waitForFunction(() => document.getElementById('rollPreviewOverlay').style.display === 'flex');
+        await page.locator('#rollPreviewGo').click();
+        await page.waitForFunction(() => document.getElementById('rollModalOverlay').style.display === 'flex');
+        await page.locator('#rollModalClose').click();
+        await page.waitForFunction(() => document.getElementById('appConfirmOverlay').style.display === 'flex');
+        const notice = await page.locator('#appConfirmMsg').textContent();
+        await page.locator('#appConfirmX').click();
+        await page.waitForFunction(() => document.getElementById('rollModalOverlay').style.display === 'flex');
+        const parent = await page.locator('#rollModalTitle').textContent();
+        await page.locator('#rollModalClose').click();
+        await page.evaluate(() => window.__cnhGate);
+        return [added === 'Elemental Imbalance' && notice === IMBALANCE && /Elemental gate smoke/.test(parent), {added, notice, parent}];
+      });
+      await check('CN-R2-NO-ERRORS-DESKTOP', async () => [errors.length === 0, errors]);
       await context.close();
     }
   } finally {

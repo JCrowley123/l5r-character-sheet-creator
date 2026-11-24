@@ -112,3 +112,34 @@ Lost Love's "Spend Void" and Quick's "Use" follow B18's answers (G07 and G06) if
 - **Comments 6, 7 and 9 (combat):** a note for the combat overhaul.
   - A full rules read pass and an audit of combat come before anything is built: initiative, Quick and Leadership.
   - Status conditions such as Dazed are tracked and automated.
+
+## Round 2 (B01 and B03 revised, 24 November 2026)
+
+The owner approved round 2 as shown ("Approve as shown"; MOCKUP.md, "Round 2 answers"). B01 and B03 were rebuilt to it, with B05 and B09 restacked on them, on the tip branch `claude/release-15b-b09` only.
+
+- **Site:** https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/ (build `1f002be9…5819`).
+- **The checklist's round-2 section** is in the same Claude Doc, with the same Result choices (Pass / Fail / Not run on iPhone and on laptop) and a Decision for each unit (Accept / Revise / Remove).
+- Only the changes are checked. Round 1's checks passed, and B05 and B09 were accepted.
+
+### B01, round 2 · the check buttons' look and the failure lines
+
+**Set up.** In Manage, add Brash, Epilepsy, Touch of the Void, Lord Moon's Curse (any severity) and Cursed by the Realm (choose Toshigoku). For likely failures in check 3, set Willpower to 1 (put it back afterwards).
+
+1. **Lord Moon's "Resist Lord Moon (TN 20)"** is the same size as the other check buttons, such as Epilepsy's "Avoid (TN 15)" and Brash's "Resist insult (TN 25)". The full-moon tick above it is as before.
+2. **Touch of the Void's button** is outlined like the other check buttons (no black fill) and reads **"Keep control (TN 30)"**.
+3. **No "Tell the GM" after a failure.** Roll each of these until it fails:
+   - Brash "Resist insult (TN 25)": "You attack (or challenge) the one who provoked you, at once."
+   - Epilepsy "Avoid (TN 15)": "You have a seizure. Each round, the End seizure button rolls to end it."
+   - Touch of the Void "Keep control (TN 30)": "You are Dazed for one Round."
+   - Toshigoku "Check (TN 15)": "You are overcome by the urge to fight."
+4. **Elemental Imbalance (needs a Shugenja).** Give a Shugenja Elemental Imbalance on one element and cast a spell of that element. When the Willpower check fails, the message reads: "You failed the Elemental Imbalance Willpower check: the GM decides what happens. Your Spell Casting Roll still proceeds." The spell roll then goes ahead.
+
+### B03, round 2 · Quick and Leadership outlined
+
+**Set up.** In Manage, add Leadership and Quick. Switch to Play.
+
+1. **Quick's "Use" and Leadership's "Lead an ally"** are outlined like the other buttons on the cards, with no black fill. Their words, amounts and notes are as before, greyed out of a combat round.
+
+### Round 2 results
+
+To be recorded here, verbatim, when the owner has run the round.

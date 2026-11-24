@@ -11,10 +11,10 @@ from pathlib import Path
 import hashlib, importlib.util, re, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART H — Phase 15 Implementation/Release 15b/B09 — Skill Picker Traits from the Final List'
-PREDECESSOR_SHA = '4d0a42b5ed28d24ce3614b0afe66bde674da07955f724c09dce350fe43313473'   # B05 on B03
-PREDECESSOR_BYTES = 17762714
-BEFORE_PREDECESSOR_SHA = '223790bc58b04190bdb2971dac281745a578cda153c396685403657a83e05b8d'   # B03 on B01
-BEFORE_PREDECESSOR_BYTES = 17759590
+PREDECESSOR_SHA = '029595b6412b10183837cf1e6ade8aeb80d78ac94ea68fdee696a280c9528983'   # B05 on B03
+PREDECESSOR_BYTES = 17770451
+BEFORE_PREDECESSOR_SHA = 'feac10a6afd30eca2c0556cfcd66817a78d72401f10049a57569195e905bfc04'   # B03 on B01
+BEFORE_PREDECESSOR_BYTES = 17767327
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// PART H PHASE 15.2.9 BEGIN picker-traits-seam'
 Q = Path(__file__).resolve().parent

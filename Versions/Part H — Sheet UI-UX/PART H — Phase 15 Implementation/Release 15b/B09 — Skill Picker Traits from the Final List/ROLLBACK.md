@@ -23,7 +23,7 @@ It adds no save field, no storage key and no class.
 2. From this folder, run `python -B qa/remove-phase.py <scratch copy>`. It refuses the live tree, a foreign marker inside its block, and a missing block.
 3. Run the scratch copy's `build/recombine.py --verify`.
 
-With nothing later present, the rebuild is exactly B05 on B03: 17,762,714 bytes, SHA-256 `4d0a42b5ed28d24ce3614b0afe66bde674da07955f724c09dce350fe43313473`. `qa/test-removal.py` proves three things:
+With nothing later present, the rebuild is exactly B05 on B03 (round 2): 17,770,451 bytes, SHA-256 `029595b6412b10183837cf1e6ade8aeb80d78ac94ea68fdee696a280c9528983`. (Round 1's was 17,762,714 bytes, `4d0a42b5…3473`.) Round 2 (24 November 2026) is on the tip branch `claude/release-15b-b09` only; the lower branches keep round 1. The builds below are round 2's, made from the tip by removing later units. `qa/test-removal.py` proves three things:
 - that rebuild;
 - that B05 removed next gives B03 exactly;
 - that B05 can be removed with this unit kept.

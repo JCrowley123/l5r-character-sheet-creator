@@ -141,6 +141,34 @@ Each unit has its own folder with README (build numbers, light checks), ROLLBACK
 - **Previews:** B01, B03 and B05 match their builds file for file (`qa/preview-b0*-files.log`). The tip (https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/) matches its build file for file and passes **3,812/3,812** on the deployed files: 88 harnesses, the group's four plus every touched layer's (`qa/preview-b09.log`, `qa/hosted-preview/claude-release-15b-b09/`).
 - **Device round:** [DEVICE-CHECKS.md](DEVICE-CHECKS.md), mirroring the Claude Doc https://claude.ai/artifact/Nphzgd9PYVFgZRPbLFPQmX.
 
+### Round 2 built (24 November 2026)
+
+B01 and B03 were rebuilt to the approved round 2, and B05 and B09 restacked on them, in one commit on the tip branch `claude/release-15b-b09`, as group 1 committed B17's fix on its tip. **The lower branches (`claude/release-15b-b01`, `-b03`, `-b05`) do not carry round 2**; their builds are round 1's. The intermediate builds below are made from the tip by removing later units (`qa/removed-build.py`).
+
+- **B01** (`CN15`): Lord Moon's button at the check buttons' size (new stylesheet `src/css/1154-check-button-names.css`, under the body class `cn15-on`); Touch of the Void's button outlined and named "Keep control (TN 30)" (B01 now wraps `VI4533.lines`); the ten failure lines without "Tell the GM" (seven in `CHK4531.CHECKS` at install, Touch of the Void's and Toshigoku's through `rollWithModifiers`, Elemental Imbalance's through `appAlert`), each by its exact old words. Own checks 15 → 23 (`CN-R2-*`, pinned before their first run).
+- **B03** (`LA15`): Quick's and Leadership's buttons take the class `ghost`. Own checks 13 → 15 (`LA-OUTLINED-*`, pinned before their first run).
+- **B05:** unchanged; its harness was fixed to find Touch of the Void's button by its row and to check the failure line's first sentence only, so it no longer depends on B01 (same ids and count).
+- **B09:** unchanged.
+
+| Build | SHA-256 | Bytes |
+|---|---|---|
+| Group build (the tip, round 2) | `1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819` | 17,773,727 |
+| B09 removed (B05 on B03) | `029595b6…8983` | 17,770,451 |
+| B05 removed (B03 on B01) | `feac10a6…fc04` | 17,767,327 |
+| B03 removed (B01 on group 1) | `9e245e2c…7a64` | 17,762,561 |
+| B01 removed (group 1 as live, unchanged) | `5ac767c6…574d` | 17,750,809 |
+| All 26 Release 15a units removed, group kept | `fd8fb7d0…8469` | 17,580,504 |
+
+- **Restack:** `PRE_RELEASE_*` in B03's, B05's and B09's removers and the predecessor constants in their removal proofs name the round-2 builds. The manifest's `expect_sha256` is pinned to the group build.
+- **Light checks, all first time:**
+  - the group's own harnesses on the group build: B01 23/23, B03 15/15, B05 10/10, B09 9/9 (`qa/light/r2-own-on-group-1f002be9/`);
+  - every removal proof 10/10 (`qa/removal-round2.log` in each unit) and the dependency check 4/4 (`qa/dependencies-round2.log`);
+  - the touched layers, one union run on the group build (round 1's four patterns plus the moon and gates patterns): **85/85 harnesses, 3,806/3,806** (`qa/light/r2-touched-run.log`);
+  - the three harnesses that follow B01 (Feature 4.5.31's, Feature 4.5.33's and A07's) on the build with B01 removed: 3/3, 171/171, same counts (`qa/light/r2-b01-removed-following-run.log`);
+  - the group's four harnesses with 15a removed: 23/23, 15/15, 10/10, 9/9 (`qa/light/r2-own-on-15a-removed-fd8fb7d0/`).
+- **Older harnesses that now follow B01** (same ids and count, declared in both ROLLBACKs): Feature 4.5.33's `void-initiative-harness.js` (Touch of the Void's words) and A07's `moon-row-harness.js` (the resist button's size). Checked and left alone, because they read neither the old words nor the size: the Moon Resist Label fix's, Feature 4.5.10's, Feature 4.5.2's (gates) and Feature 4.5.32's. **Older removers that refuse while B01 is present:** Feature 4.5.31's (as before) and now Feature 4.5.33's.
+- **Device round 2:** the checklist's "Round 2" section, in the same Claude Doc, mirrored in [DEVICE-CHECKS.md](DEVICE-CHECKS.md).
+
 ## For the build (not decided by the owner; settle when the build starts)
 
 - **B01.** The labels come from `CHK4531.build` (`209.9999998-feat-checks-conditions.js`); `decorateRow` rebuilds a row only when its `sig` changes, so the layer must relabel on build and on a switch-off/on. The spoken names are `aria-label`s set by `api.checkButton` (`spec.name + ': ' + spec.trait + ' Trait Roll ' + spec.why`). Lost Love's button is `api.button('Spend a Void Point', …)`. Take the word "Spend Void" from B18's G07 answer if it is in by then. Search every harness that pins "Check (TN", "Spend a Void Point" or the old spoken names (B18 found "Check" in 8 files and "Spend a Void Point" in 5, upper bounds). The resistance phase (pinned after Phase 15) will likely restyle these six; B01 sets their words.
