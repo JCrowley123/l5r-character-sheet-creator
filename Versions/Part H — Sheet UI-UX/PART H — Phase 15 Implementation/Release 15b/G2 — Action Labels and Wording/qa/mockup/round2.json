@@ -1,0 +1,484 @@
+{
+ "sha": "0d8cebb174c4c4130cfab0368bb0950793d93c01285310438f9e073bb4b81637",
+ "when": "2026-11-24T16:35:15.325Z",
+ "phone": {
+  "today": {
+   "checks": [
+    {
+     "entry": "Brash",
+     "buttons": [
+      {
+       "text": "Resist insult (TN 25)",
+       "cls": "ghost chk4531-btn",
+       "w": 164,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lord Moon’s Curse",
+     "buttons": [
+      {
+       "text": "Resist Lord Moon (TN 20)",
+       "cls": "ghost lm7-roll",
+       "w": 200,
+       "h": 44,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "11.84px"
+      }
+     ]
+    },
+    {
+     "entry": "Touch of the Void",
+     "buttons": [
+      {
+       "text": "Willpower (TN 30)",
+       "cls": "vi4533-btn",
+       "w": 147,
+       "h": 20,
+       "bg": "rgb(42, 36, 32)",
+       "color": "rgb(239, 231, 212)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Epilepsy",
+     "buttons": [
+      {
+       "text": "Avoid (TN 15)",
+       "cls": "ghost chk4531-btn",
+       "w": 108,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      },
+      {
+       "text": "End seizure (TN 10)",
+       "cls": "ghost chk4531-btn",
+       "w": 154,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lost Love",
+     "buttons": [
+      {
+       "text": "Steady yourself — Spend Void",
+       "cls": "ghost chk4531-btn",
+       "w": 235,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "brashFail": {
+    "title": "Brash — Willpower vs TN 25",
+    "note": "You attack (or challenge) the one who provoked you, at once. Tell the GM: the sheet does not act for you."
+   },
+   "touchFail": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "note": "You are Dazed for one Round. Tell the GM: the sheet does not track Dazed."
+   },
+   "checkErrors": [],
+   "use": [
+    {
+     "entry": "Leadership",
+     "buttons": [
+      {
+       "text": "Lead an ally",
+       "cls": "vi4533-btn",
+       "w": 106,
+       "h": 20,
+       "bg": "rgb(42, 36, 32)",
+       "color": "rgb(239, 231, 212)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Quick",
+     "buttons": [
+      {
+       "text": "Use",
+       "cls": "vi4533-btn",
+       "w": 44,
+       "h": 20,
+       "bg": "rgb(42, 36, 32)",
+       "color": "rgb(239, 231, 212)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "useErrors": []
+  },
+  "proposed": {
+   "checks": [
+    {
+     "entry": "Brash",
+     "buttons": [
+      {
+       "text": "Resist insult (TN 25)",
+       "cls": "ghost chk4531-btn",
+       "w": 164,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lord Moon’s Curse",
+     "buttons": [
+      {
+       "text": "Resist Lord Moon (TN 20)",
+       "cls": "ghost lm7-roll",
+       "w": 197,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Touch of the Void",
+     "buttons": [
+      {
+       "text": "Keep control (TN 30)",
+       "cls": "vi4533-btn ghost",
+       "w": 168,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Epilepsy",
+     "buttons": [
+      {
+       "text": "Avoid (TN 15)",
+       "cls": "ghost chk4531-btn",
+       "w": 108,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      },
+      {
+       "text": "End seizure (TN 10)",
+       "cls": "ghost chk4531-btn",
+       "w": 154,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lost Love",
+     "buttons": [
+      {
+       "text": "Steady yourself — Spend Void",
+       "cls": "ghost chk4531-btn",
+       "w": 235,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "brashFail": {
+    "title": "Brash — Willpower vs TN 25",
+    "note": "You attack (or challenge) the one who provoked you, at once."
+   },
+   "touchFail": {
+    "title": "Touch of the Void — Willpower vs TN 30",
+    "note": "You are Dazed for one Round."
+   },
+   "checkErrors": [],
+   "use": [
+    {
+     "entry": "Leadership",
+     "buttons": [
+      {
+       "text": "Lead an ally",
+       "cls": "vi4533-btn ghost",
+       "w": 106,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Quick",
+     "buttons": [
+      {
+       "text": "Use",
+       "cls": "vi4533-btn ghost",
+       "w": 44,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "useErrors": []
+  }
+ },
+ "laptop": {
+  "today": {
+   "checks": [
+    {
+     "entry": "Brash",
+     "buttons": [
+      {
+       "text": "Resist insult (TN 25)",
+       "cls": "ghost chk4531-btn",
+       "w": 164,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lord Moon’s Curse",
+     "buttons": [
+      {
+       "text": "Resist Lord Moon (TN 20)",
+       "cls": "ghost lm7-roll",
+       "w": 200,
+       "h": 44,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "11.84px"
+      }
+     ]
+    },
+    {
+     "entry": "Touch of the Void",
+     "buttons": [
+      {
+       "text": "Willpower (TN 30)",
+       "cls": "vi4533-btn",
+       "w": 147,
+       "h": 20,
+       "bg": "rgb(42, 36, 32)",
+       "color": "rgb(239, 231, 212)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Epilepsy",
+     "buttons": [
+      {
+       "text": "Avoid (TN 15)",
+       "cls": "ghost chk4531-btn",
+       "w": 108,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      },
+      {
+       "text": "End seizure (TN 10)",
+       "cls": "ghost chk4531-btn",
+       "w": 154,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lost Love",
+     "buttons": [
+      {
+       "text": "Steady yourself — Spend Void",
+       "cls": "ghost chk4531-btn",
+       "w": 235,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "checkErrors": [],
+   "use": [
+    {
+     "entry": "Leadership",
+     "buttons": [
+      {
+       "text": "Lead an ally",
+       "cls": "vi4533-btn",
+       "w": 106,
+       "h": 20,
+       "bg": "rgb(42, 36, 32)",
+       "color": "rgb(239, 231, 212)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Quick",
+     "buttons": [
+      {
+       "text": "Use",
+       "cls": "vi4533-btn",
+       "w": 44,
+       "h": 20,
+       "bg": "rgb(42, 36, 32)",
+       "color": "rgb(239, 231, 212)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "useErrors": []
+  },
+  "proposed": {
+   "checks": [
+    {
+     "entry": "Brash",
+     "buttons": [
+      {
+       "text": "Resist insult (TN 25)",
+       "cls": "ghost chk4531-btn",
+       "w": 164,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lord Moon’s Curse",
+     "buttons": [
+      {
+       "text": "Resist Lord Moon (TN 20)",
+       "cls": "ghost lm7-roll",
+       "w": 197,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Touch of the Void",
+     "buttons": [
+      {
+       "text": "Keep control (TN 30)",
+       "cls": "vi4533-btn ghost",
+       "w": 168,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Epilepsy",
+     "buttons": [
+      {
+       "text": "Avoid (TN 15)",
+       "cls": "ghost chk4531-btn",
+       "w": 108,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      },
+      {
+       "text": "End seizure (TN 10)",
+       "cls": "ghost chk4531-btn",
+       "w": 154,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Lost Love",
+     "buttons": [
+      {
+       "text": "Steady yourself — Spend Void",
+       "cls": "ghost chk4531-btn",
+       "w": 235,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "checkErrors": [],
+   "use": [
+    {
+     "entry": "Leadership",
+     "buttons": [
+      {
+       "text": "Lead an ally",
+       "cls": "vi4533-btn ghost",
+       "w": 106,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    },
+    {
+     "entry": "Quick",
+     "buttons": [
+      {
+       "text": "Use",
+       "cls": "vi4533-btn ghost",
+       "w": 44,
+       "h": 20,
+       "bg": "rgba(0, 0, 0, 0)",
+       "color": "rgb(42, 36, 32)",
+       "font": "12.48px"
+      }
+     ]
+    }
+   ],
+   "useErrors": []
+  }
+ }
+}

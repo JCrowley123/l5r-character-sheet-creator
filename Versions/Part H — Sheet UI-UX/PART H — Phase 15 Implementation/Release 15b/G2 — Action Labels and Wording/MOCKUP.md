@@ -83,6 +83,32 @@ How it is read:
 
 Read as: build the four units in this session, on stacked branches, through the build and preview stage (light checks, one code review, previews, the device-round checklist), and stop for the device round.
 
+## Round 2 (24 November 2026): B01 and B03 revised
+
+**The owner's word for round 2,** after the device round (DEVICE-CHECKS.md: every check Pass; B05 and B09 Accept, B01 and B03 Revise; nine comments). Asked whether to spend more time on this group or move to group 3, Claude recommended finishing with a narrow round 2. The owner answered, by the next-step button:
+
+> Narrow round 2 first
+
+**The board's version 3** (https://claude.ai/artifact/REUwrJoboaHe6xQBuGDDy2) has the round-2 section on top. Pictures are group 2 as built (`0d8cebb1…1637`) beside the proposal, drawn in a test browser at phone and laptop size, with no page errors (`qa/mockup/round2.cjs`, `qa/mockup/round2.json`).
+
+- **B01, revised (comments 2, 5, 8):**
+  - **Lord Moon's "Resist Lord Moon (TN 20)"** takes the check buttons' size: 20 px tall instead of A07's 44 px.
+  - **Touch of the Void's button** loses its black fill and is renamed **"Keep control (TN 30)"**, to match its pass line "You remain in control.". Its spoken name: "Keep control (TN 30): Touch of the Void, Willpower roll after you spend a Void Point". This answers B18's G11 for this button. The alternative offered: "Resist the Void (TN 30)".
+  - **The ten failure lines** lose their "Tell the GM …" sentence: seven on Feature 4.5.31 (Epilepsy's among them), Touch of the Void's, Toshigoku's, and Elemental Imbalance's message. Elemental Imbalance keeps "the GM decides what happens", because the rule leaves the outcome to the GM.
+- **B03, revised (comment 3):** "Use" and "Lead an ally" take the outlined look of every other card button. The words and amounts are unchanged.
+- **Parked:**
+  - Lord Moon's tick, Great Potential's pill and how an entry shows its choice go to a unit of their own, from B18's inventory.
+  - The combat notes go to the combat overhaul.
+  - An invisible 44 px touch reach for every card button would be a sheet-wide change, so it isn't proposed now.
+
+**The board's two questions:**
+1. **B01, round 2:** approve as shown (recommended), or name Touch of the Void "Resist the Void (TN 30)", or revise.
+2. **B03, round 2:** approve as shown (recommended), or revise.
+
+### Round 2 answers
+
+Not given yet.
+
 ## Built (24 November 2026)
 
 Each unit has its own folder with README (build numbers, light checks), ROLLBACK, harness with pinned ids, remover and removal proof, and a `CHAIN` entry after B17.
