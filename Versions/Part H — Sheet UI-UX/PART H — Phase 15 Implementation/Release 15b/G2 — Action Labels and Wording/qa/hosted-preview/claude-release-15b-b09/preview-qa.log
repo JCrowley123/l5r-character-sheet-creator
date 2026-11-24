@@ -1,0 +1,4174 @@
+Preview page matches the committed build byte for byte.
+Service worker matches build 90f180540842c52c.
+== B01 — Check Buttons Named for What They Do/check-names-harness.js
+PASS CN-SEAM-PHONE
+PASS CN-LABELS-PHONE
+PASS CN-SPOKEN-PHONE
+PASS CN-EPILEPSY-UNCHANGED-PHONE
+PASS CN-BRASH-ROLL-PHONE
+PASS CN-CONTRARY-ROLL-PHONE
+PASS CN-RUMORMONGER-ROLL-PHONE
+PASS CN-OTHER-ROLLS-PHONE
+PASS CN-LOST-LOVE-SPENDS-PHONE
+PASS CN-FITS-PHONE
+PASS CN-SURVIVES-REDRAW-PHONE
+PASS CN-NO-ERRORS-PHONE
+PASS CN-LABELS-DESKTOP
+PASS CN-FITS-DESKTOP
+PASS CN-NO-ERRORS-DESKTOP
+15/15 checks passed
+
+== B03 — Lead an Ally/lead-an-ally-harness.js
+PASS LA-SEAM-PHONE
+PASS LA-LEAD-LABEL-PHONE
+PASS LA-QUICK-LABEL-PHONE
+PASS LA-NOTES-KEPT-PHONE
+PASS LA-GREYED-OUT-OF-COMBAT-PHONE
+PASS LA-ONE-LINE-PHONE
+PASS LA-AMOUNT-FOLLOWS-PHONE
+PASS LA-LEAD-ROLLS-PHONE
+PASS LA-QUICK-USES-PHONE
+PASS LA-NO-ERRORS-PHONE
+PASS LA-LABELS-DESKTOP
+PASS LA-ONE-LINE-DESKTOP
+PASS LA-NO-ERRORS-DESKTOP
+13/13 checks passed
+
+== B05 — You Remain in Control/remain-in-control-harness.js
+PASS RC-SEAM-PHONE
+PASS RC-TOUCH-PASSES-PHONE
+PASS RC-TOUCH-FAILS-PHONE
+PASS RC-MOON-PASSES-PHONE
+PASS RC-MOON-FAILS-PHONE
+PASS RC-OTHER-LINES-UNCHANGED-PHONE
+PASS RC-NO-ERRORS-PHONE
+PASS RC-TOUCH-PASSES-DESKTOP
+PASS RC-MOON-PASSES-DESKTOP
+PASS RC-NO-ERRORS-DESKTOP
+10/10 checks passed
+
+== B09 — Skill Picker Traits from the Final List/picker-traits-harness.js
+PASS PT-SEAM-PHONE
+PASS PT-INTIMIDATION-PHONE
+PASS PT-OPTIONS-UNCHANGED-PHONE
+PASS PT-EVERY-OPTION-MATCHES-ITS-ROW-PHONE
+PASS PT-REAL-PICK-PHONE
+PASS PT-REDRAW-KEEPS-WORDS-PHONE
+PASS PT-NO-ERRORS-PHONE
+PASS PT-INTIMIDATION-DESKTOP
+PASS PT-NO-ERRORS-DESKTOP
+9/9 checks passed
+
+== BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/ancfix-harness.js
+PASS AC-VOID-NONE-SKILLED
+PASS AC-VOID-NONE-UNSKILLED
+PASS AC-VOID-NONE-TRAIT
+PASS AC-VOID-NONE-NO-ERRORS
+PASS AC-VOID-SEPPUN-BEFORE-TICK
+PASS AC-VOID-SEPPUN-SKILLED
+PASS AC-VOID-SEPPUN-TRAIT
+PASS AC-VOID-SEPPUN-UNSKILLED-KEEPS-SKILL
+PASS AC-VOID-SEPPUN-UNTICK
+PASS AC-VOID-SEPPUN-ROLL-TAKES-GIFT
+PASS AC-VOID-SEPPUN-NO-ERRORS
+PASS AC-VOID-IONGI-SKILLED
+PASS AC-VOID-IONGI-NO-ERRORS
+PASS AC-INFO-REFERENCES-AGREE
+PASS AC-INFO-BOX
+PASS AC-INFO-COLOUR
+PASS AC-INFO-GLYPH
+PASS AC-INFO-NO-TEXT
+PASS AC-INFO-FITS
+PASS AC-INFO-OPENS
+PASS AC-INFO-NO-ERRORS
+PASS AC-CLAN-IMPERIAL
+PASS AC-CLAN-RONIN
+PASS AC-CLAN-MINOR-CLAN
+PASS AC-CLAN-MINOR-PICKER-ONLY
+PASS AC-CLAN-CHOICE-KEPT
+PASS AC-CLAN-APPLIED-WINS
+PASS AC-CLAN-NO-ERRORS
+28/28 checks passed
+
+== BUGFIX — Ancestor Gifts Used and Favour/ancestor-gifts-harness.js
+PASS AG-SETUP
+PASS AG-READY
+PASS AG-USED-LABEL
+PASS AG-USED-DISABLED
+PASS AG-USED-NO-TOGGLE
+PASS AG-RESET
+PASS AG-PAID-HERE
+PASS AG-LOGIC
+PASS AG-EDIT-SHOWN
+PASS AG-EDIT-SETS
+PASS AG-PLAY-HIDDEN
+PASS AG-NO-ERRORS
+12/12 checks passed
+
+== BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js
+Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-15b-g2-preview-fbc3l10a\site\index.html
+PASS SSR-ENABLED
+PASS SSR-LIBRARY-MIRUMOTO
+PASS SSR-LIBRARY-SHIBA
+PASS SSR-LIBRARY-KAIU
+PASS SSR-NO-PAGE-ERRORS-LIBRARY
+     swept 106 Schools, 106 applied, 589 School Skill rows
+PASS SSR-SWEEP-EVERY-SCHOOL-APPLIED
+PASS SSR-SWEEP-NO-BLANK-TRAIT
+PASS SSR-SWEEP-EVERY-ROW-IS-A-SKILL
+PASS SSR-SWEEP-TRAIT-MATCHES-LIBRARY
+PASS SSR-SWEEP-NO-PLACEHOLDER-ROWS
+     Schools with a "Family: Subject" School Skill: 70
+PASS SSR-SWEEP-FAMILY-SCOPE-SEEN
+PASS SSR-NO-PAGE-ERRORS-SWEEP
+PASS SSR-TSI-ROWS
+PASS SSR-TSI-FOUR-CHOICES-LEFT
+PASS SSR-KASUGA-ROWS
+PASS SSR-KASUGA-ONE-CHOICE-LEFT
+PASS SSR-MIRUMOTO-LORE-THEOLOGY
+PASS SSR-SHIBA-LORE-THEOLOGY
+PASS SSR-KAIU-WAR-FAN
+PASS SSR-JUROJIN-MEDICINE-WHOLE
+PASS SSR-JUROJIN-MEDICINE-EMPHASES
+PASS SSR-KITSU-LORES
+PASS SSR-LORE-ROW-ROLLS
+PASS SSR-REVERT-REMOVES-CORRECTED-ROWS
+PASS SSR-NO-PAGE-ERRORS-ROLL
+PASS SSR-TYPED-FAMILY-NAME-FILLS
+PASS SSR-EXISTING-TRAIT-NEVER-OVERWRITTEN
+PASS SSR-UNKNOWN-NAME-STAYS-BLANK
+PASS SSR-OLD-SAVE-LORE-TRAIT-FILLED
+PASS SSR-OLD-SAVE-OLD-NAME-KEPT-AND-FILLED
+PASS SSR-OLD-SAVE-PLACEHOLDERS-KEPT
+PASS SSR-OLD-NAME-SATISFIES-CHARACTER-CHECK
+PASS SSR-OLD-NAME-SATISFIES-SECOND-SCHOOL-UNLOCK
+PASS SSR-SECOND-SCHOOL-READS-CORRECTED-LIBRARY
+PASS SSR-NO-PAGE-ERRORS-OLD-SAVE
+PASS SSR-TSI-NO-FALSE-MISSING-SKILLS
+PASS SSR-TSI-FOUR-CHOICE-SLOTS
+
+37/37 checks passed
+
+== BUGFIX — Empty Quiver Cancels/quiver-cancel-harness.js
+PASS QC-ENABLED
+PASS QC-EMPTY-PICKER
+PASS QC-CANCEL-ENDS
+PASS QC-CLOSE-CANCELS
+PASS QC-WITH-ARROWS
+PASS QC-NO-ERRORS
+6/6 checks passed
+
+== BUGFIX — Empty Quiver Rolls On/quiver-harness.js
+PASS EQ-ENABLED
+PASS EQ-EMPTY-OFFERS
+PASS EQ-ROLL-WITHOUT
+PASS EQ-CLOSE-CANCELS
+PASS EQ-WITH-ARROWS
+PASS EQ-ONCE
+PASS EQ-LOGIC
+PASS EQ-NO-ERRORS
+8/8 checks passed
+
+== BUGFIX — Gender From Identity and the Wizard/gender-harness.js
+PASS GI-READ
+PASS GI-PAINT-MATCH
+PASS GI-UI-CHOICES
+PASS GI-PAINT-CONFLICT
+PASS GI-UNKNOWN
+PASS GI-CHOICES
+PASS GI-WIZARD-FIELDS
+PASS GI-WIZARD-SKIPPABLE
+PASS GI-WIZARD-ORDER
+PASS GI-STARTOVER-KEEPS
+PASS GI-BUTTON
+PASS GI-NO-ERRORS
+12/12 checks passed
+
+== BUGFIX — Gift Cancel Refunds the Spell Slot/gift-refund-harness.js
+PASS GR-ENABLED
+PASS GR-CANCEL-ROLL
+PASS GR-CANCEL-X
+PASS GR-ROLL-WITHOUT
+PASS GR-PREVIEW-CANCEL-ONCE
+PASS GR-NO-GIFT
+PASS GR-SETTLE-RESIST
+PASS GR-NO-ERRORS
+8/8 checks passed
+
+== BUGFIX — Hotei Where the Sheet Spends Void/hotei-auto-harness.js
+PASS HT-CURSED
+PASS HT-PARAGON-PRICE
+PASS HT-PARAGON-SHORT
+PASS HT-PARAGON-CHARGE
+PASS HT-PARAGON-PLAIN
+PASS HT-PARAGON-TEXT
+PASS HT-ANC-PAY
+PASS HT-ANC-SHORT
+PASS HT-ANC-PLAIN
+PASS HT-ANC-NOTE
+PASS HT-OUTCOME
+PASS HT-ROW-NOTE
+PASS HT-STATUS
+PASS HT-STATUS-PLAIN
+PASS HT-BUTTON
+PASS HT-NO-ERRORS
+16/16 checks passed
+
+== BUGFIX — Minor Clan Defender Paragon Gate/paragon-gate-harness.js
+PASS PG47-CAPABILITY
+PASS PG47-NO-PARAGON
+PASS PG47-UNCONFIGURED
+PASS PG47-UNCONFIGURED-PICKER
+PASS PG47-UNCONFIGURED-DIRECT-ENTRY
+PASS PG47-VALID-Compassion
+PASS PG47-VALID-Courage
+PASS PG47-VALID-Courtesy
+PASS PG47-VALID-Duty
+PASS PG47-VALID-Honesty
+PASS PG47-VALID-Honor
+PASS PG47-VALID-Sincerity
+PASS PG47-INVALID-empty
+PASS PG47-INVALID-wrongType
+PASS PG47-INVALID-wrongRevision
+PASS PG47-INVALID-unknownTenet
+PASS PG47-INVALID-extraKey
+PASS PG47-INVALID-array
+PASS PG47-INVALID-null
+PASS PG47-BAD-JSON
+PASS PG47-DISADVANTAGE-DOES-NOT-COUNT
+PASS PG47-WRONG-NAME-DOES-NOT-COUNT
+PASS PG47-ONE-VALID-ROW-SUFFICES
+PASS PG47-PREREQUISITES-STILL-APPLY
+PASS PG47-OTHER-SCHOOL-UNAFFECTED
+PASS PG47-OPEN-MODAL
+PASS PG47-CANCEL-STILL-BLOCKED
+PASS PG47-CONFIRMED-PICKER
+PASS PG47-BEGIN-ENABLED
+PASS PG47-ENTRY-RANK-ZERO
+PASS PG47-EXISTING-ENROLLMENT-PRESERVED
+PASS PG47-NO-PAGE-ERRORS
+32/32 checks passed
+
+== BUGFIX — Moon Curse Full Moon/moon-harness.js
+PASS LM-ENABLED
+PASS LM-ROW-CONTROLS
+PASS LM-TICK-ADDS
+PASS LM-SPENT-LAST
+PASS LM-UNTICK-UNSPENT
+PASS LM-UNTICK-SPENT
+PASS LM-PIP-CLICK
+PASS LM-SAVED
+PASS LM-QUICK
+PASS LM-ROLL-FAIL
+PASS LM-ROLL-PASS
+PASS LM-PANEL-FOLLOWS
+PASS LM-REPICK-KEEPS
+PASS LM-ROW-REMOVED-SUNRISE
+PASS LM-LOAD-NOT-SUNRISE
+PASS LM-LOGIC
+PASS LM-NO-ERRORS
+17/17 checks passed
+
+== BUGFIX — Moon Resist Label/moon-label-harness.js
+PASS MR-ENABLED
+PASS MR-LABEL
+PASS MR-FOLLOWS-LEVEL
+PASS MR-SAME-ROLL
+PASS MR-NO-ERRORS
+5/5 checks passed
+
+== BUGFIX — Negative Roll Modifier Display/negative-roll-modifier-harness.js
+PASS NEGMOD-KEEP-01 a negative modifier reads as a penalty, not as "+ -40 bonus"
+PASS NEGMOD-NOTE-01 the notation line signs the modifier instead of prefixing "+"
+PASS NEGMOD-MIX-01 a net-negative mix of a Ten Dice bonus and a wound penalty reads as a penalty — Keeping 10 of 10 (suggested 10) − 28 penalty | 14k12 → 10k10 −28 (Ten Dice Rule)
+PASS NEGMOD-SCOPE-01 no string changed where the modifier is absent or positive
+PASS NEGMOD-SCOPE-02 only the modifier itself was reworded in the negative cases
+PASS NEGMOD-ARITH-01 displayed total minus kept dice equals the modifier, in all six cases
+PASS NEGMOD-HIDDEN-01 the "Ten Dice Rule bonus" note is hidden in every negative case
+PASS NEGMOD-HIDDEN-02 a real positive Ten Dice bonus still shows its note, unchanged — {"text":"Ten Dice Rule bonus: +12 (already included in the total above)","hidden":false}
+PASS NEGMOD-PURE-01 signedRollMod: positive, negative, zero, minus one
+PASS NEGMOD-PURE-02 rollTotalModNote: bonus stays "bonus", negative becomes "penalty"
+PASS NEGMOD-PURE-03 both helpers use U+2212 MINUS SIGN, not U+002D HYPHEN-MINUS — rollTotalModNote=8722, signedRollMod=8722 (8722 expected)
+PASS NEGMOD-SEAM-01 kill-switch and both helpers are exported — flag=true fns=2
+
+12/12 checks passed
+NEGATIVE_ROLL_MOD_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-15b-g2-preview-fbc3l10a\\site\\index.html","passed":12,"total":12}
+
+== BUGFIX — Printed Skills and Equipment Tables/printed-skills-equipment-harness.js
+PASS PSE-SWITCH
+PASS PSE-SETUP
+PASS PSE-SCREEN-UNCHANGED
+PASS PSE-IDEMPOTENT
+PASS PSE-NO-SCROLLER
+PASS PSE-TABLES-WITHIN-PAGE
+PASS PSE-LONG-TEXT-WHOLE-WORDS
+PASS PSE-SHORT-VALUES-FIT
+PASS PSE-EMPHASES-WHOLE
+PASS PSE-SHORT-COLUMNS-TIGHT
+PASS PSE-WIDE-COLUMNS-TAKE-THE-REST
+PASS PSE-MANAGEMENT-MODE
+PASS PSE-AFTERPRINT-RESTORES
+PASS PSE-RESTORE-CLEANS-COPIES
+PASS PSE-PDF-TEXT-WHOLE
+PASS PSE-PDF-LEAVES-SCREEN-AS-WAS
+PASS PSE-DATA-UNCHANGED
+PASS PSE-NO-PAGE-ERRORS
+18/18 checks passed
+
+== BUGFIX — Rank 0 Skill Rolls Explode/rank-zero-harness.js
+PASS R0-table-DICE
+PASS R0-table-NOTE
+PASS R0-list-DICE
+PASS R0-list-NOTE
+PASS R0-direct-DICE
+PASS R0-direct-NOTE
+PASS R0-ATTACK-DICE
+PASS R0-TRAINED-DICE
+PASS R0-VOID-table
+PASS R0-VOID-list
+PASS R0-VOID-weapon
+PASS R0-SOUL
+PASS R0-CANCEL-VOID
+PASS R0-OTHER-TRAIT
+PASS R0-OTHER-RING
+PASS R0-OTHER-SPELL
+PASS R0-OTHER-MANUAL
+PASS R0-DAMAGE-UNCHANGED
+PASS NO-PAGE-ERRORS
+19/19 checks passed
+
+== BUGFIX — Roll Preview Opens at the Top/roll-preview-top-harness.js
+PASS RPT-SWITCH
+PASS RPT-CARD-SCROLLS
+PASS RPT-SCROLLED
+PASS RPT-STAYS-WHILE-OPEN
+PASS RPT-AFTER-CANCEL-AT-TOP
+PASS RPT-AFTER-CLOSE-AT-TOP
+PASS RPT-AFTER-ROLL-AT-TOP
+PASS RPT-ANOTHER-ROLL-AT-TOP
+PASS RPT-LOGIC-TO-TOP
+PASS RPT-NO-PAGE-ERRORS
+10/10 checks passed
+
+== BUGFIX — Search Focus on Close/dependency-harness.js
+PASS SF-DEP-CONTROL-API
+PASS SF-DEP-CONTROL-FOCUS
+PASS SF-DEP-CONTROL-ERRORS
+PASS SF-DEP-OFF-API
+PASS SF-DEP-OFF-FOCUS
+PASS SF-DEP-OFF-ERRORS
+PASS SF-DEP-FRAGMENT-ABSENT-API
+PASS SF-DEP-FRAGMENT-ABSENT-FOCUS
+PASS SF-DEP-FRAGMENT-ABSENT-ERRORS
+PASS SF-DEP-FACETS-OFF-API
+PASS SF-DEP-FACETS-OFF-FOCUS
+PASS SF-DEP-FACETS-OFF-ERRORS
+PASS SF-DEP-PAGE-OFF-API
+PASS SF-DEP-PAGE-OFF-FOCUS
+PASS SF-DEP-PAGE-OFF-ERRORS
+15/15 checks passed
+
+== BUGFIX — Search Focus on Close/search-focus-harness.js
+PASS SF-SWITCH
+PASS SF-BACK-RETURNS-FOCUS
+PASS SF-BACK-KEEPS-PLACE
+PASS SF-ESCAPE-RETURNS-FOCUS
+PASS SF-SECOND-ESCAPE-CLOSES
+PASS SF-FILTERS-KEPT
+PASS SF-NO-KEYBOARD
+PASS SF-STALE-OPENER-FALLBACK
+PASS SF-REOPENED-ENTRY-RETURNS-FOCUS
+PASS SF-FOCUS-ELSEWHERE-LEFT
+PASS SF-CHARACTER-AND-STORAGE-UNCHANGED
+PASS SF-NO-PAGE-ERRORS
+12/12 checks passed
+
+== BUGFIX — Search Keystroke Speed/speed-harness.js
+PASS SS-SWITCH
+PASS SS-SAME-RESULTS
+PASS SS-NORMALISE-SAME
+PASS SS-REMEMBERS
+PASS SS-LONG-TEXT-NOT-KEPT
+PASS SS-BOUNDED
+PASS SS-NO-PAGE-ERRORS
+7/7 checks passed
+
+== BUGFIX — Skill List Hides Held Skills/skill-list-harness.js
+PASS SL-HIDES-HELD
+PASS SL-ROW-ADDED
+PASS SL-RETURNS
+PASS SL-SUBJECT-STAYS
+PASS SL-TYPED-NAME
+PASS SL-LOAD
+PASS SL-OTHERS-STAY
+PASS SL-WIZARD-ADD
+PASS SL-CASE
+PASS SL-WIZARD-FRESH
+PASS SL-WIZARD-RETURN
+PASS SL-NO-ERRORS
+12/12 checks passed
+
+== BUGFIX — Skill Traits/dependency-harness.js
+PASS ST-DEP-CONTROL
+PASS ST-DEP-CONTROL-ERRORS
+PASS ST-DEP-FIX-OFF
+PASS ST-DEP-FIX-OFF-ERRORS
+PASS ST-DEP-SCHOOL-ROWS-OFF
+PASS ST-DEP-SCHOOL-ROWS-OFF-ERRORS
+PASS ST-DEP-SEARCH-OFF
+PASS ST-DEP-SEARCH-OFF-ERRORS
+8/8 checks passed
+
+== BUGFIX — Skill Traits/skill-traits-harness.js
+PASS ST-ENABLED
+PASS ST-CATALOGUE
+PASS ST-LIBRARY-ENTRY
+PASS ST-NEW-INTIMIDATION
+PASS ST-NEW-PERFORM-BIWA
+PASS ST-NEW-PERFORM-DANCE
+PASS ST-NEW-PERFORM-DRUMS
+PASS ST-NEW-PERFORM-FLUTE
+PASS ST-NEW-PERFORM-PUPPETEER
+PASS ST-NEW-PERFORM-SAMISEN
+PASS ST-NEW-PERFORM-ORATORY
+PASS ST-NEW-PERFORM-SONG
+PASS ST-NEW-PERFORM-STORYTELLING
+PASS ST-NEW-GAMES-FORTUNES-WINDS
+PASS ST-NEW-GAMES-LETTERS
+PASS ST-NEW-GAMES-SADANE
+PASS ST-NEW-GAMES-GO
+PASS ST-NEW-GAMES-SHOGI
+PASS ST-NEW-GAMES-KEMARI
+PASS ST-LOAD-OLD-TRAITS
+PASS ST-INPUT-NOT-MUTATED
+PASS ST-NO-REPRICE
+PASS ST-OVERRIDES-ROUNDTRIP
+PASS ST-TYPED-RENAMES
+PASS ST-TYPED-OVERRIDE
+PASS ST-MANUAL-SAME-VALUE
+PASS ST-CASE-SPACES
+PASS ST-MANUAL-OLD-DEFAULT-RENAME
+PASS ST-UNLISTED-UNCHANGED
+PASS ST-CRAFT-ROW
+PASS ST-CRAFT-INFO
+PASS ST-CRAFT-RENAME
+PASS ST-CRAFT-NO-DUPLICATE
+PASS ST-SEARCH-INTIMIDATION
+PASS ST-SEARCH-FACET
+PASS ST-SEARCH-CRAFT
+PASS ST-FT28-PARKED
+PASS ST-NO-PAGE-ERRORS
+38/38 checks passed
+
+== BUGFIX — Spell Slot Accounting/spell-slot-accounting-harness.js
+PASS SSA-ENABLED
+PASS SSA-REGISTRY-SEVEN
+PASS SSA-ELEMENT-PREVIEW
+PASS SSA-ELEMENT-SPENT-BEFORE-PREVIEW
+PASS SSA-ELEMENT-CANCEL-REFUNDS
+PASS SSA-ELEMENT-STATUS
+PASS SSA-ELEMENT-ROLL-KEEPS-SLOT
+PASS SSA-VOID-PREVIEW
+PASS SSA-VOID-CANCEL-REFUNDS
+PASS SSA-BONUS-ASKS
+PASS SSA-BONUS-PREVIEW
+PASS SSA-BONUS-SPENT
+PASS SSA-BONUS-CANCEL-REFUNDS
+PASS SSA-BONUS-STATUS
+PASS SSA-BONUS-DECLINE-UNCHANGED
+PASS SSA-UNIVERSAL-PICKER
+PASS SSA-UNIVERSAL-PREVIEW
+PASS SSA-UNIVERSAL-SPENT
+PASS SSA-UNIVERSAL-CANCEL-REFUNDS
+PASS SSA-VV-ASKS
+PASS SSA-VV-PREVIEW
+PASS SSA-VV-RING-SPENT
+PASS SSA-VV-RING-CANCEL-REFUNDS
+PASS SSA-VV-EARTH-FULL-PREVIEW
+PASS SSA-VV-VOID-SPENT
+PASS SSA-VV-VOID-CANCEL-REFUNDS
+PASS SSA-MAHO-ASKS
+PASS SSA-MAHO-PREVIEW
+PASS SSA-MAHO-WOUNDS-TAKEN
+PASS SSA-MAHO-CANCEL-REFUNDS
+PASS SSA-MAHO-STATUS
+PASS SSA-LATE-DROPPED
+PASS SSA-LATE-RECORDED
+PASS SSA-GATE-CHECK-PREVIEW
+PASS SSA-GATE-SPENT
+PASS SSA-GATE-CHECK-CANCEL-REFUNDS
+PASS SSA-GATE-FAILED-KEEPS-SLOT
+PASS SSA-GATE-PASSED-SPELL-PREVIEW
+PASS SSA-GATE-PASSED-CANCEL-REFUNDS
+PASS SSA-PIP-FULL-REFUSED
+PASS SSA-PIP-FULL-STATUS
+PASS SSA-PIP-NO-WARNING-WHEN-CONSISTENT
+PASS SSA-PIP-TAKEBACK-CONSISTENT
+PASS SSA-PIP-SPEND-WITH-ROOM
+PASS SSA-OVERFULL-NOT-REPAIRED
+PASS SSA-OVERFULL-WARNED
+PASS SSA-OVERFULL-NOTE-STYLED
+PASS SSA-OVERFULL-FIRST-TAKEBACK
+PASS SSA-OVERFULL-WARNING-CLEARS
+PASS SSA-OVERFULL-FIRE-KEPT
+PASS SSA-SAVE-NO-NEW-FIELD
+PASS SSA-NO-PAGE-ERRORS
+52/52 checks passed
+
+== BUGFIX — Spell Slots Tab Visibility Race/spell-slots-visibility-harness.js
+  PASS  Spell Slots reaches the tab bar synchronously, in the same task as recalcAll()  — [object Object]
+  PASS  Spell Slots tab present after a real Apply-School tap  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Spell Slots, Equipment, Background
+  PASS  Spell Slots tab still present after navigating through four other tabs  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Spell Slots, Combat, Equipment, Background
+  PASS  Spell Slots tab absent again for a fresh (non-caster) character  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Combat, Equipment, Background
+  PASS  refreshVisibility() exists on window.__L5R_CAROUSEL__ and returns false when nothing changed  — [object Object]
+  PASS  no uncaught page errors
+
+6/6 checks passed
+
+== BUGFIX — Spell Slots Tab on Safari/safari-tab-harness.js
+PASS SST-EMU-EMULATION-ACTIVE
+PASS SST-EMU-START-HIDDEN
+PASS SST-EMU-SHUGENJA-SHOWS-TAB
+PASS SST-EMU-SECTION-READS-SHOWN
+PASS SST-EMU-PAGE-REACHABLE
+PASS SST-EMU-BUSHI-HIDES-TAB
+PASS SST-EMU-REFRESH-KEEPS-HIDDEN
+PASS SST-EMU-SHUGENJA-AGAIN
+PASS SST-EMU-LOADED-SHUGENJA-SHOWS-TAB
+PASS SST-EMU-NO-PAGE-ERRORS
+PASS SST-PLAIN-START-HIDDEN
+PASS SST-PLAIN-SHUGENJA-SHOWS-TAB
+PASS SST-PLAIN-SECTION-READS-SHOWN
+PASS SST-PLAIN-PAGE-REACHABLE
+PASS SST-PLAIN-BUSHI-HIDES-TAB
+PASS SST-PLAIN-REFRESH-KEEPS-HIDDEN
+PASS SST-PLAIN-SHUGENJA-AGAIN
+PASS SST-PLAIN-LOADED-SHUGENJA-SHOWS-TAB
+PASS SST-PLAIN-NO-PAGE-ERRORS
+19/19 checks passed
+
+== BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js
+PASS SS-ENABLED
+PASS SS-LINE
+PASS SS-ONCE
+PASS SS-LOGIC
+PASS SS-NO-ERRORS
+5/5 checks passed
+
+== BUGFIX — Typed Initiative Is the Dice/typed-initiative-harness.js
+PASS IDT-SWITCH
+PASS IDT-LABEL
+PASS IDT-TYPED-AFTER-VOID
+PASS IDT-TYPED-HOLDS-NO-BONUS
+PASS IDT-TYPED-BEFORE-VOID
+PASS IDT-TYPED-AFTER-QUICK
+PASS IDT-TYPED-AGAIN
+PASS IDT-EMPTY-REFUSED
+PASS IDT-ROLLED-UNCHANGED
+PASS IDT-LOGIC-SET
+PASS IDT-NO-PAGE-ERRORS
+11/11 checks passed
+
+== BUGFIX — Void Card Reasons on a Phone/void-reasons-harness.js
+PASS VWY-SWITCH
+PASS VWY-HOTEI-BUTTON-DISABLED
+PASS VWY-HOTEI-AT-ONE-POINT
+PASS VWY-READABLE
+PASS VWY-BUTTONS-KEEP-TITLES
+PASS VWY-NO-POINTS-ONCE
+PASS VWY-OUT-OF-COMBAT-NOT-REPEATED
+PASS VWY-SPENT-NOT-REPEATED
+PASS VWY-ONLY-DISABLED
+PASS VWY-AFTER-PIP-TAP
+PASS VWY-MOMOKU-NOT-REPEATED
+PASS VWY-LOGIC-LINES
+PASS VWY-ONE-BOX
+PASS VWY-NO-PAGE-ERRORS
+14/14 checks passed
+
+== BUGFIX — Void Raise Not on Initiative/void-raise-harness.js
+PASS VR-INIT-NO-K1
+PASS VR-SKILL-K1
+PASS VR-RING-K1
+PASS VR-STAYS-ARMED
+PASS VR-SKILL-SPENDS
+PASS VR-INIT-TEN
+PASS VR-PREVIEW-INIT
+PASS VR-PREVIEW-RING
+PASS VR-TOUCH-INIT
+PASS VR-TOUCH-SKILL
+PASS VR-TOUCH-PREVIEW
+PASS VR-NO-ERRORS
+12/12 checks passed
+
+== BUGFIX — Wizard Overspend Warns/overspend-warns-harness.js
+PASS XW-ENABLED
+PASS XW-TRAITS-NEXT-OPEN
+PASS XW-TRAITS-WARNING
+PASS XW-NAME-STILL-BLOCKS
+PASS XW-EVERY-STEP-OPEN
+PASS XW-ADV-BUSY-BLOCKS
+PASS XW-KIHO-STEP-OPEN
+PASS XW-REVIEW-WARNING
+PASS XW-REVIEW-FINDING-KEPT
+PASS XW-REVIEW-OTHER-ERROR-BLOCKS
+PASS XW-FINISH-OPEN
+PASS XW-FINISH-WARNS
+PASS XW-FINISH-STAY
+PASS XW-FINISH-GOES-ON
+PASS XW-FINISH-ONCE
+PASS XW-NO-ERRORS
+PASS XW-WITHIN-NO-WARNING
+17/17 checks passed
+
+== BUGFIX — Wizard Skill Remove/wizard-remove-harness.js
+PASS WR-BUTTONS
+PASS WR-LOGIC
+PASS WR-REMOVE
+PASS WR-PHONE
+PASS WR-NO-ERRORS
+5/5 checks passed
+
+== BUGFIX — Yomi Sees the Ancestor/yomi-ancestor-harness.js
+PASS YAN-SWITCH
+PASS YAN-NO-ANCESTOR-CLEAR
+PASS YAN-ANCESTOR-FLAGGED
+PASS YAN-LOGIC-LABEL
+PASS YAN-ANCESTOR-KEPT
+PASS YAN-LOST-FAVOUR-STILL-FLAGGED
+PASS YAN-WITH-INHERITANCE
+PASS YAN-REMOVED-ANCESTOR-CLEARS
+PASS YAN-INVALID-NOT-FLAGGED
+PASS YAN-AFTER-LOAD
+PASS YAN-OTHER-REALM-NO-FLAG
+PASS YAN-NO-PAGE-ERRORS
+12/12 checks passed
+
+== PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-expansion-harness.js
+
+PART I PHASE 4.5 — Variable-Advantage Completion Pass
+
+  PASS  the completion pass registers the five requested new schema shapes  — ["dualTierPick","rankPick","languagePick","skillPick","clanWeaponAutoPick"]
+  PASS  Allies computes both selected tiers and the Crane discount with a minimum cost of one  — [5,1]
+  PASS  Gentry exposes the approved holding ladder, including all intermediate tiers  — [["Village",8],["Large Village",15],["Unique Holding",18],["Town",20],["City",25],["Province",30]]
+  PASS  ranked resources resolve their approved costs and ranks  — [["kharmicTie",5,5],["luck",3,9],["magicResistanceReminder",2,4]]
+  PASS  Allies opens Influence then Devotion in the shared modal
+  PASS  Allies writes its dual-tier object and its discounted cost field through the UI  — {"name":"Allies","cost":"5","config":{"influence":4,"devotion":2,"value":"Influence 4 / Devotion 2","type":"dualTierPick"},"rowText":"Influence 4 + Devotion 2 — 5 points (Crane discount −1)Change","unconfigured":false,"badges":[]}
+  PASS  Allies changes only its own XP contribution  — 5
+  PASS  Gentry uses the shared modal and offers the longest approved tier
+  PASS  Gentry writes Province at 30 points and no silent default remains  — {"name":"Gentry","cost":"30","config":{"type":"severityTier","value":"Province"},"rowText":"Province — 30 pointsChange","unconfigured":false,"badges":[]}
+  PASS  Gentry contributes exactly its selected tier to XP  — 30
+  PASS  Kharmic Tie collects the target first and Rank second in the shared modal
+  PASS  Kharmic Tie displays the target badge and a reset-session control
+  PASS  Kharmic Tie starts with one persistent use per selected Rank and charges its Rank  — {"cost":"3","target":"Aiko","rank":3,"remaining":3,"hasSourceId":true}
+  PASS  Kharmic Tie changes only its own XP contribution  — 3
+  PASS  Languages asks for type then a specific free-text language in the shared modal
+  PASS  Languages stores type and free text, displays the badge, and charges 3 XP  — {"cost":"3","config":{"value":"Non-human: Naga","languageType":"Non-human","language":"Naga","type":"languagePick"},"badge":"Non-human: Naga"}
+  PASS  Languages changes only its selected XP contribution  — 3
+  PASS  Luck uses the existing rank picker
+  PASS  Luck paints both per-entry and sidebar pip pools
+  PASS  Luck starts with Rank pips and applies its 9 XP cost  — {"cost":"9","rank":3,"remaining":3}
+  PASS  Luck changes only its selected XP contribution  — 9
+  PASS  Magic Resistance uses the existing rank picker
+  PASS  Magic Resistance displays its incoming-spell reminder and charges 4 XP  — {"cost":"4","rowHasReminder":true,"badge":"Incoming spell TN +6"}
+  PASS  Magic Resistance changes only its selected XP contribution  — 4
+  PASS  Great Potential opens a skill input backed by the shared modal
+  PASS  Great Potential persists its selected Skill and displays a badge  — {"config":{"value":"Kenjutsu","skill":"Kenjutsu","type":"skillPick"},"badge":"Raise-limit reminder"}
+  PASS  every non-auto variable Advantage is visibly unconfigured and inert until configured  — {"Allies":{"effect":null,"flagged":true,"cost":"0"},"Gentry":{"effect":null,"flagged":true,"cost":"0"},"Kharmic Tie":{"effect":null,"flagged":true,"cost":"0"},"Languages":{"effect":null,"flagged":true,"cost":"0"},"Luck":{"effect":null,"flagged":true,"cost":"0"},"Magic Resistance":{"effect":null,"flagged":true,"cost":"0"},"Great Potential":{"effect":null,"flagged":true,"cost":"5"}}
+  PASS  a weapon attack preview offers the target-specific Kharmic Tie declaration
+  PASS  checking Kharmic Tie projects +1k1 through the one existing modifier registry contributor
+  PASS  cancelling a declared Kharmic Tie attack spends nothing  — 2
+  PASS  confirming a declared Kharmic Tie weapon attack spends exactly one use  — 1
+  PASS  the finished attack records the Kharmic Tie modifier
+  PASS  the per-entry reset restores Kharmic Tie to its Rank maximum  — 2
+  PASS  Luck appears after an ordinary result with the full-roll action and all pips available  — {"text":"Spend Luck (2/2)","disabled":false,"total":"2","dice":3}
+  PASS  Luck rerolls the same complete 3k2 pool and keeps a higher reroll  — {"total":"18","notation":"3k2","pips":1,"outcome":"Luck spent — original 2, reroll 18. Kept the higher reroll."}
+  PASS  Luck preserves the higher original result when a later whole-roll reroll loses  — {"total":"18","pips":0,"outcome":"Luck spent — original 18, reroll 2. Kept the higher original result.","disabled":true}
+  PASS  Great Potential’s preview shows the calculated Raise cap and both candidate limits
+  PASS  Magic Resistance is absent from the player’s own elemental and Maho casting modifier lists  — [0,0]
+  PASS  Sacred Weapon is a no-modal auto-pick from the character Clan
+  PASS  Crab Sacred Weapon has its approved cost, configuration, and one tagged Kaiu Blade  — {"cost":"6","id":"kaiu-blade","clan":"Crab","name":"Kaiu Blade","baseDamage":["5","3"],"rows":2,"owned":1}
+  PASS  changing Clan replaces only the owned row with the new Clan’s exact base profile  — {"id":"kakita-blade","clan":"Crane","cost":"5","owned":1,"name":"Kakita Blade","totalWeapons":2}
+  PASS  removing Sacred Weapon removes only its tagged row and preserves the manual Katana  — {"rows":1,"names":["Katana"],"tagged":0}
+  PASS  every Clan has exactly the approved Sacred Weapon identity, cost, and row count  — [["Crab","kaiu-blade","Kaiu Blade",6,1],["Crane","kakita-blade","Kakita Blade",5,1],["Dragon","twin-sister-blades","Twin Sister Blades",3,2],["Lion","akodo-blade","Akodo Blade",6,1],["Mantis","storm-kama","Storm Kama",6,2],["Phoenix","inquisitors-strike","Inquisitor’s Strike",6,1],["Scorpion","shosuro-blade","Shosuro Blade",5,1],["Spider","black-steel-blade","Black Steel Blade",6,1],["Unicorn","moto-scimitar","Moto Scimitar",6,1]]
+  PASS  save/load and JSON import/export preserve every advanced config object exactly  — [{"name":"Allies","config":{"influence":2,"devotion":4,"value":"Influence 2 / Devotion 4","type":"dualTierPick"}},{"name":"Gentry","config":{"type":"severityTier","value":"Town"}},{"name":"Kharmic Tie","config":{"value":"Rank 4","rank":4,"target":"Aiko","remaining":2,"sourceId":"kharmic-persist","type":"rankPick"}},{"name":"Languages","config":{"value":"Human: Rokugani","languageType":"Human","language":"Rokugani","type":"languagePick"}},{"name":"Luck","config":{"value":"Rank 3","rank":3,"remaining":1,"type":"rankPick"}},{"name":"Magic Resistance","config":{"value":"Rank 1","rank":1,"type":"rankPick"}},{"name":"Sacred Weapon","config":{"value":"kaiu-blade","clan":"Crab","sourceId":"sacred-mwuo4fgm-fl6wgk56","type":"clanWeaponAutoPick"}},{"name":"Great Potential","config":{"value":"Kenjutsu","skill":"Kenjutsu","type":"skillPick"}}]
+  PASS  persisted Kharmic and Luck pips reappear in the session-resource sidebar  — Session ResourcesLuck●○○ 1/3Kharmic Tie — Aiko●●○○ 2/4
+  PASS  Sacred Weapon ownership tags survive save/load with their source identity  — [{"source":"sacred-mwuo4fgm-fl6wgk56","weapon":"kaiu-blade","index":"0"}]
+  PASS  the expansion leaves the one Phase 4.5 registry contributor shape intact  — [["adv-config",60]]
+  PASS  no uncaught page errors
+
+48/48 checks passed
+
+== PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-harness.js
+
+PART I PHASE 4.5 — Modal-Configured Advantages/Disadvantages
+
+  PASS  Elemental Blessing + Fire resolves to a 1 XP discount on Fire’s two Traits  — {"effect":"traitXpDiscount","ring":"Fire","traits":["agility","intelligence"],"amount":1}
+  PASS  an unconfigured entry resolves to no effect at all  — null
+  PASS  a pick that names no real Ring resolves to no effect  — null
+  PASS  Lord Moon’s Curse + Medium resolves to a 5-point entry cost  — {"effect":"entryCost","cost":5}
+  PASS  an Advantage with no variable choice has no schema  — null
+  PASS  a name typed with a straight apostrophe still matches the library’s curly one  — "severityTier"
+  PASS  the Ring picker offers the four elemental Rings and not Void  — ["Air","Earth","Fire","Water"]
+  PASS  every severity-tier price is a number the entry’s own library text states  — []
+  PASS    (audited 24 tier prices across 10 entries)
+  PASS  every configurable name exists in the sheet’s own Advantage/Disadvantage libraries  — []
+  PASS  with nothing configured, no Trait is discounted  — 0
+  PASS  the picker offers Fire and the entry takes it  — {"ok":true}
+  PASS  a blessed Trait is discounted 1 XP per Rank actually bought  — 2
+  PASS  raising Agility to 4 costs what L5R’s own Trait rule says, independently computed  — 28
+  PASS  with Fire blessed, that same Trait costs the rule’s price minus one per Rank bought  — 26
+  PASS  the discount covers BOTH of the blessed Ring’s Traits and no other Ring’s  — {"agility":2,"intelligence":2,"reflexes":0,"stamina":0,"strength":0}
+  PASS  a Trait still at its free floor is discounted nothing — there is no bought Rank to cheapen  — 0
+  PASS  the discount can never exceed what the Trait itself costs  — true
+  PASS  an unconfigured Elemental Blessing costs its points and discounts nothing  — 4
+  PASS  configuring it for Fire takes exactly 3 XP off the tracker (2 Agility Ranks + 1 Intelligence)  — 3
+  PASS  re-picking to Water clears Fire’s discount entirely and applies Water’s (nothing bought there)  — 44
+  PASS  removing the entry reverses its effect completely — cost and discount both  — 40
+  PASS  choosing the High tier writes 7 into the entry’s own cost field  — "7"
+  PASS  the High tier reaches the XP tracker as a 7-point Disadvantage  — 7
+  PASS  dropping to the Low tier moves the total by exactly the difference, with no double-count  — 4
+  PASS  an unconfigured variable entry is visibly flagged as needing a choice  — {"unconfigured":true,"text":"Needs a choice"}
+  PASS  once configured the flag is replaced by what was actually picked  — {"configured":true,"warned":false,"mentionsRing":true,"mentionsTraits":true}
+  PASS  an Advantage with no choice to make grows no configuration control  — false
+  PASS  renaming a configured entry drops its pick, its control and its discount together  — {"row":false,"stored":false,"discount":0}
+  PASS  a configured entry saves as {..., config:{type, value}}  — {"type":"ringPick","value":"Water"}
+  PASS  an entry with no choice to make writes no config key at all  — false
+  PASS  the pick survives a full save/load round-trip, and still discounts after it  — {"restored":{"type":"ringPick","value":"Water"},"flaggedUnconfigured":true,"discountsStrength":2}
+  PASS  an unconfigured roll-effect entry contributes nothing to any roll  — []
+  PASS  Chosen by the Oracles gives +1k1 on a Ring Roll of the chosen Ring  — [{"label":"Chosen by the Oracles","rolled":1,"kept":1,"total":0,"informational":false}]
+  PASS  …and nothing on a Ring Roll of any other Ring  — []
+  PASS  …and a 3k3 Fire Ring Roll really becomes 4k4 once the pipeline folds it  — {"rolled":4,"kept":4}
+  PASS  …and nothing on a Trait Roll or a Skill Roll  — [[],[]]
+  PASS  Chosen by the Oracles offers Void; Elemental Blessing does not  — {"oracles":["Air","Earth","Fire","Water","Void"],"blessing":["Air","Earth","Fire","Water"]}
+  PASS  …and a Void pick works on a Void Ring Roll, the case RINGS alone could not express  — [{"label":"Chosen by the Oracles","rolled":1,"kept":1,"total":0,"informational":false}]
+  PASS  Friendly Kami gives +1k1 on a Universal spell cast in the chosen Element  — [{"label":"Friendly Kami","rolled":1,"kept":1,"total":0,"informational":false}]
+  PASS  …on all three Universal spells, and on no other spell  — {"Commune":1,"Sense":1,"Summon":1,"Path to Inner Peace":0}
+  PASS  …and nothing when the same spell is cast in a different Element  — []
+  PASS  …and nothing on a Maho casting, which is not a kami spell at all  — []
+  PASS  Friend of the Elements reports a Free Raise on both the chosen Ring’s Traits  — [[{"label":"Friend of the Elements","rolled":0,"kept":0,"total":0,"informational":true}],[{"label":"Friend of the Elements","rolled":0,"kept":0,"total":0,"informational":true}]]
+  PASS  …and nothing on a Trait belonging to another Ring  — []
+  PASS  …and the pool it produces is IDENTICAL to the pool with no modifier at all  — {"rolled":3,"kept":3,"same":true,"reported":true}
+  PASS  the phase registers exactly one contributor, last in priority order  — [{"id":"adv-config","priority":60}]
+  PASS  no option label overflows its tile, in any configurable entry’s picker  — []
+  PASS  the trunk’s own Element picker still gets its fixed 78×78 nowrap tile  — {"width":"78px","height":"78px","whiteSpace":"nowrap"}
+  PASS  the phase exports both kill-switches as enabled  — [true,true]
+  PASS  no uncaught page errors
+
+51/51 checks passed
+
+== PART I — Phase 4.5.10 Cursed by the Realm/disadv-realm-harness.js
+PASS REALM4510-WIRE-01 The seam exports this phase and its kill-switch is on
+PASS REALM4510-WIRE-02 The entry has a schema, of this phase’s own new type
+PASS REALM4510-WIRE-03 realmPick joins D45.configTypes without displacing the twelve
+PASS REALM4510-WIRE-04 Its modifiers are reached through D45.modules, not a new seat
+PASS REALM4510-WIRE-05 All ten of Core p.158’s realms are offered
+PASS REALM4510-SEAT-01 The pre-roll registry is untouched at seven seats
+PASS REALM4510-XP-01 Every realm awards 4 for a non-Shugenja
+PASS REALM4510-XP-02 A Shugenja is awarded 5 instead
+PASS REALM4510-XP-03 The Shugenja branch reads the sheet’s own caster lock
+PASS REALM4510-XP-04 An unconfigured row prices at 0, not the catalogue’s 4
+PASS REALM4510-XP-05 …and says so rather than showing a provisional price — Needs a choiceChoose…
+PASS REALM4510-CFG-01 Every realm resolves to a costed effect
+PASS REALM4510-CFG-02 An unknown realm is refused rather than priced
+PASS REALM4510-CFG-03 A toggle realm is incomplete until its boolean exists
+PASS REALM4510-CFG-04 Changing realm drops the previous realm’s toggle
+PASS REALM4510-CFG-05 finalize keeps the legacy display field honest, not "Rank undefined"
+PASS REALM4510-CHIKUSHUDO-01 Animal Handling takes −1k1
+PASS REALM4510-CHIKUSHUDO-02 Another Skill is untouched
+PASS REALM4510-CHIKUSHUDO-03 Animal Handling rolls on Awareness, so Meido cannot overlap it
+PASS REALM4510-MEIDO-01 A Perception-based Skill roll takes −1k0
+PASS REALM4510-MEIDO-02 The Perception Trait Roll itself takes it too
+PASS REALM4510-MEIDO-03 Another Trait is untouched
+PASS REALM4510-MEIDO-04 Every Perception Skill the library defines is covered
+PASS REALM4510-MEIDO-05 Out of the trance it applies nothing
+PASS REALM4510-TENGOKU-01 It reaches the five supported roll kinds and no others
+PASS REALM4510-TENGOKU-02 It moves no dice in either direction, only the total
+PASS REALM4510-TENGOKU-03 The note carries the RULE, not a bare number — Tengoku — inside a temple (TN +10)
+PASS REALM4510-TENGOKU-04 Outside the temple it applies nothing
+PASS REALM4510-DAMAGE-01 No branch contributes to a damage roll carrying the attack’s skillName
+PASS REALM4510-DAMAGE-02 D45 excludes damage BEFORE consulting this phase’s module
+PASS REALM4510-TOTAL-01 The displayed total is exactly 10 below the kept dice
+PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  23 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
+PASS REALM4510-DECLARE-01 Undeclared, it contributes nothing
+PASS REALM4510-DECLARE-02 The preview offers the declaration
+PASS REALM4510-DECLARE-03 …unchecked when the preview opens
+PASS REALM4510-DECLARE-04 Ticking it arms this roll only
+PASS REALM4510-DECLARE-05 Cancelling the preview disarms it
+PASS REALM4510-DECLARE-06 A fresh preview starts unarmed even if the last roll declared
+PASS REALM4510-DECLARE-07 The declaration never enters the saved config
+PASS REALM4510-DECLARE-08 Another realm’s character sees an unchanged preview
+PASS REALM4510-TOSHIGOKU-01 The row offers the Willpower check
+PASS REALM4510-TOSHIGOKU-02 It contributes no automatic modifier to anything
+PASS REALM4510-TOSHIGOKU-03 Invoking it opens a real roll preview
+PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 9 Target Number: 15 You are overcome by the urge to fight. Tell t
+PASS REALM4510-YOMI-01 With no ancestral entry it says so plainly
+PASS REALM4510-YOMI-02 It names Inheritance, the entry the audit names — Ancestral: Inheritance, Haunted — resolve with your GM
+PASS REALM4510-YOMI-03 It names Haunted, the entry measuring the libraries found — Ancestral: Inheritance, Haunted — resolve with your GM
+PASS REALM4510-YOMI-04 Nothing is deleted — both entries survive the flag
+PASS REALM4510-YOMI-05 Those two and Phase 4.5.37’s six are the sheet’s ENTIRE ancestral surface
+PASS REALM4510-JIGOKU-01 It still awards its 4 XP
+PASS REALM4510-JIGOKU-02 It offers no automated check
+PASS REALM4510-JIGOKU-03 It applies no modifier to any roll kind
+PASS REALM4510-JIGOKU-04 The row says the roll is not automated rather than implying it is — Jigoku — Resisting the Shadowlands Taint is harder for you. The roll is NOT automated here: this sheet does not state wh
+PASS REALM4510-PERSIST-01 Realm, toggle state and award all survive a reload
+PASS REALM4510-PERSIST-02 …and it is still applying after the reload
+PASS REALM4510-GEOM-01 The badge reads as a badge rather than as more row text — {"w":65,"h":24,"border":"solid","weight":"600","radius":"10px","display":"flex"}
+PASS REALM4510-GEOM-02 An automatic realm is visually distinct from a reminder-only one — [{"w":65,"h":24,"border":"solid","weight":"600","radius":"10px","display":"flex"},{"w":60,"h":24,"border":"dashed","weight":"500","radius":"10px","display":"flex"}]
+PASS REALM4510-GEOM-03 The ancestral flag takes its own full row rather than trailing the badge — {"basis":"100%","mt":"4px","w":303}
+PASS REALM4510-GEOM-06 Yomi reads as quiet/reminder, matching Gaki-do, not as active
+PASS REALM4510-GEOM-04 No control this phase adds overflows its row at 375px
+PASS REALM4510-GEOM-05 The check button carries no stray offset on whichever line it lands — {"sameLine":true,"gapAfterBadge":8,"flushLeft":null}
+PASS REALM4510-ERRORS No uncaught browser errors
+
+Feature 4.5.10: 62/62 checks passed
+REALM4510_RESULT={"passed":62,"total":62}
+
+== PART I — Phase 4.5.11 Seven Fortunes Curse/disadv-fortune-harness.js
+PASS F4511-PRESENT-01 The fragment is in the build and exports its module
+PASS F4511-PRESENT-02 The kill-switch reads on
+PASS F4511-PRESENT-03 Installs under the catalogue row’s own name
+PASS F4511-PRESENT-04 Awards 3 ordinarily and 6 for Hotei
+PASS F4511-PRESENT-05 DISADV_LIBRARY is on the seam, so the catalogue row can be the oracle
+PASS F4511-CAT-01 Exactly one catalogue row carries this name
+PASS F4511-CAT-02 The catalogue prices the ordinary curse at this phase’s own award
+PASS F4511-CAT-03 It is filed Spiritual, as the catalogue has it
+PASS F4511-CAT-04 The schema installs as a fortunePick with one step
+PASS F4511-CAT-05 All seven Fortunes are offered, including the two not yet automated
+PASS F4511-CAT-06 Every option carries its own explanation in the picker
+PASS F4511-CAT-07 A hand-typed straight apostrophe still finds the schema
+PASS F4511-CAT-08 A straight-apostrophe entry configures, prices and applies exactly as the curly one
+PASS F4511-XP-Benten Benten awards 3 and shows its own badge
+PASS F4511-XP-Bishamon Bishamon awards 3 and shows its own badge
+PASS F4511-XP-Daikoku Daikoku awards 3 and shows its own badge
+PASS F4511-XP-Ebisu Ebisu awards 3 and shows its own badge
+PASS F4511-XP-Fukurokujin Fukurokujin awards 3 and shows its own badge
+PASS F4511-XP-Hotei Hotei awards 6 and shows its own badge
+PASS F4511-XP-Jurojin Jurojin awards 3 and shows its own badge
+PASS F4511-XP-VALUE finalize keeps the legacy value field honest (never "Rank undefined") — {"type":"fortunePick","fortune":"Benten","value":"Benten"}
+PASS F4511-XP-SUMMARY The row summarises the rule, not just the Fortune’s name — Benten — The Fortune of Romance has turned from you: Etiquette rolls are harder, TN +10. Value: 3 XP.
+PASS F4511-XP-VALIDATE validate() refuses an unknown, missing or mistyped Fortune
+PASS F4511-BENTEN-01 Etiquette reports 10 lower, as a TN +10 and not as lost dice
+PASS F4511-BENTEN-02 The note carries the RULE, so -10 cannot be read as a dice penalty
+PASS F4511-BENTEN-03 Courtier is untouched — this is one Skill, not all Social Skills
+PASS F4511-BENTEN-04 A Ring roll is untouched
+PASS F4511-BENTEN-05 A real Etiquette roll reports its kept dice minus 10
+PASS F4511-FUKU-01 The bare Lore Skill reports 5 lower
+PASS F4511-FUKU-02 A Lore specialization is included, as the audit requires
+PASS F4511-FUKU-03 A Skill that merely CONTAINS "Lore" does not match
+PASS F4511-FUKU-04 An unrelated Skill is untouched
+PASS F4511-FUKU-05 Every "Lore: <subject>" spelling the School library uses matches
+PASS F4511-DAIKOKU-01 Commerce loses a rolled and a kept die
+PASS F4511-DAIKOKU-02 Another Merchant Skill is untouched
+PASS F4511-DAIKOKU-03 The row states the starting-koku reduction the sheet will not make — Starting outfit: one koku less — adjust when you record it. This sheet does not change your koku.
+PASS F4511-DAIKOKU-04 Koku is never debited, so no recalc can debit it twice
+PASS F4511-DAIKOKU-05 Money the player has entered is left exactly alone
+PASS F4511-EBISU-01 The declaration is offered on a Social Skill Roll
+PASS F4511-EBISU-02 It is not offered on a Skill that is not Social
+PASS F4511-EBISU-03 Undeclared, it contributes nothing at all
+PASS F4511-EBISU-04 Declared on a Social Skill Roll, it costs a rolled and a kept die
+PASS F4511-EBISU-05 Declared on a NON-Social Skill it still contributes nothing
+PASS F4511-EBISU-06 Every Skill on Feature 4.5.2’s own Social list is recognised — ["Acting","Courtier","Etiquette","Perform","Sincerity","Intimidation","Temptation"]
+PASS F4511-EBISU-07 Matching ignores case, and refuses a non-Social or empty name
+PASS F4511-JUROJIN-01 Undeclared, it contributes nothing
+PASS F4511-JUROJIN-02 Declared, it costs two ROLLED dice and no kept die
+PASS F4511-JUROJIN-03 It reaches every roll kind a resistance roll might be made with
+PASS F4511-DEFER-Bishamon-NOTE Bishamon no longer claims deferral once a later phase automates it — no 4.5.11 note, as expected
+PASS F4511-DEFER-Bishamon-MODS Bishamon moves no dice on any roll
+PASS F4511-DEFER-Hotei-NOTE Hotei no longer claims deferral once a later phase automates it — no 4.5.11 note, as expected
+PASS F4511-DEFER-Hotei-MODS Hotei moves no dice on any roll
+PASS F4511-DEFER-HOTEI-PRICE Hotei’s row states the 6-point price it was recorded at — Hotei — The Fortune of Contentment burdens you: a Technique or Advantage that needs a Void Point to activate needs two. Void spent on a roll, Kiho, Kata and spells is unchanged. Value: 6 XP.
+PASS F4511-DAMAGE-01 A damage roll carrying the attack’s own Skill gets no TN deduction
+PASS F4511-DAMAGE-02 A damage roll carrying the penalised Skill loses no dice
+PASS F4511-DAMAGE-03 Even an explicitly declared Fortune cannot reach damage
+PASS F4511-DECLARE-01 A declaration is never written into the saved config
+PASS F4511-DECLARE-02 The stored config carries no declaration key at all — {"type":"fortunePick","fortune":"Ebisu","value":"Ebisu"}
+PASS F4511-DECLARE-03 Opening the preview clears a declaration left over from before — pending=false
+PASS F4511-DECLARE-04 The preview offers the declaration, unticked, naming its Fortune
+PASS F4511-DECLARE-05 Cancelling the preview clears the declaration
+PASS F4511-BOTH-01 Both declarations are offered on a roll where both are in scope
+PASS F4511-BOTH-02 Declaring both applies both, and they do not merge or overwrite
+PASS F4511-BOTH-03 Unticking one leaves the other exactly as it was
+PASS F4511-SEAT-01 The pre-roll registry is untouched — no seat taken, nothing re-registered
+PASS F4511-SEAT-02 fortunePick is present
+PASS F4511-SEAT-03 It was appended without displacing the thirteen already there
+PASS F4511-SEAT-04 The array is still frozen after being replaced
+PASS F4511-SEAT-05 It reaches the pipeline as a D45 module, not as a contributor
+PASS F4511-GEOM-01 An automated Fortune reads as active — solid, bold, tinted
+PASS F4511-GEOM-02 Hotei reads as active once a later phase automates it, so no row understates the sheet
+PASS F4511-GEOM-03 The row note takes the full row width and sits flush left
+PASS F4511-GEOM-04 The declaration block is separated from the preview above it
+PASS F4511-ERRORS No uncaught page errors during the run
+
+FEATURE 4.5.11 — 74/74 checks passed
+
+== PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon/disadv-bishamon-harness.js
+PASS F4512-PRESENT-01 F4512 is exported on the test seam
+PASS F4512-PRESENT-02 The kill-switch is on in this build
+PASS F4512-PRESENT-03 It installed over Feature 4.5.11
+PASS F4512-PRESENT-04 Bishamon’s effect key is no longer 4.5.11’s ‘deferred’
+PASS F4512-PRESENT-05 It recorded what it replaced, so removal is describable
+PASS F4512-PRESENT-06 Feature 4.5.11 is reachable as the host
+PASS F4512-PRESENT-07 The floor is the documented value
+PASS F4512-PIPE-01 Phase 1.5’s registry baseline is untouched at seven
+PASS F4512-PIPE-02 It contributes no pre-roll modifier on a damage context — pipeline returned []
+PASS F4512-BRANCH-01 Katana loses exactly one rolled die and keeps the same kept dice
+PASS F4512-BRANCH-02 Unarmed is Strength-based and is affected
+PASS F4512-BRANCH-03 Yumi (rating 3) is capped by Strength, so it moves
+PASS F4512-BRANCH-04 Han-kyu (rating 1) is capped by its OWN rating, so it does not move
+PASS F4512-BRANCH-05 Perception weapons are untouched
+PASS F4512-BRANCH-06 Flat-DR weapons are untouched
+PASS F4512-BRANCH-07 Every weapon’s kept dice are unchanged — this is a rolled-dice penalty
+PASS F4512-ROLL-01 A real damage roll rolls one die FEWER with Bishamon configured
+PASS F4512-ROLL-02 The damage breakdown names Bishamon rather than leaving the drop unexplained — Bishamon: your Strength counts as 2 rather than 3 for damage (−1k0).
+PASS F4512-ROLL-03 An uncursed damage roll says nothing about Bishamon
+PASS F4512-FLOOR-01 At Strength 1 the curse costs nothing, rather than reaching 0
+PASS F4512-FLOOR-02 Unarmed never reaches a pool rollWeaponDamage() would refuse — 1k1
+PASS F4512-FLOOR-03 The row says plainly that it is costing nothing right now — Strength 1 is already the lowest this sheet allows, so this curse is costing you nothing on damage right now.
+PASS F4512-EXPLAIN-01 At Strength 1 the damage breakdown says why the curse costs nothing — Bishamon: your Strength is already 1, the lowest this sheet allows, so the curse costs nothing here. → 4k2.
+PASS F4512-EXPLAIN-02 Unarmed gets that same explanation at the floor — Bishamon: your Strength is already 1, the lowest this sheet allows, so the curse costs nothing here. → 1k1.
+PASS F4512-EXPLAIN-03 Han-kyu names its OWN rating as the limit, not the floor — Bishamon: this bow's own rating of 1 already limits the pool below your reduced Strength, so the curse costs nothing here. → 3k2.
+PASS F4512-EXPLAIN-04 Perception and flat-DR weapons stay silent — the curse was never theirs
+PASS F4512-EXPLAIN-05 A real reduction names ‘your Strength’, not the bare trait label — Bishamon: your Strength counts as 2 rather than 3 for damage (−1k0). → 5k2.
+PASS F4512-EXPLAIN-06 The bow reduction is attributed to the bow’s damage, not to a ‘Bow Strength’ — Bishamon: your Strength counts as 2 rather than 3 for this bow's damage (−1k0). → 4k2.
+PASS F4512-ISOLATE-01 The Strength Trait itself is never written
+PASS F4512-ISOLATE-02 getTraitValueByName still reports the real Strength
+PASS F4512-ISOLATE-03 The Water Ring — which Strength feeds — does not move
+PASS F4512-ISOLATE-04 An attack roll is unaffected
+PASS F4512-ROW-01 It is still priced at the ordinary 3 points
+PASS F4512-ROW-02 The badge still names the Fortune
+PASS F4512-ROW-03 The badge no longer carries 4.5.11’s quiet deferred treatment — fortune4511-badge fortune4511-eff-damageStrength
+PASS F4512-ROW-04 Feature 4.5.11’s ‘not yet automated’ note is gone
+PASS F4512-ROW-05 This phase’s own note names both numbers — Weapon damage uses Strength 2 instead of 3. Bows only while your Strength is the limit; Perception and flat-damage weapons are unaffected.
+PASS F4512-ROW-06 Repeated recalcs do not stack duplicate notes
+PASS F4512-ROW-07 The note follows the Trait rather than freezing at its first value — Weapon damage uses Strength 4 instead of 5. Bows only while your Strength is the limit; Perception and flat-damage weapons are unaffected.
+PASS F4512-STACK-01 A second Bishamon row reduces Strength again, matching 4.5.11’s own per-row shape
+PASS F4512-STACK-02 Stacking still cannot push below the floor — {"traitName":"Strength","traitValue":1,"pool":"5k2"}
+PASS F4512-SCOPE-Benten Benten does not touch weapon damage
+PASS F4512-SCOPE-Daikoku Daikoku does not touch weapon damage
+PASS F4512-SCOPE-Hotei Hotei does not touch weapon damage
+PASS F4512-SCOPE-HOTEI-DEFER Hotei is automated by Phase 4.5.36, not this one: no note of this phase on its row
+PASS F4512-SAVE-01 The stored config is 4.5.11’s shape — this phase persists nothing of its own
+PASS F4512-GEOM-01 The note claims the full row width through its own flex-basis — 100%
+PASS F4512-GEOM-02 It is separated from the line above by its own margin — 4px
+PASS F4512-GEOM-03 It renders smaller than the row it sits in — 12.0704 vs 13.12
+PASS F4512-GEOM-04 It carries the sheet’s accent colour rather than inheriting body ink — rgb(163, 51, 42)
+PASS F4512-CLEAN-01 No uncaught page errors during the run
+
+FEATURE 4.5.12 — 51/51 checks passed
+BISHAMON_SUITE_RESULT={"passed":51,"total":51}
+
+== PART I — Phase 4.5.15 Roll Declaration Registry/roll-declarations-harness.js
+PASS RD-ENABLED
+PASS RD-REGISTRY-SEVEN
+PASS RD-NO-PRODUCTION-PROVIDER
+PASS RD-EMPTY-NO-BLOCK
+PASS RD-EMPTY-UNCHANGED-DICE
+PASS RD-REJECT-BAD-ID
+PASS RD-REJECT-NO-FUNCTIONS
+PASS RD-REGISTER
+PASS RD-REPLACE-SAME-ID
+PASS RD-UNREGISTER
+PASS RD-OFFERED-UNCHECKED
+PASS RD-SOURCE-LABEL
+PASS RD-NOTE-SHOWN
+PASS RD-PREVIEW-BASE
+PASS RD-PREVIEW-TICKED
+PASS RD-TICK-SURVIVES-RENDER
+PASS RD-MODIFIER-ROW
+PASS RD-REAL-DICE-DECLARED
+PASS RD-RESULT-NAMES-IT
+PASS RD-FRESH-NEXT-PREVIEW
+PASS RD-REAL-DICE-NEXT-ROLL
+PASS RD-UNTICK
+PASS RD-REAL-DICE-UNTICKED
+PASS RD-ARMED-WHILE-OPEN
+PASS RD-CANCEL-DISARMS
+PASS RD-ESCAPE-DISARMS
+PASS RD-NO-LEAK-SKIPPED-PREVIEW
+PASS RD-NO-LEAK-NEW-CONTEXT
+PASS RD-SAME-CONTEXT-STILL-APPLIES
+PASS RD-NOTHING-SAVED
+PASS RD-NOT-IN-STORAGE
+PASS RD-DAMAGE-NEVER-OFFERED
+PASS RD-OTHER-KINDS-DEFER-TO-PROVIDER
+PASS RD-DAMAGE-NEVER-ARMED
+PASS RD-PROVIDER-SCOPE-RESPECTED
+PASS RD-FOREIGN-TOGGLE-REFUSED
+PASS RD-MANUAL-REAL-DICE
+PASS RD-GROUPED
+PASS RD-ALL-UNCHECKED
+PASS RD-STACK-PROVIDERS
+PASS RD-UNREGISTER-DROPS-ARMED
+PASS RD-MULTI-REAL-DICE
+PASS RD-THROWING-OFFERS-ISOLATED
+PASS RD-THROWING-MODIFIERS-ROLL-PROCEEDS
+PASS RD-JUNK-OFFERS-FILTERED
+PASS RD-JUNK-DELTAS-ZEROED
+PASS RD-TEXT-ESCAPED
+PASS RD-TEXT-VISIBLE
+PASS RD-GEOMETRY-320
+PASS RD-GEOMETRY-375
+PASS RD-GEOMETRY-768
+PASS RD-GEOMETRY-1440
+PASS RD-BROWSER-ERRORS
+
+53/53 checks passed
+RD4515_QA_RESULT={"passed":53,"total":53,"failed":0}
+
+== PART I — Phase 4.5.16 Heart of Vengeance/heart-vengeance-harness.js
+PASS HV-ENABLED
+PASS HV-SCHEMA
+PASS HV-PROVIDER-REGISTERED
+PASS HV-REGISTRY-SEVEN
+PASS HV-OPENS-ON-ADD
+PASS HV-BLANK
+PASS HV-BLANK-NOT-OFFERED
+PASS HV-CONFIG
+PASS HV-PRICE-NORMAL
+PASS HV-BADGE
+PASS HV-PRICE-SPIDER
+PASS HV-PRICE-CRAB
+PASS HV-PRICE-SCORPION
+PASS HV-RECALC-STABLE
+PASS HV-SUGGESTS-Scorpion-Clan
+PASS HV-SUGGESTS-Spider-Clan
+PASS HV-SUGGESTS-Mantis-Clan
+PASS HV-SUGGESTS-Brotherhood-of-Shinsei
+PASS HV-SUGGESTS-Otomo-family-Imperial-
+PASS HV-SUGGESTS-Miya-family-Imperial-
+PASS HV-SUGGESTS-Seppun-family-Imperial-
+PASS HV-SUGGESTIONS-UNIQUE
+PASS HV-LABELLED-INPUT
+PASS HV-REJECT-EMPTY
+PASS HV-FREE-TEXT
+PASS HV-EDIT-PREFILLED
+PASS HV-CANCEL-KEEPS
+PASS HV-OFFERED-SKILL
+PASS HV-OFFERED-TRAIT
+PASS HV-OFFERED-RING
+PASS HV-OFFERED-MANUAL
+PASS HV-NOT-OFFERED-ATTACK
+PASS HV-NOT-OFFERED-DAMAGE
+PASS HV-NOT-OFFERED-SPELL
+PASS HV-NOT-OFFERED-INITIATIVE
+PASS HV-ATTACK-PREVIEW-CLEAN
+PASS HV-UNTICKED-SKILL
+PASS HV-DECLARED-DICE-SKILL
+PASS HV-RESULT-NAMES-RIVAL
+PASS HV-FRESH-SKILL
+PASS HV-UNDECLARED-DICE-SKILL
+PASS HV-UNTICKED-TRAIT
+PASS HV-DECLARED-DICE-TRAIT
+PASS HV-FRESH-TRAIT
+PASS HV-UNDECLARED-DICE-TRAIT
+PASS HV-UNTICKED-RING
+PASS HV-DECLARED-DICE-RING
+PASS HV-FRESH-RING
+PASS HV-UNDECLARED-DICE-RING
+PASS HV-UNTICKED-MANUAL
+PASS HV-DECLARED-DICE-MANUAL
+PASS HV-FRESH-MANUAL
+PASS HV-UNDECLARED-DICE-MANUAL
+PASS HV-CANCEL-DISARMS
+PASS HV-NO-LEAK
+PASS HV-DECLARATION-NOT-SAVED
+PASS HV-ONE-OPTION-PER-FACTION
+PASS HV-ONCE-PER-ROLL-PREVIEW
+PASS HV-ONCE-PER-ROLL-DICE
+PASS HV-EXPORT
+PASS HV-IMPORT
+PASS HV-IMPORT-OFFERS
+PASS HV-LOCAL-RELOAD
+PASS HV-OLD-SAVE-1
+PASS HV-OLD-SAVE-2
+PASS HV-OLD-SAVE-3
+PASS HV-MINIMAL-IMPORT
+PASS HV-INVALID-FUTURE
+PASS HV-INVALID-UNKNOWN-FIELD
+PASS HV-INVALID-EMPTY
+PASS HV-INVALID-OTHER-TYPE
+PASS HV-WRONG-SIDE
+PASS HV-RENAMED-CLEAN
+PASS HV-FOREIGN-RENAME-CLEARS
+PASS HV-INFO
+PASS HV-ONLY-XP-FIELDS
+PASS HV-UNCHANGED-skills
+PASS HV-UNCHANGED-traits
+PASS HV-UNCHANGED-rings
+PASS HV-UNCHANGED-voidCurrent
+PASS HV-UNCHANGED-disadv
+PASS HV-UNCHANGED-equip
+PASS HV-UNCHANGED-weapons
+PASS HV-NO-UNDECLARED-MODS
+PASS HV-TEXT-SAFE
+PASS HV-TEXT-VISIBLE
+PASS HV-GEOMETRY-320
+PASS HV-GEOMETRY-375
+PASS HV-GEOMETRY-768
+PASS HV-GEOMETRY-1440
+PASS HV-BROWSER-ERRORS
+
+91/91 checks passed
+HV4516_QA_RESULT={"passed":91,"total":91,"failed":0}
+
+== PART I — Phase 4.5.18 Paragon/paragon-harness.js
+PASS P-ENABLED
+PASS P-SCHEMA
+PASS P-REGISTRY-SEVEN
+PASS P-SEVEN-IN-PRINTED-ORDER
+PASS P-OPTION-BENEFIT-Compassion
+PASS P-OPTION-BENEFIT-Courage
+PASS P-OPTION-BENEFIT-Courtesy
+PASS P-OPTION-BENEFIT-Duty
+PASS P-OPTION-BENEFIT-Honesty
+PASS P-OPTION-BENEFIT-Honor
+PASS P-OPTION-BENEFIT-Sincerity
+PASS P-NONE-PRESELECTED
+PASS P-OPTIONS-LABELLED
+PASS P-NOTE-REMINDER-ONLY
+PASS P-BLANK
+PASS P-REQUIRES-CHOICE
+PASS P-CONFIG
+PASS P-PRICE-TOTAL
+PASS P-PRICE-LION
+PASS P-PRICE-CRAB
+PASS P-PRICE-CRANE
+PASS P-BADGE-Compassion
+PASS P-REMINDER-Compassion
+PASS P-BADGE-Courage
+PASS P-REMINDER-Courage
+PASS P-BADGE-Courtesy
+PASS P-REMINDER-Courtesy
+PASS P-BADGE-Duty
+PASS P-REMINDER-Duty
+PASS P-BADGE-Honesty
+PASS P-REMINDER-Honesty
+PASS P-BADGE-Honor
+PASS P-REMINDER-Honor
+PASS P-BADGE-Sincerity
+PASS P-REMINDER-Sincerity
+PASS P-EDIT-SHOWS-CURRENT
+PASS P-CHANGE-REPLACES
+PASS P-CANCEL-KEEPS
+PASS P-NO-DICE-Compassion
+PASS P-ONLY-XP-Compassion
+PASS P-NO-VOID-Compassion
+PASS P-NO-DICE-Courage
+PASS P-ONLY-XP-Courage
+PASS P-NO-VOID-Courage
+PASS P-NO-DICE-Courtesy
+PASS P-ONLY-XP-Courtesy
+PASS P-NO-VOID-Courtesy
+PASS P-NO-DICE-Duty
+PASS P-ONLY-XP-Duty
+PASS P-NO-VOID-Duty
+PASS P-NO-DICE-Honesty
+PASS P-ONLY-XP-Honesty
+PASS P-NO-VOID-Honesty
+PASS P-NO-DICE-Honor
+PASS P-ONLY-XP-Honor
+PASS P-NO-VOID-Honor
+PASS P-NO-DICE-Sincerity
+PASS P-ONLY-XP-Sincerity
+PASS P-NO-VOID-Sincerity
+PASS P-NO-OPTIONS-IN-VOID-LIST
+PASS P-IMPORT
+PASS P-LOCAL-RELOAD
+PASS P-LEGACY
+PASS P-LEGACY-LION
+PASS P-MINIMAL-VALID
+PASS P-INVALID-UNKNOWN-TENET
+PASS P-INVALID-CASE
+PASS P-INVALID-FUTURE
+PASS P-INVALID-EXTRA
+PASS P-INVALID-DISADV-TYPE
+PASS P-WRONG-SIDE
+PASS P-RENAMED-CLEAN
+PASS P-FOREIGN-RENAME-CLEARS
+PASS P-DARK-PARAGON-NOT-CLAIMED
+PASS P-INFO
+PASS P-GEOMETRY-320
+PASS P-GEOMETRY-375
+PASS P-GEOMETRY-768
+PASS P-GEOMETRY-1440
+PASS P-BROWSER-ERRORS
+
+80/80 checks passed
+P4518_QA_RESULT={"passed":80,"total":80,"failed":0}
+
+== PART I — Phase 4.5.19 Soul of Artistry/soul-artistry-harness.js
+PASS SA-ENABLED
+PASS SA-SCHEMA
+PASS SA-REGISTRY-SEVEN
+PASS SA-BASELINE-UNSKILLED
+PASS SA-TWO-FAMILIES
+PASS SA-OPTION-MEMBERS
+PASS SA-NONE-PRESELECTED
+PASS SA-OPTIONS-LABELLED
+PASS SA-REQUIRES-CHOICE
+PASS SA-CONFIG
+PASS SA-BADGE
+PASS SA-PRICE-TOTAL
+PASS SA-PRICE-CRANE
+PASS SA-PRICE-COURTIER-TITLE
+PASS SA-PRICE-COURTIER-TAG
+PASS SA-PRICE-CRANE-AND-COURTIER
+PASS SA-PRICE-LION-BUSHI
+PASS SA-PRICE-ARTISAN-SCHOOL
+PASS SA-PRICE-FOLLOWS-CLAN
+PASS SA-ARTISAN-Artisan
+PASS SA-ARTISAN-Artisan_Painting
+PASS SA-ARTISAN-artisan_origami
+PASS SA-ARTISAN-Artisan_Poetry_
+PASS SA-ARTISAN-Calligraphy
+PASS SA-ARTISAN-Calligraphy_Cipher_
+PASS SA-ARTISAN-Craft
+PASS SA-ARTISAN-Craft_Blacksmithing
+PASS SA-ARTISAN-Craft_Weaponsmithing
+PASS SA-ARTISAN-Engineering
+PASS SA-ARTISAN-Sailing
+PASS SA-ARTISAN-Forgery
+PASS SA-ARTISAN-Forgery_Documents_
+PASS SA-ARTISAN-Crafty
+PASS SA-ARTISAN-Craftsmanship
+PASS SA-ARTISAN-Artisanal
+PASS SA-ARTISAN-Etiquette
+PASS SA-ARTISAN-Perform_Song
+PASS SA-ARTISAN-Lore_Calligraphy
+PASS SA-CRAFT-Artisan
+PASS SA-CRAFT-Artisan_Painting
+PASS SA-CRAFT-artisan_origami
+PASS SA-CRAFT-Artisan_Poetry_
+PASS SA-CRAFT-Calligraphy
+PASS SA-CRAFT-Calligraphy_Cipher_
+PASS SA-CRAFT-Craft
+PASS SA-CRAFT-Craft_Blacksmithing
+PASS SA-CRAFT-Craft_Weaponsmithing
+PASS SA-CRAFT-Engineering
+PASS SA-CRAFT-Sailing
+PASS SA-CRAFT-Forgery
+PASS SA-CRAFT-Forgery_Documents_
+PASS SA-CRAFT-Crafty
+PASS SA-CRAFT-Craftsmanship
+PASS SA-CRAFT-Artisanal
+PASS SA-CRAFT-Etiquette
+PASS SA-CRAFT-Perform_Song
+PASS SA-CRAFT-Lore_Calligraphy
+PASS SA-ROW-PREVIEW-RANK1
+PASS SA-ROW-PREVIEW-EXPLAINS
+PASS SA-ROW-NO-DOUBLE-VOID-LIFT
+PASS SA-ROW-DICE
+PASS SA-ROW-TITLE
+PASS SA-ROW-RANK-UNCHANGED
+PASS SA-ROW-NOTHING-SPENT
+PASS SA-LIST-PREVIEW-RANK1
+PASS SA-LIST-DICE
+PASS SA-LIST-TITLE
+PASS SA-TRAINED-NO-LINE
+PASS SA-TRAINED-DICE
+PASS SA-SKILL-ROLLS-ONLY
+PASS SA-ATTACK-UNCHANGED
+PASS SA-DUPLICATE-LIFTS-ONCE
+PASS SA-BOTH-FAMILIES
+PASS SA-UNCONFIGURED
+PASS SA-WRONG-SIDE
+PASS SA-INVALID-UNKNOWN
+PASS SA-INVALID-CASE
+PASS SA-INVALID-FUTURE
+PASS SA-INVALID-EXTRA
+PASS SA-INVALID-OTHER-TYPE
+PASS SA-IMPORT
+PASS SA-LOCAL-RELOAD
+PASS SA-RELOADED-LIFTS
+PASS SA-EDIT-SHOWS-CURRENT
+PASS SA-CANCEL-KEEPS
+PASS SA-INFO
+PASS SA-RENAMED-CLEAN
+PASS SA-GEOMETRY-320
+PASS SA-GEOMETRY-375
+PASS SA-GEOMETRY-768
+PASS SA-GEOMETRY-1440
+PASS SA-BROWSER-ERRORS
+
+92/92 checks passed
+SA4519_QA_RESULT={"passed":92,"total":92,"failed":0}
+
+== PART I — Phase 4.5.2 Disadvantages/disadv-config-harness.js
+PASS D45-00 Disadvantages point release is present and enabled
+PASS D45-SCHEMA-CONTRACT Point-release exposes explicit save schema version 3
+PASS D45-SCHEMA-TYPES Point-release advertises both new and retained configuration shapes
+PASS D45-XP-Antisocial-2 Antisocial 2-point refund
+PASS D45-XP-Antisocial-4 Antisocial 4-point refund
+PASS D45-XP-Cast Out-1 Cast Out 1-point refund
+PASS D45-XP-Cast Out-3 Cast Out 3-point refund
+PASS D45-XP-Compulsion-2 Compulsion 2-point refund
+PASS D45-XP-Compulsion-3 Compulsion 3-point refund
+PASS D45-XP-Compulsion-4 Compulsion 4-point refund
+PASS D45-XP-Obligation-3 Obligation 3-point refund
+PASS D45-XP-Obligation-6 Obligation 6-point refund
+PASS D45-XP-CRAB Antisocial Crab refund is 3/5
+PASS D45-XP-CONSUMED-other Consumed exact refunds for other Clan
+PASS D45-XP-CONSUMED-Crane Consumed exact refunds for Crane
+PASS D45-XP-CONSUMED-Spider Consumed exact refunds for Spider
+PASS D45-XP-BUSHIDO-0 Failure of Bushido base refunds
+PASS D45-XP-BUSHIDO-1 Failure of Bushido Ninja adjustment
+PASS D45-XP-IMBALANCE-1 Elemental Imbalance rank 1: refund and TN
+PASS D45-XP-IMBALANCE-3 Elemental Imbalance rank 3: refund and TN
+PASS D45-XP-IMBALANCE-25 Elemental Imbalance rank 25: refund and TN
+PASS D45-XP-IMBALANCE-101 Elemental Imbalance rank 101: refund and TN
+PASS D45-XP-PHOBIA-1 Phobia rank 1 refund
+PASS D45-XP-PHOBIA-2 Phobia rank 2 refund
+PASS D45-XP-PHOBIA-3 Phobia rank 3 refund
+PASS D45-XP-ENEMY-0-false Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-ENEMY-0-true Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-ENEMY-1-false Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-ENEMY-1-true Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-ENEMY-7-false Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-ENEMY-7-true Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-ENEMY-25-false Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-ENEMY-25-true Sworn Enemy difference and purchased Nemesis refund
+PASS D45-XP-MADNESS Madness refund and Willpower TN
+PASS D45-DYNAMIC-01 Antisocial refund reaches the unrelated XP total
+PASS D45-DYNAMIC-02 One native Clan edit updates cost and XP without test-driven recalc
+PASS D45-DYNAMIC-03 Clan refund reverses without stale totals
+PASS D45-DYNAMIC-STATUS-1 Status 1 updates Blackmailed and total immediately
+PASS D45-DYNAMIC-STATUS-4 Status 4 updates Blackmailed and total immediately
+PASS D45-DYNAMIC-STATUS-0 Status 0 updates Blackmailed and total immediately
+PASS D45-DYNAMIC-STATUS-6 Status 6 updates Blackmailed and total immediately
+PASS D45-DYNAMIC-04 Blackmailed stores its Status linkage
+PASS D45-CONFIG-Antisocial Antisocial has the required configuration type
+PASS D45-CONFIG-EMPTY-Antisocial Antisocial rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Antisocial Antisocial rejects unknown type
+PASS D45-CONFIG-Blackmailed Blackmailed has the required configuration type
+PASS D45-CONFIG-Cast Out Cast Out has the required configuration type
+PASS D45-CONFIG-EMPTY-Cast Out Cast Out rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Cast Out Cast Out rejects unknown type
+PASS D45-CONFIG-Compulsion Compulsion has the required configuration type
+PASS D45-CONFIG-EMPTY-Compulsion Compulsion rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Compulsion Compulsion rejects unknown type
+PASS D45-CONFIG-Consumed Consumed has the required configuration type
+PASS D45-CONFIG-EMPTY-Consumed Consumed rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Consumed Consumed rejects unknown type
+PASS D45-CONFIG-Elemental Imbalance Elemental Imbalance has the required configuration type
+PASS D45-CONFIG-EMPTY-Elemental Imbalance Elemental Imbalance rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Elemental Imbalance Elemental Imbalance rejects unknown type
+PASS D45-CONFIG-Enlightened Madness Enlightened Madness has the required configuration type
+PASS D45-CONFIG-EMPTY-Enlightened Madness Enlightened Madness rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Enlightened Madness Enlightened Madness rejects unknown type
+PASS D45-CONFIG-Failure of Bushido Failure of Bushido has the required configuration type
+PASS D45-CONFIG-EMPTY-Failure of Bushido Failure of Bushido rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Failure of Bushido Failure of Bushido rejects unknown type
+PASS D45-CONFIG-Obligation Obligation has the required configuration type
+PASS D45-CONFIG-EMPTY-Obligation Obligation rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Obligation Obligation rejects unknown type
+PASS D45-CONFIG-Phobia Phobia has the required configuration type
+PASS D45-CONFIG-EMPTY-Phobia Phobia rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Phobia Phobia rejects unknown type
+PASS D45-CONFIG-Sworn Enemy Sworn Enemy has the required configuration type
+PASS D45-CONFIG-EMPTY-Sworn Enemy Sworn Enemy rejects absent configuration
+PASS D45-CONFIG-UNKNOWN-Sworn Enemy Sworn Enemy rejects unknown type
+PASS D45-CONFIG-RANK-empty Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-RANK-abc Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-RANK-3.5 Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-RANK-0 Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-RANK--1 Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-RANK-Infinity Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-RANK-NaN Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-RANK-3cats Elemental Imbalance rejects invalid rank
+PASS D45-CONFIG-NONCASTER Elemental Imbalance enforces Shugenja only
+PASS D45-CONFIG-DEFICIENCY Elemental Imbalance rejects a deficient element
+PASS D45-CONFIG-DIFF--1 Sworn Enemy rejects invalid difference
+PASS D45-CONFIG-DIFF-1.5 Sworn Enemy rejects invalid difference
+PASS D45-CONFIG-DIFF- Sworn Enemy rejects invalid difference
+PASS D45-CONFIG-DIFF-2x Sworn Enemy rejects invalid difference
+PASS D45-CONFIG-ENEMY-NAME Sworn Enemy requires a nonblank named enemy
+PASS D45-CONFIG-INSIGHT-SKILL Consumed Insight requires a School Skill
+PASS D45-REMINDER-COMPULSION-2 Compulsion 2: complete current Willpower reminder — ✕ To resist your compulsion: Willpower Trait Roll, TN 15. TN 15 at 2 points; +5 per additional point, maximum TN 25 at 4 points. The player decides when this applies. Value: 2 XP.Change 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points.
+PASS D45-REMINDER-COMPULSION-NUMERIC-2 Compulsion never adds automatic numeric roll penalties
+PASS D45-REMINDER-COMPULSION-3 Compulsion 3: complete current Willpower reminder — ✕ To resist your compulsion: Willpower Trait Roll, TN 20. TN 15 at 2 points; +5 per additional point, maximum TN 25 at 4 points. The player decides when this applies. Value: 3 XP.Change 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points.
+PASS D45-REMINDER-COMPULSION-NUMERIC-3 Compulsion never adds automatic numeric roll penalties
+PASS D45-REMINDER-COMPULSION-4 Compulsion 4: complete current Willpower reminder — ✕ To resist your compulsion: Willpower Trait Roll, TN 25. TN 15 at 2 points; +5 per additional point, maximum TN 25 at 4 points. The player decides when this applies. Value: 4 XP.Change 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points.
+PASS D45-REMINDER-COMPULSION-NUMERIC-4 Compulsion never adds automatic numeric roll penalties
+PASS D45-REMINDER-CASTOUT Cast Out displays Glory-as-Infamy without altering Glory
+PASS D45-SOCIAL-LIST Antisocial exposes the authoritative seven-skill list
+PASS D45-SOCIAL-RANK2 Antisocial 2-point penalty affects every listed Social Skill
+PASS D45-SOCIAL-RANK4 Antisocial 4-point penalty affects every listed Social Skill
+PASS D45-SOCIAL-BOUNDARY Antisocial leaves non-Social Skills unchanged and has no pending-list warning
+PASS D45-PHOBIA-OFF Inactive Phobia has no roll penalty
+PASS D45-PHOBIA-UI Phobia toggle persists active state in its own row
+PASS D45-PHOBIA-SKILL Active Phobia applies rank × 5 to SKILL
+PASS D45-PHOBIA-ATTACK Active Phobia applies rank × 5 to ATTACK
+PASS D45-PHOBIA-SPELL Active Phobia applies rank × 5 to SPELL
+PASS D45-PHOBIA-TRAIT Active Phobia applies rank × 5 to TRAIT
+PASS D45-PHOBIA-RING Active Phobia applies rank × 5 to RING
+PASS D45-PHOBIA-INITIATIVE Active Phobia applies rank × 5 to INITIATIVE
+PASS D45-PHOBIA-MANUAL Active Phobia applies rank × 5 to MANUAL
+PASS D45-PHOBIA-DAMAGE Phobia explicitly excludes the damage context
+PASS D45-PHOBIA-REVERSE Turning Phobia off removes its effect immediately
+PASS D45-NEMESIS-BADGE Named enemy badge retains the complete target
+PASS D45-NEMESIS-COST Situational activity does not alter purchased refund
+PASS D45-NEMESIS-POLICY Every Void spending option is suppressed while Nemesis is active — [{"key":"k1","allowed":{"ok":false,"reason":"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy."}},{"key":"skill","allowed":{"ok":false,"reason":"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy."}},{"key":"tn","allowed":{"ok":false,"reason":"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy."}},{"key":"init","allowed":{"ok":false,"reason":"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy."}},{"key":"damage","allowed":{"ok":false,"reason":"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy."}},{"key":"kiho","allowed":{"ok":false,"reason":"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy."}}]
+PASS D45-NEMESIS-OFF Nemesis can be deactivated independently of its purchase
+PASS D45-GATE-POLICY Willpower gates keep Luck and Void spending available as nested options
+PASS D45-GATE-MAHO Elemental Imbalance does not gate Maho casting
+PASS D45-GATE-ELEMENTAL-FAIL Failed Elemental Imbalance gate reports the narrative warning
+PASS D45-GATE-ELEMENTAL-CONTINUE Elemental Imbalance failure leaves the parent spell roll proceeding
+PASS D45-GATE-NESTED-VOID Willpower preview retains the existing Void-spend options
+PASS D45-GATE-NESTED-LUCK Willpower result retains the existing Luck action
+PASS D45-GATE-MADNESS-FAIL Failed Enlightened Madness gate reports cancellation and GM control
+PASS D45-GATE-MADNESS-SLOT Failed Enlightened Madness does not refund the consumed spell slot
+PASS D45-GATE-MADNESS-CANCEL Failed Enlightened Madness cancels the parent action — {"slot":"1","rollOpen":false,"busy":false}
+PASS D45-SAVE-VERSION Save schema advances beyond version 2 — 7
+PASS D45-SAVE-CONFIGS All eleven configs round-trip through JSON and sheet load
+PASS D45-SAVE-TRANSIENT Willpower gate history and activity are not serialized
+PASS D45-SAVE-TOGGLES Phobia and Nemesis activity persist
+PASS D45-SAVE-UNKNOWN Unknown configuration is visible and gives no silent refund — {"name":"Compulsion","cost":0,"text":"✕ Unknown or incomplete configuration — choose again.Choose… 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points.","config":{"type":"futureUnknownConfiguration","tier":4,"value":"4"},"unconfigured":true}
+PASS D45-UI-UNCONFIGURED-Antisocial Antisocial is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Antisocial Antisocial opens the existing configuration overlay
+PASS D45-UI-CLOSE-Antisocial Antisocial closes cleanly
+PASS D45-UI-UNCONFIGURED-Cast Out Cast Out is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Cast Out Cast Out opens the existing configuration overlay
+PASS D45-UI-CLOSE-Cast Out Cast Out closes cleanly
+PASS D45-UI-UNCONFIGURED-Compulsion Compulsion is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Compulsion Compulsion opens the existing configuration overlay
+PASS D45-UI-CLOSE-Compulsion Compulsion closes cleanly
+PASS D45-UI-UNCONFIGURED-Consumed Consumed is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Consumed Consumed opens the existing configuration overlay
+PASS D45-UI-CLOSE-Consumed Consumed closes cleanly
+PASS D45-UI-UNCONFIGURED-Elemental Imbalance Elemental Imbalance is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Elemental Imbalance Elemental Imbalance opens the existing configuration overlay
+PASS D45-UI-CLOSE-Elemental Imbalance Elemental Imbalance closes cleanly
+PASS D45-UI-UNCONFIGURED-Enlightened Madness Enlightened Madness is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Enlightened Madness Enlightened Madness opens the existing configuration overlay
+PASS D45-UI-CLOSE-Enlightened Madness Enlightened Madness closes cleanly
+PASS D45-UI-UNCONFIGURED-Failure of Bushido Failure of Bushido is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Failure of Bushido Failure of Bushido opens the existing configuration overlay
+PASS D45-UI-CLOSE-Failure of Bushido Failure of Bushido closes cleanly
+PASS D45-UI-UNCONFIGURED-Obligation Obligation is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Obligation Obligation opens the existing configuration overlay
+PASS D45-UI-CLOSE-Obligation Obligation closes cleanly
+PASS D45-UI-UNCONFIGURED-Phobia Phobia is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Phobia Phobia opens the existing configuration overlay
+PASS D45-UI-CLOSE-Phobia Phobia closes cleanly
+PASS D45-UI-UNCONFIGURED-Sworn Enemy Sworn Enemy is visibly unconfigured after cancellation
+PASS D45-UI-OPEN-Sworn Enemy Sworn Enemy opens the existing configuration overlay
+PASS D45-UI-CLOSE-Sworn Enemy Sworn Enemy closes cleanly
+PASS D45-UI-PHONE Visible modal controls fit the 375px viewport
+PASS D45-REGISTRY-01 The suite leaves every pre-existing registry entry unchanged
+PASS D45-REGISTRY-02 The expansion uses the one existing adv-config registry seat
+PASS D45-ERRORS No uncaught browser errors
+┌─────────┐
+│ (index) │
+├─────────┤
+└─────────┘
+
+163/163 checks passed
+D45_QA_RESULT={"total":163,"passed":163,"failed":0,"results":[{"id":"D45-00","name":"Disadvantages point release is present and enabled","pass":true,"detail":""},{"id":"D45-SCHEMA-CONTRACT","name":"Point-release exposes explicit save schema version 3","pass":true,"detail":""},{"id":"D45-SCHEMA-TYPES","name":"Point-release advertises both new and retained configuration shapes","pass":true,"detail":""},{"id":"D45-XP-Antisocial-2","name":"Antisocial 2-point refund","pass":true,"detail":""},{"id":"D45-XP-Antisocial-4","name":"Antisocial 4-point refund","pass":true,"detail":""},{"id":"D45-XP-Cast Out-1","name":"Cast Out 1-point refund","pass":true,"detail":""},{"id":"D45-XP-Cast Out-3","name":"Cast Out 3-point refund","pass":true,"detail":""},{"id":"D45-XP-Compulsion-2","name":"Compulsion 2-point refund","pass":true,"detail":""},{"id":"D45-XP-Compulsion-3","name":"Compulsion 3-point refund","pass":true,"detail":""},{"id":"D45-XP-Compulsion-4","name":"Compulsion 4-point refund","pass":true,"detail":""},{"id":"D45-XP-Obligation-3","name":"Obligation 3-point refund","pass":true,"detail":""},{"id":"D45-XP-Obligation-6","name":"Obligation 6-point refund","pass":true,"detail":""},{"id":"D45-XP-CRAB","name":"Antisocial Crab refund is 3/5","pass":true,"detail":""},{"id":"D45-XP-CONSUMED-other","name":"Consumed exact refunds for other Clan","pass":true,"detail":""},{"id":"D45-XP-CONSUMED-Crane","name":"Consumed exact refunds for Crane","pass":true,"detail":""},{"id":"D45-XP-CONSUMED-Spider","name":"Consumed exact refunds for Spider","pass":true,"detail":""},{"id":"D45-XP-BUSHIDO-0","name":"Failure of Bushido base refunds","pass":true,"detail":""},{"id":"D45-XP-BUSHIDO-1","name":"Failure of Bushido Ninja adjustment","pass":true,"detail":""},{"id":"D45-XP-IMBALANCE-1","name":"Elemental Imbalance rank 1: refund and TN","pass":true,"detail":""},{"id":"D45-XP-IMBALANCE-3","name":"Elemental Imbalance rank 3: refund and TN","pass":true,"detail":""},{"id":"D45-XP-IMBALANCE-25","name":"Elemental Imbalance rank 25: refund and TN","pass":true,"detail":""},{"id":"D45-XP-IMBALANCE-101","name":"Elemental Imbalance rank 101: refund and TN","pass":true,"detail":""},{"id":"D45-XP-PHOBIA-1","name":"Phobia rank 1 refund","pass":true,"detail":""},{"id":"D45-XP-PHOBIA-2","name":"Phobia rank 2 refund","pass":true,"detail":""},{"id":"D45-XP-PHOBIA-3","name":"Phobia rank 3 refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-0-false","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-0-true","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-1-false","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-1-true","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-7-false","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-7-true","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-25-false","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-ENEMY-25-true","name":"Sworn Enemy difference and purchased Nemesis refund","pass":true,"detail":""},{"id":"D45-XP-MADNESS","name":"Madness refund and Willpower TN","pass":true,"detail":""},{"id":"D45-DYNAMIC-01","name":"Antisocial refund reaches the unrelated XP total","pass":true,"detail":""},{"id":"D45-DYNAMIC-02","name":"One native Clan edit updates cost and XP without test-driven recalc","pass":true,"detail":""},{"id":"D45-DYNAMIC-03","name":"Clan refund reverses without stale totals","pass":true,"detail":""},{"id":"D45-DYNAMIC-STATUS-1","name":"Status 1 updates Blackmailed and total immediately","pass":true,"detail":""},{"id":"D45-DYNAMIC-STATUS-4","name":"Status 4 updates Blackmailed and total immediately","pass":true,"detail":""},{"id":"D45-DYNAMIC-STATUS-0","name":"Status 0 updates Blackmailed and total immediately","pass":true,"detail":""},{"id":"D45-DYNAMIC-STATUS-6","name":"Status 6 updates Blackmailed and total immediately","pass":true,"detail":""},{"id":"D45-DYNAMIC-04","name":"Blackmailed stores its Status linkage","pass":true,"detail":""},{"id":"D45-CONFIG-Antisocial","name":"Antisocial has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Antisocial","name":"Antisocial rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Antisocial","name":"Antisocial rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Blackmailed","name":"Blackmailed has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-Cast Out","name":"Cast Out has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Cast Out","name":"Cast Out rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Cast Out","name":"Cast Out rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Compulsion","name":"Compulsion has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Compulsion","name":"Compulsion rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Compulsion","name":"Compulsion rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Consumed","name":"Consumed has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Consumed","name":"Consumed rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Consumed","name":"Consumed rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Elemental Imbalance","name":"Elemental Imbalance has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Elemental Imbalance","name":"Elemental Imbalance rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Elemental Imbalance","name":"Elemental Imbalance rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Enlightened Madness","name":"Enlightened Madness has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Enlightened Madness","name":"Enlightened Madness rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Enlightened Madness","name":"Enlightened Madness rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Failure of Bushido","name":"Failure of Bushido has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Failure of Bushido","name":"Failure of Bushido rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Failure of Bushido","name":"Failure of Bushido rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Obligation","name":"Obligation has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Obligation","name":"Obligation rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Obligation","name":"Obligation rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Phobia","name":"Phobia has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Phobia","name":"Phobia rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Phobia","name":"Phobia rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-Sworn Enemy","name":"Sworn Enemy has the required configuration type","pass":true,"detail":""},{"id":"D45-CONFIG-EMPTY-Sworn Enemy","name":"Sworn Enemy rejects absent configuration","pass":true,"detail":""},{"id":"D45-CONFIG-UNKNOWN-Sworn Enemy","name":"Sworn Enemy rejects unknown type","pass":true,"detail":""},{"id":"D45-CONFIG-RANK-empty","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-RANK-abc","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-RANK-3.5","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-RANK-0","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-RANK--1","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-RANK-Infinity","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-RANK-NaN","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-RANK-3cats","name":"Elemental Imbalance rejects invalid rank","pass":true,"detail":""},{"id":"D45-CONFIG-NONCASTER","name":"Elemental Imbalance enforces Shugenja only","pass":true,"detail":""},{"id":"D45-CONFIG-DEFICIENCY","name":"Elemental Imbalance rejects a deficient element","pass":true,"detail":""},{"id":"D45-CONFIG-DIFF--1","name":"Sworn Enemy rejects invalid difference","pass":true,"detail":""},{"id":"D45-CONFIG-DIFF-1.5","name":"Sworn Enemy rejects invalid difference","pass":true,"detail":""},{"id":"D45-CONFIG-DIFF-","name":"Sworn Enemy rejects invalid difference","pass":true,"detail":""},{"id":"D45-CONFIG-DIFF-2x","name":"Sworn Enemy rejects invalid difference","pass":true,"detail":""},{"id":"D45-CONFIG-ENEMY-NAME","name":"Sworn Enemy requires a nonblank named enemy","pass":true,"detail":""},{"id":"D45-CONFIG-INSIGHT-SKILL","name":"Consumed Insight requires a School Skill","pass":true,"detail":""},{"id":"D45-REMINDER-COMPULSION-2","name":"Compulsion 2: complete current Willpower reminder","pass":true,"detail":"✕ To resist your compulsion: Willpower Trait Roll, TN 15. TN 15 at 2 points; +5 per additional point, maximum TN 25 at 4 points. The player decides when this applies. Value: 2 XP.Change 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points."},{"id":"D45-REMINDER-COMPULSION-NUMERIC-2","name":"Compulsion never adds automatic numeric roll penalties","pass":true,"detail":""},{"id":"D45-REMINDER-COMPULSION-3","name":"Compulsion 3: complete current Willpower reminder","pass":true,"detail":"✕ To resist your compulsion: Willpower Trait Roll, TN 20. TN 15 at 2 points; +5 per additional point, maximum TN 25 at 4 points. The player decides when this applies. Value: 3 XP.Change 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points."},{"id":"D45-REMINDER-COMPULSION-NUMERIC-3","name":"Compulsion never adds automatic numeric roll penalties","pass":true,"detail":""},{"id":"D45-REMINDER-COMPULSION-4","name":"Compulsion 4: complete current Willpower reminder","pass":true,"detail":"✕ To resist your compulsion: Willpower Trait Roll, TN 25. TN 15 at 2 points; +5 per additional point, maximum TN 25 at 4 points. The player decides when this applies. Value: 4 XP.Change 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points."},{"id":"D45-REMINDER-COMPULSION-NUMERIC-4","name":"Compulsion never adds automatic numeric roll penalties","pass":true,"detail":""},{"id":"D45-REMINDER-CASTOUT","name":"Cast Out displays Glory-as-Infamy without altering Glory","pass":true,"detail":""},{"id":"D45-SOCIAL-LIST","name":"Antisocial exposes the authoritative seven-skill list","pass":true,"detail":""},{"id":"D45-SOCIAL-RANK2","name":"Antisocial 2-point penalty affects every listed Social Skill","pass":true,"detail":""},{"id":"D45-SOCIAL-RANK4","name":"Antisocial 4-point penalty affects every listed Social Skill","pass":true,"detail":""},{"id":"D45-SOCIAL-BOUNDARY","name":"Antisocial leaves non-Social Skills unchanged and has no pending-list warning","pass":true,"detail":""},{"id":"D45-PHOBIA-OFF","name":"Inactive Phobia has no roll penalty","pass":true,"detail":""},{"id":"D45-PHOBIA-UI","name":"Phobia toggle persists active state in its own row","pass":true,"detail":""},{"id":"D45-PHOBIA-SKILL","name":"Active Phobia applies rank × 5 to SKILL","pass":true,"detail":""},{"id":"D45-PHOBIA-ATTACK","name":"Active Phobia applies rank × 5 to ATTACK","pass":true,"detail":""},{"id":"D45-PHOBIA-SPELL","name":"Active Phobia applies rank × 5 to SPELL","pass":true,"detail":""},{"id":"D45-PHOBIA-TRAIT","name":"Active Phobia applies rank × 5 to TRAIT","pass":true,"detail":""},{"id":"D45-PHOBIA-RING","name":"Active Phobia applies rank × 5 to RING","pass":true,"detail":""},{"id":"D45-PHOBIA-INITIATIVE","name":"Active Phobia applies rank × 5 to INITIATIVE","pass":true,"detail":""},{"id":"D45-PHOBIA-MANUAL","name":"Active Phobia applies rank × 5 to MANUAL","pass":true,"detail":""},{"id":"D45-PHOBIA-DAMAGE","name":"Phobia explicitly excludes the damage context","pass":true,"detail":""},{"id":"D45-PHOBIA-REVERSE","name":"Turning Phobia off removes its effect immediately","pass":true,"detail":""},{"id":"D45-NEMESIS-BADGE","name":"Named enemy badge retains the complete target","pass":true,"detail":""},{"id":"D45-NEMESIS-COST","name":"Situational activity does not alter purchased refund","pass":true,"detail":""},{"id":"D45-NEMESIS-POLICY","name":"Every Void spending option is suppressed while Nemesis is active","pass":true,"detail":"[{\"key\":\"k1\",\"allowed\":{\"ok\":false,\"reason\":\"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy.\"}},{\"key\":\"skill\",\"allowed\":{\"ok\":false,\"reason\":\"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy.\"}},{\"key\":\"tn\",\"allowed\":{\"ok\":false,\"reason\":\"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy.\"}},{\"key\":\"init\",\"allowed\":{\"ok\":false,\"reason\":\"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy.\"}},{\"key\":\"damage\",\"allowed\":{\"ok\":false,\"reason\":\"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy.\"}},{\"key\":\"kiho\",\"allowed\":{\"ok\":false,\"reason\":\"Sworn Enemy — Kharmic Nemesis is active against Bayushi Aiko; Void Points cannot be spent while opposing this enemy.\"}}]"},{"id":"D45-NEMESIS-OFF","name":"Nemesis can be deactivated independently of its purchase","pass":true,"detail":""},{"id":"D45-GATE-POLICY","name":"Willpower gates keep Luck and Void spending available as nested options","pass":true,"detail":""},{"id":"D45-GATE-MAHO","name":"Elemental Imbalance does not gate Maho casting","pass":true,"detail":""},{"id":"D45-GATE-ELEMENTAL-FAIL","name":"Failed Elemental Imbalance gate reports the narrative warning","pass":true,"detail":""},{"id":"D45-GATE-ELEMENTAL-CONTINUE","name":"Elemental Imbalance failure leaves the parent spell roll proceeding","pass":true,"detail":""},{"id":"D45-GATE-NESTED-VOID","name":"Willpower preview retains the existing Void-spend options","pass":true,"detail":""},{"id":"D45-GATE-NESTED-LUCK","name":"Willpower result retains the existing Luck action","pass":true,"detail":""},{"id":"D45-GATE-MADNESS-FAIL","name":"Failed Enlightened Madness gate reports cancellation and GM control","pass":true,"detail":""},{"id":"D45-GATE-MADNESS-SLOT","name":"Failed Enlightened Madness does not refund the consumed spell slot","pass":true,"detail":""},{"id":"D45-GATE-MADNESS-CANCEL","name":"Failed Enlightened Madness cancels the parent action","pass":true,"detail":"{\"slot\":\"1\",\"rollOpen\":false,\"busy\":false}"},{"id":"D45-SAVE-VERSION","name":"Save schema advances beyond version 2","pass":true,"detail":"7"},{"id":"D45-SAVE-CONFIGS","name":"All eleven configs round-trip through JSON and sheet load","pass":true,"detail":""},{"id":"D45-SAVE-TRANSIENT","name":"Willpower gate history and activity are not serialized","pass":true,"detail":""},{"id":"D45-SAVE-TOGGLES","name":"Phobia and Nemesis activity persist","pass":true,"detail":""},{"id":"D45-SAVE-UNKNOWN","name":"Unknown configuration is visible and gives no silent refund","pass":true,"detail":"{\"name\":\"Compulsion\",\"cost\":0,\"text\":\"✕ Unknown or incomplete configuration — choose again.Choose… 2-4 points. An ingrained habit or addiction; resisting it needs a Willpower roll from TN 15 up to TN 25 at 4 points.\",\"config\":{\"type\":\"futureUnknownConfiguration\",\"tier\":4,\"value\":\"4\"},\"unconfigured\":true}"},{"id":"D45-UI-UNCONFIGURED-Antisocial","name":"Antisocial is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Antisocial","name":"Antisocial opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Antisocial","name":"Antisocial closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Cast Out","name":"Cast Out is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Cast Out","name":"Cast Out opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Cast Out","name":"Cast Out closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Compulsion","name":"Compulsion is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Compulsion","name":"Compulsion opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Compulsion","name":"Compulsion closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Consumed","name":"Consumed is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Consumed","name":"Consumed opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Consumed","name":"Consumed closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Elemental Imbalance","name":"Elemental Imbalance is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Elemental Imbalance","name":"Elemental Imbalance opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Elemental Imbalance","name":"Elemental Imbalance closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Enlightened Madness","name":"Enlightened Madness is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Enlightened Madness","name":"Enlightened Madness opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Enlightened Madness","name":"Enlightened Madness closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Failure of Bushido","name":"Failure of Bushido is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Failure of Bushido","name":"Failure of Bushido opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Failure of Bushido","name":"Failure of Bushido closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Obligation","name":"Obligation is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Obligation","name":"Obligation opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Obligation","name":"Obligation closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Phobia","name":"Phobia is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Phobia","name":"Phobia opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Phobia","name":"Phobia closes cleanly","pass":true,"detail":""},{"id":"D45-UI-UNCONFIGURED-Sworn Enemy","name":"Sworn Enemy is visibly unconfigured after cancellation","pass":true,"detail":""},{"id":"D45-UI-OPEN-Sworn Enemy","name":"Sworn Enemy opens the existing configuration overlay","pass":true,"detail":""},{"id":"D45-UI-CLOSE-Sworn Enemy","name":"Sworn Enemy closes cleanly","pass":true,"detail":""},{"id":"D45-UI-PHONE","name":"Visible modal controls fit the 375px viewport","pass":true,"detail":""},{"id":"D45-REGISTRY-01","name":"The suite leaves every pre-existing registry entry unchanged","pass":true,"detail":""},{"id":"D45-REGISTRY-02","name":"The expansion uses the one existing adv-config registry seat","pass":true,"detail":""},{"id":"D45-ERRORS","name":"No uncaught browser errors","pass":true,"detail":""}]}
+
+== PART I — Phase 4.5.20 Void Versatility/void-versatility-harness.js
+PASS VV-ENABLED
+PASS VV-SCHEMA
+PASS VV-REGISTRY-SEVEN
+PASS VV-PICKER-NO-SCHOOL
+PASS VV-PICKER-BUSHI
+PASS VV-PICKER-EARTH-AFFINITY
+PASS VV-PICKER-ISAWA-FIRE
+PASS VV-PICKER-ISAWA-VOID
+PASS VV-PICKER-UNCENTERED
+PASS VV-FOUR-RINGS-NO-VOID
+PASS VV-NONE-PRESELECTED
+PASS VV-REQUIRES-CHOICE
+PASS VV-CONFIG
+PASS VV-ROW
+PASS VV-PRICE
+PASS VV-BASELINE-NO-DIALOG
+PASS VV-BASELINE-VOID-SPENT
+PASS VV-Air-ASKS
+PASS VV-Air-ONE-DEBIT
+PASS VV-Air-SAME-VOID-ROLL
+PASS VV-Air-SAYS-WHO-PAID
+PASS VV-Earth-ASKS
+PASS VV-Earth-ONE-DEBIT
+PASS VV-Earth-SAME-VOID-ROLL
+PASS VV-Earth-SAYS-WHO-PAID
+PASS VV-Fire-ASKS
+PASS VV-Fire-ONE-DEBIT
+PASS VV-Fire-SAME-VOID-ROLL
+PASS VV-Fire-SAYS-WHO-PAID
+PASS VV-Water-ASKS
+PASS VV-Water-ONE-DEBIT
+PASS VV-Water-SAME-VOID-ROLL
+PASS VV-Water-SAYS-WHO-PAID
+PASS VV-ORDINARY-CHOSEN
+PASS VV-X-SPENDS-NOTHING
+PASS VV-RING-EMPTY-ORDINARY
+PASS VV-MANUAL-PIP-COUNTED
+PASS VV-VOID-EMPTY-OFFERS-BONUS
+PASS VV-BONUS-VIA-TRUNK
+PASS VV-ONLY-RING-LEFT
+PASS VV-ONLY-RING-PAYS
+PASS VV-AIR-SPELL-UNCHANGED
+PASS VV-UNIVERSAL-UNCHANGED
+PASS VV-UNIVERSAL-CANCEL-CLEAN
+PASS VV-INELIGIBLE-ROW-ISAWA-FIRE
+PASS VV-INELIGIBLE-NO-OFFER
+PASS VV-INELIGIBLE-ROW-BUSHI
+PASS VV-UNCENTERED-ROW
+PASS VV-DIAG-LIFTED
+PASS VV-DIAG-INELIGIBLE-STILL-BLOCKS
+PASS VV-IMPORT
+PASS VV-LOCAL-RELOAD
+PASS VV-LEGACY
+PASS VV-INVALID-VOID-RING
+PASS VV-INVALID-CASE
+PASS VV-INVALID-FUTURE
+PASS VV-INVALID-EXTRA
+PASS VV-INVALID-BASE-RINGPICK
+PASS VV-WRONG-SIDE
+PASS VV-INFO
+PASS VV-RENAMED-CLEAN
+PASS VV-GEOMETRY-320
+PASS VV-GEOMETRY-375
+PASS VV-GEOMETRY-768
+PASS VV-GEOMETRY-1440
+PASS VV-BROWSER-ERRORS
+
+66/66 checks passed
+VV4520_QA_RESULT={"passed":66,"total":66,"failed":0}
+
+== PART I — Phase 4.5.21 Seven Fortunes Blessing/fortune-blessing-harness.js
+PASS FB-ENABLED
+PASS FB-SCHEMA
+PASS FB-REGISTRY-SEVEN
+PASS FB-PROVIDER
+PASS FB-SEVEN-IN-PRINTED-ORDER
+PASS FB-RULE-Benten
+PASS FB-RULE-Bishamon
+PASS FB-RULE-Daikoku
+PASS FB-RULE-Ebisu
+PASS FB-RULE-Fukurokujin
+PASS FB-RULE-Hotei
+PASS FB-RULE-Jurojin
+PASS FB-RULES-CLOSED-NONE-PICKED
+PASS FB-LORE-HIDDEN
+PASS FB-REQUIRES-CHOICE
+PASS FB-LORE-SHOWN
+PASS FB-LORE-SUGGESTS-OWN
+PASS FB-LORE-REQUIRED
+PASS FB-LORE-MUST-BE-LORE
+PASS FB-CONFIG-FUKUROKUJIN
+PASS FB-PRICE-TOTAL
+PASS FB-EDIT-SHOWS-CURRENT
+PASS FB-SWITCH-CLEARS-LORE-AND-REPRICES
+PASS FB-PRICE-Benten
+PASS FB-PRICE-Bishamon
+PASS FB-PRICE-Daikoku
+PASS FB-PRICE-Ebisu
+PASS FB-PRICE-Fukurokujin
+PASS FB-PRICE-Hotei
+PASS FB-PRICE-Jurojin
+PASS FB-PRICE-REASON
+PASS FB-BISHAMON-STRENGTH-TRAIT-ROLL
+PASS FB-BISHAMON-NOT-OTHER-TRAIT
+PASS FB-BISHAMON-NOT-SKILL-USING-STRENGTH
+PASS FB-BISHAMON-NOT-DAMAGE
+PASS FB-DAIKOKU-COMMERCE
+PASS FB-DAIKOKU-COMMERCE-EMPHASIS
+PASS FB-DAIKOKU-NOT-OTHER
+PASS FB-FUKUROKUJIN-CHOSEN-LORE
+PASS FB-FUKUROKUJIN-OTHER-LORE
+PASS FB-FUKUROKUJIN-BARE-LORE
+PASS FB-NO-AUTO-FOR-OTHERS
+PASS FB-SOCIAL-OFFERS
+PASS FB-NON-SOCIAL-SKILL
+PASS FB-RESIST-KINDS
+PASS FB-NOT-ON-ATTACK-SPELL-DAMAGE
+PASS FB-UNTICKED-BY-DEFAULT
+PASS FB-BENTEN-PLUS-0K1
+PASS FB-FRESH-EACH-ROLL
+PASS FB-EBISU-PLUS-1K1
+PASS FB-JUROJIN-PLUS-2K0
+PASS FB-HOTEI-PLUS-10
+PASS FB-NOTHING-OFFERED-WITHOUT-FORTUNE
+PASS FB-NOTHING-OFFERED-UNCONFIGURED
+PASS FB-HOTEI-BUTTON
+PASS FB-HOTEI-CONTESTED-VOID-ROLL
+PASS FB-HOTEI-OWN-VOID-UNAFFECTED
+PASS FB-NO-BUTTON-OTHERS
+PASS FB-IMPORT
+PASS FB-LOCAL-RELOAD
+PASS FB-LEGACY-KEEPS-COST
+PASS FB-INVALID-UNKNOWN
+PASS FB-INVALID-CASE
+PASS FB-INVALID-FUKU-NO-LORE
+PASS FB-INVALID-FUKU-BAD-LORE
+PASS FB-INVALID-LORE-ON-OTHER
+PASS FB-INVALID-FUTURE
+PASS FB-INVALID-EXTRA
+PASS FB-INVALID-CURSE-TYPE
+PASS FB-WRONG-SIDE
+PASS FB-INFO
+PASS FB-RENAMED-CLEAN
+PASS FB-GEOMETRY-320
+PASS FB-GEOMETRY-375
+PASS FB-GEOMETRY-768
+PASS FB-GEOMETRY-1440
+PASS FB-BROWSER-ERRORS
+
+77/77 checks passed
+FB4521_QA_RESULT={"passed":77,"total":77,"failed":0}
+
+== PART I — Phase 4.5.23 Dark Paragon/dark-paragon-harness.js
+PASS DP-ENABLED
+PASS DP-REGISTRY-SEVEN
+PASS DP-SCHEMA
+PASS DP-PROVIDER
+PASS DP-PRICE-CLANS
+PASS DP-UNCONFIGURED
+PASS DP-PICKER-ORDER
+PASS DP-PICKER-NONE-PRESELECTED
+PASS DP-PICKER-OPERATIONS
+PASS DP-PICKER-REQUIRED
+PASS DP-PICKER-SAVED
+PASS DP-PICKER-PRESELECTS-SAVED
+PASS DP-CHANGE-KEEPS-USE
+PASS DP-ROW-EACH
+PASS DP-ROW-USED
+PASS DP-RESET
+PASS DP-WRONG-SIDE
+PASS DP-INFO
+PASS DP-SESSION-PANEL
+PASS DP-INVALID-KEPT
+PASS DP-INVALID-NO-REROLL
+PASS DP-MATCH-Control
+PASS DP-MATCH-Insight
+PASS DP-MATCH-Knowledge
+PASS DP-MATCH-Strength
+PASS DP-MATCH-Determination
+PASS DP-MATCH-Perfection
+PASS DP-NOT-ON-WILLPOWER-CHECK
+PASS DP-MATCH-ABSENT
+PASS DP-REROLL-OFFERED
+PASS DP-REROLL-CANCEL-FREE
+PASS DP-REROLL-PRICE-SHOWN
+PASS DP-REROLL-PAID
+PASS DP-REROLL-SAME-POOL
+PASS DP-REROLL-STANDS-PLUS-5
+PASS DP-REROLL-LABELLED
+PASS DP-REROLL-OUTCOME-MATCHES
+PASS DP-REROLL-NO-SECOND-BUTTON
+PASS DP-REROLL-SPENT
+PASS DP-REROLL-LOWER-STANDS
+PASS DP-REROLL-KEEPS-PENALTY
+PASS DP-STRENGTH-DAMAGE
+PASS DP-VOID-FALLBACK
+PASS DP-HONOR-EXACT
+PASS DP-CANNOT-PAY
+PASS DP-VOID-ROUND-LIMIT
+PASS DP-VOID-RECORDED
+PASS DP-DET-WOUNDED-FIXTURE
+PASS DP-DET-KINDS
+PASS DP-DET-UNTICKED
+PASS DP-DET-WITHOUT
+PASS DP-DET-ASKS-PRICE
+PASS DP-DET-ABORT
+PASS DP-DET-PAID
+PASS DP-DET-BREAKDOWN
+PASS DP-DET-SPENT
+PASS DP-DET-PREVIEW-CANCEL-FREE
+PASS DP-MANUAL-Perfection
+PASS DP-MANUAL-Will
+PASS DP-NO-STANDING-MODIFIER
+PASS DP-ROLL-ALONE-CHANGES-NOTHING
+PASS DP-LOCAL-RELOAD
+PASS DP-GEOMETRY-320
+PASS DP-GEOMETRY-375
+PASS DP-GEOMETRY-768
+PASS DP-GEOMETRY-1440
+PASS DP-BROWSER-ERRORS
+67/67 checks passed
+DP4523_QA_RESULT={"passed":67,"total":67,"failed":0}
+
+== PART I — Phase 4.5.24 Touch of the Spirit Realms/spirit-realms-harness.js
+PASS TR-ENABLED
+PASS TR-REGISTRY-SEVEN
+PASS TR-SCHEMA
+PASS TR-PROVIDER
+PASS TR-SHUGENJA-FIXTURE
+PASS TR-PRICE-OTHERS
+PASS TR-PRICE-SHUGENJA
+PASS TR-UNCONFIGURED
+PASS TR-GM-NOTE-WHERE
+PASS TR-GM-NOTE-PICKER
+PASS TR-INFO
+PASS TR-PICKER-ORDER
+PASS TR-PICKER-NONE-PRESELECTED
+PASS TR-PICKER-RULES-AND-PRICES
+PASS TR-PICKER-REQUIRED
+PASS TR-SKILL-HIDDEN
+PASS TR-SKILL-SHOWN
+PASS TR-SKILL-OPTIONS
+PASS TR-SKILL-REQUIRED
+PASS TR-YOMI-SAVED
+PASS TR-PICKER-PRESELECTS
+PASS TR-CHANGE-DROPS-SKILL
+PASS TR-LOST-FOLLOWS-REALM
+PASS TR-ROW-EACH
+PASS TR-WRONG-SIDE
+PASS TR-RENAMED-CLEAN
+PASS TR-INVALID-KEPT
+PASS TR-INVALID-NO-EFFECT
+PASS TR-CHIKUSHUDO
+PASS TR-YOMI
+PASS TR-YOMI-STALE
+PASS TR-JIGOKU-SCOPE
+PASS TR-JIGOKU-LOST
+PASS TR-JIGOKU-NO-TAINT
+PASS TR-NO-STANDING-EFFECT
+PASS TR-SAKKAKU-WHERE
+PASS TR-MEIDO-WHERE
+PASS TR-TENGOKU-WHERE
+PASS TR-NOT-WITHOUT-REALM
+PASS TR-SAKKAKU-DICE
+PASS TR-TENGOKU-DICE
+PASS TR-MEIDO-DICE
+PASS TR-REAL-ROLLS
+PASS TR-LOST-TICK
+PASS TR-LOCAL-RELOAD
+PASS TR-GEOMETRY-320
+PASS TR-GEOMETRY-375
+PASS TR-GEOMETRY-768
+PASS TR-GEOMETRY-1440
+PASS TR-BROWSER-ERRORS
+50/50 checks passed
+TR4524_QA_RESULT={"passed":50,"total":50,"failed":0}
+
+== PART I — Phase 4.5.25 Clan and School Prices/clan-prices-harness.js
+PASS CP-TABLE-CATALOGUE-AGREES
+PASS CP-TABLE-QUALIFIED-PRICE
+PASS CP-TABLE-OTHERS-CATALOGUE
+PASS CP-TABLE-OR-READING
+PASS CP-TABLE-IMPERIAL-FAMILY
+PASS CP-TABLE-LEFT-OUT
+PASS CP-TABLE-NO-ERRORS
+PASS CP-XP-ADV-DRAGON
+PASS CP-XP-ADV-OTHER
+PASS CP-XP-DISADV-LION
+PASS CP-XP-DISADV-OTHER
+PASS CP-XP-NO-ERRORS
+PASS CP-QUICKADD-ADV
+PASS CP-QUICKADD-DISADV
+PASS CP-QUICKADD-NO-ERRORS
+PASS CP-UNCENTERED-CLAN-MONK
+PASS CP-UNCENTERED-TOGASHI
+PASS CP-UNCENTERED-BROTHERHOOD
+PASS CP-UNCENTERED-OLD-SAVE-KEPT
+PASS CP-UNCENTERED-OLD-SAVE-NOTED
+PASS CP-UNCENTERED-NO-ERRORS
+PASS CP-VISIT-PROVISIONAL
+PASS CP-VISIT-SCHOOL-ADDED-AFTER
+PASS CP-VISIT-FOLLOWS-CLAN
+PASS CP-VISIT-FIXED-ON-PLAY
+PASS CP-VISIT-FIXED-STAYS
+PASS CP-VISIT-NO-RETRO
+PASS CP-VISIT-NO-RETRO-NOTE
+PASS CP-VISIT-NEW-PURCHASE-ALL-SCHOOLS
+PASS CP-VISIT-WIZARD-FIXES
+PASS CP-VISIT-NO-ERRORS
+PASS CP-TYPED-KEPT
+PASS CP-TYPED-MARKED
+PASS CP-TYPED-KEPT-AFTER-PLAY
+PASS CP-TYPED-NOTE-ON-PRICED-ROW
+PASS CP-TYPED-NO-ERRORS
+PASS CP-SAVE-RECORD-SAVED
+PASS CP-SAVE-RESTORED
+PASS CP-SAVE-OPEN-NOT-A-CHANGE
+PASS CP-SAVE-OLD-CATALOGUE-REPRICED
+PASS CP-SAVE-OLD-STARTING-SCHOOL
+PASS CP-SAVE-OLD-STARTING-TYPE
+PASS CP-SAVE-OLD-CLAN-PRICE-KEPT
+PASS CP-SAVE-OLD-NOT-A-CHANGE
+PASS CP-SAVE-NO-ERRORS
+45/45 checks passed
+
+== PART I — Phase 4.5.26 Dice Rolling Entries/dice-entries-harness.js
+PASS LIFT-CrabHands-Cannon
+PASS PREVIEW-CrabHands-Cannon
+PASS LIFT-CrabHands-Chain Weapons
+PASS PREVIEW-CrabHands-Chain Weapons
+PASS LIFT-CrabHands-Firearms
+PASS PREVIEW-CrabHands-Firearms
+PASS LIFT-CrabHands-Heavy Weapons
+PASS PREVIEW-CrabHands-Heavy Weapons
+PASS LIFT-CrabHands-Kenjutsu
+PASS PREVIEW-CrabHands-Kenjutsu
+PASS LIFT-CrabHands-Knives
+PASS PREVIEW-CrabHands-Knives
+PASS LIFT-CrabHands-Kyujutsu
+PASS PREVIEW-CrabHands-Kyujutsu
+PASS LIFT-CrabHands-Ninjutsu
+PASS PREVIEW-CrabHands-Ninjutsu
+PASS LIFT-CrabHands-Polearms
+PASS PREVIEW-CrabHands-Polearms
+PASS LIFT-CrabHands-Spears
+PASS PREVIEW-CrabHands-Spears
+PASS LIFT-CrabHands-Staves
+PASS PREVIEW-CrabHands-Staves
+PASS LIFT-CrabHands-War Fan
+PASS PREVIEW-CrabHands-War Fan
+PASS LIFT-Crafty-Cannon
+PASS PREVIEW-Crafty-Cannon
+PASS LIFT-Crafty-Firearms
+PASS PREVIEW-Crafty-Firearms
+PASS LIFT-Crafty-Ninjutsu
+PASS PREVIEW-Crafty-Ninjutsu
+PASS LIFT-Crafty-Forgery
+PASS PREVIEW-Crafty-Forgery
+PASS LIFT-Crafty-Intimidation
+PASS PREVIEW-Crafty-Intimidation
+PASS LIFT-Crafty-Sleight of Hand
+PASS PREVIEW-Crafty-Sleight of Hand
+PASS LIFT-Crafty-Stealth
+PASS PREVIEW-Crafty-Stealth
+PASS LIFT-Crafty-Temptation
+PASS PREVIEW-Crafty-Temptation
+PASS LIFT-Sage-Lore
+PASS PREVIEW-Sage-Lore
+PASS LIFT-Sage-Lore: History
+PASS PREVIEW-Sage-Lore: History
+PASS LIFT-Sage-Lore (Theology)
+PASS PREVIEW-Sage-Lore (Theology)
+PASS LIFT-Sensation-Perform
+PASS PREVIEW-Sensation-Perform
+PASS LIFT-Sensation-Perform: Song
+PASS PREVIEW-Sensation-Perform: Song
+PASS LIFT-Sensation-Perform (Dance)
+PASS PREVIEW-Sensation-Perform (Dance)
+PASS TABLE-Crab Hands
+PASS BOUGHT-Crab Hands
+PASS TABLE-Crafty
+PASS BOUGHT-Crafty
+PASS TABLE-Sage
+PASS BOUGHT-Sage
+PASS TABLE-Sensation
+PASS BOUGHT-Sensation
+PASS ONCE-Ninjutsu
+PASS ONCE-Forgery
+PASS ONCE-Perform: Song
+PASS WEAPON-Crab Hands
+PASS WEAPON-TITLE-Crab Hands
+PASS WEAPON-Crafty
+PASS WEAPON-TITLE-Crafty
+PASS NO-FALSE-MATCH-Crafty
+PASS NO-FALSE-MATCH-Lorekeeper
+PASS NO-FALSE-MATCH-Performance
+PASS NO-FALSE-MATCH-Artisan: Lore
+PASS LIFT-TRAINED-UNCHANGED
+PASS GN-Acting
+PASS GN-NOTE-Acting
+PASS GN-Courtier
+PASS GN-NOTE-Courtier
+PASS GN-Etiquette
+PASS GN-NOTE-Etiquette
+PASS GN-Perform
+PASS GN-NOTE-Perform
+PASS GN-Sincerity
+PASS GN-NOTE-Sincerity
+PASS GN-Intimidation
+PASS GN-NOTE-Intimidation
+PASS GN-Temptation
+PASS GN-NOTE-Temptation
+PASS GN-Perform: Song
+PASS GN-NOTE-Perform: Song
+PASS GN-Perform (Dance)
+PASS GN-NOTE-Perform (Dance)
+PASS GN-LIFT
+PASS GN-NO-FORCED-EXPLOSION
+PASS GN-VOID
+PASS GN-EXCLUDED-InvestigationSKILL
+PASS GN-EXCLUDED-PerformativeSKILL
+PASS GN-EXCLUDED-CourtierTRAIT
+PASS GN-EXCLUDED-CourtierMANUAL
+PASS GN-LUCK
+PASS GN-REPEATED-REROLL
+PASS GN-ANCESTOR
+PASS GN-NO-LEAK
+PASS GN-EMPHASIS
+PASS SAVE-LOAD
+PASS REMOVE-GAIJIN
+PASS WRONG-LIST-LIFT
+PASS WRONG-LIST-GAIJIN
+PASS GN-TEN-DICE-AND-FLAT
+PASS NO-CHARACTER-MUTATION
+PASS CANCEL-NO-GAIJIN-LEAK
+PASS NO-PAGE-ERRORS
+110/110 checks passed
+
+== PART I — Phase 4.5.27 Situational Roll Entries/situational-entries-harness.js
+PASS SIT-SEAM
+PASS SIT-PROVIDER-REGISTERED
+PASS SIT-REGISTRY-SEVEN
+PASS SIT-CATALOGUE-HAS-NINE
+PASS SIT-NOTHING-OFFERED-WITHOUT-ENTRIES
+PASS SIT-OFFERS-COURTIER
+PASS SIT-OFFERS-ACTING
+PASS SIT-OFFERS-ETIQUETTE-WILLPOWER
+PASS SIT-OFFERS-PERFORM-SONG
+PASS SIT-OFFERS-SINCERITY
+PASS SIT-OFFERS-INTIMIDATION
+PASS SIT-OFFERS-TEMPTATION
+PASS SIT-OFFERS-TEMPTATION-UNSKILLED
+PASS SIT-OFFERS-INVESTIGATION-PERCEPTION
+PASS SIT-OFFERS-INVESTIGATION-LOWERCASE
+PASS SIT-OFFERS-INVESTIGATION-AWARENESS
+PASS SIT-OFFERS-CALLIGRAPHY
+PASS SIT-OFFERS-LORE
+PASS SIT-OFFERS-FULL-DEFENSE
+PASS SIT-OFFERS-TRAIT-INTELLIGENCE
+PASS SIT-OFFERS-TRAIT-WILLPOWER
+PASS SIT-OFFERS-RING-AIR
+PASS SIT-OFFERS-MANUAL
+PASS SIT-OFFERS-ATTACK
+PASS SIT-OFFERS-DAMAGE
+PASS SIT-OFFERS-SPELL
+PASS SIT-OFFERS-INITIATIVE
+PASS SIT-LABELS-STATE-BOOK-POOLS
+PASS SIT-LABELS-CITE-SOURCES
+PASS SIT-ONLY-OWNED-BALANCE
+PASS SIT-ONLY-OWNED-CLEAR-THINKER
+PASS SIT-ONLY-OWNED-DANGEROUS-BEAUTY
+PASS SIT-ONLY-OWNED-HEARTLESS
+PASS SIT-ONLY-OWNED-IMPERIAL-SCRIBE
+PASS SIT-ONLY-OWNED-IMPERIAL-SPOUSE
+PASS SIT-ONLY-OWNED-IRREPROACHABLE
+PASS SIT-ONLY-OWNED-PRECISE-MEMORY
+PASS SIT-ONLY-OWNED-WARY
+PASS SIT-DISADVANTAGE-LIST-DOES-NOT-COUNT
+PASS SIT-DUPLICATE-OFFERED-ONCE
+PASS SIT-DUPLICATE-APPLIES-ONCE
+PASS SIT-RENAMED-ROW-NOT-OFFERED
+PASS SIT-REMOVED-BEFORE-ROLL-NOT-APPLIED
+PASS SIT-UNTICKED-BALANCE
+PASS SIT-PREVIEW-POOL-BALANCE
+PASS SIT-DICE-BALANCE
+PASS SIT-FRESH-BALANCE
+PASS SIT-UNDECLARED-BALANCE
+PASS SIT-UNTICKED-CLEAR-THINKER
+PASS SIT-PREVIEW-POOL-CLEAR-THINKER
+PASS SIT-DICE-CLEAR-THINKER
+PASS SIT-FRESH-CLEAR-THINKER
+PASS SIT-UNDECLARED-CLEAR-THINKER
+PASS SIT-UNTICKED-DANGEROUS-BEAUTY
+PASS SIT-PREVIEW-POOL-DANGEROUS-BEAUTY
+PASS SIT-DICE-DANGEROUS-BEAUTY
+PASS SIT-FRESH-DANGEROUS-BEAUTY
+PASS SIT-UNDECLARED-DANGEROUS-BEAUTY
+PASS SIT-UNTICKED-HEARTLESS
+PASS SIT-PREVIEW-POOL-HEARTLESS
+PASS SIT-DICE-HEARTLESS
+PASS SIT-FRESH-HEARTLESS
+PASS SIT-UNDECLARED-HEARTLESS
+PASS SIT-UNTICKED-IMPERIAL-SCRIBE
+PASS SIT-PREVIEW-POOL-IMPERIAL-SCRIBE
+PASS SIT-DICE-IMPERIAL-SCRIBE
+PASS SIT-FRESH-IMPERIAL-SCRIBE
+PASS SIT-UNDECLARED-IMPERIAL-SCRIBE
+PASS SIT-UNTICKED-IMPERIAL-SPOUSE
+PASS SIT-PREVIEW-POOL-IMPERIAL-SPOUSE
+PASS SIT-DICE-IMPERIAL-SPOUSE
+PASS SIT-FRESH-IMPERIAL-SPOUSE
+PASS SIT-UNDECLARED-IMPERIAL-SPOUSE
+PASS SIT-UNTICKED-IRREPROACHABLE
+PASS SIT-PREVIEW-POOL-IRREPROACHABLE
+PASS SIT-DICE-IRREPROACHABLE
+PASS SIT-FRESH-IRREPROACHABLE
+PASS SIT-UNDECLARED-IRREPROACHABLE
+PASS SIT-CANCEL-DISARMS
+PASS SIT-AFTER-CANCEL-UNTICKED
+PASS SIT-REROLL-KEEPS-DECLARATION
+PASS SIT-NO-LEAK-SKIPPED-PREVIEW
+PASS SIT-OLD-ROLL-RELEASED
+PASS SIT-NOTHING-SAVED
+PASS SIT-RELOADED-UNTICKED
+PASS SIT-OFFERED-IN-PLAY
+PASS SIT-FOUR-STACK-PREVIEW
+PASS SIT-FOUR-STACK-DICE
+PASS SIT-STACKS-WITH-HEART-OF-VENGEANCE
+PASS SIT-TEN-DICE-RULE-PREVIEW
+PASS SIT-TEN-DICE-RULE-DICE
+PASS SIT-BALANCE-HIDDEN-WITH-FAILURE-OF-HONOR
+PASS SIT-BALANCE-OFFERED-WITH-OTHER-TENET
+PASS SIT-BALANCE-OFFERED-UNCONFIGURED-FAILURE
+PASS SIT-BALANCE-REMINDS-HONOR-RANK
+PASS SIT-FREE-RAISE-CALLIGRAPHY
+PASS SIT-FREE-RAISE-NOT-UNSKILLED
+PASS SIT-FREE-RAISE-NOT-RANK-ZERO
+PASS SIT-FREE-RAISE-NOT-OTHER-SKILL
+PASS SIT-FREE-RAISE-NOT-TRAIT
+PASS SIT-FREE-RAISE-IN-PREVIEW
+PASS SIT-FREE-RAISE-NO-DICE
+PASS SIT-FREE-RAISE-NEEDS-SCRIBE
+PASS SIT-ROUTE-SKILL-TABLE-WARY
+PASS SIT-ROUTE-TRAIT-LABEL-OFFERED
+PASS SIT-ROUTE-TRAIT-LABEL-DICE
+PASS SIT-ROUTE-UNSKILLED-NO-EXPLOSION
+PASS SIT-ROUTE-CRAFTY-LIFTED-TEMPTATION
+PASS SIT-ROUTE-GAIJIN-NAME-PRESERVED
+PASS SIT-DESC-CLEAR-THINKER
+PASS SIT-DESC-HEARTLESS
+PASS SIT-DESC-NEW-ROW-USES-TEXT
+PASS SIT-GEOMETRY-320
+PASS SIT-GEOMETRY-375
+PASS SIT-GEOMETRY-768
+PASS SIT-GEOMETRY-1440
+PASS SIT-NO-PAGE-ERRORS
+
+117/117 checks passed
+
+== PART I — Phase 4.5.28 Situational Entry Buttons and Gates/situational-buttons-harness.js
+PASS SB-SEAM
+PASS SB-REGISTRY-STILL-SEVEN
+PASS SB-CATALOGUE-HAS-FOUR
+PASS SB-ROW-WARY-BUTTON
+PASS SB-ROW-MEMORY-BUTTON
+PASS SB-ROW-OTHERS-UNTOUCHED
+PASS SB-BUTTONS-NAMED-NOT-TITLED
+PASS SB-ROW-UNDER-NAME
+PASS SB-ROW-NOT-DUPLICATED-BY-RECALC
+PASS SB-BUTTONS-USABLE-IN-PLAY
+PASS SB-NOTHING-SAVED
+PASS SB-ROW-RENAMED-LOSES-BUTTON
+PASS SB-DISADVANTAGE-LIST-NO-BUTTON
+PASS SB-AMBUSH-NO-TICK
+PASS SB-AMBUSH-PREVIEW
+PASS SB-AMBUSH-DICE
+PASS SB-AMBUSH-TITLE-NAMES-THE-ROLL
+PASS SB-AMBUSH-REROLL-KEEPS-IT
+PASS SB-AMBUSH-APPLIED-AGAIN-NEXT-TIME
+PASS SB-ORDINARY-INVESTIGATION-NO-WARY
+PASS SB-ORDINARY-INVESTIGATION-ROLL
+PASS SB-AMBUSH-UNSKILLED-PREVIEW
+PASS SB-AMBUSH-UNSKILLED-NO-EXPLOSION
+PASS SB-AMBUSH-NOTICE-EMPHASIS-OFFERED
+PASS SB-AMBUSH-NO-EMPHASIS-NONE-OFFERED
+PASS SB-AMBUSH-CANCEL-NO-CARRY
+PASS SB-AMBUSH-CANCEL-NEXT-TITLE
+PASS SB-AMBUSH-NEEDS-WARY
+PASS SB-AMBUSH-SKIPPED-PREVIEW-STILL-APPLIES
+PASS SB-UNMARKED-ROLL-NEVER-GETS-WARY
+PASS SB-AMBUSH-IN-PLAY
+PASS SB-RECALL-NO-TICK
+PASS SB-RECALL-PREVIEW
+PASS SB-RECALL-DICE
+PASS SB-RECALL-REROLL-KEEPS-IT
+PASS SB-ORDINARY-INTELLIGENCE-NO-MEMORY
+PASS SB-ORDINARY-INTELLIGENCE-ROLL
+PASS SB-RECALL-TWO-ROWS-ONCE
+PASS SB-RECALL-NEEDS-PRECISE-MEMORY
+PASS SB-RECALL-IN-PLAY
+PASS SB-PICKER-SCRIBE-GREYED
+PASS SB-PICKER-SACROSANCT-GREYED
+PASS SB-PICKER-OTHERS-UNCHANGED
+PASS SB-PICKER-SCRIBE-MET
+PASS SB-PICKER-SCRIBE-STATUS-1.9
+PASS SB-PICKER-SCRIBE-CALLIGRAPHY-3
+PASS SB-PICKER-SCRIBE-HIGHEST-ROW
+PASS SB-PICKER-SACROSANCT-HONOR-6
+PASS SB-PICKER-SACROSANCT-HONOR-5.9
+PASS SB-PICKER-RANK-WHEN-NO-POINTS
+PASS SB-PICKER-FOLLOWS-RECALC
+PASS SB-ROW-SCRIBE-SAYS-WHY
+PASS SB-ROW-SACROSANCT-SAYS-WHY
+PASS SB-ROW-KEEPS-ITS-XP
+PASS SB-SCRIBE-UNMET-NO-BONUS
+PASS SB-ROW-SCRIBE-ONLY-UNMET-PART
+PASS SB-SCRIBE-STATUS-ONLY-UNMET-NO-BONUS
+PASS SB-ROW-SCRIBE-MET-NO-NOTE
+PASS SB-SCRIBE-MET-BONUS-BACK
+PASS SB-ROW-SACROSANCT-MET-NO-NOTE
+PASS SB-TYPED-RANK-SHOWS-NOTE
+PASS SB-TYPED-RANK-CLEARS-NOTE
+PASS SB-TYPED-STATUS-SHOWS-NOTE
+PASS SB-TYPED-HONOR-SHOWS-NOTE
+PASS SB-LAYOUT-320
+PASS SB-LAYOUT-375
+PASS SB-LAYOUT-768
+PASS SB-LAYOUT-1440
+PASS SB-LAYOUT-BUTTON-COMPACT
+PASS SB-LAYOUT-NOTE-GOLD
+PASS SB-NO-PAGE-ERRORS
+
+71/71 checks passed
+
+== PART I — Phase 4.5.30 Automatic Roll Entries/automatic-entries-harness.js
+PASS AE-SEAM
+PASS AE-REGISTRY-STILL-SEVEN
+PASS AE-CATALOGUE
+PASS AE-NOTHING-WITHOUT-ENTRIES
+PASS AE-SILENT-STEALTH
+PASS AE-SILENT-STEALTH-EMPHASIS-NAME
+PASS AE-SILENT-NOT-OTHER-SKILL
+PASS AE-SILENT-NOT-DAMAGE
+PASS AE-PRODIGY-EVERY-SCHOOL-SKILL
+PASS AE-PRODIGY-ATTACK-WITH-SCHOOL-SKILL
+PASS AE-PRODIGY-NOT-OTHER-SKILL
+PASS AE-PRODIGY-NOT-DAMAGE
+PASS AE-PRODIGY-TICKED-SCHOOL-ROW
+PASS AE-PRODIGY-NO-SCHOOL-NOTHING
+PASS AE-VOICE-SONG-ORATORY-STORYTELLING
+PASS AE-VOICE-NOT-OTHER-PERFORM
+PASS AE-EYESIGHT-RANGED-ATTACK
+PASS AE-EYESIGHT-NOT-MELEE
+PASS AE-EYESIGHT-PERCEPTION-TRAIT
+PASS AE-EYESIGHT-PERCEPTION-SKILL
+PASS AE-EYESIGHT-SPOT-AMBUSH
+PASS AE-EYESIGHT-NOT-OTHER-TRAIT
+PASS AE-EYESIGHT-RANGED-PERCEPTION-ONCE
+PASS AE-EYESIGHT-NOT-DAMAGE
+PASS AE-COUNTENANCE-SEVEN-SOCIAL
+PASS AE-COUNTENANCE-NOT-ARTISAN
+PASS AE-ANACHRONISM-ARTISAN-CRAFT-SOCIAL
+PASS AE-ANACHRONISM-NOT-OTHER
+PASS AE-TN-NOTE-SAYS-TN
+PASS AE-WRONG-LIST-DOES-NOT-COUNT
+PASS AE-DUPLICATE-APPLIES-ONCE
+PASS AE-DIFFERENT-ENTRIES-STACK
+PASS AE-RENAMED-DOES-NOT-COUNT
+PASS AE-DICE-SILENT
+PASS AE-DICE-COUNTENANCE-TOTAL
+PASS AE-ROUTE-SKILL-TABLE
+PASS AE-ROW-ANACHRONISM-ONLY
+PASS AE-ROW-RENAMED-LOSES-LINE
+PASS AE-NOTHING-SAVED
+PASS AE-ROW-LAYOUT-320
+PASS AE-NO-PAGE-ERRORS
+
+41/41 checks passed
+
+== PART I — Phase 4.5.31 Checks and Conditions/checks-conditions-harness.js
+PASS CK-SEAM
+PASS CK-REGISTRY-STILL-SEVEN
+PASS CK-CATALOGUE
+PASS CK-TICK-PROVIDER-REGISTERED
+PASS CK-NOTHING-WITHOUT-ENTRIES
+PASS CK-NO-ROWS-WITHOUT-ENTRIES
+PASS CK-ROW-BRASH
+PASS CK-ROW-CANT-LIE
+PASS CK-ROW-CONTRARY
+PASS CK-ROW-EPILEPSY
+PASS CK-ROW-OVERCONFIDENT
+PASS CK-ROW-RUMORMONGER
+PASS CK-ROW-SOFT-HEARTED
+PASS CK-ROW-LOST-LOVE
+PASS CK-ROW-MISSING-LIMB
+PASS CK-ROW-LAME-REMINDS-MOVE
+PASS CK-ROW-BLIND-REMINDERS
+PASS CK-ROW-ISHIKEN-NON-SHUGENJA
+PASS CK-ROW-ISHIKEN-SHUGENJA-NONE
+PASS CK-PLAY-MODE
+PASS CK-MANAGE-LIMB-EDITABLE
+PASS CK-BRASH-ROLL
+PASS CK-BRASH-ADDS-HONOR-RANK
+PASS CK-BRASH-FAILS-BELOW-TN
+PASS CK-BRASH-FAILURE-OF-BUSHIDO-HONOR
+PASS CK-BRASH-ROW-SAYS-NOT-ADDED
+PASS CK-CANT-LIE
+PASS CK-CONTRARY-USES-TYPED-TN
+PASS CK-CONTRARY-EMPTY-TN-ASKS
+PASS CK-EPILEPSY-AVOID
+PASS CK-EPILEPSY-END
+PASS CK-OVERCONFIDENT-PERCEPTION
+PASS CK-RUMORMONGER-EMPTY-ASKS
+PASS CK-RUMORMONGER-TN-5X-GLORY
+PASS CK-BOX-SURVIVES-RECALC
+PASS CK-SOFT-HEARTED-CHECK
+PASS CK-CHECK-NEEDS-TRAIT
+PASS CK-TICKS-UNTICKED-BY-DEFAULT
+PASS CK-LAME-AGILITY-ROLLS
+PASS CK-LAME-NOT-OTHER-TRAITS
+PASS CK-LAME-ARMED-TN-10
+PASS CK-MISSING-LIMB-EVERY-ROLL
+PASS CK-MISSING-LIMB-NOT-DAMAGE-OR-INITIATIVE
+PASS CK-MISSING-LIMB-UNCHOSEN-LABEL
+PASS CK-MISSING-LIMB-NAMES-THE-LIMB
+PASS CK-MISSING-LIMB-ARMED-TN-10
+PASS CK-DISBELIEVER-SEVEN-SOCIAL
+PASS CK-DISBELIEVER-NOT-OTHER
+PASS CK-DISBELIEVER-ARMED-TN-5
+PASS CK-PREVIEW-BOXES
+PASS CK-PREVIEW-TICK-REACHES-TOTAL
+PASS CK-SWITCHES-OFF-NOTHING
+PASS CK-LOST-LOVE-EVERY-TN
+PASS CK-LOST-LOVE-NOT-DAMAGE-INITIATIVE
+PASS CK-LOST-LOVE-SAVED
+PASS CK-LOST-LOVE-SPEND-VOID
+PASS CK-LOST-LOVE-NO-VOID
+PASS CK-SWITCHES-STACK
+PASS CK-SWITCHES-ROUND-TRIP
+PASS CK-LIMB-ROUND-TRIP
+PASS CK-RENAMED-DROPS-SETTING
+PASS CK-RENAMED-NO-EFFECT
+PASS CK-BLIND-CORE-BASELINE
+PASS CK-BLIND-ARMOR-TN
+PASS CK-BLIND-IDEMPOTENT
+PASS CK-BLIND-FOLLOWS-REFLEXES
+PASS CK-BLIND-REMOVED-CORE-BACK
+PASS CK-BLIND-RANGED
+PASS CK-BLIND-MELEE
+PASS CK-BLIND-UNARMED-IS-MELEE
+PASS CK-BLIND-NOT-DAMAGE
+PASS CK-BLIND-PERCEPTION-INFO
+PASS CK-BLIND-NOT-OTHER-ROLLS
+PASS CK-WRONG-LIST-NO-ROWS
+PASS CK-WRONG-LIST-NO-EFFECT
+PASS CK-DUPLICATE-ONCE
+PASS CK-DUPLICATE-BLIND-ARMOR-ONCE
+PASS CK-NOTHING-ELSE-SAVED
+PASS CK-ISHIKEN-PICKER-NON-SHUGENJA
+PASS CK-ISHIKEN-PICKER-SHUGENJA
+PASS CK-PICKER-SAME-SPELLS-LISTED
+PASS CK-PICKER-VOID-LISTED
+PASS CK-PICKER-VOID-GREYED-WITHOUT
+PASS CK-PICKER-OTHERS-UNCHANGED
+PASS CK-PICKER-NOTHING-GATED-WITH
+PASS CK-WIZARD-GROUPS-WITHOUT
+PASS CK-WIZARD-STEP-GREYED
+PASS CK-WIZARD-GROUPS-WITH
+PASS CK-WIZARD-STEP-NOT-GREYED-WITH
+PASS CK-ADD-VOID-REFUSED-SCROLL-KEPT
+PASS CK-ADD-VOID-WITH-ISHIKEN
+PASS CK-NO-SCHOOL-GIVES-VOID
+PASS CK-VOID-ON-LIST-FLAGGED
+PASS CK-VOID-CAST-NOT-BLOCKED
+PASS CK-VOID-ON-LIST-CLEAR-WITH
+PASS CK-UNIVERSAL-NEVER-VOID-WITHOUT
+PASS CK-UNIVERSAL-NEVER-VOID-WITH
+PASS CK-VOID-SCROLL-STILL-OFFERED
+PASS CK-ROW-LAYOUT-320
+PASS CK-TOUCH-TARGETS
+PASS CK-NO-PAGE-ERRORS
+
+101/101 checks passed
+
+== PART I — Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js
+PASS DS-SEAM
+PASS DS-REGISTRY-STILL-SEVEN
+PASS DS-CATALOGUE
+PASS DS-TICK-PROVIDER-REGISTERED
+PASS DS-CORE-UNARMED-IS-0K1-PLUS-STRENGTH
+PASS DS-HANDS-OF-STONE-UNARMED
+PASS DS-HANDS-OF-STONE-NOT-WEAPONS
+PASS DS-LARGE-LARGE-MELEE
+PASS DS-LARGE-NOT-MEDIUM-RANGED-UNARMED
+PASS DS-SMALL-MELEE
+PASS DS-SMALL-NOT-RANGED
+PASS DS-LARGE-AND-SMALL-NEITHER
+PASS DS-LARGE-AND-SMALL-ROWS-SAY
+PASS DS-SMALL-NEVER-KEEPS-MORE-THAN-ROLLED
+PASS DS-DAMAGE-ROLL-USES-THE-DICE
+PASS DS-DAMAGE-ROLL-NAMES-THE-ENTRY
+PASS DS-DAMAGE-NOT-A-ROLL-MODIFIER
+PASS DS-LARGE-GREYED-WITH-SMALL
+PASS DS-SMALL-GREYED-WITH-LARGE
+PASS DS-NEITHER-GREYED-ALONE
+PASS DS-GREAT-DESTINY-ROW
+PASS DS-GREAT-DESTINY-ASKS-FIRST
+PASS DS-GREAT-DESTINY-ONE-WOUND-FROM-DEATH
+PASS DS-GREAT-DESTINY-USED
+PASS DS-GREAT-DESTINY-ONCE-A-SESSION
+PASS DS-GREAT-DESTINY-USE-SAVED
+PASS DS-GREAT-DESTINY-RESET
+PASS DS-DARK-FATE-ROW
+PASS DS-DARK-FATE-ASKS-FIRST
+PASS DS-DARK-FATE-ONE-WOUND-FROM-DEATH
+PASS DS-DARK-FATE-USED
+PASS DS-DARK-FATE-ONCE-A-SESSION
+PASS DS-DARK-FATE-USE-SAVED
+PASS DS-DARK-FATE-RESET
+PASS DS-DESTINY-FOLLOWS-WOUND-CORE
+PASS DS-HAUNTED-CONTENT-NOTHING
+PASS DS-HAUNTED-ANGRY-OFFERS
+PASS DS-HAUNTED-NOT-DAMAGE
+PASS DS-HAUNTED-UNTICKED-BY-DEFAULT
+PASS DS-HAUNTED-UNTICKED-NOT-SPENT
+PASS DS-HAUNTED-TICKED-POOL
+PASS DS-HAUNTED-ROLL
+PASS DS-HAUNTED-SPENT
+PASS DS-HAUNTED-SAVED
+PASS DS-HAUNTED-RESET
+PASS DS-HAUNTED-CANCEL-NOT-SPENT
+PASS DS-ENLIGHTENED-VOID-XP
+PASS DS-ENLIGHTENED-NOTHING-BOUGHT
+PASS DS-OBTUSE-CORE
+PASS DS-OBTUSE-HIGH-DOUBLED
+PASS DS-OBTUSE-BREAKDOWN-AGREES
+PASS DS-OBTUSE-EMPHASIS-NOT-DOUBLED
+PASS DS-OBTUSE-ONLY-PAID-RANKS
+PASS DS-BETROTHAL-SOCIAL-POSITION
+PASS DS-BETROTHAL-STABLE-OVER-RECALCS
+PASS DS-BETROTHAL-ROUND-TRIP
+PASS DS-BETROTHAL-GONE-PRICE-BACK
+PASS DS-BETROTHAL-NEVER-BELOW-ONE
+PASS DS-BETROTHAL-TIE-CORE-PRICE
+PASS DS-BETROTHAL-TIE-NEEDS-SPOUSE
+PASS DS-BETROTHAL-NOT-OTHER-ADVANTAGES
+PASS DS-ROW-NOTES
+PASS DS-ROW-BETROTHAL
+PASS DS-PLAY-MODE
+PASS DS-ROW-STYLED
+PASS DS-WRONG-LIST-NOTHING
+PASS DS-DUPLICATE-ONCE
+PASS DS-ROW-LAYOUT-320
+PASS DS-NO-PAGE-ERRORS
+
+69/69 checks passed
+
+== PART I — Phase 4.5.33 Void and Initiative Entries/void-initiative-harness.js
+PASS VI-SEAM
+PASS VI-CORE-VOID-ORACLE
+PASS VI-DAREDEVIL-ATHLETICS
+PASS VI-DAREDEVIL-ATHLETICS-EMPHASIS
+PASS VI-DAREDEVIL-OTHER-SKILL
+PASS VI-DAREDEVIL-TRAIT
+PASS VI-DAREDEVIL-NOT-ARMED
+PASS VI-TOUCH-SKILL
+PASS VI-TOUCH-TRAIT
+PASS VI-TOUCH-NOT-DAMAGE
+PASS VI-TOUCH-NOT-ARMED
+PASS VI-BOTH-NO-STACK
+PASS VI-WRONG-LIST-NOTHING
+PASS VI-DAREDEVIL-POOL
+PASS VI-VOID-OPEN-WITHOUT
+PASS VI-MOMOKU-CLOSES-VOID
+PASS VI-MOMOKU-PIPS-STAY
+PASS VI-MOMOKU-NOTE
+PASS VI-QUICK-OUT-OF-COMBAT
+PASS VI-QUICK-USE
+PASS VI-QUICK-NEXT-ROUND-OPEN
+PASS VI-QUICK-ADDS-UP
+PASS VI-QUICK-ON-INITIATIVE
+PASS VI-QUICK-NOT-ON-SKILLS
+PASS VI-QUICK-ROUND-NOTE
+PASS VI-QUICK-RESET
+PASS VI-QUICK-NEEDS-ROW
+PASS VI-LEAD-OUT-OF-COMBAT
+PASS VI-LEAD-ROLL
+PASS VI-LEAD-ONCE-A-ROUND
+PASS VI-LEAD-NOTHING-ON-SELF
+PASS VI-TOUCH-ROW
+PASS VI-TOUCH-CHECK-TN30
+PASS VI-TOUCH-AUTO-AFTER-THE-ROLL
+PASS VI-TOUCH-CANCEL-NO-CHECK
+PASS VI-TOUCH-CARD-AT-ONCE
+PASS VI-TOUCH-ARMED-WAITS-FOR-ITS-ROLL
+PASS VI-TOUCH-TWO-SPENDS-TWO-CHECKS
+PASS VI-TOUCH-ONLY-ITS-OWN-LIST
+PASS VI-PLAY-MODE
+PASS VI-STYLED
+PASS VI-ROW-LAYOUT-320
+PASS VI-NOTHING-SAVED
+PASS VI-NO-PAGE-ERRORS
+
+44/44 checks passed
+
+== PART I — Phase 4.5.35 Initiative Score/initiative-score-harness.js
+PASS IS-SEAM
+PASS IS-NONE-YET
+PASS IS-ROLL-RECORDS
+PASS IS-REKEPT-DICE-FOLLOWED
+PASS IS-RESET-CLEARS
+PASS IS-QUICK-ROW-BEFORE
+PASS IS-QUICK-ADDS
+PASS IS-QUICK-ADDS-UP
+PASS IS-NO-DOUBLE-COUNT
+PASS IS-VOID-AFTER-THE-ROLL
+PASS IS-CENTER-ONLY-ITS-ROUND
+PASS IS-TYPED-TOTAL
+PASS IS-TYPED-EMPTY-REFUSED
+PASS IS-INPUT-16PX
+PASS IS-STYLED
+PASS IS-FITS-320
+PASS IS-FITS-390
+PASS IS-NOTHING-SAVED
+PASS IS-PLAY-VISIBLE
+PASS IS-NO-PAGE-ERRORS
+
+20/20 checks passed
+
+== PART I — Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js
+PASS W436-SWITCH
+PASS W436-GUARD-NO-ROW
+PASS W436-TRAIT-LOWERED
+PASS W436-RING-LOWERED
+PASS W436-PURCHASED-KEPT
+PASS W436-RING-ONLY-WHEN-LOWER
+PASS W436-FLOOR-ONE
+PASS W436-TWO-ROWS-TWO-TRAITS
+PASS W436-SAME-TRAIT-ONCE
+PASS W436-UNPICKED-CHANGES-NOTHING
+PASS W436-VOID-UNCHANGED
+PASS W436-INSIGHT-AS-BOUGHT
+PASS W436-XP-AS-BOUGHT
+PASS W436-WOUNDS-FROM-EARTH
+PASS W436-WITH-BAD-HEALTH
+PASS W436-TN-AND-INITIATIVE
+PASS W436-INITIATIVE-SCORE-READS-IT
+PASS W436-INITIATIVE-ROLL
+PASS W436-TRAIT-ROLL
+PASS W436-RING-ROLL
+PASS W436-PREREQUISITES-READ-IT
+PASS W436-DISPLAY
+PASS W436-PICK-EIGHT-TRAITS
+PASS W436-PICK-REFUSES-SECOND
+PASS W436-ROW-COST-AND-NOTE
+PASS W436-RENAMED-ROW-DROPPED
+PASS W436-NO-ROW-BLANK-BOX-AS-CORE
+PASS W436-DUPLICATE-NO-REFUND
+PASS W436-DAMAGE-USES-IT
+PASS W436-WITH-BISHAMON
+PASS W436-WITH-BLIND
+PASS H436-NO-CURSE-NO-BUTTON
+PASS H436-ROW-AUTOMATED
+PASS H436-BUTTON
+PASS H436-SPENDS-TWO
+PASS H436-TAKE-BACK-BOTH
+PASS H436-STALE-TAKE-BACK-ORDINARY
+PASS H436-CHECKED-FIRST
+PASS H436-ORDINARY-SPEND-ONE
+PASS H436-LIBRARY-UNCHANGED
+PASS H436-ONE-SPEND-PER-ROUND
+PASS H436-BUTTON-FOLLOWS-ROWS-AND-PIPS
+PASS H436-VOID-CARD-GATES
+PASS H436-TAKE-BACK-STAYS-WITH-SHEET
+PASS W436-NO-PAGE-ERRORS
+45/45 checks passed
+
+== PART I — Phase 4.5.39 Supplement Skill Pickers/skill-pickers-harness.js
+PASS S439-SWITCH
+PASS S439-WH-ASKS
+PASS S439-WH-NEW-ROW
+PASS S439-WH-MAX
+PASS S439-WH-CHANGE-MOVES-RANK
+PASS S439-ZT-ASKS
+PASS S439-ZT-EXISTING-ROW
+PASS S439-ZT-REMOVED-TAKES-BACK
+PASS S439-RE-ASKS
+PASS S439-RE-SCHOOL-SKILL-REFUSED
+PASS S439-RE-PRICE
+PASS S439-RE-ROLL
+PASS S439-RE-ATTACK
+PASS S439-RE-VOID-ANACHRONISM
+PASS S439-RE-ANCESTOR-HENSHIN-PRICE
+PASS S439-WA-ASKS
+PASS S439-WA-CRAFT-ONLY
+PASS S439-WA-OFFERED
+PASS S439-WA-DECLARED-DICE
+PASS S439-NEEDS-A-CHOICE
+PASS S439-SAVED-AND-OPENED
+PASS S439-RENAME-TAKES-BACK
+PASS S439-GREAT-POTENTIAL-UNCHANGED
+PASS S439-NO-PAGE-ERRORS
+
+24/24 checks passed
+
+== PART I — Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js
+PASS UX454-INFO-01 A row carrying an explanatory tooltip gains an info button
+PASS UX454-INFO-02 The title= attribute is KEPT, so desktop hover is unchanged
+PASS UX454-INFO-03 The button contributes NOTHING to textContent (glyph is CSS)
+PASS UX454-INFO-04 It is still announced to assistive tech
+PASS UX454-INFO-05 A short control label (e.g. "Cancel") gets no info button
+PASS UX454-INFO-06 There were short labels present to be skipped — 40 short titles seen
+PASS UX454-RULES-01 Every Consumed tenet card carrying a rule gains an info button
+PASS UX454-RULES-02 And there were rules to reach in the first place — 7 rule tooltips on 7 cards
+PASS UX454-RULES-03 Tapping it opens the info overlay
+PASS UX454-RULES-04 …carrying that option’s own rule text
+PASS UX454-RULES-05 …without selecting the option as a side effect
+PASS UX454-SUPERSEDE-01 Every tenet card still carries its disclosure element in the DOM — [true,true,true,true,true,true,true]
+PASS UX454-SUPERSEDE-02 …but it is hidden wherever this phase added the equivalent button
+PASS UX454-SUPERSEDE-03 Every heading is exactly the option label, nothing appended from the hidden disclosure
+PASS UX454-SUPERSEDE-04 No heading exceeds a clean short label (the original bug produced 60+ chars) — [23,29,23,25,26,24,20]
+PASS UX454-NOSPLIT-01 No tenet name (including "Determination", the longest) breaks mid-word
+PASS UX454-NOSPLIT-02 And none of the fourteen overflow their card horizontally
+PASS UX454-NOSPLIT-03 All fourteen tenets across both entries were actually checked — checked 14
+PASS UX454-WORD-01 The tier step reads "Severity", not "XP refund"
+PASS UX454-WORD-02 Elemental Imbalance drops "refunded" from its rank step
+PASS UX454-WORD-03 The row summary says "value", not "refund"
+PASS UX454-GEOM-01 No configuration option card overflows at 375px
+PASS UX454-GEOM-02 The roll preview label is one line, not three, at 375px
+PASS UX454-GEOM-03 And it is no longer crushed into a narrow column — label width 291px
+PASS UX454-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS UX454-CONTRACT-02 It adds no CSS class the sheet did not already scope
+PASS UX454-REGISTRY-01 The UX pass leaves every registry entry unchanged
+PASS UX454-ERRORS No uncaught browser errors
+┌─────────┐
+│ (index) │
+├─────────┤
+└─────────┘
+
+28/28 checks passed
+UX454_QA_RESULT={"total":28,"passed":28,"failed":0}
+
+== PART I — Phase 4.5.7 Unlucky/disadv-unlucky-harness.js
+PASS UNLUCKY457-PRICE-01 Rank 1 awards 2 XP
+PASS UNLUCKY457-PRICE-02 …and gives one use, shown as 1/1
+PASS UNLUCKY457-PRICE-03 Rank 5 awards 10 XP
+PASS UNLUCKY457-PRICE-04 …and gives FIVE uses, not ten
+PASS UNLUCKY457-PRICE-05 Rank 10 awards 20 XP, so no rank cap was invented
+PASS UNLUCKY457-PRICE-06 The row says the second result is the one that stands — Rank 10 — the GM may force 10 rerolls per session, keeping the second result; 10/10 left Value: 20 XP.
+PASS UNLUCKY457-REROLL-01 Twenty real invocations were driven — ran 20
+PASS UNLUCKY457-REROLL-02 The displayed total is the REROLL every single time
+PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 8 higher, 12 lower of 20
+PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":18,"statedOriginal":18,"reroll":23,"shown":23},{"original":17,"statedOriginal":17,"reroll":40,"shown":40},{"original":16,"statedOriginal":16,"reroll":27,"shown":27}]
+PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":18,"statedOriginal":18,"reroll":17,"shown":17},{"original":23,"statedOriginal":23,"reroll":19,"shown":19},{"original":15,"statedOriginal":15,"reroll":13,"shown":13}]
+PASS UNLUCKY457-USES-01 The count walks 3/3 → 2/3 → 1/3 → 0/3 and then disables
+PASS UNLUCKY457-USES-02 The row shows the pool spent, not the entry vanished
+PASS UNLUCKY457-ISOLATION-01 The only thing an invoke changes on the character is Unlucky’s own counter
+PASS UNLUCKY457-LUCK-01 Both resources offer their own action on the same result — {"setup":"ok","luckBefore":"Spend Luck (2/2)","luckAfter":"Spend Luck (2/2)","unluckyAfter":"GM invokes Unlucky (2/3)"}
+PASS UNLUCKY457-LUCK-02 Spending Unlucky does not touch Luck’s pool
+PASS UNLUCKY457-LUCK-03 …while Unlucky’s own pool went down — GM invokes Unlucky (2/3)
+PASS UNLUCKY457-MANUAL-01 At full, "+" is disabled and "−" is not
+PASS UNLUCKY457-MANUAL-02 Two manual uses bring it to 1/3
+PASS UNLUCKY457-MANUAL-03 And "+" gives one back, for a use recorded in error
+PASS UNLUCKY457-MANUAL-04 At zero, "−" is disabled rather than going negative
+PASS UNLUCKY457-MANUAL-05 Reset restores the full per-session pool
+PASS UNLUCKY457-MANUAL-06 None of the three carries a tooltip icon, and all are still labelled
+PASS UNLUCKY457-PERSIST-01 Reloading restores the rank at its award
+PASS UNLUCKY457-PERSIST-02 …and the uses already spent, not a refilled pool
+PASS UNLUCKY457-GEOM-01 The invoke button spans the block and does not overflow — {"available":291,"wrap":291,"button":291,"buttonHeight":35,"overflowing":false}
+PASS UNLUCKY457-GEOM-02 It fills the modal rather than shrinking to its label — {"available":291,"wrap":291,"button":291,"buttonHeight":35,"overflowing":false}
+PASS UNLUCKY457-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS UNLUCKY457-CONTRACT-02 Unlucky is registered as configurable
+PASS UNLUCKY457-CONTRACT-03 It appears in the shared Session Resources panel — Session ResourcesUnlucky●●● 3/3
+PASS UNLUCKY457-REGISTRY-01 Unlucky leaves every registry entry unchanged
+PASS UNLUCKY457-ERRORS No uncaught browser errors
+┌─────────┐
+│ (index) │
+├─────────┤
+└─────────┘
+
+32/32 checks passed
+UNLUCKY457_QA_RESULT={"total":32,"passed":32,"failed":0}
+
+== PART I — Phase 4.5.9 Doubt/disadv-doubt-harness.js
+PASS DOUBT459-00 Feature 4.59 is present and enabled
+PASS DOUBT459-CONTRACT-01 Doubt is registered as configurable
+PASS DOUBT459-CONTRACT-02 It reuses the existing skillPick shape rather than inventing one
+PASS DOUBT459-CONTRACT-03 This phase adds no configTypes string to 4.5.2 public contract
+PASS DOUBT459-SEAT-01 Phase 1.5 baseline of seven contributors is unchanged
+PASS DOUBT459-SEAT-02 Wrapping the seat did not drop Phase 4.5 own contributions
+PASS DOUBT459-PRICE-01 The award is a fixed 4, not a tier
+PASS DOUBT459-PRICE-02 An empty or non-string Skill is refused
+PASS DOUBT459-PRICE-03 The picker offers this character own School Skills
+PASS DOUBT459-PRICE-04 A configured row prices at 4
+PASS DOUBT459-PRICE-05 The summary states the rule, not just the number — Every roll using Kenjutsu, including a weapon attack with it, requires one extra Raise for no benefit: TN +5, shown as 5 off the reported total. Raise limits and any other Raises you declare still apply. Value: 4 XP.
+PASS DOUBT459-PRICE-06 The badge names the Skill and the TN increase, concisely — Kenjutsu — TN +5
+PASS DOUBT459-SCOPE-SKILL A Skill roll using the chosen Skill loses 5 from its total
+PASS DOUBT459-SCOPE-ATTACK A weapon attack made with that Skill does too
+PASS DOUBT459-SCOPE-DAMAGE DAMAGE is untouched, though its context carries the same skillName
+PASS DOUBT459-SCOPE-OTHERSKILL A Skill roll using a different Skill is untouched
+PASS DOUBT459-SCOPE-RING A ring roll is untouched
+PASS DOUBT459-SCOPE-TRAIT A trait roll is untouched
+PASS DOUBT459-SCOPE-SPELL A spell roll is untouched
+PASS DOUBT459-SCOPE-MANUAL A manual roll is untouched
+PASS DOUBT459-SCOPE-INITIATIVE A initiative roll is untouched
+PASS DOUBT459-SCOPE-NODICE It moves no dice in either direction, only the total
+PASS DOUBT459-TOTAL-01 The displayed total is exactly 5 below the kept dice
+PASS DOUBT459-TOTAL-02 The breakdown names the required Raise, not just a number — 
+      13
+      
+      
+      Ten Dice Rule bonus: +-5 (already included in the total above)
+      Keeping 3 of 5 (suggested 3) − 5 penalty
+      Roll modifiersDoubt: -5 to total — required Raise, no 
+PASS DOUBT459-TOTAL-03 Against a known TN the penalty is applied once, to the total
+PASS DOUBT459-TOTAL-04 The penalty is listed once and declared already-included
+PASS DOUBT459-TOTAL-05 The misleading "Ten Dice Rule bonus" note is hidden, not shown twice — barText=Roll modifiersDoubt: -5 to total — required Raise, no benefit (TN +5)Net -5 — already included in the total
+PASS DOUBT459-STALE-01 The 4 XP is kept rather than silently withdrawn
+PASS DOUBT459-STALE-02 …and the row says exactly why it is not applying — Sincerity is no longer one of your School Skills, so the required Raise is NOT being applied. Your 4 XP is kept — re-pick a current School Skill to restore it. Value: 4 XP.
+PASS DOUBT459-STALE-03 No penalty is applied for a Skill the rule no longer covers
+PASS DOUBT459-STALE-04 A character without that School Skill reads it as stale, award intact
+PASS DOUBT459-STALE-05 …and it applies nothing while in that state
+PASS DOUBT459-PERSIST-01 The Skill and its award survive a reload
+PASS DOUBT459-PERSIST-02 …and it is still applying after the reload
+PASS DOUBT459-GEOM-01 The applying badge reads as a badge rather than as more text — {"h":26,"w":124,"border":"solid","bg":"rgba(163, 51, 42, 0.08)","weight":"600","overflow":false}
+PASS DOUBT459-GEOM-02 A stale Doubt is visually distinct from an applying one — [{"h":26,"w":124,"border":"solid","bg":"rgba(163, 51, 42, 0.08)","weight":"600","overflow":false},{"h":26,"w":215,"border":"dashed","bg":"rgba(0, 0, 0, 0)","weight":"500","overflow":false}]
+PASS DOUBT459-GEOM-03 Neither badge overflows the 375px viewport — [124,215]
+PASS DOUBT459-ERRORS No uncaught browser errors
+┌─────────┐
+│ (index) │
+├─────────┤
+└─────────┘
+
+38/38 checks passed
+DOUBT459_QA_RESULT={"total":38,"passed":38,"failed":0}
+
+== PART I — Phase 4.7.1 Supplemental Advanced Schools/supplemental-harness.js
+PASS SUP-CAPABILITY-14-SCHOOLS
+PASS SUP-CATALOGUE-CLEAN
+PASS SUP-CATALOGUE-TOTAL
+PASS SUP-QUALIFIES-minor-clan-defender
+PASS SUP-THRESHOLD-minor-clan-defender-Agility
+PASS SUP-BELOW-minor-clan-defender-Agility
+PASS SUP-THRESHOLD-minor-clan-defender-Strength
+PASS SUP-BELOW-minor-clan-defender-Strength
+PASS SUP-PROGRESSION-SAVE-minor-clan-defender
+PASS SUP-QUALIFIES-imperial-scion
+PASS SUP-THRESHOLD-imperial-scion-Awareness
+PASS SUP-BELOW-imperial-scion-Awareness
+PASS SUP-THRESHOLD-imperial-scion-Perception
+PASS SUP-BELOW-imperial-scion-Perception
+PASS SUP-THRESHOLD-imperial-scion-Courtier
+PASS SUP-BELOW-imperial-scion-Courtier
+PASS SUP-THRESHOLD-imperial-scion-Etiquette
+PASS SUP-BELOW-imperial-scion-Etiquette
+PASS SUP-PROGRESSION-SAVE-imperial-scion
+PASS SUP-QUALIFIES-kobune-captain
+PASS SUP-THRESHOLD-kobune-captain-Water
+PASS SUP-BELOW-kobune-captain-Water
+PASS SUP-THRESHOLD-kobune-captain-Commerce
+PASS SUP-BELOW-kobune-captain-Commerce
+PASS SUP-THRESHOLD-kobune-captain-Knives
+PASS SUP-BELOW-kobune-captain-Knives
+PASS SUP-THRESHOLD-kobune-captain-Sailing
+PASS SUP-BELOW-kobune-captain-Sailing
+PASS SUP-PROGRESSION-SAVE-kobune-captain
+PASS SUP-QUALIFIES-dark-paragons
+PASS SUP-THRESHOLD-dark-paragons-Lore: Theology
+PASS SUP-BELOW-dark-paragons-Lore: Theology
+PASS SUP-PROGRESSION-SAVE-dark-paragons
+PASS SUP-QUALIFIES-kolat-assassin
+PASS SUP-THRESHOLD-kolat-assassin-Agility
+PASS SUP-BELOW-kolat-assassin-Agility
+PASS SUP-THRESHOLD-kolat-assassin-Reflexes
+PASS SUP-BELOW-kolat-assassin-Reflexes
+PASS SUP-THRESHOLD-kolat-assassin-Acting
+PASS SUP-BELOW-kolat-assassin-Acting
+PASS SUP-THRESHOLD-kolat-assassin-Knives
+PASS SUP-BELOW-kolat-assassin-Knives
+PASS SUP-THRESHOLD-kolat-assassin-Stealth
+PASS SUP-BELOW-kolat-assassin-Stealth
+PASS SUP-PROGRESSION-SAVE-kolat-assassin
+PASS SUP-QUALIFIES-legion-of-two-thousand
+PASS SUP-THRESHOLD-legion-of-two-thousand-Fire
+PASS SUP-BELOW-legion-of-two-thousand-Fire
+PASS SUP-THRESHOLD-legion-of-two-thousand-Water
+PASS SUP-BELOW-legion-of-two-thousand-Water
+PASS SUP-THRESHOLD-legion-of-two-thousand-Battle
+PASS SUP-BELOW-legion-of-two-thousand-Battle
+PASS SUP-THRESHOLD-legion-of-two-thousand-Defense
+PASS SUP-BELOW-legion-of-two-thousand-Defense
+PASS SUP-THRESHOLD-legion-of-two-thousand-Kenjutsu
+PASS SUP-BELOW-legion-of-two-thousand-Kenjutsu
+PASS SUP-PROGRESSION-SAVE-legion-of-two-thousand
+PASS SUP-QUALIFIES-disciples-of-sun-tao
+PASS SUP-THRESHOLD-disciples-of-sun-tao-Fire
+PASS SUP-BELOW-disciples-of-sun-tao-Fire
+PASS SUP-THRESHOLD-disciples-of-sun-tao-Water
+PASS SUP-BELOW-disciples-of-sun-tao-Water
+PASS SUP-THRESHOLD-disciples-of-sun-tao-Battle
+PASS SUP-BELOW-disciples-of-sun-tao-Battle
+PASS SUP-PROGRESSION-SAVE-disciples-of-sun-tao
+PASS SUP-QUALIFIES-children-of-doji
+PASS SUP-THRESHOLD-children-of-doji-Awareness
+PASS SUP-BELOW-children-of-doji-Awareness
+PASS SUP-THRESHOLD-children-of-doji-Void
+PASS SUP-BELOW-children-of-doji-Void
+PASS SUP-THRESHOLD-children-of-doji-Courtier
+PASS SUP-BELOW-children-of-doji-Courtier
+PASS SUP-THRESHOLD-children-of-doji-Etiquette
+PASS SUP-BELOW-children-of-doji-Etiquette
+PASS SUP-THRESHOLD-children-of-doji-Sincerity
+PASS SUP-BELOW-children-of-doji-Sincerity
+PASS SUP-PROGRESSION-SAVE-children-of-doji
+PASS SUP-QUALIFIES-kakita-master-artisan
+PASS SUP-THRESHOLD-kakita-master-artisan-Awareness
+PASS SUP-BELOW-kakita-master-artisan-Awareness
+PASS SUP-THRESHOLD-kakita-master-artisan-Void
+PASS SUP-BELOW-kakita-master-artisan-Void
+PASS SUP-PROGRESSION-SAVE-kakita-master-artisan
+PASS SUP-QUALIFIES-mirumoto-master-sensei
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Air
+PASS SUP-BELOW-mirumoto-master-sensei-Air
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Earth
+PASS SUP-BELOW-mirumoto-master-sensei-Earth
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Void
+PASS SUP-BELOW-mirumoto-master-sensei-Void
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Kenjutsu
+PASS SUP-BELOW-mirumoto-master-sensei-Kenjutsu
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Meditation
+PASS SUP-BELOW-mirumoto-master-sensei-Meditation
+PASS SUP-PROGRESSION-SAVE-mirumoto-master-sensei
+PASS SUP-QUALIFIES-tamori-master-of-the-mountain
+PASS SUP-THRESHOLD-tamori-master-of-the-mountain-Spellcraft
+PASS SUP-BELOW-tamori-master-of-the-mountain-Spellcraft
+PASS SUP-PROGRESSION-SAVE-tamori-master-of-the-mountain
+PASS SUP-QUALIFIES-akodo-tactical-master
+PASS SUP-THRESHOLD-akodo-tactical-master-Water
+PASS SUP-BELOW-akodo-tactical-master-Water
+PASS SUP-THRESHOLD-akodo-tactical-master-Intelligence
+PASS SUP-BELOW-akodo-tactical-master-Intelligence
+PASS SUP-THRESHOLD-akodo-tactical-master-Battle
+PASS SUP-BELOW-akodo-tactical-master-Battle
+PASS SUP-PROGRESSION-SAVE-akodo-tactical-master
+PASS SUP-QUALIFIES-asako-inquisitors
+PASS SUP-THRESHOLD-asako-inquisitors-Void
+PASS SUP-BELOW-asako-inquisitors-Void
+PASS SUP-THRESHOLD-asako-inquisitors-Lore: Law
+PASS SUP-BELOW-asako-inquisitors-Lore: Law
+PASS SUP-THRESHOLD-asako-inquisitors-Lore: Shugenja
+PASS SUP-BELOW-asako-inquisitors-Lore: Shugenja
+PASS SUP-PROGRESSION-SAVE-asako-inquisitors
+PASS SUP-FRINGE-minor-applied-not-picker
+PASS SUP-FRINGE-imperial-status
+PASS SUP-FRINGE-imperial-membership
+PASS SUP-FRINGE-leadership-required
+PASS SUP-FRINGE-paragon-required
+PASS SUP-FRINGE-dark-paragon-required
+PASS SUP-FRINGE-any-trait-five
+PASS SUP-FRINGE-taint-blocks-assassin
+PASS SUP-FRINGE-taint-blocks-inquisitor
+PASS SUP-FRINGE-sensei-not-brash
+PASS SUP-FRINGE-sensei-not-proud
+PASS SUP-FRINGE-art-potential-required
+PASS SUP-FRINGE-art-potential-matches
+PASS SUP-FRINGE-prodigy-required-non-artisan
+PASS SUP-FRINGE-crane-required-non-artisan
+PASS SUP-FRINGE-four-allies-required
+PASS SUP-FRINGE-devotion-four-required
+PASS SUP-FRINGE-inquisitor-wrong-weapon
+PASS SUP-FRINGE-sun-tao-emphasis
+PASS SUP-FRINGE-akodo-emphasis
+PASS SUP-FRINGE-akodo-either-game
+PASS SUP-FRINGE-tamori-three-distinct-rings
+PASS SUP-FRINGE-inquisitor-two-other-rings
+PASS SUP-NEZUMI-RECORDED-ONLY
+PASS SUP-NARRATIVE-CANNOT-BYPASS
+PASS SUP-HONOR-EXACT-dark-paragons
+PASS SUP-HONOR-BELOW-dark-paragons
+PASS SUP-HONOR-EXACT-legion-of-two-thousand
+PASS SUP-HONOR-BELOW-legion-of-two-thousand
+PASS SUP-HONOR-EXACT-children-of-doji
+PASS SUP-HONOR-BELOW-children-of-doji
+PASS SUP-INQUISITOR-AFFINITY-ROUTE
+PASS SUP-INQUISITOR-NO-CASTING-NO-WEAPON
+PASS SUP-INQUISITOR-VOID-REQUIRES-ISHIKEN
+PASS SUP-INQUISITOR-VOID-WITH-ISHIKEN
+PASS SUP-INQUISITOR-HELD-SHUGENJA
+PASS SUP-KAKITA-TRAINED-ALTERNATIVE
+PASS SUP-KAKITA-RANK-ZERO-IS-NOT-TRAINED
+PASS SUP-TAMORI-EXACT-PATTERN
+PASS SUP-WEAPONS-DUPLICATES-DONT-COUNT
+PASS SUP-NO-PAGE-ERRORS
+156/156 checks passed
+
+== PART I — Phase 4.8 Ancestors/ancestors-harness.js
+PASS ANC48-PLACE-IN-CLAN-TAB
+PASS ANC48-PLACE-AFTER-PICKERS
+PASS ANC48-PLACE-HIDDEN-FIELD
+PASS ANC48-PLACE-LABEL
+PASS ANC48-PLACE-NO-CARD-YET
+PASS ANC48-PLACE-NOT-AN-ADVANTAGE
+PASS ANC48-PLACE-INFO
+PASS ANC48-PLACE-INFO-NO-TEXT
+PASS ANC48-PLACE-INFO-MATCHES-ADVANTAGES
+PASS ANC48-LIBRARY-ORDER
+PASS ANC48-LIBRARY-COSTS
+PASS ANC48-LIBRARY-CARD-PAGE
+PASS ANC48-LIBRARY-CARD-SECTIONS
+PASS ANC48-LIBRARY-CARD-FACTION
+PASS ANC48-OFFER-CRAB
+PASS ANC48-OFFER-MANTIS-MINOR
+PASS ANC48-OFFER-SPIDER-OWN
+PASS ANC48-OFFER-NO-CLAN
+PASS ANC48-OFFER-OTHER-REFUSED
+PASS ANC48-OFFER-OTHER-NOT-SAVED
+PASS ANC48-OFFER-PICKER-FALLBACK
+PASS ANC48-OFFER-CRANE-NONE-NEW
+PASS ANC48-OFFER-DRAGON-AGASHA-TWICE
+PASS ANC48-OFFER-IMPERIAL
+PASS ANC48-OFFER-IMPERIAL-GROUP
+PASS ANC48-OFFER-MINOR-BADGER
+PASS ANC48-OFFER-FOX-SHARED
+PASS ANC48-OFFER-RONIN
+PASS ANC48-OFFER-MONK-PICKER
+PASS ANC48-OFFER-MONK-SCHOOL
+PASS ANC48-OFFER-MONK-SCHOOL-GROUPS
+PASS ANC48-OFFER-RONIN-REFUSED-TO-CLAN
+PASS ANC48-COST-HIDA-SPENT
+PASS ANC48-COST-HIDA-REMAIN
+PASS ANC48-COST-BREAKDOWN
+PASS ANC48-COST-SWITCH-KUNI
+PASS ANC48-COST-NONE-AGAIN
+PASS ANC48-COST-VALIDATOR-SEES-IT
+PASS ANC48-COST-AGASHA-TEN
+PASS ANC48-SPIDER-ASKED
+PASS ANC48-SPIDER-CANCEL-NOTHING
+PASS ANC48-SPIDER-CONFIRM-SAVED
+PASS ANC48-SPIDER-GM-NOTE
+PASS ANC48-SPIDER-OWN-NOT-ASKED
+PASS ANC48-SPIDER-GREAT-CLANS-SPIDER-ASKED
+PASS ANC48-FAVOUR-BADGE-TEXT
+PASS ANC48-FAVOUR-LOSE-CANCEL
+PASS ANC48-FAVOUR-LOST
+PASS ANC48-FAVOUR-LOST-GIFT-OFF
+PASS ANC48-FAVOUR-LOST-COST-KEPT
+PASS ANC48-FAVOUR-LOST-GREY
+PASS ANC48-FAVOUR-JEALOUS-LOCKED
+PASS ANC48-FAVOUR-JEALOUS-REFUSED
+PASS ANC48-FAVOUR-REGAIN
+PASS ANC48-FAVOUR-REGAIN-GIFT-ON
+PASS ANC48-FAVOUR-SECOND-LOSS-WARNED
+PASS ANC48-FAVOUR-FINAL
+PASS ANC48-FAVOUR-FINAL-BADGE
+PASS ANC48-FAVOUR-FINAL-NO-TOGGLE
+PASS ANC48-FAVOUR-FINAL-COST-KEPT
+PASS ANC48-FAVOUR-NO-RETURN-WARNED
+PASS ANC48-FAVOUR-NO-RETURN-FINAL-AT-ONCE
+PASS ANC48-FAVOUR-NO-RETURN-BADGE
+PASS ANC48-FAVOUR-NO-RETURN-LOCKED
+PASS ANC48-SAVE-COLLECT
+PASS ANC48-SAVE-ROUND-TRIP
+PASS ANC48-SAVE-ROUND-TRIP-XP
+PASS ANC48-SAVE-EXPORT-FILE
+PASS ANC48-SAVE-OLD-SAVE-CLEARS
+PASS ANC48-SAVE-REFUSED-KEEPS
+PASS ANC48-SAVE-INVALID-WARNED
+PASS ANC48-SAVE-INVALID-FREE
+PASS ANC48-SAVE-RESET-CLEARS
+PASS ANC48-SAVE-SESSION-ROUND-TRIP
+PASS ANC48-SAVE-NO-RETURN-REGAINED-INVALID
+PASS ANC48-AUTO-01-Doji
+PASS ANC48-AUTO-02-Doji
+PASS ANC48-AUTO-03-Doji
+PASS ANC48-AUTO-04-Doji
+PASS ANC48-AUTO-05-AgashaKitsuki
+PASS ANC48-AUTO-06-AgashaKitsuki
+PASS ANC48-AUTO-07-AgashaKitsuki
+PASS ANC48-AUTO-08-Mirumoto
+PASS ANC48-AUTO-09-Mirumoto
+PASS ANC48-AUTO-10-Mirumoto
+PASS ANC48-AUTO-11-Akodo
+PASS ANC48-AUTO-12-Akodo
+PASS ANC48-AUTO-13-Akodo
+PASS ANC48-AUTO-14-Akodo
+PASS ANC48-AUTO-15-Ikoma
+PASS ANC48-AUTO-16-Ikoma
+PASS ANC48-AUTO-17-Ikoma
+PASS ANC48-AUTO-18-KaimetsuUo
+PASS ANC48-AUTO-19-KaimetsuUo
+PASS ANC48-AUTO-20-Shiba
+PASS ANC48-AUTO-21-Shiba
+PASS ANC48-AUTO-22-Bayushi
+PASS ANC48-AUTO-23-Bayushi
+PASS ANC48-AUTO-24-Bayushi
+PASS ANC48-AUTO-25-Shosuro
+PASS ANC48-AUTO-26-Shosuro
+PASS ANC48-AUTO-27-Shosuro
+PASS ANC48-AUTO-28-KuniYori
+PASS ANC48-AUTO-29-KuniYori
+PASS ANC48-AUTO-30-Shinjo
+PASS ANC48-AUTO-31-Shinjo
+PASS ANC48-AUTO-32-Hida
+PASS ANC48-AUTO-33-Moto
+PASS ANC48-AUTO-34-AgashaKitsuki
+PASS ANC48-AUTO-35-Hiruma
+PASS ANC48-AUTO-36-Hiruma
+PASS ANC48-AUTO-37-Hiruma
+PASS ANC48-AUTO-38-Kaiu
+PASS ANC48-AUTO-39-Agasha
+PASS ANC48-AUTO-40-Agasha
+PASS ANC48-AUTO-41-Agashamostfavoured
+PASS ANC48-AUTO-42-Kitsu
+PASS ANC48-AUTO-43-Kitsu
+PASS ANC48-AUTO-44-Yogo
+PASS ANC48-AUTO-45-Yogo
+PASS ANC48-AUTO-46-Otaku
+PASS ANC48-AUTO-47-ChudaBikimi
+PASS ANC48-AUTO-48-SunTao
+PASS ANC48-AUTO-49-SunTao
+PASS ANC48-AUTO-50-Miyuko
+PASS ANC48-AUTO-51-Mizumoto
+PASS ANC48-AUTO-52-Mizumoto
+PASS ANC48-AUTO-53-Mizumoto
+PASS ANC48-AUTO-NEVER-DAMAGE
+PASS ANC48-AUTO-NONE-NO-LEAK
+PASS ANC48-TOTALS-JUNZO-SPELL
+PASS ANC48-TOTALS-JUNZO-MAHO
+PASS ANC48-TOTALS-JUNZO-NOT-SKILLS
+PASS ANC48-TOTALS-JUNZO-NOTHING-TO-COUNT
+PASS ANC48-SHOWN-TSI-SWORDSMITHING
+PASS ANC48-SHOWN-TSI-OTHER-CRAFT
+PASS ANC48-SHOWN-KAZE-FREE-RAISE
+PASS ANC48-SHOWN-KAZE-NOT-ARMED
+PASS ANC48-SHOWN-SHOWN-MOVES-NO-DICE
+PASS ANC48-SHOWN-KAZE-RANKS-SHORT
+PASS ANC48-IUCHI-DEFICIENT-FIRE
+PASS ANC48-IUCHI-AFFINITY-WATER
+PASS ANC48-IUCHI-OTHER-AIR
+PASS ANC48-IUCHI-MATCHES-SHEET
+PASS ANC48-IUCHI-NO-DEFICIENCY-NOTHING
+PASS ANC48-DECLARE-01-kuni-cast-OFFERED
+PASS ANC48-DECLARE-01-kuni-cast-APPLIED
+PASS ANC48-DECLARE-02-kitsuki-lie-OFFERED
+PASS ANC48-DECLARE-02-kitsuki-lie-APPLIED
+PASS ANC48-DECLARE-03-akodo-battle-OFFERED
+PASS ANC48-DECLARE-03-akodo-battle-APPLIED
+PASS ANC48-DECLARE-04-kaimetsu-provoked-OFFERED
+PASS ANC48-DECLARE-04-kaimetsu-provoked-APPLIED
+PASS ANC48-DECLARE-05-kaimetsu-improvised-OFFERED
+PASS ANC48-DECLARE-05-kaimetsu-improvised-APPLIED
+PASS ANC48-DECLARE-06-gusai-conceal-OFFERED
+PASS ANC48-DECLARE-06-gusai-conceal-APPLIED
+PASS ANC48-DECLARE-07-asako-ally-OFFERED
+PASS ANC48-DECLARE-07-asako-ally-APPLIED
+PASS ANC48-DECLARE-08-shosuro-deceit-OFFERED
+PASS ANC48-DECLARE-08-shosuro-deceit-APPLIED
+PASS ANC48-DECLARE-09-yori-deceit-OFFERED
+PASS ANC48-DECLARE-09-yori-deceit-APPLIED
+PASS ANC48-DECLARE-10-atarasi-strike-OFFERED
+PASS ANC48-DECLARE-10-atarasi-strike-APPLIED
+PASS ANC48-DECLARE-11-moto-resist-OFFERED
+PASS ANC48-DECLARE-11-moto-resist-APPLIED
+PASS ANC48-DECLARE-12-shinjo-enigma-OFFERED
+PASS ANC48-DECLARE-12-shinjo-enigma-APPLIED
+PASS ANC48-DECLARE-13-shinjo-honesty-OFFERED
+PASS ANC48-DECLARE-13-shinjo-honesty-APPLIED
+PASS ANC48-DECLARE-14-yamatsu-resist-OFFERED
+PASS ANC48-DECLARE-14-yamatsu-resist-APPLIED
+PASS ANC48-DECLARE-15-hitomi-resist-OFFERED
+PASS ANC48-DECLARE-15-hitomi-resist-APPLIED
+PASS ANC48-DECLARE-16-isawa-research-OFFERED
+PASS ANC48-DECLARE-16-isawa-research-APPLIED
+PASS ANC48-DECLARE-17-yogo-wards-OFFERED
+PASS ANC48-DECLARE-17-yogo-wards-APPLIED
+PASS ANC48-DECLARE-18-otaku-male-OFFERED
+PASS ANC48-DECLARE-18-otaku-male-APPLIED
+PASS ANC48-DECLARE-19-bikimi-slot-OFFERED
+PASS ANC48-DECLARE-19-bikimi-slot-APPLIED
+PASS ANC48-DECLARE-20-otomo-courtier-OFFERED
+PASS ANC48-DECLARE-20-otomo-courtier-APPLIED
+PASS ANC48-DECLARE-21-seppun-void-OFFERED
+PASS ANC48-DECLARE-21-seppun-void-APPLIED
+PASS ANC48-DECLARE-22-fureheshu-strength-OFFERED
+PASS ANC48-DECLARE-22-fureheshu-strength-APPLIED
+PASS ANC48-DECLARE-23-iongi-void-OFFERED
+PASS ANC48-DECLARE-23-iongi-void-APPLIED
+PASS ANC48-DECLARE-24-heichi-powerful-OFFERED
+PASS ANC48-DECLARE-24-heichi-powerful-APPLIED
+PASS ANC48-DECLARE-25-kuyuden-peace-OFFERED
+PASS ANC48-DECLARE-25-kuyuden-peace-APPLIED
+PASS ANC48-DECLARE-26-reichin-fear-OFFERED
+PASS ANC48-DECLARE-26-reichin-fear-APPLIED
+PASS ANC48-DECLARE-27-reichin-bloodspeaker-OFFERED
+PASS ANC48-DECLARE-27-reichin-bloodspeaker-APPLIED
+PASS ANC48-DECLARE-28-garin-loyalties-OFFERED
+PASS ANC48-DECLARE-28-garin-loyalties-APPLIED
+PASS ANC48-DECLARE-29-suzume-persuade-OFFERED
+PASS ANC48-DECLARE-29-suzume-persuade-APPLIED
+PASS ANC48-DECLARE-30-kasuga-duty-OFFERED
+PASS ANC48-DECLARE-30-kasuga-duty-APPLIED
+PASS ANC48-DECLARE-NOT-ON-OTHER-ROLLS
+PASS ANC48-DECLARE-ASAKO-NOT-KENJUTSU
+PASS ANC48-DECLARE-LOST-NOTHING-OFFERED
+PASS ANC48-DECLARE-PROVOKED-DROPS-AUTO
+PASS ANC48-DECLARE-KAKITA-NOTHING-BEFORE
+PASS ANC48-DECLARE-BAYUSHI-NOTHING-TO-TICK
+PASS ANC48-DECLARE-KITSUKI-NEEDS-THE-VOID
+PASS ANC48-DECLARE-SEPPUN-NOT-WITH-THE-VOID
+PASS ANC48-DECLARE-IONGI-NOT-WITH-THE-VOID
+PASS ANC48-DECLARE-FURESHU-ONLY-WHEN-HIGHER
+PASS ANC48-DECLARE-BIKIMI-SHUGENJA-ONLY
+PASS ANC48-DECLARE-YOGO-LISTED-WARDS-NOT-TICKED
+PASS ANC48-DECLARE-REICHIN-NEVER-BOTH
+PASS ANC48-DECLARE-RESIST-NOT-ON-AGILITY
+PASS ANC48-DECLARE-PAID-NOTE
+PASS ANC48-VOID-BAYUSHI-WITHOUT
+PASS ANC48-VOID-BAYUSHI-WITH
+PASS ANC48-VOID-KAIU-WITH
+PASS ANC48-VOID-SAIBANKAN-PERCEPTION
+PASS ANC48-VOID-SAIBANKAN-LORE-LAW
+PASS ANC48-VOID-SAIBANKAN-NOT-AWARENESS
+PASS ANC48-VOID-KAIU-REAL-POOL
+PASS ANC48-VOID-KAIU-REAL-ONE-VOID
+PASS ANC48-PAY-KUNI-POOL
+PASS ANC48-PAY-KUNI-VOID-SPENT
+PASS ANC48-PAY-KUNI-SESSION-MARKED
+PASS ANC48-PAY-KUNI-SECOND-ASKED
+PASS ANC48-PAY-KUNI-SECOND-WITHOUT
+PASS ANC48-PAY-KUNI-SECOND-NO-VOID-SPENT
+PASS ANC48-PAY-KUNI-CANCEL-ROLLS-NOTHING
+PASS ANC48-PAY-KUNI-CANCEL-NOTHING-SPENT
+PASS ANC48-PAY-FURESHU-POOL
+PASS ANC48-PAY-FURESHU-VOID-SPENT
+PASS ANC48-PAY-SEPPUN-POOL
+PASS ANC48-PAY-SEPPUN-NO-VOID-SPENT
+PASS ANC48-PAY-SEPPUN-SESSION-MARKED
+PASS ANC48-PAY-SEPPUN-GONE-WHEN-VOID-TICKED
+PASS ANC48-PAY-NOTHING-TAKEN-ON-PREVIEW-CANCEL
+PASS ANC48-PAY-IONGI-ROUND-SPEND
+PASS ANC48-PAY-IONGI-REFUSED-AFTER-VOID
+PASS ANC48-PAY-ATARASI-ASKED
+PASS ANC48-PAY-ATARASI-VOID-PAID
+PASS ANC48-PAY-ATARASI-POOL
+PASS ANC48-PAY-ATARASI-DAMAGE-THIS-ROUND
+PASS ANC48-PAY-ATARASI-DAMAGE-NEXT-ROUND
+PASS ANC48-PAY-ATARASI-TAINT-NO-VOID
+PASS ANC48-PAY-ATARASI-X-CANCELS
+PASS ANC48-PAY-BIKIMI-WITH-SLOT
+PASS ANC48-PAY-BIKIMI-WITHOUT-SLOT
+PASS ANC48-AFTER-KAKITA-BLOCK
+PASS ANC48-AFTER-KAKITA-PAYS
+PASS ANC48-AFTER-KAKITA-BETTER-KEPT
+PASS ANC48-AFTER-KAKITA-POOL-PLUS-ONE
+PASS ANC48-AFTER-KAKITA-FIRST-KEPT
+PASS ANC48-AFTER-KAKITA-ARTISAN
+PASS ANC48-AFTER-KAKITA-NOT-KENJUTSU
+PASS ANC48-AFTER-KAKITA-NO-VOID-DISABLED
+PASS ANC48-AFTER-SUNTAO-BLOCK
+PASS ANC48-AFTER-SUNTAO-SUCCESS-REFUSED
+PASS ANC48-AFTER-SUNTAO-SUCCESS-NOTHING-SPENT
+PASS ANC48-AFTER-SUNTAO-ADDS-DIE
+PASS ANC48-AFTER-SUNTAO-KEEPS-YOUR-DICE
+PASS ANC48-AFTER-SUNTAO-PAYS
+PASS ANC48-AFTER-SUNTAO-NOT-COURTIER
+PASS ANC48-AFTER-SUNTAO-NOT-RESORTED
+PASS ANC48-AFTER-TOKU-BLOCK-ANY-ROLL
+PASS ANC48-AFTER-TOKU-HIGHER-KEPT
+PASS ANC48-AFTER-TOKU-SESSION-MARKED
+PASS ANC48-AFTER-TOKU-SPENT-DISABLED
+PASS ANC48-AFTER-TOKU-RESET-READY
+PASS ANC48-AFTER-LOST-NOTHING-AFTER
+PASS ANC48-SESSION-SEPPUN-LINE
+PASS ANC48-SESSION-USE-NOW-ASKS
+PASS ANC48-SESSION-USE-NOW-MARKS
+PASS ANC48-SESSION-USE-NOW-GONE
+PASS ANC48-SESSION-RESET
+PASS ANC48-SESSION-IONGI-USE-NOW-ROUND
+PASS ANC48-SESSION-QUICK-ACCESS-LISTS
+PASS ANC48-SESSION-NO-LINE-FOR-OTHERS
+PASS ANC48-DAMAGE-HIDA-KATANA
+PASS ANC48-DAMAGE-HIDA-BOW
+PASS ANC48-DAMAGE-HIDA-UNARMED
+PASS ANC48-DAMAGE-ROLL-DICE
+PASS ANC48-DAMAGE-ROLL-NOTE
+PASS ANC48-DAMAGE-IKOMA-UNARMED
+PASS ANC48-DAMAGE-IKOMA-KATANA
+PASS ANC48-DAMAGE-NO-ANCESTOR-NOTE
+PASS ANC48-DAMAGE-ATARASI-NOTHING-UNPAID
+PASS ANC48-ARMOR-SHIBA-ADDS-INT
+PASS ANC48-ARMOR-LOST-REMOVES
+PASS ANC48-ARMOR-OTHERS-NOTHING
+PASS ANC48-FLAGS-KAKITA-LOW
+PASS ANC48-FLAGS-KAKITA-OK
+PASS ANC48-FLAGS-AKODO-LOW
+PASS ANC48-FLAGS-BAYUSHI-HIGH
+PASS ANC48-FLAGS-ATARASI-HIGH
+PASS ANC48-FLAGS-KUNI-TAINT
+PASS ANC48-FLAGS-NEVER-AUTO-LOST
+PASS ANC48-FLAGS-BAYUSHI-UNTRAINED
+PASS ANC48-FLAGS-OTHER-CLAN-NOT-APPLIED
+PASS ANC48-FLAGS-HIRUMA-ABOVE
+PASS ANC48-FLAGS-HIRUMA-AT-FIVE
+PASS ANC48-FLAGS-HITOMI-LOW
+PASS ANC48-FLAGS-TOKU-LOW
+PASS ANC48-FLAGS-YAMATSU-TAINT
+PASS ANC48-FLAGS-KAETERU-WORLDLY
+PASS ANC48-FLAGS-KAETERU-THREE-IS-FINE
+PASS ANC48-CHECKS-KITSU-OTHER-FAMILY
+PASS ANC48-CHECKS-KITSU-OWN-FAMILY
+PASS ANC48-CHECKS-KITSU-NO-FAMILY-YET
+PASS ANC48-CHECKS-OSUSUKI-FOX-KITSUNE
+PASS ANC48-CHECKS-OTAKU-UTAKU
+PASS ANC48-CHECKS-OTAKU-GENDER-NOTE
+PASS ANC48-CHECKS-IUCHI-NOT-SHUGENJA
+PASS ANC48-CHECKS-IUCHI-SHUGENJA
+PASS ANC48-CHECKS-YAMATSU-NOT-TATTOOED
+PASS ANC48-CHECKS-YAMATSU-TATTOOED
+PASS ANC48-CHECKS-BASSO-OTHER-ORDER
+PASS ANC48-CHECKS-BASSO-SHINMAKI
+PASS ANC48-CHECKS-SAKURA-FORTUNIST
+PASS ANC48-CHECKS-SAKURA-SHINTAO
+PASS ANC48-CHECKS-KAZE-SHINTAO
+PASS ANC48-CHECKS-MIYUKO-NOT-SHUGENJA
+PASS ANC48-CHECKS-NEVER-BLOCKS
+PASS ANC48-NOTES-MIYA-DAYS
+PASS ANC48-NOTES-CHIRORU-SIBLINGS
+PASS ANC48-NOTES-YOGO-CURSE-MISSING
+PASS ANC48-NOTES-YOGO-CURSE-PRESENT
+PASS ANC48-NOTES-AGASHA-TRANSMUTE
+PASS ANC48-NOTES-BOOK-PAGE-ON-CARD
+PASS ANC48-PLAY-PICK-LOCKED
+PASS ANC48-PLAY-CHANGE-BLOCKED
+PASS ANC48-PLAY-BADGE-LIVE
+PASS ANC48-PLAY-INFO-LIVE
+PASS ANC48-PLAY-UNLOCKED-AGAIN
+PASS ANC48-PLAY-SESSION-LIVE
+PASS ANC48-WIZARD-BLOCK
+PASS ANC48-WIZARD-CARDS
+PASS ANC48-WIZARD-PICKED
+PASS ANC48-WIZARD-SAME-AS-SHEET
+PASS ANC48-WIZARD-DETAILS
+PASS ANC48-WIZARD-REVIEW-ROW
+PASS ANC48-WIZARD-NONE-CARD
+PASS ANC48-END-NO-ERRORS
+349/349 checks passed
+
+== PART K — Phase 11.2 Creation Wizard/wizard-harness.js
+Creation wizard checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-15b-g2-preview-fbc3l10a\site\index.html
+PASS CW-ENABLED
+PASS CW-OPENS-ON-CREATE
+PASS CW-COVERS-VIEWPORT
+PASS CW-NAME-GATE
+PASS CW-NAME-WRITES-SHEET
+PASS CW-CLAN-FROM-SHEET
+PASS CW-CLAN-GATE
+PASS CW-CLAN-MONS
+PASS CW-CLAN-SETS-SHEET
+PASS CW-FAMILY-FROM-SHEET
+PASS CW-FAMILY-GATE
+PASS CW-FAMILY-APPLIED
+PASS CW-SCHOOL-FROM-SHEET
+PASS CW-SCHOOL-QUESTION-ABOVE
+PASS CW-SCHOOL-CANCEL-NOT-APPLIED
+PASS CW-SCHOOL-APPLIED
+PASS CW-SCHOOL-SUMMARY-FIELDS
+PASS CW-TRAIT-FLOOR
+PASS CW-TRAIT-WRITES-SHEET
+PASS CW-VOID-THROUGH-STEPPER
+PASS CW-OVERSPEND-BLOCKS
+PASS CW-OVERSPEND-CLEARS
+PASS CW-NO-SIDEWAYS-SCROLL
+PASS CW-REVIEW-FINDINGS
+PASS CW-REVIEW-SUMMARY
+PASS CW-FINISH-LABEL
+PASS CW-FINISH-BLOCKED-BY-ERROR
+PASS CW-BACK-KEEPS-SCHOOL
+PASS CW-FINISH-SAVED
+PASS CW-NO-PAGE-ERRORS-WALK
+PASS CW-SAME-AS-BY-HAND
+PASS CW-BACK-TO-CLAN
+PASS CW-CLAN-CHANGE-CANCEL-KEEPS
+PASS CW-CLAN-CHANGE-STARTS-OVER
+PASS CW-NEW-CLAN-FAMILIES
+PASS CW-NO-PAGE-ERRORS-CLAN-CHANGE
+PASS CW-MINOR-GATE
+PASS CW-MINOR-FAMILIES
+PASS CW-BROTHERHOOD-NO-FAMILY
+PASS CW-BROTHERHOOD-SCHOOLS
+PASS CW-EXIT-STAY
+PASS CW-EXIT-KEEPS-CHARACTER
+PASS CW-NO-PAGE-ERRORS-EXIT
+
+43/43 checks passed
+
+== PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js
+Wizard Skills and Advantages checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-15b-g2-preview-fbc3l10a\site\index.html
+PASS CW1-ENABLED
+PASS CW1-STEPS-INSERTED
+PASS CW1-SKILLS-STEP
+PASS CW1-SLOTS-MATCH-VALIDATOR
+PASS CW1-SLOT-LORE-NARROWED
+PASS CW1-SLOT-HIGH-NARROWED
+PASS CW1-EXTRA-ALL-SKILLS
+PASS CW1-SUBJECT-REQUIRED
+PASS CW1-SLOT-ROW
+PASS CW1-CHOOSE-AGAIN-REMOVES
+PASS CW1-BOTH-SLOTS
+PASS CW1-SKILL-FLOOR
+PASS CW1-RAISE-SKILL
+PASS CW1-ADD-EXTRA
+PASS CW1-OVERSPEND-BLOCKS
+PASS CW1-OVERSPEND-CLEARS
+PASS CW1-NO-SIDEWAYS-SCROLL
+PASS CW1-BACK-TO-SCHOOL
+PASS CW1-SCHOOL-CHANGE-CLEARS-SLOTS
+PASS CW1-NO-PAGE-ERRORS-SKILLS
+PASS CW1-ADV-STEP
+PASS CW1-ADV-MIRROR
+PASS CW1-DISADV-MIRROR
+PASS CW1-ENTRIES-ADDED
+PASS CW1-CONFIG-ASKS-ABOVE
+PASS CW1-CONFIG-CANCELLED-FREES-NEXT
+PASS CW1-TOUCH-TARGETS
+PASS CW1-REMOVE
+PASS CW1-REVIEW
+PASS CW1-FINISH-STATUS
+PASS CW1-NO-PAGE-ERRORS-ADV
+PASS CW1-SAME-AS-BY-HAND
+     differing keys: skills
+
+32/32 checks passed
+
+== PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js
+Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-15b-g2-preview-fbc3l10a\site\index.html
+PASS CW2-ENABLED
+PASS CW2-BUSHI-NO-EXTRA-STEPS
+PASS CW2-KAKITA-SLOT
+PASS CW2-KAKITA-OPTIONS
+PASS CW2-NUDGE-FIRST-NEXT
+PASS CW2-NUDGE-SECOND-NEXT-LEAVES
+PASS CW2-REVIEW-LISTS-OPEN
+PASS CW2-NUDGE-RESETS
+PASS CW2-KAKITA-FILLED
+PASS CW2-NO-NUDGE-WHEN-CHOSEN
+PASS CW2-REVIEW-ALL-MADE
+PASS CW2-NO-PAGE-ERRORS-KAKITA
+     swept 105 Schools, 114 free choices
+PASS CW2-LIBRARY-SWEPT
+PASS CW2-LIBRARY-EVERY-CATEGORY-READ
+PASS CW2-LIBRARY-NO-SPLIT-CHOICE
+PASS CW2-FORM-JOINED
+PASS CW2-FORM-COUNT
+PASS CW2-FORM-NOT-LOW
+PASS CW2-FORM-FROM-LIST
+PASS CW2-FORM-BUGEI
+PASS CW2-SHUGENJA-STEPS
+PASS CW2-SPELLS-STEP
+PASS CW2-SPELL-COUNT-NOT-GUESSED
+PASS CW2-SPELL-OPTIONS
+PASS CW2-SPELLS-NUDGE
+PASS CW2-SPELL-ADDED
+PASS CW2-SPELL-LEAVES-PICKER
+PASS CW2-SPELL-NO-NUDGE-ONCE-CHOSEN
+PASS CW2-SPELL-REMOVED-WITH-SCROLL
+PASS CW2-TOUCH-TARGETS-SPELLS
+PASS CW2-NO-SIDEWAYS-SCROLL
+PASS CW2-SPELLS-STEP-GOES
+PASS CW2-NO-PAGE-ERRORS-SPELLS
+PASS CW2-MONK-STEPS
+PASS CW2-MONK-TWO-SLOTS
+PASS CW2-LORE-PLACEHOLDER-BEFORE
+PASS CW2-MONK-NUDGE-LISTS-ALL
+PASS CW2-TOUCH-TARGETS-LORE
+PASS CW2-LORE-NAMED
+PASS CW2-LORE-CHOOSE-AGAIN
+PASS CW2-KIHO-STEP
+PASS CW2-KIHO-NOTE
+PASS CW2-KIHO-OPTIONS
+PASS CW2-KIHO-FREE-PICK
+PASS CW2-KIHO-NUDGE
+PASS CW2-TOUCH-TARGETS-KIHO
+PASS CW2-KIHO-REMOVED
+PASS CW2-REVIEW-LISTS-KIHO
+PASS CW2-LORE-GOES-WITH-SCHOOL
+PASS CW2-NO-PAGE-ERRORS-MONK
+PASS CW2-SAME-AS-BY-HAND-SPELLS
+     differing keys: equip, tech
+PASS CW2-SAME-AS-BY-HAND-MONK
+     differing keys: skills
+
+52/52 checks passed
+
+== PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js
+Wizard starting spells checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-15b-g2-preview-fbc3l10a\site\index.html
+PASS CW3-ENABLED
+PASS CW3-TABLE-ONLY-QUOTED
+PASS CW3-GIVEN-ADDED
+PASS CW3-ALLOTMENT-SHOWN
+PASS CW3-QUOTA-BOXES
+PASS CW3-PICKER-WORDING
+PASS CW3-OPTIONS-MATCH-SHEET-WATER
+PASS CW3-OPTIONS-MATCH-SHEET-AIR
+PASS CW3-OPTIONS-MATCH-SHEET-EARTH
+PASS CW3-AFFINITY-AND-DEFICIENCY
+PASS CW3-VALIDATOR-NOTES-IT
+PASS CW3-NUDGE
+PASS CW3-QUOTAS-FILLED
+PASS CW3-GIVEN-NOT-COUNTED
+PASS CW3-SCROLL-FOR-EVERY-SPELL
+PASS CW3-VALIDATOR-CLEARS
+PASS CW3-NO-NUDGE-WHEN-DONE
+PASS CW3-TOUCH-TARGETS
+PASS CW3-REMOVE-REOPENS
+PASS CW3-REVIEW-LISTS-OPEN
+PASS CW3-NO-PAGE-ERRORS
+PASS CW3-CHOSEN-COUNT
+PASS CW3-GIVEN-TAKEN-BACK
+PASS CW3-UNRECORDED-SCHOOL-UNCHANGED
+PASS CW3-SAME-AS-BY-HAND
+     differing keys: equip, tech
+
+25/25 checks passed
+
+== PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js
+Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-15b-g2-preview-fbc3l10a\site\index.html
+PASS CW5-ENABLED
+PASS CW5-LINE-AGASHA-SHUGENJA
+PASS CW5-LINE-ASAHINA-SHUGENJA
+PASS CW5-LINE-CHUDA-SHUGENJA
+PASS CW5-LINE-CHUDA-SHUGENJA-SNAKE
+PASS CW5-LINE-FUZAKE-SHUGENJA
+PASS CW5-LINE-HORIUCHI-SHUGENJA
+PASS CW5-LINE-ISAWA-SHUGENJA
+PASS CW5-LINE-IUCHI-SHUGENJA
+PASS CW5-LINE-KITSUNE-SHUGENJA
+PASS CW5-LINE-KOMORI-SHUGENJA
+PASS CW5-LINE-KUNI-SHUGENJA
+PASS CW5-LINE-MOSHI-SHUGENJA
+PASS CW5-LINE-MOTO-DEATH-PRIEST-SHUGENJA
+PASS CW5-LINE-NINUBE-SHUGENJA
+PASS CW5-LINE-SEPPUN-SHUGENJA
+PASS CW5-LINE-SOSHI-SHUGENJA
+PASS CW5-LINE-TAMORI-SHUGENJA
+PASS CW5-LINE-TONBO-SHUGENJA
+PASS CW5-LINE-YOGO-WARDMASTER-SHUGENJA
+PASS CW5-LINE-YORITOMO-SHUGENJA
+PASS CW5-KITSU-UNCHANGED
+PASS CW5-EVERY-SCHOOL-RECORDED
+PASS CW5-NAMED-SPELLS-EXIST
+PASS CW5-YOGO-WARDS
+PASS CW5-ORDER-INDEPENDENT
+PASS CW5-EARLIER-BOXES-FIRST
+PASS CW5-CHUDA-DEFICIENCY
+PASS CW5-NO-PAGE-ERRORS-TABLE
+PASS CW5-WALK-AGASHA-SHUGENJA
+PASS CW5-WALK-ASAHINA-SHUGENJA
+PASS CW5-WALK-CHUDA-SHUGENJA
+PASS CW5-WALK-CHUDA-SHUGENJA-SNAKE
+PASS CW5-WALK-FUZAKE-SHUGENJA
+PASS CW5-WALK-HORIUCHI-SHUGENJA
+PASS CW5-WALK-ISAWA-SHUGENJA
+PASS CW5-WALK-IUCHI-SHUGENJA
+PASS CW5-WALK-KITSUNE-SHUGENJA
+PASS CW5-WALK-KOMORI-SHUGENJA
+PASS CW5-WALK-KUNI-SHUGENJA
+PASS CW5-WALK-MOSHI-SHUGENJA
+PASS CW5-WALK-MOTO-DEATH-PRIEST-SHUGENJA
+PASS CW5-WALK-NINUBE-SHUGENJA
+PASS CW5-WALK-SEPPUN-SHUGENJA
+PASS CW5-WALK-SOSHI-SHUGENJA
+PASS CW5-WALK-TAMORI-SHUGENJA
+PASS CW5-WALK-TONBO-SHUGENJA
+PASS CW5-WALK-YOGO-WARDMASTER-SHUGENJA
+PASS CW5-WALK-YORITOMO-SHUGENJA
+PASS CW5-ISAWA-OPTIONS-MATCH-SHEET
+PASS CW5-ISAWA-FIRST-SPELL
+PASS CW5-ISAWA-OPEN
+PASS CW5-VALIDATOR-NOTES-IT
+PASS CW5-ISAWA-BEST-FIT
+PASS CW5-ISAWA-OPTIONS-SHRINK
+PASS CW5-ISAWA-FILLED
+PASS CW5-SCROLL-FOR-EVERY-SPELL
+PASS CW5-VALIDATOR-CLEARS
+PASS CW5-TOUCH-TARGETS
+PASS CW5-REMOVE-REOPENS
+PASS CW5-REVIEW-LISTS-OPEN
+PASS CW5-NO-PAGE-ERRORS-ISAWA
+PASS CW5-CHUDA-OPTIONS-MATCH-SHEET
+PASS CW5-CHUDA-MAHO-COUNTED
+PASS CW5-NO-PAGE-ERRORS-CHUDA
+PASS CW5-YOGO-OPTIONS-MATCH-SHEET
+PASS CW5-YOGO-BOXES
+PASS CW5-NO-PAGE-ERRORS-YOGO
+PASS CW5-SEPPUN-CORRECTED
+PASS CW5-FUZAKE-PATH-GIVEN
+PASS CW5-SAME-AS-BY-HAND
+     differing keys: equip, tech
+
+71/71 checks passed
+
+== PART K — Phase 12.4 Play Mode Skills/skills-harness.js
+Skills in Play (part 5) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-15b-g2-preview-fbc3l10a\site\index.html
+PASS SK124-ENABLED
+PASS SK124-MANAGEMENT-RANK-TYPES
+PASS SK124-MANAGEMENT-ADD-SKILL-WORKS
+PASS SK124-PLAY-ROW-CONTROLS-LOCKED
+PASS SK124-PLAY-RANK-TYPING-BLOCKED
+PASS SK124-PLAY-ADD-SKILL-INERT
+PASS SK124-PLAY-REMOVE-INERT
+PASS SK124-PLAY-SCHOOL-TICK-INERT
+PASS SK124-PLAY-D10-ROLLS
+PASS SK124-PLAY-ROLL-AND-INFO-NOT-LOCKED
+PASS SK124-PLAY-NEW-ROW-LOCKED
+PASS SK124-PLAY-SHOWS-PLAIN-VALUES
+PASS SK124-BACK-TO-MANAGEMENT
+PASS SK124-MANAGEMENT-REMOVE-WORKS
+PASS SK124-NO-PAGE-ERRORS-LOCK
+PASS SK124-OPEN-FROM-LIST-LOCKS-THE-TAB
+PASS SK124-NO-PAGE-ERRORS-LIST
+
+17/17 checks passed
+
+== PART K — Phase 12.5 Play Mode Advantages and Disadvantages/advantages-harness.js
+PASS PM125-ENABLED
+PASS PM125-FIXTURE-ELEMENTAL-BLESSING
+PASS PM125-MANAGEMENT-OPEN-ELEMENTAL-BLESSING
+PASS PM125-FIXTURE-GENTRY
+PASS PM125-MANAGEMENT-OPEN-GENTRY
+PASS PM125-FIXTURE-ALLIES
+PASS PM125-MANAGEMENT-OPEN-ALLIES
+PASS PM125-FIXTURE-LUCK
+PASS PM125-MANAGEMENT-OPEN-LUCK
+PASS PM125-FIXTURE-KHARMIC-TIE
+PASS PM125-MANAGEMENT-OPEN-KHARMIC-TIE
+PASS PM125-FIXTURE-LANGUAGES
+PASS PM125-MANAGEMENT-OPEN-LANGUAGES
+PASS PM125-FIXTURE-MAGIC-RESISTANCE
+PASS PM125-MANAGEMENT-OPEN-MAGIC-RESISTANCE
+PASS PM125-FIXTURE-GREAT-POTENTIAL
+PASS PM125-MANAGEMENT-OPEN-GREAT-POTENTIAL
+PASS PM125-FIXTURE-SACRED-WEAPON
+PASS PM125-MANAGEMENT-AUTO-SACRED-WEAPON
+PASS PM125-FIXTURE-WEALTHY
+PASS PM125-MANAGEMENT-OPEN-WEALTHY
+PASS PM125-FIXTURE-BLACKMAIL
+PASS PM125-MANAGEMENT-OPEN-BLACKMAIL
+PASS PM125-FIXTURE-FORBIDDEN-KNOWLEDGE
+PASS PM125-MANAGEMENT-OPEN-FORBIDDEN-KNOWLEDGE
+PASS PM125-FIXTURE-INHERITANCE
+PASS PM125-MANAGEMENT-OPEN-INHERITANCE
+PASS PM125-FIXTURE-WAY-OF-THE-LAND
+PASS PM125-MANAGEMENT-OPEN-WAY-OF-THE-LAND
+PASS PM125-FIXTURE-DARLING-OF-THE-COURT
+PASS PM125-MANAGEMENT-OPEN-DARLING-OF-THE-COURT
+PASS PM125-FIXTURE-HEART-OF-VENGEANCE
+PASS PM125-MANAGEMENT-OPEN-HEART-OF-VENGEANCE
+PASS PM125-FIXTURE-PARAGON
+PASS PM125-MANAGEMENT-OPEN-PARAGON
+PASS PM125-FIXTURE-SOUL-OF-ARTISTRY
+PASS PM125-MANAGEMENT-OPEN-SOUL-OF-ARTISTRY
+PASS PM125-FIXTURE-VOID-VERSATILITY
+PASS PM125-MANAGEMENT-OPEN-VOID-VERSATILITY
+PASS PM125-FIXTURE-SEVEN-FORTUNES-BLESSING
+PASS PM125-MANAGEMENT-OPEN-SEVEN-FORTUNES-BLESSING
+PASS PM125-FIXTURE-DARK-PARAGON
+PASS PM125-MANAGEMENT-OPEN-DARK-PARAGON
+PASS PM125-FIXTURE-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-MANAGEMENT-OPEN-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-FIXTURE-ANTISOCIAL
+PASS PM125-MANAGEMENT-OPEN-ANTISOCIAL
+PASS PM125-FIXTURE-BLACKMAILED
+PASS PM125-FIXTURE-CONSUMED
+PASS PM125-MANAGEMENT-OPEN-CONSUMED
+PASS PM125-FIXTURE-ELEMENTAL-IMBALANCE
+PASS PM125-MANAGEMENT-OPEN-ELEMENTAL-IMBALANCE
+PASS PM125-FIXTURE-ENLIGHTENED-MADNESS
+PASS PM125-MANAGEMENT-OPEN-ENLIGHTENED-MADNESS
+PASS PM125-FIXTURE-PHOBIA
+PASS PM125-MANAGEMENT-OPEN-PHOBIA
+PASS PM125-FIXTURE-SWORN-ENEMY
+PASS PM125-MANAGEMENT-OPEN-SWORN-ENEMY
+PASS PM125-FIXTURE-UNLUCKY
+PASS PM125-MANAGEMENT-OPEN-UNLUCKY
+PASS PM125-FIXTURE-DEPENDANT
+PASS PM125-MANAGEMENT-OPEN-DEPENDANT
+PASS PM125-FIXTURE-DOUBT
+PASS PM125-MANAGEMENT-OPEN-DOUBT
+PASS PM125-FIXTURE-CURSED-BY-THE-REALM
+PASS PM125-MANAGEMENT-OPEN-CURSED-BY-THE-REALM
+PASS PM125-FIXTURE-SEVEN-FORTUNES-CURSE
+PASS PM125-MANAGEMENT-OPEN-SEVEN-FORTUNES-CURSE
+PASS PM125-FIXTURE-WRATH-OF-THE-KAMI
+PASS PM125-MANAGEMENT-OPEN-WRATH-OF-THE-KAMI
+PASS PM125-LOCK-ELEMENTAL-BLESSING
+PASS PM125-PLAY-CONFIG-INERT-ELEMENTAL-BLESSING
+PASS PM125-LOCK-GENTRY
+PASS PM125-PLAY-CONFIG-INERT-GENTRY
+PASS PM125-LOCK-ALLIES
+PASS PM125-PLAY-CONFIG-INERT-ALLIES
+PASS PM125-LOCK-LUCK
+PASS PM125-PLAY-CONFIG-INERT-LUCK
+PASS PM125-LOCK-KHARMIC-TIE
+PASS PM125-PLAY-CONFIG-INERT-KHARMIC-TIE
+PASS PM125-LOCK-LANGUAGES
+PASS PM125-PLAY-CONFIG-INERT-LANGUAGES
+PASS PM125-LOCK-MAGIC-RESISTANCE
+PASS PM125-PLAY-CONFIG-INERT-MAGIC-RESISTANCE
+PASS PM125-LOCK-GREAT-POTENTIAL
+PASS PM125-PLAY-CONFIG-INERT-GREAT-POTENTIAL
+PASS PM125-LOCK-SACRED-WEAPON
+PASS PM125-PLAY-CONFIG-INERT-SACRED-WEAPON
+PASS PM125-LOCK-WEALTHY
+PASS PM125-PLAY-CONFIG-INERT-WEALTHY
+PASS PM125-LOCK-BLACKMAIL
+PASS PM125-PLAY-CONFIG-INERT-BLACKMAIL
+PASS PM125-LOCK-FORBIDDEN-KNOWLEDGE
+PASS PM125-PLAY-CONFIG-INERT-FORBIDDEN-KNOWLEDGE
+PASS PM125-LOCK-INHERITANCE
+PASS PM125-PLAY-CONFIG-INERT-INHERITANCE
+PASS PM125-LOCK-WAY-OF-THE-LAND
+PASS PM125-PLAY-CONFIG-INERT-WAY-OF-THE-LAND
+PASS PM125-LOCK-DARLING-OF-THE-COURT
+PASS PM125-PLAY-CONFIG-INERT-DARLING-OF-THE-COURT
+PASS PM125-LOCK-HEART-OF-VENGEANCE
+PASS PM125-PLAY-CONFIG-INERT-HEART-OF-VENGEANCE
+PASS PM125-LOCK-PARAGON
+PASS PM125-PLAY-CONFIG-INERT-PARAGON
+PASS PM125-LOCK-SOUL-OF-ARTISTRY
+PASS PM125-PLAY-CONFIG-INERT-SOUL-OF-ARTISTRY
+PASS PM125-LOCK-VOID-VERSATILITY
+PASS PM125-PLAY-CONFIG-INERT-VOID-VERSATILITY
+PASS PM125-LOCK-SEVEN-FORTUNES-BLESSING
+PASS PM125-PLAY-CONFIG-INERT-SEVEN-FORTUNES-BLESSING
+PASS PM125-LOCK-DARK-PARAGON
+PASS PM125-PLAY-CONFIG-INERT-DARK-PARAGON
+PASS PM125-LOCK-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-PLAY-CONFIG-INERT-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-LOCK-ANTISOCIAL
+PASS PM125-PLAY-CONFIG-INERT-ANTISOCIAL
+PASS PM125-LOCK-BLACKMAILED
+PASS PM125-LOCK-CONSUMED
+PASS PM125-PLAY-CONFIG-INERT-CONSUMED
+PASS PM125-LOCK-ELEMENTAL-IMBALANCE
+PASS PM125-PLAY-CONFIG-INERT-ELEMENTAL-IMBALANCE
+PASS PM125-LOCK-ENLIGHTENED-MADNESS
+PASS PM125-PLAY-CONFIG-INERT-ENLIGHTENED-MADNESS
+PASS PM125-LOCK-PHOBIA
+PASS PM125-PLAY-CONFIG-INERT-PHOBIA
+PASS PM125-LOCK-SWORN-ENEMY
+PASS PM125-PLAY-CONFIG-INERT-SWORN-ENEMY
+PASS PM125-LOCK-UNLUCKY
+PASS PM125-PLAY-CONFIG-INERT-UNLUCKY
+PASS PM125-LOCK-DEPENDANT
+PASS PM125-PLAY-CONFIG-INERT-DEPENDANT
+PASS PM125-LOCK-DOUBT
+PASS PM125-PLAY-CONFIG-INERT-DOUBT
+PASS PM125-LOCK-CURSED-BY-THE-REALM
+PASS PM125-PLAY-CONFIG-INERT-CURSED-BY-THE-REALM
+PASS PM125-LOCK-SEVEN-FORTUNES-CURSE
+PASS PM125-PLAY-CONFIG-INERT-SEVEN-FORTUNES-CURSE
+PASS PM125-LOCK-WRATH-OF-THE-KAMI
+PASS PM125-PLAY-CONFIG-INERT-WRATH-OF-THE-KAMI
+PASS PM125-MODE-NO-DATA-OR-XP-CHANGE
+PASS PM125-PLAY-ADD-HIDDEN
+PASS PM125-ADD-INERT-adv
+PASS PM125-REMOVE-INERT-adv
+PASS PM125-ADD-INERT-disadv
+PASS PM125-REMOVE-INERT-disadv
+PASS PM125-TYPING-INERT
+PASS PM125-PLAIN-TEXT-CSS
+PASS PM125-MANAGEMENT-RESTORED
+PASS PM125-MANAGEMENT-ADD
+PASS PM125-MANAGEMENT-REMOVE
+PASS PM125-MATRIX-NO-ERRORS
+PASS PM125-MODAL-CLOSED
+PASS PM125-DRAFT-CANCELLED-NO-LATE-COMMIT
+PASS PM125-DRAFT-DISCARDED-ON-REOPEN
+PASS PM125-DEPENDANT-INLINE-LOCK
+PASS PM125-DEPENDANT-READONLY
+PASS PM125-DEPENDANT-CHANGE-GATE
+PASS PM125-WEALTHY-GRANT-INERT
+PASS PM125-DEPENDANT-CHANGE-COMMIT-RESTORED
+PASS PM125-MANAGEMENT-CONFIG-COMMITS
+PASS PM125-GRID-CONFIRM-EVENT-GATE
+PASS PM125-REAL-REBUILD-ALREADY-PLAY
+PASS PM125-TECHNIQUE-DOM-ISOLATION
+PASS PM125-BOUNDARIES-NO-ERRORS
+PASS PM125-WEALTHY-RETURN-STARTS-DISABLED
+PASS PM125-WEALTHY-NATURAL-DISABLED-PRESERVED
+PASS PM125-VISIBLE-PLAY-HOTEI
+PASS PM125-VISIBLE-PLAY-TATTOO
+PASS PM125-VISIBLE-PLAY-PHOBIA
+PASS PM125-VISIBLE-PLAY-NEMESIS
+PASS PM125-VISIBLE-PLAY-REALM
+PASS PM125-VISIBLE-PLAY-COURT
+PASS PM125-VISIBLE-PLAY-COURT-SESSION
+PASS PM125-VISIBLE-PLAY-LOST
+PASS PM125-VISIBLE-PLAY-DP-USE
+PASS PM125-VISIBLE-PLAY-DP-RESET
+PASS PM125-VISIBLE-PLAY-LUCK-RESET
+PASS PM125-VISIBLE-PLAY-TIE-RESET
+PASS PM125-VISIBLE-PLAY-UNLUCKY
+PASS PM125-VISIBLE-PLAY-INFO
+PASS PM125-PLAY-TOGGLE-PHOBIA
+PASS PM125-PLAY-TOGGLE-SWORN-ENEMY
+PASS PM125-PLAY-TOGGLE-CURSED-BY-THE-REALM
+PASS PM125-COURT-SELECTION
+PASS PM125-COURT-SESSION
+PASS PM125-LOST-TOGGLE
+PASS PM125-HOTEI-ROLL-ACTION
+PASS PM125-TATTOO-CHECK-ACTION
+PASS PM125-RESET-LUCK
+PASS PM125-RESET-KHARMIC-TIE
+PASS PM125-UNLUCKY-MINUS
+PASS PM125-RESOURCE-DISABLED-PRESERVED
+PASS PM125-UNLUCKY-PLUS
+PASS PM125-UNLUCKY-RESET
+PASS PM125-DARK-PARAGON-USE
+PASS PM125-DARK-PARAGON-RESET
+PASS PM125-INFO-ACTION
+PASS PM125-PLAY-ACTIONS-NO-ERRORS
+PASS PM125-VISIBLE-REALM-CHECK
+PASS PM125-REALM-CHECK-ACTION
+PASS PM125-REALM-CHECK-NO-ERRORS
+PASS PM125-VISIBLE-LUCK-REROLL
+PASS PM125-LUCK-REROLL
+PASS PM125-LUCK-ZERO-DISABLED
+PASS PM125-VISIBLE-UNLUCKY-REROLL
+PASS PM125-UNLUCKY-REROLL
+PASS PM125-VISIBLE-DP-REROLL
+PASS PM125-DARK-PARAGON-REROLL
+PASS PM125-REROLLS-NO-ERRORS
+PASS PM125-LIST-OPEN-LOCKS
+PASS PM125-WIZARD-FINISH-LOCKS
+PASS PM125-ENTRY-PATHS-NO-ERRORS
+
+212/212 checks passed
+
+== PART K — Phase 14 Search/search-harness.js
+PASS S14-SEAM
+PASS S14-CATEGORY-ORDER
+PASS S14-CATEGORY-GROUPS
+PASS S14-COUNT-SKILLS
+PASS S14-COUNT-ADVANTAGES
+PASS S14-COUNT-DISADVANTAGES
+PASS S14-COUNT-SCHOOLS
+PASS S14-COUNT-ADVANCED
+PASS S14-COUNT-PATHS
+PASS S14-COUNT-TECHNIQUES
+PASS S14-COUNT-KATA
+PASS S14-COUNT-KIHO
+PASS S14-COUNT-SPELLS
+PASS S14-COUNT-WEAPONS
+PASS S14-COUNT-CLANS
+PASS S14-COUNT-ANCESTORS
+PASS S14-EVERY-NAME-FOUND-FIRST
+PASS S14-RANK-NAME-FIRST
+PASS S14-RANK-TYPE-BEFORE-TEXT
+PASS S14-RANK-EXACT
+PASS S14-APOSTROPHE-IGNORED
+PASS S14-APOSTROPHE-TYPED
+PASS S14-ACCENT-IGNORED
+PASS S14-CASE-IGNORED
+PASS S14-ALL-TERMS
+PASS S14-CATEGORY-A-Z
+PASS S14-OFFSET-LIMIT
+PASS S14-DEFAULT-LIMIT
+PASS S14-NO-MATCH
+PASS S14-SUMMARY-SHAPE
+PASS S14-RECORDS-MATCH-CATALOGUES
+PASS S14-PAGES-ONLY-WHERE-HELD
+PASS S14-NO-JUNK-VALUES
+PASS S14-RECORDS-PLAIN-DATA
+PASS S14-GET-RETURNS-COPY
+PASS S14-AUDIT-PAGES-COUNT
+PASS S14-MENU-ITEMS-MANAGE
+PASS S14-OPENS-SEARCH-TAB
+PASS S14-HOME-CATEGORIES
+PASS S14-INPUT-16PX
+PASS S14-TYPING-FILTERS
+PASS S14-CLEARED-HOME
+PASS S14-CATEGORY-PAGE
+PASS S14-SHOW-MORE
+PASS S14-CATEGORY-SCOPED
+PASS S14-KEYBOARD-CLOSES-FIRST
+PASS S14-DETAIL
+PASS S14-BACK-RESTORES
+PASS S14-ESCAPE-DETAIL-TO-LIST
+PASS S14-ESCAPE-CLOSES
+PASS S14-MENU-ITEMS-PLAY
+PASS S14-STATE-KEPT
+PASS S14-UP-TO-HOME
+PASS S14-OPEN-API
+PASS S14-NO-SIDEWAYS-SCROLL-320
+PASS S14-NO-SIDEWAYS-SCROLL-375
+PASS S14-NO-SIDEWAYS-SCROLL-390
+PASS S14-KEYSTROKE-UNDER-50MS
+PASS S14-SHEET-UNCHANGED
+PASS S14-STYLED
+PASS S14-REGISTER-SOURCE
+PASS S14-NO-PAGE-ERRORS
+
+62/62 checks passed
+
+== PART K — Phase 14.1 Search Facets/dependency-harness.js
+PASS F141-DEP-CONTROL
+PASS F141-DEP-CONTROL-NO-PAGE-ERRORS
+PASS F141-DEP-FACET-PAGE-OFF
+PASS F141-DEP-FACET-PAGE-OFF-NO-PAGE-ERRORS
+PASS F141-DEP-FACETS-OFF
+PASS F141-DEP-FACETS-OFF-NO-PAGE-ERRORS
+PASS F141-DEP-SEARCH-PAGE-OFF
+PASS F141-DEP-SEARCH-PAGE-OFF-NO-PAGE-ERRORS
+PASS F141-DEP-SEARCH-OFF
+PASS F141-DEP-SEARCH-OFF-NO-PAGE-ERRORS
+PASS F141-DEP-APP-BAR-OFF
+PASS F141-DEP-APP-BAR-OFF-NO-PAGE-ERRORS
+PASS F141-DEP-CHARACTERS-OFF
+PASS F141-DEP-CHARACTERS-OFF-NO-PAGE-ERRORS
+
+14/14 checks passed
+
+== PART K — Phase 14.1 Search Facets/facets-harness.js
+PASS F141-SEAM
+PASS F141-FACET-SETS
+PASS F141-TECHNIQUE-SUBTYPES
+PASS F141-OPTIONS-ARE-THE-CATALOGUES
+PASS F141-OPTIONS-CHECKED
+PASS F141-EACH-OPTION-FILTERS
+PASS F141-COMBINED-AND-COUNTS
+PASS F141-ANY-VALUE-WITHIN
+PASS F141-TECHNIQUE-SCHOOL-AND-RANK-TOGETHER
+PASS F141-SPELLS-GROUPED
+PASS F141-TEXT-WITHIN-FILTERS
+PASS F141-NO-CATEGORY-IS-SEARCH14
+PASS F141-UNKNOWN-FILTERS
+PASS F141-PAGING
+PASS F141-PLAIN-DATA
+PASS F141-UI-NOT-ON-HOME
+PASS F141-UI-NO-FOREIGN-CATEGORY-ATTRIBUTE
+PASS F141-UI-NOT-ACROSS-CATEGORIES
+PASS F141-UI-SPELLS-BAR
+PASS F141-UI-SPELLS-GROUPED
+PASS F141-UI-OPTION-TEXT
+PASS F141-UI-FILTERED-LIST
+PASS F141-UI-FILTERED-HEADINGS
+PASS F141-UI-COUNTS-FOLLOW
+PASS F141-UI-SELECT-KEEPS-FOCUS
+PASS F141-UI-TYPING-NARROWS
+PASS F141-UI-TWO-FILTERS
+PASS F141-UI-HIDDEN-IN-DETAIL
+PASS F141-UI-BACK-KEEPS-FILTERS
+PASS F141-UI-RETURNS-TO-FILTERED-LIST
+PASS F141-UI-LEAVING-CATEGORY-CLEARS
+PASS F141-UI-OPEN-WITH-OPTIONS-CLEARS
+PASS F141-UI-SHOW-MORE
+PASS F141-UI-CLEAR
+PASS F141-UI-EACH-CATEGORY-OWN-FACETS
+PASS F141-UI-SIZES
+PASS F141-UI-NO-SIDEWAYS-SCROLL-320
+PASS F141-UI-NO-SIDEWAYS-SCROLL-375
+PASS F141-UI-NO-SIDEWAYS-SCROLL-390
+PASS F141-UI-APP-BAR-NOT-COVERED
+PASS F141-UI-KEYSTROKE-UNDER-50MS
+PASS F141-SHEET-UNCHANGED
+PASS F141-STYLED
+PASS F141-NO-PAGE-ERRORS
+
+44/44 checks passed
+
+== PART K — Phase 14.3a Skill, Weapon and Spell References/dependency-harness.js
+PASS REF143-DEP-CONTROL-API
+PASS REF143-DEP-CONTROL-CITATIONS
+PASS REF143-DEP-CONTROL-ERRORS
+PASS REF143-DEP-OFF-API
+PASS REF143-DEP-OFF-CITATIONS
+PASS REF143-DEP-OFF-ERRORS
+PASS REF143-ONLY-CITATIONS-CHANGED
+PASS REF143-NO-CATALOGUE-MUTATION
+PASS REF143-DEP-FRAGMENT-ABSENT-API
+PASS REF143-DEP-FRAGMENT-ABSENT-CITATIONS
+PASS REF143-DEP-FRAGMENT-ABSENT-ERRORS
+PASS REF143-DEP-SEARCH-OFF-API
+PASS REF143-DEP-SEARCH-OFF-CITATIONS
+PASS REF143-DEP-SEARCH-OFF-ERRORS
+PASS REF143-DEP-PAGE-OFF-API
+PASS REF143-DEP-PAGE-OFF-CITATIONS
+PASS REF143-DEP-PAGE-OFF-ERRORS
+PASS REF143-DEP-FACETS-OFF-API
+PASS REF143-DEP-FACETS-OFF-CITATIONS
+PASS REF143-DEP-FACETS-OFF-ERRORS
+PASS REF143-DEP-REF142-OFF-API
+PASS REF143-DEP-REF142-OFF-CITATIONS
+PASS REF143-DEP-REF142-OFF-ERRORS
+23/23 checks passed
+
+== PART K — Phase 14.3a Skill, Weapon and Spell References/references-harness.js
+PASS REF143-SWITCH
+PASS REF143-SKILLS-COVERAGE
+PASS REF143-SKILLS-LIST-PAGES
+PASS REF143-SKILLS-DETAIL-PAGES
+PASS REF143-SKILLS-LOOKUP
+PASS REF143-SKILLS-TEXT-PRESERVED
+PASS REF143-WEAPONS-COVERAGE
+PASS REF143-WEAPONS-LIST-PAGES
+PASS REF143-WEAPONS-DETAIL-PAGES
+PASS REF143-WEAPONS-LOOKUP
+PASS REF143-WEAPONS-TEXT-PRESERVED
+PASS REF143-SPELLS-COVERAGE
+PASS REF143-SPELLS-LIST-PAGES
+PASS REF143-SPELLS-DETAIL-PAGES
+PASS REF143-SPELLS-LOOKUP
+PASS REF143-SPELLS-TEXT-PRESERVED
+PASS REF143-RETITLED-ENTRIES
+PASS REF143-NORMALISED-LOOKUP
+PASS REF143-NO-GUESSED-PAGES
+PASS REF143-BOOK-SEARCH
+PASS REF143-PAGE-SEARCH
+PASS REF143-COPY-ISOLATION
+PASS REF143-EARLIER-CITATIONS-KEPT
+PASS REF143-UI-SKILL-LIST
+PASS REF143-UI-SKILL-DETAIL
+PASS REF143-UI-BACK-KEEPS-QUERY
+PASS REF143-UI-WEAPON-DETAIL
+PASS REF143-WIDTH-320
+PASS REF143-WIDTH-390
+PASS REF143-CHARACTER-UNCHANGED
+PASS REF143-STORAGE-UNCHANGED
+PASS REF143-NO-PAGE-ERRORS
+32/32 checks passed
+
+== PART G — Phase 1.5 Roll Pipeline Consolidation/roll-pipeline-baseline.js
+  PASS  the six core contributors are all present, in priority order  — [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+  PASS  the only contributor beyond the six is Phase 4.5 (Part I)’s, and only when present  — [object Object]
+  PASS  Emphasis re-roll is NOT a registry entry (post-render decorator — see README)  — ["range","arrow","stance","offhand","wounds","void","adv-config"]
+  PASS  void +1k1 contributes rolledDelta 1 / keptDelta 1  — [object Object]
+  PASS  a bare 'trait' pending flag contributes nothing -- it was merged into 'k1', not a second key  — null
+  PASS  void +1 Skill Rank contributes rolledDelta 1 / keptDelta 0 and forces explodeOverride true  — [object Object]
+  PASS  void Initiative bonus (skirmish-wide) contributes totalDelta = VOID_EFFECT_VALUES.initiativeBonus  — 10
+  PASS  void contributes nothing to a damage roll, even with every pending flag set (RAW: damage rolls may not be enhanced)  — null
+  PASS  wound penalty at "Grazed" reaches a non-damage roll as totalDelta (matches WOUND_PENALTIES)  — -5
+  PASS  wound penalty contributes nothing to a damage roll  — null
+  PASS  Full Attack stance contributes rolledDelta 2 / keptDelta 1 to an attack roll  — [object Object]
+  PASS  Full Attack stance contributes nothing to a non-attack, non-initiative roll  — null
+  PASS  Center's next-round attack bonus is +1k1 plus the character's Void Ring on the total  — [object Object]
+  PASS  Center's attack bonus is consumed by consumeCenterBonusIfApplied and does not reappear this round  — null
+  PASS  Center's +10 Initiative bonus is NOT consumed by an attack roll (RAW: lasts the whole round, not one roll)  — 10
+  PASS  Center's Initiative bonus is still present after the attack bonus was spent  — 10
+  PASS  range: within listed range contributes nothing  — null
+  PASS  range: beyond listed range contributes rolledDelta = -penaltyDice  — -2
+  PASS  range: firing into melee contributes totalDelta -10  — -10
+  PASS  range contributes nothing outside an attack roll, even with a range decision present  — null
+  PASS  off-hand attack with an un-exempted Medium weapon contributes totalDelta = offHandBySize.Medium  — -10
+  PASS  main-hand attack while dual-wielding (no exemption) contributes totalDelta = mainHandPenalty  — -5
+  PASS  an attack that declares no hand (single weapon) is untouched by the dual-wield contributor  — null
+  PASS  arrow contributor is informational only, and never moves a die even though it carries no zero deltas of its own  — [object Object]
+  PASS  arrow contributes nothing for a weapon that does not use ammunition  — null
+  PASS  arrow contributes nothing outside a damage roll  — null
+  PASS  a rolled pool can never go negative — it floors at 0k0  — [object Object]
+  PASS  kept dice can never exceed rolled dice, however large a keptDelta stacks  — [object Object]
+  PASS  getPreRollModifiers() forces an informational contributor's deltas to zero regardless of what it returns  — [object Object]
+  PASS  a contributor that throws is skipped, not fatal to the roll  — {"threw":false,"gotResult":true}
+  PASS  a stacked attack (Full Attack + wounded + Void k1 + range + off-hand) lists contributors in priority order  — range,stance,offhand,wounds,void
+  PASS  the same stacked attack folds to the arithmetic sum of every individual contributor  — [object Object]
+  PASS  a damage roll is untouched by every contributor except the informational arrow line, even with stance/wounds/Void/range/off-hand all simultaneously active (RAW: damage rolls are never enhanced)  — [object Object]
+  PASS  Void's one-roll effects (k1/skill) are auto-consumed by consumeVoidOneRollEffects — the pipeline's own hook, not a per-feature one  — [object Object]
+  PASS  no uncaught page errors
+
+35/35 checks passed
+
+== PART G — Phase 3 Smart Roll Preview/roll-preview-harness.js
+  PASS  a roll opens the preview instead of rolling immediately  — true
+  PASS  no dice were thrown while the preview is open  — false
+  PASS  the previewed pool matches the pipeline's own projection (5k3, unmodified)  — 5k3
+  PASS  an unmodified roll lists no modifiers  — 0
+  PASS  a skill roll shows no TN — only spells carry one  — null
+  PASS  cancelling closes the preview without rolling  — [object Object]
+  PASS  a wound penalty is listed in the preview  — true
+  PASS  the listed modifier labels match the pipeline's own  — Wound Penalty
+  PASS  the flat penalty shown matches the pipeline's totalDelta  — -3 to total
+  PASS  the preview offers a one-roll Void spend when points are available  — true
+  PASS  ticking +1k1 updates the projected pool live (5k3 -> 6k4)  — 6k4
+  PASS  ticking a Void option spends NOTHING while the preview is open  — 3
+  PASS  cancelling after ticking Void refunds nothing because nothing was spent  — 3
+  PASS  cancelling leaves no Void effect armed for the next roll  — {}
+  PASS  confirming closes the preview and throws the dice  — [object Object]
+  PASS  the number of dice actually thrown matches the pool the preview promised  — 6
+  PASS  confirming a Void spend deducts exactly one point  — 2
+  PASS  a spell roll shows its Target Number in the preview  — 20
+  PASS  a manual-notation roll DOES go through the preview (it is a pipeline roll)  — true
+  PASS  ticking +1k1 alone gives the expected pool (3k3 -> 4k4)  — 4k4
+  PASS  ticking a second one-roll option unchecks the first (radio-group behaviour)  — false
+  PASS  the pool reflects ONLY the second option, not both stacked (4k3, not 5k4)  — 4k3
+  PASS  confirming after switching options deducts exactly ONE Void Point, not two  — 1
+  PASS  the dice graphic shows a rolled and a kept die, badged with the real counts  — 5,3
+  PASS  a trained skill roll says which Trait and Rank built the pool  — Agility 3,Kenjutsu Rank 2
+  PASS  spending Void updates the dice badges too, not just the formula  — 6,4
+  PASS  an unskilled roll says the Trait rolls and keeps alone  — Agility 3,Unskilled
+  PASS  a Ring roll names the Ring and its value  — Earth Ring 2, rolled and kept
+  PASS  a trained skill roll does NOT offer +1 Skill Rank — there is no rank 0 to raise  — k1
+  PASS  an unskilled skill roll offers both — the general bonus and the rank-0 lift  — k1,skill
+  PASS  a Ring roll does NOT offer +1 Skill Rank — a Ring has no Skill Rank to raise  — k1
+  PASS  a Spell Casting roll does NOT offer +1 Skill Rank — a casting pool has no Skill Rank  — k1
+  PASS  a Trait roll does NOT offer +1 Skill Rank  — k1
+  PASS  an Initiative roll does NOT offer +1 Skill Rank
+  PASS  a Spell Casting roll STILL does not offer it once +1k1 is already ticked  — k1
+  PASS  a Ring roll STILL does not offer it once +1k1 is already ticked  — k1
+  PASS  a trained skill roll STILL does not offer it once +1k1 is already ticked  — k1
+  PASS  an UNSKILLED skill roll still offers both once +1k1 is ticked — the control case  — k1,skill
+  PASS  the contributor itself contributes nothing to a trained roll, even with the flag armed  — null
+  PASS  an UNSKILLED weapon attack still gets it — that is a rank-0 roll too  — true
+  PASS  a trained skill roll offers only +1k1 before anything is ticked  — k1
+  PASS  and STILL only +1k1 after ticking it — the offer list is not measured against itself  — k1
+  PASS  an unskilled roll still offers both before ticking  — k1,skill
+  PASS  and still offers both after ticking one  — k1,skill
+  PASS  with no Void Points left the offer is gone but the REASON is shown  — [object Object]
+  PASS  an option that would not help this roll is withheld silently, with no reason line  — [object Object]
+  PASS  the +1 Skill Rank option names both what it does and what follows from it  — [object Object]
+  PASS  a spent +1 Skill Rank is consumed by the roll, not carried to the next one  — [object Object]
+  PASS  the phase exports its kill-switch as enabled  — true
+  PASS  no uncaught page errors
+
+50/50 checks passed
+
+== PART G — Phase 4 Explain This Roll/roll-breakdown-harness.js
+  PASS  SKILL trained: the rows add up to the pool the roll was given  — {"rolled":5,"kept":3}
+  PASS  SKILL unskilled: the rows add up to the pool the roll was given  — {"rolled":2,"kept":2}
+  PASS  ATTACK: the rows add up to the pool the roll was given  — {"rolled":5,"kept":2}
+  PASS  RING: the rows add up to the pool the roll was given  — {"rolled":2,"kept":2}
+  PASS  TRAIT: the rows add up to the pool the roll was given  — {"rolled":4,"kept":4}
+  PASS  SPELL, affinity: the rows add up to the pool the roll was given  — {"rolled":7,"kept":3}
+  PASS  SPELL, plain: the rows add up to the pool the roll was given  — {"rolled":4,"kept":2}
+  PASS  INITIATIVE: the rows add up to the pool the roll was given  — {"rolled":5,"kept":3}
+  PASS  a context with nothing declared produces no rows at all  — []
+  PASS  parts that do not reconcile fall back to one honest "Base pool" row  — {"n":1,"label":"Base pool","saysPool":true}
+  PASS  an Affinity annotates the School Rank row rather than adding one  — {"rows":2,"note":true}
+  PASS  no Affinity means no "base N" note invented on the School Rank row  — false
+  PASS  a hand-entered roll says where the number came from and nothing more  — [{"label":"Entered by hand","txt":"5k3"}]
+  PASS  a roll with NO modifiers still explains its pool after rolling  — {"titles":["Base pool"],"baseRows":2,"modRows":0}
+  PASS  and those rows reconcile with the pool that was rolled  — {"rolled":5,"kept":3}
+  PASS  the result bar shows both groups, the base pool first  — ["Base pool","Roll modifiers"]
+  PASS  the base rows are identical in the preview and in the result  — [{"label":"Water Ring 3","txt":"3k3 — rolled and kept"},{"label":"School Rank 4","txt":"+4k0 — base 3, +1 Affinity"}]
+  PASS  the modifier rows are identical in the preview and in the result  — ["Wound Penalty"]
+  PASS  and both match Phase 3's shared renderer asked directly — one renderer, not two copies  — ["Wound Penalty"]
+  PASS  a total-only modifier does not disturb the pool rows  — {"rolled":7,"kept":3}
+  PASS  the phase exports its kill-switch as enabled  — true
+  PASS  no uncaught page errors
+
+22/22 checks passed
+
+== PART G — Phase 6 School Technique Text/technique-text-harness.js
+PASS T6-LOAD-SWITCH
+PASS T6-LOAD-ENTRIES
+PASS T6-LOAD-SCHOOL-RANK
+PASS T6-LOAD-CREDITS-PAGE
+PASS T6-LOAD-OWN-WORDS-LENGTH
+PASS T6-LOAD-ALL-HAVE-TEXT
+PASS T6-LOAD-CHECK-CLEAN
+PASS T6-LOAD-NO-CLASHES
+PASS T6-LOAD-NO-ERRORS
+PASS T6-GRANT-EVERY-SCHOOL
+PASS T6-GRANT-NONE-FALLBACK
+PASS T6-GRANT-NO-ERRORS
+PASS T6-APPLY-USAGI-R1
+PASS T6-APPLY-TOKU-R4
+PASS T6-APPLY-NO-ERRORS
+PASS T6-OLDSAVE-NOTICE-REPLACED
+PASS T6-OLDSAVE-BRACKET-SCHOOL
+PASS T6-OLDSAVE-EDITED-KEPT
+PASS T6-OLDSAVE-NOT-A-CHANGE
+PASS T6-OLDSAVE-PLAY-SAME
+PASS T6-OLDSAVE-NO-ERRORS
+21/21 checks passed
+
+== A03 — Top-Aligned Columns and Compact Skill Cards/compact-skills-harness.js
+PASS SEAM-PRESENT
+PASS DESKTOP-COLUMNS-LEVEL
+PASS DESKTOP-COLUMNS-ONE-EMPTY
+PASS TWO-COLUMN-PHONE-LEVEL
+PASS PHONE-COLUMNS-STACKED
+PASS OTHER-GRIDS-UNCHANGED
+PASS CARD-FIRST-ROW
+PASS PLAY-CARD
+PASS MANAGE-CARD
+PASS MANAGE-ORDER
+PASS PLAY-COMPACT
+PASS FIRST-ROW-STEADY
+PASS MANAGE-SHORTER
+PASS SUMMARY-MATCHES
+PASS SUMMARY-WRAPS
+PASS SUMMARY-NOT-A-CONTROL
+PASS SUMMARY-READABLE
+PASS MODE-SWITCH-LIVE
+PASS PLAY-LOCKS-KEPT
+PASS PLAY-ROLL-AND-INFO
+PASS SUMMARY-LIVE
+PASS VALUES-KEPT
+PASS DOM-NOT-MOVED
+PASS FIRST-CELL-ADDITIONS
+PASS EMPHASIS-WARNING-SHOWN
+PASS MANAGE-EDITS-WORK
+PASS PLAY-MASTERIES-REACHED
+PASS NEW-ROW
+PASS QUICK-ADD
+PASS RELOAD
+PASS PHONE-END-CLEAR
+PASS PRINT-UNCHANGED
+PASS SMALL-PHONE-FIT
+PASS NARROW-PHONE-FIT
+PASS DESKTOP-SKILLS-UNCHANGED
+PASS TABLET-UNCHANGED
+PASS NO-SCRIPT-ERRORS
+37/37 checks passed
+
+== A03.1 — Masteries in the Skill Information/skill-masteries-harness.js
+PASS SM-SEAM-PHONE
+PASS SM-MATCHES-THE-CARD-PHONE
+PASS SM-REACHED-MARKED-PHONE
+PASS SM-READABLE-PHONE
+PASS SM-PLACE-PHONE
+PASS SM-DEBUG-UNCHANGED-PHONE
+PASS SM-FOLLOWS-RANK-PHONE
+PASS SM-CLASS-GATES-PHONE
+PASS SM-NO-ERRORS-PHONE
+PASS SM-SEAM-DESKTOP
+PASS SM-MATCHES-THE-CARD-DESKTOP
+PASS SM-REACHED-MARKED-DESKTOP
+PASS SM-READABLE-DESKTOP
+PASS SM-PLACE-DESKTOP
+PASS SM-DEBUG-UNCHANGED-DESKTOP
+PASS SM-FOLLOWS-RANK-DESKTOP
+PASS SM-CLASS-GATES-DESKTOP
+PASS SM-NO-ERRORS-DESKTOP
+PASS SM-CUSTOM-SKILL
+19/19 checks passed
+
+== A04 — One Information Pattern/info-pattern-harness.js
+PASS IP-SEAM-PHONE
+PASS IP-SEAM-DESKTOP
+PASS IP-SKILL-RING-PHONE-PLAY
+PASS IP-SKILL-RING-PHONE-MANAGEMENT
+PASS IP-SKILL-RING-DESKTOP-PLAY
+PASS IP-SKILL-RING-DESKTOP-MANAGEMENT
+PASS IP-SKILL-TOUCH-PHONE
+PASS IP-SKILL-TOUCH-DESKTOP
+PASS IP-SKILL-OPENS-PHONE
+PASS IP-SKILL-OPENS-DESKTOP
+PASS IP-SKILL-RENAME
+PASS IP-VOID-PHONE
+PASS IP-VOID-DESKTOP
+PASS IP-KIHO-PHONE
+PASS IP-KIHO-DESKTOP
+PASS IP-COMBAT-UNCHANGED-PHONE
+PASS IP-COMBAT-UNCHANGED-DESKTOP
+PASS IP-ADV-NOT-NESTED-PHONE-PLAY
+PASS IP-ADV-NOT-NESTED-PHONE-MANAGEMENT
+PASS IP-ADV-NOT-NESTED-DESKTOP-PLAY
+PASS IP-ADV-NOT-NESTED-DESKTOP-MANAGEMENT
+PASS IP-PLAY-NO-LONE-I-PHONE
+PASS IP-CHOOSE-PHONE
+PASS IP-PLAY-NO-LONE-I-DESKTOP
+PASS IP-CHOOSE-DESKTOP
+PASS IP-MODAL-NOT-NESTED
+PASS IP-HOTEI-ROW-PHONE
+PASS IP-HOTEI-ROW-DESKTOP
+PASS IP-HOTEI-PANEL-PHONE
+PASS IP-HOTEI-PANEL-DESKTOP
+PASS IP-CLASS-GATES-PHONE
+PASS IP-CLASS-GATES-DESKTOP
+PASS IP-NO-ERRORS-PHONE
+PASS IP-NO-ERRORS-DESKTOP
+PASS IP-OTHER-FORTUNE-UNCHANGED
+35/35 checks passed
+
+== A07 — The Moon Row/moon-row-harness.js
+PASS MR-SEAM-PHONE
+PASS MR-SEVERITY-LABELLED-PHONE
+PASS MR-ONE-EDGE-PHONE
+PASS MR-TOGGLE-ROW-PHONE
+PASS MR-RESIST-AND-ORDER-PHONE
+PASS MR-PLAY-SEVERITY-LABELLED-PHONE
+PASS MR-PLAY-ONE-EDGE-PHONE
+PASS MR-PLAY-TOGGLE-ROW-PHONE
+PASS MR-PLAY-RESIST-AND-ORDER-PHONE
+PASS MR-TICK-STILL-WORKS-PHONE
+PASS MR-ONLY-THE-MOON-ROW-PHONE
+PASS MR-CLASS-GATES-PHONE
+PASS MR-NO-ERRORS-PHONE
+PASS MR-SEAM-DESKTOP
+PASS MR-SEVERITY-LABELLED-DESKTOP
+PASS MR-ONE-EDGE-DESKTOP
+PASS MR-TOGGLE-ROW-DESKTOP
+PASS MR-RESIST-AND-ORDER-DESKTOP
+PASS MR-PLAY-SEVERITY-LABELLED-DESKTOP
+PASS MR-PLAY-ONE-EDGE-DESKTOP
+PASS MR-PLAY-TOGGLE-ROW-DESKTOP
+PASS MR-PLAY-RESIST-AND-ORDER-DESKTOP
+PASS MR-TICK-STILL-WORKS-DESKTOP
+PASS MR-ONLY-THE-MOON-ROW-DESKTOP
+PASS MR-CLASS-GATES-DESKTOP
+PASS MR-NO-ERRORS-DESKTOP
+26/26 checks passed
+
+== A16 — No Bottom i in the Seven Pickers/picker-info-harness.js
+PASS BI-SEAM-PHONE
+PASS BI-A01-NOT-DRAWN-PHONE
+PASS BI-A01-NOTE-SHOWN-PHONE
+PASS BI-A01-NOTHING-LOST-PHONE
+PASS BI-A03-NOT-DRAWN-PHONE
+PASS BI-A03-NOTE-SHOWN-PHONE
+PASS BI-A03-NOTHING-LOST-PHONE
+PASS BI-A04-NOT-DRAWN-PHONE
+PASS BI-A04-NOTE-SHOWN-PHONE
+PASS BI-A04-NOTHING-LOST-PHONE
+PASS BI-A09-NOT-DRAWN-PHONE
+PASS BI-A09-NOTE-SHOWN-PHONE
+PASS BI-A09-NOTHING-LOST-PHONE
+PASS BI-A12-NOT-DRAWN-PHONE
+PASS BI-A12-NOTE-SHOWN-PHONE
+PASS BI-A12-NOTHING-LOST-PHONE
+PASS BI-A13-NOT-DRAWN-PHONE
+PASS BI-A13-NOTE-SHOWN-PHONE
+PASS BI-A13-NOTHING-LOST-PHONE
+PASS BI-A14-NOT-DRAWN-PHONE
+PASS BI-A14-NOTE-SHOWN-PHONE
+PASS BI-A14-NOTHING-LOST-PHONE
+PASS BI-CLASS-GATES-PHONE
+PASS BI-OTHER-PICKERS-UNTOUCHED-PHONE
+PASS BI-NO-ERRORS-PHONE
+PASS BI-SEAM-DESKTOP
+PASS BI-A01-NOT-DRAWN-DESKTOP
+PASS BI-A01-NOTE-SHOWN-DESKTOP
+PASS BI-A01-NOTHING-LOST-DESKTOP
+PASS BI-A03-NOT-DRAWN-DESKTOP
+PASS BI-A03-NOTE-SHOWN-DESKTOP
+PASS BI-A03-NOTHING-LOST-DESKTOP
+PASS BI-A04-NOT-DRAWN-DESKTOP
+PASS BI-A04-NOTE-SHOWN-DESKTOP
+PASS BI-A04-NOTHING-LOST-DESKTOP
+PASS BI-A09-NOT-DRAWN-DESKTOP
+PASS BI-A09-NOTE-SHOWN-DESKTOP
+PASS BI-A09-NOTHING-LOST-DESKTOP
+PASS BI-A12-NOT-DRAWN-DESKTOP
+PASS BI-A12-NOTE-SHOWN-DESKTOP
+PASS BI-A12-NOTHING-LOST-DESKTOP
+PASS BI-A13-NOT-DRAWN-DESKTOP
+PASS BI-A13-NOTE-SHOWN-DESKTOP
+PASS BI-A13-NOTHING-LOST-DESKTOP
+PASS BI-A14-NOT-DRAWN-DESKTOP
+PASS BI-A14-NOTE-SHOWN-DESKTOP
+PASS BI-A14-NOTHING-LOST-DESKTOP
+PASS BI-CLASS-GATES-DESKTOP
+PASS BI-OTHER-PICKERS-UNTOUCHED-DESKTOP
+PASS BI-NO-ERRORS-DESKTOP
+50/50 checks passed
+
+== A19 — Undo the Last Void Spend/void-spend-undo-harness.js
+PASS VU-SEAM-PHONE
+PASS VU-NO-LINE-BEFORE-SPEND-PHONE
+PASS VU-K1-SPENT-LINE-PHONE
+PASS VU-K1-UNDO-RESTORES-PHONE
+PASS VU-K1-NO-TOUCH-ROLL-AFTER-UNDO-PHONE
+PASS VU-TN-TOUCH-CANCELLED-UNDO-PHONE
+PASS VU-ROLL-ENDS-PHONE
+PASS VU-CANCELLED-PREVIEW-KEEPS-PHONE
+PASS VU-TOUCH-SAVE-KEEPS-UNDO-PHONE
+PASS VU-NO-ERRORS-PHONE
+PASS VU-NEXT-ROUND-ENDS-DESKTOP
+PASS VU-RESET-ENDS-DESKTOP
+PASS VU-LATEST-SPEND-ONLY-DESKTOP
+PASS VU-DOUBLE-UNDO-ONCE-DESKTOP
+PASS VU-PIP-TAP-ENDS-DESKTOP
+PASS VU-PREVIEW-VOID-SPEND-NOT-COVERED-DESKTOP
+PASS VU-DAMAGE-UNDO-DESKTOP
+PASS VU-INITIATIVE-UNDO-DESKTOP
+PASS VU-HOTEI-TWO-POINTS-UNDO-DESKTOP
+PASS VU-OPEN-ENDS-DESKTOP
+PASS VU-KEYBOARD-UNDO-FOCUS-DESKTOP
+PASS VU-SAVE-DATA-UNCHANGED-DESKTOP
+PASS VU-TOUCH-SAVE-KEEPS-UNDO-DESKTOP
+PASS VU-TOUCH-SAVE-THEN-ROLL-ENDS-DESKTOP
+PASS VU-NO-ERRORS-DESKTOP
+25/25 checks passed
+
+== A20 — A Trait for One Skill Roll/skill-trait-choice-harness.js
+PASS TC-SEAM-PHONE
+PASS TC-OPENS-ON-USUAL-PHONE
+PASS TC-LIST-ORDER-PHONE
+PASS TC-OTHER-TRAIT-POOL-PHONE
+PASS TC-TICKS-KEPT-PHONE
+PASS TC-ROLL-USES-CHOICE-PHONE
+PASS TC-SAVED-TRAIT-UNCHANGED-PHONE
+PASS TC-REOPENS-ON-USUAL-PHONE
+PASS TC-NO-ERRORS-PHONE
+PASS TC-CANCEL-FORGETS-DESKTOP
+PASS TC-BACK-TO-USUAL-DESKTOP
+PASS TC-UNSKILLED-KEEPS-RULE-DESKTOP
+PASS TC-BOOK-NOTE-DESKTOP
+PASS TC-NOT-ON-TRAIT-ROLL-DESKTOP
+PASS TC-NOT-ON-ATTACK-DESKTOP
+PASS TC-KEYBOARD-CHOICE-DESKTOP
+PASS TC-TWO-TRAIT-SKILL-DESKTOP
+PASS TC-NO-ERRORS-DESKTOP
+18/18 checks passed

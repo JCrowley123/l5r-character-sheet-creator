@@ -2,7 +2,7 @@
 
 23 November 2026 (Claude). The board, [mockups/G2-MOCKUPS.html](mockups/G2-MOCKUPS.html), was published to the owner as a private artifact (https://claude.ai/artifact/REUwrJoboaHe6xQBuGDDy2). It shows today beside the proposal for each unit, at phone and laptop size, with a recommendation and one decision for each. Every picture is the live build (`5ac767c6…574d`, `main` at `acdb6f75`, Release 15b group 1 live) in a test browser, with the proposal applied only in that browser. How the pictures were made: [REPRODUCTION.md](REPRODUCTION.md).
 
-**Round 1, 24 November:** the owner approved all four units as recommended ([Round 1 answers](#round-1-answers)). Nothing is built yet. The records stay on `claude/release-15b-g2` until the owner's word.
+**Round 1, 24 November:** the owner approved all four units as recommended ([Round 1 answers](#round-1-answers)), then said "Build here". All four were built the same day on stacked branches ([Built](#built-24-november-2026)); the device round is next. Nothing is on `main`.
 
 ## Where the group comes from
 
@@ -75,6 +75,32 @@ How it is read:
 - **What the approval covers.** On the board's terms it covers the build and preview stage only: each unit on its own stacked branch, with light checks and one code review. The device round, qualification and go-live each still need the owner's word.
 - **Nothing is built yet.** The mock-up session's brief built nothing. Where the build runs is the owner's next call.
 
+### The word to build
+
+24 November 2026, the owner, by the next-step button under the question "Build group 2 in this session?":
+
+> Build here
+
+Read as: build the four units in this session, on stacked branches, through the build and preview stage (light checks, one code review, previews, the device-round checklist), and stop for the device round.
+
+## Built (24 November 2026)
+
+Each unit has its own folder with README (build numbers, light checks), ROLLBACK, harness with pinned ids, remover and removal proof, and a `CHAIN` entry after B17.
+
+| Unit | Marker | Tag / switch | Own checks | Branch (commit) |
+|---|---|---|---:|---|
+| B01 Check Buttons Named for What They Do | `PART H PHASE 15.2.6` | `CN15` / `CHECK_BUTTON_NAMES_ENABLED` | 15 | `claude/release-15b-b01` (`4ae54580`) |
+| B03 Lead an Ally | `PART H PHASE 15.2.7` | `LA15` / `LEAD_AN_ALLY_ENABLED` | 13 | `claude/release-15b-b03` (`6c28167f`) |
+| B05 You Remain in Control | `PART H PHASE 15.2.8` | `RC15` / `REMAIN_IN_CONTROL_ENABLED` | 10 | `claude/release-15b-b05` (`34142fa3`) |
+| B09 Skill Picker Traits from the Final List | `PART H PHASE 15.2.9` | `SKP15` / `PICKER_TRAITS_FINAL_ENABLED` | 9 | `claude/release-15b-b09` (`66d825f2`; the tip) |
+
+- **Group build:** `0d8cebb174c4c4130cfab0368bb0950793d93c01285310438f9e073bb4b81637`, 17,765,990 bytes. Removing the group restores `5ac767c6…574d` (group 1 as live) exactly, by the chain of removal proofs.
+- **Light checks:** every unit's own harness, removal proof (10/10 each) and dependency check (4/4 for the group). The touched layers: B01 14/14 harnesses, B03 17/17, B05 49/49 and B09 27/27, all passing. The group's four harnesses pass on the group build and with all 26 Release 15a units removed (`509a17ee…e498`). The runs that failed first were the harnesses' own mistakes; each README records them.
+- **Older harnesses that follow a switch:** Feature 4.5.31's suite harness and its dependency harness follow B01 (same ids and count; 101/101 with B01 and without). **Older removers that refuse while a unit is present:** Feature 4.5.31 (B01) and Feature 4.5.33 (B03); the reciprocal notes are in their ROLLBACKs.
+- **Code review:** [qa/code-review.md](qa/code-review.md). One change, found by B09's removal proof: the tag `PT15` became `SKP15`.
+- **Previews:** B01, B03 and B05 match their builds file for file (`qa/preview-b0*-files.log`). The tip (https://claude-release-15b-b09.l5r-character-sheet-creator.pages.dev/) matches its build file for file and passes **3,812/3,812** on the deployed files: 88 harnesses, the group's four plus every touched layer's (`qa/preview-b09.log`, `qa/hosted-preview/claude-release-15b-b09/`).
+- **Device round:** [DEVICE-CHECKS.md](DEVICE-CHECKS.md), mirroring the Claude Doc https://claude.ai/artifact/Nphzgd9PYVFgZRPbLFPQmX.
+
 ## For the build (not decided by the owner; settle when the build starts)
 
 - **B01.** The labels come from `CHK4531.build` (`209.9999998-feat-checks-conditions.js`); `decorateRow` rebuilds a row only when its `sig` changes, so the layer must relabel on build and on a switch-off/on. The spoken names are `aria-label`s set by `api.checkButton` (`spec.name + ': ' + spec.trait + ' Trait Roll ' + spec.why`). Lost Love's button is `api.button('Spend a Void Point', …)`. Take the word "Spend Void" from B18's G07 answer if it is in by then. Search every harness that pins "Check (TN", "Spend a Void Point" or the old spoken names (B18 found "Check" in 8 files and "Spend a Void Point" in 5, upper bounds). The resistance phase (pinned after Phase 15) will likely restyle these six; B01 sets their words.
@@ -86,5 +112,7 @@ How it is read:
 ## Usage
 
 Claude, Opus 5.5, Pro plan, account-wide meters: weekly all models 65% and five-hour 24% at the start (22:18 UTC, 23 November); 68% and 46% at 22:51 UTC, after the reproduction, the board and these records. The weekly meter resets on 25 November at 01:00 UTC.
+
+Build (24 November): weekly 69% at the owner's "Build here" (11:44 UTC); 76% with five-hour 52% at 12:25 UTC, the group built, checked, previewed and its checklist made.
 
 Round 1 (24 November): weekly 69% and five-hour 2% at 11:40 UTC. After the answer was recorded and the board republished as version 2 with the approval banner, the readings were 69% and 3% at 11:42 UTC.
