@@ -1,0 +1,232 @@
+{
+ "A new player who wants a classic warrior": {
+  "answers": [
+   [
+    "Do you want your character to cast spells?",
+    "No: they rely on their own skill"
+   ],
+   [
+    "How much rules detail do you want to keep track of?",
+    "Keep it simple: I am still learning the game"
+   ],
+   [
+    "How do you feel about unusual characters?",
+    "A classic samurai most players will recognise"
+   ],
+   [
+    "When trouble starts, what does your character reach for first?",
+    "A sword or another weapon"
+   ],
+   [
+    "In a fight, where do you want to be?",
+    "In the front line, taking hits and hitting back harder"
+   ],
+   [
+    "What would they most like to be remembered for?",
+    "Standing between the Empire and the darkness"
+   ],
+   [
+    "Where do they feel most at home?",
+    "On a great wall, facing a monster-haunted wasteland"
+   ],
+   [
+    "Would they break the rules to get the job done?",
+    "Only if there is truly no other way"
+   ],
+   [
+    "Which virtue of Bushido matters most to them?",
+    "Courage"
+   ],
+   [
+    "How religious are they?",
+    "Respectful, like most samurai"
+   ],
+   [
+    "Who or what would you like at their side?",
+    "No preference"
+   ],
+   [
+    "Every samurai thinks about how they will die. How will yours?",
+    "In a last stand, holding the line"
+   ]
+  ],
+  "hard": [
+   [
+    "Hida Bushi",
+    "Crab"
+   ]
+  ],
+  "soft": [
+   [
+    "Daidoji Iron Warrior [Bushi]",
+    "Crane"
+   ],
+   [
+    "Lion Elite Spearmen [Bushi]",
+    "Lion"
+   ],
+   [
+    "Heichi Bushi",
+    "Boar"
+   ],
+   [
+    "Matsu Berserker [Bushi]",
+    "Lion"
+   ]
+  ],
+  "wild": null
+ },
+ "A curious player who wants something different": {
+  "answers": [
+   [
+    "Do you want your character to cast spells?",
+    "A touch of the mystical, but no spells"
+   ],
+   [
+    "How much rules detail do you want to keep track of?",
+    "Some extra options are fine"
+   ],
+   [
+    "How do you feel about unusual characters?",
+    "Open to something a bit different"
+   ],
+   [
+    "When trouble starts, what does your character reach for first?",
+    "A sword or another weapon"
+   ],
+   [
+    "In a fight, where do you want to be?",
+    "No preference"
+   ],
+   [
+    "What would they most like to be remembered for?",
+    "Standing between the Empire and the darkness"
+   ],
+   [
+    "Where do they feel most at home?",
+    "On the road, never in one place for long"
+   ],
+   [
+    "Would they break the rules to get the job done?",
+    "Only if there is truly no other way"
+   ],
+   [
+    "Which virtue of Bushido matters most to them?",
+    "Honesty"
+   ],
+   [
+    "How religious are they?",
+    "Deeply: prayer and meditation shape their life"
+   ],
+   [
+    "Who or what would you like at their side?",
+    "No one: they walk alone"
+   ],
+   [
+    "Every samurai thinks about how they will die. How will yours?",
+    "Fighting the darkness, far from home"
+   ]
+  ],
+  "hard": [
+   [
+    "Kuni Witch-Hunter [Monk]",
+    "Crab"
+   ]
+  ],
+  "soft": [
+   [
+    "Toritaka Bushi",
+    "Crab"
+   ],
+   [
+    "The Order of Heroes [Monk]",
+    "Brotherhood of Shinsei"
+   ],
+   [
+    "The Temples of the Thousand Fortunes [Monk]",
+    "Brotherhood of Shinsei"
+   ],
+   [
+    "The Togashi Tattooed Order [Monk]",
+    "Dragon"
+   ]
+  ],
+  "wild": [
+   "Fukurokujin\u2019s Eyes [Monk]",
+   "Brotherhood of Shinsei"
+  ]
+ },
+ "A player who wants a healer": {
+  "answers": [
+   [
+    "Do you want your character to cast spells?",
+    "Yes: magic is the heart of who they are"
+   ],
+   [
+    "How much rules detail do you want to keep track of?",
+    "Some extra options are fine"
+   ],
+   [
+    "How do you feel about unusual characters?",
+    "No preference"
+   ],
+   [
+    "What should their magic be best at?",
+    "Healing and protecting"
+   ],
+   [
+    "Which Element calls to them?",
+    "Air: subtle, quick and perceptive"
+   ],
+   [
+    "What would they most like to be remembered for?",
+    "The people they saved"
+   ],
+   [
+    "Where do they feel most at home?",
+    "Elegant courts and castles"
+   ],
+   [
+    "Would they break the rules to get the job done?",
+    "Never: their word and their honour are everything"
+   ],
+   [
+    "Which virtue of Bushido matters most to them?",
+    "Compassion"
+   ],
+   [
+    "Who or what would you like at their side?",
+    "A book or a brush"
+   ],
+   [
+    "Every samurai thinks about how they will die. How will yours?",
+    "Of old age, surrounded by students"
+   ]
+  ],
+  "hard": [
+   [
+    "Asahina Shugenja",
+    "Crane"
+   ]
+  ],
+  "soft": [
+   [
+    "Fuzake Shugenja",
+    "Monkey"
+   ],
+   [
+    "Seppun Shugenja",
+    "Imperial"
+   ],
+   [
+    "Isawa Shugenja",
+    "Phoenix"
+   ],
+   [
+    "Yogo Wardmaster [Shugenja]",
+    "Scorpion"
+   ]
+  ],
+  "wild": null
+ }
+}

@@ -1,0 +1,18 @@
+[
+ {"label":"Hida Bushi - core 40", "clan":"Crab","family":"Hida","school":"Hida Bushi",
+  "traits":["Willpower","Agility"], "slots":["Jiujutsu"],
+  "skills":{"Heavy Weapons":2,"Defense":1,"Kenjutsu":1,"Athletics":1},
+  "advantages":["Strength of the Earth","Large"]},
+ {"label":"Hida Bushi - with disadvantages", "clan":"Crab","family":"Hida","school":"Hida Bushi",
+  "traits":["Willpower","Agility"], "slots":["Jiujutsu"],
+  "skills":{"Heavy Weapons":2,"Defense":1,"Kenjutsu":2,"Athletics":1,"Lore: Shadowlands":1,"Jiujutsu":1,"Intimidation":1},
+  "advantages":["Strength of the Earth","Large"], "disadvantages":["Brash","Overconfident","Antisocial"]},
+ {"label":"Kuni Witch-Hunter - core 40", "clan":"Crab","family":"Kuni","school":"Kuni Witch-Hunter [Monk]",
+  "traits":["Stamina","Awareness","Agility"], "slots":["Etiquette"],
+  "skills":{"Investigation":1,"Kenjutsu":1},
+  "advantages":[]},
+ {"label":"Kuni Witch-Hunter - with disadvantages", "clan":"Crab","family":"Kuni","school":"Kuni Witch-Hunter [Monk]",
+  "traits":["Stamina","Awareness","Agility"], "slots":["Etiquette"],
+  "skills":{"Investigation":1,"Kenjutsu":1,"Lore: Shadowlands":1},
+  "advantages":["Irreproachable","Wary","Clear Thinker"], "disadvantages":["Driven","Sworn Enemy","Obligation","Can’t Lie"]}
+]

@@ -1,0 +1,3128 @@
+{
+ "rows": [
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Hida Bushi",
+   "benefit": "Stamina",
+   "honor": 3.5,
+   "skills": "Athletics, Defense, Heavy Weapons (Tetsubo), Intimidation, Kenjutsu, Lore: Shadowlands, any one Bugei Skill",
+   "tech": [
+    "The Way of the Crab",
+    "The Mountain Does Not Move",
+    "Two Pincers One Mind",
+    "Devastating Blow",
+    "The Mountain Does Not Fall"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.106",
+   "lore": {
+    "text": "One of the Empire's oldest bushi styles, forged against the Shadowlands: endure the enemy's blows, then crush them with heavy weapons.",
+    "book": "Core Rulebook",
+    "page": 106,
+    "source": "Core Rulebook p.106"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Hida Pragmatist [Bushi]",
+   "benefit": "Agility",
+   "honor": 2.5,
+   "skills": "Athletics, Defense, Jiujutsu (Improvised Weapons) 2, Kenjutsu, Lore: Shadowlands, any one Bugei Skill",
+   "tech": [
+    "The Eternal Stone Unleashed",
+    "Wearing Down the Mountain",
+    "Fury of the Avalanche",
+    "Stone Turns Steel Aside",
+    "Fight to the End"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.247",
+   "lore": {
+    "text": "Students of Kobo Ichi-Kai, taught at Clear Water Village, who put unarmed fighting above every other kind. Their strength makes them fine yojimbo and a match even for Shadowlands creatures.",
+    "book": "Emerald Empire",
+    "page": 247,
+    "source": "Emerald Empire p.247"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Hiruma Bushi",
+   "benefit": "Willpower",
+   "honor": 4.5,
+   "skills": "Athletics, Hunting, Kenjutsu (Katana), Kyujutsu, Lore: Shadowlands, Stealth, any one Skill",
+   "tech": [
+    "Torch’s Flame Flickers",
+    "Wolf’s Little Lesson",
+    "Hummingbird Wings",
+    "Shark Smells Blood",
+    "Daylight Wastes No Movement"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.108",
+   "lore": {
+    "text": "Where the Hida endure, the Hiruma evade, striking weak points with lightning speed. Their School is built for movement and survival inside the Shadowlands.",
+    "book": "Core Rulebook",
+    "page": 108,
+    "source": "Core Rulebook p.108"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Kaiu Engineer [Artisan/Bushi]",
+   "benefit": "Intelligence",
+   "honor": 4.5,
+   "skills": "Battle, Craft: Armorsmithing, Craft: Weaponsmithing, Defense, Engineering, Lore: Architecture, War Fan",
+   "tech": [
+    "The Kaiu Method",
+    "The Path of Stone",
+    "The Path of the Shell",
+    "The Path of War",
+    "The Path of Steel"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.39",
+   "lore": {
+    "text": "The Empire's foremost builders, siege engineers and armourers, devoted to the Crab's defence against the Shadowlands. Many also lead troops, turning siegecraft to war.",
+    "book": "The Great Clans",
+    "page": 39,
+    "source": "The Great Clans p.39"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Kuni Shugenja",
+   "benefit": "Willpower",
+   "honor": 2.5,
+   "skills": "Calligraphy (Cipher), Defense, Lore: Shadowlands 2, Lore: Theology, Spellcraft, any one Weapon Skill",
+   "tech": [
+    "Gaze Into Shadow"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Earth",
+   "deficiency": "Air",
+   "spells": "",
+   "source": "Core Rulebook p.107",
+   "lore": {
+    "text": "Thought of as obsessive madmen who delve into forbidden secrets, the Kuni accept that as the price of fighting the Shadowlands. Their alliance with the Nezumi gives them insight into other nonhumans.",
+    "book": "Core Rulebook",
+    "page": 107,
+    "source": "Core Rulebook p.107"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Kuni Witch-Hunter [Monk]",
+   "benefit": "Willpower",
+   "honor": 5.5,
+   "skills": "Investigation, Jiujutsu, Kenjutsu, Lore: Shadowlands, Lore: Maho, Meditation, any one Skill",
+   "tech": [
+    "To See the Darkness",
+    "To Ride the Darkness",
+    "To Strike the Darkness",
+    "To Repel the Darkness",
+    "To Shatter the Darkness"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.40",
+   "lore": {
+    "text": "A small band of mystic warriors who roam the Empire hunting maho-tsukai and Shadowlands infiltrators, ignoring borders. Commoners welcome them; other samurai often do not.",
+    "book": "The Great Clans",
+    "page": 40,
+    "source": "The Great Clans p.40"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Toritaka Bushi",
+   "benefit": "Strength",
+   "honor": 5.5,
+   "skills": "Animal Handling (Falcons), Hunting 2, Kenjutsu, Etiquette, Lore: Spirit Realms, Spears, any one Skill",
+   "tech": [
+    "The Falcon’s Eyes",
+    "The Falcon Takes Flight",
+    "The Falcon’s Wings",
+    "Vigilant and Strong",
+    "Claws of the Falcon"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.219",
+   "lore": {
+    "text": "Specialists in destroying creatures from other spirit realms, with a fluid style for unexpected monsters: potent against the otherworldly, less so against people.",
+    "book": "Core Rulebook",
+    "page": 219,
+    "source": "Core Rulebook p.219"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Yasuki Courtier",
+   "benefit": "Perception",
+   "honor": 2.5,
+   "skills": "Commerce (Appraisal), Courtier, Defense, Etiquette, Intimidation, Sincerity (Deceit), any one Merchant Skill",
+   "tech": [
+    "The Way of the Carp",
+    "Do As We Say",
+    "Treasures of the Carp",
+    "Wiles of the Carp",
+    "What is Yours is Mine"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.107",
+   "lore": {
+    "text": "Once Crane, the Yasuki joined the Crab and became the Empire's richest merchants. Their courtiers are salesmen who find what a rival needs and supply it, at a price.",
+    "book": "Core Rulebook",
+    "page": 107,
+    "source": "Core Rulebook p.107"
+   }
+  },
+  {
+   "clan": "Crab",
+   "kind": "major",
+   "name": "Hiruma Scout [Bushi]",
+   "benefit": "Reflexes",
+   "honor": 4.5,
+   "skills": "Athletics, Hunting, Kenjutsu, Kyujutsu, Lore: Shadowlands, Stealth (Sneaking), any one Bugei Skill",
+   "tech": [
+    "Dance the Razor's Edge",
+    "Run Like the Wind",
+    "Veil of the Spirits",
+    "Harness the Wind",
+    "Strike of the Stalker"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "",
+   "lore": {
+    "text": "After Hiruma Castle fell, the family lost the teachers of its old bushi School. The Hiruma Scouts are the stealthy style practised in that era.",
+    "book": "Imperial Histories 1",
+    "page": 147,
+    "source": "Imperial Histories 1 p.147"
+   }
+  },
+  {
+   "clan": "Crane",
+   "kind": "major",
+   "name": "Asahina Shugenja",
+   "benefit": "Awareness",
+   "honor": 6.5,
+   "skills": "any one Artisan Skill, Calligraphy (Cipher), Etiquette, Lore: Theology, Meditation, Spellcraft, any one High Skill",
+   "tech": [
+    "The Soul’s Grace"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Air",
+   "deficiency": "Fire",
+   "spells": "",
+   "source": "Core Rulebook p.110",
+   "lore": {
+    "text": "Part priests and part monks, the Asahina value preserving life over destruction, treat every ritual as a lesson and prize the making of art. Their magic leans towards protection.",
+    "book": "Core Rulebook",
+    "page": 110,
+    "source": "Core Rulebook p.110"
+   }
+  },
+  {
+   "clan": "Crane",
+   "kind": "major",
+   "name": "Daidoji Iron Warrior [Bushi]",
+   "benefit": "Agility",
+   "honor": 6.5,
+   "skills": "Battle, Defense 2, Iaijutsu, Kenjutsu (Katana), Kyujutsu, any one Skill",
+   "tech": [
+    "The Force of Honor",
+    "The Shield of Faith",
+    "Strike Beneath the Veil",
+    "Vigilance of Mind",
+    "To Tread on the Sword"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.111",
+   "lore": {
+    "text": "The Crane's quiet strength: heavy infantry and yojimbo who win the day when words fail, with Techniques for enduring blows and guarding others.",
+    "book": "Core Rulebook",
+    "page": 111,
+    "source": "Core Rulebook p.111"
+   }
+  },
+  {
+   "clan": "Crane",
+   "kind": "major",
+   "name": "Daidoji Scout [Bushi]",
+   "benefit": "Reflexes",
+   "honor": 3.5,
+   "skills": "Athletics, Hunting (Traps), Kenjutsu, Knives, Kyujutsu (Yumi), Stealth (Sneaking), any 1 Bugei or Low Skill",
+   "tech": [
+    "Surveying the Land",
+    "Scouring the Shadows",
+    "Weaken the Resistance",
+    "Strike and Move",
+    "Cunning of Daidoji"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.70",
+   "lore": {
+    "text": "A Daidoji style of scouting, ambush and precise strikes at commanders and supply lines. Its scouts use traps and surprise, accepting some dishonour for the good of the Crane.",
+    "book": "The Great Clans",
+    "page": 70,
+    "source": "The Great Clans p.70"
+   }
+  },
+  {
+   "clan": "Crane",
+   "kind": "major",
+   "name": "Doji Courtier",
+   "benefit": "Awareness",
+   "honor": 6.5,
+   "skills": "Calligraphy, Courtier (Manipulation), Etiquette (Courtesy), Perform: Storytelling, Sincerity, Tea Ceremony, any one Artisan or Perform skill",
+   "tech": [
+    "The Soul of Honor",
+    "Speaking in Silence",
+    "The Perfect Gift",
+    "Voice of Honor",
+    "The Gift of the Lady"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.110",
+   "lore": {
+    "text": "The source of the Crane's mastery of court. The Doji School builds vast networks of allies through favours and obligations, with a curriculum broad enough to meet any need.",
+    "book": "Core Rulebook",
+    "page": 110,
+    "source": "Core Rulebook p.110"
+   }
+  },
+  {
+   "clan": "Crane",
+   "kind": "major",
+   "name": "Doji Magistrate [Bushi]",
+   "benefit": "Reflexes",
+   "honor": 5.5,
+   "skills": "Defense, Horsemanship, Jiujutsu, Kenjutsu, Knives (Jitte), Polearms, any High or Bugei Skill",
+   "tech": [
+    "Temper Steel With Honor",
+    "Flowing Like Water",
+    "Breath of the Law",
+    "Flowing Like Air",
+    "The Willow in the Storm"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.170",
+   "lore": {
+    "text": "Crane magistrates trained to fight with compassion, avoiding injury where they can and favouring weapons such as the jitte and sasumata that disarm or capture.",
+    "book": "Emerald Empire",
+    "page": 170,
+    "source": "Emerald Empire p.170"
+   }
+  },
+  {
+   "clan": "Crane",
+   "kind": "major",
+   "name": "Kakita Bushi",
+   "benefit": "Reflexes",
+   "honor": 6.5,
+   "skills": "Etiquette, Iaijutsu (Focus), Kenjutsu, Kyujutsu, Sincerity, Tea Ceremony, any one Bugei or High Skill",
+   "tech": [
+    "The Way of the Crane",
+    "Speed of Lightning",
+    "First and Last Strike",
+    "One Strike Two Cuts",
+    "Strike With No Thought"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.109",
+   "lore": {
+    "text": "The Kakita Dueling Academy is devoted to iaijutsu above all. Its champions decide battles before they begin and answer any challenge at court.",
+    "book": "Core Rulebook",
+    "page": 109,
+    "source": "Core Rulebook p.109"
+   }
+  },
+  {
+   "clan": "Crane",
+   "kind": "major",
+   "name": "Kakita Artisan",
+   "benefit": "Awareness",
+   "honor": 5.5,
+   "skills": "Courtier, Games: Sadane, Etiquette, Sincerity, any 3 skills from Acting/Artisan/Perform",
+   "tech": [
+    "Soul of the Artisan",
+    "The Soul’s Dream",
+    "Free the Spirit",
+    "Undying Name",
+    "A Gift Beyond Price"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.71",
+   "lore": {
+    "text": "The Kakita Artisan Academy studies every art, performed or crafted, and how each can serve the Crane Clan.",
+    "book": "The Great Clans",
+    "page": 71,
+    "source": "The Great Clans p.71"
+   }
+  },
+  {
+   "clan": "Dragon",
+   "kind": "major",
+   "name": "Kitsuki Investigator [Courtier]",
+   "benefit": "Perception",
+   "honor": 5.5,
+   "skills": "Courtier, Etiquette (Courtesy), Investigation (Interrogation), Kenjutsu, Meditation, Sincerity, any one Lore Skill",
+   "tech": [
+    "Kitsuki’s Method",
+    "Wisdom the Wind Brings",
+    "Know the Rhythm of the Heart",
+    "Finding the Path",
+    "The Eyes Betray the Heart"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.114",
+   "lore": {
+    "text": "Alone in the Empire, the Kitsuki believe in evidence. Their School hones near-perfect memory and observation, making them the Dragon's courtiers and natural magistrates.",
+    "book": "Core Rulebook",
+    "page": 114,
+    "source": "Core Rulebook p.114"
+   }
+  },
+  {
+   "clan": "Dragon",
+   "kind": "major",
+   "name": "Mirumoto Bushi",
+   "benefit": "Stamina",
+   "honor": 4.5,
+   "skills": "Defense, Iaijutsu, Kenjutsu (Katana), Lore: Shugenja, Meditation, Lore: Theology, any one Bugei or High Skill",
+   "tech": [
+    "Way of the Dragon",
+    "The Calm in Midst of Thunder",
+    "Strong and Swift",
+    "Furious Retaliation",
+    "Heart of the Dragon"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.112",
+   "lore": {
+    "text": "The only School that teaches Niten, fighting with katana and wakizashi together, which fuels a long rivalry with the Kakita's single-sword style.",
+    "book": "Core Rulebook",
+    "page": 112,
+    "source": "Core Rulebook p.112"
+   }
+  },
+  {
+   "clan": "Dragon",
+   "kind": "major",
+   "name": "Mirumoto Taoist Swordsman [Bushi]",
+   "benefit": "Void",
+   "honor": 5.5,
+   "skills": "Athletics, Defense, Iaijutsu, Kenjutsu (Katana), Lore: Theology, Meditation, any 1 Bugei or High Skill",
+   "tech": [
+    "Aligned With the Elements",
+    "Fist and Blade",
+    "Strike of Harmony",
+    "Master of Steel",
+    "Balance of Nothingness"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.221",
+   "lore": {
+    "text": "Swordsmen who train beside the Togashi tattooed monks and bring their unconventional methods to the blade.",
+    "book": "Emerald Empire",
+    "page": 221,
+    "source": "Emerald Empire p.221"
+   }
+  },
+  {
+   "clan": "Dragon",
+   "kind": "major",
+   "name": "Tamori Shugenja",
+   "benefit": "Stamina",
+   "honor": 4.5,
+   "skills": "Athletics, Calligraphy (Cipher), Defense, Divination, Lore: Theology, Medicine, Spellcraft",
+   "tech": [
+    "Flesh of the Elements"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Earth",
+   "deficiency": "Air",
+   "spells": "",
+   "source": "Core Rulebook p.113",
+   "lore": {
+    "text": "Formed from the Agasha who stayed with the Dragon, the Tamori inherited their experimental magic, notably sealing a spell's essence in prepared liquids for later use.",
+    "book": "Core Rulebook",
+    "page": 113,
+    "source": "Core Rulebook p.113"
+   }
+  },
+  {
+   "clan": "Dragon",
+   "kind": "major",
+   "name": "The Togashi Tattooed Order [Monk]",
+   "benefit": "Void",
+   "honor": 4.5,
+   "skills": "Athletics, Artisan: Tattooing, Defense, Jiujutsu, any one Lore Skill, Meditation, any one non-Low Skill",
+   "tech": [
+    "Blood of the Kami",
+    "Body of Stone",
+    "Blessing of the Kami",
+    "Will of Stone",
+    "Touch of the Kami"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.114",
+   "lore": {
+    "text": "The ise zumi, whose tattoos, inked with the Kami Togashi's blood, grant supernatural powers. Revered and feared, they excel at unarmed combat and feats of athleticism.",
+    "book": "Core Rulebook",
+    "page": 114,
+    "source": "Core Rulebook p.114"
+   }
+  },
+  {
+   "clan": "Dragon",
+   "kind": "major",
+   "name": "The Hoshi Tsurui Zumi Order [Monk]",
+   "benefit": "Void",
+   "honor": 4.5,
+   "skills": "Athletics, Defense, Etiquette, Jiujutsu, Meditation (Void Recovery), any 2 Skills",
+   "tech": [
+    "Swift Fist, Subtle Heart"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Imperial Histories 1 p.214",
+   "lore": {
+    "text": "A branch of the Togashi tattooed monks begun in the Hidden Emperor era, when Togashi Hoshi broke with Hitomi and began tattooing his own followers.",
+    "book": "Imperial Histories 1",
+    "page": 214,
+    "source": "Imperial Histories 1 p.214"
+   }
+  },
+  {
+   "clan": "Dragon",
+   "kind": "major",
+   "name": "The Hitomi Kikage Zumi Order [Monk]",
+   "benefit": "Reflexes",
+   "honor": 4.5,
+   "skills": "Athletics, Defense, Jiujutsu, Lore (choose one), Meditation, any 2 Non-Low Skills",
+   "tech": [
+    "The Gift of the Lady",
+    "Strike the Base",
+    "Moving the Wind",
+    "Strike the Center",
+    "Strike the Summit"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Imperial Histories 1 p.215",
+   "lore": {
+    "text": "Tattooed monks, mostly of the Hitomi family, who seek enlightenment through violent physical action. They flourish under Lady Hitomi but appear in other eras too.",
+    "book": "Imperial Histories 1",
+    "page": 215,
+    "source": "Imperial Histories 1 p.215"
+   }
+  },
+  {
+   "clan": "Lion",
+   "kind": "major",
+   "name": "Akodo Bushi",
+   "benefit": "Perception",
+   "honor": 6.5,
+   "skills": "Battle (Mass Combat), Defense, Kenjutsu, Kyujutsu, Lore: History, Sincerity, any one Bugei or High Skill",
+   "tech": [
+    "The Way of the Lion",
+    "Strength of Purity",
+    "Strength of My Ancestors",
+    "Triumph Before Battle",
+    "Akodo’s Final Lesson"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.116",
+   "lore": {
+    "text": "The Akodo refuse narrow specialisation: their School perfects precise, fundamental kenjutsu and pairs it with a thorough study of battle.",
+    "book": "Core Rulebook",
+    "page": 116,
+    "source": "Core Rulebook p.116"
+   }
+  },
+  {
+   "clan": "Lion",
+   "kind": "major",
+   "name": "Ikoma Bard [Courtier]",
+   "benefit": "Intelligence",
+   "honor": 6.5,
+   "skills": "Courtier, Etiquette, Lore: History (Lion Clan), Perform: Storytelling, Sincerity (Honesty), any one High Skill, any one Bugei Skill",
+   "tech": [
+    "The Herald of Glory",
+    "The Heart of the Lion",
+    "The Voice of the Ancestors",
+    "The Strength of Tradition",
+    "Every Lion is Your Brother"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.118",
+   "lore": {
+    "text": "The Empire's great storytellers. Ikoma bards argue through history and parable, invoking ancestors and heroes to win debates and spread Glory.",
+    "book": "Core Rulebook",
+    "page": 118,
+    "source": "Core Rulebook p.118"
+   }
+  },
+  {
+   "clan": "Lion",
+   "kind": "major",
+   "name": "Ikoma Lion’s Shadow [Bushi]",
+   "benefit": "Awareness",
+   "honor": 3.5,
+   "skills": "Courtier, Etiquette, Kenjutsu, Investigation (Notice), Sincerity, Stealth, any 1 High or Low Skill",
+   "tech": [
+    "No Boundaries",
+    "The Lion Cannot Fail",
+    "The Spirit of Ikoma",
+    "The Quiet Lion’s Claws",
+    "Ferocious Determination"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.109",
+   "lore": {
+    "text": "A small, secretive School that keeps alive the ruthless, pragmatic methods of the first Ikoma, which the family's histories prefer to forget.",
+    "book": "Emerald Empire",
+    "page": 109,
+    "source": "Emerald Empire p.109"
+   }
+  },
+  {
+   "clan": "Lion",
+   "kind": "major",
+   "name": "Kitsu Shugenja",
+   "benefit": "Perception",
+   "honor": 6.5,
+   "skills": "Battle, Calligraphy (Cipher), Etiquette, Lore: History, Lore: Theology, Spellcraft, any one High or Bugei Skill",
+   "tech": [
+    "Eyes of the Ancestors"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Water",
+   "deficiency": "Fire",
+   "spells": "",
+   "source": "Core Rulebook p.117",
+   "lore": {
+    "text": "Keeping rituals unchanged since the family began, the Kitsu sense and work the bonds between the living, their ancestors and other realms, and command large-scale battle magic.",
+    "book": "Core Rulebook",
+    "page": 117,
+    "source": "Core Rulebook p.117"
+   }
+  },
+  {
+   "clan": "Lion",
+   "kind": "major",
+   "name": "Lion Elite Spearmen [Bushi]",
+   "benefit": "Reflexes",
+   "honor": 5.5,
+   "skills": "Battle, Defense, Kenjutsu, Lore: History, Polearms, Spears (Magari-Yari), any one Bugei or High Skill",
+   "tech": [
+    "The Way of Magari-Yarijutsu",
+    "Strike Like The Lion",
+    "Strike Through the Eagle",
+    "Strike Like the Wind",
+    "Strike With the Soul"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Naishou Province p.7",
+   "lore": {
+    "text": "The Lion's spear units are few in modern times and other Clans see them as a relic of an earlier age. Several escort the new Miya Governor of Naishou Province.",
+    "book": "Naishou Province",
+    "page": 7,
+    "source": "Naishou Province p.7"
+   }
+  },
+  {
+   "clan": "Lion",
+   "kind": "major",
+   "name": "Matsu Beastmaster [Bushi]",
+   "benefit": "Agility",
+   "honor": 5.5,
+   "skills": "Animal Handling 2, Battle, Defense, Iaijutsu, Kenjutsu, any 1 Bugei Skill",
+   "tech": [
+    "One with the Pride",
+    "Heart of the Beast",
+    "The Ferocity Within",
+    "All as One",
+    "With the Soul of a Lion"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.136",
+   "lore": {
+    "text": "Matsu who take lion warcats into their own pride and communicate with them almost mystically, though the bond can leave them awkward among people.",
+    "book": "The Great Clans",
+    "page": 136,
+    "source": "The Great Clans p.136"
+   }
+  },
+  {
+   "clan": "Lion",
+   "kind": "major",
+   "name": "Matsu Berserker [Bushi]",
+   "benefit": "Strength",
+   "honor": 6.5,
+   "skills": "Battle, Jiujutsu, Kenjutsu (Katana), Kyujutsu, Lore: History, any two Bugei Skills",
+   "tech": [
+    "The Lion’s Roar",
+    "Matsu’s Fury",
+    "The Lion’s Charge",
+    "Matsu’s Courage",
+    "The Lion’s Victory"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.119",
+   "lore": {
+    "text": "Most Matsu train here. The School teaches total, fearless commitment to the attack, on the principle that a beaten foe cannot strike back.",
+    "book": "Core Rulebook",
+    "page": 119,
+    "source": "Core Rulebook p.119"
+   }
+  },
+  {
+   "clan": "Phoenix",
+   "kind": "major",
+   "name": "Agasha Shugenja",
+   "benefit": "Intelligence",
+   "honor": 4.5,
+   "skills": "Calligraphy (Cipher), any one Craft Skill, Defense, Etiquette, Lore: Theology, Spellcraft, any one High or Bugei Skill",
+   "tech": [
+    "Elements of All Things"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Fire",
+   "deficiency": "Water",
+   "spells": "",
+   "source": "Core Rulebook p.125",
+   "lore": {
+    "text": "Agasha shugenja pursue unconventional magic, from alchemy to spells that call on several elements at once, and the Phoenix let them take that study as far as it leads.",
+    "book": "Core Rulebook",
+    "page": 125,
+    "source": "Core Rulebook p.125"
+   }
+  },
+  {
+   "clan": "Phoenix",
+   "kind": "major",
+   "name": "Asako Henshin [Monk]",
+   "benefit": "Willpower",
+   "honor": 5.5,
+   "skills": "Calligraphy, Jiujutsu, Lore: Elements, Lore: Theology, Meditation 2, any 1 Skill (not Low)",
+   "tech": [
+    "The Four Mysteries",
+    "The Riddle of Earth",
+    "The Riddle of Air",
+    "The Riddle of Fire",
+    "The Riddle of Water"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.199",
+   "lore": {
+    "text": "A secretive monastic sect of the Asako whose ways few outside the family understand. Its monks study how a person relates to the Elements that make up all things.",
+    "book": "The Great Clans",
+    "page": 199,
+    "source": "The Great Clans p.199"
+   }
+  },
+  {
+   "clan": "Phoenix",
+   "kind": "major",
+   "name": "Asako Loremaster [Courtier]",
+   "benefit": "Intelligence",
+   "honor": 6.5,
+   "skills": "Courtier, Etiquette (Courtesy), Lore: History, Lore: Theology (Fortunes), Meditation, Sincerity, any Lore Skill",
+   "tech": [
+    "Temple of the Soul",
+    "From the Ashes",
+    "Voice of the Universe",
+    "Invincible Mind",
+    "Wisdom of the Ages"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.124",
+   "lore": {
+    "text": "Scholarly Asako courtiers who study an unusually wide range of subjects and turn that learning into insight and influence at court.",
+    "book": "Core Rulebook",
+    "page": 124,
+    "source": "Core Rulebook p.124"
+   }
+  },
+  {
+   "clan": "Phoenix",
+   "kind": "major",
+   "name": "Isawa Shugenja",
+   "benefit": "Intelligence",
+   "honor": 4.5,
+   "skills": "Calligraphy (Cipher), Lore: Theology, any one Lore Skill, Medicine, Meditation, Spellcraft, any one High Skill",
+   "tech": [
+    "Isawa’s Gift"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.124",
+   "lore": {
+    "text": "The oldest shugenja School in Rokugan and the largest shugenja family. The Isawa have pursued the secrets of the universe for more than a thousand years.",
+    "book": "Core Rulebook",
+    "page": 124,
+    "source": "Core Rulebook p.124"
+   }
+  },
+  {
+   "clan": "Phoenix",
+   "kind": "major",
+   "name": "Shiba Artisan [Courtier]",
+   "benefit": "Intelligence",
+   "honor": 4.5,
+   "skills": "Artisan (pick 2), Calligraphy, Etiquette, Lore (pick 1), Sincerity, any 1 High or Bugei Skill",
+   "tech": [
+    "Soul of Brilliance",
+    "The Way of Sincerity",
+    "The Art Speaks",
+    "Bounty of the Craft",
+    "The Touch of Destiny"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.122",
+   "lore": {
+    "text": "A quiet Shiba tradition that seeks to capture beauty as purely as possible; unlike the Kakita, a Shiba artist needs no audience.",
+    "book": "Emerald Empire",
+    "page": 122,
+    "source": "Emerald Empire p.122"
+   }
+  },
+  {
+   "clan": "Phoenix",
+   "kind": "major",
+   "name": "Shiba Bushi",
+   "benefit": "Agility",
+   "honor": 5.5,
+   "skills": "Defense, Kenjutsu, Kyujutsu, Meditation (Void Recovery), Spears, Lore: Theology, any one Bugei or High Skill",
+   "tech": [
+    "The Way of the Phoenix",
+    "Dancing With the Elements",
+    "One With the Void",
+    "Move With the World",
+    "Touch of the Void"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.123",
+   "lore": {
+    "text": "Warrior-scholars who look for any alternative to bloodshed, then strike swiftly when it comes. Their Techniques draw on the Void and protect others, suiting them to yojimbo work.",
+    "book": "Core Rulebook",
+    "page": 123,
+    "source": "Core Rulebook p.123"
+   }
+  },
+  {
+   "clan": "Scorpion",
+   "kind": "major",
+   "name": "Bayushi Bushi",
+   "benefit": "Intelligence",
+   "honor": 2.5,
+   "skills": "Courtier (Manipulation), Defense, Etiquette, Iaijutsu, Kenjutsu, Sincerity, any one Skill",
+   "tech": [
+    "The Way of the Scorpion",
+    "Pincers and Tail",
+    "Strike at the Tail",
+    "Strike From Above Strike From Below",
+    "The Pincers Hold, The Tail Strikes"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.126",
+   "lore": {
+    "text": "The School behind the Scorpion's villainous reputation trains its students as agents of discord, adding manipulation, stealth and even poison to their swordplay. Its Techniques are dirty tricks that exploit every advantage.",
+    "book": "Core Rulebook",
+    "page": 126,
+    "source": "Core Rulebook p.126"
+   }
+  },
+  {
+   "clan": "Scorpion",
+   "kind": "major",
+   "name": "Bayushi Courtier",
+   "benefit": "Awareness",
+   "honor": 2.5,
+   "skills": "Calligraphy, Courtier (Gossip), Etiquette, Investigation, Sincerity (Deceit), Temptation, any one High skill",
+   "tech": [
+    "Weakness is My Strength",
+    "Shallow Waters",
+    "Secrets are Birthmarks",
+    "Scrutiny’s Sweet Sting",
+    "No More Masks"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.127",
+   "lore": {
+    "text": "Masters of manipulation whose patient gathering of secrets built the Scorpion's network of informants. They find the weakness in any opponent, or ally, and use it for the Clan.",
+    "book": "Core Rulebook",
+    "page": 127,
+    "source": "Core Rulebook p.127"
+   }
+  },
+  {
+   "clan": "Scorpion",
+   "kind": "major",
+   "name": "Shosuro Actor [Ninja]",
+   "benefit": "Awareness",
+   "honor": 1.5,
+   "skills": "Acting, Etiquette, Knives, Meditation, Sincerity (Deceit), Stealth, any 1 High or Low Skill",
+   "tech": [
+    "The First Face",
+    "The Subtle Sting",
+    "The Second Face",
+    "The Viper’s Kiss",
+    "The Third Face"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.227",
+   "lore": {
+    "text": "Shinobi who infiltrate in plain sight, disguised as servants, peasants or even particular samurai, which is why the Shosuro have long practised acting.",
+    "book": "The Great Clans",
+    "page": 227,
+    "source": "The Great Clans p.227"
+   }
+  },
+  {
+   "clan": "Scorpion",
+   "kind": "major",
+   "name": "Shosuro Infiltrator [Ninja]",
+   "benefit": "Reflexes",
+   "honor": 1.5,
+   "skills": "Acting, Athletics, Ninjutsu, Sincerity, Stealth (Sneaking) 2, any one Skill",
+   "tech": [
+    "The Path of Shadows",
+    "Strike From Darkness",
+    "Steel Within Silk",
+    "Whisper of Steel",
+    "The Final Silence"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.128",
+   "lore": {
+    "text": "A School few outsiders know exists, training silent killers who strike unsuspecting targets from hiding, without pleasure or remorse.",
+    "book": "Core Rulebook",
+    "page": 128,
+    "source": "Core Rulebook p.128"
+   }
+  },
+  {
+   "clan": "Scorpion",
+   "kind": "major",
+   "name": "Soshi Magistrate [Bushi]",
+   "benefit": "Agility",
+   "honor": 2.5,
+   "skills": "Athletics, Defense, Intimidation (Control), Jiujutsu, Kenjutsu, Lore: Underworld, any Bugei Skill",
+   "tech": [
+    "The Face of Justice",
+    "Rise to Meet the Challenge",
+    "The Magistrate’s Cut",
+    "Certainty of Purpose",
+    "Relentless Resolve"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.171",
+   "lore": {
+    "text": "Grown from techniques taught to the yoriki of Soshi Saibankan, this School trains the Scorpion's magistrates and guards in both armed and unarmed fighting.",
+    "book": "Emerald Empire",
+    "page": 171,
+    "source": "Emerald Empire p.171"
+   }
+  },
+  {
+   "clan": "Scorpion",
+   "kind": "major",
+   "name": "Soshi Shugenja",
+   "benefit": "Awareness",
+   "honor": 2.5,
+   "skills": "Calligraphy (Cipher), Courtier, Etiquette, Lore: Theology, Spellcraft, Stealth, any 1 Skill",
+   "tech": [
+    "The Kami’s Whisper"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Air",
+   "deficiency": "Earth",
+   "spells": "",
+   "source": "Core Rulebook p.127",
+   "lore": {
+    "text": "Called in when stealth and subtlety are needed, Soshi shugenja coax the amoral kami into trickery and can cast most non-damaging spells without any visible sign.",
+    "book": "Core Rulebook",
+    "page": 127,
+    "source": "Core Rulebook p.127"
+   }
+  },
+  {
+   "clan": "Scorpion",
+   "kind": "major",
+   "name": "Yogo Wardmaster [Shugenja]",
+   "benefit": "Intelligence",
+   "honor": 1.5,
+   "skills": "Calligraphy (Cipher), Etiquette, Investigation, Lore: Theology, Spellcraft, Stealth, any 1 High or Low Skill",
+   "tech": [
+    "Way of the Wardmaster"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.229",
+   "lore": {
+    "text": "Shugenja of the Yogo's closely guarded ward magic: protective charms more flexible than the Toritaka's exorcism wards.",
+    "book": "The Great Clans",
+    "page": 229,
+    "source": "The Great Clans p.229"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Horiuchi Shugenja",
+   "benefit": "Stamina",
+   "honor": 4.5,
+   "skills": "Calligraphy, Craft: Meishodo, Defense, Lore: Theology, Meditation, Spellcraft (Spell Research), any 1 High or Bugei Skill",
+   "tech": [
+    "Mysteries of Meishodo"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Earth",
+   "deficiency": "Air",
+   "spells": "",
+   "source": "The Great Clans p.257",
+   "lore": {
+    "text": "Keepers of meishodo, the talisman magic the Unicorn gathered from many peoples on their travels beyond the Empire. In earlier eras the Iuchi teach it.",
+    "book": "The Great Clans",
+    "page": 257,
+    "source": "The Great Clans p.257"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Ide Emissary [Courtier]",
+   "benefit": "Awareness",
+   "honor": 5.5,
+   "skills": "Calligraphy, Commerce, Courtier, Etiquette (Conversation), Horsemanship, Sincerity (Honesty), any one High or Perform skill",
+   "tech": [
+    "The Heart Speaks",
+    "Piercing the Veils",
+    "The Heart Listens",
+    "Answering the Heart",
+    "The Immovable Hand of Peace"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.131",
+   "lore": {
+    "text": "The most peaceable courtiers of the Great Clans, the Ide cultivate calm and mediation. Their Techniques never attack; they defuse conflict and protect the Emissary.",
+    "book": "Core Rulebook",
+    "page": 131,
+    "source": "Core Rulebook p.131"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Iuchi Shugenja",
+   "benefit": "Perception",
+   "honor": 5.5,
+   "skills": "Battle, Calligraphy (Cipher), Horsemanship, Lore: Theology, Meditation, Spellcraft, any one High or Bugei Skill",
+   "tech": [
+    "Spirit of the Wind"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Water",
+   "deficiency": "Fire",
+   "spells": "",
+   "source": "Core Rulebook p.130",
+   "lore": {
+    "text": "Free-spirited and unconventional, the Iuchi learned much of their craft on the open plains during the Unicorn's wanderings, meishodo talismans included. Their magic favours speed and travel.",
+    "book": "Core Rulebook",
+    "page": 130,
+    "source": "Core Rulebook p.130"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Moto Bushi",
+   "benefit": "Strength",
+   "honor": 3.5,
+   "skills": "Athletics, Defense, Horsemanship, Hunting, Kenjutsu (Scimitar), any one Bugei Skill, any one Skill",
+   "tech": [
+    "The Way of the Unicorn",
+    "Shinsei’s Smile",
+    "Desert Wind Strike",
+    "The Charge of Madness",
+    "Moto Cannot Yield"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.130",
+   "lore": {
+    "text": "Descended in part from the nomads who joined the Unicorn abroad, the Moto fight as unrestrained heavy cavalry, a style other Clans find both fearsome and improper.",
+    "book": "Core Rulebook",
+    "page": 130,
+    "source": "Core Rulebook p.130"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Moto Death Priest [Shugenja]",
+   "benefit": "Willpower",
+   "honor": 3.5,
+   "skills": "Athletics, Horsemanship, Hunting, Lore: Theology, Meditation, Spellcraft, any 1 Skill",
+   "tech": [
+    "Blessings of the Shi-Tien Yen-Wang"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Earth",
+   "deficiency": "Air",
+   "spells": "",
+   "source": "Imperial Histories 1 p.240",
+   "lore": {
+    "text": "Followers of the Shi-Tien Yen-Wang, a wrathful pantheon of foreign death gods, who turn those gods' disfavour on their enemies.",
+    "book": "Imperial Histories 1",
+    "page": 240,
+    "source": "Imperial Histories 1 p.240"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Moto Vindicator [Bushi]",
+   "benefit": "Willpower",
+   "honor": 3.5,
+   "skills": "Horsemanship, Hunting, Investigation (Notice), Kenjutsu, Kyujutsu, Lore: Shadowlands, any 1 Bugei Skill",
+   "tech": [
+    "Purity of the Breath",
+    "Facing the Dark Within",
+    "Justice of Our Ancestors",
+    "Avenging Our Own",
+    "Bloodied but Unbowed"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.258",
+   "lore": {
+    "text": "Born of the shame of Moto Tsume's fall into the Shadowlands, the Vindicators swore to destroy the Tainted Moto and every Shadowlands creature.",
+    "book": "The Great Clans",
+    "page": 258,
+    "source": "The Great Clans p.258"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Shinjo Bushi",
+   "benefit": "Agility",
+   "honor": 4.5,
+   "skills": "Athletics, Defense, Horsemanship 2, Kenjutsu, Kyujutsu, any 1 Skill",
+   "tech": [
+    "The Way of the Ki-Rin",
+    "Dance of the Blade",
+    "The Four Winds Strike",
+    "Spirit of the Blade Unleashed",
+    "Dancing With the Fortunes"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.31",
+   "lore": {
+    "text": "Mounted fighters whose style adopts foreign methods from the Unicorn's travels, such as the active parry and riposte, unfamiliar to most Rokugani.",
+    "book": "Emerald Empire",
+    "page": 31,
+    "source": "Emerald Empire p.31"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Utaku Battle Maiden [Bushi]",
+   "benefit": "Reflexes",
+   "honor": 6.5,
+   "skills": "Battle, Defense, Horsemanship 2, Kenjutsu, Sincerity, any one High or Bugei Skill",
+   "tech": [
+    "Riding in Harmony",
+    "The Void of War",
+    "Sensing the Breeze",
+    "Wind Never Stops",
+    "Otaku’s Blessing"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.132",
+   "lore": {
+    "text": "The shiotome, the most respected cavalry in the Empire and the only riders allowed to breed the Utaku steeds. Honor strengthens their mounted Techniques.",
+    "book": "Core Rulebook",
+    "page": 132,
+    "source": "Core Rulebook p.132"
+   }
+  },
+  {
+   "clan": "Unicorn",
+   "kind": "major",
+   "name": "Utaku Mounted Infantry [Bushi]",
+   "benefit": "Agility",
+   "honor": 5.5,
+   "skills": "Athletics, Battle, Defense, Kenjutsu, Polearms, Spears, any one Bugei or High Skill",
+   "tech": [
+    "Choose Your Weapon",
+    "Speed of My Sisters",
+    "All-Fronts Attack",
+    "Utaku’s Thunder",
+    "Epic of My Name"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Imperial Histories 2 p.168",
+   "lore": {
+    "text": "Soldiers who ride to battle and fight on foot, developed during the Unicorn's wanderings; many are Otaku men barred by tradition from fighting on horseback.",
+    "book": "Imperial Histories 2",
+    "page": 168,
+    "source": "Imperial Histories 2 p.168"
+   }
+  },
+  {
+   "clan": "Spider",
+   "kind": "major",
+   "name": "Chuda Shugenja",
+   "benefit": "Willpower",
+   "honor": 0.5,
+   "skills": "Calligraphy (Cipher), Hunting, Lore: Maho, Lore: Shadowlands, Spellcraft, Stealth, any one Skill",
+   "tech": [
+    "Blood Like Water"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.213",
+   "lore": {
+    "text": "Heirs of the destroyed Snake Clan, the Chuda keep a secret tradition of maho centuries old and now serve the Spider, always pushing blood magic further whatever it costs.",
+    "book": "Core Rulebook",
+    "page": 213,
+    "source": "Core Rulebook p.213"
+   }
+  },
+  {
+   "clan": "Spider",
+   "kind": "major",
+   "name": "Daigotsu Bushi",
+   "benefit": "Strength",
+   "honor": 1.5,
+   "skills": "Hunting, Intimidation, Jiujutsu, Kenjutsu (Katana), Kyujutsu, Lore: Shadowlands, any one Bugei or Low Skill",
+   "tech": [
+    "The Way of the Spider",
+    "Aura of Blood",
+    "Ashura’s Wing",
+    "Devouring Wrath",
+    "Inhuman Assault"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.212",
+   "lore": {
+    "text": "Spider Clan warriors whose style is pieced together from the Schools they knew in their former lives. Eclectic but brutal, it can even feed on a dying foe's life force.",
+    "book": "Core Rulebook",
+    "page": 212,
+    "source": "Core Rulebook p.212"
+   }
+  },
+  {
+   "clan": "Spider",
+   "kind": "major",
+   "name": "Daigotsu Courtier",
+   "benefit": "Perception",
+   "honor": 1,
+   "skills": "Acting, Courtier (Manipulation), Etiquette, Meditation, Sincerity (Deceit), Temptation, any one High Skill",
+   "tech": [
+    "Insidious Whispers",
+    "Cracks in the Wall",
+    "Darkness Cannot be Trapped",
+    "The Touch of Sin",
+    "The Embrace of Darkness"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.213",
+   "lore": {
+    "text": "Spider courtiers who slip into the courts of the Great Clans in disguise, using blackmail and contacts to steer rivals into conflict while hiding their own Taint.",
+    "book": "Core Rulebook",
+    "page": 213,
+    "source": "Core Rulebook p.213"
+   }
+  },
+  {
+   "clan": "Spider",
+   "kind": "major",
+   "name": "Goju Ninja",
+   "benefit": "Agility",
+   "honor": 0,
+   "skills": "Athletics, Kenjutsu, Ninjutsu, Sincerity (Deceit), Stealth 2, any one Skill",
+   "tech": [
+    "The Cloak of Night",
+    "Melting into Shadow",
+    "The Shadowed Blade",
+    "Step Within Shadow",
+    "Shadow upon the Moon"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.280",
+   "lore": {
+    "text": "The faceless servants of the Lying Darkness, people whose identities the Nothing has consumed. They draw on it for infiltration, deception and murder.",
+    "book": "The Great Clans",
+    "page": 280,
+    "source": "The Great Clans p.280"
+   }
+  },
+  {
+   "clan": "Spider",
+   "kind": "major",
+   "name": "Ninube Shugenja",
+   "benefit": "Awareness",
+   "honor": 0,
+   "skills": "Calligraphy, Knives, Sincerity (Lying), Spellcraft, Stealth 2, any Low skill",
+   "tech": [
+    "Mask of the Nothing"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Air",
+   "deficiency": "Earth",
+   "spells": "",
+   "source": "The Great Clans p.281",
+   "lore": {
+    "text": "Called shugenja only for convenience, the Ninube are no longer truly individuals; their power, like the Goju's, comes from the Nothing.",
+    "book": "The Great Clans",
+    "page": 281,
+    "source": "The Great Clans p.281"
+   }
+  },
+  {
+   "clan": "Spider",
+   "kind": "major",
+   "name": "The Order of the Spider Monks [Monk]",
+   "benefit": "Agility",
+   "honor": 1.5,
+   "skills": "Athletics, Jiujutsu 2, Lore: Theology, Meditation, Polearms, any one Skill",
+   "tech": [
+    "The Dark Path",
+    "Drawing in the Strike",
+    "Speed of Darkness",
+    "Guarded by Chi",
+    "Darkness Unleashed"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.215",
+   "lore": {
+    "text": "Begun with the fallen monk Roshungi and spread by his student Michio, the Order teaches each follower to find their own path whatever it costs others.",
+    "book": "Core Rulebook",
+    "page": 215,
+    "source": "Core Rulebook p.215"
+   }
+  },
+  {
+   "clan": "Imperial",
+   "kind": "major",
+   "name": "Miya Herald [Courtier]",
+   "benefit": "Awareness",
+   "honor": 6.5,
+   "skills": "Courtier (Rhetoric), Defense, Etiquette (Courtesy), Horsemanship, Lore: Heraldry, Sincerity, any 1 High or Bugei skill",
+   "tech": [
+    "Voice of the Emperor",
+    "Eyes of the Emperor",
+    "Hand of the Emperor",
+    "Blessing of the Emperor",
+    "Glory of the Emperor"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.230",
+   "lore": {
+    "text": "Imperial messengers who carry the Emperor's word to every corner of Rokugan. They build trust, calm disputes and can defend themselves on dangerous roads.",
+    "book": "Core Rulebook",
+    "page": 230,
+    "source": "Core Rulebook p.230"
+   }
+  },
+  {
+   "clan": "Imperial",
+   "kind": "major",
+   "name": "Otomo Courtier",
+   "benefit": "Awareness",
+   "honor": 5.5,
+   "skills": "Courtier (Manipulation), Defense, Etiquette, Intimidation (Control), Investigation, Sincerity, any 1 High Skill",
+   "tech": [
+    "The Voice of Heaven",
+    "Destiny Has No Secrets",
+    "My Master’s Voice",
+    "The Emperor’s Protection",
+    "The Virtues of Command"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.229",
+   "lore": {
+    "text": "Imperial courtiers who protect the throne by sowing suspicion among the Great Clans. They trade on Imperial authority and use every underhanded trick, safe behind their bloodline.",
+    "book": "Core Rulebook",
+    "page": 229,
+    "source": "Core Rulebook p.229"
+   }
+  },
+  {
+   "clan": "Imperial",
+   "kind": "major",
+   "name": "Seppun Guardsman [Bushi]",
+   "benefit": "Perception",
+   "honor": 6.5,
+   "skills": "Battle, Defense, Etiquette, Iaijutsu, Kenjutsu (Katana), Kyujutsu, any 1 High Skill",
+   "tech": [
+    "Never in Darkness",
+    "The Clouds Part",
+    "Sun’s Light Reveals",
+    "Speed of Heaven",
+    "Heaven Never Falls"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.228",
+   "lore": {
+    "text": "The Miharu, who give up everything to guard the Imperial House. Their School puts defence, and the life of the one they protect, above the guardsman's own.",
+    "book": "Core Rulebook",
+    "page": 228,
+    "source": "Core Rulebook p.228"
+   }
+  },
+  {
+   "clan": "Imperial",
+   "kind": "major",
+   "name": "Seppun Shugenja",
+   "benefit": "Intelligence",
+   "honor": 6.5,
+   "skills": "Calligraphy, Defense, Etiquette, Investigation (Notice), Meditation, Lore: Theology, any 1 High or Bugei Skill",
+   "tech": [
+    "In Defense of the Throne"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Fire",
+   "deficiency": "Water",
+   "spells": "",
+   "source": "Core Rulebook p.228",
+   "lore": {
+    "text": "The Hidden Guard: shugenja who keep constant watch against threats steel cannot answer, with some of the finest wards in Rokugan, as the Emperor's last line of defence.",
+    "book": "Core Rulebook",
+    "page": 228,
+    "source": "Core Rulebook p.228"
+   }
+  },
+  {
+   "clan": "Badger",
+   "kind": "minor",
+   "name": "Ichiro Bushi",
+   "benefit": "Strength",
+   "honor": 3.5,
+   "skills": "Athletics, Commerce, Defense, Heavy Weapons, Jiujutsu, Kenjutsu (Katana), any High or Bugei skill",
+   "tech": [
+    "Transcend the Mountain",
+    "Strength of the Badger",
+    "Crushing Blow",
+    "Crashing Stones",
+    "Return the Strike"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.215",
+   "lore": {
+    "text": "Founded by a Hida, the Badger's School stays close to its Crab roots: wrestling, unarmed fighting and sheer strength that answers finesse with overwhelming force.",
+    "book": "Core Rulebook",
+    "page": 215,
+    "source": "Core Rulebook p.215"
+   }
+  },
+  {
+   "clan": "Bat",
+   "kind": "minor",
+   "name": "Komori Shugenja",
+   "benefit": "Awareness",
+   "honor": 4.5,
+   "skills": "Calligraphy (Cipher), Lore: Ancestors, Lore: Theology, Meditation, Spellcraft, Tea Ceremony, any one High Skill",
+   "tech": [
+    "The Kami’s Whispers"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Air",
+   "deficiency": "Earth",
+   "spells": "",
+   "source": "Core Rulebook p.216",
+   "lore": {
+    "text": "The Bat Clan's shugenja draw on the koumori, kindly bat spirits of Chikushudo, for strange spells and swift messages across the Empire.",
+    "book": "Core Rulebook",
+    "page": 216,
+    "source": "Core Rulebook p.216"
+   }
+  },
+  {
+   "clan": "Boar",
+   "kind": "minor",
+   "name": "Heichi Bushi",
+   "benefit": "Strength",
+   "honor": 3,
+   "skills": "Athletics, Defense, Hunting, Intimidation, Kenjutsu, Spears (Mai Chong), any one Bugei Skill",
+   "tech": [
+    "The Charge of the Boar",
+    "The Strength of Opposition",
+    "The Speed of the Boar",
+    "The Anger of the Boar",
+    "Beyond the Mountains"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.217",
+   "lore": {
+    "text": "Shaped by the dangers of the Boar lands, Heichi bushi take the enemy's worst and keep fighting. The School favours the rare curved Mai Chong spear and a patient, defensive style.",
+    "book": "Core Rulebook",
+    "page": 217,
+    "source": "Core Rulebook p.217"
+   }
+  },
+  {
+   "clan": "Dragonfly",
+   "kind": "minor",
+   "name": "Tonbo Shugenja",
+   "benefit": "Perception",
+   "honor": 4.5,
+   "skills": "Calligraphy, Courtier, Etiquette, Meditation (Void Recovery), Sincerity, Spellcraft, any one High Skill",
+   "tech": [
+    "Guided by Fate"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Water",
+   "deficiency": "Fire",
+   "spells": "",
+   "source": "Core Rulebook p.218",
+   "lore": {
+    "text": "Deeply spiritual priests of the mountains who also serve as go-betweens for the Dragon at court, using their bond with the spirits to sharpen their social graces.",
+    "book": "Core Rulebook",
+    "page": 218,
+    "source": "Core Rulebook p.218"
+   }
+  },
+  {
+   "clan": "Falcon",
+   "kind": "minor",
+   "name": "Toritaka Bushi",
+   "benefit": "Strength",
+   "honor": 5.5,
+   "skills": "Animal Handling (Falcons), Hunting 2, Kenjutsu, Etiquette, Lore: Spirit Realms, Spears, any one Skill",
+   "tech": [
+    "The Falcon’s Eyes",
+    "The Falcon Takes Flight",
+    "The Falcon’s Wings",
+    "Vigilant and Strong",
+    "Claws of the Falcon"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.219",
+   "lore": {
+    "text": "Specialists in destroying creatures from other spirit realms, with a fluid style for unexpected monsters: potent against the otherworldly, less so against people.",
+    "book": "Core Rulebook",
+    "page": 219,
+    "source": "Core Rulebook p.219"
+   }
+  },
+  {
+   "clan": "Fox",
+   "kind": "minor",
+   "name": "Kitsune Shugenja",
+   "benefit": "Stamina",
+   "honor": 4.5,
+   "skills": "Calligraphy, Defense, Hunting, Medicine (Herbalism), Meditation, Spellcraft, any one High or Bugei skill",
+   "tech": [
+    "Essence of Chikushudo"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Earth",
+   "deficiency": "Air",
+   "spells": "",
+   "source": "Core Rulebook p.219",
+   "lore": {
+    "text": "Living beside one of Rokugan's great forests, Fox shugenja learn to love its spirits and creatures, and their School deepens the bond between people and animals.",
+    "book": "Core Rulebook",
+    "page": 219,
+    "source": "Core Rulebook p.219"
+   }
+  },
+  {
+   "clan": "Hare",
+   "kind": "minor",
+   "name": "Usagi Bushi",
+   "benefit": "Reflexes",
+   "honor": 4,
+   "skills": "Athletics (Running), Defense, Hunting, Jiujutsu, Kenjutsu, Lore: Maho, any one High or Bugei skill",
+   "tech": [
+    "Speed of the Hare",
+    "Leap of the Hare",
+    "Swift as Lightning",
+    "Kick of the Hare",
+    "Reichin’s Style"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.220",
+   "lore": {
+    "text": "Tested by centuries of war, the Hare's School turns their athleticism into hit-and-run attacks that seem to come from every side.",
+    "book": "Core Rulebook",
+    "page": 220,
+    "source": "Core Rulebook p.220"
+   }
+  },
+  {
+   "clan": "Mantis",
+   "kind": "minor",
+   "name": "Mantis Brawler [Bushi]",
+   "benefit": "Agility",
+   "honor": 3.5,
+   "skills": "Athletics, Commerce, Intimidation, Jiujutsu, Knives, Sailing, any 1 Weapon Skill",
+   "tech": [
+    "Way of Drunken Fists",
+    "Drunk Loses His Sandal",
+    "Drunk Never Falls",
+    "Two Drunks Dance",
+    "Drunk Pounds a Door"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.165",
+   "lore": {
+    "text": "Born of shipboard fights and tavern brawls among the Mantis Clan's pirates and smugglers, a fighting style even less conventional than the Yoritomo's.",
+    "book": "The Great Clans",
+    "page": 165,
+    "source": "The Great Clans p.165"
+   }
+  },
+  {
+   "clan": "Mantis",
+   "kind": "minor",
+   "name": "Moshi Shugenja",
+   "benefit": "Awareness",
+   "honor": 4.5,
+   "skills": "Calligraphy (Cipher), Divination, Lore: Theology, Meditation, Spellcraft, any two High or Bugei Skills",
+   "tech": [
+    "Favor of the Sun"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Air",
+   "deficiency": "Earth",
+   "spells": "",
+   "source": "Core Rulebook p.120",
+   "lore": {
+    "text": "Long devoted to the Sun Goddess, the Moshi turned to practical weather magic after joining the Mantis and often sail on Yoritomo ships to calm the seas.",
+    "book": "Core Rulebook",
+    "page": 120,
+    "source": "Core Rulebook p.120"
+   }
+  },
+  {
+   "clan": "Mantis",
+   "kind": "minor",
+   "name": "Tsuruchi Archer [Bushi]",
+   "benefit": "Reflexes",
+   "honor": 3.5,
+   "skills": "Athletics, Defense, Hunting, Investigation, Kyujutsu (Yumi) 2, any one Bugei or High Skill",
+   "tech": [
+    "Always Be Ready",
+    "The Arrow Knows the Way",
+    "The Wasp’s Sting",
+    "Flight of No-Mind",
+    "Tsuruchi’s Eye"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.122",
+   "lore": {
+    "text": "The Empire's finest archers since their days as the Wasp Clan, devoted to the purity of the bow: deadly at range, outclassed in melee.",
+    "book": "Core Rulebook",
+    "page": 122,
+    "source": "Core Rulebook p.122"
+   }
+  },
+  {
+   "clan": "Mantis",
+   "kind": "minor",
+   "name": "Tsuruchi Bounty Hunter [Bushi]",
+   "benefit": "Agility",
+   "honor": 4.5,
+   "skills": "Athletics, Hunting (Tracking), Intimidation, Investigation, Kenjutsu, Kyujutsu, Lore: Underworld",
+   "tech": [
+    "A Hunter’s Sense",
+    "No Prey Escapes",
+    "Justice of the Wasp",
+    "Twin Sting Strike",
+    "Eyes of the Wasp"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "The Great Clans p.167",
+   "lore": {
+    "text": "The Wasp Clan once lived by hunting fugitives for the Emerald Champion; a few Tsuruchi still learn that relentless trade as a School of its own.",
+    "book": "The Great Clans",
+    "page": 167,
+    "source": "The Great Clans p.167"
+   }
+  },
+  {
+   "clan": "Mantis",
+   "kind": "minor",
+   "name": "Yoritomo Bushi",
+   "benefit": "Strength",
+   "honor": 3.5,
+   "skills": "Commerce, Defense, Jiujutsu (Improved Weapons), Kenjutsu, Knives (Kama), Sailing, any one Skill",
+   "tech": [
+    "The Way of the Mantis",
+    "Voice of the Storm",
+    "Strike of the Mantis",
+    "The Rolling Wave",
+    "Hand of Osano-Wo"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.120",
+   "lore": {
+    "text": "Fighters shaped by ship-to-ship combat, with fluid movement, a habit of exploiting weaknesses quickly and skill with peasant weapons that stand up to sea air.",
+    "book": "Core Rulebook",
+    "page": 120,
+    "source": "Core Rulebook p.120"
+   }
+  },
+  {
+   "clan": "Mantis",
+   "kind": "minor",
+   "name": "Yoritomo Courtier",
+   "benefit": "Willpower",
+   "honor": 2.5,
+   "skills": "Commerce (Appraisal), Courtier, Defense, Etiquette, Intimidation (Control), Sincerity, any one Merchant or Lore skill",
+   "tech": [
+    "Duty Before Honor",
+    "Storm Heart",
+    "Command the Winds",
+    "Will of the Storm",
+    "Strength in All Things"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.121",
+   "lore": {
+    "text": "Created to serve the Mantis's trade, these courtiers rely on intimidation and bullying, a style that has found more success since the Mantis became a Great Clan.",
+    "book": "Core Rulebook",
+    "page": 121,
+    "source": "Core Rulebook p.121"
+   }
+  },
+  {
+   "clan": "Mantis",
+   "kind": "minor",
+   "name": "Yoritomo Shugenja",
+   "benefit": "Perception",
+   "honor": 4.5,
+   "skills": "Athletics, Calligraphy, Knives, Lore: Theology, Meditation, Sailing (Navigation), any 1 Skill",
+   "tech": [
+    "Child of the Sea"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Water",
+   "deficiency": "Earth",
+   "spells": "",
+   "source": "The Great Clans p.168",
+   "lore": {
+    "text": "A small Yoritomo line, begun with a daughter of the Mantis founder, with an unmatched bond to the spirits of the sea and storm.",
+    "book": "The Great Clans",
+    "page": 168,
+    "source": "The Great Clans p.168"
+   }
+  },
+  {
+   "clan": "Monkey",
+   "kind": "minor",
+   "name": "Toku Bushi",
+   "benefit": "Willpower",
+   "honor": 5.5,
+   "skills": "Athletics, Defense, Hunting, Investigation (Search), Kenjutsu, Lore: History, any 1 High or Bugei Skill",
+   "tech": [
+    "Toku’s Lesson",
+    "The Strength of One Man",
+    "Courage Above All",
+    "Forge Your Own Fate",
+    "Fortune Favors the Mortal Man"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.221",
+   "lore": {
+    "text": "The Monkey Clan's School teaches calm against overwhelming odds and fighting many foes at once.",
+    "book": "Core Rulebook",
+    "page": 221,
+    "source": "Core Rulebook p.221"
+   }
+  },
+  {
+   "clan": "Monkey",
+   "kind": "minor",
+   "name": "Fuzake Shugenja",
+   "benefit": "Willpower",
+   "honor": 5.5,
+   "skills": "Calligraphy, Defense, Etiquette, Lore: Theology, Medicine, Spellcraft, any one High or Merchant Skill",
+   "tech": [
+    "The Sideways Path"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Earth",
+   "deficiency": "Fire",
+   "spells": "",
+   "source": "Secrets of the Empire p.238",
+   "lore": {
+    "text": "Begun as ronin shugenja in Toturi's Army under Yasuki Garou, a friend of Toku, the Fuzake swore to the Monkey Clan and devote themselves to healing and an eccentric reverence for the Fortunes.",
+    "book": "Secrets of the Empire",
+    "page": 238,
+    "source": "Secrets of the Empire p.238"
+   }
+  },
+  {
+   "clan": "Oriole",
+   "kind": "minor",
+   "name": "Tsi Smith [Artisan]",
+   "benefit": "Intelligence",
+   "honor": 4.5,
+   "skills": "Any one Artisan Skill, Commerce, two ranks in any one Craft Skill, Defense, any one Weapon Skill, any one High, Bugei, or Merchant Skill",
+   "tech": [
+    "Tools of the Fortunes",
+    "Tsi Xing Guo’s Blessing",
+    "A Crafter’s Dedication",
+    "Exhaustive Knowledge",
+    "Star-filled Steel"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.222",
+   "lore": {
+    "text": "Named for a foreign smith honoured by the second Emperor and revived by a ronin centuries later, the School forges weapons and armour and learns to fight so it knows how they are used.",
+    "book": "Core Rulebook",
+    "page": 222,
+    "source": "Core Rulebook p.222"
+   }
+  },
+  {
+   "clan": "Ox",
+   "kind": "minor",
+   "name": "Morito Bushi",
+   "benefit": "Agility",
+   "honor": 3.5,
+   "skills": "Defense, Horsemanship, Hunting (Tracking), Kenjutsu, Lore: Kolat, Lore: Underworld, any one Skill",
+   "tech": [
+    "Legacy of the Four Winds",
+    "The Wind Blows Many Ways",
+    "Thunder and Fury",
+    "The Blade Upon the Wind",
+    "Fast and Furious"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.223",
+   "lore": {
+    "text": "The Ox Clan's heavy cavalry, trained to ride down infantry and make the most of a horse's speed; most fight with a polearm.",
+    "book": "Core Rulebook",
+    "page": 223,
+    "source": "Core Rulebook p.223"
+   }
+  },
+  {
+   "clan": "Snake",
+   "kind": "minor",
+   "name": "Chuda Shugenja [Snake]",
+   "benefit": "Willpower",
+   "honor": 4.5,
+   "skills": "Calligraphy (Cipher), Etiquette, Lore: Maho, Lore: Shadowlands, Spellcraft, any 2 Skills",
+   "tech": [
+    "To Punish the Wicked"
+   ],
+   "shugenja": true,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "Earth",
+   "deficiency": "Air",
+   "spells": "",
+   "source": "Core Rulebook p.224",
+   "lore": {
+    "text": "The Snake Clan's original School, founded by an Imperial magistrate sworn to destroy maho-tsukai. Its shugenja hunted Tainted sorcerers and their monsters with Earth and Jade magic.",
+    "book": "Core Rulebook",
+    "page": 224,
+    "source": "Core Rulebook p.224"
+   }
+  },
+  {
+   "clan": "Sparrow",
+   "kind": "minor",
+   "name": "Suzume Bushi",
+   "benefit": "Willpower",
+   "honor": 6.5,
+   "skills": "Calligraphy, Kenjutsu (Katana), Lore: History, Lore: Theology, Perform: Storytelling, any one Lore Skill, any one Skill",
+   "tech": [
+    "All Things in Time",
+    "Purity of Chi",
+    "Wisdom is the Greatest Weapon",
+    "Quiet Spirit, Steady Blade",
+    "Slow and Deadly"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.225",
+   "lore": {
+    "text": "Founded from Crane samurai, the Sparrow keep a katana style that waits for the perfect strike, and their love of stories helps them read the flow of battle.",
+    "book": "Core Rulebook",
+    "page": 225,
+    "source": "Core Rulebook p.225"
+   }
+  },
+  {
+   "clan": "Tortoise",
+   "kind": "minor",
+   "name": "Kasuga Smuggler [Courtier]",
+   "benefit": "Awareness",
+   "honor": 2,
+   "skills": "Commerce, Etiquette, Investigation (Notice), Lore: Underworld, Sincerity (Deceit), Stealth, any one High, Merchant, or Low Skill",
+   "tech": [
+    "Way of the Tortoise",
+    "The Shell of the Tortoise",
+    "The Eyes of the Emperor",
+    "Hand in Hand",
+    "The Tortoise Smiles"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.225",
+   "lore": {
+    "text": "Tortoise agents who move among the Empire's criminals, ruthless and steeped in the underworld, finding allies wherever they can, even among honest peasants.",
+    "book": "Core Rulebook",
+    "page": 225,
+    "source": "Core Rulebook p.225"
+   }
+  },
+  {
+   "clan": "Tiger",
+   "kind": "minor",
+   "name": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+   "benefit": "Agility",
+   "honor": 5.5,
+   "skills": "Commerce, Hunting, Kenjutsu, Kyujutsu, any one Skill from Lore: Gaijin or Lore: Shadowlands, Stealth (Sneaking), any one Low or Bugei Skill",
+   "tech": [
+    "The Tiger's Tread",
+    "The Tiger's Pounce",
+    "Rending Claws",
+    "Shelter the Blameless (Yotsu Bushi)",
+    "The Tiger's Fangs"
+   ],
+   "shugenja": false,
+   "monk": false,
+   "brotherhood": false,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "",
+   "lore": {
+    "text": "From the ronin family that guarded the commoners of Otosan Uchi, the School grew into a full bushi style while fighting the Spider in the capital's ruins. In the Heroes of Rokugan timeline the Yotsu become the Tiger Clan.",
+    "book": "Imperial Histories 1",
+    "page": 276,
+    "source": "Imperial Histories 1 p.276"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Four Temples [Monk]",
+   "benefit": "Awareness",
+   "honor": 6.5,
+   "skills": "Courtier, Etiquette, Jiujutsu, Lore: Theology (Shintao), Meditation, any two Skills",
+   "tech": [
+    "Soul of Civility"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.231",
+   "lore": {
+    "text": "Monks who believe enlightenment requires staying engaged with society. With a great monastery in the Imperial capital, they advise lords and help travellers.",
+    "book": "Core Rulebook",
+    "page": 231,
+    "source": "Core Rulebook p.231"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Order of Heroes [Monk]",
+   "benefit": "Perception",
+   "honor": 4.5,
+   "skills": "Athletics, Defense, Jiujutsu, Lore: Theology (pick an Emphasis), Meditation, any two Skills",
+   "tech": [
+    "Destiny’s Hand"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.232",
+   "lore": {
+    "text": "A little-known sect that believes anyone can become a hero. It quietly finds threats to the Empire and the people able to meet them.",
+    "book": "Core Rulebook",
+    "page": 232,
+    "source": "Core Rulebook p.232"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Shrine of the Seven Thunders [Monk]",
+   "benefit": "Stamina",
+   "honor": 4.5,
+   "skills": "Athletics, Jiujutsu, Lore: Theology (Shintao), Lore (pick one), Meditation, any two Skills",
+   "tech": [
+    "Walk with the Prophet"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.232",
+   "lore": {
+    "text": "Monks who honour the seven heroes who defeated Fu Leng by devoting their lives to contemplation, rarely leaving their monastery.",
+    "book": "Core Rulebook",
+    "page": 232,
+    "source": "Core Rulebook p.232"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Temple of Kaimetsu-uo [Monk]",
+   "benefit": "Willpower",
+   "honor": 4.5,
+   "skills": "Defense, Jiujutsu, Lore: Theology (Fortunes), Meditation, any three Skills",
+   "tech": [
+    "The Path of Purity"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.232",
+   "lore": {
+    "text": "Followers of the Mantis founder who believe he left to avoid a ruinous fight over the Crab's leadership; they seek enlightenment through conciliation and peace.",
+    "book": "Core Rulebook",
+    "page": 232,
+    "source": "Core Rulebook p.232"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Temple of Osano-Wo [Monk]",
+   "benefit": "Strength",
+   "honor": 4.5,
+   "skills": "Battle, Jiujutsu 2, Lore: Theology (Fortunes), Meditation, any two Bugei Skills",
+   "tech": [
+    "The Hand of Thunder"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.233",
+   "lore": {
+    "text": "Perhaps the most militant Brotherhood sect, devoted to physical prowess and martial arts; its monks ritually scar themselves to mark their progress.",
+    "book": "Core Rulebook",
+    "page": 233,
+    "source": "Core Rulebook p.233"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Temples of the Thousand Fortunes [Monk]",
+   "benefit": "Agility",
+   "honor": 4.5,
+   "skills": "Jiujutsu, Lore: History, Lore: Theology (Fortunes), any one Lore Skill, Meditation, any two Skills",
+   "tech": [
+    "The Thousand Forms"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Core Rulebook p.233",
+   "lore": {
+    "text": "A varied network of temples to Rokugan's countless Fortunes, whose monks mostly believe they must work hard to prove worthy of enlightenment.",
+    "book": "Core Rulebook",
+    "page": 233,
+    "source": "Core Rulebook p.233"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Order of the Wind [Monk]",
+   "benefit": "Reflexes",
+   "honor": 4.5,
+   "skills": "Athletics, Defense, Jiujutsu, Lore: Theology, Meditation, Staves, any one Skill",
+   "tech": [
+    "Essence of the Wind"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Air p.193",
+   "lore": {
+    "text": "Brothers who accept that the world is chaotic and unpredictable and stay steady within it, gaining command of themselves and, quietly, a little of the world around them.",
+    "book": "Book of Air",
+    "page": 193,
+    "source": "Book of Air p.193"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Wind’s Grace Order [Monk]",
+   "benefit": "Reflexes",
+   "honor": 6.5,
+   "skills": "Calligraphy, Jiujutsu, Kyujutsu, Lore: Theology (Shintao), Meditation, any two Skills",
+   "tech": [
+    "Pillars of the Mind’s Eye"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Air p.194",
+   "lore": {
+    "text": "Formed after the Clan War for monks who could not regain their peace after defending the temples. Archery gave them focus, and the order keeps ties to the Asahina and other archery traditions.",
+    "book": "Book of Air",
+    "page": 194,
+    "source": "Book of Air p.194"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Fukurokujin’s Eyes [Monk]",
+   "benefit": "Perception",
+   "honor": 4.5,
+   "skills": "Calligraphy, Divination, Etiquette, Investigation, Lore: History, Lore: Theology, any one non-Bugei Skill",
+   "tech": [
+    "Way of the Closed Eye"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Air p.194",
+   "lore": {
+    "text": "A hereditary order of a few bloodlines descended from a tribe older than the Kami's arrival, valued by the Crab for uncannily accurate judgement and prediction.",
+    "book": "Book of Air",
+    "page": 194,
+    "source": "Book of Air p.194"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Order of the Nameless Gift [Monk]",
+   "benefit": "Stamina",
+   "honor": 4.5,
+   "skills": "Athletics, Defense, Jiujutsu, Lore (pick one), Meditation, any two Skills",
+   "tech": [
+    "Shinsei’s Gift"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Earth p.205",
+   "lore": {
+    "text": "An offshoot of the Shrine of the Seven Thunders that seeks the Thunders' fate-changing power in every soul through physical rigour and trials of endurance, taking the world plainly as it is.",
+    "book": "Book of Earth",
+    "page": 205,
+    "source": "Book of Earth p.205"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Temple of Persistence [Monk]",
+   "benefit": "Stamina",
+   "honor": 3.5,
+   "skills": "Athletics, Defense, Jiujutsu (Martial Arts), Lore: Theology, Meditation, any one Bugei Skill, any one Skill",
+   "tech": [
+    "Unyielding Spirit"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Earth p.205",
+   "lore": {
+    "text": "A largely martial order devoted to unyielding endurance. Its training tests body, mind and spirit to their limits, and its stubborn monks rarely accept defeat.",
+    "book": "Book of Earth",
+    "page": 205,
+    "source": "Book of Earth p.205"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Order of Rebirth [Monk]",
+   "benefit": "Intelligence",
+   "honor": 6.5,
+   "skills": "Athletics, Jiujutsu, Lore: History, Lore: Theology, Meditation, any two Skills",
+   "tech": [
+    "Changing the Way"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Fire p.190",
+   "lore": {
+    "text": "Descended from militant sohei of Osano-Wo, these brothers embrace new paths and philosophies to uncover new truths, earning other sects' disdain.",
+    "book": "Book of Fire",
+    "page": 190,
+    "source": "Book of Fire p.190"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Tengoku’s Fist [Monk]",
+   "benefit": "Agility",
+   "honor": 4.5,
+   "skills": "Athletics, Battle, Jiujutsu 2, Lore: Theology, Meditation, any one Skill",
+   "tech": [
+    "The Hand of the Heavens"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Fire p.191",
+   "lore": {
+    "text": "A friendly offshoot of the Shrine of the Seven Thunders, these sohei see violence as a natural part of life: never a first resort, but an option they use exceptionally well.",
+    "book": "Book of Fire",
+    "page": 191,
+    "source": "Book of Fire p.191"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Temple of Heavenly Wisdom [Monk]",
+   "benefit": "Intelligence",
+   "honor": 6.5,
+   "skills": "Courtier, Etiquette, Lore: History, Lore: Theology, Meditation, Sincerity, any one High Skill",
+   "tech": [
+    "The Largesse of Fukurokujin"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Fire p.191",
+   "lore": {
+    "text": "Perhaps the oldest monastic tradition in Crane lands. Its ancient temple helped the Lady Doji spread culture and won its monks unusual prestige.",
+    "book": "Book of Fire",
+    "page": 191,
+    "source": "Book of Fire p.191"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Order of Jurojin’s Blessing [Monk]",
+   "benefit": "Intelligence",
+   "honor": 5.5,
+   "skills": "Athletics, Jiujutsu, Lore: Anatomy (Disease), Medicine (Disease, Herbalism), Meditation, Staves, any one Skill",
+   "tech": [
+    "Blessings of Longevity"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Water p.187",
+   "lore": {
+    "text": "Founded during the Great Famine to tend the sick of every caste; some members also treat injuries and, in later centuries, madness.",
+    "book": "Book of Water",
+    "page": 187,
+    "source": "Book of Water p.187"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Shrine of Heaven’s Mirror [Monk]",
+   "benefit": "Perception",
+   "honor": 3.5,
+   "skills": "Athletics, Divination (Omens), Jiujutsu, Lore: Omens, Meditation, any two Skills",
+   "tech": [
+    "Gaze into the Mirror"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Water p.187",
+   "lore": {
+    "text": "Ascetics who seek trance states, through sleeplessness, drink, wild dance and visionary plants, to receive guidance from the Fortunes and spirits, above all through omens.",
+    "book": "Book of Water",
+    "page": 187,
+    "source": "Book of Water p.187"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "The Order of Eternity [Monk]",
+   "benefit": "Intelligence",
+   "honor": null,
+   "skills": "Defense, Divination (Astrology), Jiujutsu, Meditation, Lore: Theology, any two High Skills",
+   "tech": [
+    "The Touch of Eternity"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Book of Void p.193",
+   "lore": {
+    "text": "Monks who study the nature of time and wait for the right moment to act. Their long stillness and sudden action can make them seem odd, even mad.",
+    "book": "Book of Void",
+    "page": 193,
+    "source": "Book of Void p.193"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Shinmaki Order [Monk]",
+   "benefit": "Void",
+   "honor": 6.5,
+   "skills": "Divination, Jiujutsu, Lore: Theology (Diamond Sutra), Meditation 2, any two Skills",
+   "tech": [
+    "The Diamond Sutra"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Emerald Empire p.206",
+   "lore": {
+    "text": "A small, controversial sect that studies the Diamond Sutra and meditates on the Seven Thunders in dark, isolated monasteries, emerging only now and then.",
+    "book": "Emerald Empire",
+    "page": 206,
+    "source": "Emerald Empire p.206"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "First Dawn Scholars [Monk]",
+   "benefit": "Intelligence",
+   "honor": 5.5,
+   "skills": "Etiquette, Jiujutsu, Lore: Nonhumans, Lore: Theology (Fortunes), Meditation, Staves, any one Skill",
+   "tech": [
+    "Way of the Ancient World"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Imperial Histories 2 p.29",
+   "lore": {
+    "text": "In the Togashi Dynasty setting, the Owl Clan's monastic order: keepers of a library on civilisations older than humanity, who seek enlightenment in the world before the Kami fell.",
+    "book": "Imperial Histories 2",
+    "page": 29,
+    "source": "Imperial Histories 2 p.29"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Order of the Five Rings [Monk]",
+   "benefit": "Awareness",
+   "honor": 4,
+   "skills": "Courtier, Defense, Etiquette, Jiujutsu, Lore: Elements, Lore: Theology (Shintao), Meditation",
+   "tech": [
+    "Cracks within the Elements"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Imperial Histories 2 p.102",
+   "lore": {
+    "text": "A short-lived order devoted to the charismatic monk Gorinno and his heretical philosophy, its members growing ever more zealous and cult-like.",
+    "book": "Imperial Histories 2",
+    "page": 102,
+    "source": "Imperial Histories 2 p.102"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Fudoist Order [Monk]",
+   "benefit": "Willpower",
+   "honor": null,
+   "skills": "Courtier, Etiquette, Jiujutsu, Lore: Theology, Meditation, any two Skills",
+   "tech": [
+    "For Each, One Path"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Imperial Histories 2 p.287",
+   "lore": {
+    "text": "Monks of Fudoism, a heresy the Brotherhood of Shinsei has banned. Each must choose a personal path, and their Technique turns the gap in Honor between them and a foe into an edge.",
+    "book": "Imperial Histories 2",
+    "page": 286,
+    "source": "Imperial Histories 2 p.286"
+   }
+  },
+  {
+   "clan": "Brotherhood of Shinsei",
+   "kind": "brotherhood",
+   "name": "Order of Peaceful Repose [Monk]",
+   "benefit": "Awareness",
+   "honor": 4.5,
+   "skills": "Athletics, Calligraphy, Jiujutsu, Lore: Ghosts, Lore: Theology (Emma-O), Meditation, any one Skill",
+   "tech": [
+    "Emma-O’s Insight"
+   ],
+   "shugenja": false,
+   "monk": true,
+   "brotherhood": true,
+   "affinity": "",
+   "deficiency": "",
+   "spells": "",
+   "source": "Secrets of the Empire p.242",
+   "lore": {
+    "text": "Monks of Emma-O who lay ghosts to rest wherever war or local conditions make them common, whether the dead were peasants or samurai.",
+    "book": "Secrets of the Empire",
+    "page": 242,
+    "source": "Secrets of the Empire p.242"
+   }
+  }
+ ],
+ "fam": {
+  "Crab": [
+   [
+    "Hida",
+    "Strength"
+   ],
+   [
+    "Hiruma",
+    "Agility"
+   ],
+   [
+    "Kaiu",
+    "Intelligence"
+   ],
+   [
+    "Kuni",
+    "Intelligence"
+   ],
+   [
+    "Toritaka",
+    "Perception"
+   ],
+   [
+    "Yasuki",
+    "Awareness"
+   ]
+  ],
+  "Crane": [
+   [
+    "Asahina",
+    "Intelligence"
+   ],
+   [
+    "Daidoji",
+    "Stamina"
+   ],
+   [
+    "Doji",
+    "Awareness"
+   ],
+   [
+    "Kakita",
+    "Agility"
+   ]
+  ],
+  "Dragon": [
+   [
+    "Kitsuki",
+    "Awareness"
+   ],
+   [
+    "Mirumoto",
+    "Agility"
+   ],
+   [
+    "Tamori",
+    "Willpower"
+   ],
+   [
+    "Togashi",
+    "Reflexes"
+   ],
+   [
+    "Hoshi",
+    "Void"
+   ],
+   [
+    "Hitomi",
+    "Strength"
+   ]
+  ],
+  "Lion": [
+   [
+    "Akodo",
+    "Agility"
+   ],
+   [
+    "Ikoma",
+    "Awareness"
+   ],
+   [
+    "Kitsu",
+    "Intelligence"
+   ],
+   [
+    "Matsu",
+    "Strength"
+   ]
+  ],
+  "Phoenix": [
+   [
+    "Agasha",
+    "Perception"
+   ],
+   [
+    "Asako",
+    "Awareness"
+   ],
+   [
+    "Isawa",
+    "Willpower"
+   ],
+   [
+    "Shiba",
+    "Perception"
+   ]
+  ],
+  "Scorpion": [
+   [
+    "Bayushi",
+    "Agility"
+   ],
+   [
+    "Shosuro",
+    "Awareness"
+   ],
+   [
+    "Soshi",
+    "Intelligence"
+   ],
+   [
+    "Yogo",
+    "Willpower"
+   ]
+  ],
+  "Spider": [
+   [
+    "Chuda",
+    "Intelligence"
+   ],
+   [
+    "Daigotsu",
+    "Stamina"
+   ],
+   [
+    "Goju",
+    "Agility"
+   ],
+   [
+    "Spider Monks",
+    "Reflexes"
+   ]
+  ],
+  "Unicorn": [
+   [
+    "Horiuchi",
+    "Willpower"
+   ],
+   [
+    "Ide",
+    "Perception"
+   ],
+   [
+    "Iuchi",
+    "Intelligence"
+   ],
+   [
+    "Moto",
+    "Agility"
+   ],
+   [
+    "Shinjo",
+    "Reflexes"
+   ],
+   [
+    "Utaku",
+    "Stamina"
+   ]
+  ],
+  "Imperial": [
+   [
+    "Miya",
+    "Reflexes"
+   ],
+   [
+    "Otomo",
+    "Intelligence"
+   ],
+   [
+    "Seppun",
+    "Agility"
+   ],
+   [
+    "Hantei",
+    "Void"
+   ],
+   [
+    "Toturi",
+    "Willpower"
+   ],
+   [
+    "Nasu",
+    "Awareness"
+   ]
+  ],
+  "Ronin": [
+   [
+    "Kaeru",
+    "Awareness"
+   ],
+   [
+    "Tsi",
+    "Willpower"
+   ],
+   [
+    "Tsume",
+    "Reflexes"
+   ],
+   [
+    "Yotsu",
+    "Intelligence"
+   ]
+  ]
+ },
+ "minfam": {
+  "Badger": [
+   [
+    "Ichiro",
+    "Strength"
+   ]
+  ],
+  "Bat": [
+   [
+    "Komori",
+    "Intelligence"
+   ]
+  ],
+  "Boar": [
+   [
+    "Heichi",
+    "Willpower"
+   ]
+  ],
+  "Dragonfly": [
+   [
+    "Tonbo",
+    "Awareness"
+   ]
+  ],
+  "Falcon": [
+   [
+    "Toritaka",
+    "Perception"
+   ]
+  ],
+  "Fox": [
+   [
+    "Kitsune",
+    "Willpower"
+   ]
+  ],
+  "Hare": [
+   [
+    "Usagi",
+    "Awareness"
+   ],
+   [
+    "Ujina",
+    "Agility"
+   ]
+  ],
+  "Mantis": [
+   [
+    "Kitsune",
+    "Awareness"
+   ],
+   [
+    "Moshi",
+    "Intelligence"
+   ],
+   [
+    "Tsuruchi",
+    "Perception"
+   ],
+   [
+    "Yoritomo",
+    "Stamina"
+   ]
+  ],
+  "Monkey": [
+   [
+    "Toku",
+    "Stamina"
+   ],
+   [
+    "Fuzake",
+    "Perception"
+   ]
+  ],
+  "Oriole": [
+   [
+    "Tsi",
+    "Strength"
+   ]
+  ],
+  "Ox": [
+   [
+    "Morito",
+    "Stamina"
+   ]
+  ],
+  "Snake": [
+   [
+    "Chuda",
+    "Strength"
+   ]
+  ],
+  "Sparrow": [
+   [
+    "Suzume",
+    "Awareness"
+   ]
+  ],
+  "Tortoise": [
+   [
+    "Kasuga",
+    "Perception"
+   ]
+  ],
+  "Tiger": [
+   [
+    "Yotsu",
+    "Intelligence"
+   ]
+  ]
+ },
+ "loreSample": {
+  "text": "One of the Empire's oldest bushi styles, forged against the Shadowlands: endure the enemy's blows, then crush them with heavy weapons.",
+  "book": "Core Rulebook",
+  "page": 106,
+  "source": "Core Rulebook p.106"
+ }
+}

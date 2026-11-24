@@ -1,0 +1,3054 @@
+{
+ "schools": [
+  {
+   "name": "Hida Bushi",
+   "clan": "Crab",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "Core Rulebook p.106",
+   "primary": [
+    "front line",
+    "monster hunter"
+   ],
+   "secondary": [
+    "bodyguard"
+   ],
+   "homes": [
+    "battlefield",
+    "the Wall"
+   ],
+   "cx": "Straightforward",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Hida Pragmatist [Bushi]",
+   "clan": "Crab",
+   "type": "Bushi",
+   "honor": 2.5,
+   "source": "Emerald Empire p.247",
+   "primary": [
+    "unarmed"
+   ],
+   "secondary": [
+    "bodyguard",
+    "monster hunter"
+   ],
+   "homes": [
+    "the road",
+    "the Wall"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.247: check your GM uses this book."
+   ],
+   "know": [
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Hiruma Bushi",
+   "clan": "Crab",
+   "type": "Bushi",
+   "honor": 4.5,
+   "source": "Core Rulebook p.108",
+   "primary": [
+    "monster hunter",
+    "fast skirmisher"
+   ],
+   "secondary": [
+    "archer",
+    "stealth"
+   ],
+   "homes": [
+    "the Wall",
+    "wilds"
+   ],
+   "cx": "Straightforward",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Hiruma Scout [Bushi]",
+   "clan": "Crab",
+   "type": "Bushi",
+   "honor": 4.5,
+   "source": "Imperial Histories 1 p.147",
+   "primary": [
+    "fast skirmisher",
+    "stealth"
+   ],
+   "secondary": [
+    "monster hunter"
+   ],
+   "homes": [
+    "the Wall",
+    "wilds"
+   ],
+   "cx": "Some extra",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 1 p.147: check your GM uses this book.",
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era."
+   ],
+   "know": []
+  },
+  {
+   "name": "Kaiu Engineer [Artisan/Bushi]",
+   "clan": "Crab",
+   "type": "Artisan/Bushi",
+   "honor": 4.5,
+   "source": "The Great Clans p.39",
+   "primary": [
+    "craftsman"
+   ],
+   "secondary": [
+    "commander",
+    "front line"
+   ],
+   "homes": [
+    "battlefield",
+    "the Wall"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.39: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Kuni Shugenja",
+   "clan": "Crab",
+   "type": "Shugenja",
+   "honor": 2.5,
+   "source": "Core Rulebook p.107",
+   "primary": [
+    "battle magic",
+    "monster hunter"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "libraries and temples",
+    "the Wall"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Earth",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Kuni Witch-Hunter [Monk]",
+   "clan": "Crab",
+   "type": "Monk",
+   "honor": 5.5,
+   "source": "The Great Clans p.40",
+   "primary": [
+    "investigator",
+    "monster hunter"
+   ],
+   "secondary": [
+    "mystic",
+    "traveller"
+   ],
+   "homes": [
+    "the road",
+    "the Wall"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.40: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Toritaka Bushi",
+   "clan": "Crab or Falcon",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Core Rulebook p.219",
+   "primary": [
+    "monster hunter",
+    "spirits and the dead"
+   ],
+   "secondary": [
+    "animal companion"
+   ],
+   "homes": [
+    "the Wall",
+    "wilds"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Yasuki Courtier",
+   "clan": "Crab",
+   "type": "Courtier",
+   "honor": 2.5,
+   "source": "Core Rulebook p.107",
+   "primary": [
+    "merchant"
+   ],
+   "secondary": [
+    "diplomat",
+    "schemer"
+   ],
+   "homes": [
+    "court",
+    "sea"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Asahina Shugenja",
+   "clan": "Crane",
+   "type": "Shugenja",
+   "honor": 6.5,
+   "source": "Core Rulebook p.110",
+   "primary": [
+    "healer",
+    "protective magic"
+   ],
+   "secondary": [
+    "artist",
+    "mystic"
+   ],
+   "homes": [
+    "court",
+    "libraries and temples"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Air",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Daidoji Iron Warrior [Bushi]",
+   "clan": "Crane",
+   "type": "Bushi",
+   "honor": 6.5,
+   "source": "Core Rulebook p.111",
+   "primary": [
+    "bodyguard",
+    "front line"
+   ],
+   "secondary": [
+    "commander"
+   ],
+   "homes": [
+    "battlefield",
+    "court"
+   ],
+   "cx": "Straightforward",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Daidoji Scout [Bushi]",
+   "clan": "Crane",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "The Great Clans p.70",
+   "primary": [
+    "fast skirmisher",
+    "stealth"
+   ],
+   "secondary": [
+    "archer"
+   ],
+   "homes": [
+    "battlefield",
+    "wilds"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.70: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Doji Courtier",
+   "clan": "Crane",
+   "type": "Courtier",
+   "honor": 6.5,
+   "source": "Core Rulebook p.110",
+   "primary": [
+    "diplomat"
+   ],
+   "secondary": [
+    "artist"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Doji Magistrate [Bushi]",
+   "clan": "Crane",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Emerald Empire p.170",
+   "primary": [
+    "bodyguard",
+    "investigator"
+   ],
+   "secondary": [],
+   "homes": [
+    "court",
+    "the road"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.170: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Kakita Artisan",
+   "clan": "Crane",
+   "type": "Artisan",
+   "honor": 5.5,
+   "source": "The Great Clans p.71",
+   "primary": [
+    "artist"
+   ],
+   "secondary": [
+    "diplomat"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.71: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Kakita Bushi",
+   "clan": "Crane",
+   "type": "Bushi",
+   "honor": 6.5,
+   "source": "Core Rulebook p.109",
+   "primary": [
+    "duelist"
+   ],
+   "secondary": [
+    "artist"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Kitsuki Investigator [Courtier]",
+   "clan": "Dragon",
+   "type": "Courtier",
+   "honor": 5.5,
+   "source": "Core Rulebook p.114",
+   "primary": [
+    "investigator"
+   ],
+   "secondary": [
+    "diplomat",
+    "scholar"
+   ],
+   "homes": [
+    "court",
+    "mountains"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Mirumoto Bushi",
+   "clan": "Dragon",
+   "type": "Bushi",
+   "honor": 4.5,
+   "source": "Core Rulebook p.112",
+   "primary": [
+    "duelist"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Mirumoto Taoist Swordsman [Bushi]",
+   "clan": "Dragon",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Emerald Empire p.221",
+   "primary": [
+    "duelist",
+    "mystic"
+   ],
+   "secondary": [],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.221: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Tamori Shugenja",
+   "clan": "Dragon",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.113",
+   "primary": [
+    "battle magic",
+    "unusual magic"
+   ],
+   "secondary": [
+    "healer"
+   ],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Earth",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "The Hitomi Kikage Zumi Order [Monk]",
+   "clan": "Dragon",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Imperial Histories 1 p.215",
+   "primary": [
+    "mystic",
+    "unarmed"
+   ],
+   "secondary": [
+    "all-out attacker"
+   ],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 1 p.215: check your GM uses this book.",
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era."
+   ],
+   "know": [
+    "Tattooed monk: the app does not model tattoos yet."
+   ]
+  },
+  {
+   "name": "The Hoshi Tsurui Zumi Order [Monk]",
+   "clan": "Dragon",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Imperial Histories 1 p.214",
+   "primary": [
+    "mystic",
+    "unarmed"
+   ],
+   "secondary": [],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 1 p.214: check your GM uses this book.",
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era."
+   ],
+   "know": [
+    "Uses the kiho rules.",
+    "Tattooed monk: the app does not model tattoos yet."
+   ]
+  },
+  {
+   "name": "The Togashi Tattooed Order [Monk]",
+   "clan": "Dragon",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Core Rulebook p.114",
+   "primary": [
+    "mystic",
+    "unarmed"
+   ],
+   "secondary": [
+    "traveller"
+   ],
+   "homes": [
+    "mountains",
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Tattooed monk: the app does not model tattoos yet."
+   ]
+  },
+  {
+   "name": "Akodo Bushi",
+   "clan": "Lion",
+   "type": "Bushi",
+   "honor": 6.5,
+   "source": "Core Rulebook p.116",
+   "primary": [
+    "commander"
+   ],
+   "secondary": [
+    "duelist",
+    "front line"
+   ],
+   "homes": [
+    "battlefield"
+   ],
+   "cx": "Straightforward",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Ikoma Bard [Courtier]",
+   "clan": "Lion",
+   "type": "Courtier",
+   "honor": 6.5,
+   "source": "Core Rulebook p.118",
+   "primary": [
+    "artist",
+    "diplomat"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "battlefield",
+    "court"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Ikoma Lion’s Shadow [Bushi]",
+   "clan": "Lion",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "Emerald Empire p.109",
+   "primary": [
+    "schemer",
+    "stealth"
+   ],
+   "secondary": [],
+   "homes": [
+    "battlefield",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.109: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Kitsu Shugenja",
+   "clan": "Lion",
+   "type": "Shugenja",
+   "honor": 6.5,
+   "source": "Core Rulebook p.117",
+   "primary": [
+    "battle magic",
+    "spirits and the dead"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "battlefield",
+    "libraries and temples"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Water",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Lion Elite Spearmen [Bushi]",
+   "clan": "Lion",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Naishou Province p.7",
+   "primary": [
+    "bodyguard",
+    "front line"
+   ],
+   "secondary": [
+    "commander"
+   ],
+   "homes": [
+    "battlefield",
+    "court"
+   ],
+   "cx": "Straightforward",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Naishou Province p.7: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Matsu Beastmaster [Bushi]",
+   "clan": "Lion",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "The Great Clans p.136",
+   "primary": [
+    "animal companion",
+    "front line"
+   ],
+   "secondary": [],
+   "homes": [
+    "battlefield",
+    "wilds"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.136: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Matsu Berserker [Bushi]",
+   "clan": "Lion",
+   "type": "Bushi",
+   "honor": 6.5,
+   "source": "Core Rulebook p.119",
+   "primary": [
+    "all-out attacker",
+    "front line"
+   ],
+   "secondary": [],
+   "homes": [
+    "battlefield"
+   ],
+   "cx": "Straightforward",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Agasha Shugenja",
+   "clan": "Phoenix",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.125",
+   "primary": [
+    "unusual magic"
+   ],
+   "secondary": [
+    "battle magic",
+    "scholar"
+   ],
+   "homes": [
+    "libraries and temples"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Fire",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Asako Henshin [Monk]",
+   "clan": "Phoenix",
+   "type": "Monk",
+   "honor": 5.5,
+   "source": "The Great Clans p.199",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "libraries and temples"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.199: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Asako Loremaster [Courtier]",
+   "clan": "Phoenix",
+   "type": "Courtier",
+   "honor": 6.5,
+   "source": "Core Rulebook p.124",
+   "primary": [
+    "scholar"
+   ],
+   "secondary": [
+    "diplomat"
+   ],
+   "homes": [
+    "court",
+    "libraries and temples"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Isawa Shugenja",
+   "clan": "Phoenix",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.124",
+   "primary": [
+    "battle magic",
+    "scholar"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "libraries and temples"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "chosen",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Shiba Artisan [Courtier]",
+   "clan": "Phoenix",
+   "type": "Courtier",
+   "honor": 4.5,
+   "source": "Emerald Empire p.122",
+   "primary": [
+    "artist"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "libraries and temples"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.122: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Shiba Bushi",
+   "clan": "Phoenix",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Core Rulebook p.123",
+   "primary": [
+    "bodyguard"
+   ],
+   "secondary": [
+    "diplomat",
+    "mystic"
+   ],
+   "homes": [
+    "court",
+    "libraries and temples"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Bayushi Bushi",
+   "clan": "Scorpion",
+   "type": "Bushi",
+   "honor": 2.5,
+   "source": "Core Rulebook p.126",
+   "primary": [
+    "schemer"
+   ],
+   "secondary": [
+    "duelist",
+    "stealth"
+   ],
+   "homes": [
+    "court",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Bayushi Courtier",
+   "clan": "Scorpion",
+   "type": "Courtier",
+   "honor": 2.5,
+   "source": "Core Rulebook p.127",
+   "primary": [
+    "schemer"
+   ],
+   "secondary": [
+    "investigator"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Shosuro Actor [Ninja]",
+   "clan": "Scorpion",
+   "type": "Ninja",
+   "honor": 1.5,
+   "source": "The Great Clans p.227",
+   "primary": [
+    "schemer",
+    "stealth"
+   ],
+   "secondary": [
+    "artist"
+   ],
+   "homes": [
+    "court",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.227: check your GM uses this book.",
+    "Ninja: a secret even within their own Clan, and exposure means disgrace or death. Your GM will need to plan around it."
+   ],
+   "know": [
+    "Starts with low Honor (1.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Shosuro Infiltrator [Ninja]",
+   "clan": "Scorpion",
+   "type": "Ninja",
+   "honor": 1.5,
+   "source": "Core Rulebook p.128",
+   "primary": [
+    "stealth"
+   ],
+   "secondary": [
+    "fast skirmisher"
+   ],
+   "homes": [
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "Ninja: a secret even within their own Clan, and exposure means disgrace or death. Your GM will need to plan around it."
+   ],
+   "know": [
+    "Starts with low Honor (1.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Soshi Magistrate [Bushi]",
+   "clan": "Scorpion",
+   "type": "Bushi",
+   "honor": 2.5,
+   "source": "Emerald Empire p.171",
+   "primary": [
+    "investigator"
+   ],
+   "secondary": [
+    "schemer",
+    "unarmed"
+   ],
+   "homes": [
+    "court",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.171: check your GM uses this book."
+   ],
+   "know": [
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Soshi Shugenja",
+   "clan": "Scorpion",
+   "type": "Shugenja",
+   "honor": 2.5,
+   "source": "Core Rulebook p.127",
+   "primary": [
+    "schemer",
+    "stealth"
+   ],
+   "secondary": [
+    "unusual magic"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Air",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Yogo Wardmaster [Shugenja]",
+   "clan": "Scorpion",
+   "type": "Shugenja",
+   "honor": 1.5,
+   "source": "The Great Clans p.229",
+   "primary": [
+    "protective magic"
+   ],
+   "secondary": [
+    "monster hunter"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.229: check your GM uses this book."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "Starts with low Honor (1.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Horiuchi Shugenja",
+   "clan": "Unicorn",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "The Great Clans p.257",
+   "primary": [
+    "unusual magic"
+   ],
+   "secondary": [
+    "traveller"
+   ],
+   "homes": [
+    "plains"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "Earth",
+   "ask": [
+    "From The Great Clans p.257: check your GM uses this book."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Ide Emissary [Courtier]",
+   "clan": "Unicorn",
+   "type": "Courtier",
+   "honor": 5.5,
+   "source": "Core Rulebook p.131",
+   "primary": [
+    "diplomat"
+   ],
+   "secondary": [
+    "traveller"
+   ],
+   "homes": [
+    "court",
+    "plains"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Iuchi Shugenja",
+   "clan": "Unicorn",
+   "type": "Shugenja",
+   "honor": 5.5,
+   "source": "Core Rulebook p.130",
+   "primary": [
+    "unusual magic",
+    "traveller"
+   ],
+   "secondary": [
+    "nature and weather"
+   ],
+   "homes": [
+    "plains"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Water",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Moto Bushi",
+   "clan": "Unicorn",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "Core Rulebook p.130",
+   "primary": [
+    "cavalry",
+    "front line"
+   ],
+   "secondary": [
+    "all-out attacker"
+   ],
+   "homes": [
+    "battlefield",
+    "plains"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Moto Death Priest [Shugenja]",
+   "clan": "Unicorn",
+   "type": "Shugenja",
+   "honor": 3.5,
+   "source": "Imperial Histories 1 p.240",
+   "primary": [
+    "spirits and the dead",
+    "unusual magic"
+   ],
+   "secondary": [
+    "battle magic"
+   ],
+   "homes": [
+    "plains"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "Earth",
+   "ask": [
+    "From Imperial Histories 1 p.240: check your GM uses this book.",
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Moto Vindicator [Bushi]",
+   "clan": "Unicorn",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "The Great Clans p.258",
+   "primary": [
+    "cavalry",
+    "monster hunter"
+   ],
+   "secondary": [],
+   "homes": [
+    "plains",
+    "the road"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.258: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Shinjo Bushi",
+   "clan": "Unicorn",
+   "type": "Bushi",
+   "honor": 4.5,
+   "source": "Emerald Empire p.31",
+   "primary": [
+    "cavalry",
+    "duelist"
+   ],
+   "secondary": [
+    "traveller"
+   ],
+   "homes": [
+    "plains"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.31: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Utaku Battle Maiden [Bushi]",
+   "clan": "Unicorn",
+   "type": "Bushi",
+   "honor": 6.5,
+   "source": "Core Rulebook p.132",
+   "primary": [
+    "cavalry"
+   ],
+   "secondary": [
+    "bodyguard"
+   ],
+   "homes": [
+    "battlefield",
+    "plains"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Utaku Mounted Infantry [Bushi]",
+   "clan": "Unicorn",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Imperial Histories 2 p.168",
+   "primary": [
+    "front line",
+    "traveller"
+   ],
+   "secondary": [
+    "cavalry"
+   ],
+   "homes": [
+    "battlefield",
+    "plains"
+   ],
+   "cx": "Straightforward",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 2 p.168: check your GM uses this book.",
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era."
+   ],
+   "know": []
+  },
+  {
+   "name": "Mantis Brawler [Bushi]",
+   "clan": "Mantis",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "The Great Clans p.165",
+   "primary": [
+    "unarmed"
+   ],
+   "secondary": [
+    "sailor"
+   ],
+   "homes": [
+    "sea",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.165: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Moshi Shugenja",
+   "clan": "Mantis",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.120",
+   "primary": [
+    "nature and weather"
+   ],
+   "secondary": [
+    "sailor"
+   ],
+   "homes": [
+    "sea"
+   ],
+   "cx": "Involved",
+   "niche": "Common",
+   "affinity": "Air",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Tsuruchi Archer [Bushi]",
+   "clan": "Mantis",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "Core Rulebook p.122",
+   "primary": [
+    "archer"
+   ],
+   "secondary": [],
+   "homes": [
+    "battlefield",
+    "sea"
+   ],
+   "cx": "Straightforward",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Tsuruchi Bounty Hunter [Bushi]",
+   "clan": "Mantis",
+   "type": "Bushi",
+   "honor": 4.5,
+   "source": "The Great Clans p.167",
+   "primary": [
+    "investigator"
+   ],
+   "secondary": [
+    "archer",
+    "traveller"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.167: check your GM uses this book."
+   ],
+   "know": []
+  },
+  {
+   "name": "Yoritomo Bushi",
+   "clan": "Mantis",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "Core Rulebook p.120",
+   "primary": [
+    "sailor",
+    "fast skirmisher"
+   ],
+   "secondary": [
+    "front line"
+   ],
+   "homes": [
+    "sea"
+   ],
+   "cx": "Straightforward",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": []
+  },
+  {
+   "name": "Yoritomo Courtier",
+   "clan": "Mantis",
+   "type": "Courtier",
+   "honor": 2.5,
+   "source": "Core Rulebook p.121",
+   "primary": [
+    "merchant",
+    "schemer"
+   ],
+   "secondary": [],
+   "homes": [
+    "court",
+    "sea"
+   ],
+   "cx": "Some extra",
+   "niche": "Common",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Starts with low Honor (2.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Yoritomo Shugenja",
+   "clan": "Mantis",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "The Great Clans p.168",
+   "primary": [
+    "nature and weather",
+    "sailor"
+   ],
+   "secondary": [],
+   "homes": [
+    "sea"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "Water",
+   "ask": [
+    "From The Great Clans p.168: check your GM uses this book."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots."
+   ]
+  },
+  {
+   "name": "Chuda Shugenja",
+   "clan": "Spider",
+   "type": "Shugenja",
+   "honor": 0.5,
+   "source": "Core Rulebook p.213",
+   "primary": [
+    "forbidden power"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "streets and shadows"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "Spider Clan: tied to the Shadowlands and often Tainted. Usually changes the whole campaign, so agree it with your GM and the other players first."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "Starts with low Honor (0.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Daigotsu Bushi",
+   "clan": "Spider",
+   "type": "Bushi",
+   "honor": 1.5,
+   "source": "Core Rulebook p.212",
+   "primary": [
+    "front line"
+   ],
+   "secondary": [
+    "forbidden power"
+   ],
+   "homes": [
+    "battlefield",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "Spider Clan: tied to the Shadowlands and often Tainted. Usually changes the whole campaign, so agree it with your GM and the other players first."
+   ],
+   "know": [
+    "Starts with low Honor (1.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Daigotsu Courtier",
+   "clan": "Spider",
+   "type": "Courtier",
+   "honor": 1,
+   "source": "Core Rulebook p.213",
+   "primary": [
+    "schemer"
+   ],
+   "secondary": [
+    "forbidden power"
+   ],
+   "homes": [
+    "court",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "Spider Clan: tied to the Shadowlands and often Tainted. Usually changes the whole campaign, so agree it with your GM and the other players first."
+   ],
+   "know": [
+    "Starts with low Honor (1): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Goju Ninja",
+   "clan": "Spider",
+   "type": "Bushi",
+   "honor": 0,
+   "source": "The Great Clans p.280",
+   "primary": [
+    "forbidden power",
+    "stealth"
+   ],
+   "secondary": [],
+   "homes": [
+    "streets and shadows"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From The Great Clans p.280: check your GM uses this book.",
+    "Spider Clan: tied to the Shadowlands and often Tainted. Usually changes the whole campaign, so agree it with your GM and the other players first.",
+    "Ninja: a secret even within their own Clan, and exposure means disgrace or death. Your GM will need to plan around it."
+   ],
+   "know": [
+    "Starts with low Honor (0): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Ninube Shugenja",
+   "clan": "Spider",
+   "type": "Shugenja",
+   "honor": 0,
+   "source": "The Great Clans p.281",
+   "primary": [
+    "forbidden power",
+    "stealth"
+   ],
+   "secondary": [],
+   "homes": [
+    "streets and shadows"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "Air",
+   "ask": [
+    "From The Great Clans p.281: check your GM uses this book.",
+    "Spider Clan: tied to the Shadowlands and often Tainted. Usually changes the whole campaign, so agree it with your GM and the other players first."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "Starts with low Honor (0): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "The Order of the Spider Monks [Monk]",
+   "clan": "Spider",
+   "type": "Monk",
+   "honor": 1.5,
+   "source": "Core Rulebook p.215",
+   "primary": [
+    "mystic",
+    "unarmed"
+   ],
+   "secondary": [
+    "forbidden power"
+   ],
+   "homes": [
+    "the road",
+    "streets and shadows"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "Spider Clan: tied to the Shadowlands and often Tainted. Usually changes the whole campaign, so agree it with your GM and the other players first."
+   ],
+   "know": [
+    "Starts with low Honor (1.5): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Miya Herald [Courtier]",
+   "clan": "Imperial",
+   "type": "Courtier",
+   "honor": 6.5,
+   "source": "Core Rulebook p.230",
+   "primary": [
+    "diplomat",
+    "traveller"
+   ],
+   "secondary": [],
+   "homes": [
+    "court",
+    "the road"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Serves the Imperial families rather than a Great Clan."
+   ]
+  },
+  {
+   "name": "Otomo Courtier",
+   "clan": "Imperial",
+   "type": "Courtier",
+   "honor": 5.5,
+   "source": "Core Rulebook p.229",
+   "primary": [
+    "schemer"
+   ],
+   "secondary": [
+    "diplomat"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Serves the Imperial families rather than a Great Clan."
+   ]
+  },
+  {
+   "name": "Seppun Guardsman [Bushi]",
+   "clan": "Imperial",
+   "type": "Bushi",
+   "honor": 6.5,
+   "source": "Core Rulebook p.228",
+   "primary": [
+    "bodyguard"
+   ],
+   "secondary": [
+    "front line"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Straightforward",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Serves the Imperial families rather than a Great Clan."
+   ]
+  },
+  {
+   "name": "Seppun Shugenja",
+   "clan": "Imperial",
+   "type": "Shugenja",
+   "honor": 6.5,
+   "source": "Core Rulebook p.228",
+   "primary": [
+    "protective magic"
+   ],
+   "secondary": [
+    "battle magic"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "Fire",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "Serves the Imperial families rather than a Great Clan."
+   ]
+  },
+  {
+   "name": "Ichiro Bushi",
+   "clan": "Badger",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "Core Rulebook p.215",
+   "primary": [
+    "front line",
+    "unarmed"
+   ],
+   "secondary": [],
+   "homes": [
+    "mountains",
+    "the Wall"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Komori Shugenja",
+   "clan": "Bat",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.216",
+   "primary": [
+    "nature and weather",
+    "spirits and the dead"
+   ],
+   "secondary": [
+    "traveller"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "Air",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Heichi Bushi",
+   "clan": "Boar",
+   "type": "Bushi",
+   "honor": 3,
+   "source": "Core Rulebook p.217",
+   "primary": [
+    "front line"
+   ],
+   "secondary": [
+    "bodyguard"
+   ],
+   "homes": [
+    "the Wall",
+    "wilds"
+   ],
+   "cx": "Straightforward",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Tonbo Shugenja",
+   "clan": "Dragonfly",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.218",
+   "primary": [
+    "diplomat",
+    "spirits and the dead"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "court",
+    "mountains"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "Water",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Kitsune Shugenja",
+   "clan": "Fox",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.219",
+   "primary": [
+    "animal companion",
+    "nature and weather"
+   ],
+   "secondary": [
+    "spirits and the dead"
+   ],
+   "homes": [
+    "wilds"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "Earth",
+   "ask": [],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Usagi Bushi",
+   "clan": "Hare",
+   "type": "Bushi",
+   "honor": 4,
+   "source": "Core Rulebook p.220",
+   "primary": [
+    "fast skirmisher"
+   ],
+   "secondary": [],
+   "homes": [
+    "battlefield",
+    "wilds"
+   ],
+   "cx": "Straightforward",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Fuzake Shugenja",
+   "clan": "Monkey",
+   "type": "Shugenja",
+   "honor": 5.5,
+   "source": "Secrets of the Empire p.238",
+   "primary": [
+    "healer"
+   ],
+   "secondary": [
+    "spirits and the dead"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "Earth",
+   "ask": [
+    "From Secrets of the Empire p.238: check your GM uses this book."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Toku Bushi",
+   "clan": "Monkey",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Core Rulebook p.221",
+   "primary": [
+    "front line"
+   ],
+   "secondary": [
+    "bodyguard"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Straightforward",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Tsi Smith [Artisan]",
+   "clan": "Oriole",
+   "type": "Artisan",
+   "honor": 4.5,
+   "source": "Core Rulebook p.222",
+   "primary": [
+    "craftsman"
+   ],
+   "secondary": [
+    "duelist"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Morito Bushi",
+   "clan": "Ox",
+   "type": "Bushi",
+   "honor": 3.5,
+   "source": "Core Rulebook p.223",
+   "primary": [
+    "cavalry",
+    "front line"
+   ],
+   "secondary": [],
+   "homes": [
+    "plains"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Chuda Shugenja [Snake]",
+   "clan": "Snake",
+   "type": "Shugenja",
+   "honor": 4.5,
+   "source": "Core Rulebook p.224",
+   "primary": [
+    "monster hunter"
+   ],
+   "secondary": [
+    "protective magic"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "Earth",
+   "ask": [
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era."
+   ],
+   "know": [
+    "Casts spells: you will choose starting spells and track spell slots.",
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Suzume Bushi",
+   "clan": "Sparrow",
+   "type": "Bushi",
+   "honor": 6.5,
+   "source": "Core Rulebook p.225",
+   "primary": [
+    "duelist"
+   ],
+   "secondary": [
+    "artist"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Straightforward",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "Kasuga Smuggler [Courtier]",
+   "clan": "Tortoise",
+   "type": "Courtier",
+   "honor": 2,
+   "source": "Core Rulebook p.225",
+   "primary": [
+    "merchant",
+    "schemer"
+   ],
+   "secondary": [
+    "stealth"
+   ],
+   "homes": [
+    "sea",
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story.",
+    "Starts with low Honor (2): other samurai may distrust them."
+   ]
+  },
+  {
+   "name": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+   "clan": "Tiger",
+   "type": "Bushi",
+   "honor": 5.5,
+   "source": "Imperial Histories 1 p.276",
+   "primary": [
+    "bodyguard",
+    "stealth"
+   ],
+   "secondary": [],
+   "homes": [
+    "streets and shadows"
+   ],
+   "cx": "Some extra",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 1 p.276: check your GM uses this book.",
+    "Comes from an alternate timeline: check it fits your campaign."
+   ],
+   "know": [
+    "A Minor Clan: your character may be the only one of their Clan in the story."
+   ]
+  },
+  {
+   "name": "First Dawn Scholars [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 5.5,
+   "source": "Imperial Histories 2 p.29",
+   "primary": [
+    "mystic",
+    "scholar"
+   ],
+   "secondary": [],
+   "homes": [
+    "libraries and temples"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 2 p.29: check your GM uses this book.",
+    "Comes from an alternate timeline: check it fits your campaign."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Fudoist Order [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": null,
+   "source": "Imperial Histories 2 p.287",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [
+    "unarmed"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 2 p.287: check your GM uses this book.",
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era.",
+    "A heretical or controversial order: other monks may treat your character as an enemy."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Fukurokujin’s Eyes [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Book of Air p.194",
+   "primary": [
+    "investigator",
+    "mystic"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "the Wall"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Book of Air p.194: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Order of Peaceful Repose [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Secrets of the Empire p.242",
+   "primary": [
+    "spirits and the dead"
+   ],
+   "secondary": [
+    "healer"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Secrets of the Empire p.242: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Order of the Five Rings [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4,
+   "source": "Imperial Histories 2 p.102",
+   "primary": [
+    "mystic",
+    "schemer"
+   ],
+   "secondary": [],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Imperial Histories 2 p.102: check your GM uses this book.",
+    "Belongs to one period of Rokugan's history: check it fits your campaign's era.",
+    "A heretical or controversial order: other monks may treat your character as an enemy."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Order of the Wind [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Book of Air p.193",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [
+    "fast skirmisher"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Air p.193: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Shinmaki Order [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 6.5,
+   "source": "Emerald Empire p.206",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Emerald Empire p.206: check your GM uses this book.",
+    "A heretical or controversial order: other monks may treat your character as an enemy."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Temple of Persistence [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 3.5,
+   "source": "Book of Earth p.205",
+   "primary": [
+    "front line",
+    "unarmed"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Earth p.205: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Tengoku’s Fist [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Book of Fire p.191",
+   "primary": [
+    "unarmed"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Fire p.191: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Four Temples [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 6.5,
+   "source": "Core Rulebook p.231",
+   "primary": [
+    "diplomat",
+    "mystic"
+   ],
+   "secondary": [
+    "healer"
+   ],
+   "homes": [
+    "court",
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Order of Eternity [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": null,
+   "source": "Book of Void p.193",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Book of Void p.193: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Order of Heroes [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Core Rulebook p.232",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [
+    "monster hunter"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Order of Jurojin’s Blessing [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 5.5,
+   "source": "Book of Water p.187",
+   "primary": [
+    "healer"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Water p.187: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Order of Rebirth [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 6.5,
+   "source": "Book of Fire p.190",
+   "primary": [
+    "mystic",
+    "scholar"
+   ],
+   "secondary": [],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Fire p.190: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Order of the Nameless Gift [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Book of Earth p.205",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [
+    "front line"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Earth p.205: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Shrine of Heaven’s Mirror [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 3.5,
+   "source": "Book of Water p.187",
+   "primary": [
+    "mystic",
+    "spirits and the dead"
+   ],
+   "secondary": [],
+   "homes": [
+    "wilds"
+   ],
+   "cx": "Involved",
+   "niche": "Unusual",
+   "affinity": "",
+   "ask": [
+    "From Book of Water p.187: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Shrine of the Seven Thunders [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Core Rulebook p.232",
+   "primary": [
+    "mystic"
+   ],
+   "secondary": [
+    "scholar"
+   ],
+   "homes": [
+    "mountains"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Temple of Heavenly Wisdom [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 6.5,
+   "source": "Book of Fire p.191",
+   "primary": [
+    "artist",
+    "scholar"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "court"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Fire p.191: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Temple of Kaimetsu-uo [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Core Rulebook p.232",
+   "primary": [
+    "diplomat",
+    "mystic"
+   ],
+   "secondary": [
+    "sailor"
+   ],
+   "homes": [
+    "sea"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Temple of Osano-Wo [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Core Rulebook p.233",
+   "primary": [
+    "front line",
+    "unarmed"
+   ],
+   "secondary": [
+    "mystic"
+   ],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "The Temples of the Thousand Fortunes [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 4.5,
+   "source": "Core Rulebook p.233",
+   "primary": [
+    "mystic",
+    "spirits and the dead"
+   ],
+   "secondary": [],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  },
+  {
+   "name": "Wind’s Grace Order [Monk]",
+   "clan": "Brotherhood of Shinsei",
+   "type": "Monk",
+   "honor": 6.5,
+   "source": "Book of Air p.194",
+   "primary": [
+    "archer",
+    "mystic"
+   ],
+   "secondary": [],
+   "homes": [
+    "the road"
+   ],
+   "cx": "Involved",
+   "niche": "Uncommon",
+   "affinity": "",
+   "ask": [
+    "From Book of Air p.194: check your GM uses this book."
+   ],
+   "know": [
+    "Uses the kiho rules."
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "magic",
+   "text": "Do you want your character to cast spells?",
+   "answers": [
+    [
+     "Yes: magic is the heart of who they are",
+     "only Shugenja Schools remain"
+    ],
+    [
+     "A touch of the mystical, but no spells",
+     "Shugenja Schools removed, mystic +2, spirits and the dead +1, monster hunter +1, Monk +2"
+    ],
+    [
+     "No: they rely on their own skill",
+     "Shugenja Schools removed, mystic -1"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "complexity",
+   "text": "How much rules detail do you want to keep track of?",
+   "answers": [
+    [
+     "Keep it simple: I am still learning the game",
+     "Straightforward +3, Some extra +0, Involved -3"
+    ],
+    [
+     "Some extra options are fine",
+     "Straightforward +1, Some extra +2, Involved +0"
+    ],
+    [
+     "Lots of moving parts: I like mastering a system",
+     "Straightforward -1, Some extra +1, Involved +3"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "niche",
+   "text": "How do you feel about unusual characters?",
+   "answers": [
+    [
+     "A classic samurai most players will recognise",
+     "Common +3, Uncommon +0, Unusual -4"
+    ],
+    [
+     "Open to something a bit different",
+     "Common +1, Uncommon +2, Unusual +0, adds a \"something different\" pick"
+    ],
+    [
+     "The stranger the better",
+     "Common -1, Uncommon +1, Unusual +3, adds a \"something different\" pick"
+    ],
+    [
+     "No preference",
+     "adds a \"something different\" pick"
+    ]
+   ]
+  },
+  {
+   "id": "approach",
+   "text": "When trouble starts, what does your character reach for first?",
+   "answers": [
+    [
+     "A sword or another weapon",
+     "Bushi +4"
+    ],
+    [
+     "Words: persuasion, wit or a well-placed secret",
+     "Courtier +4"
+    ],
+    [
+     "Inner discipline and their own two hands",
+     "unarmed +1, Monk +4"
+    ],
+    [
+     "The shadows: they would rather not be seen",
+     "stealth +2, Ninja +4"
+    ],
+    [
+     "Their craft or their art",
+     "artist +1, craftsman +1, Artisan +4"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "fight",
+   "text": "In a fight, where do you want to be?",
+   "answers": [
+    [
+     "In the front line, taking hits and hitting back harder",
+     "front line +3"
+    ],
+    [
+     "Facing one opponent: a single perfect strike",
+     "duelist +3"
+    ],
+    [
+     "At a distance, with a bow",
+     "archer +3"
+    ],
+    [
+     "On horseback",
+     "cavalry +3"
+    ],
+    [
+     "Fists, feet and grappling",
+     "unarmed +3"
+    ],
+    [
+     "Fast and mobile: strike and get away",
+     "fast skirmisher +3, stealth +1"
+    ],
+    [
+     "Guarding someone who matters",
+     "bodyguard +3"
+    ],
+    [
+     "Directing the battle",
+     "commander +3"
+    ],
+    [
+     "All-out attack: no holding back",
+     "all-out attacker +3"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "court",
+   "text": "Away from a fight, how do they get their way?",
+   "answers": [
+    [
+     "Charm, courtesy and making friends",
+     "diplomat +3"
+    ],
+    [
+     "Secrets, leverage and a little fear",
+     "schemer +3"
+    ],
+    [
+     "Evidence: they find out the truth",
+     "investigator +3"
+    ],
+    [
+     "Stories, art and performance",
+     "artist +3"
+    ],
+    [
+     "Knowledge: they have read everything",
+     "scholar +3"
+    ],
+    [
+     "Trade: everyone has a price",
+     "merchant +3"
+    ],
+    [
+     "Making things that last",
+     "craftsman +3"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "magickind",
+   "text": "What should their magic be best at?",
+   "answers": [
+    [
+     "Destroying enemies",
+     "battle magic +3"
+    ],
+    [
+     "Healing and protecting",
+     "healer +3, protective magic +3"
+    ],
+    [
+     "Speaking with spirits, ancestors and the dead",
+     "spirits and the dead +3"
+    ],
+    [
+     "Nature, animals and the weather",
+     "nature and weather +3, animal companion +1"
+    ],
+    [
+     "Strange or experimental magic",
+     "unusual magic +3"
+    ],
+    [
+     "Hunting monsters and the Taint",
+     "monster hunter +3"
+    ],
+    [
+     "Subtle tricks no one notices",
+     "stealth +3, schemer +1"
+    ],
+    [
+     "Forbidden power, whatever the cost",
+     "forbidden power +3"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "element",
+   "text": "Which Element calls to them?",
+   "answers": [
+    [
+     "Air: subtle, quick and perceptive",
+     "Affinity Air +3, Deficiency Air -2"
+    ],
+    [
+     "Earth: steady, protective and enduring",
+     "Affinity Earth +3, Deficiency Earth -2"
+    ],
+    [
+     "Fire: passionate, clever and destructive",
+     "Affinity Fire +3, Deficiency Fire -2"
+    ],
+    [
+     "Water: adaptable, healing and always moving",
+     "Affinity Water +3, Deficiency Water -2"
+    ],
+    [
+     "Void: the rare, mystical space between",
+     "Affinity Void +3, Deficiency Void -2"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "ambition",
+   "text": "What would they most like to be remembered for?",
+   "answers": [
+    [
+     "Standing between the Empire and the darkness",
+     "monster hunter +2, bodyguard +1"
+    ],
+    [
+     "Perfect mastery of an art: the sword, the brush or the stage",
+     "duelist +2, artist +2"
+    ],
+    [
+     "Victory: battles won and enemies broken",
+     "commander +2, front line +2"
+    ],
+    [
+     "Wisdom: understanding the secrets of the world",
+     "scholar +2, mystic +2"
+    ],
+    [
+     "Loyalty in the shadows: doing what others will not",
+     "schemer +2, stealth +2"
+    ],
+    [
+     "Freedom: going where no one else has been",
+     "traveller +2, cavalry +1, sailor +1"
+    ],
+    [
+     "Wealth and influence",
+     "merchant +2, schemer +1, diplomat +1"
+    ],
+    [
+     "The people they saved",
+     "healer +2, protective magic +1, bodyguard +1, diplomat +1"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "home",
+   "text": "Where do they feel most at home?",
+   "answers": [
+    [
+     "On a great wall, facing a monster-haunted wasteland",
+     "home: the Wall +3"
+    ],
+    [
+     "Elegant courts and castles",
+     "home: court +3"
+    ],
+    [
+     "High mountains and quiet monasteries",
+     "home: mountains +3"
+    ],
+    [
+     "Libraries and temples",
+     "home: libraries and temples +3"
+    ],
+    [
+     "The open plains, on horseback",
+     "home: plains +3"
+    ],
+    [
+     "At sea, among islands and ports",
+     "home: sea +3"
+    ],
+    [
+     "On the battlefield, among soldiers",
+     "home: battlefield +3"
+    ],
+    [
+     "Forests and wild places",
+     "home: wilds +3"
+    ],
+    [
+     "City streets and shady corners",
+     "home: streets and shadows +3"
+    ],
+    [
+     "On the road, never in one place for long",
+     "home: the road +3"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "rules",
+   "text": "Would they break the rules to get the job done?",
+   "answers": [
+    [
+     "Never: their word and their honour are everything",
+     "high Honor +3, low Honor -2"
+    ],
+    [
+     "Only if there is truly no other way",
+     "mid Honor +2"
+    ],
+    [
+     "Yes, if the result is worth it",
+     "low Honor +3, high Honor -1"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "bushido",
+   "text": "Which virtue of Bushido matters most to them?",
+   "answers": [
+    [
+     "Compassion",
+     "healer +2, bodyguard +1, protective magic +1"
+    ],
+    [
+     "Courage",
+     "front line +2, monster hunter +2, all-out attacker +1"
+    ],
+    [
+     "Courtesy",
+     "diplomat +2, artist +1"
+    ],
+    [
+     "Duty",
+     "bodyguard +2, commander +1"
+    ],
+    [
+     "Honesty",
+     "investigator +2"
+    ],
+    [
+     "Honor",
+     "high Honor +2"
+    ],
+    [
+     "Sincerity",
+     "diplomat +1, mystic +1"
+    ],
+    [
+     "None of them: results matter more",
+     "low Honor +3"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "faith",
+   "text": "How religious are they?",
+   "answers": [
+    [
+     "Deeply: prayer and meditation shape their life",
+     "mystic +3, spirits and the dead +2, Monk +1"
+    ],
+    [
+     "Respectful, like most samurai",
+     "no effect"
+    ],
+    [
+     "Not very: steel and results matter more",
+     "mystic -2, spirits and the dead -1"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "companion",
+   "text": "Who or what would you like at their side?",
+   "answers": [
+    [
+     "A loyal horse",
+     "cavalry +2, home: plains +1"
+    ],
+    [
+     "A hunting falcon or a war-cat",
+     "animal companion +3"
+    ],
+    [
+     "A ship and its crew",
+     "sailor +3"
+    ],
+    [
+     "A fine blade, their family's pride",
+     "duelist +2"
+    ],
+    [
+     "A book or a brush",
+     "scholar +2, artist +2"
+    ],
+    [
+     "A network of informants",
+     "schemer +2, investigator +1"
+    ],
+    [
+     "No one: they walk alone",
+     "traveller +2, stealth +1, mystic +1"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  },
+  {
+   "id": "death",
+   "text": "Every samurai thinks about how they will die. How will yours?",
+   "answers": [
+    [
+     "In a last stand, holding the line",
+     "front line +2, bodyguard +2"
+    ],
+    [
+     "In a duel",
+     "duelist +3"
+    ],
+    [
+     "Fighting the darkness, far from home",
+     "monster hunter +3"
+    ],
+    [
+     "Of old age, surrounded by students",
+     "scholar +2, mystic +2, healer +1"
+    ],
+    [
+     "Quietly, with secrets no one ever learns",
+     "stealth +2, schemer +2"
+    ],
+    [
+     "At the head of an army",
+     "commander +3"
+    ],
+    [
+     "Somewhere no one from home has ever been",
+     "traveller +2, sailor +1, cavalry +1"
+    ],
+    [
+     "No preference",
+     "no effect"
+    ]
+   ]
+  }
+ ]
+}
