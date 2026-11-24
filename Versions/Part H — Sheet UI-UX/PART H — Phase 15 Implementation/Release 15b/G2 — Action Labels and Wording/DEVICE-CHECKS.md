@@ -62,6 +62,43 @@ Lost Love's "Spend Void" and Quick's "Use" follow B18's answers (G07 and G06) if
 3. **Remove that row.** The picker offers "Intimidation (Awareness)" again.
 4. **Sailing and Ninjutsu** still read "(Agility or Intelligence)" and "(Agility or Reflexes)". Perform, Games and Craft read as before.
 
-## Results
+## Results (the owner, 24 November 2026)
 
-Not given yet.
+**In the checklist** (read back from the Claude Doc at revision 53):
+
+| Unit | Checks | iPhone | Laptop | Decision | Notes |
+|---|---|---|---|---|---|
+| B01 | 1–6 | Pass | Pass | **Revise** | (none in the doc) |
+| B01 | 7 (VoiceOver, optional) | Not run | Not run | | |
+| B03 | 1–5 | Pass | Pass | **Revise** | (none in the doc) |
+| B05 | 1–4 | Pass | Pass | **Accept** | (none in the doc) |
+| B09 | 1–4 | Pass | Pass | **Accept** | (none in the doc) |
+
+**In the chat, verbatim:**
+
+> I have ran the checks and they all pass as described however here are some comments I have:
+>
+> 1. The attached screenshots show further examples of where the badges and buttons are inconsistent.
+> 2. An example is the button to resist lord moons curse is a lot bigger than any of the other "check" buttons
+> 3. the buttons to use quick and leadership are black and are not the same as any of the other buttons to use a feature in the advantages or disadvantages
+> 4. The badge for great potential needs to be included in the consistency pass
+> 5. The willpower check for touch of void is black again doesn't match other checks.  It also does not have a "descriptive name" as the other checks.
+> 6. When checking leadership and quick, it highlighted the need to have a closer look at the combat, I know that combat is getting aa overhaul later, but when it comes to do so we need to do a complete read of how combat is meant to work and pay close attention to things like initiative etc. maybe a read pass is required for combat as well as a audit, before anything is built as part of the combat overhaul
+> 7. Once the read and audit are done then maybe advantages like quick and leadership will integrate more smoothly
+> 8. A lot of the failed checks say Tell the GM: The sheet does not track.... i think this line should be removed as it implies that the players may not me faithful about the outcomes of there rolls and if they fail a check
+> 9. I also think that with the new combat overhaul there was a plan to add status conditions, so things like dazed can be added, and they can be automated and tracked in the app
+
+The screenshots in comment 1 did not reach the session that built the group; they are asked for again.
+
+**How it is read (Claude, proposed, not yet agreed):**
+
+- **B05 and B09 are accepted.** They wait for the group: qualification runs on the group once B01 and B03 are revised and accepted.
+- **B01 (Revise): comments 2, 5 and 8.**
+  - **Comment 2:** Lord Moon's "Resist Lord Moon (TN 20)" (the `lm7-roll` look) takes the same look as the other check buttons.
+  - **Comment 5:** Touch of the Void's "Willpower (TN 30)" (the filled dark `vi4533-btn` look) takes the check buttons' look and a descriptive name. This is the button B18's G11 question named; the owner's comment answers it for this button.
+  - **Comment 8:** the failure lines lose "Tell the GM: the sheet does not act for you." and its variants. There are ten in four files: six on Feature 4.5.31's checks, Epilepsy's, Touch of the Void's "…does not track Dazed.", and two others.
+- **B03 (Revise): comment 3.** Quick's and Leadership's buttons take the look of the other buttons that use a feature on Advantage and Disadvantage cards.
+- **Comments 1 and 4 (badges and buttons, Great Potential's badge):** a consistency unit of their own, mock-up first, once the screenshots are in.
+- **Comments 6, 7 and 9 (combat):** a note for the combat overhaul.
+  - A full rules read pass and an audit of combat come before anything is built: initiative, Quick and Leadership.
+  - Status conditions such as Dazed are tracked and automated.
