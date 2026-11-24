@@ -88,7 +88,17 @@ Lost Love's "Spend Void" and Quick's "Use" follow B18's answers (G07 and G06) if
 > 8. A lot of the failed checks say Tell the GM: The sheet does not track.... i think this line should be removed as it implies that the players may not me faithful about the outcomes of there rolls and if they fail a check
 > 9. I also think that with the new combat overhaul there was a plan to add status conditions, so things like dazed can be added, and they can be automated and tracked in the app
 
-The screenshots in comment 1 did not reach the session that built the group; they are asked for again.
+**The screenshots (comment 1)** came in a later message, the same day. They are kept in [device-round/](device-round/) as `owner-screenshot-1.png` to `-3.png`: the Adv & Disadv page on a laptop with group 2 built. What they show (Claude's reading):
+
+- **Buttons, three looks.**
+  - Most "use" and "check" buttons on these cards share one small outlined look ("ghost"): B01's seven, Epilepsy's two, and the Advantage configuration's buttons, all 0.78 rem with 3 × 8 px padding.
+  - Quick's "Use", Leadership's "Lead an ally" and Touch of the Void's "Willpower (TN 30)" are filled black (Feature 4.5.33's `vi4533-btn`).
+  - Lord Moon's "Resist Lord Moon (TN 20)" is larger and outlined (Release 15a A07's Moon row restyles `lm7-roll`).
+- **Ticks, two looks.** Lost Love's and Soft-Hearted's ticks have small capital labels ("REMINDED OF YOUR LOSS (TN +5)"). Lord Moon's "Full moon tonight (+1 Void Point, spent last)" is larger, in ordinary case.
+- **What an entry's choice looks like, three ways.**
+  - Great Potential: "Skill: Iaijutsu — Raise cap uses …" with a grey pill, "Raise-limit reminder".
+  - Elemental Blessing and Sworn Enemy: a plain line ("Fire — Agility and Intelligence cost 1 XP less per Rank"; "Sworn Enemy: Unknown Lion Samurai — Insight difference 0; …").
+  - Lord Moon: a small-capitals label, "SEVERITY Medium — 5 points".
 
 **How it is read (Claude, proposed, not yet agreed):**
 
