@@ -2,7 +2,7 @@
 
 23 November 2026 (Claude). The board, [mockups/G2-MOCKUPS.html](mockups/G2-MOCKUPS.html), was published to the owner as a private artifact (https://claude.ai/artifact/REUwrJoboaHe6xQBuGDDy2). It shows today beside the proposal for each unit, at phone and laptop size, with a recommendation and one decision for each. Every picture is the live build (`5ac767c6…574d`, `main` at `acdb6f75`, Release 15b group 1 live) in a test browser, with the proposal applied only in that browser. How the pictures were made: [REPRODUCTION.md](REPRODUCTION.md).
 
-Nothing is built. The records stay on `claude/release-15b-g2` until the owner's word.
+**Round 1, 24 November:** the owner approved all four units as recommended ([Round 1 answers](#round-1-answers)). Nothing is built yet. The records stay on `claude/release-15b-g2` until the owner's word.
 
 ## Where the group comes from
 
@@ -55,7 +55,25 @@ The board asks four questions, one per unit:
 
 ### Round 1 answers
 
-Not given yet. They go here verbatim, followed by how they are read.
+24 November 2026, the owner, by the next-step button under the question "Approve group 2's four units as recommended?":
+
+> Approve as recommended
+
+How it is read:
+
+1. **B01:** approved as shown. That means the seven labels with the TN kept, spoken names that start with the label, and Soft-Hearted's switch under its button on a phone.
+2. **B03:** approved with Quick on the same pattern:
+   - Leadership reads "Lead an ally", with "1k1 + School Rank" beside it.
+   - Quick reads "Use", with "+Reflexes" beside it.
+   - Both amounts are filled in from the character.
+3. **B05:** approved with Lord Moon's line too:
+   - Touch of the Void's success line: "You remain in control."
+   - Lord Moon's Curse: "Willpower roll passed. You remain in control tonight."
+4. **B09:** approved as shown. The picker takes its Traits from the corrected list. The subject Skills' range is not named.
+
+- **Words waiting on B18.** B18's answer store was still empty on 24 November (checked at 11:41 UTC). The board said Lost Love's "Spend Void" and Quick's "Use" follow the G07 and G06 answers, and that if those answers come after the build, the two words change with B18's own build. So the build uses "Spend Void" and "Use" as shown, unless G07 or G06 has a different answer by the time the build starts.
+- **What the approval covers.** On the board's terms it covers the build and preview stage only: each unit on its own stacked branch, with light checks and one code review. The device round, qualification and go-live each still need the owner's word.
+- **Nothing is built yet.** The mock-up session's brief built nothing. Where the build runs is the owner's next call.
 
 ## For the build (not decided by the owner; settle when the build starts)
 
@@ -68,3 +86,5 @@ Not given yet. They go here verbatim, followed by how they are read.
 ## Usage
 
 Claude, Opus 5.5, Pro plan, account-wide meters: weekly all models 65% and five-hour 24% at the start (22:18 UTC, 23 November); 68% and 46% at 22:51 UTC, after the reproduction, the board and these records. The weekly meter resets on 25 November at 01:00 UTC.
+
+Round 1 (24 November): weekly 69% and five-hour 2% at 11:40 UTC. After the answer was recorded and the board republished as version 2 with the approval banner, the readings were 69% and 3% at 11:42 UTC.
