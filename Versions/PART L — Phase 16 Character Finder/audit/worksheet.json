@@ -2892,15 +2892,6 @@
      "description"
     ],
     "verdict": "backed"
-   },
-   {
-    "label": "duelist",
-    "main": false,
-    "score": 1,
-    "where": [
-     "Skills"
-    ],
-    "verdict": "weak"
    }
   ],
   "suggested": [
@@ -2930,7 +2921,6 @@
    }
   ],
   "book": [
-   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
    "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
    "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
   ],

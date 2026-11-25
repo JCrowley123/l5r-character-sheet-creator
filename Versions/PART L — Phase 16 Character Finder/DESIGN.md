@@ -557,7 +557,7 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Isawa Shugenja | Phoenix | Shugenja (chosen) | 4.5 | battle magic, scholar · mystic | libraries and temples | Involved | Common | Core Rulebook p.124 |
 | Shiba Artisan [Courtier] | Phoenix | Courtier | 4.5 | artist · mystic | libraries and temples | Some extra | Uncommon | Emerald Empire p.122 |
 | Shiba Bushi | Phoenix | Bushi | 5.5 | bodyguard · diplomat, mystic | court, libraries and temples | Some extra | Common | Core Rulebook p.123 |
-| Bayushi Bushi | Scorpion | Bushi | 2.5 | schemer · duelist, stealth | court, streets and shadows | Some extra | Common | Core Rulebook p.126 |
+| Bayushi Bushi | Scorpion | Bushi | 2.5 | schemer · stealth | court, streets and shadows | Some extra | Common | Core Rulebook p.126 |
 | Bayushi Courtier | Scorpion | Courtier | 2.5 | schemer · investigator | court | Some extra | Common | Core Rulebook p.127 |
 | Shosuro Actor [Ninja] | Scorpion | Ninja | 1.5 | schemer, stealth · artist | court, streets and shadows | Some extra | Unusual | The Great Clans p.227 |
 | Shosuro Infiltrator [Ninja] | Scorpion | Ninja | 1.5 | stealth · fast skirmisher | streets and shadows | Some extra | Unusual | Core Rulebook p.128 |

@@ -19,3 +19,4 @@ evidence for each change, in our own words, is in `book-evidence.json`.
 | Lion | Ikoma Lion’s Shadow [Bushi] | Homes | battlefield, streets and shadows | battlefield, court | Emerald Empire p.109 |
 | Lion | Lion Elite Spearmen [Bushi] | main labels | front line, bodyguard | front line | Naishou Province p.7 |
 | Lion | Lion Elite Spearmen [Bushi] | Homes | battlefield, court | battlefield | Naishou Province p.7 |
+| Scorpion | Bayushi Bushi | also labels | stealth, duelist | stealth | Core Rulebook p.126 |

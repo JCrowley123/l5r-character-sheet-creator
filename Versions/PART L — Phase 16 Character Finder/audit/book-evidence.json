@@ -651,12 +651,12 @@
   "answers": [
    {
     "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The entry is about experiment, alchemy and blending elements, and the Technique lets them swap the Ring used to cast; nothing speaks of destroying foes beyond their Fire affinity.",
+    "page": "Core Rulebook p.125",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -665,30 +665,30 @@
   "answers": [
    {
     "question": "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Jiujutsu is a School Skill and Rank 4 raises their unarmed damage, but the School centres on bending Traits and riddling the elements, so at most an also label.",
+    "page": "The Great Clans p.199",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Contested, Raises?, if, per, unaware).",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Some extra",
+    "evidence": "No spells, kiho or tattoos appear in the entry, so the rubric makes it Some extra; but its Rank 1 power, raising or lowering Traits a set number of times a day, is a lot for a new player to track.",
+    "page": "The Great Clans p.199",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"First Dawn Scholars [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Henshin are a secretive Phoenix sect seeking perfection of the soul by tricking the elements. The First Dawn Scholars (Imperial Histories 2 p.29) are the Owl Clan's order in the Togashi Dynasty, keeping a great library on the ancient pre-human world. Proposal: First Dawn main scholar with the library home and Unusual; Henshin main mystic, also unarmed.",
+    "page": "The Great Clans p.199",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -697,30 +697,30 @@
   "answers": [
    {
     "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The book says the School has no particular specialisation and is simply the finest at casting in general, with a chosen Affinity; destruction is not its theme, though nothing stops an Isawa from being a battle mage.",
+    "page": "Core Rulebook p.124",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Called the most knowledgeable shugenja family, a thousand years at the secrets of the universe; taught Lore: Theology, a free Lore, Calligraphy and Medicine.",
+    "page": "Core Rulebook p.124",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Meditation is a School Skill and an Isawa may even take Void as the Affinity.",
+    "page": "Core Rulebook p.124",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -729,12 +729,12 @@
   "answers": [
    {
     "question": "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Spending Void on their art gives larger bonuses, and their work can restore Void Points to others; the text stresses serenity and each person's place in the universe.",
+    "page": "Emerald Empire p.123",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -743,21 +743,21 @@
   "answers": [
    {
     "question": "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Described as peaceful warrior-scholars who seek any option short of killing, but they learn no social Skill and no Technique persuades anyone. A weak also label.",
+    "page": "Core Rulebook p.123",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their role is yojimbo to the Isawa and warrior-scholar; the entry never mentions court life.",
+    "page": "Core Rulebook p.123",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -766,30 +766,30 @@
   "answers": [
    {
     "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Iaijutsu is a School Skill, but the Techniques are skirmish tricks: Initiative, cheap feints, Fatigue and Stun. Nothing concerns the duel.",
+    "page": "Core Rulebook p.126",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They win by tricks and Conditions, not by heavy armour, Reduction or soaking blows.",
+    "page": "Core Rulebook p.126",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught manipulation, stealth and sometimes poison as weapons of discord; no city streets or criminals are named.",
+    "page": "Core Rulebook p.126",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -798,12 +798,12 @@
   "answers": [
    {
     "question": "Should \"diplomat\" be added? Wins people over: courtesy, alliances, favours, mediation and calm.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They dig up secrets and blackmail and wreck reputations; nothing wins people over by courtesy or favours.",
+    "page": "Core Rulebook p.127",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -812,12 +812,12 @@
   "answers": [
    {
     "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Trained at a famous acting academy that rivals the Kakita; Acting is a School Skill and Rank 1 boosts it.",
+    "page": "The Great Clans p.227",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -826,12 +826,12 @@
   "answers": [
    {
     "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their speed comes only from striking out of hiding (Rank 3); there is no movement, Initiative or hit-and-run Technique. Ambush belongs under stealth.",
+    "page": "Core Rulebook p.128",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -840,30 +840,30 @@
   "answers": [
    {
     "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They subdue by fear, brawling and grappling, not by armour or endurance.",
+    "page": "Emerald Empire p.171",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Lore: Underworld; they serve as city guards and magistrates who deal at close range with criminals and street gangs.",
+    "page": "Emerald Empire p.171",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 1 is mostly constant (an Intimidation bonus and melee damage) but the bonus grows against lower Status, a small condition.",
+    "page": "Emerald Empire p.171",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -872,21 +872,21 @@
   "answers": [
    {
     "question": "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They bend the kami to stealth, trickery and deception and suit subtle manipulation at court; Courtier is a School Skill.",
+    "page": "Core Rulebook p.127",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is \"strange-magic\" right? Unusual magic: alchemy, experiment, talismans, foreign or multi-element spells.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Silent casting and illusions are not among the rubric's kinds of unusual magic (alchemy, experiment, talismans, foreign or multi-element).",
+    "page": "Core Rulebook p.127",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -895,12 +895,12 @@
   "answers": [
    {
     "question": "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The School is about paper wards and protective charms. Taint-hunting belongs to the Kuroiban Alternate Path on the next page, not to the School itself.",
+    "page": "The Great Clans p.229",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },

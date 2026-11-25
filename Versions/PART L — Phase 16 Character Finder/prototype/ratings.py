@@ -46,7 +46,7 @@ R = {
 "Shiba Artisan [Courtier]": (["artist"], ["mystic"], ["library"], 2, 2, []),
 "Shiba Bushi": (["bodyguard"], ["mystic","diplomat"], ["library","court"], 2, 1, []),
 # ---- Scorpion
-"Bayushi Bushi": (["schemer"], ["stealth","duelist"], ["court","underworld"], 2, 1, []),
+"Bayushi Bushi": (["schemer"], ["stealth"], ["court","underworld"], 2, 1, []),
 "Bayushi Courtier": (["schemer"], ["investigator"], ["court"], 2, 1, []),
 "Shosuro Actor [Ninja]": (["stealth","schemer"], ["artist"], ["court","underworld"], 2, 3, ["ninja"]),
 "Shosuro Infiltrator [Ninja]": (["stealth"], ["skirmisher"], ["underworld"], 2, 3, ["ninja"]),
