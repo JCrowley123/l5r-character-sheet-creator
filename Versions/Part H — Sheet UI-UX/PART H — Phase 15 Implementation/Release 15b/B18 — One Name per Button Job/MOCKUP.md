@@ -6,6 +6,7 @@ Prepared by Claude on **25 November 2026**. Nothing is built; no application fil
 - **Live sheet:** `origin/main` `450362b9`, application `1f002be9…5819`, 17,773,727 bytes (15b groups 1 and 2 live).
 - **The re-check** of the 21 November inventory against that sheet: [RECHECK.md](RECHECK.md).
 - **How it was made:** [REPRODUCTION.md](REPRODUCTION.md), section "Stage 3 mock-ups, round 1".
+- **Round 2 answered (25 November, 20:26 UTC):** both cards approved. Everything on B18 is approved; see [KICKOFF-B18-BUILD.md](KICKOFF-B18-BUILD.md).
 - **Round 2 (25 November, evening):** the same link, **version 3**, two cards on the owner's Reset note. See [Round 2](#round-2-reset-size-and-the-i-25-november-2026). A copy is [mockups/B18-MOCKUPS-ROUND2.html](mockups/B18-MOCKUPS-ROUND2.html); round 1's page stays as [mockups/B18-MOCKUPS.html](mockups/B18-MOCKUPS.html).
 - **Answered (25 November, 19:32 UTC):** 19 approved, Touch of the Void kept, build next; Reset approved as a word with a size and i pass asked for. See [the owner's answers](#round-1-the-owners-answers-25-november-2026-1926-1932-utc).
 
@@ -199,13 +200,16 @@ Every Reset ends at 63 × 28 px. Rows with today's four smallest Resets (Kharmic
 
 **Light checks** (`qa/mockup/round2-board-checks.json`): pass. At 375 × 812 and 1280 × 900, in light and dark: no page errors, no failed loads, no horizontal scroll (375/375, 1280/1280), 28 of 28 pictures loaded, 2 answers. The captures: 28 page loads of the live sheet, 0 errors.
 
-### Round 2: the owner's answers
+### Round 2: the owner's answers (25 November 2026, 20:25–20:26 UTC)
 
-| Card | Answer | Owner's note, verbatim |
-|---|---|---|
-| `size` | | |
-| `iright` | | |
-| Anything else (`NOTE2`) | | |
+Read from the board's store at about 20:30 UTC. The two documents are saved as they came in `qa/answers-round2/answers/`. Round 1's 21 documents were read again and are unchanged. No `NOTE2` was left.
+
+| Card | Answer | Time (UTC) | Owner's note, verbatim |
+|---|---|---|---|
+| `size` · Every Reset button is the same size | **Approve** | 20:25 | (none) |
+| `iright` · The i always sits at the right end of its row | **Approve** | 20:26 | (none) |
+
+**Every B18 card is now settled.** Both looks are approved as shown: 28 px tall and in capitals; the i at the right end of its row. With round 1 this completes the owner's Reset note. What to build is in [KICKOFF-B18-BUILD.md](KICKOFF-B18-BUILD.md).
 
 ## Usage
 
