@@ -1,0 +1,342 @@
+[
+ {
+  "role": "message-ok",
+  "label": "Got it",
+  "default": false,
+  "sites": [
+   "sheet/050-kiho-rules.js:485",
+   "sheet/050-kiho-rules.js:487",
+   "sheet/050-kiho-rules.js:686",
+   "sheet/050-kiho-rules.js:748",
+   "sheet/209.999993-feat-alternate-paths.js:1606"
+  ],
+  "count": 5
+ },
+ {
+  "role": "question-ok",
+  "label": "OK",
+  "default": true,
+  "sites": [
+   "sheet/080-identity-build-ui.js:207",
+   "sheet/110-modals-trackers.js:732",
+   "sheet/120-persistence.js:392",
+   "sheet/120-persistence.js:428",
+   "sheet/120-persistence.js:430",
+   "sheet/120-persistence.js:571"
+  ],
+  "count": 6
+ },
+ {
+  "role": "question-cancel",
+  "label": "Cancel",
+  "default": true,
+  "sites": [
+   "sheet/080-identity-build-ui.js:207",
+   "sheet/090-table-rows-weapons.js:632",
+   "sheet/110-modals-trackers.js:732",
+   "sheet/110-modals-trackers.js:1047",
+   "sheet/120-persistence.js:392",
+   "sheet/120-persistence.js:428"
+  ],
+  "count": 21
+ },
+ {
+  "role": "message-ok",
+  "label": "OK",
+  "default": true,
+  "sites": [
+   "sheet/090-table-rows-weapons.js:488",
+   "sheet/090-table-rows-weapons.js:492",
+   "sheet/090-table-rows-weapons.js:550",
+   "sheet/100-dice-engine.js:669",
+   "sheet/100-dice-engine.js:680",
+   "sheet/100-dice-engine.js:700"
+  ],
+  "count": 38
+ },
+ {
+  "role": "question-ok",
+  "label": "Confirm",
+  "default": false,
+  "sites": [
+   "sheet/090-table-rows-weapons.js:632",
+   "sheet/110-modals-trackers.js:1047"
+  ],
+  "count": 2
+ },
+ {
+  "role": "question-ok",
+  "label": "Yes",
+  "default": false,
+  "sites": [
+   "sheet/110-modals-trackers.js:755"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-cancel",
+  "label": "No",
+  "default": false,
+  "sites": [
+   "sheet/110-modals-trackers.js:755"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question3-ok",
+  "label": "Own Blood",
+  "default": false,
+  "sites": [
+   "sheet/110-modals-trackers.js:945"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-cancel",
+  "label": "Someone Else's Blood",
+  "default": false,
+  "sites": [
+   "sheet/110-modals-trackers.js:945"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Export JSON",
+  "default": false,
+  "sites": [
+   "sheet/120-persistence.js:507"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Delete",
+  "default": false,
+  "sites": [
+   "sheet/120-persistence.js:532",
+   "sheet/209.993-feat-characters-list.js:407"
+  ],
+  "count": 2
+ },
+ {
+  "role": "question-ok",
+  "label": "Clear Sheet",
+  "default": false,
+  "sites": [
+   "sheet/120-persistence.js:551"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question3-ok",
+  "label": "(built at runtime: 'Use ' + api.ringLabel(plan))",
+  "default": false,
+  "sites": [
+   "sheet/209.9297-feat-adv-void-versatility.js:102"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-cancel",
+  "label": "(built at runtime: 'Use ' + api.ordinaryLabel(plan))",
+  "default": false,
+  "sites": [
+   "sheet/209.9297-feat-adv-void-versatility.js:102"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "(built at runtime: 'Use ' + api.ringLabel(plan))",
+  "default": false,
+  "sites": [
+   "sheet/209.9297-feat-adv-void-versatility.js:106"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Pay and use",
+  "default": false,
+  "sites": [
+   "sheet/209.92991-feat-adv-dark-paragon.js:146"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Roll without it",
+  "default": false,
+  "sites": [
+   "sheet/209.92991-feat-adv-dark-paragon.js:286",
+   "sheet/209.99998-feat-ancestors.js:1072"
+  ],
+  "count": 2
+ },
+ {
+  "role": "question-cancel",
+  "label": "Cancel roll",
+  "default": false,
+  "sites": [
+   "sheet/209.92991-feat-adv-dark-paragon.js:286",
+   "sheet/209.99998-feat-ancestors.js:1072"
+  ],
+  "count": 2
+ },
+ {
+  "role": "question3-ok",
+  "label": "Pay and roll",
+  "default": false,
+  "sites": [
+   "sheet/209.92991-feat-adv-dark-paragon.js:293"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-cancel",
+  "label": "Roll without it",
+  "default": false,
+  "sites": [
+   "sheet/209.92991-feat-adv-dark-paragon.js:293",
+   "sheet/209.99998-feat-ancestors.js:1063"
+  ],
+  "count": 2
+ },
+ {
+  "role": "question-ok",
+  "label": "Discard it",
+  "default": false,
+  "sites": [
+   "sheet/209.993-feat-characters-list.js:358"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Start again",
+  "default": false,
+  "sites": [
+   "sheet/209.994-feat-creation-wizard.js:254"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-cancel",
+  "label": "Keep my choices",
+  "default": false,
+  "sites": [
+   "sheet/209.994-feat-creation-wizard.js:254"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Leave",
+  "default": false,
+  "sites": [
+   "sheet/209.994-feat-creation-wizard.js:451"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-cancel",
+  "label": "Stay",
+  "default": false,
+  "sites": [
+   "sheet/209.994-feat-creation-wizard.js:451",
+   "sheet/209.999999999999996-bugfix-wizard-overspend-warns.js:86"
+  ],
+  "count": 2
+ },
+ {
+  "role": "question3-ok",
+  "label": "(built at runtime: problem ? 'Roll without it' : 'Spend a Void Point')",
+  "default": false,
+  "sites": [
+   "sheet/209.99998-feat-ancestors.js:1047"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-cancel",
+  "label": "Take a point of Taint",
+  "default": false,
+  "sites": [
+   "sheet/209.99998-feat-ancestors.js:1047"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question3-ok",
+  "label": "Roll with it",
+  "default": false,
+  "sites": [
+   "sheet/209.99998-feat-ancestors.js:1063"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Use it now",
+  "default": false,
+  "sites": [
+   "sheet/209.99998-feat-ancestors.js:1111"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "My GM agrees",
+  "default": false,
+  "sites": [
+   "sheet/209.99998-feat-ancestors.js:1291"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "(built at runtime: final ? 'Lost for good' : 'Favour lost')",
+  "default": false,
+  "sites": [
+   "sheet/209.99998-feat-ancestors.js:1314"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Favour returned",
+  "default": false,
+  "sites": [
+   "sheet/209.99998-feat-ancestors.js:1319"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "(built at runtime: 'Use ' + d.name)",
+  "default": false,
+  "sites": [
+   "sheet/209.9999999-feat-damage-sessions-xp.js:204"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Replace",
+  "default": false,
+  "sites": [
+   "sheet/209.99999999993-bugfix-clan-school-sync.js:147"
+  ],
+  "count": 1
+ },
+ {
+  "role": "question-ok",
+  "label": "Finish",
+  "default": false,
+  "sites": [
+   "sheet/209.999999999999996-bugfix-wizard-overspend-warns.js:86"
+  ],
+  "count": 1
+ }
+]

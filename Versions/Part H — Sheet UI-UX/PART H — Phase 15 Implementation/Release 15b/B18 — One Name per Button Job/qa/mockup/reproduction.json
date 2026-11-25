@@ -1,0 +1,4279 @@
+{
+ "source_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+ "captured_utc": "2026-11-25T02:38:02.023Z",
+ "phone": {
+  "resets": {
+   "id": "resets",
+   "groups": [
+    "G01",
+    "G06"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session: all 3 Kharmic Tie uses back",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 2,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "Restore Luck to its per-session maximum",
+     "where": "Luck"
+    },
+    {
+     "n": 3,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "Make Dark Paragon available again for a new session",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 4,
+     "words": "Use",
+     "visible": "USE",
+     "spoken": "Great Destiny: a killing blow leaves you 1 Wound from death instead",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 5,
+     "words": "Reset session",
+     "visible": "RESET SESSION",
+     "spoken": "Great Destiny: make it available again for a new session",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 6,
+     "words": "Reset session",
+     "visible": "RESET SESSION",
+     "spoken": "Haunted: a new session, the GM may choose a roll again",
+     "title": "",
+     "where": "Haunted"
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Record an Unlucky use the GM forced away from the sheet",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Give back an Unlucky use recorded by mistake",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 9,
+     "words": "Reset session",
+     "visible": "RESET SESSION",
+     "spoken": "Restore Unlucky to its per-session maximum",
+     "title": "",
+     "where": "Unlucky"
+    }
+   ],
+   "todayHeight": 187,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Kharmic Tie for a new session",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 2,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Luck for a new session",
+     "title": "Restore Luck to its per-session maximum",
+     "where": "Luck"
+    },
+    {
+     "n": 3,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Dark Paragon for a new session",
+     "title": "Make Dark Paragon available again for a new session",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 4,
+     "words": "Use",
+     "visible": "USE",
+     "spoken": "Use Great Destiny: a killing blow leaves you 1 Wound from death instead",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 5,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset Great Destiny for a new session",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 6,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset Haunted for a new session",
+     "title": "",
+     "where": "Haunted"
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Record an Unlucky use the GM forced away from the sheet",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Give back an Unlucky use recorded by mistake",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 9,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset Unlucky for a new session",
+     "title": "",
+     "where": "Unlucky"
+    }
+   ],
+   "afterHeight": 187,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "ancestor": {
+   "id": "ancestor",
+   "groups": [
+    "G01",
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "",
+     "visible": "i",
+     "spoken": "About Ancestors",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "todayHeight": 744,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "",
+     "visible": "i",
+     "spoken": "Ancestors information",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Kuni’s gift for a new session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "afterHeight": 744,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "ancestor-use": {
+   "id": "ancestor-use",
+   "groups": [
+    "G01",
+    "G06"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Use it now",
+     "visible": "Use it now",
+     "spoken": "Use it now",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "todayHeight": 701,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Use",
+     "visible": "Use",
+     "spoken": "Use Seppun’s free Void Point",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Seppun’s gift for a new session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "afterHeight": 669,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "combat-round": {
+   "id": "combat-round",
+   "groups": [
+    "G01",
+    "G14"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease wounds taken by 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase wounds taken by 1",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 70,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset the round counter",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease wounds taken by 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase wounds taken by 1",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 70,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "changes": {
+   "id": "changes",
+   "groups": [
+    "G02",
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Choose…",
+     "visible": "CHOOSE…",
+     "spoken": "Choose…",
+     "title": "Wealthy — choose how many Ranks.",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Explain: Wealthy",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 3,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Kharmic Tie: person or Rank",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 4,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Kharmic Tie information",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 5,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change",
+     "title": "Change this choice",
+     "where": "Luck"
+    },
+    {
+     "n": 6,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Explain: Luck",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 7,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Configure Dark Paragon",
+     "title": "",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 8,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Dark Paragon information",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "todayHeight": 187,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Choose…",
+     "visible": "CHOOSE…",
+     "spoken": "Choose Wealthy",
+     "title": "Wealthy — choose how many Ranks.",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Wealthy information",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 3,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Kharmic Tie: person or Rank",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 4,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Kharmic Tie information",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 5,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Luck",
+     "title": "Change this choice",
+     "where": "Luck"
+    },
+    {
+     "n": 6,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Luck information",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 7,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Dark Paragon",
+     "title": "",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 8,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Dark Paragon information",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "afterHeight": 187,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-skills": {
+   "id": "remove-skills",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "todayHeight": 310,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Emphasis",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Calligraphy",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Defense",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Lore: Shadowlands",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Lore: Theology",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spellcraft",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Emphasis",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Intimidation",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "afterHeight": 310,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-adv": {
+   "id": "remove-adv",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "todayHeight": 187,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Wealthy",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Kharmic Tie",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Luck",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Dark Paragon",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "afterHeight": 187,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-equip": {
+   "id": "remove-equip",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 9,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 214,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Robes",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Wakizashi",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Knife",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Scroll Satchel",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Traveling Pack",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove 3 koku",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spell Scroll — Sense",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spell Scroll — Commune",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 9,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spell Scroll — Summon",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 214,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-weapons": {
+   "id": "remove-weapons",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "todayHeight": 610,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove A long named ancestral weapon for the audit",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "afterHeight": 610,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "characters-menu": {
+   "id": "characters-menu",
+   "groups": [
+    "G16"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Export JSON",
+     "visible": "Export JSON",
+     "spoken": "Export JSON",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Export to PDF",
+     "visible": "Export to PDF",
+     "spoken": "Export to PDF",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Save As a copy",
+     "visible": "Save As a copy",
+     "spoken": "Save As a copy",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "History",
+     "visible": "History",
+     "spoken": "History",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "Delete",
+     "visible": "Delete",
+     "spoken": "Delete",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 138,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Export JSON",
+     "visible": "Export JSON",
+     "spoken": "Export JSON",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Export PDF",
+     "visible": "Export PDF",
+     "spoken": "Export PDF",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Save As a copy",
+     "visible": "Save As a copy",
+     "spoken": "Save As a copy",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "History",
+     "visible": "History",
+     "spoken": "History",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "Delete",
+     "visible": "Delete",
+     "spoken": "Delete",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 138,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "court-window": {
+   "id": "court-window",
+   "groups": [
+    "G10"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 2",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Add court",
+     "visible": "ADD COURT",
+     "spoken": "Add court",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 393,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 2",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+ Add court",
+     "visible": "+ ADD COURT",
+     "spoken": "+ Add court",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 393,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "court-window-delete": {
+   "id": "court-window-delete",
+   "groups": [
+    "G03",
+    "G03-delete"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 2",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 393,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Delete",
+     "visible": "DELETE",
+     "spoken": "Delete court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Delete",
+     "visible": "DELETE",
+     "spoken": "Delete court 2",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 393,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "kiho-notice": {
+   "id": "kiho-notice",
+   "groups": [
+    "G04",
+    "G05"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Got it",
+     "visible": "GOT IT",
+     "spoken": "Got it",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 621,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close notice",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "OK",
+     "visible": "OK",
+     "spoken": "OK",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 621,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "skill-info": {
+   "id": "skill-info",
+   "groups": [
+    "G04"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Close",
+     "where": ""
+    }
+   ],
+   "todayHeight": 488,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close Calligraphy information",
+     "title": "Close",
+     "where": ""
+    }
+   ],
+   "afterHeight": 488,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "roll-preview": {
+   "id": "roll-preview",
+   "groups": [
+    "G04"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Cancel",
+     "visible": "CANCEL",
+     "spoken": "Cancel",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Roll 4k3",
+     "visible": "Roll 4k3",
+     "spoken": "Roll 4k3",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 650,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Cancel Before you roll",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Cancel",
+     "visible": "CANCEL",
+     "spoken": "Cancel",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Roll 4k3",
+     "visible": "Roll 4k3",
+     "spoken": "Roll 4k3",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 650,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "roll-result": {
+   "id": "roll-result",
+   "groups": [
+    "G08"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Re-roll 1s",
+     "visible": "RE-ROLL 1S",
+     "spoken": "Re-roll 1s",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Spend Luck (2/3)",
+     "visible": "Spend Luck (2/3)",
+     "spoken": "Spend Luck (2/3)",
+     "title": "Reroll this entire roll and keep the higher result",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "GM invokes Unlucky (1/2)",
+     "visible": "GM INVOKES UNLUCKY (1/2)",
+     "spoken": "GM invokes Unlucky (1/2)",
+     "title": "Reroll this entire roll and keep the second result",
+     "where": ""
+    }
+   ],
+   "todayHeight": 610,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Reroll 1s",
+     "visible": "REROLL 1S",
+     "spoken": "Reroll 1s",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reroll with Luck (2/3)",
+     "visible": "Reroll with Luck (2/3)",
+     "spoken": "Reroll with Luck: roll the whole roll again and keep the higher result, 2 of 3 left",
+     "title": "Reroll this entire roll and keep the higher result",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "GM invokes Unlucky (1/2)",
+     "visible": "GM INVOKES UNLUCKY (1/2)",
+     "spoken": "GM invokes Unlucky (1/2)",
+     "title": "Reroll this entire roll and keep the second result",
+     "where": ""
+    }
+   ],
+   "afterHeight": 610,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "dice-tray": {
+   "id": "dice-tray",
+   "groups": [
+    "G09"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 650,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear the dice",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear the other dice",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 650,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "add-emphasis": {
+   "id": "add-emphasis",
+   "groups": [
+    "G10"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "Rank 3+ required for another Emphasis in this skill.",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 310,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Calligraphy",
+     "title": "Rank 3+ required for another Emphasis in this skill.",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Defense",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Lore: Shadowlands",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Lore: Theology",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Spellcraft",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Intimidation",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 331,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "library": {
+   "id": "library",
+   "groups": [
+    "G10"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "+Book",
+     "visible": "+ Book",
+     "spoken": "Add a book",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 767,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "+ Add Book",
+     "visible": "+ Add Book",
+     "spoken": "Add Book",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 767,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "touch": {
+   "id": "touch",
+   "groups": [
+    "G11"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Steady yourself — Spend Void",
+     "visible": "STEADY YOURSELF — SPEND VOID",
+     "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+     "title": "",
+     "where": "Lost Love"
+    },
+    {
+     "n": 2,
+     "words": "Keep control (TN 30)",
+     "visible": "KEEP CONTROL (TN 30)",
+     "spoken": "Keep control (TN 30): Touch of the Void, Willpower roll after you spend a Void Point",
+     "title": "",
+     "where": "Touch of the Void"
+    },
+    {
+     "n": 3,
+     "words": "Check (TN 15)",
+     "visible": "CHECK (TN 15)",
+     "spoken": "Make the Toshigoku Willpower Trait Roll at TN 15, when the GM calls for it",
+     "title": "",
+     "where": "Cursed by the Realm"
+    }
+   ],
+   "todayHeight": 247,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Steady yourself — Spend Void",
+     "visible": "STEADY YOURSELF — SPEND VOID",
+     "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+     "title": "",
+     "where": "Lost Love"
+    },
+    {
+     "n": 2,
+     "words": "Check (TN 30)",
+     "visible": "CHECK (TN 30)",
+     "spoken": "Check (TN 30): Touch of the Void, Willpower roll after you spend a Void Point",
+     "title": "",
+     "where": "Touch of the Void"
+    },
+    {
+     "n": 3,
+     "words": "Check (TN 15)",
+     "visible": "CHECK (TN 15)",
+     "spoken": "Make the Toshigoku Willpower Trait Roll at TN 15, when the GM calls for it",
+     "title": "",
+     "where": "Cursed by the Realm"
+    }
+   ],
+   "afterHeight": 247,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "combat-info": {
+   "id": "combat-info",
+   "groups": [
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "ⓘ",
+     "title": "TN & Initiative formula",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "ⓘ",
+     "title": "Attack & Damage formula",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "👁",
+     "visible": "👁",
+     "spoken": "👁",
+     "title": "Weapon Info",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Attack stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Full Attack stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Defense stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Full Defense stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Center stance rules",
+     "title": "Stance rules",
+     "where": ""
+    }
+   ],
+   "todayHeight": 62,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "i",
+     "visible": "i",
+     "spoken": "TN & Initiative information",
+     "title": "TN & Initiative formula",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Attack & Damage information",
+     "title": "Attack & Damage formula",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "i",
+     "visible": "i",
+     "spoken": "A long named ancestral weapon for the audit information",
+     "title": "Weapon Info",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Attack stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Full Attack stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Defense stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Full Defense stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Center stance information",
+     "title": "Stance rules",
+     "where": ""
+    }
+   ],
+   "afterHeight": 62,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "quick-access": {
+   "id": "quick-access",
+   "groups": [
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close",
+     "title": "Close",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Armor TN: how it is worked out",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 507,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close",
+     "title": "Close",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Armor TN information",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 507,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "identity-steppers": {
+   "id": "identity-steppers",
+   "groups": [
+    "G14"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Taint points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Taint points",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 714,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Taint points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Taint points",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 714,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "void-ring": {
+   "id": "void-ring",
+   "groups": [
+    "G14"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "−",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "+",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 257,
+   "todayPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Void Ring",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Void Ring",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 257,
+   "afterPageWidth": {
+    "scroll": 375,
+    "client": 375
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  }
+ },
+ "laptop": {
+  "resets": {
+   "id": "resets",
+   "groups": [
+    "G01",
+    "G06"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session: all 3 Kharmic Tie uses back",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 2,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "Restore Luck to its per-session maximum",
+     "where": "Luck"
+    },
+    {
+     "n": 3,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "Make Dark Paragon available again for a new session",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 4,
+     "words": "Use",
+     "visible": "USE",
+     "spoken": "Great Destiny: a killing blow leaves you 1 Wound from death instead",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 5,
+     "words": "Reset session",
+     "visible": "RESET SESSION",
+     "spoken": "Great Destiny: make it available again for a new session",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 6,
+     "words": "Reset session",
+     "visible": "RESET SESSION",
+     "spoken": "Haunted: a new session, the GM may choose a roll again",
+     "title": "",
+     "where": "Haunted"
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Record an Unlucky use the GM forced away from the sheet",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Give back an Unlucky use recorded by mistake",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 9,
+     "words": "Reset session",
+     "visible": "RESET SESSION",
+     "spoken": "Restore Unlucky to its per-session maximum",
+     "title": "",
+     "where": "Unlucky"
+    }
+   ],
+   "todayHeight": 179,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Kharmic Tie for a new session",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 2,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Luck for a new session",
+     "title": "Restore Luck to its per-session maximum",
+     "where": "Luck"
+    },
+    {
+     "n": 3,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Dark Paragon for a new session",
+     "title": "Make Dark Paragon available again for a new session",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 4,
+     "words": "Use",
+     "visible": "USE",
+     "spoken": "Use Great Destiny: a killing blow leaves you 1 Wound from death instead",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 5,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset Great Destiny for a new session",
+     "title": "",
+     "where": "Great Destiny"
+    },
+    {
+     "n": 6,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset Haunted for a new session",
+     "title": "",
+     "where": "Haunted"
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Record an Unlucky use the GM forced away from the sheet",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Give back an Unlucky use recorded by mistake",
+     "title": "",
+     "where": "Unlucky"
+    },
+    {
+     "n": 9,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset Unlucky for a new session",
+     "title": "",
+     "where": "Unlucky"
+    }
+   ],
+   "afterHeight": 179,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "ancestor": {
+   "id": "ancestor",
+   "groups": [
+    "G01",
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "",
+     "visible": "i",
+     "spoken": "About Ancestors",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "todayHeight": 523,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "",
+     "visible": "i",
+     "spoken": "Ancestors information",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Kuni’s gift for a new session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "afterHeight": 523,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "ancestor-use": {
+   "id": "ancestor-use",
+   "groups": [
+    "G01",
+    "G06"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Use it now",
+     "visible": "Use it now",
+     "spoken": "Use it now",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset session",
+     "visible": "Reset session",
+     "spoken": "Reset session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "todayHeight": 454,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Use",
+     "visible": "Use",
+     "spoken": "Use Seppun’s free Void Point",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reset",
+     "visible": "Reset",
+     "spoken": "Reset Seppun’s gift for a new session",
+     "title": "A new session: make the once-a-session gift ready again",
+     "where": ""
+    }
+   ],
+   "afterHeight": 454,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "combat-round": {
+   "id": "combat-round",
+   "groups": [
+    "G01",
+    "G14"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease wounds taken by 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase wounds taken by 1",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 44,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Reset",
+     "visible": "RESET",
+     "spoken": "Reset the round counter",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease wounds taken by 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase wounds taken by 1",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 44,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "changes": {
+   "id": "changes",
+   "groups": [
+    "G02",
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Choose…",
+     "visible": "CHOOSE…",
+     "spoken": "Choose…",
+     "title": "Wealthy — choose how many Ranks.",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Explain: Wealthy",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 3,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Kharmic Tie: person or Rank",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 4,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Kharmic Tie information",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 5,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change",
+     "title": "Change this choice",
+     "where": "Luck"
+    },
+    {
+     "n": 6,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Explain: Luck",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 7,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Configure Dark Paragon",
+     "title": "",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 8,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Dark Paragon information",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "todayHeight": 179,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Choose…",
+     "visible": "CHOOSE…",
+     "spoken": "Choose Wealthy",
+     "title": "Wealthy — choose how many Ranks.",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Wealthy information",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 3,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Kharmic Tie: person or Rank",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 4,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Kharmic Tie information",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 5,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Luck",
+     "title": "Change this choice",
+     "where": "Luck"
+    },
+    {
+     "n": 6,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Luck information",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 7,
+     "words": "Change",
+     "visible": "CHANGE",
+     "spoken": "Change Dark Paragon",
+     "title": "",
+     "where": "Dark Paragon"
+    },
+    {
+     "n": 8,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Dark Paragon information",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "afterHeight": 179,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-skills": {
+   "id": "remove-skills",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "todayHeight": 90,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Emphasis",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Calligraphy",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Defense",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Lore: Shadowlands",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Lore: Theology",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spellcraft",
+     "title": "Remove",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Emphasis",
+     "title": "Remove Emphasis",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Intimidation",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "afterHeight": 90,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-adv": {
+   "id": "remove-adv",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "todayHeight": 179,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Wealthy",
+     "title": "",
+     "where": "Wealthy"
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Kharmic Tie",
+     "title": "",
+     "where": "Kharmic Tie"
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Luck",
+     "title": "",
+     "where": "Luck"
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Dark Paragon",
+     "title": "",
+     "where": "Dark Paragon"
+    }
+   ],
+   "afterHeight": 179,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-equip": {
+   "id": "remove-equip",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 9,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 40,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Robes",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Wakizashi",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Knife",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Scroll Satchel",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Traveling Pack",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove 3 koku",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spell Scroll — Sense",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spell Scroll — Commune",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 9,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove Spell Scroll — Summon",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 40,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "remove-weapons": {
+   "id": "remove-weapons",
+   "groups": [
+    "G03"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "todayHeight": 281,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Remove A long named ancestral weapon for the audit",
+     "title": "Remove",
+     "where": ""
+    }
+   ],
+   "afterHeight": 281,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "characters-menu": {
+   "id": "characters-menu",
+   "groups": [
+    "G16"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Export JSON",
+     "visible": "Export JSON",
+     "spoken": "Export JSON",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Export to PDF",
+     "visible": "Export to PDF",
+     "spoken": "Export to PDF",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Save As a copy",
+     "visible": "Save As a copy",
+     "spoken": "Save As a copy",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "History",
+     "visible": "History",
+     "spoken": "History",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "Delete",
+     "visible": "Delete",
+     "spoken": "Delete",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 118,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Export JSON",
+     "visible": "Export JSON",
+     "spoken": "Export JSON",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Export PDF",
+     "visible": "Export PDF",
+     "spoken": "Export PDF",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Save As a copy",
+     "visible": "Save As a copy",
+     "spoken": "Save As a copy",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "History",
+     "visible": "History",
+     "spoken": "History",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "Delete",
+     "visible": "Delete",
+     "spoken": "Delete",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 118,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "court-window": {
+   "id": "court-window",
+   "groups": [
+    "G10"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 2",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Add court",
+     "visible": "ADD COURT",
+     "spoken": "Add court",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 393,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 2",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+ Add court",
+     "visible": "+ ADD COURT",
+     "spoken": "+ Add court",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 393,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "court-window-delete": {
+   "id": "court-window-delete",
+   "groups": [
+    "G03",
+    "G03-delete"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Remove",
+     "visible": "REMOVE",
+     "spoken": "Remove court 2",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 393,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Delete",
+     "visible": "DELETE",
+     "spoken": "Delete court 1",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Delete",
+     "visible": "DELETE",
+     "spoken": "Delete court 2",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 393,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "kiho-notice": {
+   "id": "kiho-notice",
+   "groups": [
+    "G04",
+    "G05"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Got it",
+     "visible": "GOT IT",
+     "spoken": "Got it",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 557,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close notice",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "OK",
+     "visible": "OK",
+     "spoken": "OK",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 557,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "skill-info": {
+   "id": "skill-info",
+   "groups": [
+    "G04"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Close",
+     "where": ""
+    }
+   ],
+   "todayHeight": 440,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close Calligraphy information",
+     "title": "Close",
+     "where": ""
+    }
+   ],
+   "afterHeight": 440,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "roll-preview": {
+   "id": "roll-preview",
+   "groups": [
+    "G04"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "✕",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Cancel",
+     "visible": "CANCEL",
+     "spoken": "Cancel",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Roll 4k3",
+     "visible": "Roll 4k3",
+     "spoken": "Roll 4k3",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 667,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Cancel Before you roll",
+     "title": "Cancel",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Cancel",
+     "visible": "CANCEL",
+     "spoken": "Cancel",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "Roll 4k3",
+     "visible": "Roll 4k3",
+     "spoken": "Roll 4k3",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 667,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "roll-result": {
+   "id": "roll-result",
+   "groups": [
+    "G08"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Re-roll 1s",
+     "visible": "RE-ROLL 1S",
+     "spoken": "Re-roll 1s",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Spend Luck (2/3)",
+     "visible": "Spend Luck (2/3)",
+     "spoken": "Spend Luck (2/3)",
+     "title": "Reroll this entire roll and keep the higher result",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "GM invokes Unlucky (1/2)",
+     "visible": "GM INVOKES UNLUCKY (1/2)",
+     "spoken": "GM invokes Unlucky (1/2)",
+     "title": "Reroll this entire roll and keep the second result",
+     "where": ""
+    }
+   ],
+   "todayHeight": 540,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Reroll 1s",
+     "visible": "REROLL 1S",
+     "spoken": "Reroll 1s",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Reroll with Luck (2/3)",
+     "visible": "Reroll with Luck (2/3)",
+     "spoken": "Reroll with Luck: roll the whole roll again and keep the higher result, 2 of 3 left",
+     "title": "Reroll this entire roll and keep the higher result",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "GM invokes Unlucky (1/2)",
+     "visible": "GM INVOKES UNLUCKY (1/2)",
+     "spoken": "GM invokes Unlucky (1/2)",
+     "title": "Reroll this entire roll and keep the second result",
+     "where": ""
+    }
+   ],
+   "afterHeight": 540,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "dice-tray": {
+   "id": "dice-tray",
+   "groups": [
+    "G09"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 800,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear the dice",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "Clear",
+     "visible": "CLEAR",
+     "spoken": "Clear the other dice",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 800,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "add-emphasis": {
+   "id": "add-emphasis",
+   "groups": [
+    "G10"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "Rank 3+ required for another Emphasis in this skill.",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+ Emph",
+     "visible": "+ EMPH",
+     "spoken": "+ Emph",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 90,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Calligraphy",
+     "title": "Rank 3+ required for another Emphasis in this skill.",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Defense",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Lore: Shadowlands",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Lore: Theology",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Spellcraft",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+ Add Emphasis",
+     "visible": "+ ADD EMPHASIS",
+     "spoken": "Add Emphasis to Intimidation",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 90,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "library": {
+   "id": "library",
+   "groups": [
+    "G10"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "+Book",
+     "visible": "+ Book",
+     "spoken": "Add a book",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 955,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "+ Add Book",
+     "visible": "+ Add Book",
+     "spoken": "Add Book",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 955,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "touch": {
+   "id": "touch",
+   "groups": [
+    "G11"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "Steady yourself — Spend Void",
+     "visible": "STEADY YOURSELF — SPEND VOID",
+     "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+     "title": "",
+     "where": "Lost Love"
+    },
+    {
+     "n": 2,
+     "words": "Keep control (TN 30)",
+     "visible": "KEEP CONTROL (TN 30)",
+     "spoken": "Keep control (TN 30): Touch of the Void, Willpower roll after you spend a Void Point",
+     "title": "",
+     "where": "Touch of the Void"
+    },
+    {
+     "n": 3,
+     "words": "Check (TN 15)",
+     "visible": "CHECK (TN 15)",
+     "spoken": "Make the Toshigoku Willpower Trait Roll at TN 15, when the GM calls for it",
+     "title": "",
+     "where": "Cursed by the Realm"
+    }
+   ],
+   "todayHeight": 211,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "Steady yourself — Spend Void",
+     "visible": "STEADY YOURSELF — SPEND VOID",
+     "spoken": "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+     "title": "",
+     "where": "Lost Love"
+    },
+    {
+     "n": 2,
+     "words": "Check (TN 30)",
+     "visible": "CHECK (TN 30)",
+     "spoken": "Check (TN 30): Touch of the Void, Willpower roll after you spend a Void Point",
+     "title": "",
+     "where": "Touch of the Void"
+    },
+    {
+     "n": 3,
+     "words": "Check (TN 15)",
+     "visible": "CHECK (TN 15)",
+     "spoken": "Make the Toshigoku Willpower Trait Roll at TN 15, when the GM calls for it",
+     "title": "",
+     "where": "Cursed by the Realm"
+    }
+   ],
+   "afterHeight": 211,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "combat-info": {
+   "id": "combat-info",
+   "groups": [
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "ⓘ",
+     "title": "TN & Initiative formula",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "ⓘ",
+     "title": "Attack & Damage formula",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "👁",
+     "visible": "👁",
+     "spoken": "👁",
+     "title": "Weapon Info",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Attack stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Full Attack stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Defense stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Full Defense stance rules",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "ⓘ",
+     "visible": "Ⓘ",
+     "spoken": "Center stance rules",
+     "title": "Stance rules",
+     "where": ""
+    }
+   ],
+   "todayHeight": 44,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "i",
+     "visible": "i",
+     "spoken": "TN & Initiative information",
+     "title": "TN & Initiative formula",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Attack & Damage information",
+     "title": "Attack & Damage formula",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "i",
+     "visible": "i",
+     "spoken": "A long named ancestral weapon for the audit information",
+     "title": "Weapon Info",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Attack stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Full Attack stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Defense stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Full Defense stance information",
+     "title": "Stance rules",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Center stance information",
+     "title": "Stance rules",
+     "where": ""
+    }
+   ],
+   "afterHeight": 50,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "quick-access": {
+   "id": "quick-access",
+   "groups": [
+    "G12"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close",
+     "title": "Close",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Armor TN: how it is worked out",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 507,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "✕",
+     "visible": "✕",
+     "spoken": "Close",
+     "title": "Close",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "i",
+     "visible": "i",
+     "spoken": "Armor TN information",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 507,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "identity-steppers": {
+   "id": "identity-steppers",
+   "groups": [
+    "G14"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Subtract Taint points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Add Taint points",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 202,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Honour points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 3,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 4,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Glory points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 5,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 6,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Status points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 7,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Taint points",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 8,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Taint points",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 202,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  },
+  "void-ring": {
+   "id": "void-ring",
+   "groups": [
+    "G14"
+   ],
+   "today": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "−",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "+",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "todayHeight": 223,
+   "todayPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "todayErrors": [],
+   "todayDialogs": [],
+   "after": [
+    {
+     "n": 1,
+     "words": "−",
+     "visible": "−",
+     "spoken": "Decrease Void Ring",
+     "title": "",
+     "where": ""
+    },
+    {
+     "n": 2,
+     "words": "+",
+     "visible": "+",
+     "spoken": "Increase Void Ring",
+     "title": "",
+     "where": ""
+    }
+   ],
+   "afterHeight": 223,
+   "afterPageWidth": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "afterErrors": [],
+   "afterDialogs": []
+  }
+ },
+ "errors": []
+}
