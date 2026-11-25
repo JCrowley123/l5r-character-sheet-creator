@@ -781,7 +781,7 @@ answer 20%.
 | Magic "Yes": every listed School is a Shugenja School | 100% | **100%** | rule: 100% |
 | Player who wants School X finds it in the top six | 82% | **81.3%** | floor 81%, **target 90%** |
 | … gets it as a best match | 63% | **62.3%** | floor 62% |
-| … stopping after question 9 | – | **78.0%** | floor 77.9% |
+| … stopping after question 9 | – | **78.0%** | floor 77.7% (was 77.9%; see below) |
 | Schools such a player finds less than a quarter of the time | 13 | **5** | floor 5, target 0 |
 | "Classic samurai": best matches that are not Unusual | 98.5% | **98.1%** | floor 98% |
 | "Keep it simple" (no magic asked): best matches that are not Involved | 84% | **89.2%** | floor 89% |
@@ -799,6 +799,16 @@ answer 20%.
 Still hard to find in version 2: Goju Ninja, Order of Peaceful Repose, The Order of Heroes, Tengoku's Fist and
 Yasuki Courtier. For information: one changed answer changes the first best match 40% of the time, which is why
 results are presented as a shortlist, not a single answer.
+
+### Floors moved by the rating audit
+
+The audit's book step (section 10, step 3) changes ratings on the books' evidence, and the "player who wants School X"
+measures are built from the ratings, so a correct change can lower a floor. The rule is: find out why, and move the
+floor only when the change is evidence-backed and better for players. Rules never move.
+
+| Date | Floor | From | To | Why |
+|---|---|---|---|---|
+| 25 Nov 2026 | Stopping after question 9 | 77.9% | 77.7% | Bayushi Bushi lost "duelist" (no duelling Technique, Core Rulebook p.126). Over five seeds the measure fell 0.24 points, almost all of it Bayushi Bushi itself (now one main and one also label). Players asking for a duellist are no longer steered to a School with no duelling Technique. The book's Initiative Technique may support "fast skirmisher" as a replacement; that is a judgement call for the owner's group, not applied. |
 
 ### What the measurements say about getting to 90%
 
