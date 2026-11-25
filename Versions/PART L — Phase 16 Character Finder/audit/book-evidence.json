@@ -4,30 +4,30 @@
   "answers": [
    {
     "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The entry presents the Hida as heavy infantry who soak punishment and then crush the foe. No Technique or line of text is about guarding another person.",
+    "page": "Core Rulebook p.106",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "A soldier's School: described as the model of heavy infantry, built for armoured melee in the Crab's wars.",
+    "page": "Core Rulebook p.106",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Stealth).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 1 drops heavy-armour TN penalties (Stealth aside) and adds damage with the heavy weapon the School already carries. Nothing to choose, spend or track, so Straightforward holds.",
+    "page": "Core Rulebook p.106",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -36,21 +36,21 @@
   "answers": [
    {
     "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught at one dojo in a named village and aimed at Shadowlands foes. Nothing in the entry is about travel or wandering.",
+    "page": "Emerald Empire p.247",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Rank 1 bonus works only unarmed or with improvised weapons and obliges the player to keep the highest dice: a condition plus a restriction, so Some extra is right.",
+    "page": "Emerald Empire p.247",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -59,39 +59,39 @@
   "answers": [
    {
     "question": "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Stealth is a School Skill and the text has them operating inside the Shadowlands, but no Technique uses it, so it rightly stays an also label.",
+    "page": "Core Rulebook p.108",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. The entry sets them against the Hida: they survive by evading blows, not absorbing them, and their Techniques raise Armor TN rather than give Reduction.",
+    "page": "Core Rulebook p.108",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 1 boosts attacks only in the Attack Stance, the ordinary fighting stance, plus a rations perk. Strictly a condition, but nothing to spend or choose.",
+    "page": "Core Rulebook p.108",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"Hiruma Scout [Bushi]\" (rated 86% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Bushi School is an evasive melee fighter who picks off key foes, with Stealth only as a Skill. The Scout School (Imperial Histories 1 p.147) is built on Stealth: Initiative from it, near-invisibility and striking from hiding. Proposal: Hiruma Bushi main skirmisher and monster-hunter; Hiruma Scout main stealth. The rubric has no scout label.",
+    "page": "Core Rulebook p.108",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -100,21 +100,21 @@
   "answers": [
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Lore: Shadowlands at 2, Lore: Theology, Spellcraft and a cipher, and the text casts them as researchers of secrets others avoid.",
+    "page": "Core Rulebook p.107",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"library\" right? Libraries, temples and places of study.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their study is of Shadowlands creatures for fighting them; the entry names no library, temple or school as their place. Their setting is the Wall.",
+    "page": "Core Rulebook p.107",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -123,12 +123,12 @@
   "answers": [
    {
     "question": "Should \"forbidden\" be added? Uses forbidden power: maho, blood magic, the Nothing.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They hunt maho users and Tainted foes; nothing in the entry has them use blood magic or the Taint themselves (the rater matched the word maho).",
+    "page": "The Great Clans p.40",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -137,30 +137,30 @@
   "answers": [
    {
     "question": "Is \"beast\" right? Fights or works with an animal companion.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Animal Handling (Falcons) is a School Skill and the Techniques are all named for the falcon, but none involves an animal. A weak also label.",
+    "page": "Core Rulebook p.219",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"wilds\" right? Forests and wild places.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Hunting is taught at rank 2, but the text is about fighting spirit-realm creatures and says nothing of forests or wild country.",
+    "page": "Core Rulebook p.219",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Printed in the Core Rulebook's Minor Clans section as the old Falcon Clan's School, not as a Great Clan School, so Uncommon is right.",
+    "page": "Core Rulebook p.219",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -169,21 +169,21 @@
   "answers": [
    {
     "question": "Is the home \"sea\" right? The sea, islands and ports.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The entry is about trade, salesmanship and the courts. Ships, ports and the sea are never mentioned.",
+    "page": "Core Rulebook p.107",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Near-twin of \"Yoritomo Courtier\" (rated 83% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Yasuki win people by finding and supplying what they want (a Commerce bonus, reading desires, a social bonus after providing it). Yoritomo (Core Rulebook p.121) win by bullying and work with pirates and lawless types. Proposal: Yasuki merchant, also diplomat and schemer; Yoritomo schemer and merchant with the sea home. Dropping the Yasuki sea home separates them.",
+    "page": "Core Rulebook p.107",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },

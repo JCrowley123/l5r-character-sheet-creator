@@ -5,14 +5,14 @@
 
 R = {
 # ---- Crab
-"Hida Bushi": (["frontline","monster-hunter"], ["bodyguard"], ["wall","battlefield"], 1, 1, []),
-"Hida Pragmatist [Bushi]": (["unarmed"], ["bodyguard","monster-hunter"], ["wall","road"], 2, 2, []),
+"Hida Bushi": (["frontline","monster-hunter"], [], ["wall","battlefield"], 1, 1, []),
+"Hida Pragmatist [Bushi]": (["unarmed"], ["bodyguard","monster-hunter"], ["wall"], 2, 2, []),
 "Hiruma Bushi": (["skirmisher","monster-hunter"], ["stealth","archer"], ["wall","wilds"], 1, 1, []),
 "Kaiu Engineer [Artisan/Bushi]": (["craft"], ["commander","frontline"], ["wall","battlefield"], 2, 2, []),
 "Kuni Shugenja": (["monster-hunter","battle-magic"], ["scholar"], ["wall","library"], 3, 1, []),
 "Kuni Witch-Hunter [Monk]": (["monster-hunter","investigator"], ["mystic","traveller"], ["road","wall"], 2, 2, []),
 "Toritaka Bushi": (["monster-hunter","spirits"], ["beast"], ["wall","wilds"], 2, 2, []),
-"Yasuki Courtier": (["merchant"], ["schemer","diplomat"], ["court","sea"], 2, 1, []),
+"Yasuki Courtier": (["merchant"], ["schemer","diplomat"], ["court"], 2, 1, []),
 "Hiruma Scout [Bushi]": (["stealth","skirmisher"], ["monster-hunter"], ["wall","wilds"], 2, 3, ["era"]),
 # ---- Crane
 "Asahina Shugenja": (["healer","protector-magic"], ["artist","mystic"], ["court","library"], 3, 1, []),

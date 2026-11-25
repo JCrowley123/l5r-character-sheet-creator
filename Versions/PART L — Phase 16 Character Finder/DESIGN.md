@@ -521,15 +521,15 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 <!-- generated:SCHOOLS (prototype/tables.py) -->
 | School | Clan | Type | Honor | Plays like (main · also) | Home | Complexity | How unusual | Source |
 |---|---|---|---|---|---|---|---|---|
-| Hida Bushi | Crab | Bushi | 3.5 | front line, monster hunter · bodyguard | battlefield, the Wall | Straightforward | Common | Core Rulebook p.106 |
-| Hida Pragmatist [Bushi] | Crab | Bushi | 2.5 | unarmed · bodyguard, monster hunter | the road, the Wall | Some extra | Uncommon | Emerald Empire p.247 |
+| Hida Bushi | Crab | Bushi | 3.5 | front line, monster hunter | battlefield, the Wall | Straightforward | Common | Core Rulebook p.106 |
+| Hida Pragmatist [Bushi] | Crab | Bushi | 2.5 | unarmed · bodyguard, monster hunter | the Wall | Some extra | Uncommon | Emerald Empire p.247 |
 | Hiruma Bushi | Crab | Bushi | 4.5 | monster hunter, fast skirmisher · archer, stealth | the Wall, wilds | Straightforward | Common | Core Rulebook p.108 |
 | Hiruma Scout [Bushi] | Crab | Bushi | 4.5 | fast skirmisher, stealth · monster hunter | the Wall, wilds | Some extra | Unusual | Imperial Histories 1 p.147 |
 | Kaiu Engineer [Artisan/Bushi] | Crab | Artisan/Bushi | 4.5 | craftsman · commander, front line | battlefield, the Wall | Some extra | Uncommon | The Great Clans p.39 |
 | Kuni Shugenja | Crab | Shugenja (Earth) | 2.5 | battle magic, monster hunter · scholar | libraries and temples, the Wall | Involved | Common | Core Rulebook p.107 |
 | Kuni Witch-Hunter [Monk] | Crab | Monk | 5.5 | investigator, monster hunter · mystic, traveller | the road, the Wall | Some extra | Uncommon | The Great Clans p.40 |
 | Toritaka Bushi | Crab or Falcon | Bushi | 5.5 | monster hunter, spirits and the dead · animal companion | the Wall, wilds | Some extra | Uncommon | Core Rulebook p.219 |
-| Yasuki Courtier | Crab | Courtier | 2.5 | merchant · diplomat, schemer | court, sea | Some extra | Common | Core Rulebook p.107 |
+| Yasuki Courtier | Crab | Courtier | 2.5 | merchant · diplomat, schemer | court | Some extra | Common | Core Rulebook p.107 |
 | Asahina Shugenja | Crane | Shugenja (Air) | 6.5 | healer, protective magic · artist, mystic | court, libraries and temples | Involved | Common | Core Rulebook p.110 |
 | Daidoji Iron Warrior [Bushi] | Crane | Bushi | 6.5 | bodyguard, front line · commander | battlefield, court | Straightforward | Common | Core Rulebook p.111 |
 | Daidoji Scout [Bushi] | Crane | Bushi | 3.5 | fast skirmisher, stealth · archer | battlefield, wilds | Some extra | Uncommon | The Great Clans p.70 |

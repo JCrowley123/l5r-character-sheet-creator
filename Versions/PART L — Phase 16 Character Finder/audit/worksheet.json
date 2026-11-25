@@ -29,13 +29,6 @@
      "Skills"
     ],
     "verdict": "backed"
-   },
-   {
-    "label": "bodyguard",
-    "main": false,
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "suggested": [],
@@ -57,7 +50,6 @@
    }
   ],
   "book": [
-   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
    "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
    "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Stealth)."
   ],
@@ -134,16 +126,9 @@
      "description"
     ],
     "verdict": "backed"
-   },
-   {
-    "home": "road",
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "book": [
-   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
    "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
   ],
   "complexity": {
@@ -697,17 +682,10 @@
      "description"
     ],
     "verdict": "backed"
-   },
-   {
-    "home": "sea",
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "book": [
-   "Is the home \"sea\" right? The sea, islands and ports.",
-   "Near-twin of \"Yoritomo Courtier\" (rated 83% alike): what separates them? Propose a label for each that the evidence supports."
+   "Near-twin of \"Otomo Courtier\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
   ],
   "complexity": {
    "rated": 2,
@@ -733,8 +711,8 @@
   },
   "twins": [
    {
-    "with": "Yoritomo Courtier",
-    "similarity": 0.83
+    "with": "Otomo Courtier",
+    "similarity": 0.8
    }
   ]
  },

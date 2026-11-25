@@ -1,0 +1,10 @@
+# Short list for the group
+
+Judgement calls the evidence could not settle (rating audit, step 5). For each: keep, change or remove, and why.
+
+- **Hiruma Bushi**: Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while). Evidence so far: Rank 1 boosts attacks only in the Attack Stance, the ordinary fighting stance, plus a rations perk. Strictly a condition, but nothing to spend or choose.
+- **Hiruma Bushi**: Near-twin of "Hiruma Scout [Bushi]" (rated 86% alike): what separates them? Propose a label for each that the evidence supports. Evidence so far: The Bushi School is an evasive melee fighter who picks off key foes, with Stealth only as a Skill. The Scout School (Imperial Histories 1 p.147) is built on Stealth: Initiative from it, near-invisibility and striking from hiding. Proposal: Hiruma Bushi main skirmisher and monster-hunter; Hiruma Scout main stealth. The rubric has no scout label.
+- **Kuni Shugenja**: Is the home "library" right? Libraries, temples and places of study. Evidence so far: Their study is of Shadowlands creatures for fighting them; the entry names no library, temple or school as their place. Their setting is the Wall.
+- **Toritaka Bushi**: Is "beast" right? Fights or works with an animal companion. Evidence so far: Animal Handling (Falcons) is a School Skill and the Techniques are all named for the falcon, but none involves an animal. A weak also label.
+- **Toritaka Bushi**: Is the home "wilds" right? Forests and wild places. Evidence so far: Hunting is taught at rank 2, but the text is about fighting spirit-realm creatures and says nothing of forests or wild country.
+- **Yasuki Courtier**: Near-twin of "Yoritomo Courtier" (rated 83% alike): what separates them? Propose a label for each that the evidence supports. Evidence so far: Yasuki win people by finding and supplying what they want (a Commerce bonus, reading desires, a social bonus after providing it). Yoritomo (Core Rulebook p.121) win by bullying and work with pirates and lawless types. Proposal: Yasuki merchant, also diplomat and schemer; Yoritomo schemer and merchant with the sea home. Dropping the Yasuki sea home separates them.

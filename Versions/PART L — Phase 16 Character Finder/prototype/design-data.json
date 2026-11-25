@@ -10,9 +10,7 @@
     "front line",
     "monster hunter"
    ],
-   "secondary": [
-    "bodyguard"
-   ],
+   "secondary": [],
    "homes": [
     "battlefield",
     "the Wall"
@@ -37,7 +35,6 @@
     "monster hunter"
    ],
    "homes": [
-    "the road",
     "the Wall"
    ],
    "cx": "Some extra",
@@ -214,8 +211,7 @@
     "schemer"
    ],
    "homes": [
-    "court",
-    "sea"
+    "court"
    ],
    "cx": "Some extra",
    "niche": "Common",
