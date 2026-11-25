@@ -1,0 +1,203 @@
+<title>B18 Button Names Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column in the look of the 15a and 15b mock-up boards; each group is a band of pictures (today | after,
+   stacked on a phone), a table of the numbered buttons, and its answer. Palette: paper, ink, red for today, green for after,
+   blue for the numbered discs (the same blue the pictures use). */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --today:#8f3b2e; --new:#2f6b45; --chip:#efe6d4; --warn:#8a5a12; --disc:#1d4fd6; --disc-ink:#ffffff;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; --disc:#7aa2ff; --disc-ink:#0d1630; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --today:#e48b78; --new:#86c79b; --chip:#332d27; --warn:#e0b060; --disc:#7aa2ff; --disc-ink:#0d1630; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;line-height:1.15}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.12rem;margin-top:10px}
+p{margin:0;max-width:72ch}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:78ch}
+a{color:var(--gold)}
+.lede{color:var(--soft);margin-top:8px}
+.meta{font-size:.8rem;color:var(--soft);margin-top:10px;font-variant-numeric:tabular-nums}
+code{font-size:.85em;background:var(--chip);padding:1px 5px;border-radius:4px;word-break:break-word}
+section{border-top:1px solid var(--line);margin-top:34px;padding-top:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.note > b{color:var(--warn)}
+.why{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px;max-width:none}
+.why b{color:var(--new)}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.how div{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:.9rem;min-width:0}
+.disc{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--disc);color:var(--disc-ink);font:700 11px/1 var(--body);font-variant-numeric:tabular-nums}
+.scene{display:flex;flex-direction:column;gap:10px;min-width:0}
+.cap{font-weight:600}
+.pics{display:grid;gap:14px;align-items:start;min-width:0}
+.pics.two.phone{grid-template-columns:repeat(2,minmax(0,320px))}
+.pics.one.phone{grid-template-columns:minmax(0,320px)}
+.pics.two.laptop{grid-template-columns:1fr}
+.pics.one.laptop{grid-template-columns:1fr}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+.laptop figure img{width:auto;max-width:100%}
+figcaption{font-size:.8rem;color:var(--soft)}
+figcaption .t{color:var(--today);font-weight:600}
+figcaption .n{color:var(--new);font-weight:600}
+figcaption .s{color:var(--soft);font-weight:600}
+.tbl{overflow-x:auto;min-width:0}
+table{border-collapse:collapse;width:100%;font-size:.84rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--soft);font-size:.76rem;letter-spacing:.03em}
+td.ch{color:var(--new);font-weight:600}
+td.st{color:var(--soft);font-size:.76rem;white-space:nowrap}
+table.reads{min-width:720px}
+table.more{min-width:560px}
+.summary td:first-child{white-space:nowrap;font-weight:600}
+.summary td.ans{color:var(--new);font-weight:600}
+.what li b{color:var(--new)}
+.notes{color:var(--soft);font-size:.9rem}
+.opts3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.o3{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.o3.rec{border-color:var(--new);box-shadow:inset 0 0 0 1px var(--new)}
+.pill{align-self:flex-start;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--new);border:1px solid var(--new);border-radius:999px;padding:1px 8px}
+fieldset.decide{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:4px 0 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+fieldset.decide legend{font-weight:600;padding:0 4px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+label.opt{display:flex;align-items:flex-start;gap:8px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer;min-height:44px;background:var(--paper)}
+label.opt:has(input:checked){border-color:var(--new);box-shadow:inset 0 0 0 1px var(--new)}
+label.opt input{margin-top:3px;accent-color:var(--new)}
+label.opt small{display:block;color:var(--new);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+.nl{font-size:.85rem;color:var(--soft)}
+textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-height:44px}
+input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--disc);outline-offset:2px}
+.saved{font-size:.78rem;color:var(--soft);min-height:1.2em}
+.status{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-top:14px;font-size:.9rem}
+.status b{font-variant-numeric:tabular-nums}
+button.copy{font:600 .9rem var(--body);color:var(--paper);background:var(--ink);border:0;border-radius:8px;padding:10px 16px;min-height:44px;cursor:pointer}
+pre#summary{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.82rem;max-width:100%;overflow-x:auto}
+@media (max-width:720px){h1{font-size:1.7rem}.pics.two.phone{grid-template-columns:minmax(0,1fr)}.pics.one.phone{grid-template-columns:minmax(0,1fr)}.summary td:first-child{white-space:normal}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">Release 15b · B18 · one name per button job · mock-ups, round 1</span>
+  <h1>Each button job: today beside your ruling</h1>
+  <p class="lede">On 24 November you ruled on 14 groups of buttons that do the same job (“Use my suggestion” for all 14) and asked to see how each looks today beside how it will look before anything is built. This board is that. Every picture is the live sheet in a test browser; the “after” pictures have the ruling applied only in that browser. Nothing is built until you approve.</p>
+  <p class="meta">Live sheet: <code>main</code> at <code>{{MAIN}}</code> (15b groups 1 and 2 live), application <code>{{SHA}}</code>, {{BYTES}} bytes. Captured {{CAPTURED}} in the project’s QA Chromium at 375 × 812 (phone, touch) and 1440 × 1000 (laptop): {{RUNS}} page loads, {{ERRORS}} page errors. Test characters: the inventory’s dense Kuni Shugenja, and small variants with only the entries one picture needs (named under each picture).</p>
+  <div class="status"><span id="where">Connecting…</span><span><b id="count">0</b> of 15 answered</span><a href="#answers">Your answers, all together</a></div>
+</header>
+
+<section id="read">
+  <span class="tag">How to read the board</span>
+  <div class="how">
+    <div><span class="disc">1</span> A blue number marks each button the group touches, in today’s picture and the after picture. The table under the pictures uses the same numbers.</div>
+    <div><b>Words</b> are what the button says, as written (the sheet draws some buttons in capitals). <b>Read aloud</b> is what a screen reader or voice control uses.</div>
+    <div>Where only the read-aloud name changes, the pictures would be identical, so the board shows one picture and says so.</div>
+    <div>Phone pictures of cards are cut from a phone screen made taller, so several cards show together at the phone’s width. Their layout is unchanged.</div>
+  </div>
+  <h3>The re-check (today’s sheet, not 21 November’s)</h3>
+  <ul>
+    <li>Groups 1 and 2 of 15b went live after the inventory. The inventory was run again on today’s sheet: 409 controls (405 on 21 November). The differences are in the board.</li>
+    <li>Already as ruled since then: Lost Love’s “Steady yourself — Spend Void” (G07), Quick’s “Use” (G06), Kharmic Tie’s Change and its one i (G02, G12).</li>
+    <li>New and not yet as ruled: Kharmic Tie’s “Reset session” (G01), and the i’s for Armor TN (B04) and the wound penalty (A14) (G12).</li>
+    <li>One ruling no longer fits: Touch of the Void (G11) now reads “Keep control (TN 30)”, which you approved in group 2’s round 2.</li>
+  </ul>
+</section>
+
+<section id="summary-table">
+  <span class="tag">The 14 groups</span>
+  <h2>Your rulings and my recommendation for each</h2>
+  <div class="tbl"><table class="summary"><thead><tr><th>Group</th><th>Job</th><th>Your ruling</th><th>I recommend</th><th>Your answer</th></tr></thead><tbody>{{TOC}}</tbody></table></div>
+</section>
+
+{{GROUPS}}
+
+<section id="left">
+  <span class="tag">Left alone</span>
+  <h2>The nine groups that stay as they are</h2>
+  <p>You raised no objection on 24 November, so these stay. No mock-ups.</p>
+  <ul>{{LEFT}}</ul>
+</section>
+
+<section id="order">
+  <span class="tag">One more question</span>
+  <h2>{{ORDER_Q}}</h2>
+  <p>{{ORDER_CTX}}</p>
+  <p class="why"><b>My recommendation: next, before group 3.</b> {{ORDER_WHY}}</p>
+  <fieldset class="decide" id="d-ORDER"><legend>Your answer on the order</legend><div class="opts">{{ORDER_OPTS}}<label class="opt"><input type="radio" name="r-ORDER" id="r-ORDER-other" value="other"><span>Somewhere else (say where)</span></label></div>
+    <label class="nl" for="n-ORDER">A note</label><textarea id="n-ORDER" rows="2"></textarea><p class="saved" id="sv-ORDER" aria-live="polite"></p></fieldset>
+</section>
+
+<section id="answers">
+  <span class="tag">Your answers</span>
+  <h2>Everything you chose, in one place</h2>
+  <label class="nl" for="n-NOTE">Anything else (optional)</label><textarea id="n-NOTE" rows="3"></textarea><p class="saved" id="sv-NOTE" aria-live="polite"></p>
+  <pre id="summary"></pre>
+  <div><button type="button" class="copy" id="copy">Copy my answers</button> <span id="copyMsg" class="saved"></span></div>
+  <p class="meta">Answers save as you choose. If saving fails, they are kept in this browser and Copy gives them to you as text to paste into the chat.</p>
+</section>
+</div>
+
+<script>
+(function(){
+var IDS={{IDS}};
+var WORD={approve:'Approve',revise:'Revise',leave:'Leave as now',delete:'B: Delete for everything',next:'Next, before group 3',after3:'After group 3, before the Search controls',last:'Last, after group 5',other:'Somewhere else'};
+var state={},db=null,timers={};
+function radios(id){return document.querySelectorAll('input[name="r-'+id+'"]')}
+function read(id){var c=document.querySelector('input[name="r-'+id+'"]:checked');var n=document.getElementById('n-'+id);return {choice:c?c.value:'',note:n?n.value.trim():''}}
+function title(id){if(id==='ORDER')return 'Where B18 goes in 15b';if(id==='NOTE')return 'Anything else';var h=document.querySelector('#'+id.toLowerCase()+' h2');return h?h.textContent:id}
+function render(){
+  var n=0,lines=[];
+  IDS.forEach(function(id){var a=state[id]||{};if(a.choice)n++;var cell=document.getElementById('sum-'+id);if(cell)cell.textContent=a.choice?(WORD[a.choice]||a.choice):'—';
+    lines.push(id+' · '+title(id)+': '+(a.choice?(WORD[a.choice]||a.choice):'(not answered)')+(a.note?' — note: '+a.note:''));});
+  var note=(state.NOTE||{}).note;if(note)lines.push('Anything else: '+note);
+  document.getElementById('count').textContent=n;
+  document.getElementById('summary').textContent=lines.join('\n');
+}
+function persist(id){
+  var a=state[id]||{choice:'',note:''};
+  var doc={id:id,title:title(id),choice:a.choice||'',word:a.choice?(WORD[a.choice]||a.choice):'',note:a.note||'',updated:new Date().toISOString()};
+  try{localStorage.setItem('b18m-'+id,JSON.stringify(doc))}catch(e){}
+  var el=document.getElementById('sv-'+id);
+  if(!db){if(el)el.textContent='Kept in this browser only';return}
+  db.collection('answers').doc(id).set(doc).then(function(){if(el)el.textContent='Saved'},function(){if(el)el.textContent='Could not save; use Copy my answers'});
+}
+function collect(id,now){state[id]=id==='NOTE'?{choice:'',note:document.getElementById('n-NOTE').value.trim()}:read(id);render();clearTimeout(timers[id]);timers[id]=setTimeout(function(){persist(id)},now?0:700)}
+function apply(id,d){
+  if(!d)return;var active=document.activeElement;
+  if(id!=='NOTE'){var r=document.querySelector('input[name="r-'+id+'"][value="'+d.choice+'"]');var box=document.getElementById('d-'+id);
+    if(r&&!(active&&box&&box.contains(active)))r.checked=true;}
+  var n=document.getElementById('n-'+id);if(n&&active!==n)n.value=d.note||'';
+  state[id]={choice:d.choice||'',note:d.note||''};
+}
+IDS.forEach(function(id){radios(id).forEach(function(r){r.addEventListener('change',function(){collect(id,true)})});
+  var n=document.getElementById('n-'+id);if(n)n.addEventListener('input',function(){collect(id,false)});});
+document.getElementById('n-NOTE').addEventListener('input',function(){collect('NOTE',false)});
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('summary').textContent,m=document.getElementById('copyMsg');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('summary'));var s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent='Select and copy the text above.'}
+  try{navigator.clipboard.writeText(t).then(function(){m.textContent='Copied.'},sel)}catch(e){sel()}
+});
+try{IDS.concat(['NOTE']).forEach(function(id){var v=localStorage.getItem('b18m-'+id);if(v)apply(id,JSON.parse(v))})}catch(e){}
+render();
+var done=false;
+var timer=setTimeout(function(){if(!done)document.getElementById('where').textContent='Saving in this browser only'},10000);
+(window.claude&&window.claude.use?window.claude.use('db'):Promise.resolve(null)).then(function(d){
+  done=true;clearTimeout(timer);db=d;
+  document.getElementById('where').textContent=db?'Answers save as you go':'Saving in this browser only';
+  if(!db)return;
+  db.collection('answers').onSnapshot(function(snap){snap.docs.forEach(function(doc){var d=doc.data();if(d)apply(doc.id,d)});render()},
+    function(){document.getElementById('where').textContent='Saving in this browser only'});
+}).catch(function(){done=true;clearTimeout(timer);document.getElementById('where').textContent='Saving in this browser only'});
+})();
+</script>

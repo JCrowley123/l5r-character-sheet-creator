@@ -1,0 +1,493 @@
+{
+ "source_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+ "captured_utc": "2026-11-25T20:09:47.958Z",
+ "cards": {
+  "size": {
+   "look": "SIZE",
+   "places": [
+    {
+     "name": "Kharmic Tie",
+     "device": "phone",
+     "now": {
+      "words": "Reset",
+      "spoken": "Reset Kharmic Tie for a new session",
+      "width": 47,
+      "height": 19,
+      "fontSize": "11.52px",
+      "textTransform": "none",
+      "toRightEdge": 139,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 107
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset Kharmic Tie for a new session",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 122,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Luck",
+     "device": "phone",
+     "now": {
+      "words": "Reset",
+      "spoken": "Reset Luck for a new session",
+      "width": 47,
+      "height": 19,
+      "fontSize": "11.52px",
+      "textTransform": "none",
+      "toRightEdge": 133,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 107
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset Luck for a new session",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 116,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Dark Paragon",
+     "device": "phone",
+     "now": {
+      "words": "Reset",
+      "spoken": "Reset Dark Paragon for a new session",
+      "width": 56,
+      "height": 32,
+      "fontSize": "13.12px",
+      "textTransform": "none",
+      "toRightEdge": 122,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 120
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset Dark Paragon for a new session",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 115,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Great Destiny",
+     "device": "phone",
+     "now": {
+      "words": "RESET",
+      "spoken": "Reset Great Destiny for a new session",
+      "width": 59,
+      "height": 20,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 83,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset Great Destiny for a new session",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 75,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Haunted",
+     "device": "phone",
+     "now": {
+      "words": "RESET",
+      "spoken": "Reset Haunted for a new session",
+      "width": 59,
+      "height": 20,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 68,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset Haunted for a new session",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 64,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Unlucky",
+     "device": "phone",
+     "now": {
+      "words": "RESET",
+      "spoken": "Reset Unlucky for a new session",
+      "width": 58,
+      "height": 28,
+      "fontSize": "12px",
+      "textTransform": "uppercase",
+      "toRightEdge": 142,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 116
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset Unlucky for a new session",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 133,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Ancestor card",
+     "device": "phone",
+     "now": {
+      "words": "Reset",
+      "spoken": "Reset Kuni’s gift for a new session",
+      "width": 52,
+      "height": 26,
+      "fontSize": "11.52px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 114
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset Kuni’s gift for a new session",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Combat round counter",
+     "device": "phone",
+     "now": {
+      "words": "RESET",
+      "spoken": "Reset the round counter",
+      "width": 59,
+      "height": 26,
+      "fontSize": "11.2px",
+      "textTransform": "uppercase",
+      "toRightEdge": 57,
+      "cardWidth": 299
+     },
+     "nowBox": {
+      "width": 315,
+      "height": 86
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "RESET",
+      "spoken": "Reset the round counter",
+      "width": 63,
+      "height": 28,
+      "fontSize": "12.48px",
+      "textTransform": "uppercase",
+      "toRightEdge": 44,
+      "cardWidth": 299
+     },
+     "afterBox": {
+      "width": 315,
+      "height": 88
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "iright": {
+   "look": "IRIGHT",
+   "places": [
+    {
+     "name": "Luck, on a phone",
+     "device": "phone",
+     "now": {
+      "words": "",
+      "spoken": "Luck information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 91,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "",
+      "spoken": "Luck information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Luck, on a laptop",
+     "device": "laptop",
+     "now": {
+      "words": "",
+      "spoken": "Luck information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 324,
+      "cardWidth": 562
+     },
+     "nowBox": {
+      "width": 578,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "",
+      "spoken": "Luck information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 562
+     },
+     "afterBox": {
+      "width": 578,
+      "height": 108
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Dark Paragon",
+     "device": "phone",
+     "now": {
+      "words": "i",
+      "spoken": "Dark Paragon information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "17px",
+      "textTransform": "none",
+      "toRightEdge": 220,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "i",
+      "spoken": "Dark Paragon information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "17px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Seven Fortunes’ Curse",
+     "device": "phone",
+     "now": {
+      "words": "",
+      "spoken": "Hotei’s Curse information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 223,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "",
+      "spoken": "Hotei’s Curse information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "A card that needs a choice (Manage)",
+     "device": "phone",
+     "now": {
+      "words": "",
+      "spoken": "Wealthy information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 100,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "",
+      "spoken": "Wealthy information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Kharmic Tie, already like this (no change)",
+     "device": "phone",
+     "now": {
+      "words": "",
+      "spoken": "Kharmic Tie information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": {
+      "words": "",
+      "spoken": "Kharmic Tie information",
+      "width": 28,
+      "height": 28,
+      "fontSize": "0px",
+      "textTransform": "none",
+      "toRightEdge": 13,
+      "cardWidth": 329
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    }
+   ]
+  }
+ },
+ "errors": []
+}

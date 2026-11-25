@@ -1,0 +1,10 @@
+dialog words 35
+hidden rows 8
+source-only rows 125 dropped (not controls or already live) 24 candidates with no entry 5 entries that matched nothing [('209.99999992-feat-search-page', 179), ('209.999999991-feat-search-facet-page', 92), ('209.99999992-feat-search-page', 66), ('209.99999992-feat-search-page', 150), ('209.99999992-feat-search-page', 164), ('209.99999992-feat-search-page', 272), ('209.993-feat-characters-list', 261), ('209.99999999992-feat-library-page', 94), ('209.99999999992-feat-library-page', 95), ('209.99999999992-feat-library-page', 119), ('209.99999999992-feat-library-page', 1627), ('209.99999999992-feat-library-page', 1631), ('209.9999999999961-bugfix-rank-points-ui', 65)]
+  NO ENTRY sheet/209.9999998-feat-checks-conditions.js 476 'Spend a Void Point' 
+  NO ENTRY sheet/209.99999993-feat-void-initiative-entries.js 206 'Did not act first: +Reflexes' 
+  NO ENTRY sheet/209.99999993-feat-void-initiative-entries.js 211 'Lead an ally (School Rank + 1k1)' 
+  NO ENTRY sheet/209.9999999999999999993-feat-net-wound-penalty.js 86 '' '
+  NO ENTRY sheet/209.9999999999999999996-feat-kharmic-tie-row.js 58 '' '
+raw records 3542 rows 409 {'live': 241, 'source only': 160, 'hidden in the page': 8} static candidates 298
+rows without a source line 4

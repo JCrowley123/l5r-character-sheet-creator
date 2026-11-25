@@ -1,0 +1,1353 @@
+{
+ "source_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+ "captured_utc": "2026-11-25T03:24:59.784Z",
+ "cards": {
+  "reset": {
+   "groups": [
+    "G01"
+   ],
+   "places": [
+    {
+     "name": "Kharmic Tie",
+     "now": [
+      {
+       "words": "Reset session",
+       "drawn": "Reset session",
+       "spoken": "Reset session: all 3 Kharmic Tie uses back",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 107
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Kharmic Tie for a new session",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 107
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Luck",
+     "now": [
+      {
+       "words": "Reset session",
+       "drawn": "Reset session",
+       "spoken": "Reset session",
+       "title": "Restore Luck to its per-session maximum"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 107
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Luck for a new session",
+       "title": "Restore Luck to its per-session maximum"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 107
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Dark Paragon",
+     "now": [
+      {
+       "words": "Reset session",
+       "drawn": "Reset session",
+       "spoken": "Reset session",
+       "title": "Make Dark Paragon available again for a new session"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 120
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Dark Paragon for a new session",
+       "title": "Make Dark Paragon available again for a new session"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 120
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Great Destiny",
+     "now": [
+      {
+       "words": "Reset session",
+       "drawn": "RESET SESSION",
+       "spoken": "Great Destiny: make it available again for a new session",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset Great Destiny for a new session",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Haunted",
+     "now": [
+      {
+       "words": "Reset session",
+       "drawn": "RESET SESSION",
+       "spoken": "Haunted: a new session, the GM may choose a roll again",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset Haunted for a new session",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Unlucky",
+     "now": [
+      {
+       "words": "Reset session",
+       "drawn": "RESET SESSION",
+       "spoken": "Restore Unlucky to its per-session maximum",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 116
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset Unlucky for a new session",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 116
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Ancestor card",
+     "now": [
+      {
+       "words": "Reset session",
+       "drawn": "Reset session",
+       "spoken": "Reset session",
+       "title": "A new session: make the once-a-session gift ready again"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 114
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Kuni’s gift for a new session",
+       "title": "A new session: make the once-a-session gift ready again"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 114
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Combat round counter",
+     "now": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 315,
+      "height": 86
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset the round counter",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 315,
+      "height": 86
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "use": {
+   "groups": [
+    "G06"
+   ],
+   "places": [
+    {
+     "name": "Seppun Ancestor card",
+     "now": [
+      {
+       "words": "Use it now",
+       "drawn": "Use it now",
+       "spoken": "Use it now",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 114
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Use",
+       "drawn": "Use",
+       "spoken": "Use Seppun’s free Void Point",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 114
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Great Destiny",
+     "now": [
+      {
+       "words": "Use",
+       "drawn": "USE",
+       "spoken": "Great Destiny: a killing blow leaves you 1 Wound from death instead",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 108
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Use",
+       "drawn": "USE",
+       "spoken": "Use Great Destiny: a killing blow leaves you 1 Wound from death instead",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 108
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "gotit": {
+   "groups": [
+    "G05"
+   ],
+   "places": [
+    {
+     "name": "Kiho rules (Techniques, its i)",
+     "now": [
+      {
+       "words": "Got it",
+       "drawn": "GOT IT",
+       "spoken": "Got it",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 149
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "OK",
+       "drawn": "OK",
+       "spoken": "OK",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 149
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "yesno": {
+   "groups": [
+    "G05"
+   ],
+   "places": [
+    {
+     "name": "Casting with no Earth slot left",
+     "now": [
+      {
+       "words": "Yes",
+       "drawn": "YES",
+       "spoken": "Yes",
+       "title": ""
+      },
+      {
+       "words": "No",
+       "drawn": "NO",
+       "spoken": "No",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 182
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Confirm",
+       "drawn": "CONFIRM",
+       "spoken": "Confirm",
+       "title": ""
+      },
+      {
+       "words": "Cancel",
+       "drawn": "CANCEL",
+       "spoken": "Cancel",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 182
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "reroll": {
+   "groups": [
+    "G08"
+   ],
+   "places": [
+    {
+     "name": "A Skill roll with an Emphasis",
+     "now": [
+      {
+       "words": "Re-roll 1s",
+       "drawn": "RE-ROLL 1S",
+       "spoken": "Re-roll 1s",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 166
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reroll 1s",
+       "drawn": "REROLL 1S",
+       "spoken": "Reroll 1s",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 166
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "The same, after pressing it",
+     "now": [
+      {
+       "words": "Re-roll selected",
+       "drawn": "RE-ROLL SELECTED",
+       "spoken": "Re-roll selected",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 136
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reroll selected",
+       "drawn": "REROLL SELECTED",
+       "spoken": "Reroll selected",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 136
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "luck": {
+   "groups": [
+    "G08"
+   ],
+   "places": [
+    {
+     "name": "A roll’s result, with Luck",
+     "now": [
+      {
+       "words": "Spend Luck (2/3)",
+       "drawn": "Spend Luck (2/3)",
+       "spoken": "Spend Luck (2/3)",
+       "title": "Reroll this entire roll and keep the higher result"
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 135
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Reroll with Luck (2/3)",
+       "drawn": "Reroll with Luck (2/3)",
+       "spoken": "Reroll with Luck: roll the whole roll again and keep the higher result, 2 of 3 left",
+       "title": "Reroll this entire roll and keep the higher result"
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 135
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "emph": {
+   "groups": [
+    "G10"
+   ],
+   "places": [
+    {
+     "name": "Calligraphy (has an Emphasis)",
+     "now": [
+      {
+       "words": "+ Emph",
+       "drawn": "+ EMPH",
+       "spoken": "+ Emph",
+       "title": "Rank 3+ required for another Emphasis in this skill."
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 210
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "+ Add Emphasis",
+       "drawn": "+ ADD EMPHASIS",
+       "spoken": "Add Emphasis to Calligraphy",
+       "title": "Rank 3+ required for another Emphasis in this skill."
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 210
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Defense (no Emphasis yet)",
+     "now": [
+      {
+       "words": "+ Emph",
+       "drawn": "+ EMPH",
+       "spoken": "+ Emph",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 240
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "+ Add Emphasis",
+       "drawn": "+ ADD EMPHASIS",
+       "spoken": "Add Emphasis to Defense",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 240
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "book": {
+   "groups": [
+    "G10"
+   ],
+   "places": [
+    {
+     "name": "The Library page",
+     "now": [
+      {
+       "words": "+Book",
+       "drawn": "+ Book",
+       "spoken": "Add a book",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 375,
+      "height": 114
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "+ Add Book",
+       "drawn": "+ Add Book",
+       "spoken": "Add Book",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 375,
+      "height": 114
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "court": {
+   "groups": [
+    "G10"
+   ],
+   "places": [
+    {
+     "name": "Darling of the Court’s window",
+     "now": [
+      {
+       "words": "Add court",
+       "drawn": "ADD COURT",
+       "spoken": "Add court",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 212
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "+ Add court",
+       "drawn": "+ ADD COURT",
+       "spoken": "+ Add court",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 212
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "spendvoid": {
+   "groups": [
+    "G07"
+   ],
+   "places": [
+    {
+     "name": "A roll with Hida Atarasi’s strike declared",
+     "now": [
+      {
+       "words": "Spend a Void Point",
+       "drawn": "SPEND A VOID POINT",
+       "spoken": "Spend a Void Point",
+       "title": ""
+      },
+      {
+       "words": "Take a point of Taint",
+       "drawn": "TAKE A POINT OF TAINT",
+       "spoken": "Take a point of Taint",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 231
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Spend Void",
+       "drawn": "SPEND VOID",
+       "spoken": "Spend Void",
+       "title": ""
+      },
+      {
+       "words": "Take a point of Taint",
+       "drawn": "TAKE A POINT OF TAINT",
+       "spoken": "Take a point of Taint",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 214
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "combati": {
+   "groups": [
+    "G12"
+   ],
+   "places": [
+    {
+     "name": "Armor & TN",
+     "now": [
+      {
+       "words": "ⓘ",
+       "drawn": "Ⓘ",
+       "spoken": "ⓘ",
+       "title": "TN & Initiative formula"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 78
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "i",
+       "drawn": "ⓘ",
+       "spoken": "TN & Initiative information",
+       "title": "TN & Initiative formula"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 78
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Weapons",
+     "now": [
+      {
+       "words": "ⓘ",
+       "drawn": "Ⓘ",
+       "spoken": "ⓘ",
+       "title": "Attack & Damage formula"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 78
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "i",
+       "drawn": "ⓘ",
+       "spoken": "Attack & Damage information",
+       "title": "Attack & Damage formula"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 78
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "A weapon",
+     "now": [
+      {
+       "words": "👁",
+       "drawn": "👁",
+       "spoken": "👁",
+       "title": "Weapon Info"
+      }
+     ],
+     "nowBox": {
+      "width": 315,
+      "height": 113
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "i",
+       "drawn": "👁",
+       "spoken": "A long named ancestral weapon for the audit information",
+       "title": "Weapon Info"
+      }
+     ],
+     "afterBox": {
+      "width": 315,
+      "height": 114
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "A stance",
+     "now": [
+      {
+       "words": "ⓘ",
+       "drawn": "Ⓘ",
+       "spoken": "Attack stance rules",
+       "title": "Stance rules"
+      }
+     ],
+     "nowBox": {
+      "width": 315,
+      "height": 71
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "i",
+       "drawn": "ⓘ",
+       "spoken": "Attack stance information",
+       "title": "Stance rules"
+      }
+     ],
+     "afterBox": {
+      "width": 318,
+      "height": 162
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "pdf": {
+   "groups": [
+    "G16"
+   ],
+   "places": [
+    {
+     "name": "A saved character’s ⋯ menu (Characters)",
+     "now": [
+      {
+       "words": "Export to PDF",
+       "drawn": "Export to PDF",
+       "spoken": "Export to PDF",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 206,
+      "height": 168
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Export PDF",
+       "drawn": "Export PDF",
+       "spoken": "Export PDF",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 206,
+      "height": 168
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "rowx": {
+   "groups": [
+    "G03"
+   ],
+   "places": [
+    {
+     "name": "A Skill",
+     "now": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "✕",
+       "title": "Remove"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 120
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Calligraphy",
+       "title": "Remove"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 120
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "An Emphasis",
+     "now": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "✕",
+       "title": "Remove Emphasis"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 120
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Emphasis",
+       "title": "Remove Emphasis"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 120
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "An Advantage",
+     "now": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "✕",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 118
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Wealthy",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 118
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "An item",
+     "now": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "✕",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 120
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Robes",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 120
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "cornerx": {
+   "groups": [
+    "G04"
+   ],
+   "places": [
+    {
+     "name": "A Skill’s i window",
+     "now": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "✕",
+       "title": "Close"
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 109
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Close Calligraphy information",
+       "title": "Close"
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 109
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "A roll preview",
+     "now": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "✕",
+       "title": "Cancel"
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 109
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Cancel Before you roll",
+       "title": "Cancel"
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 109
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "A notice (the Kiho rules)",
+     "now": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "✕",
+       "title": "Cancel"
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 109
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Close notice",
+       "title": "Cancel"
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 109
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "changechoose": {
+   "groups": [
+    "G02"
+   ],
+   "places": [
+    {
+     "name": "Wealthy, not chosen yet",
+     "now": [
+      {
+       "words": "Choose…",
+       "drawn": "CHOOSE…",
+       "spoken": "Choose…",
+       "title": "Wealthy — choose how many Ranks."
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 90
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Choose…",
+       "drawn": "CHOOSE…",
+       "spoken": "Choose Wealthy",
+       "title": "Wealthy — choose how many Ranks."
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 90
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Luck, chosen",
+     "now": [
+      {
+       "words": "Change",
+       "drawn": "CHANGE",
+       "spoken": "Change",
+       "title": "Change this choice"
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 90
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Change",
+       "drawn": "CHANGE",
+       "spoken": "Change Luck",
+       "title": "Change this choice"
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 90
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "info": {
+   "groups": [
+    "G12"
+   ],
+   "places": [
+    {
+     "name": "Luck’s i",
+     "now": [
+      {
+       "words": "i",
+       "drawn": "",
+       "spoken": "Explain: Luck",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 98
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "i",
+       "drawn": "",
+       "spoken": "Luck information",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 98
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "The Ancestor section’s i",
+     "now": [
+      {
+       "words": "",
+       "drawn": "",
+       "spoken": "About Ancestors",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 87
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "",
+       "drawn": "",
+       "spoken": "Ancestors information",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 87
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "Armor TN’s i (Quick Access)",
+     "now": [
+      {
+       "words": "i",
+       "drawn": "",
+       "spoken": "Armor TN: how it is worked out",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 296,
+      "height": 88
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "i",
+       "drawn": "",
+       "spoken": "Armor TN information",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 296,
+      "height": 88
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "steppers": {
+   "groups": [
+    "G14"
+   ],
+   "places": [
+    {
+     "name": "Honour (Identity)",
+     "now": [
+      {
+       "words": "−",
+       "drawn": "−",
+       "spoken": "Subtract Honour points",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 180
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "−",
+       "drawn": "−",
+       "spoken": "Decrease Honour points",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 180
+     },
+     "afterErrors": []
+    },
+    {
+     "name": "The Void Ring (Rings & Traits, Manage)",
+     "now": [
+      {
+       "words": "−",
+       "drawn": "−",
+       "spoken": "−",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 152,
+      "height": 53
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "−",
+       "drawn": "−",
+       "spoken": "Decrease Void Ring",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 152,
+      "height": 53
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "clear": {
+   "groups": [
+    "G09"
+   ],
+   "places": [
+    {
+     "name": "The dice tray",
+     "now": [
+      {
+       "words": "Clear",
+       "drawn": "CLEAR",
+       "spoken": "Clear",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 351,
+      "height": 135
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Clear",
+       "drawn": "CLEAR",
+       "spoken": "Clear the dice",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 351,
+      "height": 135
+     },
+     "afterErrors": []
+    }
+   ]
+  },
+  "touch": {
+   "groups": [
+    "G11"
+   ],
+   "places": [
+    {
+     "name": "Touch of the Void",
+     "now": [
+      {
+       "words": "Keep control (TN 30)",
+       "drawn": "KEEP CONTROL (TN 30)",
+       "spoken": "Keep control (TN 30): Touch of the Void, Willpower roll after you spend a Void Point",
+       "title": ""
+      }
+     ],
+     "nowBox": {
+      "width": 345,
+      "height": 110
+     },
+     "nowErrors": [],
+     "after": [
+      {
+       "words": "Check (TN 30)",
+       "drawn": "CHECK (TN 30)",
+       "spoken": "Check (TN 30): Touch of the Void, Willpower roll after you spend a Void Point",
+       "title": ""
+      }
+     ],
+     "afterBox": {
+      "width": 345,
+      "height": 110
+     },
+     "afterErrors": []
+    }
+   ]
+  }
+ },
+ "errors": []
+}

@@ -1,0 +1,159 @@
+{
+ "old_rows": 405,
+ "new_rows": 409,
+ "only_old": [
+  {
+   "id": "C060",
+   "group": "G11",
+   "label": "Lead an ally (School Rank + 1k1)",
+   "spoken": "Lead an ally (School Rank + 1k1)",
+   "title": "Start a combat round first.",
+   "where": "Adv & Disadv",
+   "reach": "live"
+  }
+ ],
+ "only_new": [
+  {
+   "id": "C058",
+   "group": "G11",
+   "label": "Lead an ally",
+   "spoken": "Lead an ally: roll 1k1 + 1 (School Rank) for one ally’s Initiative Score",
+   "title": "Start a combat round first.",
+   "where": "Adv & Disadv",
+   "reach": "live"
+  },
+  {
+   "id": "C061",
+   "group": "G12",
+   "label": "i",
+   "spoken": "Kharmic Tie information",
+   "title": "",
+   "where": "Adv & Disadv",
+   "reach": "live"
+  },
+  {
+   "id": "C094",
+   "group": "G12",
+   "label": "i",
+   "spoken": "Armor TN: how it is worked out",
+   "title": "",
+   "where": "Quick Access panel",
+   "reach": "live"
+  }
+ ],
+ "changed": [
+  {
+   "old_id": "C058",
+   "new_id": "C056",
+   "group": "G02",
+   "where": "Adv & Disadv",
+   "cls": "adv-config-btn.ghost",
+   "was": [
+    [
+     "Change",
+     "Change  (varies; e.g. Configure Dark Paragon)",
+     "Change this choice"
+    ]
+   ],
+   "now": [
+    [
+     "Change",
+     "Change  (varies; e.g. Change Kharmic Tie: person or Rank / Configure Dark Paragon)",
+     "Change this choice"
+    ]
+   ]
+  },
+  {
+   "old_id": "C062",
+   "new_id": "C059",
+   "group": "G01",
+   "where": "Adv & Disadv",
+   "cls": "adv-config-reset-session.ghost",
+   "was": [
+    [
+     "Reset session",
+     "Reset session",
+     "Restore {…} to its per-session maximum"
+    ]
+   ],
+   "now": [
+    [
+     "Reset session",
+     "Reset {…}",
+     "Restore Luck to its per-session maximum"
+    ]
+   ]
+  },
+  {
+   "old_id": "C072",
+   "new_id": "C071",
+   "group": "G11",
+   "where": "Adv & Disadv",
+   "cls": "chk4531-btn.ghost",
+   "was": [
+    [
+     "Check",
+     "Contrary: Willpower Trait Roll when a dispute is going on",
+     ""
+    ],
+    [
+     "Check (TN 20)",
+     "Can’t Lie: Willpower Trait Roll when a lie is told in front of you  (varies; e.g. Overconfident: Perception Trait Roll to see that a foe is clearly better than you / Soft-Hearted: Willpower Trait Roll to kill)",
+     ""
+    ],
+    [
+     "Check (TN 25)",
+     "Brash: Willpower Trait Roll when threatened or insulted",
+     ""
+    ],
+    [
+     "Check (TN 5 × Glory)",
+     "Rumormonger: Willpower Trait Roll to keep a rumor to yourself",
+     ""
+    ],
+    [
+     "Spend a Void Point",
+     "Lost Love: spend a Void Point to set the memory aside",
+     ""
+    ]
+   ],
+   "now": [
+    [
+     "Cooperate",
+     "Cooperate: Contrary, Willpower roll when a dispute is going on",
+     ""
+    ],
+    [
+     "Discretion check (TN 20)",
+     "Discretion check (TN 20): Can’t Lie, Willpower roll when a lie is told in front of you",
+     ""
+    ],
+    [
+     "Measure the enemy (TN 20)",
+     "Measure the enemy (TN 20): Overconfident, Perception roll to see that a foe is clearly better than you",
+     ""
+    ],
+    [
+     "Resist gossip (TN 5 × Glory)",
+     "Resist gossip (TN 5 × Glory): Rumormonger, Willpower roll to keep a rumor to yourself",
+     ""
+    ],
+    [
+     "Resist insult (TN 25)",
+     "Resist insult (TN 25): Brash, Willpower roll when threatened or insulted",
+     ""
+    ],
+    [
+     "Resolve check (TN 20)",
+     "Resolve check (TN 20): Soft-Hearted, Willpower roll to kill",
+     ""
+    ],
+    [
+     "Steady yourself — Spend Void",
+     "Steady yourself — Spend Void: Lost Love, a Void Point sets the memory aside",
+     ""
+    ]
+   ]
+  }
+ ]
+}

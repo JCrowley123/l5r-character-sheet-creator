@@ -1,0 +1,119 @@
+{
+ "source": "https://claude.ai/artifact/CfJNQtsc9wsm5vpGP7NW76 (answers collection), read 24 November 2026",
+ "answered_utc": "2026-11-24T22:54Z to 23:01Z",
+ "answers": [
+  {
+   "id": "G01",
+   "title": "Giving back a once-per-session use",
+   "choice": "suggest",
+   "word": "Reset",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G02",
+   "title": "Opening a choice again",
+   "choice": "suggest",
+   "word": "Change",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G03",
+   "title": "Taking something off the sheet",
+   "choice": "suggest",
+   "word": "Remove, and Delete",
+   "other": "",
+   "note": "This one I am unsure of, I think before it is built I want to see a mock up comparing how it is now to how it will be"
+  },
+  {
+   "id": "G04",
+   "title": "The ✕ in a window’s corner",
+   "choice": "suggest",
+   "word": "Close or Cancel, by what the window is",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G05",
+   "title": "The buttons at a window’s foot",
+   "choice": "suggest",
+   "word": "OK · Confirm · Cancel · Done",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G06",
+   "title": "Using an ability now",
+   "choice": "suggest",
+   "word": "Use",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G07",
+   "title": "Spending a Void Point",
+   "choice": "suggest",
+   "word": "Spend Void",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G08",
+   "title": "Rolling again",
+   "choice": "suggest",
+   "word": "Reroll with {source}",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G09",
+   "title": "Clearing what you entered",
+   "choice": "suggest",
+   "word": "Clear (as it is)",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G10",
+   "title": "Adding something",
+   "choice": "suggest",
+   "word": "+ Add {thing}",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G11",
+   "title": "Rolling the dice",
+   "choice": "suggest",
+   "word": "Check (TN 30)",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G12",
+   "title": "The information buttons",
+   "choice": "suggest",
+   "word": "i, read aloud as “{thing} information”",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G14",
+   "title": "Plus and minus buttons",
+   "choice": "suggest",
+   "word": "Increase / Decrease {thing}",
+   "other": "",
+   "note": ""
+  },
+  {
+   "id": "G16",
+   "title": "Saving and exporting",
+   "choice": "suggest",
+   "word": "Export PDF",
+   "other": "",
+   "note": ""
+  }
+ ],
+ "rest_note": "I think as a rule of thumb, before anything is changed or built I want to see a mock up comparing how it is now, to how it will look after the change"
+}
