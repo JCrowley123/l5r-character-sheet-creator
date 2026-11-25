@@ -192,21 +192,21 @@
   "answers": [
    {
     "question": "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. The School values preserving life over destruction; its Technique lowers enemies' damage and favours Defense spells. Nothing in it destroys enemies.",
+    "page": "Core Rulebook p.110",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"library\" right? Libraries, temples and places of study.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Described as nearly as much monks as priests, given to scholarship, meditation and teaching through their rituals.",
+    "page": "Core Rulebook p.110",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -215,39 +215,39 @@
   "answers": [
    {
     "question": "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Battle is a School Skill, but the text makes them the rank and file of the Crane armies, not their leaders, and no Technique helps troops. A weak also label.",
+    "page": "Core Rulebook p.111",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They form most of the Crane's armies as the Clan's heavy infantry.",
+    "page": "Core Rulebook p.111",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: per).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 1 mainly adds Wounds by Honor Rank, always on; the word per comes from per Wound Rank, not a limit. Straightforward holds.",
+    "page": "Core Rulebook p.111",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Near-twin of \"Lion Elite Spearmen [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Daidoji are bodyguards first: three Techniques build on the Guard Maneuver and taking blows for a charge. The Spearmen (Naishou Province p.7) are spear and polearm specialists who also hurl javelins and have no guarding Technique. Proposal: Daidoji main bodyguard and front line; Spearmen front line without bodyguard.",
+    "page": "Core Rulebook p.111",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -256,21 +256,21 @@
   "answers": [
    {
     "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Built to harass and delay the enemy with ambushes and quick precision strikes on officers and supplies; Rank 4 speeds their attacks with light weapons and bows.",
+    "page": "The Great Clans p.70",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "A style of warfare aimed at enemy commanders and supply trains in a campaign.",
+    "page": "The Great Clans p.70",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -279,21 +279,21 @@
   "answers": [
    {
     "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Perform: Storytelling, Tea Ceremony and a free Artisan or Perform Skill; the Techniques are about favours, so it stays an also label.",
+    "page": "Core Rulebook p.110",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Some extra, rubric says Involved (tattoos or kiho).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "No spells, kiho or tattoos. Rank 1 depends on keeping Honor at 6.0 and adds a Contested Roll, which is Some extra.",
+    "page": "Core Rulebook p.110",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -302,30 +302,30 @@
   "answers": [
    {
     "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Law officers who subdue and disarm rather than kill; students mostly serve as yoriki or patrol guards. No Technique guards another person, though the family's aim is to protect its people.",
+    "page": "Emerald Empire p.170",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Jiujutsu is a School Skill, the book says the School includes unarmed martial arts, and Ranks 2 to 4 cover grappling, disarming and unarmed attacks.",
+    "page": "Emerald Empire p.170",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "underworld",
+    "evidence": "Students patrol borders and keep order in cities and towns; Horsemanship is taught but nothing speaks of wandering. Keeping order in towns fits city streets better than the road.",
+    "page": "Emerald Empire p.170",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -334,21 +334,21 @@
   "answers": [
    {
     "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Tea Ceremony is a School Skill and the family prizes the arts, but the book stresses that the School teaches the duel almost alone. A weak also label.",
+    "page": "Core Rulebook p.109",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. Their Initiative bonus serves to strike first, in the duel and the skirmish; there is no movement or hit-and-run Technique.",
+    "page": "Core Rulebook p.109",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -357,12 +357,12 @@
   "answers": [
    {
     "question": "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Courtier, Etiquette and Sincerity; their art can sway an audience's feelings (Rank 2) and turn another clan's attitude in the Crane's favour (Rank 5).",
+    "page": "The Great Clans p.72",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },

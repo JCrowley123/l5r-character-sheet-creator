@@ -19,7 +19,7 @@ R = {
 "Daidoji Iron Warrior [Bushi]": (["bodyguard","frontline"], ["commander"], ["court","battlefield"], 1, 1, []),
 "Daidoji Scout [Bushi]": (["stealth","skirmisher"], ["archer"], ["battlefield","wilds"], 2, 2, []),
 "Doji Courtier": (["diplomat"], ["artist"], ["court"], 2, 1, []),
-"Doji Magistrate [Bushi]": (["investigator","bodyguard"], [], ["court","road"], 2, 2, []),
+"Doji Magistrate [Bushi]": (["investigator","bodyguard"], ["unarmed"], ["court","road"], 2, 2, []),
 "Kakita Bushi": (["duelist"], ["artist"], ["court"], 2, 1, []),
 "Kakita Artisan": (["artist"], ["diplomat"], ["court"], 2, 2, []),
 # ---- Dragon

@@ -534,7 +534,7 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Daidoji Iron Warrior [Bushi] | Crane | Bushi | 6.5 | bodyguard, front line · commander | battlefield, court | Straightforward | Common | Core Rulebook p.111 |
 | Daidoji Scout [Bushi] | Crane | Bushi | 3.5 | fast skirmisher, stealth · archer | battlefield, wilds | Some extra | Uncommon | The Great Clans p.70 |
 | Doji Courtier | Crane | Courtier | 6.5 | diplomat · artist | court | Some extra | Common | Core Rulebook p.110 |
-| Doji Magistrate [Bushi] | Crane | Bushi | 5.5 | bodyguard, investigator | court, the road | Some extra | Uncommon | Emerald Empire p.170 |
+| Doji Magistrate [Bushi] | Crane | Bushi | 5.5 | bodyguard, investigator · unarmed | court, the road | Some extra | Uncommon | Emerald Empire p.170 |
 | Kakita Artisan | Crane | Artisan | 5.5 | artist · diplomat | court | Some extra | Uncommon | The Great Clans p.71 |
 | Kakita Bushi | Crane | Bushi | 6.5 | duelist · artist | court | Some extra | Common | Core Rulebook p.109 |
 | Kitsuki Investigator [Courtier] | Dragon | Courtier | 5.5 | investigator · diplomat, scholar | court, mountains | Some extra | Common | Core Rulebook p.114 |

@@ -326,7 +326,9 @@
     "bodyguard",
     "investigator"
    ],
-   "secondary": [],
+   "secondary": [
+    "unarmed"
+   ],
    "homes": [
     "court",
     "the road"

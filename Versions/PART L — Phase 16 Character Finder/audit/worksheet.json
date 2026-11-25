@@ -1169,20 +1169,21 @@
     "score": 0,
     "where": [],
     "verdict": "no evidence"
-   }
-  ],
-  "suggested": [
+   },
    {
     "label": "unarmed",
+    "main": false,
     "score": 7,
     "where": [
      "Rank 2 Technique",
      "Rank 3 Technique",
      "Rank 4 Technique",
      "Skills"
-    ]
+    ],
+    "verdict": "backed"
    }
   ],
+  "suggested": [],
   "homes": [
    {
     "home": "court",
@@ -1201,7 +1202,6 @@
   ],
   "book": [
    "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
-   "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
    "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
   ],
   "complexity": {

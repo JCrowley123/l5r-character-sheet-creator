@@ -9,3 +9,4 @@ evidence for each change, in our own words, is in `book-evidence.json`.
 | Crab | Hida Bushi | also labels | bodyguard | (none) | Core Rulebook p.106 |
 | Crab | Hida Pragmatist [Bushi] | Homes | the Wall, the road | the Wall | Emerald Empire p.247 |
 | Crab | Yasuki Courtier | Homes | court, sea | court | Core Rulebook p.107 |
+| Crane | Doji Magistrate [Bushi] | also labels | (none) | unarmed | Emerald Empire p.170 |
