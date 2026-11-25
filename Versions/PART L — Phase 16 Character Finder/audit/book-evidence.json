@@ -518,21 +518,21 @@
   "answers": [
    {
     "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Nothing about duels: the School deliberately avoids specialising, teaching precise all-round kenjutsu plus tactics and battle study.",
+    "page": "Core Rulebook p.116",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Raises?, against, choose, when).",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Some extra",
+    "evidence": "Rank 1 asks the player to choose on each attack between ignoring the armour part of Armor TN or a Free Raise, and its attack bonus applies only to the first attack on a foe or against someone who Raised. A choice plus conditions.",
+    "page": "Core Rulebook p.117",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -541,30 +541,30 @@
   "answers": [
    {
     "question": "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Stealth is a School Skill and the group is described as small and secretive, but no Technique uses Stealth. Arguably an also label rather than a main one.",
+    "page": "Emerald Empire p.109",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They embrace dishonourable means for the Lion, may use Low Skills without losing Honor, trade Honor for bonuses and unsettle foes by recalling their past failures.",
+    "page": "Emerald Empire p.109",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "court",
+    "evidence": "The book says their main battleground is the court and that most Lion delegations to major courts include them; city streets and criminals are never mentioned.",
+    "page": "Emerald Empire p.109",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -573,21 +573,21 @@
   "answers": [
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Lore: History, Lore: Theology, Calligraphy (Cipher) and Spellcraft, and described as the most traditional shugenja family.",
+    "page": "Core Rulebook p.118",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"library\" right? Libraries, temples and places of study.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their practice is ancient ritual and contact with ancestors, which suits temples, but the entry names no temple or library; their other focus is magic for the battlefield.",
+    "page": "Core Rulebook p.117",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -596,30 +596,30 @@
   "answers": [
    {
     "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "A spear and polearm School: Reduction from parrying with the spear, ignoring Reduction, thrown spears. No Technique guards another person; escorting a governor is a setting note, not their role.",
+    "page": "Naishou Province p.7",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Battle is a School Skill and they serve as units within the Lion armies, but no Technique leads or aids troops. A weak also label.",
+    "page": "Naishou Province p.7",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "An army unit kept by the Matsu; nothing in the entry concerns court life.",
+    "page": "Naishou Province p.7",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -628,21 +628,21 @@
   "answers": [
    {
     "question": "Is the home \"wilds\" right? Forests and wild places.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They live among half-tamed warcats and are known as wild and uncivilised, serving on raids and reconnaissance; but no forest or wild country is named.",
+    "page": "The Great Clans p.136",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 1 gives a warcat companion that attacks when directed and guards otherwise: an extra creature to run, so Some extra is right.",
+    "page": "The Great Clans p.137",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },

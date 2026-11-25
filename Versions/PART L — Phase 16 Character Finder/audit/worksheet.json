@@ -961,8 +961,7 @@
   "book": [
    "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
    "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: per).",
-   "Near-twin of \"Lion Elite Spearmen [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: per)."
   ],
   "complexity": {
    "rated": 1,
@@ -985,13 +984,7 @@
     115,
     116
    ]
-  },
-  "twins": [
-   {
-    "with": "Lion Elite Spearmen [Bushi]",
-    "similarity": 1.0
-   }
-  ]
+  }
  },
  {
   "name": "Daidoji Scout [Bushi]",
@@ -1931,13 +1924,6 @@
      "Rank 1 Technique"
     ],
     "verdict": "backed"
-   },
-   {
-    "label": "duelist",
-    "main": false,
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "suggested": [],
@@ -1953,14 +1939,13 @@
    }
   ],
   "book": [
-   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
-   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Raises?, against, choose, when)."
+   "Near-twin of \"Lion Elite Spearmen [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
   ],
   "complexity": {
-   "rated": 1,
+   "rated": 2,
    "rubric": 2,
    "why": "Rank 1 has: Raises?, against, choose, when",
-   "agree": false
+   "agree": true
   },
   "niche": {
    "rated": 1,
@@ -1977,7 +1962,13 @@
     120,
     121
    ]
-  }
+  },
+  "twins": [
+   {
+    "with": "Lion Elite Spearmen [Bushi]",
+    "similarity": 1.0
+   }
+  ]
  },
  {
   "name": "Ikoma Bard [Courtier]",
@@ -2100,16 +2091,17 @@
     "verdict": "backed"
    },
    {
-    "home": "underworld",
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Rank 5 Technique"
+    ],
+    "verdict": "backed"
    }
   ],
   "book": [
    "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
-   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
-   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
+   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear."
   ],
   "complexity": {
    "rated": 2,
@@ -2236,13 +2228,6 @@
     "verdict": "backed"
    },
    {
-    "label": "bodyguard",
-    "main": true,
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
-   },
-   {
     "label": "commander",
     "main": false,
     "score": 1,
@@ -2261,18 +2246,10 @@
      "Clan"
     ],
     "verdict": "backed"
-   },
-   {
-    "home": "court",
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "book": [
-   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
-   "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
-   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+   "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish."
   ],
   "complexity": {
    "rated": 1,

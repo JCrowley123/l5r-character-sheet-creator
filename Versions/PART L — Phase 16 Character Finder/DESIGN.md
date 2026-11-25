@@ -544,11 +544,11 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | The Hitomi Kikage Zumi Order [Monk] | Dragon | Monk | 4.5 | all-out attacker, unarmed · mystic | mountains | Involved | Unusual | Imperial Histories 1 p.215 |
 | The Hoshi Tsurui Zumi Order [Monk] | Dragon | Monk | 4.5 | mystic · unarmed | mountains | Involved | Unusual | Imperial Histories 1 p.214 |
 | The Togashi Tattooed Order [Monk] | Dragon | Monk | 4.5 | mystic, unarmed · traveller | mountains, the road | Involved | Common | Core Rulebook p.114 |
-| Akodo Bushi | Lion | Bushi | 6.5 | commander · duelist, front line | battlefield | Straightforward | Common | Core Rulebook p.116 |
+| Akodo Bushi | Lion | Bushi | 6.5 | commander · front line | battlefield | Some extra | Common | Core Rulebook p.116 |
 | Ikoma Bard [Courtier] | Lion | Courtier | 6.5 | artist, diplomat · scholar | battlefield, court | Some extra | Common | Core Rulebook p.118 |
-| Ikoma Lion’s Shadow [Bushi] | Lion | Bushi | 3.5 | schemer, stealth | battlefield, streets and shadows | Some extra | Uncommon | Emerald Empire p.109 |
+| Ikoma Lion’s Shadow [Bushi] | Lion | Bushi | 3.5 | schemer, stealth | battlefield, court | Some extra | Uncommon | Emerald Empire p.109 |
 | Kitsu Shugenja | Lion | Shugenja (Water) | 6.5 | battle magic, spirits and the dead · scholar | battlefield, libraries and temples | Involved | Common | Core Rulebook p.117 |
-| Lion Elite Spearmen [Bushi] | Lion | Bushi | 5.5 | bodyguard, front line · commander | battlefield, court | Straightforward | Uncommon | Naishou Province p.7 |
+| Lion Elite Spearmen [Bushi] | Lion | Bushi | 5.5 | front line · commander | battlefield | Straightforward | Uncommon | Naishou Province p.7 |
 | Matsu Beastmaster [Bushi] | Lion | Bushi | 5.5 | animal companion, front line | battlefield, wilds | Some extra | Uncommon | The Great Clans p.136 |
 | Matsu Berserker [Bushi] | Lion | Bushi | 6.5 | all-out attacker, front line | battlefield | Straightforward | Common | Core Rulebook p.119 |
 | Agasha Shugenja | Phoenix | Shugenja (Fire) | 4.5 | unusual magic · battle magic, scholar | libraries and temples | Involved | Common | Core Rulebook p.125 |

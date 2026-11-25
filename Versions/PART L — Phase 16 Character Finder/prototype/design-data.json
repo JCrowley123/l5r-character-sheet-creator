@@ -563,13 +563,12 @@
     "commander"
    ],
    "secondary": [
-    "duelist",
     "front line"
    ],
    "homes": [
     "battlefield"
    ],
-   "cx": "Straightforward",
+   "cx": "Some extra",
    "niche": "Common",
    "affinity": "",
    "ask": [],
@@ -611,7 +610,7 @@
    "secondary": [],
    "homes": [
     "battlefield",
-    "streets and shadows"
+    "court"
    ],
    "cx": "Some extra",
    "niche": "Uncommon",
@@ -653,15 +652,13 @@
    "honor": 5.5,
    "source": "Naishou Province p.7",
    "primary": [
-    "bodyguard",
     "front line"
    ],
    "secondary": [
     "commander"
    ],
    "homes": [
-    "battlefield",
-    "court"
+    "battlefield"
    ],
    "cx": "Straightforward",
    "niche": "Uncommon",

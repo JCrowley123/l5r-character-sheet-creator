@@ -14,3 +14,8 @@ evidence for each change, in our own words, is in `book-evidence.json`.
 | Dragon | The Togashi Tattooed Order [Monk] | how unusual | Uncommon | Common | Core Rulebook p.114 |
 | Dragon | The Hoshi Tsurui Zumi Order [Monk] | main · also | mystic, unarmed · (none) | mystic · unarmed | Imperial Histories 1 p.214 |
 | Dragon | The Hitomi Kikage Zumi Order [Monk] | main · also | unarmed, mystic · all-out | unarmed, all-out · mystic | Imperial Histories 1 p.215 |
+| Lion | Akodo Bushi | also labels | front line, duelist | front line | Core Rulebook p.116 |
+| Lion | Akodo Bushi | complexity | Straightforward | Some extra | Core Rulebook p.117 |
+| Lion | Ikoma Lion’s Shadow [Bushi] | Homes | battlefield, streets and shadows | battlefield, court | Emerald Empire p.109 |
+| Lion | Lion Elite Spearmen [Bushi] | main labels | front line, bodyguard | front line | Naishou Province p.7 |
+| Lion | Lion Elite Spearmen [Bushi] | Homes | battlefield, court | battlefield | Naishou Province p.7 |

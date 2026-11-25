@@ -31,11 +31,11 @@ R = {
 "The Hoshi Tsurui Zumi Order [Monk]": (["mystic"], ["unarmed"], ["mountains"], 3, 3, ["era"]),
 "The Hitomi Kikage Zumi Order [Monk]": (["unarmed","all-out"], ["mystic"], ["mountains"], 3, 3, ["era"]),
 # ---- Lion
-"Akodo Bushi": (["commander"], ["frontline","duelist"], ["battlefield"], 1, 1, []),
+"Akodo Bushi": (["commander"], ["frontline"], ["battlefield"], 2, 1, []),
 "Ikoma Bard [Courtier]": (["artist","diplomat"], ["scholar"], ["court","battlefield"], 2, 1, []),
-"Ikoma Lion’s Shadow [Bushi]": (["stealth","schemer"], [], ["battlefield","underworld"], 2, 2, []),
+"Ikoma Lion’s Shadow [Bushi]": (["stealth","schemer"], [], ["battlefield","court"], 2, 2, []),
 "Kitsu Shugenja": (["spirits","battle-magic"], ["scholar"], ["battlefield","library"], 3, 1, []),
-"Lion Elite Spearmen [Bushi]": (["frontline","bodyguard"], ["commander"], ["battlefield","court"], 1, 2, []),
+"Lion Elite Spearmen [Bushi]": (["frontline"], ["commander"], ["battlefield"], 1, 2, []),
 "Matsu Beastmaster [Bushi]": (["beast","frontline"], [], ["battlefield","wilds"], 2, 2, []),
 "Matsu Berserker [Bushi]": (["all-out","frontline"], [], ["battlefield"], 1, 1, []),
 # ---- Phoenix
