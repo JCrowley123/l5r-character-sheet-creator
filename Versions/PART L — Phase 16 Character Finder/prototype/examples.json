@@ -54,23 +54,27 @@
    [
     "Hida Bushi",
     "Crab"
+   ],
+   [
+    "Toku Bushi",
+    "Monkey"
    ]
   ],
   "soft": [
-   [
-    "Daidoji Iron Warrior [Bushi]",
-    "Crane"
-   ],
-   [
-    "Lion Elite Spearmen [Bushi]",
-    "Lion"
-   ],
    [
     "Heichi Bushi",
     "Boar"
    ],
    [
+    "Daidoji Iron Warrior [Bushi]",
+    "Crane"
+   ],
+   [
     "Matsu Berserker [Bushi]",
+    "Lion"
+   ],
+   [
+    "Lion Elite Spearmen [Bushi]",
     "Lion"
    ]
   ],
@@ -129,30 +133,34 @@
   ],
   "hard": [
    [
+    "The Order of Heroes [Monk]",
+    "Brotherhood of Shinsei"
+   ],
+   [
     "Kuni Witch-Hunter [Monk]",
     "Crab"
    ]
   ],
   "soft": [
    [
-    "Toritaka Bushi",
-    "Crab"
-   ],
-   [
-    "The Order of Heroes [Monk]",
-    "Brotherhood of Shinsei"
-   ],
-   [
     "The Temples of the Thousand Fortunes [Monk]",
     "Brotherhood of Shinsei"
    ],
    [
-    "The Togashi Tattooed Order [Monk]",
+    "Toritaka Bushi",
+    "Crab"
+   ],
+   [
+    "Mirumoto Taoist Swordsman [Bushi]",
     "Dragon"
+   ],
+   [
+    "Moto Vindicator [Bushi]",
+    "Unicorn"
    ]
   ],
   "wild": [
-   "Fukurokujin\u2019s Eyes [Monk]",
+   "Fudoist Order [Monk]",
    "Brotherhood of Shinsei"
   ]
  },
@@ -219,12 +227,12 @@
     "Imperial"
    ],
    [
-    "Isawa Shugenja",
-    "Phoenix"
-   ],
-   [
     "Yogo Wardmaster [Shugenja]",
     "Scorpion"
+   ],
+   [
+    "Isawa Shugenja",
+    "Phoenix"
    ]
   ],
   "wild": null

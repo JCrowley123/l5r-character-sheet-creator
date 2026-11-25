@@ -7,10 +7,12 @@ unaffected by its presence.
 To remove it, delete this folder:
 
 ```bash
-rm -r "Versions/PART K — Phase 11.4 Character Finder"
+rm -r "Versions/PART L — Phase 16 Character Finder"
 ```
 
-Nothing else refers to it.
+Two records outside it mention it and should go too: the Phase 16 entry under "PART L — New Player Help" in
+`Versions/L5R Character Sheet Phased Roadmap reorder.md` (its section and its Status Overview row), and the
+25 November 2026 line at the end of `Versions/CLAUDE.md`. Nothing in the application refers to it.
 
 ## Dependencies
 
@@ -20,4 +22,4 @@ repository root) and the data they extracted from it (`prototype/schools.json`).
 
 If the owner approves the design, the build phase gets its own fragment, marker, harness and a full
 `ROLLBACK.md` of the usual kind. Its planned dependencies (a hard one on Phase 11.2, the creation wizard; soft,
-guarded ones on Phase 9.1, 14.3b and 4.6/4.7 data) are listed in `DESIGN.md` section 10.
+guarded ones on Phase 9.1, 14.3b and 4.6/4.7 data) are listed in `DESIGN.md` section 11.

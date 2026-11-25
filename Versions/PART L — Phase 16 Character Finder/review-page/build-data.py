@@ -4,7 +4,8 @@ import json, os, sys, re, random
 HERE = os.path.dirname(os.path.abspath(__file__))
 P = os.path.join(HERE, '..', 'prototype')
 sys.path.insert(0, P)
-from finder import Q, SCHOOLS, DATA, recommend, random_answers, questions_for
+import finder
+from finder import Q, SCHOOLS, DATA, recommend, random_answers, questions_for, is_sampler
 from tables import warnings, TAG_WORDS, HOME_WORDS, CX, NICHE
 tech = json.load(open(os.path.join(HERE, 'tech1.json')))
 famlib = dict(DATA['fam']); famlib.update(DATA['minfam'])
@@ -24,7 +25,7 @@ for s in SCHOOLS:
     schools.append({'n': s['name'], 'c': s['clan'], 'k': s['kind'], 'r': sorted(s['roles']), 'b': s['band'], 'h': s['honor'],
         'p': sorted(s['primary']), 's': sorted(s['secondary']), 'o': sorted(s['homes']), 'x': s['cx'], 'u': s['niche'],
         'a': s['affinity'], 'd': s['deficiency'], 'ca': bool(s['choose_affinity']), 'src': s['source'] or SRC.get(s['name'], ''),
-        'lore': (lore[s['name']] or {}).get('text', ''), 'fam': family(s), 'ben': benefit[s['name']], 'sk': skills[s['name']],
+        'f': s['factor'], 'lore': (lore[s['name']] or {}).get('text', ''), 'fam': family(s), 'ben': benefit[s['name']], 'sk': skills[s['name']],
         't1': tech[s['name']]['tech'], 't1d': tech[s['name']]['desc'], 'ask': ask, 'know': know})
 qs = {qid: {'q': text, 'a': [[label, eff] for label, eff in answers]} for qid, (text, answers) in Q.items()}
 # Oracle: 400 random answer sets and what the prototype recommends, for checking the page's port.
@@ -32,13 +33,17 @@ rng = random.Random(11)
 oracle = []
 for i in range(400):
     ans = random_answers(rng, 0.2)
+    if i % 40 == 1:  # nearly empty answers: the sampler
+        ans = {q: (len(Q[q][1]) - 1 if rng.random() < 0.8 else v) for q, v in ans.items()}
     if i % 5 == 0:   # some players stop early with "See my results now"
         asked = questions_for(ans); cut = rng.randrange(6, len(asked) + 1)
         ans = {k: v for k, v in ans.items() if k in asked[:cut]}
     hard, soft, wild, uniq = recommend(ans)
-    oracle.append({'ans': ans, 'hard': [x['name'] for x in hard], 'soft': [x['name'] for x in soft], 'wild': wild['name'] if wild else None,
+    oracle.append({'ans': ans, 'sample': is_sampler(ans), 'hard': [x['name'] for x in hard], 'soft': [x['name'] for x in soft], 'wild': wild['name'] if wild else None,
                    'all': [x['name'] for x in uniq]})
-json.dump({'schools': schools, 'q': qs, 'tags': TAG_WORDS, 'homes': HOME_WORDS, 'cx': CX, 'niche': NICHE}, open(os.path.join(HERE, 'finder-data.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
+cfg = {'direct': list(finder.DIRECT_QUESTIONS), 'directWeight': finder.DIRECT_WEIGHT, 'early': finder.EARLY_EXIT_AFTER,
+       'samplerBelow': finder.SAMPLER_BELOW, 'comfort': list(finder.COMFORT_QUESTIONS)}
+json.dump({'cfg': cfg, 'schools': schools, 'q': qs, 'tags': TAG_WORDS, 'homes': HOME_WORDS, 'cx': CX, 'niche': NICHE}, open(os.path.join(HERE, 'finder-data.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
 json.dump(oracle, open(os.path.join(HERE, 'oracle.json'), 'w'))
 print('finder-data bytes', os.path.getsize(os.path.join(HERE, 'finder-data.json')), '| families matched', sum(1 for x in schools if x['fam']), 'of', len(schools))
 print('no family:', [x['n'] for x in schools if not x['fam']])

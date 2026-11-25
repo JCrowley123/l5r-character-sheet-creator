@@ -1,12 +1,24 @@
-"""Prototype of the Character Finder scoring, run against the app's real school list.
+"""Character Finder scoring, version 2 (25 November 2026), run against the app's real School list.
 
-python3 -I finder.py  -> reachability, balance and sample answer paths.
+    python3 -I finder.py       reachability and a short summary
+    python3 -I reliability.py  the full reliability tests, with pass marks
+
+Changes from version 1, all approved by the owner on 25 November 2026:
+  - Label points are evened out, so a School rated with many labels gains no more in total than one with few.
+  - The four questions where a player states their style directly (approach, fight, court, magic type) count 1.5x.
+  - "Keep it simple" pushes Involved Schools down twice as hard (-6, was -3); "A classic samurai" pushes Unusual
+    Schools down harder (-6, was -4); "Never break the rules" pushes low-Honor Schools down harder (-3, was -2).
+  - Ties go to the School whose MAIN labels match more answers, then to a per-player shuffle. Never alphabetical.
+  - Magic "No" (and "a touch of the mystical") no longer removes Shugenja. They are pushed down (-3) and can never
+    be a best match, but stay in "Also worth a look" and "See all matches" when the rest of the answers suit them.
+  - Fewer than two answers that say something about the character gives a sample of Schools, not a "match".
 """
-import json, random, re, sys, os
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import json, math, random, re, sys, os
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
 from ratings import R
 
-DATA = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'schools.json')))
+DATA = json.load(open(os.path.join(HERE, 'schools.json')))
 
 def role_of(s):
     n = s['name']
@@ -24,29 +36,38 @@ def honor_band(h):
     if h is None: return 'mid'
     return 'high' if h >= 6 else ('low' if h <= 3.5 else 'mid')
 
+LABEL_WEIGHT_REFERENCE = 6.0   # a School with 2 main labels, 1 "also" label and 1 home keeps its points unchanged
+DIRECT_QUESTIONS = ('approach', 'fight', 'court', 'magickind')
+DIRECT_WEIGHT = 1.5
+NOT_A_BEST_MATCH_PENALTY = -3     # small enough that a strong fit still shows under "Also worth a look"
+EARLY_EXIT_AFTER = 8           # "See my results now" appears once 8 questions are answered
+SAMPLER_BELOW = 2              # fewer answers than this that describe the character -> a sample, not a match
+
 SCHOOLS = []
-for s in DATA['rows']:
+for i, s in enumerate(DATA['rows']):
     p, sec, homes, cx, niche, flags = R[s['name']]
-    SCHOOLS.append(dict(name=s['name'], clan=s['clan'], kind=s['kind'], roles=role_of(s), honor=s['honor'],
-        band=honor_band(s['honor']), primary=set(p), secondary=set(sec), homes=set(homes), cx=cx, niche=niche,
+    lw = 2 * len(p) + len(sec) + len(homes)
+    SCHOOLS.append(dict(i=i, name=s['name'], clan=s['clan'], kind=s['kind'], roles=role_of(s), honor=s['honor'],
+        band=honor_band(s['honor']), primary=list(p), secondary=list(sec), homes=list(homes), cx=cx, niche=niche,
         flags=set(flags), source=s['source'] or '', affinity=s['affinity'], deficiency=s['deficiency'],
-        choose_affinity=(s['shugenja'] and not s['affinity'] and s['name'] == 'Isawa Shugenja')))
-assert len(SCHOOLS) == 106 and len(R) == len({s["name"] for s in SCHOOLS}) == 105, (len(SCHOOLS), len(R))
+        choose_affinity=(s['shugenja'] and not s['affinity'] and s['name'] == 'Isawa Shugenja'),
+        factor=math.sqrt(LABEL_WEIGHT_REFERENCE / max(lw, 1))))
+assert len(SCHOOLS) == 106 and len(R) == len({s['name'] for s in SCHOOLS}) == 105, (len(SCHOOLS), len(R))
 
 NP = ('No preference', {})
 Q = {
  'magic': ('Do you want your character to cast spells?', [
-    ('Yes: magic is the heart of who they are', {'filter': 'shugenja'}),
-    ('A touch of the mystical, but no spells', {'filter': 'no-shugenja', 'tags': {'mystic': 2, 'spirits': 1, 'monster-hunter': 1}, 'roles': {'Monk': 2}}),
-    ('No: they rely on their own skill', {'filter': 'no-shugenja', 'tags': {'mystic': -1}}),
+    ('Yes: magic is the heart of who they are', {'filter': 'Shugenja'}),
+    ('A touch of the mystical, but no spells', {'tags': {'mystic': 2, 'spirits': 1, 'monster-hunter': 1}, 'roles': {'Monk': 2, 'Shugenja': NOT_A_BEST_MATCH_PENALTY}, 'not_best': 'Shugenja'}),
+    ('No: they rely on their own skill', {'tags': {'mystic': -1}, 'roles': {'Shugenja': NOT_A_BEST_MATCH_PENALTY}, 'not_best': 'Shugenja'}),
     NP]),
  'complexity': ('How much rules detail do you want to keep track of?', [
-    ('Keep it simple: I am still learning the game', {'cx': {1: 3, 2: 0, 3: -3}}),
+    ('Keep it simple: I am still learning the game', {'cx': {1: 3, 2: 0, 3: -6}}),
     ('Some extra options are fine', {'cx': {1: 1, 2: 2, 3: 0}}),
     ('Lots of moving parts: I like mastering a system', {'cx': {1: -1, 2: 1, 3: 3}}),
     NP]),
  'niche': ('How do you feel about unusual characters?', [
-    ('A classic samurai most players will recognise', {'niche': {1: 3, 2: 0, 3: -4}}),
+    ('A classic samurai most players will recognise', {'niche': {1: 3, 2: 0, 3: -6}}),
     ('Open to something a bit different', {'niche': {1: 1, 2: 2, 3: 0}, 'wildcard': True}),
     ('The stranger the better', {'niche': {1: -1, 2: 1, 3: 3}, 'wildcard': True}),
     ('No preference', {'wildcard': True})]),
@@ -117,7 +138,7 @@ Q = {
     ('On the road, never in one place for long', {'homes': {'road': 3}}),
     NP]),
  'rules': ('Would they break the rules to get the job done?', [
-    ('Never: their word and their honour are everything', {'honor': {'high': 3, 'low': -2}}),
+    ('Never: their word and their honour are everything', {'honor': {'high': 3, 'low': -3}}),
     ('Only if there is truly no other way', {'honor': {'mid': 2}}),
     ('Yes, if the result is worth it', {'honor': {'low': 3, 'high': -1}}),
     NP]),
@@ -155,9 +176,12 @@ Q = {
     ('Somewhere no one from home has ever been', {'tags': {'traveller': 2, 'sailor': 1, 'cavalry': 1}}),
     NP]),
 }
+ALL_QUESTIONS = ['magic', 'complexity', 'niche', 'approach', 'fight', 'court', 'magickind', 'element',
+                 'ambition', 'home', 'rules', 'bushido', 'faith', 'companion', 'death']
+COMFORT_QUESTIONS = ('magic', 'complexity', 'niche')
 
 def questions_for(ans):
-    """The adaptive order. ans maps question id -> answer index (or None while unasked)."""
+    """The adaptive order. ans maps question id -> answer index."""
     order = ['magic', 'complexity', 'niche']
     caster = ans.get('magic') == 0
     if caster:
@@ -171,52 +195,124 @@ def questions_for(ans):
     order += ['companion', 'death']
     return order
 
+def contribution(s, qid, e):
+    """What one answer adds to one School. The same arithmetic, in the same order, is in the review page."""
+    label = 0.0
+    for tag, w in e.get('tags', {}).items():
+        label += w * (2 if tag in s['primary'] else 1 if tag in s['secondary'] else 0)
+    for home, w in e.get('homes', {}).items():
+        if home in s['homes']: label += w
+    label *= s['factor']
+    rest = 0.0
+    for role, w in e.get('roles', {}).items():
+        if role in s['roles']: rest += w
+    rest += e.get('honor', {}).get(s['band'], 0)
+    rest += e.get('cx', {}).get(s['cx'], 0)
+    rest += e.get('niche', {}).get(s['niche'], 0)
+    el = e.get('element')
+    if el:
+        if s['choose_affinity'] or s['affinity'] == el: rest += 3
+        elif s['deficiency'] == el: rest -= 2
+    c = label + rest
+    if qid in DIRECT_QUESTIONS: c *= DIRECT_WEIGHT
+    return c
+
+CONTRIB = {(qid, i): [contribution(s, qid, e) for s in SCHOOLS] for qid, (text, answers) in Q.items() for i, (label, e) in enumerate(answers)}
+
+def asked_answers(ans):
+    return [(q, ans[q]) for q in questions_for(ans) if ans.get(q) is not None]
+
 def effects(ans):
-    for qid in questions_for(ans):
-        i = ans.get(qid)
-        if i is None: continue
-        yield Q[qid][1][i][1]
+    for q, i in asked_answers(ans):
+        yield Q[q][1][i][1]
 
 def score(s, ans):
-    t = 0
-    for e in effects(ans):
-        for tag, w in e.get('tags', {}).items():
-            t += w * (2 if tag in s['primary'] else 1 if tag in s['secondary'] else 0)
-        for role, w in e.get('roles', {}).items():
-            if role in s['roles']: t += w
-        for home, w in e.get('homes', {}).items():
-            if home in s['homes']: t += w
-        t += e.get('honor', {}).get(s['band'], 0)
-        t += e.get('cx', {}).get(s['cx'], 0)
-        t += e.get('niche', {}).get(s['niche'], 0)
-        el = e.get('element')
-        if el:
-            if s['choose_affinity'] or s['affinity'] == el: t += 3
-            elif s['deficiency'] == el: t -= 2
+    t = 0.0
+    for q, i in asked_answers(ans):
+        t += CONTRIB[(q, i)][s['i']]
     return t
 
+def main_label_fit(s, ans):
+    m = 0
+    for e in effects(ans):
+        m += sum(1 for t, w in e.get('tags', {}).items() if w > 0 and t in s['primary'])
+    return m
+
+def fnv1a(text, h=0x811c9dc5):
+    for ch in text:
+        h ^= ord(ch)
+        h = (h * 16777619) & 0xffffffff
+    return h
+
+def signature(ans):
+    return '|'.join('%s:%d' % (q, i) for q, i in asked_answers(ans))
+
 def allowed(s, ans):
-    f = ans.get('magic')
-    if f == 0: return 'Shugenja' in s['roles']
-    if f in (1, 2): return 'Shugenja' not in s['roles']
+    """Only "Yes" to magic removes anything: it leaves only Shugenja."""
+    if ans.get('magic') == 0: return 'Shugenja' in s['roles']
     return True
 
-def recommend(ans):
+def content_answers(ans):
+    """Answers that say something about the character (not the comfort questions, not "No preference")."""
+    return sum(1 for q, i in asked_answers(ans) if q not in COMFORT_QUESTIONS and Q[q][1][i][1])
+
+def is_sampler(ans):
+    return content_answers(ans) < SAMPLER_BELOW
+
+def shuffle_key(s, ans, seed=None):
+    """The last tie-break: a shuffle that differs from player to player, so no School wins ties by its name."""
+    if seed is None: seed = fnv1a(signature(ans) + '#')
+    return fnv1a(s['name'], seed)
+
+def ranked(ans):
+    seed = fnv1a(signature(ans) + '#')
     pool = [s for s in SCHOOLS if allowed(s, ans)]
-    ranked = sorted(pool, key=lambda s: (-score(s, ans), s['cx'], s['niche'], s['name']))
-    # One card per school name (Toritaka Bushi is offered by both the Crab and the Falcon).
+    order = sorted(pool, key=lambda s: (-score(s, ans), -main_label_fit(s, ans), s['cx'], s['niche'], shuffle_key(s, ans, seed)))
     seen, uniq = set(), []
-    for s in ranked:
-        if s['name'] in seen: continue
+    for s in order:
+        if s['name'] in seen: continue   # Toritaka Bushi is offered by both the Crab and the Falcon
         seen.add(s['name']); uniq.append(s)
-    top = score(uniq[0], ans)
-    hard = [uniq[0]]
-    if len(uniq) > 1 and (top <= 0 or score(uniq[1], ans) >= 0.8 * top): hard.append(uniq[1])
+    return uniq
+
+def sampler(ans):
+    """A spread of Schools to explore: different Clans and types, the most common and simplest first."""
+    seed = fnv1a(signature(ans) + '#')
+    not_best = {e['not_best'] for e in effects(ans) if e.get('not_best')}
+    stranger = ans.get('niche') == 2
+    pool, seen = [], set()
+    for s in sorted([s for s in SCHOOLS if allowed(s, ans)], key=lambda s: (s['niche'], s['cx'], shuffle_key(s, ans, seed))):
+        if s['name'] in seen or (s['roles'] & not_best) or (s['niche'] == 3 and not stranger): continue
+        seen.add(s['name']); pool.append(s)
+    pick, clans = [], set()
+    for role in ('Bushi', 'Courtier', 'Shugenja', 'Monk', 'Artisan', 'Ninja'):
+        for s in pool:
+            if role in s['roles'] and s['clan'] not in clans and s not in pick:
+                pick.append(s); clans.add(s['clan']); break
+        if len(pick) == 6: break
+    for s in pool:
+        if len(pick) == 6: break
+        if s['clan'] not in clans and s not in pick:
+            pick.append(s); clans.add(s['clan'])
+    rest = [s for s in ranked(ans) if s not in pick]
+    return pick, pick + rest
+
+def recommend(ans):
+    """Returns (best matches, also worth a look, something different, every School in order).
+    In sampler mode there are no best matches: the second list is the sample."""
+    if is_sampler(ans):
+        sample, everything = sampler(ans)
+        return [], sample, None, everything
+    uniq = ranked(ans)
+    not_best = {e['not_best'] for e in effects(ans) if e.get('not_best')}
+    eligible = [s for s in uniq if not (s['roles'] & not_best)]
+    top = score(eligible[0], ans)
+    hard = [eligible[0]]
+    if len(eligible) > 1 and (top <= 0 or score(eligible[1], ans) >= 0.8 * top): hard.append(eligible[1])
     soft, clans = [], {}
     for s in hard: clans[s['clan']] = clans.get(s['clan'], 0) + 1
-    for s in uniq[len(hard):]:
+    for s in uniq:
         if len(soft) == 4: break
-        if clans.get(s['clan'], 0) >= 2: continue
+        if s in hard or clans.get(s['clan'], 0) >= 2: continue
         soft.append(s); clans[s['clan']] = clans.get(s['clan'], 0) + 1
     wild = None
     if any(e.get('wildcard') for e in effects(ans)) or ans.get('niche') is None:
@@ -226,40 +322,39 @@ def recommend(ans):
 
 def random_answers(rng, p_np=0.15):
     ans = {}
-    for qid in ['magic', 'complexity', 'niche', 'approach', 'fight', 'court', 'magickind', 'element',
-                'ambition', 'home', 'rules', 'bushido', 'faith', 'companion', 'death']:
+    for qid in ALL_QUESTIONS:
         opts = Q[qid][1]
         ans[qid] = len(opts) - 1 if rng.random() < p_np else rng.randrange(len(opts) - 1)
-    # keep only the questions this path actually asks
     asked = questions_for(ans)
     return {k: v for k, v in ans.items() if k in asked}
 
-def best_path_for(target, rng, tries=60):
-    """Hill-climb the answers to put target as high as possible. Returns (rank, answers)."""
+def best_rank(target, ans):
+    hard, soft, wild, uniq = recommend(ans)
+    if target['name'] in {s['name'] for s in hard}: return 0 if hard[0]['name'] == target['name'] else 1
+    names = [s['name'] for s in uniq]
+    return 2 + names.index(target['name']) if target['name'] in names else 999
+
+def best_path_for(target, rng, tries=40):
+    """Hill-climb the answers to put target as high as possible. Returns (rank, answers); rank 0 = first best match."""
     best = (10**9, None)
     for t in range(tries):
         ans = random_answers(rng, 0.3)
         if 'Shugenja' in target['roles']: ans['magic'] = 0
-        elif ans.get('magic') == 0: ans['magic'] = 2
+        elif ans.get('magic') == 0: ans['magic'] = 3
         ans = {k: v for k, v in ans.items() if k in questions_for(ans)}
-        def rank_of(a):
-            hard, soft, wild, uniq = recommend(a)
-            names = [s['name'] for s in uniq]
-            return names.index(target['name']) if target['name'] in names else 999
-        cur = rank_of(ans)
+        for need in questions_for(ans): ans.setdefault(need, len(Q[need][1]) - 1)
+        cur = best_rank(target, ans)
         improved = True
         while improved and cur > 0:
             improved = False
             for qid in list(questions_for(ans)):
-                if qid == 'magic' and 'Shugenja' in target['roles']: continue
                 for i in range(len(Q[qid][1])):
                     if ans.get(qid) == i: continue
+                    if qid == 'magic' and ((i == 0) != ('Shugenja' in target['roles'])): continue
                     trial = dict(ans); trial[qid] = i
-                    if qid == 'magic' and i == 0: continue
                     trial = {k: v for k, v in trial.items() if k in questions_for(trial)}
-                    for need in questions_for(trial):
-                        trial.setdefault(need, len(Q[need][1]) - 1)
-                    r = rank_of(trial)
+                    for need in questions_for(trial): trial.setdefault(need, len(Q[need][1]) - 1)
+                    r = best_rank(target, trial)
                     if r < cur: ans, cur, improved = trial, r, True
         if cur < best[0]: best = (cur, ans)
         if cur == 0: break
@@ -267,30 +362,8 @@ def best_path_for(target, rng, tries=60):
 
 if __name__ == '__main__':
     rng = random.Random(7)
-    # 1. Reachability: every school can be the top recommendation on some answer path.
-    worst = []
-    for s in SCHOOLS:
-        r, a = best_path_for(s, rng)
-        worst.append((r, s['name']))
-    worst.sort(reverse=True)
-    unreachable_top = [n for r, n in worst if r > 0]
-    unreachable_hard = [n for r, n in worst if r > 1]
-    print('schools:', len(SCHOOLS), '| unique names:', len({s["name"] for s in SCHOOLS}))
-    print('not reachable as #1:', len(unreachable_top), unreachable_top[:20])
-    print('not reachable as a hard pick (top 2):', len(unreachable_hard), unreachable_hard)
-    # 2. Balance and empty results over random players.
-    N = 20000
-    hard_count, any_count, small = {}, {}, 0
-    hard_sizes = {1: 0, 2: 0}
-    for _ in range(N):
-        ans = random_answers(rng)
-        hard, soft, wild, uniq = recommend(ans)
-        if len(uniq) < 6: small += 1
-        hard_sizes[len(hard)] += 1
-        for s in hard: hard_count[s['name']] = hard_count.get(s['name'], 0) + 1
-        for s in hard + soft + ([wild] if wild else []): any_count[s['name']] = any_count.get(s['name'], 0) + 1
-    print('random players:', N, '| results with fewer than 6 schools:', small, '| hard pick sizes:', hard_sizes)
-    top = sorted(hard_count.items(), key=lambda x: -x[1])[:8]
-    print('most frequent hard picks (% of players):', [(n, round(100 * c / N, 1)) for n, c in top])
-    never = [s['name'] for s in SCHOOLS if s['name'] not in any_count]
-    print('never shown in hard/soft/wildcard across random players:', len(never), never)
+    worst = sorted(((best_path_for(s, rng)[0], s['name']) for s in {s['name']: s for s in SCHOOLS}.values()), reverse=True)
+    print('Schools:', len(SCHOOLS), '| distinct names:', len({s["name"] for s in SCHOOLS}))
+    print('not reachable as the first best match:', [n for r, n in worst if r > 0])
+    print('not reachable as a best match at all:', [n for r, n in worst if r > 1])
+    print('Run reliability.py for the full tests.')

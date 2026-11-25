@@ -135,53 +135,131 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Design draft · proposed Part K, Phase 11.4 · 24 November 2026</div>
+    <div class="eyebrow">Design · Part L — New Player Help, Phase 16 · updated 25 November 2026</div>
     <h1>Character Finder</h1>
-    <p class="lede">An optional questionnaire for players who don't know what to play. About a dozen multiple-choice questions narrow the app's 105 Basic Schools down to one or two strong matches and a few more worth a look. Each match opens a guide, and a Build button hands the choice to the creation wizard.</p>
-    <div class="status">Nothing is built yet. This page is for reviewing the design. The full document is <code>Versions/PART K — Phase 11.4 Character Finder/DESIGN.md</code> on branch <code>claude/serene-ride-ojsryb</code>.</div>
+    <p class="lede">An optional questionnaire for players who don't know what to play. Up to twelve multiple-choice questions narrow the app's 105 Basic Schools down to one or two best matches and four more worth a look. Each one opens a guide, and a Build button hands the choice to the creation wizard.</p>
+    <div class="status">Design approved, with your nine rulings applied. Scoring is at version 2 and has automated tests with pass marks. Nothing is built yet. The full document is <code>Versions/PART L — Phase 16 Character Finder/DESIGN.md</code> on branch <code>claude/serene-ride-ojsryb</code>.</div>
     <div class="facts">
       <div class="fact"><b>105</b><span>Basic Schools rated, every Clan</span></div>
-      <div class="fact"><b>11–12</b><span>questions per player</span></div>
-      <div class="fact"><b>105 / 105</b><span>Schools a player can be steered to</span></div>
-      <div class="fact"><b>4 / 4</b><span>sample builds pass in the real wizard</span></div>
+      <div class="fact"><b>81%</b><span>find the School they want in the top six (target 90%)</span></div>
+      <div class="fact"><b>0.11</b><span>label-count bias, down from 0.60</span></div>
+      <div class="fact"><b>21 / 21</b><span>reliability tests pass</span></div>
     </div>
   </header>
 
   <nav class="sections" aria-label="Sections">
-    <a href="#try">Try it</a><a href="#decided">What you decided</a><a href="#schools">All Schools</a><a href="#guides">Two guides</a><a href="#gm">GM notes</a><a href="#checks">Checks</a><a href="#plan">Plan</a><a href="#asks">Your questions</a>
+    <a href="#try">Try it</a><a href="#decided">Your decisions</a><a href="#reliability">Reliability</a><a href="#audit">Checking the ratings</a><a href="#schools">All Schools</a><a href="#guides">Two guides</a><a href="#gm">GM notes</a><a href="#plan">Plan</a><a href="#open">Still open</a>
   </nav>
 
   <section id="try">
     <h2>Try it</h2>
-    <p>This uses the real draft questions and the real scoring over all 105 Schools, so you can see what a player would get. Tap a result to open its card. Match scores are shown here for review only, and a player would not see them.</p>
+    <p>The real questions and version 2 scoring over all 105 Schools. Tap a result to open its card. Match points are shown for review only; a player would not see them.</p>
     <div class="label">Or load an example player</div>
     <div class="examples" id="examples"></div>
     <div class="panel" id="panel" aria-live="polite"><p class="smeta">Loading the School data…</p></div>
   </section>
 
   <section id="decided">
-    <h2>What you decided</h2>
+    <h2>Your decisions</h2>
+    <h3>24 November</h3>
     <ul class="plain">
-      <li><b>Every School is a candidate,</b> not only the Great Clans and the Core Rulebook. A new player doesn't know what they don't know.</li>
-      <li><b>Two questions set the comfort level:</b> how much rules detail, and how unusual a character. They change the order of results and never hide anything.</li>
-      <li><b>A guide, not a builder.</b> The player decides what to build and makes every purchase.</li>
-      <li><b>GM warnings</b> on niche or complex characters.</li>
-      <li><b>A Build button</b> that feeds the creation wizard, so the player carries on with Skills and the rest.</li>
-      <li><b>A suggested starting build</b> in every guide: Rings and Traits, Skills, Advantages and Disadvantages for a Rank 1 character.</li>
+      <li><b>Every School is a candidate,</b> not only the Great Clans and the Core Rulebook.</li>
+      <li><b>Complexity and "how unusual"</b> change the order of results and never hide anything.</li>
+      <li><b>A guide, not a builder,</b> with GM warnings, a Build button into the wizard, and a suggested starting build in every guide.</li>
     </ul>
+    <h3>25 November</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>Question</th><th>Your ruling</th></tr></thead>
+      <tbody>
+        <tr><td>–</td><td>Reliability</td><td>Apply the scoring fixes, show a sample instead of a fake match, separate near-twins where the books do, and keep it all as tests with pass marks. Target: the right School in the top six 9 times in 10.</td></tr>
+        <tr><td class="num">1</td><td>Name and place</td><td>A new Part for new-player help, so tutorials and a glossary can follow. Buttons: "Help me choose" and "Not sure what to play?"</td></tr>
+        <tr><td class="num">2</td><td>Magic</td><td>"Yes" leaves only Shugenja. "No" pushes them down but keeps them, so a strong fit can still tempt the player.</td></tr>
+        <tr><td class="num">3</td><td>Where it starts</td><td>The wizard's Clan step and the Characters screen; guides searchable after the first batch</td></tr>
+        <tr><td class="num">4</td><td>Ratings review</td><td>Needs a system, not an expert (see Checking the ratings)</td></tr>
+        <tr><td class="num">5</td><td>Quick version</td><td>None; "See my results now" after question 8</td></tr>
+        <tr><td class="num">6</td><td>Suggested builds</td><td>Hints only</td></tr>
+        <tr><td class="num">7</td><td>Roleplay prompts</td><td>Removed from character creation; they stay in the guides as ideas, never on the character</td></tr>
+        <tr><td class="num">8</td><td>Ronin</td><td>Left out until ronin Schools exist</td></tr>
+        <tr><td class="num">9</td><td>Guide order</td><td>Clan by Clan</td></tr>
+      </tbody>
+    </table></div>
     <h3>How a player uses it</h3>
     <ol class="steps">
-      <li><div><b>Questions.</b> Started from the wizard's Clan step ("Not sure? Help me choose") or the Characters screen. One question per screen, every one with "No preference", and "See my results now" from question 6.</div></li>
-      <li><div><b>Results.</b> One or two best matches, four more worth a look, and sometimes something different. "See all matches" lists all 105 in order.</div></li>
-      <li><div><b>Guide.</b> Who they are, how they play, how to roleplay them, a suggested starting build, where they can go later, and any reason to talk to the GM.</div></li>
-      <li><div><b>Build.</b> The wizard applies the Clan, Family and School cards itself, so Apply School still asks its own questions. The player lands on Rings &amp; Traits, with a folded "Suggested for…" panel on the next steps.</div></li>
+      <li><div><b>Questions.</b> From "Help me choose" on the wizard's Clan step, or "Not sure what to play?" on the Characters screen. One question per screen, each with "No preference", and "See my results now" after question 8.</div></li>
+      <li><div><b>Results.</b> One or two best matches and four more worth a look. If the answers say too little, a sample of six Schools to start from instead.</div></li>
+      <li><div><b>Guide.</b> Who they are, how they play, how to roleplay them with a few optional questions to think about, a suggested starting build, and where they can go later.</div></li>
+      <li><div><b>Build.</b> The wizard applies Clan, Family and School and carries on at Rings &amp; Traits, with folded "Suggested for…" hints on the next steps.</div></li>
     </ol>
-    <p>Afterwards, optional "Bring them to life" prompts based on the book's Twenty Questions (pp. 100–102, in our own words) fill the existing Appearance, Personality, History and Notes boxes, so the save format does not change.</p>
+  </section>
+
+  <section id="reliability">
+    <h2>Reliability</h2>
+    <p>Reliable here means: a player who roughly knows what they want finds it in the top six about 9 times in 10, and no School is hidden from the players it suits. That is three questions, and these tests answer only the first.</p>
+    <ol class="steps">
+      <li><div><b>Does the scoring do what the ratings say?</b> Measured below.</div></li>
+      <li><div><b>Are the ratings right?</b> Simulation can't tell, because the simulated players are built from the same ratings. See Checking the ratings.</div></li>
+      <li><div><b>Do real players like what they get?</b> Needs real people: your group, then a couple of new players before any release.</div></li>
+    </ol>
+    <p>The tests run in about a minute. <b>Rules</b> must always hold. <b>Floors</b> sit at today's values, so a change that makes things worse fails instead of slipping through. "A player who wants School X" means 20 simulated players per School who pick the answer that suits it best 60% of the time.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Test</th><th>Version 1</th><th>Version 2</th><th>Pass mark</th></tr></thead>
+      <tbody>
+        <tr><td>Every School can be a best match</td><td class="num">105</td><td class="num"><b>105</b></td><td>rule</td></tr>
+        <tr><td>All "No preference" gives a sample, not a match</td><td>no</td><td><b>yes</b></td><td>rule</td></tr>
+        <tr><td>Magic "No": a Shugenja is never a best match</td><td class="num">100%</td><td class="num"><b>100%</b></td><td>rule</td></tr>
+        <tr><td>Player who wants School X finds it in the top six</td><td class="num">82%</td><td class="num"><b>81.3%</b></td><td>81%, target 90%</td></tr>
+        <tr><td>Schools such a player rarely finds</td><td class="num">13</td><td class="num"><b>5</b></td><td>5, target 0</td></tr>
+        <tr><td>"Words" gives a Courtier</td><td class="num">48%</td><td class="num"><b>67%</b></td><td>67%</td></tr>
+        <tr><td>"A sword" gives a Bushi</td><td class="num">80%</td><td class="num"><b>88%</b></td><td>87%</td></tr>
+        <tr><td>"Keep it simple" avoids Involved Schools</td><td class="num">84%</td><td class="num"><b>89%</b></td><td>89%</td></tr>
+        <tr><td>"Classic samurai" avoids Unusual Schools</td><td class="num">98.5%</td><td class="num"><b>98.1%</b></td><td>98%</td></tr>
+        <tr><td>Label-count bias (0 = none)</td><td class="num">0.60</td><td class="num"><b>0.11</b></td><td>0.15</td></tr>
+        <tr><td>Alphabetical bias in ties</td><td>yes</td><td class="num"><b>0.09</b></td><td>0.15</td></tr>
+        <tr><td>Said "No" to magic, but fits a Shugenja School: still offered it</td><td class="num">0%</td><td class="num"><b>15.7%</b></td><td>15%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="smeta">21 tests with pass marks, all passing; the full list is in DESIGN.md section 9.</p>
+    <h3>Why tuning can't reach 90%</h3>
+    <p>Trying different settings only moved "finds it in the top six" between 77% and 81%. What's left is in the ratings: near-twin Schools with almost the same labels (Goju Ninja and Shosuro Infiltrator, Agasha and Tamori, many monk orders), and labels that look wrong. For example, a player who answers only "a sword, the front line, the Wall" gets the Boar and Badger Schools ahead of Hida Bushi, because the draft gave them a "Wall" home. Better ratings are the way to 90%.</p>
+    <h3>Early exit: after question 8 or 9?</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Stop after</th><th>Best match</th><th>Top six</th></tr></thead>
+      <tbody>
+        <tr><td>6 questions</td><td class="num">38%</td><td class="num">56%</td></tr>
+        <tr><td>8 questions (your ruling)</td><td class="num">57%</td><td class="num">76%</td></tr>
+        <tr><td><b>9 questions</b></td><td class="num"><b>63%</b></td><td class="num"><b>80%</b></td></tr>
+        <tr><td>All</td><td class="num">65%</td><td class="num">83%</td></tr>
+      </tbody>
+    </table></div>
+    <p>With version 2, question 9 (Bushido) closes most of the gap. I recommend moving "See my results now" to after question 9. It's one setting, and the design keeps 8 until you decide.</p>
+  </section>
+
+  <section id="audit">
+    <h2>Checking the ratings without an expert</h2>
+    <p>A proposal for your approval. It doesn't rely on anyone's expertise. It turns each rating into a checkable claim with evidence, gathers that evidence from several independent sources, and leaves a short list of real disagreements.</p>
+    <ol class="steps">
+      <li><div><b>A rubric.</b> Plain one-line definitions, for example "archer: teaches Kyujutsu, and a Technique or the description centres on the bow". Checking a rating then means checking a fact.</div></li>
+      <li><div><b>The app's own evidence, automatically.</b> Skills, all five Techniques and the description of every School are already in the app, in our own words, checked against the books in earlier phases.</div></li>
+      <li><div><b>The books,</b> for what the app can't settle: a reading pass of each School's printed entry, with evidence in our own words and the page. This needs a session with your PDFs.</div></li>
+      <li><div><b>A third opinion:</b> the two community wikis the Sourcebook Index already links for every School, as a cross-check, never copied.</div></li>
+      <li><div><b>Settle disagreements</b> by evidence first. The few real judgement calls go to someone in your group as a short list, not 105 rows. Then a free real-world test: each player in your group takes the questionnaire as their character, and their School should be in their top six.</div></li>
+      <li><div><b>Make it permanent:</b> every rating keeps its evidence and confidence, and the tests check that each label meets the rubric.</div></li>
+    </ol>
+    <p>A first try with Skills alone, of the draft's 255 labels:</p>
+    <div class="tbl"><table>
+      <tbody>
+        <tr><td>Backed by the School's own Skill list</td><td class="num"><b>135</b></td></tr>
+        <tr><td>Testable against Skills, but not backed (some are fine: the Asahina heal through spells)</td><td class="num">46</td></tr>
+        <tr><td>Not testable from Skills; need the Technique text or the book</td><td class="num">74</td></tr>
+        <tr><td>Distinctive Skills taught but not labelled (not every one should be)</td><td class="num">43</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Your part, as a non-expert:</b> approve the rubric, spot-check about ten Schools by opening the cited page, and pass the short disagreement list to your group. If more than one of the ten is wrong, the audit is redone. Near-twins are handled inside the audit: wherever the evidence separates them, the difference becomes a label.</p>
   </section>
 
   <section id="schools">
     <h2>All Schools and their ratings</h2>
-    <p>The draft rating of each School: what it plays like (main labels count double), where it feels at home, how complex and how unusual it is. Type, Honor, Family, page and Rank 1 Technique come from the app's own data. Please check the complexity and "how unusual" ratings especially.</p>
+    <p>The draft rating of each School, which the audit will check. Main labels count double. Type, Honor, Family, page and Rank 1 Technique come from the app's own data.</p>
     <div class="filters">
       <input id="f-search" type="search" placeholder="Search a School, Clan or label" aria-label="Search Schools">
       <select id="f-type" aria-label="Type"><option value="">Every type</option></select>
@@ -195,7 +273,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
 
   <section id="guides">
     <h2>Two guides, written in full</h2>
-    <p>These show the depth intended for every School. The facts come from the app's data. The roleplay advice is our own, and is the part to check hardest.</p>
+    <p>These show the depth intended for every School. The facts come from the app's data. The roleplay advice is our own.</p>
 
     <article class="guide" id="guide-hida">
       <h3>Hida Bushi</h3>
@@ -212,6 +290,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
         <li>Good hooks: a sibling lost on the Wall, a grudge against the Crane, a debt to a Kuni shugenja.</li>
         <li>Playing against type: a Hida who writes poetry about the Wall and is quietly good at it.</li>
       </ul>
+      <p><b>Questions to think about</b> (optional): How long did you serve on the Wall, and what did you see there? Who do you trust most, and did they stand beside you there? What do you really think of the Crane? How do you expect to die, and does it frighten you?</p>
       <h3>Suggested starting build</h3>
       <div class="tbl"><table>
         <thead><tr><th>Choice</th><th>XP</th><th>Why</th></tr></thead>
@@ -246,6 +325,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
         <li>Good hooks: the sorcerer who got away, a fellow hunter who fell to the Taint, a village that hid you.</li>
         <li>Playing against type: a hunter who believes most of the Tainted can be saved.</li>
       </ul>
+      <p><b>Questions to think about</b> (optional): Who was the first maho-tsukai you hunted, and what became of them? What would you do if someone you trust showed signs of the Taint? Which local lord would be glad to see you leave, and why?</p>
       <h3>Suggested starting build</h3>
       <div class="tbl"><table>
         <thead><tr><th>Choice</th><th>XP</th><th>Why</th></tr></thead>
@@ -265,7 +345,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
 
   <section id="gm">
     <h2>GM notes</h2>
-    <p>Notes are worked out from the data, not written by hand per School, so they stay right as Schools are added. A guide can add its own note where the data can't know, as the Witch-Hunter's does.</p>
+    <p>Worked out from the data, so they stay right as Schools are added. A guide can add its own note where the data can't know, as the Witch-Hunter's does.</p>
     <div class="tbl"><table>
       <thead><tr><th>Shown when</th><th>What the player reads</th></tr></thead>
       <tbody>
@@ -283,38 +363,22 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
         <tr><td>Imperial families</td><td>Serves the Imperial families rather than a Great Clan.</td></tr>
       </tbody>
     </table></div>
-    <p>Result: 52 Schools have at least one "Ask your GM" note, 35 only "Good to know", and 18 neither. Use the GM filter under All Schools to see which.</p>
-  </section>
-
-  <section id="checks">
-    <h2>Checks already run on the draft</h2>
-    <div class="tbl"><table>
-      <thead><tr><th>Check</th><th>Result</th></tr></thead>
-      <tbody>
-        <tr><td>Every School can be a best match on some set of answers</td><td class="num"><b>105 of 105</b></td></tr>
-        <tr><td>Every School can be the single top match</td><td class="num">104 of 105</td></tr>
-        <tr><td>20,000 random players: a result list shorter than 6</td><td class="num"><b>0</b></td></tr>
-        <tr><td>Most frequent best match (no School dominates)</td><td class="num">6.6% of players</td></tr>
-        <tr><td>Both sample guides' builds, with and without Disadvantages, entered in the real wizard</td><td class="num"><b>4 of 4</b> at 40 / 40 XP, no findings</td></tr>
-      </tbody>
-    </table></div>
-    <p>The only School that can't come out first is Hoshi Tsurui Zumi. It reaches second place behind its near twin, the Togashi Tattooed Order.</p>
-    <p>The first run caught a real problem: <b>Matsu Berserker could never be a best match.</b> Akodo Bushi had the same labels and always scored higher. The Matsu now have their own "all-out attack" style, which their School description supports. This check runs again whenever a rating or question changes.</p>
+    <p><b>Ronin and tattooed monks.</b> Ronin stay out until ronin Schools exist, because there is nothing to build. The three tattooed monk orders are different: their Schools exist and can be built today, and only the tattoos' own powers aren't tracked yet. So they stay in, with the note above, which goes when the tattoo work lands.</p>
   </section>
 
   <section id="plan">
     <h2>How it would be built</h2>
     <ul class="plain">
-      <li>Its own fragments and marker (<code>PART K PHASE 11.4</code>), one switch, and no edits inside the wizard's fragments: the Clan-step button and "Suggested for…" panels wrap the wizard's render, as the Creation Cap of Four fix already does.</li>
+      <li>Its own fragments, marker <code>PART L PHASE 16</code> and one switch. No edits inside the wizard's fragments: the Clan-step button and "Suggested for…" hints wrap the wizard's render, as the Creation Cap of Four fix already does.</li>
       <li>A declared dependency on the wizard (Phase 11.2) for Build. Without it the finder still works as a browser, with Build hidden.</li>
-      <li>No save-format change.</li>
-      <li>Tests: the adaptive order; the app's rankings match the prototype's on 500 fixed answer sets; every School reachable; GM notes match their rules; Build equals doing it by hand; every guide's build passes in the wizard; phone layout and touch targets; removal proof.</li>
+      <li>No save-format change, and nothing written to the character except what Build applies through the wizard.</li>
+      <li>Tests: the reliability rules and floors; the app's rankings must match the prototype's (this page already matches it on 400 answer sets); Build equals doing it by hand; every guide's build passes in the wizard; phone layout; removal proof.</li>
     </ul>
-    <h3>Content, in batches</h3>
-    <p>The first release covers every School with a card generated from the app's data, like the cards in Try it, plus the two full guides and a short introduction to each of the 25 Clans. Full guides then follow Clan by Clan:</p>
+    <h3>Guides, Clan by Clan</h3>
     <div class="tbl"><table>
       <thead><tr><th>Batch</th><th>Schools</th><th>Count</th></tr></thead>
       <tbody>
+        <tr><td>First release</td><td>A generated card for every School, the two guides above, an introduction to each of the 25 Clans</td><td class="num">105</td></tr>
         <tr><td>1</td><td>Crab, Crane, Dragon, Lion</td><td class="num">28</td></tr>
         <tr><td>2</td><td>Phoenix, Scorpion, Unicorn, Mantis</td><td class="num">28</td></tr>
         <tr><td>3</td><td>Imperial and the Minor Clans</td><td class="num">19</td></tr>
@@ -324,33 +388,27 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
     </table></div>
   </section>
 
-  <section id="asks">
-    <h2>Your questions</h2>
-    <p>Answer by number whenever suits you. Nothing is built until you approve.</p>
+  <section id="open">
+    <h2>Still open</h2>
     <ol class="asks">
-      <li><b>Name and place:</b> Part K, Phase 11.4, "Character Finder"? Or another name, such as "Help me choose"?</li>
-      <li><b>The one filter:</b> should "No" to magic remove every Shugenja School, or only push them down the list?</li>
-      <li><b>Entry points:</b> the wizard's Clan step and the Characters screen. Anywhere else?</li>
-      <li><b>Ratings:</b> please check complexity and "how unusual" in All Schools. The checks re-run after any change.</li>
-      <li><b>Question wording:</b> edit freely. Should there also be a quick version with only the first six questions?</li>
-      <li><b>Suggested builds:</b> hints only, as drafted, or also a "Use this build" button? That would make it a builder rather than a guide.</li>
-      <li><b>Roleplay prompts:</b> into the existing Identity boxes (no save change), or a section of their own (a save-format change)?</li>
-      <li><b>Ronin:</b> fine to leave out until the planned ronin work adds ronin Schools?</li>
-      <li><b>Guide order:</b> batches as above, starting with Crab, Crane, Dragon and Lion?</li>
+      <li><b>The rating audit:</b> approve the method above, and say where your PDFs are for the book-reading step.</li>
+      <li><b>Early exit:</b> after question 8 as ruled, or 9 as now recommended?</li>
+      <li><b>Tattooed monks:</b> keep them in with the "tattoos not modelled yet" note (recommended), or hide them until the tattoo work lands?</li>
+      <li><b>The Part's name:</b> "Part L — New Player Help"?</li>
     </ol>
   </section>
 
-  <footer>Ratings, questions and scores come from <code>prototype/ratings.py</code> and <code>prototype/finder.py</code> in the phase folder. This page uses the same data. School descriptions, Families, pages and Technique text are the app's own, in our own words.</footer>
+  <footer>Ratings, questions and scoring come from <code>prototype/ratings.py</code> and <code>prototype/finder.py</code>, and this page uses the same data. School descriptions, Families, pages and Technique text are the app's own, in our own words.</footer>
 </div>
 
 <script>
 (function () {
   'use strict';
-  var D = null;
+  var D = null, CFG = null;
   var $ = function (id) { return document.getElementById(id); };
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
 
-  // ---------- scoring: a line-for-line port of prototype/finder.py ----------
+  // ---------- scoring version 2: a line-for-line port of prototype/finder.py ----------
   function questionsFor(ans) {
     var order = ['magic', 'complexity', 'niche'];
     var caster = ans.magic === 0;
@@ -361,55 +419,104 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
     order.push('companion', 'death');
     return order;
   }
-  function effects(ans) {
-    return questionsFor(ans).filter(function (q) { return ans[q] !== undefined && ans[q] !== null; })
-      .map(function (q) { return D.q[q].a[ans[q]][1]; });
+  function asked(ans) {
+    return questionsFor(ans).filter(function (q) { return ans[q] !== undefined && ans[q] !== null; }).map(function (q) { return [q, ans[q]]; });
   }
-  function score(s, effs) {
+  function effectsOf(ans) { return asked(ans).map(function (p) { return D.q[p[0]].a[p[1]][1]; }); }
+  function contribution(s, qid, e) {
+    var label = 0;
+    if (e.tags) Object.keys(e.tags).forEach(function (k) { label += e.tags[k] * (s.p.indexOf(k) >= 0 ? 2 : s.s.indexOf(k) >= 0 ? 1 : 0); });
+    if (e.homes) Object.keys(e.homes).forEach(function (k) { if (s.o.indexOf(k) >= 0) label += e.homes[k]; });
+    label *= s.f;
+    var rest = 0;
+    if (e.roles) Object.keys(e.roles).forEach(function (k) { if (s.r.indexOf(k) >= 0) rest += e.roles[k]; });
+    rest += (e.honor && e.honor[s.b]) || 0;
+    rest += (e.cx && e.cx[s.x]) || 0;
+    rest += (e.niche && e.niche[s.u]) || 0;
+    if (e.element) { if (s.ca || s.a === e.element) rest += 3; else if (s.d === e.element) rest -= 2; }
+    var c = label + rest;
+    if (CFG.direct.indexOf(qid) >= 0) c *= CFG.directWeight;
+    return c;
+  }
+  function score(s, ans) {
     var t = 0;
-    effs.forEach(function (e) {
-      if (e.tags) Object.keys(e.tags).forEach(function (k) { t += e.tags[k] * (s.p.indexOf(k) >= 0 ? 2 : s.s.indexOf(k) >= 0 ? 1 : 0); });
-      if (e.roles) Object.keys(e.roles).forEach(function (k) { if (s.r.indexOf(k) >= 0) t += e.roles[k]; });
-      if (e.homes) Object.keys(e.homes).forEach(function (k) { if (s.o.indexOf(k) >= 0) t += e.homes[k]; });
-      if (e.honor) t += e.honor[s.b] || 0;
-      if (e.cx) t += e.cx[s.x] || 0;
-      if (e.niche) t += e.niche[s.u] || 0;
-      if (e.element) { if (s.ca || s.a === e.element) t += 3; else if (s.d === e.element) t -= 2; }
-    });
+    asked(ans).forEach(function (p) { t += contribution(s, p[0], D.q[p[0]].a[p[1]][1]); });
     return t;
   }
-  function allowed(s, ans) {
-    var f = ans.magic;
-    if (f === 0) return s.r.indexOf('Shugenja') >= 0;
-    if (f === 1 || f === 2) return s.r.indexOf('Shugenja') < 0;
-    return true;
+  function mainLabelFit(s, effs) {
+    var m = 0;
+    effs.forEach(function (e) { if (e.tags) Object.keys(e.tags).forEach(function (t) { if (e.tags[t] > 0 && s.p.indexOf(t) >= 0) m++; }); });
+    return m;
   }
-  function recommend(ans) {
-    var effs = effects(ans);
-    var pool = D.schools.filter(function (s) { return allowed(s, ans); }).map(function (s) { return {s: s, sc: score(s, effs)}; });
-    pool.sort(function (a, b) { return (b.sc - a.sc) || (a.s.x - b.s.x) || (a.s.u - b.s.u) || (a.s.n < b.s.n ? -1 : a.s.n > b.s.n ? 1 : 0); });
+  function fnv1a(text, h) {
+    h = (h === undefined) ? 0x811c9dc5 : h;
+    for (var i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+    return h >>> 0;
+  }
+  function signature(ans) { return asked(ans).map(function (p) { return p[0] + ':' + p[1]; }).join('|'); }
+  function allowed(s, ans) { return ans.magic === 0 ? s.r.indexOf('Shugenja') >= 0 : true; }
+  function contentAnswers(ans) {
+    return asked(ans).filter(function (p) { return CFG.comfort.indexOf(p[0]) < 0 && Object.keys(D.q[p[0]].a[p[1]][1]).length > 0; }).length;
+  }
+  function isSampler(ans) { return contentAnswers(ans) < CFG.samplerBelow; }
+  function notBestOf(effs) { var nb = {}; effs.forEach(function (e) { if (e.not_best) nb[e.not_best] = 1; }); return nb; }
+  function hits(s, set) { return s.r.some(function (r) { return set[r]; }); }
+  function ranked(ans) {
+    var seed = fnv1a(signature(ans) + '#'), effs = effectsOf(ans);
+    var pool = D.schools.filter(function (s) { return allowed(s, ans); }).map(function (s) {
+      return {s: s, sc: score(s, ans), fit: mainLabelFit(s, effs), h: fnv1a(s.n, seed)};
+    });
+    pool.sort(function (a, b) { return (b.sc - a.sc) || (b.fit - a.fit) || (a.s.x - b.s.x) || (a.s.u - b.s.u) || (a.h - b.h); });
     var seen = {}, uniq = [];
     pool.forEach(function (x) { if (!seen[x.s.n]) { seen[x.s.n] = 1; uniq.push(x); } });
-    var top = uniq[0].sc, hard = [uniq[0]];
-    if (uniq.length > 1 && (top <= 0 || uniq[1].sc >= 0.8 * top)) hard.push(uniq[1]);
+    return uniq;
+  }
+  function sampler(ans) {
+    var seed = fnv1a(signature(ans) + '#'), nb = notBestOf(effectsOf(ans)), stranger = ans.niche === 2;
+    var cands = D.schools.filter(function (s) { return allowed(s, ans); }).map(function (s) { return {s: s, sc: score(s, ans), h: fnv1a(s.n, seed)}; });
+    cands.sort(function (a, b) { return (a.s.u - b.s.u) || (a.s.x - b.s.x) || (a.h - b.h); });
+    var pool = [], seen = {};
+    cands.forEach(function (x) {
+      if (seen[x.s.n] || hits(x.s, nb) || (x.s.u === 3 && !stranger)) return;
+      seen[x.s.n] = 1; pool.push(x);
+    });
+    var pick = [], clans = {};
+    var roles = ['Bushi', 'Courtier', 'Shugenja', 'Monk', 'Artisan', 'Ninja'];
+    for (var r = 0; r < roles.length && pick.length < 6; r++) {
+      for (var i = 0; i < pool.length; i++) {
+        var x = pool[i];
+        if (x.s.r.indexOf(roles[r]) >= 0 && !clans[x.s.c] && pick.indexOf(x) < 0) { pick.push(x); clans[x.s.c] = 1; break; }
+      }
+    }
+    pool.forEach(function (x) { if (pick.length < 6 && !clans[x.s.c] && pick.indexOf(x) < 0) { pick.push(x); clans[x.s.c] = 1; } });
+    var picked = pick.map(function (x) { return x.s; });
+    var rest = ranked(ans).filter(function (x) { return picked.indexOf(x.s) < 0; });
+    return {pick: pick, all: pick.concat(rest)};
+  }
+  function recommend(ans) {
+    if (isSampler(ans)) { var sm = sampler(ans); return {mode: 'sample', hard: [], soft: sm.pick, wild: null, all: sm.all}; }
+    var uniq = ranked(ans), effs = effectsOf(ans), nb = notBestOf(effs);
+    var eligible = uniq.filter(function (x) { return !hits(x.s, nb); });
+    var top = eligible[0].sc, hard = [eligible[0]];
+    if (eligible.length > 1 && (top <= 0 || eligible[1].sc >= 0.8 * top)) hard.push(eligible[1]);
     var soft = [], clans = {};
     hard.forEach(function (x) { clans[x.s.c] = (clans[x.s.c] || 0) + 1; });
-    for (var i = hard.length; i < uniq.length && soft.length < 4; i++) {
+    for (var i = 0; i < uniq.length && soft.length < 4; i++) {
       var x = uniq[i];
-      if ((clans[x.s.c] || 0) >= 2) continue;
+      if (hard.indexOf(x) >= 0 || (clans[x.s.c] || 0) >= 2) continue;
       soft.push(x); clans[x.s.c] = (clans[x.s.c] || 0) + 1;
     }
     var wild = null;
     if (effs.some(function (e) { return e.wildcard; }) || ans.niche === undefined) {
-      var shown = {}; hard.concat(soft).forEach(function (x) { shown[x.s.n] = 1; });
+      var shown = {}; hard.concat(soft).forEach(function (y) { shown[y.s.n] = 1; });
       for (var j = 0; j < uniq.length; j++) {
         var y = uniq[j];
         if (y.s.u === 3 && !shown[y.s.n] && y.sc >= 0.5 * top) { wild = y; break; }
       }
     }
-    return {hard: hard, soft: soft, wild: wild, all: uniq};
+    return {mode: 'match', hard: hard, soft: soft, wild: wild, all: uniq, notBest: nb};
   }
-  window.__finder = {recommend: recommend, questionsFor: questionsFor};
+  window.__finder = {recommend: recommend, questionsFor: questionsFor, isSampler: isSampler};
 
   // ---------- School card ----------
   var CLANS_OF = {};
@@ -439,7 +546,8 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
     var h = '<details class="school' + (opts.hard ? ' hard' : '') + '"' + (opts.open ? ' open' : '') + '><summary>';
     h += '<span class="seal" aria-hidden="true">' + esc(clans[0].charAt(0)) + '</span>';
     h += '<span style="min-width:0"><span class="sname">' + esc(displayName(s.n)) + '</span><span class="smeta">' + esc(clans.join(' or ')) + ' · ' + esc(s.r.join('/')) + (s.h != null ? ' · Honor ' + s.h : '') + '</span>' + chipsFor(s) + '</span>';
-    h += '<span class="score">' + (opts.sc != null ? opts.sc + ' pts' : '') + '</span></summary><div class="sbody">';
+    h += '<span class="score">' + (opts.sc != null ? Math.round(opts.sc) + ' pts' : '') + '</span></summary><div class="sbody">';
+    if (opts.saidNo) h += '<div class="note know"><b>You said no magic,</b> but the rest of your answers suit this School.</div>';
     if (s.lore) h += '<p>' + esc(s.lore) + '</p>';
     h += '<dl class="facts2"><dt>Family</dt><dd>' + fam + '</dd><dt>School Trait</dt><dd>+1 ' + esc(s.ben) + '</dd>';
     h += '<dt>Plays like</dt><dd>' + plays + '</dd><dt>At home</dt><dd>' + s.o.map(function (o) { return esc(D.homes[o]); }).join(', ') + '</dd>';
@@ -454,11 +562,12 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
   }
 
   // ---------- Try it ----------
-  var ans = {}, idx = 0, done = false;
+  var ans = {}, idx = 0;
   var EXAMPLES = [
     ['New player, classic warrior', {magic: 2, complexity: 0, niche: 0, approach: 0, fight: 0, ambition: 0, home: 0, rules: 1, bushido: 1, faith: 1, companion: 7, death: 0}],
     ['Curious, wants something different', {magic: 1, complexity: 1, niche: 1, approach: 0, fight: 9, ambition: 0, home: 9, rules: 1, bushido: 4, faith: 0, companion: 6, death: 2}],
-    ['Wants to play a healer', {magic: 0, complexity: 1, niche: 3, magickind: 1, element: 0, ambition: 7, home: 1, rules: 0, bushido: 0, companion: 4, death: 3}]
+    ['Wants to play a healer', {magic: 0, complexity: 1, niche: 3, magickind: 1, element: 0, ambition: 7, home: 1, rules: 0, bushido: 0, companion: 4, death: 3}],
+    ['Skips every question', {magic: 3, complexity: 3, niche: 3, approach: 5, fight: 9, ambition: 8, home: 10, rules: 3, bushido: 8, faith: 3, companion: 7, death: 7}]
   ];
   function answered() { var o = questionsFor(ans).slice(0, idx), a = {}; o.forEach(function (q) { if (ans[q] !== undefined) a[q] = ans[q]; }); return a; }
   function renderQuestion() {
@@ -472,40 +581,48 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
       h += '<button type="button" data-a="' + i + '" class="' + (np ? 'np ' : '') + (ans[q] === i ? 'chosen' : '') + '">' + esc(a[0]) + '</button>';
     });
     h += '</div><div class="row"><button type="button" class="btn" id="back"' + (idx === 0 ? ' disabled' : '') + '>Back</button>';
-    h += '<button type="button" class="btn" id="early"' + (idx < 6 ? ' disabled' : '') + '>See my results now</button></div>';
+    if (idx >= CFG.early) h += '<button type="button" class="btn" id="early">See my results now</button>';
+    h += '</div>';
     $('panel').innerHTML = h;
     $('panel').querySelectorAll('[data-a]').forEach(function (b) {
       b.addEventListener('click', function () {
         ans[q] = +b.getAttribute('data-a'); idx++;
-        if (idx >= questionsFor(ans).length) { done = true; renderResults(answered()); } else renderQuestion();
+        if (idx >= questionsFor(ans).length) renderResults(answered()); else renderQuestion();
         var t = $('qtext'); if (t) t.focus({preventScroll: true});
       });
     });
     $('back').addEventListener('click', function () { if (idx > 0) { idx--; renderQuestion(); } });
-    $('early').addEventListener('click', function () { done = true; renderResults(answered()); });
+    if ($('early')) $('early').addEventListener('click', function () { renderResults(answered()); });
     $('restart').addEventListener('click', restart);
   }
   function renderResults(a) {
     var r = recommend(a);
+    var saidNo = r.notBest && r.notBest.Shugenja;
+    function c(x, o) { o.sc = x.sc; o.build = true; o.saidNo = saidNo && x.s.r.indexOf('Shugenja') >= 0; return card(x.s, o); }
     var h = '<div class="panel-top"><span class="label">' + Object.keys(a).length + ' answers</span><span class="row" style="margin:0">';
     h += '<button type="button" class="btn quiet" id="change" style="min-height:36px;padding:.3rem .7rem">Change my answers</button>';
     h += '<button type="button" class="btn quiet" id="restart" style="min-height:36px;padding:.3rem .7rem">Start again</button></span></div>';
-    h += '<div class="res-h">Your best match' + (r.hard.length > 1 ? 'es' : '') + '</div>';
-    r.hard.forEach(function (x, i) { h += card(x.s, {hard: true, sc: x.sc, build: true, open: i === 0}); });
-    h += '<div class="res-h">Also worth a look</div>';
-    r.soft.forEach(function (x) { h += card(x.s, {sc: x.sc, build: true}); });
-    if (r.wild) { h += '<div class="res-h">Something different</div>' + card(r.wild.s, {sc: r.wild.sc, build: true}); }
+    if (r.mode === 'sample') {
+      h += '<div class="res-h">A sample to start from</div><p class="smeta">Your answers don\'t say enough about the character yet for real matches. Here are six Schools from six different Clans to explore, or answer a few more questions.</p>';
+      r.soft.forEach(function (x) { h += card(x.s, {build: true}); });
+    } else {
+      h += '<div class="res-h">Your best match' + (r.hard.length > 1 ? 'es' : '') + '</div>';
+      r.hard.forEach(function (x, i) { h += c(x, {hard: true, open: i === 0}); });
+      h += '<div class="res-h">Also worth a look</div>';
+      r.soft.forEach(function (x) { h += c(x, {}); });
+      if (r.wild) h += '<div class="res-h">Something different</div>' + c(r.wild, {});
+    }
     h += '<div class="row"><button type="button" class="btn" id="all">See all matches (' + r.all.length + ')</button></div><div id="allbox" hidden></div>';
     $('panel').innerHTML = h;
-    $('change').addEventListener('click', function () { done = false; idx = 0; renderQuestion(); });
+    $('change').addEventListener('click', function () { idx = 0; renderQuestion(); });
     $('restart').addEventListener('click', restart);
     $('all').addEventListener('click', function () {
       var box = $('allbox');
-      if (box.hidden) { box.innerHTML = '<div class="res-h">All matches, best first</div>' + r.all.map(function (x) { return card(x.s, {sc: x.sc, build: true}); }).join(''); box.hidden = false; $('all').textContent = 'Hide all matches'; }
+      if (box.hidden) { box.innerHTML = '<div class="res-h">All matches, best first</div>' + r.all.map(function (x) { return r.mode === 'sample' ? card(x.s, {build: true}) : c(x, {}); }).join(''); box.hidden = false; $('all').textContent = 'Hide all matches'; }
       else { box.hidden = true; $('all').textContent = 'See all matches (' + r.all.length + ')'; }
     });
   }
-  function restart() { ans = {}; idx = 0; done = false; renderQuestion(); }
+  function restart() { ans = {}; idx = 0; renderQuestion(); }
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-build]');
     if (!b) return;
@@ -522,7 +639,8 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
   function buildList() {
     var seen = {};
     D.schools.forEach(function (s) {
-      (CLANS_OF[s.n] = CLANS_OF[s.n] || []).indexOf(s.c) < 0 && CLANS_OF[s.n].push(s.c);
+      CLANS_OF[s.n] = CLANS_OF[s.n] || [];
+      if (CLANS_OF[s.n].indexOf(s.c) < 0) CLANS_OF[s.n].push(s.c);
       if (!seen[s.n]) { seen[s.n] = 1; UNIQUE.push(s); }
     });
     var types = {}; UNIQUE.forEach(function (s) { s.r.forEach(function (r) { types[r] = 1; }); });
@@ -553,12 +671,12 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
   }
 
   function start(data) {
-    D = data;
+    D = data; CFG = data.cfg;
     buildList();
     EXAMPLES.forEach(function (ex) {
       var b = document.createElement('button'); b.type = 'button'; b.textContent = ex[0];
       b.addEventListener('click', function () {
-        ans = Object.assign({}, ex[1]); idx = questionsFor(ans).length; done = true; renderResults(answered());
+        ans = Object.assign({}, ex[1]); idx = questionsFor(ans).length; renderResults(answered());
         $('panel').scrollIntoView({block: 'start', behavior: 'smooth'});
       });
       $('examples').appendChild(b);

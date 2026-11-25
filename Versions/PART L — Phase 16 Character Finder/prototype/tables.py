@@ -81,8 +81,8 @@ def question_rows():
         rows = []
         for label, e in answers:
             parts = []
-            if e.get('filter') == 'shugenja': parts.append('only Shugenja Schools remain')
-            if e.get('filter') == 'no-shugenja': parts.append('Shugenja Schools removed')
+            if e.get('filter') == 'Shugenja': parts.append('only Shugenja Schools remain')
+            if e.get('not_best'): parts.append('a %s School is never a best match' % e['not_best'])
             for k, w in e.get('tags', {}).items(): parts.append('%s %+d' % (TAG_WORDS[k], w))
             for k, w in e.get('roles', {}).items(): parts.append('%s %+d' % (k, w))
             for k, w in e.get('homes', {}).items(): parts.append('home: %s %+d' % (HOME_WORDS[k], w))

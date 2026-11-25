@@ -294,6 +294,7 @@ below (*Deferred and declined*, "Desk review rulings, 23 October 2026").
 | 12 | K | Play Mode / Management Mode Split | **Part 1 done** (machinery and Background, confirmed on the iPhone and merged, 25 September 2026); **part 2 done** (Clan & School, merged 25 September 2026); **part 3 done** (Identity, merged 25 September 2026); **part 4 done** (Rings & Traits); parts 1 to 4 confirmed on the owner's iPhone and merged, 25 September 2026; **part 5 done** (Skills, confirmed on the iPhone and merged); **Techniques done** (12.6, confirmed on the iPhone and merged; 12.5 Advantages & Disadvantages also complete, owner-tested and merged 28 September 2026); **12.7 Combat done** (hidden in Management, confirmed on the owner's iPhone and merged, 30 September 2026); **12.8 toolbar done** (the old row replaced by header Characters, Save and a ⋯ menu; confirmed on the owner's iPhone and merged, 30 September 2026). **Phase 12 is complete**; one part per tab follows, at the owner's request | Rulings of 25 September are recorded in the phase section below. The audit (`Versions/PART K — Phase 12 Play and Management Modes Audit/AUDIT.md`) classifies every control on all ten tabs, recommends one capture-phase gate with a selector registry, estimates about 17–27% over three stages. Its four rulings were taken as recommended on 25 September; 12.5 is complete and merged; 12.7 is complete and merged; 12.8 (toolbar replacement) is complete and merged, so Phase 12 is complete. Two owner ideas are parked for review after completion (Deferred and declined, below): Manage as a separate screen, and Print on the Characters list's menu. The owner's "Manage as a separate screen" concept is parked for review after completion (Deferred and declined, below). Carousel fixes since, both merged and live: BUGFIX — Carousel Settles on Its Destination (Cycle 1) and BUGFIX — Carousel Keeps Its Page on Rotation (15 October 2026, checked on the owner's devices) |
 | 13 | K | Library (Sourcebook Viewer) | **Complete for the approved scope, 20 October 2026. Release 1, the iPhone feasibility test, merged and live 17 October 2026 (`79890fe`) and checked on the owner's iPhone; Release 1.1, its fixes, merged and live 18 October (`ef00634`) and checked on the owner's iPhone (8/8 Pass); Release 2a, the shelf, merged and live 18 October (`6f55cd4`) and checked on the owner's iPhone (13/13 Pass; desktop D1–D2 to come); Release 2b, the reader and desktop (Chapters, Search in book, the desktop side panel), merged and live 18 October (`dba5594`) and checked on the owner's iPhone and laptop (14/15 Pass; R5 re-explained); Release 2c, chapters from the printed contents page and the match count, merged and live 19 October (`4939a78`) and checked on the owner's iPhone and laptop (7/8 Pass; C5 working by the owner's notes, its wording rewritten); Release 2d, the part tapped stays highlighted where two share a page, merged and live 20 October (`e8d41d3`) and checked on the owner's iPhone and laptop (6/6 Pass)** | The Library starts empty; the user imports books they own (PDF first), stored on the device; list and shelf-grid views; a reader; Search citations open the book at the printed page. See "Owner's rulings and Cycle 2 proposed — 15 October 2026". The mock-ups were not reached in Cycle 2; **drawn 17 October for the owner's approval:** [Library Mock-ups](https://claude.ai/artifact/24UdQFLot4pPCm7oHsRPe3); the owner's agreed changes drawn the same day in a second canvas, every Library flow on iOS, Android and desktop: [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU). Approved 17 October with the File missing proposal; Cycle 4 started from `Versions/CLAUDE-SESSION-KICKOFF-CYCLE-4-2026-10-17.md`. Releases 1, 1.1, 2a, 2b, 2c and 2d: `Versions/PART K — Phase 13 Library/README.md`. (Until 16 October this row read "Fully scoped"; until 17 October, "Reworked by the owner, 15 October 2026; mock-ups first", then "Mock-ups approved by the owner, 17 October 2026; Cycle 4 builds it") |
 | 14 | K | Comprehensive Search | **First release merged and live 9 October 2026** (`5b3543d`); the owner's check: 12 of 14 Search rows passed, two corrections proposed (S9, S11). **Cycle 1, merged and live 15 October (`a980211`); device check 28 Pass, 1 Fail (W4, printed weapons), 2 Not run:** 14.3a Skill, Weapon and Spell references (357 entries, all cited); Search focus on close (FT-34) and keystroke speed fixed; **14.3b** (Schools, School Techniques, Clans & Families: 473 entries, all cited) merged and live 16 October 2026 (`8052c00`), checked on the owner's iPhone; **BUGFIX — Gift of the Lady per School and Imperial Histories Volumes** merged and live 16 October (`9f4f259`), checked on the laptop | The Characters screen's Search tab and the ⋯ menu; 13 catalogues; book and page where held. Facets (14.1) and every page reference the 14.3 scope listed are built. **Done 17 October:** the Library link (Phase 13's first release). **Left:** FT-16 fuller descriptions after Phase 15 (optional first catalogue only by owner choice) |
+| 16 | L | Character Finder ("Help me choose") | **Designed; design approved by the owner 24–25 November 2026; not built** | An optional questionnaire recommending Clan, Family and School to new players, with a guide per School and a Build button into the creation wizard. Scoring version 2 with 21 reliability tests and pass marks. Open: the rating audit (method proposed), early exit after question 8 or 9, tattooed monks, the Part's name. See `Versions/PART L — Phase 16 Character Finder/DESIGN.md` |
 | 10 | — | Future Expansions (Equipment) | Deferred by design | Not yet assigned a Part — nothing is scoped to build |
 
 ---
@@ -1492,6 +1493,34 @@ Any value within a filter, every filter across; typing narrows within the filter
 Logic (`FACETS141`) apart from the page (`FACETPAGE141`), which hooks into Phase 14's page by wrapping its interface.
 Depends on Phase 14. Left for later: page references, the Library link (Phase 13), Items and Monsters, adding from results,
 fuller descriptions (FT-16). See `Versions/PART K — Phase 14.1 Search Facets/README.md`.
+
+---
+
+## PART L — New Player Help
+
+A new Part opened on the owner's ruling of 25 November 2026, for features that help new players: the Character Finder
+first, and later perhaps tutorials and a glossary.
+
+### PHASE 16 — Character Finder
+*(Added 25 November 2026; design approved by the owner 24–25 November; not built)*
+
+An optional questionnaire, started from "Help me choose" on the wizard's Clan step or "Not sure what to play?" on the
+Characters screen. Up to twelve multiple-choice questions, each with "No preference", recommend 1–2 best matches and four
+more worth a look from all 105 Basic Schools (every Clan, Minor Clans, the Brotherhood and sourcebook Schools; ronin when
+ronin Schools exist). Complexity and "how unusual" questions rank results and never hide them; "Yes" to magic leaves only
+Shugenja, "No" pushes them down but keeps them. Each recommendation opens a guide (who they are, how they play, roleplay
+advice with optional questions to think about, a suggested starting build checked in the real wizard, where they can go
+later, and "Ask your GM" notes worked out from data) and a Build button that drives the creation wizard through Clan,
+Family and School and carries on at Rings & Traits, with suggestions as hints only. No save-format change; roleplay
+prompts never appear on the character. Hard dependency on Phase 11.2 (the wizard) for Build.
+
+Reliability: `prototype/reliability.py`, 21 tests with pass marks (rules, and floors at version 2's measured values).
+Target: a player who roughly knows what they want finds it in the top six 9 times in 10 (81% today; the ratings, not
+the arithmetic, are the limit). Before building: a rating audit that does not depend on a subject-matter expert
+(rubric, the app's own evidence, a book-reading pass, the community wikis, the owner's group as a real-world test),
+awaiting the owner's approval. Guides then follow Clan by Clan. See
+`Versions/PART L — Phase 16 Character Finder/DESIGN.md` and the review page
+<https://claude.ai/artifact/PoyremW11mLkwik15pEvW1>.
 
 ---
 

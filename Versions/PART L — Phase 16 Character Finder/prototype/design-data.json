@@ -2554,11 +2554,11 @@
     ],
     [
      "A touch of the mystical, but no spells",
-     "Shugenja Schools removed, mystic +2, spirits and the dead +1, monster hunter +1, Monk +2"
+     "a Shugenja School is never a best match, mystic +2, spirits and the dead +1, monster hunter +1, Monk +2, Shugenja -3"
     ],
     [
      "No: they rely on their own skill",
-     "Shugenja Schools removed, mystic -1"
+     "a Shugenja School is never a best match, mystic -1, Shugenja -3"
     ],
     [
      "No preference",
@@ -2572,7 +2572,7 @@
    "answers": [
     [
      "Keep it simple: I am still learning the game",
-     "Straightforward +3, Some extra +0, Involved -3"
+     "Straightforward +3, Some extra +0, Involved -6"
     ],
     [
      "Some extra options are fine",
@@ -2594,7 +2594,7 @@
    "answers": [
     [
      "A classic samurai most players will recognise",
-     "Common +3, Uncommon +0, Unusual -4"
+     "Common +3, Uncommon +0, Unusual -6"
     ],
     [
      "Open to something a bit different",
@@ -2894,7 +2894,7 @@
    "answers": [
     [
      "Never: their word and their honour are everything",
-     "high Honor +3, low Honor -2"
+     "high Honor +3, low Honor -3"
     ],
     [
      "Only if there is truly no other way",

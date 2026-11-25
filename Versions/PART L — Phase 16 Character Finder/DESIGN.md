@@ -1,37 +1,56 @@
-# Character Finder: design draft
+# Character Finder: design
 
-**Status, 24 November 2026:** draft for the owner's review. Nothing is built and no application file is changed.
-The phase number 11.4 is a proposal (11.3 is the App Bar). It sits in Part K beside the creation wizard
-(Phase 11.2), which it feeds. The roadmap has no entry yet; one follows the owner's approval.
+**Status, 25 November 2026:** design approved by the owner (24–25 November) with nine rulings (section 1). The
+scoring is at version 2, with the reliability fixes the owner approved, and has automated tests with pass marks
+(section 9). A method for checking the ratings without a subject-matter expert is proposed and awaits the owner's
+approval (section 10). **Nothing is built and no application file is changed.**
 
-**Review page:** <https://claude.ai/artifact/PoyremW11mLkwik15pEvW1>. It has this design plus a working "Try it"
-version of the questionnaire, using the same data and scoring (checked against the prototype on 400 answer
-sets, 0 mismatches). Its source is `review-page/`.
+**Place:** a new Part, as the owner ruled: **Part L — New Player Help**, **Phase 16** (the next unused phase number;
+11.4 was the first draft's number). Part L can later hold tutorials and a glossary. Code marker `PART L PHASE 16`
+(the dependency checker's `MARKER_RE` accepts it). Players see the buttons **"Help me choose"** and **"Not sure what
+to play?"**; "Character Finder" is the internal name.
 
-**In one paragraph.** An optional questionnaire for players who do not know what to play. About a dozen
+**Review page:** <https://claude.ai/artifact/PoyremW11mLkwik15pEvW1>, with a working "Try it" version of the
+questionnaire that uses this design's data and version 2 scoring. Its source is `review-page/`.
+
+**In one paragraph.** An optional questionnaire for players who do not know what to play. Up to twelve
 multiple-choice questions, each with a "No preference" answer, narrow the 105 Basic Schools the app offers down
-to 1–2 **hard** recommendations, 3–4 **soft** ones, and sometimes a **something different** pick. Every
-recommendation opens a **guide**: what the character is, how they play, how to roleplay them, a suggested
-starting build, where they can go later, and any reason to talk to the GM first. A **Build** button hands the
-choice to the creation wizard, which applies Clan, Family and School through its own steps and carries on from
-Rings & Traits. It is a guide, not a builder: the player still makes every purchase.
+to 1–2 **best matches**, four more **worth a look**, and sometimes a **something different** pick. Every
+recommendation opens a **guide**: what the character is, how they play, how to roleplay them (with optional
+questions to think about), a suggested starting build, where they can go later, and any reason to talk to the
+GM first. A **Build** button hands the choice to the creation wizard, which applies Clan, Family and School
+through its own steps and carries on from Rings & Traits. It is a guide, not a builder: the player still makes
+every purchase.
 
 ---
 
-## 1. What the owner has already decided
+## 1. The owner's decisions
 
-From the conversation of 24 November 2026:
+**24 November 2026**
 
 1. **Full scope.** Every Basic School is a candidate, not only the Great Clans and the Core Rulebook. A new
    player "will not know what they don't know", and a niche character may be the one they enjoy most.
-2. **Two questions set the player's comfort level:** how complex a character they want, and how comfortable
-   they are with niche characters. These **rank** results; they never hide them.
-3. **A guide, not a build.** The results are suggestions; the player decides what to build.
-4. **GM warnings** on complex or niche characters, advising the player to consult their GM.
-5. **A Build button** on each recommendation that feeds the creation wizard and lets the player carry on with
-   Skills and the rest.
-6. **A suggested starting build** in each guide: Skills, Advantages and Disadvantages, and Ring and Trait
-   ranks suited to a new (Rank 1) character of that School.
+2. **Two questions set the player's comfort level** (complexity, and how unusual). They **rank** results and
+   never hide them.
+3. **A guide, not a build.** The player decides what to build.
+4. **GM warnings** on complex or niche characters.
+5. **A Build button** that feeds the creation wizard, so the player carries on with Skills and the rest.
+6. **A suggested starting build** in each guide.
+
+**25 November 2026** (the owner's answers to the nine questions, and to the reliability review)
+
+| # | Question | Ruling |
+|---|---|---|
+| — | Reliability | Apply the scoring fixes; show a sample, not a "match", when every answer is "No preference"; give near-twins a distinguishing label wherever the books separate them; keep it all as automated tests with pass marks. Target: a player who roughly knows what they want finds it in the top six **9 times in 10**. |
+| 1 | Name and place | **A new Part** for new-player help (tutorials and a glossary may follow); buttons say "Help me choose" and "Not sure what to play?" |
+| 2 | The magic filter | **"Yes" filters; "No" pushes Shugenja down but keeps them.** "If all of their other answers give 90% to a Shugenja school, including it as an option may entice them to play something they had not thought of." |
+| 3 | Where it starts | The wizard's Clan step and the Characters screen now; guides searchable in Search and the Library after the first batch of guides |
+| 4 | Reviewing the ratings | The owner is not a subject-matter expert, so "a system or tool needs to be designed" (section 10) |
+| 5 | Quick version | No separate quick version; "See my results now" after question 8 |
+| 6 | Suggested builds | Hints only. No "Use this build" button |
+| 7 | Roleplay prompts | **Removed from character creation.** Prompts stay in the guides only, so players never see them on their character as something they must follow |
+| 8 | Ronin | Left out until the planned ronin work adds ronin Schools |
+| 9 | Guide order | Clan by clan. It is a personal project until it is ready, so the order is the owner's convenience |
 
 ## 2. What it is built from
 
@@ -43,33 +62,38 @@ All of the following already exists in the app:
 | One or two sentences per School in our own words, with page | `SCHOOLLORE9` (Part H Phase 9.1) |
 | Printed page for every School, Clan and Family | `SCHOOLREF1432` (Part K Phase 14.3b) |
 | Every Family and its +1 Trait | `FAMILY_LIBRARY`, `MINOR_CLAN_LIBRARY` |
-| Technique text in our own words | `TECH_DESCRIPTIONS` |
+| Technique text in our own words, all five Ranks | `TECH_DESCRIPTIONS` |
 | Where a School can go later | `ALTERNATE_PATH_LIBRARY` (214 Paths, each naming the Schools it replaces), `ADVANCED_SCHOOL_LIBRARY` |
 | XP costs, the creation cap of 4, the character check | `traitCost`/`voidCost`/`skillCost`, BUGFIX — Creation Cap of Four, `validateCharacter()` |
 | Applying Clan, Family and School without new rules | the creation wizard (`CW112`, `CW1121`) |
-| Identity text boxes for the roleplay prompts | `f_appearance`, `f_personality`, `f_history`, `f_notes` |
 
-**Not included: ronin.** `FAMILY_LIBRARY` lists four ronin families, but no ronin School exists yet. Ronin
-become candidates when the planned ronin work (roadmap: "PLANNED — ronin, tattoos and a new Combat tab") adds
-them. Their ratings are then one row each in the table in section 6.
+**Not included: ronin** (owner's ruling 8). `FAMILY_LIBRARY` lists four ronin families, but no ronin School exists
+yet. When the planned ronin work adds them, each is one new row in the rating table; answers such as "On the road"
+and "No one: they walk alone" will lead to them without changing any question.
 
-**Not included: Advanced Schools and Alternate Paths.** A new character cannot take them (each needs a
-Technique Rank or Insight Rank above 1). They appear in each guide as "Where they can go later".
+**Included, with a note: the tattooed monks.** Ruling 8 covers ronin because the app has no ronin Schools. The
+three tattooed orders (Togashi Tattooed Order, Hoshi Tsurui Zumi, Hitomi Kikage Zumi) are different: their Schools
+exist and can be built today; only the tattoos' own powers are not tracked yet. They stay in the finder with the
+"Good to know: the app does not model tattoos yet" note, which disappears when the planned tattoo work lands. (If
+the owner prefers them hidden until then, it is one flag in the ratings.)
+
+**Not included: Advanced Schools and Alternate Paths.** A new character cannot take them. They appear in each
+guide as "Where they can go later".
 
 ## 3. The player's journey
 
-### Where it starts
+### Where it starts (ruling 3)
 
-- **The wizard's Clan step** gains a "Not sure? Help me choose" button above the Clan cards.
-- **The Characters screen** gains "Not sure what to play?" beside Create New Character. A player can browse
+- **The wizard's Clan step** gains "Not sure? **Help me choose**" above the Clan cards.
+- **The Characters screen** gains "**Not sure what to play?**" beside Create New Character. A player can browse
   without making a character; one is only made when they press Build.
+- **Later**, after the first batch of guides: guides become searchable in Search and the Library.
 
 ### Question screens
 
-Full screen, one question at a time, like the wizard: the question, its answers as large buttons, Back,
-a progress line ("Question 4 of 12") and "See my results now" from question 6 onwards. Every question has
-"No preference", so a player who skips everything still gets results (the whole list, ordered by how common
-each School is).
+Full screen, one question at a time: the question, its answers as large buttons, Back, a progress line
+("Question 4 of 12"), and **"See my results now" once 8 questions are answered** (ruling 5). Every question has
+"No preference".
 
 ### Results screen
 
@@ -81,58 +105,50 @@ Your best matches
 
 Also worth a look
   [mon] Daidoji Iron Warrior       Crane · Bushi          Straightforward · Common
-  [mon] Lion Elite Spearmen        Lion · Bushi           Straightforward · Uncommon  ⚠ Ask your GM
+  [mon] Kuni Shugenja              Crab · Shugenja        Involved · Common
+        You said no magic, but the rest of your answers suit this School.
   ...
 
 Something different                                   (only when the player is open to it)
-  [mon] Fukurokujin's Eyes         Brotherhood · Monk     Involved · Unusual          ⚠ Ask your GM
 
 [See all matches (105)]   [Change my answers]
 ```
 
-**See all matches** lists every School in score order with the same badges, filterable by Clan, type,
-complexity and how unusual. Nothing is ever hidden, only ordered.
+- **A Shugenja offered to a player who said "No" to magic** carries the line "You said no magic, but the rest of
+  your answers suit this School" (ruling 2). It can appear under "Also worth a look" and "See all matches", never
+  as a best match.
+- **Too little to go on.** If fewer than two answers say anything about the character (the comfort questions and
+  "No preference" do not count), there are no "best matches". The screen shows **"A sample to start from"**: six
+  Schools from six different Clans covering at least three types, the most common and simplest first, with "Answer
+  a few more questions for real matches".
+- **See all matches** lists every School in score order, filterable by Clan, type, complexity and how unusual.
+  Nothing is hidden, only ordered.
 
 ### Guide screen
 
-One School, in these sections (section 7 has two complete examples):
-
 1. **At a glance:** Clan mon, Clan and Family (with the Family's +1 Trait), type, starting Honor, the School's
    +1 Trait, complexity, how unusual, source and page.
-2. **Ask your GM / Good to know** notes (section 5), when there are any.
-3. **Who they are:** the Clan, the Family and the School in plain words.
-4. **How they play:** what they are good at, their School Skills, and the Rank 1 Technique in our own words.
-5. **Roleplaying them:** attitudes, relationships, good story hooks, and one way to play against type.
-6. **A suggested starting build** (section 8), with the reason for each choice.
-7. **Where they can go later:** Alternate Paths and Advanced Schools open to this School, from the app's data.
-8. **Build this character** button.
+2. **Ask your GM / Good to know** notes (section 5).
+3. **Who they are.**
+4. **How they play:** what they are good at, School Skills, the Rank 1 Technique in our own words.
+5. **Roleplaying them:** attitudes, relationships, story hooks, one way to play against type, and **"Questions to
+   think about"**: a few of the book's Twenty Questions (Core Rulebook pp.100–102) in our own words, chosen for this
+   School. These are ideas, not instructions, and nothing is written to the character (ruling 7).
+6. **Suggested starting build** (section 8).
+7. **Where they can go later.**
+8. **Build this character.**
 
 ### Build
 
-Build asks for a name if there is no character yet, then drives the creation wizard exactly as a player would:
-it chooses the Clan card, the Family card and the School card in turn, so Apply School asks its own Affinity,
-Deficiency, Honor and specialisation questions as normal. The player lands on **Rings & Traits** with Name,
-Clan, Family and School done, and can still go Back and change any of them. If a Clan is already applied, the
-wizard's existing "start over?" confirmation appears first.
+Build asks for a name if there is no character yet, then drives the creation wizard exactly as a player would: it
+chooses the Clan, Family and School cards in turn, so Apply School asks its own Affinity, Deficiency, Honor and
+specialisation questions. The player lands on **Rings & Traits** with Name, Clan, Family and School done, and can
+go Back and change any of them. If a Clan is already applied, the wizard's existing "start over?" confirmation
+appears first. On Rings & Traits, Skills and Advantages & Disadvantages, a folded panel reads "Suggested for a Hida
+Bushi" and shows that step's part of the suggested build. It only informs: nothing is bought (ruling 6).
 
-On Rings & Traits, Skills and Advantages & Disadvantages, a folded panel reads "Suggested for a Hida Bushi"
-and shows that step's part of the suggested build. It only informs: nothing is bought for the player.
-
-### "Bring them to life" (optional, at Review)
-
-Our own-words versions of the book's Twenty Questions (Core Rulebook pp.100–102), offered as optional prompts
-after the finder or at the wizard's Review step. Each answer is added to an existing Identity box, headed by its
-question, so the save format does not change:
-
-| Box | Prompts (paraphrased, never quoted) |
-|---|---|
-| Appearance | How would others describe them? What is the first thing people notice? |
-| Personality | Their greatest strength and weakness; which part of Bushido they hold dearest and which they neglect; habits and mannerisms; the emotion they find hardest to hide; how they treat a subordinate who errs; how religious they are |
-| History / Background | What drives them; who they trust most and why; what they think of their own Clan; whether they are married or betrothed; any prejudices; whom they truly serve; how their parents would describe them; their highest ambition; how they will die |
-| Notes | Favourite and least favourite things; and the twenty "other questions" as optional extras |
-
-Where the finder already asked something (how they will die, their ambition), the prompt starts from that
-answer: "You said they will die in a duel. Against whom, and why?"
+**Removed (ruling 7):** the "Bring them to life" prompts at the wizard's Review step, and writing answers into the
+Identity boxes. The character sheet never shows roleplay prompts.
 
 ## 4. The questions
 
@@ -144,16 +160,17 @@ answer: "You said they will die in a duel. Against whom, and why?"
 | 4 | Approach (what they reach for first) | What their magic does best |
 | 5 | Fight style, or Court style after "Words" or "Craft" | Which Element calls to them |
 | 6–9 | Remembered for · Home · Breaking rules · Bushido | the same |
-| 10 | How religious | (skipped: a shugenja is religious by definition) |
+| 10 | How religious | (skipped: a Shugenja is religious by definition) |
 | 11–12 | Companion · How they will die | the same |
 
-**Only one question filters.** Answering "Yes" to magic leaves only Shugenja Schools, which is the owner's own
-example. "No" and "A touch of the mystical" remove Shugenja. Everything else adds or subtracts points. The
-Bushido question uses the seven tenets as the app's Paragon Advantage names them (Core p.152). The last
-question is the book's own question 20.
+**Magic (ruling 2).** "Yes" leaves only Shugenja Schools. "No" and "A touch of the mystical" take 3 points off every
+Shugenja School and stop them being best matches. They still appear under "Also worth a look" when the other
+answers suit them strongly (measured in section 9: 15.7% of players whose answers fit a Shugenja School, but who
+said "No", are still offered it).
 
-The wording below is a draft for the owner to edit. "What it scores" is what each answer adds to a School's
-score (section 6 explains the arithmetic).
+The Bushido question uses the seven tenets as the app's Paragon Advantage names them (Core p.152). The last
+question is the book's own question 20. "What it scores" is what each answer adds to a School before the
+arithmetic in section 6 (evening out labels, and the 1.5× weight of the four direct questions).
 
 <!-- generated:QUESTIONS (prototype/tables.py) -->
 **Do you want your character to cast spells?** (`magic`)
@@ -161,15 +178,15 @@ score (section 6 explains the arithmetic).
 | Answer | What it scores |
 |---|---|
 | Yes: magic is the heart of who they are | only Shugenja Schools remain |
-| A touch of the mystical, but no spells | Shugenja Schools removed, mystic +2, spirits and the dead +1, monster hunter +1, Monk +2 |
-| No: they rely on their own skill | Shugenja Schools removed, mystic -1 |
+| A touch of the mystical, but no spells | a Shugenja School is never a best match, mystic +2, spirits and the dead +1, monster hunter +1, Monk +2, Shugenja -3 |
+| No: they rely on their own skill | a Shugenja School is never a best match, mystic -1, Shugenja -3 |
 | No preference | no effect |
 
 **How much rules detail do you want to keep track of?** (`complexity`)
 
 | Answer | What it scores |
 |---|---|
-| Keep it simple: I am still learning the game | Straightforward +3, Some extra +0, Involved -3 |
+| Keep it simple: I am still learning the game | Straightforward +3, Some extra +0, Involved -6 |
 | Some extra options are fine | Straightforward +1, Some extra +2, Involved +0 |
 | Lots of moving parts: I like mastering a system | Straightforward -1, Some extra +1, Involved +3 |
 | No preference | no effect |
@@ -178,7 +195,7 @@ score (section 6 explains the arithmetic).
 
 | Answer | What it scores |
 |---|---|
-| A classic samurai most players will recognise | Common +3, Uncommon +0, Unusual -4 |
+| A classic samurai most players will recognise | Common +3, Uncommon +0, Unusual -6 |
 | Open to something a bit different | Common +1, Uncommon +2, Unusual +0, adds a "something different" pick |
 | The stranger the better | Common -1, Uncommon +1, Unusual +3, adds a "something different" pick |
 | No preference | adds a "something different" pick |
@@ -281,7 +298,7 @@ score (section 6 explains the arithmetic).
 
 | Answer | What it scores |
 |---|---|
-| Never: their word and their honour are everything | high Honor +3, low Honor -2 |
+| Never: their word and their honour are everything | high Honor +3, low Honor -3 |
 | Only if there is truly no other way | mid Honor +2 |
 | Yes, if the result is worth it | low Honor +3, high Honor -1 |
 | No preference | no effect |
@@ -356,10 +373,8 @@ added:
 | | Starting Honor 2.5 or lower | "Other samurai may distrust them." |
 | | Imperial families | "Serves the Imperial families rather than a Great Clan." |
 
-A guide can add its own note where the data cannot know. For example, the Kuni Witch-Hunter needs a campaign
-with the Taint and maho in it.
-
-Result: 52 Schools carry at least one "Ask your GM" note, 35 carry only "Good to know", and 18 carry neither.
+A guide can add its own note where the data cannot know (the Kuni Witch-Hunter needs a campaign with the Taint and
+maho in it). Result: 52 Schools carry at least one "Ask your GM" note, 35 only "Good to know", 18 neither.
 
 <!-- generated:WARNINGS (prototype/tables.py) -->
 | School | Ask your GM | Good to know |
@@ -453,37 +468,43 @@ Result: 52 Schools carry at least one "Ask your GM" note, 35 carry only "Good to
 | Wind’s Grace Order [Monk] | From Book of Air p.194: check your GM uses this book. | Uses the kiho rules. |
 <!-- end generated:WARNINGS -->
 
-## 6. Scoring, and the rating of every School
+## 6. Scoring (version 2), and the rating of every School
 
 ### Each School's rating
 
-Five things per School, drafted here for the owner to correct:
-
 - **Plays like:** one to three *main* labels (worth double) and up to three *also* labels, from 29 plain-words
-  labels such as front line, duelist, archer, cavalry, bodyguard, monster hunter, stealth, diplomat, schemer,
-  investigator, healer, battle magic or mystic.
+  labels (front line, duelist, archer, cavalry, bodyguard, monster hunter, stealth, diplomat, schemer,
+  investigator, healer, battle magic, mystic and so on).
 - **Home:** one or two of ten settings (the Wall, court, mountains, libraries and temples, plains, sea,
-  battlefield, wilds, streets and shadows, the road). This is how Clans come in without a "pick a Clan"
-  question.
-- **Complexity:** Straightforward, Some extra or Involved. Every Shugenja and monk is Involved; most courtiers,
-  ninja, artisans, duelists and riders have Some extra.
-- **How unusual:** Common, Uncommon or Unusual. Core Rulebook Great Clan Schools are mostly Common;
-  supplements, Minor Clans and the Brotherhood are mostly Uncommon; Spider, ninja, heresies, single-era and
-  alternate-timeline Schools are Unusual.
-- **Type, Honor and Affinity** come from the app's own data, not from this rating.
+  battlefield, wilds, streets and shadows, the road). This is how Clans come in without a "pick a Clan" question.
+- **Complexity:** Straightforward, Some extra or Involved. **How unusual:** Common, Uncommon or Unusual.
+- **Type, Honor and Affinity** come from the app's own data.
 
-### The arithmetic
+These ratings are a first draft by Claude. Section 10 is how they get checked.
 
-1. Each answer lists label weights (for example "front line +3"). A School gains the weight **×2** for a
-   *main* label and **×1** for an *also* label.
-2. Type, Home, Honor band (6 or more high, 3.5 or less low), complexity and how unusual add their weight once
-   if they match. For a caster, the chosen Element adds +3 when it is the School's Affinity (Isawa, who chooses
-   an Affinity, always matches) and −2 when it is the Deficiency.
-3. Ties go to the less complex, then the more common, then alphabetical.
-4. **Hard picks:** the top School, plus the second if it scores at least 80% of the first.
-   **Soft picks:** the next four, with at most two from any one Clan across hard and soft, so the list has
-   variety. **Something different:** the best Unusual School not already shown, if the player did not ask for
-   a classic samurai and it scores at least half of the top score.
+### The arithmetic (version 2)
+
+1. Each answer lists weights, for example "front line +3". A School gains the weight ×2 for a *main* label and ×1
+   for an *also* label, plus the weight once for a matching Home.
+2. **Evening out (new):** those label and Home points are multiplied by √(6 ÷ the School's label weight), where
+   label weight = 2 × main labels + also labels + Homes. A School rated with many labels therefore gains no more in
+   total than one rated with few. Without this, the number of labels I happened to give a School decided how often
+   it was recommended (rank correlation 0.60; now 0.11).
+3. Type, Honor band (6 or more high, 3.5 or less low), complexity and how unusual add their weight once if they
+   match. For a caster, the chosen Element adds +3 when it is the School's Affinity (Isawa always matches) and −2
+   when it is the Deficiency.
+4. **Direct answers count 1.5× (new):** the four questions where a player states their style outright (approach,
+   fight, court, magic type).
+5. **Firmer comfort answers (new):** "Keep it simple" −6 for Involved (was −3); "A classic samurai" −6 for Unusual
+   (was −4); "Never break the rules" −3 for low Honor (was −2).
+6. **Ties (new):** first to the School whose *main* labels match more of the answers, then the less complex, then
+   the more common, then a shuffle that differs from player to player. Never alphabetical: in version 1, 21% of
+   players had a tie at the top, and the alphabet quietly favoured Akodo and Asahina.
+7. **Best matches:** the top School that the magic answer allows as a best match, plus the second if it scores at
+   least 80% of the first. **Also worth a look:** the next four, at most two from any one Clan across both lists.
+   **Something different:** the best Unusual School not already shown, if the player did not ask for a classic
+   samurai and it scores at least half of the top score. **A sample** replaces all three when fewer than two answers
+   describe the character.
 
 ### The rating table
 
@@ -599,8 +620,8 @@ Five things per School, drafted here for the owner to correct:
 
 ## 7. Two worked guides
 
-These show the depth intended for every School. The facts come from the app's data (pages cited). The
-roleplay advice is our own and is the part the owner should check hardest.
+These show the depth intended for every School. The facts come from the app's data (pages cited). The roleplay
+advice is our own.
 
 ### Hida Bushi
 
@@ -609,23 +630,26 @@ Straightforward · Common · Core Rulebook p.106. No GM notes.
 
 **Who they are.** The Crab hold the great Wall on the Empire's southern border against the Shadowlands, and
 the Hida are their ruling family and the heart of their army. Their School is one of the oldest in Rokugan:
-wear heavy armour, take the blow, then answer with a heavy weapon such as the tetsubo. Other Clans,
-the Crane above all, think the Crab crude. The Crab think the other Clans have no idea what is out there.
+wear heavy armour, take the blow, then answer with a heavy weapon such as the tetsubo. Other Clans, the Crane
+above all, think the Crab crude. The Crab think the other Clans have no idea what is out there.
 
-**How they play.** The party's front line. **Rank 1, The Way of the Crab:** no Armor TN penalty for heavy
-armour (except for Stealth) and +1k0 damage with Heavy Weapons. So wear the heaviest armour you can and use
-your tetsubo. Rank 2 adds Reduction equal to your Earth Ring, which is why the build below raises Earth.
-School Skills: Athletics, Defense, Heavy Weapons (Tetsubo), Intimidation, Kenjutsu, Lore: Shadowlands and one
-Bugei Skill of your choice. Outfit: Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm,
-Traveling Pack, 3 koku.
+**How they play.** The party's front line. **Rank 1, The Way of the Crab:** no Armor TN penalty for heavy armour
+(except for Stealth) and +1k0 damage with Heavy Weapons, so wear the heaviest armour you can. Rank 2 adds Reduction
+equal to your Earth Ring, which is why the build below raises Earth. School Skills: Athletics, Defense, Heavy
+Weapons (Tetsubo), Intimidation, Kenjutsu, Lore: Shadowlands and one Bugei Skill of your choice. Outfit: Light or
+Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 3 koku.
 
 **Roleplaying them.**
 - You have seen what the rest of the Empire only fears. Patience with ceremony is short; patience with people
   who pull their weight is long.
 - Honor 3.5 is not dishonour. A Hida bends etiquette, not duty.
-- Intimidation is a social tool as well as a battle cry. Courts expect you to be blunt, so use it.
+- Intimidation is a social tool as well as a battle cry.
 - Good hooks: a sibling lost on the Wall; a grudge against the Crane; a debt to a Kuni shugenja.
 - Playing against type: a Hida who writes poetry about the Wall and is quietly good at it.
+
+**Questions to think about** (optional, from the book's Twenty Questions): How long did you serve on the Wall,
+and what did you see there? Who do you trust most, and did they stand beside you there? What do you really think
+of the Crane? How do you expect to die, and does it frighten you?
 
 **Suggested starting build** (verified in the app, section 8):
 
@@ -640,11 +664,9 @@ Traveling Pack, 3 koku.
 | | Large | 3 | +1k0 damage with large weapons. Crab pay 3 |
 | | **Total** | **40** | |
 
-**With Disadvantages** (optional, 9 XP): Brash (3), Overconfident (3) and Antisocial (3, the Crab price). These
-are true to type and make good stories. Spend the 9 XP on Kenjutsu 3, Lore: Shadowlands 2, Jiujutsu 2 and
-Intimidation 2.
-
-**Usually not worth it at Rank 1:** Void 3 costs 18 XP, nearly half the budget.
+**With Disadvantages** (optional, 9 XP): Brash (3), Overconfident (3) and Antisocial (3, the Crab price). Spend the
+9 XP on Kenjutsu 3, Lore: Shadowlands 2, Jiujutsu 2 and Intimidation 2. **Usually not worth it at Rank 1:** Void 3
+costs 18 XP, nearly half the budget.
 
 **Where they can go later** (from the app's data): Alternate Paths at Technique Rank 2: Crab Defender (Book of
 Air p.172), Crab Sumai Wrestler (Book of Earth p.191), Tsuru's Legion (Sword and Fan p.202). At Rank 4: Crab
@@ -658,25 +680,28 @@ Honor 5.5 · Some extra · Uncommon · The Great Clans p.40.
 ⚠ **Ask your GM:** from The Great Clans p.40, so check your GM uses this book. The character shines only if the
 Taint and maho are part of the campaign, so ask about that too.
 
-**Who they are.** The Kuni are the Crab's shugenja family, known for obsessive study of the Shadowlands.
-The Witch-Hunters are a small band of Kuni mystic warriors who roam the whole Empire, ignoring Clan borders,
-to hunt maho-tsukai (blood sorcerers) and Shadowlands infiltrators. Commoners welcome them. Other samurai
-often do not.
+**Who they are.** The Kuni are the Crab's shugenja family, known for obsessive study of the Shadowlands. The
+Witch-Hunters are a small band of Kuni mystic warriors who roam the whole Empire, ignoring Clan borders, to hunt
+maho-tsukai (blood sorcerers) and Shadowlands infiltrators. Commoners welcome them. Other samurai often do not.
 
-**How they play.** An investigator who can fight. **Rank 1, To See the Darkness:** a Contested Roll
-(your Investigation/Awareness against their Sincerity/Willpower) senses the Taint in someone, with +1k0 for
-each full Rank of their Taint. You also gain +1k1 to resist the Taint and to attack Shadowlands creatures or
-known Tainted foes. Rank 2 lets you recall a Shadowlands creature's weaknesses. School Skills: Investigation,
-Jiujutsu, Kenjutsu, Lore: Shadowlands, Lore: Maho, Meditation and one Skill of your choice. Outfit: Rugged
-Clothing, Daisho, Knife, Jade Pendant, Traveling Pack, 3 koku.
+**How they play.** An investigator who can fight. **Rank 1, To See the Darkness:** a Contested Roll (your
+Investigation/Awareness against their Sincerity/Willpower) senses the Taint in someone, with +1k0 for each full
+Rank of their Taint. You also gain +1k1 to resist the Taint and to attack Shadowlands creatures or known Tainted
+foes. Rank 2 lets you recall a Shadowlands creature's weaknesses. School Skills: Investigation, Jiujutsu,
+Kenjutsu, Lore: Shadowlands, Lore: Maho, Meditation and one Skill of your choice. Outfit: Rugged Clothing, Daisho,
+Knife, Jade Pendant, Traveling Pack, 3 koku.
 
 **Roleplaying them.**
 - Most of the job is asking questions, watching faces and being unwelcome. The sword comes out last.
-- The great dilemma: a maho-tsukai may be a desperate, sympathetic person who made one terrible choice. What
-  do you do with them?
+- The great dilemma: a maho-tsukai may be a desperate, sympathetic person who made one terrible choice. What do
+  you do with them?
 - You answer to no local lord's comfort. That makes enemies and occasionally saves a province.
 - Good hooks: the sorcerer who got away; a fellow hunter who fell to the Taint; a village that hid you.
 - Playing against type: a hunter who believes most of the Tainted can be saved.
+
+**Questions to think about** (optional): Who was the first maho-tsukai you hunted, and what became of them? What
+would you do if someone you trust showed signs of the Taint? Which local lord would be glad to see you leave, and
+why?
 
 **Suggested starting build** (verified in the app, section 8):
 
@@ -691,23 +716,22 @@ Clothing, Daisho, Knife, Jade Pendant, Traveling Pack, 3 koku.
 
 **With Disadvantages** (optional, 10 XP): Driven (2), Sworn Enemy (3: the one who got away), Obligation (3) and
 Can't Lie (2). Spend the 10 XP on Irreproachable (2), Wary (3), Clear Thinker (3) and Lore: Shadowlands 2.
-
-**Usually not worth it at Rank 1:** Void 3 (18 XP). The Witch-Hunter is a [Monk] School but not a Brotherhood
-one, so it does not get Brotherhood kiho rates.
+**Usually not worth it at Rank 1:** Void 3 (18 XP). The Witch-Hunter is a [Monk] School but not a Brotherhood one,
+so it does not get Brotherhood kiho rates.
 
 **Where they can go later:** Alternate Path at Technique Rank 2: Student of Hitsu-do (Book of Fire p.179).
 
 ## 8. Suggested starting builds: rules and checks
 
-- **Budget:** 40 XP, plus up to 10 XP from Disadvantages (shown as a separate, optional layer so a player who
-  takes none still has a complete build).
-- **Within the app's rules:** Traits ×4, Void ×6, Skills by new Rank, Emphases 2 XP, Clan and School prices
-  as the app applies them, and nothing above 4 at creation.
-- **Prefer raising the partner Trait.** When the Family or School has already raised one Trait of a Ring,
-  raising its partner lifts the whole Ring. That is the single most useful tip for a new player, and the
-  guides say so where it applies.
-- **Every suggested build is checked by entering it in the real wizard.** For this draft, a scratch script did
-  that for both examples, four builds in all:
+- **Hints only** (ruling 6): shown in the guide and as folded panels on the wizard's later steps. Nothing is
+  bought for the player.
+- **Budget:** 40 XP, plus up to 10 XP from Disadvantages (a separate, optional layer, so a player who takes none
+  still has a complete build).
+- **Within the app's rules:** Traits ×4, Void ×6, Skills by new Rank, Emphases 2 XP, Clan and School prices as the
+  app applies them, nothing above 4 at creation.
+- **Prefer raising the partner Trait:** when the Family or School has raised one Trait of a Ring, raising its
+  partner lifts the whole Ring. The guides say so where it applies.
+- **Every suggested build is checked by entering it in the real wizard** (`prototype/verify-builds.js`):
 
 | Build | XP spent / total | Character check | Review allows Finish |
 |---|---|---|---|
@@ -716,62 +740,160 @@ one, so it does not get Brotherhood kiho rates.
 | Kuni Witch-Hunter | 40 / 40 | no findings | yes |
 | Kuni Witch-Hunter with Disadvantages | 40 / 40 (Disadvantages give 10) | no findings | yes |
 
-  No page errors in any run. The script is `prototype/verify-builds.js`. In the build phase it becomes a
-  harness that checks every guide's build, so a guide can never teach a build the app rejects.
+## 9. Reliability
 
-## 9. Checks already run on this draft
+### What "reliable" means here
 
-`prototype/finder.py` implements sections 4 and 6 exactly and runs them against the app's real School list:
+The finder is a guide that gives a shortlist. The agreed target (25 November) is: **a player who roughly knows what
+they want finds it in the top six about 9 times in 10, and no School is hidden from the players it suits.**
 
-| Check | Result |
-|---|---|
-| Every School can be a **hard pick** on some set of answers | **105 of 105** |
-| Every School can be the **top** pick | 104 of 105. Hoshi Tsurui Zumi reaches second place behind its near twin, the Togashi Tattooed Order |
-| 20,000 random players: any result list shorter than 6 Schools | **0** |
-| No School dominates: the most frequent hard pick | 6.6% of players (Asahina Shugenja) |
-| Every School appears somewhere in hard, soft or "something different" | **105 of 105** |
+Reliability is three separate questions, and the tests below answer only the first:
 
-The first run found a real problem: **Matsu Berserker could never be a hard pick**, because Akodo Bushi had the
-same labels and always outscored it. The fix gave the Matsu their own "all-out attack" label and fight answer,
-which the School's own description supports ("total, fearless commitment to the attack"). That is exactly what
-this check is for. It will run again every time a rating or question changes.
+1. **Does the scoring do what the ratings say?** Measured by `prototype/reliability.py`.
+2. **Are the ratings right?** Simulation cannot answer this: the simulated players are built from the same
+   ratings, so a wrong rating is invisible to them. Section 10 is the method.
+3. **Do real players like what they get?** Needs real people (section 10, step 5).
 
-**Three example players** (from `prototype/examples.py`):
+### The tests and their pass marks
 
-| Player | Hard pick | Soft picks | Something different |
+`python3 -I prototype/reliability.py` runs all of them in about a minute and exits with a failure if any test
+fails. **Rules** must always hold. **Floors** are set at the values measured for version 2, so a rating or question
+change that makes things worse fails instead of passing quietly. The "player who wants School X" tests simulate,
+for every School, 20 players who pick the answer that suits it best 60% of the time, "No preference" 20% and any
+answer 20%.
+
+| Test | Version 1 | Version 2 | Pass mark |
 |---|---|---|---|
-| New, wants a classic warrior (simple, classic, sword, front line, the Wall, Courage, last stand) | Hida Bushi | Daidoji Iron Warrior, Lion Elite Spearmen, Heichi Bushi, Matsu Berserker | none (asked for classic) |
-| Curious (a touch of the mystical, open to different, the road, Honesty, deeply religious, walks alone, fighting the darkness) | Kuni Witch-Hunter | Toritaka Bushi, Order of Heroes, Temples of the Thousand Fortunes, Togashi Tattooed Order | Fukurokujin's Eyes |
-| Wants a healer (magic, healing, Air, court, never breaks rules, Compassion, old age) | Asahina Shugenja | Fuzake, Seppun, Isawa and Yogo Wardmaster shugenja | none good enough |
+| Every School can be a best match on some answers | 105 | **105** | rule: 105 |
+| Shortest result list over 20,000 random players | 6+ | **21** | rule: at least 6 |
+| All "No preference" gives a sample from 6 Clans, not a match | no (Akodo, alphabetically) | **yes** | rule |
+| Magic "No" or "a touch": best matches that are not Shugenja | 100% (filtered out) | **100%** | rule: 100% |
+| Magic "Yes": every listed School is a Shugenja School | 100% | **100%** | rule: 100% |
+| Player who wants School X finds it in the top six | 82% | **81.3%** | floor 81%, **target 90%** |
+| … gets it as a best match | 63% | **62.3%** | floor 62% |
+| … stopping after question 8 | – | **73.3%** | floor 73% |
+| Schools such a player finds less than a quarter of the time | 13 | **5** | floor 5, target 0 |
+| "Classic samurai": best matches that are not Unusual | 98.5% | **98.1%** | floor 98% |
+| "Keep it simple" (no magic asked): best matches that are not Involved | 84% | **89.2%** | floor 89% |
+| "A sword": best matches that are Bushi | 80.5% | **87.6%** | floor 87% |
+| "Words": best matches that are Courtiers | 48.1% | **67.4%** | floor 67% |
+| "Healing" magic: best matches that heal or protect | 91.1% | **98.6%** | floor 98% |
+| "Never break the rules": best matches without low Honor | 87.3% | **87.4%** | floor 87% |
+| Label-count bias (rank correlation; 0 is none) | 0.60 | **0.11** | floor 0.15 |
+| Alphabetical bias (rank correlation) | ties went alphabetically | **0.09** | floor 0.15 |
+| Most frequent best match, share of random players | 6.8% | **5.3%** | floor 5.5% |
+| One answer changed: Schools kept in the top six | 4.2 of 6 | **4.25 of 6** | floor 4.2 |
+| Fits a Shugenja School but said "No": still offered it | 0% (filtered out) | **15.7%** | floor 15% |
 
-## 10. How it would be built
+Still hard to find in version 2: Goju Ninja, Order of Peaceful Repose, The Order of Heroes, Tengoku's Fist and
+Yasuki Courtier. For information: one changed answer changes the first best match 40% of the time, which is why
+results are presented as a shortlist, not a single answer.
 
-The project's rules for every phase apply. Specifically:
+### What the measurements say about getting to 90%
+
+- **The arithmetic is not the limit.** A sweep of the settings (how strongly labels are evened out, the magic
+  penalty, the weight of direct answers) moved "finds it in the top six" only between 77% and 81%. Each setting
+  trades one measure against another.
+- **The ratings are the limit.** What is left is mostly near-twins (Goju Ninja and Shosuro Infiltrator, Agasha and
+  Tamori, Tengoku's Fist and Osano-Wo, many monk orders sharing "mystic") and labels that look wrong. Example: a
+  player who answers only "a sword, the front line, the Wall" gets Heichi and Ichiro (Boar and Badger) ahead of Hida
+  Bushi, because the draft gave those Minor Clan Schools a "Wall" home. That is a rating error, and no setting can
+  fix it. Section 10 is the way to 90%.
+
+### Early exit: after 8 or after 9? (for the owner)
+
+Ruling 5 put "See my results now" after question 8, on version 1's numbers. Version 2 measured (10 players per
+School):
+
+| Stop after | Best match | Top six |
+|---|---|---|
+| 6 questions | 38% | 56% |
+| 8 questions | 57% | 76% |
+| **9 questions** | **63%** | **80%** |
+| 10 questions | 62% | 80% |
+| All | 65% | 83% |
+
+Question 9 (Bushido) closes most of the remaining gap. **Recommendation: after question 9.** It is one constant
+(`EARLY_EXIT_AFTER`); the design keeps 8 until the owner says otherwise.
+
+## 10. Checking the ratings without an expert (proposal, awaiting approval)
+
+The owner is not a GM or a subject-matter expert, and this is a self-funded project. So the method does not rely on
+anyone's expertise. It turns each rating from an opinion into a **checkable claim with evidence**, gets the evidence
+from several independent sources, and leaves only a short list of genuine disagreements.
+
+**Step 1. A rubric.** One-line, checkable definitions for every label, Home, complexity and "how unusual" level.
+For example: *archer: the School teaches Kyujutsu and a Technique or its description centres on the bow*;
+*Involved: casts spells, uses kiho, or uses tattoos*. With a rubric, checking a rating means checking a fact
+("does this School teach Kyujutsu?"), which anyone can do.
+
+**Step 2. The app's own evidence, automatically.** Each School's Skills, all five Techniques (`TECH_DESCRIPTIONS`)
+and its description (`SCHOOLLORE9`) are already in the app, in our own words, and earlier phases checked them
+against the books. A script applies the rubric to them. A first try with Skills alone, 25 November:
+
+| Of the draft's 255 labels | Count |
+|---|---|
+| Backed by the School's own Skill list | 135 |
+| Testable against Skills but not backed (some are fine: the Asahina heal through spells, not the Medicine Skill) | 46 |
+| Not testable from Skills at all (battle magic, bodyguard, skirmisher and so on); need the Technique text or the book | 74 |
+| Distinctive Skills taught but not labelled (Akodo teach Kyujutsu, for example; not every one should be a label) | 43 |
+
+Adding the Technique text and descriptions will settle many more.
+
+**Step 3. The books, for what the app's data cannot settle.** A reading pass of each School's printed entry,
+recording the evidence for each label in our own words with the page, under the project's rules (book text only in
+a scratch folder, never committed). The Sourcebook Index already gives every School's page. This needs a session
+with the owner's PDFs: a laptop session, or the laptop's folder attached to a cloud session.
+
+**Step 4. A third opinion.** The two community wikis the Sourcebook Index already links for every School (Magical
+Samurai, Last Haiku), used as a cross-check, never copied. Optionally, a separate blind rating by a fresh session
+that sees only the evidence and the rubric, not the draft. That is cheap and catches careless labels, but it shares
+Claude's blind spots, so it is not proof.
+
+**Step 5. Settle disagreements by evidence, then by people.**
+- Where the sources agree, the rating is marked **evidence-backed**.
+- Where they disagree, the audit lists the evidence side by side. Most become fact checks.
+- The few genuine judgement calls go to the owner's group: whoever runs the game, or an experienced player, reads
+  only that short list, not 105 rows.
+- **A free real-world test:** the owner's group already have characters. Each player takes the questionnaire
+  answering as their character. Their real School should be in the top six. Before any public release, a couple of
+  new players try the review page.
+
+**Step 6. Make it permanent.** Each rating records its evidence and its confidence (evidence-backed or judgement).
+`reliability.py` gains three tests: every label meets the rubric; the share of scoring that rests on judgement-only
+labels must not grow; the group's known characters stay in their top six.
+
+**The owner's part, as a non-expert:** approve the rubric (plain words), spot-check about ten Schools by opening the
+cited page and confirming the evidence says what the audit claims, and pass the short disagreement list to the
+group. If more than one of the ten spot checks is wrong, the audit is redone before its ratings are used.
+
+**Near-twins** (the reliability ruling) are handled inside the audit: wherever the evidence separates two Schools,
+the difference becomes a label, and a test checks that each twin can be found on its own.
+
+## 11. How it would be built
 
 - **Own fragments, own marker.** `src/sheet/…-feat-character-finder.js` (logic and screens) and
   `…-feat-character-finder-content.js` (questions, ratings, guides) behind `CHARACTER_FINDER_ENABLED`, marker
-  `PART K PHASE 11.4`. Content batches then change only the content file.
+  `PART L PHASE 16`. Content batches change only the content file.
 - **No edits inside the wizard's fragments.** The Clan-step button and the "Suggested for…" panels are added by
   wrapping `CW112.render`, as BUGFIX — Creation Cap of Four already does. Build chooses the wizard's own cards.
 - **Declared dependency** on Phase 11.2 (the wizard) for Build and the panels. If 11.2 were removed, the finder
-  still works as a browser and Build is hidden. Soft use of Phase 9.1's flavour text, 14.3b's page references
-  and Phase 4.6/4.7's Path data is guarded: each section is left out when its source is absent.
-- **No save-format change.** Finder answers live only while the finder is open (and in this browser's storage
-  for "Change my answers"). The roleplay prompts write into existing Identity boxes.
-- **Tests** (one harness plus pinned negative variants, as usual): the adaptive question order; the app's
-  rankings equal the prototype's for a fixed sample of 500 answer sets (the prototype is the oracle);
-  reachability (105/105) and no short list; warnings match their rules; Build gives the same character as doing
-  it by hand and lands on Rings & Traits; every guide's suggested build passes in the wizard; 390×844 layout,
-  44 px touch targets and no page errors; removal proof and the dependency checker.
+  still works as a browser and Build is hidden. Soft, guarded use of Phase 9.1's flavour text, 14.3b's page
+  references and Phase 4.6/4.7's Path data.
+- **No save-format change.** Finder answers live only while the finder is open (and in this browser's storage for
+  "Change my answers"). Nothing is written to the character but what Build applies through the wizard.
+- **Tests:** `reliability.py`'s rules and floors, as a harness; the app's rankings equal the prototype's on 500
+  fixed answer sets (the prototype is the oracle; the review page already passes this on 400); the adaptive order;
+  GM notes match their rules; Build gives the same character as doing it by hand and lands on Rings & Traits; every
+  guide's suggested build passes in the wizard; 390×844 layout, 44 px touch targets and no page errors; removal
+  proof and the dependency checker.
 
-## 11. Content plan
+## 12. Content plan (ruling 9: Clan by Clan)
 
-**First release:** the finder, every question, every School's rating and generated card, the two guides above,
-and a short own-words introduction for each of the 25 Clans. The generated card uses the app's description,
-Family and School Traits, Skills, Outfit, Rank 1 Technique, notes and Paths. So every School is recommendable
-and useful from day one. Schools without a full guide yet say "Full guide coming".
-
-**Then guides in batches, Clan by Clan.** Each batch adds the roleplay sections and a verified suggested build:
+**First release:** the finder, every question, every School's rating and generated card, the two guides above, and
+a short own-words introduction for each of the 25 Clans. The generated card uses the app's description, Family and
+School Traits, Skills, Outfit, Rank 1 Technique, notes and Paths, so every School is useful from day one. Schools
+without a full guide say "Full guide coming". Guides then follow in batches:
 
 | Batch | Schools |
 |---|---|
@@ -781,23 +903,15 @@ and useful from day one. Schools without a full guide yet say "Full guide coming
 | 4 | Brotherhood of Shinsei (22) |
 | 5 | Spider (6) |
 
-Starting templates by play style (front line, duelist, archer, scout, court, shugenja by Element, monk) keep the
-builds consistent. Each is then adjusted to its School and checked in the wizard.
+After batch 1, guides become searchable in Search and the Library (ruling 3).
 
-## 12. Questions for the owner
+## 13. Open items for the owner
 
-1. **Phase number and place:** Part K, Phase 11.4, "Character Finder"? Another name ("Help me choose")?
-2. **The one hard filter:** should "No" to magic remove every Shugenja, or only push them down?
-3. **Entry points:** the wizard's Clan step and the Characters screen. Anywhere else, such as the Library?
-4. **Ratings:** please check the table in section 6, especially *How unusual* and *Complexity*. They are
-   judgement calls, and the checks in section 9 re-run after any change.
-5. **Question wording:** edit freely. A shorter "quick" version (questions 1–6 only) could be offered too.
-6. **Suggested builds:** hints only, as drafted? Or also a "Use this build" button, which would make it a
-   builder rather than a guide?
-7. **Roleplay prompts:** into the existing Identity boxes as drafted (no save change), or their own section
-   (a save-format change)?
-8. **Ronin:** fine to leave out until the planned ronin work adds ronin Schools?
-9. **First guides to write after the two examples:** batch order as in section 11?
+1. **Approve the rating audit** (section 10), and say where the PDFs are for the book-reading step.
+2. **Early exit after question 8 or 9?** (section 9; recommended: 9).
+3. **Tattooed monks:** keep them in with the "tattoos not modelled yet" note (recommended), or hide them until the
+   tattoo work lands?
+4. **The Part's name:** "Part L — New Player Help"?
 
 ## Files in this folder
 
@@ -806,20 +920,22 @@ builds consistent. Each is then adjusted to its School and checked in the wizard
 | `DESIGN.md` | This document |
 | `ROLLBACK.md` | Design only: deleting the folder removes it |
 | `prototype/ratings.py` | The draft rating of every School (section 6) |
-| `prototype/finder.py` | Questions, scoring and the checks in section 9: `python3 -I finder.py` |
-| `prototype/examples.py` | The three example players |
-| `prototype/tables.py` | Regenerates the three marked tables in this document (and `design-data.json`) from the two files above |
+| `prototype/finder.py` | Questions and version 2 scoring |
+| `prototype/reliability.py` | The tests and pass marks in section 9: `python3 -I reliability.py` |
+| `prototype/examples.py` | Example players |
+| `prototype/tables.py` | Regenerates the three marked tables in this document (and `design-data.json`) |
 | `prototype/extract-schools.js`, `schools.json` | Reads the School list, flavour text, pages and Families from the built app (run `python3 build.py` first) |
 | `prototype/verify-builds.js`, `builds.json` | Enters the suggested builds in the real wizard and prints the app's own XP and findings |
 | `prototype/design-data.json`, `examples.json` | Generated: the tables and example players as data |
 | `review-page/character-finder.html`, `finder-data.json` | The published review page and its data |
-| `review-page/extract-tech.js`, `build-data.py` | Rebuild `finder-data.json` from the built app and the prototype |
+| `review-page/extract-tech.js`, `build-data.py`, `check-parity.js` | Rebuild `finder-data.json`; check the page's scoring against the prototype |
 
 To re-run everything after changing a rating or a question:
 
 ```bash
 python3 build.py                                    # at the repository root
-cd "Versions/PART K — Phase 11.4 Character Finder/prototype"
+cd "Versions/PART L — Phase 16 Character Finder/prototype"
 node extract-schools.js && node verify-builds.js
-python3 -I finder.py && python3 -I examples.py && python3 -I tables.py
+python3 -I reliability.py && python3 -I examples.py && python3 -I tables.py
+cd ../review-page && node extract-tech.js && python3 -I build-data.py && node check-parity.js
 ```
