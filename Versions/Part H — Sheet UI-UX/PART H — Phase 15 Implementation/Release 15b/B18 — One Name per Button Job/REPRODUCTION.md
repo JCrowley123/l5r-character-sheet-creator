@@ -102,3 +102,19 @@ Kept in the repository: `reproduction.json`, `board-checks.json`, the board copy
 - **The "after" pictures are drawn, not built.** The engine changes words and spoken names in the page as it is drawn; a build would change the source. Layout effects of a longer word (G10 on a phone) and of the ring i (G12) are real measurements of the drawn page.
 - **Spoken names are read from the page**, in the order a screen reader uses (aria-labelledby, aria-label, content, title); no screen reader was run.
 - **Not pictured** (they need a state the test characters do not reach): the wizard's later screens (G02, G03), the Library's book menu (G03), the bonus-slot question (G05), Hida Atarasi's price question (G07), the after-roll gifts of Kakita and Toku and the Emphasis reroll's second step (G08), the Arrows window and the Rank settings steppers (G14), the wound penalty's i (G12). Each is listed on the board with its words today and after.
+
+### Round 1 revised: one change per card (`qa/mockup/`)
+
+| Script | Does |
+|---|---|
+| `cards.cjs` | for each change and each place it shows (41 places), opens the live sheet on a phone (375 × 812) twice, today and with only that change's groups drawn (`proposals.cjs`); outlines the changed button for the picture only, cuts a close-up (the width of its card or window, a band round the button), and reads its words, drawn words, spoken name and title; writes `cards.json`. Two questions the characters cannot reach are drawn by filling the sheet's question window as its own `appConfirm` does, with the sheet's own words. |
+| `cards_content.py`, `build_cards.py`, `cards-template.html` | the cards' words, and the builder (WebP at quality 76, 640 px wide at most; a "heard only" card shows one picture) |
+| `check-board.cjs` | the same light checks; `FOCUS=#reset` picks the part photographed |
+
+```powershell
+sh "$M/run.sh" "$M/cards.cjs" out/b18-cards                       # about 4 minutes
+python -X utf8 "$M/build_cards.py" out/b18-cards out/B18-MOCKUPS.html
+$env:FOCUS = "#reset"; sh "$M/run.sh" "$M/check-board.cjs" out/B18-MOCKUPS.html out/b18-cards-check
+```
+
+Kept: `cards.json`, `cards-board-checks.json`, the board copy. The close-ups are in the session notes folder (`b18-mockup-evidence/cards/`). The first board's scripts (`repro.cjs`, `content.py`, `build_board.py`, `board-template.html`) and its `reproduction.json` and `board-checks.json` stay as the record of version 1.

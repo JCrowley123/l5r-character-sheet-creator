@@ -2,7 +2,8 @@
 // B18 board, light checks: opens the board file in the QA Chromium at 375 x 812 (phone, touch) and 1280 x 900 (laptop),
 // light and dark, and records page errors, failed loads other than the font host, the page's horizontal scroll (the
 // body must not scroll sideways), every picture loaded, and the decision controls present. Pictures of the top of the
-// board and of one group are written for the record. Usage: run.sh check-board.cjs <board.html> <out folder>
+// board and of one part (FOCUS, a CSS selector; round 1: #g03) are written for the record.
+// Usage: [FOCUS=#id] run.sh check-board.cjs <board.html> <out folder>
 const {chromium}=require('playwright');const fs=require('fs'),path=require('path'),{pathToFileURL}=require('url');
 const src=path.resolve(process.argv[2]);const out=path.resolve(process.argv[3]);fs.mkdirSync(out,{recursive:true});
 // The board is published inside the artifact skeleton (a charset, a viewport with viewport-fit=cover and a small reset);
@@ -26,11 +27,11 @@ fs.writeFileSync(file,'<!doctype html><html><head><meta charset="utf-8"><meta na
      for(let a=e.parentElement;a;a=a.parentElement){const o=getComputedStyle(a).overflowX;if(o==='auto'||o==='scroll')return false;}return true;}).slice(0,8).map(e=>e.tagName+'.'+e.className);
     return {scrollWidth:de.scrollWidth,clientWidth:de.clientWidth,horizontalScroll:de.scrollWidth>de.clientWidth,wideElements:wide,
      images:document.images.length,imagesBroken:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).length,
-     sections:document.querySelectorAll('section[id^="g"]').length,decisions:document.querySelectorAll('fieldset.decide').length,
-     radios:document.querySelectorAll('fieldset.decide input[type=radio]').length,status:document.getElementById('where').textContent,
+     sections:document.querySelectorAll('section[id^="g"],article.card').length,decisions:document.querySelectorAll('fieldset.decide,fieldset.answer').length,
+     radios:document.querySelectorAll('fieldset.decide input[type=radio],fieldset.answer input[type=radio]').length,status:document.getElementById('where').textContent,
      title:document.title};});
    if(scheme==='light'){await p.screenshot({path:path.join(out,`board-${name}-top.png`)});
-    await p.locator('#g03').scrollIntoViewIfNeeded();await p.screenshot({path:path.join(out,`board-${name}-g03.png`)});}
+    await p.locator(process.env.FOCUS||'#g03').scrollIntoViewIfNeeded();await p.screenshot({path:path.join(out,`board-${name}-focus.png`)});}
    else await p.screenshot({path:path.join(out,`board-${name}-dark-top.png`)});
    R.runs.push(Object.assign({size:name,scheme,errors:errs,failedLoads:failed},m));await c.close();
   }

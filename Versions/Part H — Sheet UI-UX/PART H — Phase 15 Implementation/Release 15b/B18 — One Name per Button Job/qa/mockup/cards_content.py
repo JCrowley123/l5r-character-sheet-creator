@@ -1,0 +1,102 @@
+"""B18 board, round 1 revised: one card per button change (the owner, 25 November 2026: "show me 1 button change at a
+time with the side by side comparison"). build_cards.py reads this and cards.json (cards.cjs). Strings may hold simple
+HTML (b, i); every value read from the sheet is escaped by the builder.
+Each card: id (the answer's id on the board), group (B18's job group), part (see, hear, ask), title, where, lines
+(short, plain), extra (text-only places: [where, now, after]), options (value, label), rec (the recommended value)."""
+
+APPROVE = [('approve', 'Approve'), ('change', 'Change it'), ('keep', 'Keep as now')]
+
+CARDS = [
+ # ---------- Part 1: changes you can see ----------
+ {'id': 'reset', 'group': 'G01', 'part': 'see', 'title': '“Reset session” becomes “Reset”',
+  'where': '7 cards: Kharmic Tie, Luck, Dark Paragon, Great Destiny, Haunted, Unlucky and the Ancestor card. The Combat round counter already says Reset.',
+  'lines': ['A screen reader still hears that it is for a new session: “Reset Luck for a new session”.',
+            'Only the word changes now. Where Reset sits on each card comes later, with A04.2.'],
+  'extra': [('Great Destiny’s message when it is already used', '“… Reset session to use it again.”', '“… Reset to use it again.”'),
+            ('The Ancestor gift’s note in a roll preview', '“… ready again after Reset session on the Ancestor card …”', '“… ready again after Reset on the Ancestor card …”'),
+            ('Kharmic Tie’s i window', '“Reset session gives back all 3 …”', '“Reset gives back all 3 …”')],
+  'extra_title': 'Three lines of text that name the button change with it'},
+ {'id': 'use', 'group': 'G06', 'part': 'see', 'title': '“Use it now” becomes “Use”',
+  'where': 'The Ancestor card’s once-a-session gift (Seppun shown). Great Destiny and Quick already say Use.',
+  'lines': ['A screen reader hears “Use Seppun’s free Void Point”.']},
+ {'id': 'gotit', 'group': 'G05', 'part': 'see', 'title': '“Got it” becomes “OK”',
+  'where': '5 messages: the Kiho rules (shown), Affinity, Deficiency, a Kiho’s missing prerequisite, an Alternate Path you cannot take.',
+  'lines': ['Every message on the sheet is then closed with OK.']},
+ {'id': 'yesno', 'group': 'G05', 'part': 'see', 'title': '“Yes” and “No” become “Confirm” and “Cancel”',
+  'where': 'One question: casting a spell when no slot of that Element is left.',
+  'lines': ['Every plain question on the sheet then answers Confirm or Cancel.',
+            'Drawn in the sheet’s own question window with its own words; the test character never runs out of slots.']},
+ {'id': 'reroll', 'group': 'G08', 'part': 'see', 'title': '“Re-roll” is spelled “Reroll”',
+  'where': 'The Emphasis reroll in a roll’s result (two buttons), and Kakita’s gift.',
+  'extra': [('Kakita’s gift, after a roll', '“Re-roll with Kakita (a Void Point)”', '“Reroll with Kakita (a Void Point)”')],
+  'extra_title': 'Also (not pictured: it needs a Kakita roll)'},
+ {'id': 'luck', 'group': 'G08', 'part': 'see', 'title': '“Spend Luck” becomes “Reroll with Luck”',
+  'where': 'A roll’s result when you have Luck, and Toku’s gift.',
+  'lines': ['“GM invokes Unlucky” and “Add Sun Tao’s die” stay as they are.'],
+  'extra': [('Toku’s gift, after a roll', '“Spend Toku’s Luck (1/1)”', '“Reroll with Toku’s Luck (1/1)”')],
+  'extra_title': 'Also (not pictured: it needs a Toku roll)'},
+ {'id': 'emph', 'group': 'G10', 'part': 'see', 'title': '“+ Emph” becomes “+ Add Emphasis”',
+  'where': 'Every Skill card (Manage).',
+  'lines': ['On a phone, a Skill with no Emphasis yet gets one line taller: the count moves under the button.']},
+ {'id': 'book', 'group': 'G10', 'part': 'see', 'title': '“+Book” becomes “+ Add Book”', 'where': 'The Library page.'},
+ {'id': 'court', 'group': 'G10', 'part': 'see', 'title': '“Add court” becomes “+ Add court”',
+  'where': 'Darling of the Court’s window. The card itself already says “+ Add court”.'},
+ {'id': 'spendvoid', 'group': 'G07', 'part': 'see', 'title': '“Spend a Void Point” becomes “Spend Void”',
+  'where': 'One question: a roll with Hida Atarasi’s strike declared. Lost Love and the Void card already say Spend Void.',
+  'lines': ['Drawn in the sheet’s own question window with its own words; the test character does not have Hida Atarasi.']},
+ {'id': 'combati', 'group': 'G12', 'part': 'see', 'title': 'The Combat tab’s ⓘ and 👁 become the sheet’s ring i',
+  'where': 'Armor & TN, Weapons, each weapon and each stance (Combat tab).',
+  'lines': ['A screen reader hears “Attack stance information”, “Attack & Damage information” and so on.',
+            'The ring is larger, so the Combat cards get 120 px taller on a phone (40 px on a laptop).']},
+ {'id': 'pdf', 'group': 'G16', 'part': 'see', 'title': '“Export to PDF” becomes “Export PDF”',
+  'where': 'A saved character’s ⋯ menu on the Characters page. It then pairs with “Export JSON” above it.'},
+ {'id': 'chooseagain', 'group': 'G02', 'part': 'see', 'title': '“Choose again” becomes “Change”', 'nopic': True,
+  'where': 'Two places in the creation wizard (Skills and Advantages; free choices), under a choice you already made.',
+  'lines': ['Not pictured: the wizard’s later screens need a full walk-through. Everywhere else on the sheet this button already says Change.'],
+  'extra': [('Creation wizard, under a choice already made', '“Choose again”', '“Change”')],
+  'extra_title': 'The words'},
+ # ---------- Part 2: changes you cannot see ----------
+ {'id': 'rowx', 'group': 'G03', 'part': 'hear', 'title': 'The ✕ on a row is read as “Remove …”',
+  'where': 'Every ✕ on a Skill, an Emphasis, an Advantage or Disadvantage, an item and a weapon.',
+  'lines': ['It looks the same. Today a screen reader hears only “✕” and cannot tell which row it belongs to.',
+            '<b>Delete</b> stays for erasing a whole saved character or a Library book. The written word <b>Remove</b> stays in the creation wizard and the court window.',
+            'If you choose “Use Delete instead”, these ✕ are read “Delete …” and the written Remove buttons say Delete.'],
+  'options': [('approve', 'Approve “Remove”'), ('delete', 'Use “Delete” instead'), ('change', 'Change it'), ('keep', 'Keep as now')]},
+ {'id': 'cornerx', 'group': 'G04', 'part': 'hear', 'title': 'The ✕ in a window’s corner is read as “Close …” or “Cancel …”',
+  'where': 'All 31 windows. Close when a window only shows you something; Cancel when it holds a choice you have not kept yet.',
+  'lines': ['It looks the same. Today a screen reader hears only “✕”.']},
+ {'id': 'changechoose', 'group': 'G02', 'part': 'hear', 'title': 'Change and Choose… are read with the card’s name',
+  'where': 'Every Advantage and Disadvantage card with Change or Choose… (Manage).',
+  'lines': ['It looks the same. Today most are heard as “Configure …” or just “Choose…”, so a voice-control user cannot say the word they see.']},
+ {'id': 'info', 'group': 'G12', 'part': 'hear', 'title': 'Every i is read as “… information”',
+  'where': 'The i’s that are heard another way today: the Ancestor section, Advantage cards (“Explain: …”), Armor TN and the wound penalty.',
+  'lines': ['It looks the same. Most i’s already work this way (Skills, Void Points, Kiho rules, Kharmic Tie).'],
+  'extra': [('The wound penalty’s i (shown while you are wounded)', 'heard “Wound penalty: how it is worked out”', 'heard “Wound penalty information”')],
+  'extra_title': 'Also (not pictured)'},
+ {'id': 'steppers', 'group': 'G14', 'part': 'hear', 'title': 'Every − and + is read as “Decrease …” and “Increase …”',
+  'where': 'Honour, Glory, Status and Taint; the Void Ring; the Add Arrows window; Rank settings. Wounds already work this way.',
+  'lines': ['It looks the same. Today the same buttons are heard as Add/Subtract, One more/One fewer, Raise/Lower or Gain/Lose, and the Void Ring’s have no name at all.',
+            'Unlucky’s − and + stay as they are: they record what the GM did.']},
+ {'id': 'clear', 'group': 'G09', 'part': 'hear', 'title': 'The dice tray’s Clear buttons say what they clear',
+  'where': 'The dice tray’s two Clear buttons. The word stays Clear.',
+  'lines': ['It looks the same. A screen reader hears “Clear the dice” and “Clear the other dice” instead of “Clear” twice.']},
+ # ---------- Part 3: two questions ----------
+ {'id': 'touch', 'group': 'G11', 'part': 'ask', 'title': 'Touch of the Void: keep “Keep control (TN 30)”?',
+  'where': 'Touch of the Void’s button.',
+  'lines': ['Your ruling on 24 November said “Check (TN 30)”, to match the other check buttons.',
+            'The same day, group 2 renamed it “Keep control (TN 30)” (you approved it), and the other check buttons stopped saying Check. So “Check (TN 30)” would now be the odd one out.',
+            'The picture shows it now, and with your ruling’s word.'],
+  'labels': ('Now', 'With “Check (TN 30)”'),
+  'options': [('keep', 'Keep “Keep control (TN 30)”'), ('approve', 'Use “Check (TN 30)”'), ('change', 'Change it')], 'rec': 'keep'},
+]
+
+ORDER = {'id': 'order', 'group': 'order', 'part': 'ask', 'title': 'When should these changes be built?',
+ 'lines': ['15b’s order today: group 3 (reference text: B06, B10, B11, B16), group 4 (Search controls: B07, B08), group 5 (print and About: B12, B13).',
+           'I recommend <b>next, before group 3</b>. Groups 3 to 5 add or rework buttons (an i for the Clan and School text, Search’s filters, About in the ⋯ menu). If these words are on the sheet first, those groups use them from the start, and nothing is renamed twice.'],
+ 'options': [('next', 'Next, before group 3'), ('after3', 'After group 3'), ('last', 'Last, after group 5'), ('change', 'Somewhere else')], 'rec': 'next'}
+
+ALREADY = ['Lost Love’s button already says “Steady yourself — Spend Void” (group 2).',
+           'Quick’s button already says “Use” (group 2).',
+           'Kharmic Tie’s Change is already heard as “Change Kharmic Tie”, and it has one i (group 1).']
+
+STAYING = 'Undo · moving around the sheet · Apply buttons · Manage and Done · choosing from a list · ticks in the roll preview · pips · headings that open and close · one-off actions.'
