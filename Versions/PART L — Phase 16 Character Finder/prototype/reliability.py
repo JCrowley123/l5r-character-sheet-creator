@@ -14,7 +14,7 @@ Pass marks are of two kinds. RULES must always hold. FLOORS were set at the valu
 passing quietly. Where a TARGET differs from the floor, the target is what "reliable" was agreed to mean
 (25 November: a player who roughly knows what they want finds it in the top six 9 times in 10).
 """
-import os, sys, random, statistics as st
+import os, sys, json, random, statistics as st
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from finder import (Q, SCHOOLS, CONTRIB, ALL_QUESTIONS, EARLY_EXIT_AFTER, questions_for, recommend, ranked, score,
@@ -154,7 +154,30 @@ def run():
     out['persona_early_exit_top6'] = 100 * early_top6 / n
     out['persona_hard_to_find'] = sum(1 for v in per.values() if v < 0.25)
     out['_hard_to_find'] = sorted((v, k) for k, v in per.items() if v < 0.25)
+
+    # 5. Real players (rating audit, step 5): the owner's group answer as their own characters on the review page
+    # and send the answer code it shows. Each player's real School should be in their top six.
+    known = load_known()
+    found = []
+    for k in known:
+        h, s, w, u = recommend(parse_code(k['code']))
+        found.append(k['school'] in {x['name'] for x in h + s})
+    out['known_characters'] = (100.0 * sum(found) / len(found)) if found else None
+    out['_known_missed'] = [k['who'] + ': ' + k['school'] for k, f in zip(known, found) if not f]
     return out
+
+KNOWN = os.path.join(HERE, '..', 'audit', 'known-characters.json')
+
+def load_known():
+    return json.load(open(KNOWN, encoding='utf-8')) if os.path.exists(KNOWN) else []
+
+def parse_code(code):
+    """An answer code from the review page, e.g. "v2|magic:2|complexity:0|...". The version guards against a code
+    made before the questions changed."""
+    parts = code.strip().split('|')
+    if parts[0] != 'v2':
+        raise ValueError('answer code from another version of the questions: ' + parts[0])
+    return {q: int(i) for q, i in (p.split(':') for p in parts[1:])}
 
 #   key: (label, kind, comparison, pass mark, target or None, unit)
 MARKS = [
@@ -167,7 +190,7 @@ MARKS = [
  ('persona_top6', 'Player who wants School X finds it in the top six', 'floor', '>=', 81.0, 90.0, '%'),
  ('persona_best', 'Player who wants School X gets it as a best match', 'floor', '>=', 62.0, None, '%'),
  ('persona_hard_to_find', 'Schools such a player finds less than a quarter of the time', 'floor', '<=', 5, 0, ''),
- ('persona_early_exit_top6', 'The same, stopping at "See my results now" after question 8', 'floor', '>=', 73.0, None, '%'),
+ ('persona_early_exit_top6', 'The same, stopping at "See my results now" after question 9', 'floor', '>=', 77.9, None, '%'),
  ('classic_not_unusual', '"Classic samurai": best matches that are not Unusual', 'floor', '>=', 98.0, None, '%'),
  ('simple_not_involved', '"Keep it simple" (no magic asked): best matches that are not Involved', 'floor', '>=', 89.0, None, '%'),
  ('sword_bushi', '"A sword": best matches that are Bushi', 'floor', '>=', 87.0, None, '%'),
@@ -182,6 +205,7 @@ MARKS = [
  ('reach_first', 'Schools that can be the FIRST best match (information only)', 'info', None, None, 105, ''),
  ('no_magic_sees_shugenja_in_also', 'Magic "No": players shown a Shugenja under "Also worth a look" (information only)', 'info', None, None, None, '%'),
  ('said_no_but_fits_shugenja_offered', 'Fits a Shugenja School but said "No": still offered it under "Also worth a look"', 'floor', '>=', 15.0, None, '%'),
+ ('known_characters', "The owner's group: each player's real School is in their top six", 'rule', '==', 100.0, None, '%'),
 ]
 
 def check(value, op, mark):
@@ -192,6 +216,9 @@ if __name__ == '__main__':
     failed = 0
     for key, label, kind, op, mark, target, unit in MARKS:
         v = out[key]
+        if v is None:
+            print('%-4s %-82s %s' % ('INFO', label, 'none recorded yet (audit/known-characters.json)'))
+            continue
         shown = ('yes' if v else 'no') if isinstance(v, bool) else (('%.2f' if key.startswith('bias') or key.startswith('stability_six') else '%.1f') % v + unit if isinstance(v, float) else '%s%s' % (v, unit))
         if kind == 'info':
             status = 'INFO'
@@ -201,5 +228,6 @@ if __name__ == '__main__':
         tail = '' if kind == 'info' else ('  (pass mark %s %s%s)' % (op, mark, '' if target is None else ', target %s' % target))
         print('%-4s %-82s %s%s' % (status, label, shown, tail))
     print('hard to find:', [(k, v) for v, k in out['_hard_to_find']])
+    if out['_known_missed']: print("group players whose School was not in their top six:", out['_known_missed'])
     print('%d failed' % failed)
     sys.exit(1 if failed else 0)

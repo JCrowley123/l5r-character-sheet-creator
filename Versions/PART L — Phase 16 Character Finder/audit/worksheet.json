@@ -1,0 +1,8020 @@
+[
+ {
+  "name": "Hida Bushi",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.106",
+  "labels": [
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 11,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "monster-hunter",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "bodyguard",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Stealth)."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 2,
+   "why": "Rank 1 has: Stealth",
+   "agree": false
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 106,
+   "pdf_pages": [
+    109,
+    110,
+    111
+   ]
+  }
+ },
+ {
+  "name": "Hida Pragmatist [Bushi]",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Emerald Empire p.247",
+  "labels": [
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "bodyguard",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "monster-hunter",
+    "main": false,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 247,
+   "pdf_pages": [
+    248,
+    249,
+    250
+   ]
+  }
+ },
+ {
+  "name": "Hiruma Bushi",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.108",
+  "labels": [
+   {
+    "label": "skirmisher",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "monster-hunter",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "stealth",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "archer",
+    "main": false,
+    "score": 2,
+    "where": [
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "frontline",
+    "score": 4,
+    "where": [
+     "Rank 2 Technique",
+     "description"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "wilds",
+    "score": 2,
+    "where": [
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while).",
+   "Near-twin of \"Hiruma Scout [Bushi]\" (rated 86% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 2,
+   "why": "Rank 1 has: while",
+   "agree": false
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 108,
+   "pdf_pages": [
+    111,
+    112,
+    113
+   ]
+  },
+  "twins": [
+   {
+    "with": "Hiruma Scout [Bushi]",
+    "similarity": 0.86
+   }
+  ]
+ },
+ {
+  "name": "Kaiu Engineer [Artisan/Bushi]",
+  "clans": [
+   "Crab"
+  ],
+  "source": "The Great Clans p.39",
+  "labels": [
+   {
+    "label": "craft",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "commander",
+    "main": false,
+    "score": 7,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": false,
+    "score": 2,
+    "where": [
+     "Rank 3 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 4,
+    "where": [
+     "description",
+     "Rank 4 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Void Point, instead, spend",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 39,
+   "pdf_pages": [
+    40,
+    41,
+    42
+   ]
+  }
+ },
+ {
+  "name": "Kuni Shugenja",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.107",
+  "labels": [
+   {
+    "label": "monster-hunter",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "battle-magic",
+    "main": true,
+    "score": 2,
+    "where": [
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "library",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"library\" right? Libraries, temples and places of study."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 107,
+   "pdf_pages": [
+    110,
+    111,
+    112
+   ]
+  }
+ },
+ {
+  "name": "Kuni Witch-Hunter [Monk]",
+  "clans": [
+   "Crab"
+  ],
+  "source": "The Great Clans p.40",
+  "labels": [
+   {
+    "label": "monster-hunter",
+    "main": true,
+    "score": 11,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "investigator",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "traveller",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "forbidden",
+    "score": 6,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "wall",
+    "score": 6,
+    "where": [
+     "Clan",
+     "description",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Should \"forbidden\" be added? Uses forbidden power: maho, blood magic, the Nothing."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Contested, against, per",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 40,
+   "pdf_pages": [
+    41,
+    42,
+    43
+   ]
+  }
+ },
+ {
+  "name": "Toritaka Bushi",
+  "clans": [
+   "Crab",
+   "Falcon"
+  ],
+  "source": "Core Rulebook p.219",
+  "labels": [
+   {
+    "label": "monster-hunter",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "beast",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "wilds",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"beast\" right? Fights or works with an animal companion.",
+   "Is the home \"wilds\" right? Forests and wild places.",
+   "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan)."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: against",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": false
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 219,
+   "pdf_pages": [
+    222,
+    223,
+    224
+   ]
+  }
+ },
+ {
+  "name": "Yasuki Courtier",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.107",
+  "labels": [
+   {
+    "label": "merchant",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "schemer",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": false,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 4,
+    "where": [
+     "Courtier School",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "sea",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"sea\" right? The sea, islands and ports.",
+   "Near-twin of \"Yoritomo Courtier\" (rated 83% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Contested, Raises?",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 107,
+   "pdf_pages": [
+    110,
+    111,
+    112
+   ]
+  },
+  "twins": [
+   {
+    "with": "Yoritomo Courtier",
+    "similarity": 0.83
+   }
+  ]
+ },
+ {
+  "name": "Hiruma Scout [Bushi]",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Imperial Histories 1 p.147 (no outfit specified)",
+  "labels": [
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "skirmisher",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "monster-hunter",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 4 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 4,
+    "where": [
+     "Clan",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "wilds",
+    "score": 2,
+    "where": [
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Stealth, surprised, unaware, unless",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 147,
+   "pdf_pages": [
+    148,
+    149,
+    150
+   ]
+  }
+ },
+ {
+  "name": "Asahina Shugenja",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.110",
+  "labels": [
+   {
+    "label": "healer",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "protector-magic",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "artist",
+    "main": false,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "battle-magic",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "library",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
+   "Is the home \"library\" right? Libraries, temples and places of study."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 110,
+   "pdf_pages": [
+    113,
+    114,
+    115
+   ]
+  }
+ },
+ {
+  "name": "Daidoji Iron Warrior [Bushi]",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.111",
+  "labels": [
+   {
+    "label": "bodyguard",
+    "main": true,
+    "score": 8,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 3 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "commander",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: per).",
+   "Near-twin of \"Lion Elite Spearmen [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 2,
+   "why": "Rank 1 has: per",
+   "agree": false
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 111,
+   "pdf_pages": [
+    114,
+    115,
+    116
+   ]
+  },
+  "twins": [
+   {
+    "with": "Lion Elite Spearmen [Bushi]",
+    "similarity": 1.0
+   }
+  ]
+ },
+ {
+  "name": "Daidoji Scout [Bushi]",
+  "clans": [
+   "Crane"
+  ],
+  "source": "The Great Clans p.70",
+  "labels": [
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "skirmisher",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "archer",
+    "main": false,
+    "score": 4,
+    "where": [
+     "Rank 4 Technique",
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "battlefield",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "home": "wilds",
+    "score": 2,
+    "where": [
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Stealth",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 70,
+   "pdf_pages": [
+    71,
+    72,
+    73
+   ]
+  }
+ },
+ {
+  "name": "Doji Courtier",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.110",
+  "labels": [
+   {
+    "label": "diplomat",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "artist",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 8,
+    "where": [
+     "Clan",
+     "Courtier School",
+     "description",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+   "Complexity: rated Some extra, rubric says Involved (tattoos or kiho)."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 3,
+   "why": "tattoos or kiho",
+   "agree": false
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 110,
+   "pdf_pages": [
+    113,
+    114,
+    115
+   ]
+  }
+ },
+ {
+  "name": "Doji Magistrate [Bushi]",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Emerald Empire p.170",
+  "labels": [
+   {
+    "label": "investigator",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "bodyguard",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "unarmed",
+    "score": 7,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Skills"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: unaware, unless",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 170,
+   "pdf_pages": [
+    171,
+    172,
+    173
+   ]
+  }
+ },
+ {
+  "name": "Kakita Bushi",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.109",
+  "labels": [
+   {
+    "label": "duelist",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "artist",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "skirmisher",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Focus, while",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 109,
+   "pdf_pages": [
+    112,
+    113,
+    114
+   ]
+  }
+ },
+ {
+  "name": "Kakita Artisan",
+  "clans": [
+   "Crane"
+  ],
+  "source": "The Great Clans p.71",
+  "labels": [
+   {
+    "label": "artist",
+    "main": true,
+    "score": 13,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?, choose, when",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 71,
+   "pdf_pages": [
+    72,
+    73,
+    74
+   ]
+  }
+ },
+ {
+  "name": "Kitsuki Investigator [Courtier]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.114",
+  "labels": [
+   {
+    "label": "investigator",
+    "main": true,
+    "score": 11,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "diplomat",
+    "main": false,
+    "score": 3,
+    "where": [
+     "Rank 4 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "schemer",
+    "score": 4,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 5 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 4,
+    "where": [
+     "Courtier School",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Should \"schemer\" be added? Gets their way by secrets, leverage, deceit or fear."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 114,
+   "pdf_pages": [
+    117,
+    118,
+    119
+   ]
+  }
+ },
+ {
+  "name": "Mirumoto Bushi",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.112",
+  "labels": [
+   {
+    "label": "duelist",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 2 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
+   "Near-twin of \"Mirumoto Taoist Swordsman [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 112,
+   "pdf_pages": [
+    115,
+    116,
+    117
+   ]
+  },
+  "twins": [
+   {
+    "with": "Mirumoto Taoist Swordsman [Bushi]",
+    "similarity": 1.0
+   }
+  ]
+ },
+ {
+  "name": "Mirumoto Taoist Swordsman [Bushi]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Emerald Empire p.221",
+  "labels": [
+   {
+    "label": "duelist",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Complexity: rated Some extra, rubric says Involved (tattoos or kiho)."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 3,
+   "why": "tattoos or kiho",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 221,
+   "pdf_pages": [
+    222,
+    223,
+    224
+   ]
+  }
+ },
+ {
+  "name": "Tamori Shugenja",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.113",
+  "labels": [
+   {
+    "label": "strange-magic",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "battle-magic",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "healer",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+   "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 113,
+   "pdf_pages": [
+    116,
+    117,
+    118
+   ]
+  }
+ },
+ {
+  "name": "The Togashi Tattooed Order [Monk]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.114",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "traveller",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan)."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "tattoos or kiho",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": false
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 114,
+   "pdf_pages": [
+    117,
+    118,
+    119
+   ]
+  }
+ },
+ {
+  "name": "The Hoshi Tsurui Zumi Order [Monk]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Imperial Histories 1 p.214",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Near-twin of \"The Hitomi Kikage Zumi Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 214,
+   "pdf_pages": [
+    215,
+    216,
+    217
+   ]
+  },
+  "twins": [
+   {
+    "with": "The Hitomi Kikage Zumi Order [Monk]",
+    "similarity": 0.8
+   },
+   {
+    "with": "Shinmaki Order [Monk]",
+    "similarity": 0.75
+   }
+  ]
+ },
+ {
+  "name": "The Hitomi Kikage Zumi Order [Monk]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Imperial Histories 1 p.215",
+  "labels": [
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 11,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "all-out",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "tattoos or kiho",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 215,
+   "pdf_pages": [
+    216,
+    217,
+    218
+   ]
+  }
+ },
+ {
+  "name": "Akodo Bushi",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Core Rulebook p.116",
+  "labels": [
+   {
+    "label": "commander",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": false,
+    "score": 2,
+    "where": [
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "duelist",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "battlefield",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Raises?, against, choose, when)."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?, against, choose, when",
+   "agree": false
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 116,
+   "pdf_pages": [
+    119,
+    120,
+    121
+   ]
+  }
+ },
+ {
+  "name": "Ikoma Bard [Courtier]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Core Rulebook p.118",
+  "labels": [
+   {
+    "label": "artist",
+    "main": true,
+    "score": 11,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 3 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 4,
+    "where": [
+     "Rank 5 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Courtier School"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 4,
+    "where": [
+     "Clan",
+     "Rank 3 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: per",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 118,
+   "pdf_pages": [
+    121,
+    122,
+    123
+   ]
+  }
+ },
+ {
+  "name": "Ikoma Lion’s Shadow [Bushi]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Emerald Empire p.109",
+  "labels": [
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "battlefield",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "underworld",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Contested, against, per",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 109,
+   "pdf_pages": [
+    110,
+    111,
+    112
+   ]
+  }
+ },
+ {
+  "name": "Kitsu Shugenja",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Core Rulebook p.117",
+  "labels": [
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "battle-magic",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "battlefield",
+    "score": 6,
+    "where": [
+     "Clan",
+     "description",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "library",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"library\" right? Libraries, temples and places of study."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 117,
+   "pdf_pages": [
+    120,
+    121,
+    122
+   ]
+  }
+ },
+ {
+  "name": "Lion Elite Spearmen [Bushi]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Naishou Province p.7",
+  "labels": [
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "bodyguard",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "commander",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "battlefield",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "court",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Naishou Province",
+   "file": "Legend of the Five Rings Naishou Province L5R-4e.pdf",
+   "printed_page": 7,
+   "pdf_pages": [
+    8,
+    9,
+    10
+   ]
+  }
+ },
+ {
+  "name": "Matsu Beastmaster [Bushi]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "The Great Clans p.136",
+  "labels": [
+   {
+    "label": "beast",
+    "main": true,
+    "score": 13,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 3 Technique",
+     "Rank 5 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "battlefield",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "wilds",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"wilds\" right? Forests and wild places.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 136,
+   "pdf_pages": [
+    137,
+    138,
+    139
+   ]
+  }
+ },
+ {
+  "name": "Matsu Berserker [Bushi]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Core Rulebook p.119",
+  "labels": [
+   {
+    "label": "all-out",
+    "main": true,
+    "score": 8,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 2,
+    "where": [
+     "Rank 3 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "battlefield",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 119,
+   "pdf_pages": [
+    122,
+    123,
+    124
+   ]
+  }
+ },
+ {
+  "name": "Agasha Shugenja",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Core Rulebook p.125",
+  "labels": [
+   {
+    "label": "strange-magic",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "battle-magic",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "library",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 125,
+   "pdf_pages": [
+    128,
+    129,
+    130
+   ]
+  }
+ },
+ {
+  "name": "Asako Henshin [Monk]",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "The Great Clans p.199",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 5 Technique",
+     "description",
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "unarmed",
+    "score": 5,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "Skills"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "library",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
+   "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Contested, Raises?, if, per, unaware).",
+   "Near-twin of \"First Dawn Scholars [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 2,
+   "why": "Rank 1 has: Contested, Raises?, if, per, unaware",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 199,
+   "pdf_pages": [
+    200,
+    201,
+    202
+   ]
+  },
+  "twins": [
+   {
+    "with": "First Dawn Scholars [Monk]",
+    "similarity": 1.0
+   }
+  ]
+ },
+ {
+  "name": "Asako Loremaster [Courtier]",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Core Rulebook p.124",
+  "labels": [
+   {
+    "label": "scholar",
+    "main": true,
+    "score": 11,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": false,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "library",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "court",
+    "score": 6,
+    "where": [
+     "Courtier School",
+     "description",
+     "Rank 2 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?, Void Point, instead, spend",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 124,
+   "pdf_pages": [
+    127,
+    128,
+    129
+   ]
+  }
+ },
+ {
+  "name": "Isawa Shugenja",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Core Rulebook p.124",
+  "labels": [
+   {
+    "label": "battle-magic",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "scholar",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "library",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 124,
+   "pdf_pages": [
+    127,
+    128,
+    129
+   ]
+  }
+ },
+ {
+  "name": "Shiba Artisan [Courtier]",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Emerald Empire p.122",
+  "labels": [
+   {
+    "label": "artist",
+    "main": true,
+    "score": 13,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "library",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Void Point, choose, instead, spend",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 122,
+   "pdf_pages": [
+    123,
+    124,
+    125
+   ]
+  }
+ },
+ {
+  "name": "Shiba Bushi",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Core Rulebook p.123",
+  "labels": [
+   {
+    "label": "bodyguard",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "library",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "court",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Void Point, instead, spend",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 123,
+   "pdf_pages": [
+    126,
+    127,
+    128
+   ]
+  }
+ },
+ {
+  "name": "Bayushi Bushi",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.126",
+  "labels": [
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "stealth",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "duelist",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "frontline",
+    "score": 4,
+    "where": [
+     "Rank 4 Technique",
+     "Rank 5 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "underworld",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: against",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 126,
+   "pdf_pages": [
+    129,
+    130,
+    131
+   ]
+  }
+ },
+ {
+  "name": "Bayushi Courtier",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.127",
+  "labels": [
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "investigator",
+    "main": false,
+    "score": 3,
+    "where": [
+     "Rank 2 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "diplomat",
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "Skills"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 6,
+    "where": [
+     "Clan",
+     "Courtier School",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Should \"diplomat\" be added? Wins people over: courtesy, alliances, favours, mediation and calm."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Contested, Raises?, when",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 127,
+   "pdf_pages": [
+    130,
+    131,
+    132
+   ]
+  }
+ },
+ {
+  "name": "Shosuro Actor [Ninja]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "The Great Clans p.227",
+  "labels": [
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "artist",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Void Point, instead, spend",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "ninja",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 227,
+   "pdf_pages": [
+    228,
+    229,
+    230
+   ]
+  }
+ },
+ {
+  "name": "Shosuro Infiltrator [Ninja]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.128",
+  "labels": [
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "skirmisher",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "Rank 3 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Stealth",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "ninja",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 128,
+   "pdf_pages": [
+    131,
+    132,
+    133
+   ]
+  }
+ },
+ {
+  "name": "Soshi Magistrate [Bushi]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Emerald Empire p.171",
+  "labels": [
+   {
+    "label": "investigator",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "unarmed",
+    "main": false,
+    "score": 7,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "schemer",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 5 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "frontline",
+    "score": 6,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "underworld",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 171,
+   "pdf_pages": [
+    172,
+    173,
+    174
+   ]
+  }
+ },
+ {
+  "name": "Soshi Shugenja",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.127",
+  "labels": [
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "strange-magic",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
+   "Is \"strange-magic\" right? Unusual magic: alchemy, experiment, talismans, foreign or multi-element spells."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 127,
+   "pdf_pages": [
+    130,
+    131,
+    132
+   ]
+  }
+ },
+ {
+  "name": "Yogo Wardmaster [Shugenja]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "The Great Clans p.229",
+  "labels": [
+   {
+    "label": "protector-magic",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "monster-hunter",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 229,
+   "pdf_pages": [
+    230,
+    231,
+    232
+   ]
+  }
+ },
+ {
+  "name": "Horiuchi Shugenja",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "The Great Clans p.257",
+  "labels": [
+   {
+    "label": "strange-magic",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "traveller",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Near-twin of \"Iuchi Shugenja\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 257,
+   "pdf_pages": [
+    258,
+    259,
+    260
+   ]
+  },
+  "twins": [
+   {
+    "with": "Iuchi Shugenja",
+    "similarity": 0.8
+   }
+  ]
+ },
+ {
+  "name": "Ide Emissary [Courtier]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.131",
+  "labels": [
+   {
+    "label": "diplomat",
+    "main": true,
+    "score": 11,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "traveller",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "court",
+    "score": 4,
+    "where": [
+     "Courtier School",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?, instead",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 131,
+   "pdf_pages": [
+    134,
+    135,
+    136
+   ]
+  }
+ },
+ {
+  "name": "Iuchi Shugenja",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.130",
+  "labels": [
+   {
+    "label": "traveller",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "strange-magic",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "nature",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "skirmisher",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"nature\" right? Tied to nature: animals, forests, weather, the sea and storms.",
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 130,
+   "pdf_pages": [
+    133,
+    134,
+    135
+   ]
+  }
+ },
+ {
+  "name": "Moto Bushi",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.130",
+  "labels": [
+   {
+    "label": "cavalry",
+    "main": true,
+    "score": 8,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "all-out",
+    "main": false,
+    "score": 4,
+    "where": [
+     "Rank 5 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: mounted, while",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 130,
+   "pdf_pages": [
+    133,
+    134,
+    135
+   ]
+  }
+ },
+ {
+  "name": "Moto Death Priest [Shugenja]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Imperial Histories 1 p.240",
+  "labels": [
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "strange-magic",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "battle-magic",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"spirits\" right? Deals with spirits, ancestors, the dead, the Fortunes or the Spirit Realms.",
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 240,
+   "pdf_pages": [
+    241,
+    242,
+    243
+   ]
+  }
+ },
+ {
+  "name": "Moto Vindicator [Bushi]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "The Great Clans p.258",
+  "labels": [
+   {
+    "label": "monster-hunter",
+    "main": true,
+    "score": 9,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "cavalry",
+    "main": true,
+    "score": 2,
+    "where": [
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "frontline",
+    "score": 4,
+    "where": [
+     "Rank 3 Technique",
+     "Rank 5 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: against, choose",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 258,
+   "pdf_pages": [
+    259,
+    260,
+    261
+   ]
+  }
+ },
+ {
+  "name": "Shinjo Bushi",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Emerald Empire p.31",
+  "labels": [
+   {
+    "label": "cavalry",
+    "main": true,
+    "score": 10,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "duelist",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "traveller",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "archer",
+    "score": 4,
+    "where": [
+     "Rank 3 Technique",
+     "Skills",
+     "Outfit"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 4,
+    "where": [
+     "Clan",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Should \"archer\" be added? Fights with the bow: teaches Kyujutsu, and a Technique or the description centres on bows."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Void Point, spend, when",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 31,
+   "pdf_pages": [
+    32,
+    33,
+    34
+   ]
+  }
+ },
+ {
+  "name": "Utaku Battle Maiden [Bushi]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.132",
+  "labels": [
+   {
+    "label": "cavalry",
+    "main": true,
+    "score": 12,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "bodyguard",
+    "main": false,
+    "score": 2,
+    "where": [
+     "Rank 4 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "skirmisher",
+    "score": 4,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 6,
+    "where": [
+     "Clan",
+     "description",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: instead, mounted, per, while",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 132,
+   "pdf_pages": [
+    135,
+    136,
+    137
+   ]
+  }
+ },
+ {
+  "name": "Utaku Mounted Infantry [Bushi]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Imperial Histories 2 p.168",
+  "labels": [
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "traveller",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "cavalry",
+    "main": false,
+    "score": 3,
+    "where": [
+     "description",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: choose)."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 2,
+   "why": "Rank 1 has: choose",
+   "agree": false
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 2",
+   "file": "Legend of the Five Rings Imperial Histories 2 L5R-4e.pdf",
+   "printed_page": 168,
+   "pdf_pages": [
+    169,
+    170,
+    171
+   ]
+  }
+ },
+ {
+  "name": "Chuda Shugenja",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.213",
+  "labels": [
+   {
+    "label": "forbidden",
+    "main": true,
+    "score": 6,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Clan: Spider"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "monster-hunter",
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Spider Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 213,
+   "pdf_pages": [
+    216,
+    217,
+    218
+   ]
+  }
+ },
+ {
+  "name": "Daigotsu Bushi",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.212",
+  "labels": [
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 3 Technique",
+     "Rank 4 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "forbidden",
+    "main": false,
+    "score": 4,
+    "where": [
+     "description",
+     "Clan: Spider"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "monster-hunter",
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Skills"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: choose",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Spider Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 212,
+   "pdf_pages": [
+    215,
+    216,
+    217
+   ]
+  }
+ },
+ {
+  "name": "Daigotsu Courtier",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.213",
+  "labels": [
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "forbidden",
+    "main": false,
+    "score": 4,
+    "where": [
+     "description",
+     "Clan: Spider"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "monster-hunter",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 6,
+    "where": [
+     "Courtier School",
+     "description",
+     "Rank 2 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?, when",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Spider Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 213,
+   "pdf_pages": [
+    216,
+    217,
+    218
+   ]
+  }
+ },
+ {
+  "name": "Goju Ninja",
+  "clans": [
+   "Spider"
+  ],
+  "source": "The Great Clans p.280",
+  "labels": [
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "forbidden",
+    "main": true,
+    "score": 4,
+    "where": [
+     "description",
+     "Clan: Spider"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "skirmisher",
+    "score": 4,
+    "where": [
+     "Rank 4 Technique",
+     "Rank 5 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+   "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Raises?)."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?",
+   "agree": false
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Spider Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 280,
+   "pdf_pages": [
+    281,
+    282,
+    283
+   ]
+  }
+ },
+ {
+  "name": "Ninube Shugenja",
+  "clans": [
+   "Spider"
+  ],
+  "source": "The Great Clans p.281",
+  "labels": [
+   {
+    "label": "forbidden",
+    "main": true,
+    "score": 4,
+    "where": [
+     "description",
+     "Clan: Spider"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Spider Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 281,
+   "pdf_pages": [
+    282,
+    283,
+    284
+   ]
+  }
+ },
+ {
+  "name": "The Order of the Spider Monks [Monk]",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.215",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "forbidden",
+    "main": false,
+    "score": 2,
+    "where": [
+     "Clan: Spider"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "frontline",
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Skills"
+    ]
+   },
+   {
+    "label": "monster-hunter",
+    "score": 6,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "Complexity: rated Involved, rubric says Some extra (Rank 1 has: against)."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 2,
+   "why": "Rank 1 has: against",
+   "agree": false
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Spider Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 215,
+   "pdf_pages": [
+    218,
+    219,
+    220
+   ]
+  }
+ },
+ {
+  "name": "Miya Herald [Courtier]",
+  "clans": [
+   "Imperial"
+  ],
+  "source": "Core Rulebook p.230",
+  "labels": [
+   {
+    "label": "diplomat",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "traveller",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 6,
+    "where": [
+     "Clan",
+     "Courtier School",
+     "Rank 5 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Void Point, spend",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 230,
+   "pdf_pages": [
+    233,
+    234,
+    235
+   ]
+  }
+ },
+ {
+  "name": "Otomo Courtier",
+  "clans": [
+   "Imperial"
+  ],
+  "source": "Core Rulebook p.229",
+  "labels": [
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 8,
+    "where": [
+     "Clan",
+     "Courtier School",
+     "description",
+     "Rank 2 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Contested",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 229,
+   "pdf_pages": [
+    232,
+    233,
+    234
+   ]
+  }
+ },
+ {
+  "name": "Seppun Guardsman [Bushi]",
+  "clans": [
+   "Imperial"
+  ],
+  "source": "Core Rulebook p.228",
+  "labels": [
+   {
+    "label": "bodyguard",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 5 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "stealth",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique"
+    ]
+   },
+   {
+    "label": "investigator",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 4,
+    "where": [
+     "Clan",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Should \"stealth\" be added? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Should \"investigator\" be added? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 228,
+   "pdf_pages": [
+    231,
+    232,
+    233
+   ]
+  }
+ },
+ {
+  "name": "Seppun Shugenja",
+  "clans": [
+   "Imperial"
+  ],
+  "source": "Core Rulebook p.228",
+  "labels": [
+   {
+    "label": "protector-magic",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "battle-magic",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "bodyguard",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+   "Should \"bodyguard\" be added? Protects others: yojimbo, guarding a charge, defending allies."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 228,
+   "pdf_pages": [
+    231,
+    232,
+    233
+   ]
+  }
+ },
+ {
+  "name": "Ichiro Bushi",
+  "clans": [
+   "Badger"
+  ],
+  "source": "Core Rulebook p.215",
+  "labels": [
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 3 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "home": "wall",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"mountains\" right? Mountains and monasteries.",
+   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 215,
+   "pdf_pages": [
+    218,
+    219,
+    220
+   ]
+  }
+ },
+ {
+  "name": "Komori Shugenja",
+  "clans": [
+   "Bat"
+  ],
+  "source": "Core Rulebook p.216",
+  "labels": [
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "nature",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "traveller",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"nature\" right? Tied to nature: animals, forests, weather, the sea and storms.",
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 216,
+   "pdf_pages": [
+    219,
+    220,
+    221
+   ]
+  }
+ },
+ {
+  "name": "Heichi Bushi",
+  "clans": [
+   "Boar"
+  ],
+  "source": "Core Rulebook p.217",
+  "labels": [
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "bodyguard",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "home": "wilds",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+   "Is the home \"wilds\" right? Forests and wild places.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while)."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 2,
+   "why": "Rank 1 has: while",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 217,
+   "pdf_pages": [
+    220,
+    221,
+    222
+   ]
+  }
+ },
+ {
+  "name": "Tonbo Shugenja",
+  "clans": [
+   "Dragonfly"
+  ],
+  "source": "Core Rulebook p.218",
+  "labels": [
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "court",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 218,
+   "pdf_pages": [
+    221,
+    222,
+    223
+   ]
+  }
+ },
+ {
+  "name": "Kitsune Shugenja",
+  "clans": [
+   "Fox"
+  ],
+  "source": "Core Rulebook p.219",
+  "labels": [
+   {
+    "label": "nature",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "beast",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "spirits",
+    "main": false,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wilds",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"beast\" right? Fights or works with an animal companion."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 219,
+   "pdf_pages": [
+    222,
+    223,
+    224
+   ]
+  }
+ },
+ {
+  "name": "Usagi Bushi",
+  "clans": [
+   "Hare"
+  ],
+  "source": "Core Rulebook p.220",
+  "labels": [
+   {
+    "label": "skirmisher",
+    "main": true,
+    "score": 6,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "all-out",
+    "score": 6,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 4 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "wilds",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "home": "battlefield",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Should \"all-out\" be added? Holds nothing back: Full Attack, fearless or reckless commitment to the attack.",
+   "Is the home \"wilds\" right? Forests and wild places."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 220,
+   "pdf_pages": [
+    223,
+    224,
+    225
+   ]
+  }
+ },
+ {
+  "name": "Mantis Brawler [Bushi]",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "The Great Clans p.165",
+  "labels": [
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 4 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "sailor",
+    "main": false,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "sea",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "underworld",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: against",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 165,
+   "pdf_pages": [
+    166,
+    167,
+    168
+   ]
+  }
+ },
+ {
+  "name": "Moshi Shugenja",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "Core Rulebook p.120",
+  "labels": [
+   {
+    "label": "nature",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "sailor",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "sea",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Near-twin of \"Yoritomo Shugenja\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 120,
+   "pdf_pages": [
+    123,
+    124,
+    125
+   ]
+  },
+  "twins": [
+   {
+    "with": "Yoritomo Shugenja",
+    "similarity": 1.0
+   }
+  ]
+ },
+ {
+  "name": "Tsuruchi Archer [Bushi]",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "Core Rulebook p.122",
+  "labels": [
+   {
+    "label": "archer",
+    "main": true,
+    "score": 14,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "sea",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "battlefield",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 122,
+   "pdf_pages": [
+    125,
+    126,
+    127
+   ]
+  }
+ },
+ {
+  "name": "Tsuruchi Bounty Hunter [Bushi]",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "The Great Clans p.167",
+  "labels": [
+   {
+    "label": "investigator",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "archer",
+    "main": false,
+    "score": 4,
+    "where": [
+     "Rank 4 Technique",
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "traveller",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "scholar",
+    "score": 4,
+    "where": [
+     "Rank 2 Technique",
+     "Rank 5 Technique"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+   "Should \"scholar\" be added? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: against, while",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 167,
+   "pdf_pages": [
+    168,
+    169,
+    170
+   ]
+  }
+ },
+ {
+  "name": "Yoritomo Bushi",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "Core Rulebook p.120",
+  "labels": [
+   {
+    "label": "sailor",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "skirmisher",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "frontline",
+    "main": false,
+    "score": 2,
+    "where": [
+     "Rank 2 Technique"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "sea",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 120,
+   "pdf_pages": [
+    123,
+    124,
+    125
+   ]
+  }
+ },
+ {
+  "name": "Yoritomo Courtier",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "Core Rulebook p.121",
+  "labels": [
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 13,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Rank 3 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "merchant",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "sea",
+    "score": 4,
+    "where": [
+     "Clan",
+     "Rank 1 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "court",
+    "score": 4,
+    "where": [
+     "Courtier School",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Raises?, against",
+   "agree": true
+  },
+  "niche": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Core Rulebook, Great Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 121,
+   "pdf_pages": [
+    124,
+    125,
+    126
+   ]
+  }
+ },
+ {
+  "name": "Yoritomo Shugenja",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "The Great Clans p.168",
+  "labels": [
+   {
+    "label": "nature",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "sailor",
+    "main": true,
+    "score": 3,
+    "where": [
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "sea",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 168,
+   "pdf_pages": [
+    169,
+    170,
+    171
+   ]
+  }
+ },
+ {
+  "name": "Toku Bushi",
+  "clans": [
+   "Monkey"
+  ],
+  "source": "Core Rulebook p.221",
+  "labels": [
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 2,
+    "where": [
+     "Rank 3 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "bodyguard",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: against)."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 2,
+   "why": "Rank 1 has: against",
+   "agree": false
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 221,
+   "pdf_pages": [
+    224,
+    225,
+    226
+   ]
+  }
+ },
+ {
+  "name": "Fuzake Shugenja",
+  "clans": [
+   "Monkey"
+  ],
+  "source": "Secrets of the Empire p.238",
+  "labels": [
+   {
+    "label": "healer",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "spirits",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Secrets of the Empire",
+   "file": "Legend of the Five Rings Secrets of the Empire L5R-4e.pdf",
+   "printed_page": 238,
+   "pdf_pages": [
+    239,
+    240,
+    241
+   ]
+  }
+ },
+ {
+  "name": "Tsi Smith [Artisan]",
+  "clans": [
+   "Oriole"
+  ],
+  "source": "Core Rulebook p.222",
+  "labels": [
+   {
+    "label": "craft",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "duelist",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: against, per",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 222,
+   "pdf_pages": [
+    225,
+    226,
+    227
+   ]
+  }
+ },
+ {
+  "name": "Morito Bushi",
+  "clans": [
+   "Ox"
+  ],
+  "source": "Core Rulebook p.223",
+  "labels": [
+   {
+    "label": "cavalry",
+    "main": true,
+    "score": 8,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 3 Technique",
+     "description",
+     "Skills",
+     "Outfit"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "skirmisher",
+    "score": 8,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 4 Technique",
+     "Rank 5 Technique",
+     "description"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "plains",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: mounted, while",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 223,
+   "pdf_pages": [
+    226,
+    227,
+    228
+   ]
+  }
+ },
+ {
+  "name": "Chuda Shugenja [Snake]",
+  "clans": [
+   "Snake"
+  ],
+  "source": "Core Rulebook p.224",
+  "labels": [
+   {
+    "label": "monster-hunter",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "protector-magic",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "battle-magic",
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"protector-magic\" right? A spellcaster whose magic wards, shields and protects.",
+   "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "casts spells",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "a destroyed Clan",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 224,
+   "pdf_pages": [
+    227,
+    228,
+    229
+   ]
+  }
+ },
+ {
+  "name": "Suzume Bushi",
+  "clans": [
+   "Sparrow"
+  ],
+  "source": "Core Rulebook p.225",
+  "labels": [
+   {
+    "label": "duelist",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 5 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "artist",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 3 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ],
+  "complexity": {
+   "rated": 1,
+   "rubric": 1,
+   "why": "Rank 1 is a constant bonus",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 225,
+   "pdf_pages": [
+    228,
+    229,
+    230
+   ]
+  }
+ },
+ {
+  "name": "Kasuga Smuggler [Courtier]",
+  "clans": [
+   "Tortoise"
+  ],
+  "source": "Core Rulebook p.225",
+  "labels": [
+   {
+    "label": "merchant",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 3 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "stealth",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 6,
+    "where": [
+     "Clan",
+     "description",
+     "Rank 4 Technique"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "sea",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Is the home \"sea\" right? The sea, islands and ports."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: while",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 225,
+   "pdf_pages": [
+    228,
+    229,
+    230
+   ]
+  }
+ },
+ {
+  "name": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "clans": [
+   "Tiger"
+  ],
+  "source": "Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline",
+  "labels": [
+   {
+    "label": "bodyguard",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 4 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "stealth",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Rank 2 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "underworld",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
+  ],
+  "complexity": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "Rank 1 has: Stealth, against",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 276,
+   "pdf_pages": [
+    277,
+    278,
+    279
+   ]
+  }
+ },
+ {
+  "name": "The Four Temples [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.231",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 5,
+    "where": [
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "healer",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 4,
+    "where": [
+     "Clan",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "home": "court",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+   "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 231,
+   "pdf_pages": [
+    234,
+    235,
+    236
+   ]
+  }
+ },
+ {
+  "name": "The Order of Heroes [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.232",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "monster-hunter",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 232,
+   "pdf_pages": [
+    235,
+    236,
+    237
+   ]
+  }
+ },
+ {
+  "name": "The Shrine of the Seven Thunders [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.232",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Near-twin of \"The Order of Eternity [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 232,
+   "pdf_pages": [
+    235,
+    236,
+    237
+   ]
+  },
+  "twins": [
+   {
+    "with": "The Order of Eternity [Monk]",
+    "similarity": 1.0
+   },
+   {
+    "with": "Shinmaki Order [Monk]",
+    "similarity": 0.75
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Kaimetsu-uo [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.232",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 5,
+    "where": [
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "diplomat",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "sailor",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "sea",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"sailor\" right? At home on ships: Sailing, sea fighting, pirates.",
+   "Is the home \"sea\" right? The sea, islands and ports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 232,
+   "pdf_pages": [
+    235,
+    236,
+    237
+   ]
+  }
+ },
+ {
+  "name": "The Temple of Osano-Wo [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.233",
+  "labels": [
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 5,
+    "where": [
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Near-twin of \"Temple of Persistence [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"The Order of the Nameless Gift [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 233,
+   "pdf_pages": [
+    236,
+    237,
+    238
+   ]
+  },
+  "twins": [
+   {
+    "with": "Temple of Persistence [Monk]",
+    "similarity": 1.0
+   },
+   {
+    "with": "The Order of the Nameless Gift [Monk]",
+    "similarity": 0.8
+   },
+   {
+    "with": "Tengoku’s Fist [Monk]",
+    "similarity": 0.8
+   },
+   {
+    "with": "Fudoist Order [Monk]",
+    "similarity": 0.8
+   }
+  ]
+ },
+ {
+  "name": "The Temples of the Thousand Fortunes [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.233",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 233,
+   "pdf_pages": [
+    236,
+    237,
+    238
+   ]
+  }
+ },
+ {
+  "name": "Order of the Wind [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Air p.193",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "skirmisher",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Air",
+   "file": "Book 1 The Book of Air L5R-4e.pdf",
+   "printed_page": 193,
+   "pdf_pages": [
+    194,
+    195,
+    196
+   ]
+  }
+ },
+ {
+  "name": "Wind’s Grace Order [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Air p.194",
+  "labels": [
+   {
+    "label": "archer",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Air",
+   "file": "Book 1 The Book of Air L5R-4e.pdf",
+   "printed_page": 194,
+   "pdf_pages": [
+    195,
+    196,
+    197
+   ]
+  }
+ },
+ {
+  "name": "Fukurokujin’s Eyes [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Air p.194",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "investigator",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wall",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"investigator\" right? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives.",
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood)."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": false
+  },
+  "pages": {
+   "book": "Book of Air",
+   "file": "Book 1 The Book of Air L5R-4e.pdf",
+   "printed_page": 194,
+   "pdf_pages": [
+    195,
+    196,
+    197
+   ]
+  }
+ },
+ {
+  "name": "The Order of the Nameless Gift [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Earth p.205",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "frontline",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Near-twin of \"Temple of Persistence [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Earth",
+   "file": "Book 2 The Book of Earth L5R-4e.pdf",
+   "printed_page": 205,
+   "pdf_pages": [
+    206,
+    207,
+    208
+   ]
+  },
+  "twins": [
+   {
+    "with": "Temple of Persistence [Monk]",
+    "similarity": 0.8
+   }
+  ]
+ },
+ {
+  "name": "Temple of Persistence [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Earth p.205",
+  "labels": [
+   {
+    "label": "frontline",
+    "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 5,
+    "where": [
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts.",
+   "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Earth",
+   "file": "Book 2 The Book of Earth L5R-4e.pdf",
+   "printed_page": 205,
+   "pdf_pages": [
+    206,
+    207,
+    208
+   ]
+  },
+  "twins": [
+   {
+    "with": "Tengoku’s Fist [Monk]",
+    "similarity": 0.8
+   },
+   {
+    "with": "Fudoist Order [Monk]",
+    "similarity": 0.8
+   }
+  ]
+ },
+ {
+  "name": "The Order of Rebirth [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Fire p.190",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Fire",
+   "file": "Book 3 The Book of Fire L5R-4e.pdf",
+   "printed_page": 190,
+   "pdf_pages": [
+    191,
+    192,
+    193
+   ]
+  }
+ },
+ {
+  "name": "Tengoku’s Fist [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Fire p.191",
+  "labels": [
+   {
+    "label": "unarmed",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Rank 1 Technique",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Near-twin of \"Fudoist Order [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Fire",
+   "file": "Book 3 The Book of Fire L5R-4e.pdf",
+   "printed_page": 191,
+   "pdf_pages": [
+    192,
+    193,
+    194
+   ]
+  },
+  "twins": [
+   {
+    "with": "Fudoist Order [Monk]",
+    "similarity": 1.0
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Heavenly Wisdom [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Fire p.191",
+  "labels": [
+   {
+    "label": "scholar",
+    "main": true,
+    "score": 1,
+    "where": [
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "weak"
+   },
+   {
+    "label": "artist",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "court",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Fire",
+   "file": "Book 3 The Book of Fire L5R-4e.pdf",
+   "printed_page": 191,
+   "pdf_pages": [
+    192,
+    193,
+    194
+   ]
+  }
+ },
+ {
+  "name": "The Order of Jurojin’s Blessing [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Water p.187",
+  "labels": [
+   {
+    "label": "healer",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
+    "score": 3,
+    "where": [
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Book of Water",
+   "file": "Book 4 The Book of Water L5R-4e.pdf",
+   "printed_page": 187,
+   "pdf_pages": [
+    188,
+    189,
+    190
+   ]
+  }
+ },
+ {
+  "name": "The Shrine of Heaven’s Mirror [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Water p.187",
+  "labels": [
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 3,
+    "where": [
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "wilds",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood)."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": false
+  },
+  "pages": {
+   "book": "Book of Water",
+   "file": "Book 4 The Book of Water L5R-4e.pdf",
+   "printed_page": 187,
+   "pdf_pages": [
+    188,
+    189,
+    190
+   ]
+  }
+ },
+ {
+  "name": "The Order of Eternity [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Void p.193",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "scholar",
+    "main": false,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "book": [
+   "Is the home \"mountains\" right? Mountains and monasteries.",
+   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
+   "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": false
+  },
+  "pages": {
+   "book": "Book of Void",
+   "file": "Book 5 The Book of Void L5R-4e.pdf",
+   "printed_page": 193,
+   "pdf_pages": [
+    194,
+    195,
+    196
+   ]
+  },
+  "twins": [
+   {
+    "with": "Shinmaki Order [Monk]",
+    "similarity": 0.75
+   }
+  ]
+ },
+ {
+  "name": "Shinmaki Order [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Emerald Empire p.206",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "mountains",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "description: heretical, controversial or one era",
+   "agree": true
+  },
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 206,
+   "pdf_pages": [
+    207,
+    208,
+    209
+   ]
+  }
+ },
+ {
+  "name": "First Dawn Scholars [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Imperial Histories 2 p.29",
+  "labels": [
+   {
+    "label": "scholar",
+    "main": true,
+    "score": 5,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills (two or more Lores)"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "library",
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 2",
+   "file": "Legend of the Five Rings Imperial Histories 2 L5R-4e.pdf",
+   "printed_page": 29,
+   "pdf_pages": [
+    30,
+    31,
+    32
+   ]
+  }
+ },
+ {
+  "name": "Order of the Five Rings [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Imperial Histories 2 p.102",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 5,
+    "where": [
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "schemer",
+    "main": true,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 2",
+   "file": "Legend of the Five Rings Imperial Histories 2 L5R-4e.pdf",
+   "printed_page": 102,
+   "pdf_pages": [
+    103,
+    104,
+    105
+   ]
+  }
+ },
+ {
+  "name": "Fudoist Order [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Imperial Histories 2 p.287",
+  "labels": [
+   {
+    "label": "mystic",
+    "main": true,
+    "score": 5,
+    "where": [
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "unarmed",
+    "main": false,
+    "score": 1,
+    "where": [
+     "Skills"
+    ],
+    "verdict": "weak"
+   }
+  ],
+  "suggested": [],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "one historical era (Imperial Histories)",
+   "agree": true
+  },
+  "pages": {
+   "book": "Imperial Histories 2",
+   "file": "Legend of the Five Rings Imperial Histories 2 L5R-4e.pdf",
+   "printed_page": 287,
+   "pdf_pages": [
+    288,
+    289,
+    290
+   ]
+  }
+ },
+ {
+  "name": "Order of Peaceful Repose [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Secrets of the Empire p.242",
+  "labels": [
+   {
+    "label": "spirits",
+    "main": true,
+    "score": 4,
+    "where": [
+     "Rank 1 Technique",
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "healer",
+    "main": false,
+    "score": 0,
+    "where": [],
+    "verdict": "no evidence"
+   }
+  ],
+  "suggested": [
+   {
+    "label": "mystic",
+    "score": 7,
+    "where": [
+     "Rank 1 Technique",
+     "description",
+     "Skills",
+     "Brotherhood monk"
+    ]
+   }
+  ],
+  "homes": [
+   {
+    "home": "road",
+    "score": 2,
+    "where": [
+     "Clan"
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "book": [
+   "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
+   "Should \"mystic\" be added? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ],
+  "complexity": {
+   "rated": 3,
+   "rubric": 3,
+   "why": "Brotherhood monk (kiho)",
+   "agree": true
+  },
+  "niche": {
+   "rated": 2,
+   "rubric": 2,
+   "why": "supplement, Minor Clan, Imperial or Brotherhood",
+   "agree": true
+  },
+  "pages": {
+   "book": "Secrets of the Empire",
+   "file": "Legend of the Five Rings Secrets of the Empire L5R-4e.pdf",
+   "printed_page": 242,
+   "pdf_pages": [
+    243,
+    244,
+    245
+   ]
+  }
+ }
+]

@@ -40,7 +40,7 @@ LABEL_WEIGHT_REFERENCE = 6.0   # a School with 2 main labels, 1 "also" label and
 DIRECT_QUESTIONS = ('approach', 'fight', 'court', 'magickind')
 DIRECT_WEIGHT = 1.5
 NOT_A_BEST_MATCH_PENALTY = -3     # small enough that a strong fit still shows under "Also worth a look"
-EARLY_EXIT_AFTER = 8           # "See my results now" appears once 8 questions are answered
+EARLY_EXIT_AFTER = 9           # "See my results now" appears once 9 questions are answered (owner, 25 November)
 SAMPLER_BELOW = 2              # fewer answers than this that describe the character -> a sample, not a match
 
 SCHOOLS = []

@@ -1,12 +1,13 @@
 # Character Finder: design
 
-**Status, 25 November 2026:** design approved by the owner (24–25 November) with nine rulings (section 1). The
-scoring is at version 2, with the reliability fixes the owner approved, and has automated tests with pass marks
-(section 9). A method for checking the ratings without a subject-matter expert is proposed and awaits the owner's
-approval (section 10). **Nothing is built and no application file is changed.**
+**Status, 25 November 2026:** design approved by the owner (24–25 November), with every ruling in section 1 applied.
+The scoring is at version 2 and passes 21 automated tests with pass marks (section 9). The rating audit (section 10)
+is **approved and under way**: steps 1 and 2 are done; step 3, reading the books, is ready for a Claude session on
+the owner's laptop, where the PDFs are (`audit/KICKOFF-BOOK-READING.md`). **Nothing is built and no application file
+is changed.**
 
-**Place:** a new Part, as the owner ruled: **Part L — New Player Help**, **Phase 16** (the next unused phase number;
-11.4 was the first draft's number). Part L can later hold tutorials and a glossary. Code marker `PART L PHASE 16`
+**Place:** a new Part, as the owner ruled and named: **Part L — New Player Help**, **Phase 16** (the next unused phase
+number; 11.4 was the first draft's number). Part L can later hold tutorials and a glossary. Code marker `PART L PHASE 16`
 (the dependency checker's `MARKER_RE` accepts it). Players see the buttons **"Help me choose"** and **"Not sure what
 to play?"**; "Character Finder" is the internal name.
 
@@ -52,6 +53,15 @@ every purchase.
 | 8 | Ronin | Left out until the planned ronin work adds ronin Schools |
 | 9 | Guide order | Clan by clan. It is a personal project until it is ready, so the order is the owner's convenience |
 
+**25 November 2026, later** (the owner's answers to section 13's open items)
+
+| Item | Ruling |
+|---|---|
+| Rating audit | **Approved** (section 10). The books are on the owner's laptop, in `C:\Users\jcrow\OneDrive\Documents\L5R 4th edition books`, the folder the Sourcebook Index already reads |
+| Early exit | **After question 9** (supersedes ruling 5's "after 8", on version 2's measurements) |
+| Tattooed monks | **Kept in**, with the "tattoos not modelled yet" note |
+| The Part's name | **Part L — New Player Help** |
+
 ## 2. What it is built from
 
 All of the following already exists in the app:
@@ -74,8 +84,8 @@ and "No one: they walk alone" will lead to them without changing any question.
 **Included, with a note: the tattooed monks.** Ruling 8 covers ronin because the app has no ronin Schools. The
 three tattooed orders (Togashi Tattooed Order, Hoshi Tsurui Zumi, Hitomi Kikage Zumi) are different: their Schools
 exist and can be built today; only the tattoos' own powers are not tracked yet. They stay in the finder with the
-"Good to know: the app does not model tattoos yet" note, which disappears when the planned tattoo work lands. (If
-the owner prefers them hidden until then, it is one flag in the ratings.)
+"Good to know: the app does not model tattoos yet" note, which disappears when the planned tattoo work lands (the
+owner's ruling, 25 November).
 
 **Not included: Advanced Schools and Alternate Paths.** A new character cannot take them. They appear in each
 guide as "Where they can go later".
@@ -92,7 +102,7 @@ guide as "Where they can go later".
 ### Question screens
 
 Full screen, one question at a time: the question, its answers as large buttons, Back, a progress line
-("Question 4 of 12"), and **"See my results now" once 8 questions are answered** (ruling 5). Every question has
+("Question 4 of 12"), and **"See my results now" once 9 questions are answered** (the owner, 25 November). Every question has
 "No preference".
 
 ### Results screen
@@ -771,7 +781,7 @@ answer 20%.
 | Magic "Yes": every listed School is a Shugenja School | 100% | **100%** | rule: 100% |
 | Player who wants School X finds it in the top six | 82% | **81.3%** | floor 81%, **target 90%** |
 | … gets it as a best match | 63% | **62.3%** | floor 62% |
-| … stopping after question 8 | – | **73.3%** | floor 73% |
+| … stopping after question 9 | – | **78.0%** | floor 77.9% |
 | Schools such a player finds less than a quarter of the time | 13 | **5** | floor 5, target 0 |
 | "Classic samurai": best matches that are not Unusual | 98.5% | **98.1%** | floor 98% |
 | "Keep it simple" (no magic asked): best matches that are not Involved | 84% | **89.2%** | floor 89% |
@@ -784,6 +794,7 @@ answer 20%.
 | Most frequent best match, share of random players | 6.8% | **5.3%** | floor 5.5% |
 | One answer changed: Schools kept in the top six | 4.2 of 6 | **4.25 of 6** | floor 4.2 |
 | Fits a Shugenja School but said "No": still offered it | 0% (filtered out) | **15.7%** | floor 15% |
+| The owner's group: each player's real School is in their top six | – | *none recorded yet* | rule: 100% |
 
 Still hard to find in version 2: Goju Ninja, Order of Peaceful Repose, The Order of Heroes, Tengoku's Fist and
 Yasuki Courtier. For information: one changed answer changes the first best match 40% of the time, which is why
@@ -800,9 +811,9 @@ results are presented as a shortlist, not a single answer.
   Bushi, because the draft gave those Minor Clan Schools a "Wall" home. That is a rating error, and no setting can
   fix it. Section 10 is the way to 90%.
 
-### Early exit: after 8 or after 9? (for the owner)
+### Early exit after question 9 (the owner, 25 November)
 
-Ruling 5 put "See my results now" after question 8, on version 1's numbers. Version 2 measured (10 players per
+Ruling 5 first put "See my results now" after question 8, on version 1's numbers. Version 2 measured (10 players per
 School):
 
 | Stop after | Best match | Top six |
@@ -813,10 +824,11 @@ School):
 | 10 questions | 62% | 80% |
 | All | 65% | 83% |
 
-Question 9 (Bushido) closes most of the remaining gap. **Recommendation: after question 9.** It is one constant
-(`EARLY_EXIT_AFTER`); the design keeps 8 until the owner says otherwise.
+Question 9 (Bushido) closes most of the remaining gap, so the owner moved the early exit to after question 9
+(`EARLY_EXIT_AFTER = 9`). With 20 players per School, as in the tests, it finds the wanted School in the top six 78%
+of the time (73.3% after question 8).
 
-## 10. Checking the ratings without an expert (proposal, awaiting approval)
+## 10. Checking the ratings without an expert (approved 25 November; under way)
 
 The owner is not a GM or a subject-matter expert, and this is a self-funded project. So the method does not rely on
 anyone's expertise. It turns each rating from an opinion into a **checkable claim with evidence**, gets the evidence
@@ -870,6 +882,35 @@ group. If more than one of the ten spot checks is wrong, the audit is redone bef
 **Near-twins** (the reliability ruling) are handled inside the audit: wherever the evidence separates two Schools,
 the difference becomes a label, and a test checks that each twin can be found on its own.
 
+### Progress (25 November)
+
+**Steps 1 and 2: done** (`audit/`). `rubric.py` holds the plain-words definitions. `extract-evidence.js` read every
+School's Skills, Outfit, all 354 Techniques and description from the app into `app-evidence.json`, and `rater.py`
+weighed them by the rubric (`WORKSHEET.md`). No rating has been changed yet.
+
+| Of the draft ratings | Result |
+|---|---|
+| Labels backed by the app's evidence | 183 of 255 (main labels: 135 of 161) |
+| Labels with weak evidence / no evidence | 30 / 42 |
+| Labels the evidence suggests adding | 28 (some false alarms: the Kuni Witch-Hunter's Techniques mention maho because they hunt it) |
+| Homes backed | 106 of 148 (no evidence for the Badger's and the Boar's "Wall") |
+| Complexity / how unusual agree with the rubric | 89 / 100 of 105 |
+| Near-twin pairs (rated at least 75% alike) | 20 |
+| Questions left for the books | **183, across 88 Schools** (`book-worklist.json`) |
+
+**Step 3: ready for the laptop.** The owner's laptop does not currently offer its folders to cloud sessions, so a
+Claude session on the laptop does this, following `audit/KICKOFF-BOOK-READING.md`. `extract_pages.py` extracts each
+School's pages to a scratch folder outside the repository (it refuses a path inside it); the answers go in
+`book-evidence.json`; `check_evidence.py` checks them (every question answered, a printed page, nothing sharing a run
+of 8 or more words with the book), writes `SHORT-LIST.md` for the group and, at the end, `SPOT-CHECK.md` for the owner.
+Both tools were tested here on a scratch copy: a copied sentence and unanswered questions are caught. The wikis are
+used from the laptop too: this cloud environment blocks both sites.
+
+**Step 5: the group's answer codes.** The review page now shows an answer code after the results. Each player answers
+as their own character and sends the code with their character's School; they go in `audit/known-characters.json`,
+and `reliability.py`'s test "each player's real School is in their top six" (a rule) runs on them. A code read back
+gives exactly the results the page showed (checked).
+
 ## 11. How it would be built
 
 - **Own fragments, own marker.** `src/sheet/…-feat-character-finder.js` (logic and screens) and
@@ -905,13 +946,13 @@ without a full guide say "Full guide coming". Guides then follow in batches:
 
 After batch 1, guides become searchable in Search and the Library (ruling 3).
 
-## 13. Open items for the owner
+## 13. Next
 
-1. **Approve the rating audit** (section 10), and say where the PDFs are for the book-reading step.
-2. **Early exit after question 8 or 9?** (section 9; recommended: 9).
-3. **Tattooed monks:** keep them in with the "tattoos not modelled yet" note (recommended), or hide them until the
-   tattoo work lands?
-4. **The Part's name:** "Part L — New Player Help"?
+1. **The book step**, in a Claude session on the owner's laptop: "Read `Versions/PART L — Phase 16 Character
+   Finder/audit/KICKOFF-BOOK-READING.md` and carry out the book-reading step of the rating audit, one Clan at a time."
+2. **The group's answer codes**, one per player with their character's School.
+3. **After the book step:** the owner's spot check (`SPOT-CHECK.md`) and the group's short list (`SHORT-LIST.md`);
+   then the review page is rebuilt and republished, and the guides start, Clan by Clan.
 
 ## Files in this folder
 
@@ -929,6 +970,11 @@ After batch 1, guides become searchable in Search and the Library (ruling 3).
 | `prototype/design-data.json`, `examples.json` | Generated: the tables and example players as data |
 | `review-page/character-finder.html`, `finder-data.json` | The published review page and its data |
 | `review-page/extract-tech.js`, `build-data.py`, `check-parity.js` | Rebuild `finder-data.json`; check the page's scoring against the prototype |
+| `audit/KICKOFF-BOOK-READING.md` | Instructions for the book-reading step, for a session on the owner's laptop |
+| `audit/rubric.py` | The definitions every rating is checked against |
+| `audit/extract-evidence.js`, `app-evidence.json`, `rater.py`, `WORKSHEET.md`, `worksheet.json` | Step 2: the app's evidence and what it backs |
+| `audit/book-worklist.json`, `book-evidence.json`, `extract_pages.py`, `check_evidence.py` | Step 3: the questions, the answers, and the tools |
+| `audit/known-characters.json` | Step 5: the group's answer codes (empty until collected) |
 
 To re-run everything after changing a rating or a question:
 

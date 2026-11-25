@@ -1,0 +1,2089 @@
+[
+ {
+  "name": "Hida Bushi",
+  "answers": [
+   {
+    "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Stealth).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Hida Pragmatist [Bushi]",
+  "answers": [
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Hiruma Bushi",
+  "answers": [
+   {
+    "question": "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Hiruma Scout [Bushi]\" (rated 86% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kuni Shugenja",
+  "answers": [
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"library\" right? Libraries, temples and places of study.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kuni Witch-Hunter [Monk]",
+  "answers": [
+   {
+    "question": "Should \"forbidden\" be added? Uses forbidden power: maho, blood magic, the Nothing.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Toritaka Bushi",
+  "answers": [
+   {
+    "question": "Is \"beast\" right? Fights or works with an animal companion.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"wilds\" right? Forests and wild places.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Yasuki Courtier",
+  "answers": [
+   {
+    "question": "Is the home \"sea\" right? The sea, islands and ports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Yoritomo Courtier\" (rated 83% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Asahina Shugenja",
+  "answers": [
+   {
+    "question": "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"library\" right? Libraries, temples and places of study.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Daidoji Iron Warrior [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: per).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Lion Elite Spearmen [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Daidoji Scout [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Doji Courtier",
+  "answers": [
+   {
+    "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Some extra, rubric says Involved (tattoos or kiho).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Doji Magistrate [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kakita Bushi",
+  "answers": [
+   {
+    "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kakita Artisan",
+  "answers": [
+   {
+    "question": "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kitsuki Investigator [Courtier]",
+  "answers": [
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"schemer\" be added? Gets their way by secrets, leverage, deceit or fear.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Mirumoto Bushi",
+  "answers": [
+   {
+    "question": "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Mirumoto Taoist Swordsman [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Mirumoto Taoist Swordsman [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Some extra, rubric says Involved (tattoos or kiho).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Tamori Shugenja",
+  "answers": [
+   {
+    "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Togashi Tattooed Order [Monk]",
+  "answers": [
+   {
+    "question": "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Hoshi Tsurui Zumi Order [Monk]",
+  "answers": [
+   {
+    "question": "Near-twin of \"The Hitomi Kikage Zumi Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Akodo Bushi",
+  "answers": [
+   {
+    "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Raises?, against, choose, when).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Ikoma Lion’s Shadow [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kitsu Shugenja",
+  "answers": [
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"library\" right? Libraries, temples and places of study.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Lion Elite Spearmen [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Matsu Beastmaster [Bushi]",
+  "answers": [
+   {
+    "question": "Is the home \"wilds\" right? Forests and wild places.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Agasha Shugenja",
+  "answers": [
+   {
+    "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Asako Henshin [Monk]",
+  "answers": [
+   {
+    "question": "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Contested, Raises?, if, per, unaware).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"First Dawn Scholars [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Isawa Shugenja",
+  "answers": [
+   {
+    "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Shiba Artisan [Courtier]",
+  "answers": [
+   {
+    "question": "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Shiba Bushi",
+  "answers": [
+   {
+    "question": "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Bayushi Bushi",
+  "answers": [
+   {
+    "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Bayushi Courtier",
+  "answers": [
+   {
+    "question": "Should \"diplomat\" be added? Wins people over: courtesy, alliances, favours, mediation and calm.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Shosuro Actor [Ninja]",
+  "answers": [
+   {
+    "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Shosuro Infiltrator [Ninja]",
+  "answers": [
+   {
+    "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Soshi Magistrate [Bushi]",
+  "answers": [
+   {
+    "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Soshi Shugenja",
+  "answers": [
+   {
+    "question": "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"strange-magic\" right? Unusual magic: alchemy, experiment, talismans, foreign or multi-element spells.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Yogo Wardmaster [Shugenja]",
+  "answers": [
+   {
+    "question": "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Horiuchi Shugenja",
+  "answers": [
+   {
+    "question": "Near-twin of \"Iuchi Shugenja\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Ide Emissary [Courtier]",
+  "answers": [
+   {
+    "question": "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Iuchi Shugenja",
+  "answers": [
+   {
+    "question": "Is \"nature\" right? Tied to nature: animals, forests, weather, the sea and storms.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Moto Bushi",
+  "answers": [
+   {
+    "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Moto Death Priest [Shugenja]",
+  "answers": [
+   {
+    "question": "Is \"spirits\" right? Deals with spirits, ancestors, the dead, the Fortunes or the Spirit Realms.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Moto Vindicator [Bushi]",
+  "answers": [
+   {
+    "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Shinjo Bushi",
+  "answers": [
+   {
+    "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"archer\" be added? Fights with the bow: teaches Kyujutsu, and a Technique or the description centres on bows.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Utaku Battle Maiden [Bushi]",
+  "answers": [
+   {
+    "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Utaku Mounted Infantry [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: choose).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Chuda Shugenja",
+  "answers": [
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Daigotsu Bushi",
+  "answers": [
+   {
+    "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Daigotsu Courtier",
+  "answers": [
+   {
+    "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Goju Ninja",
+  "answers": [
+   {
+    "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Raises?).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Order of the Spider Monks [Monk]",
+  "answers": [
+   {
+    "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Involved, rubric says Some extra (Rank 1 has: against).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Seppun Guardsman [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"stealth\" be added? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"investigator\" be added? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Seppun Shugenja",
+  "answers": [
+   {
+    "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"bodyguard\" be added? Protects others: yojimbo, guarding a charge, defending allies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Ichiro Bushi",
+  "answers": [
+   {
+    "question": "Is the home \"mountains\" right? Mountains and monasteries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Komori Shugenja",
+  "answers": [
+   {
+    "question": "Is \"nature\" right? Tied to nature: animals, forests, weather, the sea and storms.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Heichi Bushi",
+  "answers": [
+   {
+    "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"wilds\" right? Forests and wild places.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Tonbo Shugenja",
+  "answers": [
+   {
+    "question": "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kitsune Shugenja",
+  "answers": [
+   {
+    "question": "Is \"beast\" right? Fights or works with an animal companion.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Usagi Bushi",
+  "answers": [
+   {
+    "question": "Should \"all-out\" be added? Holds nothing back: Full Attack, fearless or reckless commitment to the attack.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"wilds\" right? Forests and wild places.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Moshi Shugenja",
+  "answers": [
+   {
+    "question": "Near-twin of \"Yoritomo Shugenja\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Tsuruchi Archer [Bushi]",
+  "answers": [
+   {
+    "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Tsuruchi Bounty Hunter [Bushi]",
+  "answers": [
+   {
+    "question": "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"scholar\" be added? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Yoritomo Bushi",
+  "answers": [
+   {
+    "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Toku Bushi",
+  "answers": [
+   {
+    "question": "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: against).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Fuzake Shugenja",
+  "answers": [
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Tsi Smith [Artisan]",
+  "answers": [
+   {
+    "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Morito Bushi",
+  "answers": [
+   {
+    "question": "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Chuda Shugenja [Snake]",
+  "answers": [
+   {
+    "question": "Is \"protector-magic\" right? A spellcaster whose magic wards, shields and protects.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Suzume Bushi",
+  "answers": [
+   {
+    "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Kasuga Smuggler [Courtier]",
+  "answers": [
+   {
+    "question": "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"sea\" right? The sea, islands and ports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "answers": [
+   {
+    "question": "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Four Temples [Monk]",
+  "answers": [
+   {
+    "question": "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Order of Heroes [Monk]",
+  "answers": [
+   {
+    "question": "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Shrine of the Seven Thunders [Monk]",
+  "answers": [
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"The Order of Eternity [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Kaimetsu-uo [Monk]",
+  "answers": [
+   {
+    "question": "Is \"sailor\" right? At home on ships: Sailing, sea fighting, pirates.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"sea\" right? The sea, islands and ports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Osano-Wo [Monk]",
+  "answers": [
+   {
+    "question": "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Temple of Persistence [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"The Order of the Nameless Gift [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Order of the Wind [Monk]",
+  "answers": [
+   {
+    "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Fukurokujin’s Eyes [Monk]",
+  "answers": [
+   {
+    "question": "Is \"investigator\" right? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Order of the Nameless Gift [Monk]",
+  "answers": [
+   {
+    "question": "Near-twin of \"Temple of Persistence [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Temple of Persistence [Monk]",
+  "answers": [
+   {
+    "question": "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Order of Rebirth [Monk]",
+  "answers": [
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Tengoku’s Fist [Monk]",
+  "answers": [
+   {
+    "question": "Near-twin of \"Fudoist Order [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Heavenly Wisdom [Monk]",
+  "answers": [
+   {
+    "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Shrine of Heaven’s Mirror [Monk]",
+  "answers": [
+   {
+    "question": "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "The Order of Eternity [Monk]",
+  "answers": [
+   {
+    "question": "Is the home \"mountains\" right? Mountains and monasteries.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Order of the Five Rings [Monk]",
+  "answers": [
+   {
+    "question": "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Fudoist Order [Monk]",
+  "answers": [
+   {
+    "question": "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ },
+ {
+  "name": "Order of Peaceful Repose [Monk]",
+  "answers": [
+   {
+    "question": "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   },
+   {
+    "question": "Should \"mystic\" be added? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
+    "decision": "",
+    "to": "",
+    "evidence": "",
+    "page": "",
+    "source": "book",
+    "confidence": ""
+   }
+  ]
+ }
+]

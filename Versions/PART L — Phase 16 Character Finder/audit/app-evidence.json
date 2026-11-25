@@ -1,0 +1,3574 @@
+[
+ {
+  "name": "Hida Bushi",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 3.5,
+  "benefit": "Stamina",
+  "skills": "Athletics, Defense, Heavy Weapons (Tetsubo), Intimidation, Kenjutsu, Lore: Shadowlands, any one Bugei Skill",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.106",
+  "lore": "One of the Empire's oldest bushi styles, forged against the Shadowlands: endure the enemy's blows, then crush them with heavy weapons.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Crab",
+    "text": "Ignore TN penalties for wearing heavy armor (except for Stealth), and gain +1k0 to the total of all damage rolls with a Heavy Weapon."
+   },
+   {
+    "rank": 2,
+    "name": "The Mountain Does Not Move",
+    "text": "Gain Reduction equal to your Earth Ring."
+   },
+   {
+    "rank": 3,
+    "name": "Two Pincers One Mind",
+    "text": "Attack as a Simple Action instead of a Complex Action when using Heavy Weapons or Samurai-keyword weapons."
+   },
+   {
+    "rank": 4,
+    "name": "Devastating Blow",
+    "text": "Once per encounter with a Heavy Weapon, make a calculated strike that lowers the target's Reduction by 4; a successful hit also Dazes them, with the recovery TN dropping each time they fail to shake it off."
+   },
+   {
+    "rank": 5,
+    "name": "The Mountain Does Not Fall",
+    "text": "Spend a Void Point in the Reactions Stage to act as if Healthy next Turn, ignoring Dazed, Fatigued, and Stunned until the next Reactions Stage."
+   }
+  ]
+ },
+ {
+  "name": "Hida Pragmatist [Bushi]",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 2.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Defense, Jiujutsu (Improvised Weapons) 2, Kenjutsu, Lore: Shadowlands, any one Bugei Skill",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.247",
+  "lore": "Students of Kobo Ichi-Kai, taught at Clear Water Village, who put unarmed fighting above every other kind. Their strength makes them fine yojimbo and a match even for Shadowlands creatures.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Eternal Stone Unleashed",
+    "text": "+1k0 to resist Intimidation/Fear, and +1k0 to unarmed or improvised-weapon attack and damage rolls — but you must always keep high dice on those boosted rolls."
+   },
+   {
+    "rank": 2,
+    "name": "Wearing Down the Mountain",
+    "text": "The Extra Attack Maneuver costs only 3 Raises (instead of 5) when fighting unarmed or with an improvised weapon."
+   },
+   {
+    "rank": 3,
+    "name": "Fury of the Avalanche",
+    "text": "Attack as a Simple Action when unarmed, using an improvised weapon, or wielding a Samurai-keyword weapon."
+   },
+   {
+    "rank": 4,
+    "name": "Stone Turns Steel Aside",
+    "text": "A number of times per skirmish equal to your Void, after being hit by a melee attack you may take a Free Action to win a Contested Roll and turn the enemy's own weapon against them, using your own Strength for damage. Not usable in an iaijutsu duel."
+   },
+   {
+    "rank": 5,
+    "name": "Fight to the End",
+    "text": "Spend a Void Point to make a Complex-Action attack that ignores Wound penalties (even Down/Out) and status effects, dealing +3k1 damage."
+   }
+  ]
+ },
+ {
+  "name": "Hiruma Bushi",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Willpower",
+  "skills": "Athletics, Hunting, Kenjutsu (Katana), Kyujutsu, Lore: Shadowlands, Stealth, any one Skill",
+  "outfit": "Ashigaru or Light Armor, Sturdy Clothing, Daisho, Bow with 20 Arrows or Knife, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.108",
+  "lore": "Where the Hida endure, the Hiruma evade, striking weak points with lightning speed. Their School is built for movement and survival inside the Shadowlands.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Torch’s Flame Flickers",
+    "text": "+1k0 to attack rolls while in the Attack Stance, and double the duration food/water/jade rations last for a number of people equal to your Hunting Rank."
+   },
+   {
+    "rank": 2,
+    "name": "Wolf’s Little Lesson",
+    "text": "While in the Attack Stance, gain +5 Armor TN each time you hit with a melee weapon; stacks up to your School Rank times, lasting the rest of the skirmish."
+   },
+   {
+    "rank": 3,
+    "name": "Hummingbird Wings",
+    "text": "Once per Round, spend a Void Point when targeted by an attack to gain double your School Rank as an Armor TN bonus against it, stacking with other Armor TN bonuses."
+   },
+   {
+    "rank": 4,
+    "name": "Shark Smells Blood",
+    "text": "Attack as a Simple Action instead of Complex when using a Samurai-keyword weapon."
+   },
+   {
+    "rank": 5,
+    "name": "Daylight Wastes No Movement",
+    "text": "If you deal more Wounds than needed to kill your target, carry the excess Wounds over to the next target you hit (not on consecutive attacks, and only within the current skirmish)."
+   }
+  ]
+ },
+ {
+  "name": "Kaiu Engineer [Artisan/Bushi]",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Intelligence",
+  "skills": "Battle, Craft: Armorsmithing, Craft: Weaponsmithing, Defense, Engineering, Lore: Architecture, War Fan",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or War Fan, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.39",
+  "lore": "The Empire's foremost builders, siege engineers and armourers, devoted to the Crab's defence against the Shadowlands. Many also lead troops, turning siegecraft to war.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Kaiu Method",
+    "text": "+1k0 on any School Skill Roll; spending a Void Point on a School Skill Roll grants +2k2 instead of +1k1 (the two bonuses don't stack)."
+   },
+   {
+    "rank": 2,
+    "name": "The Path of Stone",
+    "text": "When building a large structure, an Engineering roll (TN 25) adds Wounds equal to School Rank x100; when commanding a siege engine, reroll one damage die per shot that rolls below your School Rank."
+   },
+   {
+    "rank": 3,
+    "name": "The Path of the Shell",
+    "text": "When crafting armor, spend double time/cost to add your School Rank to its Reduction, and half your School Rank (rounded up) to its Armor TN bonus."
+   },
+   {
+    "rank": 4,
+    "name": "The Path of War",
+    "text": "Modify Mass Battle Chart results by up to half your School Rank; attack as a Simple Action with katana, dai tsuchi, or war fan."
+   },
+   {
+    "rank": 5,
+    "name": "The Path of Steel",
+    "text": "When crafting a weapon, grant it +1k0 to attack rolls or +0k1 to damage; for a katana, you may spend all Void Points to make it unbreakable, at the cost of not recovering Void Points for a week."
+   }
+  ]
+ },
+ {
+  "name": "Kuni Shugenja",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 2.5,
+  "benefit": "Willpower",
+  "skills": "Calligraphy (Cipher), Defense, Lore: Shadowlands 2, Lore: Theology, Spellcraft, any one Weapon Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 3 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Earth",
+  "deficiency": "Air",
+  "source": "Core Rulebook p.107",
+  "lore": "Thought of as obsessive madmen who delve into forbidden secrets, the Kuni accept that as the price of fighting the Shadowlands. Their alliance with the Nezumi gives them insight into other nonhumans.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Gaze Into Shadow",
+    "text": "+1k0 on Spell Casting Rolls against non-human creatures; damage spells deal +1k1 against Tainted targets, and gain a Free Raise on any Jade-keyword spell."
+   }
+  ]
+ },
+ {
+  "name": "Kuni Witch-Hunter [Monk]",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Willpower",
+  "skills": "Investigation, Jiujutsu, Kenjutsu, Lore: Shadowlands, Lore: Maho, Meditation, any one Skill",
+  "outfit": "Rugged Clothing, Daisho, Knife, Jade Pendant, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.40",
+  "lore": "A small band of mystic warriors who roam the Empire hunting maho-tsukai and Shadowlands infiltrators, ignoring borders. Commoners welcome them; other samurai often do not.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "To See the Darkness",
+    "text": "Sense Taint in a target via a Contested Roll (Investigation/Awareness vs. Sincerity/Willpower), gaining +1k0 per full Rank of their Taint; also +1k1 to resist Taint and to attacks against Shadowlands creatures or known Tainted foes."
+   },
+   {
+    "rank": 2,
+    "name": "To Ride the Darkness",
+    "text": "As a Free Action vs. a Shadowlands creature, roll Lore: Shadowlands/Intelligence (TN 20) to recall one strength or weakness of it, with Raises revealing more."
+   },
+   {
+    "rank": 3,
+    "name": "To Strike the Darkness",
+    "text": "Attack as a Simple Action against Shadowlands creatures or known Tainted foes."
+   },
+   {
+    "rank": 4,
+    "name": "To Repel the Darkness",
+    "text": "+3k0 to your Rank 1 and Rank 2 detection rolls, and learn one Kiho."
+   },
+   {
+    "rank": 5,
+    "name": "To Shatter the Darkness",
+    "text": "+4k1 to attack and damage rolls against Shadowlands creatures and known Tainted foes, stacking with the Rank 1 bonus."
+   }
+  ]
+ },
+ {
+  "name": "Toritaka Bushi",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Strength",
+  "skills": "Animal Handling (Falcons), Hunting 2, Kenjutsu, Etiquette, Lore: Spirit Realms, Spears, any one Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.219",
+  "lore": "Specialists in destroying creatures from other spirit realms, with a fluid style for unexpected monsters: potent against the otherworldly, less so against people.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Falcon’s Eyes",
+    "text": "+1k0 on Perception-based Skill and Trait rolls, and +1k0 to damage against creatures from other Spirit Realms."
+   },
+   {
+    "rank": 2,
+    "name": "The Falcon Takes Flight",
+    "text": "Roll Perception vs. TN equal to a nearby other-realm creature's Air Ring x5 to detect its presence."
+   },
+   {
+    "rank": 3,
+    "name": "The Falcon’s Wings",
+    "text": "Attack as a Simple Action with a spear or Samurai-keyword weapon."
+   },
+   {
+    "rank": 4,
+    "name": "Vigilant and Strong",
+    "text": "Spend a Void Point to negate darkness/blinding penalties for about two Rounds."
+   },
+   {
+    "rank": 5,
+    "name": "Claws of the Falcon",
+    "text": "Ignore up to 5 points of an opponent's Reduction; spend a Void Point as a Free Action to reduce a Spirit-Realm creature's Reduction by 10 for a Round."
+   }
+  ]
+ },
+ {
+  "name": "Yasuki Courtier",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 2.5,
+  "benefit": "Perception",
+  "skills": "Commerce (Appraisal), Courtier, Defense, Etiquette, Intimidation, Sincerity (Deceit), any one Merchant Skill",
+  "outfit": "Traditional Clothing, Wakizashi, Knife, Calligraphy Set, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.107",
+  "lore": "Once Crane, the Yasuki joined the Crab and became the Empire's richest merchants. Their courtiers are salesmen who find what a rival needs and supply it, at a price.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Carp",
+    "text": "Free Raise on Commerce with no Honor/Glory loss for using it publicly; Contested Roll (Commerce/Perception vs. Etiquette/Awareness) to discern what someone wants."
+   },
+   {
+    "rank": 2,
+    "name": "Do As We Say",
+    "text": "A number of times per session equal to your School Rank, re-roll a failed Sincerity or Intimidation roll (must keep the second result)."
+   },
+   {
+    "rank": 3,
+    "name": "Treasures of the Carp",
+    "text": "Roll Commerce/Awareness (TN 20) to locate a rare item for someone; Raises find rarer items."
+   },
+   {
+    "rank": 4,
+    "name": "Wiles of the Carp",
+    "text": "Anyone lying to or deceiving you socially faces a TN increase of 5x your School Rank."
+   },
+   {
+    "rank": 5,
+    "name": "What is Yours is Mine",
+    "text": "If you help someone get something they want, gain +5k0 on Contested Social Rolls against them for 24 hours."
+   }
+  ]
+ },
+ {
+  "name": "Hiruma Scout [Bushi]",
+  "clan": "Crab",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Reflexes",
+  "skills": "Athletics, Hunting, Kenjutsu, Kyujutsu, Lore: Shadowlands, Stealth (Sneaking), any one Bugei Skill",
+  "outfit": "",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 1 p.147 (no outfit specified)",
+  "lore": "After Hiruma Castle fell, the family lost the teachers of its old bushi School. The Hiruma Scouts are the stealthy style practised in that era.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Dance the Razor's Edge",
+    "text": "Unless surprised or otherwise unaware, add Stealth Rank to Initiative. Food, water and jade rations last twice as long for a number of people equal to Hunting Rank. In the Shadowlands, gain +1k0 to Stealth and always know the direction and approximate distance to the Empire. (Imperial Histories 1 p.147 (no outfit specified))"
+   },
+   {
+    "rank": 2,
+    "name": "Run Like the Wind",
+    "text": "You may take Free or Simple Move Actions in Full Defense. Run at high speed for Stamina plus School Rank hours, then become Exhausted until you rest for one hour. (Imperial Histories 1 p.147 (no outfit specified))"
+   },
+   {
+    "rank": 3,
+    "name": "Veil of the Spirits",
+    "text": "While remaining still with cover, concealment or camouflage approved by the GM, spend 1 Void Point to add School Rank kept dice to Stealth. The benefit ends if you move or make noise. (Imperial Histories 1 p.147 (no outfit specified))"
+   },
+   {
+    "rank": 4,
+    "name": "Harness the Wind",
+    "text": "Make attacks with Samurai weapons, knives or bows as Simple Actions. Against Shadowlands creatures or known Tainted nonhumans, this applies with any weapon. (Imperial Histories 1 p.147 (no outfit specified))"
+   },
+   {
+    "rank": 5,
+    "name": "Strike of the Stalker",
+    "text": "Against a surprised or unaware opponent, your Raises have no Void-based limit and you ignore 10 points of Reduction. (Imperial Histories 1 p.147 (no outfit specified))"
+   }
+  ]
+ },
+ {
+  "name": "Asahina Shugenja",
+  "clan": "Crane",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Awareness",
+  "skills": "any one Artisan Skill, Calligraphy (Cipher), Etiquette, Lore: Theology, Meditation, Spellcraft, any one High Skill",
+  "outfit": "Robes, Bo, Wakizashi, Scroll Satchel, Traveling Pack, 10 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Air",
+  "deficiency": "Fire",
+  "source": "Core Rulebook p.110",
+  "lore": "Part priests and part monks, the Asahina value preserving life over destruction, treat every ritual as a lesson and prize the making of art. Their magic leans towards protection.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Soul’s Grace",
+    "text": "Spend a Void Point to reduce all opponents' damage rolls within 20' by 0k1 for a number of Rounds equal to School Rank (re-triggering resets but doesn't stack the duration); Free Raise on Defense-keyword spells."
+   }
+  ]
+ },
+ {
+  "name": "Daidoji Iron Warrior [Bushi]",
+  "clan": "Crane",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Agility",
+  "skills": "Battle, Defense 2, Iaijutsu, Kenjutsu (Katana), Kyujutsu, any one Skill",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.111",
+  "lore": "The Crane's quiet strength: heavy infantry and yojimbo who win the day when words fail, with Techniques for enduring blows and guarding others.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Force of Honor",
+    "text": "Gain bonus Wounds per Wound Rank equal to (Honor Rank rounded down, minus 4, minimum 1); +1k0 to attack rolls in the Attack Stance."
+   },
+   {
+    "rank": 2,
+    "name": "The Shield of Faith",
+    "text": "The Guard Maneuver lasts one extra Round and its Armor TN bonus increases by 5 (to both you and your target)."
+   },
+   {
+    "rank": 3,
+    "name": "Strike Beneath the Veil",
+    "text": "Melee attack as a Simple Action while in the Attack Stance."
+   },
+   {
+    "rank": 4,
+    "name": "Vigilance of Mind",
+    "text": "Spend a Void Point in the Reactions Stage to gain +2k1 to attack/damage next Round against someone who struck you or your Guard target."
+   },
+   {
+    "rank": 5,
+    "name": "To Tread on the Sword",
+    "text": "Spend two Void Points as a Free Action to redirect an action from your Guard target to yourself, plus a Free Action to move toward them."
+   }
+  ]
+ },
+ {
+  "name": "Daidoji Scout [Bushi]",
+  "clan": "Crane",
+  "kind": "major",
+  "honor": 3.5,
+  "benefit": "Reflexes",
+  "skills": "Athletics, Hunting (Traps), Kenjutsu, Knives, Kyujutsu (Yumi), Stealth (Sneaking), any 1 Bugei or Low Skill",
+  "outfit": "Light or Ashigaru Armor, Rugged Clothing, Daisho, Bow, Knife, any 1 weapon, Trap-making Gear, Camouflage Face-paint, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.70",
+  "lore": "A Daidoji style of scouting, ambush and precise strikes at commanders and supply lines. Its scouts use traps and surprise, accepting some dishonour for the good of the Crane.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Surveying the Land",
+    "text": "+1k0 on Stealth and Hunting rolls; improvised/rural traps deal +1k1 extra damage."
+   },
+   {
+    "rank": 2,
+    "name": "Scouring the Shadows",
+    "text": "+2k0 to attack rolls against unaware opponents."
+   },
+   {
+    "rank": 3,
+    "name": "Weaken the Resistance",
+    "text": "Ignore Reduction from armor or school techniques (not natural or magical Reduction); +1k0 damage against targets with no such Reduction."
+   },
+   {
+    "rank": 4,
+    "name": "Strike and Move",
+    "text": "Attack as a Simple Action with katana, wakizashi, knife, or bow; traps deal +2k1 extra damage."
+   },
+   {
+    "rank": 5,
+    "name": "Cunning of Daidoji",
+    "text": "Spend a Void Point as a Free Action for a precision strike: Maneuvers cost 1 less Raise and a hit gains +1k1 damage; against an unaware foe, Raises aren't limited by Void."
+   }
+  ]
+ },
+ {
+  "name": "Doji Courtier",
+  "clan": "Crane",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Awareness",
+  "skills": "Calligraphy, Courtier (Manipulation), Etiquette (Courtesy), Perform: Storytelling, Sincerity, Tea Ceremony, any one Artisan or Perform skill",
+  "outfit": "Extravagant Clothing, Wakizashi, any 1 weapon, Calligraphy Set, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.110",
+  "lore": "The source of the Crane's mastery of court. The Doji School builds vast networks of allies through favours and obligations, with a curriculum broad enough to meet any need.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Soul of Honor",
+    "text": "Free Raise on Courtier, Sincerity, and Etiquette while Honor is 6.0+; a Contested Roll can learn what favor someone needs."
+   },
+   {
+    "rank": 2,
+    "name": "Speaking in Silence",
+    "text": "Roll Courtier/Intelligence (TN 15) to covertly communicate simple ideas with other trained Doji Courtiers or high-Courtier Crane."
+   },
+   {
+    "rank": 3,
+    "name": "The Perfect Gift",
+    "text": "Roll Courtier/Awareness (TN 20, Raises for better gifts) to produce a helpful gift/favor; a successful gift can grant a 1-point Devotion Ally at no XP cost."
+   },
+   {
+    "rank": 4,
+    "name": "Voice of Honor",
+    "text": "A won Contested Roll forces an opponent in debate to concede their position conflicts with Bushido."
+   },
+   {
+    "rank": 5,
+    "name": "The Gift of the Lady",
+    "text": "Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."
+   }
+  ]
+ },
+ {
+  "name": "Doji Magistrate [Bushi]",
+  "clan": "Crane",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Reflexes",
+  "skills": "Defense, Horsemanship, Jiujutsu, Kenjutsu, Knives (Jitte), Polearms, any High or Bugei Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon (or 2 Knives), Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.170",
+  "lore": "Crane magistrates trained to fight with compassion, avoiding injury where they can and favouring weapons such as the jitte and sasumata that disarm or capture.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Temper Steel With Honor",
+    "text": "Add your Air Ring to Armor TN (unless helpless/unaware); +1k0 attacking with jitte or sasumata."
+   },
+   {
+    "rank": 2,
+    "name": "Flowing Like Water",
+    "text": "Use your opponent's Strength instead of your own when rolling to control a Grapple or Disarm."
+   },
+   {
+    "rank": 3,
+    "name": "Breath of the Law",
+    "text": "A successful Grapple or Disarm also Dazes the target."
+   },
+   {
+    "rank": 4,
+    "name": "Flowing Like Air",
+    "text": "Attack as a Simple Action unarmed or with jitte, sasumata, or a Samurai-keyword weapon."
+   },
+   {
+    "rank": 5,
+    "name": "The Willow in the Storm",
+    "text": "Spend a Void Point in the Reactions Stage so attackers next Round subtract your Air Ring from each die (including exploding dice); not usable in Full Attack or Center Stance."
+   }
+  ]
+ },
+ {
+  "name": "Kakita Bushi",
+  "clan": "Crane",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Reflexes",
+  "skills": "Etiquette, Iaijutsu (Focus), Kenjutsu, Kyujutsu, Sincerity, Tea Ceremony, any one Bugei or High Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.109",
+  "lore": "The Kakita Dueling Academy is devoted to iaijutsu above all. Its champions decide battles before they begin and answer any challenge at court.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Crane",
+    "text": "Add twice your Iaijutsu Skill to Initiative rolls; while in the Center Stance (and the Round after), gain +1k1 plus your School Rank to attack and Focus rolls."
+   },
+   {
+    "rank": 2,
+    "name": "Speed of Lightning",
+    "text": "+2k0 to attack rolls against targets with lower Initiative than yours."
+   },
+   {
+    "rank": 3,
+    "name": "First and Last Strike",
+    "text": "Strike first in a duel by winning the Iaijutsu/Void roll by 3+; gain a Free Raise per extra margin of 3 instead of 5."
+   },
+   {
+    "rank": 4,
+    "name": "One Strike Two Cuts",
+    "text": "Attack as a Simple Action with Samurai-keyword weapons."
+   },
+   {
+    "rank": 5,
+    "name": "Strike With No Thought",
+    "text": "Take a Simple Action (including Move) each Turn while in Center Stance, gaining its benefits immediately and able to hold the stance indefinitely."
+   }
+  ]
+ },
+ {
+  "name": "Kakita Artisan",
+  "clan": "Crane",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Awareness",
+  "skills": "Courtier, Games: Sadane, Etiquette, Sincerity, any 3 skills from Acting/Artisan/Perform",
+  "outfit": "Court Robes, Beautiful Clothing, Wakizashi, Art supplies, Fan, Steed (Rokugan pony), Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.71",
+  "lore": "The Kakita Artisan Academy studies every art, performed or crafted, and how each can serve the Crane Clan.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Soul of the Artisan",
+    "text": "Choose a 'chosen art' Skill: +2k0 to its rolls, unlimited Raises; Free Raise when critiquing others' art with Games: Sadane."
+   },
+   {
+    "rank": 2,
+    "name": "The Soul’s Dream",
+    "text": "A Contested Roll during a public performance can emotionally sway the audience for hours equal to your Insight Rank."
+   },
+   {
+    "rank": 3,
+    "name": "Free the Spirit",
+    "text": "Choose a second 'chosen art'; the bonus for chosen arts rises to +2k1."
+   },
+   {
+    "rank": 4,
+    "name": "Undying Name",
+    "text": "Roll (chosen art)/Awareness (TN 20 + 5x target's Glory) to raise or lower their Glory (or inflict Infamy with Raises); once per target per 6 months."
+   },
+   {
+    "rank": 5,
+    "name": "A Gift Beyond Price",
+    "text": "Once per month, a Contested Roll gifting your art can permanently shift someone's attitude toward your clan, favorably on success."
+   }
+  ]
+ },
+ {
+  "name": "Kitsuki Investigator [Courtier]",
+  "clan": "Dragon",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Perception",
+  "skills": "Courtier, Etiquette (Courtesy), Investigation (Interrogation), Kenjutsu, Meditation, Sincerity, any one Lore Skill",
+  "outfit": "Traditional Clothing, Wakizashi, Knife, Calligraphy Set, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.114",
+  "lore": "Alone in the Empire, the Kitsuki believe in evidence. Their School hones near-perfect memory and observation, making them the Dragon's courtiers and natural magistrates.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Kitsuki’s Method",
+    "text": "Free Raise on all Investigation rolls; add your Perception to your Armor TN in a skirmish."
+   },
+   {
+    "rank": 2,
+    "name": "Wisdom the Wind Brings",
+    "text": "Anyone lying to you, deceiving you socially, or using Feint/Disarm against you adds +5 to their TN per your School Rank."
+   },
+   {
+    "rank": 3,
+    "name": "Know the Rhythm of the Heart",
+    "text": "After conversing briefly, roll Investigation (Notice)/Perception vs. their Intelligence x5 to accurately read their personality and motivations."
+   },
+   {
+    "rank": 4,
+    "name": "Finding the Path",
+    "text": "A Contested Roll (Investigation (Interrogation)/Intelligence vs. their Etiquette (Courtesy)/Intelligence) reveals one of a target's allies or enemies; each Raise reveals another. Usable once per target per day."
+   },
+   {
+    "rank": 5,
+    "name": "The Eyes Betray the Heart",
+    "text": "Automatically win a Contested Roll (Investigation (Interrogation)/Perception vs. their Sincerity (Deceit)/Willpower) to detect any deliberate lie told to you; +5k0 if you already suspected the lie, and Raises can extract extra information."
+   }
+  ]
+ },
+ {
+  "name": "Mirumoto Bushi",
+  "clan": "Dragon",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Stamina",
+  "skills": "Defense, Iaijutsu, Kenjutsu (Katana), Lore: Shugenja, Meditation, Lore: Theology, any one Bugei or High Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.112",
+  "lore": "The only School that teaches Niten, fighting with katana and wakizashi together, which fuels a long rivalry with the Kakita's single-sword style.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Way of the Dragon",
+    "text": "Wielding katana and wakizashi together (Niten) removes dual-wield penalties and adds your School Rank to Armor TN, stacking with the normal two-weapon bonus; you may also raise or lower the TN of a spell cast at you by 5."
+   },
+   {
+    "rank": 2,
+    "name": "The Calm in Midst of Thunder",
+    "text": "While in the Center Stance, add your Kenjutsu Skill Rank to the total of your Iaijutsu rolls."
+   },
+   {
+    "rank": 3,
+    "name": "Strong and Swift",
+    "text": "Attack as a Simple Action with Samurai-keyword weapons."
+   },
+   {
+    "rank": 4,
+    "name": "Furious Retaliation",
+    "text": "Choose an opponent who attacked you this Round; gain +3k0 to attack rolls against them on your next Turn."
+   },
+   {
+    "rank": 5,
+    "name": "Heart of the Dragon",
+    "text": "Wielding katana and wakizashi and attacking twice in a Turn grants one additional off-hand attack as a Free Action."
+   }
+  ]
+ },
+ {
+  "name": "Mirumoto Taoist Swordsman [Bushi]",
+  "clan": "Dragon",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Void",
+  "skills": "Athletics, Defense, Iaijutsu, Kenjutsu (Katana), Lore: Theology, Meditation, any 1 Bugei or High Skill",
+  "outfit": "Sturdy Clothing, Katana, Wakizashi, Tanto, Traveling Pack, 1 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.221",
+  "lore": "Swordsmen who train beside the Togashi tattooed monks and bring their unconventional methods to the blade.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Aligned With the Elements",
+    "text": "Wielding a sword while wearing no armor grants Reduction equal to School Rank + 2 and +1k0 to sword damage."
+   },
+   {
+    "rank": 2,
+    "name": "Fist and Blade",
+    "text": "With a sword, perform Knockdown for 1 less Raise, and a controlled Grapple can deal the sword's damage instead of unarmed damage."
+   },
+   {
+    "rank": 3,
+    "name": "Strike of Harmony",
+    "text": "You may spend a Void Point on damage while wielding any sword, stacking with the katana's own Void-spending ability if applicable."
+   },
+   {
+    "rank": 4,
+    "name": "Master of Steel",
+    "text": "Attack as a Simple Action while wielding a sword."
+   },
+   {
+    "rank": 5,
+    "name": "Balance of Nothingness",
+    "text": "Once per skirmish, spend unlimited Void Points on a single damage roll while wielding a sword."
+   }
+  ]
+ },
+ {
+  "name": "Tamori Shugenja",
+  "clan": "Dragon",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Stamina",
+  "skills": "Athletics, Calligraphy (Cipher), Defense, Divination, Lore: Theology, Medicine, Spellcraft",
+  "outfit": "Robes, Wakizashi, any 1 weapon, Scroll Satchel, Traveling Pack, 5 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Earth",
+  "deficiency": "Air",
+  "source": "Core Rulebook p.113",
+  "lore": "Formed from the Agasha who stayed with the Dragon, the Tamori inherited their experimental magic, notably sealing a spell's essence in prepared liquids for later use.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Flesh of the Elements",
+    "text": "Store a person/creature-targeting spell in a potion by expending a spell slot; anyone can trigger it later by drinking (Simple Action) or throwing it (Complex Action, Athletics/Agility). It still counts against your daily spell slots each day it awaits use, and takes hours equal to the spell's Mastery Level to brew. Also grants a Free Raise on Craft-keyword spells."
+   }
+  ]
+ },
+ {
+  "name": "The Togashi Tattooed Order [Monk]",
+  "clan": "Dragon",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Void",
+  "skills": "Athletics, Artisan: Tattooing, Defense, Jiujutsu, any one Lore Skill, Meditation, any one non-Low Skill",
+  "outfit": "Robes, Bo, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.114",
+  "lore": "The ise zumi, whose tattoos, inked with the Kami Togashi's blood, grant supernatural powers. Revered and feared, they excel at unarmed combat and feats of athleticism.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Blood of the Kami",
+    "text": "Gain two Tattoos at this Rank."
+   },
+   {
+    "rank": 2,
+    "name": "Body of Stone",
+    "text": "+1k1 to the total of all unarmed attack and damage rolls."
+   },
+   {
+    "rank": 3,
+    "name": "Blessing of the Kami",
+    "text": "Gain two additional Tattoos."
+   },
+   {
+    "rank": 4,
+    "name": "Will of Stone",
+    "text": "Unarmed attacks become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 5,
+    "name": "Touch of the Kami",
+    "text": "Gain two additional Tattoos."
+   }
+  ]
+ },
+ {
+  "name": "The Hoshi Tsurui Zumi Order [Monk]",
+  "clan": "Dragon",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Void",
+  "skills": "Athletics, Defense, Etiquette, Jiujutsu, Meditation (Void Recovery), any 2 Skills",
+  "outfit": "Robes, Bo, Traveling Pack, 2 koku",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 1 p.214",
+  "lore": "A branch of the Togashi tattooed monks begun in the Hidden Emperor era, when Togashi Hoshi broke with Hitomi and began tattooing his own followers.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Swift Fist, Subtle Heart",
+    "text": "Spend a Void Point as a Free Action to gain, for a number of Rounds equal to your School Rank, either +1k1 to unarmed attack rolls or +1k0 to unarmed damage (chosen each Turn). You begin with 1 Tattoo and 2 known Kiho (prerequisites still apply), can buy further Kiho as a Brotherhood of Shinsei monk, and gain an additional Tattoo at School Rank 4."
+   }
+  ]
+ },
+ {
+  "name": "The Hitomi Kikage Zumi Order [Monk]",
+  "clan": "Dragon",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Reflexes",
+  "skills": "Athletics, Defense, Jiujutsu, Lore (choose one), Meditation, any 2 Non-Low Skills",
+  "outfit": "Sturdy Clothing, Traveling Pack, 4 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 1 p.215",
+  "lore": "Tattooed monks, mostly of the Hitomi family, who seek enlightenment through violent physical action. They flourish under Lady Hitomi but appear in other eras too.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Gift of the Lady",
+    "text": "Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."
+   },
+   {
+    "rank": 2,
+    "name": "Strike the Base",
+    "text": "Spend a Void Point on unarmed damage rolls, including damage inflicted in a Grapple."
+   },
+   {
+    "rank": 3,
+    "name": "Moving the Wind",
+    "text": "Attack as a Simple Action when unarmed; gain one additional Tattoo."
+   },
+   {
+    "rank": 4,
+    "name": "Strike the Center",
+    "text": "Perform Knockdown unarmed for 1 less Raise, and gain +1k1 to unarmed damage (including Grapple damage)."
+   },
+   {
+    "rank": 5,
+    "name": "Strike the Summit",
+    "text": "Knockdown attempts may call 2 additional Raises, automatically Stunning on a success; thrown Grapple targets must roll Earth (TN 20) or also be Stunned. Gain 1 additional Tattoo."
+   }
+  ]
+ },
+ {
+  "name": "Akodo Bushi",
+  "clan": "Lion",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Perception",
+  "skills": "Battle (Mass Combat), Defense, Kenjutsu, Kyujutsu, Lore: History, Sincerity, any one Bugei or High Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.116",
+  "lore": "The Akodo refuse narrow specialisation: their School perfects precise, fundamental kenjutsu and pairs it with a thorough study of battle.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Lion",
+    "text": "Choose to ignore an opponent's Armor-derived Armor TN, or gain a Free Raise when attacking; also +1k0 on your first melee attack against a foe each skirmish, or against anyone who's Raised on you since your last Turn (capped at +1k0 regardless of how many times)."
+   },
+   {
+    "rank": 2,
+    "name": "Strength of Purity",
+    "text": "Add your Honor Rank to the total of one roll per Turn during a skirmish (not damage rolls, and not while in the Center Stance)."
+   },
+   {
+    "rank": 3,
+    "name": "Strength of My Ancestors",
+    "text": "Attack as a Simple Action with Samurai-keyword weapons."
+   },
+   {
+    "rank": 4,
+    "name": "Triumph Before Battle",
+    "text": "Once per skirmish, designate an opponent during the Reactions Stage; ignore their Stance-based Armor TN bonus next Round."
+   },
+   {
+    "rank": 5,
+    "name": "Akodo’s Final Lesson",
+    "text": "On a Bugei Skill Roll with Raises, if you meet the original TN but miss the Raised TN, you still succeed (just without the Raise benefits)."
+   }
+  ]
+ },
+ {
+  "name": "Ikoma Bard [Courtier]",
+  "clan": "Lion",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Intelligence",
+  "skills": "Courtier, Etiquette, Lore: History (Lion Clan), Perform: Storytelling, Sincerity (Honesty), any one High Skill, any one Bugei Skill",
+  "outfit": "Traditional Clothing, Wakizashi, Knife, Calligraphy Set, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.118",
+  "lore": "The Empire's great storytellers. Ikoma bards argue through history and parable, invoking ancestors and heroes to win debates and spread Glory.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Herald of Glory",
+    "text": "Gain the Precise Memory Advantage free; publicly praising someone's heroic deeds via a successful Perform: Storytelling/Awareness roll (TN 20) grants them Glory equal to your School Rank, usable per person per month up to your School Rank times."
+   },
+   {
+    "rank": 2,
+    "name": "The Heart of the Lion",
+    "text": "No Honor/Glory loss for displaying emotion publicly on behalf of a Lion or an honorable cause; Intimidation/Temptation against you add +5 to their TN per your School Rank."
+   },
+   {
+    "rank": 3,
+    "name": "The Voice of the Ancestors",
+    "text": "Before a battle, inspire allies with Perform: Oratory/Awareness (TN 15 + 5 per person, +5 more per non-Lion target); success lets each inspired ally add their Honor Rank to one Skill Roll during that battle."
+   },
+   {
+    "rank": 4,
+    "name": "The Strength of Tradition",
+    "text": "A number of times per session equal to School Rank, encourage an ally (Perform: Storytelling/Awareness, TN 25); on success, their next failed roll that day can be re-rolled with your Honor Rank in unkept dice added — but you lose 2 Honor if that re-roll also fails."
+   },
+   {
+    "rank": 5,
+    "name": "Every Lion is Your Brother",
+    "text": "Five times per session, add unkept dice equal to your Perform: Storytelling Rank to a Contested Social Roll by citing historical precedent."
+   }
+  ]
+ },
+ {
+  "name": "Ikoma Lion’s Shadow [Bushi]",
+  "clan": "Lion",
+  "kind": "major",
+  "honor": 3.5,
+  "benefit": "Awareness",
+  "skills": "Courtier, Etiquette, Kenjutsu, Investigation (Notice), Sincerity, Stealth, any 1 High or Low Skill",
+  "outfit": "Traditional Clothing, Daisho, any 1 weapon, Calligraphy Set, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.109",
+  "lore": "A small, secretive School that keeps alive the ruthless, pragmatic methods of the first Ikoma, which the family's histories prefer to forget.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "No Boundaries",
+    "text": "No Honor loss for Low Skills used for the Lion Clan's benefit; as a Free Action, target a number of foes equal to School Rank for +1k0 on attack and Contested Rolls against them, usable School Rank times per day, lasting the rest of the day."
+   },
+   {
+    "rank": 2,
+    "name": "The Lion Cannot Fail",
+    "text": "+1k0 on all School Skill Rolls."
+   },
+   {
+    "rank": 3,
+    "name": "The Spirit of Ikoma",
+    "text": "Once per Round, lose 3 Honor as a Free Action for +2k1 to attack, damage, and Contested Social Skill Rolls until the end of the Round."
+   },
+   {
+    "rank": 4,
+    "name": "The Quiet Lion’s Claws",
+    "text": "Melee weapon attacks become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 5,
+    "name": "Ferocious Determination",
+    "text": "Spend a Void Point as a Free Action for a Contested Roll (Courtier/Awareness vs. their Etiquette (Courtesy)/Awareness); winning subtracts your Awareness plus their Honor Rank from their attack and Contested Social rolls against you for hours equal to your School Rank. Doesn't work on targets without an Honor Rank."
+   }
+  ]
+ },
+ {
+  "name": "Kitsu Shugenja",
+  "clan": "Lion",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Perception",
+  "skills": "Battle, Calligraphy (Cipher), Etiquette, Lore: History, Lore: Theology, Spellcraft, any one High or Bugei Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 5 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Water",
+  "deficiency": "Fire",
+  "source": "Core Rulebook p.117",
+  "lore": "Keeping rituals unchanged since the family began, the Kitsu sense and work the bonds between the living, their ancestors and other realms, and command large-scale battle magic.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Eyes of the Ancestors",
+    "text": "Roll a Spell Casting Roll (as a Water spell) vs. the target's Willpower x5 to learn all their Spiritual Advantages/Disadvantages; spend a Void Point to suppress one Spiritual Advantage of theirs for minutes equal to School Rank. Also grants a Free Raise on Battle-keyword spells."
+   }
+  ]
+ },
+ {
+  "name": "Lion Elite Spearmen [Bushi]",
+  "clan": "Lion",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Reflexes",
+  "skills": "Battle, Defense, Kenjutsu, Lore: History, Polearms, Spears (Magari-Yari), any one Bugei or High Skill",
+  "outfit": "Normal clothing, daisho, ten nage-yari, spear (magari-yari), any one other spear or polearm, light or ashigaru armor, traveling pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Naishou Province p.7",
+  "lore": "The Lion's spear units are few in modern times and other Clans see them as a relic of an earlier age. Several escort the new Miya Governor of Naishou Province.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of Magari-Yarijutsu",
+    "text": "+1k0 on Spear and Polearm Skill rolls; in Center, Defense, or Full Defense Stance with a spear/polearm, gain Reduction equal to half your Skill Rank."
+   },
+   {
+    "rank": 2,
+    "name": "Strike Like The Lion",
+    "text": "With a spear or polearm, ignore enemy Reduction equal to half your Honor Rank (rounded up)."
+   },
+   {
+    "rank": 3,
+    "name": "Strike Through the Eagle",
+    "text": "Ready/draw a nage-yari as a Free Action any number of times per Round; nage-yari thrown attacks become a Simple Action."
+   },
+   {
+    "rank": 4,
+    "name": "Strike Like the Wind",
+    "text": "Melee attacks become a Simple Action when wielding a spear or polearm."
+   },
+   {
+    "rank": 5,
+    "name": "Strike With the Soul",
+    "text": "The Extra Attack Maneuver costs only 3 Raises with a spear/polearm in melee; thrown spear attacks may include one Free Action attack."
+   }
+  ]
+ },
+ {
+  "name": "Matsu Beastmaster [Bushi]",
+  "clan": "Lion",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Agility",
+  "skills": "Animal Handling 2, Battle, Defense, Iaijutsu, Kenjutsu, any 1 Bugei Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 4 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.136",
+  "lore": "Matsu who take lion warcats into their own pride and communicate with them almost mystically, though the bond can leave them awkward among people.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "One with the Pride",
+    "text": "Gain a bonded lion warcat that follows commands and won't attack you; direct it to Attack (Complex Action) or it defaults to Guard."
+   },
+   {
+    "rank": 2,
+    "name": "Heart of the Beast",
+    "text": "Gain a second warcat; you and your lions gain Swift 2 and an extra Wound Rank."
+   },
+   {
+    "rank": 3,
+    "name": "The Ferocity Within",
+    "text": "Melee attacks become a Simple Action with katana, wakizashi, magari-yari, nage-yari, knives, or unarmed; direct a warcat to Attack as a Simple Action."
+   },
+   {
+    "rank": 4,
+    "name": "All as One",
+    "text": "Pride members get two claw attacks per Round; you and your pride gain +2k1 on damage while fighting together; a directed warcat Attack may include a Simple Move Action."
+   },
+   {
+    "rank": 5,
+    "name": "With the Soul of a Lion",
+    "text": "Gain a third warcat; all your warcats gain +10 Armor TN, +2 Reduction, and +2 Fear."
+   }
+  ]
+ },
+ {
+  "name": "Matsu Berserker [Bushi]",
+  "clan": "Lion",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Strength",
+  "skills": "Battle, Jiujutsu, Kenjutsu (Katana), Kyujutsu, Lore: History, any two Bugei Skills",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.119",
+  "lore": "Most Matsu train here. The School teaches total, fearless commitment to the attack, on the principle that a beaten foe cannot strike back.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Lion’s Roar",
+    "text": "Add your Honor Rank to all damage rolls; Full Attack Stance grants an extra 5' of movement (within your normal max)."
+   },
+   {
+    "rank": 2,
+    "name": "Matsu’s Fury",
+    "text": "In Full Attack Stance, a hit against a chosen target (within 30') freezes them from taking Move Actions unless they beat a Willpower roll (TN = damage dealt); immune to Fear-immune creatures."
+   },
+   {
+    "rank": 3,
+    "name": "The Lion’s Charge",
+    "text": "Melee attacks become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 4,
+    "name": "Matsu’s Courage",
+    "text": "Ignore Wound Rank TN penalties up to your Honor Rank (double while in Full Attack Stance)."
+   },
+   {
+    "rank": 5,
+    "name": "The Lion’s Victory",
+    "text": "Once per encounter after rolling damage, spend a Void Point as a Free Action so all kept damage dice explode (reroll and add) instead of just 10s."
+   }
+  ]
+ },
+ {
+  "name": "Agasha Shugenja",
+  "clan": "Phoenix",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Intelligence",
+  "skills": "Calligraphy (Cipher), any one Craft Skill, Defense, Etiquette, Lore: Theology, Spellcraft, any one High or Bugei Skill",
+  "outfit": "Robes, Wakizashi, any 1 weapon, Scroll Satchel, Traveling Pack, 5 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Fire",
+  "deficiency": "Water",
+  "source": "Core Rulebook p.125",
+  "lore": "Agasha shugenja pursue unconventional magic, from alchemy to spells that call on several elements at once, and the Phoenix let them take that study as far as it leads.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Elements of All Things",
+    "text": "Spend a Void Point to cast a spell using a different Ring than the one it normally requires (still uses a spell slot of the Ring actually used). Also grants a Free Raise on Craft-keyword spells."
+   }
+  ]
+ },
+ {
+  "name": "Asako Henshin [Monk]",
+  "clan": "Phoenix",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Willpower",
+  "skills": "Calligraphy, Jiujutsu, Lore: Elements, Lore: Theology, Meditation 2, any 1 Skill (not Low)",
+  "outfit": "Robes, Bo, Scroll Satchel, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.199",
+  "lore": "A secretive monastic sect of the Asako whose ways few outside the family understand. Its monks study how a person relates to the Elements that make up all things.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Four Mysteries",
+    "text": "As a Simple Action, raise or lower both Traits tied to one of your Rings by your School Rank (half, rounded down, minimum 1, if targeting someone else — and a Contested Willpower Roll if they're unwilling/unaware). Lasts minutes equal to your Insight Rank, usable up to 5x Insight Rank times per day. Doesn't change the underlying Ring or Wound Ranks."
+   },
+   {
+    "rank": 2,
+    "name": "The Riddle of Earth",
+    "text": "As a Simple Action, become immune to all Conditional Effects (except Grappled and Mounted) for hours equal to your Earth Ring."
+   },
+   {
+    "rank": 3,
+    "name": "The Riddle of Air",
+    "text": "As a Simple Action, see through all illusions and false images for hours equal to your School Rank; if an illusion comes from a spell above your Insight Rank, you must win a Contested Air Roll against the caster to see through it."
+   },
+   {
+    "rank": 4,
+    "name": "The Riddle of Fire",
+    "text": "As a Complex Action, increase your kept dice on unarmed damage by your Fire Ring for a number of Rounds equal to your School Rank; alternatively, spend a Void Point when hit in melee to force a Contested Fire Roll that reduces the attacker's damage dice by your Fire Ring on a win."
+   },
+   {
+    "rank": 5,
+    "name": "The Riddle of Water",
+    "text": "Succeed at Lore: Elements (Water)/Water (TN 20) to take one Complex and one Simple Action in a Turn, or three Simple Actions instead."
+   }
+  ]
+ },
+ {
+  "name": "Asako Loremaster [Courtier]",
+  "clan": "Phoenix",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Intelligence",
+  "skills": "Courtier, Etiquette (Courtesy), Lore: History, Lore: Theology (Fortunes), Meditation, Sincerity, any Lore Skill",
+  "outfit": "Sensible Clothing, Wakizashi, Calligraphy Set, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.124",
+  "lore": "Scholarly Asako courtiers who study an unusually wide range of subjects and turn that learning into insight and influence at court.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Temple of the Soul",
+    "text": "Free Raise on any Lore Skill Roll; spending a Void Point on Etiquette grants +3k1 instead of the usual +1k1."
+   },
+   {
+    "rank": 2,
+    "name": "From the Ashes",
+    "text": "After observing a court for a day, roll Lore: History/Perception (TN 20) for +2k0 on Social Skill Rolls for the next two days while you remain there (re-rollable to extend without further observation)."
+   },
+   {
+    "rank": 3,
+    "name": "Voice of the Universe",
+    "text": "Spend an hour conversing with an ally, then roll Lore: History/Intelligence (TN 25); success lets them add your Lore: History Rank to Social Skill Rolls for 24 hours (two Raises extends this to one more participating ally). Can't be reused on the same person until it expires."
+   },
+   {
+    "rank": 4,
+    "name": "Invincible Mind",
+    "text": "When you fail a Contested Social Roll resisting emotional/social manipulation (not Fear), re-roll using Intelligence instead of the original Trait, keeping the second result."
+   },
+   {
+    "rank": 5,
+    "name": "Wisdom of the Ages",
+    "text": "+5k0 on any Lore Skill Roll, including ones used for your other School Techniques."
+   }
+  ]
+ },
+ {
+  "name": "Isawa Shugenja",
+  "clan": "Phoenix",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Intelligence",
+  "skills": "Calligraphy (Cipher), Lore: Theology, any one Lore Skill, Medicine, Meditation, Spellcraft, any one High Skill",
+  "outfit": "Robes, Wakizashi, any 1 weapon, Scroll Satchel, Traveling Pack, 5 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.124",
+  "lore": "The oldest shugenja School in Rokugan and the largest shugenja family. The Isawa have pursued the secrets of the universe for more than a thousand years.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Isawa’s Gift",
+    "text": "Free Raise on all Spell Casting Rolls of your Affinity element."
+   }
+  ]
+ },
+ {
+  "name": "Shiba Artisan [Courtier]",
+  "clan": "Phoenix",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Intelligence",
+  "skills": "Artisan (pick 2), Calligraphy, Etiquette, Lore (pick 1), Sincerity, any 1 High or Bugei Skill",
+  "outfit": "Sensible Clothing, Wakizashi, tools for chosen specialty, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.122",
+  "lore": "A quiet Shiba tradition that seeks to capture beauty as purely as possible; unlike the Kakita, a Shiba artist needs no audience.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Soul of Brilliance",
+    "text": "Choose one Artisan Skill; spending a Void Point on it grants +2k2 instead of the usual +1k1."
+   },
+   {
+    "rank": 2,
+    "name": "The Way of Sincerity",
+    "text": "Once per month, roll your chosen Artisan Skill (TN 15); the margin of success becomes XP usable only to buy the Allies Advantage, lasting weeks equal to your School Rank."
+   },
+   {
+    "rank": 3,
+    "name": "The Art Speaks",
+    "text": "Choose one Artisan Skill; substitute its Rank for a called-for Social Skill on a roll (no Mastery Level benefits apply, since you don't actually have ranks in that Social Skill)."
+   },
+   {
+    "rank": 4,
+    "name": "Bounty of the Craft",
+    "text": "Once per day (15-minute ritual), roll your Artisan Skill (TN 30); on success, you and up to School Rank others present regain all Void Points. Doesn't work in the Shadowlands."
+   },
+   {
+    "rank": 5,
+    "name": "The Touch of Destiny",
+    "text": "While your art is on display before others, everyone in the room gains 1 extra Void Point (you gain 2, and can deny the effect to anyone), capped at 1 per person per day (2 for you)."
+   }
+  ]
+ },
+ {
+  "name": "Shiba Bushi",
+  "clan": "Phoenix",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Agility",
+  "skills": "Defense, Kenjutsu, Kyujutsu, Meditation (Void Recovery), Spears, Lore: Theology, any one Bugei or High Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.123",
+  "lore": "Warrior-scholars who look for any alternative to bloodshed, then strike swiftly when it comes. Their Techniques draw on the Void and protect others, suiting them to yojimbo work.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Phoenix",
+    "text": "Spending a Void Point for +1k1 can instead be upgraded to spending 2 Void Points for +2k2; Guard as a Free Action, though the target's Armor TN bonus drops to +5 instead of +10."
+   },
+   {
+    "rank": 2,
+    "name": "Dancing With the Elements",
+    "text": "Choose a target within 30' each Round; you may raise or lower the TN of any spell they cast or are targeted by (by 5), and the same for spells targeting you directly."
+   },
+   {
+    "rank": 3,
+    "name": "One With the Void",
+    "text": "Automatically regain a Void Point during the Reactions Stage whenever anyone else spends one this Round (even above your max, though excess is lost after combat); usable twice per skirmish."
+   },
+   {
+    "rank": 4,
+    "name": "Move With the World",
+    "text": "Attack as a Simple Action with Polearms, Spears, or Samurai-keyword weapons."
+   },
+   {
+    "rank": 5,
+    "name": "Touch of the Void",
+    "text": "Each Void Point spent counts as two where applicable, and you may spend Void Points on enhancements twice in a single Turn."
+   }
+  ]
+ },
+ {
+  "name": "Bayushi Bushi",
+  "clan": "Scorpion",
+  "kind": "major",
+  "honor": 2.5,
+  "benefit": "Intelligence",
+  "skills": "Courtier (Manipulation), Defense, Etiquette, Iaijutsu, Kenjutsu, Sincerity, any one Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.126",
+  "lore": "The School behind the Scorpion's villainous reputation trains its students as agents of discord, adding manipulation, stealth and even poison to their swordplay. Its Techniques are dirty tricks that exploit every advantage.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Scorpion",
+    "text": "+1k1 to Initiative Rolls; +5 Armor TN against any opponent with lower Initiative than you."
+   },
+   {
+    "rank": 2,
+    "name": "Pincers and Tail",
+    "text": "The Feint Maneuver costs only 1 Raise instead of 2."
+   },
+   {
+    "rank": 3,
+    "name": "Strike at the Tail",
+    "text": "Choose a target within 30' when you assume a Stance; a successful hit that Turn Fatigues them (as if they'd gone without rest for 24 hours) unless they beat an Earth Ring roll (TN 25) in the Reactions Stage."
+   },
+   {
+    "rank": 4,
+    "name": "Strike From Above Strike From Below",
+    "text": "Melee attacks become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 5,
+    "name": "The Pincers Hold, The Tail Strikes",
+    "text": "Once per encounter, spend a Void Point as a Complex Action for a melee attack that Stuns on a hit; the target can shake it off with an Earth Ring roll (TN = damage dealt) in the Reactions Stage."
+   }
+  ]
+ },
+ {
+  "name": "Bayushi Courtier",
+  "clan": "Scorpion",
+  "kind": "major",
+  "honor": 2.5,
+  "benefit": "Awareness",
+  "skills": "Calligraphy, Courtier (Gossip), Etiquette, Investigation, Sincerity (Deceit), Temptation, any one High skill",
+  "outfit": "Extravagant Clothing, Wakizashi, any 1 weapon, Calligraphy Set, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.127",
+  "lore": "Masters of manipulation whose patient gathering of secrets built the Scorpion's network of informants. They find the weakness in any opponent, or ally, and use it for the Clan.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Weakness is My Strength",
+    "text": "In a Contested Social Roll, gain a Free Raise for every 3 points of Mental/Social Disadvantages your opponent has (max 5 Free Raises). Also, Free Raise on Courtier when spreading gossip, without needing a Raise to hide that you're the source."
+   },
+   {
+    "rank": 2,
+    "name": "Shallow Waters",
+    "text": "After conversing briefly, win a Contested Roll (Investigation/Awareness vs. their Etiquette/Awareness) to learn their lowest-Rank Mental Trait and lowest-Rank Social Skill; spend a Void Point to also learn the next-lowest of each."
+   },
+   {
+    "rank": 3,
+    "name": "Secrets are Birthmarks",
+    "text": "Win a Contested Roll (Courtier (Manipulation)/Awareness vs. their Etiquette (Courtesy)/Awareness) after conversing to force them to reveal one Mental or Social Advantage/Disadvantage (just its title, not details); a revealed Disadvantage lets you claim a free 2-point Blackmail Advantage on them (GM permitting)."
+   },
+   {
+    "rank": 4,
+    "name": "Scrutiny’s Sweet Sting",
+    "text": "Against someone you have Blackmail on, their dice can't explode on Contested Social Rolls against you; spend a Void Point on any Contested Social Roll to force the opponent to use a mental Trait of your choice."
+   },
+   {
+    "rank": 5,
+    "name": "No More Masks",
+    "text": "A number of times per session equal to School Rank, win an Opposed Roll (Courtier (Gossip)/Awareness vs. their Etiquette (Courtesy)/Awareness, +5k0 if you have Blackmail on them) to inflict a Social Disadvantage, Sworn Enemy, or Obligation on the target for a month. Can't reuse on the same target until it expires."
+   }
+  ]
+ },
+ {
+  "name": "Shosuro Actor [Ninja]",
+  "clan": "Scorpion",
+  "kind": "major",
+  "honor": 1.5,
+  "benefit": "Awareness",
+  "skills": "Acting, Etiquette, Knives, Meditation, Sincerity (Deceit), Stealth, any 1 High or Low Skill",
+  "outfit": "Fine Clothing, Assorted Costumes and Disguises, Knife, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.227",
+  "lore": "Shinobi who infiltrate in plain sight, disguised as servants, peasants or even particular samurai, which is why the Shosuro have long practised acting.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The First Face",
+    "text": "Learn one persona; spending a Void Point on Acting or Sincerity (Deceit) grants +3k1 instead of the usual +1k1."
+   },
+   {
+    "rank": 2,
+    "name": "The Subtle Sting",
+    "text": "+2k0 to attack rolls when wielding a Small weapon."
+   },
+   {
+    "rank": 3,
+    "name": "The Second Face",
+    "text": "Learn a second persona; may spend 2 Void Points (instead of 1) when enhancing a School Skill Roll, stacking with Rank 1's bonus."
+   },
+   {
+    "rank": 4,
+    "name": "The Viper’s Kiss",
+    "text": "Attack as a Simple Action instead of Complex when using a Small-sized weapon."
+   },
+   {
+    "rank": 5,
+    "name": "The Third Face",
+    "text": "Learn a third persona; Raises aren't limited by Void when attacking an unaware or unsuspecting foe."
+   }
+  ]
+ },
+ {
+  "name": "Shosuro Infiltrator [Ninja]",
+  "clan": "Scorpion",
+  "kind": "major",
+  "honor": 1.5,
+  "benefit": "Reflexes",
+  "skills": "Acting, Athletics, Ninjutsu, Sincerity, Stealth (Sneaking) 2, any one Skill",
+  "outfit": "Ashigaru or Light Armor, Sturdy Black Clothing, Daisho, Bow or Knife, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.128",
+  "lore": "A School few outsiders know exists, training silent killers who strike unsuspecting targets from hiding, without pleasure or remorse.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Path of Shadows",
+    "text": "No Honor loss for Low Skills or Ninjutsu weapons used for the Scorpion Clan; +2k0 to all Stealth Skill rolls."
+   },
+   {
+    "rank": 2,
+    "name": "Strike From Darkness",
+    "text": "Attacking someone unaware of you removes the Void limit on Raises and adds unkept dice equal to School Rank to the attack roll; against a Condition-afflicted foe (like Stunned/Fatigued) add half that many unkept dice instead — the two don't stack, choose one."
+   },
+   {
+    "rank": 3,
+    "name": "Steel Within Silk",
+    "text": "Attack (melee, or ranged with shuriken/tsubute) as a Simple Action instead of Complex when ambushing or using Ninjutsu/Ninja-keyword weapons."
+   },
+   {
+    "rank": 4,
+    "name": "Whisper of Steel",
+    "text": "After attacking (only if you make just one attack that Round), opponents/bystanders need a Contested Roll (Investigation (Notice)/Perception vs. your Stealth/Agility) to even detect you."
+   },
+   {
+    "rank": 5,
+    "name": "The Final Silence",
+    "text": "After a successful damage roll, spend Void Points (any number) to bump up to two damage dice each to 10 (non-exploding)."
+   }
+  ]
+ },
+ {
+  "name": "Soshi Magistrate [Bushi]",
+  "clan": "Scorpion",
+  "kind": "major",
+  "honor": 2.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Defense, Intimidation (Control), Jiujutsu, Kenjutsu, Lore: Underworld, any Bugei Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.171",
+  "lore": "Grown from techniques taught to the yoriki of Soshi Saibankan, this School trains the Scorpion's magistrates and guards in both armed and unarmed fighting.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Face of Justice",
+    "text": "+1k0 to Intimidation (+2k0 vs. someone of lower Status); +1k0 damage on melee attacks."
+   },
+   {
+    "rank": 2,
+    "name": "Rise to Meet the Challenge",
+    "text": "While Prone, a Free Action Athletics/Agility roll (TN 20) lets you stand back up; +1k1 to rolls controlling a Grapple."
+   },
+   {
+    "rank": 3,
+    "name": "The Magistrate’s Cut",
+    "text": "Once per opponent per skirmish, a melee Called Shot with 3 Raises temporarily Blinds the target until the Reactions Stage of the next Round."
+   },
+   {
+    "rank": 4,
+    "name": "Certainty of Purpose",
+    "text": "Melee attacks (including unarmed) become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 5,
+    "name": "Relentless Resolve",
+    "text": "Once per skirmish (not in Center Stance), gain unkept dice equal to your Intimidation Rank on all attack rolls for one Round."
+   }
+  ]
+ },
+ {
+  "name": "Soshi Shugenja",
+  "clan": "Scorpion",
+  "kind": "major",
+  "honor": 2.5,
+  "benefit": "Awareness",
+  "skills": "Calligraphy (Cipher), Courtier, Etiquette, Lore: Theology, Spellcraft, Stealth, any 1 Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 5 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Air",
+  "deficiency": "Earth",
+  "source": "Core Rulebook p.127",
+  "lore": "Called in when stealth and subtlety are needed, Soshi shugenja coax the amoral kami into trickery and can cast most non-damaging spells without any visible sign.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Kami’s Whisper",
+    "text": "Sacrifice an extra spell slot of the same Element when casting a non-damaging spell to hide all visible signs it was cast; also grants a Free Raise on Illusion-keyword spells."
+   }
+  ]
+ },
+ {
+  "name": "Yogo Wardmaster [Shugenja]",
+  "clan": "Scorpion",
+  "kind": "major",
+  "honor": 1.5,
+  "benefit": "Intelligence",
+  "skills": "Calligraphy (Cipher), Etiquette, Investigation, Lore: Theology, Spellcraft, Stealth, any 1 High or Low Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, pack of twenty paper wards, 3 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.229",
+  "lore": "Shugenja of the Yogo's closely guarded ward magic: protective charms more flexible than the Toritaka's exorcism wards.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Way of the Wardmaster",
+    "text": "Cast a Wards-keyword spell with extra Raises (equal to its Mastery Level) to store it latent in a paper ward; activate it later as a Simple Action by placing it on a target (an unwilling target requires a Spellcraft/Agility attack roll). Destroying an active ward ends its effect; the spell slot isn't freed until the ward discharges or is destroyed unused."
+   }
+  ]
+ },
+ {
+  "name": "Horiuchi Shugenja",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Stamina",
+  "skills": "Calligraphy, Craft: Meishodo, Defense, Lore: Theology, Meditation, Spellcraft (Spell Research), any 1 High or Bugei Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll/Amulet Satchel, Traveling Pack, 4 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Earth",
+  "deficiency": "Air",
+  "source": "The Great Clans p.257",
+  "lore": "Keepers of meishodo, the talisman magic the Unicorn gathered from many peoples on their travels beyond the Empire. In earlier eras the Iuchi teach it.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Mysteries of Meishodo",
+    "text": "Craft magical amulets: roll Craft: Meishodo/Ring for the spell's Ring (TN 15 + 5x Mastery Level, taking hours equal to the Mastery Level) to store one spell in a charm. Casting from it takes one Complex Action with no Spell Casting Roll needed (and no Raise benefits), still using a spell slot. Only spells of Mastery Level up to your School Rank (never 4-6) can be stored this way, and anyone trained in meishodo can use your amulets."
+   }
+  ]
+ },
+ {
+  "name": "Ide Emissary [Courtier]",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Awareness",
+  "skills": "Calligraphy, Commerce, Courtier, Etiquette (Conversation), Horsemanship, Sincerity (Honesty), any one High or Perform skill",
+  "outfit": "Extravagant Clothing, Wakizashi, any 1 weapon, Calligraphy Set, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.131",
+  "lore": "The most peaceable courtiers of the Great Clans, the Ide cultivate calm and mediation. Their Techniques never attack; they defuse conflict and protect the Emissary.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Heart Speaks",
+    "text": "Roll Etiquette (Courtesy)/Awareness (TN 20) to avoid inadvertently giving offense; Free Raise on Sincerity (Honesty), but Sincerity (Deceit) rolls get +5 TN instead."
+   },
+   {
+    "rank": 2,
+    "name": "Piercing the Veils",
+    "text": "Win a Contested Roll (Etiquette/Awareness vs. their Etiquette/Willpower) to get a general sense of someone's true feelings in a social situation; Raises reveal more specific insight."
+   },
+   {
+    "rank": 3,
+    "name": "The Heart Listens",
+    "text": "After at least 10 minutes of conversation, win a Contested Roll (Sincerity (Honesty)/Awareness vs. their Etiquette (Courtesy)/Willpower) to shift their attitude toward you positively; two Raises makes them a temporary Ally for the day. Doesn't work on Sworn Enemies."
+   },
+   {
+    "rank": 4,
+    "name": "Answering the Heart",
+    "text": "Add unkept dice equal to your School Rank when using your Rank 2 and Rank 3 techniques."
+   },
+   {
+    "rank": 5,
+    "name": "The Immovable Hand of Peace",
+    "text": "Spend a Void Point to win a Contested Roll (Sincerity (Honesty)/Awareness vs. their Etiquette (Courtesy)/Awareness); on success, the target can't take hostile action against you for hours equal to twice your School Rank, as long as you don't act hostile toward them either. Doesn't work on targets with Honor Rank below 2.0 or no Honor Rank."
+   }
+  ]
+ },
+ {
+  "name": "Iuchi Shugenja",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Perception",
+  "skills": "Battle, Calligraphy (Cipher), Horsemanship, Lore: Theology, Meditation, Spellcraft, any one High or Bugei Skill",
+  "outfit": "Extravagant clothing, wakizashi, Scroll Satchel, any 1 weapon, Calligraphy Set, Traveling Pack, Horse, 10 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Water",
+  "deficiency": "Fire",
+  "source": "Core Rulebook p.130",
+  "lore": "Free-spirited and unconventional, the Iuchi learned much of their craft on the open plains during the Unicorn's wanderings, meishodo talismans included. Their magic favours speed and travel.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Spirit of the Wind",
+    "text": "As a Complex Action, sacrifice a spell slot of any element to grant a target an extra Simple Move Action on their next Turn (lost if unused). Also grants a Free Raise on Travel-keyword spells."
+   }
+  ]
+ },
+ {
+  "name": "Moto Bushi",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 3.5,
+  "benefit": "Strength",
+  "skills": "Athletics, Defense, Horsemanship, Hunting, Kenjutsu (Scimitar), any one Bugei Skill, any one Skill",
+  "outfit": "Riding or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, Horse, 10 koku, any one weapon",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.130",
+  "lore": "Descended in part from the nomads who joined the Unicorn abroad, the Moto fight as unrestrained heavy cavalry, a style other Clans find both fearsome and improper.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Unicorn",
+    "text": "Wield any two-handed weapon (except bows) in one hand; +1k0 damage while mounted, using a scimitar, or using a two-handed melee weapon (these don't stack); scimitars count as having the Samurai keyword for you."
+   },
+   {
+    "rank": 2,
+    "name": "Shinsei’s Smile",
+    "text": "Gain a bonus to attack rolls equal to half your opponent's current Wound Rank TN penalty (rounded down)."
+   },
+   {
+    "rank": 3,
+    "name": "Desert Wind Strike",
+    "text": "Melee weapon attacks become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 4,
+    "name": "The Charge of Madness",
+    "text": "Once per skirmish, if you drop a target to the Out Wound Level, immediately make one more attack as a Free Action against a different target (no Raises allowed)."
+   },
+   {
+    "rank": 5,
+    "name": "Moto Cannot Yield",
+    "text": "While mounted or in Full Attack Stance with a two-handed or Samurai-keyword weapon, keep extra damage dice equal to half your Strength (rounded down)."
+   }
+  ]
+ },
+ {
+  "name": "Moto Death Priest [Shugenja]",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 3.5,
+  "benefit": "Willpower",
+  "skills": "Athletics, Horsemanship, Hunting, Lore: Theology, Meditation, Spellcraft, any 1 Skill",
+  "outfit": "Sturdy Traveling Clothing, Wakizashi, any 1 weapon, Traveling Pack, Horse, 5 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Earth",
+  "deficiency": "Air",
+  "source": "Imperial Histories 1 p.240",
+  "lore": "Followers of the Shi-Tien Yen-Wang, a wrathful pantheon of foreign death gods, who turn those gods' disfavour on their enemies.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Blessings of the Shi-Tien Yen-Wang",
+    "text": "As a Simple Action, sacrifice a spell slot to target an enemy within School Rank x100 feet with a Contested Willpower Roll; on success they can't benefit from exploding dice or re-roll Advantages for Rounds equal to your School Rank. Also grants a Free Raise on Travel-keyword spells."
+   }
+  ]
+ },
+ {
+  "name": "Moto Vindicator [Bushi]",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 3.5,
+  "benefit": "Willpower",
+  "skills": "Horsemanship, Hunting, Investigation (Notice), Kenjutsu, Kyujutsu, Lore: Shadowlands, any 1 Bugei Skill",
+  "outfit": "Heavy Armor, Sturdy Clothing, Daisho, any 1 Weapon, Traveling Pack, Riding Horse, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.258",
+  "lore": "Born of the shame of Moto Tsume's fall into the Shadowlands, the Vindicators swore to destroy the Tainted Moto and every Shadowlands creature.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Purity of the Breath",
+    "text": "Each Round, choose either to reduce Wound Rank TN penalties, or add to your Armor TN, by School Rank + Willpower (doubled against Shadowlands creatures)."
+   },
+   {
+    "rank": 2,
+    "name": "Facing the Dark Within",
+    "text": "+2k0 on all Investigation rolls (+2k1 specifically to notice Shadowlands Taint)."
+   },
+   {
+    "rank": 3,
+    "name": "Justice of Our Ancestors",
+    "text": "Melee attacks become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 4,
+    "name": "Avenging Our Own",
+    "text": "+2k0 to attack and damage rolls against an enemy who's attacked you this skirmish, or against any Tainted creature regardless."
+   },
+   {
+    "rank": 5,
+    "name": "Bloodied but Unbowed",
+    "text": "Once per skirmish (Free Action), for two Rounds add your current Wound Rank TN penalty to melee damage rolls (extendable a third Round by taking 10 Wounds)."
+   }
+  ]
+ },
+ {
+  "name": "Shinjo Bushi",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 4.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Defense, Horsemanship 2, Kenjutsu, Kyujutsu, any 1 Skill",
+  "outfit": "Ashigaru or Light Armor, Sturdy Clothing, Daisho, Bow, Knife, Traveling Pack, Horse, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.31",
+  "lore": "Mounted fighters whose style adopts foreign methods from the Unicorn's travels, such as the active parry and riposte, unfamiliar to most Rokugani.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Ki-Rin",
+    "text": "When spending a Void Point for +1k1 on a School Skill Roll, also add your Horsemanship Rank to the total (not usable in Center Stance)."
+   },
+   {
+    "rank": 2,
+    "name": "Dance of the Blade",
+    "text": "In Full Defense Stance, when hit by an attack, take a Free Action to win a Contested Agility Roll and turn the attack into a miss instead; usable School Rank times per Round."
+   },
+   {
+    "rank": 3,
+    "name": "The Four Winds Strike",
+    "text": "Attack as a Simple Action with Samurai-keyword weapons; while mounted, also with a bow."
+   },
+   {
+    "rank": 4,
+    "name": "Spirit of the Blade Unleashed",
+    "text": "In Defense or Full Defense Stance, after an opponent's melee attack resolves against you, take a Free Action for a melee counterattack (shifting you into Attack Stance); usable School Rank times per skirmish, once per Round."
+   },
+   {
+    "rank": 5,
+    "name": "Dancing With the Fortunes",
+    "text": "While mounted, instead of spending a Void Point, roll a Void Ring Roll (TN 20, or 30 on foot) as a Free Action; success grants the Void Point's effect without spending it. Usable up to your starting Void Points per skirmish."
+   }
+  ]
+ },
+ {
+  "name": "Utaku Battle Maiden [Bushi]",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Reflexes",
+  "skills": "Battle, Defense, Horsemanship 2, Kenjutsu, Sincerity, any one High or Bugei Skill",
+  "outfit": "Light or Riding Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, Horse, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.132",
+  "lore": "The shiotome, the most respected cavalry in the Empire and the only riders allowed to breed the Utaku steeds. Honor strengthens their mounted Techniques.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Riding in Harmony",
+    "text": "Add your Honor Rank to one attack roll per Round (or a damage roll instead, while mounted); +Honor Rank to all Horsemanship rolls."
+   },
+   {
+    "rank": 2,
+    "name": "The Void of War",
+    "text": "During Stage 1 of a Combat Round, add +5 to either Initiative Score or Armor TN (lasts until you use this again or the skirmish ends)."
+   },
+   {
+    "rank": 3,
+    "name": "Sensing the Breeze",
+    "text": "While mounted, attacks become a Simple Action instead of Complex."
+   },
+   {
+    "rank": 4,
+    "name": "Wind Never Stops",
+    "text": "While mounted, spend a Void Point to charge as a Simple Action (move + attack together, at your steed's speed); a successful hit grants +2k1 to all damage rolls that Turn."
+   },
+   {
+    "rank": 5,
+    "name": "Otaku’s Blessing",
+    "text": "Spend a Void Point as a Free Action at the start of your Turn to add your Honor Rank to all damage rolls and Bugei Skill Rolls that Turn (stacks with Riding in Harmony)."
+   }
+  ]
+ },
+ {
+  "name": "Utaku Mounted Infantry [Bushi]",
+  "clan": "Unicorn",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Battle, Defense, Kenjutsu, Polearms, Spears, any one Bugei or High Skill",
+  "outfit": "Normal clothing, daisho, any one spear or polearm, light armor, steed, traveling pack, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 2 p.168",
+  "lore": "Soldiers who ride to battle and fight on foot, developed during the Unicorn's wanderings; many are Otaku men barred by tradition from fighting on horseback.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Choose Your Weapon",
+    "text": "Choose Kenjutsu, Polearms, or Spears; gain a free Emphasis in it and +1k0 to attack rolls with it. In Defense/Full Defense Stance with that weapon, add full Skill Rank to Armor TN (Spears/Polearms) or half Skill Rank rounded down (Kenjutsu)."
+   },
+   {
+    "rank": 2,
+    "name": "Speed of My Sisters",
+    "text": "On foot, move as if your Water Ring were 1 Rank higher; +1k0 to Initiative rolls."
+   },
+   {
+    "rank": 3,
+    "name": "All-Fronts Attack",
+    "text": "Attack as a Simple Action with your chosen weapon Skill."
+   },
+   {
+    "rank": 4,
+    "name": "Utaku’s Thunder",
+    "text": "Once per skirmish, spend a Void Point to add your Honor Rank in unkept dice to an attack roll with your chosen weapon; your Rank 2 movement bonus improves to Water Rank +2."
+   },
+   {
+    "rank": 5,
+    "name": "Epic of My Name",
+    "text": "Your Rank 1 Armor TN bonus now also applies in Attack Stance; once per skirmish in Full Attack Stance (or Attack Stance too, for Spears/Polearms), add +4k2 to a damage roll with your chosen weapon."
+   }
+  ]
+ },
+ {
+  "name": "Chuda Shugenja",
+  "clan": "Spider",
+  "kind": "major",
+  "honor": 0.5,
+  "benefit": "Willpower",
+  "skills": "Calligraphy (Cipher), Hunting, Lore: Maho, Lore: Shadowlands, Spellcraft, Stealth, any one Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 3 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.213",
+  "lore": "Heirs of the destroyed Snake Clan, the Chuda keep a secret tradition of maho centuries old and now serve the Spider, always pushing blood magic further whatever it costs.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Blood Like Water",
+    "text": "Declare a Raise when casting maho to hide its corrupted nature; a second Raise (or 1 Honor) caps the Taint gained from that spell at 1 point."
+   }
+  ]
+ },
+ {
+  "name": "Daigotsu Bushi",
+  "clan": "Spider",
+  "kind": "major",
+  "honor": 1.5,
+  "benefit": "Strength",
+  "skills": "Hunting, Intimidation, Jiujutsu, Kenjutsu (Katana), Kyujutsu, Lore: Shadowlands, any one Bugei or Low Skill",
+  "outfit": "Light Armour, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.212",
+  "lore": "Spider Clan warriors whose style is pieced together from the Schools they knew in their former lives. Eclectic but brutal, it can even feed on a dying foe's life force.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Spider",
+    "text": "Each Round, choose to reduce Wound-Rank TN penalties or increase damage rolls by Strength + Taint Rank; detecting your Taint is also harder (TN +10)."
+   },
+   {
+    "rank": 2,
+    "name": "Aura of Blood",
+    "text": "Spend a Void Point to grant yourself and nearby allies +2k0 to damage rolls for a duration based on Taint + Strength."
+   },
+   {
+    "rank": 3,
+    "name": "Ashura’s Wing",
+    "text": "Melee attack as a Simple Action."
+   },
+   {
+    "rank": 4,
+    "name": "Devouring Wrath",
+    "text": "Regain 5 Wounds whenever you hit an opponent in melee (up to a small cap beyond your max, lost after the skirmish)."
+   },
+   {
+    "rank": 5,
+    "name": "Inhuman Assault",
+    "text": "Once per skirmish, a Complex-Action attack that ignores armor/Stance bonuses; on a hit, the target loses those bonuses for several rounds."
+   }
+  ]
+ },
+ {
+  "name": "Daigotsu Courtier",
+  "clan": "Spider",
+  "kind": "major",
+  "honor": 1,
+  "benefit": "Perception",
+  "skills": "Acting, Courtier (Manipulation), Etiquette, Meditation, Sincerity (Deceit), Temptation, any one High Skill",
+  "outfit": "Sensible Clothing, Wakizashi, Calligraphy Set, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.213",
+  "lore": "Spider courtiers who slip into the courts of the Great Clans in disguise, using blackmail and contacts to steer rivals into conflict while hiding their own Taint.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Insidious Whispers",
+    "text": "Free Raise on Sincerity (Deceit); Taint-detection TN vs. you rises with your School Rank, and your School Rank adds to your effective Honor when others judge it."
+   },
+   {
+    "rank": 2,
+    "name": "Cracks in the Wall",
+    "text": "Spend a Void Point and roll Courtier/Awareness (TN 25) to penalize everyone nearby's Etiquette/Perform rolls for an hour, without them knowing why."
+   },
+   {
+    "rank": 3,
+    "name": "Darkness Cannot be Trapped",
+    "text": "Spend a Void Point to shift blame for an accusation onto someone else present, via a Contested Roll."
+   },
+   {
+    "rank": 4,
+    "name": "The Touch of Sin",
+    "text": "A number of times per session equal to your School Rank, a Contested Roll can inflict a Consumed by Shourido Disadvantage on a target temporarily."
+   },
+   {
+    "rank": 5,
+    "name": "The Embrace of Darkness",
+    "text": "A Contested Roll can convince a target to treat someone else as an enemy (not their lord or the Emperor); easier if they're already Consumed by Shourido."
+   }
+  ]
+ },
+ {
+  "name": "Goju Ninja",
+  "clan": "Spider",
+  "kind": "major",
+  "honor": 0,
+  "benefit": "Agility",
+  "skills": "Athletics, Kenjutsu, Ninjutsu, Sincerity (Deceit), Stealth 2, any one Skill",
+  "outfit": "Black Clothing, Ninja-to, Tanto, 6 Shuriken or Tsubute, any one weapon, 50 feet of Rope and Grapple, Traveling Pack, 1 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.280",
+  "lore": "The faceless servants of the Lying Darkness, people whose identities the Nothing has consumed. They draw on it for infiltration, deception and murder.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Cloak of Night",
+    "text": "Simple Action to raise Armor TN by up to School Rank x5, at the cost of the same penalty to most other rolls, for the skirmish."
+   },
+   {
+    "rank": 2,
+    "name": "Melting into Shadow",
+    "text": "Bonus rolled dice on Stealth equal to School Rank; detection TN against you rises by School Rank x5; Free Raise attacking unaware foes."
+   },
+   {
+    "rank": 3,
+    "name": "The Shadowed Blade",
+    "text": "Attack as a Simple Action with knives/Ninjutsu weapons, or make multiple shuriken attacks as a Complex Action equal to School Rank."
+   },
+   {
+    "rank": 4,
+    "name": "Step Within Shadow",
+    "text": "Move between suitably-sized shadows as a Simple Move Action, range School Rank x100 feet."
+   },
+   {
+    "rank": 5,
+    "name": "Shadow upon the Moon",
+    "text": "In darkness, dissolve into incorporeal vapor (immune to most harm except crystal), move freely but can't interact physically; gain +5 Initiative the first Round after reforming."
+   }
+  ]
+ },
+ {
+  "name": "Ninube Shugenja",
+  "clan": "Spider",
+  "kind": "major",
+  "honor": 0,
+  "benefit": "Awareness",
+  "skills": "Calligraphy, Knives, Sincerity (Lying), Spellcraft, Stealth 2, any Low skill",
+  "outfit": "Black Clothing, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 2 Koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Air",
+  "deficiency": "Earth",
+  "source": "The Great Clans p.281",
+  "lore": "Called shugenja only for convenience, the Ninube are no longer truly individuals; their power, like the Goju's, comes from the Nothing.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Mask of the Nothing",
+    "text": "Expend a spell slot to become an invisible-in-darkness shadow with a Stealth bonus, immune to most mundane harm; returning to physical form after lethal damage leaves you Stunned but alive."
+   }
+  ]
+ },
+ {
+  "name": "The Order of the Spider Monks [Monk]",
+  "clan": "Spider",
+  "kind": "major",
+  "honor": 1.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Jiujutsu 2, Lore: Theology, Meditation, Polearms, any one Skill",
+  "outfit": "Light or Heavy Armour, Sturdy Clothing, any Heavy Weapon or Polearm, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.215",
+  "lore": "Begun with the fallen monk Roshungi and spread by his student Michio, the Order teaches each follower to find their own path whatever it costs others.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Dark Path",
+    "text": "+1k0 to unarmed/polearm attack rolls, and add twice your School Rank to Armor TN against melee attacks."
+   },
+   {
+    "rank": 2,
+    "name": "Drawing in the Strike",
+    "text": "Choose a non-Void Ring; gain Reduction equal to it, plus your Taint Rank if any."
+   },
+   {
+    "rank": 3,
+    "name": "Speed of Darkness",
+    "text": "Attack as a Simple Action unarmed or with a polearm."
+   },
+   {
+    "rank": 4,
+    "name": "Guarded by Chi",
+    "text": "Choose a non-Void Ring; add twice its value (plus Taint Rank) to the TN of spells cast against you, suppressible at will."
+   },
+   {
+    "rank": 5,
+    "name": "Darkness Unleashed",
+    "text": "Gain extra daily Void Points equal to your Taint Rank or Earth Ring (whichever is higher), usable normally or for +1k1 damage."
+   }
+  ]
+ },
+ {
+  "name": "Miya Herald [Courtier]",
+  "clan": "Imperial",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Awareness",
+  "skills": "Courtier (Rhetoric), Defense, Etiquette (Courtesy), Horsemanship, Lore: Heraldry, Sincerity, any 1 High or Bugei skill",
+  "outfit": "Sensible Clothing, Wakizashi, Calligraphy Set, Horse (Rokugani pony), 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.230",
+  "lore": "Imperial messengers who carry the Emperor's word to every corner of Rokugan. They build trust, calm disputes and can defend themselves on dangerous roads.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Voice of the Emperor",
+    "text": "Spend a Void Point for the Way of the Land Advantage in your current province until you next sleep; attackers who revere the Emperor lose Honor equal to twice your School Rank."
+   },
+   {
+    "rank": 2,
+    "name": "Eyes of the Emperor",
+    "text": "Add your Honor Rank to Etiquette (Courtesy) rolls resisting others' influence."
+   },
+   {
+    "rank": 3,
+    "name": "Hand of the Emperor",
+    "text": "Spend a Void Point to prevent Emperor-revering Rokugani from harming you until the next Reactions Step, outside of skirmishes/duels."
+   },
+   {
+    "rank": 4,
+    "name": "Blessing of the Emperor",
+    "text": "A number of times per session equal to your School Rank, a Contested Roll can force honorable onlookers to cease violence for a minute."
+   },
+   {
+    "rank": 5,
+    "name": "Glory of the Emperor",
+    "text": "+5k0 on Courtier or Etiquette rolls against targets with Honor 1.0+."
+   }
+  ]
+ },
+ {
+  "name": "Otomo Courtier",
+  "clan": "Imperial",
+  "kind": "major",
+  "honor": 5.5,
+  "benefit": "Awareness",
+  "skills": "Courtier (Manipulation), Defense, Etiquette, Intimidation (Control), Investigation, Sincerity, any 1 High Skill",
+  "outfit": "Traditional Clothing, Wakizashi, Knife, Calligraphy Set, 10 Koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.229",
+  "lore": "Imperial courtiers who protect the throne by sowing suspicion among the Great Clans. They trade on Imperial authority and use every underhanded trick, safe behind their bloodline.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Voice of Heaven",
+    "text": "No Honor loss for Intimidation (Control); a Contested Roll can provoke an argument between two other people."
+   },
+   {
+    "rank": 2,
+    "name": "Destiny Has No Secrets",
+    "text": "Spend a Void Point to roll Courtier/Awareness (TN 25) and learn one useful piece of GM-chosen information."
+   },
+   {
+    "rank": 3,
+    "name": "My Master’s Voice",
+    "text": "A Contested Roll (Complex Action) can freeze an honorable target from acting against you or your allies for their next Turn."
+   },
+   {
+    "rank": 4,
+    "name": "The Emperor’s Protection",
+    "text": "Spend a Void Point in an argument; winning a Contested Roll forces the target to agree or lose 5 Honor."
+   },
+   {
+    "rank": 5,
+    "name": "The Virtues of Command",
+    "text": "+5k0 on Contested Social Rolls against those who revere Imperial authority."
+   }
+  ]
+ },
+ {
+  "name": "Seppun Guardsman [Bushi]",
+  "clan": "Imperial",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Perception",
+  "skills": "Battle, Defense, Etiquette, Iaijutsu, Kenjutsu (Katana), Kyujutsu, any 1 High Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 Weapon, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.228",
+  "lore": "The Miharu, who give up everything to guard the Imperial House. Their School puts defence, and the life of the one they protect, above the guardsman's own.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Never in Darkness",
+    "text": "Extra unkept dice equal to School Rank resisting Temptation/Intimidation/Courtier meant to pull you from duty; +1k1 to Investigation rolls detecting ambushes."
+   },
+   {
+    "rank": 2,
+    "name": "The Clouds Part",
+    "text": "Spend a Void Point at the start of your Turn to add Honor Rank to attack and damage rolls until your next Turn."
+   },
+   {
+    "rank": 3,
+    "name": "Sun’s Light Reveals",
+    "text": "Spend a Void Point (or none near the Emperor) to roll Investigation/Perception (TN 25) and see through all disguises/illusions around you."
+   },
+   {
+    "rank": 4,
+    "name": "Speed of Heaven",
+    "text": "Attack as a Simple Action with Samurai-keyword weapons."
+   },
+   {
+    "rank": 5,
+    "name": "Heaven Never Falls",
+    "text": "Spend a Void Point to intercept an attack meant for someone you're guarding within 20', taking the damage yourself; if still standing, gain an extra Simple Action."
+   }
+  ]
+ },
+ {
+  "name": "Seppun Shugenja",
+  "clan": "Imperial",
+  "kind": "major",
+  "honor": 6.5,
+  "benefit": "Intelligence",
+  "skills": "Calligraphy, Defense, Etiquette, Investigation (Notice), Meditation, Lore: Theology, any 1 High or Bugei Skill",
+  "outfit": "Robes, Wakizashi, Bo, Scroll Satchel, Traveling Pack, 10 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Fire",
+  "deficiency": "Water",
+  "source": "Core Rulebook p.228",
+  "lore": "The Hidden Guard: shugenja who keep constant watch against threats steel cannot answer, with some of the finest wards in Rokugan, as the Emperor's last line of defence.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "In Defense of the Throne",
+    "text": "Free Raise on spells protecting the Emperor or Imperial family (when it wouldn't cost Honor), and on spells known only to Imperial families."
+   }
+  ]
+ },
+ {
+  "name": "Ichiro Bushi",
+  "clan": "Badger",
+  "kind": "minor",
+  "honor": 3.5,
+  "benefit": "Strength",
+  "skills": "Athletics, Commerce, Defense, Heavy Weapons, Jiujutsu, Kenjutsu (Katana), any High or Bugei skill",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, any Heavy or Polearm, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.215",
+  "lore": "Founded by a Hida, the Badger's School stays close to its Crab roots: wrestling, unarmed fighting and sheer strength that answers finesse with overwhelming force.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Transcend the Mountain",
+    "text": "You may re-roll any Skill or Trait roll that uses Strength, but the second result stands. Moderate terrain costs you nothing on movement or combat, and Difficult terrain only half its usual penalty. (Core Rulebook p.216)"
+   },
+   {
+    "rank": 2,
+    "name": "Strength of the Badger",
+    "text": "As many times per session as your Strength, re-roll a damage roll and take the higher result. (Core Rulebook p.216)"
+   },
+   {
+    "rank": 3,
+    "name": "Crushing Blow",
+    "text": "Your attacks ignore the part of an opponent’s Armor TN that comes from armor, and your unarmed attacks ignore 1 Rank of the target’s Reduction. (Core Rulebook p.216)"
+   },
+   {
+    "rank": 4,
+    "name": "Crashing Stones",
+    "text": "Unarmed attacks, and attacks with Samurai weapons, are Simple Actions for you. (Core Rulebook p.216)"
+   },
+   {
+    "rank": 5,
+    "name": "Return the Strike",
+    "text": "When a skirmish begins, before anyone rolls Initiative, you may take -20 to your Initiative for the whole skirmish; in return, for the first two Rounds, roll extra unkept dice equal to your Strength on both attack and damage rolls. (Core Rulebook p.216)"
+   }
+  ]
+ },
+ {
+  "name": "Komori Shugenja",
+  "clan": "Bat",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Awareness",
+  "skills": "Calligraphy (Cipher), Lore: Ancestors, Lore: Theology, Meditation, Spellcraft, Tea Ceremony, any one High Skill",
+  "outfit": "Robes, Wakizashi, any 1 weapon, Scroll Satchel, Traveling Pack, 3 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Air",
+  "deficiency": "Earth",
+  "source": "Core Rulebook p.216",
+  "lore": "The Bat Clan's shugenja draw on the koumori, kindly bat spirits of Chikushudo, for strange spells and swift messages across the Empire.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Kami’s Whispers",
+    "text": "Spend one spell slot to whisper a message to someone you know: up to thirty seconds long per School Rank, carried up to 100 miles per School Rank. (Core Rulebook p.217)"
+   }
+  ]
+ },
+ {
+  "name": "Heichi Bushi",
+  "clan": "Boar",
+  "kind": "minor",
+  "honor": 3,
+  "benefit": "Strength",
+  "skills": "Athletics, Defense, Hunting, Intimidation, Kenjutsu, Spears (Mai Chong), any one Bugei Skill",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, any Spear, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.217",
+  "lore": "Shaped by the dangers of the Boar lands, Heichi bushi take the enemy's worst and keep fighting. The School favours the rare curved Mai Chong spear and a patient, defensive style.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Charge of the Boar",
+    "text": "While in the Full Attack Stance, readying a Medium weapon or a spear is a Free Action for you, and a spear you fight with gains +0k1 damage. (Core Rulebook p.218)"
+   },
+   {
+    "rank": 2,
+    "name": "The Strength of Opposition",
+    "text": "Entangling an opponent costs you two Raises with a mai chong, or three with any other spear. (Core Rulebook p.218)"
+   },
+   {
+    "rank": 3,
+    "name": "The Speed of the Boar",
+    "text": "Attacking with a spear is a Simple Action for you. (Core Rulebook p.218)"
+   },
+   {
+    "rank": 4,
+    "name": "The Anger of the Boar",
+    "text": "In the Reactions segment you may spend a Void Point to lower your Wound penalty by one Wound Rank for the rest of the skirmish; the Wounds themselves remain. (Core Rulebook p.218)"
+   },
+   {
+    "rank": 5,
+    "name": "Beyond the Mountains",
+    "text": "In the Full Defense Stance you may still make one ordinary attack with a spear or a Samurai weapon as a Free Action, at +2k0 to the attack roll. (Core Rulebook p.218)"
+   }
+  ]
+ },
+ {
+  "name": "Tonbo Shugenja",
+  "clan": "Dragonfly",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Perception",
+  "skills": "Calligraphy, Courtier, Etiquette, Meditation (Void Recovery), Sincerity, Spellcraft, any one High Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 3 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Water",
+  "deficiency": "Fire",
+  "source": "Core Rulebook p.218",
+  "lore": "Deeply spiritual priests of the mountains who also serve as go-betweens for the Dragon at court, using their bond with the spirits to sharpen their social graces.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Guided by Fate",
+    "text": "Spend a spell slot for +1k0 on a Social Skill Roll, never more slots on one roll than your School Rank. Free Raise on spells with the Divination keyword. (Core Rulebook p.218)"
+   }
+  ]
+ },
+ {
+  "name": "Toritaka Bushi",
+  "clan": "Falcon",
+  "kind": "minor",
+  "honor": 5.5,
+  "benefit": "Strength",
+  "skills": "Animal Handling (Falcons), Hunting 2, Kenjutsu, Etiquette, Lore: Spirit Realms, Spears, any one Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.219",
+  "lore": "Specialists in destroying creatures from other spirit realms, with a fluid style for unexpected monsters: potent against the otherworldly, less so against people.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Falcon’s Eyes",
+    "text": "+1k0 on Perception-based Skill and Trait rolls, and +1k0 to damage against creatures from other Spirit Realms."
+   },
+   {
+    "rank": 2,
+    "name": "The Falcon Takes Flight",
+    "text": "Roll Perception vs. TN equal to a nearby other-realm creature's Air Ring x5 to detect its presence."
+   },
+   {
+    "rank": 3,
+    "name": "The Falcon’s Wings",
+    "text": "Attack as a Simple Action with a spear or Samurai-keyword weapon."
+   },
+   {
+    "rank": 4,
+    "name": "Vigilant and Strong",
+    "text": "Spend a Void Point to negate darkness/blinding penalties for about two Rounds."
+   },
+   {
+    "rank": 5,
+    "name": "Claws of the Falcon",
+    "text": "Ignore up to 5 points of an opponent's Reduction; spend a Void Point as a Free Action to reduce a Spirit-Realm creature's Reduction by 10 for a Round."
+   }
+  ]
+ },
+ {
+  "name": "Kitsune Shugenja",
+  "clan": "Fox",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Stamina",
+  "skills": "Calligraphy, Defense, Hunting, Medicine (Herbalism), Meditation, Spellcraft, any one High or Bugei skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 3 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Earth",
+  "deficiency": "Air",
+  "source": "Core Rulebook p.219",
+  "lore": "Living beside one of Rokugan's great forests, Fox shugenja learn to love its spirits and creatures, and their School deepens the bond between people and animals.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Essence of Chikushudo",
+    "text": "Your Sense, Commune and Summon can reach Chikushudo’s animal spirits, not only the kami (Summon then brings one animal spirit rather than an amount of an element). Free Raise on any spell cast on an animal that does no damage. (Core Rulebook p.220)"
+   }
+  ]
+ },
+ {
+  "name": "Usagi Bushi",
+  "clan": "Hare",
+  "kind": "minor",
+  "honor": 4,
+  "benefit": "Reflexes",
+  "skills": "Athletics (Running), Defense, Hunting, Jiujutsu, Kenjutsu, Lore: Maho, any one High or Bugei skill",
+  "outfit": "Ashigaru or Light Armor, Sturdy Clothing, Daisho, Bow (with 20 arrows) or Knife, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.220",
+  "lore": "Tested by centuries of war, the Hare's School turns their athleticism into hit-and-run attacks that seem to come from every side.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Speed of the Hare",
+    "text": "Where there is room to dodge and leap (the GM decides), add your Athletics Rank to your Armor TN, except in the Full Attack or Center Stance. For the distance of Move Actions your Water counts as 1 higher. (Core Rulebook p.221)"
+   },
+   {
+    "rank": 2,
+    "name": "Leap of the Hare",
+    "text": "In the Full Attack Stance you may spring at an opponent up to 15 feet away and attack without a Move Action; every attack you make that Turn must be against that opponent. (Core Rulebook p.221)"
+   },
+   {
+    "rank": 3,
+    "name": "Swift as Lightning",
+    "text": "Unarmed, knife and Samurai-weapon attacks are Simple Actions for you. (Core Rulebook p.221)"
+   },
+   {
+    "rank": 4,
+    "name": "Kick of the Hare",
+    "text": "Your Rank 2 leap now works in the Attack Stance too. Used in the Full Attack Stance, your second attack that Round may go to a different opponent within 15 feet of the first. (Core Rulebook p.221)"
+   },
+   {
+    "rank": 5,
+    "name": "Reichin’s Style",
+    "text": "A Feint costs you only 1 Raise, and the extra damage of a successful Feint is not capped at your Insight Rank x5. (Core Rulebook p.221)"
+   }
+  ]
+ },
+ {
+  "name": "Mantis Brawler [Bushi]",
+  "clan": "Mantis",
+  "kind": "minor",
+  "honor": 3.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Commerce, Intimidation, Jiujutsu, Knives, Sailing, any 1 Weapon Skill",
+  "outfit": "Rugged Clothing, any 2 weapons, Kama, Tanto, Traveling Pack, 4 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.165",
+  "lore": "Born of shipboard fights and tavern brawls among the Mantis Clan's pirates and smugglers, a fighting style even less conventional than the Yoritomo's.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Way of Drunken Fists",
+    "text": "Being Prone costs you nothing on Armor TN, or on attacks with Small weapons or unarmed, and against ranged attacks you still get the usual Prone bonus to Armor TN. +1k0 on rolls to take control of a Grapple, and on damage dealt unarmed or with an improvised or Small weapon. (The Great Clans p.166)"
+   },
+   {
+    "rank": 2,
+    "name": "Drunk Loses His Sandal",
+    "text": "After a successful Feint you may give up 5 of its extra damage for +5 Armor TN until your next Turn (+10 if you Feinted while Prone). Once any enemy attack against you resolves, hit or miss, you may drop Prone as a Free Action. (The Great Clans p.166)"
+   },
+   {
+    "rank": 3,
+    "name": "Drunk Never Falls",
+    "text": "In a skirmish you ignore the penalties for being Fatigued, Dazed or drunk. While Stunned you can still take one Simple Action each Round. (The Great Clans p.166)"
+   },
+   {
+    "rank": 4,
+    "name": "Two Drunks Dance",
+    "text": "Unarmed, improvised-weapon and Small-weapon attacks are Simple Actions for you. (The Great Clans p.167)"
+   },
+   {
+    "rank": 5,
+    "name": "Drunk Pounds a Door",
+    "text": "Spend a Void Point on a melee attack for +4k1 to both its attack and damage rolls, or +4k2 if you are Prone. (The Great Clans p.167)"
+   }
+  ]
+ },
+ {
+  "name": "Moshi Shugenja",
+  "clan": "Mantis",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Awareness",
+  "skills": "Calligraphy (Cipher), Divination, Lore: Theology, Meditation, Spellcraft, any two High or Bugei Skills",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 10 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Air",
+  "deficiency": "Earth",
+  "source": "Core Rulebook p.120",
+  "lore": "Long devoted to the Sun Goddess, the Moshi turned to practical weather magic after joining the Mantis and often sail on Yoritomo ships to calm the seas.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Favor of the Sun",
+    "text": "By day you have a second Affinity, for Fire spells; it lapses at night. Free Raise on spells with the Thunder keyword. (Core Rulebook p.121)"
+   }
+  ]
+ },
+ {
+  "name": "Tsuruchi Archer [Bushi]",
+  "clan": "Mantis",
+  "kind": "minor",
+  "honor": 3.5,
+  "benefit": "Reflexes",
+  "skills": "Athletics, Defense, Hunting, Investigation, Kyujutsu (Yumi) 2, any one Bugei or High Skill",
+  "outfit": "Ashigaru or Light Armor, Sturdy Clothing, Bow and 20 arrows, Wakizashi, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.122",
+  "lore": "The Empire's finest archers since their days as the Wasp Clan, devoted to the purity of the bow: deadly at range, outclassed in melee.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Always Be Ready",
+    "text": "+1k0 to the total of your attack rolls with a bow, and +3 to your Initiative Score. (Core Rulebook p.122)"
+   },
+   {
+    "rank": 2,
+    "name": "The Arrow Knows the Way",
+    "text": "A Free Raise usable only for the Called Shot Maneuver, and +2k0 to the total of damage rolls with a bow. (Core Rulebook p.122)"
+   },
+   {
+    "rank": 3,
+    "name": "The Wasp’s Sting",
+    "text": "Bow attacks are Simple Actions for you. (Core Rulebook p.122)"
+   },
+   {
+    "rank": 4,
+    "name": "Flight of No-Mind",
+    "text": "Once per skirmish, spend a Void Point and a Complex Action on one arrow that ignores armor entirely, and any Wound or visibility penalties. You may call Raises, but not Extra Attack, and the target must be within the bow’s normal range. (Core Rulebook p.122)"
+   },
+   {
+    "rank": 5,
+    "name": "Tsuruchi’s Eye",
+    "text": "A ranged attack made as a Complex Action gains +4k1 to both its attack and damage totals. Cannot be combined with Flight of No-Mind. (Core Rulebook p.122)"
+   }
+  ]
+ },
+ {
+  "name": "Tsuruchi Bounty Hunter [Bushi]",
+  "clan": "Mantis",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Hunting (Tracking), Intimidation, Investigation, Kenjutsu, Kyujutsu, Lore: Underworld",
+  "outfit": "Ashigaru or Light Armor, Sturdy Clothing, Daisho, Bow or Knife, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "The Great Clans p.167",
+  "lore": "The Wasp Clan once lived by hunting fugitives for the Emerald Champion; a few Tsuruchi still learn that relentless trade as a School of its own.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "A Hunter’s Sense",
+    "text": "+1k1 on Intimidation against someone of lower caste you think can lead you to your quarry; with samurai the bonus falls to +1k0 but covers every Social Skill Roll. While hunting a particular target, roll extra unkept dice, as many as your School Rank, on Hunting or Investigation rolls to track it down. (The Great Clans p.168)"
+   },
+   {
+    "rank": 2,
+    "name": "No Prey Escapes",
+    "text": "Spend a Void Point to pass a Lore: Underworld roll automatically, naming criminals nearby who might tell you about your quarry. Dealing with them still costs Honor as usual. (The Great Clans p.168)"
+   },
+   {
+    "rank": 3,
+    "name": "Justice of the Wasp",
+    "text": "Against someone an Imperial authority (or a higher Mantis one) has found guilty of a crime, Disarm and Knockdown cost you one Raise fewer, and a successful one leaves the target Dazed. (The Great Clans p.168)"
+   },
+   {
+    "rank": 4,
+    "name": "Twin Sting Strike",
+    "text": "Ranged attacks with a yumi are Simple Actions for you; against a target so condemned (see Rank 3), so are melee attacks with a katana or any knife. (The Great Clans p.168)"
+   },
+   {
+    "rank": 5,
+    "name": "Eyes of the Wasp",
+    "text": "Identifying a samurai with Lore: Heraldry tells you their Honor Rank and every Social and Mental Disadvantage, as well as their Glory. Any opponent your Rank 3 Technique applies to is Dazed whenever you hit them, Maneuver or not. (The Great Clans p.168)"
+   }
+  ]
+ },
+ {
+  "name": "Yoritomo Bushi",
+  "clan": "Mantis",
+  "kind": "minor",
+  "honor": 3.5,
+  "benefit": "Strength",
+  "skills": "Commerce, Defense, Jiujutsu (Improved Weapons), Kenjutsu, Knives (Kama), Sailing, any one Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon (or pair of Knives), Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.120",
+  "lore": "Fighters shaped by ship-to-ship combat, with fluid movement, a habit of exploiting weaknesses quickly and skill with peasant weapons that stand up to sea air.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Way of the Mantis",
+    "text": "Rough or uneven ground costs you nothing on movement or attacks. Fighting with improvised or Peasant-keyword weapons loses you no Honor or Glory, and a Small or Medium Peasant weapon carries no off-hand penalty. +1k0 to all attack rolls. (Core Rulebook p.120)"
+   },
+   {
+    "rank": 2,
+    "name": "Voice of the Storm",
+    "text": "Each time you hit an opponent in melee, their Armor TN against your attacks drops by 5 for 2 Rounds. It stacks up to your School Rank in times, and each new hit restarts the 2 Rounds. (Core Rulebook p.120)"
+   },
+   {
+    "rank": 3,
+    "name": "Strike of the Mantis",
+    "text": "Attacks with Samurai- or Peasant-keyword weapons are Simple Actions for you. (Core Rulebook p.120)"
+   },
+   {
+    "rank": 4,
+    "name": "The Rolling Wave",
+    "text": "Move at least 5 feet and you gain +10 Armor TN until your next Turn. On your Turn, before rolling an attack, you may give that bonus up for two Free Raises usable only on Knockdown. (Core Rulebook p.120)"
+   },
+   {
+    "rank": 5,
+    "name": "Hand of Osano-Wo",
+    "text": "For a Void Point (a Free Action), keep extra damage dice equal to your Strength; against a Prone target you also add +0k2 to the damage. (Core Rulebook p.120)"
+   }
+  ]
+ },
+ {
+  "name": "Yoritomo Courtier",
+  "clan": "Mantis",
+  "kind": "minor",
+  "honor": 2.5,
+  "benefit": "Willpower",
+  "skills": "Commerce (Appraisal), Courtier, Defense, Etiquette, Intimidation (Control), Sincerity, any one Merchant or Lore skill",
+  "outfit": "Extravagant Clothing, Wakizashi, any 1 weapon, Calligraphy Set, Traveling Pack, 10 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.121",
+  "lore": "Created to serve the Mantis's trade, these courtiers rely on intimidation and bullying, a style that has found more success since the Mantis became a Great Clan.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Duty Before Honor",
+    "text": "Using Commerce in public costs you no Honor or Glory, and Intimidation (Control) costs no Honor. Social Skill Rolls against ronin, bandits, gangsters, mercenaries, pirates and other outlaws gain Free Raises equal to your School Rank. (Core Rulebook p.121)"
+   },
+   {
+    "rank": 2,
+    "name": "Storm Heart",
+    "text": "For Intimidation (Control) your Willpower counts as one Rank higher, or two against a samurai whose Status is lower than yours. (Core Rulebook p.121)"
+   },
+   {
+    "rank": 3,
+    "name": "Command the Winds",
+    "text": "As many times per session as your School Rank, a failed Sincerity Social Skill Roll may be rolled again as Intimidation (Control); the Intimidation result stands. (Core Rulebook p.121)"
+   },
+   {
+    "rank": 4,
+    "name": "Will of the Storm",
+    "text": "When you open a conversation, roll Intimidation (Control) / Willpower against their Etiquette (Courtesy) / Willpower. If you win, for the next hour they cannot spend Void Points against you and take -3k0 on Social rolls against you. Not again until that hour ends. (Core Rulebook p.121)"
+   },
+   {
+    "rank": 5,
+    "name": "Strength in All Things",
+    "text": "+5k0 whenever you use Intimidation on someone, and whenever you resist an Intimidation or Temptation roll or a Fear effect. (Core Rulebook p.121)"
+   }
+  ]
+ },
+ {
+  "name": "Yoritomo Shugenja",
+  "clan": "Mantis",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Perception",
+  "skills": "Athletics, Calligraphy, Knives, Lore: Theology, Meditation, Sailing (Navigation), any 1 Skill",
+  "outfit": "Robes, Wakizashi, any 1 weapon, Scroll Satchel, Traveling Pack, 10 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Water",
+  "deficiency": "Earth",
+  "source": "The Great Clans p.168",
+  "lore": "A small Yoritomo line, begun with a daughter of the Mantis founder, with an unmatched bond to the spirits of the sea and storm.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Child of the Sea",
+    "text": "Spend a spell slot to shift the wind where you are by one degree, or a slot and a Void Point to shift the whole weather by one degree; no more slots and Void Points together each Round than your School Rank. The change reaches miles equal to your School Rank around you. Free Raise on Thunder spells. (The Great Clans p.169)"
+   }
+  ]
+ },
+ {
+  "name": "Toku Bushi",
+  "clan": "Monkey",
+  "kind": "minor",
+  "honor": 5.5,
+  "benefit": "Willpower",
+  "skills": "Athletics, Defense, Hunting, Investigation (Search), Kenjutsu, Lore: History, any 1 High or Bugei Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 Weapon, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.221",
+  "lore": "The Monkey Clan's School teaches calm against overwhelming odds and fighting many foes at once.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Toku’s Lesson",
+    "text": "+1k0 on any Skill Roll, attacks included, against a TN of 25 or more. Your Wound penalties are reduced by your Willpower plus twice your School Rank. (Core Rulebook p.222)"
+   },
+   {
+    "rank": 2,
+    "name": "The Strength of One Man",
+    "text": "+1k1 to attack and damage rolls while you face more than one opponent, or a foe of higher Insight Rank. (Core Rulebook p.222)"
+   },
+   {
+    "rank": 3,
+    "name": "Courage Above All",
+    "text": "Melee attacks are Simple Actions for you. (Core Rulebook p.222)"
+   },
+   {
+    "rank": 4,
+    "name": "Forge Your Own Fate",
+    "text": "When you are about to take Wounds, spend a Void Point to make the attacker drop the two highest dice of the damage roll, even if that leaves fewer kept dice, though never below 1k1. (Core Rulebook p.222)"
+   },
+   {
+    "rank": 5,
+    "name": "Fortune Favors the Mortal Man",
+    "text": "Once per Round, spend a Void Point to re-roll any roll at +2k1, then keep whichever of the two results you prefer. (Core Rulebook p.222)"
+   }
+  ]
+ },
+ {
+  "name": "Fuzake Shugenja",
+  "clan": "Monkey",
+  "kind": "minor",
+  "honor": 5.5,
+  "benefit": "Willpower",
+  "skills": "Calligraphy, Defense, Etiquette, Lore: Theology, Medicine, Spellcraft, any one High or Merchant Skill",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 2 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Earth",
+  "deficiency": "Fire",
+  "source": "Secrets of the Empire p.238",
+  "lore": "Begun as ronin shugenja in Toturi's Army under Yasuki Garou, a friend of Toku, the Fuzake swore to the Monkey Clan and devote themselves to healing and an eccentric reverence for the Fortunes.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Sideways Path",
+    "text": "When you cast a healing spell (one that mends Wounds, or cures poison or disease, Path to Inner Peace and Peace of the Kami among them), you may also spend Earth spell slots; each one gives a Free Raise on the Spell Casting Roll. (Secrets of the Empire p.238)"
+   }
+  ]
+ },
+ {
+  "name": "Tsi Smith [Artisan]",
+  "clan": "Oriole",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Intelligence",
+  "skills": "Any one Artisan Skill, Commerce, two ranks in any one Craft Skill, Defense, any one Weapon Skill, any one High, Bugei, or Merchant Skill",
+  "outfit": "Sensible Clothing, Wakizashi, Calligraphy Set, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.222",
+  "lore": "Named for a foreign smith honoured by the second Emperor and revived by a ronin centuries later, the School forges weapons and armour and learns to fight so it knows how they are used.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Tools of the Fortunes",
+    "text": "Every Craft Skill counts as a School Skill for effects that care. A successful Craft roll against a TN of at least 10 plus 5 per School Rank earns 1 point of Glory, and 1 more for each 5 by which you beat the TN. (Core Rulebook p.223)"
+   },
+   {
+    "rank": 2,
+    "name": "Tsi Xing Guo’s Blessing",
+    "text": "Using something you made yourself (a weapon in battle, a fine kimono at court), Void Points spent on the related Skill Rolls give +2k1 instead of +1k1. When an item you made is given as a gift between samurai, you and the giver each gain Glory equal to your School Rank. (Core Rulebook p.223)"
+   },
+   {
+    "rank": 3,
+    "name": "A Crafter’s Dedication",
+    "text": "Crafting time is worked out from half the item’s price. When someone near you uses an item you made, you may spend a Complex Action to give them +Xk1 on the matching Skill Roll, X being your School Rank (Kenjutsu for a katana, Defense for armor, Etiquette for a kimono). (Core Rulebook p.223)"
+   },
+   {
+    "rank": 4,
+    "name": "Exhaustive Knowledge",
+    "text": "For a Void Point (a Free Action), for Rounds equal to your School Rank, attacks with a weapon you made are Simple Actions. (Core Rulebook p.223)"
+   },
+   {
+    "rank": 5,
+    "name": "Star-filled Steel",
+    "text": "Once per day, when you finish a weapon, spending every Void Point you have makes it a Sacred Weapon (as the Advantage), a Tsi weapon with one quality: Balanced (+1k0 to its attack rolls), Swift (+5 Initiative while wielded) or Unbreakable. The GM may also allow Radiant (counts as jade against Invulnerable creatures). (Core Rulebook p.223)"
+   }
+  ]
+ },
+ {
+  "name": "Morito Bushi",
+  "clan": "Ox",
+  "kind": "minor",
+  "honor": 3.5,
+  "benefit": "Agility",
+  "skills": "Defense, Horsemanship, Hunting (Tracking), Kenjutsu, Lore: Kolat, Lore: Underworld, any one Skill",
+  "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Horse (Rokugani Pony), Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.223",
+  "lore": "The Ox Clan's heavy cavalry, trained to ride down infantry and make the most of a horse's speed; most fight with a polearm.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Legacy of the Four Winds",
+    "text": "While Mounted you gain +1k0 to Initiative at the start of combat and +1k0 to attack rolls. (Core Rulebook p.224)"
+   },
+   {
+    "rank": 2,
+    "name": "The Wind Blows Many Ways",
+    "text": "At the start of combat, choose Bugei Skills up to your School Rank in number; every roll that uses one gains +1k0. (Core Rulebook p.224)"
+   },
+   {
+    "rank": 3,
+    "name": "Thunder and Fury",
+    "text": "While Mounted, your attacks are Simple Actions. (Core Rulebook p.224)"
+   },
+   {
+    "rank": 4,
+    "name": "The Blade Upon the Wind",
+    "text": "Once per skirmish, for a Void Point (a Free Action), set your Initiative Score to match any other combatant’s, friend or foe. From then on it drops by 5 in the Reactions Stage of every Round until the encounter ends, and you still have only one Turn per Round. (Core Rulebook p.224)"
+   },
+   {
+    "rank": 5,
+    "name": "Fast and Furious",
+    "text": "+2k2 to attack and damage rolls against an opponent whose Initiative is lower than yours. (Core Rulebook p.224)"
+   }
+  ]
+ },
+ {
+  "name": "Chuda Shugenja [Snake]",
+  "clan": "Snake",
+  "kind": "minor",
+  "honor": 4.5,
+  "benefit": "Willpower",
+  "skills": "Calligraphy (Cipher), Etiquette, Lore: Maho, Lore: Shadowlands, Spellcraft, any 2 Skills",
+  "outfit": "Robes, Wakizashi, Knife, Scroll Satchel, Traveling Pack, 3 koku",
+  "shugenja": true,
+  "brotherhood": false,
+  "affinity": "Earth",
+  "deficiency": "Air",
+  "source": "Core Rulebook p.224",
+  "lore": "The Snake Clan's original School, founded by an Imperial magistrate sworn to destroy maho-tsukai. Its shugenja hunted Tainted sorcerers and their monsters with Earth and Jade magic.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "To Punish the Wicked",
+    "text": "For a Void Point (a Free Action), lower one target’s Reduction by your School Rank. Your spells’ damage rolls gain your School Rank against a target with the Shadowlands Taint. (Core Rulebook p.224)"
+   }
+  ]
+ },
+ {
+  "name": "Suzume Bushi",
+  "clan": "Sparrow",
+  "kind": "minor",
+  "honor": 6.5,
+  "benefit": "Willpower",
+  "skills": "Calligraphy, Kenjutsu (Katana), Lore: History, Lore: Theology, Perform: Storytelling, any one Lore Skill, any one Skill",
+  "outfit": "Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 3 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.225",
+  "lore": "Founded from Crane samurai, the Sparrow keep a katana style that waits for the perfect strike, and their love of stories helps them read the flow of battle.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "All Things in Time",
+    "text": "At the start of a Round, before anyone acts, you may lower your Initiative Score by 5 for +1k0 on every attack and damage roll that Round. (Core Rulebook p.225)"
+   },
+   {
+    "rank": 2,
+    "name": "Purity of Chi",
+    "text": "Armor TN +5 against creatures, and against people whose Honor is lower than yours. (Core Rulebook p.225)"
+   },
+   {
+    "rank": 3,
+    "name": "Wisdom is the Greatest Weapon",
+    "text": "For a Void Point, add your Honor Rank to a Perform or Lore Skill Roll. (Core Rulebook p.225)"
+   },
+   {
+    "rank": 4,
+    "name": "Quiet Spirit, Steady Blade",
+    "text": "In the Attack Stance, your melee attacks are Simple Actions. (Core Rulebook p.225)"
+   },
+   {
+    "rank": 5,
+    "name": "Slow and Deadly",
+    "text": "In the Round after you take the Center Stance, your attack and damage rolls gain +10. Not in iaijutsu duels. (Core Rulebook p.225)"
+   }
+  ]
+ },
+ {
+  "name": "Kasuga Smuggler [Courtier]",
+  "clan": "Tortoise",
+  "kind": "minor",
+  "honor": 2,
+  "benefit": "Awareness",
+  "skills": "Commerce, Etiquette, Investigation (Notice), Lore: Underworld, Sincerity (Deceit), Stealth, any one High, Merchant, or Low Skill",
+  "outfit": "Extravagant Clothing, Wakizashi, any 1 weapon, Calligraphy Set, 5 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.225",
+  "lore": "Tortoise agents who move among the Empire's criminals, ruthless and steeped in the underworld, finding allies wherever they can, even among honest peasants.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Way of the Tortoise",
+    "text": "At character creation each purchase of the Languages Advantage also brings one gaijin language free. While serving your clan you lose no Honor for Low Skills and no Glory for using Commerce in public. +2k0 on all Social Skill Rolls with heimin and hinin (peasants, merchants, eta). (Core Rulebook p.227)"
+   },
+   {
+    "rank": 2,
+    "name": "The Shell of the Tortoise",
+    "text": "A clan or Imperial samurai who attacks or openly slanders you unprovoked (the GM decides) at once loses Honor points equal to twice your School Rank. (Core Rulebook p.227)"
+   },
+   {
+    "rank": 3,
+    "name": "The Eyes of the Emperor",
+    "text": "While acting for your clan, roll extra unkept dice, as many as your School Rank, on any Low Skill in which you have at least 1 Rank, including School Skills that count as Low when used a certain way (Sincerity with Deceit). Skill Ranks that come from Advantages or Techniques (such as Crafty) do not count. (Core Rulebook p.227)"
+   },
+   {
+    "rank": 4,
+    "name": "Hand in Hand",
+    "text": "Once per session, if you can reach the local heimin or hinin, a Lore: Underworld / Awareness roll at TN 25 tells you one useful fact, chosen by the GM, that no other route would give you. (Core Rulebook p.227)"
+   },
+   {
+    "rank": 5,
+    "name": "The Tortoise Smiles",
+    "text": "Your Void does not cap your Raises on rolls with your six named School Skills. As many times per session as your Void, gain +5k0 when rolling any of your School Skills; this stacks with your Rank 3 Technique. (Core Rulebook p.227)"
+   }
+  ]
+ },
+ {
+  "name": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "clan": "Tiger",
+  "kind": "minor",
+  "honor": 5.5,
+  "benefit": "Agility",
+  "skills": "Commerce, Hunting, Kenjutsu, Kyujutsu, any one Skill from Lore: Gaijin or Lore: Shadowlands, Stealth (Sneaking), any one Low or Bugei Skill",
+  "outfit": "Daisho, Light or Ashigaru Armor, two other weapons, Sturdy Clothing, Traveling Pack, 4 koku",
+  "shugenja": false,
+  "brotherhood": false,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline",
+  "lore": "From the ronin family that guarded the commoners of Otosan Uchi, the School grew into a full bushi style while fighting the Spider in the capital's ruins. In the Heroes of Rokugan timeline the Yotsu become the Tiger Clan.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Tiger's Tread",
+    "text": "Against enemies of the Empire, halve Honor losses from the Ambush and Shadowing uses of Stealth, rounding down. In urban areas, including ruins, gain +1k0 to Stealth and add Stealth Rank to Armor TN. (Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline)"
+   },
+   {
+    "rank": 2,
+    "name": "The Tiger's Pounce",
+    "text": "In the first Round of a skirmish, add Stealth Rank to Initiative. This bonus ends at the Reactions Stage. (Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline)"
+   },
+   {
+    "rank": 3,
+    "name": "Rending Claws",
+    "text": "Make attacks with Samurai weapons as Simple Actions. (Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline)"
+   },
+   {
+    "rank": 4,
+    "name": "Shelter the Blameless (Yotsu Bushi)",
+    "text": "While actively defending or protecting another person, as determined by the GM, gain 1 bonus Void Point for that Round. Any unspent bonus point expires at the end of the Round. (Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline)"
+   },
+   {
+    "rank": 5,
+    "name": "The Tiger's Fangs",
+    "text": "During the first Round of a skirmish, Maneuvers require one fewer Raise. (Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline)"
+   }
+  ]
+ },
+ {
+  "name": "The Four Temples [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 6.5,
+  "benefit": "Awareness",
+  "skills": "Courtier, Etiquette, Jiujutsu, Lore: Theology (Shintao), Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.231",
+  "lore": "Monks who believe enlightenment requires staying engaged with society. With a great monastery in the Imperial capital, they advise lords and help travellers.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Soul of Civility",
+    "text": "When you spend a Void Point to augment a High Skill Roll or a Social Skill Roll, you gain +2k2 instead of the normal +1k1."
+   }
+  ]
+ },
+ {
+  "name": "The Order of Heroes [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Perception",
+  "skills": "Athletics, Defense, Jiujutsu, Lore: Theology (pick an Emphasis), Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.232",
+  "lore": "A little-known sect that believes anyone can become a hero. It quietly finds threats to the Empire and the people able to meet them.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Destiny’s Hand",
+    "text": "Spend a Void Point as a Free Action to give one ally who has not yet taken his Turn +1k1 on any one roll this Round. Never a roll that cannot normally benefit from Void Points, such as a damage roll."
+   }
+  ]
+ },
+ {
+  "name": "The Shrine of the Seven Thunders [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Stamina",
+  "skills": "Athletics, Jiujutsu, Lore: Theology (Shintao), Lore (pick one), Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.232",
+  "lore": "Monks who honour the seven heroes who defeated Fu Leng by devoting their lives to contemplation, rarely leaving their monastery.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Walk with the Prophet",
+    "text": "All three of your starting Kiho must be chosen from a single Element, and your Insight Rank counts as one higher for meeting the Mastery Level of Kiho from that Element."
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Kaimetsu-uo [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Willpower",
+  "skills": "Defense, Jiujutsu, Lore: Theology (Fortunes), Meditation, any three Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.232",
+  "lore": "Followers of the Mantis founder who believe he left to avoid a ruinous fight over the Crab's leadership; they seek enlightenment through conciliation and peace.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Path of Purity",
+    "text": "In a Contested Social Skill Roll your opponent initiated, you may use any Ring in place of the Trait normally used (typically Awareness)."
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Osano-Wo [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Strength",
+  "skills": "Battle, Jiujutsu 2, Lore: Theology (Fortunes), Meditation, any two Bugei Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.233",
+  "lore": "Perhaps the most militant Brotherhood sect, devoted to physical prowess and martial arts; its monks ritually scar themselves to mark their progress.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Hand of Thunder",
+    "text": "Gain +0k1 to all damage rolls from unarmed attacks, cumulative with any other effect that lets you roll or keep extra dice on unarmed damage."
+   }
+  ]
+ },
+ {
+  "name": "The Temples of the Thousand Fortunes [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Agility",
+  "skills": "Jiujutsu, Lore: History, Lore: Theology (Fortunes), any one Lore Skill, Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Core Rulebook p.233",
+  "lore": "A varied network of temples to Rokugan's countless Fortunes, whose monks mostly believe they must work hard to prove worthy of enlightenment.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Thousand Forms",
+    "text": "You begin play knowing four Kiho rather than the usual three. These four do not count against the additional Kiho you may purchase with Experience Points."
+   }
+  ]
+ },
+ {
+  "name": "Order of the Wind [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Reflexes",
+  "skills": "Athletics, Defense, Jiujutsu, Lore: Theology, Meditation, Staves, any one Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Air p.193",
+  "lore": "Brothers who accept that the world is chaotic and unpredictable and stay steady within it, gaining command of themselves and, quietly, a little of the world around them.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Essence of the Wind",
+    "text": "Any effect that targets you and tries to influence your behaviour — spell, courtier Technique, Social Skill, Advantage or anything else — costs its user an additional Void Point to take effect, and that extra point may bypass the normal one-per-Round limit on enhancement effects."
+   }
+  ]
+ },
+ {
+  "name": "Wind’s Grace Order [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 6.5,
+  "benefit": "Reflexes",
+  "skills": "Calligraphy, Jiujutsu, Kyujutsu, Lore: Theology (Shintao), Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Air p.194",
+  "lore": "Formed after the Clan War for monks who could not regain their peace after defending the temples. Archery gave them focus, and the order keeps ties to the Asahina and other archery traditions.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Pillars of the Mind’s Eye",
+    "text": "Make an archery attack as a Complex Action, gaining +1k0 for each Kiho you currently have active (only one Martial Kiho counts, and active Kiho may have no other effect that Round). If the attack directly kills an intelligent being you lose 3 points of Honor."
+   }
+  ]
+ },
+ {
+  "name": "Fukurokujin’s Eyes [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Perception",
+  "skills": "Calligraphy, Divination, Etiquette, Investigation, Lore: History, Lore: Theology, any one non-Bugei Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Air p.194",
+  "lore": "A hereditary order of a few bloodlines descended from a tribe older than the Kami's arrival, valued by the Crab for uncannily accurate judgement and prediction.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Way of the Closed Eye",
+    "text": "You cannot be surprised by an ambush. Before Initiative is rolled you may spend a Void Point and roll Perception at TN 20 to raise your Initiative Score by 20 — a bonus lost the instant you make any attack."
+   }
+  ]
+ },
+ {
+  "name": "The Order of the Nameless Gift [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Stamina",
+  "skills": "Athletics, Defense, Jiujutsu, Lore (pick one), Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Earth p.205",
+  "lore": "An offshoot of the Shrine of the Seven Thunders that seeks the Thunders' fate-changing power in every soul through physical rigour and trials of endurance, taking the world plainly as it is.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Shinsei’s Gift",
+    "text": "You gain Void Points per day equal to your Earth Ring, spendable only to reduce damage or to raise your Armor TN, never simultaneously with other Void Points or in any other way. This sheet does not track that separate pool for you."
+   }
+  ]
+ },
+ {
+  "name": "Temple of Persistence [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 3.5,
+  "benefit": "Stamina",
+  "skills": "Athletics, Defense, Jiujutsu (Martial Arts), Lore: Theology, Meditation, any one Bugei Skill, any one Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Earth p.205",
+  "lore": "A largely martial order devoted to unyielding endurance. Its training tests body, mind and spirit to their limits, and its stubborn monks rarely accept defeat.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Unyielding Spirit",
+    "text": "Spend a Void Point as a Free Action to ignore all penalties to the very next roll. If that roll is an Attack Roll, or a Contested Roll you did not initiate, also add +Xk0 where X is your Earth Ring."
+   }
+  ]
+ },
+ {
+  "name": "The Order of Rebirth [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 6.5,
+  "benefit": "Intelligence",
+  "skills": "Athletics, Jiujutsu, Lore: History, Lore: Theology, Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Fire p.190",
+  "lore": "Descended from militant sohei of Osano-Wo, these brothers embrace new paths and philosophies to uncover new truths, earning other sects' disdain.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Changing the Way",
+    "text": "Each time in an encounter that you activate a Kiho of a different Element from every Kiho already used that encounter, you gain +5 on the activation roll."
+   }
+  ]
+ },
+ {
+  "name": "Tengoku’s Fist [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Agility",
+  "skills": "Athletics, Battle, Jiujutsu 2, Lore: Theology, Meditation, any one Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Fire p.191",
+  "lore": "A friendly offshoot of the Shrine of the Seven Thunders, these sohei see violence as a natural part of life: never a first resort, but an option they use exceptionally well.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Hand of the Heavens",
+    "text": "When attacking unarmed, or with a bisento, a bo staff, or any weapon with the Monk property, gain a Free Raise on the attack roll if your Fire Ring exceeds your opponent’s."
+   }
+  ]
+ },
+ {
+  "name": "The Temple of Heavenly Wisdom [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 6.5,
+  "benefit": "Intelligence",
+  "skills": "Courtier, Etiquette, Lore: History, Lore: Theology, Meditation, Sincerity, any one High Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Fire p.191",
+  "lore": "Perhaps the oldest monastic tradition in Crane lands. Its ancient temple helped the Lady Doji spread culture and won its monks unusual prestige.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Largesse of Fukurokujin",
+    "text": "On any Social Skill Roll, name one Kiho you know: you may not use it for the rest of the day, but you gain +1k1 on the roll. Each Kiho may be spent this way only once per day."
+   }
+  ]
+ },
+ {
+  "name": "The Order of Jurojin’s Blessing [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 5.5,
+  "benefit": "Intelligence",
+  "skills": "Athletics, Jiujutsu, Lore: Anatomy (Disease), Medicine (Disease, Herbalism), Meditation, Staves, any one Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Water p.187",
+  "lore": "Founded during the Great Famine to tend the sick of every caste; some members also treat injuries and, in later centuries, madness.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Blessings of Longevity",
+    "text": "+1k1 on Medicine rolls to treat disease or infection and +1k0 to treat Wounds. You may also attempt to treat natural, non-Taint insanity with a Medicine roll, though whether it helps is your GM’s call."
+   }
+  ]
+ },
+ {
+  "name": "The Shrine of Heaven’s Mirror [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 3.5,
+  "benefit": "Perception",
+  "skills": "Athletics, Divination (Omens), Jiujutsu, Lore: Omens, Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Water p.187",
+  "lore": "Ascetics who seek trance states, through sleeplessness, drink, wild dance and visionary plants, to receive guidance from the Fortunes and spirits, above all through omens.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Gaze into the Mirror",
+    "text": "+1k0 on all Divination rolls, or +1k1 when interpreting an omen. Once per day you may spend a Void Point to interpret an omen with absolute accuracy and no roll — though what the omen truly means remains your GM’s call."
+   }
+  ]
+ },
+ {
+  "name": "The Order of Eternity [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": null,
+  "benefit": "Intelligence",
+  "skills": "Defense, Divination (Astrology), Jiujutsu, Meditation, Lore: Theology, any two High Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Book of Void p.193",
+  "lore": "Monks who study the nature of time and wait for the right moment to act. Their long stillness and sudden action can make them seem odd, even mad.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Touch of Eternity",
+    "text": "Contemplate a non-combat situation for as long as your GM requires, then roll Meditation / Void at TN 25 or higher. On a success gain +1k1 +Void on Skill Rolls made to resolve that specific situation, for no more rolls than your Void Rank before further contemplation is needed."
+   }
+  ]
+ },
+ {
+  "name": "Shinmaki Order [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 6.5,
+  "benefit": "Void",
+  "skills": "Divination, Jiujutsu, Lore: Theology (Diamond Sutra), Meditation 2, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Emerald Empire p.206",
+  "lore": "A small, controversial sect that studies the Diamond Sutra and meditates on the Seven Thunders in dark, isolated monasteries, emerging only now and then.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "The Diamond Sutra",
+    "text": "You start play with the Disturbing Countenance Disadvantage for no points, and gain +1k0 to Meditation rolls, Fear rolls, and all Social Skill Rolls with heimin and hinin. You lose no Honor for touching dead flesh, though Glory and Infamy change as normal."
+   }
+  ]
+ },
+ {
+  "name": "First Dawn Scholars [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 5.5,
+  "benefit": "Intelligence",
+  "skills": "Etiquette, Jiujutsu, Lore: Nonhumans, Lore: Theology (Fortunes), Meditation, Staves, any one Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 2 p.29",
+  "lore": "In the Togashi Dynasty setting, the Owl Clan's monastic order: keepers of a library on civilisations older than humanity, who seek enlightenment in the world before the Kami fell.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Way of the Ancient World",
+    "text": "You may learn one additional Mystical Kiho, and gain +1k0 on all Etiquette and Lore Skill rolls."
+   }
+  ]
+ },
+ {
+  "name": "Order of the Five Rings [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4,
+  "benefit": "Awareness",
+  "skills": "Courtier, Defense, Etiquette, Jiujutsu, Lore: Elements, Lore: Theology (Shintao), Meditation",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 2 p.102",
+  "lore": "A short-lived order devoted to the charismatic monk Gorinno and his heretical philosophy, its members growing ever more zealous and cult-like.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Cracks within the Elements",
+    "text": "On any attack roll or Social Skill Roll against a mortal opponent, add twice the difference between that opponent’s highest and lowest Rings to your total."
+   }
+  ]
+ },
+ {
+  "name": "Fudoist Order [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": null,
+  "benefit": "Willpower",
+  "skills": "Courtier, Etiquette, Jiujutsu, Lore: Theology, Meditation, any two Skills",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Imperial Histories 2 p.287",
+  "lore": "Monks of Fudoism, a heresy the Brotherhood of Shinsei has banned. Each must choose a personal path, and their Technique turns the gap in Honor between them and a foe into an edge.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "For Each, One Path",
+    "text": "At character creation choose a low or high starting Honor Rank, and choose to specialise in either opposed Social Skill Rolls or Attack rolls. You gain a bonus to that roll type equal to twice the difference between your Honor Rank and your opponent’s."
+   }
+  ]
+ },
+ {
+  "name": "Order of Peaceful Repose [Monk]",
+  "clan": "Brotherhood of Shinsei",
+  "kind": "brotherhood",
+  "honor": 4.5,
+  "benefit": "Awareness",
+  "skills": "Athletics, Calligraphy, Jiujutsu, Lore: Ghosts, Lore: Theology (Emma-O), Meditation, any one Skill",
+  "outfit": "Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni",
+  "shugenja": false,
+  "brotherhood": true,
+  "affinity": "",
+  "deficiency": "",
+  "source": "Secrets of the Empire p.242",
+  "lore": "Monks of Emma-O who lay ghosts to rest wherever war or local conditions make them common, whether the dead were peasants or samurai.",
+  "techniques": [
+   {
+    "rank": 1,
+    "name": "Emma-O’s Insight",
+    "text": "Spend 10 minutes in meditation and roll Meditation / Awareness at TN 25 to detect the presence of ghosts — yorei or goryo, though not gaki. Usable a number of times per day equal to your Void Rank, and Raises on the roll reveal further detail."
+   }
+  ]
+ }
+]

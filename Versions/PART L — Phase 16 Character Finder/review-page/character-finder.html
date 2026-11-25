@@ -138,7 +138,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
     <div class="eyebrow">Design · Part L — New Player Help, Phase 16 · updated 25 November 2026</div>
     <h1>Character Finder</h1>
     <p class="lede">An optional questionnaire for players who don't know what to play. Up to twelve multiple-choice questions narrow the app's 105 Basic Schools down to one or two best matches and four more worth a look. Each one opens a guide, and a Build button hands the choice to the creation wizard.</p>
-    <div class="status">Design approved, with your nine rulings applied. Scoring is at version 2 and has automated tests with pass marks. Nothing is built yet. The full document is <code>Versions/PART L — Phase 16 Character Finder/DESIGN.md</code> on branch <code>claude/serene-ride-ojsryb</code>.</div>
+    <div class="status">Design approved, with all your rulings applied. Scoring is at version 2 and has automated tests with pass marks. The rating audit is under way: step 2 is done, and the book step is ready for a session on your laptop. Nothing is built yet. The full document is <code>Versions/PART L — Phase 16 Character Finder/DESIGN.md</code> on branch <code>claude/serene-ride-ojsryb</code>.</div>
     <div class="facts">
       <div class="fact"><b>105</b><span>Basic Schools rated, every Clan</span></div>
       <div class="fact"><b>81%</b><span>find the School they want in the top six (target 90%)</span></div>
@@ -148,7 +148,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
   </header>
 
   <nav class="sections" aria-label="Sections">
-    <a href="#try">Try it</a><a href="#decided">Your decisions</a><a href="#reliability">Reliability</a><a href="#audit">Checking the ratings</a><a href="#schools">All Schools</a><a href="#guides">Two guides</a><a href="#gm">GM notes</a><a href="#plan">Plan</a><a href="#open">Still open</a>
+    <a href="#try">Try it</a><a href="#decided">Your decisions</a><a href="#reliability">Reliability</a><a href="#audit">Checking the ratings</a><a href="#schools">All Schools</a><a href="#guides">Two guides</a><a href="#gm">GM notes</a><a href="#plan">Plan</a><a href="#open">Next</a>
   </nav>
 
   <section id="try">
@@ -172,20 +172,20 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
       <thead><tr><th>#</th><th>Question</th><th>Your ruling</th></tr></thead>
       <tbody>
         <tr><td>–</td><td>Reliability</td><td>Apply the scoring fixes, show a sample instead of a fake match, separate near-twins where the books do, and keep it all as tests with pass marks. Target: the right School in the top six 9 times in 10.</td></tr>
-        <tr><td class="num">1</td><td>Name and place</td><td>A new Part for new-player help, so tutorials and a glossary can follow. Buttons: "Help me choose" and "Not sure what to play?"</td></tr>
+        <tr><td class="num">1</td><td>Name and place</td><td>Part L — New Player Help, Phase 16, so tutorials and a glossary can follow. Buttons: "Help me choose" and "Not sure what to play?"</td></tr>
         <tr><td class="num">2</td><td>Magic</td><td>"Yes" leaves only Shugenja. "No" pushes them down but keeps them, so a strong fit can still tempt the player.</td></tr>
         <tr><td class="num">3</td><td>Where it starts</td><td>The wizard's Clan step and the Characters screen; guides searchable after the first batch</td></tr>
-        <tr><td class="num">4</td><td>Ratings review</td><td>Needs a system, not an expert (see Checking the ratings)</td></tr>
-        <tr><td class="num">5</td><td>Quick version</td><td>None; "See my results now" after question 8</td></tr>
+        <tr><td class="num">4</td><td>Ratings review</td><td>Needs a system, not an expert. The audit method is approved (see Checking the ratings)</td></tr>
+        <tr><td class="num">5</td><td>Quick version</td><td>None; "See my results now" after question 9 (moved from 8 on the newer numbers)</td></tr>
         <tr><td class="num">6</td><td>Suggested builds</td><td>Hints only</td></tr>
         <tr><td class="num">7</td><td>Roleplay prompts</td><td>Removed from character creation; they stay in the guides as ideas, never on the character</td></tr>
-        <tr><td class="num">8</td><td>Ronin</td><td>Left out until ronin Schools exist</td></tr>
+        <tr><td class="num">8</td><td>Ronin</td><td>Left out until ronin Schools exist. Tattooed monks stay in, with a note</td></tr>
         <tr><td class="num">9</td><td>Guide order</td><td>Clan by Clan</td></tr>
       </tbody>
     </table></div>
     <h3>How a player uses it</h3>
     <ol class="steps">
-      <li><div><b>Questions.</b> From "Help me choose" on the wizard's Clan step, or "Not sure what to play?" on the Characters screen. One question per screen, each with "No preference", and "See my results now" after question 8.</div></li>
+      <li><div><b>Questions.</b> From "Help me choose" on the wizard's Clan step, or "Not sure what to play?" on the Characters screen. One question per screen, each with "No preference", and "See my results now" after question 9.</div></li>
       <li><div><b>Results.</b> One or two best matches and four more worth a look. If the answers say too little, a sample of six Schools to start from instead.</div></li>
       <li><div><b>Guide.</b> Who they are, how they play, how to roleplay them with a few optional questions to think about, a suggested starting build, and where they can go later.</div></li>
       <li><div><b>Build.</b> The wizard applies Clan, Family and School and carries on at Rings &amp; Traits, with folded "Suggested for…" hints on the next steps.</div></li>
@@ -208,6 +208,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
         <tr><td>All "No preference" gives a sample, not a match</td><td>no</td><td><b>yes</b></td><td>rule</td></tr>
         <tr><td>Magic "No": a Shugenja is never a best match</td><td class="num">100%</td><td class="num"><b>100%</b></td><td>rule</td></tr>
         <tr><td>Player who wants School X finds it in the top six</td><td class="num">82%</td><td class="num"><b>81.3%</b></td><td>81%, target 90%</td></tr>
+        <tr><td>… stopping at "See my results now" after question 9</td><td>–</td><td class="num"><b>78%</b></td><td>78%</td></tr>
         <tr><td>Schools such a player rarely finds</td><td class="num">13</td><td class="num"><b>5</b></td><td>5, target 0</td></tr>
         <tr><td>"Words" gives a Courtier</td><td class="num">48%</td><td class="num"><b>67%</b></td><td>67%</td></tr>
         <tr><td>"A sword" gives a Bushi</td><td class="num">80%</td><td class="num"><b>88%</b></td><td>87%</td></tr>
@@ -218,25 +219,25 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
         <tr><td>Said "No" to magic, but fits a Shugenja School: still offered it</td><td class="num">0%</td><td class="num"><b>15.7%</b></td><td>15%</td></tr>
       </tbody>
     </table></div>
-    <p class="smeta">21 tests with pass marks, all passing; the full list is in DESIGN.md section 9.</p>
+    <p class="smeta">21 tests with pass marks, all passing, and one more waiting for your group (below). The full list is in DESIGN.md section 9.</p>
     <h3>Why tuning can't reach 90%</h3>
     <p>Trying different settings only moved "finds it in the top six" between 77% and 81%. What's left is in the ratings: near-twin Schools with almost the same labels (Goju Ninja and Shosuro Infiltrator, Agasha and Tamori, many monk orders), and labels that look wrong. For example, a player who answers only "a sword, the front line, the Wall" gets the Boar and Badger Schools ahead of Hida Bushi, because the draft gave them a "Wall" home. Better ratings are the way to 90%.</p>
-    <h3>Early exit: after question 8 or 9?</h3>
+    <h3>Early exit after question 9 (your decision)</h3>
     <div class="tbl"><table>
       <thead><tr><th>Stop after</th><th>Best match</th><th>Top six</th></tr></thead>
       <tbody>
         <tr><td>6 questions</td><td class="num">38%</td><td class="num">56%</td></tr>
-        <tr><td>8 questions (your ruling)</td><td class="num">57%</td><td class="num">76%</td></tr>
-        <tr><td><b>9 questions</b></td><td class="num"><b>63%</b></td><td class="num"><b>80%</b></td></tr>
+        <tr><td>8 questions</td><td class="num">57%</td><td class="num">76%</td></tr>
+        <tr><td><b>9 questions (chosen)</b></td><td class="num"><b>63%</b></td><td class="num"><b>80%</b></td></tr>
         <tr><td>All</td><td class="num">65%</td><td class="num">83%</td></tr>
       </tbody>
     </table></div>
-    <p>With version 2, question 9 (Bushido) closes most of the gap. I recommend moving "See my results now" to after question 9. It's one setting, and the design keeps 8 until you decide.</p>
+    <p>Question 9 (Bushido) closes most of the gap, so "See my results now" now appears after question 9. These figures used 10 players per School; the reliability test uses 20, and measures 78%.</p>
   </section>
 
   <section id="audit">
     <h2>Checking the ratings without an expert</h2>
-    <p>A proposal for your approval. It doesn't rely on anyone's expertise. It turns each rating into a checkable claim with evidence, gathers that evidence from several independent sources, and leaves a short list of real disagreements.</p>
+    <p>Approved on 25 November. It doesn't rely on anyone's expertise. It turns each rating into a checkable claim with evidence, gathers that evidence from several independent sources, and leaves a short list of real disagreements.</p>
     <ol class="steps">
       <li><div><b>A rubric.</b> Plain one-line definitions, for example "archer: teaches Kyujutsu, and a Technique or the description centres on the bow". Checking a rating then means checking a fact.</div></li>
       <li><div><b>The app's own evidence, automatically.</b> Skills, all five Techniques and the description of every School are already in the app, in our own words, checked against the books in earlier phases.</div></li>
@@ -245,15 +246,24 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
       <li><div><b>Settle disagreements</b> by evidence first. The few real judgement calls go to someone in your group as a short list, not 105 rows. Then a free real-world test: each player in your group takes the questionnaire as their character, and their School should be in their top six.</div></li>
       <li><div><b>Make it permanent:</b> every rating keeps its evidence and confidence, and the tests check that each label meets the rubric.</div></li>
     </ol>
-    <p>A first try with Skills alone, of the draft's 255 labels:</p>
+    <h3>Step 2 is done: the app's own evidence</h3>
+    <p>Every School was checked against its own Skills, Outfit, all five Techniques and description, by the rubric. Nothing has been changed yet: the book step settles what this can't.</p>
     <div class="tbl"><table>
       <tbody>
-        <tr><td>Backed by the School's own Skill list</td><td class="num"><b>135</b></td></tr>
-        <tr><td>Testable against Skills, but not backed (some are fine: the Asahina heal through spells)</td><td class="num">46</td></tr>
-        <tr><td>Not testable from Skills; need the Technique text or the book</td><td class="num">74</td></tr>
-        <tr><td>Distinctive Skills taught but not labelled (not every one should be)</td><td class="num">43</td></tr>
+        <tr><td>Labels backed by the app's evidence</td><td class="num"><b>183 of 255</b></td></tr>
+        <tr><td>… of them main labels</td><td class="num">135 of 161</td></tr>
+        <tr><td>Homes backed</td><td class="num">106 of 148</td></tr>
+        <tr><td>Complexity agrees with the rubric / how unusual agrees</td><td class="num">89 / 100 of 105</td></tr>
+        <tr><td>Labels the evidence suggests adding</td><td class="num">28</td></tr>
+        <tr><td>Near-twin pairs to separate (rated at least 75% alike)</td><td class="num">20</td></tr>
+        <tr><td>Questions left for the books</td><td class="num"><b>183, across 88 Schools</b></td></tr>
       </tbody>
     </table></div>
+    <p>It confirms the Wall problem: no evidence anywhere for the Boar and Badger Schools' "Wall" home. It also points at Morito Bushi, rated front line, whose Techniques say fast skirmisher, and at the Order of Peaceful Repose, missing "mystic". Some suggestions are false alarms (the Kuni Witch-Hunter's Techniques mention maho because they hunt it), which is why nothing changes without the books.</p>
+    <h3>Step 3 needs your laptop</h3>
+    <p>Your PDFs are only on your laptop, and it doesn't share folders with cloud sessions at the moment. Everything is ready for a Claude session on the laptop: a script that extracts each School's pages to a scratch folder outside the repository, the list of questions with the exact pages, and a checker for the answers (own words, printed pages, nothing copied). In that session, say: <i>Read <code>Versions/PART L — Phase 16 Character Finder/audit/KICKOFF-BOOK-READING.md</code> and carry out the book-reading step of the rating audit, one Clan at a time.</i></p>
+    <h3>Step 5: your group, for free</h3>
+    <p>Ask each player to answer Try it as their own character. After the results, the page shows an answer code. Send me each code with that player's School (no names needed). A test then checks that every player's real School is in their top six.</p>
     <p><b>Your part, as a non-expert:</b> approve the rubric, spot-check about ten Schools by opening the cited page, and pass the short disagreement list to your group. If more than one of the ten is wrong, the audit is redone. Near-twins are handled inside the audit: wherever the evidence separates them, the difference becomes a label.</p>
   </section>
 
@@ -389,12 +399,11 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
   </section>
 
   <section id="open">
-    <h2>Still open</h2>
+    <h2>Next</h2>
     <ol class="asks">
-      <li><b>The rating audit:</b> approve the method above, and say where your PDFs are for the book-reading step.</li>
-      <li><b>Early exit:</b> after question 8 as ruled, or 9 as now recommended?</li>
-      <li><b>Tattooed monks:</b> keep them in with the "tattoos not modelled yet" note (recommended), or hide them until the tattoo work lands?</li>
-      <li><b>The Part's name:</b> "Part L — New Player Help"?</li>
+      <li><b>The book step:</b> start a Claude session on your laptop with the line above. It works one Clan at a time and commits as it goes.</li>
+      <li><b>Your group's answer codes:</b> one per player, with their character's School.</li>
+      <li><b>After the book step:</b> you spot-check ten answers against the book, and your group looks at the short list of judgement calls.</li>
     </ol>
   </section>
 
@@ -613,7 +622,14 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
       if (r.wild) h += '<div class="res-h">Something different</div>' + c(r.wild, {});
     }
     h += '<div class="row"><button type="button" class="btn" id="all">See all matches (' + r.all.length + ')</button></div><div id="allbox" hidden></div>';
+    var code = 'v2|' + signature(a);
+    h += '<div class="note know" style="margin-top:1rem"><b>Your answer code</b> (for the group test): <code id="code" style="user-select:all">' + esc(code) + '</code>' +
+         '<div class="row" style="margin-top:.5rem"><button type="button" class="btn" id="copy" style="min-height:40px">Copy the code</button><span class="smeta" id="copied" style="align-self:center"></span></div></div>';
     $('panel').innerHTML = h;
+    $('copy').addEventListener('click', function () {
+      var done = function (ok) { $('copied').textContent = ok ? 'Copied' : 'Select the code and copy it'; };
+      try { navigator.clipboard.writeText(code).then(function () { done(true); }, function () { done(false); }); } catch (e) { done(false); }
+    });
     $('change').addEventListener('click', function () { idx = 0; renderQuestion(); });
     $('restart').addEventListener('click', restart);
     $('all').addEventListener('click', function () {

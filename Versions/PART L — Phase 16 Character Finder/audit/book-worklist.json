@@ -1,0 +1,1858 @@
+[
+ {
+  "name": "Hida Bushi",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.106",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 106,
+   "pdf_pages": [
+    109,
+    110,
+    111
+   ]
+  },
+  "questions": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Stealth)."
+  ]
+ },
+ {
+  "name": "Hida Pragmatist [Bushi]",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Emerald Empire p.247",
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 247,
+   "pdf_pages": [
+    248,
+    249,
+    250
+   ]
+  },
+  "questions": [
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ]
+ },
+ {
+  "name": "Hiruma Bushi",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.108",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 108,
+   "pdf_pages": [
+    111,
+    112,
+    113
+   ]
+  },
+  "questions": [
+   "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while).",
+   "Near-twin of \"Hiruma Scout [Bushi]\" (rated 86% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Kuni Shugenja",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.107",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 107,
+   "pdf_pages": [
+    110,
+    111,
+    112
+   ]
+  },
+  "questions": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"library\" right? Libraries, temples and places of study."
+  ]
+ },
+ {
+  "name": "Kuni Witch-Hunter [Monk]",
+  "clans": [
+   "Crab"
+  ],
+  "source": "The Great Clans p.40",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 40,
+   "pdf_pages": [
+    41,
+    42,
+    43
+   ]
+  },
+  "questions": [
+   "Should \"forbidden\" be added? Uses forbidden power: maho, blood magic, the Nothing."
+  ]
+ },
+ {
+  "name": "Toritaka Bushi",
+  "clans": [
+   "Crab",
+   "Falcon"
+  ],
+  "source": "Core Rulebook p.219",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 219,
+   "pdf_pages": [
+    222,
+    223,
+    224
+   ]
+  },
+  "questions": [
+   "Is \"beast\" right? Fights or works with an animal companion.",
+   "Is the home \"wilds\" right? Forests and wild places.",
+   "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan)."
+  ]
+ },
+ {
+  "name": "Yasuki Courtier",
+  "clans": [
+   "Crab"
+  ],
+  "source": "Core Rulebook p.107",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 107,
+   "pdf_pages": [
+    110,
+    111,
+    112
+   ]
+  },
+  "questions": [
+   "Is the home \"sea\" right? The sea, islands and ports.",
+   "Near-twin of \"Yoritomo Courtier\" (rated 83% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Asahina Shugenja",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.110",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 110,
+   "pdf_pages": [
+    113,
+    114,
+    115
+   ]
+  },
+  "questions": [
+   "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
+   "Is the home \"library\" right? Libraries, temples and places of study."
+  ]
+ },
+ {
+  "name": "Daidoji Iron Warrior [Bushi]",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.111",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 111,
+   "pdf_pages": [
+    114,
+    115,
+    116
+   ]
+  },
+  "questions": [
+   "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: per).",
+   "Near-twin of \"Lion Elite Spearmen [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Daidoji Scout [Bushi]",
+  "clans": [
+   "Crane"
+  ],
+  "source": "The Great Clans p.70",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 70,
+   "pdf_pages": [
+    71,
+    72,
+    73
+   ]
+  },
+  "questions": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ]
+ },
+ {
+  "name": "Doji Courtier",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.110",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 110,
+   "pdf_pages": [
+    113,
+    114,
+    115
+   ]
+  },
+  "questions": [
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+   "Complexity: rated Some extra, rubric says Involved (tattoos or kiho)."
+  ]
+ },
+ {
+  "name": "Doji Magistrate [Bushi]",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Emerald Empire p.170",
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 170,
+   "pdf_pages": [
+    171,
+    172,
+    173
+   ]
+  },
+  "questions": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Kakita Bushi",
+  "clans": [
+   "Crane"
+  ],
+  "source": "Core Rulebook p.109",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 109,
+   "pdf_pages": [
+    112,
+    113,
+    114
+   ]
+  },
+  "questions": [
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ]
+ },
+ {
+  "name": "Kakita Artisan",
+  "clans": [
+   "Crane"
+  ],
+  "source": "The Great Clans p.71",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 71,
+   "pdf_pages": [
+    72,
+    73,
+    74
+   ]
+  },
+  "questions": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm."
+  ]
+ },
+ {
+  "name": "Kitsuki Investigator [Courtier]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.114",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 114,
+   "pdf_pages": [
+    117,
+    118,
+    119
+   ]
+  },
+  "questions": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Should \"schemer\" be added? Gets their way by secrets, leverage, deceit or fear."
+  ]
+ },
+ {
+  "name": "Mirumoto Bushi",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.112",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 112,
+   "pdf_pages": [
+    115,
+    116,
+    117
+   ]
+  },
+  "questions": [
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
+   "Near-twin of \"Mirumoto Taoist Swordsman [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Mirumoto Taoist Swordsman [Bushi]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Emerald Empire p.221",
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 221,
+   "pdf_pages": [
+    222,
+    223,
+    224
+   ]
+  },
+  "questions": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Complexity: rated Some extra, rubric says Involved (tattoos or kiho)."
+  ]
+ },
+ {
+  "name": "Tamori Shugenja",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.113",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 113,
+   "pdf_pages": [
+    116,
+    117,
+    118
+   ]
+  },
+  "questions": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+   "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick."
+  ]
+ },
+ {
+  "name": "The Togashi Tattooed Order [Monk]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Core Rulebook p.114",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 114,
+   "pdf_pages": [
+    117,
+    118,
+    119
+   ]
+  },
+  "questions": [
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan)."
+  ]
+ },
+ {
+  "name": "The Hoshi Tsurui Zumi Order [Monk]",
+  "clans": [
+   "Dragon"
+  ],
+  "source": "Imperial Histories 1 p.214",
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 214,
+   "pdf_pages": [
+    215,
+    216,
+    217
+   ]
+  },
+  "questions": [
+   "Near-twin of \"The Hitomi Kikage Zumi Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Akodo Bushi",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Core Rulebook p.116",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 116,
+   "pdf_pages": [
+    119,
+    120,
+    121
+   ]
+  },
+  "questions": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: Raises?, against, choose, when)."
+  ]
+ },
+ {
+  "name": "Ikoma Lion’s Shadow [Bushi]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Emerald Empire p.109",
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 109,
+   "pdf_pages": [
+    110,
+    111,
+    112
+   ]
+  },
+  "questions": [
+   "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
+  ]
+ },
+ {
+  "name": "Kitsu Shugenja",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Core Rulebook p.117",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 117,
+   "pdf_pages": [
+    120,
+    121,
+    122
+   ]
+  },
+  "questions": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"library\" right? Libraries, temples and places of study."
+  ]
+ },
+ {
+  "name": "Lion Elite Spearmen [Bushi]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "Naishou Province p.7",
+  "pages": {
+   "book": "Naishou Province",
+   "file": "Legend of the Five Rings Naishou Province L5R-4e.pdf",
+   "printed_page": 7,
+   "pdf_pages": [
+    8,
+    9,
+    10
+   ]
+  },
+  "questions": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is \"commander\" right? Leads troops: Battle, mass battle, or bonuses to allies in a skirmish.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ]
+ },
+ {
+  "name": "Matsu Beastmaster [Bushi]",
+  "clans": [
+   "Lion"
+  ],
+  "source": "The Great Clans p.136",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 136,
+   "pdf_pages": [
+    137,
+    138,
+    139
+   ]
+  },
+  "questions": [
+   "Is the home \"wilds\" right? Forests and wild places.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ]
+ },
+ {
+  "name": "Agasha Shugenja",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Core Rulebook p.125",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 125,
+   "pdf_pages": [
+    128,
+    129,
+    130
+   ]
+  },
+  "questions": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies."
+  ]
+ },
+ {
+  "name": "Asako Henshin [Monk]",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "The Great Clans p.199",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 199,
+   "pdf_pages": [
+    200,
+    201,
+    202
+   ]
+  },
+  "questions": [
+   "Should \"unarmed\" be added? Fights without weapons: grappling, wrestling or martial arts.",
+   "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Contested, Raises?, if, per, unaware).",
+   "Near-twin of \"First Dawn Scholars [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Isawa Shugenja",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Core Rulebook p.124",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 124,
+   "pdf_pages": [
+    127,
+    128,
+    129
+   ]
+  },
+  "questions": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ]
+ },
+ {
+  "name": "Shiba Artisan [Courtier]",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Emerald Empire p.122",
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 122,
+   "pdf_pages": [
+    123,
+    124,
+    125
+   ]
+  },
+  "questions": [
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ]
+ },
+ {
+  "name": "Shiba Bushi",
+  "clans": [
+   "Phoenix"
+  ],
+  "source": "Core Rulebook p.123",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 123,
+   "pdf_pages": [
+    126,
+    127,
+    128
+   ]
+  },
+  "questions": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ]
+ },
+ {
+  "name": "Bayushi Bushi",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.126",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 126,
+   "pdf_pages": [
+    129,
+    130,
+    131
+   ]
+  },
+  "questions": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
+  ]
+ },
+ {
+  "name": "Bayushi Courtier",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.127",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 127,
+   "pdf_pages": [
+    130,
+    131,
+    132
+   ]
+  },
+  "questions": [
+   "Should \"diplomat\" be added? Wins people over: courtesy, alliances, favours, mediation and calm."
+  ]
+ },
+ {
+  "name": "Shosuro Actor [Ninja]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "The Great Clans p.227",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 227,
+   "pdf_pages": [
+    228,
+    229,
+    230
+   ]
+  },
+  "questions": [
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty."
+  ]
+ },
+ {
+  "name": "Shosuro Infiltrator [Ninja]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.128",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 128,
+   "pdf_pages": [
+    131,
+    132,
+    133
+   ]
+  },
+  "questions": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ]
+ },
+ {
+  "name": "Soshi Magistrate [Bushi]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Emerald Empire p.171",
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 171,
+   "pdf_pages": [
+    172,
+    173,
+    174
+   ]
+  },
+  "questions": [
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ]
+ },
+ {
+  "name": "Soshi Shugenja",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "Core Rulebook p.127",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 127,
+   "pdf_pages": [
+    130,
+    131,
+    132
+   ]
+  },
+  "questions": [
+   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
+   "Is \"strange-magic\" right? Unusual magic: alchemy, experiment, talismans, foreign or multi-element spells."
+  ]
+ },
+ {
+  "name": "Yogo Wardmaster [Shugenja]",
+  "clans": [
+   "Scorpion"
+  ],
+  "source": "The Great Clans p.229",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 229,
+   "pdf_pages": [
+    230,
+    231,
+    232
+   ]
+  },
+  "questions": [
+   "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ]
+ },
+ {
+  "name": "Horiuchi Shugenja",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "The Great Clans p.257",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 257,
+   "pdf_pages": [
+    258,
+    259,
+    260
+   ]
+  },
+  "questions": [
+   "Near-twin of \"Iuchi Shugenja\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Ide Emissary [Courtier]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.131",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 131,
+   "pdf_pages": [
+    134,
+    135,
+    136
+   ]
+  },
+  "questions": [
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands."
+  ]
+ },
+ {
+  "name": "Iuchi Shugenja",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.130",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 130,
+   "pdf_pages": [
+    133,
+    134,
+    135
+   ]
+  },
+  "questions": [
+   "Is \"nature\" right? Tied to nature: animals, forests, weather, the sea and storms.",
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ]
+ },
+ {
+  "name": "Moto Bushi",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.130",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 130,
+   "pdf_pages": [
+    133,
+    134,
+    135
+   ]
+  },
+  "questions": [
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ]
+ },
+ {
+  "name": "Moto Death Priest [Shugenja]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Imperial Histories 1 p.240",
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 240,
+   "pdf_pages": [
+    241,
+    242,
+    243
+   ]
+  },
+  "questions": [
+   "Is \"spirits\" right? Deals with spirits, ancestors, the dead, the Fortunes or the Spirit Realms.",
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies."
+  ]
+ },
+ {
+  "name": "Moto Vindicator [Bushi]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "The Great Clans p.258",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 258,
+   "pdf_pages": [
+    259,
+    260,
+    261
+   ]
+  },
+  "questions": [
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Shinjo Bushi",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Emerald Empire p.31",
+  "pages": {
+   "book": "Emerald Empire",
+   "file": "Legend of the Five Rings Emerald Empire L5R-4e.pdf",
+   "printed_page": 31,
+   "pdf_pages": [
+    32,
+    33,
+    34
+   ]
+  },
+  "questions": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Should \"archer\" be added? Fights with the bow: teaches Kyujutsu, and a Technique or the description centres on bows."
+  ]
+ },
+ {
+  "name": "Utaku Battle Maiden [Bushi]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Core Rulebook p.132",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 132,
+   "pdf_pages": [
+    135,
+    136,
+    137
+   ]
+  },
+  "questions": [
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ]
+ },
+ {
+  "name": "Utaku Mounted Infantry [Bushi]",
+  "clans": [
+   "Unicorn"
+  ],
+  "source": "Imperial Histories 2 p.168",
+  "pages": {
+   "book": "Imperial Histories 2",
+   "file": "Legend of the Five Rings Imperial Histories 2 L5R-4e.pdf",
+   "printed_page": 168,
+   "pdf_pages": [
+    169,
+    170,
+    171
+   ]
+  },
+  "questions": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: choose)."
+  ]
+ },
+ {
+  "name": "Chuda Shugenja",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.213",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 213,
+   "pdf_pages": [
+    216,
+    217,
+    218
+   ]
+  },
+  "questions": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ]
+ },
+ {
+  "name": "Daigotsu Bushi",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.212",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 212,
+   "pdf_pages": [
+    215,
+    216,
+    217
+   ]
+  },
+  "questions": [
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ]
+ },
+ {
+  "name": "Daigotsu Courtier",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.213",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 213,
+   "pdf_pages": [
+    216,
+    217,
+    218
+   ]
+  },
+  "questions": [
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ]
+ },
+ {
+  "name": "Goju Ninja",
+  "clans": [
+   "Spider"
+  ],
+  "source": "The Great Clans p.280",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 280,
+   "pdf_pages": [
+    281,
+    282,
+    283
+   ]
+  },
+  "questions": [
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
+   "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Raises?)."
+  ]
+ },
+ {
+  "name": "The Order of the Spider Monks [Monk]",
+  "clans": [
+   "Spider"
+  ],
+  "source": "Core Rulebook p.215",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 215,
+   "pdf_pages": [
+    218,
+    219,
+    220
+   ]
+  },
+  "questions": [
+   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "Complexity: rated Involved, rubric says Some extra (Rank 1 has: against)."
+  ]
+ },
+ {
+  "name": "Seppun Guardsman [Bushi]",
+  "clans": [
+   "Imperial"
+  ],
+  "source": "Core Rulebook p.228",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 228,
+   "pdf_pages": [
+    231,
+    232,
+    233
+   ]
+  },
+  "questions": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Should \"stealth\" be added? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Should \"investigator\" be added? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives."
+  ]
+ },
+ {
+  "name": "Seppun Shugenja",
+  "clans": [
+   "Imperial"
+  ],
+  "source": "Core Rulebook p.228",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 228,
+   "pdf_pages": [
+    231,
+    232,
+    233
+   ]
+  },
+  "questions": [
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
+   "Should \"bodyguard\" be added? Protects others: yojimbo, guarding a charge, defending allies."
+  ]
+ },
+ {
+  "name": "Ichiro Bushi",
+  "clans": [
+   "Badger"
+  ],
+  "source": "Core Rulebook p.215",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 215,
+   "pdf_pages": [
+    218,
+    219,
+    220
+   ]
+  },
+  "questions": [
+   "Is the home \"mountains\" right? Mountains and monasteries.",
+   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+  ]
+ },
+ {
+  "name": "Komori Shugenja",
+  "clans": [
+   "Bat"
+  ],
+  "source": "Core Rulebook p.216",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 216,
+   "pdf_pages": [
+    219,
+    220,
+    221
+   ]
+  },
+  "questions": [
+   "Is \"nature\" right? Tied to nature: animals, forests, weather, the sea and storms.",
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Heichi Bushi",
+  "clans": [
+   "Boar"
+  ],
+  "source": "Core Rulebook p.217",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 217,
+   "pdf_pages": [
+    220,
+    221,
+    222
+   ]
+  },
+  "questions": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+   "Is the home \"wilds\" right? Forests and wild places.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while)."
+  ]
+ },
+ {
+  "name": "Tonbo Shugenja",
+  "clans": [
+   "Dragonfly"
+  ],
+  "source": "Core Rulebook p.218",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 218,
+   "pdf_pages": [
+    221,
+    222,
+    223
+   ]
+  },
+  "questions": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+   "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ]
+ },
+ {
+  "name": "Kitsune Shugenja",
+  "clans": [
+   "Fox"
+  ],
+  "source": "Core Rulebook p.219",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 219,
+   "pdf_pages": [
+    222,
+    223,
+    224
+   ]
+  },
+  "questions": [
+   "Is \"beast\" right? Fights or works with an animal companion."
+  ]
+ },
+ {
+  "name": "Usagi Bushi",
+  "clans": [
+   "Hare"
+  ],
+  "source": "Core Rulebook p.220",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 220,
+   "pdf_pages": [
+    223,
+    224,
+    225
+   ]
+  },
+  "questions": [
+   "Should \"all-out\" be added? Holds nothing back: Full Attack, fearless or reckless commitment to the attack.",
+   "Is the home \"wilds\" right? Forests and wild places."
+  ]
+ },
+ {
+  "name": "Moshi Shugenja",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "Core Rulebook p.120",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 120,
+   "pdf_pages": [
+    123,
+    124,
+    125
+   ]
+  },
+  "questions": [
+   "Near-twin of \"Yoritomo Shugenja\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Tsuruchi Archer [Bushi]",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "Core Rulebook p.122",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 122,
+   "pdf_pages": [
+    125,
+    126,
+    127
+   ]
+  },
+  "questions": [
+   "Is the home \"battlefield\" right? Battlefields, armies and soldiers."
+  ]
+ },
+ {
+  "name": "Tsuruchi Bounty Hunter [Bushi]",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "The Great Clans p.167",
+  "pages": {
+   "book": "The Great Clans",
+   "file": "Legend of the Five Rings The Great Clans L5R-4e.pdf",
+   "printed_page": 167,
+   "pdf_pages": [
+    168,
+    169,
+    170
+   ]
+  },
+  "questions": [
+   "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
+   "Should \"scholar\" be added? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Yoritomo Bushi",
+  "clans": [
+   "Mantis"
+  ],
+  "source": "Core Rulebook p.120",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 120,
+   "pdf_pages": [
+    123,
+    124,
+    125
+   ]
+  },
+  "questions": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ]
+ },
+ {
+  "name": "Toku Bushi",
+  "clans": [
+   "Monkey"
+  ],
+  "source": "Core Rulebook p.221",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 221,
+   "pdf_pages": [
+    224,
+    225,
+    226
+   ]
+  },
+  "questions": [
+   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
+   "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: against)."
+  ]
+ },
+ {
+  "name": "Fuzake Shugenja",
+  "clans": [
+   "Monkey"
+  ],
+  "source": "Secrets of the Empire p.238",
+  "pages": {
+   "book": "Secrets of the Empire",
+   "file": "Legend of the Five Rings Secrets of the Empire L5R-4e.pdf",
+   "printed_page": 238,
+   "pdf_pages": [
+    239,
+    240,
+    241
+   ]
+  },
+  "questions": [
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Tsi Smith [Artisan]",
+  "clans": [
+   "Oriole"
+  ],
+  "source": "Core Rulebook p.222",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 222,
+   "pdf_pages": [
+    225,
+    226,
+    227
+   ]
+  },
+  "questions": [
+   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Morito Bushi",
+  "clans": [
+   "Ox"
+  ],
+  "source": "Core Rulebook p.223",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 223,
+   "pdf_pages": [
+    226,
+    227,
+    228
+   ]
+  },
+  "questions": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ]
+ },
+ {
+  "name": "Chuda Shugenja [Snake]",
+  "clans": [
+   "Snake"
+  ],
+  "source": "Core Rulebook p.224",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 224,
+   "pdf_pages": [
+    227,
+    228,
+    229
+   ]
+  },
+  "questions": [
+   "Is \"protector-magic\" right? A spellcaster whose magic wards, shields and protects.",
+   "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Suzume Bushi",
+  "clans": [
+   "Sparrow"
+  ],
+  "source": "Core Rulebook p.225",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 225,
+   "pdf_pages": [
+    228,
+    229,
+    230
+   ]
+  },
+  "questions": [
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
+  ]
+ },
+ {
+  "name": "Kasuga Smuggler [Courtier]",
+  "clans": [
+   "Tortoise"
+  ],
+  "source": "Core Rulebook p.225",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 225,
+   "pdf_pages": [
+    228,
+    229,
+    230
+   ]
+  },
+  "questions": [
+   "Is \"stealth\" right? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
+   "Is the home \"sea\" right? The sea, islands and ports."
+  ]
+ },
+ {
+  "name": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "clans": [
+   "Tiger"
+  ],
+  "source": "Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline",
+  "pages": {
+   "book": "Imperial Histories 1",
+   "file": "Legend of the Five Rings Imperial Histories 1 L5R-4e.pdf",
+   "printed_page": 276,
+   "pdf_pages": [
+    277,
+    278,
+    279
+   ]
+  },
+  "questions": [
+   "Is the home \"underworld\" right? City streets, the underworld, criminals and shadows."
+  ]
+ },
+ {
+  "name": "The Four Temples [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.231",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 231,
+   "pdf_pages": [
+    234,
+    235,
+    236
+   ]
+  },
+  "questions": [
+   "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
+   "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ]
+ },
+ {
+  "name": "The Order of Heroes [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.232",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 232,
+   "pdf_pages": [
+    235,
+    236,
+    237
+   ]
+  },
+  "questions": [
+   "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings."
+  ]
+ },
+ {
+  "name": "The Shrine of the Seven Thunders [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.232",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 232,
+   "pdf_pages": [
+    235,
+    236,
+    237
+   ]
+  },
+  "questions": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Near-twin of \"The Order of Eternity [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "The Temple of Kaimetsu-uo [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.232",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 232,
+   "pdf_pages": [
+    235,
+    236,
+    237
+   ]
+  },
+  "questions": [
+   "Is \"sailor\" right? At home on ships: Sailing, sea fighting, pirates.",
+   "Is the home \"sea\" right? The sea, islands and ports."
+  ]
+ },
+ {
+  "name": "The Temple of Osano-Wo [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Core Rulebook p.233",
+  "pages": {
+   "book": "Core Rulebook",
+   "file": "Legend of the Five Rings Rpg Core Rulebook 4th Ed..pdf",
+   "printed_page": 233,
+   "pdf_pages": [
+    236,
+    237,
+    238
+   ]
+  },
+  "questions": [
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
+   "Near-twin of \"Temple of Persistence [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"The Order of the Nameless Gift [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Order of the Wind [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Air p.193",
+  "pages": {
+   "book": "Book of Air",
+   "file": "Book 1 The Book of Air L5R-4e.pdf",
+   "printed_page": 193,
+   "pdf_pages": [
+    194,
+    195,
+    196
+   ]
+  },
+  "questions": [
+   "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+  ]
+ },
+ {
+  "name": "Fukurokujin’s Eyes [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Air p.194",
+  "pages": {
+   "book": "Book of Air",
+   "file": "Book 1 The Book of Air L5R-4e.pdf",
+   "printed_page": 194,
+   "pdf_pages": [
+    195,
+    196,
+    197
+   ]
+  },
+  "questions": [
+   "Is \"investigator\" right? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives.",
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
+   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood)."
+  ]
+ },
+ {
+  "name": "The Order of the Nameless Gift [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Earth p.205",
+  "pages": {
+   "book": "Book of Earth",
+   "file": "Book 2 The Book of Earth L5R-4e.pdf",
+   "printed_page": 205,
+   "pdf_pages": [
+    206,
+    207,
+    208
+   ]
+  },
+  "questions": [
+   "Near-twin of \"Temple of Persistence [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Temple of Persistence [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Earth p.205",
+  "pages": {
+   "book": "Book of Earth",
+   "file": "Book 2 The Book of Earth L5R-4e.pdf",
+   "printed_page": 205,
+   "pdf_pages": [
+    206,
+    207,
+    208
+   ]
+  },
+  "questions": [
+   "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts.",
+   "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
+   "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "The Order of Rebirth [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Fire p.190",
+  "pages": {
+   "book": "Book of Fire",
+   "file": "Book 3 The Book of Fire L5R-4e.pdf",
+   "printed_page": 190,
+   "pdf_pages": [
+    191,
+    192,
+    193
+   ]
+  },
+  "questions": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries."
+  ]
+ },
+ {
+  "name": "Tengoku’s Fist [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Fire p.191",
+  "pages": {
+   "book": "Book of Fire",
+   "file": "Book 3 The Book of Fire L5R-4e.pdf",
+   "printed_page": 191,
+   "pdf_pages": [
+    192,
+    193,
+    194
+   ]
+  },
+  "questions": [
+   "Near-twin of \"Fudoist Order [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "The Temple of Heavenly Wisdom [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Fire p.191",
+  "pages": {
+   "book": "Book of Fire",
+   "file": "Book 3 The Book of Fire L5R-4e.pdf",
+   "printed_page": 191,
+   "pdf_pages": [
+    192,
+    193,
+    194
+   ]
+  },
+  "questions": [
+   "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
+   "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
+   "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life."
+  ]
+ },
+ {
+  "name": "The Shrine of Heaven’s Mirror [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Water p.187",
+  "pages": {
+   "book": "Book of Water",
+   "file": "Book 4 The Book of Water L5R-4e.pdf",
+   "printed_page": 187,
+   "pdf_pages": [
+    188,
+    189,
+    190
+   ]
+  },
+  "questions": [
+   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood)."
+  ]
+ },
+ {
+  "name": "The Order of Eternity [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Book of Void p.193",
+  "pages": {
+   "book": "Book of Void",
+   "file": "Book 5 The Book of Void L5R-4e.pdf",
+   "printed_page": 193,
+   "pdf_pages": [
+    194,
+    195,
+    196
+   ]
+  },
+  "questions": [
+   "Is the home \"mountains\" right? Mountains and monasteries.",
+   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
+   "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
+  ]
+ },
+ {
+  "name": "Order of the Five Rings [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Imperial Histories 2 p.102",
+  "pages": {
+   "book": "Imperial Histories 2",
+   "file": "Legend of the Five Rings Imperial Histories 2 L5R-4e.pdf",
+   "printed_page": 102,
+   "pdf_pages": [
+    103,
+    104,
+    105
+   ]
+  },
+  "questions": [
+   "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear."
+  ]
+ },
+ {
+  "name": "Fudoist Order [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Imperial Histories 2 p.287",
+  "pages": {
+   "book": "Imperial Histories 2",
+   "file": "Legend of the Five Rings Imperial Histories 2 L5R-4e.pdf",
+   "printed_page": 287,
+   "pdf_pages": [
+    288,
+    289,
+    290
+   ]
+  },
+  "questions": [
+   "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts."
+  ]
+ },
+ {
+  "name": "Order of Peaceful Repose [Monk]",
+  "clans": [
+   "Brotherhood of Shinsei"
+  ],
+  "source": "Secrets of the Empire p.242",
+  "pages": {
+   "book": "Secrets of the Empire",
+   "file": "Legend of the Five Rings Secrets of the Empire L5R-4e.pdf",
+   "printed_page": 242,
+   "pdf_pages": [
+    243,
+    244,
+    245
+   ]
+  },
+  "questions": [
+   "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
+   "Should \"mystic\" be added? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho."
+  ]
+ }
+]
