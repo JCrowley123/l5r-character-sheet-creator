@@ -909,12 +909,12 @@
   "answers": [
    {
     "question": "Near-twin of \"Iuchi Shugenja\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Horiuchi make meishodo amulets, a blend of gaijin and Rokugani magic that stores one spell for quick casting, and the Core Rulebook's family entry (p.129) says they specialise in defensive and protective magic. The Iuchi (Core Rulebook p.130) speed others' movement and favour Travel spells. Proposal: Horiuchi main unusual magic, also protective magic in place of traveller; Iuchi main traveller and unusual magic.",
+    "page": "The Great Clans p.257",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -923,12 +923,12 @@
   "answers": [
    {
     "question": "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Trained for dealing with foreigners after centuries in the Burning Sands, to adapt at once to unfamiliar customs; Horsemanship is a School Skill.",
+    "page": "Core Rulebook p.131",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -937,21 +937,21 @@
   "answers": [
    {
     "question": "Is \"nature\" right? Tied to nature: animals, forests, weather, the sea and storms.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The entry speaks of open-plains teaching, talismans and Travel magic; nothing about weather, animals, forests or the sea.",
+    "page": "Core Rulebook p.130",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their Technique gives an ally an extra Move Action and they favour Travel spells, which meets the rubric's movement test, though the label fits a caster awkwardly.",
+    "page": "Core Rulebook p.131",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -960,12 +960,12 @@
   "answers": [
    {
     "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Heavy cavalry whose untamed style makes them fearsome on the battlefield.",
+    "page": "Core Rulebook p.130",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -974,21 +974,21 @@
   "answers": [
    {
     "question": "Is \"spirits\" right? Deals with spirits, ancestors, the dead, the Fortunes or the Spirit Realms.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Servants of the gods of death and judgement, who weigh the dead in the Realm of Waiting; their Technique calls on those gods against an enemy.",
+    "page": "Imperial Histories 1 p.240",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They deliver death to the Unicorn's enemies and are feared in battle; the Technique curses a foe's dice in combat.",
+    "page": "Imperial Histories 1 p.240",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -997,21 +997,21 @@
   "answers": [
    {
     "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Heavy Armor is in the Outfit and Rank 1 lets them shrug off Wound penalties or harden their Armor TN, doubled against the Shadowlands: endurance by the rubric's definition.",
+    "page": "The Great Clans p.258",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "wall",
+    "evidence": "Sworn to destroy the Tainted Moto and trained with the Crab; the entry is about the Shadowlands, not wandering.",
+    "page": "The Great Clans p.258",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1020,21 +1020,21 @@
   "answers": [
    {
     "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their style is a gaijin-born parry and riposte fought from defensive Stances; Iaijutsu is not taught and no Technique concerns duels.",
+    "page": "Emerald Empire p.31",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"archer\" be added? Fights with the bow: teaches Kyujutsu, and a Technique or the description centres on bows.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Kyujutsu is a School Skill, a bow is in the Outfit and Rank 3 makes mounted bow attacks Simple Actions.",
+    "page": "Emerald Empire p.31",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1043,21 +1043,21 @@
   "answers": [
    {
     "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. Rank 2 can add to Initiative and Rank 4 charges, but both serve mounted combat, which the cavalry label already covers.",
+    "page": "Core Rulebook p.132",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Empire's finest cavalry, taught Battle and built for war on horseback.",
+    "page": "Core Rulebook p.132",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1066,21 +1066,21 @@
   "answers": [
    {
     "question": "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Infantry who ride to battle and then dismount to hold enemy foot soldiers in place, defending with spear or polearm.",
+    "page": "Imperial Histories 2 p.168",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: choose).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 1's only choice is a weapon picked once when the character is made; after that it is a steady bonus. Arguably Some extra by the rubric's letter.",
+    "page": "Imperial Histories 2 p.169",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },

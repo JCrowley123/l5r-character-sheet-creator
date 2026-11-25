@@ -59,8 +59,8 @@ R = {
 "Iuchi Shugenja": (["traveller","strange-magic"], ["nature"], ["plains"], 3, 1, []),
 "Moto Bushi": (["cavalry","frontline"], ["all-out"], ["plains","battlefield"], 2, 1, []),
 "Moto Death Priest [Shugenja]": (["spirits","strange-magic"], ["battle-magic"], ["plains"], 3, 3, ["era"]),
-"Moto Vindicator [Bushi]": (["monster-hunter","cavalry"], [], ["plains","road"], 2, 2, []),
-"Shinjo Bushi": (["cavalry","duelist"], ["traveller"], ["plains"], 2, 2, []),
+"Moto Vindicator [Bushi]": (["monster-hunter","cavalry"], ["frontline"], ["plains","road"], 2, 2, []),
+"Shinjo Bushi": (["cavalry"], ["traveller","archer"], ["plains"], 2, 2, []),
 "Utaku Battle Maiden [Bushi]": (["cavalry"], ["bodyguard"], ["plains","battlefield"], 2, 1, []),
 "Utaku Mounted Infantry [Bushi]": (["frontline","traveller"], ["cavalry"], ["plains","battlefield"], 1, 3, ["era"]),
 # ---- Spider (all carry the spider flag)

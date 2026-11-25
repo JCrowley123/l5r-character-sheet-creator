@@ -20,3 +20,6 @@ evidence for each change, in our own words, is in `book-evidence.json`.
 | Lion | Lion Elite Spearmen [Bushi] | main labels | front line, bodyguard | front line | Naishou Province p.7 |
 | Lion | Lion Elite Spearmen [Bushi] | Homes | battlefield, court | battlefield | Naishou Province p.7 |
 | Scorpion | Bayushi Bushi | also labels | stealth, duelist | stealth | Core Rulebook p.126 |
+| Unicorn | Moto Vindicator [Bushi] | also labels | (none) | front line | The Great Clans p.258 |
+| Unicorn | Shinjo Bushi | main labels | cavalry, duelist | cavalry | Emerald Empire p.31 |
+| Unicorn | Shinjo Bushi | also labels | traveller | traveller, archer | Emerald Empire p.31 |

@@ -1159,7 +1159,9 @@
     "cavalry",
     "monster hunter"
    ],
-   "secondary": [],
+   "secondary": [
+    "front line"
+   ],
    "homes": [
     "plains",
     "the road"
@@ -1179,10 +1181,10 @@
    "honor": 4.5,
    "source": "Emerald Empire p.31",
    "primary": [
-    "cavalry",
-    "duelist"
+    "cavalry"
    ],
    "secondary": [
+    "archer",
     "traveller"
    ],
    "homes": [

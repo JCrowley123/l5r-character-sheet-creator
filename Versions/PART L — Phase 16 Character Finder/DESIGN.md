@@ -569,8 +569,8 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Iuchi Shugenja | Unicorn | Shugenja (Water) | 5.5 | unusual magic, traveller · nature and weather | plains | Involved | Common | Core Rulebook p.130 |
 | Moto Bushi | Unicorn | Bushi | 3.5 | cavalry, front line · all-out attacker | battlefield, plains | Some extra | Common | Core Rulebook p.130 |
 | Moto Death Priest [Shugenja] | Unicorn | Shugenja (Earth) | 3.5 | spirits and the dead, unusual magic · battle magic | plains | Involved | Unusual | Imperial Histories 1 p.240 |
-| Moto Vindicator [Bushi] | Unicorn | Bushi | 3.5 | cavalry, monster hunter | plains, the road | Some extra | Uncommon | The Great Clans p.258 |
-| Shinjo Bushi | Unicorn | Bushi | 4.5 | cavalry, duelist · traveller | plains | Some extra | Uncommon | Emerald Empire p.31 |
+| Moto Vindicator [Bushi] | Unicorn | Bushi | 3.5 | cavalry, monster hunter · front line | plains, the road | Some extra | Uncommon | The Great Clans p.258 |
+| Shinjo Bushi | Unicorn | Bushi | 4.5 | cavalry · archer, traveller | plains | Some extra | Uncommon | Emerald Empire p.31 |
 | Utaku Battle Maiden [Bushi] | Unicorn | Bushi | 6.5 | cavalry · bodyguard | battlefield, plains | Some extra | Common | Core Rulebook p.132 |
 | Utaku Mounted Infantry [Bushi] | Unicorn | Bushi | 5.5 | front line, traveller · cavalry | battlefield, plains | Straightforward | Unusual | Imperial Histories 2 p.168 |
 | Mantis Brawler [Bushi] | Mantis | Bushi | 3.5 | unarmed · sailor | sea, streets and shadows | Some extra | Uncommon | The Great Clans p.165 |
@@ -781,7 +781,7 @@ answer 20%.
 | Magic "Yes": every listed School is a Shugenja School | 100% | **100%** | rule: 100% |
 | Player who wants School X finds it in the top six | 82% | **81.3%** | floor 81%, **target 90%** |
 | … gets it as a best match | 63% | **62.3%** | floor 62% |
-| … stopping after question 9 | – | **78.0%** | floor 77.7% (was 77.9%; see below) |
+| … stopping after question 9 | – | **78.0%** | floor 77.6% (was 77.9%; see below) |
 | Schools such a player finds less than a quarter of the time | 13 | **5** | floor 5, target 0 |
 | "Classic samurai": best matches that are not Unusual | 98.5% | **98.1%** | floor 98% |
 | "Keep it simple" (no magic asked): best matches that are not Involved | 84% | **89.2%** | floor 89% |
@@ -809,6 +809,7 @@ floor only when the change is evidence-backed and better for players. Rules neve
 | Date | Floor | From | To | Why |
 |---|---|---|---|---|
 | 25 Nov 2026 | Stopping after question 9 | 77.9% | 77.7% | Bayushi Bushi lost "duelist" (no duelling Technique, Core Rulebook p.126). Over five seeds the measure fell 0.24 points, almost all of it Bayushi Bushi itself (now one main and one also label). Players asking for a duellist are no longer steered to a School with no duelling Technique. The book's Initiative Technique may support "fast skirmisher" as a replacement; that is a judgement call for the owner's group, not applied. |
+| 25 Nov 2026 | Stopping after question 9 | 77.7% | 77.6% | Unicorn changes (Shinjo Bushi duelist to archer, Moto Vindicator front line). On the test's fixed seed the measure fell 0.05 points, but over five seeds it rose (78.34% to 78.45%): noise at one seed, not harm. These floors are measured on one seed and move by about 0.3 points with any rating change; averaging several seeds would make them steadier (for the owner to decide). |
 
 ### What the measurements say about getting to 90%
 

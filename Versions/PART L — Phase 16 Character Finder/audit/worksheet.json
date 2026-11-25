@@ -3814,18 +3814,19 @@
      "Outfit"
     ],
     "verdict": "backed"
-   }
-  ],
-  "suggested": [
+   },
    {
     "label": "frontline",
+    "main": false,
     "score": 4,
     "where": [
      "Rank 3 Technique",
      "Rank 5 Technique"
-    ]
+    ],
+    "verdict": "backed"
    }
   ],
+  "suggested": [],
   "homes": [
    {
     "home": "plains",
@@ -3843,7 +3844,6 @@
    }
   ],
   "book": [
-   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
    "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
   ],
   "complexity": {
@@ -3891,13 +3891,6 @@
     "verdict": "backed"
    },
    {
-    "label": "duelist",
-    "main": true,
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
-   },
-   {
     "label": "traveller",
     "main": false,
     "score": 2,
@@ -3905,19 +3898,20 @@
      "description"
     ],
     "verdict": "backed"
-   }
-  ],
-  "suggested": [
+   },
    {
     "label": "archer",
+    "main": false,
     "score": 4,
     "where": [
      "Rank 3 Technique",
      "Skills",
      "Outfit"
-    ]
+    ],
+    "verdict": "backed"
    }
   ],
+  "suggested": [],
   "homes": [
    {
     "home": "plains",
@@ -3929,10 +3923,7 @@
     "verdict": "backed"
    }
   ],
-  "book": [
-   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
-   "Should \"archer\" be added? Fights with the bow: teaches Kyujutsu, and a Technique or the description centres on bows."
-  ],
+  "book": [],
   "complexity": {
    "rated": 2,
    "rubric": 2,
