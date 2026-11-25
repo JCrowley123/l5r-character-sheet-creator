@@ -1508,7 +1508,7 @@
   ],
   "book": [
    "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
-   "Near-twin of \"Mirumoto Taoist Swordsman [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports."
+   "Near-twin of \"Mirumoto Taoist Swordsman [Bushi]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
   ],
   "complexity": {
    "rated": 2,
@@ -1535,7 +1535,7 @@
   "twins": [
    {
     "with": "Mirumoto Taoist Swordsman [Bushi]",
-    "similarity": 1.0
+    "similarity": 0.75
    }
   ]
  },
@@ -1546,15 +1546,6 @@
   ],
   "source": "Emerald Empire p.221",
   "labels": [
-   {
-    "label": "duelist",
-    "main": true,
-    "score": 1,
-    "where": [
-     "Skills"
-    ],
-    "verdict": "weak"
-   },
    {
     "label": "mystic",
     "main": true,
@@ -1578,7 +1569,6 @@
    }
   ],
   "book": [
-   "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
    "Complexity: rated Some extra, rubric says Involved (tattoos or kiho)."
   ],
   "complexity": {
@@ -1734,8 +1724,7 @@
   ],
   "book": [
    "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
-   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
-   "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan)."
+   "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
   ],
   "complexity": {
    "rated": 3,
@@ -1744,10 +1733,10 @@
    "agree": true
   },
   "niche": {
-   "rated": 2,
+   "rated": 1,
    "rubric": 1,
    "why": "Core Rulebook, Great Clan",
-   "agree": false
+   "agree": true
   },
   "pages": {
    "book": "Core Rulebook",
@@ -1781,7 +1770,7 @@
    },
    {
     "label": "unarmed",
-    "main": true,
+    "main": false,
     "score": 3,
     "where": [
      "Rank 1 Technique",
@@ -1860,8 +1849,17 @@
     "verdict": "backed"
    },
    {
-    "label": "mystic",
+    "label": "all-out",
     "main": true,
+    "score": 2,
+    "where": [
+     "description"
+    ],
+    "verdict": "backed"
+   },
+   {
+    "label": "mystic",
+    "main": false,
     "score": 9,
     "where": [
      "Rank 1 Technique",
@@ -1869,15 +1867,6 @@
      "Rank 5 Technique",
      "description",
      "Skills"
-    ],
-    "verdict": "backed"
-   },
-   {
-    "label": "all-out",
-    "main": false,
-    "score": 2,
-    "where": [
-     "description"
     ],
     "verdict": "backed"
    }

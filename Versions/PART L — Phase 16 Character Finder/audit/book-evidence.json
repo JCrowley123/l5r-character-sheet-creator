@@ -371,21 +371,21 @@
   "answers": [
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Only one free Lore Skill is taught. The School prizes evidence, keen observation and near-perfect memory, which is detective work rather than study.",
+    "page": "Core Rulebook p.114",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Should \"schemer\" be added? Gets their way by secrets, leverage, deceit or fear.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They see through lies and can map a person's friends and foes, but they use it to reach the truth, not to manipulate or threaten.",
+    "page": "Core Rulebook p.114",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -394,21 +394,21 @@
   "answers": [
    {
     "question": "Is \"mystic\" right? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Meditation and Theology are School Skills and Rank 1 lets them push a spell's casting TN up or down; the Dragon are likened to the Brotherhood.",
+    "page": "Core Rulebook p.112",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Near-twin of \"Mirumoto Taoist Swordsman [Bushi]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Mirumoto Bushi fight with two swords and have a duelling Technique (Rank 2 adds Kenjutsu to iaijutsu rolls in the Center Stance). The Taoist Swordsman (Emerald Empire p.221) fights unarmoured with one sword, gaining Reduction, and has no duelling Technique. Proposal: Mirumoto keep duelist; Taoist Swordsman lose duelist (its own answer) and gain front line for the Reduction.",
+    "page": "Core Rulebook p.113",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -417,21 +417,21 @@
   "answers": [
    {
     "question": "Is \"duelist\" right? Excels in one-on-one duels: iaijutsu, Focus and Strike, or a School built around the duel.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Iaijutsu is only a School Skill. No Technique concerns duels: they add sword damage, Reduction without armour, knockdowns and grapples.",
+    "page": "Emerald Empire p.221",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Some extra, rubric says Involved (tattoos or kiho).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "No kiho or tattoos; they only train beside tattooed monks. Rank 1 works only with a sword and no armour, a condition, so Some extra is right.",
+    "page": "Emerald Empire p.221",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -440,21 +440,21 @@
   "answers": [
    {
     "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The book calls the Tamori the most militant shugenja family, ready to use violence where other priests hold back, and their stored spells make them dangerous in ambushes.",
+    "page": "Core Rulebook p.113",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Medicine is a School Skill, and stored one-target spells can be handed to allies; it stays an also label.",
+    "page": "Core Rulebook p.113",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -463,30 +463,30 @@
   "answers": [
    {
     "question": "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Core entry does not describe them as wanderers; only one sample tattoo (Centipede) lets them cross great distances in a day.",
+    "page": "Core Rulebook p.115",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Nothing in the Core entry places them on the road; the support for this home is their reputation as roaming monks, not this page.",
+    "page": "Core Rulebook p.114",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "How unusual: rated Uncommon, rubric says Common (Core Rulebook, Great Clan).",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Common",
+    "evidence": "Printed in the Core Rulebook among the Dragon's own Schools, and none of the rubric's Unusual conditions applies, so the rubric makes it Common.",
+    "page": "Core Rulebook p.114",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -495,21 +495,21 @@
   "answers": [
    {
     "question": "Near-twin of \"The Hitomi Kikage Zumi Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Hoshi: unarmed from main to also; Hitomi: all-out from also to main, mystic from main to also",
+    "evidence": "The book sets them against each other: the Tsurui Zumi lean to the mystical and to ki and kiho, many shunning combat, while the Kikage Zumi (Imperial Histories 1 p.215) seek enlightenment through brutal, violent action, with unarmed Techniques at every Rank.",
+    "page": "Imperial Histories 1 p.214",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Both are monks devoted to the spirit, but the Shinmaki (Emerald Empire p.206) are isolated Brotherhood scholars of an obscure sutra with Divination and a gift with commoners; the Tsurui Zumi are Dragon tattooed monks with kiho and unarmed training. Proposal: Shinmaki also spirits (Divination, telling fortunes); Hoshi also unarmed.",
+    "page": "Imperial Histories 1 p.214",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },

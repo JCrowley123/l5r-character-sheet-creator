@@ -436,7 +436,6 @@
    "honor": 5.5,
    "source": "Emerald Empire p.221",
    "primary": [
-    "duelist",
     "mystic"
    ],
    "secondary": [],
@@ -482,11 +481,11 @@
    "honor": 4.5,
    "source": "Imperial Histories 1 p.215",
    "primary": [
-    "mystic",
+    "all-out attacker",
     "unarmed"
    ],
    "secondary": [
-    "all-out attacker"
+    "mystic"
    ],
    "homes": [
     "mountains"
@@ -509,10 +508,11 @@
    "honor": 4.5,
    "source": "Imperial Histories 1 p.214",
    "primary": [
-    "mystic",
+    "mystic"
+   ],
+   "secondary": [
     "unarmed"
    ],
-   "secondary": [],
    "homes": [
     "mountains"
    ],
@@ -546,7 +546,7 @@
     "the road"
    ],
    "cx": "Involved",
-   "niche": "Uncommon",
+   "niche": "Common",
    "affinity": "",
    "ask": [],
    "know": [

@@ -25,11 +25,11 @@ R = {
 # ---- Dragon
 "Kitsuki Investigator [Courtier]": (["investigator"], ["scholar","diplomat"], ["court","mountains"], 2, 1, []),
 "Mirumoto Bushi": (["duelist"], ["mystic"], ["mountains"], 2, 1, []),
-"Mirumoto Taoist Swordsman [Bushi]": (["duelist","mystic"], [], ["mountains"], 2, 2, []),
+"Mirumoto Taoist Swordsman [Bushi]": (["mystic"], [], ["mountains"], 2, 2, []),
 "Tamori Shugenja": (["strange-magic","battle-magic"], ["healer"], ["mountains"], 3, 1, []),
-"The Togashi Tattooed Order [Monk]": (["mystic","unarmed"], ["traveller"], ["mountains","road"], 3, 2, []),
-"The Hoshi Tsurui Zumi Order [Monk]": (["mystic","unarmed"], [], ["mountains"], 3, 3, ["era"]),
-"The Hitomi Kikage Zumi Order [Monk]": (["unarmed","mystic"], ["all-out"], ["mountains"], 3, 3, ["era"]),
+"The Togashi Tattooed Order [Monk]": (["mystic","unarmed"], ["traveller"], ["mountains","road"], 3, 1, []),
+"The Hoshi Tsurui Zumi Order [Monk]": (["mystic"], ["unarmed"], ["mountains"], 3, 3, ["era"]),
+"The Hitomi Kikage Zumi Order [Monk]": (["unarmed","all-out"], ["mystic"], ["mountains"], 3, 3, ["era"]),
 # ---- Lion
 "Akodo Bushi": (["commander"], ["frontline","duelist"], ["battlefield"], 1, 1, []),
 "Ikoma Bard [Courtier]": (["artist","diplomat"], ["scholar"], ["court","battlefield"], 2, 1, []),

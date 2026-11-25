@@ -539,11 +539,11 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Kakita Bushi | Crane | Bushi | 6.5 | duelist · artist | court | Some extra | Common | Core Rulebook p.109 |
 | Kitsuki Investigator [Courtier] | Dragon | Courtier | 5.5 | investigator · diplomat, scholar | court, mountains | Some extra | Common | Core Rulebook p.114 |
 | Mirumoto Bushi | Dragon | Bushi | 4.5 | duelist · mystic | mountains | Some extra | Common | Core Rulebook p.112 |
-| Mirumoto Taoist Swordsman [Bushi] | Dragon | Bushi | 5.5 | duelist, mystic | mountains | Some extra | Uncommon | Emerald Empire p.221 |
+| Mirumoto Taoist Swordsman [Bushi] | Dragon | Bushi | 5.5 | mystic | mountains | Some extra | Uncommon | Emerald Empire p.221 |
 | Tamori Shugenja | Dragon | Shugenja (Earth) | 4.5 | battle magic, unusual magic · healer | mountains | Involved | Common | Core Rulebook p.113 |
-| The Hitomi Kikage Zumi Order [Monk] | Dragon | Monk | 4.5 | mystic, unarmed · all-out attacker | mountains | Involved | Unusual | Imperial Histories 1 p.215 |
-| The Hoshi Tsurui Zumi Order [Monk] | Dragon | Monk | 4.5 | mystic, unarmed | mountains | Involved | Unusual | Imperial Histories 1 p.214 |
-| The Togashi Tattooed Order [Monk] | Dragon | Monk | 4.5 | mystic, unarmed · traveller | mountains, the road | Involved | Uncommon | Core Rulebook p.114 |
+| The Hitomi Kikage Zumi Order [Monk] | Dragon | Monk | 4.5 | all-out attacker, unarmed · mystic | mountains | Involved | Unusual | Imperial Histories 1 p.215 |
+| The Hoshi Tsurui Zumi Order [Monk] | Dragon | Monk | 4.5 | mystic · unarmed | mountains | Involved | Unusual | Imperial Histories 1 p.214 |
+| The Togashi Tattooed Order [Monk] | Dragon | Monk | 4.5 | mystic, unarmed · traveller | mountains, the road | Involved | Common | Core Rulebook p.114 |
 | Akodo Bushi | Lion | Bushi | 6.5 | commander · duelist, front line | battlefield | Straightforward | Common | Core Rulebook p.116 |
 | Ikoma Bard [Courtier] | Lion | Courtier | 6.5 | artist, diplomat · scholar | battlefield, court | Some extra | Common | Core Rulebook p.118 |
 | Ikoma Lion’s Shadow [Bushi] | Lion | Bushi | 3.5 | schemer, stealth | battlefield, streets and shadows | Some extra | Uncommon | Emerald Empire p.109 |
