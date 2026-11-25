@@ -1,0 +1,1745 @@
+{
+ "source_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+ "captured_utc": "2026-11-25T19:36:21.218Z",
+ "resets": {
+  "phone": [
+   {
+    "name": "Kharmic Tie",
+    "cls": "ghost adv-config-reset-session",
+    "words": "Reset session",
+    "width": 95,
+    "height": 19,
+    "fontSize": "11.52px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "0.6912px",
+    "padding": "2px 6px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 329,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost adv-config-reset-session",
+      "left": 143,
+      "right": 91,
+      "w": 95,
+      "h": 19
+     },
+     {
+      "words": "Kharmic Tie information",
+      "cls": "sk-info-btn kt15-info",
+      "left": 288,
+      "right": 13,
+      "w": 28,
+      "h": 28
+     }
+    ]
+   },
+   {
+    "name": "Luck",
+    "cls": "ghost adv-config-reset-session",
+    "words": "Reset session",
+    "width": 95,
+    "height": 19,
+    "fontSize": "11.52px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "0.6912px",
+    "padding": "2px 6px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 329,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost adv-config-reset-session",
+      "left": 149,
+      "right": 85,
+      "w": 95,
+      "h": 19
+     },
+     {
+      "words": "Explain: Luck",
+      "cls": "adv-config-info",
+      "left": 258,
+      "right": 43,
+      "w": 28,
+      "h": 28
+     }
+    ]
+   },
+   {
+    "name": "Dark Paragon",
+    "cls": "ghost dp4523-reset",
+    "words": "Reset session",
+    "width": 104,
+    "height": 32,
+    "fontSize": "13.12px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "normal",
+    "padding": "2px 10px",
+    "minHeight": "32px",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 329,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost dp4523-reset",
+      "left": 151,
+      "right": 74,
+      "w": 104,
+      "h": 32
+     }
+    ]
+   },
+   {
+    "name": "Great Destiny",
+    "cls": "ghost dsx4532-btn",
+    "words": "RESET SESSION",
+    "width": 119,
+    "height": 20,
+    "fontSize": "12.48px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.7488px",
+    "padding": "3px 8px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 329,
+    "sameLine": [
+     {
+      "words": "USE",
+      "cls": "ghost dsx4532-btn",
+      "left": 135,
+      "right": 150,
+      "w": 44,
+      "h": 20
+     },
+     {
+      "words": "RESET SESSION",
+      "cls": "ghost dsx4532-btn",
+      "left": 187,
+      "right": 23,
+      "w": 119,
+      "h": 20
+     }
+    ]
+   },
+   {
+    "name": "Haunted",
+    "cls": "ghost dsx4532-btn",
+    "words": "RESET SESSION",
+    "width": 119,
+    "height": 20,
+    "fontSize": "12.48px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.7488px",
+    "padding": "3px 8px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 329,
+    "sameLine": [
+     {
+      "words": "RESET SESSION",
+      "cls": "ghost dsx4532-btn",
+      "left": 13,
+      "right": 197,
+      "w": 119,
+      "h": 20
+     }
+    ]
+   },
+   {
+    "name": "Unlucky",
+    "cls": "ghost unlucky-btn",
+    "words": "RESET SESSION",
+    "width": 116,
+    "height": 28,
+    "fontSize": "12px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.72px",
+    "padding": "2px 8px",
+    "minHeight": "28px",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 329,
+    "sameLine": [
+     {
+      "words": "−",
+      "cls": "ghost unlucky-btn",
+      "left": 61,
+      "right": 240,
+      "w": 28,
+      "h": 28
+     },
+     {
+      "words": "+",
+      "cls": "ghost unlucky-btn",
+      "left": 95,
+      "right": 206,
+      "w": 28,
+      "h": 28
+     },
+     {
+      "words": "RESET SESSION",
+      "cls": "ghost unlucky-btn",
+      "left": 129,
+      "right": 84,
+      "w": 116,
+      "h": 28
+     }
+    ]
+   },
+   {
+    "name": "Ancestor card",
+    "cls": "ghost anc48-session-reset print-hide",
+    "words": "Reset session",
+    "width": 94,
+    "height": 26,
+    "fontSize": "11.52px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "normal",
+    "padding": "4px 10px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 329,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost anc48-session-reset print-hide",
+      "left": 222,
+      "right": 13,
+      "w": 94,
+      "h": 26
+     }
+    ]
+   },
+   {
+    "name": "Combat round counter",
+    "cls": "ghost",
+    "words": "RESET",
+    "width": 59,
+    "height": 26,
+    "fontSize": "11.2px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.672px",
+    "padding": "4px 10px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 299,
+    "sameLine": [
+     {
+      "words": "NEXT ROUND",
+      "cls": "ghost",
+      "left": 75,
+      "right": 126,
+      "w": 98,
+      "h": 26
+     },
+     {
+      "words": "RESET",
+      "cls": "ghost",
+      "left": 183,
+      "right": 57,
+      "w": 59,
+      "h": 26
+     }
+    ]
+   }
+  ],
+  "laptop": [
+   {
+    "name": "Kharmic Tie",
+    "cls": "ghost adv-config-reset-session",
+    "words": "Reset session",
+    "width": 95,
+    "height": 19,
+    "fontSize": "11.52px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "0.6912px",
+    "padding": "2px 6px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 562,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost adv-config-reset-session",
+      "left": 143,
+      "right": 324,
+      "w": 95,
+      "h": 19
+     },
+     {
+      "words": "Kharmic Tie information",
+      "cls": "sk-info-btn kt15-info",
+      "left": 521,
+      "right": 13,
+      "w": 28,
+      "h": 28
+     }
+    ]
+   },
+   {
+    "name": "Luck",
+    "cls": "ghost adv-config-reset-session",
+    "words": "Reset session",
+    "width": 95,
+    "height": 19,
+    "fontSize": "11.52px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "0.6912px",
+    "padding": "2px 6px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 562,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost adv-config-reset-session",
+      "left": 149,
+      "right": 318,
+      "w": 95,
+      "h": 19
+     },
+     {
+      "words": "Explain: Luck",
+      "cls": "adv-config-info",
+      "left": 258,
+      "right": 276,
+      "w": 28,
+      "h": 28
+     }
+    ]
+   },
+   {
+    "name": "Dark Paragon",
+    "cls": "ghost dp4523-reset",
+    "words": "Reset session",
+    "width": 104,
+    "height": 32,
+    "fontSize": "13.12px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "normal",
+    "padding": "2px 10px",
+    "minHeight": "32px",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 562,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost dp4523-reset",
+      "left": 151,
+      "right": 307,
+      "w": 104,
+      "h": 32
+     }
+    ]
+   },
+   {
+    "name": "Great Destiny",
+    "cls": "ghost dsx4532-btn",
+    "words": "RESET SESSION",
+    "width": 119,
+    "height": 20,
+    "fontSize": "12.48px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.7488px",
+    "padding": "3px 8px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 562,
+    "sameLine": [
+     {
+      "words": "USE",
+      "cls": "ghost dsx4532-btn",
+      "left": 135,
+      "right": 383,
+      "w": 44,
+      "h": 20
+     },
+     {
+      "words": "RESET SESSION",
+      "cls": "ghost dsx4532-btn",
+      "left": 187,
+      "right": 256,
+      "w": 119,
+      "h": 20
+     }
+    ]
+   },
+   {
+    "name": "Haunted",
+    "cls": "ghost dsx4532-btn",
+    "words": "RESET SESSION",
+    "width": 119,
+    "height": 20,
+    "fontSize": "12.48px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.7488px",
+    "padding": "3px 8px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 562,
+    "sameLine": [
+     {
+      "words": "RESET SESSION",
+      "cls": "ghost dsx4532-btn",
+      "left": 345,
+      "right": 97,
+      "w": 119,
+      "h": 20
+     }
+    ]
+   },
+   {
+    "name": "Unlucky",
+    "cls": "ghost unlucky-btn",
+    "words": "RESET SESSION",
+    "width": 116,
+    "height": 28,
+    "fontSize": "12px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.72px",
+    "padding": "2px 8px",
+    "minHeight": "28px",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 562,
+    "sameLine": [
+     {
+      "words": "−",
+      "cls": "ghost unlucky-btn",
+      "left": 61,
+      "right": 473,
+      "w": 28,
+      "h": 28
+     },
+     {
+      "words": "+",
+      "cls": "ghost unlucky-btn",
+      "left": 95,
+      "right": 439,
+      "w": 28,
+      "h": 28
+     },
+     {
+      "words": "RESET SESSION",
+      "cls": "ghost unlucky-btn",
+      "left": 129,
+      "right": 317,
+      "w": 116,
+      "h": 28
+     }
+    ]
+   },
+   {
+    "name": "Ancestor card",
+    "cls": "ghost anc48-session-reset print-hide",
+    "words": "Reset session",
+    "width": 94,
+    "height": 26,
+    "fontSize": "11.52px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "none",
+    "letterSpacing": "normal",
+    "padding": "4px 10px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 1134,
+    "sameLine": [
+     {
+      "words": "Reset session",
+      "cls": "ghost anc48-session-reset print-hide",
+      "left": 1027,
+      "right": 13,
+      "w": 94,
+      "h": 26
+     }
+    ]
+   },
+   {
+    "name": "Combat round counter",
+    "cls": "ghost",
+    "words": "RESET",
+    "width": 59,
+    "height": 26,
+    "fontSize": "11.2px",
+    "fontFamily": "\"Noto Sans JP\"",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "letterSpacing": "0.672px",
+    "padding": "4px 10px",
+    "minHeight": "auto",
+    "borderRadius": "6px",
+    "border": "1px rgb(90, 79, 67)",
+    "cardWidth": 1104,
+    "sameLine": [
+     {
+      "words": "NEXT ROUND",
+      "cls": "ghost",
+      "left": 75,
+      "right": 931,
+      "w": 98,
+      "h": 26
+     },
+     {
+      "words": "RESET",
+      "cls": "ghost",
+      "left": 183,
+      "right": 862,
+      "w": 59,
+      "h": 26
+     }
+    ]
+   }
+  ]
+ },
+ "infos": {
+  "phone": {
+   "resets / Adv & Disadv": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 212,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 50
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 43,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 220,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 189,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    }
+   ],
+   "resets / Clan & School": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 212,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 50
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 43,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 220,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 189,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    }
+   ],
+   "resets / Combat": [
+    {
+     "card": "",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 212,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 50
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 43,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 220,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 189,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    }
+   ],
+   "sessions / Adv & Disadv": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 212,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 50
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 43,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 220,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Seven Fortunes’ Curse",
+     "label": "Hotei’s Curse information",
+     "cls": "ip15-hotei-info",
+     "toRightEdge": 223,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 189,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    }
+   ],
+   "sessions / Clan & School": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 212,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 50
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 43,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 220,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Seven Fortunes’ Curse",
+     "label": "Hotei’s Curse information",
+     "cls": "ip15-hotei-info",
+     "toRightEdge": 223,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 189,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    }
+   ],
+   "sessions / Combat": [
+    {
+     "card": "",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 212,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 40,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 50
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 43,
+     "cardWidth": 329,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 220,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Seven Fortunes’ Curse",
+     "label": "Hotei’s Curse information",
+     "cls": "ip15-hotei-info",
+     "toRightEdge": 223,
+     "cardWidth": 329,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 189,
+     "cardWidth": 375,
+     "leftNeighbour": null
+    }
+   ]
+  },
+  "laptop": {
+   "resets / Adv & Disadv": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 635,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 283
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 276,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 453,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 766,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    }
+   ],
+   "resets / Clan & School": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 635,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 283
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 276,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 453,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 766,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    }
+   ],
+   "resets / Combat": [
+    {
+     "card": "",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 635,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 283
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 276,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 453,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 766,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    }
+   ],
+   "sessions / Adv & Disadv": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 635,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Skills",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 283
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 276,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "Reset session",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 453,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Seven Fortunes’ Curse",
+     "label": "Hotei’s Curse information",
+     "cls": "ip15-hotei-info",
+     "toRightEdge": 456,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 766,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    }
+   ],
+   "sessions / Clan & School": [
+    {
+     "card": "Rings & Traits",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 635,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 283
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 276,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 453,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Seven Fortunes’ Curse",
+     "label": "Hotei’s Curse information",
+     "cls": "ip15-hotei-info",
+     "toRightEdge": 456,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 766,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    }
+   ],
+   "sessions / Combat": [
+    {
+     "card": "",
+     "label": "Void Points information",
+     "cls": "void-eye-btn",
+     "toRightEdge": 635,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Calligraphy information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Defense information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Shadowlands information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Lore: Theology information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Spellcraft information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "",
+     "label": "Intimidation information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 742,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Kharmic Tie",
+     "label": "Kharmic Tie information",
+     "cls": "sk-info-btn kt15-info",
+     "toRightEdge": 13,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 283
+     }
+    },
+    {
+     "card": "Luck",
+     "label": "Explain: Luck",
+     "cls": "adv-config-info",
+     "toRightEdge": 276,
+     "cardWidth": 562,
+     "leftNeighbour": {
+      "words": "",
+      "gap": 14
+     }
+    },
+    {
+     "card": "Dark Paragon",
+     "label": "Dark Paragon information",
+     "cls": "dp4523-info",
+     "toRightEdge": 453,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Seven Fortunes’ Curse",
+     "label": "Hotei’s Curse information",
+     "cls": "ip15-hotei-info",
+     "toRightEdge": 456,
+     "cardWidth": 562,
+     "leftNeighbour": null
+    },
+    {
+     "card": "Gaze Into Shadow",
+     "label": "Kiho rules information",
+     "cls": "sk-info-btn",
+     "toRightEdge": 766,
+     "cardWidth": 1440,
+     "leftNeighbour": null
+    }
+   ]
+  }
+ },
+ "errors": []
+}

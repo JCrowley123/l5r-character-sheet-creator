@@ -118,3 +118,16 @@ $env:FOCUS = "#reset"; sh "$M/run.sh" "$M/check-board.cjs" out/B18-MOCKUPS.html 
 ```
 
 Kept: `cards.json`, `cards-board-checks.json`, the board copy. The close-ups are in the session notes folder (`b18-mockup-evidence/cards/`). The first board's scripts (`repro.cjs`, `content.py`, `build_board.py`, `board-template.html`) and its `reproduction.json` and `board-checks.json` stay as the record of version 1.
+
+## The owner's answers and the Reset measurements (25 November 2026)
+
+**The answers:** read from the board's store with the artifact data tool (collection `answers`, list, saved one JSON file per document) into `qa/answers-round1/answers/` (21 files).
+
+**The Reset measurements:** today's sheet in Play, on a phone (375 × 812, touch) and a laptop (1440 × 1000), with the board's `resets` and `sessions` characters. For each Reset: its class, size, letters and the buttons on its line. For each i on the Advantage, Clan & School and Combat tabs: its distance from its card's right edge and from the button before it. No change is drawn.
+
+```powershell
+$M = "Versions/Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/qa/mockup"
+sh "$M/run.sh" "$M/measure-reset.cjs" "$M/../reset-measures"
+```
+
+Kept: `qa/reset-measures/reset-measures.json` and the two characters it used. 0 page errors. The i survey also lists hidden tabs' i's (the tabs share one page), so read only the Advantage cards' rows from it.

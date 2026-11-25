@@ -1,0 +1,9 @@
+{
+  "choice": "change",
+  "group": "G01",
+  "id": "reset",
+  "note": "I approve of the button becoming \"Reset\" however looking at some of the examples the buttons seem to change in size, so a pass needs to be done to make sure that they are the same size.  I have also noticed that in some of the examples like luck, or Kharmic tie where there is a tool tip \"i\" icon the button seems to either be right next to the reset button or all the way to the right.  I feel that this needs to be consistent, my gut says that where appropriate the \"i\" should be on the right hand side as to not make the buttons too crowded.  What are your thoughts?",
+  "title": "“Reset session” becomes “Reset”",
+  "updated": "2026-11-25T19:27:00.044Z",
+  "word": "Change it"
+}

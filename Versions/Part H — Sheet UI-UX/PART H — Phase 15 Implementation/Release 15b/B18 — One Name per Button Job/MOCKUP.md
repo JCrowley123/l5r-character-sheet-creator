@@ -6,6 +6,7 @@ Prepared by Claude on **25 November 2026**. Nothing is built; no application fil
 - **Live sheet:** `origin/main` `450362b9`, application `1f002be9…5819`, 17,773,727 bytes (15b groups 1 and 2 live).
 - **The re-check** of the 21 November inventory against that sheet: [RECHECK.md](RECHECK.md).
 - **How it was made:** [REPRODUCTION.md](REPRODUCTION.md), section "Stage 3 mock-ups, round 1".
+- **Answered (25 November, 19:32 UTC):** 19 approved, Touch of the Void kept, build next; Reset approved as a word with a size and i pass asked for. See [the owner's answers](#round-1-the-owners-answers-25-november-2026-1926-1932-utc).
 
 The owner's rule for all of B18 (24 November, verbatim): "I think as a rule of thumb, before anything is changed or built I want to see a mock up comparing how it is now, to how it will look after the change".
 
@@ -91,34 +92,71 @@ The nine groups left alone (G13, G15, G17–G23) are listed on the board without
 
 The board, opened in the project's QA Chromium inside the artifact skeleton at 375 × 812 (phone, touch) and 1280 × 900, light and dark: no page errors, no failed loads, no horizontal scroll at 375 px, every picture loaded, 15 decisions (`qa/mockup/board-checks.json`: 3,263,856 bytes, 77 pictures, 99 images on the page, 4 of 4 runs passed; a write and delete of one probe document in the store worked, and the store was left empty). The captures: 96 page loads of the live sheet, 0 page errors.
 
-## Round 1: the owner's answers
+## Round 1: the owner's answers (25 November 2026, 19:26–19:32 UTC)
 
-To be recorded verbatim from the board's store (collection `answers`, one document per card id) when the owner has answered. Nothing is built before then.
+Read from the board's store (collection `answers`) at about 19:35 UTC. The 21 documents are saved as they came in `qa/answers-round1/answers/`. No `NOTE` was left.
 
-| # | Card | Answer | Owner's note, verbatim |
+**In short:** 19 cards approved (G03 as **Remove**), Touch of the Void keeps **Keep control (TN 30)**, B18 is built **next, before group 3**. One card, Reset, came back **Change it**: the word is approved, and the owner asked for a pass on the buttons' size and on where the i sits.
+
+| # | Card | Change | Answer | Time (UTC) |
+|---|---|---|---|---|
+| 1 | `reset` | “Reset session” becomes “Reset” | **Change it** | 19:27 |
+| 2 | `use` | “Use it now” becomes “Use” | **Approve** | 19:27 |
+| 3 | `gotit` | “Got it” becomes “OK” | **Approve** | 19:27 |
+| 4 | `yesno` | “Yes” and “No” become “Confirm” and “Cancel” | **Approve** | 19:28 |
+| 5 | `reroll` | “Re-roll” is spelled “Reroll” | **Approve** | 19:28 |
+| 6 | `luck` | “Spend Luck” becomes “Reroll with Luck” | **Approve** | 19:28 |
+| 7 | `emph` | “+ Emph” becomes “+ Add Emphasis” | **Approve** | 19:28 |
+| 8 | `book` | “+Book” becomes “+ Add Book” | **Approve** | 19:29 |
+| 9 | `court` | “Add court” becomes “+ Add court” | **Approve** | 19:29 |
+| 10 | `spendvoid` | “Spend a Void Point” becomes “Spend Void” | **Approve** | 19:30 |
+| 11 | `combati` | The Combat tab’s ⓘ and 👁 become the ring i | **Approve** | 19:30 |
+| 12 | `pdf` | “Export to PDF” becomes “Export PDF” | **Approve** | 19:30 |
+| 13 | `chooseagain` | “Choose again” becomes “Change” | **Approve** | 19:30 |
+| 14 | `rowx` | A row’s ✕ is read “Remove …” | **Approve “Remove”** | 19:31 |
+| 15 | `cornerx` | A window’s corner ✕ is read “Close …” or “Cancel …” | **Approve** | 19:31 |
+| 16 | `changechoose` | Change and Choose… read with the card’s name | **Approve** | 19:31 |
+| 17 | `info` | Every i read “… information” | **Approve** | 19:31 |
+| 18 | `steppers` | Every − and + read “Decrease …” / “Increase …” | **Approve** | 19:32 |
+| 19 | `clear` | The dice tray’s Clear buttons say what they clear | **Approve** | 19:32 |
+| 20 | `touch` | Touch of the Void keeps “Keep control (TN 30)”? | **Keep “Keep control (TN 30)”** | 19:32 |
+| 21 | `order` | When to build | **Next, before group 3** | 19:32 |
+
+**The owner's note on `reset`, verbatim:**
+
+> I approve of the button becoming "Reset" however looking at some of the examples the buttons seem to change in size, so a pass needs to be done to make sure that they are the same size.  I have also noticed that in some of the examples like luck, or Kharmic tie where there is a tool tip "i" icon the button seems to either be right next to the reset button or all the way to the right.  I feel that this needs to be consistent, my gut says that where appropriate the "i" should be on the right hand side as to not make the buttons too crowded.  What are your thoughts?
+
+### Claude's reply to the Reset note (25 November)
+
+Measured on today's sheet (build `1f002be9…`, live main `450362b9`), in Play, on a phone (375 px) and a laptop (1440 px); the same on both. Script `qa/mockup/measure-reset.cjs`, results `qa/reset-measures/reset-measures.json`.
+
+**The size: the owner is right.** The eight Reset buttons come in six looks:
+
+| Card | Height | Letters | Capitals |
 |---|---|---|---|
-| 1 | `reset` | | |
-| 2 | `use` | | |
-| 3 | `gotit` | | |
-| 4 | `yesno` | | |
-| 5 | `reroll` | | |
-| 6 | `luck` | | |
-| 7 | `emph` | | |
-| 8 | `book` | | |
-| 9 | `court` | | |
-| 10 | `spendvoid` | | |
-| 11 | `combati` | | |
-| 12 | `pdf` | | |
-| 13 | `chooseagain` | | |
-| 14 | `rowx` | | |
-| 15 | `cornerx` | | |
-| 16 | `changechoose` | | |
-| 17 | `info` | | |
-| 18 | `steppers` | | |
-| 19 | `clear` | | |
-| 20 | `touch` | | |
-| 21 | `order` | | |
-| — | Anything else (`NOTE`) | | |
+| Kharmic Tie, Luck | 19 px | 11.5 px | no |
+| Great Destiny, Haunted | 20 px | 12.5 px | yes |
+| Ancestor card | 26 px | 11.5 px | no |
+| Combat round counter | 26 px | 11.2 px | yes |
+| Unlucky | 28 px | 12 px | yes |
+| Dark Paragon | 32 px | 13.1 px | no |
+
+The four at 19–20 px are also under the 24 px a button needs to be easy to tap on a phone (the WCAG 2.2 minimum target size). The Combat round counter's Reset is the sheet's own plain button, with no style of its own; the other seven each have one.
+
+**The i: the owner is right.** On the Advantage cards the i sits in three places:
+
+- **Kharmic Tie:** at the right end of the row (B17, built on the owner's A04.2 row pattern: the choice on the left; Change and the i on the right).
+- **Luck:** straight after Reset. On a laptop that leaves it in the middle of the card, 276 px from the right edge.
+- **Dark Paragon, Seven Fortunes' Curse:** beside the badge and its text.
+
+**Claude's recommendation:**
+
+1. **One Reset for every card:** the sheet's own plain button, as on the Combat round counter (26 px tall). The other buttons on the same row take the same look: Great Destiny's Use, Unlucky's − and +.
+2. **The i at the right end of the card's top row,** as Kharmic Tie has it already, on every card with an i and buttons. Reset, Use and the pips stay on the left. This is the A04.2 layout the owner set on 7 November, so A04.2 needs no change for it.
+3. **Left as they are:** the i's in a list's own column (Skills) and beside a heading (Void Points, Kiho rules). They are already the same within their own kind.
+4. **Mock-up first:** two cards, one change each, on the same board (round 2), then built with B18's words. A04.2's other parts (badges, summaries) still wait for the rules read.
+
+Also seen: on Haunted the shorter word lets Reset move up beside "Ancestor content: no roll is taken." The round-2 pictures will show where each Reset lands.
 
 ## Usage
 
