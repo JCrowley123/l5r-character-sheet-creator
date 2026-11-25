@@ -131,3 +131,26 @@ sh "$M/run.sh" "$M/measure-reset.cjs" "$M/../reset-measures"
 ```
 
 Kept: `qa/reset-measures/reset-measures.json` and the two characters it used. 0 page errors. The i survey also lists hidden tabs' i's (the tabs share one page), so read only the Advantage cards' rows from it.
+
+## Round 2: Reset size and the i (25 November 2026)
+
+**Which cards have an i or a Reset, and how their rows are built:** `probe-rows.cjs` reads Play and Manage on a phone and a laptop. `probe-anc.cjs` reads the i's parent elements on a phone. Both are read only, and their results are in `qa/round2/`.
+
+**The pictures:** `cards-r2.cjs` opens the live sheet twice per place, both times with the round-1 words the owner approved (G01, G06, G12 from `proposals.cjs`). The "after" adds one look from `proposals-r2.cjs` (`SIZE` or `IRIGHT`, a style sheet). The laptop place is captured at twice the pixels.
+
+**The board:** `build_round2.py` with `round2-template.html`, a copy of round 1's template whose header, end and answer ids are changed.
+
+```powershell
+$M = "Versions/Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/qa/mockup"
+sh "$M/run.sh" "$M/probe-rows.cjs" "$M/../round2"
+sh "$M/run.sh" "$M/cards-r2.cjs" out/b18-round2
+python -X utf8 "$M/build_round2.py" out/b18-round2 out/B18-MOCKUPS-ROUND2.html
+$env:FOCUS = "#iright"; sh "$M/run.sh" "$M/check-board.cjs" out/B18-MOCKUPS-ROUND2.html out/b18-round2-check
+```
+
+**Kept:**
+- `cards-r2.json` and `round2-board-checks.json`;
+- the board copy `mockups/B18-MOCKUPS-ROUND2.html` (265,904 bytes, 28 pictures);
+- the close-ups and board-check pictures in the session notes folder (`b18-mockup-evidence/round2/`).
+
+Published to the same artifact as version 3. Its `db` capability carries forward.

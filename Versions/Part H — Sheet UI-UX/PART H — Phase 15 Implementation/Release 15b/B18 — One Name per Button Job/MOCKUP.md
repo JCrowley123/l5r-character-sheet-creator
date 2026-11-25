@@ -6,6 +6,7 @@ Prepared by Claude on **25 November 2026**. Nothing is built; no application fil
 - **Live sheet:** `origin/main` `450362b9`, application `1f002be9…5819`, 17,773,727 bytes (15b groups 1 and 2 live).
 - **The re-check** of the 21 November inventory against that sheet: [RECHECK.md](RECHECK.md).
 - **How it was made:** [REPRODUCTION.md](REPRODUCTION.md), section "Stage 3 mock-ups, round 1".
+- **Round 2 (25 November, evening):** the same link, **version 3**, two cards on the owner's Reset note. See [Round 2](#round-2-reset-size-and-the-i-25-november-2026). A copy is [mockups/B18-MOCKUPS-ROUND2.html](mockups/B18-MOCKUPS-ROUND2.html); round 1's page stays as [mockups/B18-MOCKUPS.html](mockups/B18-MOCKUPS.html).
 - **Answered (25 November, 19:32 UTC):** 19 approved, Touch of the Void kept, build next; Reset approved as a word with a size and i pass asked for. See [the owner's answers](#round-1-the-owners-answers-25-november-2026-1926-1932-utc).
 
 The owner's rule for all of B18 (24 November, verbatim): "I think as a rule of thumb, before anything is changed or built I want to see a mock up comparing how it is now, to how it will look after the change".
@@ -141,7 +142,7 @@ Measured on today's sheet (build `1f002be9…`, live main `450362b9`), in Play, 
 | Unlucky | 28 px | 12 px | yes |
 | Dark Paragon | 32 px | 13.1 px | no |
 
-The four at 19–20 px are also under the 24 px a button needs to be easy to tap on a phone (the WCAG 2.2 minimum target size). The Combat round counter's Reset is the sheet's own plain button, with no style of its own; the other seven each have one.
+The four at 19–20 px are also under the 24 px a button needs to be easy to tap on a phone (the WCAG 2.2 minimum target size). Each of the eight has a style of its own. (Corrected the same evening: the reply first called the Combat round counter's Reset the sheet's plain button. It is not: `.combat-round-box button` sets its own size. The sheet's plain button is 34 px tall.)
 
 **The i: the owner is right.** On the Advantage cards the i sits in three places:
 
@@ -151,12 +152,60 @@ The four at 19–20 px are also under the 24 px a button needs to be easy to tap
 
 **Claude's recommendation:**
 
-1. **One Reset for every card:** the sheet's own plain button, as on the Combat round counter (26 px tall). The other buttons on the same row take the same look: Great Destiny's Use, Unlucky's − and +.
+1. **One Reset for every card.** First said as "the sheet's own plain button, as on the Combat round counter (26 px tall)"; corrected in round 2 to 28 px tall (the i's height and Unlucky's), in the letters of Change and Choose… on the same cards. The other buttons on the same row take the same look: Great Destiny's Use, Unlucky's − and +.
 2. **The i at the right end of the card's top row,** as Kharmic Tie has it already, on every card with an i and buttons. Reset, Use and the pips stay on the left. This is the A04.2 layout the owner set on 7 November, so A04.2 needs no change for it.
 3. **Left as they are:** the i's in a list's own column (Skills) and beside a heading (Void Points, Kiho rules). They are already the same within their own kind.
 4. **Mock-up first:** two cards, one change each, on the same board (round 2), then built with B18's words. A04.2's other parts (badges, summaries) still wait for the rules read.
 
 Also seen: on Haunted the shorter word lets Reset move up beside "Ancestor content: no roll is taken." The round-2 pictures will show where each Reset lands.
+
+## Round 2: Reset size and the i (25 November 2026)
+
+The owner answered "Yes, mock them up" to Claude's question (25 November). The board's link is unchanged: **version 3** shows the two round-2 cards and a short list of round 1's recorded answers. Answers save in the same store (collection `answers`) as `size`, `iright` and `NOTE2`. Round 1's 21 documents stay there untouched.
+
+**The two cards** (both pictures of every pair already carry the round-1 words the owner approved, so only one look changes):
+
+1. **`size` · Every Reset button is the same size.**
+   - **After:** 28 px tall (the height of the i beside it, and Unlucky's fingertip size), in the letters of Change and Choose… on the same cards (capitals, .78rem).
+   - **The rest of the row:** the buttons beside Reset take the same look: Great Destiny's Use, Unlucky's − and +, and the Combat round counter's Next round.
+   - **The answers:** Approve, **Approve, but not in capitals**, Change it, or Keep as now.
+   - **Pictures:** 8 places, on a phone.
+2. **`iright` · The i always sits at the right end of its row,** as Kharmic Tie's already does (B17).
+   - **Where:** Luck (on a phone and on a laptop), Dark Paragon, Seven Fortunes' Curse, and a card that still needs a choice (Wealthy, Manage). Kharmic Tie is pictured as the model, unchanged.
+   - **Left as they are:** the Skills list's i's and the i's beside a heading. Where Change sits in Manage also stays, for A04.2.
+
+**Measured in the pictures** (`qa/mockup/cards-r2.json`, captured 2026-11-25 20:09 UTC, sheet `1f002be9…`):
+
+| Card | Place | Now | After |
+|---|---|---|---|
+| Reset size | Kharmic Tie | 47 × 19 px, 11.52px, not capitals | 63 × 28 px, 12.48px, capitals |
+| Reset size | Luck | 47 × 19 px, 11.52px, not capitals | 63 × 28 px, 12.48px, capitals |
+| Reset size | Dark Paragon | 56 × 32 px, 13.12px, not capitals | 63 × 28 px, 12.48px, capitals |
+| Reset size | Great Destiny | 59 × 20 px, 12.48px, capitals | 63 × 28 px, 12.48px, capitals |
+| Reset size | Haunted | 59 × 20 px, 12.48px, capitals | 63 × 28 px, 12.48px, capitals |
+| Reset size | Unlucky | 58 × 28 px, 12px, capitals | 63 × 28 px, 12.48px, capitals |
+| Reset size | Ancestor card | 52 × 26 px, 11.52px, not capitals | 63 × 28 px, 12.48px, capitals |
+| Reset size | Combat round counter | 59 × 26 px, 11.2px, capitals | 63 × 28 px, 12.48px, capitals |
+| i place | Luck, on a phone | 91 px from the card's right edge (card 329 px) | 13 px |
+| i place | Luck, on a laptop | 324 px from the card's right edge (card 562 px) | 13 px |
+| i place | Dark Paragon | 220 px from the card's right edge (card 329 px) | 13 px |
+| i place | Seven Fortunes’ Curse | 223 px from the card's right edge (card 329 px) | 13 px |
+| i place | A card that needs a choice (Manage) | 100 px from the card's right edge (card 329 px) | 13 px |
+| i place | Kharmic Tie, already like this (no change) | 13 px from the card's right edge (card 329 px) | 13 px |
+
+Every Reset ends at 63 × 28 px. Rows with today's four smallest Resets (Kharmic Tie, Luck, Great Destiny, Haunted) get 8 or 9 px taller; Dark Paragon's gets 4 px shorter. Every i ends 13 px from its card's right edge, where Kharmic Tie's is.
+
+**How the after is drawn:** `qa/mockup/proposals-r2.cjs` adds one style sheet in the test browser. The i rule needs `!important`, because the sheet's one-info-pattern rule sets the i's left margin at a higher specificity; a build would change that rule itself.
+
+**Light checks** (`qa/mockup/round2-board-checks.json`): pass. At 375 × 812 and 1280 × 900, in light and dark: no page errors, no failed loads, no horizontal scroll (375/375, 1280/1280), 28 of 28 pictures loaded, 2 answers. The captures: 28 page loads of the live sheet, 0 errors.
+
+### Round 2: the owner's answers
+
+| Card | Answer | Owner's note, verbatim |
+|---|---|---|
+| `size` | | |
+| `iright` | | |
+| Anything else (`NOTE2`) | | |
 
 ## Usage
 

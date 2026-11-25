@@ -1,0 +1,1938 @@
+{
+ "source_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+ "captured_utc": "2026-11-25T20:03:44.047Z",
+ "runs": {
+  "phone/sessions/play": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 143,
+      "right": 91,
+      "top": 59,
+      "h": 19,
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[288-316]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 43,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 149,
+      "right": 85,
+      "top": 59,
+      "h": 19,
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 220,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | i[81-109]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 74,
+      "top": 172,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Great Destiny",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 187,
+      "right": 23,
+      "top": 54,
+      "h": 20,
+      "line": "Available this session.[13-127] | USE[135-179] | RESET SESSION[187-306]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Seven Fortunes’ Curse",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 78,
+      "right": 223,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "Hotei[13-62] | Hotei’s Curse informatio[78-106]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Haunted",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 13,
+      "right": 197,
+      "top": 118,
+      "h": 20,
+      "line": "RESET SESSION[13-132]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Unlucky",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.unlucky-btn",
+      "parent": "span.unlucky-controls",
+      "grand": "div.adv-config-row.d45-row.configured",
+      "left": 129,
+      "right": 84,
+      "top": 107,
+      "h": 28,
+      "line": "●○ 1/2[13-55] | −[61-89] | +[95-123] | RESET SESSION[129-245]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | 2 of 3 Kharmic Tie uses [100-131] | Reset session: all 3 Kha[143-238] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 43,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "[13-108] | 2 of 3 Luck uses remaini[116-143] | [149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 220,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Dark Paragon information[81-109]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Seven Fortunes’ Curse",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 78,
+      "right": 223,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "[13-62] | Hotei’s Curse informatio[78-106]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 222,
+      "right": 13,
+      "top": 447,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-214] | Reset session[222-316]"
+     }
+    ]
+   }
+  ],
+  "phone/sessions/management": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Wealthy",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 100,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "Needs a choice[13-90] | CHOOSE…[98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | CHANGE[206-278] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 56,
+      "right": 178,
+      "top": 90,
+      "h": 19,
+      "line": "●●○[13-44] | Reset session[56-151]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Zakyo Toshi Citizen",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 100,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Zakyo Toshi Citizen",
+      "line": "Needs a choice[13-90] | CHOOSE…[98-185] | Explain: Zakyo Toshi Cit[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 155,
+      "right": 146,
+      "top": 82,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "●●○[13-40] | Reset session[46-141] | Explain: Luck[155-183]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 46,
+      "right": 188,
+      "top": 87,
+      "h": 19,
+      "line": "●●○[13-40] | Reset session[46-141] | Explain: Luck[155-183]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 140,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | CHANGE[81-153] | i[161-189]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 74,
+      "top": 172,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Great Destiny",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 187,
+      "right": 23,
+      "top": 54,
+      "h": 20,
+      "line": "Available this session.[13-127] | USE[135-179] | RESET SESSION[187-306]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Seven Fortunes’ Curse",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 158,
+      "right": 143,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "CHANGE[13-85] | Hotei[93-142] | Hotei’s Curse informatio[158-186]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Haunted",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 13,
+      "right": 197,
+      "top": 118,
+      "h": 20,
+      "line": "RESET SESSION[13-132]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Unlucky",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.unlucky-btn",
+      "parent": "span.unlucky-controls",
+      "grand": "div.adv-config-row.d45-row.configured",
+      "left": 129,
+      "right": 84,
+      "top": 136,
+      "h": 28,
+      "line": "●○ 1/2[13-55] | −[61-89] | +[95-123] | RESET SESSION[129-245]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Wealthy",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 100,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "[13-90] | [98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | Change Kharmic Tie: pers[206-278] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Zakyo Toshi Citizen",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 100,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Zakyo Toshi Citizen",
+      "line": "[13-90] | [98-185] | Explain: Zakyo Toshi Cit[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 155,
+      "right": 146,
+      "top": 82,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "2 of 3 Luck uses remaini[13-40] | [46-141] | Explain: Luck[155-183]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 140,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Configure Dark Paragon[81-153] | Dark Paragon information[161-189]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Seven Fortunes’ Curse",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 158,
+      "right": 143,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "[13-85] | [93-142] | Hotei’s Curse informatio[158-186]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 222,
+      "right": 13,
+      "top": 447,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-214] | Reset session[222-316]"
+     }
+    ]
+   }
+  ],
+  "phone/changes/play": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 143,
+      "right": 91,
+      "top": 59,
+      "h": 19,
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[288-316]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 43,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 149,
+      "right": 85,
+      "top": 59,
+      "h": 19,
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 220,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | i[81-109]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 74,
+      "top": 172,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | 2 of 3 Kharmic Tie uses [100-131] | Reset session: all 3 Kha[143-238] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 43,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "[13-108] | 2 of 3 Luck uses remaini[116-143] | [149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 220,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Dark Paragon information[81-109]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 222,
+      "right": 13,
+      "top": 447,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-214] | Reset session[222-316]"
+     }
+    ]
+   }
+  ],
+  "phone/changes/management": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Wealthy",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 100,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "Needs a choice[13-90] | CHOOSE…[98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | CHANGE[206-278] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 56,
+      "right": 178,
+      "top": 90,
+      "h": 19,
+      "line": "●●○[13-44] | Reset session[56-151]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 155,
+      "right": 146,
+      "top": 82,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "●●○[13-40] | Reset session[46-141] | Explain: Luck[155-183]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 46,
+      "right": 188,
+      "top": 87,
+      "h": 19,
+      "line": "●●○[13-40] | Reset session[46-141] | Explain: Luck[155-183]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 140,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | CHANGE[81-153] | i[161-189]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 74,
+      "top": 172,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Wealthy",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 100,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "[13-90] | [98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 288,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | Change Kharmic Tie: pers[206-278] | Kharmic Tie information[288-316]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 155,
+      "right": 146,
+      "top": 82,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "2 of 3 Luck uses remaini[13-40] | [46-141] | Explain: Luck[155-183]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 329,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 140,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Configure Dark Paragon[81-153] | Dark Paragon information[161-189]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 329,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 222,
+      "right": 13,
+      "top": 447,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-214] | Reset session[222-316]"
+     }
+    ]
+   }
+  ],
+  "laptop/sessions/play": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 143,
+      "right": 324,
+      "top": 59,
+      "h": 19,
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[521-549]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 276,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 149,
+      "right": 318,
+      "top": 59,
+      "h": 19,
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 453,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | i[81-109]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 307,
+      "top": 135,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Great Destiny",
+    "width": 562,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 187,
+      "right": 256,
+      "top": 54,
+      "h": 20,
+      "line": "Available this session.[13-127] | USE[135-179] | RESET SESSION[187-306]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Seven Fortunes’ Curse",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 78,
+      "right": 456,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "Hotei[13-62] | Hotei’s Curse informatio[78-106]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Haunted",
+    "width": 562,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 345,
+      "right": 97,
+      "top": 59,
+      "h": 20,
+      "line": "Ancestor content: no rol[157-337] | RESET SESSION[345-465]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Unlucky",
+    "width": 562,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.unlucky-btn",
+      "parent": "span.unlucky-controls",
+      "grand": "div.adv-config-row.d45-row.configured",
+      "left": 129,
+      "right": 317,
+      "top": 88,
+      "h": 28,
+      "line": "●○ 1/2[13-55] | −[61-89] | +[95-123] | RESET SESSION[129-245]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | 2 of 3 Kharmic Tie uses [100-131] | Reset session: all 3 Kha[143-238] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 276,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "[13-108] | 2 of 3 Luck uses remaini[116-143] | [149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 453,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Dark Paragon information[81-109]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Seven Fortunes’ Curse",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 78,
+      "right": 456,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "[13-62] | Hotei’s Curse informatio[78-106]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 1134,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 1027,
+      "right": 13,
+      "top": 256,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-1019] | Reset session[1027-1121]"
+     }
+    ]
+   }
+  ],
+  "laptop/sessions/management": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Wealthy",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 333,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "Needs a choice[13-90] | CHOOSE…[98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | CHANGE[439-511] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 143,
+      "right": 324,
+      "top": 59,
+      "h": 19,
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | CHANGE[439-511] | Kharmic Tie information[521-549]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Zakyo Toshi Citizen",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 333,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Zakyo Toshi Citizen",
+      "line": "Needs a choice[13-90] | CHOOSE…[98-185] | Explain: Zakyo Toshi Cit[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 338,
+      "right": 196,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "Rank 3 — 9 points[13-108] | CHANGE[116-188] | ●●○[196-224] | Reset session[230-324] | Explain: Luck[338-366]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 230,
+      "right": 238,
+      "top": 59,
+      "h": 19,
+      "line": "Rank 3 — 9 points[13-108] | CHANGE[116-188] | ●●○[196-224] | Reset session[230-324] | Explain: Luck[338-366]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 373,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | CHANGE[81-153] | i[161-189]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 307,
+      "top": 135,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Great Destiny",
+    "width": 562,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 187,
+      "right": 256,
+      "top": 54,
+      "h": 20,
+      "line": "Available this session.[13-127] | USE[135-179] | RESET SESSION[187-306]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Seven Fortunes’ Curse",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 158,
+      "right": 376,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "CHANGE[13-85] | Hotei[93-142] | Hotei’s Curse informatio[158-186]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Haunted",
+    "width": 562,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.dsx4532-btn",
+      "parent": "div.dsx4532-row",
+      "grand": "div.entry",
+      "left": 345,
+      "right": 97,
+      "top": 59,
+      "h": 20,
+      "line": "Ancestor content: no rol[157-337] | RESET SESSION[345-465]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Unlucky",
+    "width": 562,
+    "i": [],
+    "reset": [
+     {
+      "el": "button.ghost.unlucky-btn",
+      "parent": "span.unlucky-controls",
+      "grand": "div.adv-config-row.d45-row.configured",
+      "left": 129,
+      "right": 317,
+      "top": 107,
+      "h": 28,
+      "line": "●○ 1/2[13-55] | −[61-89] | +[95-123] | RESET SESSION[129-245]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Wealthy",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 333,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "[13-90] | [98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | 2 of 3 Kharmic Tie uses [100-131] | Reset session: all 3 Kha[143-238] | Change Kharmic Tie: pers[439-511] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Zakyo Toshi Citizen",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 333,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Zakyo Toshi Citizen",
+      "line": "[13-90] | [98-185] | Explain: Zakyo Toshi Cit[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 338,
+      "right": 196,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "[13-108] | [116-188] | 2 of 3 Luck uses remaini[196-224] | [230-324] | Explain: Luck[338-366]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 373,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Configure Dark Paragon[81-153] | Dark Paragon information[161-189]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Seven Fortunes’ Curse",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.ip15-hotei-info",
+      "parent": "div.adv-config-row.d45-row.configured",
+      "grand": "div.entry",
+      "left": 158,
+      "right": 376,
+      "top": 54,
+      "h": 28,
+      "label": "Hotei’s Curse information",
+      "line": "[13-85] | [93-142] | Hotei’s Curse informatio[158-186]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 1134,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 1027,
+      "right": 13,
+      "top": 256,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-1019] | Reset session[1027-1121]"
+     }
+    ]
+   }
+  ],
+  "laptop/changes/play": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 143,
+      "right": 324,
+      "top": 59,
+      "h": 19,
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | Kharmic Tie information[521-549]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 276,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 149,
+      "right": 318,
+      "top": 59,
+      "h": 19,
+      "line": "Rank 3 — 9 points[13-108] | ●●○[116-143] | Reset session[149-244] | Explain: Luck[258-286]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 453,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | i[81-109]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 307,
+      "top": 135,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | 2 of 3 Kharmic Tie uses [100-131] | Reset session: all 3 Kha[143-238] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 258,
+      "right": 276,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "[13-108] | 2 of 3 Luck uses remaini[116-143] | [149-244] | Explain: Luck[258-286]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 81,
+      "right": 453,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Dark Paragon information[81-109]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 1134,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 1027,
+      "right": 13,
+      "top": 256,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-1019] | Reset session[1027-1121]"
+     }
+    ]
+   }
+  ],
+  "laptop/changes/management": [
+   {
+    "tab": "Adv & Disadv",
+    "card": "Wealthy",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 333,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "Needs a choice[13-90] | CHOOSE…[98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | CHANGE[439-511] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-kharmic-controls",
+      "grand": "span.kt15-main",
+      "left": 143,
+      "right": 324,
+      "top": 59,
+      "h": 19,
+      "line": "Aiko · Rank 3[13-88] | ●●○[100-131] | Reset session[143-238] | CHANGE[439-511] | Kharmic Tie information[521-549]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 338,
+      "right": 196,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "Rank 3 — 9 points[13-108] | CHANGE[116-188] | ●●○[196-224] | Reset session[230-324] | Explain: Luck[338-366]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.adv-config-reset-session",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 230,
+      "right": 238,
+      "top": 59,
+      "h": 19,
+      "line": "Rank 3 — 9 points[13-108] | CHANGE[116-188] | ●●○[196-224] | Reset session[230-324] | Explain: Luck[338-366]"
+     }
+    ]
+   },
+   {
+    "tab": "Adv & Disadv",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 373,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "Control[13-73] | CHANGE[81-153] | i[161-189]"
+     }
+    ],
+    "reset": [
+     {
+      "el": "button.ghost.dp4523-reset",
+      "parent": "div.dp4523-session",
+      "grand": "div.adv-config-row.dp4523-row.configured",
+      "left": 151,
+      "right": 307,
+      "top": 135,
+      "h": 32,
+      "line": "Available this session ([13-145] | Reset session[151-255]"
+     }
+    ]
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Wealthy",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "div.adv-config-row.unconfigured",
+      "grand": "div.entry",
+      "left": 201,
+      "right": 333,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Wealthy",
+      "line": "[13-90] | [98-185] | Explain: Wealthy[201-229]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Kharmic Tie",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.sk-info-btn.kt15-info",
+      "parent": "span.kt15-end",
+      "grand": "div.adv-config-row.configured.kt15-row",
+      "left": 521,
+      "right": 13,
+      "top": 54,
+      "h": 28,
+      "label": "Kharmic Tie information",
+      "line": "[13-88] | 2 of 3 Kharmic Tie uses [100-131] | Reset session: all 3 Kha[143-238] | Change Kharmic Tie: pers[439-511] | Kharmic Tie information[521-549]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Luck",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.adv-config-info",
+      "parent": "span.adv-config-resource-controls.adv-config-luck-controls",
+      "grand": "div.adv-config-row.configured",
+      "left": 338,
+      "right": 196,
+      "top": 54,
+      "h": 28,
+      "label": "Explain: Luck",
+      "line": "[13-108] | [116-188] | 2 of 3 Luck uses remaini[196-224] | [230-324] | Explain: Luck[338-366]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "Dark Paragon",
+    "width": 562,
+    "i": [
+     {
+      "el": "button.dp4523-info",
+      "parent": "div.adv-config-row.dp4523-row.configured",
+      "grand": "div.entry",
+      "left": 161,
+      "right": 373,
+      "top": 54,
+      "h": 28,
+      "label": "Dark Paragon information",
+      "line": "[13-73] | Configure Dark Paragon[81-153] | Dark Paragon information[161-189]"
+     }
+    ],
+    "reset": []
+   },
+   {
+    "tab": "Clan & School",
+    "card": "anc48Card",
+    "width": 1134,
+    "i": [],
+    "reset": [
+     {
+      "el": "button#anc48ResetSession.ghost.anc48-session-reset.print-hide",
+      "parent": "div#anc48Session.anc48-session",
+      "grand": "div#anc48Card.anc48-card",
+      "left": 1027,
+      "right": 13,
+      "top": 256,
+      "h": 26,
+      "line": "Kuni’s gift: used this s[13-1019] | Reset session[1027-1121]"
+     }
+    ]
+   }
+  ]
+ }
+}

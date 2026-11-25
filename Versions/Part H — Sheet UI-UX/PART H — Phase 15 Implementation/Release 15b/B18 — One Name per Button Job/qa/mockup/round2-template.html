@@ -1,0 +1,166 @@
+<title>B18 Button Names Mock-ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* Round 2 (the owner's Reset note, 25 November 2026). Layout: one column of cards, one change per card: a plain title, where it is, Now beside After (one above the
+   other on a phone), and one answer. Palette: the mock-up boards' paper and ink, red for now, green for after, and the
+   blue of the outline drawn round the changed button in the pictures. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --now:#8f3b2e; --after:#2f6b45; --chip:#efe6d4; --ring:#1d4fd6;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --now:#e48b78; --after:#86c79b; --chip:#332d27; --ring:#7aa2ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --now:#e48b78; --after:#86c79b; --chip:#332d27; --ring:#7aa2ff; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 var(--body)}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px;display:flex;flex-direction:column;gap:22px}
+h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2rem;line-height:1.15}
+p{margin:0}
+a{color:var(--gold)}
+.lede{color:var(--soft);max-width:62ch}
+.kicker{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.done li{margin-bottom:2px}
+.how{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.how ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px}
+.ring{display:inline-block;border:2.5px solid var(--ring);border-radius:7px;padding:0 6px;font-size:.85em}
+.progress{font-weight:600}
+.progress b{font-variant-numeric:tabular-nums}
+details.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+details.toc summary{cursor:pointer;font-weight:600;min-height:28px}
+.toc ol{margin:6px 0 10px;padding-left:28px;display:flex;flex-direction:column;gap:3px}
+.toc .tp{margin-top:10px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.toc .ans{color:var(--after);font-weight:600;font-size:.85rem}
+h2.part{font-size:1.5rem;margin-top:18px;padding-top:18px;border-top:2px solid var(--line)}
+h2.part span{display:block;font-family:var(--body);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0;scroll-margin-top:12px}
+.card h2{font-size:1.45rem;line-height:1.2}
+.count{font-size:.78rem;color:var(--soft);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.where{color:var(--soft)}
+.where b{color:var(--ink)}
+.place{display:flex;flex-direction:column;gap:8px;min-width:0}
+.pname{font-weight:600;font-size:.92rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.pair.one{grid-template-columns:minmax(0,420px)}
+figure{margin:0;display:flex;flex-direction:column;gap:4px;min-width:0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
+figcaption{font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--soft)}
+figcaption.now{color:var(--now)}
+figcaption.after{color:var(--after)}
+.pair.one figcaption{text-transform:none;letter-spacing:0;font-weight:400}
+.hear{font-size:.9rem;overflow-wrap:anywhere}
+.hear .k{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-right:4px}
+.hear b{color:var(--after)}
+.arrow{color:var(--soft)}
+ul.lines{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.xt{font-weight:600;font-size:.9rem}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;min-width:520px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--soft);font-size:.76rem;font-weight:600}
+td.af{color:var(--after);font-weight:600}
+fieldset.answer{border:0;border-top:1px solid var(--line);margin:0;padding:12px 0 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+fieldset.answer legend{font-weight:600;padding:12px 0 0;float:left;width:100%}
+.opts{display:flex;flex-wrap:wrap;gap:8px;clear:both}
+label.opt{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 16px 8px 12px;cursor:pointer;min-height:44px;background:var(--paper)}
+label.opt:has(input:checked){border-color:var(--after);box-shadow:inset 0 0 0 1.5px var(--after);background:var(--card)}
+label.opt input{accent-color:var(--after);margin:0}
+label.opt small{margin-left:6px;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--after);font-weight:600}
+.notewrap{display:flex;flex-direction:column;gap:4px}
+.notewrap label{font-size:.88rem;color:var(--soft)}
+textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-height:44px}
+input:focus-visible,textarea:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.saved{font-size:.78rem;color:var(--soft);min-height:1.2em}
+.end{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.end ul{margin:0;padding-left:20px}
+pre#summary{white-space:pre-wrap;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.82rem;margin:0}
+button.copy{font:600 .95rem var(--body);color:var(--paper);background:var(--ink);border:0;border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;align-self:flex-start}
+.meta{font-size:.78rem;color:var(--soft)}
+@media (max-width:640px){.pair{grid-template-columns:1fr}h1{font-size:1.7rem}.card{padding:14px}}
+</style>
+
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:10px">
+  <p class="kicker">Round 2</p>
+  <h1>Reset buttons: one size, and the i on the right</h1>
+  <p class="lede">Your note on the Reset card asked for two things. Each card below shows one of them on the live sheet, the way it is now beside how it would look, with the button outlined in <span class="ring">blue</span>. Both pictures already have the word “Reset” you approved. Nothing is built until you approve.</p>
+</header>
+
+<div class="how">
+  <p><b>How to answer</b></p>
+  <ol>
+    <li>Read the card’s title: it says the whole change in one line.</li>
+    <li>Compare <b style="color:var(--now)">Now</b> with <b style="color:var(--after)">After</b>.</li>
+    <li>Choose <b>Approve</b>, <b>Change it</b> (then say what you want instead) or <b>Keep as now</b>. Your answers save as you go.</li>
+  </ol>
+  <p class="progress"><b id="count">0</b> of {{TOTAL}} answered · <span id="where">Connecting…</span></p>
+</div>
+
+{{CARDS}}
+
+<div class="end done" id="end">
+  <h2>Round 1: your answers, recorded</h2>
+  <ul>{{ROUND1}}</ul>
+</div>
+
+<div class="end" id="answers">
+  <h2>Your answers</h2>
+  <label for="n-NOTE2" class="meta">Anything else (optional)</label>
+  <textarea id="n-NOTE2" rows="2"></textarea>
+  <pre id="summary"></pre>
+  <button type="button" class="copy" id="copy">Copy my answers</button>
+  <p class="meta" id="copyMsg"></p>
+  <p class="meta">Pictures captured {{CAPTURED}} from the live sheet in the project’s test browser at 375 × 812 (a phone); one of Luck at 1440 × 1000 (a laptop). The “after” pictures have the change drawn in that browser only.</p>
+</div>
+</div>
+
+<script>
+(function(){
+var CARDS={{IDS}},WORDS={{WORDS}};
+var state={},db=null,timers={};
+function read(id){var c=document.querySelector('input[name="r-'+id+'"]:checked');var n=document.getElementById('n-'+id);return {choice:c?c.value:'',note:n?n.value.trim():''}}
+function word(id,v){return (WORDS[id]&&WORDS[id][v])||v}
+function render(){
+  var n=0,lines=[];
+  CARDS.forEach(function(c,i){var a=state[c.id]||{};if(a.choice)n++;
+    var t=document.getElementById('t-'+c.id);if(t)t.textContent=a.choice?'· '+word(c.id,a.choice):'';
+    var w=document.getElementById('nw-'+c.id);if(w)w.hidden=!(a.choice==='change'||a.note);
+    lines.push((i+1)+'. '+c.title+': '+(a.choice?word(c.id,a.choice):'(not answered)')+(a.note?' — '+a.note:''));});
+  var note=(state.NOTE2||{}).note;if(note)lines.push('Anything else: '+note);
+  document.getElementById('count').textContent=n;document.getElementById('summary').textContent=lines.join('\n');
+}
+function persist(id){
+  var a=state[id]||{},c=CARDS.filter(function(x){return x.id===id})[0];
+  var doc={round:2,id:id,group:c?c.group:'',title:c?c.title:'Anything else',choice:a.choice||'',word:a.choice?word(id,a.choice):'',note:a.note||'',updated:new Date().toISOString()};
+  try{localStorage.setItem('b18r2-'+id,JSON.stringify(doc))}catch(e){}
+  var el=document.getElementById(id==='NOTE2'?'copyMsg':'sv-'+id);
+  if(!db){if(el)el.textContent='Kept in this browser only';return}
+  db.collection('answers').doc(id).set(doc).then(function(){if(el)el.textContent='Saved'},function(){if(el)el.textContent='Could not save; use Copy my answers at the end'});
+}
+function collect(id,now){state[id]=id==='NOTE2'?{choice:'',note:document.getElementById('n-NOTE2').value.trim()}:read(id);render();clearTimeout(timers[id]);timers[id]=setTimeout(function(){persist(id)},now?0:700)}
+function apply(id,d){if(!d)return;var active=document.activeElement;
+  if(id!=='NOTE2'){var r=document.querySelector('input[name="r-'+id+'"][value="'+d.choice+'"]');var box=document.getElementById('d-'+id);if(r&&!(active&&box&&box.contains(active)))r.checked=true;}
+  var n=document.getElementById('n-'+id);if(n&&active!==n)n.value=d.note||'';state[id]={choice:d.choice||'',note:d.note||''};}
+CARDS.forEach(function(c){document.querySelectorAll('input[name="r-'+c.id+'"]').forEach(function(r){r.addEventListener('change',function(){collect(c.id,true);
+    if(r.value==='change'){var t=document.getElementById('n-'+c.id);if(t)setTimeout(function(){t.focus()},0)}})});
+  var n=document.getElementById('n-'+c.id);if(n)n.addEventListener('input',function(){collect(c.id,false)});});
+document.getElementById('n-NOTE2').addEventListener('input',function(){collect('NOTE2',false)});
+document.getElementById('copy').addEventListener('click',function(){var t=document.getElementById('summary').textContent,m=document.getElementById('copyMsg');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('summary'));var s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent='Select and copy the text above.'}
+  try{navigator.clipboard.writeText(t).then(function(){m.textContent='Copied.'},sel)}catch(e){sel()}});
+try{CARDS.map(function(c){return c.id}).concat(['NOTE2']).forEach(function(id){var v=localStorage.getItem('b18r2-'+id);if(v)apply(id,JSON.parse(v))})}catch(e){}
+render();
+var done=false,timer=setTimeout(function(){if(!done)document.getElementById('where').textContent='saving in this browser only'},10000);
+(window.claude&&window.claude.use?window.claude.use('db'):Promise.resolve(null)).then(function(d){done=true;clearTimeout(timer);db=d;
+  document.getElementById('where').textContent=db?'answers save as you go':'saving in this browser only';if(!db)return;
+  db.collection('answers').onSnapshot(function(snap){snap.docs.forEach(function(doc){var d=doc.data();if(d&&(doc.id==='NOTE2'||CARDS.some(function(c){return c.id===doc.id})))apply(doc.id,d)});render()},
+    function(){document.getElementById('where').textContent='saving in this browser only'});
+}).catch(function(){done=true;clearTimeout(timer);document.getElementById('where').textContent='saving in this browser only'});
+})();
+</script>
