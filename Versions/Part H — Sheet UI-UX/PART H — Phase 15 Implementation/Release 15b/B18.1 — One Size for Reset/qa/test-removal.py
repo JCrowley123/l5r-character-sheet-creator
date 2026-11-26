@@ -11,8 +11,8 @@ from pathlib import Path
 import hashlib, importlib.util, re, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART H — Phase 15 Implementation/Release 15b/B18.1 — One Size for Reset'
-PREDECESSOR_SHA = 'e6755993bf44ec573b185cf2e51439eb2d83d72a018f6073f3f45fb531d7c089'   # B18
-PREDECESSOR_BYTES = 17805868
+PREDECESSOR_SHA = '0a55634f68127cd04150ecc97a31deb9fbd3a1b365489ff907b914555c32754a'   # B18
+PREDECESSOR_BYTES = 17806742
 BEFORE_PREDECESSOR_SHA = '1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819'   # B09 on B05: group 2 as live
 BEFORE_PREDECESSOR_BYTES = 17773727
 SEAM = 'src/sheet/210-test-seam-and-init.js'

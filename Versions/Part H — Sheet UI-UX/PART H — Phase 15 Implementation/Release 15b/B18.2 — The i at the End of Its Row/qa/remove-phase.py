@@ -20,8 +20,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('info-row-end-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:INFO_AT_ROW_END_ENABLED|IE15|ie15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.2\.10\.2(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = '3b9bc604413019b8a5541c4e2535fd1326590f8722a321ac67fe0efd2a78b4c4'
-PRE_RELEASE_BYTES = 17809073
+PRE_RELEASE_SHA = 'a85cb6486f3bfbb0bd03ca6f2eece478c00218fc1dba00cd9a63d2d41c9ac429'
+PRE_RELEASE_BYTES = 17809947
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

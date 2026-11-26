@@ -24,7 +24,7 @@ It adds no save field, no storage key and no element. Its one class is `ie15-on`
 2. From this folder, run `python -B qa/remove-phase.py <scratch copy>`.
 3. Run the scratch copy's `build/recombine.py --verify`.
 
-The rebuild is exactly B18.1 (17,809,073 bytes, SHA-256 `3b9bc604413019b8a5541c4e2535fd1326590f8722a321ac67fe0efd2a78b4c4`, before the B18 fix of 26 November; see the README for the current numbers). `qa/test-removal.py` proves that rebuild, that B18.1 removed next gives B18 exactly, and that B18.1 can be removed with this unit kept.
+The rebuild is exactly B18 + B18.1 as they stand on the tip: 17,809,947 bytes, SHA-256 `a85cb6486f3bfbb0bd03ca6f2eece478c00218fc1dba00cd9a63d2d41c9ac429`. `qa/test-removal.py` proves that rebuild, that B18.1 removed next gives B18 exactly, and that B18.1 can be removed with this unit kept.
 
 **Switching it off instead:** set `INFO_AT_ROW_END_ENABLED = false`. The body class is not set and every i sits where it did.
 

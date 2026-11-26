@@ -36,7 +36,8 @@ function install() {
   const norm = s => String(s || '').replace(/\s+/g, ' ').trim();
   H.entry = (list, name) => Array.from(document.querySelectorAll('#' + list + ' .entry')).find(d => d.querySelector('.en-name').value === name) || null;
   H.look = (el, props) => { if (!el) return null; const s = getComputedStyle(el), r = el.getBoundingClientRect();
-    const out = {text: norm(el.textContent), h: Math.round(r.height * 10) / 10, w: Math.round(r.width * 10) / 10, shown: r.width > 0};
+    // nested: the button holds more than its word (without Release 15a A04, Phase 4.54's i sits inside Luck's Reset).
+    const out = {text: norm(el.textContent), h: Math.round(r.height * 10) / 10, w: Math.round(r.width * 10) / 10, shown: r.width > 0, nested: el.children.length > 0};
     props.forEach(p => { out[p] = s[p]; }); return out; };
   H.byWords = (root, re) => root ? Array.from(root.querySelectorAll('button')).find(b => re.test(norm(b.textContent))) : null;
   // A Reset and the Change button on the same card (Great Destiny and Haunted have none: Luck's is used).
@@ -91,7 +92,7 @@ async function resets(page) {
   const rounds = await page.evaluate(P => [window.RSH.look(document.getElementById('btnResetRounds'), P), window.RSH.look(document.getElementById('btnNextRound'), P)], LETTERS);
   const all = out.map(x => x[1]).concat([anc, rounds[0]]);
   const ok = out.every(([, r, c]) => r && r.shown && near(r.h, 28) && r.textTransform === 'uppercase' && sameLetters(r, c)) &&
-    all.every(r => r && near(r.h, 28) && near(r.w, all[0].w) && sameLetters(r, all[0])) && near(rounds[1].h, 28) && sameLetters(rounds[1], all[0]);
+    all.every(r => r && near(r.h, 28) && (r.nested || near(r.w, all[0].w)) && sameLetters(r, all[0])) && near(rounds[1].h, 28) && sameLetters(rounds[1], all[0]);
   return [ok, {out, anc, rounds}];
 }
 // The other buttons on the same rows take the same look.

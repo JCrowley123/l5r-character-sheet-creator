@@ -25,7 +25,7 @@ It adds no save field, no storage key and no element. Its one class is `rs15-on`
 3. From this folder, run `python -B qa/remove-phase.py <scratch copy>`.
 4. Run the scratch copy's `build/recombine.py --verify`.
 
-With nothing later present, the rebuild is exactly B18: 17,805,868 bytes, SHA-256 `e6755993bf44ec573b185cf2e51439eb2d83d72a018f6073f3f45fb531d7c089`. `qa/test-removal.py` proves that rebuild, that B18 removed next gives group 2 as live exactly (`1f002be9…5819`), and that B18 can be removed with this unit kept (`4fde6af4…256c`, 17,776,932 bytes: the Resets keep their words "Reset session" and take this unit's size).
+With nothing later present, the rebuild is exactly B18: on the group's tip (after B18's revision) 17,806,742 bytes, SHA-256 `0a55634f68127cd04150ecc97a31deb9fbd3a1b365489ff907b914555c32754a`; on this unit's own branch `e6755993…c089`. `qa/test-removal.py` proves that rebuild, that B18 removed next gives group 2 as live exactly (`1f002be9…5819`), and that B18 can be removed with this unit kept (`4fde6af4…256c`, 17,776,932 bytes: the Resets keep their words "Reset session" and take this unit's size).
 
 **Switching it off instead:** set `RESET_ONE_SIZE_ENABLED = false`. The body class is not set and every Reset has its own look again.
 

@@ -11,10 +11,10 @@ from pathlib import Path
 import hashlib, importlib.util, re, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART H — Phase 15 Implementation/Release 15b/B18.2 — The i at the End of Its Row'
-PREDECESSOR_SHA = '3b9bc604413019b8a5541c4e2535fd1326590f8722a321ac67fe0efd2a78b4c4'   # B18.1
-PREDECESSOR_BYTES = 17809073
-BEFORE_PREDECESSOR_SHA = 'e6755993bf44ec573b185cf2e51439eb2d83d72a018f6073f3f45fb531d7c089'   # B18 on B09
-BEFORE_PREDECESSOR_BYTES = 17805868
+PREDECESSOR_SHA = 'a85cb6486f3bfbb0bd03ca6f2eece478c00218fc1dba00cd9a63d2d41c9ac429'   # B18.1
+PREDECESSOR_BYTES = 17809947
+BEFORE_PREDECESSOR_SHA = '0a55634f68127cd04150ecc97a31deb9fbd3a1b365489ff907b914555c32754a'   # B18 on B09
+BEFORE_PREDECESSOR_BYTES = 17806742
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// PART H PHASE 15.2.10.2 BEGIN info-row-end-seam'
 Q = Path(__file__).resolve().parent

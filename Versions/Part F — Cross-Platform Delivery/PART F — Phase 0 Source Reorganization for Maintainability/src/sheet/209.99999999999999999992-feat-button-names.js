@@ -46,7 +46,16 @@
     const $ = function(id){ return document.getElementById(id); };
     const norm = function(s){ return String(s === undefined || s === null ? '' : s).replace(/\s+/g, ' ').trim(); };
     const words = function(el){ return el ? norm(el.textContent) : ''; };
-    const setText = function(el, text){ if(el && el.textContent !== text) el.textContent = text; };
+    // A control's own words. Anything drawn inside it stays: without Release 15a A04, Phase 4.54 (Part I) puts its i
+    // inside the button it explains (Luck's Reset, a card's Choose…).
+    const setText = function(el, text){
+      if(!el) return;
+      if(!el.children.length){ if(el.textContent !== text) el.textContent = text; return; }
+      const nodes = Array.prototype.filter.call(el.childNodes, function(n){ return n.nodeType === 3 && n.nodeValue.trim(); });
+      if(!nodes.length){ el.insertBefore(document.createTextNode(text), el.firstChild); return; }
+      if(nodes[0].nodeValue !== text) nodes[0].nodeValue = text;
+      for(let i = 1; i < nodes.length; i++) nodes[i].nodeValue = '';
+    };
     const setLabel = function(el, label){ if(el && label && el.getAttribute('aria-label') !== label) el.setAttribute('aria-label', label); };
     const own = Object.prototype.hasOwnProperty;
     // Spoken names this unit wrote, so they follow a renamed row; names other units wrote are left as they are.
@@ -147,7 +156,8 @@
       const label = button && button.getAttribute ? button.getAttribute('aria-label') || '' : '';
       const m = /^Explain:\s*(.+)$/.exec(label) || /^(.+?): how it is worked out$/.exec(label);
       if(!m) return false;
-      setLabel(button, m[1] + ' information');
+      // An i named from a button's old words (Luck's i explains its Reset) takes the button's new word.
+      setLabel(button, (own.call(api.HEADINGS, m[1]) ? api.HEADINGS[m[1]] : m[1]) + ' information');
       return true;
     };
     // The hidden words the corner ✕'s and the four cards' − and + are named from (aria-labelledby).
@@ -368,7 +378,8 @@
     };
     api.library = function(){
       const plus = $('l13Add');
-      if(plus && words(plus) === '+Book'){ setText(plus, '+ Add Book'); setLabel(plus, 'Add Book'); }
+      // The words replace the button's content, its separate + included, as the board showed them.
+      if(plus && words(plus) === '+Book'){ plus.textContent = '+ Add Book'; setLabel(plus, 'Add Book'); }
     };
     api.court = function(){
       Array.prototype.forEach.call(document.querySelectorAll('#advConfigGrid .court4514-add'), function(b){

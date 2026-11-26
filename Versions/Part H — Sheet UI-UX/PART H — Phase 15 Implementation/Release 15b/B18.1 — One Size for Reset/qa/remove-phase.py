@@ -20,8 +20,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('reset-size-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:RESET_ONE_SIZE_ENABLED|RS15|rs15[\w-]*)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+H\s+PHASE\s+15\.2\.10\.1(?![\d.]*\d)", re.I)
-PRE_RELEASE_SHA = 'e6755993bf44ec573b185cf2e51439eb2d83d72a018f6073f3f45fb531d7c089'
-PRE_RELEASE_BYTES = 17805868
+PRE_RELEASE_SHA = '0a55634f68127cd04150ecc97a31deb9fbd3a1b365489ff907b914555c32754a'
+PRE_RELEASE_BYTES = 17806742
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

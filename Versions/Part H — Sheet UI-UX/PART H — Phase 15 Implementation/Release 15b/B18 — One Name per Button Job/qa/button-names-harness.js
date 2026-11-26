@@ -199,7 +199,8 @@ async function phoneSessions(browser, F) {
   // An i's window takes its heading from the button it explains: Luck's i explains its Reset, so the heading is "Reset".
   await check('BN-I-WINDOW-HEADING-PHONE', async () => {
     await goTo(page, 'Adv & Disadv');
-    await press(page, phone, button(page, 'Luck information'));
+    await page.evaluate(() => { const b = window.BNH.entry('advList', 'Luck').querySelector('.adv-config-info'); if (b) b.dataset.bnh = 'luck-i'; });
+    await press(page, phone, page.locator('[data-bnh="luck-i"]'));
     const w = await page.evaluate(() => ({open: window.BNH.overlay('stanceInfoOverlay'), title: document.getElementById('stanceInfoTitle').textContent.trim(),
       body: document.getElementById('stanceInfoBody').textContent.trim(), x: window.BNH.byId('stanceInfoClose'),
       part: !!window.__L5R_TEST__.BN15.parts.explainWindow}));
@@ -314,10 +315,12 @@ async function phoneSessions(browser, F) {
       windowState.explain.every(s => / information$/.test(s)) && closed, {got, windowState, closed}];
   });
   // ---- G12 i ----
+  // With Release 15a A04 the i's are taken out of the button they explain and named for their entry ("Luck information");
+  // without A04 they stay inside it and are named from its words ("Reset information", "Choose… information").
   await check('BN-INFO-PHONE', async () => {
     const got = await page.evaluate(() => {
       const H = window.BNH, d = H.entry('advList', 'Luck'), w = H.entry('advList', 'Wealthy');
-      return {luck: H.read(d.querySelector('.adv-config-info')), wealthy: w ? H.read(w.querySelector('.adv-config-info')) : null,
+      return {a04: !!window.__L5R_TEST__.IP15, luck: H.read(d.querySelector('.adv-config-info')), wealthy: w ? H.read(w.querySelector('.adv-config-info')) : null,
         all: Array.from(document.querySelectorAll('#advList .adv-config-info, #disadvList .adv-config-info')).map(b => H.spoken(b))};
     });
     await goTo(page, 'Clan & School');
@@ -326,7 +329,7 @@ async function phoneSessions(browser, F) {
     const armor = await page.evaluate(() => window.BNH.byId('at15QaInfo'));
     const wound = await page.evaluate(() => window.__L5R_TEST__.WP15 ? window.__L5R_TEST__.WP15.LABEL : 'Wound penalty information');
     await press(page, phone, page.locator('#quickAccessToggleBtn'));
-    return [got.luck.spoken === 'Luck information' && !!got.wealthy && got.wealthy.spoken === 'Wealthy information' &&
+    return [got.luck.spoken === (got.a04 ? 'Luck information' : 'Reset information') && !!got.wealthy && got.wealthy.spoken === (got.a04 ? 'Wealthy information' : 'Choose… information') &&
       got.all.length >= 3 && got.all.every(s => / information$/.test(s)) && anc.spoken === 'Ancestors information' &&
       armor.spoken === 'Armor TN information' && wound === 'Wound penalty information', {got, anc, armor, wound}];
   });
@@ -373,7 +376,8 @@ async function phoneSessions(browser, F) {
     return [same(got.slice().sort(), want.slice().sort()) && Number(after) > Number(before) &&
       arrows.length === 3 && arrows.every(([n, s]) => same(s, ['Decrease ' + n, 'Increase ' + n])), {got, before, after, arrows}];
   });
-  // Release 15a A08 keeps a burst of quick taps on a card's − and + as one Undo; it still does with B18's names.
+  // Release 15a A08 keeps a burst of quick taps on a card's − and + as one Undo; it still does with B18's names. Without
+  // A08 the sheet's own Undo takes back the last tap only.
   await check('BN-QUICK-TAPS-ONE-UNDO-PHONE', async () => {
     await goTo(page, 'Identity');
     // Honour as Rank and points together (three points can carry it into the next Rank).
@@ -387,7 +391,8 @@ async function phoneSessions(browser, F) {
     await page.locator('#cp7-undo').tap();
     await settle(page);
     const undone = await read();
-    return [after === before + 3 && undone === before, {before, after, undone}];
+    const a08 = await page.evaluate(() => !!window.__L5R_TEST__.QT15);
+    return [after === before + 3 && undone === (a08 ? before : before + 2), {before, after, undone, a08}];
   });
   await check('BN-UNCHANGED-PHONE', async () => {
     await goTo(page, 'Adv & Disadv');
