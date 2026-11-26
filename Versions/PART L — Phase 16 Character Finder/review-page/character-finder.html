@@ -135,13 +135,13 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Design · Part L — New Player Help, Phase 16 · updated 25 November 2026</div>
+    <div class="eyebrow">Design · Part L — New Player Help, Phase 16 · updated 26 November 2026</div>
     <h1>Character Finder</h1>
     <p class="lede">An optional questionnaire for players who don't know what to play. Up to twelve multiple-choice questions narrow the app's 105 Basic Schools down to one or two best matches and four more worth a look. Each one opens a guide, and a Build button hands the choice to the creation wizard.</p>
-    <div class="status">Design approved, with all your rulings applied. Scoring is at version 2 and has automated tests with pass marks. The rating audit is under way: step 2 is done, and the book step is ready for a session on your laptop. Nothing is built yet. The full document is <code>Versions/PART L — Phase 16 Character Finder/DESIGN.md</code> on branch <code>claude/serene-ride-ojsryb</code>.</div>
+    <div class="status">Design approved, with all your rulings applied. Scoring is at version 2 and has automated tests with pass marks. The rating audit's book step is done: every question answered from your books, 30 rating changes applied, and the page now uses the audited ratings. Your spot check and the group's short list come next. Nothing is built yet. The full document is <code>Versions/PART L — Phase 16 Character Finder/DESIGN.md</code> on branch <code>claude/serene-ride-ojsryb</code>.</div>
     <div class="facts">
       <div class="fact"><b>105</b><span>Basic Schools rated, every Clan</span></div>
-      <div class="fact"><b>81%</b><span>find the School they want in the top six (target 90%)</span></div>
+      <div class="fact"><b>81.6%</b><span>find the School they want in the top six (target 90%)</span></div>
       <div class="fact"><b>0.11</b><span>label-count bias, down from 0.60</span></div>
       <div class="fact"><b>21 / 21</b><span>reliability tests pass</span></div>
     </div>
@@ -208,7 +208,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
         <tr><td>All "No preference" gives a sample, not a match</td><td>no</td><td><b>yes</b></td><td>rule</td></tr>
         <tr><td>Magic "No": a Shugenja is never a best match</td><td class="num">100%</td><td class="num"><b>100%</b></td><td>rule</td></tr>
         <tr><td>Player who wants School X finds it in the top six</td><td class="num">82%</td><td class="num"><b>81.3%</b></td><td>81%, target 90%</td></tr>
-        <tr><td>… stopping at "See my results now" after question 9</td><td>–</td><td class="num"><b>78%</b></td><td>78%</td></tr>
+        <tr><td>… stopping at "See my results now" after question 9</td><td>–</td><td class="num"><b>78%</b></td><td>77.6%</td></tr>
         <tr><td>Schools such a player rarely finds</td><td class="num">13</td><td class="num"><b>5</b></td><td>5, target 0</td></tr>
         <tr><td>"Words" gives a Courtier</td><td class="num">48%</td><td class="num"><b>67%</b></td><td>67%</td></tr>
         <tr><td>"A sword" gives a Bushi</td><td class="num">80%</td><td class="num"><b>88%</b></td><td>87%</td></tr>
@@ -220,8 +220,19 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
       </tbody>
     </table></div>
     <p class="smeta">21 tests with pass marks, all passing, and one more waiting for your group (below). The full list is in DESIGN.md section 9.</p>
+    <h3>After the book step (26 November)</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Test</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><td>Player who wants School X finds it in the top six</td><td class="num">81.3%</td><td class="num"><b>81.6%</b></td></tr>
+        <tr><td>… gets it as a best match</td><td class="num">62.3%</td><td class="num"><b>61.9%</b></td></tr>
+        <tr><td>… stopping after question 9</td><td class="num">78.0%</td><td class="num"><b>77.7%</b></td></tr>
+        <tr><td>Schools such a player rarely finds</td><td class="num">5</td><td class="num"><b>4</b></td></tr>
+      </tbody>
+    </table></div>
+    <p>All tests still pass. Three pass marks moved down by 0.1 to 0.3 points; each move was checked over eight runs with different random players first and is recorded with its reason in DESIGN.md section 9. Averaged over those eight runs, top six went from 81.5% to 81.8%.</p>
     <h3>Why tuning can't reach 90%</h3>
-    <p>Trying different settings only moved "finds it in the top six" between 77% and 81%. What's left is in the ratings: near-twin Schools with almost the same labels (Goju Ninja and Shosuro Infiltrator, Agasha and Tamori, many monk orders), and labels that look wrong. For example, a player who answers only "a sword, the front line, the Wall" gets the Boar and Badger Schools ahead of Hida Bushi, because the draft gave them a "Wall" home. Better ratings are the way to 90%.</p>
+    <p>Trying different settings only moved "finds it in the top six" between 77% and 81%. What's left is in the ratings: near-twin Schools with almost the same labels (Goju Ninja and Shosuro Infiltrator, Agasha and Tamori, many monk orders), and labels that look wrong. For example, a player who answers only "a sword, the front line, the Wall" gets the Boar and Badger Schools ahead of Hida Bushi, because the draft gave them a "Wall" home. The book step fixed that one: Hida Bushi now comes first. Better ratings are the way to 90%, and the rest of the gap is mostly near-twin monk orders that only your group's judgement calls can separate.</p>
     <h3>Early exit after question 9 (your decision)</h3>
     <div class="tbl"><table>
       <thead><tr><th>Stop after</th><th>Best match</th><th>Top six</th></tr></thead>
@@ -260,8 +271,18 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
       </tbody>
     </table></div>
     <p>It confirms the Wall problem: no evidence anywhere for the Boar and Badger Schools' "Wall" home. It also points at Morito Bushi, rated front line, whose Techniques say fast skirmisher, and at the Order of Peaceful Repose, missing "mystic". Some suggestions are false alarms (the Kuni Witch-Hunter's Techniques mention maho because they hunt it), which is why nothing changes without the books.</p>
-    <h3>Step 3 needs your laptop</h3>
-    <p>Your PDFs are only on your laptop, and it doesn't share folders with cloud sessions at the moment. Everything is ready for a Claude session on the laptop: a script that extracts each School's pages to a scratch folder outside the repository, the list of questions with the exact pages, and a checker for the answers (own words, printed pages, nothing copied). In that session, say: <i>Read <code>Versions/PART L — Phase 16 Character Finder/audit/KICKOFF-BOOK-READING.md</code> and carry out the book-reading step of the rating audit, one Clan at a time.</i></p>
+    <h3>Step 3 is done: the books</h3>
+    <p>A Claude session on your laptop read each School's printed entry and answered all 183 questions in our own words, with the printed page. The checker found nothing copied and nothing unanswered, and the extracted book text was deleted afterwards.</p>
+    <div class="tbl"><table>
+      <tbody>
+        <tr><td>Questions answered</td><td class="num"><b>183 of 183</b></td></tr>
+        <tr><td>Clear answers / judgement calls for your group</td><td class="num">104 / 79</td></tr>
+        <tr><td>Rating changes applied</td><td class="num"><b>30, across 24 Schools</b></td></tr>
+        <tr><td>Clear changes held back</td><td class="num">6, across 4 Schools</td></tr>
+      </tbody>
+    </table></div>
+    <p>Among the changes: the Badger and Boar lose the "Wall" home (the Boar's home is the Twilight Mountains); "duelist" goes from Akodo, Bayushi Bushi, Shinjo and the Taoist Swordsman, none of which has a duelling Technique; Shinjo gains "archer" and Morito "fast skirmisher"; and the Hoshi and Hitomi tattooed orders are told apart as the book tells them apart. The full list, with pages, is <code>audit/CHANGES.md</code>.</p>
+    <p><b>Held back:</b> six changes for Tsi Smith, Kaimetsu-uo, Order of the Wind and Peaceful Repose. The book says the labels are wrong, but removing them made results worse, either by taking away the only label that told a monk order apart from the others, or by leaving a School so thinly rated that the scoring pushed it too high. They wait for your group's labels, or for your decision on a scoring cap for thinly rated Schools.</p>
     <h3>Step 5: your group, for free</h3>
     <p>Ask each player to answer Try it as their own character. After the results, the page shows an answer code. Send me each code with that player's School (no names needed). A test then checks that every player's real School is in their top six.</p>
     <p><b>Your part, as a non-expert:</b> approve the rubric, spot-check about ten Schools by opening the cited page, and pass the short disagreement list to your group. If more than one of the ten is wrong, the audit is redone. Near-twins are handled inside the audit: wherever the evidence separates them, the difference becomes a label.</p>
@@ -269,7 +290,7 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
 
   <section id="schools">
     <h2>All Schools and their ratings</h2>
-    <p>The draft rating of each School, which the audit will check. Main labels count double. Type, Honor, Family, page and Rank 1 Technique come from the app's own data.</p>
+    <p>The rating of each School after the book step. Your group's judgement calls may still change some. Main labels count double. Type, Honor, Family, page and Rank 1 Technique come from the app's own data.</p>
     <div class="filters">
       <input id="f-search" type="search" placeholder="Search a School, Clan or label" aria-label="Search Schools">
       <select id="f-type" aria-label="Type"><option value="">Every type</option></select>
@@ -401,9 +422,10 @@ footer { margin-top: 3rem; font-family: var(--f-ui); font-size: .8rem; color: va
   <section id="open">
     <h2>Next</h2>
     <ol class="asks">
-      <li><b>The book step:</b> start a Claude session on your laptop with the line above. It works one Clan at a time and commits as it goes.</li>
+      <li><b>Your spot check:</b> open the ten pages in <code>audit/SPOT-CHECK.md</code> and tick each one where the summary matches the book. If more than one is wrong, the audit is redone.</li>
+      <li><b>Your group's short list:</b> 79 judgement calls in <code>audit/SHORT-LIST.md</code>, many with a suggested label.</li>
       <li><b>Your group's answer codes:</b> one per player, with their character's School.</li>
-      <li><b>After the book step:</b> you spot-check ten answers against the book, and your group looks at the short list of judgement calls.</li>
+      <li><b>Your decision:</b> whether to cap the scoring boost for Schools with very few labels, which would let the held changes go in.</li>
     </ol>
   </section>
 
