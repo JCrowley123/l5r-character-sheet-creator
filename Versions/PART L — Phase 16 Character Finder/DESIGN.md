@@ -2,9 +2,10 @@
 
 **Status, 25 November 2026:** design approved by the owner (24–25 November), with every ruling in section 1 applied.
 The scoring is at version 2 and passes 21 automated tests with pass marks (section 9). The rating audit (section 10)
-is **approved and under way**: steps 1 and 2 are done; step 3, reading the books, is ready for a Claude session on
-the owner's laptop, where the PDFs are (`audit/KICKOFF-BOOK-READING.md`). **Nothing is built and no application file
-is changed.**
+is **approved and under way**: steps 1 to 3 are done. The book-reading step (25–26 November, on the owner's laptop)
+answered all 183 questions and applied 30 evidence-backed rating changes; 79 judgement calls wait for the owner's group
+(`audit/SHORT-LIST.md`) and ten answers for the owner's spot check (`audit/SPOT-CHECK.md`). **Nothing is built and no
+application file is changed.**
 
 **Place:** a new Part, as the owner ruled and named: **Part L — New Player Help**, **Phase 16** (the next unused phase
 number; 11.4 was the first draft's number). Part L can later hold tutorials and a glossary. Code marker `PART L PHASE 16`
@@ -910,13 +911,33 @@ weighed them by the rubric (`WORKSHEET.md`). No rating has been changed yet.
 | Near-twin pairs (rated at least 75% alike) | 20 |
 | Questions left for the books | **183, across 88 Schools** (`book-worklist.json`) |
 
-**Step 3: ready for the laptop.** The owner's laptop does not currently offer its folders to cloud sessions, so a
+**Step 3: ready for the laptop (superseded: see "Step 3: done" below).** The owner's laptop does not currently offer its folders to cloud sessions, so a
 Claude session on the laptop does this, following `audit/KICKOFF-BOOK-READING.md`. `extract_pages.py` extracts each
 School's pages to a scratch folder outside the repository (it refuses a path inside it); the answers go in
 `book-evidence.json`; `check_evidence.py` checks them (every question answered, a printed page, nothing sharing a run
 of 8 or more words with the book), writes `SHORT-LIST.md` for the group and, at the end, `SPOT-CHECK.md` for the owner.
 Both tools were tested here on a scratch copy: a copied sentence and unanswered questions are caught. The wikis are
 used from the laptop too: this cloud environment blocks both sites.
+
+**Step 3: done (25–26 November 2026), on the owner's laptop.** All 183 questions across 88 Schools are answered in
+`audit/book-evidence.json`, in our own words with the printed page (`check_evidence.py`: no problems). 104 answers are
+clear, 79 are judgement calls on `audit/SHORT-LIST.md`. 30 clear changes across 24 Schools are applied to
+`prototype/ratings.py` and listed in `audit/CHANGES.md`, among them the errors this section expected: the Badger's and
+the Boar's "Wall" home, Morito Bushi as a skirmisher, and the Hitomi and Hoshi tattooed orders told apart. Six clear
+changes across four Schools are **held**, listed with the reason in `CHANGES.md`: each strips the only label that tells a
+School from its near-twins, or leaves it so thinly rated that the evening-out step over-promotes it, and measurably made
+results worse for players. They belong with the group's near-twin labels, or with a scoring cap for thinly rated
+Schools (the owner's decision).
+
+| Measure (fixed seed; eight-seed mean in brackets) | Before the book step | After |
+|---|---|---|
+| Finds it in the top six | 81.3% (81.5%) | 81.6% (81.8%) |
+| Gets it as a best match | 62.3% (63.9%) | 61.9% (63.9%) |
+| Stopping after question 9 | 78.0% (78.2%) | 77.7% (78.1%) |
+| Schools found less than a quarter of the time | 5 | 4 |
+
+The 90% target is not reached by the ratings alone. What remains is mostly near-twins among the monk orders, which only
+the group's judgement calls can separate. Three floors moved slightly on the way, each recorded in section 9.
 
 **Step 5: the group's answer codes.** The review page now shows an answer code after the results. Each player answers
 as their own character and sends the code with their character's School; they go in `audit/known-characters.json`,
