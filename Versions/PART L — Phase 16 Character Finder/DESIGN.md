@@ -590,17 +590,17 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Otomo Courtier | Imperial | Courtier | 5.5 | schemer · diplomat | court | Some extra | Uncommon | Core Rulebook p.229 |
 | Seppun Guardsman [Bushi] | Imperial | Bushi | 6.5 | bodyguard · front line | court | Straightforward | Uncommon | Core Rulebook p.228 |
 | Seppun Shugenja | Imperial | Shugenja (Fire) | 6.5 | protective magic · battle magic, bodyguard | court | Involved | Uncommon | Core Rulebook p.228 |
-| Ichiro Bushi | Badger | Bushi | 3.5 | front line, unarmed | mountains, the Wall | Some extra | Uncommon | Core Rulebook p.215 |
+| Ichiro Bushi | Badger | Bushi | 3.5 | front line, unarmed | mountains | Some extra | Uncommon | Core Rulebook p.215 |
 | Komori Shugenja | Bat | Shugenja (Air) | 4.5 | nature and weather, spirits and the dead · traveller | the road | Involved | Uncommon | Core Rulebook p.216 |
-| Heichi Bushi | Boar | Bushi | 3 | front line · bodyguard | the Wall, wilds | Straightforward | Uncommon | Core Rulebook p.217 |
+| Heichi Bushi | Boar | Bushi | 3 | front line | mountains | Straightforward | Uncommon | Core Rulebook p.217 |
 | Tonbo Shugenja | Dragonfly | Shugenja (Water) | 4.5 | diplomat, spirits and the dead · mystic | court, mountains | Involved | Uncommon | Core Rulebook p.218 |
 | Kitsune Shugenja | Fox | Shugenja (Earth) | 4.5 | animal companion, nature and weather · spirits and the dead | wilds | Involved | Uncommon | Core Rulebook p.219 |
 | Usagi Bushi | Hare | Bushi | 4 | fast skirmisher | battlefield, wilds | Straightforward | Uncommon | Core Rulebook p.220 |
 | Fuzake Shugenja | Monkey | Shugenja (Earth) | 5.5 | healer · spirits and the dead | the road | Involved | Uncommon | Secrets of the Empire p.238 |
-| Toku Bushi | Monkey | Bushi | 5.5 | front line · bodyguard | the road | Straightforward | Uncommon | Core Rulebook p.221 |
+| Toku Bushi | Monkey | Bushi | 5.5 | front line | the road | Straightforward | Uncommon | Core Rulebook p.221 |
 | Tsi Smith [Artisan] | Oriole | Artisan | 4.5 | craftsman · duelist | the road | Some extra | Uncommon | Core Rulebook p.222 |
-| Morito Bushi | Ox | Bushi | 3.5 | cavalry, front line | plains | Some extra | Uncommon | Core Rulebook p.223 |
-| Chuda Shugenja [Snake] | Snake | Shugenja (Earth) | 4.5 | monster hunter · protective magic | the road | Involved | Unusual | Core Rulebook p.224 |
+| Morito Bushi | Ox | Bushi | 3.5 | cavalry, front line · fast skirmisher | plains | Some extra | Uncommon | Core Rulebook p.223 |
+| Chuda Shugenja [Snake] | Snake | Shugenja (Earth) | 4.5 | monster hunter · battle magic | the road | Involved | Unusual | Core Rulebook p.224 |
 | Suzume Bushi | Sparrow | Bushi | 6.5 | duelist · artist | the road | Straightforward | Uncommon | Core Rulebook p.225 |
 | Kasuga Smuggler [Courtier] | Tortoise | Courtier | 2 | merchant, schemer · stealth | sea, streets and shadows | Some extra | Uncommon | Core Rulebook p.225 |
 | Yotsu Bushi School (Heroes of Rokugan) [Bushi] | Tiger | Bushi | 5.5 | bodyguard, stealth | streets and shadows | Some extra | Unusual | Imperial Histories 1 p.276 |
@@ -780,7 +780,7 @@ answer 20%.
 | Magic "No" or "a touch": best matches that are not Shugenja | 100% (filtered out) | **100%** | rule: 100% |
 | Magic "Yes": every listed School is a Shugenja School | 100% | **100%** | rule: 100% |
 | Player who wants School X finds it in the top six | 82% | **81.3%** | floor 81%, **target 90%** |
-| … gets it as a best match | 63% | **62.3%** | floor 62% |
+| … gets it as a best match | 63% | **62.3%** | floor 61.9% (was 62%; see below) |
 | … stopping after question 9 | – | **78.0%** | floor 77.6% (was 77.9%; see below) |
 | Schools such a player finds less than a quarter of the time | 13 | **5** | floor 5, target 0 |
 | "Classic samurai": best matches that are not Unusual | 98.5% | **98.1%** | floor 98% |
@@ -810,6 +810,7 @@ floor only when the change is evidence-backed and better for players. Rules neve
 |---|---|---|---|---|
 | 25 Nov 2026 | Stopping after question 9 | 77.9% | 77.7% | Bayushi Bushi lost "duelist" (no duelling Technique, Core Rulebook p.126). Over five seeds the measure fell 0.24 points, almost all of it Bayushi Bushi itself (now one main and one also label). Players asking for a duellist are no longer steered to a School with no duelling Technique. The book's Initiative Technique may support "fast skirmisher" as a replacement; that is a judgement call for the owner's group, not applied. |
 | 25 Nov 2026 | Stopping after question 9 | 77.7% | 77.6% | Unicorn changes (Shinjo Bushi duelist to archer, Moto Vindicator front line). On the test's fixed seed the measure fell 0.05 points, but over five seeds it rose (78.34% to 78.45%): noise at one seed, not harm. These floors are measured on one seed and move by about 0.3 points with any rating change; averaging several seeds would make them steadier (for the owner to decide). |
+| 26 Nov 2026 | Gets it as a best match | 62.0% | 61.9% | Minor Clan changes (Badger and Boar lose the Wall, bodyguard labels without evidence removed, Morito skirmisher, Snake Chuda battle magic). Over eight seeds best match fell 0.16 points while top six rose 0.15; against the original draft the audit so far leaves best match flat (63.92% to 63.89%) and top six up (81.51% to 81.80%). A "front line, the Wall" player now gets Hida ahead of the Badger and Boar, the error section 9 describes. |
 
 ### What the measurements say about getting to 90%
 

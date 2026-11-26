@@ -4938,18 +4938,12 @@
     "score": 0,
     "where": [],
     "verdict": "no evidence"
-   },
-   {
-    "home": "wall",
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "book": [
    "Is the home \"mountains\" right? Mountains and monasteries.",
-   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
-   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus)."
+   "Complexity: rated Some extra, rubric says Straightforward (Rank 1 is a constant bonus).",
+   "Near-twin of \"Heichi Bushi\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
   ],
   "complexity": {
    "rated": 2,
@@ -4972,7 +4966,13 @@
     219,
     220
    ]
-  }
+  },
+  "twins": [
+   {
+    "with": "Heichi Bushi",
+    "similarity": 0.75
+   }
+  ]
  },
  {
   "name": "Komori Shugenja",
@@ -5058,34 +5058,19 @@
      "Skills"
     ],
     "verdict": "backed"
-   },
-   {
-    "label": "bodyguard",
-    "main": false,
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "suggested": [],
   "homes": [
    {
-    "home": "wall",
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
-   },
-   {
-    "home": "wilds",
+    "home": "mountains",
     "score": 0,
     "where": [],
     "verdict": "no evidence"
    }
   ],
   "book": [
-   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
-   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
-   "Is the home \"wilds\" right? Forests and wild places.",
+   "Is the home \"mountains\" right? Mountains and monasteries.",
    "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: while)."
   ],
   "complexity": {
@@ -5863,13 +5848,6 @@
      "Rank 3 Technique"
     ],
     "verdict": "backed"
-   },
-   {
-    "label": "bodyguard",
-    "main": false,
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
    }
   ],
   "suggested": [],
@@ -5882,7 +5860,6 @@
    }
   ],
   "book": [
-   "Is \"bodyguard\" right? Protects others: yojimbo, guarding a charge, defending allies.",
    "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
    "Complexity: rated Straightforward, rubric says Some extra (Rank 1 has: against)."
   ],
@@ -6061,20 +6038,21 @@
     "score": 0,
     "where": [],
     "verdict": "no evidence"
-   }
-  ],
-  "suggested": [
+   },
    {
     "label": "skirmisher",
+    "main": false,
     "score": 8,
     "where": [
      "Rank 1 Technique",
      "Rank 4 Technique",
      "Rank 5 Technique",
      "description"
-    ]
+    ],
+    "verdict": "backed"
    }
   ],
+  "suggested": [],
   "homes": [
    {
     "home": "plains",
@@ -6087,8 +6065,7 @@
    }
   ],
   "book": [
-   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques."
+   "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance."
   ],
   "complexity": {
    "rated": 2,
@@ -6132,23 +6109,17 @@
     "verdict": "backed"
    },
    {
-    "label": "protector-magic",
-    "main": false,
-    "score": 0,
-    "where": [],
-    "verdict": "no evidence"
-   }
-  ],
-  "suggested": [
-   {
     "label": "battle-magic",
+    "main": false,
     "score": 4,
     "where": [
      "Rank 1 Technique",
      "description"
-    ]
+    ],
+    "verdict": "backed"
    }
   ],
+  "suggested": [],
   "homes": [
    {
     "home": "road",
@@ -6158,8 +6129,6 @@
    }
   ],
   "book": [
-   "Is \"protector-magic\" right? A spellcaster whose magic wards, shields and protects.",
-   "Should \"battle-magic\" be added? A spellcaster whose magic destroys enemies.",
    "Is the home \"road\" right? The road: wanderers, messengers, travelling monks."
   ],
   "complexity": {

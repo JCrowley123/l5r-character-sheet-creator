@@ -27,3 +27,15 @@ evidence for each change, in our own words, is in `book-evidence.json`.
 | Spider | Goju Ninja | complexity | Involved | Some extra | The Great Clans p.280 |
 | Spider | The Order of the Spider Monks [Monk] | also labels | forbidden | forbidden, front line | Core Rulebook p.215 |
 | Imperial | Seppun Shugenja | also labels | battle magic | battle magic, bodyguard | Core Rulebook p.228 |
+| Badger | Ichiro Bushi | Homes | mountains, the Wall | mountains | Core Rulebook p.215 |
+| Boar | Heichi Bushi | also labels | bodyguard | (none) | Core Rulebook p.217 |
+| Boar | Heichi Bushi | Homes | the Wall, wilds | mountains | Core Rulebook p.217 |
+| Monkey | Toku Bushi | also labels | bodyguard | (none) | Core Rulebook p.222 |
+| Ox | Morito Bushi | also labels | (none) | fast skirmisher | Core Rulebook p.224 |
+| Snake | Chuda Shugenja [Snake] | also labels | protective magic | battle magic | Core Rulebook p.224 |
+
+## Clear decisions held back (not applied)
+
+| School | Decision | Page | Why held |
+|---|---|---|---|
+| Tsi Smith [Artisan] | Remove duelist; remove the road home | Core Rulebook p.222 | The book is clear (no duelling Technique; the Tsi seldom leave their lands), but it would leave one label and no Home. The scoring's evening-out step then multiplies its few matches so far that it crowds out Courtiers for "Words" players (67.0% floor to 66.9%) and lowers the early-exit result (77.8% to 77.5%). The fix belongs in the scoring (a cap for very thinly rated Schools), which is the owner's decision. |

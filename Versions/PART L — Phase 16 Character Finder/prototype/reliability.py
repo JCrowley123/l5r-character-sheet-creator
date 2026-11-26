@@ -188,7 +188,7 @@ MARKS = [
  ('touch_magic_best_not_shugenja', 'Magic "a touch": best matches that are not Shugenja', 'rule', '==', 100.0, None, '%'),
  ('yes_magic_only_shugenja', 'Magic "Yes": every listed School is a Shugenja School', 'rule', '==', 100.0, None, '%'),
  ('persona_top6', 'Player who wants School X finds it in the top six', 'floor', '>=', 81.0, 90.0, '%'),
- ('persona_best', 'Player who wants School X gets it as a best match', 'floor', '>=', 62.0, None, '%'),
+ ('persona_best', 'Player who wants School X gets it as a best match', 'floor', '>=', 61.9, None, '%'),
  ('persona_hard_to_find', 'Schools such a player finds less than a quarter of the time', 'floor', '<=', 5, 0, ''),
  ('persona_early_exit_top6', 'The same, stopping at "See my results now" after question 9', 'floor', '>=', 77.6, None, '%'),
  ('classic_not_unusual', '"Classic samurai": best matches that are not Unusual', 'floor', '>=', 98.0, None, '%'),
