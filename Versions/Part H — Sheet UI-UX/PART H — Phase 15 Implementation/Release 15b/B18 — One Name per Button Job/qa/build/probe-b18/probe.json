@@ -1,0 +1,940 @@
+{
+ "source_sha256": "2be73c43bd748bc7135f1a2d24c9b4cb17ad43dab760c3310d7fbb2f90d7faea",
+ "captured_utc": "2026-11-26T11:18:10.556Z",
+ "cards": {
+  "reset": {
+   "groups": [
+    "G01"
+   ],
+   "places": [
+    {
+     "name": "Kharmic Tie",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Kharmic Tie for a new session",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset Kharmic Tie for a new session"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Luck",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Luck for a new session",
+       "title": "Restore Luck to its per-session maximum"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset Luck for a new session"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Dark Paragon",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Dark Paragon for a new session",
+       "title": "Make Dark Paragon available again for a new session"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset Dark Paragon for a new session"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Great Destiny",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset Great Destiny for a new session",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset Great Destiny for a new session"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Haunted",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset Haunted for a new session",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset Haunted for a new session"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Unlucky",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset Unlucky for a new session",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset Unlucky for a new session"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Ancestor card",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "Reset",
+       "spoken": "Reset Kuni’s gift for a new session",
+       "title": "A new session: make the once-a-session gift ready again"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset Kuni’s gift for a new session"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Combat round counter",
+     "built": [
+      {
+       "words": "Reset",
+       "drawn": "RESET",
+       "spoken": "Reset the round counter",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reset",
+       "spoken": "Reset the round counter"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "use": {
+   "groups": [
+    "G06"
+   ],
+   "places": [
+    {
+     "name": "Seppun Ancestor card",
+     "built": [
+      {
+       "words": "Use",
+       "drawn": "Use",
+       "spoken": "Use Seppun’s free Void Point",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Use",
+       "spoken": "Use Seppun’s free Void Point"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Great Destiny",
+     "built": [
+      {
+       "words": "Use",
+       "drawn": "USE",
+       "spoken": "Use Great Destiny: a killing blow leaves you 1 Wound from death instead",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Use",
+       "spoken": "Use Great Destiny: a killing blow leaves you 1 Wound from death instead"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "gotit": {
+   "groups": [
+    "G05"
+   ],
+   "places": [
+    {
+     "name": "Kiho rules (Techniques, its i)",
+     "built": [
+      {
+       "words": "OK",
+       "drawn": "OK",
+       "spoken": "OK",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "OK",
+       "spoken": "OK"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "yesno": {
+   "groups": [
+    "G05"
+   ],
+   "places": [
+    {
+     "name": "Casting with no Earth slot left",
+     "built": [
+      {
+       "words": "Confirm",
+       "drawn": "CONFIRM",
+       "spoken": "Confirm",
+       "title": ""
+      },
+      {
+       "words": "Cancel",
+       "drawn": "CANCEL",
+       "spoken": "Cancel",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Confirm",
+       "spoken": "Confirm"
+      },
+      {
+       "words": "Cancel",
+       "spoken": "Cancel"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "reroll": {
+   "groups": [
+    "G08"
+   ],
+   "places": [
+    {
+     "name": "A Skill roll with an Emphasis",
+     "built": [
+      {
+       "words": "Reroll 1s",
+       "drawn": "REROLL 1S",
+       "spoken": "Reroll 1s",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reroll 1s",
+       "spoken": "Reroll 1s"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "The same, after pressing it",
+     "built": [
+      {
+       "words": "Reroll selected",
+       "drawn": "REROLL SELECTED",
+       "spoken": "Reroll selected",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reroll selected",
+       "spoken": "Reroll selected"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "luck": {
+   "groups": [
+    "G08"
+   ],
+   "places": [
+    {
+     "name": "A roll’s result, with Luck",
+     "built": [
+      {
+       "words": "Reroll with Luck (2/3)",
+       "drawn": "Reroll with Luck (2/3)",
+       "spoken": "Reroll with Luck: roll the whole roll again and keep the higher result, 2 of 3 left",
+       "title": "Reroll this entire roll and keep the higher result"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Reroll with Luck (2/3)",
+       "spoken": "Reroll with Luck: roll the whole roll again and keep the higher result, 2 of 3 left"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "emph": {
+   "groups": [
+    "G10"
+   ],
+   "places": [
+    {
+     "name": "Calligraphy (has an Emphasis)",
+     "built": [
+      {
+       "words": "+ Add Emphasis",
+       "drawn": "+ ADD EMPHASIS",
+       "spoken": "Add Emphasis to Calligraphy",
+       "title": "Rank 3+ required for another Emphasis in this skill."
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "+ Add Emphasis",
+       "spoken": "Add Emphasis to Calligraphy"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Defense (no Emphasis yet)",
+     "built": [
+      {
+       "words": "+ Add Emphasis",
+       "drawn": "+ ADD EMPHASIS",
+       "spoken": "Add Emphasis to Defense",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "+ Add Emphasis",
+       "spoken": "Add Emphasis to Defense"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "book": {
+   "groups": [
+    "G10"
+   ],
+   "places": [
+    {
+     "name": "The Library page",
+     "built": [
+      {
+       "words": "+ Add Book",
+       "drawn": "+ Add Book",
+       "spoken": "Add Book",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "+ Add Book",
+       "spoken": "Add Book"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "court": {
+   "groups": [
+    "G10"
+   ],
+   "places": [
+    {
+     "name": "Darling of the Court’s window",
+     "built": [
+      {
+       "words": "+ Add court",
+       "drawn": "+ ADD COURT",
+       "spoken": "+ Add court",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "+ Add court",
+       "spoken": "+ Add court"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "spendvoid": {
+   "groups": [
+    "G07"
+   ],
+   "places": [
+    {
+     "name": "A roll with Hida Atarasi’s strike declared",
+     "built": [
+      {
+       "words": "Spend Void",
+       "drawn": "SPEND VOID",
+       "spoken": "Spend Void",
+       "title": ""
+      },
+      {
+       "words": "Take a point of Taint",
+       "drawn": "TAKE A POINT OF TAINT",
+       "spoken": "Take a point of Taint",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Spend Void",
+       "spoken": "Spend Void"
+      },
+      {
+       "words": "Take a point of Taint",
+       "spoken": "Take a point of Taint"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "combati": {
+   "groups": [
+    "G12"
+   ],
+   "places": [
+    {
+     "name": "Armor & TN",
+     "built": [
+      {
+       "words": "i",
+       "drawn": "ⓘ",
+       "spoken": "TN & Initiative information",
+       "title": "TN & Initiative formula"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "i",
+       "spoken": "TN & Initiative information"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Weapons",
+     "built": [
+      {
+       "words": "i",
+       "drawn": "ⓘ",
+       "spoken": "Attack & Damage information",
+       "title": "Attack & Damage formula"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "i",
+       "spoken": "Attack & Damage information"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "A weapon",
+     "built": [
+      {
+       "words": "i",
+       "drawn": "👁",
+       "spoken": "A long named ancestral weapon for the audit information",
+       "title": "Weapon Info"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "i",
+       "spoken": "A long named ancestral weapon for the audit information"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "A stance",
+     "built": [
+      {
+       "words": "i",
+       "drawn": "ⓘ",
+       "spoken": "Attack stance information",
+       "title": "Stance rules"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "i",
+       "spoken": "Attack stance information"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "pdf": {
+   "groups": [
+    "G16"
+   ],
+   "places": [
+    {
+     "name": "A saved character’s ⋯ menu (Characters)",
+     "built": [
+      {
+       "words": "Export PDF",
+       "drawn": "Export PDF",
+       "spoken": "Export PDF",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Export PDF",
+       "spoken": "Export PDF"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "rowx": {
+   "groups": [
+    "G03"
+   ],
+   "places": [
+    {
+     "name": "A Skill",
+     "built": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Calligraphy",
+       "title": "Remove"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "✕",
+       "spoken": "Remove Calligraphy"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "An Emphasis",
+     "built": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Emphasis",
+       "title": "Remove Emphasis"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "✕",
+       "spoken": "Remove Emphasis"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "An Advantage",
+     "built": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Wealthy",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "✕",
+       "spoken": "Remove Wealthy"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "An item",
+     "built": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Remove Robes",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "✕",
+       "spoken": "Remove Robes"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "cornerx": {
+   "groups": [
+    "G04"
+   ],
+   "places": [
+    {
+     "name": "A Skill’s i window",
+     "built": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Close Calligraphy information",
+       "title": "Close"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "✕",
+       "spoken": "Close Calligraphy information"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "A roll preview",
+     "built": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Cancel Before you roll",
+       "title": "Cancel"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "✕",
+       "spoken": "Cancel Before you roll"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "A notice (the Kiho rules)",
+     "built": [
+      {
+       "words": "✕",
+       "drawn": "✕",
+       "spoken": "Close notice",
+       "title": "Cancel"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "✕",
+       "spoken": "Close notice"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "changechoose": {
+   "groups": [
+    "G02"
+   ],
+   "places": [
+    {
+     "name": "Wealthy, not chosen yet",
+     "built": [
+      {
+       "words": "Choose…",
+       "drawn": "CHOOSE…",
+       "spoken": "Choose Wealthy",
+       "title": "Wealthy — choose how many Ranks."
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Choose…",
+       "spoken": "Choose Wealthy"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Luck, chosen",
+     "built": [
+      {
+       "words": "Change",
+       "drawn": "CHANGE",
+       "spoken": "Change Luck",
+       "title": "Change this choice"
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Change",
+       "spoken": "Change Luck"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "info": {
+   "groups": [
+    "G12"
+   ],
+   "places": [
+    {
+     "name": "Luck’s i",
+     "built": [
+      {
+       "words": "i",
+       "drawn": "",
+       "spoken": "Luck information",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "i",
+       "spoken": "Luck information"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "The Ancestor section’s i",
+     "built": [
+      {
+       "words": "",
+       "drawn": "",
+       "spoken": "Ancestors information",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "",
+       "spoken": "Ancestors information"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "Armor TN’s i (Quick Access)",
+     "built": [
+      {
+       "words": "i",
+       "drawn": "",
+       "spoken": "Armor TN information",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "i",
+       "spoken": "Armor TN information"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "steppers": {
+   "groups": [
+    "G14"
+   ],
+   "places": [
+    {
+     "name": "Honour (Identity)",
+     "built": [
+      {
+       "words": "−",
+       "drawn": "−",
+       "spoken": "Decrease Honour points",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "−",
+       "spoken": "Decrease Honour points"
+      }
+     ],
+     "match": true
+    },
+    {
+     "name": "The Void Ring (Rings & Traits, Manage)",
+     "built": [
+      {
+       "words": "−",
+       "drawn": "−",
+       "spoken": "Decrease Void Ring",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "−",
+       "spoken": "Decrease Void Ring"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "clear": {
+   "groups": [
+    "G09"
+   ],
+   "places": [
+    {
+     "name": "The dice tray",
+     "built": [
+      {
+       "words": "Clear",
+       "drawn": "CLEAR",
+       "spoken": "Clear the dice",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Clear",
+       "spoken": "Clear the dice"
+      }
+     ],
+     "match": true
+    }
+   ]
+  },
+  "touch": {
+   "groups": [
+    "G11"
+   ],
+   "places": [
+    {
+     "name": "Touch of the Void",
+     "built": [
+      {
+       "words": "Keep control (TN 30)",
+       "drawn": "KEEP CONTROL (TN 30)",
+       "spoken": "Keep control (TN 30): Touch of the Void, Willpower roll after you spend a Void Point",
+       "title": ""
+      }
+     ],
+     "errors": [],
+     "want": [
+      {
+       "words": "Keep control (TN 30)",
+       "spoken": "Keep control (TN 30): Touch of the Void, Willpower roll after you spend a Void Point"
+      }
+     ],
+     "match": true
+    }
+   ]
+  }
+ },
+ "errors": [],
+ "mismatches": []
+}

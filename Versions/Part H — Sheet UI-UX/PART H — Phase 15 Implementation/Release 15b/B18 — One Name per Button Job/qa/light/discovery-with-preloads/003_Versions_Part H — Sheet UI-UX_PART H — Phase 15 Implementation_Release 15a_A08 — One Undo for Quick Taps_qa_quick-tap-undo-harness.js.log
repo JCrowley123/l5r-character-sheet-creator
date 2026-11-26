@@ -1,0 +1,15 @@
+  detail QT-ONE-TAP-AS-BEFORE-PHONE: "exception: locator.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Add Honour points', exact: true })\u001b[22m\n"
+  detail QT-QUICK-BURST-ONE-UNDO-PHONE: "exception: locator.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Add Honour points', exact: true })\u001b[22m\n"
+locator.tap: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Add Honour points', exact: true })[22m
+
+    at press (C:\Users\jcrow\l5r-character-sheet-creator\.claude\worktrees\happy-fermi-d06ead\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A08 — One Undo for Quick Taps\qa\quick-tap-undo-harness.js:63:130)
+    at plus (C:\Users\jcrow\l5r-character-sheet-creator\.claude\worktrees\happy-fermi-d06ead\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A08 — One Undo for Quick Taps\qa\quick-tap-undo-harness.js:64:49)
+    at C:\Users\jcrow\l5r-character-sheet-creator\.claude\worktrees\happy-fermi-d06ead\Versions\Part H — Sheet UI-UX\PART H — Phase 15 Implementation\Release 15a\A08 — One Undo for Quick Taps\qa\quick-tap-undo-harness.js:103:45 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Add Honour points', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+0/21 checks passed

@@ -1,0 +1,16 @@
+fragment : src/sheet/209.99999999999999999992-feat-button-names.js
+marker   : PART H PHASE 15.2.10
+surface  : 12 name(s) -- BN15, ONE_NAME_PER_JOB_ENABLED, bn15-i, bn15-on, bn15-plain, bn15Name, bn15Title, bn15WordCancel, bn15WordClose, bn15WordInfo, bn15WordWindow, bn15Words
+
+src\css\1155-button-names.css
+    own      5  [PART H PHASE 15.2.10 +4]  is set by this unit's script, which also marks each button (.bn15-i) and the page (body.bn15-on)
+    own      9  [PART H PHASE 15.2.10 +8]  html body.bn15-on .bn15-i:not(.bn15-plain) {
+    own     36  [PART H PHASE 15.2.10 +35]  html body.bn15-on .bn15-i:not(.bn15-plain)::after {
+    own     43  [PART H PHASE 15.2.10 +42]  html body.bn15-on .bn15-i:not(.bn15-plain)::before {
+
+src\sheet\210-test-seam-and-init.js
+    own   1047  [PART H PHASE 15.2.10 +1]  if(typeof BN15 === 'object' && BN15) Object.assign(window.__L5R_TEST__, {BN15, ONE_NAME_PER_JOB_
+    own   1048  [PART H PHASE 15.2.10 +2]  // END BN15 button-names-seam
+
+every reference is inside a block PART H PHASE 15.2.10 owns -- surgical removal covers all of them.
+exit 0

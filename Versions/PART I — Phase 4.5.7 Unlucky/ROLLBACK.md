@@ -124,3 +124,7 @@ Void point, Willpower gate or limited-resource activation. Any future "reroll th
 call it rather than reimplementing the pool maths, and should prove the isolation the way
 `UNLUCKY457-ISOLATION-01` does — by diffing the whole character before and after, not by listing
 the costs it remembered to avoid.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**Declared fixture correction.** `qa/disadv-unlucky-harness.js` follows B18: while `BN15` is on the seam, Unlucky's "Reset session" reads "Reset" and Luck's result button "Reroll with Luck (n/m)" (`UNLUCKY457-LUCK-01`, `UNLUCKY457-MANUAL-01`, `UNLUCKY457-MANUAL-05`). Unlucky's − and + and "GM invokes Unlucky" keep their words and spoken names, by the owner's ruling. It keeps its ids and count, and with B18 removed every line runs as before.

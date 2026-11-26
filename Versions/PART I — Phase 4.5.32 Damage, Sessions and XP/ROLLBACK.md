@@ -60,3 +60,9 @@ The removal chain registry gained one entry, at its end.
 ## Release 15a A11 — explanatory text gaps (7 November 2026)
 
 Release 15a A11 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A11 — Explanatory Text Gaps and One Left Edge/`), on the owner's word of 7 November, gives this release's condition row (`.chk4531-row` / `.dsx4532-row`) a 6 px bottom margin while `body.te15-on` is set, so the description no longer sits 2 px under its controls. Stylesheet only; it calls nothing here. This release's harness passes in full with A11 present. A11's stylesheet names this release's row class, so this release's remover may refuse while A11 is present: remove A11 first (the removal chain does so in order).
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) names Great Destiny's, Dark Fate's and Haunted's buttons (`.dsx4532-btn`): "Reset session" reads "Reset", heard "Reset {entry} for a new session"; Use is heard "Use Great Destiny: …"; and the message after a second Use reads "… Reset to use it again." (B18 rewrites it as the message window is asked for). Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `dsx4532-btn` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/damage-sessions-xp-harness.js` follows B18: while `BN15` is on the seam, the rows expect "Reset", the used message "… Reset to use it again.", and the presses look for "Reset" (`DS-GREAT-DESTINY-*`, `DS-DARK-FATE-*`, `DS-DESTINY-EXCEPTION`, `DS-HAUNTED-*`). It keeps its ids and count, and with B18 removed every line runs as before.

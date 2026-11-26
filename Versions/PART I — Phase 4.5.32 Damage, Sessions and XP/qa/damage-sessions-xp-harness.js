@@ -96,6 +96,10 @@ async function main() {
     await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_CAROUSEL__?.isReady?.() &&
       (!window.__L5R_TEST__.CL11 || window.__L5R_TEST__.CL11.ready));
     await page.evaluate(() => window.__L5R_TEST__.CL11?.close?.());
+    // Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam, "Reset
+    // session" reads "Reset" and the used message says "Reset to use it again". Same ids and count; with B18 removed
+    // every line runs as before.
+    const RESET_WORDS = (await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed))) ? 'Reset' : 'Reset session';
     // Weapons from the sheet's own library: a Large melee weapon, a Medium one, a ranged one, and Unarmed.
     const W = await page.evaluate(() => { const T = window.__L5R_TEST__;
       return {large:T.WEAPON_LIBRARY.find(w => w.size === 'Large' && !T.isRangedWeapon(w) && w.damage && w.damage.roll > 0).name,
@@ -168,7 +172,7 @@ async function main() {
         const tag = name === 'Great Destiny' ? 'GREAT-DESTINY' : 'DARK-FATE';
         await setup(page, [name], {earth:3});
         const limit = await page.evaluate(() => { const t = window.__L5R_TEST__.computeWoundThresholds(3); return t[t.length - 1]; });
-        check('DS-' + tag + '-ROW', await rowOf(page, name), {buttons:[['Use', false], ['Reset session', false]], switches:[], state:'Available this session.', notes:[]});
+        check('DS-' + tag + '-ROW', await rowOf(page, name), {buttons:[['Use', false], [RESET_WORDS, false]], switches:[], state:'Available this session.', notes:[]});
         await press(page, name, 'Use');
         let msg = await confirmDialog(page, false);
         check('DS-' + tag + '-ASKS-FIRST', [/1 Wound from death/.test(msg), msg.includes((limit - 1) + ' of ' + limit), await page.evaluate(() => +document.getElementById('f_woundsTaken').value)], [true, true, 0]);
@@ -177,15 +181,15 @@ async function main() {
         await page.waitForFunction(() => +document.getElementById('f_woundsTaken').value > 0);
         check('DS-' + tag + '-ONE-WOUND-FROM-DEATH', await page.evaluate(() => [+document.getElementById('f_woundsTaken').value, document.getElementById('woundSummaryLine').textContent.split(' — ')[0]]),
           [limit - 1, 'Out']);
-        check('DS-' + tag + '-USED', await rowOf(page, name), {buttons:[['Use', true], ['Reset session', false]], switches:[], state:'Used this session.', notes:[]});
+        check('DS-' + tag + '-USED', await rowOf(page, name), {buttons:[['Use', true], [RESET_WORDS, false]], switches:[], state:'Used this session.', notes:[]});
         await page.evaluate(() => { document.getElementById('f_woundsTaken').value = 0; });
         // Not awaited: if the once-a-session refusal were missing, the confirm dialog would wait for a tap.
         await page.evaluate(name => { window.__L5R_TEST__.DSX4532.useDestiny([...document.querySelectorAll('.entry')].find(d => d.querySelector('.en-name').value === name), name.toLowerCase()); }, name);
         await page.waitForFunction(() => document.getElementById('appConfirmOverlay').style.display === 'flex', null, {timeout:4000}).catch(() => {});
         check('DS-' + tag + '-ONCE-A-SESSION', [await alertText(page), await page.evaluate(() => +document.getElementById('f_woundsTaken').value)],
-          [name + ' is already used this session. Reset session to use it again.', 0]);
+          [name + ' is already used this session. ' + RESET_WORDS + ' to use it again.', 0]);
         check('DS-' + tag + '-USE-SAVED', await page.evaluate(name => (window.__L5R_TEST__.collectData()[name === 'Great Destiny' ? 'adv' : 'disadv'].find(d => d.name === name) || {}).config?.used, name), true);
-        await press(page, name, 'Reset session');
+        await press(page, name, RESET_WORDS);
         check('DS-' + tag + '-RESET', (await rowOf(page, name)).state, 'Available this session.');
       }
       // The contract: the limit follows the wound core, Bad Health (Feature 4.5.29) included.
@@ -225,7 +229,7 @@ async function main() {
       await page.keyboard.press('Escape');
       check('DS-HAUNTED-SPENT', [(await rowOf(page, 'Haunted')).state, await offered()], ['Used this session.', []]);
       check('DS-HAUNTED-SAVED', await page.evaluate(() => { const c = (window.__L5R_TEST__.collectData().disadv.find(d => d.name === 'Haunted') || {}).config || {}; return [c.angry, c.used]; }), [true, true]);
-      await press(page, 'Haunted', 'Reset session');
+      await press(page, 'Haunted', RESET_WORDS);
       check('DS-HAUNTED-RESET', [(await rowOf(page, 'Haunted')).state, await offered()], ['The GM may choose one roll this session (−1k1).', ['Haunted: the GM chose this roll — −1k1']]);
       // Cancelling the preview spends nothing.
       await page.evaluate(() => { window.__L5R_TEST__.rollSkill('Courtier', 'Awareness', 2); });

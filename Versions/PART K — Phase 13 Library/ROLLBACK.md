@@ -39,3 +39,7 @@ the site's data in the browser removes it.
 - **Phase 14 (Search, `SEARCHPAGE14`)**: the page wraps `SEARCHPAGE14.render` to link citations of books on the
   shelf and, since Release 2a, to mark the others "not in Library". Without Search there are no links; the shelf and
   the reader still work.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) wraps `LIBPAGE13.mount` and renames the shelf's "+Book" to "+ Add Book", heard "Add Book" (the words are set as the button's text, as the board showed them). Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `LIBPAGE13` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.

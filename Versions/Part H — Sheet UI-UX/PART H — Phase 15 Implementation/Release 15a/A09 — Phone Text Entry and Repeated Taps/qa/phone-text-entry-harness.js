@@ -142,7 +142,10 @@ async function open(browser, opts) {
         await check('TX-STEPPER-TWICE-PHONE', async () => {
           await goTab(page, 'Identity');
           const read = () => page.evaluate(() => { const f = window.__L5R_TEST__.collectData().fields; return {rank: Number(f.f_honorRank), pts: Number(f.f_honorPts)}; });
-          const plus = page.getByRole('button', {name: 'Add Honour points', exact: true});
+          // Follows Release 15b B18 (declared in both ROLLBACKs): while B18 is on the seam the + is heard "Increase Honour
+          // points". Same id and count.
+          const b18 = await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
+          const plus = page.getByRole('button', {name: b18 ? 'Increase Honour points' : 'Add Honour points', exact: true});
           await plus.scrollIntoViewIfNeeded(); await settle(page);
           const before = await read();
           const box = await plus.boundingBox(), x = box.x + box.width / 2, y = box.y + box.height / 2;

@@ -81,6 +81,11 @@ async function main() {
     page.on('dialog', d => d.accept());
     await page.goto(pathToFileURL(path.resolve(file)).href);
     await page.waitForFunction(() => window.__L5R_TEST__ && typeof window.__L5R_TEST__.recalcAll === 'function');
+    // Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam, "Reset
+    // session" reads "Reset" and Luck's "Spend Luck (n/m)" reads "Reroll with Luck (n/m)". Same ids and count; with B18
+    // removed every line runs as before.
+    const B18 = await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
+    const RESET_WORDS = B18 ? 'Reset' : 'Reset session', LUCK_RE = B18 ? /^Reroll with Luck/ : /Spend Luck/;
     const registryBefore = await page.evaluate(() =>
       window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.map(m => [m.id, m.priority]));
 
@@ -251,7 +256,7 @@ async function main() {
         };
       });
       record('UNLUCKY457-LUCK-01', 'Both resources offer their own action on the same result',
-        both.setup === 'ok' && /Spend Luck/.test(both.luckBefore || ''), JSON.stringify(both));
+        both.setup === 'ok' && LUCK_RE.test(both.luckBefore || ''), JSON.stringify(both));
       equal('UNLUCKY457-LUCK-02', 'Spending Unlucky does not touch Luck’s pool',
         both.luckAfter, both.luckBefore);
       record('UNLUCKY457-LUCK-03', '…while Unlucky’s own pool went down',
@@ -272,7 +277,7 @@ async function main() {
       let state = await rowState(page);
       equal('UNLUCKY457-MANUAL-01', 'At full, "+" is disabled and "−" is not',
         state.buttons.map(b => [b.label, b.disabled]),
-        [['−', false], ['+', true], ['Reset session', false]]);
+        [['−', false], ['+', true], [RESET_WORDS, false]]);
 
       await click('−'); await page.waitForTimeout(150);
       await click('−'); await page.waitForTimeout(150);
@@ -290,7 +295,7 @@ async function main() {
       equal('UNLUCKY457-MANUAL-04', 'At zero, "−" is disabled rather than going negative',
         [state.pips, state.buttons[0].disabled], ['○○○ 0/3', true]);
 
-      await click('Reset session'); await page.waitForTimeout(150);
+      await click(RESET_WORDS); await page.waitForTimeout(150);
       state = await rowState(page);
       equal('UNLUCKY457-MANUAL-05', 'Reset restores the full per-session pool', state.pips, '●●● 3/3');
 

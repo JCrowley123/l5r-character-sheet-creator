@@ -1,0 +1,8 @@
+Run 1 (25-26 November 2026, build 2b17b31e…3705, before the preloads were used): 28/33 checks passed.
+The five failures were the harness's own recipes, not the unit:
+  BN-INFO-PHONE        expected more than three i's on the test character's Advantage cards; it has exactly three (>= 3 now).
+  BN-COMBAT-I-PHONE    read the stance tiles in Manage, where they are hidden; they are a Play control (the check now switches to Play).
+  BN-UNCHANGED-PHONE   expected Dark Paragon's "Use Control"; Control has no Use button (the check now reads its i's name).
+  BN-BOOK-PHONE        called CL11.show, which does not exist; the screen opens with CL11.open('library').
+  BN-PDF-PHONE         the same; now saved with #btnSave and opened with CL11.open('characters').
+Every word and spoken name the run read was the approved one. Run 2: run-2.log.

@@ -7,3 +7,9 @@ The same owned fragment installs the `beforeprint` and `afterprint` handlers. Th
 Hard dependencies: Characters List (CL11) for selection, save/load and cancellation; Printed Sheet Ring Layers (PRINTRINGS) for readable print output. Export is not installed if either dependency is off or absent. Remove Export first before surgically removing either dependency. Skill Traits is independent and must survive this removal.
 
 The conditional test-only menu expectation may stay: it retains the old exact assertion when this release is absent. Its original is preserved under originals/. Never restore whole shared source files.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) wraps `PDF111.decorate` and renames the menu item "Export to PDF" to "Export PDF" after it is added. Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `PDF111` and `pdf111-export` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/pdf-harness.js` follows B18: while `BN15` is on the seam, `PDF-MENU-ORDER` expects "Export PDF". It keeps its ids and count, and with B18 removed every line runs as before.

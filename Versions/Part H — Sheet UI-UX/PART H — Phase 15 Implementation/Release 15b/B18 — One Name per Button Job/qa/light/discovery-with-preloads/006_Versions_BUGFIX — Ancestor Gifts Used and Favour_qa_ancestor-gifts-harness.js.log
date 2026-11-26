@@ -1,0 +1,13 @@
+PASS AG-SETUP
+PASS AG-READY
+FAIL AG-USED-LABEL actual=[true,"Used this session. It is ready again after Reset on the Ancestor card (Clan & School)."] expected=[true,"Used this session. It is ready again after Reset session on the Ancestor card (Clan & School)."]
+PASS AG-USED-DISABLED
+PASS AG-USED-NO-TOGGLE
+PASS AG-RESET
+PASS AG-PAID-HERE
+PASS AG-LOGIC
+PASS AG-EDIT-SHOWN
+PASS AG-EDIT-SETS
+PASS AG-PLAY-HIDDEN
+PASS AG-NO-ERRORS
+11/12 checks passed

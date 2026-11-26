@@ -61,8 +61,16 @@ async function open(browser, opts, mode) {
 }
 // A player's tap (phone) or click (laptop) on a card's − or +, or on Undo.
 const press = async (page, phone, label) => { const b = page.getByRole('button', {name: label, exact: true}); if (phone) await b.tap(); else await b.click(); };
-const plus = (page, phone, title = 'Honour') => press(page, phone, 'Add ' + title + ' points');
-const minus = (page, phone, title = 'Honour') => press(page, phone, 'Subtract ' + title + ' points');
+// Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam the card's − and
+// + are heard "Decrease … points" and "Increase … points". Read once per page, so a quick burst of taps is not slowed.
+// Same ids and count; with B18 removed every line runs as before.
+const VERBS = new WeakMap();
+async function verbs(page) {
+  if (!VERBS.has(page)) VERBS.set(page, (await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed))) ? ['Increase', 'Decrease'] : ['Add', 'Subtract']);
+  return VERBS.get(page);
+}
+const plus = async (page, phone, title = 'Honour') => press(page, phone, (await verbs(page))[0] + ' ' + title + ' points');
+const minus = async (page, phone, title = 'Honour') => press(page, phone, (await verbs(page))[1] + ' ' + title + ' points');
 const undo = async (page, phone) => { const b = page.locator('#cp7-undo'); if (phone) await b.tap(); else await b.click(); await settle(page); };
 const look = page => page.evaluate(() => ({honor: window.QTH.read('honor'), notice: window.QTH.notice(), undo: window.QTH.undoShown()}));
 const fresh = async (page, seeds) => { await page.evaluate(s => { window.QTH.fresh(); s.forEach(x => window.QTH.seed(...x)); }, seeds); await settle(page); };

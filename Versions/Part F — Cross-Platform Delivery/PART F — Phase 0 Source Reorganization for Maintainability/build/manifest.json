@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "1f002be964b12ee91b7ed484b949946a859d84b84a7a7756bf7d9ed1841b5819",
+  "expect_sha256": "2be73c43bd748bc7135f1a2d24c9b4cb17ad43dab760c3310d7fbb2f90d7faea",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -199,6 +199,7 @@
     { "file": "src/css/1152-kharmic-tie-row.css", "note": "PART H PHASE 15.2.5 - Release 15b B17, Kharmic Tie's one row and its window's table" },
     { "file": "src/css/1153-lead-an-ally.css", "note": "PART H PHASE 15.2.7 - Release 15b B03, the amount beside Leadership's and Quick's buttons" },
     { "file": "src/css/1154-check-button-names.css", "note": "PART H PHASE 15.2.6 - Release 15b B01 round 2, Lord Moon's Curse's resist button at the check buttons' size" },
+    { "file": "src/css/1155-button-names.css", "note": "PART H PHASE 15.2.10 - Release 15b B18, the Combat tab's i's drawn as the sheet's ring i" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -556,6 +557,7 @@
     { "file": "src/sheet/209.9999999999999999998-feat-lead-an-ally.js", "note": "PART H PHASE 15.2.7 - Release 15b B03, Leadership reads Lead an ally and Quick reads Use, each with its amount beside it" },
     { "file": "src/sheet/209.9999999999999999999-feat-remain-in-control.js", "note": "PART H PHASE 15.2.8 - Release 15b B05, Touch of the Void's and Lord Moon's Curse's success lines say You remain in control" },
     { "file": "src/sheet/209.99999999999999999991-feat-picker-traits.js", "note": "PART H PHASE 15.2.9 - Release 15b B09, the Skills picker's Traits read from the list as it stands after every layer" },
+    { "file": "src/sheet/209.99999999999999999992-feat-button-names.js", "note": "PART H PHASE 15.2.10 - Release 15b B18, one name per button job: the words and spoken names the owner approved" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

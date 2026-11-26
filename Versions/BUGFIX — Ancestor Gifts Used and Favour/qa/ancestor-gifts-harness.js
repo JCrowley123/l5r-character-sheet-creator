@@ -1,5 +1,7 @@
 'use strict';
 // Ancestor Gifts Used and Favour (owner ruling R25, 23 October 2026). node ancestor-gifts-harness.js <sheet.html>
+// AG-USED-LABEL follows Release 15b B18 (declared in both ROLLBACKs): while B18 is on the seam the note says "after Reset"
+// (B18's one word for the Ancestor card's button); otherwise "after Reset session". Same id and count.
 const {chromium}=require('playwright'),{pathToFileURL}=require('url'),path=require('path');
 const TOTAL=12,results=[];
 function check(id,got,want){if(results.some(r=>r.id===id))throw Error('Duplicate check '+id);const ok=JSON.stringify(got)===JSON.stringify(want);results.push({id,ok});console.log((ok?'PASS ':'FAIL ')+id+(ok?'':' actual='+String(JSON.stringify(got)).slice(0,400)+' expected='+String(JSON.stringify(want)).slice(0,300)));}
@@ -28,10 +30,10 @@ false
 ],
 [
 "AG-USED-LABEL",
-"if(!T.AG7||!T.AG7.enabled())return null;T.resetToBaseline();T.MODES12.set('management');$('f_clan').value='Crab';T.recalcAll();const chosen=await T.ANC48.choose('Kuni');T.recalcAll();await sleep(20);T.ANC48.useSession();const ctx=T.makeRollContext(T.ROLL_KINDS.SPELL,{spellName:'Probe'});T.RD4515.start(ctx);const o=()=>T.RD4515.offered(ctx).find(x=>x.key==='ancestors:kuni-cast');return [o().label.endsWith(' — used this session'),o().note];",
+"if(!T.AG7||!T.AG7.enabled())return null;T.resetToBaseline();T.MODES12.set('management');$('f_clan').value='Crab';T.recalcAll();const chosen=await T.ANC48.choose('Kuni');T.recalcAll();await sleep(20);T.ANC48.useSession();const ctx=T.makeRollContext(T.ROLL_KINDS.SPELL,{spellName:'Probe'});T.RD4515.start(ctx);const o=()=>T.RD4515.offered(ctx).find(x=>x.key==='ancestors:kuni-cast');return [o().label.endsWith(' — used this session'),o().note===(T.BN15&&T.BN15.installed?'Used this session. It is ready again after Reset on the Ancestor card (Clan & School).':'Used this session. It is ready again after Reset session on the Ancestor card (Clan & School).')];",
 [
 true,
-"Used this session. It is ready again after Reset session on the Ancestor card (Clan & School)."
+true
 ]
 ],
 [

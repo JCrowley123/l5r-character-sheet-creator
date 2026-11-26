@@ -373,6 +373,9 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999999999999-feat-remain-in-control.js"),
     Release("PART H — Phase 15 Implementation/Release 15b/B09 — Skill Picker Traits from the Final List",
             fragment="src/sheet/209.99999999999999999991-feat-picker-traits.js"),
+    # Release 15b, B18: one name per button job.
+    Release("PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job",
+            fragment="src/sheet/209.99999999999999999992-feat-button-names.js"),
 )
 
 

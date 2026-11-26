@@ -1,0 +1,62 @@
+PASS DS-SEAM
+PASS DS-REGISTRY-STILL-SEVEN
+PASS DS-CATALOGUE
+PASS DS-TICK-PROVIDER-REGISTERED
+PASS DS-CORE-UNARMED-IS-0K1-PLUS-STRENGTH
+PASS DS-HANDS-OF-STONE-UNARMED
+PASS DS-HANDS-OF-STONE-NOT-WEAPONS
+PASS DS-LARGE-LARGE-MELEE
+PASS DS-LARGE-NOT-MEDIUM-RANGED-UNARMED
+PASS DS-SMALL-MELEE
+PASS DS-SMALL-NOT-RANGED
+PASS DS-LARGE-AND-SMALL-NEITHER
+PASS DS-LARGE-AND-SMALL-ROWS-SAY
+PASS DS-SMALL-NEVER-KEEPS-MORE-THAN-ROLLED
+PASS DS-DAMAGE-ROLL-USES-THE-DICE
+PASS DS-DAMAGE-ROLL-NAMES-THE-ENTRY
+PASS DS-DAMAGE-NOT-A-ROLL-MODIFIER
+PASS DS-LARGE-GREYED-WITH-SMALL
+PASS DS-SMALL-GREYED-WITH-LARGE
+PASS DS-NEITHER-GREYED-ALONE
+FAIL DS-GREAT-DESTINY-ROW actual={"buttons":[["Use",false],["Reset",false]],"switches":[],"state":"Available this session.","notes":[]} expected={"buttons":[["Use",false],["Reset session",false]],"switches":[],"state":"Available this session.","notes":[]}
+PASS DS-GREAT-DESTINY-ASKS-FIRST
+PASS DS-GREAT-DESTINY-ONE-WOUND-FROM-DEATH
+FAIL DS-GREAT-DESTINY-USED actual={"buttons":[["Use",true],["Reset",false]],"switches":[],"state":"Used this session.","notes":[]} expected={"buttons":[["Use",true],["Reset session",false]],"switches":[],"state":"Used this session.","notes":[]}
+FAIL DS-GREAT-DESTINY-ONCE-A-SESSION actual=["Great Destiny is already used this session. Reset to use it again.",0] expected=["Great Destiny is already used this session. Reset session to use it again.",0]
+PASS DS-GREAT-DESTINY-USE-SAVED
+FAIL DS-DESTINY-EXCEPTION actual="page.evaluate: Error: No Reset session button on Great Destiny\n    at eval (eval at evaluate (:311:30), <anonymous>:4:19)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at press (C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:65:14)\n    at C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:188:15\n    at async section (C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:25:9)\n    at async main (C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:166:5)" expected="no exception"
+PASS DS-HAUNTED-CONTENT-NOTHING
+PASS DS-HAUNTED-ANGRY-OFFERS
+PASS DS-HAUNTED-NOT-DAMAGE
+PASS DS-HAUNTED-UNTICKED-BY-DEFAULT
+PASS DS-HAUNTED-UNTICKED-NOT-SPENT
+PASS DS-HAUNTED-TICKED-POOL
+PASS DS-HAUNTED-ROLL
+PASS DS-HAUNTED-SPENT
+PASS DS-HAUNTED-SAVED
+FAIL DS-HAUNTED-EXCEPTION actual="page.evaluate: Error: No Reset session button on Haunted\n    at eval (eval at evaluate (:311:30), <anonymous>:4:19)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at press (C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:65:14)\n    at C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:228:13\n    at async section (C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:25:9)\n    at async main (C:\\Users\\jcrow\\l5r-character-sheet-creator\\.claude\\worktrees\\happy-fermi-d06ead\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js:200:5)" expected="no exception"
+PASS DS-ENLIGHTENED-VOID-XP
+PASS DS-ENLIGHTENED-NOTHING-BOUGHT
+PASS DS-OBTUSE-CORE
+PASS DS-OBTUSE-HIGH-DOUBLED
+PASS DS-OBTUSE-BREAKDOWN-AGREES
+PASS DS-OBTUSE-EMPHASIS-NOT-DOUBLED
+PASS DS-OBTUSE-ONLY-PAID-RANKS
+PASS DS-BETROTHAL-SOCIAL-POSITION
+PASS DS-BETROTHAL-STABLE-OVER-RECALCS
+PASS DS-BETROTHAL-ROUND-TRIP
+PASS DS-BETROTHAL-GONE-PRICE-BACK
+PASS DS-BETROTHAL-NEVER-BELOW-ONE
+PASS DS-BETROTHAL-TIE-CORE-PRICE
+PASS DS-BETROTHAL-TIE-NEEDS-SPOUSE
+PASS DS-BETROTHAL-NOT-OTHER-ADVANTAGES
+PASS DS-ROW-NOTES
+PASS DS-ROW-BETROTHAL
+PASS DS-PLAY-MODE
+PASS DS-ROW-STYLED
+PASS DS-WRONG-LIST-NOTHING
+PASS DS-DUPLICATE-ONCE
+PASS DS-ROW-LAYOUT-320
+PASS DS-NO-PAGE-ERRORS
+
+55/60 checks passed

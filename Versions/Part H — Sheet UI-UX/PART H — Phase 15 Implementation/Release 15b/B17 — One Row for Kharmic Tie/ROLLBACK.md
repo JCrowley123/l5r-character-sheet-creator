@@ -54,3 +54,9 @@ With nothing later present, the rebuild is exactly B14 on B04: 17,741,065 bytes,
 - **A14, B04 and B14:** none either way. B14 can be removed with B17 kept, and the rebuild verifies.
 - **B18 (One Name per Button Job):** B18 decides "Reset session"'s word for every card, this one included. B17 keeps the trunk's word until then.
 - **Nothing depends on B17.** No later unit may call `KT15` or read the classes above without declaring it here first.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) wraps `KT15.show` and, after the window is drawn, changes its line "Reset session gives back all N …" to "Reset gives back all N …" (`.kt15-rule`). On the row, B18 rewrites the button this unit kept as "Reset session": it reads "Reset", heard "Reset Kharmic Tie for a new session". This unit's "Change Kharmic Tie: person or Rank" is kept. Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `KT15` and `kt15-rule` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/kharmic-row-harness.js` follows B18: while `BN15` is on the seam, Reset reads "Reset" and is heard "Reset Kharmic Tie for a new session", and the window's line says "Reset gives back all 3" (`KT-ONE-ROW-MANAGE-PHONE`, `KT-PLAY-ONE-LINE-PHONE`, `KT-WINDOW-*`, `KT-RESET-STILL-WORKS-PHONE`, `KT-ONE-LINE-MANAGE-DESKTOP`). It keeps its ids and count, and with B18 removed every line runs as before.

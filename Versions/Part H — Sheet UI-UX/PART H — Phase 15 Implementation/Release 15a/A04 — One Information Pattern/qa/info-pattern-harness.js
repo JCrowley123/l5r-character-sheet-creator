@@ -42,6 +42,9 @@ function helpers() {
   return {shown, ring, reach, page, entry, nested};
 }
 
+// Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam, the moved i is heard "Wealthy information".
+// Same ids and count; with B18 removed every line runs as before.
+const b18 = page => page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
 async function open(browser, opts, data) {
   const context = await browser.newContext(opts);
   await context.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//, route => route.abort('blockedbyclient'));
@@ -170,7 +173,7 @@ const closeOverlays = page => page.evaluate(() => { for (const id of ['stanceInf
         await row.locator('.adv-config-btn').click(); await settle(page);
         const picker = await page.evaluate(() => getComputedStyle(document.getElementById('advConfigModalOverlay')).display);
         await closeOverlays(page); await settle(page);
-        return [wealthy.isInfo && wealthy.label === 'Explain: Wealthy' && wealthy.hostText === 'Choose…' && wealthy.reach.every(Boolean) && info.overlay !== 'none' &&
+        return [wealthy.isInfo && wealthy.label === ((await b18(page)) ? 'Wealthy information' : 'Explain: Wealthy') && wealthy.hostText === 'Choose…' && wealthy.reach.every(Boolean) && info.overlay !== 'none' &&
           info.body === wealthy.title && info.picker === 'none' && picker !== 'none', {wealthy, info, picker}];
       });
       if (device === 'phone') {

@@ -970,7 +970,10 @@ async function main() {
     await scenario('SESSION', ['SEPPUN-LINE', 'USE-NOW-ASKS', 'USE-NOW-MARKS', 'USE-NOW-GONE', 'RESET', 'IONGI-USE-NOW-ROUND', 'QUICK-ACCESS-LISTS', 'NO-LINE-FOR-OTHERS'], async check => {
       await setup(page, { clan: 'Imperial', voids: 2 });
       await pick(page, 'Seppun');
-      check('SEPPUN-LINE', (await card(page)).session, 'Seppun’s free Void Point: ready this session (1/1)Use it nowReset session');
+      // Follows Release 15b B18 (declared in both ROLLBACKs): while B18 is on the seam the card's buttons read "Use" and
+      // "Reset". Same id and count; with B18 removed the line runs as before.
+      const b18 = await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
+      check('SEPPUN-LINE', (await card(page)).session, 'Seppun’s free Void Point: ready this session (1/1)' + (b18 ? 'UseReset' : 'Use it nowReset session'));
       const message = await press(page, 'anc48UseNow', 'ok');
       check('USE-NOW-ASKS', /Apply its effect yourself/.test(message));
       check('USE-NOW-MARKS', [(await state(page)).sessionUsed, await voids(page)], [true, 2]);

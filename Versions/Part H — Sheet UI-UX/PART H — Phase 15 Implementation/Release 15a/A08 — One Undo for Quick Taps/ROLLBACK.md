@@ -35,3 +35,9 @@ With nothing later present, the rebuild is exactly AE3 (the automatic-entries gr
 - **The Characters list (`CL11`) — soft.** Only for asking for an autosave after a merge.
 - **A09 (phone text entry and repeated taps) — none.** A09 makes − and + answer a quick second tap on a phone; each such tap is a tap here and joins the group. Without A09 a quick second tap may be taken by the phone instead, and nothing reaches the card.
 - **Nothing depends on this unit.** A12, the next unit of the group, does not touch these cards.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit names this release's buttons another way.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) renames the Honour, Glory, Status and Taint cards' − and + to "Decrease … points" and "Increase … points". This unit tells those eight from every other control by their `aria-label` (`TAP`), so B18 leaves the `aria-label` as it is and gives the new spoken name through `aria-labelledby`, which a screen reader reads first. Quick taps still make one Undo with B18 present (B18's `BN-QUICK-TAPS-ONE-UNDO-PHONE`, and this unit's own harness). If this unit ever reads the spoken name instead of the `aria-label`, it must accept both sets of words. B18 names nothing of this unit, so this unit's remover does not refuse while B18 is present.
+
+**Declared fixture correction.** `qa/quick-tap-undo-harness.js` follows B18: while `BN15` is on the seam, `plus` and `minus` press the cards' − and + by their new spoken names, "Increase … points" and "Decrease … points" (read once per page, so a burst of taps is not slowed). It keeps its ids and count, and with B18 removed every line runs as before.

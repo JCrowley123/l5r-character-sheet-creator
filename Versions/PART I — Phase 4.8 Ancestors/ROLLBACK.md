@@ -142,3 +142,9 @@ grid is never the screen's first; the Review line follows School): 43/43 with an
 ## Release 15b B04 — one Armor TN breakdown (20 November 2026)
 
 **A later unit now reads this release.** Release 15b B04 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B04 — One Armor TN Breakdown/`) calls `ancestorArmorTNBonus` (guarded) to name Shiba's gift in its Armor TN breakdown. This release's remover matches `ancestorArmorTNBonus` as its surface, so it refuses while B04 is present: **remove B04 first**; the removal chain does this in order.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) wraps `ANC48.sessionLine` and names the card's buttons as they are drawn ("Use it now" reads "Use", heard "Use {gift}"; "Reset session" reads "Reset", heard "Reset {Ancestor}’s gift for a new session"), names `#anc48Info` "Ancestors information", reads `ANC48.SESSION_NAME` and `ANC48.active()`, changes the two gift notes in `ANC48.LIBRARY` that say press “Use it now” to press “Use”, and passes "Use" for the question's "Use it now". Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `ANC48` and the `anc48` ids in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/ancestors-harness.js` follows B18: while `BN15` is on the seam, `SEPPUN-LINE` expects the card's line to end "UseReset". It keeps its ids and count, and with B18 removed every line runs as before.

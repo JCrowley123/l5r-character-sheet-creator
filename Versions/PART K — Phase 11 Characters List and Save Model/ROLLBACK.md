@@ -141,3 +141,7 @@ Phase 11.1 also makes `CL-MENU-OPENS` conditional in this phase's harness: the e
 ## Release 8b / SC8 dependency (1 November 2026)
 
 The independently removable layer in `Versions/PART K — Phase 11.2.5 School Choices from the Character Check/` uses this phase to complete starting School choices from Manage. Remove SC8 before removing this prerequisite, or explicitly sever its adapter first. SC8 has its own fragment, switch, seam, remover and tests; removing SC8 alone preserves this phase unchanged.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**Declared fixture correction.** `qa/characters-harness.js` follows B18: while `BN15` is on the seam, `CL-MENU-OPENS` expects the PDF item to read "Export PDF" (the item is Phase 11.1's; B18 renames it). B18 names nothing of this release's. It keeps its ids and count, and with B18 removed every line runs as before.

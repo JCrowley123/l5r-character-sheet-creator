@@ -57,6 +57,10 @@ async function main() {
     page.on('pageerror', e => errors.push(String(e)));
     await page.goto(pathToFileURL(path.resolve(file)).href);
     await page.waitForFunction(() => window.__L5R_TEST__ && typeof window.__L5R_TEST__.recalcAll === 'function');
+    // Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam, each i is
+    // heard "{heading} information" instead of "Explain: {heading}". Same ids and count; with B18 removed every line runs
+    // as before.
+    const B18 = await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
 
     const registryBefore = await page.evaluate(() =>
       window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.map(m => [m.id, m.priority]));
@@ -83,11 +87,11 @@ async function main() {
       // The regression guard: existing suites assert on exact row textContent.
       const glyph = await page.evaluate(() => {
         const btn = document.querySelector('#advList .entry .adv-config-info');
-        return btn ? { text: btn.textContent, aria: (btn.getAttribute('aria-label') || '').slice(0, 9) } : null;
+        return btn ? { text: btn.textContent, aria: btn.getAttribute('aria-label') || '' } : null;
       });
       equal('UX454-INFO-03', 'The button contributes NOTHING to textContent (glyph is CSS)',
         glyph && glyph.text, '');
-      equal('UX454-INFO-04', 'It is still announced to assistive tech', glyph && glyph.aria, 'Explain: ');
+      equal('UX454-INFO-04', 'It is still announced to assistive tech', glyph && (B18 ? / information$/.test(glyph.aria) && glyph.aria.length > 12 : glyph.aria.slice(0, 9) === 'Explain: '), true);
 
       // A short control label is not an explanation and must not collect an icon.
       const shortOnes = await page.evaluate(() => {
@@ -182,7 +186,7 @@ async function main() {
       equal('UX454-SUPERSEDE-02', '…but it is hidden wherever this phase added the equivalent button',
         state.map(s => s.disclosureHidden), state.map(s => s.hasButton));
       equal('UX454-SUPERSEDE-03', 'Every heading is exactly the option label, nothing appended from the hidden disclosure',
-        state.map(s => s.ariaLabel), state.map(s => 'Explain: ' + s.label));
+        state.map(s => s.ariaLabel), state.map(s => B18 ? s.label + ' information' : 'Explain: ' + s.label));
       record('UX454-SUPERSEDE-04', 'No heading exceeds a clean short label (the original bug produced 60+ chars)',
         state.every(s => s.ariaLabel.length < 40), JSON.stringify(state.map(s => s.ariaLabel.length)));
     });

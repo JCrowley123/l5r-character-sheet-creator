@@ -224,6 +224,10 @@ async function main() {
   await page.waitForFunction(() => !!window.__L5R_TEST__, null, { timeout: 30000 });
   // Release 15b B17 present: the Kharmic Tie badge names the person and the Rank (declared above).
   const ONE_ROW = await page.evaluate(() => !!(window.__L5R_TEST__.KT15 && window.__L5R_TEST__.KT15.installed && window.__L5R_TEST__.KHARMIC_TIE_ROW_ENABLED));
+  // Release 15b B18 present (declared in both ROLLBACKs): "Reset session" reads "Reset" and "Spend Luck (n/m)" reads
+  // "Reroll with Luck (n/m)". Same checks and count; with B18 removed every line runs as before.
+  const B18 = await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
+  const RESET_WORDS = B18 ? 'Reset' : 'Reset session', LUCK_WORDS = B18 ? 'Reroll with Luck' : 'Spend Luck';
 
   const present = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
@@ -326,7 +330,7 @@ async function main() {
     kharmic.targetModal.confirm === 'Next' && kharmic.rankModal.visible && kharmic.rankModal.confirm === 'Confirm');
   const kharmicUI = await entrySnapshot(page);
   truth('Kharmic Tie displays the target badge and a reset-session control',
-    kharmicUI.badges.includes(ONE_ROW ? 'Aiko · Rank 3' : 'Target: Aiko') && kharmicUI.rowText.includes('Reset session'));
+    kharmicUI.badges.includes(ONE_ROW ? 'Aiko · Rank 3' : 'Target: Aiko') && kharmicUI.rowText.includes(RESET_WORDS));
   same('Kharmic Tie starts with one persistent use per selected Rank and charges its Rank',
     { cost: kharmicUI.cost, target: kharmicUI.config.target, rank: kharmicUI.config.rank, remaining: kharmicUI.config.remaining,
       hasSourceId: typeof kharmicUI.config.sourceId === 'string' && kharmicUI.config.sourceId.startsWith('kharmic-') },
@@ -351,7 +355,7 @@ async function main() {
   truth('Luck uses the existing rank picker', luckConfig.ok && luckConfig.state.visible && luckConfig.state.text.includes('Rank 3'));
   const luckUI = await entrySnapshot(page);
   truth('Luck paints both per-entry and sidebar pip pools',
-    luckUI.rowText.includes('Reset session') && (await page.evaluate(() => document.getElementById('advConfigSessionResources').textContent)).includes('Luck'));
+    luckUI.rowText.includes(RESET_WORDS) && (await page.evaluate(() => document.getElementById('advConfigSessionResources').textContent)).includes('Luck'));
   same('Luck starts with Rank pips and applies its 9 XP cost',
     { cost: luckUI.cost, rank: luckUI.config.rank, remaining: luckUI.config.remaining },
     { cost: '9', rank: 3, remaining: 3 });
@@ -472,7 +476,7 @@ async function main() {
       return { text: button && button.textContent, disabled: button && button.disabled,
         total: document.getElementById('rollTotalDisplay').textContent,
         dice: document.querySelectorAll('#rollDiceRow .roll-die').length };
-    }), { text: 'Spend Luck (2/2)', disabled: false, total: '2', dice: 3 });
+    }), { text: LUCK_WORDS + ' (2/2)', disabled: false, total: '2', dice: 3 });
   await page.evaluate(() => document.querySelector('.adv-config-spend-luck').click());
   await page.waitForFunction(() => document.getElementById('rollTotalDisplay').textContent === '18');
   same('Luck rerolls the same complete 3k2 pool and keeps a higher reroll',

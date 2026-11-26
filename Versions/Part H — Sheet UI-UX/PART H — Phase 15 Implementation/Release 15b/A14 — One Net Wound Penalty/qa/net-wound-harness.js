@@ -59,6 +59,9 @@ function install() {
   H.preview = () => Array.from(document.querySelectorAll('#rollPreviewBody .rp-mod')).map(r => r.textContent.replace(/\s+/g, ' ').trim());
   window.WPH = H;
 }
+// Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam, the i is heard "Wound penalty information".
+// Same ids and count; with B18 removed every line runs as before.
+const b18 = page => page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
 async function open(browser, opts) {
   const context = await browser.newContext(opts);
   await context.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//, route => route.abort('blockedbyclient'));
@@ -109,7 +112,7 @@ const previewOk = rows => same(woundRows(rows), ['Wound Penalty-5 to total — N
       await check('WP-LINE-NET-PHONE', async () => [line.text === LINE, line.text]);
       await check('WP-LEVEL-NAMES-NET-PHONE', async () => { const l = await page.evaluate(() => window.WPH.levels()); return [same(l, LEVELS), l]; });
       await check('WP-LINE-I-PHONE', async () => { const b = line.button;
-        return [!!b && b.shown && b.own === '' && b.name === 'Wound penalty: how it is worked out' && line.docScroll === line.vw &&
+        return [!!b && b.shown && b.own === '' && b.name === ((await b18(page)) ? 'Wound penalty information' : 'Wound penalty: how it is worked out') && line.docScroll === line.vw &&
           b.box.left >= line.card.left && b.box.right <= line.card.right && b.box.top >= line.box.top - 2 && b.box.bottom <= line.box.bottom + 2, line]; });
       await check('WP-WINDOW-BREAKDOWN-PHONE', async () => {
         await press(page, P, lineInfo(page));
@@ -132,7 +135,7 @@ const previewOk = rows => same(woundRows(rows), ['Wound Penalty-5 to total — N
         const w = await page.evaluate(() => window.WPH.window());
         await page.evaluate(() => window.WPH.close()); await settle(page);
         if (await page.evaluate(() => !document.getElementById('quickAccessPanel').hidden)) await press(page, P, page.locator('#quickAccessToggleBtn'));
-        return [qa.text === LINE && !!qa.button && qa.button.shown && qa.button.name === 'Wound penalty: how it is worked out' &&
+        return [qa.text === LINE && !!qa.button && qa.button.shown && qa.button.name === ((await b18(page)) ? 'Wound penalty information' : 'Wound penalty: how it is worked out') &&
           w.open && w.title === 'Nicked' && same(w.rows, NICKED_ROWS), {qa, w}];
       });
       const rows = await defensePreview(page, P);

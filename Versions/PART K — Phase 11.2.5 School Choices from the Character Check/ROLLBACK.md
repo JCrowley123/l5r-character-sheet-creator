@@ -18,3 +18,7 @@ Release 8c and Phase 15 do not exist as dependencies of this layer. Any later de
 
 - **Release 15a, 8b.1-UI-01 (Starting-Spell Review and Its Actions)** rebinds `SC8.render` by property and reads this layer's dialog (`#sc8Dialog`, `#sc8Body`, `#sc8Done`, `#sc8Message`). Guarded: with this layer absent it installs nothing. It names `SC8`, so remove that unit before this layer; the removal chain does so in order.
 - **Release 15a, 8b.1-UI-02 (Readable Spell Name and School Tag)** reads this layer's `.sc8-source` label on spell rows in the Techniques list and does not draw it there; it draws its own short tag from the label's text. It calls nothing here. The label stays in the row with its text, and the labels on Skills and Equipment are untouched.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) wraps `SC8.render` to rename any "Choose again" it draws to "Change". Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `SC8` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.

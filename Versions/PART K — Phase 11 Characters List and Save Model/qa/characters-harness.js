@@ -345,10 +345,12 @@ async function main() {
       check('CL-ROWS-NEWEST-FIRST', await page.evaluate(() => [...document.querySelectorAll('.cl11-row')].map(r => r.dataset.id)), [b, a]);
 
       await page.click(row(a) + ' .cl11-more');
+      // CL-MENU-OPENS follows Release 15b B18 (declared in both ROLLBACKs): while B18 is on the seam the PDF item reads
+      // "Export PDF". Same id and count.
       check('CL-MENU-OPENS', await page.evaluate((i) => [!document.querySelector(`.cl11-row[data-id="${i}"] .cl11-menu`).hidden,
         document.querySelector(`.cl11-row[data-id="${i}"] .cl11-more`).getAttribute('aria-expanded'),
         [...document.querySelectorAll(`.cl11-row[data-id="${i}"] .cl11-item`)].map(x => x.textContent)], a),
-        [true, 'true', ((await page.evaluate(() => !!window.__L5R_TEST__.PDF111 && window.__L5R_TEST__.PDF111.enabled())) ? ['Export JSON', 'Export to PDF', 'Save As a copy'] : ['Export JSON', 'Save As a copy'])
+        [true, 'true', ((await page.evaluate(() => !!window.__L5R_TEST__.PDF111 && window.__L5R_TEST__.PDF111.enabled())) ? ['Export JSON', (await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed))) ? 'Export PDF' : 'Export to PDF', 'Save As a copy'] : ['Export JSON', 'Save As a copy'])
           .concat(await page.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['History', 'Delete'] : ['Delete'])]);
       await page.keyboard.press('Escape');
       check('CL-ESCAPE-CLOSES-MENU-FIRST', [await page.evaluate((i) => document.querySelector(`.cl11-row[data-id="${i}"] .cl11-menu`).hidden, a), await viewOpen(page)], [true, true]);

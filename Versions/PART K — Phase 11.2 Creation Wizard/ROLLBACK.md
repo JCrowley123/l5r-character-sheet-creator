@@ -100,3 +100,7 @@ its `originals/`). The removal method for this release itself is unchanged.
 ## Release 8b / SC8 dependency (1 November 2026)
 
 The independently removable layer in `Versions/PART K — Phase 11.2.5 School Choices from the Character Check/` uses this phase to complete starting School choices from Manage. Remove SC8 before removing this prerequisite, or explicitly sever its adapter first. SC8 has its own fragment, switch, seam, remover and tests; removing SC8 alone preserves this phase unchanged.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) wraps `CW112.render` and renames each "Choose again" (Phase 11.2.1's and 11.2.2's) to "Change" after the step is drawn. Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `CW112` and `cw1121-undo` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.

@@ -33,3 +33,7 @@ With nothing later present, the rebuild is exactly G3 as live (8b.1-UI-03): 17,6
 - **The trunk.** The editable boxes and buttons themselves, wherever they are drawn. The rules name no other layer's class. The five Ring boxes are left alone by their ids (`ring_*`), which the trunk owns.
 - **Phase 15 units — none either way.** No other unit names this one, and this one names none.
 - **Nothing depends on this unit.**
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**Declared fixture correction.** `qa/phone-text-entry-harness.js` follows B18: while `BN15` is on the seam, `TX-STEPPER-TWICE-PHONE` presses Honour's + by its new spoken name, "Increase Honour points". It keeps its ids and count, and with B18 removed every line runs as before.

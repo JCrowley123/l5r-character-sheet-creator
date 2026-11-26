@@ -1,0 +1,48 @@
+/* PART H PHASE 15.2.10 — Release 15b, B18: one name per button job (owner, 25 November 2026, card "combati",
+   approved as shown). The Combat tab's ⓘ (Armor & TN, Weapons, each stance) and 👁 (each weapon) are drawn as the
+   sheet's ring i: a 28 px ring in the ink colour with an upright serif i, and a transparent ::before reaching 8 px
+   past it. The glyph's own text is hidden (font-size 0), not removed, so no row's textContent changes; the spoken name
+   is set by this unit's script, which also marks each button (.bn15-i) and the page (body.bn15-on). The selectors
+   carry html, the body class and a :not() so they outrank the carousel's touch-size rule without !important. Screen
+   only: print is unchanged. */
+@media screen {
+  html body.bn15-on .bn15-i:not(.bn15-plain) {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    width: 28px;
+    min-width: 28px;
+    max-width: 28px;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    font-family: Georgia, serif;
+    font-size: 0;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  html body.bn15-on .bn15-i:not(.bn15-plain)::after {
+    content: 'i';
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  html body.bn15-on .bn15-i:not(.bn15-plain)::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+  }
+}

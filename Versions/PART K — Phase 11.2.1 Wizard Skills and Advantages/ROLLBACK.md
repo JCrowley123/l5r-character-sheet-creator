@@ -103,3 +103,7 @@ Missing Basic Schools (4.7.2) optionally wraps wizard Skill addition and free-ch
 ## Release 8b / SC8 dependency (1 November 2026)
 
 The independently removable layer in `Versions/PART K — Phase 11.2.5 School Choices from the Character Check/` uses this phase to complete starting School choices from Manage. Remove SC8 before removing this prerequisite, or explicitly sever its adapter first. SC8 has its own fragment, switch, seam, remover and tests; removing SC8 alone preserves this phase unchanged.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) renames this release's "Choose again" (`.cw1121-undo`) to "Change" after each wizard step is drawn. This release's harness finds the button by its class, so it needs no change. Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `cw1121-undo` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.

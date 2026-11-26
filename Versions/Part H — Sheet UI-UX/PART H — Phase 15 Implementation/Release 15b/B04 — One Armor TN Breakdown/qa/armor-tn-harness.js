@@ -50,6 +50,9 @@ function install() {
   H.baseNote = () => { const n = $('bl4534BaseNote'); return n ? {shown: shown(n), text: n.textContent} : null; };
   window.ATH = H;
 }
+// Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam, Quick Access's Armor TN i is heard "Armor TN information".
+// Same ids and count; with B18 removed every line runs as before.
+const b18 = page => page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed));
 async function open(browser, opts) {
   const context = await browser.newContext(opts);
   await context.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//, route => route.abort('blockedbyclient'));
@@ -103,7 +106,7 @@ const value = s => Number(String(s).replace('−', '-'));
         await press(page, P, page.locator('#quickAccessToggleBtn'));
         const i = await page.evaluate(() => window.ATH.qaInfo()), blind = await page.evaluate(() => window.ATH.qaBlindShown());
         await press(page, P, page.locator('#quickAccessToggleBtn'));
-        return [!!i && i.shown && i.own === '' && i.name === 'Armor TN: how it is worked out' && blind === false, {i, blind}];
+        return [!!i && i.shown && i.own === '' && i.name === ((await b18(page)) ? 'Armor TN information' : 'Armor TN: how it is worked out') && blind === false, {i, blind}];
       });
       await check('AT-QA-WINDOW-PHONE', async () => { const w = await qaWindow(page, P);
         return [w.open && w.title === 'Armor TN' && w.sub === '7 to be hit' && same(w.rows, BLIND_ROWS) && w.after.length === 0, w]; });

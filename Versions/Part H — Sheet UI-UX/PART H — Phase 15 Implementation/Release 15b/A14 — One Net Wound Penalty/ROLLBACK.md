@@ -47,3 +47,9 @@ The ids and the count are unchanged. The result, with A14 present and with A14 r
 - **Trunk:** `formatWoundPenalty`, `showWoundInfoModal`, `renderWounds` (which calls `renderQuickAccessPanel` by name after every render), `WOUND_LEVELS`, and the ids `woundSummaryLine`, `woundBar`, `woundInfoDesc` and `qaWoundsValue`.
 - **A04 (Release 15a), One Information Pattern:** soft. The i is a `.sk-info-btn`, which A04's ring draws. Without A04 it is the trunk's small gold ring with this unit's own letter. Nothing in this unit names A04's surface.
 - **Nothing depends on A14.** No later unit may call `WP15` or read the classes and ids above without declaring it here first.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) sets this unit's `WP15.LABEL` from "Wound penalty: how it is worked out" to "Wound penalty information" when it installs, so the i is drawn with B18's spoken name, and names any i already drawn (`wp15LineInfo`, `wp15QaInfo`) after each recalculation. Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `WP15`, `wp15LineInfo` and `wp15QaInfo` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/net-wound-harness.js` follows B18: while `BN15` is on the seam, `WP-LINE-I-PHONE` and `WP-QA-NET-AND-I-PHONE` expect the i to be heard "Wound penalty information". It keeps its ids and count, and with B18 removed every line runs as before.

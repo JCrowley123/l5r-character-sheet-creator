@@ -8,6 +8,9 @@
 // whether it is there (the seam). Real taps on a touch phone, real clicks on a laptop. Characters: the audit's dense
 // Kuni Shugenja with a Kharmic Tie at Rank 3 tied to Aiko, one use spent (2 of 3 left); and the same with a Tie at
 // Rank 5 tied to Kakita Yoshiko, all 5 left; both copied into this folder.
+// Follows Release 15b B18 (one name per button job, declared in both ROLLBACKs): while B18 is on the seam, Reset session
+// reads "Reset", is heard "Reset Kharmic Tie for a new session", and the window's line says "Reset gives back all 3".
+// Same ids and count; with B18 removed every line runs as before.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
 const pins = require('./expected-checks.json');
@@ -27,10 +30,18 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const DEVICES = {PHONE: {viewport: {width: 390, height: 844}, isMobile: true, hasTouch: true}, DESKTOP: {viewport: {width: 1440, height: 1000}}};
 const settle = page => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(r)))));
 
-const RESET = 'Reset session: all 3 Kharmic Tie uses back', CHANGE = 'Change Kharmic Tie: person or Rank', INFO = 'Kharmic Tie information';
+let RESET = 'Reset session: all 3 Kharmic Tie uses back', RESET_WORDS = 'Reset session';
+const CHANGE = 'Change Kharmic Tie: person or Rank', INFO = 'Kharmic Tie information';
 const RULE = 'Before a weapon attack roll, declare that you are fighting for or protecting Aiko: +1k1 to that roll. Once per session for each Rank. Core Rulebook p.151.';
-const HOW = 'An attack’s roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset session gives back all 3 at the start of a session.';
-const HOW_MANAGE = HOW + ' Change picks another person or Rank; the Rank sets the cost.';
+let HOW = 'An attack’s roll preview offers the Tie while a use is left; nothing is spent until you roll. Reset session gives back all 3 at the start of a session.';
+let HOW_MANAGE = HOW + ' Change picks another person or Rank; the Rank sets the cost.';
+// Release 15b B18's words, while B18 is present.
+async function followB18(page) {
+  if (!(await page.evaluate(() => !!(window.__L5R_TEST__.BN15 && window.__L5R_TEST__.BN15.installed)))) return;
+  RESET = 'Reset Kharmic Tie for a new session'; RESET_WORDS = 'Reset';
+  HOW = HOW.replace('Reset session gives back', 'Reset gives back');
+  HOW_MANAGE = HOW + ' Change picks another person or Rank; the Rank sets the cost.';
+}
 
 function install() {
   const $ = id => document.getElementById(id), H = {};
@@ -88,6 +99,7 @@ const inside = r => r.buttons.concat(r.badges).every(x => x.box.left >= r.card.l
     {
       const {context, page, errors} = await open(browser, DEVICES.PHONE);
       const P = true;
+      await followB18(page);
       await check('KT-SEAM-PHONE', async () => {
         const r = await page.evaluate(() => { const T = window.__L5R_TEST__; return {kt: !!T.KT15 && T.KT15.installed === true, on: T.KHARMIC_TIE_ROW_ENABLED}; });
         return [r.kt && r.on === true, r];
@@ -95,7 +107,7 @@ const inside = r => r.buttons.concat(r.badges).every(x => x.box.left >= r.card.l
       const manage = await page.evaluate(() => window.KTH.row());
       await check('KT-ONE-ROW-MANAGE-PHONE', async () => [same(manage.badges.map(b => [b.text, b.title]), [['Aiko · Rank 3', null]]) && manage.infos === 0 &&
         !manage.summaryShown && same(manage.buttons.map(b => b.name), [RESET, CHANGE, INFO]) && manage.buttons.every(b => b.title === null) &&
-        manage.buttons[0].text === 'Reset session' && !!manage.pips && manage.pips.text === '●●○' && manage.pips.label === '2 of 3 Kharmic Tie uses remaining', manage]);
+        manage.buttons[0].text === RESET_WORDS && !!manage.pips && manage.pips.text === '●●○' && manage.pips.label === '2 of 3 Kharmic Tie uses remaining', manage]);
       await check('KT-CHANGE-AND-I-ON-BADGE-LINE-MANAGE-PHONE', async () => { const b = manage.badges[0].box, c = manage.buttons[1].box, i = manage.buttons[2].box;
         return [near(c.mid, b.mid) && near(i.mid, b.mid) && c.right <= i.left && b.right <= c.left && inside(manage), manage]; });
       await mode(page, 'play');

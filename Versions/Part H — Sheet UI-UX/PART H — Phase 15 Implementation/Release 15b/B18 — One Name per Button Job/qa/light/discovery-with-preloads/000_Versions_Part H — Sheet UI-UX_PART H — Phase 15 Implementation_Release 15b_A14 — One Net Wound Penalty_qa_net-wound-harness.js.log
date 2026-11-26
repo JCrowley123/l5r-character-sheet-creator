@@ -1,0 +1,20 @@
+  detail WP-LINE-I-PHONE: {"text":"Nicked — TN of all rolls +5 — 12 of 38 wound points","button":{"shown":true,"name":"Wound penalty information","own":"","box":{"left":73,"right":101,"top":1439,"bottom":1467,"width":28,"height":28}},"box":{"left":23,"right":367,"top":1417,"bottom":1467,"width":344,"height":50},"card":{"left":10,"right":380,"top":172,"bottom":1588,"width":370,"height":1417},"docScroll":390,"vw":390}
+  detail WP-QA-NET-AND-I-PHONE: {"qa":{"text":"Nicked — TN of all rolls +5 — 12 of 38 wound points","button":{"shown":true,"name":"Wound penalty information"}},"w":{"open":true,"title":"Nicked","pen":"TN of all rolls +5","rows":[["Nicked","Wound Rank penalty","+3"],["Low Pain Threshold","Disadvantage, Core Rulebook p.160","+5"],["Strength of the Earth","Advantage, Core Rulebook p.154","−3"],["TN of all rolls","","+5"]],"after":["Increase the TN of all rolls made by +3 while Nicked. A character who has been nicked has suffered a mild but distracting injury."],"text":"NickedWound Rank penalty+3Low Pain ThresholdDisadvantage, Core Rulebook p.160+5Strength of the EarthAdvantage, Core Rulebook p.154−3TN of all rolls+5Increase the TN of all rolls made by +3 while Nicked. A character who has been nicked has suffered a mild but distracting injury."}}
+PASS WP-SEAM-PHONE
+PASS WP-LINE-NET-PHONE
+PASS WP-LEVEL-NAMES-NET-PHONE
+FAIL WP-LINE-I-PHONE
+PASS WP-WINDOW-BREAKDOWN-PHONE
+PASS WP-LEVEL-OWN-SUMS-PHONE
+FAIL WP-QA-NET-AND-I-PHONE
+PASS WP-PREVIEW-ONE-ROW-PHONE
+PASS WP-PENALTY-UNCHANGED-PHONE
+PASS WP-CANCELLED-EXPLAINED-PHONE
+PASS WP-NO-ENTRIES-NO-I-PHONE
+PASS WP-HEALTHY-NO-I-PHONE
+PASS WP-PRINT-HIDES-I-PHONE
+PASS WP-NO-ERRORS-PHONE
+PASS WP-LINE-AND-I-DESKTOP
+PASS WP-PREVIEW-ONE-ROW-DESKTOP
+PASS WP-NO-ERRORS-DESKTOP
+15/17 checks passed

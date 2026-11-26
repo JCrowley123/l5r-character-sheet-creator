@@ -1,0 +1,122 @@
+[
+ {
+  "k": 0,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\A14 — One Net Wound Penalty\\qa\\net-wound-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 14
+ },
+ {
+  "k": 1,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B04 — One Armor TN Breakdown\\qa\\armor-tn-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 9
+ },
+ {
+  "k": 2,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B17 — One Row for Kharmic Tie\\qa\\kharmic-row-harness.js",
+  "code": 0,
+  "passed": 13,
+  "total": 13,
+  "secs": 10
+ },
+ {
+  "k": 3,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A08 — One Undo for Quick Taps\\qa\\quick-tap-undo-harness.js",
+  "code": 0,
+  "passed": 21,
+  "total": 21,
+  "secs": 52
+ },
+ {
+  "k": 4,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A09 — Phone Text Entry and Repeated Taps\\qa\\phone-text-entry-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 25
+ },
+ {
+  "k": 5,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A04 — One Information Pattern\\qa\\info-pattern-harness.js",
+  "code": 0,
+  "passed": 35,
+  "total": 35,
+  "secs": 14
+ },
+ {
+  "k": 6,
+  "file": "Versions\\BUGFIX — Ancestor Gifts Used and Favour\\qa\\ancestor-gifts-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 2
+ },
+ {
+  "k": 7,
+  "file": "Versions\\PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-expansion-harness.js",
+  "code": 0,
+  "passed": 48,
+  "total": 48,
+  "secs": 4
+ },
+ {
+  "k": 8,
+  "file": "Versions\\PART I — Phase 4.5.4 Configuration UX Pass\\qa\\adv-config-ux-harness.js",
+  "code": 0,
+  "passed": 28,
+  "total": 28,
+  "secs": 4
+ },
+ {
+  "k": 9,
+  "file": "Versions\\PART I — Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+  "code": 0,
+  "passed": 32,
+  "total": 32,
+  "secs": 9
+ },
+ {
+  "k": 10,
+  "file": "Versions\\PART K — Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+  "code": 0,
+  "passed": 70,
+  "total": 70,
+  "secs": 89
+ },
+ {
+  "k": 11,
+  "file": "Versions\\PART I — Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+  "code": 0,
+  "passed": 349,
+  "total": 349,
+  "secs": 40
+ },
+ {
+  "k": 12,
+  "file": "Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+  "code": 0,
+  "passed": 69,
+  "total": 69,
+  "secs": 4
+ },
+ {
+  "k": 13,
+  "file": "Versions\\PART K — Phase 11.1 Export to PDF\\qa\\pdf-harness.js",
+  "code": 0,
+  "passed": 33,
+  "total": 33,
+  "secs": 3
+ },
+ {
+  "k": 14,
+  "file": "Versions\\BUGFIX — Template PDF Export\\qa\\template-pdf-harness.js",
+  "code": 0,
+  "passed": 22,
+  "total": 22,
+  "secs": 4
+ }
+]

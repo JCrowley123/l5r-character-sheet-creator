@@ -47,3 +47,7 @@ All of these are soft. Every call is guarded, so without the other layer A04's p
 - **BUGFIX — Hotei Where the Sheet Spends Void:** A04 folds `.ht7-note` behind the i. HT7's remover does not name that class, so either can be removed first. Its harness passes 16/16 with A04 present.
 - **A03:** none either way. A04 keeps `.sk-info-btn`'s element and class, which A03 places, and A03's harness passes 37/37 with A04 present. A03 can also be removed with A04 kept (`A03-ALONE-REBUILD-VERIFIES`).
 - **Nothing depends on A04.** No later unit may call `IP15` or read `ip15-on`, `ip15-folded`, `ip15-hotei-info`, `ip15-hotei-line` or `data-ip15-line` without declaring it here first.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**Declared fixture correction.** `qa/info-pattern-harness.js` follows B18: while `BN15` is on the seam, `IP-CHOOSE-PHONE` and `IP-CHOOSE-DESKTOP` expect the moved i to be heard "Wealthy information" instead of "Explain: Wealthy". B18 renames the i's this unit names ("Explain: {entry}") after this unit has named them; it names nothing of this unit, so this unit's remover does not refuse while B18 is present. It keeps its ids and count, and with B18 removed every line runs as before.

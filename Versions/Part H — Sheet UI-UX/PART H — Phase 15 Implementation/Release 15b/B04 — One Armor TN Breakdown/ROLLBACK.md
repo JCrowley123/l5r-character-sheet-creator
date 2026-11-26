@@ -51,3 +51,9 @@ B04 reads three older releases. Each of their removers matches what B04 reads as
 - **A04 (Release 15a), One Information Pattern:** soft. The i is a `.sk-info-btn`. Nothing here names A04's surface.
 - **A14:** none either way. A14 can be removed with B04 kept; the rebuild verifies.
 - **Nothing depends on B04.** No later unit may call `AT15` or read the classes and id above without declaring it here first.
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**A later unit now reads this release.** Release 15b B18 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job/`) sets this unit's `AT15.LABEL` from "Armor TN: how it is worked out" to "Armor TN information" when it installs, and names Quick Access's i (`at15QaInfo`) after each recalculation. The breakdown table's own label is unchanged. Its words and spoken names are the ones the owner approved on B18's board (25 November 2026); what this release does is unchanged. This release's remover finds `AT15` and `at15QaInfo` in B18's script, so it refuses while B18 is present: **remove B18 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/armor-tn-harness.js` follows B18: while `BN15` is on the seam, `AT-QA-I-PHONE` expects the i to be heard "Armor TN information". It keeps its ids and count, and with B18 removed every line runs as before.

@@ -1043,6 +1043,9 @@
   // PART H PHASE 15.2.9 BEGIN picker-traits-seam
   if(typeof SKP15 === 'object' && SKP15) Object.assign(window.__L5R_TEST__, {SKP15, PICKER_TRAITS_FINAL_ENABLED});
   // END SKP15 picker-traits-seam
+  // PART H PHASE 15.2.10 BEGIN button-names-seam
+  if(typeof BN15 === 'object' && BN15) Object.assign(window.__L5R_TEST__, {BN15, ONE_NAME_PER_JOB_ENABLED});
+  // END BN15 button-names-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

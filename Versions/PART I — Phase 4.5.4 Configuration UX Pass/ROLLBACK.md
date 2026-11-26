@@ -111,3 +111,7 @@ wording will simply come back. `UX454-WORD-03` is the check that would catch it.
 ## Release 15a A04.1 — each option's rule inline (7 November 2026)
 
 Release 15a A04.1 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A04.1 — One Way to Show Choices in Pickers/`), on the owner's comment 2 at G1's review, stops drawing this phase's `.adv-config-info` inside an option whose rule it shows inline (the button stays in the DOM), and appends `, .ir15-rule` to `R454.EXCLUDE_FROM_LABEL` by property, guarded, so this phase's headings stay the option's own label. A soft dependency, declared both ways. This phase's harness passes 28/28 with A04.1 present. A04.1 names `R454`, so this phase's remover may refuse while A04.1 is present: remove A04.1 first (the removal chain does so in order).
+
+## Release 15b B18 — one name per button job (26 November 2026)
+
+**Declared fixture correction.** `qa/adv-config-ux-harness.js` follows B18: while `BN15` is on the seam, each i is heard "{heading} information" instead of "Explain: {heading}" (`UX454-INFO-04`, `UX454-SUPERSEDE-03`). B18 wraps `R454.decorate` by property, after Release 15a A04's wrapper, and renames the i's it has just drawn; this release's remover does not name B18. It keeps its ids and count, and with B18 removed every line runs as before.
