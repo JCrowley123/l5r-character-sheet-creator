@@ -23,3 +23,7 @@ evidence for each change, in our own words, is in `book-evidence.json`.
 | Unicorn | Moto Vindicator [Bushi] | also labels | (none) | front line | The Great Clans p.258 |
 | Unicorn | Shinjo Bushi | main labels | cavalry, duelist | cavalry | Emerald Empire p.31 |
 | Unicorn | Shinjo Bushi | also labels | traveller | traveller, archer | Emerald Empire p.31 |
+| Spider | Goju Ninja | also labels | (none) | fast skirmisher | The Great Clans p.281 |
+| Spider | Goju Ninja | complexity | Involved | Some extra | The Great Clans p.280 |
+| Spider | The Order of the Spider Monks [Monk] | also labels | forbidden | forbidden, front line | Core Rulebook p.215 |
+| Imperial | Seppun Shugenja | also labels | battle magic | battle magic, bodyguard | Core Rulebook p.228 |

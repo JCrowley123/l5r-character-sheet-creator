@@ -583,13 +583,13 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Chuda Shugenja | Spider | Shugenja | 0.5 | forbidden power · scholar | streets and shadows | Involved | Unusual | Core Rulebook p.213 |
 | Daigotsu Bushi | Spider | Bushi | 1.5 | front line · forbidden power | battlefield, streets and shadows | Some extra | Unusual | Core Rulebook p.212 |
 | Daigotsu Courtier | Spider | Courtier | 1 | schemer · forbidden power | court, streets and shadows | Some extra | Unusual | Core Rulebook p.213 |
-| Goju Ninja | Spider | Bushi | 0 | forbidden power, stealth | streets and shadows | Involved | Unusual | The Great Clans p.280 |
+| Goju Ninja | Spider | Bushi | 0 | forbidden power, stealth · fast skirmisher | streets and shadows | Some extra | Unusual | The Great Clans p.280 |
 | Ninube Shugenja | Spider | Shugenja (Air) | 0 | forbidden power, stealth | streets and shadows | Involved | Unusual | The Great Clans p.281 |
-| The Order of the Spider Monks [Monk] | Spider | Monk | 1.5 | mystic, unarmed · forbidden power | the road, streets and shadows | Involved | Unusual | Core Rulebook p.215 |
+| The Order of the Spider Monks [Monk] | Spider | Monk | 1.5 | mystic, unarmed · forbidden power, front line | the road, streets and shadows | Involved | Unusual | Core Rulebook p.215 |
 | Miya Herald [Courtier] | Imperial | Courtier | 6.5 | diplomat, traveller | court, the road | Some extra | Uncommon | Core Rulebook p.230 |
 | Otomo Courtier | Imperial | Courtier | 5.5 | schemer · diplomat | court | Some extra | Uncommon | Core Rulebook p.229 |
 | Seppun Guardsman [Bushi] | Imperial | Bushi | 6.5 | bodyguard · front line | court | Straightforward | Uncommon | Core Rulebook p.228 |
-| Seppun Shugenja | Imperial | Shugenja (Fire) | 6.5 | protective magic · battle magic | court | Involved | Uncommon | Core Rulebook p.228 |
+| Seppun Shugenja | Imperial | Shugenja (Fire) | 6.5 | protective magic · battle magic, bodyguard | court | Involved | Uncommon | Core Rulebook p.228 |
 | Ichiro Bushi | Badger | Bushi | 3.5 | front line, unarmed | mountains, the Wall | Some extra | Uncommon | Core Rulebook p.215 |
 | Komori Shugenja | Bat | Shugenja (Air) | 4.5 | nature and weather, spirits and the dead · traveller | the road | Involved | Uncommon | Core Rulebook p.216 |
 | Heichi Bushi | Boar | Bushi | 3 | front line · bodyguard | the Wall, wilds | Straightforward | Uncommon | Core Rulebook p.217 |

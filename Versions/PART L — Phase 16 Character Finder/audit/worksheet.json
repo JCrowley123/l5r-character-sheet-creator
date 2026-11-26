@@ -4388,18 +4388,19 @@
      "Clan: Spider"
     ],
     "verdict": "backed"
-   }
-  ],
-  "suggested": [
+   },
    {
     "label": "skirmisher",
+    "main": false,
     "score": 4,
     "where": [
      "Rank 4 Technique",
      "Rank 5 Technique"
-    ]
+    ],
+    "verdict": "backed"
    }
   ],
+  "suggested": [],
   "homes": [
    {
     "home": "underworld",
@@ -4411,15 +4412,12 @@
     "verdict": "backed"
    }
   ],
-  "book": [
-   "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-   "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Raises?)."
-  ],
+  "book": [],
   "complexity": {
-   "rated": 3,
+   "rated": 2,
    "rubric": 2,
    "why": "Rank 1 has: Raises?",
-   "agree": false
+   "agree": true
   },
   "niche": {
    "rated": 3,
@@ -4539,18 +4537,20 @@
      "Clan: Spider"
     ],
     "verdict": "backed"
-   }
-  ],
-  "suggested": [
+   },
    {
     "label": "frontline",
+    "main": false,
     "score": 5,
     "where": [
      "Rank 1 Technique",
      "Rank 2 Technique",
      "Skills"
-    ]
-   },
+    ],
+    "verdict": "backed"
+   }
+  ],
+  "suggested": [
    {
     "label": "monster-hunter",
     "score": 6,
@@ -4578,7 +4578,6 @@
    }
   ],
   "book": [
-   "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
    "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
    "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
    "Complexity: rated Involved, rubric says Some extra (Rank 1 has: against)."
@@ -4853,18 +4852,19 @@
     "score": 0,
     "where": [],
     "verdict": "no evidence"
-   }
-  ],
-  "suggested": [
+   },
    {
     "label": "bodyguard",
+    "main": false,
     "score": 4,
     "where": [
      "Rank 1 Technique",
      "description"
-    ]
+    ],
+    "verdict": "backed"
    }
   ],
+  "suggested": [],
   "homes": [
    {
     "home": "court",
@@ -4876,8 +4876,7 @@
    }
   ],
   "book": [
-   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
-   "Should \"bodyguard\" be added? Protects others: yojimbo, guarding a charge, defending allies."
+   "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies."
   ],
   "complexity": {
    "rated": 3,

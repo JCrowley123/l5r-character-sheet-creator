@@ -67,14 +67,14 @@ R = {
 "Chuda Shugenja": (["forbidden"], ["scholar"], ["underworld"], 3, 3, ["spider"]),
 "Daigotsu Bushi": (["frontline"], ["forbidden"], ["underworld","battlefield"], 2, 3, ["spider"]),
 "Daigotsu Courtier": (["schemer"], ["forbidden"], ["court","underworld"], 2, 3, ["spider"]),
-"Goju Ninja": (["stealth","forbidden"], [], ["underworld"], 3, 3, ["spider","ninja"]),
+"Goju Ninja": (["stealth","forbidden"], ["skirmisher"], ["underworld"], 2, 3, ["spider","ninja"]),
 "Ninube Shugenja": (["forbidden","stealth"], [], ["underworld"], 3, 3, ["spider"]),
-"The Order of the Spider Monks [Monk]": (["mystic","unarmed"], ["forbidden"], ["underworld","road"], 3, 3, ["spider"]),
+"The Order of the Spider Monks [Monk]": (["mystic","unarmed"], ["forbidden","frontline"], ["underworld","road"], 3, 3, ["spider"]),
 # ---- Imperial
 "Miya Herald [Courtier]": (["diplomat","traveller"], [], ["court","road"], 2, 2, []),
 "Otomo Courtier": (["schemer"], ["diplomat"], ["court"], 2, 2, []),
 "Seppun Guardsman [Bushi]": (["bodyguard"], ["frontline"], ["court"], 1, 2, []),
-"Seppun Shugenja": (["protector-magic"], ["battle-magic"], ["court"], 3, 2, []),
+"Seppun Shugenja": (["protector-magic"], ["battle-magic","bodyguard"], ["court"], 3, 2, []),
 # ---- Minor Clans
 "Ichiro Bushi": (["unarmed","frontline"], [], ["mountains","wall"], 2, 2, []),
 "Komori Shugenja": (["spirits","nature"], ["traveller"], ["road"], 3, 2, []),

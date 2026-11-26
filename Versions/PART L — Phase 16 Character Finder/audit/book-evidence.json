@@ -1089,21 +1089,21 @@
   "answers": [
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Lore: Maho, Lore: Shadowlands, Spellcraft and a cipher, and described as forever pushing the bounds of their blood-magic research.",
+    "page": "Core Rulebook p.213",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They are maho-tsukai themselves; the Shadowlands and Maho Lores serve their own dark arts, not hunting them.",
+    "page": "Core Rulebook p.213",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1112,21 +1112,21 @@
   "answers": [
    {
     "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They serve Fu Leng and draw on the Taint; Lore: Shadowlands is their own lore, not a hunter's.",
+    "page": "Core Rulebook p.212",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The legions of warriors loyal to Daigotsu, with a Technique that boosts nearby allies' damage.",
+    "page": "Core Rulebook p.212",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1135,12 +1135,12 @@
   "answers": [
    {
     "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They hide their own Taint and sow discord in the courts; nothing hunts the Tainted.",
+    "page": "Core Rulebook p.213",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1149,21 +1149,21 @@
   "answers": [
    {
     "question": "Should \"skirmisher\" be added? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 4 lets them step from one shadow to another as a Move Action over long distances, and Rank 5 adds Initiative when they reform: movement Techniques by the rubric.",
+    "page": "The Great Clans p.281",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Complexity: rated Involved, rubric says Some extra (Rank 1 has: Raises?).",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Some extra",
+    "evidence": "No spells, kiho or tattoos: their powers come from the Nothing as School Techniques. Rank 1 is a trade-off (more Armor TN, harder rolls), which the rubric calls Some extra.",
+    "page": "The Great Clans p.280",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1172,39 +1172,39 @@
   "answers": [
    {
     "question": "Should \"frontline\" be added? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Heavy Armor and a heavy weapon or polearm are in the Outfit, Rank 1 raises Armor TN against melee and Rank 2 gives Reduction: built to take hits.",
+    "page": "Core Rulebook p.215",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"monster-hunter\" be added? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. They serve the Spider; any Taint they carry powers their own Techniques.",
+    "page": "Core Rulebook p.215",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The entry mentions spreading their founder's teaching but never wandering or travel.",
+    "page": "Core Rulebook p.215",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Complexity: rated Involved, rubric says Some extra (Rank 1 has: against).",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Some extra",
+    "evidence": "None of the five Techniques is a kiho, spell or tattoo, so the rubric gives Some extra; whether these monks may also buy kiho under the general monk rules is for the group.",
+    "page": "Core Rulebook p.215",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1213,30 +1213,30 @@
   "answers": [
    {
     "question": "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They wear light armour and their defence is about the charge: spotting threats and, at Rank 5, taking a blow meant for the one they guard. Nothing gives Reduction or endurance.",
+    "page": "Core Rulebook p.228",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Should \"stealth\" be added? Works unseen: Stealth, ambush, disguise, infiltration or scouting.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. Rank 1 helps them spot an ambush, the opposite of working unseen.",
+    "page": "Core Rulebook p.228",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"investigator\" be added? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Rank 1 aids Investigation against ambushes and Rank 3 sees through every disguise and illusion, but this serves the guard's watchfulness, not detective work.",
+    "page": "Core Rulebook p.228",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1245,21 +1245,21 @@
   "answers": [
    {
     "question": "Is \"battle-magic\" right? A spellcaster whose magic destroys enemies.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their Technique boosts both attacking and protecting spells when the Emperor's life is at stake, so it stays an also label.",
+    "page": "Core Rulebook p.229",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"bodyguard\" be added? Protects others: yojimbo, guarding a charge, defending allies.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Hidden Guard exist to defend the Emperor and his family, the last line of defence against threats steel cannot answer.",
+    "page": "Core Rulebook p.228",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },

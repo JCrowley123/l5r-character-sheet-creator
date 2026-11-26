@@ -1494,11 +1494,13 @@
     "forbidden power",
     "stealth"
    ],
-   "secondary": [],
+   "secondary": [
+    "fast skirmisher"
+   ],
    "homes": [
     "streets and shadows"
    ],
-   "cx": "Involved",
+   "cx": "Some extra",
    "niche": "Unusual",
    "affinity": "",
    "ask": [
@@ -1547,7 +1549,8 @@
     "unarmed"
    ],
    "secondary": [
-    "forbidden power"
+    "forbidden power",
+    "front line"
    ],
    "homes": [
     "the road",
@@ -1642,7 +1645,8 @@
     "protective magic"
    ],
    "secondary": [
-    "battle magic"
+    "battle magic",
+    "bodyguard"
    ],
    "homes": [
     "court"
