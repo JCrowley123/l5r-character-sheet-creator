@@ -1682,30 +1682,30 @@
   "answers": [
    {
     "question": "Is \"diplomat\" right? Wins people over: courtesy, alliances, favours, mediation and calm.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They hold that monks must stay close to society, advise generals and daimyo, and are used to influential courts; Courtier and Etiquette are School Skills and the Technique boosts Social rolls.",
+    "page": "Core Rulebook p.231",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Some travel the road helping the unfortunate, but no Medicine or healing appears in the entry.",
+    "page": "Core Rulebook p.231",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They keep close ties with the political heart of the Empire, with a great monastery in the Imperial capital, and are invited to influential courts.",
+    "page": "Core Rulebook p.231",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1714,12 +1714,12 @@
   "answers": [
    {
     "question": "Is \"monster-hunter\" right? Hunts Shadowlands creatures, the Tainted, maho-tsukai or otherworldly beings.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They seek out threats to the Empire and find people able to deal with them, helping heroes rise; Shadowlands creatures and the Tainted are not named.",
+    "page": "Core Rulebook p.232",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1728,30 +1728,30 @@
   "answers": [
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Lore: Theology and one more Lore are taught, but the order seeks enlightenment by contemplation in the monastery rather than study. A weak also label.",
+    "page": "Core Rulebook p.232",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"The Order of Eternity [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Seven Thunders monks rarely leave their monastery and focus all their first kiho on one element. The Order of Eternity (Book of Void p.193) studies time and the right moment to act, with Divination (Astrology). Proposal: Eternity also spirits (Divination) in place of scholar.",
+    "page": "Core Rulebook p.232",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Shinmaki (Emerald Empire p.206) study an obscure sutra, tell fortunes and win the trust of commoners; the Seven Thunders keep to their monastery with single-element kiho. Proposal: Shinmaki also spirits (Divination).",
+    "page": "Core Rulebook p.232",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1760,21 +1760,21 @@
   "answers": [
    {
     "question": "Is \"sailor\" right? At home on ships: Sailing, sea fighting, pirates.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The temple honours the Mantis founder as a peacemaker and seeks enlightenment through conciliation; ships, Sailing and sea fighting are never mentioned.",
+    "page": "Core Rulebook p.232",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"sea\" right? The sea, islands and ports.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "No location is given for the temple, and nothing ties it to the sea or islands.",
+    "page": "Core Rulebook p.232",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1783,48 +1783,48 @@
   "answers": [
    {
     "question": "Is \"frontline\" right? Built to stand in melee and take hits: heavy weapons or armour, Reduction, endurance.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The most militant sect, devoted to physical prowess, with Battle and Jiujutsu 2; the Book of Earth (p.205) says such brutal sohei rely on endurance rather than defence. No armour or Reduction, so arguable.",
+    "page": "Core Rulebook p.233",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"Temple of Persistence [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Osano-Wo is the militant, attack-minded order (scarred, Battle, extra unarmed damage); Persistence (Book of Earth p.205) is about refusing to yield. Proposal: Osano-Wo main unarmed, also all-out; Persistence main front line, also unarmed.",
+    "page": "Core Rulebook p.233",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"The Order of the Nameless Gift [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Nameless Gift (Book of Earth p.205) is about patient endurance, with Void Points only for soaking damage or raising Armor TN; Osano-Wo is about attack. Proposal: Nameless Gift keeps front line as its also label; Osano-Wo also all-out.",
+    "page": "Core Rulebook p.233",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Tengoku's Fist (Book of Fire p.191) are serene Shintao sohei who use violence only when called for; Osano-Wo are Fortunist and openly militant. Proposal: Osano-Wo also all-out to separate them.",
+    "page": "Core Rulebook p.233",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Fudoists (Imperial Histories 2 p.287) are a heresy whose Technique serves either social contests or attacks according to Honor; Osano-Wo is purely martial. Proposal: Fudoist also diplomat or schemer for the social path.",
+    "page": "Core Rulebook p.233",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1833,12 +1833,12 @@
   "answers": [
    {
     "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their Technique makes others' attempts to sway their behaviour cost more Void; the wind is a philosophy of accepting chaos, not movement or speed.",
+    "page": "Book of Air p.193",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1847,39 +1847,39 @@
   "answers": [
    {
     "question": "Is \"investigator\" right? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "A hereditary order prized for near-uncanny assessment and prediction; Investigation is a School Skill and the Technique foresees others' actions. Foresight rather than detective work, so arguable.",
+    "page": "Book of Air p.194",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Lore: History, Lore: Theology, Divination and Calligraphy.",
+    "page": "Book of Air p.194",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Descended from a tribe that joined the Hida when the Crab settled their lands; the entry does not place them on the Wall itself.",
+    "page": "Book of Air p.194",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Uncommon",
+    "evidence": "A hereditary order from an old tribe; it is not heretical, controversial, tied to one era or destroyed, so the rubric makes it Uncommon.",
+    "page": "Book of Air p.194",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1888,12 +1888,12 @@
   "answers": [
    {
     "question": "Near-twin of \"Temple of Persistence [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Nameless Gift gains extra Void only for soaking damage and raising Armor TN; Persistence ignores penalties and adds Earth to attacks and resisted rolls. Proposal: Nameless Gift main mystic, also front line; Persistence main front line, also unarmed.",
+    "page": "Book of Earth p.205",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1902,30 +1902,30 @@
   "answers": [
    {
     "question": "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Described as largely a martial order and taught Jiujutsu (Martial Arts), though the Technique is not limited to unarmed fighting.",
+    "page": "Book of Earth p.205",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"Tengoku’s Fist [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Persistence is about tenacity and is sent where stubbornness matters; Tengoku's Fist (Book of Fire p.191) gain a Free Raise on unarmed attacks against foes with lower Fire. Proposal: Tengoku main unarmed; Persistence main front line.",
+    "page": "Book of Earth p.205",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Near-twin of \"Fudoist Order [Monk]\" (rated 80% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Fudoists (Imperial Histories 2 p.287) pick social or attack bonuses by Honor and learn Courtier and Etiquette; Persistence is a martial order. Proposal: Fudoist also diplomat or schemer.",
+    "page": "Book of Earth p.205",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1934,12 +1934,12 @@
   "answers": [
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Lore: History and Theology and devoted to finding new truths about the self and the universe, though their roots are militant sohei.",
+    "page": "Book of Fire p.190",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1948,12 +1948,12 @@
   "answers": [
    {
     "question": "Near-twin of \"Fudoist Order [Monk]\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Tengoku's Fist are Shintao sohei with Battle and Jiujutsu 2 and an unarmed attack Technique. The Fudoists (Imperial Histories 2 p.287) are a revived heresy choosing social or attack bonuses by Honor, with Courtier and Etiquette. Proposal: Fudoist also diplomat or schemer; Tengoku keeps unarmed main.",
+    "page": "Book of Fire p.191",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1962,30 +1962,30 @@
   "answers": [
    {
     "question": "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Taught Lore: History and Lore: Theology and devoted to the Fortune of Wisdom.",
+    "page": "Book of Fire p.191",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is \"artist\" right? Creates or performs: art, performance, storytelling, beauty.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Their studies helped Lady Doji spread culture through the Empire, but no art Skill is taught; their Skills are social.",
+    "page": "Book of Fire p.191",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    },
    {
     "question": "Is the home \"court\" right? Courts and castles: a Courtier School, or the description centres on court life.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "An ancient temple in the Crane provinces that gained social prestige and influence; taught Courtier, Etiquette and Sincerity, and the Technique aids politics and diplomacy.",
+    "page": "Book of Fire p.191",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1994,12 +1994,12 @@
   "answers": [
    {
     "question": "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They pursue trances by sleeplessness, drink, wild dancing and hallucinogens, whatever society thinks; arguably controversial enough for Unusual.",
+    "page": "Book of Water p.187",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -2008,30 +2008,30 @@
   "answers": [
    {
     "question": "Is the home \"mountains\" right? Mountains and monasteries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The entry speaks of their monasteries and their odd routines there, which fits the rubric's mountains and monasteries home.",
+    "page": "Book of Void p.193",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
-    "decision": "",
-    "to": "",
-    "evidence": "",
-    "page": "",
+    "decision": "change",
+    "to": "Uncommon",
+    "evidence": "Thought odd or even mad, but not heretical, controversial or tied to one era, so the rubric makes it Uncommon.",
+    "page": "Book of Void p.193",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Eternity studies time and acts at the right moment, with Divination (Astrology); the Shinmaki (Emerald Empire p.206) study an obscure sutra and are trusted by commoners. Proposal: Eternity also spirits for Divination; Shinmaki also diplomat for its bond with commoners.",
+    "page": "Book of Void p.193",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -2040,12 +2040,12 @@
   "answers": [
    {
     "question": "Is \"schemer\" right? Gets their way by secrets, leverage, deceit or fear.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "A short-lived, cult-like heretical order of zealots following a charismatic leader; their Technique exploits imbalances in the elements, not secrets or deceit.",
+    "page": "Imperial Histories 2 p.102",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -2054,12 +2054,12 @@
   "answers": [
    {
     "question": "Is \"unarmed\" right? Fights without weapons: grappling, wrestling or martial arts.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Jiujutsu is taught and the Technique may be taken for attacks, but equally for social contests. A weak also label.",
+    "page": "Imperial Histories 2 p.287",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -2068,21 +2068,21 @@
   "answers": [
    {
     "question": "Is \"healer\" right? Heals: Medicine, healing magic, tending the sick.",
-    "decision": "",
+    "decision": "remove",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They lay ghosts to rest for the Fortune of Death; there is no Medicine or healing in the entry.",
+    "page": "Secrets of the Empire p.242",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"mystic\" be added? Spiritual discipline: meditation, enlightenment, the Void, tattoos, kiho.",
-    "decision": "",
+    "decision": "add",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Meditation is a School Skill and their Technique finds ghosts through meditation; like every Brotherhood monk they begin with kiho.",
+    "page": "Secrets of the Empire p.242",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  }

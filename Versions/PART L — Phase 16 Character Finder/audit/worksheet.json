@@ -6993,8 +6993,7 @@
   "book": [
    "Is \"investigator\" right? Finds the truth: Investigation, evidence, interrogation, magistrates and hunting fugitives.",
    "Is \"scholar\" right? Knows things: several Lore Skills, study, learning or libraries.",
-   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there.",
-   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood)."
+   "Is the home \"wall\" right? The Kaiu Wall and the Shadowlands border: a Crab School, or one the description places there."
   ],
   "complexity": {
    "rated": 3,
@@ -7003,10 +7002,10 @@
    "agree": true
   },
   "niche": {
-   "rated": 3,
+   "rated": 2,
    "rubric": 2,
    "why": "supplement, Minor Clan, Imperial or Brotherhood",
-   "agree": false
+   "agree": true
   },
   "pages": {
    "book": "Book of Air",
@@ -7555,7 +7554,6 @@
   ],
   "book": [
    "Is the home \"mountains\" right? Mountains and monasteries.",
-   "How unusual: rated Unusual, rubric says Uncommon (supplement, Minor Clan, Imperial or Brotherhood).",
    "Near-twin of \"Shinmaki Order [Monk]\" (rated 75% alike): what separates them? Propose a label for each that the evidence supports."
   ],
   "complexity": {
@@ -7565,10 +7563,10 @@
    "agree": true
   },
   "niche": {
-   "rated": 3,
+   "rated": 2,
    "rubric": 2,
    "why": "supplement, Minor Clan, Imperial or Brotherhood",
-   "agree": false
+   "agree": true
   },
   "pages": {
    "book": "Book of Void",

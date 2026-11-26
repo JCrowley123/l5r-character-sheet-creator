@@ -33,9 +33,14 @@ evidence for each change, in our own words, is in `book-evidence.json`.
 | Monkey | Toku Bushi | also labels | bodyguard | (none) | Core Rulebook p.222 |
 | Ox | Morito Bushi | also labels | (none) | fast skirmisher | Core Rulebook p.224 |
 | Snake | Chuda Shugenja [Snake] | also labels | protective magic | battle magic | Core Rulebook p.224 |
+| Brotherhood | Fukurokujin’s Eyes [Monk] | how unusual | Unusual | Uncommon | Book of Air p.194 |
+| Brotherhood | The Order of Eternity [Monk] | how unusual | Unusual | Uncommon | Book of Void p.193 |
 
 ## Clear decisions held back (not applied)
 
 | School | Decision | Page | Why held |
 |---|---|---|---|
 | Tsi Smith [Artisan] | Remove duelist; remove the road home | Core Rulebook p.222 | The book is clear (no duelling Technique; the Tsi seldom leave their lands), but it would leave one label and no Home. The scoring's evening-out step then multiplies its few matches so far that it crowds out Courtiers for "Words" players (67.0% floor to 66.9%) and lowers the early-exit result (77.8% to 77.5%). The fix belongs in the scoring (a cap for very thinly rated Schools), which is the owner's decision. |
+| The Temple of Kaimetsu-uo [Monk] | Remove sailor; remove the sea home | Core Rulebook p.232 | Same cause as Tsi Smith: no Home would be left, and its few labels are then over-promoted. |
+| Order of the Wind [Monk] | Remove fast skirmisher | Book of Air p.193 | Together with the two above and Peaceful Repose, these removals take away wrong labels that were nonetheless the only thing telling these monk orders apart (nearly all share "mystic"). Over eight seeds, applying them lowered top six by 0.6 points and early exit by 0.8. They should go in together with the near-twin labels proposed on SHORT-LIST.md, once the group has settled those. |
+| Order of Peaceful Repose [Monk] | Remove healer; add mystic | Secrets of the Empire p.242 | As above: swapping its distinctive label for the common "mystic" made it the hardest School to find (0.0). |

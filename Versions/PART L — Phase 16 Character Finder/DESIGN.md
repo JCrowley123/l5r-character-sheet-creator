@@ -606,7 +606,7 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Yotsu Bushi School (Heroes of Rokugan) [Bushi] | Tiger | Bushi | 5.5 | bodyguard, stealth | streets and shadows | Some extra | Unusual | Imperial Histories 1 p.276 |
 | First Dawn Scholars [Monk] | Brotherhood of Shinsei | Monk | 5.5 | mystic, scholar | libraries and temples | Involved | Unusual | Imperial Histories 2 p.29 |
 | Fudoist Order [Monk] | Brotherhood of Shinsei | Monk | – | mystic · unarmed | the road | Involved | Unusual | Imperial Histories 2 p.287 |
-| Fukurokujin’s Eyes [Monk] | Brotherhood of Shinsei | Monk | 4.5 | investigator, mystic · scholar | the Wall | Involved | Unusual | Book of Air p.194 |
+| Fukurokujin’s Eyes [Monk] | Brotherhood of Shinsei | Monk | 4.5 | investigator, mystic · scholar | the Wall | Involved | Uncommon | Book of Air p.194 |
 | Order of Peaceful Repose [Monk] | Brotherhood of Shinsei | Monk | 4.5 | spirits and the dead · healer | the road | Involved | Uncommon | Secrets of the Empire p.242 |
 | Order of the Five Rings [Monk] | Brotherhood of Shinsei | Monk | 4 | mystic, schemer | the road | Involved | Unusual | Imperial Histories 2 p.102 |
 | Order of the Wind [Monk] | Brotherhood of Shinsei | Monk | 4.5 | mystic · fast skirmisher | the road | Involved | Uncommon | Book of Air p.193 |
@@ -614,7 +614,7 @@ These ratings are a first draft by Claude. Section 10 is how they get checked.
 | Temple of Persistence [Monk] | Brotherhood of Shinsei | Monk | 3.5 | front line, unarmed · mystic | the road | Involved | Uncommon | Book of Earth p.205 |
 | Tengoku’s Fist [Monk] | Brotherhood of Shinsei | Monk | 4.5 | unarmed · mystic | the road | Involved | Uncommon | Book of Fire p.191 |
 | The Four Temples [Monk] | Brotherhood of Shinsei | Monk | 6.5 | diplomat, mystic · healer | court, the road | Involved | Uncommon | Core Rulebook p.231 |
-| The Order of Eternity [Monk] | Brotherhood of Shinsei | Monk | – | mystic · scholar | mountains | Involved | Unusual | Book of Void p.193 |
+| The Order of Eternity [Monk] | Brotherhood of Shinsei | Monk | – | mystic · scholar | mountains | Involved | Uncommon | Book of Void p.193 |
 | The Order of Heroes [Monk] | Brotherhood of Shinsei | Monk | 4.5 | mystic · monster hunter | the road | Involved | Uncommon | Core Rulebook p.232 |
 | The Order of Jurojin’s Blessing [Monk] | Brotherhood of Shinsei | Monk | 5.5 | healer · mystic | the road | Involved | Uncommon | Book of Water p.187 |
 | The Order of Rebirth [Monk] | Brotherhood of Shinsei | Monk | 6.5 | mystic, scholar | the road | Involved | Uncommon | Book of Fire p.190 |
