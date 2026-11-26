@@ -471,9 +471,12 @@ async function main() {
           const i = document.querySelector('#advList .dp4523-info').getBoundingClientRect();
           const buttons = [...r.querySelectorAll('.dp4523-use, .dp4523-reset')].map(b => b.getBoundingClientRect());
           const rem = document.querySelector('#advList .dp4523-reminder').getBoundingClientRect();
+          // Follows Release 15b B18.1 (one size for Reset, declared in both ROLLBACKs): while B18.1 is on the seam, Use and
+          // Reset are its 28 px; otherwise this release's own 32 px. Same id and count.
+          const rs = !!(window.__L5R_TEST__.RS15 && window.__L5R_TEST__.RS15.installed);
           if (!(i.width >= 28 && i.height >= 28 && Math.abs(i.width - i.height) < 1)) console.log('DP-GEOMETRY info measured ' + i.width + 'x' + i.height + ' at ' + innerWidth);
           return {fit:r.scrollWidth <= r.clientWidth + 1, info:i.width >= 28 && i.height >= 28 && Math.abs(i.width - i.height) < 1,
-            buttons:buttons.every(b => b.height >= 32), ownLine:rem.top >= i.bottom - 1,
+            buttons:buttons.every(b => b.height >= (rs ? 28 : 32)), ownLine:rem.top >= i.bottom - 1,
             readable:[...r.querySelectorAll('.dp4523-reminder, .dp4523-state')].every(e => parseFloat(getComputedStyle(e).fontSize) >= 12)};
         });
         await setup(page, {adv:[dp('Control')]});

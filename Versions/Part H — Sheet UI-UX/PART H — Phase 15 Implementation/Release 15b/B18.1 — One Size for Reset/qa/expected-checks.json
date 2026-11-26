@@ -1,0 +1,17 @@
+{
+ "unit": "Release 15b B18.1 (PART H PHASE 15.2.10.1)",
+ "pinned": "26 November 2026, before the first run",
+ "checks": [
+  "RS-SEAM-PHONE",
+  "RS-ONE-SIZE-PHONE",
+  "RS-SAME-ROW-PHONE",
+  "RS-FITS-PHONE",
+  "RS-RESET-STILL-WORKS-PHONE",
+  "RS-NO-ERRORS-PHONE",
+  "RS-ANCESTOR-USE-PHONE",
+  "RS-NO-ERRORS-SEPPUN-PHONE",
+  "RS-ONE-SIZE-DESKTOP",
+  "RS-SAME-ROW-DESKTOP",
+  "RS-NO-ERRORS-DESKTOP"
+ ]
+}

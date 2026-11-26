@@ -1046,6 +1046,9 @@
   // PART H PHASE 15.2.10 BEGIN button-names-seam
   if(typeof BN15 === 'object' && BN15) Object.assign(window.__L5R_TEST__, {BN15, ONE_NAME_PER_JOB_ENABLED});
   // END BN15 button-names-seam
+  // PART H PHASE 15.2.10.1 BEGIN reset-size-seam
+  if(typeof RS15 === 'object' && RS15) Object.assign(window.__L5R_TEST__, {RS15, RESET_ONE_SIZE_ENABLED});
+  // END RS15 reset-size-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

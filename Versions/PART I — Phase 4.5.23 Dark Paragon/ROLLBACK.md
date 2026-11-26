@@ -53,3 +53,9 @@ See the README's measured QA for the byte-identical removal, the 4.5.15 refusal 
 ## Release 15a A16 — no bottom i in the picker (7 November 2026)
 
 Release 15a A16 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A16 — No Bottom i in the Seven Pickers/`), under the owner's ruling Q3, stops drawing this release's bottom information button inside the configuration window: its script removes `#advConfigGrid > .dp4523-info` whenever the picker draws it, while `body.bi15-on` is set (its stylesheet keeps it from being painted in the moment before). It calls nothing here and changes nothing in this release's fragment. The row's i on the Advantages list (the same class, outside the window) is unaffected, and A16's harness measures that every sentence of the bottom panel is still on the row or behind its i after Confirm. A16 names `dp4523-info`, so this release's remover may refuse while A16 is present: remove A16 first (the removal chain does so in order).
+
+## Release 15b B18.1 — one size for Reset (26 November 2026)
+
+**A later unit now styles this release's buttons.** Release 15b B18.1 (`Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15b/B18.1 — One Size for Reset/`) gives Dark Paragon's Use and Reset (`.dp4523-session .dp4523-use`, `.dp4523-reset`) the one Reset size the owner approved (28 px tall, capitals, .78rem; round 2 of B18, 25 November 2026), from its stylesheet under `body.rs15-on`. It calls nothing here. This release's remover finds `dp4523-session`, `dp4523-use` and `dp4523-reset` in B18.1's stylesheet, so it refuses while B18.1 is present: **remove B18.1 first**; the removal chain does this in order.
+
+**Declared fixture correction.** `qa/dark-paragon-harness.js` follows B18.1: while `RS15` is on the seam, `DP-GEOMETRY-320`, `-375`, `-768` and `-1440` expect Use and Reset at 28 px or more instead of 32 px. Same ids and count; with B18.1 removed every line runs as before.

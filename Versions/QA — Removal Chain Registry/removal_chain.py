@@ -376,6 +376,8 @@ CHAIN: tuple[Release, ...] = (
     # Release 15b, B18: one name per button job.
     Release("PART H — Phase 15 Implementation/Release 15b/B18 — One Name per Button Job",
             fragment="src/sheet/209.99999999999999999992-feat-button-names.js"),
+    Release("PART H — Phase 15 Implementation/Release 15b/B18.1 — One Size for Reset",
+            fragment="src/sheet/209.99999999999999999993-feat-reset-size.js"),
 )
 
 

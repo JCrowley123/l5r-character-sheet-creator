@@ -1,0 +1,5 @@
+('.\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B18.1 — One Size for Reset\\qa\\remove-phase.py', '209.99999999999999999993-feat-reset-size.js', ['RESET_ONE_SIZE_ENABLED', 'RS15', 'rs15-on'])
+('.\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B18.1 — One Size for Reset\\qa\\remove-phase.py', '1156-reset-size.css', ['rs15-on'])
+('.\\PART I — Phase 4.5.23 Dark Paragon\\qa\\remove-phase.py', '1156-reset-size.css', ['dp4523-reset', 'dp4523-session', 'dp4523-use'])
+('.\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\remove-phase.py', '1156-reset-size.css', ['dsx4532-btn'])
+('.\\PART I — Phase 4.8 Ancestors\\qa\\remove-phase.py', '1156-reset-size.css', ['anc48'])

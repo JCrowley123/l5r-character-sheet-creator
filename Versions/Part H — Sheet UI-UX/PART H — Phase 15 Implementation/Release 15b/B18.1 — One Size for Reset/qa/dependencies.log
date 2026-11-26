@@ -1,0 +1,21 @@
+fragment : src/sheet/209.99999999999999999993-feat-reset-size.js
+marker   : PART H PHASE 15.2.10.1
+surface  : 3 name(s) -- RESET_ONE_SIZE_ENABLED, RS15, rs15-on
+
+src\css\1156-reset-size.css
+    own      7  [PART H PHASE 15.2.10.1 +6]  without !important. Waits for body.rs15-on, which this unit's switch sets. Screen only: print is
+    own      9  [PART H PHASE 15.2.10.1 +8]  html body.rs15-on .adv-config-reset-session,
+    own     10  [PART H PHASE 15.2.10.1 +9]  html body.rs15-on .dp4523-session .dp4523-reset,
+    own     11  [PART H PHASE 15.2.10.1 +10]  html body.rs15-on .dp4523-session .dp4523-use,
+    own     12  [PART H PHASE 15.2.10.1 +11]  html body.rs15-on .dsx4532-btn,
+    own     13  [PART H PHASE 15.2.10.1 +12]  html body.rs15-on .unlucky-btn,
+    own     14  [PART H PHASE 15.2.10.1 +13]  html body.rs15-on .anc48-session .anc48-session-reset,
+    own     15  [PART H PHASE 15.2.10.1 +14]  html body.rs15-on .anc48-session .anc48-session-use,
+    own     16  [PART H PHASE 15.2.10.1 +15]  html body.rs15-on .combat-round-box button {
+
+src\sheet\210-test-seam-and-init.js
+    own   1050  [PART H PHASE 15.2.10.1 +1]  if(typeof RS15 === 'object' && RS15) Object.assign(window.__L5R_TEST__, {RS15, RESET_ONE_SIZE_EN
+    own   1051  [PART H PHASE 15.2.10.1 +2]  // END RS15 reset-size-seam
+
+every reference is inside a block PART H PHASE 15.2.10.1 owns -- surgical removal covers all of them.
+exit 0

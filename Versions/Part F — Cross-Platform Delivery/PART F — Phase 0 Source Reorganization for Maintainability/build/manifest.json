@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "e6755993bf44ec573b185cf2e51439eb2d83d72a018f6073f3f45fb531d7c089",
+  "expect_sha256": "3b9bc604413019b8a5541c4e2535fd1326590f8722a321ac67fe0efd2a78b4c4",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -200,6 +200,7 @@
     { "file": "src/css/1153-lead-an-ally.css", "note": "PART H PHASE 15.2.7 - Release 15b B03, the amount beside Leadership's and Quick's buttons" },
     { "file": "src/css/1154-check-button-names.css", "note": "PART H PHASE 15.2.6 - Release 15b B01 round 2, Lord Moon's Curse's resist button at the check buttons' size" },
     { "file": "src/css/1155-button-names.css", "note": "PART H PHASE 15.2.10 - Release 15b B18, the Combat tab's i's drawn as the sheet's ring i" },
+    { "file": "src/css/1156-reset-size.css", "note": "PART H PHASE 15.2.10.1 - Release 15b B18.1, every Reset and the buttons on its row 28 px tall in capitals" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -558,6 +559,7 @@
     { "file": "src/sheet/209.9999999999999999999-feat-remain-in-control.js", "note": "PART H PHASE 15.2.8 - Release 15b B05, Touch of the Void's and Lord Moon's Curse's success lines say You remain in control" },
     { "file": "src/sheet/209.99999999999999999991-feat-picker-traits.js", "note": "PART H PHASE 15.2.9 - Release 15b B09, the Skills picker's Traits read from the list as it stands after every layer" },
     { "file": "src/sheet/209.99999999999999999992-feat-button-names.js", "note": "PART H PHASE 15.2.10 - Release 15b B18, one name per button job: the words and spoken names the owner approved" },
+    { "file": "src/sheet/209.99999999999999999993-feat-reset-size.js", "note": "PART H PHASE 15.2.10.1 - Release 15b B18.1, one size for Reset: marks the page for its stylesheet" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

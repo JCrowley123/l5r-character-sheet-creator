@@ -1,0 +1,28 @@
+/* PART H PHASE 15.2.10.1 — Release 15b, B18.1: one size for Reset (owner, 25 November 2026, round-2 card "size",
+   approved as shown, with the capitals). Every Reset, and the buttons on its row, is 28 px tall in the letters of Change
+   and Choose… on the same cards: capitals, .78rem, letter spacing .06em, padding 2px 10px. Each rule names one of the
+   rows it replaces: Kharmic Tie's and Luck's Reset (the base sheet's rule), Dark Paragon's Use and Reset, Great
+   Destiny's Use and Reset and Haunted's Reset, Unlucky's −, + and Reset, the Ancestor card's Use and Reset, and the
+   Combat round counter's buttons. The selectors carry html and the body class so they outrank each row's own rule
+   without !important. Waits for body.rs15-on, which this unit's switch sets. Screen only: print is unchanged. */
+@media screen {
+  html body.rs15-on .adv-config-reset-session,
+  html body.rs15-on .dp4523-session .dp4523-reset,
+  html body.rs15-on .dp4523-session .dp4523-use,
+  html body.rs15-on .dsx4532-btn,
+  html body.rs15-on .unlucky-btn,
+  html body.rs15-on .anc48-session .anc48-session-reset,
+  html body.rs15-on .anc48-session .anc48-session-use,
+  html body.rs15-on .combat-round-box button {
+    box-sizing: border-box;
+    min-height: 28px;
+    height: auto;
+    min-width: 28px;
+    padding: 2px 10px;
+    font-size: .78rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    vertical-align: middle;
+  }
+}
