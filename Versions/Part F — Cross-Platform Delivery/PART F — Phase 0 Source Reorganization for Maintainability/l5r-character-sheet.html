@@ -8225,6 +8225,28 @@ html body.cn15-on #disadvList button.ghost.lm7-roll{min-width:28px; min-height:0
   }
 }
 
+/* PART H PHASE 15.2.10.2 — Release 15b, B18.2: the i at the right end of its row (owner, 25 November 2026, round-2
+   card "iright", approved as shown). On an Advantage or Disadvantage card's top row the i takes the row's spare room on
+   its left, so it sits at the right end, as Kharmic Tie's does. Luck's i sits inside the pips-and-Reset group, so that
+   group takes the row's spare room and its i moves to the group's end. Seven Fortunes' Curse's i (drawn by Release
+   15a's one-information-pattern unit for Hotei) is the button straight after the curse's badge; it is found by that
+   place, not by its class, so this unit does not hold up that unit's removal. The selectors carry html, the body class
+   and a :not() so they outrank that unit's rule, which sets the i's left margin, without !important. Waits for
+   body.ie15-on, which this unit's switch sets. Screen only: print is unchanged. */
+@media screen {
+  html body.ie15-on .adv-config-row > .adv-config-resource-controls:has(> .adv-config-info) {
+    flex: 1 1 auto;
+  }
+  html body.ie15-on .adv-config-resource-controls > .adv-config-info:not(.combat-formula-info) {
+    margin-left: auto;
+  }
+  html body.ie15-on .adv-config-row > .adv-config-info:not(.combat-formula-info),
+  html body.ie15-on .adv-config-row > .dp4523-info:not(.combat-formula-info),
+  html body.ie15-on .adv-config-row > .fortune4511-badge + button:not(.combat-formula-info) {
+    margin-left: auto;
+  }
+}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -59815,6 +59837,33 @@ return fontkitCache=module.exports;}
   if(RESET_ONE_SIZE_ENABLED) RS15.install();
   // ============ END PART H PHASE 15.2.10.1 RS15 ============
 
+  // ============ PART H PHASE 15.2.10.2 — THE I AT THE END OF ITS ROW ============
+  // Phase 15, Release 15b, unit B18.2 (one name per button job, round 2). The owner, 25 November 2026, on the Reset
+  // card: "my gut says that where appropriate the "i" should be on the right hand side as to not make the buttons too
+  // crowded"; the round-2 card "The i always sits at the right end of its row" approved as shown. Where an
+  // Advantage or Disadvantage card's top row has an i beside its buttons, the i sits at the right end of the row, as
+  // Kharmic Tie's already does (Release 15b B17): Luck (its i inside the pips and Reset), Dark Paragon, Seven
+  // Fortunes' Curse with Hotei, and a card that still needs a choice. Left as they are: the Skills list's i's, the i's
+  // beside a heading, Kharmic Tie, and where Change sits in Manage (parked with A04.2 for the rules read).
+  // Screen only: this fragment marks the page (body.ie15-on) and the unit's stylesheet (1157-info-row-end.css) moves the
+  // i. Words, spoken names, the order a screen reader reads them and what each button does are unchanged; print is
+  // unchanged. Nothing is saved.
+  const INFO_AT_ROW_END_ENABLED = true;
+
+  const IE15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return INFO_AT_ROW_END_ENABLED === true && !!document.body; };
+    api.install = function(){
+      if(api.installed || !api.enabled()) return false;
+      document.body.classList.add('ie15-on');
+      api.installed = true;
+      return true;
+    };
+    return api;
+  })();
+  if(INFO_AT_ROW_END_ENABLED) IE15.install();
+  // ============ END PART H PHASE 15.2.10.2 IE15 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -60866,6 +60915,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.2.10.1 BEGIN reset-size-seam
   if(typeof RS15 === 'object' && RS15) Object.assign(window.__L5R_TEST__, {RS15, RESET_ONE_SIZE_ENABLED});
   // END RS15 reset-size-seam
+  // PART H PHASE 15.2.10.2 BEGIN info-row-end-seam
+  if(typeof IE15 === 'object' && IE15) Object.assign(window.__L5R_TEST__, {IE15, INFO_AT_ROW_END_ENABLED});
+  // END IE15 info-row-end-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,0 +1,5 @@
+Run 1 (26 November 2026, a scratch build of B18.2 on B18.1, 0f8ae007…): 7/11.
+  IE-RIGHT-END-MANAGE-PHONE  Luck's i ended its group's second line (the group wraps under Change on a phone in Manage); the check asked for the first line.
+  IE-RIGHT-END-PLAY-PHONE/-DESKTOP  the needs-a-choice cards show their i in Manage only; the check expected them in Play.
+  IE-STILL-OPENS-PHONE  Luck's i window was headed "Reset session": a real finding, fixed in B18 (BN-I-WINDOW-HEADING-PHONE).
+Run 2 (build c7d7f0a3): 9/11, the "level" reference was a hidden Change in Play; now the nearest shown element. Run 3: 11/11.

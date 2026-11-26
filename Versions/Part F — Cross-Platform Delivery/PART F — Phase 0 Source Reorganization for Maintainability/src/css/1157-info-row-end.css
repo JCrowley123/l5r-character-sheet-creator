@@ -1,0 +1,21 @@
+/* PART H PHASE 15.2.10.2 — Release 15b, B18.2: the i at the right end of its row (owner, 25 November 2026, round-2
+   card "iright", approved as shown). On an Advantage or Disadvantage card's top row the i takes the row's spare room on
+   its left, so it sits at the right end, as Kharmic Tie's does. Luck's i sits inside the pips-and-Reset group, so that
+   group takes the row's spare room and its i moves to the group's end. Seven Fortunes' Curse's i (drawn by Release
+   15a's one-information-pattern unit for Hotei) is the button straight after the curse's badge; it is found by that
+   place, not by its class, so this unit does not hold up that unit's removal. The selectors carry html, the body class
+   and a :not() so they outrank that unit's rule, which sets the i's left margin, without !important. Waits for
+   body.ie15-on, which this unit's switch sets. Screen only: print is unchanged. */
+@media screen {
+  html body.ie15-on .adv-config-row > .adv-config-resource-controls:has(> .adv-config-info) {
+    flex: 1 1 auto;
+  }
+  html body.ie15-on .adv-config-resource-controls > .adv-config-info:not(.combat-formula-info) {
+    margin-left: auto;
+  }
+  html body.ie15-on .adv-config-row > .adv-config-info:not(.combat-formula-info),
+  html body.ie15-on .adv-config-row > .dp4523-info:not(.combat-formula-info),
+  html body.ie15-on .adv-config-row > .fortune4511-badge + button:not(.combat-formula-info) {
+    margin-left: auto;
+  }
+}

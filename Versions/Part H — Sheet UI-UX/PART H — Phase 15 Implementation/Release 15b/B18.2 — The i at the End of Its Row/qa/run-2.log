@@ -1,0 +1,14 @@
+  detail IE-RIGHT-END-PLAY-PHONE: {"moved":[["Luck",{"gap":13,"level":0,"w":28,"h":28}],["Dark Paragon",{"gap":13,"level":1901,"w":28,"h":28}],["Seven Fortunes’ Curse",{"gap":13,"level":0,"w":28,"h":28}]],"tie":{"gap":13,"level":812,"w":28,"h":28},"scroll":{"doc":390,"vw":390}}
+  detail IE-RIGHT-END-PLAY-DESKTOP: {"moved":[["Luck",{"gap":13,"level":0,"w":28,"h":28}],["Dark Paragon",{"gap":13,"level":1735,"w":28,"h":28}],["Seven Fortunes’ Curse",{"gap":13,"level":0,"w":28,"h":28}]],"tie":{"gap":13,"level":732,"w":28,"h":28},"scroll":{"doc":1440,"vw":1440}}
+PASS IE-SEAM-PHONE
+PASS IE-RIGHT-END-MANAGE-PHONE
+PASS IE-THE-UNIT-MOVES-THEM-PHONE
+FAIL IE-RIGHT-END-PLAY-PHONE
+PASS IE-OTHERS-STAY-PHONE
+PASS IE-READING-ORDER-PHONE
+PASS IE-STILL-OPENS-PHONE
+PASS IE-NO-ERRORS-PHONE
+PASS IE-RIGHT-END-MANAGE-DESKTOP
+FAIL IE-RIGHT-END-PLAY-DESKTOP
+PASS IE-NO-ERRORS-DESKTOP
+9/11 checks passed

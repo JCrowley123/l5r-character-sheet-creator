@@ -1,0 +1,1706 @@
+[
+ {
+  "k": 0,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B01 — Check Buttons Named for What They Do\\qa\\check-names-harness.js",
+  "code": 0,
+  "passed": 23,
+  "total": 23,
+  "secs": 18
+ },
+ {
+  "k": 1,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B03 — Lead an Ally\\qa\\lead-an-ally-harness.js",
+  "code": 0,
+  "passed": 15,
+  "total": 15,
+  "secs": 4
+ },
+ {
+  "k": 2,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B05 — You Remain in Control\\qa\\remain-in-control-harness.js",
+  "code": 0,
+  "passed": 10,
+  "total": 10,
+  "secs": 9
+ },
+ {
+  "k": 3,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B09 — Skill Picker Traits from the Final List\\qa\\picker-traits-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 10
+ },
+ {
+  "k": 4,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\A14 — One Net Wound Penalty\\qa\\net-wound-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 13
+ },
+ {
+  "k": 5,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B04 — One Armor TN Breakdown\\qa\\armor-tn-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 7
+ },
+ {
+  "k": 6,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B14 — Jigoku's Total, Then Its Arithmetic\\qa\\jigoku-total-harness.js",
+  "code": 0,
+  "passed": 10,
+  "total": 10,
+  "secs": 7
+ },
+ {
+  "k": 7,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15b\\B17 — One Row for Kharmic Tie\\qa\\kharmic-row-harness.js",
+  "code": 0,
+  "passed": 13,
+  "total": 13,
+  "secs": 8
+ },
+ {
+  "k": 8,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A19 — Undo the Last Void Spend\\qa\\void-spend-undo-harness.js",
+  "code": 0,
+  "passed": 25,
+  "total": 25,
+  "secs": 55
+ },
+ {
+  "k": 9,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A20 — A Trait for One Skill Roll\\qa\\skill-trait-choice-harness.js",
+  "code": 0,
+  "passed": 18,
+  "total": 18,
+  "secs": 15
+ },
+ {
+  "k": 10,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A19.1 — The Damage Row Fits a Phone\\qa\\damage-row-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 4
+ },
+ {
+  "k": 11,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A08 — One Undo for Quick Taps\\qa\\quick-tap-undo-harness.js",
+  "code": 0,
+  "passed": 21,
+  "total": 21,
+  "secs": 50
+ },
+ {
+  "k": 12,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE1 — Sense for the Yogo Wardmaster\\qa\\yogo-given-spells-harness.js",
+  "code": 0,
+  "passed": 13,
+  "total": 13,
+  "secs": 5
+ },
+ {
+  "k": 13,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE2 — Given Spells Credited on Opening\\qa\\given-spells-harness.js",
+  "code": 0,
+  "passed": 21,
+  "total": 21,
+  "secs": 5
+ },
+ {
+  "k": 14,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\AE3 — No XP Box or Remove on Automatic Entries\\qa\\automatic-entry-controls-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 9
+ },
+ {
+  "k": 15,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A09 — Phone Text Entry and Repeated Taps\\qa\\phone-text-entry-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 25
+ },
+ {
+  "k": 16,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A10 — Cross-Page Actions Move Focus\\qa\\cross-page-focus-harness.js",
+  "code": 0,
+  "passed": 23,
+  "total": 23,
+  "secs": 17
+ },
+ {
+  "k": 17,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A10.1 — The Page Ring Only for the Keyboard\\qa\\keyboard-page-ring-harness.js",
+  "code": 0,
+  "passed": 16,
+  "total": 16,
+  "secs": 6
+ },
+ {
+  "k": 18,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A17 — The Splash Fills the Screen\\qa\\splash-fill-harness.js",
+  "code": 0,
+  "passed": 25,
+  "total": 25,
+  "secs": 20
+ },
+ {
+  "k": 19,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\8b.1-UI-01 — Starting-Spell Review and Its Actions\\qa\\spell-review-harness.js",
+  "code": 0,
+  "passed": 32,
+  "total": 32,
+  "secs": 5
+ },
+ {
+  "k": 20,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\8b.1-UI-02 — Readable Spell Name and School Tag\\qa\\spell-name-harness.js",
+  "code": 0,
+  "passed": 28,
+  "total": 28,
+  "secs": 7
+ },
+ {
+  "k": 21,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\8b.1-UI-03 — Remove Apart from Memorised\\qa\\spell-remove-harness.js",
+  "code": 0,
+  "passed": 34,
+  "total": 34,
+  "secs": 10
+ },
+ {
+  "k": 22,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A05 — Missing Limb Picker\\qa\\limb-picker-harness.js",
+  "code": 0,
+  "passed": 22,
+  "total": 22,
+  "secs": 10
+ },
+ {
+  "k": 23,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A06 — Grant Actions and Their State\\qa\\grant-actions-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 6
+ },
+ {
+  "k": 24,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A07 — The Moon Row\\qa\\moon-row-harness.js",
+  "code": 0,
+  "passed": 26,
+  "total": 26,
+  "secs": 7
+ },
+ {
+  "k": 25,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A11 — Explanatory Text Gaps and One Left Edge\\qa\\text-edges-harness.js",
+  "code": 0,
+  "passed": 22,
+  "total": 22,
+  "secs": 9
+ },
+ {
+  "k": 26,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A04.1 — One Way to Show Choices in Pickers\\qa\\inline-rules-harness.js",
+  "code": 0,
+  "passed": 56,
+  "total": 56,
+  "secs": 10
+ },
+ {
+  "k": 27,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A04 — One Information Pattern\\qa\\info-pattern-harness.js",
+  "code": 0,
+  "passed": 35,
+  "total": 35,
+  "secs": 14
+ },
+ {
+  "k": 28,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A15 — Court Badges\\qa\\court-badges-harness.js",
+  "code": 0,
+  "passed": 33,
+  "total": 33,
+  "secs": 28
+ },
+ {
+  "k": 29,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A16 — No Bottom i in the Seven Pickers\\qa\\picker-info-harness.js",
+  "code": 0,
+  "passed": 50,
+  "total": 50,
+  "secs": 13
+ },
+ {
+  "k": 30,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A03.1 — Masteries in the Skill Information\\qa\\skill-masteries-harness.js",
+  "code": 0,
+  "passed": 19,
+  "total": 19,
+  "secs": 13
+ },
+ {
+  "k": 31,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A03 — Top-Aligned Columns and Compact Skill Cards\\qa\\compact-skills-harness.js",
+  "code": 0,
+  "passed": 37,
+  "total": 37,
+  "secs": 53
+ },
+ {
+  "k": 32,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A02 — Floating Controls Above the Tabs\\qa\\floating-strip-harness.js",
+  "code": 0,
+  "passed": 23,
+  "total": 23,
+  "secs": 73
+ },
+ {
+  "k": 33,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A01 — One Reminder per School Choice\\qa\\review-reminder-harness.js",
+  "code": 0,
+  "passed": 31,
+  "total": 31,
+  "secs": 29
+ },
+ {
+  "k": 34,
+  "file": "Versions\\PART K — Phase 11.2.6 Rank Advancement Spell Choices\\qa\\rank-spell-harness.js",
+  "code": 0,
+  "passed": 36,
+  "total": 36,
+  "secs": 3
+ },
+ {
+  "k": 35,
+  "file": "Versions\\BUGFIX — Older School Choices\\qa\\allocation-boundaries-harness.js",
+  "code": 0,
+  "passed": 5,
+  "total": 5,
+  "secs": 3
+ },
+ {
+  "k": 36,
+  "file": "Versions\\BUGFIX — Older School Choices\\qa\\legacy-grants-harness.js",
+  "code": 0,
+  "passed": 4,
+  "total": 4,
+  "secs": 2
+ },
+ {
+  "k": 37,
+  "file": "Versions\\BUGFIX — Older School Choices\\qa\\older-review-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 3
+ },
+ {
+  "k": 38,
+  "file": "Versions\\PART K — Phase 11.2.5 School Choices from the Character Check\\qa\\review-regression-harness.js",
+  "code": 0,
+  "passed": 6,
+  "total": 6,
+  "secs": 6
+ },
+ {
+  "k": 39,
+  "file": "Versions\\PART K — Phase 11.2.5 School Choices from the Character Check\\qa\\school-choices-harness.js",
+  "code": 0,
+  "passed": 30,
+  "total": 30,
+  "secs": 6
+ },
+ {
+  "k": 40,
+  "file": "Versions\\BUGFIX — Overspend One Line\\qa\\one-line-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 5
+ },
+ {
+  "k": 41,
+  "file": "Versions\\BUGFIX — Free Choice Note Clears\\qa\\free-choice-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 5
+ },
+ {
+  "k": 42,
+  "file": "Versions\\BUGFIX — Wizard Overspend Warns\\qa\\overspend-warns-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 10
+ },
+ {
+  "k": 43,
+  "file": "Versions\\BUGFIX — Undone Change Not Unsaved Work\\qa\\undone-change-harness.js",
+  "code": 0,
+  "passed": 6,
+  "total": 6,
+  "secs": 6
+ },
+ {
+  "k": 44,
+  "file": "Versions\\BUGFIX — Empty Quiver Cancels\\qa\\quiver-cancel-harness.js",
+  "code": 0,
+  "passed": 6,
+  "total": 6,
+  "secs": 4
+ },
+ {
+  "k": 45,
+  "file": "Versions\\BUGFIX — Moon Resist Label\\qa\\moon-label-harness.js",
+  "code": 0,
+  "passed": 5,
+  "total": 5,
+  "secs": 3
+ },
+ {
+  "k": 46,
+  "file": "Versions\\BUGFIX — After-Preview Refund\\qa\\refund-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 15
+ },
+ {
+  "k": 47,
+  "file": "Versions\\BUGFIX — Moon Curse Full Moon\\qa\\moon-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 17
+ },
+ {
+  "k": 48,
+  "file": "Versions\\BUGFIX — Creation Cap of Four\\qa\\cap-harness.js",
+  "code": 0,
+  "passed": 11,
+  "total": 11,
+  "secs": 5
+ },
+ {
+  "k": 49,
+  "file": "Versions\\BUGFIX — Empty Quiver Rolls On\\qa\\quiver-harness.js",
+  "code": 0,
+  "passed": 8,
+  "total": 8,
+  "secs": 5
+ },
+ {
+  "k": 50,
+  "file": "Versions\\BUGFIX — Starting Spells Are Scrolls\\qa\\scrolls-harness.js",
+  "code": 0,
+  "passed": 5,
+  "total": 5,
+  "secs": 2
+ },
+ {
+  "k": 51,
+  "file": "Versions\\Part J — Data Integrity & Validation\\PART J — Phase 7.1 Audit Log\\qa\\audit-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 14
+ },
+ {
+  "k": 52,
+  "file": "Versions\\BUGFIX — Advantage Set Rules\\qa\\set-rules-harness.js",
+  "code": 0,
+  "passed": 50,
+  "total": 50,
+  "secs": 8
+ },
+ {
+  "k": 53,
+  "file": "Versions\\BUGFIX — Station and Shapeshifter Reference Entries\\qa\\station-reference-harness.js",
+  "code": 0,
+  "passed": 10,
+  "total": 10,
+  "secs": 2
+ },
+ {
+  "k": 54,
+  "file": "Versions\\BUGFIX — Instigator Blackmail Count\\qa\\instigator-harness.js",
+  "code": 0,
+  "passed": 14,
+  "total": 14,
+  "secs": 3
+ },
+ {
+  "k": 55,
+  "file": "Versions\\BUGFIX — School List Gender Tick\\qa\\list-gender-harness.js",
+  "code": 0,
+  "passed": 8,
+  "total": 8,
+  "secs": 2
+ },
+ {
+  "k": 56,
+  "file": "Versions\\BUGFIX — Gift Cancel Refunds the Spell Slot\\qa\\gift-refund-harness.js",
+  "code": 0,
+  "passed": 8,
+  "total": 8,
+  "secs": 10
+ },
+ {
+  "k": 57,
+  "file": "Versions\\BUGFIX — Compact Advanced Schools Button\\qa\\school-button-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 3
+ },
+ {
+  "k": 58,
+  "file": "Versions\\BUGFIX — Void Raise Not on Initiative\\qa\\void-raise-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 3
+ },
+ {
+  "k": 59,
+  "file": "Versions\\BUGFIX — Hotei Where the Sheet Spends Void\\qa\\hotei-auto-harness.js",
+  "code": 0,
+  "passed": 16,
+  "total": 16,
+  "secs": 3
+ },
+ {
+  "k": 60,
+  "file": "Versions\\BUGFIX — Skill List Hides Held Skills\\qa\\skill-list-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 3
+ },
+ {
+  "k": 61,
+  "file": "Versions\\BUGFIX — Gender From Identity and the Wizard\\qa\\gender-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 2
+ },
+ {
+  "k": 62,
+  "file": "Versions\\BUGFIX — Advanced Schools Pointer\\qa\\school-pointer-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 6
+ },
+ {
+  "k": 63,
+  "file": "Versions\\BUGFIX — Wizard Skill Remove\\qa\\wizard-remove-harness.js",
+  "code": 0,
+  "passed": 5,
+  "total": 5,
+  "secs": 2
+ },
+ {
+  "k": 64,
+  "file": "Versions\\BUGFIX — Jurojin Reminder Steps\\qa\\jurojin-harness.js",
+  "code": 0,
+  "passed": 6,
+  "total": 6,
+  "secs": 2
+ },
+ {
+  "k": 65,
+  "file": "Versions\\BUGFIX — Ancestor Gifts Used and Favour\\qa\\ancestor-gifts-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 3
+ },
+ {
+  "k": 66,
+  "file": "Versions\\BUGFIX — Characteristic Card Editing\\qa\\card-editing-harness.js",
+  "code": 0,
+  "passed": 46,
+  "total": 46,
+  "secs": 26
+ },
+ {
+  "k": 67,
+  "file": "Versions\\BUGFIX — Wound Settings Preview\\qa\\wound-preview-harness.js",
+  "code": 0,
+  "passed": 18,
+  "total": 18,
+  "secs": 3
+ },
+ {
+  "k": 68,
+  "file": "Versions\\PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-harness.js",
+  "code": 0,
+  "passed": 51,
+  "total": 51,
+  "secs": 6
+ },
+ {
+  "k": 69,
+  "file": "Versions\\PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-expansion-harness.js",
+  "code": 0,
+  "passed": 48,
+  "total": 48,
+  "secs": 5
+ },
+ {
+  "k": 70,
+  "file": "Versions\\PART I — Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+  "code": 0,
+  "passed": 163,
+  "total": 163,
+  "secs": 11
+ },
+ {
+  "k": 71,
+  "file": "Versions\\Part G — Combat & Roll Engine\\PART G — Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js",
+  "code": 0,
+  "passed": 35,
+  "total": 35,
+  "secs": 2
+ },
+ {
+  "k": 72,
+  "file": "Versions\\Part G — Combat & Roll Engine\\PART G — Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+  "code": 0,
+  "passed": 50,
+  "total": 50,
+  "secs": 13
+ },
+ {
+  "k": 73,
+  "file": "Versions\\Part G — Combat & Roll Engine\\PART G — Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+  "code": 0,
+  "passed": 22,
+  "total": 22,
+  "secs": 4
+ },
+ {
+  "k": 74,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 1 UI-UX Foundations\\qa\\ui-foundations-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 7
+ },
+ {
+  "k": 75,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 1.6 Combat Tab Streamlining\\qa\\wound-bar-harness.js",
+  "code": 0,
+  "passed": 23,
+  "total": 23,
+  "secs": 6
+ },
+ {
+  "k": 76,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 2 Quick-Access Sidebar\\qa\\quick-access-sidebar-harness.js",
+  "code": 0,
+  "passed": 19,
+  "total": 19,
+  "secs": 3
+ },
+ {
+  "k": 77,
+  "file": "Versions\\Part J — Data Integrity & Validation\\PART J — Phase 5 Character Creation Linting\\qa\\character-validator-harness.js",
+  "code": 0,
+  "passed": 25,
+  "total": 25,
+  "secs": 3
+ },
+ {
+  "k": 78,
+  "file": "Versions\\Part J — Data Integrity & Validation\\PART J — Phase 8 Why Cant I Cast This\\qa\\casting-diagnostics-harness.js",
+  "code": 0,
+  "passed": 36,
+  "total": 36,
+  "secs": 3
+ },
+ {
+  "k": 79,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 9 Clan-Themed Look\\qa\\clan-theming-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 5
+ },
+ {
+  "k": 80,
+  "file": "Versions\\BUGFIX — Spell Slots Tab Visibility Race\\qa\\spell-slots-visibility-harness.js",
+  "code": 0,
+  "passed": 6,
+  "total": 6,
+  "secs": 4
+ },
+ {
+  "k": 81,
+  "file": "Versions\\PART I — Phase 4.5.3 Configuration Repairs\\qa\\adv-config-repairs-harness.js",
+  "code": 0,
+  "passed": 39,
+  "total": 39,
+  "secs": 5
+ },
+ {
+  "k": 82,
+  "file": "Versions\\PART I — Phase 4.5.4 Configuration UX Pass\\qa\\adv-config-ux-harness.js",
+  "code": 0,
+  "passed": 28,
+  "total": 28,
+  "secs": 4
+ },
+ {
+  "k": 83,
+  "file": "Versions\\PART I — Phase 4.5.5 Eligibility Gates\\qa\\adv-eligibility-harness.js",
+  "code": 0,
+  "passed": 41,
+  "total": 41,
+  "secs": 5
+ },
+ {
+  "k": 84,
+  "file": "Versions\\PART I — Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+  "code": 0,
+  "passed": 29,
+  "total": 29,
+  "secs": 10
+ },
+ {
+  "k": 85,
+  "file": "Versions\\PART I — Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+  "code": 0,
+  "passed": 32,
+  "total": 32,
+  "secs": 9
+ },
+ {
+  "k": 86,
+  "file": "Versions\\PART I — Phase 4.5.8 Dependant and Wrath of the Kami\\qa\\disadv-dependant-wrath-harness.js",
+  "code": 0,
+  "passed": 55,
+  "total": 55,
+  "secs": 37
+ },
+ {
+  "k": 87,
+  "file": "Versions\\PART I — Phase 4.5.9 Doubt\\qa\\disadv-doubt-harness.js",
+  "code": 0,
+  "passed": 38,
+  "total": 38,
+  "secs": 4
+ },
+ {
+  "k": 88,
+  "file": "Versions\\PART I — Phase 4.5.10 Cursed by the Realm\\qa\\disadv-realm-harness.js",
+  "code": 0,
+  "passed": 62,
+  "total": 62,
+  "secs": 10
+ },
+ {
+  "k": 89,
+  "file": "Versions\\PART I — Phase 4.5.11 Seven Fortunes Curse\\qa\\disadv-fortune-harness.js",
+  "code": 0,
+  "passed": 74,
+  "total": 74,
+  "secs": 7
+ },
+ {
+  "k": 90,
+  "file": "Versions\\PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon\\qa\\disadv-bishamon-harness.js",
+  "code": 0,
+  "passed": 51,
+  "total": 51,
+  "secs": 4
+ },
+ {
+  "k": 91,
+  "file": "Versions\\BUGFIX — Mastery Rank Labelling\\qa\\mastery-rank-label-harness.js",
+  "code": 0,
+  "passed": 27,
+  "total": 27,
+  "secs": 2
+ },
+ {
+  "k": 92,
+  "file": "Versions\\BUGFIX — Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 2
+ },
+ {
+  "k": 93,
+  "file": "Versions\\PART I — Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+  "code": 0,
+  "passed": 136,
+  "total": 136,
+  "secs": 10
+ },
+ {
+  "k": 94,
+  "file": "Versions\\PART I — Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+  "code": 0,
+  "passed": 225,
+  "total": 225,
+  "secs": 11
+ },
+ {
+  "k": 95,
+  "file": "Versions\\PART I — Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+  "code": 0,
+  "passed": 53,
+  "total": 53,
+  "secs": 8
+ },
+ {
+  "k": 96,
+  "file": "Versions\\PART I — Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+  "code": 0,
+  "passed": 91,
+  "total": 91,
+  "secs": 14
+ },
+ {
+  "k": 97,
+  "file": "Versions\\PART I — Phase 4.5.17 Wealthy Koku Grant\\qa\\wealthy-grant-harness.js",
+  "code": 0,
+  "passed": 87,
+  "total": 87,
+  "secs": 11
+ },
+ {
+  "k": 98,
+  "file": "Versions\\PART I — Phase 4.5.18 Paragon\\qa\\paragon-harness.js",
+  "code": 0,
+  "passed": 80,
+  "total": 80,
+  "secs": 9
+ },
+ {
+  "k": 99,
+  "file": "Versions\\PART I — Phase 4.5.19 Soul of Artistry\\qa\\soul-artistry-harness.js",
+  "code": 0,
+  "passed": 92,
+  "total": 92,
+  "secs": 12
+ },
+ {
+  "k": 100,
+  "file": "Versions\\PART I — Phase 4.5.20 Void Versatility\\qa\\void-versatility-harness.js",
+  "code": 0,
+  "passed": 66,
+  "total": 66,
+  "secs": 24
+ },
+ {
+  "k": 101,
+  "file": "Versions\\PART I — Phase 4.5.21 Seven Fortunes Blessing\\qa\\fortune-blessing-harness.js",
+  "code": 0,
+  "passed": 77,
+  "total": 77,
+  "secs": 23
+ },
+ {
+  "k": 102,
+  "file": "Versions\\PART I — Phase 4.5.22 Naishou Citizen\\qa\\naishou-citizen-harness.js",
+  "code": 0,
+  "passed": 36,
+  "total": 36,
+  "secs": 8
+ },
+ {
+  "k": 103,
+  "file": "Versions\\PART I — Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+  "code": 0,
+  "passed": 67,
+  "total": 67,
+  "secs": 23
+ },
+ {
+  "k": 104,
+  "file": "Versions\\PART I — Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js",
+  "code": 0,
+  "passed": 50,
+  "total": 50,
+  "secs": 21
+ },
+ {
+  "k": 105,
+  "file": "Versions\\BUGFIX — Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js",
+  "code": 0,
+  "passed": 52,
+  "total": 52,
+  "secs": 9
+ },
+ {
+  "k": 106,
+  "file": "Versions\\BUGFIX — Spell Slots Tab on Safari\\qa\\safari-tab-harness.js",
+  "code": 0,
+  "passed": 19,
+  "total": 19,
+  "secs": 14
+ },
+ {
+  "k": 107,
+  "file": "Versions\\PART K — Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+  "code": 0,
+  "passed": 70,
+  "total": 70,
+  "secs": 92
+ },
+ {
+  "k": 108,
+  "file": "Versions\\PART K — Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+  "code": 0,
+  "passed": 43,
+  "total": 43,
+  "secs": 19
+ },
+ {
+  "k": 109,
+  "file": "Versions\\PART K — Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+  "code": 0,
+  "passed": 32,
+  "total": 32,
+  "secs": 13
+ },
+ {
+  "k": 110,
+  "file": "Versions\\PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+  "code": 0,
+  "passed": 52,
+  "total": 52,
+  "secs": 15
+ },
+ {
+  "k": 111,
+  "file": "Versions\\PART K — Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+  "code": 0,
+  "passed": 25,
+  "total": 25,
+  "secs": 14
+ },
+ {
+  "k": 112,
+  "file": "Versions\\BUGFIX — Kitsune Shugenja Listed Under Mantis\\qa\\kitsune-mantis-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 8
+ },
+ {
+  "k": 113,
+  "file": "Versions\\PART K — Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+  "code": 0,
+  "passed": 71,
+  "total": 71,
+  "secs": 60
+ },
+ {
+  "k": 114,
+  "file": "Versions\\BUGFIX — Import File Picker Filter\\qa\\import-filter-harness.js",
+  "code": 0,
+  "passed": 10,
+  "total": 10,
+  "secs": 9
+ },
+ {
+  "k": 115,
+  "file": "Versions\\BUGFIX — Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+  "code": 0,
+  "passed": 37,
+  "total": 37,
+  "secs": 20
+ },
+ {
+  "k": 116,
+  "file": "Versions\\PART K — Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+  "code": 0,
+  "passed": 25,
+  "total": 25,
+  "secs": 8
+ },
+ {
+  "k": 117,
+  "file": "Versions\\PART K — Phase 12.1 Play Mode Clan and School\\qa\\clan-school-harness.js",
+  "code": 0,
+  "passed": 14,
+  "total": 14,
+  "secs": 9
+ },
+ {
+  "k": 118,
+  "file": "Versions\\PART K — Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 7
+ },
+ {
+  "k": 119,
+  "file": "Versions\\PART K — Phase 12.3 Play Mode Rings and Traits\\qa\\rings-traits-harness.js",
+  "code": 0,
+  "passed": 16,
+  "total": 16,
+  "secs": 4
+ },
+ {
+  "k": 120,
+  "file": "Versions\\PART K — Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 5
+ },
+ {
+  "k": 121,
+  "file": "Versions\\PART K — Phase 12.6 Play Mode Techniques\\qa\\techniques-harness.js",
+  "code": 0,
+  "passed": 16,
+  "total": 16,
+  "secs": 5
+ },
+ {
+  "k": 122,
+  "file": "Versions\\PART K — Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+  "code": 0,
+  "passed": 212,
+  "total": 212,
+  "secs": 16
+ },
+ {
+  "k": 123,
+  "file": "Versions\\BUGFIX — Dependant Inline Typing\\qa\\dependant-typing-harness.js",
+  "code": 0,
+  "passed": 73,
+  "total": 73,
+  "secs": 29
+ },
+ {
+  "k": 124,
+  "file": "Versions\\PART K — Phase 12.7 Play Mode Combat\\qa\\combat-harness.js",
+  "code": 0,
+  "passed": 55,
+  "total": 55,
+  "secs": 40
+ },
+ {
+  "k": 125,
+  "file": "Versions\\PART K — Phase 12.8 Play Mode Toolbar\\qa\\toolbar-harness.js",
+  "code": 0,
+  "passed": 37,
+  "total": 37,
+  "secs": 12
+ },
+ {
+  "k": 126,
+  "file": "Versions\\Part J — Data Integrity & Validation\\PART J — Phase 7 Save Format and Migration\\qa\\save-format-harness.js",
+  "code": 0,
+  "passed": 45,
+  "total": 45,
+  "secs": 20
+ },
+ {
+  "k": 127,
+  "file": "Versions\\PART I — Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+  "code": 0,
+  "passed": 349,
+  "total": 349,
+  "secs": 47
+ },
+ {
+  "k": 128,
+  "file": "Versions\\BUGFIX — Manage Button Clipping\\qa\\manage-toggle-harness.js",
+  "code": 0,
+  "passed": 36,
+  "total": 36,
+  "secs": 10
+ },
+ {
+  "k": 129,
+  "file": "Versions\\BUGFIX — Multiple Schools Keep Earlier Techniques\\qa\\ms-techniques-harness.js",
+  "code": 0,
+  "passed": 32,
+  "total": 32,
+  "secs": 8
+ },
+ {
+  "k": 130,
+  "file": "Versions\\BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js",
+  "code": 0,
+  "passed": 28,
+  "total": 28,
+  "secs": 8
+ },
+ {
+  "k": 131,
+  "file": "Versions\\PART I — Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+  "code": 0,
+  "passed": 175,
+  "total": 175,
+  "secs": 22
+ },
+ {
+  "k": 132,
+  "file": "Versions\\BUGFIX — Technique Name Clashes\\qa\\technique-names-harness.js",
+  "code": 0,
+  "passed": 26,
+  "total": 26,
+  "secs": 6
+ },
+ {
+  "k": 133,
+  "file": "Versions\\Part G — Combat & Roll Engine\\PART G — Phase 6 School Technique Text\\qa\\technique-text-harness.js",
+  "code": 0,
+  "passed": 21,
+  "total": 21,
+  "secs": 7
+ },
+ {
+  "k": 134,
+  "file": "Versions\\PART I — Phase 4.5.25 Clan and School Prices\\qa\\clan-prices-harness.js",
+  "code": 0,
+  "passed": 45,
+  "total": 45,
+  "secs": 14
+ },
+ {
+  "k": 135,
+  "file": "Versions\\BUGFIX — Rank 0 Skill Rolls Explode\\qa\\rank-zero-harness.js",
+  "code": 0,
+  "passed": 19,
+  "total": 19,
+  "secs": 3
+ },
+ {
+  "k": 136,
+  "file": "Versions\\PART I — Phase 4.5.26 Dice Rolling Entries\\qa\\dice-entries-harness.js",
+  "code": 0,
+  "passed": 110,
+  "total": 110,
+  "secs": 11
+ },
+ {
+  "k": 137,
+  "file": "Versions\\PART I — Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+  "code": 0,
+  "passed": 196,
+  "total": 196,
+  "secs": 27
+ },
+ {
+  "k": 138,
+  "file": "Versions\\PART I — Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+  "code": 0,
+  "passed": 156,
+  "total": 156,
+  "secs": 28
+ },
+ {
+  "k": 139,
+  "file": "Versions\\PART I — Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+  "code": 0,
+  "passed": 38,
+  "total": 38,
+  "secs": 2
+ },
+ {
+  "k": 140,
+  "file": "Versions\\BUGFIX — Minor Clan Defender Paragon Gate\\qa\\paragon-gate-harness.js",
+  "code": 0,
+  "passed": 32,
+  "total": 32,
+  "secs": 3
+ },
+ {
+  "k": 141,
+  "file": "Versions\\PART I — Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+  "code": 0,
+  "passed": 117,
+  "total": 117,
+  "secs": 13
+ },
+ {
+  "k": 142,
+  "file": "Versions\\PART I — Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+  "code": 0,
+  "passed": 71,
+  "total": 71,
+  "secs": 5
+ },
+ {
+  "k": 143,
+  "file": "Versions\\PART I — Phase 4.5.29 Wound Entries\\qa\\wound-entries-harness.js",
+  "code": 0,
+  "passed": 45,
+  "total": 45,
+  "secs": 9
+ },
+ {
+  "k": 144,
+  "file": "Versions\\PART I — Phase 4.5.30 Automatic Roll Entries\\qa\\automatic-entries-harness.js",
+  "code": 0,
+  "passed": 41,
+  "total": 41,
+  "secs": 2
+ },
+ {
+  "k": 145,
+  "file": "Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+  "code": 0,
+  "passed": 101,
+  "total": 101,
+  "secs": 5
+ },
+ {
+  "k": 146,
+  "file": "Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+  "code": 0,
+  "passed": 69,
+  "total": 69,
+  "secs": 4
+ },
+ {
+  "k": 147,
+  "file": "Versions\\PART K — Phase 14 Search\\qa\\search-harness.js",
+  "code": 0,
+  "passed": 62,
+  "total": 62,
+  "secs": 4
+ },
+ {
+  "k": 148,
+  "file": "Versions\\PART I — Phase 4.5.33 Void and Initiative Entries\\qa\\void-initiative-harness.js",
+  "code": 0,
+  "passed": 44,
+  "total": 44,
+  "secs": 11
+ },
+ {
+  "k": 149,
+  "file": "Versions\\PART I — Phase 4.5.34 Blind Armor TN Note\\qa\\blind-note-harness.js",
+  "code": 0,
+  "passed": 11,
+  "total": 11,
+  "secs": 3
+ },
+ {
+  "k": 150,
+  "file": "Versions\\BUGFIX — Characters Screen Top Bar\\qa\\topbar-harness.js",
+  "code": 0,
+  "passed": 30,
+  "total": 30,
+  "secs": 4
+ },
+ {
+  "k": 151,
+  "file": "Versions\\PART I — Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 6
+ },
+ {
+  "k": 152,
+  "file": "Versions\\PART K — Phase 11.3 App Bar\\qa\\appbar-harness.js",
+  "code": 0,
+  "passed": 25,
+  "total": 25,
+  "secs": 5
+ },
+ {
+  "k": 153,
+  "file": "Versions\\PART K — Phase 11.3 App Bar\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 14,
+  "total": 14,
+  "secs": 8
+ },
+ {
+  "k": 154,
+  "file": "Versions\\PART K — Phase 14.1 Search Facets\\qa\\facets-harness.js",
+  "code": 0,
+  "passed": 44,
+  "total": 44,
+  "secs": 4
+ },
+ {
+  "k": 155,
+  "file": "Versions\\PART K — Phase 14.1 Search Facets\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 14,
+  "total": 14,
+  "secs": 9
+ },
+ {
+  "k": 156,
+  "file": "Versions\\BUGFIX — Printed Sheet Ring Layers\\qa\\print-harness.js",
+  "code": 0,
+  "passed": 8,
+  "total": 8,
+  "secs": 5
+ },
+ {
+  "k": 157,
+  "file": "Versions\\PART K — Phase 11.1 Export to PDF\\qa\\pdf-harness.js",
+  "code": 0,
+  "passed": 33,
+  "total": 33,
+  "secs": 6
+ },
+ {
+  "k": 158,
+  "file": "Versions\\BUGFIX — Skill Traits\\qa\\skill-traits-harness.js",
+  "code": 0,
+  "passed": 38,
+  "total": 38,
+  "secs": 2
+ },
+ {
+  "k": 159,
+  "file": "Versions\\BUGFIX — Skill Traits\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 8,
+  "total": 8,
+  "secs": 5
+ },
+ {
+  "k": 160,
+  "file": "Versions\\PART K — Phase 14.2 Kata and Kiho References\\qa\\references-harness.js",
+  "code": 0,
+  "passed": 30,
+  "total": 30,
+  "secs": 3
+ },
+ {
+  "k": 161,
+  "file": "Versions\\PART K — Phase 14.2 Kata and Kiho References\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 10
+ },
+ {
+  "k": 162,
+  "file": "Versions\\BUGFIX — Search Focus on Close\\qa\\search-focus-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 6
+ },
+ {
+  "k": 163,
+  "file": "Versions\\BUGFIX — Search Focus on Close\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 15,
+  "total": 15,
+  "secs": 7
+ },
+ {
+  "k": 164,
+  "file": "Versions\\BUGFIX — Printed Weapon Text\\qa\\printed-weapons-harness.js",
+  "code": 0,
+  "passed": 15,
+  "total": 15,
+  "secs": 5
+ },
+ {
+  "k": 165,
+  "file": "Versions\\BUGFIX — Printed Weapon Text\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 5
+ },
+ {
+  "k": 166,
+  "file": "Versions\\PART K — Phase 14.3a Skill, Weapon and Spell References\\qa\\references-harness.js",
+  "code": 0,
+  "passed": 32,
+  "total": 32,
+  "secs": 3
+ },
+ {
+  "k": 167,
+  "file": "Versions\\PART K — Phase 14.3a Skill, Weapon and Spell References\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 23,
+  "total": 23,
+  "secs": 12
+ },
+ {
+  "k": 168,
+  "file": "Versions\\BUGFIX — Search Keystroke Speed\\qa\\speed-harness.js",
+  "code": 0,
+  "passed": 7,
+  "total": 7,
+  "secs": 4
+ },
+ {
+  "k": 169,
+  "file": "Versions\\BUGFIX — Print Copies Cleanup\\qa\\print-copies-harness.js",
+  "code": 0,
+  "passed": 6,
+  "total": 6,
+  "secs": 3
+ },
+ {
+  "k": 170,
+  "file": "Versions\\BUGFIX — Screen Focus from the App Bar\\qa\\screen-focus-harness.js",
+  "code": 0,
+  "passed": 11,
+  "total": 11,
+  "secs": 4
+ },
+ {
+  "k": 171,
+  "file": "Versions\\BUGFIX — Carousel Settles on Its Destination\\qa\\carousel-destination-harness.js",
+  "code": 0,
+  "passed": 9,
+  "total": 9,
+  "secs": 21
+ },
+ {
+  "k": 172,
+  "file": "Versions\\BUGFIX — Printed Weapon Columns\\qa\\printed-weapon-columns-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 10
+ },
+ {
+  "k": 173,
+  "file": "Versions\\BUGFIX — Carousel Keeps Its Page on Rotation\\qa\\carousel-rotation-harness.js",
+  "code": 0,
+  "passed": 10,
+  "total": 10,
+  "secs": 60
+ },
+ {
+  "k": 174,
+  "file": "Versions\\BUGFIX — Printed Skills and Equipment Tables\\qa\\printed-skills-equipment-harness.js",
+  "code": 0,
+  "passed": 18,
+  "total": 18,
+  "secs": 10
+ },
+ {
+  "k": 175,
+  "file": "Versions\\PART K — Phase 14.3b School, Technique, Clan and Family References\\qa\\references-harness.js",
+  "code": 0,
+  "passed": 40,
+  "total": 40,
+  "secs": 3
+ },
+ {
+  "k": 176,
+  "file": "Versions\\PART K — Phase 14.3b School, Technique, Clan and Family References\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 26,
+  "total": 26,
+  "secs": 13
+ },
+ {
+  "k": 177,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 9.1 School Flavour Text\\qa\\flavour-harness.js",
+  "code": 0,
+  "passed": 19,
+  "total": 19,
+  "secs": 2
+ },
+ {
+  "k": 178,
+  "file": "Versions\\Part H — Sheet UI-UX\\PART H — Phase 9.1 School Flavour Text\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 23,
+  "total": 23,
+  "secs": 12
+ },
+ {
+  "k": 179,
+  "file": "Versions\\BUGFIX — Spell Names Match the Books\\qa\\spell-names-harness.js",
+  "code": 0,
+  "passed": 16,
+  "total": 16,
+  "secs": 2
+ },
+ {
+  "k": 180,
+  "file": "Versions\\BUGFIX — Spell Names Match the Books\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 8
+ },
+ {
+  "k": 181,
+  "file": "Versions\\BUGFIX — Gift of the Lady per School and Imperial Histories Volumes\\qa\\gift-ih-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 4
+ },
+ {
+  "k": 182,
+  "file": "Versions\\BUGFIX — Gift of the Lady per School and Imperial Histories Volumes\\qa\\dependency-harness.js",
+  "code": 0,
+  "passed": 16,
+  "total": 16,
+  "secs": 11
+ },
+ {
+  "k": 183,
+  "file": "Versions\\PART I — Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+  "code": 0,
+  "passed": 45,
+  "total": 45,
+  "secs": 3
+ },
+ {
+  "k": 184,
+  "file": "Versions\\PART K — Phase 13 Library\\qa\\library-harness.js",
+  "code": 0,
+  "passed": 187,
+  "total": 187,
+  "secs": 100
+ },
+ {
+  "k": 185,
+  "file": "Versions\\PART K — Phase 13 Library\\qa\\library-dependency.js",
+  "code": 0,
+  "passed": 7,
+  "total": 7,
+  "secs": 14
+ },
+ {
+  "k": 186,
+  "file": "Versions\\BUGFIX — Clan and School Pickers Follow the Character\\qa\\cfs-sync-harness.js",
+  "code": 0,
+  "passed": 72,
+  "total": 72,
+  "secs": 64
+ },
+ {
+  "k": 187,
+  "file": "Versions\\QA — Cycle 5 Release 5a 2026-10-21\\qa\\sw-checks.js",
+  "code": 0,
+  "passed": 61,
+  "total": 61,
+  "secs": 113
+ },
+ {
+  "k": 188,
+  "file": "Versions\\BUGFIX — Printed Emphases Without the Web Fonts\\qa\\fonts-harness.js",
+  "code": 0,
+  "passed": 18,
+  "total": 18,
+  "secs": 9
+ },
+ {
+  "k": 189,
+  "file": "Versions\\PART I — Phase 4.5.37 Supplement Advantages and Disadvantages\\qa\\supplement-harness.js",
+  "code": 0,
+  "passed": 26,
+  "total": 26,
+  "secs": 2
+ },
+ {
+  "k": 190,
+  "file": "Versions\\PART I — Phase 4.5.38 Supplement Price Choices\\qa\\choices-harness.js",
+  "code": 0,
+  "passed": 18,
+  "total": 18,
+  "secs": 2
+ },
+ {
+  "k": 191,
+  "file": "Versions\\QA — Cycle 5 Release 5b 2026-10-22\\qa\\notice-checks.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 37
+ },
+ {
+  "k": 192,
+  "file": "Versions\\PART I — Phase 4.5.39 Supplement Skill Pickers\\qa\\skill-pickers-harness.js",
+  "code": 0,
+  "passed": 24,
+  "total": 24,
+  "secs": 2
+ },
+ {
+  "k": 193,
+  "file": "Versions\\PART I — Phase 4.5.40 Supplement Identity and Outfit\\qa\\identity-outfit-harness.js",
+  "code": 0,
+  "passed": 21,
+  "total": 21,
+  "secs": 2
+ },
+ {
+  "k": 194,
+  "file": "Versions\\PART I — Phase 4.5.41 A Changing Sworn Enemy\\qa\\shifting-enemy-harness.js",
+  "code": 0,
+  "passed": 13,
+  "total": 13,
+  "secs": 2
+ },
+ {
+  "k": 195,
+  "file": "Versions\\PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms\\qa\\printed-heirlooms-harness.js",
+  "code": 0,
+  "passed": 13,
+  "total": 13,
+  "secs": 2
+ },
+ {
+  "k": 196,
+  "file": "Versions\\BUGFIX — Clan and School Pickers After Cancel\\qa\\cfs-cancel-harness.js",
+  "code": 0,
+  "passed": 16,
+  "total": 16,
+  "secs": 11
+ },
+ {
+  "k": 197,
+  "file": "Versions\\BUGFIX — Yomi Sees the Ancestor\\qa\\yomi-ancestor-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 4
+ },
+ {
+  "k": 198,
+  "file": "Versions\\BUGFIX — Roll Preview Opens at the Top\\qa\\roll-preview-top-harness.js",
+  "code": 0,
+  "passed": 10,
+  "total": 10,
+  "secs": 6
+ },
+ {
+  "k": 199,
+  "file": "Versions\\BUGFIX — Typed Initiative Is the Dice\\qa\\typed-initiative-harness.js",
+  "code": 0,
+  "passed": 11,
+  "total": 11,
+  "secs": 5
+ },
+ {
+  "k": 200,
+  "file": "Versions\\BUGFIX — Void Card Reasons on a Phone\\qa\\void-reasons-harness.js",
+  "code": 0,
+  "passed": 14,
+  "total": 14,
+  "secs": 3
+ },
+ {
+  "k": 201,
+  "file": "Versions\\BUGFIX — Social Rank and Points\\qa\\social-rank-points-harness.js",
+  "code": 0,
+  "passed": 30,
+  "total": 30,
+  "secs": 3
+ },
+ {
+  "k": 202,
+  "file": "Versions\\BUGFIX — Taint Points and Growth\\qa\\taint-harness.js",
+  "code": 0,
+  "passed": 26,
+  "total": 26,
+  "secs": 5
+ },
+ {
+  "k": 203,
+  "file": "Versions\\BUGFIX — Imperial Scion Shared Status\\qa\\scion-harness.js",
+  "code": 0,
+  "passed": 12,
+  "total": 12,
+  "secs": 3
+ },
+ {
+  "k": 204,
+  "file": "Versions\\BUGFIX — Honour Resistance Bonus\\qa\\honour-harness.js",
+  "code": 0,
+  "passed": 20,
+  "total": 20,
+  "secs": 3
+ },
+ {
+  "k": 205,
+  "file": "Versions\\BUGFIX — Template PDF Export\\qa\\template-pdf-harness.js",
+  "code": 0,
+  "passed": 22,
+  "total": 22,
+  "secs": 5
+ },
+ {
+  "k": 206,
+  "file": "Versions\\BUGFIX — Template PDF Export\\qa\\coverage-harness.js",
+  "code": 0,
+  "passed": 15,
+  "total": 15,
+  "secs": 5
+ },
+ {
+  "k": 207,
+  "file": "Versions\\BUGFIX — Template PDF Export\\qa\\school-choices-harness.js",
+  "code": 0,
+  "passed": 4,
+  "total": 4,
+  "secs": 3
+ },
+ {
+  "k": 208,
+  "file": "Versions\\BUGFIX — Campaign Wound Multipliers\\qa\\wound-multiplier-harness.js",
+  "code": 0,
+  "passed": 31,
+  "total": 31,
+  "secs": 4
+ },
+ {
+  "k": 209,
+  "file": "Versions\\BUGFIX — Compact Characteristic Controls\\qa\\compact-points-harness.js",
+  "code": 0,
+  "passed": 33,
+  "total": 33,
+  "secs": 4
+ },
+ {
+  "k": 210,
+  "file": "Versions\\BUGFIX — PDF Field Fit and Rules\\qa\\pdf-fit-harness.js",
+  "code": 0,
+  "passed": 17,
+  "total": 17,
+  "secs": 3
+ },
+ {
+  "k": 211,
+  "file": "Versions\\BUGFIX — Optional PDF Details Appendix\\qa\\appendix-harness.js",
+  "code": 0,
+  "passed": 15,
+  "total": 15,
+  "secs": 4
+ },
+ {
+  "k": 212,
+  "file": "Versions\\BUGFIX — PDF Save and Print Workflow\\qa\\save-harness.js",
+  "code": 0,
+  "passed": 30,
+  "total": 30,
+  "secs": 3
+ }
+]

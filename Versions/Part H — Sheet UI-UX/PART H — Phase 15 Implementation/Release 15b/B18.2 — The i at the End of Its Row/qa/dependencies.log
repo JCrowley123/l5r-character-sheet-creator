@@ -1,0 +1,18 @@
+fragment : src/sheet/209.99999999999999999994-feat-info-row-end.js
+marker   : PART H PHASE 15.2.10.2
+surface  : 3 name(s) -- IE15, INFO_AT_ROW_END_ENABLED, ie15-on
+
+src\css\1157-info-row-end.css
+    own      8  [PART H PHASE 15.2.10.2 +7]  body.ie15-on, which this unit's switch sets. Screen only: print is unchanged. */
+    own     10  [PART H PHASE 15.2.10.2 +9]  html body.ie15-on .adv-config-row > .adv-config-resource-controls:has(> .adv-config-info) {
+    own     13  [PART H PHASE 15.2.10.2 +12]  html body.ie15-on .adv-config-resource-controls > .adv-config-info:not(.combat-formula-info) {
+    own     16  [PART H PHASE 15.2.10.2 +15]  html body.ie15-on .adv-config-row > .adv-config-info:not(.combat-formula-info),
+    own     17  [PART H PHASE 15.2.10.2 +16]  html body.ie15-on .adv-config-row > .dp4523-info:not(.combat-formula-info),
+    own     18  [PART H PHASE 15.2.10.2 +17]  html body.ie15-on .adv-config-row > .fortune4511-badge + button:not(.combat-formula-info) {
+
+src\sheet\210-test-seam-and-init.js
+    own   1053  [PART H PHASE 15.2.10.2 +1]  if(typeof IE15 === 'object' && IE15) Object.assign(window.__L5R_TEST__, {IE15, INFO_AT_ROW_END_E
+    own   1054  [PART H PHASE 15.2.10.2 +2]  // END IE15 info-row-end-seam
+
+every reference is inside a block PART H PHASE 15.2.10.2 owns -- surgical removal covers all of them.
+exit 0

@@ -378,6 +378,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999999999999992-feat-button-names.js"),
     Release("PART H — Phase 15 Implementation/Release 15b/B18.1 — One Size for Reset",
             fragment="src/sheet/209.99999999999999999993-feat-reset-size.js"),
+    Release("PART H — Phase 15 Implementation/Release 15b/B18.2 — The i at the End of Its Row",
+            fragment="src/sheet/209.99999999999999999994-feat-info-row-end.js"),
 )
 
 

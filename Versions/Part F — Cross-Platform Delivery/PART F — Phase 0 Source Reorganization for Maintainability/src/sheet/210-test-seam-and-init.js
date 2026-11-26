@@ -1049,6 +1049,9 @@
   // PART H PHASE 15.2.10.1 BEGIN reset-size-seam
   if(typeof RS15 === 'object' && RS15) Object.assign(window.__L5R_TEST__, {RS15, RESET_ONE_SIZE_ENABLED});
   // END RS15 reset-size-seam
+  // PART H PHASE 15.2.10.2 BEGIN info-row-end-seam
+  if(typeof IE15 === 'object' && IE15) Object.assign(window.__L5R_TEST__, {IE15, INFO_AT_ROW_END_ENABLED});
+  // END IE15 info-row-end-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
