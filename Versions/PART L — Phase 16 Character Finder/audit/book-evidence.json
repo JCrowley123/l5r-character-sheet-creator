@@ -1433,12 +1433,12 @@
   "answers": [
    {
     "question": "Near-twin of \"Yoritomo Shugenja\" (rated 100% alike): what separates them? Propose a label for each that the evidence supports.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "The Moshi are devoted to the Sun, gain a Fire Affinity by day, favour Thunder spells and call the weather kami, posted on Mantis ships to calm the seas. Yoritomo shugenja (The Great Clans p.168) are bound to the sea itself, change wind and weather by Technique and learn Sailing. Proposal: Yoritomo Shugenja main nature and sailor; Moshi main nature, also mystic for their Sun devotion in place of sailor.",
+    "page": "Core Rulebook p.120",
     "source": "book",
-    "confidence": ""
+    "confidence": "judgement"
    }
   ]
  },
@@ -1447,12 +1447,12 @@
   "answers": [
    {
     "question": "Is the home \"battlefield\" right? Battlefields, armies and soldiers.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Most young Tsuruchi train in this School to serve as soldiers and archers in the Mantis military, and its Techniques are all for the bow in combat.",
+    "page": "The Great Clans p.167",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1461,30 +1461,30 @@
   "answers": [
    {
     "question": "Is \"traveller\" right? Always on the move: wanderers, roads, journeys beyond their Clan's lands.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "They travel the length of the Empire hunting fugitives, under an old contract with the Emerald Champion.",
+    "page": "The Great Clans p.167",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Should \"scholar\" be added? Knows things: several Lore Skills, study, learning or libraries.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Not added. The only Lore taught is Underworld, used to find informants; their knowledge serves the hunt, not study.",
+    "page": "The Great Clans p.168",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    },
    {
     "question": "Is the home \"road\" right? The road: wanderers, messengers, travelling monks.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "Bounty hunters who cross the Empire after their quarry; Hunting (Tracking) is a School Skill.",
+    "page": "The Great Clans p.167",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
@@ -1493,12 +1493,12 @@
   "answers": [
    {
     "question": "Is \"skirmisher\" right? Fast and mobile: movement, Initiative or hit-and-run Techniques.",
-    "decision": "",
+    "decision": "keep",
     "to": "",
-    "evidence": "",
-    "page": "",
+    "evidence": "A ship-deck style that moves more than most Schools: no penalty on rough footing, and Rank 4 hardens Armor TN after moving at least five feet.",
+    "page": "Core Rulebook p.120",
     "source": "book",
-    "confidence": ""
+    "confidence": "clear"
    }
   ]
  },
