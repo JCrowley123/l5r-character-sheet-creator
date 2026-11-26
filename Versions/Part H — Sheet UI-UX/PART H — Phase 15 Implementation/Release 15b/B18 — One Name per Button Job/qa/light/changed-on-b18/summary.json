@@ -5,7 +5,7 @@
   "code": 0,
   "passed": 17,
   "total": 17,
-  "secs": 14
+  "secs": 18
  },
  {
   "k": 1,
@@ -37,7 +37,7 @@
   "code": 0,
   "passed": 20,
   "total": 20,
-  "secs": 25
+  "secs": 27
  },
  {
   "k": 5,
@@ -45,7 +45,7 @@
   "code": 0,
   "passed": 35,
   "total": 35,
-  "secs": 14
+  "secs": 15
  },
  {
   "k": 6,
@@ -53,7 +53,7 @@
   "code": 0,
   "passed": 12,
   "total": 12,
-  "secs": 2
+  "secs": 3
  },
  {
   "k": 7,
@@ -61,7 +61,7 @@
   "code": 0,
   "passed": 48,
   "total": 48,
-  "secs": 4
+  "secs": 5
  },
  {
   "k": 8,
@@ -69,7 +69,7 @@
   "code": 0,
   "passed": 28,
   "total": 28,
-  "secs": 4
+  "secs": 5
  },
  {
   "k": 9,
@@ -85,7 +85,7 @@
   "code": 0,
   "passed": 70,
   "total": 70,
-  "secs": 89
+  "secs": 93
  },
  {
   "k": 11,
@@ -93,7 +93,7 @@
   "code": 0,
   "passed": 349,
   "total": 349,
-  "secs": 40
+  "secs": 51
  },
  {
   "k": 12,
@@ -101,7 +101,7 @@
   "code": 0,
   "passed": 69,
   "total": 69,
-  "secs": 4
+  "secs": 8
  },
  {
   "k": 13,
@@ -109,7 +109,7 @@
   "code": 0,
   "passed": 33,
   "total": 33,
-  "secs": 3
+  "secs": 4
  },
  {
   "k": 14,
@@ -117,6 +117,6 @@
   "code": 0,
   "passed": 22,
   "total": 22,
-  "secs": 4
+  "secs": 7
  }
 ]

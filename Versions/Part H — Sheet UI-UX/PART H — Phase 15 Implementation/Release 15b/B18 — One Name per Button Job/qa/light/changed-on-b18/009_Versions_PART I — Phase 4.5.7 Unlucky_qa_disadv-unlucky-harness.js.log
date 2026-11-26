@@ -6,9 +6,9 @@ PASS UNLUCKY457-PRICE-05 Rank 10 awards 20 XP, so no rank cap was invented
 PASS UNLUCKY457-PRICE-06 The row says the second result is the one that stands — Rank 10 — the GM may force 10 rerolls per session, keeping the second result; 10/10 left Value: 20 XP.
 PASS UNLUCKY457-REROLL-01 Twenty real invocations were driven — ran 20
 PASS UNLUCKY457-REROLL-02 The displayed total is the REROLL every single time
-PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 9 higher, 9 lower of 20
-PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":17,"statedOriginal":17,"reroll":31,"shown":31},{"original":19,"statedOriginal":19,"reroll":29,"shown":29},{"original":18,"statedOriginal":18,"reroll":25,"shown":25}]
-PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":24,"statedOriginal":24,"reroll":17,"shown":17},{"original":30,"statedOriginal":30,"reroll":27,"shown":27},{"original":26,"statedOriginal":26,"reroll":13,"shown":13}]
+PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 8 higher, 10 lower of 20
+PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":29,"statedOriginal":29,"reroll":30,"shown":30},{"original":22,"statedOriginal":22,"reroll":26,"shown":26},{"original":15,"statedOriginal":15,"reroll":24,"shown":24}]
+PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":39,"statedOriginal":39,"reroll":35,"shown":35},{"original":27,"statedOriginal":27,"reroll":20,"shown":20},{"original":22,"statedOriginal":22,"reroll":9,"shown":9}]
 PASS UNLUCKY457-USES-01 The count walks 3/3 → 2/3 → 1/3 → 0/3 and then disables
 PASS UNLUCKY457-USES-02 The row shows the pool spent, not the entry vanished
 PASS UNLUCKY457-ISOLATION-01 The only thing an invoke changes on the character is Unlucky’s own counter

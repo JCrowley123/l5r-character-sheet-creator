@@ -59323,8 +59323,10 @@ return fontkitCache=module.exports;}
       tieWas: 'Reset session gives back all ',
       tieNow: 'Reset gives back all '
     });
+    // A button's old words, where an i's window uses them as its heading.
+    api.HEADINGS = Object.freeze({'Reset session': 'Reset'});
     // ---- G06 Use ----
-    api.USE = Object.freeze({was: 'Use it now', text: 'Use', noteWas: 'press “Use it now” on this card', noteNow: 'press “Use” on this card'});
+    api.USE =Object.freeze({was: 'Use it now', text: 'Use', noteWas: 'press “Use it now” on this card', noteNow: 'press “Use” on this card'});
     // ---- G05, G06, G07: the words of the sheet's question and message window ----
     api.OK_WORDS = Object.freeze({'Got it': 'OK', 'Yes': 'Confirm', 'Spend a Void Point': 'Spend Void', 'Use it now': 'Use'});
     api.CANCEL_WORDS = Object.freeze({'No': 'Cancel', 'Spend a Void Point': 'Spend Void'});
@@ -59662,6 +59664,17 @@ return fontkitCache=module.exports;}
       if(typeof R454 === 'object' && R454) wrapProperty(R454, 'decorate', function(scope){
         if(scope && scope.querySelectorAll) Array.prototype.forEach.call(scope.querySelectorAll('.adv-config-info'), api.info);
       }, 'explain');
+      // An i's window takes its heading from the words of the button the i explains, as they were when the i was drawn
+      // (Luck's i explains its Reset): a heading that is a button's old words is shown with its new word.
+      if(typeof R454 === 'object' && R454 && typeof R454.show === 'function'){
+        const previousShow = R454.show;
+        R454.show = function(title){
+          const args = Array.prototype.slice.call(arguments);
+          if(typeof title === 'string' && own.call(api.HEADINGS, title)) args[0] = api.HEADINGS[title];
+          return previousShow.apply(this, args);
+        };
+        api.parts.explainWindow = true;
+      }
       // The sheet's pages, after every recalculation.
       if(typeof recalcAll === 'function'){
         recalcAll = after(recalcAll, function(){ api.sheet(); });

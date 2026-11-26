@@ -196,6 +196,17 @@ async function phoneSessions(browser, F) {
     return [card.text === 'Reset' && card.spoken === ANCESTOR_RESET && /ready this session \(1\/1\)/.test(after.state) && after.reset.text === 'Reset' &&
       after.reset.disabled === true && rounds.text === 'Reset' && rounds.spoken === ROUNDS, {card, after, rounds}];
   });
+  // An i's window takes its heading from the button it explains: Luck's i explains its Reset, so the heading is "Reset".
+  await check('BN-I-WINDOW-HEADING-PHONE', async () => {
+    await goTo(page, 'Adv & Disadv');
+    await press(page, phone, button(page, 'Luck information'));
+    const w = await page.evaluate(() => ({open: window.BNH.overlay('stanceInfoOverlay'), title: document.getElementById('stanceInfoTitle').textContent.trim(),
+      body: document.getElementById('stanceInfoBody').textContent.trim(), x: window.BNH.byId('stanceInfoClose'),
+      part: !!window.__L5R_TEST__.BN15.parts.explainWindow}));
+    await press(page, phone, button(page, 'Close Reset information'));
+    const closed = !(await shownOverlay(page, 'stanceInfoOverlay'));
+    return [w.open && w.title === 'Reset' && /Restore Luck to its per-session maximum/.test(w.body) && w.x.spoken === 'Close Reset information' && w.part && closed, {w, closed}];
+  });
   // ---- G06 Use (Great Destiny) ----
   await goTo(page, 'Adv & Disadv');
   await check('BN-DESTINY-USE-PHONE', async () => {

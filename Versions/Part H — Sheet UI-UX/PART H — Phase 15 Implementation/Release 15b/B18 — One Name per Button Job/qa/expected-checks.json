@@ -1,12 +1,13 @@
 {
  "unit": "Release 15b B18 (PART H PHASE 15.2.10)",
- "pinned": "25 November 2026, before the first run; BN-QUICK-TAPS-ONE-UNDO-PHONE pinned 26 November 2026, before its first run (after the discovery run found the A08 interaction)",
+ "pinned": "25 November 2026, before the first run; BN-QUICK-TAPS-ONE-UNDO-PHONE pinned 26 November 2026, before its first run (after the discovery run found the A08 interaction); BN-I-WINDOW-HEADING-PHONE pinned 26 November 2026, before its first run (found by B18.2's harness: Luck's i window was headed \"Reset session\")",
  "checks": [
   "BN-SEAM-PHONE",
   "BN-RESET-PHONE",
   "BN-RESET-PRESS-PHONE",
   "BN-RESET-LINES-PHONE",
   "BN-RESET-ANCESTOR-PHONE",
+  "BN-I-WINDOW-HEADING-PHONE",
   "BN-DESTINY-USE-PHONE",
   "BN-WINDOW-WORDS-PHONE",
   "BN-REROLL-PHONE",

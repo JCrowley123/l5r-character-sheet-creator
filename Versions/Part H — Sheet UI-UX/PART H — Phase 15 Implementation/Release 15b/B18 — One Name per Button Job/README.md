@@ -40,6 +40,7 @@ One word for each job a button does, and a spoken name that says what it acts on
 
 `src/sheet/209.99999999999999999992-feat-button-names.js` holds `BN15` and the switch `ONE_NAME_PER_JOB_ENABLED`. Each change is made only where today's exact words are found, as the control is drawn, never by watching the page:
 
+- **An i's window heading** that is a button's old words (Luck's i explains its Reset): a wrapper of `R454.show`.
 - **Each Advantage and Disadvantage row**, after every earlier layer has drawn it (a wrapper of `refreshAdvConfigControl`, installed last): Reset, Change and Choose…, Great Destiny's Use, the i's, the row's ✕.
 - **Phase 4.5.4's i's** wherever they are drawn (a wrapper of `R454.decorate`, after Release 15a A04's): the rows and the configuration window's options.
 - **After every recalculation** (a wrapper of `recalcAll`): the Skills, Weapons and Equipment rows, every list's entries, the steppers, the Ancestor card's i, Quick Access's i's. Names also follow a row's name as it is typed (input and change on each list).
@@ -60,14 +61,15 @@ Tier: like group 2's B01 and B09, the screen-only tier. Every change is set sync
 - **Two Ancestor gift notes** (Seppun's and Iongi's) told the player to press “Use it now” on the card; they now say press “Use”. The kickoff listed only the three Reset lines; these two name the same button.
 - **The Ancestor's question** ("… use this session’s free Void Point now …?") had its own "Use it now" button; it reads "Use", heard as the card's.
 - **An Emphasis's ✕** is heard "Remove Emphasis", as the board pictured it (without the Emphasis's name).
+- **Luck's i window was headed "Reset session".** Phase 4.54 (Part I) heads an i's window with the words of the button the i explains, read when the i is drawn; Luck's i explains its Reset. B18 wraps `R454.show` so that heading reads "Reset" (found by B18.2's harness; B18's `BN-I-WINDOW-HEADING-PHONE`).
 
 ## Light checks (26 November 2026)
 
-- **Own harness** `qa/button-names-harness.js`: **34/34** (`qa/run-2.log`), with the suite's two preloads, on a phone (390 × 844, touch) and a laptop (1440 × 1000). Ids pinned before the first run; one check (`BN-QUICK-TAPS-ONE-UNDO-PHONE`) added and pinned after the discovery run, before its first run. Run 1 (`qa/run-1.log`): 28/33, five harness recipe errors, no unit fault.
+- **Own harness** `qa/button-names-harness.js`: **35/35** (`qa/run-3.log`), with the suite's two preloads, on a phone (390 × 844, touch) and a laptop (1440 × 1000). Ids pinned before the first run; two checks added later, each pinned before its own first run (`BN-QUICK-TAPS-ONE-UNDO-PHONE` after the discovery run, `BN-I-WINDOW-HEADING-PHONE` after B18.2's harness found the heading). Run 1 (`qa/run-1.log`): 28/33, five harness recipe errors, no unit fault; run 2 (`qa/run-2.log`): 34/34, before the heading fix.
 - **The board itself:** every one of round 1's 41 pictured places opened on the build and read for its words and spoken name: **41/41 match the approved "after"** (and Touch of the Void its kept "now"). `qa/build/probe-built.cjs`, results `qa/build/probe-b18/probe.json`.
-- **Removal:** `qa/test-removal.py` **10/10** (`qa/removal.log`). Removing B18 rebuilds group 2 as live exactly (`1f002be9…5819`, 17,773,727 bytes); B09 removed next gives B05 (`029595b6…8983`); B09 removed with B18 kept verifies (`00f22949…e3dd`, 17,801,799 bytes).
+- **Removal:** `qa/test-removal.py` **10/10** (`qa/removal.log`). Removing B18 rebuilds group 2 as live exactly (`1f002be9…5819`, 17,773,727 bytes); B09 removed next gives B05 (`029595b6…8983`); B09 removed with B18 kept verifies (`bcc7c25d…2f11`, 17,802,592 bytes).
 - **Dependencies:** `qa/feature-dependencies.py` exit 0 (`qa/dependencies.log`); older removers that name B18's files: `qa/build/surface-hits.log`.
-- **Older harnesses that pin the old words:** 14, made to follow B18 (see ROLLBACK). On B18's build and on live main's build: **15/15 harnesses, 781/781 checks** each (`qa/light/`).
-- **The live suite on B18's build:** all 213 harnesses pass. Run five at a time: 7,561/7,562; the one miss, the splash's "fades after ready and 5 s" timing in the live-site leaf, passes when run alone (61/61). `qa/light/full-b18/`, and `qa/light/README.md` for every run.
+- **Older harnesses that pin the old words:** 14, made to follow B18 (see ROLLBACK). On B18's build (`e6755993…`, after the heading fix) and on live main's build: **15/15 harnesses, 781/781 checks** each (`qa/light/`).
+- **The live suite on B18's build** (`2be73c43…`, before the heading fix, which changes only an i window's heading): all 213 harnesses pass. Run five at a time: 7,561/7,562; the one miss, the splash's "fades after ready and 5 s" timing in the live-site leaf, passes when run alone (61/61). `qa/light/full-b18/`, and `qa/light/README.md` for every run.
 
-Build: application `2be73c43bd748bc7135f1a2d24c9b4cb17ad43dab760c3310d7fbb2f90d7faea`.
+Build: application `e6755993bf44ec573b185cf2e51439eb2d83d72a018f6073f3f45fb531d7c089`, 17,805,868 bytes.
