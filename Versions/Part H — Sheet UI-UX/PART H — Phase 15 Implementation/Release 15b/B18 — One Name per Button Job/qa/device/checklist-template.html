@@ -1,0 +1,177 @@
+<title>B18 Device Checks</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+/* B18 device round. Layout: one column of cards, one change per card (the owner's ask for the mock-up boards): a plain
+   title, where to look, what to see, the live words beside the preview's, then Pass / Fail / Not run on the iPhone and
+   on the laptop. Palette: the B18 boards' paper and ink, red for live, green for the preview, blue for focus. */
+:root{
+  --paper:#f7f3ea; --card:#fffdf8; --ink:#27231f; --soft:#625a50; --line:#d9cfbd;
+  --gold:#8a6a1f; --now:#8f3b2e; --after:#2f6b45; --fail:#a3342a; --ring:#1d4fd6;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif; --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --now:#e48b78; --after:#86c79b; --fail:#f08a7f; --ring:#7aa2ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1a17; --card:#26221e; --ink:#eee6d8; --soft:#b9ad9c; --line:#433b32;
+  --gold:#d4b064; --now:#e48b78; --after:#86c79b; --fail:#f08a7f; --ring:#7aa2ff; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 var(--body)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px;display:flex;flex-direction:column;gap:20px}
+h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2rem;line-height:1.15}
+p{margin:0}
+a{color:var(--gold);overflow-wrap:anywhere}
+.lede{color:var(--soft);max-width:62ch}
+.kicker{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.box ol,.box ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px}
+.sites{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline}
+.sites b{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.sites .p{color:var(--after)}
+.sites .l{color:var(--now)}
+.progress{font-weight:600}
+.progress b{font-variant-numeric:tabular-nums}
+h2.part{font-size:1.5rem;margin-top:14px;padding-top:16px;border-top:2px solid var(--line)}
+h2.part span{display:block;font-family:var(--body);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0;scroll-margin-top:12px}
+.card h2{font-size:1.4rem;line-height:1.2}
+.count{font-size:.78rem;color:var(--soft);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.where{color:var(--soft)}
+.where b{color:var(--ink)}
+ul.lines{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.was{font-size:.92rem;overflow-wrap:anywhere}
+.was .k{display:inline-block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-right:4px}
+.was .now{color:var(--now)}
+.was .after{color:var(--after)}
+.was b{color:var(--after)}
+.arrow{color:var(--soft);margin:0 4px}
+fieldset.answer{border:0;border-top:1px solid var(--line);margin:0;padding:12px 0 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+fieldset.answer legend{font-weight:600;padding:12px 0 0;float:left;width:100%}
+.answer .t{font-weight:400;color:var(--soft);font-size:.88rem}
+.dev{display:flex;flex-wrap:wrap;align-items:center;gap:8px;clear:both}
+.devname{min-width:4.2em;font-size:.82rem;font-weight:600;color:var(--soft)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+label.opt{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 16px 8px 12px;cursor:pointer;min-height:44px;background:var(--paper)}
+label.opt:has(input:checked){border-color:var(--after);box-shadow:inset 0 0 0 1.5px var(--after);background:var(--card)}
+label.opt:has(input[value="fail"]:checked),label.opt:has(input[value="remove"]:checked){border-color:var(--fail);box-shadow:inset 0 0 0 1.5px var(--fail)}
+label.opt input{accent-color:var(--after);margin:0}
+.notewrap{display:flex;flex-direction:column;gap:4px}
+.notewrap label{font-size:.88rem;color:var(--soft)}
+textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-height:44px}
+input:focus-visible,textarea:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.saved{font-size:.78rem;color:var(--soft);min-height:1.2em}
+.unit{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px}
+.unit:first-of-type{border-top:0;padding-top:0}
+.uname{font-weight:600}
+.meta{font-size:.78rem;color:var(--soft)}
+pre#summary{white-space:pre-wrap;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.82rem;margin:0;overflow-wrap:anywhere}
+button.copy{font:600 .95rem var(--body);color:var(--paper);background:var(--ink);border:0;border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;align-self:flex-start}
+@media (max-width:640px){h1{font-size:1.7rem}.card{padding:14px}.devname{min-width:100%}}
+</style>
+
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:10px">
+  <p class="kicker">One name per button job · device checks</p>
+  <h1>B18 on your iPhone and laptop</h1>
+  <p class="lede">Everything you approved on the B18 board is built: the new words, one size for Reset, and the i at the right end of its row. Each card below is one change. Open the preview site, find the place the card names, and mark what you see on each device.</p>
+</header>
+
+<div class="box">
+  <div class="sites">
+    <b class="p">Preview</b><a href="{{PREVIEW}}">{{PREVIEW}}</a>
+    <b class="l">Live</b><a href="{{LIVE}}">{{LIVE}}</a>
+  </div>
+  <p class="meta">The preview is the live sheet plus B18 (build {{BUILD}}). Use a test character there: it saves in that site only. The board you approved: <a href="{{BOARD}}">{{BOARD}}</a>.</p>
+</div>
+
+<div class="box">
+  <p><b>How to check</b></p>
+  <ol>
+    <li>Open the preview on the iPhone, and on the laptop.</li>
+    <li>For each card, go where it says and look for what it lists. <b style="color:var(--now)">Live</b> is what the live site shows; <b style="color:var(--after)">Preview</b> is what you should see.</li>
+    <li>Mark <b>Pass</b>, <b>Fail</b> or <b>Not run</b> for each device. Add a note for anything that looks wrong. Cards marked <i>optional</i> need a particular character or VoiceOver; skip them if you like.</li>
+    <li>At the end, choose Accept, Revise or Remove for each part. Your answers save as you go.</li>
+  </ol>
+  <p class="progress"><b id="count">0</b> of {{TOTAL}} cards marked · <span id="where">Connecting…</span></p>
+</div>
+
+{{CARDS}}
+
+<div class="card" id="units">
+  <h2>Each part</h2>
+  <p class="where">After the cards: keep each part, change it, or take it out.</p>
+  {{UNITS}}
+</div>
+
+<div class="card" id="answers">
+  <h2>Your answers</h2>
+  <div class="notewrap"><label for="n-NOTE">Anything else (optional)</label><textarea id="n-NOTE" rows="2"></textarea></div>
+  <pre id="summary"></pre>
+  <button type="button" class="copy" id="copy">Copy my answers</button>
+  <p class="meta" id="copyMsg"></p>
+</div>
+</div>
+
+<script>
+(function(){
+var CARDS={{IDS}},UNITS={{UNITIDS}};
+var WORD={pass:'Pass',fail:'Fail',notrun:'Not run',accept:'Accept',revise:'Revise',remove:'Remove'};
+var state={},db=null,timers={};
+function val(name){var c=document.querySelector('input[name="'+name+'"]:checked');return c?c.value:''}
+function readCard(id){var n=document.getElementById('n-'+id);return {iphone:val('r-'+id+'-iphone'),laptop:val('r-'+id+'-laptop'),note:n?n.value.trim():''}}
+function readUnit(id){var n=document.getElementById('n-unit-'+id);return {decision:val('u-'+id),note:n?n.value.trim():''}}
+function w(v){return v?WORD[v]||v:'—'}
+function render(){
+  var n=0,lines=[];
+  CARDS.forEach(function(c,i){var a=state[c.id]||{};if(a.iphone||a.laptop)n++;
+    var t=document.getElementById('t-'+c.id);if(t)t.textContent=(a.iphone||a.laptop)?'· iPhone '+w(a.iphone)+', laptop '+w(a.laptop):'';
+    lines.push((i+1)+'. '+c.unit+' '+c.title+': iPhone '+w(a.iphone)+', laptop '+w(a.laptop)+(a.note?' — '+a.note:''));});
+  UNITS.forEach(function(u){var a=state['unit-'+u.id]||{};lines.push(u.title+': '+(a.decision?WORD[a.decision]:'(not chosen)')+(a.note?' — '+a.note:''));});
+  var note=(state.NOTE||{}).note;if(note)lines.push('Anything else: '+note);
+  document.getElementById('count').textContent=n;document.getElementById('summary').textContent=lines.join('\n');
+}
+function persist(key){
+  var a=state[key]||{},doc;
+  if(key==='NOTE')doc={round:'device',id:'NOTE',note:a.note||''};
+  else if(key.indexOf('unit-')===0){var u=UNITS.filter(function(x){return 'unit-'+x.id===key})[0];doc={round:'device',id:key,unit:u?u.id:'',title:u?u.title:'',decision:a.decision||'',word:a.decision?WORD[a.decision]:'',note:a.note||''};}
+  else{var c=CARDS.filter(function(x){return x.id===key})[0];doc={round:'device',id:key,unit:c?c.unit:'',title:c?c.title:'',iphone:a.iphone||'',laptop:a.laptop||'',note:a.note||''};}
+  doc.updated=new Date().toISOString();
+  try{localStorage.setItem('b18dev-'+key,JSON.stringify(doc))}catch(e){}
+  var el=document.getElementById(key==='NOTE'?'copyMsg':'sv-'+key);
+  if(!db){if(el)el.textContent='Kept in this browser only';return}
+  db.collection('answers').doc(key).set(doc).then(function(){if(el)el.textContent='Saved'},function(){if(el)el.textContent='Could not save; use Copy my answers at the end'});
+}
+function collect(key,now){
+  state[key]=key==='NOTE'?{note:document.getElementById('n-NOTE').value.trim()}:key.indexOf('unit-')===0?readUnit(key.slice(5)):readCard(key);
+  render();clearTimeout(timers[key]);timers[key]=setTimeout(function(){persist(key)},now?0:700);
+}
+function setRadio(name,v,box){var active=document.activeElement;if(box&&active&&box.contains(active))return;var r=v?document.querySelector('input[name="'+name+'"][value="'+v+'"]'):null;if(r)r.checked=true}
+function apply(key,d){if(!d)return;
+  var n=document.getElementById(key==='NOTE'?'n-NOTE':'n-'+key);if(n&&document.activeElement!==n)n.value=d.note||'';
+  if(key==='NOTE'){state.NOTE={note:d.note||''};return}
+  if(key.indexOf('unit-')===0){var uid=key.slice(5);setRadio('u-'+uid,d.decision,document.getElementById('c-'+key));state[key]={decision:d.decision||'',note:d.note||''};return}
+  var box=document.getElementById('d-'+key);setRadio('r-'+key+'-iphone',d.iphone,box);setRadio('r-'+key+'-laptop',d.laptop,box);
+  state[key]={iphone:d.iphone||'',laptop:d.laptop||'',note:d.note||''};
+}
+CARDS.forEach(function(c){['iphone','laptop'].forEach(function(dev){document.querySelectorAll('input[name="r-'+c.id+'-'+dev+'"]').forEach(function(r){r.addEventListener('change',function(){collect(c.id,true)})})});
+  var n=document.getElementById('n-'+c.id);if(n)n.addEventListener('input',function(){collect(c.id,false)});});
+UNITS.forEach(function(u){document.querySelectorAll('input[name="u-'+u.id+'"]').forEach(function(r){r.addEventListener('change',function(){collect('unit-'+u.id,true)})});
+  var n=document.getElementById('n-unit-'+u.id);if(n)n.addEventListener('input',function(){collect('unit-'+u.id,false)});});
+document.getElementById('n-NOTE').addEventListener('input',function(){collect('NOTE',false)});
+document.getElementById('copy').addEventListener('click',function(){var t=document.getElementById('summary').textContent,m=document.getElementById('copyMsg');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('summary'));var s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent='Select and copy the text above.'}
+  try{navigator.clipboard.writeText(t).then(function(){m.textContent='Copied.'},sel)}catch(e){sel()}});
+var KEYS=CARDS.map(function(c){return c.id}).concat(UNITS.map(function(u){return 'unit-'+u.id}),['NOTE']);
+try{KEYS.forEach(function(k){var v=localStorage.getItem('b18dev-'+k);if(v)apply(k,JSON.parse(v))})}catch(e){}
+render();
+var done=false,timer=setTimeout(function(){if(!done)document.getElementById('where').textContent='saving in this browser only'},10000);
+(window.claude&&window.claude.use?window.claude.use('db'):Promise.resolve(null)).then(function(d){done=true;clearTimeout(timer);db=d;
+  document.getElementById('where').textContent=db?'answers save as you go':'saving in this browser only';if(!db)return;
+  db.collection('answers').onSnapshot(function(snap){snap.docs.forEach(function(doc){if(KEYS.indexOf(doc.id)!==-1)apply(doc.id,doc.data())});render()},
+    function(){document.getElementById('where').textContent='saving in this browser only'});
+}).catch(function(){done=true;clearTimeout(timer);document.getElementById('where').textContent='saving in this browser only'});
+})();
+</script>

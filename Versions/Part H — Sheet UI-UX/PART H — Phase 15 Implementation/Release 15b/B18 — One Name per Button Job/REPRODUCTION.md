@@ -154,3 +154,30 @@ $env:FOCUS = "#iright"; sh "$M/run.sh" "$M/check-board.cjs" out/B18-MOCKUPS-ROUN
 - the close-ups and board-check pictures in the session notes folder (`b18-mockup-evidence/round2/`).
 
 Published to the same artifact as version 3. Its `db` capability carries forward.
+
+## Stage 4: the build (26 November 2026)
+
+Three units on stacked branches from `main` as live (`450362b9`): `claude/release-15b-b18` (B18, the words and spoken names), `claude/release-15b-b18-1` (B18.1, one size for Reset) and `claude/release-15b-b18-2` (B18.2, the i at the end of its row; the group's tip, which also carries B18's revision of 26 November). Each unit's README has its light checks; the group's HANDOVER has the summary.
+
+**The environment** for every run: `PLAYWRIGHT_BROWSERS_PATH=C:/Users/jcrow/l5r-qa-tools/ms-playwright`, `NODE_PATH=C:/Users/jcrow/l5r-qa-tools/node_modules`, `PYTHONUTF8=1`, and for a harness the suite's two preloads, as the full-pass runner gives every leaf:
+
+```sh
+node --require "Versions/PART K — Phase 14.2 Kata and Kiho References/qa/navigation-budget.cjs" \
+     --require "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs" \
+     <harness.js> <sheet.html>
+```
+
+Without the preloads the splash takes taps for its first seconds, and six older harnesses fail for that reason alone (the first discovery run, `qa/light/discovery-no-preloads/`).
+
+| Step | Script | Output |
+|---|---|---|
+| Which removers would refuse while a unit is present | `qa/build/surface-hits.py <file> …` (from `Versions/`): each `remove-phase.py`'s `SURFACE_RE` against the unit's files | `qa/build/surface-hits.log`, and each unit's `qa/surface-hits.log` |
+| The board's places on the build | `qa/mockup/run.sh ../build/probe-built.cjs <out>`: round 1's 41 places (the board's own recipe, `qa/mockup/cards.cjs`), read on the built sheet, compared with `qa/mockup/cards.json`'s "after" (Touch of the Void: "now") | `qa/build/probe-b18/`, `qa/build/probe-tip/` (41/41 each) |
+| Each unit's harness | `qa/button-names-harness.js`, `../B18.1 …/qa/reset-size-harness.js`, `../B18.2 …/qa/info-row-end-harness.js` | each unit's `qa/run-*.log` |
+| Removal proofs | each unit's `qa/test-removal.py` (removal chain first, then the unit's remover with `--expect-sha`) | each unit's `qa/removal.log` |
+| Release 15a removed, the group kept (the owner's decision 3) | `qa/build/remove-15a-keep-group.py <build>`, then the three harnesses on that build | `qa/build/remove-15a-keep-group.log`, `qa/light/tip-15a-removed/` |
+| The live suite | the 213 leaves of group 2's `qa/candidate-list.json`, five at a time with the preloads, by a scratch runner (one log per leaf, `summary.json`) | `qa/light/`, `../B18.1 …/qa/light/`, `../B18.2 …/qa/light/` |
+| The preview | `qa/verify-preview.py --url=https://claude-release-15b-b18-2.l5r-character-sheet-creator.pages.dev/ --ref=claude/release-15b-b18-2` | `qa/hosted-preview/claude-release-15b-b18-2/` |
+| The owner's checklist | `qa/device/build_checklist.py <preview url> <build sha256>` writes `qa/device/device-checks.html` (published as a private artifact, `db`, collection `answers`) and `DEVICE-CHECKS.md` | — |
+
+**What the light checks do not prove.** They are not the qualification: no qualification chain and no single full pass with its pinned candidate and retained counts were run (they wait for the owner's device checks and word). The suite runs here were five at a time; three timing-sensitive checks (the splash's "fades after ready and 5 s", Search Facets' keystroke budget) failed once under that load and passed alone. VoiceOver itself was not run: spoken names are read from the page's accessible-name attributes, as Playwright and the inventory read them.

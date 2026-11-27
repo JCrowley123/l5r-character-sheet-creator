@@ -11,3 +11,5 @@ leaves are the live suite's 213 (group 2's `qa/candidate-list.json`), run a few 
 | `changed-on-b18/` | B18 `e6755993…c089` (after the heading fix) | the 14 changed harnesses (and the Template PDF leaf the filter also caught) | 15/15 harnesses, 781/781 |
 | `changed-on-main/` | live main `1f002be9…5819` | the same | 15/15 harnesses, 781/781 |
 | `full-b18/` | B18 `2be73c43…faea` | all 213 leaves, 5 at a time | 7,561/7,562; the one miss, the splash's "fades after ready and 5 s" timing in `sw-checks.js`, passes alone (61/61) |
+| `tip-own/`, `tip-15a-removed/` | the tip `56b280e2…aab1`, and the same with all 26 Release 15a units removed (`e0178e80…`) | the three units' harnesses | 35/35, 11/11, 11/11 on each |
+| `full-tip-revised/` | the tip `56b280e2…aab1` | all 213 leaves, 5 at a time | 213/213, 7,562/7,562 |

@@ -1,0 +1,167 @@
+{
+  "commit": "08330447230c5ef85f2db78d30ecbebccf418a41",
+  "ref": "claude/release-15b-b18-2",
+  "url": "https://claude-release-15b-b18-2.l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-27T20:36:54.835060+00:00",
+  "source_sha256": "56b280e2c99ef956195b30b6da259bdb415cf17e08b92e2ca960ef8f6b44aab1",
+  "page_sha256": "fa0713a3b148a5f2eab0a09ab818cc2ea85a7843d1ec05fe3da54b79a99e96cd",
+  "page_bytes": 17820043,
+  "service_worker_build": "47fcb82e2021779f",
+  "units": [
+    "B18",
+    "B18.1",
+    "B18.2"
+  ],
+  "expected": {
+    "harnesses": 18,
+    "checks": 883
+  },
+  "harnesses": {
+    "B18 \u2014 One Name per Button Job/button-names-harness.js": {
+      "counts": [
+        "35",
+        "35"
+      ],
+      "expected": 35,
+      "passed": true
+    },
+    "B18.1 \u2014 One Size for Reset/reset-size-harness.js": {
+      "counts": [
+        "11",
+        "11"
+      ],
+      "expected": 11,
+      "passed": true
+    },
+    "B18.2 \u2014 The i at the End of Its Row/info-row-end-harness.js": {
+      "counts": [
+        "11",
+        "11"
+      ],
+      "expected": 11,
+      "passed": true
+    },
+    "BUGFIX \u2014 Ancestor Gifts Used and Favour/ancestor-gifts-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-expansion-harness.js": {
+      "counts": [
+        "48",
+        "48"
+      ],
+      "expected": 48,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.23 Dark Paragon/dark-paragon-harness.js": {
+      "counts": [
+        "67",
+        "67"
+      ],
+      "expected": 67,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js": {
+      "counts": [
+        "69",
+        "69"
+      ],
+      "expected": 69,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js": {
+      "counts": [
+        "28",
+        "28"
+      ],
+      "expected": 28,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.7 Unlucky/disadv-unlucky-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
+      "counts": [
+        "349",
+        "349"
+      ],
+      "expected": 349,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11 Characters List and Save Model/characters-harness.js": {
+      "counts": [
+        "70",
+        "70"
+      ],
+      "expected": 70,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.1 Export to PDF/pdf-harness.js": {
+      "counts": [
+        "33",
+        "33"
+      ],
+      "expected": 33,
+      "passed": true
+    },
+    "A04 \u2014 One Information Pattern/info-pattern-harness.js": {
+      "counts": [
+        "35",
+        "35"
+      ],
+      "expected": 35,
+      "passed": true
+    },
+    "A08 \u2014 One Undo for Quick Taps/quick-tap-undo-harness.js": {
+      "counts": [
+        "21",
+        "21"
+      ],
+      "expected": 21,
+      "passed": true
+    },
+    "A09 \u2014 Phone Text Entry and Repeated Taps/phone-text-entry-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "A14 \u2014 One Net Wound Penalty/net-wound-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "B04 \u2014 One Armor TN Breakdown/armor-tn-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "B17 \u2014 One Row for Kharmic Tie/kharmic-row-harness.js": {
+      "counts": [
+        "13",
+        "13"
+      ],
+      "expected": 13,
+      "passed": true
+    }
+  },
+  "files_only": false,
+  "passed": true
+}

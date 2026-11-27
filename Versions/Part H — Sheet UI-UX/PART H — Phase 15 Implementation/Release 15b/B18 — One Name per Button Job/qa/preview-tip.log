@@ -1,0 +1,38 @@
+Checking deployed files: button-names-harness.js
+Checking deployed files: reset-size-harness.js
+Checking deployed files: info-row-end-harness.js
+Checking deployed files: ancestor-gifts-harness.js
+Checking deployed files: adv-config-expansion-harness.js
+Checking deployed files: dark-paragon-harness.js
+Checking deployed files: damage-sessions-xp-harness.js
+Checking deployed files: adv-config-ux-harness.js
+Checking deployed files: disadv-unlucky-harness.js
+Checking deployed files: ancestors-harness.js
+Checking deployed files: characters-harness.js
+Checking deployed files: pdf-harness.js
+Checking deployed files: info-pattern-harness.js
+Checking deployed files: quick-tap-undo-harness.js
+Checking deployed files: phone-text-entry-harness.js
+Checking deployed files: net-wound-harness.js
+Checking deployed files: armor-tn-harness.js
+Checking deployed files: kharmic-row-harness.js
+PASS B18 — One Name per Button Job/button-names-harness.js 35/35
+PASS B18.1 — One Size for Reset/reset-size-harness.js 11/11
+PASS B18.2 — The i at the End of Its Row/info-row-end-harness.js 11/11
+PASS BUGFIX — Ancestor Gifts Used and Favour/ancestor-gifts-harness.js 12/12
+PASS PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/adv-config-expansion-harness.js 48/48
+PASS PART I — Phase 4.5.23 Dark Paragon/dark-paragon-harness.js 67/67
+PASS PART I — Phase 4.5.32 Damage, Sessions and XP/damage-sessions-xp-harness.js 69/69
+PASS PART I — Phase 4.5.4 Configuration UX Pass/adv-config-ux-harness.js 28/28
+PASS PART I — Phase 4.5.7 Unlucky/disadv-unlucky-harness.js 32/32
+PASS PART I — Phase 4.8 Ancestors/ancestors-harness.js 349/349
+PASS PART K — Phase 11 Characters List and Save Model/characters-harness.js 70/70
+PASS PART K — Phase 11.1 Export to PDF/pdf-harness.js 33/33
+PASS A04 — One Information Pattern/info-pattern-harness.js 35/35
+PASS A08 — One Undo for Quick Taps/quick-tap-undo-harness.js 21/21
+PASS A09 — Phone Text Entry and Repeated Taps/phone-text-entry-harness.js 20/20
+PASS A14 — One Net Wound Penalty/net-wound-harness.js 17/17
+PASS B04 — One Armor TN Breakdown/armor-tn-harness.js 12/12
+PASS B17 — One Row for Kharmic Tie/kharmic-row-harness.js 13/13
+units in the page: B18, B18.1, B18.2 | page fa0713a3b148 17820043 | source 56b280e2c99e
+PREVIEW PASSED: 883/883 on the deployed files
