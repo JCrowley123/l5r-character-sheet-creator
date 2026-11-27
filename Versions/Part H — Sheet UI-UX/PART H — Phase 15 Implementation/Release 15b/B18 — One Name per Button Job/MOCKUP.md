@@ -6,6 +6,7 @@ Prepared by Claude on **25 November 2026**. Nothing is built; no application fil
 - **Live sheet:** `origin/main` `450362b9`, application `1f002be9…5819`, 17,773,727 bytes (15b groups 1 and 2 live).
 - **The re-check** of the 21 November inventory against that sheet: [RECHECK.md](RECHECK.md).
 - **How it was made:** [REPRODUCTION.md](REPRODUCTION.md), section "Stage 3 mock-ups, round 1".
+- **Round 3 (27 November, after the device round):** a new board, https://claude.ai/artifact/33HybUMniMLz5BZDX6Cyf6, four cards on the owner's two device-round notes. See [Round 3](#round-3-the-device-round-notes-27-november-2026). A copy is [mockups/B18-MOCKUPS-ROUND3.html](mockups/B18-MOCKUPS-ROUND3.html). Not answered yet; nothing built.
 - **Round 2 answered (25 November, 20:26 UTC):** both cards approved. Everything on B18 is approved; see [KICKOFF-B18-BUILD.md](KICKOFF-B18-BUILD.md).
 - **Round 2 (25 November, evening):** the same link, **version 3**, two cards on the owner's Reset note. See [Round 2](#round-2-reset-size-and-the-i-25-november-2026). A copy is [mockups/B18-MOCKUPS-ROUND2.html](mockups/B18-MOCKUPS-ROUND2.html); round 1's page stays as [mockups/B18-MOCKUPS.html](mockups/B18-MOCKUPS.html).
 - **Answered (25 November, 19:32 UTC):** 19 approved, Touch of the Void kept, build next; Reset approved as a word with a size and i pass asked for. See [the owner's answers](#round-1-the-owners-answers-25-november-2026-1926-1932-utc).
@@ -210,6 +211,40 @@ Read from the board's store at about 20:30 UTC. The two documents are saved as t
 | `iright` · The i always sits at the right end of its row | **Approve** | 20:26 | (none) |
 
 **Every B18 card is now settled.** Both looks are approved as shown: 28 px tall and in capitals; the i at the right end of its row. With round 1 this completes the owner's Reset note. What to build is in [KICKOFF-B18-BUILD.md](KICKOFF-B18-BUILD.md).
+
+## Round 3: the device-round notes (27 November 2026)
+
+The owner checked all 24 device cards (Pass on the iPhone and the laptop) and accepted B18, B18.1 and B18.2 ([DEVICE-CHECKS.md](DEVICE-CHECKS.md)), with two notes, verbatim:
+
+> I have noticed when picking unlucky the rank is not the same picker as any other rank picker
+
+> I think we can remove the "i" tool tip from lucky as I don't think there is any extra information that it provides
+
+and in the chat: "I have rerun the checks and the test pass but I think we should remove the "i" from lucky and I think the rank picker for unlucky need to chandd".
+
+- **Board (private artifact):** https://claude.ai/artifact/33HybUMniMLz5BZDX6Cyf6, version 1 (27 November 2026, label "Round 3 board"). It declares the `db` capability only; answers save on the board (collection `answers`: `lucki`, `unlucky`, `imbalance`, `emptybar`, `NOTE3`). The store was empty after publishing. A copy is [mockups/B18-MOCKUPS-ROUND3.html](mockups/B18-MOCKUPS-ROUND3.html).
+- **Sheet pictured:** the group's tip as the owner checked it (`claude/release-15b-b18-2`, application `56b280e2…aab1`), opened from the file in the project's test browser; one character (the inventory character plus Perceived Honor, Elemental Imbalance, Dependant and Antisocial). "After" is drawn in that browser only (`qa/mockup/proposals-r3.cjs`); no application file was edited.
+
+**What was measured first** (`qa/mockup/cards-r3.json` and two read-only probes):
+
+- **Luck's i** is Phase 4.54's i, added because Luck's Reset carries an explanatory hover line. Its window is headed “Reset” (B18) and says only “Restore Luck to its per-session maximum”. It is the only Reset with an i of that kind: Kharmic Tie's (B17) and Dark Paragon's i's explain the Advantage; Great Destiny, Haunted and Unlucky have none.
+- **The sheet has three kinds of rank window.** Rank cards (Luck, Magic Resistance, Kharmic Tie's second step: a fixed ladder of 3 or 5 Ranks); a number box headed “Choose a Rank” with “<Name> — choose how many Ranks.”, a bold label and a note (Wealthy, Perceived Honor: no top Rank); and Phase 4.5.2's Disadvantage window (Unlucky, Elemental Imbalance's first step), headed by the entry's name, with its label twice, “step 1 of N”, and an empty bar. The empty bar is that window's message box (`#advConfigNote`), shown with nothing in it unless a step has a note or a value is missing; every Disadvantage window without a note has it (Dependant, Antisocial, Elemental Imbalance's Element step among them).
+- **Unlucky has no top Rank.** The audit's agreed design (D05): “Use a positive whole-number rank input without inventing a rank cap” and “The entry states no maximum; do not infer Luck's three-rank cap.” So the card's after is the number box (Wealthy's and Perceived Honor's look), not Luck's cards; the card says why.
+
+**The cards** (one change per card, Now beside After, Approve / Change it / Keep as now; Approve recommended on each):
+
+| Card | Title | Places |
+|---|---|---|
+| `lucki` | Luck’s i goes | Luck on a phone; on a laptop (Play) |
+| `unlucky` | Unlucky’s rank window looks like the other rank windows | Unlucky's window on a phone; on a laptop; Perceived Honor's window for comparison |
+| `imbalance` | Elemental Imbalance’s Rank step looks the same | its first step (phone) |
+| `emptybar` | The empty bar goes from the other Disadvantage windows | Dependant; Antisocial; Elemental Imbalance's second step (phone) |
+
+The last two are the sheet-wide question (Phase 15: a pattern changed in one place is asked everywhere it reaches). Unlucky's note is the sheet's own catalogue line for it (Phase 4.5.3's correction, Core p.162): “Once per session for each Rank, the GM may force a reroll of one of your rolls, keeping the second result.” Elemental Imbalance gets no note (it has none today). In the pictures, the redrawn box keeps the caret where today's window puts it.
+
+**How the after is drawn:** `qa/mockup/proposals-r3.cjs`. Luck's i is hidden with one style rule (`!important`, because Release 15a A04's info rule sets the i's display at a higher specificity; a build would stop Phase 4.54 adding that i rather than hide it). The two rank windows are redrawn with the elements and classes Wealthy's window uses (`.adv-rank-label`, `.adv-rank-input`), so the sheet's own styles draw them. The empty bar is hidden by one rule while it is empty (`#advConfigNote:empty`), so a message still shows.
+
+**Light checks** (`qa/mockup/round3-board-checks.json`): pass. At 375 × 812 and 1280 × 900, in light and dark: no page errors, no failed loads, no horizontal scroll (375/375, 1280/1280), 17 of 17 pictures loaded, 4 answers. The captures: two page loads of the tip, 0 errors.
 
 ## Usage
 

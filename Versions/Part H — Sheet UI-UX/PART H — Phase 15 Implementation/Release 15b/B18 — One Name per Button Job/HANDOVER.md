@@ -1,6 +1,6 @@
 # Release 15b · B18 group (B18, B18.1, B18.2) — handover (draft)
 
-26 November 2026 (Claude). **Built and previewed; waiting for the owner's device checks.** Nothing is on `main`; the qualification chain has not been run.
+26 November 2026 (Claude); device round recorded 27 November. **Built and previewed; the owner's device checks all passed and all three units are accepted (27 November); two notes are on a round-3 mock-up board, not answered yet.** Nothing is on `main`; the qualification chain has not been run.
 
 **What the group is:** B18, one name per button job, as the owner approved it on the mock-up board (https://claude.ai/artifact/CEVcuCGBbiamEg8spLQ3o2), in three units on stacked branches on top of group 2 as live (`450362b9`, application `1f002be9…5819`):
 
@@ -13,7 +13,9 @@
 ## Approvals
 
 - **Rulings** (24 November 2026) and **round 1** (25 November, 19:26–19:32 UTC): 19 approved, `touch` kept, `order` "Next, before group 3", `reset` "Change it" (the word approved; a size and i pass asked for). **Round 2** (25 November, 20:25–20:26 UTC): `size` and `iright` approved as shown, no notes. The owner's words, verbatim: [MOCKUP.md](MOCKUP.md).
-- **Device round:** the checklist is a private artifact, [B18 Device Checks](https://claude.ai/artifact/PaVBJfu4N4j5KKKEMkgdfJ): 24 cards, one change per card, Pass / Fail / Not run on the iPhone and on the laptop, a note; Accept / Revise / Remove for each unit. Answers save on the page (collection `answers`). Mirrored in [DEVICE-CHECKS.md](DEVICE-CHECKS.md); the owner's results go there, verbatim, when they come.
+- **Device round:** the checklist is a private artifact, [B18 Device Checks](https://claude.ai/artifact/PaVBJfu4N4j5KKKEMkgdfJ): 24 cards, one change per card, Pass / Fail / Not run on the iPhone and on the laptop, a note; Accept / Revise / Remove for each unit. Answers save on the page (collection `answers`). Mirrored in [DEVICE-CHECKS.md](DEVICE-CHECKS.md), with the owner's results verbatim.
+- **Device round answered (27 November 2026, 20:36–20:58 UTC):** all 24 cards Pass on the iPhone and on the laptop; B18, B18.1 and B18.2 **Accept**. Two notes, verbatim: “I have noticed when picking unlucky the rank is not the same picker as any other rank picker” and “I think we can remove the "i" tool tip from lucky as I don't think there is any extra information that it provides”. The answers as saved: `qa/answers-device/answers/`.
+- **Round 3 mock-ups (27 November):** https://claude.ai/artifact/33HybUMniMLz5BZDX6Cyf6, four cards: Luck’s i goes; Unlucky’s rank window looks like the other rank windows (Wealthy’s and Perceived Honor’s number box, since Unlucky has no top Rank); Elemental Imbalance’s Rank step the same; the empty bar goes from the other Disadvantage windows. See [MOCKUP.md](MOCKUP.md#round-3-the-device-round-notes-27-november-2026). Not answered; nothing built.
 
 | Site | What it has |
 |---|---|
@@ -54,7 +56,7 @@ Each unit's folder has its README, ROLLBACK, harness with pinned ids, remover an
 
 ## Next
 
-1. **The owner's device checks** on the checklist above.
+1. **The owner's answers on the round-3 board**; then build what is approved on the tip (with its harness changes: B18's Luck i window checks and B18.2's Luck place depend on Luck's i), a light pass and a device check of those cards.
 2. Then, on the owner's word: the qualification chain (group removal, the units each removed alone, the owner's decision 3, dependencies) and one full pass, with the candidate and retained counts pinned beforehand. Candidate = group 2's qualified 7,562 + B18's 35 + B18.1's 11 + B18.2's 11 = **7,619** (213 + 3 = 216 leaves), with the 15 older harnesses keeping their counts.
 3. Records (ledger, roadmap, CLAUDE.md), and the owner's word to go live.
 

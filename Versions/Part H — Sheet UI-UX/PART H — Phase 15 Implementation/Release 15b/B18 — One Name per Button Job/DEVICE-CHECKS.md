@@ -220,3 +220,16 @@ Live: beside the buttons or badge → preview: **at the right end**
 - **B18 · One name per button job** (every card above except the last two): Accept / Revise / Remove.
 - **B18.1 · One size for Reset** (the card “Every Reset is the same size”): Accept / Revise / Remove.
 - **B18.2 · The i at the end of its row** (the card “The i sits at the right end of its row”): Accept / Revise / Remove.
+
+## The owner’s results (27 November 2026)
+
+Read from the checklist’s store (collection `answers`, 27 documents) on 27 November 2026. Answered 20:36–20:58 UTC.
+
+- **All 24 cards: Pass on the iPhone, Pass on the laptop.**
+- **Units:** B18 **Accept**, B18.1 **Accept**, B18.2 **Accept** (no notes).
+- **Two notes**, verbatim:
+  - On card 1 (“Reset session” reads “Reset”): “I have noticed when picking unlucky the rank is not the same picker as any other rank picker”
+  - On card 2 (The lines that name Reset say “Reset”): “I think we can remove the "i" tool tip from lucky as I don't think there is any extra information that it provides”
+- **In the chat**, the same evening, verbatim: “I have rerun the checks and the test pass but I think we should remove the "i" from lucky and I think the rank picker for unlucky need to chandd” (with a screenshot of Unlucky’s rank window: the heading “Unlucky”, the line “Rank — 2 XP per rank, one use per rank — step 1 of 1”, a number box, an empty bar, Confirm).
+
+**What follows:** the two notes are mocked up first (one change per card, Now beside After), and nothing is built until the owner answers. The qualification chain waits for that round and the owner’s word.

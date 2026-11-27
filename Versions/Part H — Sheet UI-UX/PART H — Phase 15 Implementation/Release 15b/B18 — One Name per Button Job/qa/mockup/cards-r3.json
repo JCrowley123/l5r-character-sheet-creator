@@ -1,0 +1,264 @@
+{
+ "source_sha256": "56b280e2c99ef956195b30b6da259bdb415cf17e08b92e2ca960ef8f6b44aab1",
+ "captured_utc": "2026-11-27T21:12:00.264Z",
+ "cards": {
+  "lucki": {
+   "places": [
+    {
+     "name": "Luck, on a phone",
+     "device": "phone",
+     "files": {
+      "now": "lucki-1-now.png",
+      "after": "lucki-1-after.png"
+     },
+     "now": {
+      "iShown": true,
+      "resetWords": "Reset",
+      "resetSpoken": "Reset Luck for a new session",
+      "resetTitle": "Restore Luck to its per-session maximum",
+      "rowHeight": 28
+     },
+     "nowBox": {
+      "width": 345,
+      "height": 203
+     },
+     "after": {
+      "iShown": false,
+      "resetWords": "Reset",
+      "resetSpoken": "Reset Luck for a new session",
+      "resetTitle": "Restore Luck to its per-session maximum",
+      "rowHeight": 28
+     },
+     "afterBox": {
+      "width": 345,
+      "height": 203
+     },
+     "errors": []
+    },
+    {
+     "name": "Luck, on a laptop",
+     "device": "laptop",
+     "files": {
+      "now": "lucki-2-now.png",
+      "after": "lucki-2-after.png"
+     },
+     "now": {
+      "iShown": true,
+      "resetWords": "Reset",
+      "resetSpoken": "Reset Luck for a new session",
+      "resetTitle": "Restore Luck to its per-session maximum",
+      "rowHeight": 28
+     },
+     "nowBox": {
+      "width": 578,
+      "height": 195
+     },
+     "after": {
+      "iShown": false,
+      "resetWords": "Reset",
+      "resetSpoken": "Reset Luck for a new session",
+      "resetTitle": "Restore Luck to its per-session maximum",
+      "rowHeight": 28
+     },
+     "afterBox": {
+      "width": 578,
+      "height": 195
+     },
+     "errors": []
+    }
+   ]
+  },
+  "unlucky": {
+   "places": [
+    {
+     "name": "Unlucky’s window, on a phone",
+     "device": "phone",
+     "files": {
+      "now": "unlucky-1-now.png",
+      "after": "unlucky-1-after.png"
+     },
+     "now": {
+      "title": "Unlucky",
+      "sub": "Rank — 2 XP per rank, one use per rank — step 1 of 1",
+      "grid": "RANK — 2 XP PER RANK, ONE USE PER RANK",
+      "note": "",
+      "noteShown": true,
+      "value": "2",
+      "button": "Confirm"
+     },
+     "after": {
+      "title": "Choose a Rank",
+      "sub": "Unlucky — choose how many Ranks.",
+      "grid": "RANK — 2 XP PER RANK",
+      "note": "Once per session for each Rank, the GM may force a reroll of one of your rolls, keeping the second result.",
+      "noteShown": true,
+      "value": "2",
+      "button": "Confirm"
+     },
+     "errors": []
+    },
+    {
+     "name": "Unlucky’s window, on a laptop",
+     "device": "laptop",
+     "files": {
+      "now": "unlucky-2-now.png",
+      "after": "unlucky-2-after.png"
+     },
+     "now": {
+      "title": "Unlucky",
+      "sub": "Rank — 2 XP per rank, one use per rank — step 1 of 1",
+      "grid": "RANK — 2 XP PER RANK, ONE USE PER RANK",
+      "note": "",
+      "noteShown": true,
+      "value": "2",
+      "button": "Confirm"
+     },
+     "after": {
+      "title": "Choose a Rank",
+      "sub": "Unlucky — choose how many Ranks.",
+      "grid": "RANK — 2 XP PER RANK",
+      "note": "Once per session for each Rank, the GM may force a reroll of one of your rolls, keeping the second result.",
+      "noteShown": true,
+      "value": "2",
+      "button": "Confirm"
+     },
+     "errors": []
+    },
+    {
+     "name": "Perceived Honor’s window, already like this (no change)",
+     "device": "phone",
+     "files": {
+      "now": "unlucky-3-now.png"
+     },
+     "now": {
+      "title": "Choose a Rank",
+      "sub": "Perceived Honor — choose how many Ranks.",
+      "grid": "RANK — 2 XP PER RANK",
+      "note": "Anyone reading your Honor Rank perceives it as that many Ranks higher. Your actual Honor is unchanged, and so is everything that depends on it — Honor spending, Honor-based resistance, and any roll that adds your Honor Rank.",
+      "noteShown": true,
+      "value": null,
+      "button": "Confirm"
+     },
+     "errors": []
+    }
+   ]
+  },
+  "imbalance": {
+   "places": [
+    {
+     "name": "Elemental Imbalance, first step (its Rank)",
+     "device": "phone",
+     "files": {
+      "now": "imbalance-1-now.png",
+      "after": "imbalance-1-after.png"
+     },
+     "now": {
+      "title": "Elemental Imbalance",
+      "sub": "Rank — 2 XP per rank — step 1 of 2",
+      "grid": "RANK — 2 XP PER RANK",
+      "note": "",
+      "noteShown": true,
+      "value": null,
+      "button": "Next"
+     },
+     "after": {
+      "title": "Choose a Rank",
+      "sub": "Elemental Imbalance — choose how many Ranks.",
+      "grid": "RANK — 2 XP PER RANK",
+      "note": "",
+      "noteShown": false,
+      "value": null,
+      "button": "Next"
+     },
+     "errors": []
+    }
+   ]
+  },
+  "emptybar": {
+   "places": [
+    {
+     "name": "Dependant",
+     "device": "phone",
+     "files": {
+      "now": "emptybar-1-now.png",
+      "after": "emptybar-1-after.png"
+     },
+     "now": {
+      "title": "Dependant",
+      "sub": "Agreed point value — what you and your GM settled on — step 1 of 1",
+      "grid": "AGREED POINT VALUE — WHAT YOU AND YOUR GM SETTLED ON",
+      "note": "",
+      "noteShown": true,
+      "value": null,
+      "button": "Confirm"
+     },
+     "after": {
+      "title": "Dependant",
+      "sub": "Agreed point value — what you and your GM settled on — step 1 of 1",
+      "grid": "AGREED POINT VALUE — WHAT YOU AND YOUR GM SETTLED ON",
+      "note": "",
+      "noteShown": false,
+      "value": null,
+      "button": "Confirm"
+     },
+     "errors": []
+    },
+    {
+     "name": "Antisocial",
+     "device": "phone",
+     "files": {
+      "now": "emptybar-2-now.png",
+      "after": "emptybar-2-after.png"
+     },
+     "now": {
+      "title": "Antisocial",
+      "sub": "Severity — step 1 of 1",
+      "grid": "2 XP (CRAB: 3 XP) 4 XP (CRAB: 5 XP)",
+      "note": "",
+      "noteShown": true,
+      "value": null,
+      "button": "Confirm"
+     },
+     "after": {
+      "title": "Antisocial",
+      "sub": "Severity — step 1 of 1",
+      "grid": "2 XP (CRAB: 3 XP) 4 XP (CRAB: 5 XP)",
+      "note": "",
+      "noteShown": false,
+      "value": null,
+      "button": "Confirm"
+     },
+     "errors": []
+    },
+    {
+     "name": "Elemental Imbalance, second step (its Element)",
+     "device": "phone",
+     "files": {
+      "now": "emptybar-3-now.png",
+      "after": "emptybar-3-after.png"
+     },
+     "now": {
+      "title": "Elemental Imbalance",
+      "sub": "Choose a non-deficient element — step 2 of 2",
+      "grid": "AIR EARTH FIRE WATER",
+      "note": "",
+      "noteShown": true,
+      "value": null,
+      "button": "Confirm"
+     },
+     "after": {
+      "title": "Elemental Imbalance",
+      "sub": "Choose a non-deficient element — step 2 of 2",
+      "grid": "AIR EARTH FIRE WATER",
+      "note": "",
+      "noteShown": false,
+      "value": null,
+      "button": "Confirm"
+     },
+     "errors": []
+    }
+   ]
+  }
+ },
+ "errors": []
+}
