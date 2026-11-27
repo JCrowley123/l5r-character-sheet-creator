@@ -20,10 +20,10 @@ You don't need to judge whether the rating is right. That is the group's short l
 
 ---
 
-## 1. Kakita Bushi: Core Rulebook p.109 (PDF 112)
+## 1. Kakita Bushi: Core Rulebook p.109 (PDF 112) · **passed** (owner, 27 November 2026)
 
-- [ ] Tea Ceremony is in the School's Skills list.
-- [ ] The text says the School concentrates on duelling, and its other skills are secondary.
+- [x] Tea Ceremony is in the School's Skills list.
+- [x] The text says the School concentrates on duelling, and its other skills are secondary.
 
 ## 2. Ide Emissary: Core Rulebook p.131 (PDF 134)
 
